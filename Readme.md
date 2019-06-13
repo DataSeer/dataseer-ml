@@ -2,7 +2,19 @@ Work in progress !
 
 # Build
 
+Install GROBID:
+
+> git clone https://github.com/kermitt2/grobid
+
+Install dataseer-ml and copy it as a sub-module of GROBID:
+
 > git clone https://github.com/kermitt2/dataseer-ml
+
+> cp -rf dataseer-ml grobid/
+
+Build:
+
+> cd grobid/dataseer-ml
 
 > ./gradlew clean install
 
