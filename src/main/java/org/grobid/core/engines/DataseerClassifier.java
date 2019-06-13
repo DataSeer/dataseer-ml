@@ -182,7 +182,7 @@ public class DataseerClassifier {
         for (int i = 0; i < children.getLength(); i++) {
             final Node n = children.item(i);
             if ( (n.getNodeType() == Node.ELEMENT_NODE) && 
-                 (textualElements.contains(n.getNodeName())) ){
+                 (textualElements.contains(n.getNodeName())) ) {
                 // text content
                 //String text = n.getTextContent();
                 StringBuffer textBuffer = new StringBuffer();
@@ -198,16 +198,18 @@ public class DataseerClassifier {
                 List<String> sentences = new ArrayList<String>();
                 List<String> toConcatenate = new ArrayList<String>();
                 for(String sent : theSentences) {
-                    //System.out.println("new chunk: " + sent);
+                    System.out.println("new chunk: " + sent);
+                    String newSent = sent;
                     if (toConcatenate.size() != 0) {
                         StringBuffer conc = new StringBuffer();
                         for(String concat : toConcatenate) {
                             conc.append(concat);
                             conc.append(" ");
                         }
-                        sent = conc.toString() + sent;
+                        newSent = conc.toString() + sent;
                     }
-                    String fullSent = "<s>" + sent + "</s>";
+                    String fullSent = "<s>" + newSent + "</s>";
+                    System.out.println("try: " + fullSent);
                     boolean fail = false;
                     try {
                         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -233,7 +235,7 @@ public class DataseerClassifier {
                     //sentenceElement.setTextContent(sent);
                     //newNodes.add(sentenceElement);
 
-                    //System.out.println(sent);  
+                    System.out.println(sent);  
 
                     try {
                         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
