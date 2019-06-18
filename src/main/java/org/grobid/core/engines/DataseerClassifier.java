@@ -117,15 +117,14 @@ public class DataseerClassifier {
         String tei = null;
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder builder = factory.newDocumentBuilder();
-           
-            org.w3c.dom.Document document = builder.parse(xmlString);
+            DocumentBuilder builder = factory.newDocumentBuilder();           
+            org.w3c.dom.Document document = builder.parse(new InputSource(new StringReader(xmlString)));
             document.getDocumentElement().normalize();
             tei = processTEIDocument(document);
         } catch(ParserConfigurationException e) {
-
+            e.printStackTrace();
         } catch(IOException e) {
-            
+            e.printStackTrace();
         } 
         return tei;
     }
@@ -146,9 +145,9 @@ public class DataseerClassifier {
             tei = processTEIDocument(document);
 
         } catch(ParserConfigurationException e) {
-
+            e.printStackTrace();
         } catch(IOException e) {
-            
+            e.printStackTrace();
         } 
         return tei;
     }
@@ -160,17 +159,8 @@ public class DataseerClassifier {
     public String processTEIDocument(org.w3c.dom.Document document) throws Exception {
         String tei = null;
         Element root = document.getDocumentElement();
-        
-        /*AbstractSegmenter segmenter = EngineGetter.getSegmenter(AbstractReader.LANG_EN, tokenizer);
-        // convert String into InputStream
-        InputStream is = new ByteArrayInputStream(text.getBytes(UTF_8));
-        // read it with BufferedReader
-        BufferedReader br = new BufferedReader(new InputStreamReader(is));
-        List<List<String>> sentences = segmenter.getSentences(br);*/
-
         segment(document, root);
         tei = serialize(document, null);
-
         return tei;
     }
 
@@ -195,7 +185,7 @@ public class DataseerClassifier {
                 List<String> sentences = new ArrayList<String>();
                 List<String> toConcatenate = new ArrayList<String>();
                 for(String sent : theSentences) {
-                    System.out.println("new chunk: " + sent);
+                    //System.out.println("new chunk: " + sent);
                     String newSent = sent;
                     if (toConcatenate.size() != 0) {
                         StringBuffer conc = new StringBuffer();
@@ -206,7 +196,7 @@ public class DataseerClassifier {
                         newSent = conc.toString() + sent;
                     }
                     String fullSent = "<s>" + newSent + "</s>";
-                    System.out.println("try: " + fullSent);
+                    //System.out.println("try: " + fullSent);
                     boolean fail = false;
                     try {
                         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -232,7 +222,7 @@ public class DataseerClassifier {
                     //sentenceElement.setTextContent(sent);
                     //newNodes.add(sentenceElement);
 
-                    System.out.println(sent);  
+                    //System.out.println(sent);  
 
                     try {
                         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
