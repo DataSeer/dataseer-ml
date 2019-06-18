@@ -37,10 +37,10 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.apache.commons.lang3.StringUtils.*;
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 
-import com.googlecode.clearnlp.engine.EngineGetter;
+/*import com.googlecode.clearnlp.engine.EngineGetter;
 import com.googlecode.clearnlp.reader.AbstractReader;
 import com.googlecode.clearnlp.segmentation.AbstractSegmenter;
-import com.googlecode.clearnlp.tokenization.AbstractTokenizer;
+import com.googlecode.clearnlp.tokenization.AbstractTokenizer;*/
 
 import opennlp.tools.sentdetect.SentenceDetectorME; 
 import opennlp.tools.sentdetect.SentenceModel;
@@ -56,8 +56,6 @@ public class DataseerClassifier {
     private static volatile DataseerClassifier instance;
 
     // components for sentence segmentation
-    private AbstractTokenizer tokenizer = null;
-    private static String clearNLPdictionaryFile = "resources/clearNLP/dictionary-1.3.1.zip";
     private SentenceDetectorME detector =null;
     private static String openNLPModelFile = "resources/openNLP/en-sent.bin";
 
@@ -85,7 +83,6 @@ public class DataseerClassifier {
         dataseerLexicon = DataseerLexicon.getInstance();
         try {
             LibraryLoader.load();
-            tokenizer = EngineGetter.getTokenizer(AbstractReader.LANG_EN, new FileInputStream(clearNLPdictionaryFile));
 
             //Loading sentence detector model (hope they are thread safe!)
             InputStream inputStream = new FileInputStream(openNLPModelFile); 
