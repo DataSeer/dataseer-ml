@@ -28,6 +28,10 @@ public class Annotation implements Comparable<Annotation> {
 
     private String text = null;
     private String memo = null;
+    private String meshDataType = null;
+    private String dataType = null;
+    private String dataSubType = null;
+    private String dataLeafType = null;
 
     /**
      *  Storing attribute value pairs, only one value per attribute.
@@ -62,6 +66,30 @@ public class Annotation implements Comparable<Annotation> {
 
     public void setMemo(String text) {
         this.memo = memo;
+    }
+
+    public String getDataType() {
+        return this.dataType;
+    }
+
+    public void setDataType(String dataType) {
+        this.dataType = dataType;
+    }
+
+    public String getDataSubType() {
+        return this.dataSubType;
+    }
+
+    public void setDataSubType(String dataSubType) {
+        this.dataSubType = dataSubType;
+    }
+
+    public String getDataLeafType() {
+        return this.dataLeafType;
+    }
+
+    public void setDataLeafType(String dataLeafType) {
+        this.dataLeafType = dataLeafType;
     }
 
     public Map<String, String> getAttributes() {
