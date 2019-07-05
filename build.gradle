@@ -245,10 +245,10 @@ task(eval_dataseer_split, dependsOn: 'classes', type: JavaExec, group: 'evaluati
     jvmArgs '-Xms2g', '-Xmx8g'
 }
 
-// Run like: ./gradlew annotated_corpus_generator_csv -Ppdf=/path/input/pdf -Pcsv=path/csv -Poutput=/output/directory
+// Run like: ./gradlew annotated_corpus_generator_csv -Ppdf=/path/input/pdf -Pcsv=path/csv -Pxml=/output/directory
 task(annotated_corpus_generator_csv, dependsOn: 'classes', type: JavaExec, group: 'import') {
     main = 'org.grobid.trainer.AnnotatedCorpusGeneratorCSV'
     classpath = sourceSets.main.runtimeClasspath
-    args getArg('pdf', ''), getArg('csv', ''), getArg('output', 'resources/dataset/dataseer/corpus/')
+    args getArg('pdf', ''), getArg('csv', ''), getArg('xml', 'resources/dataset/dataseer/corpus/')
     jvmArgs '-Xms2g', '-Xmx8g'
 }
