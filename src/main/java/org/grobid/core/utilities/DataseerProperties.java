@@ -7,7 +7,7 @@ public class DataseerProperties {
 
 	public static String get(String key) {
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-		InputStream stream = classLoader.getResourceAsStream("grobid-dataseer.properties");
+		InputStream stream = classLoader.getResourceAsStream("dataseer-ml.properties");
 		
 		java.util.Properties properties = new java.util.Properties();
 		try {

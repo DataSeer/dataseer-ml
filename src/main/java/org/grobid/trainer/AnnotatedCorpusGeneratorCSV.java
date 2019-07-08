@@ -4,6 +4,7 @@ import org.grobid.core.analyzers.DataseerAnalyzer;
 import org.grobid.core.engines.DataseerClassifier;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.ArticleUtilities;
+import org.grobid.core.utilities.ArticleUtilities.Source;
 
 import org.grobid.core.analyzers.GrobidAnalyzer;
 import org.grobid.core.data.BibDataSet;
@@ -31,7 +32,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.*;
 import java.io.*;
-import java.nio.charset.Charset;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.text.NumberFormat;
@@ -41,6 +42,7 @@ import org.apache.commons.csv.*;
 import org.apache.commons.lang3.tuple.Pair;
 
 import java.net.URI;
+import java.net.URLEncoder;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -48,6 +50,14 @@ import java.util.regex.Pattern;
 import nu.xom.*;
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import org.apache.commons.lang3.StringUtils;
+
+//import org.xml.sax.InputSource;
+//import org.w3c.dom.*;
+//import javax.xml.parsers.*;
+import java.io.*;
+/*import javax.xml.transform.*;
+import javax.xml.transform.dom.*;
+import javax.xml.transform.stream.*;*/
 
 import com.fasterxml.jackson.core.io.JsonStringEncoder;
 
@@ -77,15 +87,13 @@ public class AnnotatedCorpusGeneratorCSV {
 
     private static final Logger logger = LoggerFactory.getLogger(AnnotatedCorpusGeneratorCSV.class);
 
-    static Charset UTF_8 = Charset.forName("UTF-8"); // StandardCharsets.UTF_8
-
     private ArticleUtilities articleUtilities = new ArticleUtilities();
 
     /**
      * Start the conversion/fusion process for generating MUC-style annotated XML documents
      * from PDF, parsed by GROBID core, and dataseer dataset  
      */
-    public void process(String documentPath, String csvPath, String xmlPath) throws IOException {
+    public void processXML(String documentPath, String csvPath, String xmlPath) throws IOException {
 
         Map<String, AnnotatedDocument> documents = new HashMap<String, AnnotatedDocument>();
         Map<String, DataseerAnnotation> annotations = new HashMap<String, DataseerAnnotation>();
@@ -99,7 +107,8 @@ public class AnnotatedCorpusGeneratorCSV {
 
         DataseerClassifier dataseer = DataseerClassifier.getInstance();
 
-        // go thought all annotated documents 
+        // some counters
+        int totalAnnotations = 0;
         int m = 0;
         for (Map.Entry<String, AnnotatedDocument> entry : documents.entrySet()) {
             if (m > 100) {
@@ -107,6 +116,28 @@ public class AnnotatedCorpusGeneratorCSV {
             }
             m++;
             AnnotatedDocument doc = entry.getValue();
+            String doi = doc.getDoi();
+            if (doi.indexOf("10.1371/") == -1)
+                continue;
+            if (doc.getAnnotations() != null) {
+                totalAnnotations += doc.getAnnotations().size();
+            }
+        }
+        int totalUnmatchedAnnotations = 0;
+        int totalMatchedAnnotations = 0;
+
+        // go thought all annotated documents 
+        m = 0;
+        for (Map.Entry<String, AnnotatedDocument> entry : documents.entrySet()) {
+            if (m > 100) {
+                break;
+            }
+            m++;
+            AnnotatedDocument doc = entry.getValue();
+
+            if ((doc.getAnnotations() == null) || (doc.getAnnotations().size() == 0))
+                continue;
+
             String doi = doc.getDoi();
 
             //System.out.println(doi);
@@ -129,30 +160,231 @@ public class AnnotatedCorpusGeneratorCSV {
                 System.out.println("TEI XML of the PLOS article does not exist: " + plosPath);
                 System.out.println("moving to next article...");
                 continue;
-            }   
+            }
 
             try {
                 // segment into sentence
-                String segmentedTEI = dataseer.processTEI(plosPath);
+                String segmentedTEI = dataseer.processTEI(plosPath, true);
+                //segmentedTEI = avoidDomParserAttributeBug(segmentedTEI);
 
-                // match sentence and inject attributes to sentence tags
-                for(DataseerAnnotation annotation : doc.getAnnotations()) {
-                    String sentence = annotation.getContext();
-                    if (segmentedTEI.indexOf(sentence) != -1) {
-                        System.out.println("matched sentence!");
-                    } else {
-                        System.out.println("unmatched sentence: " + sentence);
+                Builder parser = new Builder();
+                InputStream inputStream = new ByteArrayInputStream(segmentedTEI.getBytes(UTF_8));
+                nu.xom.Document document = parser.build(inputStream);
+
+                // the list of annotations which have been matched. We keep track of their indices
+                List<Integer> solvedAnnotations = new ArrayList<Integer>();
+
+                // let's iterate through the segmented sentences
+                nu.xom.Element root = document.getRootElement();
+                List<nu.xom.Element> nodeList = getElementsByTagName(root, "s");
+
+                for (int i = 0; i < nodeList.size(); i++) {
+                    nu.xom.Element node = nodeList.get(i);
+                    StringBuffer textValue = new StringBuffer();
+                    for (int j = 0; j < node.getChildCount(); j++) {
+                        Node subnode = node.getChild(j);
+                        if (subnode instanceof Text) {
+                            textValue.append(subnode.getValue());
+                        }
+                    }
+                    String localSentence = textValue.toString();
+
+                    // match sentence and inject attributes to sentence tags
+                    boolean hasMatched = false;
+                    int k = 0;
+                    for(DataseerAnnotation annotation : doc.getAnnotations()) {
+                        if (!solvedAnnotations.contains(k)) {
+                            String sentence = annotation.getContext();
+                            if (localSentence.equals(sentence)) {
+                                totalMatchedAnnotations++;
+                                System.out.println("matched sentence!");
+                                solvedAnnotations.add(new Integer(k));
+                                // add annotation attributes to the DOM sentence
+
+                                break;
+                            }
+                        }
+                        k++; 
                     }
                 }
+
+                
+                if (solvedAnnotations.size() < doc.getAnnotations().size()) {
+                    System.out.println((doc.getAnnotations().size() - solvedAnnotations.size()) + " unmatched annotations");
+                    totalUnmatchedAnnotations += doc.getAnnotations().size() - solvedAnnotations.size();
+                }
+            } catch (ParsingException e) {
+                e.printStackTrace();
+            } catch(IOException e) {
+                e.printStackTrace();
             } catch(Exception e) {
                 e.printStackTrace();
             }
 
+        }
+
+        System.out.println("Total matched annotations: " + totalMatchedAnnotations);
+        System.out.println(totalUnmatchedAnnotations + " total unmatched annotations, out of " + totalAnnotations);
+    }
+
+
+    public void processPDF(String documentPath, String csvPath, String xmlPath) throws IOException {
+
+        Map<String, AnnotatedDocument> documents = new HashMap<String, AnnotatedDocument>();
+        Map<String, DataseerAnnotation> annotations = new HashMap<String, DataseerAnnotation>();
+
+        importCSVFiles(csvPath, documents, annotations);
+
+        System.out.println("\n" + annotations.size() + " total annotations");
+        System.out.println(documents.size() + " total annotated documents");  
+        if (!documentPath.endsWith("/"))
+            documentPath += "/";
+
+        DataseerClassifier dataseer = DataseerClassifier.getInstance();
+
+        // some counters
+        int totalAnnotations = 0;
+        int m = 0;
+        for (Map.Entry<String, AnnotatedDocument> entry : documents.entrySet()) {
+            /*if (m > 100) {
+                break;
+            }
+            m++;*/
+            AnnotatedDocument doc = entry.getValue();
+            String doi = doc.getDoi();
+            if (doc.getAnnotations() != null) {
+                totalAnnotations += doc.getAnnotations().size();
+            }
+        }
+        int totalUnmatchedAnnotations = 0;
+        int totalMatchedAnnotations = 0;
+
+        ArticleUtilities articleUtilities = new ArticleUtilities();
+
+        // go thought all annotated documents 
+        m = 0;
+        for (Map.Entry<String, AnnotatedDocument> entry : documents.entrySet()) {
+            /*if (m > 20) {
+                break;
+            }
+            m++;*/
+            AnnotatedDocument doc = entry.getValue();
+
+            if ((doc.getAnnotations() == null) || (doc.getAnnotations().size() == 0))
+                continue;
+
+            String doi = doc.getDoi();
+
+            // check if the TEI file already exists for this PDF
+            String teiPath = documentPath + "/" + URLEncoder.encode(doi, "UTF-8")+".tei.xml";
+            File teiFile = new File(teiPath);
+
+            if (!teiFile.exists()) {
+
+                // get PDF file from DOI
+                File pdfFile = articleUtilities.getPDFDoc(doi, Source.DOI);
+
+                // produce TEI with GROBID
+                GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+                                        .consolidateHeader(0)
+                                        .consolidateCitations(0)
+                                        .build();
+                Engine engine = GrobidFactory.getInstance().getEngine();
+                String tei = null;
+                try {
+                    tei = engine.fullTextToTEI(pdfFile, config);
+                } catch(Exception e) {
+                    e.printStackTrace();
+                }
+                
+                // save TEI file
+                FileUtils.writeStringToFile(new File(teiPath), tei, UTF_8);
+            }
+
+            try {
+                // segment into sentence
+                String segmentedTEI = dataseer.processTEI(teiPath, false);
+                FileUtils.writeStringToFile(new File(teiPath.replace(".tei.xml", "-segmented.tei.xml")), segmentedTEI, UTF_8);
+
+                Builder parser = new Builder();
+                InputStream inputStream = new ByteArrayInputStream(segmentedTEI.getBytes(UTF_8));
+                nu.xom.Document document = parser.build(inputStream);
+
+                // the list of annotations which have been matched. We keep track of their indices
+                List<Integer> solvedAnnotations = new ArrayList<Integer>();
+
+                // let's iterate through the segmented sentences
+                nu.xom.Element root = document.getRootElement();
+                List<nu.xom.Element> nodeList = getElementsByTagName(root, "s");
+
+                for (int i = 0; i < nodeList.size(); i++) {
+                    nu.xom.Element node = nodeList.get(i);
+                    StringBuffer textValue = new StringBuffer();
+                    for (int j = 0; j < node.getChildCount(); j++) {
+                        Node subnode = node.getChild(j);
+                        if (subnode instanceof Text) {
+                            textValue.append(subnode.getValue());
+                        }
+                    }
+                    String localSentence = textValue.toString();
+                    //System.out.println(localSentence);
+                    String localSentenceSimplified = localSentence.replace(" ", "");
+
+                    // match sentence and inject attributes to sentence tags
+                    boolean hasMatched = false;
+                    int k = 0;
+                    for(DataseerAnnotation annotation : doc.getAnnotations()) {
+                        if (!solvedAnnotations.contains(k)) {
+                            String sentence = annotation.getContext();
+                            String sentenceSimplified = sentence.replace(" ", "");
+                            //System.out.println(sentence);
+                            if (localSentenceSimplified.equals(sentenceSimplified)) {
+                                totalMatchedAnnotations++;
+                                System.out.println("matched sentence!");
+                                solvedAnnotations.add(new Integer(k));
+                                // add annotation attributes to the DOM sentence
+
+                                break;
+                            }
+                        }
+                        k++; 
+                    }
+                }
+                
+                if (solvedAnnotations.size() < doc.getAnnotations().size()) {
+                    System.out.println((doc.getAnnotations().size() - solvedAnnotations.size()) + " unmatched annotations");
+                    totalUnmatchedAnnotations += doc.getAnnotations().size() - solvedAnnotations.size();
+                }
+            } catch (ParsingException e) {
+                e.printStackTrace();
+            } catch(IOException e) {
+                e.printStackTrace();
+            } catch(Exception e) {
+                e.printStackTrace();
+            }
 
         }
 
+        System.out.println("Total matched annotations: " + totalMatchedAnnotations);
+        System.out.println(totalUnmatchedAnnotations + " total unmatched annotations, out of " + totalAnnotations);
     }
 
+
+
+
+
+    public static List<nu.xom.Element> getElementsByTagName(nu.xom.Element element, String tagName) {
+        nu.xom.Elements children = element.getChildElements();
+        List<nu.xom.Element> result = new ArrayList<>();
+        for(int i=0; i<children.size(); i++) {
+            nu.xom.Element child = children.get(i);
+            if (tagName.equals(child.getLocalName())) {
+                result.add(child);
+            }
+            result.addAll(getElementsByTagName(child, tagName));
+        }
+        return result;
+    }
 
     private void importCSVFiles(String csvPath, Map<String, AnnotatedDocument> documents, Map<String, DataseerAnnotation> annotations) {
         // process is driven by what's available in the dataseer dataset
@@ -297,7 +529,8 @@ public class AnnotatedCorpusGeneratorCSV {
 
         AnnotatedCorpusGeneratorCSV converter = new AnnotatedCorpusGeneratorCSV();
         try {
-            converter.process(documentPath, csvPath, xmlPath);
+            //converter.processXML(documentPath, csvPath, xmlPath);
+            converter.processPDF(documentPath, csvPath, xmlPath);
         } catch (Exception e) {
             e.printStackTrace();
         }

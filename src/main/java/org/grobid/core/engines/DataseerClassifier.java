@@ -134,15 +134,20 @@ public class DataseerClassifier {
      * Enrich a TEI document with Dataseer information
      * @return enriched TEI string
      */
-    public String processTEI(String filePath) throws Exception {
+    public String processTEI(String filePath, boolean avoidDomParserBug) throws Exception {
         String tei = null;
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
-           
-            org.w3c.dom.Document document = builder.parse(new File(filePath));
+            tei = FileUtils.readFileToString(new File(filePath), UTF_8);
+            if (avoidDomParserBug)
+                tei = avoidDomParserAttributeBug(tei);
+
+            org.w3c.dom.Document document = builder.parse(new InputSource(new StringReader(tei)));
             document.getDocumentElement().normalize();
             tei = processTEIDocument(document);
+            if (avoidDomParserBug)
+                tei = restoreDomParserAttributeBug(tei); 
 
         } catch(ParserConfigurationException e) {
             e.printStackTrace();
@@ -276,6 +281,39 @@ public class DataseerClassifier {
         return xml;
     }
 
+
+    /**
+     *  XML is always full of bad surprises. The following document:
+     * <?xml version="1.0" encoding="UTF-8"?>
+     * <a>
+     * <p>
+     * <c toto="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</c>
+     * </p>
+     * </a>
+     * results in [Fatal Error] :1:94: Element type "ref" must be followed by either attribute specifications, ">" or "/>".
+     * or [Fatal Error] :1:70: The element type "c" must be terminated by the matching end-tag "</c>". 
+     * It appears that removing the dots in the attribute value avoid the parsing error (it doesn't make sense of course, 
+     * but ok...).
+     * So we temporary replace the dot in the attribute values of <ref> by dummy &#x02ADB;, and restore them afterwards.
+     */
+    public String avoidDomParserAttributeBug(String xml) {
+        //System.out.println(xml);
+        String newXml = xml.replaceAll("(<ref .*)\\.(.*>)", "$1&#x02ADB;$2");
+        newXml = newXml.replaceAll("(<formula .*)\\.(.*>)", "$1&#x02ADB;$2");
+        while(!newXml.equals(xml)) {
+            xml = newXml;
+            newXml = xml.replaceAll("(<ref .*)\\.(.*>)", "$1&#x02ADB;$2");
+            newXml = newXml.replaceAll("(<formula .*)\\.(.*>)", "$1&#x02ADB;$2");
+        }
+        xml = newXml;
+        //System.out.println(xml);
+        return xml;
+    }
+
+    public String restoreDomParserAttributeBug(String xml) {
+        xml = xml.replace("&#x02ADB;", ".");
+        return xml;
+    }
 
     /**
      * Convert a PDF into TEI and enrich the TEI document with Dataseer information
