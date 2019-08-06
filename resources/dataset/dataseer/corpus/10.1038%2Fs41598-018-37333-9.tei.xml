@@ -1,0 +1,1190 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:06+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Thermodynamic stability of magnetic states of monovacancy in graphene revealed by ab initio molecular dynamics simulations OPEN</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+        <date type="published">Published: xx xx xxxx</date>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Fei</forename>
+                <surname>Gao</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="institution">Beijing Computational Science Research Center</orgName>
+                <address>
+                  <postCode>100193</postCode>
+                  <settlement>Beijing</settlement>
+                  <country key="CN">China</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Shiwu</forename>
+                <surname>Gao</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="institution">Beijing Computational Science Research Center</orgName>
+                <address>
+                  <postCode>100193</postCode>
+                  <settlement>Beijing</settlement>
+                  <country key="CN">China</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Thermodynamic stability of magnetic states of monovacancy in graphene revealed by ab initio molecular dynamics simulations OPEN</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date type="published">Published: xx xx xxxx</date>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41598-018-37333-9</idno>
+          <note type="submission">Received: 1 August 2018 Accepted: 4 December 2018</note>
+          <note>1 Scientific REPORTS | (2019) 9:751 | Correspondence and requests for materials should be addressed to F.G. (email: fgao@csrc.ac.cn)</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>The stability of magnetic states is essential for potential spintronic applications.</s>
+            <s>Here we report on the thermal stability of magnetic states of monovacancy graphene using ab initio molecular dynamics simulations.</s>
+            <s>At room temperature, thermal fluctuations of the graphene lattice induce a rapid magnetic switching between two states with a high and low magnetic moment, indicating that due to the instability of the atomic structure of the vacancy, the associated magnetic moment is thermodynamically unstable.</s>
+            <s>Lowering the temperature can significantly reduce the rate of the switching process and enhance the resident time on the high magnetic state.</s>
+            <s>It stabilizes in the high magnetic state at as low as 30 K. Analyzing the atomic trajectories and the instant electronic structures confirms that these two magnetic states in MD simulations correspond to the magnetic and nonmagnetic states reported in the literatures.</s>
+            <s>Such fluctuations of local magnetic moments are associated with the vertical displacement of the carbon atoms with the unsaturated dangling bond.</s>
+            <s>This study reveals the dynamical correlation between atomic movement and the magnetic switching, and a comprehensive picture of vacancy magnetism in graphene.</s>
+            <s>It has implications in graphene based spintronic devices.</s>
+          </p>
+          <p>
+            <s>Vacancy induced magnetism in graphene has attracted great attention in recent years due to its potential applications in spintronics and the fundamental interests in magnetic manipulations at nanoscale.</s>
+            <s>While the pristine graphene is nonmagnetic, vacancies are known to carry a magnetic moment and have been intensively investigated over the past few years <ref target="#b0" type="bibr">[1]</ref>
+              <ref target="#b1" type="bibr">[2]</ref>
+              <ref target="#b2" type="bibr">[3]</ref>
+              <ref target="#b3" type="bibr">[4]</ref>
+              <ref target="#b4" type="bibr">[5]</ref>
+              <ref target="#b5" type="bibr">[6]</ref>
+              <ref target="#b6" type="bibr">[7]</ref>
+              <ref target="#b7" type="bibr">[8]</ref>
+              <ref target="#b8" type="bibr">[9]</ref>
+              <ref target="#b9" type="bibr">[10]</ref> .</s>
+            <s>This magnetic moment originates from the removal of a single carbon atom, which breaks three σ dangling bonds in the graphene plane and a π bond in the perpendicular direction.</s>
+            <s>Two of the σ bonds are saturated due to the Jahn-Teller effect <ref target="#b10" type="bibr">11,</ref>
+              <ref target="#b11" type="bibr">12</ref> .</s>
+            <s>The remaining σ dangling bond and the vacancy π band around the Fermi level gives rise to a local magnetic moment of 2 µ B .</s>
+            <s>Because of the antiferromagnetic coupling between the vacancy states through the itinerant π bands, the magnetic moments are less than 2 µ B , usually 1.0 ~ 1.7 μ B depending on the vacancy concentration <ref target="#b12" type="bibr">[13]</ref>
+              <ref target="#b13" type="bibr">[14]</ref>
+              <ref target="#b14" type="bibr">[15]</ref>
+              <ref target="#b15" type="bibr">[16]</ref>
+              <ref target="#b16" type="bibr">[17]</ref>
+              <ref target="#b17" type="bibr">[18]</ref> .</s>
+            <s>Although there seems to be a consensus on a magnetic ground state for graphene with a single vacancy, early reports in the literatures were controversial regarding a possible nonmagnetic ground state <ref target="#b16" type="bibr">[17]</ref>
+              <ref target="#b17" type="bibr">[18]</ref>
+              <ref target="#b18" type="bibr">[19]</ref> .</s>
+            <s>This nonmagnetic state has almost degenerate energy with the magnetic one but differs slightly in the geometric structure.</s>
+            <s>For example, P. O. Lehtinen et al. pointed out that the nonmagnetic state was 0.1 eV higher in energy than the magnetic state, and the displacement of the dangling bond was 0.46 Å out of the graphene plane <ref target="#b17" type="bibr">18,</ref>
+              <ref target="#b18" type="bibr">19</ref> .</s>
+            <s>This conclusion was also supported by B. R. K. Nanda and coauthors, who obtained a flat structure with the magnetic moment of 1.5 µ B and a deformed structure with a magnetic moment of 0.06 µ B .</s>
+            <s>The two states differ in energy by about 50 meV <ref target="#b19" type="bibr">20</ref> .</s>
+            <s>In addition, a Kondo-like state was suggested by C. C. Lee et al. as the ground state 21 .</s>
+            <s>The inconsistency in the ground state suggests that the spin polarization of monovacancy graphene might be thermodynamically unstable and thus casts doubt on its potential applications.</s>
+            <s>So far, the thermal stability of defect graphene has not been investigated.</s>
+          </p>
+          <p>
+            <s>Here we perform ab initio molecular dynamics (AIMD) to study the thermodynamic stability of a single-atom vacancy in graphene and its correlation with magnetic properties at different temperatures.</s>
+            <s>We found that magnetic states of monovacancy in graphene at room temperature is unstable, and it jumps between two states with</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <p>
+          <s>Thermodynamic stability of magnetic states of monovacancy in graphene revealed by ab initio molecular dynamics simulations <ref type="bibr">Fei</ref>
+          </s>
+        </p>
+      </div>
+      <div>
+        <head>Gao &amp; Shiwu Gao</head>
+        <p>
+          <s>The stability of magnetic states is essential for potential spintronic applications.</s>
+          <s>Here we report on the thermal stability of magnetic states of monovacancy graphene using ab initio molecular dynamics simulations.</s>
+          <s>At room temperature, thermal fluctuations of the graphene lattice induce a rapid magnetic switching between two states with a high and low magnetic moment, indicating that due to the instability of the atomic structure of the vacancy, the associated magnetic moment is thermodynamically unstable.</s>
+          <s>Lowering the temperature can significantly reduce the rate of the switching process and enhance the resident time on the high magnetic state.</s>
+          <s>It stabilizes in the high magnetic state at as low as 30 K. Analyzing the atomic trajectories and the instant electronic structures confirms that these two magnetic states in MD simulations correspond to the magnetic and nonmagnetic states reported in the literatures.</s>
+          <s>Such fluctuations of local magnetic moments are associated with the vertical displacement of the carbon atoms with the unsaturated dangling bond.</s>
+          <s>This study reveals the dynamical correlation between atomic movement and the magnetic switching, and a comprehensive picture of vacancy magnetism in graphene.</s>
+          <s>It has implications in graphene based spintronic devices.</s>
+        </p>
+        <p>
+          <s>Vacancy induced magnetism in graphene has attracted great attention in recent years due to its potential applications in spintronics and the fundamental interests in magnetic manipulations at nanoscale.</s>
+          <s>While the pristine graphene is nonmagnetic, vacancies are known to carry a magnetic moment and have been intensively investigated over the past few years <ref target="#b0" type="bibr">[1]</ref>
+            <ref target="#b1" type="bibr">[2]</ref>
+            <ref target="#b2" type="bibr">[3]</ref>
+            <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref>
+            <ref target="#b6" type="bibr">[7]</ref>
+            <ref target="#b7" type="bibr">[8]</ref>
+            <ref target="#b8" type="bibr">[9]</ref>
+            <ref target="#b9" type="bibr">[10]</ref> .</s>
+          <s>This magnetic moment originates from the removal of a single carbon atom, which breaks three σ dangling bonds in the graphene plane and a π bond in the perpendicular direction.</s>
+          <s>Two of the σ bonds are saturated due to the Jahn-Teller effect <ref target="#b10" type="bibr">11,</ref>
+            <ref target="#b11" type="bibr">12</ref> .</s>
+          <s>The remaining σ dangling bond and the vacancy π band around the Fermi level gives rise to a local magnetic moment of 2 µ B .</s>
+          <s>Because of the antiferromagnetic coupling between the vacancy states through the itinerant π bands, the magnetic moments are less than 2 µ B , usually 1.0 ~ 1.7 μ B depending on the vacancy concentration <ref target="#b12" type="bibr">[13]</ref>
+            <ref target="#b13" type="bibr">[14]</ref>
+            <ref target="#b14" type="bibr">[15]</ref>
+            <ref target="#b15" type="bibr">[16]</ref>
+            <ref target="#b16" type="bibr">[17]</ref>
+            <ref target="#b17" type="bibr">[18]</ref> .</s>
+          <s>Although there seems to be a consensus on a magnetic ground state for graphene with a single vacancy, early reports in the literatures were controversial regarding a possible nonmagnetic ground state <ref target="#b16" type="bibr">[17]</ref>
+            <ref target="#b17" type="bibr">[18]</ref>
+            <ref target="#b18" type="bibr">[19]</ref> .</s>
+          <s>This nonmagnetic state has almost degenerate energy with the magnetic one but differs slightly in the geometric structure.</s>
+          <s>For example, P. O. <ref type="bibr">Lehtinen et al.</ref> pointed out that the nonmagnetic state was 0.1 eV higher in energy than the magnetic state, and the displacement of the dangling bond was 0.46 Å out of the graphene plane <ref target="#b17" type="bibr">18,</ref>
+            <ref target="#b18" type="bibr">19</ref> .</s>
+          <s>This conclusion was also supported by B. R. K. Nanda and coauthors, who obtained a flat structure with the magnetic moment of 1.5 µ B and a deformed structure with a magnetic moment of 0.06 µ B .</s>
+          <s>The two states differ in energy by about 50 meV <ref target="#b19" type="bibr">20</ref> .</s>
+          <s>In addition, a Kondo-like state was suggested by C. C. Lee et al. as the ground state <ref target="#b20" type="bibr">21</ref> .</s>
+          <s>The inconsistency in the ground state suggests that the spin polarization of monovacancy graphene might be thermodynamically unstable and thus casts doubt on its potential applications.</s>
+          <s>So far, the thermal stability of defect graphene has not been investigated.</s>
+        </p>
+        <p>
+          <s>Here we perform ab initio molecular dynamics (AIMD) to study the thermodynamic stability of a single-atom vacancy in graphene and its correlation with magnetic properties at different temperatures.</s>
+          <s>We found that magnetic states of monovacancy in graphene at room temperature is unstable, and it jumps between two states with Scientific REPORTS | (2019) 9:751 | DOI:10.1038/s41598-018-37333-9 a high and low magnetic moment.</s>
+          <s>These magnetic switches are associated with the thermal fluctuations of the vertical coordinate (h) of the unsaturated carbon atoms close to the vacancy.</s>
+          <s>At lowered temperatures such as 200 and 77 K, the rate of the magnetic switching can be substantially reduced and can be suppressed for a long time at 30 K, where a relatively stable ground state can be reached.</s>
+          <s>Our study reveals the atomistic mechanism of thermal stability of monovacancy magnetism in graphene and has implications to graphene based spintronic devices.</s>
+          <s>
+            <ref target="#fig_0" type="figure">Figure 1</ref> shows the time-dependent magnetic moment of monovacancy graphene at 300 K calculated by the 6 × 6 supercell.</s>
+          <s>It is obvious that the rapid magnetic switching, at a time scale of 100 fs, occurs between two states with a high (1.5 µ B ) and low (0.5 µ B ) magnetic moment.</s>
+          <s>Analysis of the atomic trajectories indicates that this magnetic switching is directly correlated with the local geometry fluctuations of the carbon atoms close to the vacancy, although vibration of the whole lattice is observable at this temperature (movie S1 in Supplementary Information, SI).</s>
+          <s>As known before, two of the carbon atoms nearest to the vacancy (atoms 2 and 3 as labeled in the insert of <ref target="#fig_0" type="figure">Fig. 1</ref> ) are much closer and re-bond due to the Jahn-Teller distortion, which saturates two dangling σ bonds and leaves the third atom, atom 1 here, an unsaturated σ bond possessing a local magnetic moment of 1 µ B .</s>
+          <s>Interestingly, the fluctuation of the vertical displacement (h) between atom 1 and graphene plane leads to the magnetic switching directly (red solid line in <ref target="#fig_0" type="figure">Fig. 1</ref> ).</s>
+          <s>At h ≈ 0 Å, the magnetic moment is basically 1.5 µ B , whereas the magnetic moment jumps to 0.5 µ B when h is larger than 0.3 Å in the 6 × 6 graphene.</s>
+          <s>In contrast, the bond lengths between atoms 1 and 2 and between atoms 2 and 3 are also analyzed, which show no correlations with the magnetic transitions as shown in <ref target="#fig_0" type="figure">Fig. S1</ref> in SI.</s>
+          <s>The trajectories at room temperature indicate that the magnetic states of monovacany graphene are thermally unstable, and the instability is directly due to the vertical atomic deformation of the unsaturated carbon atom near the vacancy.</s>
+          <s>
+            <ref target="#fig_1" type="figure">Figure 2</ref> shows the snapshots of the lattice geometries recorded at t = 0, 500,1500, 2500, 3500, and 4500 fs, which correspond to the magnetic moment of 1.52, 1.32, 0.44, 1.50, 0.40, and1.39 µ B , respectively.</s>
+          <s>Although the system jumps between the high and low magnetic states, the planar geometries display little variations, as shown by the top views of the snapshots.</s>
+          <s>The in-plane stiffness results from the strong σ bonding within the graphene sheet.</s>
+          <s>In the vertical direction, the carbon atoms vibrate up and down due to thermal excitation of the vibrational modes, and the vertical displacement of atom 1 has h = 0, 0.17, 0.60, 0.14, 0.56, and 0.14 Å, respectively.</s>
+          <s>Therefore, it is clear that the magnetic transition directly results from the vertical fluctuation of the neighboring carbon atom.</s>
+          <s>Moreover, the bond lengths between atom 1 and 2/3 are always larger than that between atom 2 and 3 during our 4.5 ps simulations as shown in <ref target="#fig_0" type="figure">Fig. S1</ref> of SI.</s>
+          <s>This does not exclude the possibility that the three atoms may interchange their positions and characters in longer times.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+        <p>
+          <s>Lowering the temperature to 200 and 77 K, the thermal fluctuations are suppressed, yet the switching between two magnetic states still persists at a lower rate.</s>
+          <s>As shown in <ref target="#fig_2" type="figure">Fig. 3</ref> , the number of the magnetic jumps is much reduced in the 4.5 ps simulations and the resident time on the high magnetic moment (green and blue solid lines in <ref target="#fig_2" type="figure">Fig. 3</ref> ) are increased, suggesting that the high magnetic state is the ground state (S g ) and the low magnetic state is a metastable state (S m ) with a higher energy.</s>
+          <s>Only at a low temperature of 30 K, the magnetic switching in monovacancy graphene is suppressed state in the 4.5 ps simulations and the system is stabilized on the high magnetic ground.</s>
+          <s>At the same time, the vibration of the carbon atoms is much damped, and the vertical displacement h stays smaller than 0.3 Å as shown in movie S2 of SI. <ref target="#fig_2" type="figure">Figure 3</ref> suggests that lowering temperature is the robust way to achieve stability of the vacancy states.</s>
+          <s>This is in line with the observation that experimental probe at liquid helium temperature of the defect magnetic state is indeed stable.</s>
+        </p>
+        <p>
+          <s>The energy barrier between S g and S m can be deduced from the statistical residence time on the two states and the Arrhenius law for the transition rate across a barrier.</s>
+          <s>The residence times on the two states at different temperatures are tabulated in <ref target="#tab_0" type="table">Table 1</ref> .</s>
+          <s>From the average residence time on one state at two temperatures, T 1 and T 2 , the potential barrier (E b ) can be deduced by,</s>
+        </p>
+        <formula xml:id="formula_0">=                   −       E k ln t t T T / 1 1 (1) b B 2 1 2 1</formula>
+        <p>
+          <s>where k B is the Boltzmann Constant, t 1 and t 2 are the average residence time on the same state at temperature T 1 and T 2 , respectively.</s>
+          <s>Using the average residence time on the ground state t 1 = 98 fs and t 2 = 177 fs at T 1 = 300 and T 2 = 200 K, the energy barrier from S g to S m is found to be 30.5 meV.</s>
+          <s>Similarly, the energy barrier for the reverse process from S m to S g , is 19.2 meV, with t′ 1 = 80 fs and t′ 2 = 116 fs on the metastable state at T 1 = 300 and T 2 = 200 K, respectively.</s>
+          <s>From these two barriers, the energy difference between state 1 and 2 can be determined, which is 11.3 meV as schematically shown in the insert of <ref target="#fig_3" type="figure">Fig. 4</ref> .</s>
+          <s>The average residence times on the two states at 77 K are also listed in <ref target="#tab_0" type="table">Table 1</ref> , but it is statistically less reliable due to the few transitions in the 4.5 ps simulations.</s>
+        </p>
+        <p>
+          <s>To further reveal the correlation between the local structures and the magnetic switching, we have done a series of static calculations by suspending the vertical displacement h at different heights while fully relaxing all other atomic coordinates in the 6 × 6 and the 8 × 8 graphene supercell.</s>
+          <s>
+            <ref target="#fig_3" type="figure">Figure 4</ref> shows the calculated magnetic moment as a function of h.</s>
+          <s>Clearly, a jump of the magnetic moment occurs at h = 0.3 Å for both set of calculations.</s>
+          <s>Although the value of the magnetic moments changes slightly with the supercell, it confirms that the transition between the high and low magnetic states is present and occurs at about h = 0.3 Å.</s>
+          <s>This conclusion is consistent with the results of the AIMD simulations.</s>
+          <s>In addition, the small difference of magnetic moments is due to the sizes of the two supercells, which is in agreement with the previous works <ref target="#b12" type="bibr">[13]</ref>
+            <ref target="#b13" type="bibr">[14]</ref>
+            <ref target="#b14" type="bibr">[15]</ref>
+            <ref target="#b15" type="bibr">[16]</ref>
+            <ref target="#b16" type="bibr">[17]</ref>
+            <ref target="#b17" type="bibr">[18]</ref> .</s>
+          <s>The origin of the magnetic switching results from the inversion symmetry breaking in the monovacancy graphene, which undergoes a C 2v → C 2 symmetry transformation in association with the vertical deformation around the vacancy defect.</s>
+          <s>The C 2v symmetry of the magnetic ground state implies that the wave functions of the σ and the π vacancy states are orthogonal in space and do not hybridize.</s>
+          <s>The two states can thus attain parallel spins according Hund's rule of maximum multiplicity of spin occupation for independent orbitals, giving rise to the high magnetic state.</s>
+          <s>In practice, the unsaturated σ state contributes to 1 µ B as shown in <ref target="#fig_1" type="figure">Fig. S2 (a)</ref> of the SI.</s>
+          <s>The partial occupancy of the π bands close to the Fermi level contributes less than 1 µ B due to the antiferromagnetic coupling between vacancies at finite concentration.</s>
+          <s>When atoms near the vacancy are deformed out of the plane by either thermal fluctuation or shear distortion <ref target="#b21" type="bibr">22</ref> , the σ and π vacancy bands are no longer orthogonal and become hybridized, which can be clearly seen in their energy dispersion as shown in <ref target="#fig_1" type="figure">Fig. S2 (b)</ref> of the SI.</s>
+          <s>The mixing between σ and π band due to inversion symmetry breaking changes therefore the occupation of the two states, leading to the reversal of spin polarization of the π bands near the Fermi level.</s>
+          <s>The inversion symmetry breaking is therefore responsible for the magnetic switching and thermal instability.</s>
+          <s>It also suggests that symmetry conservation, by any possible means like for example adsorption on substrate, can provide potential ways to stabilize the magnetic states of the defect graphene.</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>We present an ab initio MD study on the thermodynamic stability of a single-atom vacancy in graphene.</s>
+          <s>At room temperature, the magnetic states of monovacancy graphene is thermally unstable.</s>
+          <s>This instability originates from the inversion symmetry breaking associated with local atomic fluctuations perpendicular to the graphene plane.</s>
+          <s>It is found that lowering temperature to 30 K can stabilize the system in the high magnetic state.</s>
+          <s>This theoretical study provides dynamic insight into thermal stability of the magnetic states of monovacancy graphene.</s>
+          <s>It also hints possible ways to control the graphene magnetism by symmetry conservation and thus has implications in spintronic applications.</s>
+        </p>
+      </div>
+      <div>
+        <head>Methods</head>
+        <p>
+          <s>Our ab initio MD calculations are performed using the Vienna ab initio Simulation Package (VASP) <ref target="#b22" type="bibr">23</ref> based on density functional theory.</s>
+          <s>It employs the projector augmented-wave (PAW) <ref target="#b23" type="bibr">24,</ref>
+            <ref target="#b24" type="bibr">25</ref> pseudopotentials and the general gradient approximation (GGA) <ref target="#b25" type="bibr">26</ref> in Perdew-Burke-Ernzerholf form <ref target="#b26" type="bibr">27</ref> for exchange-correlation energy.</s>
+          <s>Spin polarization is included in all calculations.</s>
+          <s>An energy cutoff of 600 eV is used for wave function expansion.</s>
+          <s>The periodic supercells contain a vacuum layer of ~ 20 Å and all atoms are allowed to relax until the forces on each atom are less than 0.01 eV/Å.</s>
+          <s id="0" type="Tabular data">In the ground state, the C-C bond length is obtained to be 1.424 Å for the pristine graphene and is in agreement with the experimental value of 1.42 Å.</s>
+          <s>The 6 × 6 supercell of graphene is used in the MD simulations with a time step of 1 fs and 3 × 3 × 1 k-sampling.</s>
+          <s>The geometrical structure, electronic and magnetic properties of the MD snapshots of the single vacancy in graphene are compared with static 6 × 6 and 8 × 8 supercells with a finer grid of k-point sampling to check and assure the convergence of the simulations.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Figure 1 .</head>
+        <label>1</label>
+        <figDesc>Figure 1. The time-dependent magnetic moment of monovacancy in the 6 × 6 graphene and the vertical displacement (h) between the atom 1 and the graphene plane at 300 K. Black and red solid lines represent the magnetic moment and the displacement. The insert shows the atomic geometry of the calculated supercell.</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Figure 2 .</head>
+        <label>2</label>
+        <figDesc>Figure 2. Snapshots of monovacancy in the 6 × 6 graphene at 300 K recorded at (a) t = 0 fs; (b) t = 500 fs; (c) t = 1500 fs; (d) t = 2500 fs; (e) t = 3500 fs; (f) t = 4500 fs, corresponding to the magnetic moment of 1.52, 1.32, 0.44, 1.50, 0.40, 1.39 µ B , respectively.</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Figure 3 .</head>
+        <label>3</label>
+        <figDesc>Figure 3. The time-dependent magnetic moment of monovacancy in the 6 × 6 graphene at 300 K (black solid line), 200 K (green solid line), 77 K (blue solid line) and 30 K (purple solid line).</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Figure 4 .</head>
+        <label>4</label>
+        <figDesc>Figure 4. The magnetic moment as functions of the vertical displacement (h) between the atom 1 and graphene plane for the 6 × 6 and 8 × 8 graphene with single atom vacancy. The insert shows the chemical barrier and energy difference between the two states, S g and S m .</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head>Table 1 .</head>
+        <label>1</label>
+        <figDesc>Average</figDesc>
+        <table>residence time on the ground state (t) and the metastable state (t′) at different temperatures 
+(T). </table>
+      </figure>
+      <note place="foot">© The Author(s) 2019</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Author Contributions</head>
+          <p>
+            <s>S.G. initiated, organized and conceived this project; F.G. performed the calculations; F.G. and S.G. interpreted the results and wrote the manuscript.</s>
+            <s>All authors reviewed the manuscript.</s>
+          </p>
+        </div>
+        <div>
+          <head>Additional Information</head>
+          <p>
+            <s>Supplementary information accompanies this paper at https://doi.org/10.1038/s41598-018-37333-9.</s>
+          </p>
+          <p>
+            <s>Competing Interests: The authors declare no competing interests.</s>
+          </p>
+          <p>
+            <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+          <p>
+            <s>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.</s>
+            <s>The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in a credit line to the material.</s>
+            <s>If material is not included in the article's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.</s>
+            <s>To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Induced magnetic ordering by proton irradiation in graphite</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Esquinazi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">91</biblScope>
+                <biblScope from="227201" to="227204" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Ground-state properties of nanographite systems with zigzag edges</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Hikihara</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Hu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H.-H</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C.-Y</forename>
+                  <surname>Mou</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">68</biblScope>
+                <biblScope from="35432" to="035440" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">First-principles study of defect-induced magnetism in carbon</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">99</biblScope>
+                <biblScope from="107201" to="107204" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Vacancy-induced magnetism in graphene and graphene ribbons</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Palacios</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Fernández-Rossier</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Brey</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">77</biblScope>
+                <biblScope from="195428" to="195441" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Missing atom as a source of carbon magnetism</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Ugeda</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Brihuega</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Guinea</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Gómez-Rodríguez</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">104</biblScope>
+                <biblScope from="96804" to="096807" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Electronic and structural distortions in graphene induced by carbon vacancies and boron doping</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Faccio</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Phys. Chem. C</title>
+              <imprint>
+                <biblScope unit="volume">114</biblScope>
+                <biblScope from="18961" to="18971" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Magnetic moments and Kondo effect near vacancies and resonant scatterers in graphene</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Haase</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Guchs</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Prischke</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Ochoa</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Guinea</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">83</biblScope>
+                <biblScope unit="issue">R</biblScope>
+                <biblScope from="241408" to="241411" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Electron-electron interactions in graphene: Current status and perspectives</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Kotov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Uchoa</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Pereira</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Guinea</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Castro Neto</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Rev. Mod. Phys</title>
+              <imprint>
+                <biblScope unit="volume">84</biblScope>
+                <biblScope from="1067" to="1125" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Spin coupling around a carbon atom vacancy in graphene</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Casartelli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Casolo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Tantardini</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Martinazzo</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">88</biblScope>
+                <biblScope from="195424" to="195432" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Magnetism and interaction-induced gap opening in graphene with vacancies or hydrogen adatoms: Quantum Monte Carlo study</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Ulybyshev</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Katsnelson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">114</biblScope>
+                <biblScope from="246801" to="246805" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Scanning tunneling microscopy fingerprints of point defects in graphene: A theoretical prediction</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Amara</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Latil</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Meunier</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Lambin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J.-C</forename>
+                  <surname>Charlier</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">76</biblScope>
+                <biblScope from="115423" to="115432" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Nuclear tunneling and dynamical Jahn-Teller effect in graphene with vacancy</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Popović</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">R K</forename>
+                  <surname>Nanda</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Satpathy</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">86</biblScope>
+                <biblScope from="85458" to="085463" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Defect-induced magnetism in graphene</title>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Yazyev</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Heim</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">75</biblScope>
+                <biblScope from="125408" to="125412" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Magnetic moment of a single vacancy in graphene and semiconducting nanoribbons</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Oantelides</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">86</biblScope>
+                <biblScope from="165438" to="165442" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Magnetic moments in graphene with vacancies</title>
+              <author>
+                <persName>
+                  <forename type="first">J.-J</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H.-C</forename>
+                  <surname>Wu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D.-P</forename>
+                  <surname>Yu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z.-M</forename>
+                  <surname>Liao</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nanoscale</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope from="8814" to="8821" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Critical analysis of vacancy-induced magnetism in monolayer and bilayer graphene</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Palacios</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Ynduráin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">85</biblScope>
+                <biblScope from="245443" to="245450" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Structure and energetics of the vacancy in graphite</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">A</forename>
+                  <surname>El-Barbary</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Telling</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Ewels</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Heggie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Briddon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">68</biblScope>
+                <biblScope from="144107" to="144113" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Irradiation-induced magnetism in graphite: A density functional study</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Lehtinen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Foster</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Ma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Krasheninnikov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Nieminen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">93</biblScope>
+                <biblScope from="187202" to="187205" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Magnetic properties of vacancies in graphene and single-walled carbon nanotubes</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Ma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Lehtinen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Foster</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Nieminen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">New J. Phys</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope from="68" to="83" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Intertwined lattice deformation and magnetism in monovacancy graphene</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Padmanabhan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">R K</forename>
+                  <surname>Nanda</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">93</biblScope>
+                <biblScope from="165403" to="165409" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Competing magnetism in π-electrons in graphene with a single carbon vacancy</title>
+              <author>
+                <persName>
+                  <forename type="first">C.-C</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Yamada-Takamura</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Ozaki</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">90</biblScope>
+                <biblScope from="14401" to="014405" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Controlling magnetic transition of monovacancy graphene by shear distortion</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Gao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Gao</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Rep</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope from="1792" to="1798" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Ab initio molecular dynamics for liquid metals</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Kresse</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Hafner</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">47</biblScope>
+                <biblScope unit="issue">R</biblScope>
+                <biblScope from="558" to="561" unit="page"/>
+                <date type="published" when="1993"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Soft self-consistent pseudopotentials in a generalized eigenvalue formalism</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Vanderbilt</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope from="7892" to="7895" unit="page"/>
+                <date type="published" when="1990"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Projector augmented-wave method</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Blöchl</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">50</biblScope>
+                <biblScope from="17953" to="17979" unit="page"/>
+                <date type="published" when="1994"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Correlation hole of the spin-polarized electron gas, with exact small-wave-vector and high-density scaling</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Perdew</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">44</biblScope>
+                <biblScope from="13298" to="13307" unit="page"/>
+                <date type="published" when="1991"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Generalized gradient approximation made simple</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Perdew</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Burke</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Ernzerhof</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">77</biblScope>
+                <biblScope from="3865" to="3868" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

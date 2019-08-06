@@ -1,0 +1,1218 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T09:34+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Simplified procedure for efficient and unbiased population size estimation</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author role="corresp">
+              <persName>
+                <forename type="first">Marcos</forename>
+                <surname>Cruzid</surname>
+              </persName>
+              <email>*marcos.cruz@unican.es</email>
+              <affiliation key="aff0">
+                <orgName type="department">Department of Mathematics, Statistics and Computer Science</orgName>
+                <orgName type="institution">Univ. of Cantabria</orgName>
+                <address>
+                  <addrLine>Av. Los Castros 48</addrLine>
+                  <postCode>E-39005</postCode>
+                  <settlement>Santander</settlement>
+                  <country key="ES">Spain</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Javier</forename>
+                <surname>Gonzá Lez-Villa</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Department of Mathematics, Statistics and Computer Science</orgName>
+                <orgName type="institution">Univ. of Cantabria</orgName>
+                <address>
+                  <addrLine>Av. Los Castros 48</addrLine>
+                  <postCode>E-39005</postCode>
+                  <settlement>Santander</settlement>
+                  <country key="ES">Spain</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Simplified procedure for efficient and unbiased population size estimation</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <note>RESEARCH ARTICLE</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <head>Abstract</head>
+          <p>
+            <s>Population size estimation is relevant to social and ecological sciences.</s>
+            <s>Exhaustive manual counting, the density method and automated computer vision are some of the estimation methods that are currently used.</s>
+            <s>Some of these methods may work in concrete cases but they do not provide a fast, efficient and unbiased estimation in general.</s>
+            <s>Recently, the CountEm method, based on systematic sampling with a grid of quadrats, was proposed.</s>
+            <s>It offers an unbiased estimation that can be applied to any population.</s>
+            <s>However, choosing suitable grid parameters is sometimes cumbersome.</s>
+            <s>Here we define a more intuitive grid parametrization, using initial number of quadrats and sampling fraction.</s>
+            <s>A crowd counting dataset with 51 images and their corresponding, manually annotated position point patterns, are used to analyze the variation of the coefficient of error with respect to different parameter choices.</s>
+            <s>Our Monte Carlo resampling results show that the error depends on the sample size and the number of nonempty quadrats, but not on the size of the target population.</s>
+            <s>A procedure to choose suitable parameter values is described, and the expected coefficients of error are given.</s>
+            <s>Counting about 100 particles in 30 nonempty quadrats usually yields coefficients of error below 10%.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Introduction</head>
+        <p>
+          <s>Population sizing is a longstanding problem with a wide range of applications such as security, social sciences and ecology.</s>
+          <s>A population is a finite set of N separate items or "particles" of interest, e.g.</s>
+          <s>humans, birds, etc.</s>
+          <s>Several approaches have been taken to address the problem.</s>
+          <s>The traditional density method <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b1" type="bibr">2]</ref> is widely used by media, police and convention organizers for crowd size estimation, but the estimation usually ignores sampling and relies on imprecise visual estimation.</s>
+          <s>Frequently, bird censuses also lean on visual estimation <ref target="#b2" type="bibr">[3]</ref>
+            <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref> or exhaustive manual counting <ref target="#b6" type="bibr">[7,</ref>
+            <ref target="#b7" type="bibr">8]</ref> that is slow, tedious and difficult to verify.</s>
+          <s>Automated computer vision can work in some particular cases with regular patterns on homogeneous backgrounds and non-overlapping particles <ref target="#b8" type="bibr">[9]</ref>
+            <ref target="#b9" type="bibr">[10]</ref>
+            <ref target="#b10" type="bibr">[11]</ref>
+            <ref target="#b11" type="bibr">[12]</ref>
+            <ref target="#b12" type="bibr">[13]</ref>
+            <ref target="#b13" type="bibr">[14]</ref>
+            <ref target="#b14" type="bibr">[15]</ref> .</s>
+          <s>However, automatic algorithms are generally biased and may show a poor performance <ref target="#b15" type="bibr">[16]</ref> .</s>
+        </p>
+        <p>
+          <s>An unbiased population size estimation method (hereafter CountEm method) was recently proposed <ref target="#b16" type="bibr">[17]</ref> .</s>
+          <s>CountEm can be applied to any kind of particle irrespective of population size and pattern (see for instance Figs 1 and 5 in <ref target="#b16" type="bibr">[17]</ref> ).</s>
+          <s>The only practical limitation is the basic requirement that all the particles in the population should be unambiguously identifiable for manual counting in the considered image.</s>
+          <s>It is based on well known principles of geometric sampling for stereology which have been previously applied to quantitative microscopy <ref target="#b17" type="bibr">[18,</ref>
+            <ref target="#b18" type="bibr">19]</ref> .</s>
+          <s>The main idea is to properly sample and count between 50 and 200 particles in order to estimate populations of any size and spatial distribution.</s>
+          <s>Systematic sampling is performed with a uniform random (UR) grid of quadrats, see <ref target="#fig_0" type="figure">Fig 1.</ref>
+          </s>
+          <s>The forbidden line rule <ref target="#b19" type="bibr">[20]</ref> is used to avoid bias due to edge effects: a particle is counted only if it touches the quadrat but it does not hit the extended forbidden line of the quadrat (see <ref target="#fig_0" type="figure">Fig 1C)</ref> .</s>
+          <s>The population size estimator, b N , is the total number of sampled particles, times the sampling period.</s>
+          <s>The precision of the method was tested <ref target="#b16" type="bibr">[17]</ref> on two images with manually annotated particle positions, yielding planar point patterns e.g.</s>
+          <s>
+            <ref target="#fig_1" type="figure">Fig 2A.</ref>
+          </s>
+          <s>As the method is unbiased, the only source of error comes from sampling variance which can be estimated empirically via Monte Carlo resampling under identical conditions (see Section Simulation procedure).</s>
+          <s>The empirical variance of the population size estimator was computed among 32 2 = 1024 Monte Carlo replications of the estimator for each given grid of quadrats.</s>
+          <s>The empirical coefficient of error was in the 5% − 10% range, counting about 50 − 100 sampled particles for both point patterns of sizes 1120 and 4633 respectively.</s>
+          <s>
+            <ref target="#b19" type="bibr">[20]</ref> .</s>
+          <s>Only heads marked with yellow arrowheads are counted in the quadrat, the rest are not because they hit the extended forbidden edge (in red).</s>
+        </p>
+        <p>
+          <s>https://doi.org/10.1371/journal.pone.0206091.g001</s>
+          <s>https://doi.org/10.1371/journal.pone.0206091.g002</s>
+        </p>
+        <p>
+          <s>Simplified procedure for efficient and unbiased population size estimation Some practical criteria were given <ref target="#b16" type="bibr">[17]</ref> to choose the grid parameters.</s>
+          <s>However, in practice, the choice of starting values for these parameters may not be obvious to every user.</s>
+          <s>Moreover, note that these practical criteria were only checked to be valid on two pictures.</s>
+        </p>
+        <p>
+          <s>Here we propose to simplify these practical guidelines, by using a more convenient parametrization of the grid.</s>
+          <s>The new estimation protocol is presented and justified in section Materials and Methods.</s>
+          <s>The protocol and the parameter values are tested on the 51 images of the crowd counting dataset, which is described in The crowd counting dataset.</s>
+          <s>The Monte Carlo resampling procedure used to compute the empirical coefficients of error is described in Section Simulation procedure.</s>
+          <s>The results and conclusions are presented in Sections Results and Conclusions respectively.</s>
+        </p>
+      </div>
+      <div>
+        <head>Materials and methods</head>
+      </div>
+      <div>
+        <head>Definitions and notation</head>
+        <p>
+          <s>We recall the necessary notation <ref target="#b16" type="bibr">[17]</ref> :</s>
+        </p>
+        <p>
+          <s>• N: Population size, i.e. number of particles in the target population.</s>
+        </p>
+        <p>
+          <s>• b N : Population size estimator.</s>
+        </p>
+        <formula xml:id="formula_0">b N ¼ T 2 t 2 � Q:<label>ð1Þ</label>
+        </formula>
+        <p>
+          <s>• Q: Total number of particles sampled by the quadrats.</s>
+        </p>
+        <p>
+          <s>• T: Separation between quadrat centers, T &gt; 0.</s>
+        </p>
+        <p>
+          <s>• t: Quadrat side length t, (0 &lt; t � T &lt; 1).</s>
+        </p>
+        <p>
+          <s>• n: Number of nonempty quadrats.</s>
+        </p>
+        <p>
+          <s>• CE e ð b N Þ: Empirical coefficient of error of b N , calculated via Monte Carlo replications (Eq 7).</s>
+        </p>
+        <p>
+          <s>Here we propose two alternative grid parameters, f and n 0 , which are related to t and T as shown in <ref target="#fig_1" type="figure">Fig 2B:</ref> • f:</s>
+        </p>
+        <formula xml:id="formula_1">Sampling fraction, f = t 2 /T 2 .</formula>
+        <p>
+          <s>• n 0 : Initial number of quadrats, n 0 = B x B y /T 2 where B x , B y represent image width and height in pixels, respectively.</s>
+        </p>
+        <p>
+          <s>Next we present an outline of the "standard" CountEm method <ref target="#b16" type="bibr">[17]</ref> and of the simplified protocol which we propose here.</s>
+        </p>
+      </div>
+      <div>
+        <head>Outline of the CountEm method</head>
+        <p>
+          <s>The main steps of the standard CountEm method <ref target="#b16" type="bibr">[17]</ref> are:</s>
+        </p>
+        <p>
+          <s>1. Crop the image, excluding empty regions as in <ref target="#fig_1" type="figure">Fig 2A.</ref>
+          </s>
+          <s>This step is optional but highly recommended to increase efficiency.</s>
+        </p>
+      </div>
+      <div>
+        <head n="2.">Choose suitable values of t and T in pixels.</head>
+        <p>
+          <s>3. Superimpose the grid uniformly at random on the image, e.g.</s>
+          <s>
+            <ref target="#fig_0" type="figure">Fig 1A.</ref> Optionally, the grid might be tilted at will by a given fixed angle in order to avoid alignments of quadrat and particle rows which would increase the variance <ref target="#b20" type="bibr">[21]</ref> .</s>
+        </p>
+        <p>
+          <s>4. Manually count the total number, Q, of particles captured by the quadrats.</s>
+          <s>Use the forbidden line rule to ensure unbiasedness: only particles intersecting the quadrat, and not touching the extended forbidden line (in red in <ref target="#fig_0" type="figure">Fig 1C)</ref> , are counted.</s>
+        </p>
+        <p>
+          <s>5. Use Eq 1 to obtain the estimated population size, b N .</s>
+        </p>
+        <p>
+          <s>6. Use Eq 3 of our previous paper <ref target="#b16" type="bibr">[17]</ref> to predict CE e ð b N Þ.</s>
+        </p>
+      </div>
+      <div>
+        <head>Outline of the simplified CountEm protocol</head>
+        <p>
+          <s>The simplified CountEm protocol proposed here consists of the following steps:</s>
+        </p>
+        <p>
+          <s>1. Apply standard CountEm step 1).</s>
+        </p>
+        <p>
+          <s>2. Choose suitable values of f and n 0 .</s>
+          <s>Tentatively one may start with n 0 = 100 and f = 0.04.</s>
+        </p>
+        <p>
+          <s>3. Apply standard CountEm step 3).</s>
+        </p>
+        <p>
+          <s>4. By cursory inspection, check that Q and the number of nonempty quadrats are approximately in the following ranges depending on the desired coefficient of error:</s>
+        </p>
+        <p>
+          <s>• Q ≳ 50 and n ≳ 20 ¼) CE e ð b N Þ ≲ 15%.</s>
+        </p>
+        <p>
+          <s>• Q ≳ 100 and n ≳ 30 ¼) CE e ð b N Þ ≲ 10%.</s>
+        </p>
+        <p>
+          <s>• Q � 200 and n � 50 ¼) CE e ð b N Þ � 5%.</s>
+          <s>If Q looks too low, then go back to step 2) and increase f.</s>
+          <s>On the other hand if n is too low, go back to step 2) and increase n 0 .</s>
+        </p>
+      </div>
+      <div>
+        <head n="5.">Apply standard CountEm steps 4), 5) and 6).</head>
+        <p>
+          <s>The corresponding software is freely available at http://countem.unican.es).</s>
+          <s>The whole estimation process can be made in a few minutes.</s>
+        </p>
+      </div>
+      <div>
+        <head>Justification of the protocol</head>
+        <p>
+          <s>Choosing suitable parameters t and T in pixels, as suggested in our previous paper <ref target="#b16" type="bibr">[17]</ref> , can sometimes be laborious.</s>
+          <s>Two practical criteria were given <ref target="#b16" type="bibr">[17]</ref> , namely aim at (i) having Q in the 50 − 150 range, and (ii) counting no more than 4 or 5 particles per quadrat.</s>
+          <s>These two recommendations imply that the number of nonempty quadrats, n, may lie between 20 and 50.</s>
+          <s>The resulting coefficient of error should be in the 5% − 10% range.</s>
+        </p>
+        <p>
+          <s>Consider an example in which the preceding criteria are fulfilled.</s>
+          <s>The goal would be to estimate the number of particles N in the image, with coefficient of error below 10% using the old parametrization t, T. After choosing some initial parameters t and T, suppose that we count Q = 40 in n = 18 nonempty quadrats, with an estimated coefficient of error ceð b N Þ ¼ 15%.</s>
+          <s>In order to reduce the error, we should increase Q and n since both are below the suggested ranges.</s>
+          <s>But how should we proceed?</s>
+          <s>Increasing t to get larger quadrats?</s>
+          <s>Decreasing T to obtain more quadrats?</s>
+          <s>Or both?</s>
+          <s>To what extent?</s>
+        </p>
+        <p>
+          <s>We propose to replace the parameters t and T with the sampling fraction, f, and the initial number of quadrats, n 0 as shown in the preceding subsection.</s>
+          <s>This parametrization is more intuitive and even inexperienced users should find it easy to implement.</s>
+          <s>Reducing the error is straightforward following the simplified procedure with the new parameters as described above.</s>
+        </p>
+        <p>
+          <s>The validity of the protocol has been checked on 51 images, studying in detail the error ranges corresponding to different sets of parameters.</s>
+        </p>
+        <p>
+          <s>The empirical squared coefficient of error, CE 2 e ð b N Þ, was computed by Monte Carlo resampling for each of the 51 point patterns in the crowd counting dataset.</s>
+          <s>The dataset is described in Section The crowd counting dataset, whereas the details on the calculation of CE</s>
+        </p>
+      </div>
+      <div>
+        <head>The crowd counting dataset</head>
+        <p>
+          <s id="0" type="Image">A total of 51 images were used for two purposes, namely checking the validity of the practical criteria discussed above, and analyzing the optimal f and n 0 values to ensure efficient estimation.</s>
+          <s>The crowd sizes, N, vary from 96 to 4633.</s>
+          <s>50 of the images and their corresponding point patterns (see <ref target="#fig_3" type="figure">Fig 3)</ref> were borrowed from the UCF dataset <ref target="#b11" type="bibr">[12]</ref> .</s>
+          <s>The additional image is the spectators image countem.unican.es</s>
+          <s>shown in <ref target="#fig_0" type="figure">Figs 1 and 2</ref> , which was already analyzed in our previous paper <ref target="#b16" type="bibr">[17]</ref> together with the image corresponding to the largest crowd of the dataset (N = 4633).</s>
+        </p>
+      </div>
+      <div>
+        <head>Simulation procedure</head>
+        <p>
+          <s>The empirical squared coefficient of error CE 2 e ð b N Þ was computed by Monte Carlo resampling on the 51 point sets for different choices of parameters {f, n 0 }.</s>
+          <s>The corresponding parameters {t, T} were calculated as follows <ref target="#fig_1" type="figure">(Fig 2B)</ref> : Simplified procedure for efficient and unbiased population size estimation</s>
+        </p>
+        <formula xml:id="formula_2">T ¼ ffi ffi ffi ffi ffi ffi ffi ffi ffi B x B y n 0 s ; t ¼ T ffi ffiffi f p :<label>ð2Þ</label>
+        </formula>
+        <p>
+          <s>The resulting grid was tilted an arbitrary fixed angle of 30˚with respect to the x axis, before applying the resampling procedure described in our previous paper <ref target="#b16" type="bibr">[17]</ref> .</s>
+          <s>Ideally the angle should be suitably selected for each image in order to avoid alignments of quadrat rows with particle patterns.</s>
+          <s>However, visual inspection <ref target="#fig_3" type="figure">(Fig 3)</ref> reveals that most of the images have either horizontal spectator rows (= 0˚) or no concrete particle alignments.</s>
+          <s>Therefore choosing 30f or the whole dataset was judged to be reasonable.</s>
+          <s>This problem was addressed in <ref target="#b20" type="bibr">[21]</ref> , <ref target="#fig_0" type="figure">Fig 11.</ref> Next we recall the necessary notation to describe the resampling procedure:</s>
+        </p>
+        <p>
+          <s>• Y = {y 1 , y 2 , . .</s>
+          <s>., y N }: finite set of N point particles in a bounded area.</s>
+          <s>We studied 51 such sets <ref target="#fig_3" type="figure">(Fig 3)</ref> .</s>
+        </p>
+        <p>
+          <s>• y i 2 Y: ith point particle of the set.</s>
+        </p>
+        <p>
+          <s>• J 0 : fundamental square tile or box of side length T.</s>
+        </p>
+        <p>
+          <s>• z 2 J 0 : UR point in the fundamental tile.</s>
+        </p>
+        <p>
+          <s>• Λ z : UR systematic grid of quadrats, generated by shifting the lower left corner of a quadrat from an arbitrary initial position in J 0 into the UR point z, thus dragging the whole quadrat grid together.</s>
+        </p>
+        <p>
+          <s>• Q = Q(Y \ Λ z ): random sample size, namely the total number of particles captured by the quadrats.</s>
+        </p>
+        <p>
+          <s>For each pair {t, T} a total of K 2 = 32 2 = 1024 replicated superimpositions of the grid Λ z onto Y were generated, corresponding to K 2 systematic replications {z k , k = 1, 2, . .</s>
+          <s>., K 2 } of the point z within J 0 .</s>
+          <s>These K 2 positions were arranged in a random subgrid within J 0 which should be expected to be more efficient than independent random replications <ref target="#b16" type="bibr">[17]</ref> .</s>
+          <s>For each k, the corresponding sample total,</s>
+        </p>
+        <formula xml:id="formula_3">Q k ¼ QðY \ L z k Þ;<label>ð3Þ</label>
+        </formula>
+        <p>
+          <s>was computed automatically from Eq 1 using the spatstat package <ref target="#b21" type="bibr">[22]</ref> :</s>
+        </p>
+        <formula xml:id="formula_4">b N k ¼ ðT=tÞ 2 � Q k :<label>ð4Þ</label>
+        </formula>
+        <p>
+          <s>The empirical mean, variance and squared coefficient of error of b N were computed respectively as follows,</s>
+        </p>
+        <formula xml:id="formula_5">E e � b N � ¼ K À 2 X K 2 k¼1 b N k ;<label>ð5Þ</label>
+        </formula>
+        <formula xml:id="formula_6">Var e � b N � ¼ K À 2 X K 2 k¼1 h b N k À E e � b N �i 2 ;<label>ð6Þ</label>
+        </formula>
+        <formula xml:id="formula_7">CE 2 e � b N � ¼ Var e � b N � =N 2 :<label>ð7Þ</label>
+        </formula>
+        <p>
+          <s>Results: Justification of the recommended parameter values • 10 3 ≲ N ≲ 10 4 ¼) 0:1 ≲ f ≲ 0:01.</s>
+          <s>Therefore f = 0.04 could be a reasonable starting value.</s>
+          <s>If the number of particles per quadrat looks higher than 5, a new run with lower f is recommended.</s>
+          <s>On the other hand if the resulting Q is low, f can be increased for a second run.</s>
+        </p>
+        <p>
+          <s>• N ≳ 10 4 ¼) f ≲ 0:01.</s>
+        </p>
+      </div>
+      <div>
+        <head>Conclusions</head>
+        <p>
+          <s>CountEm describes an unbiased and efficient population size estimation method.</s>
+          <s>It can be used irrespective of population size and pattern.</s>
+          <s>It can be applied to humans, animals, or indeed to any kind of distinguishable particles.</s>
+          <s>We have proposed new parameters to characterize the grid of quadrats, namely sampling fraction f, and initial number of quadrats, n 0 .</s>
+          <s>A crowd counting data set containing 51 images and corresponding position point patterns have been used to analyze the suitable parameter values and the resulting coefficients of error.</s>
+          <s>Population size has been shown to have no impact on the coefficient of error of the estimation, only sample size, Q, and number of nonempty quadrats, n, are relevant.</s>
+          <s>Usually Q ≳ 100 and n ≳ 30, yield coefficients of error below 10%.</s>
+          <s>The suitable parameter values depend on the order of magnitude of population size and spatial distribution.</s>
+          <s>For the sizes and spatial distributions of our crowd counting dataset, n 0 = 100 and f = 0.04 are reasonable initial values.</s>
+          <s>We believe that the reparametrization defined here allows a more intuitive and fast choice and/or adjustment of the working parameters.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig 1 .</head>
+        <label>1</label>
+        <figDesc>Fig 1. The CountEm method. (A): Spectators in a football match (Reprinted from [17] under a CC BY license, with permission from Raúl Cancio, Bilbao, 1966). A square grid of quadrats was superimposed uniformly at random to estimate the total number of spectators in the image. The quadrat marked with a yellow arrowhead is magnified in (C). (B): Square grid of quadrats with parameters t, T. (C): Forbidden line rule to remove edge effects in manual counting [20]. Only heads marked with yellow arrowheads are counted in the quadrat, the rest are not because they hit the extended forbidden edge (in red).</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig 2 .</head>
+        <label>2</label>
+        <figDesc>Fig 2. Parameter selection. (A): Point pattern of the N = 1120 manually annotated crowd positions corresponding to Fig 1A. The bounding box is plotted in blue. (B): Relation between parameters {f, n 0 } and {t, T}. Box size T is the area of the bounding box divided by the initial number of quadrats, n 0 . Quadrat size, t, is the box size times the square root of the sampling fraction, f. (C): Random superimposition of the grid of quadrats (B) on point pattern (A). The grid was tilted 30˚with respect to the x axis.</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Fig 3 .</head>
+        <label>3</label>
+        <figDesc>Fig 3. Crowd counting dataset. 15 manually annotated point patterns selected at random from the crowd counting dataset. The total number of point patterns in the dataset is 51. https://doi.org/10.1371/journal.pone.0206091.g003</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Figs 4 and 5</head>
+        <label>5</label>
+        <figDesc>Figs 4 and 5 allow us to justify the tentative values for parameters {f, n 0 } (step 2) and the practical criteria related to sample size, Q, and number of nonempty quadrats, n, (step 4) given in the simplified estimation protocol proposed above.</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
+        <head>Fig 5 .</head>
+        <label>5</label>
+        <figDesc>Fig 5. Empirical coefficient of error for optimal parameter values. (A): Empirical coefficient of error, obtained with sampling fractions adapted to each of the 51 point patterns considered in Fig 4. Blue, red and green colors represent sample sizes Q = 50, Q = 100 and Q = 200 respectively. Initial number of quadrats was set to n 0 = 100 for all cases. (B): Analogous plots for nonempty quadrats n. The broken horizontal lines are as in Fig 4.</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
+        <head/>
+        <label/>
+        <figDesc>https://doi.org/10.1371/journal.pone.0206091.g005 Simplified procedure for efficient and unbiased population size estimation There is no upper limit for N with CountEm, since only Q and n are relevant for the result- ing coefficient of error. Fig 4 shows the approximately linear dependence of CEQ. Counting more than Q = 200 particles is not worthwhile in most cases. Fig 5 shows that doubling Q from 100 to 200 does only slightly reduce the error.</figDesc>
+      </figure>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0206091 October 29, 2018 3 / 11</note>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0206091 October 29, 2018</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgments</head>
+          <p>
+            <s>The authors acknowledge financial support from the AYA-2015-66357-R (MINECO/FEDER) project.</s>
+          </p>
+        </div>
+        <div>
+          <head>Author Contributions</head>
+          <p>
+            <s>Conceptualization: Marcos Cruz.</s>
+          </p>
+          <p>
+            <s>Formal analysis: Marcos Cruz, Javier González-Villa.</s>
+          </p>
+        </div>
+        <div>
+          <head>Funding acquisition: Marcos Cruz.</head>
+          <p>
+            <s>Investigation: Marcos Cruz.</s>
+          </p>
+          <p>
+            <s>Methodology: Marcos Cruz, Javier González-Villa.</s>
+          </p>
+          <p>
+            <s>Software: Javier González-Villa.</s>
+          </p>
+        </div>
+        <div>
+          <head>Supervision: Marcos Cruz.</head>
+          <p>
+            <s>Validation: Marcos Cruz.</s>
+          </p>
+          <p>
+            <s>Visualization: Marcos Cruz, Javier González-Villa.</s>
+          </p>
+        </div>
+        <div>
+          <head>Writing -original draft: Marcos Cruz.</head>
+          <p>
+            <s>Writing -review &amp; editing: Marcos Cruz, Javier González-Villa.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">To count a crowd</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Jacobs</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Columbia Journalism Review</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">37</biblScope>
+                <date type="published" when="1967"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <monogr>
+              <title level="m" type="main">How many were there when it mattered? Significance</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Watson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Yip</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1111/j.1740-9713.2011.00502.x</idno>
+              <ptr target="https://doi.org/10.1111/j.1740-9713.2011.00502.x"/>
+              <imprint>
+                <date type="published" when="2011"/>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope from="104" to="107" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Reduction of avian diversity in created versus natural and restored wetlands</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Sebastián-González</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Green</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1111/ecog.01736</idno>
+              <ptr target="https://doi.org/10.1111/ecog.01736"/>
+            </analytic>
+            <monogr>
+              <title level="j">Ecography</title>
+              <imprint>
+                <biblScope unit="volume">39</biblScope>
+                <biblScope unit="issue">12</biblScope>
+                <biblScope from="1176" to="1184" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <monogr>
+              <title level="m" type="main">Forecasting waterfowl population dynamics under climate change-Does the spatial variation of density dependence and environmental effects matter? Biological conservation</title>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Zhao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Silverman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Fleming</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Boomer</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.biocon.2015.12.006</idno>
+              <ptr target="https://doi.org/10.1016/j.biocon.2015.12.006"/>
+              <imprint>
+                <date type="published" when="2016"/>
+                <biblScope unit="volume">194</biblScope>
+                <biblScope from="80" to="88" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Waterbird response indicates floodplain wetland restoration</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Hagy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Hine</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Horath</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Yetter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Smith</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Stafford</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1007/s10750-016-3004-3</idno>
+              <ptr target="https://doi.org/10.1007/s10750-016-3004-3"/>
+            </analytic>
+            <monogr>
+              <title level="j">Hydrobiologia</title>
+              <imprint>
+                <biblScope unit="volume">804</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="119" to="137" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <monogr>
+              <title level="m" type="main">Continental impacts of water development on waterbirds, contrasting two Australian river basins: Global implications for sustainable water use. Global change biology</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Kingsford</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Bino</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Porter</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1111/gcb.13743</idno>
+              <ptr target="https://doi.org/10.1111/gcb.13743PMID"/>
+              <imprint>
+                <date type="published" when="2017"/>
+                <biblScope unit="volume">23</biblScope>
+                <biblScope unit="page">28578561</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Population census of a large common tern colony with a small unmanned aircraft</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Chabot</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Craik</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Bird</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1371/journal.pone.0122588</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0122588PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">PloS one</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope unit="page">25874997</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Evaluation of unmanned aerial vehicle shape, flight path and camera type for waterfowl surveys: disturbance effects and species recognition</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Mcevoy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Hall</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Mcdonald</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.7717/peerj.1831</idno>
+              <ptr target="https://doi.org/10.7717/peerj.1831PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">PeerJ</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope unit="page">27020132</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Learning To Count Objects in Images</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Lempitsky</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Zisserman</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Advances in Neural Information Processing Systems</title>
+              <imprint>
+                <date type="published" when="2010"/>
+                <biblScope from="1324" to="1332" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <monogr>
+              <title level="m" type="main">An automatic counter for aerial images of aggregations of large birds. Bird study</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Descamps</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Bé Chet</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Descombes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Arnaud</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Zerubia</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1080/00063657.2011.588195</idno>
+              <ptr target="https://doi.org/10.1080/00063657.2011.588195"/>
+              <imprint>
+                <date type="published" when="2011"/>
+                <biblScope unit="volume">58</biblScope>
+                <biblScope from="302" to="308" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Density-aware person detection and tracking in crowds</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Rodriguez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Laptev</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Sivic</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Audibert</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">2011 International Conference on Computer Vision</title>
+              <imprint>
+                <date type="published" when="2011"/>
+                <biblScope from="2423" to="2430" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Multi-Source Multi-Scale Counting in Extremely Dense Crowd Images</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Idrees</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Saleemi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Seibert</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Shah</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE</title>
+              <imprint>
+                <date type="published" when="2013"/>
+                <biblScope from="2547" to="2554" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Quantifying crowd size with mobile phone and Twitter data</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Botta</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Moat</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Preis</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1098/rsos.150162</idno>
+              <ptr target="https://doi.org/10.1098/rsos.150162PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Royal Society Open Science</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope unit="page">26064667</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Assessing Rotation-Invariant Feature Classification for Automated Wildebeest Population Counts</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Torney</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Dobson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Borner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Lloyd-Jones</forename>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Moyer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Maliti</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">T</forename>
+                </persName>
+              </author>
+              <idno type="doi">10.1371/journal.pone.0156342</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0156342"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLOS ONE</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="1" to="10" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Computer-automated bird detection and counts in high-resolution aerial images: a review</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Chabot</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Francis</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1111/jofo.12171</idno>
+              <ptr target="https://doi.org/10.1111/jofo.12171"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Field Ornithology</title>
+              <imprint>
+                <biblScope unit="volume">87</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="343" to="359" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">How far are we from solving pedestrian detection?</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Benenson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Omran</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Hosang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Schiele</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition</title>
+              <meeting>the IEEE Conference on Computer Vision and Pattern Recognition</meeting>
+              <imprint>
+                <date type="published" when="2016"/>
+                <biblScope from="1259" to="1267" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Efficient and Unbiased Estimation of Population Size</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Cruz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Gó Mez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Cruz-Orive</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1371/journal.pone.0141868</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0141868"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLOS ONE</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope unit="issue">11</biblScope>
+                <biblScope from="1" to="14" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <monogr>
+              <title level="m" type="main">Unbiased Stereology. Three-dimensional Measurement in Microscopy</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Howard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Reed</surname>
+                </persName>
+              </author>
+              <editor>Oxford: Bios/ Taylor &amp; Francis</editor>
+              <imprint>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+            <note>2nd ed.</note>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Cruz-Orive</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Stereology</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.5566/ias.1767</idno>
+              <ptr target="https://doi.org/10.5566/ias.1767"/>
+            </analytic>
+            <monogr>
+              <title level="m">A HISTORICAL SURVEY</title>
+              <imprint>
+                <date type="published" when="2017"/>
+                <biblScope unit="volume">36</biblScope>
+                <biblScope from="153" to="177" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Notes on the estimation of the numerical density of arbitrary profiles: the edge effect</title>
+              <author>
+                <persName>
+                  <forename type="first">Hjg</forename>
+                  <surname>Gundersen</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1111/j.1365-2818.1977.tb00062.x</idno>
+              <ptr target="https://doi.org/10.1111/j.1365-2818.1977.tb00062.x"/>
+            </analytic>
+            <monogr>
+              <title level="j">J Microsc</title>
+              <imprint>
+                <biblScope unit="volume">111</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="219" to="223" unit="page"/>
+                <date type="published" when="1977"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">The efficiency of systematic sampling in stereologyreconsidered</title>
+              <author>
+                <persName>
+                  <forename type="first">Hjg</forename>
+                  <surname>Gundersen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Ebv</forename>
+                  <surname>Jensen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Kiêu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Nielsen</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1046/j.1365-2818.1999.00457.x</idno>
+              <ptr target="https://doi.org/10.1046/j.1365-2818.1999.00457.xPMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">J Microsc</title>
+              <imprint>
+                <biblScope unit="volume">193</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope unit="page">10348656</biblScope>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <monogr>
+              <title level="m" type="main">Spatial Point Patterns: Methodology and Applications with R</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Baddeley</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Rubak</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Turner</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2015"/>
+                <publisher>CRC Press</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

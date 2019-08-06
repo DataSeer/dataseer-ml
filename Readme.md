@@ -52,3 +52,49 @@ Example:
 
 > curl --form input=@./resources/samples/journal.pone.0198050.pdf localhost:8060/service/processDataseerPDF
 
+
+# Training data assembling and generating classification models
+
+## Importing training data
+
+Training data is available in a tabular format with reference to Open Access articles. The following process will align these tabular data with the actual article content (JATS and/or PDF via GROBID) to create a full training corpus. 
+
+> ./gradlew annotated_corpus_generator_csv -Ppdf=PATH/TO/THE/FULL/TEXTS -Pcsv=PATH/TO/THE/TABULAR/TRAINING/DATA -Pxml=PATH/WHERE/TO/WRITE/THE/ASSEMBLED/TRAINING/DATA
+
+For instance:
+
+> ./gradlew annotated_corpus_generator_csv -Ppdf=/mnt/data/resources/plos/0/pdf/ -Pcsv=resources/dataset/dataseer/csv/ -Pxml=resources/dataset/dataseer/corpus/
+
+Some reports will be generated to describe the alignment failures. 
+
+## Training the classification models
+
+After assembling the training data, the classification models can be trained with the following command:
+
+> 
+
+
+
+... 
+
+
+# Additional convenient scripts
+
+## Load training data documents in the dataseer web application
+
+All the documents present in the local training data repository (after importing the training, see above) under `dataseer-ml/resources/dataset/dataseer/corpus/` will be loaded via the dataseer web API. 
+
+> cd scripts/
+
+> node loader.js
+
+
+## Convert data type information from csv to json
+
+> cd scripts/
+
+> pip3 install pandas
+
+> python3 converter.py ../resources/DataTypes.csv ../resources/DataTypes.json
+
+

@@ -1,0 +1,1978 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T08:35+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Defects and dopant properties of Li 3 V 2 (PO 4 ) 3 OPEN</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+        <date type="published">Published: xx xx xxxx</date>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Navaratnarajah</forename>
+                <surname>Kuganathan</surname>
+              </persName>
+              <email>n.kuganathan@imperial.ac.uk</email>
+              <affiliation key="aff0">
+                <orgName type="department">Department of Materials</orgName>
+                <orgName type="institution">Imperial College London</orgName>
+                <address>
+                  <postCode>SW7 2AZ</postCode>
+                  <settlement>London</settlement>
+                  <country key="GB">United Kingdom</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Alexander</forename>
+                <surname>Chroneos</surname>
+              </persName>
+              <email>a.c.email:alexander.chroneos@imperial.ac.uk</email>
+              <affiliation key="aff0">
+                <orgName type="department">Department of Materials</orgName>
+                <orgName type="institution">Imperial College London</orgName>
+                <address>
+                  <postCode>SW7 2AZ</postCode>
+                  <settlement>London</settlement>
+                  <country key="GB">United Kingdom</country>
+                </address>
+              </affiliation>
+              <affiliation key="aff1">
+                <orgName type="department">Faculty of Engineering, Environment and Computing</orgName>
+                <orgName type="institution">Coventry University</orgName>
+                <address>
+                  <addrLine>Priory Street</addrLine>
+                  <postCode>CV1 5FB</postCode>
+                  <settlement>Coventry</settlement>
+                  <country key="GB">United Kingdom</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Defects and dopant properties of Li 3 V 2 (PO 4 ) 3 OPEN</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date type="published">Published: xx xx xxxx</date>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41598-018-36398-w</idno>
+          <note type="submission">Received: 26 July 2018 Accepted: 16 November 2018</note>
+          <note>1 SciEntiFic REPORTS | (2019) 9:333 | Correspondence and requests for materials should be addressed to N.K. (</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>Polyanion phosphate based Li 3 V 2 (PO 4 ) 3 material has attracted considerable attention as a novel cathode material for potential use in rechargeable lithium ion batteries.</s>
+            <s>The defect chemistry and dopant properties of this material are studied using well-established atomistic scale simulation techniques.</s>
+            <s>The most favourable intrinsic defect process is the Li Frenkel (0.45 eV/defect) ensuring the formation of Li vacancies required for Li diffusion via the vacancy mechanism.</s>
+            <s>Long range lithium paths via the vacancy mechanism were constructed and it is confirmed that the lowest activation energy of migration (0.60 eV) path is three dimensional with curved trajectory.</s>
+            <s>The second most stable defect energy process is calculated to be the anti-site defect, in which Li and V ions exchange their positions (0.91 eV/defect).</s>
+            <s>Tetravalent dopants were considered on both V and P sites in order to form Li vacancies needed for Li diffusion and the Li interstitials to increase the capacity respectively.</s>
+            <s>Doping by Zr on the V site and Si on the P site are calculated to be energetically favourable.</s>
+          </p>
+          <p>
+            <s>The increased need for electrical energy storage for static and mobile applications in conjunction with the demand for higher capacity, better safety, increased cycle performance, and durability made the solid-state lithium batteries technologically important <ref target="#b0" type="bibr">1,</ref>
+              <ref target="#b1" type="bibr">2</ref> .</s>
+            <s>The research is focusing mainly on the electrolyte and cathode trying to identify more efficient materials <ref target="#b2" type="bibr">[3]</ref>
+              <ref target="#b3" type="bibr">[4]</ref>
+              <ref target="#b4" type="bibr">[5]</ref>
+              <ref target="#b5" type="bibr">[6]</ref>
+              <ref target="#b6" type="bibr">[7]</ref>
+              <ref target="#b7" type="bibr">[8]</ref>
+              <ref target="#b8" type="bibr">[9]</ref>
+              <ref target="#b9" type="bibr">[10]</ref>
+              <ref target="#b10" type="bibr">[11]</ref>
+              <ref target="#b11" type="bibr">[12]</ref>
+              <ref target="#b12" type="bibr">[13]</ref>
+              <ref target="#b13" type="bibr">[14]</ref>
+              <ref target="#b14" type="bibr">[15]</ref>
+              <ref target="#b15" type="bibr">[16]</ref>
+              <ref target="#b16" type="bibr">[17]</ref> .</s>
+            <s>In particular, electrode materials require should satisfy safety requirements, be low cost, and critically have a higher energy density (i.e.</s>
+            <s>large density of Li + ions).</s>
+            <s>State of the art cathodes for solid-state lithium batteries include polyanion-type oxides, layered lithiated transition metal oxides and Mn-based spinels <ref target="#b17" type="bibr">18</ref> .</s>
+            <s>Monoclinic Li 3 V 2 (PO 4 ) 3 has gained the interest of the community as a cathode material for solid-state lithium batteries due to its low cost, safety, low environmental impact, appropriate cycling stability, and high theoretical capacity (197 mAhg −1 ) <ref target="#b17" type="bibr">[18]</ref>
+              <ref target="#b18" type="bibr">[19]</ref>
+              <ref target="#b19" type="bibr">[20]</ref>
+              <ref target="#b20" type="bibr">[21]</ref>
+              <ref target="#b21" type="bibr">[22]</ref>
+              <ref target="#b22" type="bibr">[23]</ref>
+              <ref target="#b23" type="bibr">[24]</ref>
+              <ref target="#b24" type="bibr">[25]</ref> .</s>
+            <s>Fu et al. 26 synthesized this material using mixed lithium precursors with particles high surface area leading to good electrochemical performance.</s>
+            <s>Solid state 7 Li NMR together with two-dimensional exchange study of Lithium was used to determine the temperature dependent Li hoping process to understand the Li dynamics on the microscopic scale suggesting that their methodology can be applied to the cycled materials and other lithium metal phosphates 27 .</s>
+            <s>Lee and Park 22 employed molecular dynamics simulation to calculate the vacancy migration energy of Li at different temperatures and confirmed the mobility of Li + ions is anisotropic.</s>
+            <s>Though these separate studies show different properties in this material, fundamental understating of this material is needed to optimize its performance.</s>
+          </p>
+          <p>
+            <s>Electrochemical behaviour of an electrode material is important to assess its applicabilty in batteries.</s>
+            <s>This behavour can be studied theoretically by perfoming defect calculations and we note that such studies are absent in the literature.</s>
+            <s>Atomistic modelling based on the classical pair potentials is a poweful method and can provide useful information about the defect processes, cation doping behavior and ion migration mechanism.</s>
+            <s>This methodology has been applied to a variety of oxides including Li containing materials and excellent agreement in trends and energetics of defect processes was observed between calculation and the experiment <ref target="#b6" type="bibr">7,</ref>
+              <ref target="#b27" type="bibr">28,</ref>
+              <ref target="#b28" type="bibr">29</ref> .</s>
+            <s>Here, we extend our recent modelling of electrode materials 30-34 where we examined the defects, ion diffusion and dopants.</s>
+            <s>In the present study, we employ established atomistic modeling techniques to investigate the intrinsic defect chemistry, the impact of doping on the formation of lithium interstitials and lithium ion diffusion pathways in Li 3 V 2 (PO 4 ) 3 .</s>
+            <s>We consider the solution of a range of oxides in Li 3 V 2 (PO 4 ) 3 including aliovalent dopants (e.g.</s>
+            <s>Si, Ge and Ti) and isovalent dopants (e.g.</s>
+            <s>Al, Ga and Sc).</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <p>
+          <s>. The research is focusing mainly on the electrolyte and cathode trying to identify more efficient materials <ref target="#b2" type="bibr">[3]</ref>
+            <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref>
+            <ref target="#b6" type="bibr">[7]</ref>
+            <ref target="#b7" type="bibr">[8]</ref>
+            <ref target="#b8" type="bibr">[9]</ref>
+            <ref target="#b9" type="bibr">[10]</ref>
+            <ref target="#b10" type="bibr">[11]</ref>
+            <ref target="#b11" type="bibr">[12]</ref>
+            <ref target="#b12" type="bibr">[13]</ref>
+            <ref target="#b13" type="bibr">[14]</ref>
+            <ref target="#b14" type="bibr">[15]</ref>
+            <ref target="#b15" type="bibr">[16]</ref>
+            <ref target="#b16" type="bibr">[17]</ref> .</s>
+          <s>In particular, electrode materials require should satisfy safety requirements, be low cost, and critically have a higher energy density (i.e.</s>
+          <s>large density of Li + ions).</s>
+          <s>State of the art cathodes for solid-state lithium batteries include polyanion-type oxides, layered lithiated transition metal oxides and Mn-based spinels <ref target="#b17" type="bibr">18</ref> .</s>
+          <s>Monoclinic Li 3 V 2 (PO 4 ) 3 has gained the interest of the community as a cathode material for solid-state lithium batteries due to its low cost, safety, low environmental impact, appropriate cycling stability, and high theoretical capacity (197 mAhg −1 ) <ref target="#b17" type="bibr">[18]</ref>
+            <ref target="#b18" type="bibr">[19]</ref>
+            <ref target="#b19" type="bibr">[20]</ref>
+            <ref target="#b20" type="bibr">[21]</ref>
+            <ref target="#b21" type="bibr">[22]</ref>
+            <ref target="#b22" type="bibr">[23]</ref>
+            <ref target="#b23" type="bibr">[24]</ref>
+            <ref target="#b24" type="bibr">[25]</ref> .</s>
+          <s>Fu et al. <ref target="#b25" type="bibr">26</ref> synthesized this material using mixed lithium precursors with particles high surface area leading to good electrochemical performance.</s>
+          <s>Solid state <ref target="#b6" type="bibr">7</ref> Li NMR together with two-dimensional exchange study of Lithium was used to determine the temperature dependent Li hoping process to understand the Li dynamics on the microscopic scale suggesting that their methodology can be applied to the cycled materials and other lithium metal phosphates <ref target="#b26" type="bibr">27</ref> .</s>
+          <s>Lee and Park <ref target="#b21" type="bibr">22</ref> employed molecular dynamics simulation to calculate the vacancy migration energy of Li at different temperatures and confirmed the mobility of Li + ions is anisotropic.</s>
+          <s>Though these separate studies show different properties in this material, fundamental understating of this material is needed to optimize its performance.</s>
+        </p>
+        <p>
+          <s>Electrochemical behaviour of an electrode material is important to assess its applicabilty in batteries.</s>
+          <s>This behavour can be studied theoretically by perfoming defect calculations and we note that such studies are absent in the literature.</s>
+          <s>Atomistic modelling based on the classical pair potentials is a poweful method and can provide useful information about the defect processes, cation doping behavior and ion migration mechanism.</s>
+          <s>This methodology has been applied to a variety of oxides including Li containing materials and excellent agreement in trends and energetics of defect processes was observed between calculation and the experiment <ref target="#b6" type="bibr">7,</ref>
+            <ref target="#b27" type="bibr">28,</ref>
+            <ref target="#b28" type="bibr">29</ref> .</s>
+          <s>Here, we extend our recent modelling of electrode materials <ref target="#b29" type="bibr">[30]</ref>
+            <ref target="#b30" type="bibr">[31]</ref>
+            <ref target="#b31" type="bibr">[32]</ref>
+            <ref target="#b32" type="bibr">[33]</ref>
+            <ref target="#b33" type="bibr">[34]</ref> where we examined the defects, ion diffusion and dopants.</s>
+          <s>In the present study, we employ established atomistic modeling techniques to investigate the intrinsic defect chemistry, the impact of doping on the formation of lithium interstitials and lithium ion diffusion pathways in Li 3 V 2 (PO 4 ) <ref target="#b2" type="bibr">3</ref> .</s>
+          <s>We consider the solution of a range of oxides in Li 3 V 2 (PO 4 ) 3 including aliovalent dopants (e.g.</s>
+          <s>Si, Ge and Ti) and isovalent dopants (e.g.</s>
+          <s>Al, Ga and Sc).</s>
+          <s>
+            <ref target="#fig_0" type="figure">Fig. 1</ref> shows this structure and the chemical environment of P (forming tetrahedral unit with four O atoms) and V (forming octahedral unit with six O atoms).</s>
+          <s>The starting point for the present study was to reproduce the experimentally observed monoclinic crystal structure to enable an assessment of the quality and efficacy of the classical pair potentials (refer to Table S1 in the supplementary information for the potentials parameters used and method section for the detailed description of the methodology) used here.</s>
+          <s>The calculated equilibrium lattice constants (refer to Table 1) are in excellent agreement with experiment.</s>
+        </p>
+      </div>
+      <div>
+        <head>Intrinsic defect processes.</head>
+        <p>
+          <s>To understand the electrochemical behavior of an electrode material, intrinsic defect processes are crucial.</s>
+          <s>A series of isolated point defect (vacancy and interstitial) energies were calculated, which were combined to determine the formation energies for Frenkel and Schottky-type defects in Li 3 V 2 (PO 4 ) <ref target="#b2" type="bibr">3</ref> .</s>
+          <s>The following equations represent the reactions involving these defects as written using Kröger-Vink notation <ref target="#b34" type="bibr">35</ref> .</s>
+        </p>
+        <formula xml:id="formula_0">→ ′ + • V Li Frenkel: Li Li (1) Li X Li i → + ″ •• V O Frenkel: O O (2) O X O i → + • • • ‴ V V V Frenkel: V (3) V X V i → + ′′′′′ ••••• V P Frenkel: P P (4) P X P i</formula>
+        <formula xml:id="formula_1">+ + + → ′ + + + + ′′′ ′′′′′ •• V V V Schottky: 3Li 2V 3P 12O 3 2 V 3 12 Li V (PO ) (5) Li X V X P X O X Li v P O 3 2 43 + → ′ + + &gt; • • V V Li O Schottky: 2Li O 2 L i O (6) 2 L i X O X Li O 2 + → ″ + •• V Li/V antisite (isolated): Li L i V (7) Li X V X V L i + → ″ •• Li/V antisite (cluster): Li V {Li : V } (8) Li X V X V L i X</formula>
+        <p>
+          <s>The reaction energies for these intrinsic defect processes are reported in <ref target="#fig_1" type="figure">Fig. 2</ref> and <ref type="table">Table S2</ref> .</s>
+          <s>The most favourable intrinsic disorder is Li Frenkel and the formation of other Frenkel and Schottky defects is less energetically favourable.</s>
+          <s>The second most favourable defect process is calculated to be Li-V anti-site.</s>
+          <s>This indicates that there will be a small percentage of Li on V sites ″ (L ) V and P on Li sites ⋅⋅ (V ) Li particularly at higher temperatures.</s>
+          <s>In the relaxed configuration, there is insignificant changes observed in the cation-oxygen bond distances.</s>
+          <s>Antisite defects have been observed experimentally and theoretically in a variety of Li ion cathode battery materials <ref target="#b29" type="bibr">[30]</ref>
+            <ref target="#b30" type="bibr">[31]</ref>
+            <ref target="#b31" type="bibr">[32]</ref>
+            <ref target="#b32" type="bibr">[33]</ref>
+            <ref target="#b35" type="bibr">[36]</ref>
+            <ref target="#b36" type="bibr">[37]</ref>
+            <ref target="#b37" type="bibr">[38]</ref>
+            <ref target="#b38" type="bibr">[39]</ref>
+            <ref target="#b39" type="bibr">[40]</ref>
+            <ref target="#b40" type="bibr">[41]</ref> .</s>
+          <s>In the experimental study of as-prepared Li 2 MnSiO 4 , a small amount of Li-Mn anti-site defect was observed <ref target="#b40" type="bibr">41</ref> .</s>
+          <s>During cycling of Li 2 FeSiO 4 , Nyten et al. <ref target="#b35" type="bibr">36</ref> observed structural rearrangement in the crystal structure responsible for the Li-Fe anti-site.</s>
+          <s>The difference between the isolated and cluster defect energies is calculated to be -1.06 eV suggesting that the anti-site cluster is stable compared tom its isolated form.</s>
+          <s>The formation enthalpy of Li 2 O via the Li 2 O Schottky-like reaction (relation 6) is a processes that requires an energy of 3.07 eV per defect (refer to Table S2, supplementary information).</s>
+          <s>This is a process that can lead to further ′ V Li and</s>
+        </p>
+        <formula xml:id="formula_2">••</formula>
+        <p>
+          <s>V O , however, at elevated temperatures.</s>
+          <s>The trend calculated for Li and V Frenkel and Li-V antisite defects is in agreement with the theoretical calculations performed by Lee et al. <ref target="#b21" type="bibr">22</ref> , though there is a difference in defect energetics.</s>
+          <s>Such difference is dependent on the choice of classical pair potentials used.</s>
+        </p>
+        <p>
+          <s>Lithium ion-diffusion.</s>
+          <s>As the intrinsic lithium ion diffusion of Li 3 V 2 (PO 4 ) 3 material is of crucial importance when assessing its use as a possible high-rate cathode material in lithium batteries, we used the present static atomistic simulation to examine various possible diffusion paths responsible for Li ion conduction, which are often difficult to explore on the atomic scale by experiment alone.</s>
+          <s>For the Li vacancy migration, we identified four lower activation energy local hops (A, B, C and D) and constructed long range paths connecting local Li hops (refer to <ref target="#fig_2" type="figure">Fig. 3</ref> ).</s>
+          <s>There are many long range three dimensional paths present.</s>
+          <s>The lowest overall migration energy (0.60 eV) was calculated for the D → A → B → A path.</s>
+          <s>Other possible long range paths were considered.</s>
+          <s>However, the overall activation energy was calculated to be 0.87 eV due to the local hop C involved in the long range path.</s>
+          <s>Here the activation energy of migration is defined as the position of the highest potential energy along the migration path.</s>
+          <s>Migration energies are reported in <ref type="table">Table 2</ref> together with the Li-Li separation, whereas energy profile diagrams are shown in <ref target="#fig_4" type="figure">Fig. 4</ref> .</s>
+          <s>Lee et al. <ref target="#b21" type="bibr">22</ref> calculated the one dimensional lithium ion diffusion mechanism in Li 3 V 2 (PO 4 ) <ref target="#b2" type="bibr">3</ref> and their values deviates with our study.</s>
+          <s>This is because in the present study we calculated three dimensional Li migation paths, which are the lowest energy migration paths (refer to <ref target="#fig_2" type="figure">Fig. 3</ref> for detailed migration Tetravalent doping.</s>
+          <s>The Li Frenkel is calculated to be only 0.45 eV/defect; however, an increase in the concentration of Li will further increase the applicability of Li 3 V 2 (PO 4 ) 3 as a cathode material for rechargeable lithium batteries.</s>
+          <s>A way to increase the content of intrinsic defects in oxides is by the solution of aliovalent dopants as it was previously demonstrated in CeO 2 (for example ref. <ref target="#b41" type="bibr">42</ref> and references therein).</s>
+          <s>Here we considered the solution of RO 2 (R = Ce, Zr, Ti, Si and Ge) via the following process (in Kröger-Vink notation): <ref target="#fig_3" type="figure">Figure 5</ref> reports the solution energies of RO 2 and it can be observed that ZrO 2 has the lowest solution energy of 2.18 eV.</s>
+          <s>Solution energies of CeO 2 and GeO 2 are 2.31 eV and 2.35 eV respectively meaning that Ce and Ge are also promising candidate dopants.</s>
+          <s>As these solution energies are higher compared to the Li Frenkel process, the solution of ZrO 2 , GeO 2 and CeO 2 during synthesis should be examined experimentally as they can increase the Li vacancy concentration (via relation <ref type="formula">(9)</ref> ).</s>
+        </p>
+        <formula xml:id="formula_3">+ + → + + + • ′ V 2RO 2V 2Li 2R 2 VO Li O (9) 2 V X Li X V L i 2 3 2</formula>
+        <p>
+          <s>Incorporation of additional lithium into the as-prepared material will enhance the capacity and further increase the applicability of Li 3 V 2 (PO 4 ) 3 as a viable cathode material for rechargeable sodium batteries.</s>
+          <s>A defect engineering way to increase the amount of lithium is by doping tetravalent cations on P site through creating Li interstitials.</s>
+          <s>The efficacy of the approach has been previously demonstrated experimentally and theoretically in Li battery cathode materials <ref target="#b17" type="bibr">18</ref> .</s>
+          <s>In a theoretical study of polymorphs of Li 2 MnSiO 4 , it was suggested that Al doping on the Si site is a possible way of introducing addition Li interstitial in Li 2 <ref type="bibr">MnSiO 4 40</ref> .</s>
+          <s>Here we considered the solution of RO 2 (R = Si, Ge, Ti, Zr and Ce) via the following process (in Kröger-Vink notation): <ref type="table">Table 2</ref> .</s>
+          <s>Calculated Li-Li separations and activation energies for the sodium ion migration between two adjacent Li sites refer to <ref target="#fig_2" type="figure">Fig. 3</ref> .</s>
+        </p>
+        <p>
+          <s>SciEntiFic REPORTS | (2019) 9:333 | DOI:10.1038/s41598-018-36398-w</s>
+          <s>Concentration of Li ions will be dominated by tetravalent doping via two processes as shown in equations 9 and 10.</s>
+          <s>The formation Li interstitials will be favored by Si and Ge dopants (eqn 10) on the P site whereas Ti, Zr and Ce on the V site will favor the formation of Li vacancies (eqn 9).</s>
+          <s>Solution of these tetravalent dopants will create the corresponding Li defects.</s>
+        </p>
+        <formula xml:id="formula_4">+ + → ′ + + • 2RO 2P Li O 2R 2Li PO<label>(10)</label>
+        </formula>
+      </div>
+      <div>
+        <head>Trivalent doping.</head>
+        <p>
+          <s>A wide range of isovalent substitutions on V sites were considered.</s>
+          <s>The dopant incorporation mechanism does not require the creation of vacancies or interstitials for charge-compensation.</s>
+          <s>Here we considered the solution of R 2 O 3 (R = Al, Ga, Sc, In, Y, Gd and La) via the following process (in Kröger-Vink notation):</s>
+        </p>
+        <formula xml:id="formula_5">+ → + V R O 2 2 V VO (11) 2 3 V X R 2 3</formula>
+        <p>
+          <s>In <ref target="#fig_6" type="figure">Fig. 6</ref> the solution energies as a function of the dopant ionic radius are reported.</s>
+          <s>The results reveal that the formation enthalpies for the dopants Sc 3+ , In 3+ , Y 3+ , Gd 3+ and La 3+ are exoergic suggesting that they are ideal candidates for substitution at the isovalent V site.</s>
+          <s>The solution enthalpy for La 3+ is highly negative meaning that it is worth investigating the formation of Li 3 (V,La) 2 (PO 4 ) 3 experimentally and its electrochemical performance.</s>
+        </p>
+        <p>
+          <s>Summary.</s>
+          <s>In the present study, the atomistic simulation techniques have been used to provide detailed insights into intrinsic defects, lithium ion mobility and trivalent doping, which are relevant to the general electrochemical behavior of Li 3 V 2 (PO 4 ) 3 .</s>
+          <s>The dominant energy defect process is Li Frenkel.</s>
+          <s>The Li-V anti-site defect is calculated to be the second most stable defect process suggesting that there would be small intrinsic concentration of Li on V sites at operating temperatures.</s>
+          <s>The long range Li ion diffusion path with lowest migration energy was calculated to be three dimensional with the migration energy of 0.60 eV.</s>
+          <s>Solution energies of RO 2 (R = Al, Ga, Sc, In, Y, Gd and La) were calculated to increase Li vacancies and extra Li ions in Li 3 V 2 (PO 4 ) 3 .</s>
+          <s>Zr on V site and Si on P site were found to be the efficient stratergies to increase Li vacancies and extra Li ions repectively.</s>
+          <s>Promising candidates for isovalent substitution on V site are Sc, In, Y, Gd and La.</s>
+          <s>The present study aims to inspire further experimental work on doped Li 3 V 2 (PO 4 ) 3 .</s>
+        </p>
+      </div>
+      <div>
+        <head>Methods</head>
+        <p>
+          <s>To calculate the energetics for the formation of intrinsic defects and the Li ion diffusion pathways, the classical pair potential method as implemented in the GULP package <ref target="#b42" type="bibr">43</ref> was employed.</s>
+          <s>This method is based on the classical Born model description of the ionic crystal lattice.</s>
+          <s>All systems were treated as crystalline solids with interactions between ions consisting of the long-range attractions and short-range repulsive forces representing electron-electron repulsion and van der Waals interactions.</s>
+          <s>The short-range interactions were modelled using Buckingham potentials (refer to Table S1, supplementary information) <ref target="#b29" type="bibr">30,</ref>
+            <ref target="#b30" type="bibr">31,</ref>
+            <ref target="#b43" type="bibr">[44]</ref>
+            <ref target="#b44" type="bibr">[45]</ref>
+            <ref target="#b45" type="bibr">[46]</ref>
+            <ref target="#b46" type="bibr">[47]</ref>
+            <ref target="#b48" type="bibr">[48]</ref> .</s>
+          <s>Simulation boxes and the corresponding atom positions were relaxed using the Broyden-Fletcher-Goldfarb-Shanno (BFGS) algorithm <ref target="#b49" type="bibr">49</ref> .</s>
+          <s>The Mott-Littleton method <ref target="#b50" type="bibr">50</ref> was used to investigate the lattice relaxation about point defects and the migrating ions.</s>
+          <s>It divides the crystal lattice into two concentric spherical regions, where the ions within the inner spherical region (on the order of &gt;700 ions) immediately surrounding the defect relaxed explicitly.</s>
+          <s id="0" type="Tabular data">Li ion diffusion was calculated considering two adjacent vacancy sites as initial and final configurations.</s>
+          <s>Seven interstitial Li ions were considered in a direct linear route and they were fixed while all other ions were free to relax.</s>
+          <s>The local maximum energy along this diffusion path is calculated and reported as activation energy of migration.</s>
+          <s>As the present model assumes a full charge ionic model with the calculations corresponding to the dilute limit the defect enthalpies will be overestimated, however, relative energies and trends will be consistent.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Figure 1 .</head>
+        <label>1</label>
+        <figDesc>Figure 1. Crystal structure of Li 3 V 2 (PO 4 ) 3 (space group (P2 1 /n).</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Figure 2 .</head>
+        <label>2</label>
+        <figDesc>Figure 2. Energetics of intrinsic defect process in monoclinic Li 3 V 2 (PO 4 ) 3 .</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Figure 3 .</head>
+        <label>3</label>
+        <figDesc>Figure 3. Possible long range sodium vacancy migration paths considered. Local Li migration paths are shown in blue, yellow, white and light purple atoms. PO 4 and VO 6 units are shown brown and violet colors respectively.</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Figure 5</head>
+        <label>5</label>
+        <figDesc>Figure 5 reports the solution energies of RO 2 and it can be observed that the most favorable dopant solution energy is found for Si 4+ . This suggests that a possible synthesis-doping strategy of introducing additional lithium into Li 3 V 2 (PO 4 ) 3 , although the exact amount of Si incorporation cannot be predicted. The second most favorable dopant is Ge 4+ . The solution energy increases further with the dopant size.</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Figure 4 .</head>
+        <label>4</label>
+        <figDesc>Figure 4. Four different energy profiles (as shown in Fig. 3) of Li vacancy hopping between two adjacent Li sites in Li 3 V 2 (PO 4 ) 3 .</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
+        <head>Figure 5 .</head>
+        <label>5</label>
+        <figDesc>Figure 5. Enthalpy of solution of RO 2 (R = Si, Ge, Ti, Zr and Ce) with respect to the R 4+ ionic radius in Li 3 V 2 (PO 4 ) 3 .</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
+        <head>Figure 6 .</head>
+        <label>6</label>
+        <figDesc>Figure 6. Enthalpy of solution of R 2 O 3 (R = Al, Ga, Sc, In, Y, Gd and La) with respect to the R 3+ ionic radius in Li 3 V 2 (PO 4 ) 3 .</figDesc>
+      </figure>
+      <note place="foot">© The Author(s) 2019</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>Computational facilities and support were provided by High Performance Computing Centre at Imperial College London.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Author Contributions</head>
+          <p>
+            <s>N.K. performed the calculations.</s>
+            <s>A.C. contributed to the writing of the paper.</s>
+          </p>
+        </div>
+        <div>
+          <head>Additional Information</head>
+          <p>
+            <s>Supplementary information accompanies this paper at https://doi.org/10.1038/s41598-018-36398-w.</s>
+          </p>
+          <p>
+            <s>Competing Interests: The authors declare no competing interests.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Issues and changes facing rechargeable lithium batteries</title>
+              <author>
+                <persName>
+                  <forename type="first">J.-M</forename>
+                  <surname>Tarascon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Armand</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">414</biblScope>
+                <biblScope from="359" to="367" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Building better batteries</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Armand</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J.-M</forename>
+                  <surname>Tarascon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">451</biblScope>
+                <biblScope from="652" to="657" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">A lithium superionic conductor</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Kamaya</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Mater</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope from="682" to="686" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Li-O2 and Li-S batteries with high energy storage</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Bruce</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Freunberger</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Hardwick</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J.-M</forename>
+                  <surname>Tarascon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Mater</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope from="19" to="29" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Superionic conductivity in lithium-rich anti-perovskites</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Daemen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Am. Chem. Soc</title>
+              <imprint>
+                <biblScope unit="volume">134</biblScope>
+                <biblScope from="15042" to="15047" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Defect chemistry and lithium-ion migration in polymorphs of the cathode material Li 2 MnSiO 4</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A J</forename>
+                  <surname>Fisher</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Kuganathan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Islam</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Mater. Chem. A</title>
+              <imprint>
+                <biblScope unit="volume">1</biblScope>
+                <biblScope from="4207" to="4214" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Genetics of superionic conductivity in lithium lanthanum titanates</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Jay</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">J D</forename>
+                  <surname>Rushton</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Chroneos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Grimes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Kilner</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Chem. Chem. Phys</title>
+              <imprint>
+                <biblScope unit="volume">17</biblScope>
+                <biblScope from="178" to="183" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Local structure and dynamics of lithium garnet ionic conductors: tetragonal and cubic Li 7 La 3 Zr 2 O 12</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Klenk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Lai</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Chem. Chem. Phys</title>
+              <imprint>
+                <biblScope unit="volume">17</biblScope>
+                <biblScope from="8758" to="8768" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Synergistic multi-doping effects on the Li 7 La 3 Zr 2 O 12 solid electrolyte for fast lithium ion conduction</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Shin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Rep</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="page">18053</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">High-power all-solid-state batteries using sulfide superionic conductors</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Kato</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Energy</title>
+              <imprint>
+                <biblScope unit="volume">1</biblScope>
+                <biblScope unit="page">16030</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Data mining of molecular dynamics data reveals Li diffusion characteristics in garnet Li 7 La 3 Zr 2 O 12</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Lu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Ciucci</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Rep</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="page">40769</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Origin of fast ion diffusion in super-ionic conductors</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>He</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Mo</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Commun</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope unit="page">15893</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Li x CoO 2 (0 &lt; x &lt; −1): A new cathode material for batteries of high energy density</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Mizushima</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Jones</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Wiseman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Goodenough</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mater. Res. Bull</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope from="783" to="789" unit="page"/>
+                <date type="published" when="1980"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Battery materials for ultrafast charging and discharging</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Kang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Ceder</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">458</biblScope>
+                <biblScope unit="page">190</biblScope>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">A 3.6 V lithium-based fluorosulphate insertion positive electrode for lithium-ion batteries</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Recham</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Mater</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="page">68</biblScope>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Structure and lithium transport pathways in Li 2 FeSiO 4 Cathodes for Lithium Batteries</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Armstrong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Kuganathan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Islam</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Bruce</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Am. Chem. Soc</title>
+              <imprint>
+                <biblScope unit="volume">133</biblScope>
+                <biblScope from="13031" to="13035" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Effect of bulk and surface structural changes in Li 5 FeO 4 positive electrodes during first charging on subsequent lithium-ion battery performance</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Okumura</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Shikano</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Kobayashi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Mater. Chem. A</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope from="11847" to="11856" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">L 3 V 2 (PO 4 ) 3 cathode materials for lithium ion batteries: A review</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Rui</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Power Sources</title>
+              <imprint>
+                <biblScope unit="volume">258</biblScope>
+                <biblScope from="19" to="38" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Nanostructured composites: A high capacity, fast rate Li 3 V 2 (PO 4 ) 3 /carbon cathode for rechargeable lithium batteries</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Huang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Yin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Kerr</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Taylor</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Nazar</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Adv. Mater</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope from="1525" to="1528" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Nano-structured Li 3 V 2 (PO 4 ) 3 /carbon composite for high-rate lithium ion batteries</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">Q</forename>
+                  <surname>Pan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Electrochem. Commun</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope from="1674" to="1677" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Synthesis and electrochemical properties of co-doped L 3 V 2 (PO 4 ) 3 cathode materials for lithium ion batteries</title>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Kuang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Electrochimica Acta</title>
+              <imprint>
+                <biblScope unit="volume">55</biblScope>
+                <biblScope from="1575" to="1581" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Atomistic simulation study of monoclinic L 3 V 2 (PO 4 ) 3 as a cathode material for lithium ion battery: Structure, defect chemistry, lithium ion transport pathway, and dynamics</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Park</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Phys. Chem. C</title>
+              <imprint>
+                <biblScope unit="volume">116</biblScope>
+                <biblScope from="25190" to="25197" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Lithium diffusion in Li 3 V 2 (PO 4 ) 3 -based electrodes: a joint analysis of electrochemical impedance, cyclic voltammetry, pulse chronoamperometry and chronopotentiometry data</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Ivanishhchev</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Churikov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Ivanishcheva</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Ushakov</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Ionics</title>
+              <imprint>
+                <biblScope unit="volume">22</biblScope>
+                <biblScope from="483" to="501" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Gadolinium/chloride co-doping of lithium vanadium phosphate cathodes for lithium-ion batteries</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Solid State Ionics</title>
+              <imprint>
+                <biblScope unit="volume">304</biblScope>
+                <biblScope from="65" to="70" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">F-doping effects on carbon coated Li 3 V 2 (PO 4 ) 3 as a cathode for high performance lithium rechargeable batteries: Combined experimental and DFT studies</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Wu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Chem. Chem. Phys</title>
+              <imprint>
+                <biblScope unit="volume">20</biblScope>
+                <biblScope from="15192" to="15202" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Synthesis of high tap density Li 3 V 2 (PO 4 ) 3 cathode materials using mixed lithium precursors</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Fu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Dong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Hou</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Phys. Chem. Solids</title>
+              <imprint>
+                <biblScope unit="volume">71</biblScope>
+                <biblScope from="394" to="399" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">7Li NMR and Two-Dimensional Exchange Study of Lithium Dynamics in Monoclinic Li 3 V 2 (PO 4 ) 3</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Cahill</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Chapman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Britten</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Goward</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Phys. Chem. B</title>
+              <imprint>
+                <biblScope unit="volume">110</biblScope>
+                <biblScope from="7171" to="7177" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Oxygen ion diffusion in cation ordered/disordered GdBaCo 2 O 5+δ</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Parfitt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Chroneos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Tarancón</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Kilner</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Mater. Chem</title>
+              <imprint>
+                <biblScope unit="volume">21</biblScope>
+                <biblScope from="2183" to="2186" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Atomic-Scale Investigation of Defects, Dopants, and Lithium Transport in the LiFePO 4 Olivine-Type Battery Material</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Islam</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Driscoll</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A J</forename>
+                  <surname>Fisher</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Slater</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Chem. Mater</title>
+              <imprint>
+                <biblScope unit="volume">17</biblScope>
+                <biblScope from="5085" to="5092" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Kuganathan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ganeshalingam</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Chroneos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Defects</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Dopants and Lithium Mobility in Li</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="issue">2 O 7</biblScope>
+                <biblScope unit="page">8140</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+            <note>PO 4 )2. Sci. Rep</note>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Lithium diffusion in Li 5 FeO 4</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Kuganathan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Iyngaran</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Chroneos</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Rep</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope unit="page">5832</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Defects and lithium migration in Li 2 CuO 2</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Kordatos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Kuganathan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Kelaidis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Iyngaran</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Chroneos</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Rep</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope unit="page">30</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Li 2 SnO 3 as a Cathode Material for Lithium-ionBatteries: Defects, Lithium Ion Diffusion and Dopants</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Kuganathan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Kordatos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Chroneos</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Rep</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope unit="page">12621</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Dopants and Sodium Mobility in Na 2 MnSiO 4</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Kuganathan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Chroneos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Defects</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Rep</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope unit="page">14669</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Kröger</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Vink</surname>
+                </persName>
+              </author>
+              <title level="m">Solid State Physics</title>
+              <editor>Frederick Seitz &amp; David Turnbull</editor>
+              <imprint>
+                <publisher>Academic Press</publisher>
+                <date type="published" when="1956"/>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="307" to="435" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">The lithium extraction/insertion mechanism in Li 2 FeSiO 4</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Nyten</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Kamali</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Haggstrom</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Gustafsson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Thomas</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Mater. Chem</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope from="2266" to="2272" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">A comparative XPS surface study of Li 2 FeSiO 4 /C cycled with LiTFSI-and LiPF6-based electrolytes</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Ensling</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Stjerndahl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Nyten</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Gustafsson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Thomas</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Mater. Chem</title>
+              <imprint>
+                <biblScope unit="volume">19</biblScope>
+                <biblScope from="82" to="88" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">Effects of Antisite Defects on Li Diffusion in LiFePO 4 Revealed by Li Isotope Exchange</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Phys. Chem C</title>
+              <imprint>
+                <biblScope unit="volume">121</biblScope>
+                <biblScope from="12025" to="12036" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">Synthesis, characterization and observation of antisite defects in LiNiPO4 nanomaterials</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kempaiah Devaraju</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Duc Truong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Hyodo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Sasaki</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Honma</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Rep</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="page">11041</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">Lithium Battery Material: Atomic-Scale Study of Defects, Lithium Mobility, and Trivalent Dopants</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Kuganathan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Islam</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Li2mnsio4</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Chem. Mater</title>
+              <imprint>
+                <biblScope unit="volume">21</biblScope>
+                <biblScope from="5196" to="5202" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Crystal structure, phase relations and electrochemical properties of monoclinic Li2MnSiO4</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Politaev</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Petrenko</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Nalbandyan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Medvedev</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Shvetsova</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Solid State Chem</title>
+              <imprint>
+                <biblScope unit="volume">180</biblScope>
+                <biblScope from="1045" to="1050" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">Impact of uniaxial strain and doping on oxygen diffusion in CeO2</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">J D</forename>
+                  <surname>Rushton</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Chroneos</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Rep</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope unit="page">6068</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title level="a" type="main">The General Utility Lattice Program (GULP)</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Gale</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Rohl</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Molec. Simul</title>
+              <imprint>
+                <biblScope unit="volume">29</biblScope>
+                <biblScope from="291" to="341" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">Potential models for ionic oxides</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Lewis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">R A</forename>
+                  <surname>Catlow</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Phys C: Solid State Phys</title>
+              <imprint>
+                <biblScope unit="volume">18</biblScope>
+                <biblScope unit="page">1149</biblScope>
+                <date type="published" when="1985"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b44">
+            <analytic>
+              <title level="a" type="main">Planar intergrowth structures in the ZnO-In2O3 system</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Mccoy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Grimes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Philos. Mag A</title>
+              <imprint>
+                <biblScope unit="volume">76</biblScope>
+                <biblScope from="1187" to="1201" unit="page"/>
+                <date type="published" when="1997"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b45">
+            <analytic>
+              <title level="a" type="main">Solution mechanisms for dopant oxides in yttria</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Busker</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Chroneos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Grimes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I.-W</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Am. Ceram. Soc</title>
+              <imprint>
+                <biblScope unit="volume">82</biblScope>
+                <biblScope from="1553" to="1559" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b46">
+            <analytic>
+              <title level="a" type="main">Defect cluster formation in M2O3-doped CeO2</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Minervini</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Zacate</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Grimes</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Solid State Ionics</title>
+              <imprint>
+                <biblScope unit="volume">116</biblScope>
+                <biblScope from="339" to="349" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b47">
+            <monogr>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">Reports</forename>
+                  <surname>Scientific</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1038/s41598-018-36398-w</idno>
+              <imprint>
+                <date type="published" when="2019"/>
+                <biblScope unit="volume">9</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b48">
+            <analytic>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A J</forename>
+                  <surname>Fisher</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Hart Prieto</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Islam</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Fe</forename>
+                  <surname>; M = Mn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Co</forename>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Ni</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Insights into Defect Association, Transport Mechanisms, and Doping Behavior</title>
+              <imprint>
+                <date type="published" when="2008"/>
+                <biblScope unit="volume">20</biblScope>
+                <biblScope from="5907" to="5915" unit="page"/>
+              </imprint>
+            </monogr>
+            <note>Lithium Battery Materials LiMPO4</note>
+          </biblStruct>
+          <biblStruct xml:id="b49">
+            <analytic>
+              <title level="a" type="main">GULP: A computer program for the symmetry-adapted simulation of solids</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Gale</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Chem. Soc. Faraday Trans</title>
+              <imprint>
+                <biblScope unit="volume">93</biblScope>
+                <biblScope from="629" to="637" unit="page"/>
+                <date type="published" when="1997"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b50">
+            <analytic>
+              <title level="a" type="main">Conduction in polar crystals. I. Electrolytic conduction in solid salts</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Mott</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Littleton</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Trans. Faraday Soc</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope from="485" to="499" unit="page"/>
+                <date type="published" when="1938"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

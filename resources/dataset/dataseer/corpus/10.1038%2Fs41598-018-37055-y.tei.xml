@@ -1,0 +1,1625 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T08:24+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Quantitative analysis of melanin content in a three-dimensional melanoma cell culture OPEN</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+        <date type="published">Published: xx xx xxxx</date>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Soobin</forename>
+                <surname>Chung</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName key="dep1" type="department">Center for Bioanalysis</orgName>
+                <orgName key="dep2" type="department">Division of Chemical and Medical Metrology</orgName>
+                <orgName type="institution">Korea Research Institute of Standards and Science</orgName>
+                <address>
+                  <addrLine>267 Gajeong-ro, Yuseong-gu</addrLine>
+                  <postCode>34113</postCode>
+                  <settlement>Daejeon</settlement>
+                  <country key="KR">Republic of Korea</country>
+                </address>
+              </affiliation>
+              <affiliation key="aff1">
+                <orgName type="department">Department of Bio-Analytical Science</orgName>
+                <orgName type="institution">University of Science &amp; Technology</orgName>
+                <address>
+                  <addrLine>217 Gajeong-ro, Youseong-gu</addrLine>
+                  <postCode>34113</postCode>
+                  <settlement>Daejeon</settlement>
+                  <country key="KR">Republic of Korea</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Gippeum</forename>
+                <forename type="middle">J</forename>
+                <surname>Lim</surname>
+              </persName>
+              <affiliation key="aff2">
+                <orgName type="department">Department of Biological Sciences</orgName>
+                <orgName type="institution">Korea Advanced Institute of Science and Technology</orgName>
+                <address>
+                  <addrLine>291 Daehak-ro, Yuseong-gu</addrLine>
+                  <postCode>34141</postCode>
+                  <settlement>Daejeon</settlement>
+                </address>
+              </affiliation>
+            </author>
+            <author role="corresp">
+              <persName>
+                <forename type="first">Ji</forename>
+                <forename type="middle">Youn</forename>
+                <surname>Lee</surname>
+              </persName>
+              <email>jylee@kriss.re.kr</email>
+              <affiliation key="aff0">
+                <orgName key="dep1" type="department">Center for Bioanalysis</orgName>
+                <orgName key="dep2" type="department">Division of Chemical and Medical Metrology</orgName>
+                <orgName type="institution">Korea Research Institute of Standards and Science</orgName>
+                <address>
+                  <addrLine>267 Gajeong-ro, Yuseong-gu</addrLine>
+                  <postCode>34113</postCode>
+                  <settlement>Daejeon</settlement>
+                  <country key="KR">Republic of Korea</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Quantitative analysis of melanin content in a three-dimensional melanoma cell culture OPEN</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date type="published">Published: xx xx xxxx</date>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41598-018-37055-y</idno>
+          <note type="submission">Received: 5 September 2018 Accepted: 3 December 2018</note>
+          <note>1 SCIentIfIC REPORtS | (2019) 9:780 | Republic of Korea. Correspondence and requests for materials should be addressed to J.Y.L. (</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>Reliable measurement of the amount of melanin produced by melanocytes is essential to study various skin disorders and to evaluate the efficacy of candidate reagents for such disorders or for whitening purposes.</s>
+            <s>Conventional melanin quantification methods are based on absorption spectroscopy, which measures the melanin from lysed cells grown on two-dimensional (2D) surfaces.</s>
+            <s>The 2D culture environment is intrinsically different from in vivo systems though, and therefore cells often lose their original phenotypes.</s>
+            <s>Melanocytes in particular lose their ability to synthesize melanin, thereby requiring melanogenesis stimulators such as alpha-melanocyte stimulating hormone (α-MSH) to promote melanin synthesis.</s>
+            <s>In this study, we compared melanin synthesis in B16 murine melanoma cells grown in 2D and three-dimensional culture environments.</s>
+            <s>B16 cells instantly formed an aggregate in a hanging-drop culture, and synthesized melanin efficiently without treatment of α-MSH.</s>
+            <s>We were able to measure the melanin secreted from a single melanocyte aggregate, indicating that our method enables non-invasive long-term monitoring of melanin synthesis and secretion in a high-throughput format.</s>
+            <s>We successfully tested the developed platform by quantifying the depigmenting effects of arbutin and kojic acid.</s>
+          </p>
+          <p>
+            <s>In vitro assays to measure the amount of melanin, a natural pigment and the primary determinant of skin color, are essential in many studies of skin disorders and for whitening purposes.</s>
+            <s>As highlighted in numerous articles, melanin plays a regulatory role in epidermal homeostasis and melanoma behavior <ref target="#b0" type="bibr">[1]</ref>
+              <ref target="#b1" type="bibr">[2]</ref>
+              <ref target="#b2" type="bibr">[3]</ref> .</s>
+            <s>To demonstrate the efficacy of substances that regulate melanin synthesis and secretion, diverse platforms are employed: two-dimensional (2D) cell culture models, animal models, and three-dimensional (3D) models including artificial skin (i.e.</s>
+            <s>skin equivalent).</s>
+            <s>The 2D cell culture platform is the most commonly used, where cells adhere to a flat and solid surface and grow as a single layer.</s>
+            <s>This differs from the in vivo environment though, as it fails to recapitulate the complex microenvironment of actual tissue.</s>
+            <s>Cells cultured in a 2D environment tend to exhibit different phenotypes as well as different responses to external stimuli, such as drugs, compared with cells cultured in a 3D environment 4 .</s>
+            <s>Animal models mainly employ mice in skin biology and skin cancer research because their skin is more similar to human skin than other animals 5 ; despite this similarity though, mice and human systems are still quite divergent <ref target="#b3" type="bibr">4,</ref>
+              <ref target="#b5" type="bibr">6,</ref>
+              <ref target="#b6" type="bibr">7</ref> .</s>
+            <s>Therefore, the 3D culture model has arisen as an attractive candidate to overcome the drawbacks of both the 2D model, which lacks in vivo context, and the animal model, which cannot faithfully reproduce the human system and possesses ethical issues.</s>
+            <s>Three-dimensional cell culture models include explantations of tissues, artificial skin, and cellular spheroids <ref target="#b7" type="bibr">8,</ref>
+              <ref target="#b8" type="bibr">9</ref> .</s>
+            <s>Artificial skin is an in vitro model having a structure and characteristics similar to real skin tissue.</s>
+            <s>Since it exhibits reactions similar to those occurring in the body when exposed to external stimuli, it is becoming a popular in vitro model to replace animal models.</s>
+            <s>However, artificial skin is expensive, and its composition and construction has not yet been standardized.</s>
+            <s>In addition, it is not yet available in the 96-well plate format and consequently, is not suitable for high-throughput screening.</s>
+            <s>From this point of view, cellular spheroids or aggregates present opportunities for an affordable screening platform to overcome the disadvantages of artificial skin.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <p>
+          <s>In vitro assays to measure the amount of melanin, a natural pigment and the primary determinant of skin color, are essential in many studies of skin disorders and for whitening purposes.</s>
+          <s>As highlighted in numerous articles, melanin plays a regulatory role in epidermal homeostasis and melanoma behavior <ref target="#b0" type="bibr">[1]</ref>
+            <ref target="#b1" type="bibr">[2]</ref>
+            <ref target="#b2" type="bibr">[3]</ref> .</s>
+          <s>To demonstrate the efficacy of substances that regulate melanin synthesis and secretion, diverse platforms are employed: two-dimensional (2D) cell culture models, animal models, and three-dimensional (3D) models including artificial skin (i.e.</s>
+          <s>skin equivalent).</s>
+          <s>The 2D cell culture platform is the most commonly used, where cells adhere to a flat and solid surface and grow as a single layer.</s>
+          <s>This differs from the in vivo environment though, as it fails to recapitulate the complex microenvironment of actual tissue.</s>
+          <s>Cells cultured in a 2D environment tend to exhibit different phenotypes as well as different responses to external stimuli, such as drugs, compared with cells cultured in a 3D environment <ref target="#b3" type="bibr">4</ref> .</s>
+          <s>Animal models mainly employ mice in skin biology and skin cancer research because their skin is more similar to human skin than other animals <ref target="#b4" type="bibr">5</ref> ; despite this similarity though, mice and human systems are still quite divergent <ref target="#b3" type="bibr">4,</ref>
+            <ref target="#b5" type="bibr">6,</ref>
+            <ref target="#b6" type="bibr">7</ref> .</s>
+          <s>Therefore, the 3D culture model has arisen as an attractive candidate to overcome the drawbacks of both the 2D model, which lacks in vivo context, and the animal model, which cannot faithfully reproduce the human system and possesses ethical issues.</s>
+          <s>Three-dimensional cell culture models include explantations of tissues, artificial skin, and cellular spheroids <ref target="#b7" type="bibr">8,</ref>
+            <ref target="#b8" type="bibr">9</ref> .</s>
+          <s>Artificial skin is an in vitro model having a structure and characteristics similar to real skin tissue.</s>
+          <s>Since it exhibits reactions similar to those occurring in the body when exposed to external stimuli, it is becoming a popular in vitro model to replace animal models.</s>
+          <s>However, artificial skin is expensive, and its composition and construction has not yet been standardized.</s>
+          <s>In addition, it is not yet available in the 96-well plate format and consequently, is not suitable for high-throughput screening.</s>
+          <s>From this point of view, cellular spheroids or aggregates present opportunities for an affordable screening platform to overcome the disadvantages of artificial skin.</s>
+        </p>
+        <p>
+          <s>SCIentIfIC REPORtS | (2019) 9:780 | DOI:10.1038/s41598-018-37055-y</s>
+          <s>A cellular spheroid is a 3D cell culture model based on the principle that cells in suspension assemble and form aggregations by cell−cell adhesion when cell−surface interaction is prevented.</s>
+          <s>Such aggregates can be produced by simple methods without special techniques or equipment, with large scale culture possible <ref target="#b9" type="bibr">10,</ref>
+            <ref target="#b10" type="bibr">11</ref> .</s>
+          <s>Thus, the spheroid model can be useful in screening candidate substances for pigmentation or depigmentation prior to using costly and time-consuming artificial skin or animal models.</s>
+        </p>
+        <p>
+          <s>For melanin in particular, diverse analytical methods have been employed for quantification, including fluorescence spectrophotometry <ref target="#b11" type="bibr">12</ref> , electron paramagnetic resonance spectrometry <ref target="#b12" type="bibr">[13]</ref>
+            <ref target="#b13" type="bibr">[14]</ref>
+            <ref target="#b14" type="bibr">[15]</ref> , high performance liquid chromatography <ref target="#b15" type="bibr">16</ref> , and absorption spectroscopy <ref target="#b16" type="bibr">[17]</ref>
+            <ref target="#b17" type="bibr">[18]</ref>
+            <ref target="#b18" type="bibr">[19]</ref> .</s>
+          <s>Among them, absorption spectroscopy is the most widely used method because the experimental procedure is simple, and does not require bulky equipment or skilled operators.</s>
+          <s>However, as cells are dissolved in a strong basic solvent at high temperature prior to measurement, this method is destructive and can only be used for end-point measurements <ref target="#b18" type="bibr">19,</ref>
+            <ref target="#b19" type="bibr">20</ref> .</s>
+          <s>In response to this issue, a method for culturing cells in a microplate has been proposed <ref target="#b17" type="bibr">18,</ref>
+            <ref target="#b20" type="bibr">21</ref> , where extracellular melanin secreted into the cell culture medium is non-invasively measured.</s>
+          <s>Both the recording of extracellular melanin levels and the observation of changes in cellular morphology or confluency can be done over time.</s>
+          <s>Further, at the end of the culture, cells can be used to perform additional assays, such as measuring the amount of melanin existing in the cell pellet or measuring the activity of enzymes related to melanogenesis.</s>
+        </p>
+        <p>
+          <s>In this study, we developed an in vitro assay for melanin measurement by combining a 3D cell culture with non-invasive absorption measurement in a well-plate format.</s>
+          <s>We first investigated melanin production by melanocytes in conventional 2D cultures, and then in 3D culture.</s>
+          <s>Finally, we quantitatively measured the inhibitory effect of a few depigmenting agents on the production of melanin using the developed assay.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results and Discussion</head>
+        <p>
+          <s>2D monolayer melanocyte culture and the effect of α-MSH treatment on melanocytes.</s>
+          <s>Before exploring the melanin production by melanocytes in a 3D culture, we investigated the melanogenesis characteristics of our cell lines in a conventional 2D monolayer culture.</s>
+          <s>B16 cells are melanoma cell lines derived from C57BL/6 mice 22 , which produce melanin and display metastatic behaviors.</s>
+          <s>Thus, B16 cells are widely used to study melanogenesis and depigmentation <ref target="#b22" type="bibr">23</ref> , tumor metastasis <ref target="#b23" type="bibr">24</ref> , and for cytotoxicity measurements of various substances in skin models <ref target="#b24" type="bibr">25</ref> .</s>
+          <s>In a 2D culture, B16 cells gradually lose their ability to synthesize melanin as subculture continues <ref target="#b25" type="bibr">26,</ref>
+            <ref target="#b26" type="bibr">27</ref> .</s>
+          <s>The cells should therefore be pigmented in advance to be used for depigmentation studies; alpha-melanocyte stimulating hormone (α-MSH) is one of the most commonly employed reagents for pigmentation.</s>
+          <s>It activates adenylate cyclase to escalate the level of cyclic adenosine monophosphate inside of the melanocytes, thereby promoting melanocyte growth and inducing melanogenesis <ref target="#b27" type="bibr">28,</ref>
+            <ref target="#b28" type="bibr">29</ref> .</s>
+          <s>The nonessential amino acid L-tyrosine contained in most cell culture media may stimulate melanogenesis in a hormone-like manner <ref target="#b29" type="bibr">30</ref> ; however, this stimulation by L-tyrosine is insignificant compared to that by α-MSH.</s>
+        </p>
+        <p>
+          <s>With reference to values from previous studies, commonly used B16 cell lines B16F10 and B16F1 were treated with α-MSH ranging from 10 to 50 nM.</s>
+          <s>Upon α-MSH treatment, the cellular shape changed dendritically and the color of the cell pellet, which initially appeared white to gray, turned brown to black, indicating melanin synthesis <ref type="figure">(Fig. 1A)</ref> .</s>
+          <s>Such dendritic extensions of melanocytes are known to be essential for the transfer of melanosomes from melanocytes to surrounding keratinocytes <ref target="#b30" type="bibr">31,</ref>
+            <ref target="#b31" type="bibr">32</ref> .</s>
+          <s>The treatment of α-MSH significantly inhibited cellular proliferation, and the amount of melanin did not increase by increasing α-MSH concentration <ref type="figure">(Fig. S1</ref> , Supplemental Information).</s>
+          <s>We then performed the same experiment using a lower range of α-MSH concentrations, from 0.001 to 10 nM.</s>
+          <s>In this range, both intra-and extracellular melanin increased in a dose-dependent manner in both B16F10 and B16F1 cells <ref type="figure">(Fig. 1B,C)</ref> .</s>
+          <s>In the case of B16F1 cells, as low as 0.01 nM of α-MSH induced a noticeable level of melanin synthesis.</s>
+          <s>The half maximal effective concentration (EC50) of α-MSH for both cell lines was calculated in the range of 100 to 400 pM.</s>
+          <s>Siegrist et al. also reported that B16F10 cells showed dose-dependent increase of extracellular melanin when they were treated with α-MSH in a concentration range of 0.001 to 1 nM, with an α-MSH EC50 of 27 pM <ref target="#b20" type="bibr">21</ref> .</s>
+          <s>The inhibition of cell growth by α-MSH was also observed in a dose-dependent manner <ref type="figure">(Fig. 1D</ref> ).</s>
+          <s>High concentrations of α-MSH (50-100 nM) might be preferred in depigmenting studies to demonstrate a dramatic effect of candidate substances without considering other effects such as proliferation inhibition.</s>
+        </p>
+        <p>
+          <s>While the level of extracellular melanin in control melanocytes without α-MSH treatment was negligible, the amount of measured intracellular melanin was substantial (several picograms per cell).</s>
+          <s>This raised the question of whether the determined value originated from the intracellular melanin or from other cellular substances in the lysate: when we measure the absorbance from a pellet, we measure the whole lysate, which contains diverse cellular matter including proteins and lipids.</s>
+          <s>The turbidity from those components may contribute to the absorbance, and therefore the melanin amount can be overestimated.</s>
+          <s>To answer this question, we measured the absorbance of cell lysate from a few different cell lines that do not produce melanin.</s>
+          <s>Most of the tested cells showed a similar or lower level of absorbance to unpigmented B16F10 and B16F1 cells <ref target="#fig_1" type="figure">(Fig. S2</ref> , Supplemental Information), but one tested line (MCF7) showed a considerable level of absorbance.</s>
+          <s>We suppose that such high absorbance of MCF7 mainly resulted from other cellular matter, because the absorbance decreased significantly after centrifugation, unlike the case of B16 cells.</s>
+          <s>When we measure relative parameters such as EC50, the background absorbance by cellular substances can be ignored.</s>
+          <s>However, the level of background absorbance should be considered when the absolute quantification of melanin is being sought.</s>
+          <s>This phenomenon can be overcome by using a real sample-like standard curve, for example a melanin spike-in to a cell lysate.</s>
+          <s>We also note that, for a better quantification, one should consider using natural melanin to prepare a standard curve because calibration with synthetic melanin may cause a systematic bias in measuring natural melanin in culture.</s>
+        </p>
+        <p>
+          <s>3D melanocyte culture and non-invasive measurement of melanin.</s>
+          <s>In our study, we made an aggregate of B16 cells by the hanging-drop method as described in <ref type="figure">Fig</ref> was recorded by time-lapse live imaging <ref target="#fig_2" type="figure">(Fig. 3A</ref> , and Supplemental Video).</s>
+          <s>Initially, B16F10 cells were scattered in the hanging drop before gradually moving to the lower side of the drop due to gravity.</s>
+          <s>Adhesion among cells progressed to form an aggregate in about 12 hours, after which it grew continuously.</s>
+          <s>Most of the cells in the aggregate were live at 72 hours in culture <ref target="#fig_2" type="figure">(Fig. 3B)</ref> .</s>
+          <s>Interestingly, when we transferred the aggregates to a Petri dish for a prolonged culture in suspension, the culture medium appeared dark brown in color after a few days even without the presence of α-MSH, an observation also reported in other literature <ref target="#b32" type="bibr">33</ref> .</s>
+          <s>Since the addition of α-MSH can affect the cellular status (e.g.</s>
+          <s>proliferation inhibition), such spontaneous melanin production by cellular aggregation formation is a very attractive characteristic.</s>
+        </p>
+        <p>
+          <s>For high-throughput screening, a 96-well format is preferred over conventional dish or flask cultures.</s>
+          <s>First, cells grown in 3D can easily achieve a high cell density.</s>
+          <s>Also, the level of extracellular melanin in 3D-cultured cells was high enough to be detected with the naked eye, meaning that we can measure the extracellular melanin without destroying cells.</s>
+          <s>Therefore, 3D melanocyte culture in a 96-well plate format opens up the possibility of non-invasive high-throughput measurement of melanin.</s>
+          <s>With this culture, we systematically investigated melanocyte aggregate formation and quantitatively measured melanin production.</s>
+        </p>
+        <p>
+          <s>First, we tested different initial cell numbers for the aggregate formation.</s>
+          <s>B16F10 cells of all tested initial cell numbers (500, 1,000 and 2,000) successfully formed aggregates <ref target="#fig_2" type="figure">(Fig. S3(A)</ref> , Supplemental Information).</s>
+          <s>While melanocytes of higher initial cell number generated a larger aggregate and produced higher levels of melanin, the media in the drop acidified faster concurrently.</s>
+          <s>Thus, we decided to use 1,000 cells initially.</s>
+          <s>The melanocyte aggregate grew as a sheet several hundreds of microns thick, rather than as a spherical compact where the supply of oxygen and nutrition is limited.</s>
+          <s>Therefore, the size of B16 aggregates continuously increased over time without noticeable retardation until 6 days <ref target="#fig_2" type="figure">(Fig. S3(B)</ref> , Supplemental Information).</s>
+          <s>After 72 hours, the average diameter of the aggregate was about 681 ± 28 μm in the case of B16F10 cells.</s>
+          <s>B16F1 cells showed similar behavior in the process of cellular aggregation, but the growth rate was slower than that of B16F10 cells, as similarly observed in 2D culture (data not shown).</s>
+        </p>
+        <p>
+          <s>Although the hanging-drop method is an efficient and inexpensive way to produce a cellular aggregate, it has a few limitations.</s>
+          <s>A long-term culture is not feasible because of the small volume of the drop, which is usually 20 to 30 μL.</s>
+          <s>The drop is also prone to evaporation and pH change, and washing or treating reagents cells in the drop is not straightforward.</s>
+          <s>Therefore, we transferred the aggregate to an ultra-low attachment (ULA) flat-bottom 96-well plate after 72 hours and continued the culture for an additional 96 hours.</s>
+          <s>A larger culture volume (200-250 μL) accommodates an extended culture time, and the well-plate format provides the potential for high-throughput screening.</s>
+          <s>In tests using ULA plates from the beginning <ref target="#fig_2" type="figure">(Fig. 3A)</ref> , in the case of a flat-bottom plate, a few small aggregates of different sizes were generated, which were not applicable to our assay.</s>
+          <s>A round-bottom plate was suitable for generating an aggregate of uniform size, however the shape of the plate bottom caused a few problems elsewhere.</s>
+          <s>The center-location of the aggregate hindered measurement of extracellular melanin, and the poor optical transparency was inappropriate for reproducible absorbance measurements.</s>
+          <s>Therefore, the combination of the hanging-drop method with suspension culture in a ULA flat-bottom plate can be the most efficient way to cultivate melanocytes in 3D and to measure the melanin continuously over the course of the culture.</s>
+        </p>
+        <p>
+          <s>Next, we explored the synthesis and secretion of melanin by melanocyte aggregates.</s>
+          <s>The extracellular melanin was measured at 24-hour intervals <ref target="#fig_2" type="figure">(Fig. 3C)</ref> .</s>
+          <s>As measuring the cell number and culture volume of each 3D aggregate was infeasible, we used a distinct scale for 3D aggregate melanin production (µg/well).</s>
+          <s>Although color change in the culture media was not noticeable until 48 hours post transfer (PT) to the ULA 96-well plate, the amount of melanin per well continued to increase over time.</s>
+          <s>The color of the pellet also darkened over time, indicating active melanin synthesis <ref target="#fig_2" type="figure">(Fig. 3D)</ref> .</s>
+          <s>The amount of extracellular melanin also increased over time to reach 2.26 and 1.37 μg per well from B16F10 and B16F1 cells, respectively, at 96 hours PT.</s>
+          <s>The variation in measurement values between technical quadruplicates was relatively small, with a relative standard deviation lower than 15%.</s>
+        </p>
+        <p>
+          <s>We then investigated whether the addition of α-MSH further induces melanogenesis in melanocytes.</s>
+          <s>The amount of extracellular melanin significantly increased in a dose-dependent manner from 48 hours PT <ref target="#fig_3" type="figure">(Fig. S4</ref> , Supplemental Information).</s>
+          <s>At 96 hours PT, the extracellular melanin from 1 nM α-MSH-treated B16F10 cells was about nine times higher than that of untreated cells.</s>
+          <s>In the case of B16F1 cells, the enhancement was much more prominent, as we also observed in 2D culture.</s>
+          <s>Although α-MSH can further induce melanin production, the aggregates from both B16F10 and B16F1 cells produced enough melanin to be detected without the stimulation.</s>
+          <s>The culture time required to accumulate enough melanin to be measurable was similar with and without treatment.</s>
+          <s>Most of all, α-MSH was found to inhibit the proliferation of melanocytes even at a low concentration in our 2D study.</s>
+          <s>Therefore, the depigmenting study described below was conducted without the α-MSH treatment.</s>
+        </p>
+      </div>
+      <div>
+        <head>Measurement of depigmenting effects in 3D culture with non-invasive absorption spectroscopy.</head>
+        <p>
+          <s>Depigmenting agents are largely categorized into (1) substances involved in controlling the melanin synthesis process (e.g.</s>
+          <s>controlling the amount or activity of tyrosinase), <ref target="#b1" type="bibr">(2)</ref> substances that interfere with the transfer or dispersion of the melanosome, which is a melanin-containing organelle, and (3) substances that promote the turnover of skin cells <ref target="#b33" type="bibr">34,</ref>
+            <ref target="#b34" type="bibr">35</ref> .</s>
+          <s>Here, we tested three well-known depigmenting agents: arbutin, kojic acid, and niacinamide <ref target="#b35" type="bibr">36</ref> .</s>
+          <s>Arbutin is a β-D-glucopyranoside of hydroquinone, which serves as a competitive inhibitor for tyrosinase, a key enzyme in the melanogenesis pathway which inhibits the maturation of melanosomes.</s>
+          <s>Kojic acid (5-hydroxy-2-hydroxymethyl-4H-pyran-4-one) is a copper chelator and one of the most intensively studied tyrosinase inhibitors.</s>
+          <s>Niacinamide (vitamin B3, nicotinamide, 3-pyridinecarboxamide) is a biologically active form of niacin which interferes with melanosome transfer from melanocytes to keratinocytes.</s>
+        </p>
+        <p>
+          <s>Based on published depigmenting studies that employed depigmenting agents in a 100 to 1,000 μM range 5,37-39 , we chose a 500 μM concentration to demonstrate the developed assay, a concentration range known to be not cytotoxic <ref target="#b39" type="bibr">40</ref> .</s>
+          <s>Depigmenting agents were added at the time of transfer of melanocyte aggregate to the 96-well plate.</s>
+          <s>We monitored the morphology of cellular aggregates <ref target="#fig_4" type="figure">(Fig. S5, Supplemental Information)</ref> and the level of extracellular melanin <ref target="#fig_3" type="figure">(Fig. 4</ref> ).</s>
+          <s>There were no significant differences in size and morphology of aggregates following treatment of depigmenting agents, and both cell lines showed a similar trend in depigmentation.</s>
+          <s>The depigmenting effect of arbutin and kojic acid appeared from 72 hours PT, and became more evident at 96 hours PT, with kojic acid displaying a more pronounced effect of depigmentation.</s>
+          <s>For an easier comparison between samples, we defined a depigmenting index (DI) as the percentage of decreased melanin in treated samples to an untreated control, as described in the equation below, with data summarized in <ref type="table">Table 1</ref> .</s>
+        </p>
+        <formula xml:id="formula_0">= − × Melanin M elanin Melanin</formula>
+        <p>
+          <s>Depigmenting index (DI, %) 100 untreated t reated treated DI was slightly higher in B16F10 cells in general.</s>
+          <s>Kojic acid was the most effective depigmenting agent among tested substances at a concentration of 500 μM, a result consistent with a previous study where kojic acid was more effective than arbutin at a concentration of 500 μM <ref target="#b37" type="bibr">38</ref> .</s>
+          <s>Niacinamide did not display any depigmenting effect: since niacinamide is involved in the transfer of melanosomes to keratinocytes, it is known that it does not exhibit a depigmenting effect in an environment in which melanocytes are cultured alone <ref target="#b30" type="bibr">31</ref> .</s>
+          <s>Interestingly, niacinamide rather significantly increased the level of extracellular melanin after 72 hours PT.</s>
+        </p>
+        <p>
+          <s>SCIentIfIC REPORtS | (2019) 9:780 | DOI:10.1038/s41598-018-37055-y</s>
+        </p>
+        <p>
+          <s>We measured the extracellular melanin from a spheroid lysate at the end of the culture to compare the developed method to the conventional one <ref type="figure">(Fig. S6, Supplemental Information)</ref> .</s>
+          <s>The result was similar in that both arbutin and kojic acid displayed a depigmenting effect while niacinamide did not.</s>
+          <s>However, in conventional melanin measurement, arbutin appeared to be more effective than kojic acid, and niacinamide did not enhance the intracellular melanin production at all.</s>
+          <s>Explaining this discrepancy is out of our current scope, but we suggest that the potential differences between the intra-and extracellular melanin measurements should be considered.</s>
+        </p>
+        <p>
+          <s>Lastly, we investigated the melanin production of B16 cell aggregates when they were treated with 10 to 2,000 μM of each depigmenting agent.</s>
+          <s>While arbutin did not show a dose-dependent response in the extracellular melanin, kojic acid and niacinamide did, albeit in a very different direction from 72 hours PT (Figs 5 and S7, Supplemental Information).</s>
+          <s>Kojic acid showed a typical sigmoidal dose-dependent response, and the EC50 for B16F10 cells was calculated to be 115.8</s>
+          <s>± 8.0 μM.</s>
+          <s>Niacinamide did not affect melanin production in the range of 10 to 200 μM, however concentrations higher than 500 μM induced a high level of melanin production in a dose-dependent manner.</s>
+          <s>The size and morphology of the B16 aggregates did not change up to 500 µM of each depigmenting agent <ref type="figure">(Fig. S8, Supplemental Information)</ref> .</s>
+          <s>However, at concentrations higher than 1,000 µM, the B16 aggregates were considerably smaller in size and more compact in morphology.</s>
+          <s>Therefore, a concentration lower than 500 µM is recommended for the tested depigmenting agents in 3D cultured B16 cells.</s>
+        </p>
+        <p>
+          <s>In summary, we developed a non-invasive melanin quantification method based on a 3D culture of B16F10 and B16F1 cells, which can be potentially used for a high-throughput screening of depigmenting agents.</s>
+          <s>The method combined a 3D melanocyte aggregation from a hanging-drop array with a suspension culture in a ULA 96-well plate.</s>
+          <s>B16 melanocytes restored their melanin production ability by simply forming an aggregate without the addition of stimulant.</s>
+          <s>We could measure the depigmenting effect of a few depigmenting agents non-invasively using a single melanocyte aggregate.</s>
+          <s>As a result, the melanocyte aggregate can be used as an alternative to the artificial skin model, and fill the gap between the experimental stages of 2D and animal models.</s>
+          <s>We envision that the developed platform can be employed to enable a high-throughput screening of substances involved in the melanin synthesis process of melanocytes.</s>
+        </p>
+      </div>
+      <div>
+        <head>Methods</head>
+        <p>
+          <s>2D melanocyte culture and melanogenesis induction by α-MSH treatment.</s>
+          <s>The murine melanoma cell lines B16F10 and B16F1 (ATCC) were cultured in Dulbecco's Modified Eagle Media (DMEM) supplemented with 10% fetal bovine serum, 100 U/mL penicillin, and 100 μg/mL streptomycin.</s>
+          <s>DMEM without phenol red was used for melanin measurements because phenol red, a pH indicator added to culture medium, can interfere with absorbance measurements.</s>
+          <s>Cells were cultured in a humidified incubator in which 5% CO 2 was supplied and maintained at 37 °C.</s>
+          <s>All cell culture supplies were purchased from ThermoFisher Scientific unless otherwise indicated.</s>
+          <s>Alpha-melanocyte stimulating hormone (Sigma-Aldrich) was used to induce melanin synthesis in melanocytes.</s>
+          <s>A stock solution of 0.5 mM of α-MSH was prepared in deionized water, and then diluted in a phenol red-free cell culture medium to final concentrations.</s>
+          <s>Melanocytes were incubated for 24 hours at an initial concentration of approximately 1.8 × 10 3 cells/cm 2 .</s>
+          <s>After 72 hours, the cell pellet and the culture medium were collected.</s>
+          <s id="0" type="Tabular data">The cell number was estimated from a cell counting using an automatic cell counter (Countess, Invitrogen).</s>
+        </p>
+        <p>
+          <s>3D melanocyte culture and characterization of melanocyte aggregates.</s>
+          <s>The hanging-drop method was used to create melanocyte aggregates.</s>
+          <s>Methylcellulose was added to the cell culture medium at a concentration of 0.24% w/v to make a cell suspension containing an appropriate number of cells.</s>
+          <s>An array of 25 μL drops of culture medium containing 500 to 2,000 cells was made on the lid of the culture dish.</s>
+          <s>Then the lid was carefully flipped over and placed on the top of the 1× PBS-filled culture dish to minimize evaporation of the drop.</s>
+          <s>After 72 hours in a hanging-drop culture, each aggregate was collected and transferred to each well of a ULA flat-bottom 96-well microplate (Corning) using a low-binding tip with a special coating to prevent the aggregate from sticking to the pipette tip.</s>
+          <s>We used a compact imaging device (Juli Br, NanoEnTek) which can be accommodated in a conventional CO 2 incubator to record the formation and growth of melanocyte aggregates.</s>
+          <s id="1" type="Image">Time-series images were obtained at intervals of 30 minutes for 72 hours.</s>
+          <s>For live/dead cell staining, melanocyte aggregates were washed once with 1× PBS and labeled with calcein AM and ethidium homodimer-1.</s>
+        </p>
+        <p>
+          <s>Treatment of depigmenting agents.</s>
+          <s>Arbutin, kojic acid, and niacinamide were purchased from Sigma-Aldrich, dissolved in deionized water at 20 mM, and stored at −20 °C until use.</s>
+          <s>At the time of use, each depigmenting agent was diluted to an appropriate concentration in a phenol red-free cell culture medium.</s>
+          <s>In the case of monolayer culture, depigmenting agents were added along with α-MSH.</s>
+          <s>In the case of 3D culture, the depigmenting agents were added to the cell culture medium when melanocyte aggregates were transferred to the well plate from hanging-drops at 72 hours after the cell seeding.</s>
+          <s>Then the melanocyte aggregates were exposed to depigmenting agents for an additional 96 hours.</s>
+        </p>
+        <p>
+          <s>Measurement of the amount of melanin.</s>
+          <s>When measuring the intracellular melanin from a cell pellet, 100 μL of 1 N NaOH containing 10% DMSO was added to the pellet and heated at 80 °C for 90 minutes.</s>
+          <s id="2" type="Tabular data">Absorbance was then measured at 490 nm using an EnSpire multimode plate reader (Perkin Elmer).</s>
+          <s>To convert the absorbance value to the amount of melanin, a standard curve was obtained from 0 to 500 μg/mL of synthetic melanin (Sigma-Aldrich) solution dissolved in 1 N NH <ref target="#b3" type="bibr">4</ref> OH.</s>
+          <s>When measuring the extracellular melanin in 2D culture, 200 μL of the cell culture medium was transferred to a 96-well plate and the absorbance was read.</s>
+          <s>In the case of 3D culture, the culture medium in the well plate was read directly by a plate reader.</s>
+          <s>To avoid possible interference with absorbance by a melanocyte aggregate being present in the path of the light, the aggregate was positioned on the edge of the well by slightly tilting the microplate.</s>
+          <s>Measurement was performed after confirming the relocation of cell aggregates to the edge of the well.</s>
+          <s>We used a standard curve obtained from synthetic melanin dissolved in 1 N NH <ref target="#b3" type="bibr">4</ref> OH, diluted in a culture medium.</s>
+          <s>The absorbance was averaged from three wells, and each experiment was performed in duplicate or triplicate.</s>
+        </p>
+        <p>
+          <s>Statistical analysis.</s>
+          <s>Experiments were independently repeated at least in triplicate.</s>
+          <s>Error bars in the graphical data represent standard deviations.</s>
+          <s>A two-tailed t-test was used for statistical analysis using Excel 2013 (Microsoft), and statistical significance was claimed when the p-value was lower than 0.05.</s>
+        </p>
+      </div>
+      <div>
+        <head>Data Availability</head>
+        <p>
+          <s>The datasets generated during the current study are available from the corresponding author on reasonable request.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>. 2 .Figure 1 .</head>
+        <label>21</label>
+        <figDesc>Figure 1. Effect of α-MSH treatment on melanin synthesis and proliferation of 2D cultured melanocytes. α-MSH-induced melanin synthesis of 2D cultured B16 cells. (A) 10 nM of α-MSH treatment for 72 hours induced noticeable melanogenesis in both cell lines. Typical dendritic morphology and dark pigmentation were observed. Scale bar = 200 μm. The amount of (B) intracellular and (C) extracellular melanin showed a dosedependent response in both cell lines. (D) The proliferation of B16 cells was inhibited by α-MSH treatment. The significant difference was analyzed by t-test (*p &lt; 0.05).</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Figure 2 .</head>
+        <label>2</label>
+        <figDesc>Figure 2. Schematic overview of the developed method for a non-invasive measurement of extracellular melanin from 3D-cultured melanocytes. (Step 1) Melanocytes are allowed to form an aggregate in a hanging drop for 72 hours. (Step 2) The aggregates are transferred to a ULA flat-bottom 96-well plate with or without the addition of depigmenting agents. (Step 3) The melanin present in cell culture medium is monitored by measuring the absorbance at 490 nm for 4 days.</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Figure 3 .</head>
+        <label>3</label>
+        <figDesc>Figure 3. 3D culture of melanocytes and their spontaneous melanin production. (A) B16F10 cells formed a single aggregate in a hanging-drop and a ULA round-bottom plate, but they formed a few small aggregates in a flat-bottom plate. (B) Live/dead staining of a B16F10 aggregate demonstrates that most of the cells are live after 72 hours of culture in a hanging drop. (C) Melanocyte aggregates in a 3D culture produced melanin without the addition of melanin-synthesizing hormones. (D) A pellet of melanocyte aggregate demonstrated the increase of melanin production by time.</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Figure 4 .</head>
+        <label>4</label>
+        <figDesc>Figure 4. Depigmenting effects of arbutin, kojic acid, and niacinamide on melanocytes in a 3D culture. Timecourse change of extracellular melanin production in (A) B16F10 and (B) B16F1 cells. The significant difference was analyzed by t-test (*p &lt; 0.05).</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Figure 5 .</head>
+        <label>5</label>
+        <figDesc>Figure 5. Dose-response of tested depigmenting agents in B16F10 aggregates at 96 hours PT. (A) The amount of extracellular melanin did not significantly change with different concentrations of arbutin. (B) Kojic acid showed a typical dose-dependent depigmentation. (C) Niacinamide concentrations higher than 500 μM significantly induced melanin production.</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>Table 1. Depigmenting index of arbutin, kojic acid, and niacinamide obtained from 3D cultured B16 cells.</figDesc>
+        <table>B16F10 
+B16F1 
+
+Arbutin Kojic acid Niacinamide Arbutin Kojic acid Niacinamide 
+
+Time PT (hr) DI (%) of extracellular melanin 
+
+72 
+11.22 
+36.10 
+−59.42 
+5.45 
+30.65 
+−25.20 
+
+96 
+34.39 
+53.57 
+−129.37 
+27.76 
+51.60 
+−64.11 
+
+DI (%) of intracellular melanin 
+
+72 
+33.03 
+28.72 
+−18.67 
+30.43 
+−0.95 
+−25.68 
+
+96 
+36.88 
+27.98 
+1.27 
+26.15 
+14.08 
+−4.69 
+
+SCIentIfIC REPORtS | 
+(2019) 9:780 | DOI:10.1038/s41598-018-37055-y 
+
+</table>
+      </figure>
+      <note place="foot">© The Author(s) 2019</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>This work was supported from the Korea Research Institute of Standards and Science (GP2018-0006-04) and the National Research Council of Science and Technology (DRC-14-2-KRISS).</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Author Contributions</head>
+          <note type="other">Idea</note>
+        </div>
+        <div>
+          <head>Additional Information</head>
+          <p>
+            <s>Supplementary information accompanies this paper at https://doi.org/10.1038/s41598-018-37055-y.</s>
+          </p>
+        </div>
+        <div>
+          <head>Competing Interests:</head>
+          <p>
+            <s>The authors declare no competing interests.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">The role of melanin pigment in melanoma</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Slominski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Zmijewski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Slominski</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Exp. Dermatol</title>
+              <imprint>
+                <biblScope unit="volume">24</biblScope>
+                <biblScope from="258" to="259" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Melanin pigmentation in mammalian skin and its hormonal regulation</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Slominski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Tobin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Shibahara</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Wortsman</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Physiol. Rev</title>
+              <imprint>
+                <biblScope unit="volume">84</biblScope>
+                <biblScope from="1155" to="1228" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Melanogenesis affects overall and disease-free survival in patients with stage III and IV melanoma</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Brozyna</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Jóźwicki</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Carlson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Slominski</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Hum. Pathol</title>
+              <imprint>
+                <biblScope unit="volume">44</biblScope>
+                <biblScope from="2071" to="2074" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Artificial skin in perspective: Concepts and applications</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Brohem</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Pigment Cell Melanoma Res</title>
+              <imprint>
+                <biblScope unit="volume">24</biblScope>
+                <biblScope from="35" to="50" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Evaluation of in vitro and in vivo depigmenting activity of raspberry ketone from Rheum officinale</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">C H</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int. J. Mol. Sci</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope from="4819" to="4835" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">New insights into skin structure: Scratching the surface</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Menon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Adv. Drug Deliv. Rev</title>
+              <imprint>
+                <biblScope unit="volume">54</biblScope>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">A computational skin model: Fold and wrinkle formation</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Magnenat-Thalmann</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">IEEE Trans. Inf. Technol. Biomed</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope from="317" to="323" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">The third dimension bridges the gap between cell culture and live tissue</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Pampaloni</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Reynaud</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Stelzer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Rev. Mol. Cell Biol</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope from="839" to="845" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Recent advances in three-dimensional multicellular spheroid culture for biomedical research</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">Z</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Chang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biotechnol. J</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="1172" to="1184" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Critical analysis of 3-D organoid in vitro cell culture models for high-throughput drug candidate toxicity assessments</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Astashkina</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Grainger</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Adv. Drug Deliv. Rev. 69</title>
+              <imprint>
+                <biblScope unit="volume">70</biblScope>
+                <biblScope from="1" to="18" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">3D tumor spheroids: an overview on the tools and techniques used for their analysis</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Costa</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biotechnol. Adv</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope from="1427" to="1441" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Fluorescent quantification of melanin</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Fernandes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Matama</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Guimaraes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Gomes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Cavaco-Paulo</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Pigment Cell Melanoma Res</title>
+              <imprint>
+                <biblScope unit="volume">29</biblScope>
+                <biblScope from="707" to="712" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Peroxisome proliferator-activated receptor α (PPARα) contributes to control of melanogenesis in B16 F10 melanoma cells</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Grabacka</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Arch. Dermatol. Res</title>
+              <imprint>
+                <biblScope unit="volume">309</biblScope>
+                <biblScope from="141" to="157" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Electron paramagnetic resonance spectrometry and imaging in melanomas: Comparison between pigmented and nonpigmented human malignant melanomas</title>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Godechal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Ghanem</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Cook</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Gallez</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol. Imaging</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope from="218" to="223" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Influence of paramagnetic melanin on the MRI contrast in melanoma: A combined high-field (11.7 T) MRI and EPR study</title>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Godechal</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Contrast Media Mol. Imaging</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope from="154" to="160" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Non-invasive quantification of melanin in the stratum corneum: A novel indicator of skin lesions in pigmentation diseases</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Matsunaka</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Yamamoto</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Furukawa</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Skin. Res. Technol</title>
+              <imprint>
+                <biblScope unit="volume">104</biblScope>
+                <biblScope unit="page">111</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Methodology for evaluation of melanin content and production of pigment cells in vitro</title>
+              <author>
+                <persName>
+                  <forename type="first">D.-N</forename>
+                  <surname>Hu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Photochem. Photobiol</title>
+              <imprint>
+                <biblScope unit="volume">84</biblScope>
+                <biblScope from="645" to="649" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Effect of Hoechunyangkyeok-San extract on melanogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Jung</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Park</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Yoon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Cosmet. Dermatological Sci. Appl</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope from="85" to="95" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Determination of melanin in human hair by photoacoustic spectroscopy</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Watanabe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Tamura</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Yoshimura</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Nakazawa</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Anal. Biochem</title>
+              <imprint>
+                <biblScope unit="volume">254</biblScope>
+                <biblScope from="267" to="271" unit="page"/>
+                <date type="published" when="1997"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Advanced chemical methods in melanin determination</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Wakamatsu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ito</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Pigment Cell Melanoma Res</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope from="174" to="183" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">In situ melanin assay for MSH using mouse B16 melanoma cells in culture</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Siegrist</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Eberle</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Anal. Biochem</title>
+              <imprint>
+                <biblScope unit="volume">159</biblScope>
+                <biblScope from="191" to="197" unit="page"/>
+                <date type="published" when="1986"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Specificity of arrest, survival, and growth of selected metastatic variant cell lines</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Nicolson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cancer Res</title>
+              <imprint>
+                <biblScope unit="volume">38</biblScope>
+                <biblScope from="4105" to="4111" unit="page"/>
+                <date type="published" when="1978"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Transforming growth factor-β1 inhibits basal melanogenesis in B16/F10 mouse melanoma cells by increasing the rate of degradation of tyrosinase and tyrosinase-related protein-1</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Martínez-Esparza</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Biol. Chem</title>
+              <imprint>
+                <biblScope unit="volume">272</biblScope>
+                <biblScope from="1" to="7" unit="page"/>
+                <date type="published" when="1997"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Interactions among clonal subpopulations affect stability of the metastatic phenotype in polyclonal populations of B16 melanoma cells</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Poste</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Doll</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Fidler</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proc. Natl. Acad. Sci. USA</title>
+              <imprint>
+                <biblScope unit="volume">78</biblScope>
+                <biblScope from="6226" to="6230" unit="page"/>
+                <date type="published" when="1981"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Free radical scavenging activities measured by electron spin resonance spectroscopy and B16 cell antiproliferative behaviors of seven plants</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Calliste</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Trouillas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Allais</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Simon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Duroux</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Agric. Food Chem</title>
+              <imprint>
+                <biblScope unit="volume">49</biblScope>
+                <biblScope from="3321" to="3327" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">In vitro dedifferentiation of melanocytes from adult epidermis</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Kormos</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS One</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="page">17197</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Downregulation of NFAT2 promotes melanogenesis in B16 melanoma cells</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Anat. Cell Biol</title>
+              <imprint>
+                <biblScope unit="volume">43</biblScope>
+                <biblScope from="303" to="309" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Melanocyte stimulating hormone (αMSH) stimulates normal human melanocyte growth by binding to highaffinity receptors</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Luca</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Cell Sci</title>
+              <imprint>
+                <biblScope unit="volume">105</biblScope>
+                <biblScope from="1079" to="1084" unit="page"/>
+                <date type="published" when="1993"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">α-Melanocyte stimulating hormone and its analogue Nle4DPhe7α-MSH affect morphology, tyrosinase activity and melanogenesis in cultured human melanocytes</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Hunt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Todd</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Cresswell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Thody</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Cell Sci</title>
+              <imprint>
+                <biblScope unit="volume">211</biblScope>
+                <biblScope from="205" to="211" unit="page"/>
+                <date type="published" when="1994"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">L-tyrosine and L-dihydroxyphenylalanine as hormone-like regulators of melanocyte functions</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Slominski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Zmijewski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Pawelek</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Pigment Cell Melanoma Res</title>
+              <imprint>
+                <biblScope unit="volume">25</biblScope>
+                <biblScope from="14" to="27" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">A melanocyte-keratinocyte coculture model to assess regulators of pigmentation in vitro</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Lei</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Virador</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Vieira</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Hearing</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Anal. Biochem</title>
+              <imprint>
+                <biblScope unit="volume">305</biblScope>
+                <biblScope from="260" to="268" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">The cAMP signaling pathway has opposing effects on Rac and Rho in B16F10 cells: Implications for dendrite formation in melanocytic cells</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Scott</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Leopardi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Pigment Cell Mealnoma Res</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope from="139" to="148" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">A novel culture system to induce melanin synthesis by three-dimensional spheroid culture</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Roh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Jung</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Park</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biotechnol. Bioprocess Eng</title>
+              <imprint>
+                <biblScope unit="volume">20</biblScope>
+                <biblScope from="194" to="200" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Overview of skin whitening agents with an insight into the illegal cosmetic market in Europe</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Desmedt</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Eur. Acad. Dermatol. Venereol</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope from="943" to="950" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Current clinical use of depigmenting agents</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Shin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Park</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Dermatologica Sin</title>
+              <imprint>
+                <biblScope unit="volume">32</biblScope>
+                <biblScope from="205" to="210" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">Mechanisms regulating skin pigmentation: The rise and fall of complexion coloration</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Ebanks</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Wickett</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Boissy</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int. J. Mol. Sci</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope from="4066" to="4087" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">The effect of niacinamide on reducing cutaneous pigmentation and suppression of melanosome transfer</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Hakozaki</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Br. J. Dermatol</title>
+              <imprint>
+                <biblScope unit="volume">147</biblScope>
+                <biblScope from="20" to="31" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">4-N-Butylresorcinol, a highly effective tyrosinase inhibitor for the topical treatment of hyperpigmentation</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Kolbe</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Eur. Acad. Dermatol. Venereol</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope from="19" to="23" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">Effective inhibition of melanosome transfer to keratinocytes by lectins and niacinamide is reversible</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Greatens</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Exp. Dermatol</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope from="498" to="508" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">Examining the impact of skin lighteners in vitro</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Gruber</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Holtz</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Oxid. Med. Cell. Longev</title>
+              <imprint>
+                <biblScope unit="page">2013</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

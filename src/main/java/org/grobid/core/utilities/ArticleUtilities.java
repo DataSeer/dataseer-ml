@@ -26,6 +26,8 @@ import org.slf4j.LoggerFactory;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.TextUtilities;
 
+import org.apache.commons.io.FileUtils;
+
 /**
  *  Some convenient methods for retrieving the original PDF files from the annotated set.
  */
@@ -200,6 +202,58 @@ public class ArticleUtilities {
         catch (Exception e) {
             throw new Exception("An exception occured while downloading " + urll, e);
         }
+    }
+
+    /**
+     * Apply a Pub2TEI transformation to an XML file to produce a TEI file.
+     * Input XML file must be a native XML publisher file supported by Pub2TEI.
+     * Output the path to the transformed outputed file or null if the transformation failed.
+     */
+    public static String applyPub2TEI(String inputFilePath, String outputFilePath, String pathToPub2TEI) {
+        // we use an external command line for simplification (though it would be more elegant to 
+        // stay in the current VM)
+        // java -jar Samples/saxon9he.jar -s:/mnt/data/resources/plos/0/ -xsl:Stylesheets/Publishers.xsl -o:/mnt/data/resources/plos/0/tei/ -dtd:off -a:off -expand:off -t
+
+        ProcessBuilder processBuilder = new ProcessBuilder(); 
+        String s = "-s:/mnt/data/resources/plos/0/";
+        String o = "-o:/mnt/data/resources/plos/0/tei/";
+        processBuilder.command("java", "-jar", "Samples/saxon9he.jar", s, o, "-dtd:off", "-a:off", "-expand:off", "-t");
+        processBuilder.directory(new File(pathToPub2TEI)); 
+        try {
+
+            Process process = processBuilder.start();
+
+            StringBuilder output = new StringBuilder();
+
+            BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(process.getInputStream()));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                output.append(line + "\n");
+            }
+
+            int exitVal = process.waitFor();
+            if (exitVal == 0) {
+                System.out.println("XML transformation done");
+                FileUtils.writeStringToFile(new File(outputFilePath), output.toString(), StandardCharsets.UTF_8);
+                System.out.println(output);
+                System.exit(0);
+            } else {
+                // abnormal...
+                System.out.println("XML transformation failed");
+                outputFilePath = null;
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            outputFilePath = null;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            outputFilePath = null;
+        }
+
+        return outputFilePath;
     }
 
 }

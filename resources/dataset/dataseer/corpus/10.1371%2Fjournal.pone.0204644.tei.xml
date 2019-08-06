@@ -1,0 +1,2429 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T07:06+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Predictive classifier models built from natural products with antimalarial bioactivity using machine learning approach</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Samuel</forename>
+                <surname>Egieyeh</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName key="instit1" type="institution">South African Medical Research Council Bioinformatics Unit</orgName>
+                <orgName key="instit2" type="institution">South African National Bioinformatics Institute</orgName>
+                <orgName key="instit3" type="institution">University of the Western Cape</orgName>
+                <address>
+                  <settlement>Cape Town</settlement>
+                  <country key="ZA">South Africa</country>
+                </address>
+              </affiliation>
+              <affiliation key="aff1">
+                <orgName type="department">School of Pharmacy</orgName>
+                <orgName type="institution">University of the Western Cape</orgName>
+                <address>
+                  <settlement>Cape Town</settlement>
+                  <country key="ZA">South Africa</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">James</forename>
+                <surname>Syce</surname>
+              </persName>
+              <affiliation key="aff1">
+                <orgName type="department">School of Pharmacy</orgName>
+                <orgName type="institution">University of the Western Cape</orgName>
+                <address>
+                  <settlement>Cape Town</settlement>
+                  <country key="ZA">South Africa</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Sarel</forename>
+                <forename type="middle">F</forename>
+                <surname>Malan</surname>
+              </persName>
+              <affiliation key="aff1">
+                <orgName type="department">School of Pharmacy</orgName>
+                <orgName type="institution">University of the Western Cape</orgName>
+                <address>
+                  <settlement>Cape Town</settlement>
+                  <country key="ZA">South Africa</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Alan</forename>
+                <surname>Christoffels Id</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName key="instit1" type="institution">South African Medical Research Council Bioinformatics Unit</orgName>
+                <orgName key="instit2" type="institution">South African National Bioinformatics Institute</orgName>
+                <orgName key="instit3" type="institution">University of the Western Cape</orgName>
+                <address>
+                  <settlement>Cape Town</settlement>
+                  <country key="ZA">South Africa</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Predictive classifier models built from natural products with antimalarial bioactivity using machine learning approach</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <note>RESEARCH ARTICLE ☯ These authors contributed equally to this work. * segieyeh@uwc.ac.za</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <head>Abstract</head>
+          <p>
+            <s>In view of the vast number of natural products with potential antiplasmodial bioactivity and cost of conducting antiplasmodial bioactivity assays, it may be judicious to learn from previous antiplasmodial bioassays and predict bioactivity of these natural products before experimental bioassays.</s>
+            <s>This study set out to harness antimalarial bioactivity data of natural products to build accurate predictive models, utilizing classical machine learning approaches, which can find potential antimalarial hits from new sets of natural products.</s>
+            <s>Classical machine learning approaches were used to build four classifier models (Naïve Bayesian, Voted Perceptron, Random Forest and Sequence Minimization Optimization of Support Vector Machines) from bioactivity data of natural products with in-vitro antiplasmodial activity (NAA) using a combination of the molecular descriptors and two-dimensional molecular fingerprints of the compounds.</s>
+            <s>Models were evaluated with an independent test dataset.</s>
+            <s>Possible chemical features associated with reported antimalarial activities of the compounds were also extracted.</s>
+            <s>From the results, Random Forest (accuracy 82.81%, Kappa statistics 0.65 and Area under Receiver Operating Characteristics curve 0.91) and Sequential Minimization Optimization (accuracy 85.93%, Kappa statistics 0.72 and Area under Receiver Operating Characteristics curve 0.86) showed good predictive performance for the NAA dataset.</s>
+            <s>The amine chemical group (specifically alkyl amines and basic nitrogen) was confirmed to be essential for antimalarial activity in active NAA dataset.</s>
+            <s>This study built and evaluated classifier models that were used to predict the antiplasmodial bioactivity class (active or inactive) of a set of natural products from interBioScreen chemical library.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Introduction</head>
+        <p>
+          <s>The devastating effect of malaria is evidenced by 584,000 deaths of which 78 percent were children under five years of age in 2013 <ref target="#b0" type="bibr">[1]</ref> and thousands of person-hours lost to morbidity <ref target="#b1" type="bibr">[2,</ref>
+            <ref target="#b2" type="bibr">3]</ref> .</s>
+          <s>Majority of deaths due to malaria are caused by Plasmodium falciparum, the most virulent amongst the species that cause the disease <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref> .</s>
+          <s>The growing resistance and failure of existing first-line antimalarial drugs have exacerbated the situation leading to an exigent need to develop novel antimalarial drug candidates <ref target="#b6" type="bibr">[7]</ref>
+            <ref target="#b7" type="bibr">[8]</ref>
+            <ref target="#b8" type="bibr">[9]</ref> .</s>
+          <s>Judging by the immense contribution of nature to existing antimalarial drugs <ref target="#b9" type="bibr">[10]</ref>
+            <ref target="#b10" type="bibr">[11]</ref>
+            <ref target="#b11" type="bibr">[12]</ref>
+            <ref target="#b12" type="bibr">[13]</ref> and the likelihood to encounter novel chemotypes in natural products, in-vitro malarial screen data of natural products may be the appropriate starting point for the discovery of new antimalarial drugs.</s>
+          <s>Recently a number of publications have reported the in-vitro antiplasmodial activities of natural products from plants <ref target="#b9" type="bibr">[10]</ref>
+            <ref target="#b10" type="bibr">[11]</ref>
+            <ref target="#b11" type="bibr">[12]</ref>
+            <ref target="#b12" type="bibr">[13]</ref> and marine life forms <ref target="#b13" type="bibr">[14,</ref>
+            <ref target="#b14" type="bibr">15]</ref> .</s>
+          <s>In addition, datasets of in-vitro antiplasmodial bioassays of natural products and synthetic compounds have been made available in public domain <ref target="#b15" type="bibr">[16]</ref>
+            <ref target="#b16" type="bibr">[17]</ref>
+            <ref target="#b17" type="bibr">[18]</ref> .</s>
+          <s>The availability of such data for malaria drug discovery has motivated us to create predictive models based on molecular properties using machine-learning approaches.</s>
+        </p>
+        <p>
+          <s>Machine Learning, an aspect of artificial intelligence, is the practice of using algorithms to analyze input data (training data), learn from it, and then make a prediction on another set of related or unrelated data.</s>
+          <s>Machine learning approaches may be supervised or unsupervised if the algorithms learned from labelled or unlabeled data <ref target="#b18" type="bibr">[19]</ref> .</s>
+          <s>Unsupervised statistical learning allows learning of relationships and structure of input data.</s>
+          <s>Supervised machine learning involves building a model for predicting an output based on one or more sets of input data.</s>
+        </p>
+        <p>
+          <s>It has been shown that machine learning approaches could accurately predict the activities in assorted sets of compounds with activities as diverse as anti-tubercular <ref target="#b19" type="bibr">[20]</ref> , antimalarial <ref target="#b20" type="bibr">[21]</ref> and RNA-binders <ref target="#b21" type="bibr">[22]</ref> .</s>
+          <s>To our knowledge, there has not been any bioactivity predictive model specifically for natural products with antiplasmodial or antimalarial activities.</s>
+          <s>Increasing number of natural products, mostly from ethnomedicine in malaria-endemic regions, show good in-vitro and/or in-vivo antiplasmodial activities <ref target="#b22" type="bibr">[23]</ref>
+            <ref target="#b23" type="bibr">[24]</ref>
+            <ref target="#b24" type="bibr">[25]</ref>
+            <ref target="#b25" type="bibr">[26]</ref> .</s>
+          <s>The antiplasmodial bioactivity data for these natural products present a dais to build models that may be used to screen other natural products and predict their potential antiplasmodial activities.</s>
+        </p>
+        <p>
+          <s>This present study focused on the development of machine learning classification models for natural products with varying in-vitro antiplasmodial activities (NAA).</s>
+          <s>Four classification models were built from the bioactivity class (Active or Inactive) and a combination of molecular descriptors (MD) and molecular fingerprints (MF) of the NAA dataset.</s>
+          <s>The performances of the classification models were assessed with standard model evaluation parameters (including accuracy and area under the Receiver Operating Characteristic (ROC) curve).</s>
+          <s>We also analyzed the chemical structures of the datasets to find molecular fragments or chemical features enriched within the active and inactive compounds.</s>
+          <s>Finally, we showed that the machine learning models built in this study might be used to screen large natural compound libraries in-silico and identify potential antiplasmodial compounds.</s>
+          <s>This may limit the need for in-vitro screening and drastically reduce the expense of finding hits from natural products for antimalarial drug discovery.</s>
+        </p>
+      </div>
+      <div>
+        <head>Materials and methods</head>
+        <p>
+          <s>An original Konstanz Information Miner (KNIME) workflow <ref target="#b26" type="bibr">[27,</ref>
+            <ref target="#b27" type="bibr">28]</ref> was set up <ref target="#fig_0" type="figure">(Fig 1)</ref> and used for the machine learning from our set of natural products with in-vitro antiplasmodial activities (NAA) in order to predict the activity class (active or inactive) of NAA.</s>
+        </p>
+      </div>
+      <div>
+        <head>Data</head>
+        <p>
+          <s id="0" type="Dataset:Existing dataset">The dataset used in this study consist of natural products that have been tested for in-vitro antiplasmodial activities (NAA) compiled in-house from literature, PhD and Masters Theses and public chemical databases.</s>
+          <s>The chemical structures of the compounds in NAA were either downloaded in the SMILES format from public chemical databases (ChEMBL or PubChem) or drawn using Chemtool version 1.6.13</s>
+          <s>(http://ruby.chemie.uni-freiburg.de/~martin/</s>
+          <s>chemtool) running on a Linux platform.</s>
+          <s>The dataset (NAA) was subdivided into two groups based on their in-vitro antiplasmodial activities (IC 50 ): Active (A) (IC 50 : &lt; 10 μM) and Inactive (A) (IC 50 : !10 μM).</s>
+          <s>A total of 1155 NAA compounds were used in this study, with 70% classified as active and 30% as inactive (S1 <ref type="table">Table)</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Machine learning algorithms</head>
+        <p>
+          <s>Four classifier algorithms were used to learn from the dataset: Naïve Bayesian classifier <ref target="#b28" type="bibr">[29,</ref>
+            <ref target="#b29" type="bibr">30]</ref> , Sequential Minimization Optimization (SMO) classifier, a strategy for solving the quadratic problems during training with Support Vector Machine (SVM) <ref target="#b30" type="bibr">[31,</ref>
+            <ref target="#b31" type="bibr">32]</ref> , Random Forest (RF) classifier <ref target="#b32" type="bibr">[33,</ref>
+            <ref target="#b33" type="bibr">34]</ref> and Voted perceptron (VP) classifier <ref target="#b34" type="bibr">[35,</ref>
+            <ref target="#b35" type="bibr">36]</ref> .</s>
+          <s>The specific classifiers were chosen in an attempt to represent four major types of classifiers models: Naïve Bayes represents the Bayes classifiers; Random Forest represents the tree-based classifiers; SMO represents the function-based classifier; and the Voted Perceptron represents the neural network classifiers.</s>
+          <s>The classifier algorithms were executed with Waikato Environment for Knowledge Analysis (Weka 3.6) nodes <ref target="#b36" type="bibr">[37]</ref> in Konstanz Information Miner (KNIME) <ref target="#b37" type="bibr">[38]</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Dataset pre-processing and calculation of molecular descriptors and molecular fingerprints</head>
+        <p>
+          <s>The "RDKit Descriptor Calculation" and "RDKit Fingerprint" nodes <ref target="#b38" type="bibr">[39]</ref> were used to calculate the molecular descriptors and molecular fingerprint.</s>
+          <s>The "Data_preprocessing" node was then used to normalize the molecular descriptors using a minimum-maximum normalization model.</s>
+          <s>The bit vector representing the molecular fingerprint was expanded into individual columns for each compound.</s>
+        </p>
+      </div>
+      <div>
+        <head>Selection of descriptors or features</head>
+        <p>
+          <s>The objective of features selection is three-fold: improving the prediction performance of the predictive model, providing faster and more economical predictive models, and providing a better understanding of the underlying process that generated the data <ref target="#b39" type="bibr">[40]</ref> .</s>
+          <s>The "Feature Elimination" (FE) meta-node in KNIME was used to select descriptors that are beneficial to build efficient classifier models.</s>
+        </p>
+      </div>
+      <div>
+        <head>Training of classifier models</head>
+        <p>
+          <s>The purpose of the classification algorithm was to build a classifier model that assigns a class (e.g.</s>
+          <s>active/inactive) to molecules defined by a set of attributes (e.g.</s>
+          <s>molecular descriptors).</s>
+          <s>A metanode in the KNIME workflow <ref target="#fig_0" type="figure">(Fig 1)</ref> was designed to build the various classifier models that were earlier mentioned (i.e.</s>
+          <s>Naïve Bayesian classifier, Sequential Minimization Optimization (SMO) classifier, Random Forest (RF) classifier and Voted perceptron (VP) classifier).</s>
+          <s>The Partitioning node was used to split the data coming from the Feature Elimination metanode into 80% training cum validation set and 20% independent test set by stratified sampling.</s>
+          <s>The former was then piped into the "CostSensitive_Classifier_Cross_Validation" meta-node while the later was passed to the Weka Predictor (3.6) node.</s>
+          <s>The Weka "Cost Sensitive Classifier" was used to build the classifier models and the Weka Predictor generated predictions from the test data.</s>
+          <s>Regarding the features used to build the model, the molecular descriptors and molecular fingerprints were initially used separately to train the models.</s>
+          <s>In an attempt to improve the accuracy of the model, we combined the molecular descriptors and the molecular fingerprints for each compound and used that combined feature to train the models.</s>
+        </p>
+      </div>
+      <div>
+        <head>Class Imbalance and cost-sensitive classification</head>
+        <p>
+          <s>The imbalance bioactivity class (70% active and 30% inactive) was recognized as a major limitation to building a reliable model.</s>
+          <s>Most bioassay datasets are imbalanced where one class is overly represented as observed in our datasets (approximately 70% active class (A) and 30% inactive class (N)).</s>
+          <s>Prior to building the classifier model, the "SMOTE (Synthetic Minority Over-sampling Technique)" node within the KNIME was used to balance the bioactivity classes <ref target="#b37" type="bibr">[38]</ref> .</s>
+          <s>This node oversamples the input NAA dataset to enrich the inactive instances in the training dataset.</s>
+        </p>
+        <p>
+          <s>In addition, cost-sensitivity, which does not assume equality of the costs caused by different kinds of errors, was applied to the classifier algorithms used in this study.</s>
+          <s>The Weka "metaCostSensitiveClassifier" node in KNIME <ref target="#b37" type="bibr">[38]</ref> was used to build the classifier models from NAA dataset.</s>
+          <s>The Weka "meta-CostSensitiveClassifier" makes its base classifier cost sensitive and provide it with the capability to predict a class that leads to the lowest expected cost <ref target="#b36" type="bibr">[37,</ref>
+            <ref target="#b40" type="bibr">41]</ref> .</s>
+          <s>For our datasets that have two class representations (i.e.</s>
+          <s>active (A)/inactive (N)), cost sensitivity was introduced by using a '2 ×2' dimension cost matrix ( <ref target="#tab_1" type="table">Table 1)</ref> .</s>
+        </p>
+        <p>
+          <s>The four sections of a cost matrix can be read as True Positives (TP)-actives classified as actives; False Positives (FP)-inactives classified as actives; True Negatives (TN)-inactives classified as inactives; False Negatives (FN)-actives classified as inactive.</s>
+          <s>The Weka "meta-CostSensitiveClassifier" enforces a penalty or weight on the base classifier for generating false positives (FP) or false negatives (FN) during learning.</s>
+          <s>By default, the weight on the cost matrix is set to one for FP and FN.</s>
+          <s>However, it has been reported that during the development of the classifier models the cost of misclassification may not always be the same <ref target="#b41" type="bibr">[42]</ref> .</s>
+          <s>In bioactivity prediction, the cost of FN (misclassification of an active compound as inactive) may be greater than the cost of FP (misclassification of an inactive compound as active) <ref target="#b19" type="bibr">[20]</ref> .</s>
+          <s>That is, the cost of missing a potential active compound is greater than the cost of predicting an inactive compound as active <ref target="#b19" type="bibr">[20]</ref> .</s>
+          <s>Therefore, the weight or penalty for FN was set to two <ref target="#tab_1" type="table">(Table 1)</ref> to minimize the chance of FN misclassification.</s>
+          <s>This cost matrix was used to build the NB, VP, SMO and RF classifier models.</s>
+        </p>
+      </div>
+      <div>
+        <head>Classifier model performance evaluators</head>
+        <p>
+          <s>Accuracy statistics and receiver operating characteristic.</s>
+          <s>The performances of the classifier models were assessed by accuracy statistics and Receiver Operating Characteristic graph after a 10-fold cross validation of a training set and prediction of the bioactivity class of an independent test set.</s>
+          <s>In the KNIME workflow <ref target="#fig_0" type="figure">(Fig 1)</ref> , the Scorer node and the ROC node were attached to the output from the Weka predictor nodes (from the cross-validation and the independent test data prediction).</s>
+          <s>The outputs from the Scorer node include a confusion matrix and evaluation statistics (including accuracy of the prediction, Kappa statistic and mean absolute error).</s>
+          <s>Accuracy indicates the proximity of measurement of results to the true value.</s>
+          <s>This can be mathematically expressed as:</s>
+        </p>
+        <formula xml:id="formula_0">Accuracy ¼ TP þ TN TP þ FP þ TN þ FN Ã 100<label>ð1Þ</label>
+        </formula>
+        <p>
+          <s>Where TP is True Positives; FP is False Positives; TN is True Negatives and FN is False Negatives.</s>
+          <s>The outputs from the ROC node encompass the Receiver Operating Characteristic (ROC) curve, which is a graphical plot of True Positive Rates (TPR) vs. False Positive Rates (FPR) for a binary classification system.</s>
+          <s>The Area under Curve (AUC) value was also computed from the ROC curve and in our case, it denotes the probability that a classifier will rank a randomly chosen active compound higher than a randomly chosen inactive compound.</s>
+        </p>
+      </div>
+      <div>
+        <head>Applicability domain (AD)</head>
+        <p>
+          <s>Generally, machine learning models methods are more likely to show good predictive performance for compounds that share similar properties to compounds in the training set.</s>
+          <s>Thus, it is necessary to define the "applicability domain" (i.e. the boundary defined by the chemical space in the training set) of the models and to check if new test compounds fall within such domain <ref target="#b42" type="bibr">[43]</ref> .</s>
+          <s>One of the simplest and commonly applied methods used to define AD is based on range-based definition with a preliminary Principal Components (PC) rotation <ref target="#b43" type="bibr">[44]</ref> .</s>
+          <s>In the present study, we defined the AD of the models using the training data and evaluated the extent to which the independent test data fit into the AD.</s>
+          <s>This will be helpful to explain the accuracy of prediction from models and assess whether a new compound is inside or outside the AD of the models.</s>
+          <s>Principal Component Analysis (PCA) of the molecular fingerprints of the compounds in the training/validation data was done with Unsupervised learning metanode in the machine learning KNIME workflow <ref target="#fig_0" type="figure">(Fig 1)</ref> .</s>
+          <s>The PCA was carried out for the training data from the Partition node in the KNIME workflow before cross-validation <ref target="#fig_0" type="figure">(Fig 1)</ref> .</s>
+          <s>PCA of the independent test dataset was also performed in order to validate if the compounds within the test dataset fall within the chemical space or applicability domain (AD) of the compounds in the training dataset.</s>
+        </p>
+      </div>
+      <div>
+        <head>Enriched molecular fragments in the NAA datasets</head>
+        <p>
+          <s>The molecular fragments or substructures (or chemical features) enriched within the active and inactive compounds in the NAA dataset was searched with the Molecular Substructure (MoSS) node in KNIME <ref target="#fig_0" type="figure">(Fig 1)</ref>
+            <ref target="#b26" type="bibr">[27,</ref>
+            <ref target="#b27" type="bibr">28]</ref> .</s>
+          <s>Minimum and maximum fragment sizes were set to 1 and 100 respectively.</s>
+          <s>Pure carbon fragments were ignored and the ring mining option was enabled (set at 3 to 8 to avoid finding fragments with partial rings).</s>
+          <s>The algorithm used is the Christian Borgelt's MoSS implementation <ref target="#b44" type="bibr">[45]</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Results and discussion</head>
+        <p>
+          <s>In the present study, we have trained and evaluated four antiplasmodial activity classification models based on a combination of molecular descriptors and molecular fingerprints of natural products with antiplasmodial activity (NAA).</s>
+        </p>
+      </div>
+      <div>
+        <head>Molecular descriptors and molecular fingerprints</head>
+        <p>
+          <s>A total of 117 molecular descriptors were generated with RDKit Descriptors Calculation node in KNIME <ref target="#b45" type="bibr">[46,</ref>
+            <ref target="#b46" type="bibr">47]</ref> for the compounds in the NAA dataset.</s>
+          <s>The resultant data was then preprocessed, as described under the method section, before passing on to the "Feature Elimination" meta-node <ref target="#b47" type="bibr">[48]</ref> to remove redundant molecular descriptors.</s>
+          <s>Approximately 35% of the molecular descriptors were removed from the NAA dataset.</s>
+          <s>The molecular fingerprints of the compounds in NAA datasets were also generated with RDKit Fingerprint node in KNIME <ref target="#b35" type="bibr">[36,</ref>
+            <ref target="#b36" type="bibr">37]</ref> .</s>
+          <s>The remaining 76 molecular descriptors were combined with the molecular fingerprints and used to train the classification models.</s>
+        </p>
+      </div>
+      <div>
+        <head>Training of classifier models and cross-validation</head>
+        <p>
+          <s>Four classifier models were trained with natural products with in-vitro antiplasmodial activities (NAA) (using Weka version 3.6 node in KNIME): Voted Perceptron (VP), Naïve Bayesian (NB), Random Forest (RF) and Sequential Minimization Optimization (SMO).</s>
+          <s>Running on a Dell Vostro laptop (Intel Core i3-2328M CPU @ 2.20 GHz x 4), SMO was the slowest in terms of program runtime to build one model (2.88 seconds); the NB was the fastest (0.12 seconds) followed by VP (1.05 seconds) and RF (1.31 seconds).</s>
+          <s>A total of 1147 NAA (labelled as 70% active and 30% inactive) was used in this study.</s>
+          <s>This was divided into 917 NAA for training cum 10-fold cross-validation of the classifier model and 230 NAA as the independent test dataset.</s>
+          <s>Misclassification cost was set to two for false negatives <ref type="figure">(FN)</ref> .</s>
+        </p>
+        <p>
+          <s>The values of the accuracy (percentage of correctly classified compounds) of the classifier models over the 10 fold cross-validation are presented in <ref target="#fig_1" type="figure">Fig 2.</ref> Accuracy may be defined, specifically for this study, as the proportion of compounds that were correctly classified as active and inactive (i.e. the number of compounds correctly classified divided by the total number of compounds classified multiply by 100).</s>
+          <s>From the results <ref target="#fig_1" type="figure">(Fig 2)</ref> , SMO and RF classifier models showed greater predictive accuracies than the NB and VP classifier models for the NAA dataset.</s>
+          <s>Moreover, the values of the predictive accuracy were fairly consistent over the 10 fold cross-validation for SMO and RF judging by the slope of approximately 0.2 for the data points on the graph.</s>
+          <s>This is an indication of the consistency of the predictive abilities of these classifier models.</s>
+        </p>
+        <p>
+          <s>The goal here is to see the performance of the trained classifier models to predict the activity class of 10 randomly selected test datasets.</s>
+          <s>From the result <ref target="#fig_1" type="figure">(Fig 2)</ref> , we may conclude that SMO and RF classifier models showed good and fairly consistent predictive performance of the 10 randomly selected test datasets.</s>
+          <s>However, we used all classifier models generated to predict the bioactivity class of the independent NAA test dataset that was not included in the training and cross-validation dataset.</s>
+        </p>
+      </div>
+      <div>
+        <head>Prediction of bioactivity class of an independent NAA test dataset</head>
+        <p>
+          <s>The classifier models (Sequential Minimization Optimization (SMO), Random Forest (RF), Voted Perceptron (VP) and Naïve Bayesian (NB)), previously trained and cross-validated as described earlier, were used to predict the bioactivity class of an independent test dataset of natural products with in-vitro antiplasmodial activities (NAA).</s>
+          <s>The performances of the classifier models were evaluated using accuracy, Kappa statistics and Receiver Operating Characteristic curve.</s>
+          <s>Accuracy.</s>
+          <s>From the results <ref target="#tab_2" type="table">(Table 2)</ref> , the Sequence Minimization Optimization (SMO) of Support Vector Machine model showed the highest accuracy (85.94%) followed by the Random Forest (RF), 82.81%.</s>
+          <s>Naïve Bayes (NB) and Voted perceptron (VP) models displayed accuracy just above 70% (73.05% and 71.48% respectively).</s>
+          <s>When we compared the results from the fusion model to the individual models (RF and SMO), we see that the accuracy did not change.</s>
+        </p>
+        <p>
+          <s>The objective here was to identify the classifier model trained with both molecular descriptors and molecular fingerprints that best predict the bioactivity class of the independent NAA test dataset.</s>
+          <s>From the results, we may conclude that SMO of SVM and RF models are the most suitable classifier models for NAA.</s>
+          <s>Though accuracy provided an overall estimation of the performance of the classifier models, one limitation to the use of accuracy as a metric for assessing predictive performance of classifier models is "accuracy paradox" (i.e. a classifier model with a given level of accuracy may have greater predictive power than models with high accuracy).</s>
+          <s>Therefore less biased metrics like the Kappa statistics and area under Receiver Operating Curve (ROC) were used as a more objective evaluator of the predictive powers of the classifier models.</s>
+        </p>
+        <p>
+          <s>Kappa statistics.</s>
+          <s>The results <ref target="#tab_2" type="table">(Table 2)</ref> showed that the kappa statistics of SMO and RF classifier models (0.72 and 0.65 respectively), like their accuracy values, were higher than that of the other classifier models in this study.</s>
+          <s>The results also showed that the fusion model showed a very slight increase in its Kappa statistics when compared to the individual models (RF and SMO).</s>
+          <s>The value of the Kappa statistics is often used as a measure of consistency or agreement between the "ground truth" (the actual class of each compound to be classified) and classifier models' classification (the class assigned to the compounds by the classifier model).</s>
+          <s>It accounts for the chance of random classification of compounds into the two bioactive classes (Active and Inactive).</s>
+          <s>Kappa statistic values of 1 suggest a perfect agreement between the "ground truth" and classifier models' classification.</s>
+          <s>Judging by the kappa statistics of SMO and RF models <ref target="#tab_2" type="table">(Table 2)</ref> , which are closer to 1 than that of NB and VP models, we concluded that SMO and RF classifier models showed the best predictive power as similarly observed with the use of accuracy as the evaluator of the classifier models.</s>
+        </p>
+        <p>
+          <s>Receiver operating characteristic plot (ROC).</s>
+          <s>
+            <ref target="#fig_2" type="figure">Fig 3 shows</ref> the Receiver Operating Characteristic (ROC) curve of the classifier models trained and evaluated.</s>
+          <s>Receiver Operating Characteristic (ROC) curve is a graphical plot that shows the performance of a binary classifier model as its discrimination threshold is varied.</s>
+        </p>
+        <p>
+          <s>ROC is a plot of the true positive rate (Sensitivity) against the false positive rate (1 -Specificity) at various threshold settings.</s>
+          <s>The diagonal grey line represents classifier models that randomly assign compounds to bioactivity class.</s>
+          <s>The blue line shown in the ROC plot of Voted perceptron represents classifier models that perfectly predict bioactivity class of compounds.</s>
+          <s>The predictions from RF and SMO were combined (mean) using the "Prediction Fusion" node in KNIME <ref target="#b37" type="bibr">[38]</ref> .</s>
+        </p>
+        <p>
+          <s>https://doi.org/10.1371/journal.pone.0204644.t002</s>
+        </p>
+        <p>
+          <s>The red line is the ROC curve from the predictions by the four classifier models in this study.</s>
+          <s>In contrast to NB and VP classifier models, SMO, RF and the fusion classifier models showed ROC curves that were initially very close to the true positive rate axis (i.e.</s>
+          <s>minimizing false positive rate (maximizing specificity) and maximizing true positive rates (maximizing sensitivity)).</s>
+          <s>An optimum prediction aims to maximize sensitivity and specificity.</s>
+          <s>However in all the models, as the threshold changes the false positive rate increases (i.e. the specificity decreases) and the true positive rate (i.e.</s>
+          <s>sensitivity) approaches its maximum value.</s>
+          <s>Hence low specificity values may lead to high incidence of false positives (i.e.</s>
+          <s>detecting inactive compounds as active).</s>
+          <s>It is therefore expedient to choose the threshold that will have good specificity and thus avoid investing resources to synthesize and conduct bioassays for compounds that may not be active and fail along the drug development pipeline <ref target="#b48" type="bibr">[49]</ref>
+            <ref target="#b49" type="bibr">[50]</ref>
+            <ref target="#b50" type="bibr">[51]</ref>
+            <ref target="#b51" type="bibr">[52]</ref> .</s>
+          <s>Area under the receiver operating characteristic curve (AUC).</s>
+          <s>The values of the area under the ROC curve (AUC) are shown in <ref target="#tab_2" type="table">Table 2</ref> .</s>
+          <s>The RF had the highest value of AUC of 0.91 followed by SMO with an AUC value of 0.86.</s>
+          <s>The VP and NB classifier models showed AUC values of 0.72 and 0.74 respectively.</s>
+          <s>The fusion model showed AUC that is higher than AUC of SMO but similar to the AUC seen for RF.</s>
+          <s>The ROC The area under the ROC curve (AUC) is a measure of how well a model can discriminate between two classes in a dataset (e.g.</s>
+          <s>active and inactive compounds) <ref target="#b52" type="bibr">[53]</ref> .</s>
+          <s>In this study, AUC depicts the probability that the active class predicted by the classifier models for a randomly selected compound will exceed that of a randomly selected non-active class <ref target="#b53" type="bibr">[54]</ref> .</s>
+          <s>Where the prediction of the bioactivity class of compounds is purely random, the AUC will be equal to 0.5 (i.e. the ROC curve will coincide with the diagonal line).</s>
+          <s>When the prediction results in perfect separation of the bioactivity class of the compounds, i.e.</s>
+          <s>where there is no overlapping of the distributions of the bioactivity classes, the area under the ROC curve will be one.</s>
+        </p>
+        <p>
+          <s>The values of the AUC for the four classifier models indicate that the discriminatory or predictive power (separation of the bioactivity class of the compounds) of the models range from fair (0.7-0.8) to excellent (&gt; 0.9).</s>
+          <s>The discriminating powers of the classifier models, judging by the AUC, were thus: RF, SMO, NB and VP in decreasing order of discriminating power to predict a bioactive class of the compounds in the NAA dataset.</s>
+          <s>Overall, the nature of the ROC plot and the higher AUC values of RF and SMO suggest their suitability as good classifier models for the NAA dataset used in this study.</s>
+        </p>
+      </div>
+      <div>
+        <head>Applicability domain (AD) of the classifier models</head>
+        <p>
+          <s>Applicability Domain (AD) of the classifier models refers to the chemical space, defined by the training set, within which a test compound should be in order for its bioactivity class to be reliably predicted.</s>
+          <s>In this present study, the AD of the models was defined with the training and cross-validation dataset and its validity evaluated on the independent test dataset.</s>
+          <s>Principal Component Analysis (PCA) was used to define the AD of the models and to map the test dataset (active and inactive compounds) in their respective chemical spaces.</s>
+          <s>
+            <ref type="figure">Fig 4 is</ref> the visualization of the first three principal components of the compounds in the training and cross-validation dataset <ref type="figure">(Fig 4 (X)</ref> ) and compounds in the independent test dataset <ref type="figure">(Fig 4 (Y)</ref> ) for the NAA dataset.</s>
+          <s>
+            <ref type="figure">From Fig 4(Y)</ref> and 4(X), we observed that almost all compounds in the test dataset fell within the chemical space or AD of the training dataset used to build the classifier models.</s>
+        </p>
+        <p>
+          <s>The results also revealed no clear boundary between the active and inactive compounds in the training dataset and the independent test dataset for NAA.</s>
+          <s>This implies some level of chemical structural similarity amid the active and inactive compounds in the datasets, which may pose a restriction on the discriminatory ability of the models.</s>
+          <s>Overall, this analysis enabled the identification of the AD for the models built in this study.</s>
+          <s>Therefore the models may reliably predict new compounds that fall within this AD.</s>
+        </p>
+      </div>
+      <div>
+        <head>Enriched molecular fragments in the NAA datasets</head>
+        <p>
+          <s>We sought to understand the molecular substructures (or chemical features) associated with antiplasmodial activity and inactivity of compounds in the NAA (natural products with invitro antiplasmodial activities) dataset.</s>
+          <s>To this end, we used the Molecular Substructure (MoSS) node in KNIME to search for most common molecular substructures in the active and inactive compounds in the NAA dataset.</s>
+        </p>
+        <p>
+          <s>A total of 52 most common molecular substructures from active compounds (717 compounds) and 48 most common molecular substructures from inactive compounds (323) were identified.</s>
+          <s>The molecular similarities amongst the substructures from the active and inactive compounds were estimated and projected in a three dimensional (3D) space <ref target="#fig_3" type="figure">(Fig 5)</ref> .</s>
+        </p>
+        <p>
+          <s>From these results, most of the substructures from the active and inactive compounds overlapped in the 3D space indicating their high molecular similarity.</s>
+          <s>However, some of the substructures from the active and inactive compounds occupy a distinct region of the 3D space <ref target="#fig_3" type="figure">(Fig 5)</ref> .</s>
+          <s>These include hydroxyisoquinoline and isoquinoline substructures from active compounds and hydroxyflavone from inactive compounds.</s>
+          <s>These substructures may be determinants of antiplasmodial activities and may guide rational selection and design of active antiplasmodial compounds.</s>
+          <s>A closer at difference in the functional groups between the active NAA dataset (A) and inactive NAA dataset (N) revealed the following: Akylamine (29% in A, 13% in N); Aromatic amine (1.5% in A, 3% in N); Basic nitrogen (36% in A, 14% in N); Acidic oxygen (4% in A, 9% in N).</s>
+          <s>In all, the amine chemical group (specifically alkyl amines and basic nitrogen) was confirmed to be essential for antimalarial activity in active NAA dataset.</s>
+        </p>
+      </div>
+      <div>
+        <head>Benefits of models from machine learning (in-silico compound screening)</head>
+        <p>
+          <s>To illustrate the benefit of the machine learning and the resultant classifier models, the Sequential Minimization Optimisation (SMO) and Random Forest classifier models, adjudged the top classifier models in this study, were used to screen 450 natural compounds of a private natural product chemical library from InterBioScreen (http://www.ibscreen.com).</s>
+          <s>The results (S2 <ref type="table">Table)</ref> showed that the SMO classifier model predicted that 39% of the compounds will possess active antiplasmodial activities while Random Forest predicted a higher proportion of the natural product chemical library as active (87%).</s>
+          <s>Although there was a significant difference in the proportion of compounds predicted as active by the classifier models the output from the RF classifier model may be less reliable due to the tendency for RF models to overfitting data <ref target="#b32" type="bibr">[33,</ref>
+            <ref target="#b33" type="bibr">34]</ref> .</s>
+          <s>The two classifier models showed consistent antiplasmodial bioactivity class prediction for 54% of the compounds in the natural product chemical library.</s>
+        </p>
+        <p>
+          <s>The natural compounds predicted as active, which are readily available from InterBioScreen and other chemical libraries, may be prioritized and readily purchased for in-vitro antiplasmodial screening.</s>
+          <s>Overall, these results attest to the importance of bioactivity predictive models built with machine learning algorithms that are capable of effective and efficient learning from existing bioactivity data and predicting biological activities in-silico to modern drug discovery.</s>
+        </p>
+      </div>
+      <div>
+        <head>Conclusions</head>
+        <p>
+          <s>In this study, we used machine learning as a method to build various antimalarial predictive models that can predict the bioactivity class of natural products.</s>
+          <s>The classifier models that were most suitable for the dataset (natural products with in-vitro antiplasmodial activities) were identified.</s>
+          <s>These models were used, in-silico, to annotate potential antimalarial compounds in a large natural product library.</s>
+          <s>Such compounds may be prioritized for the more expensive in-vitro bioactivity screening.</s>
+          <s>In addition, we generated a pool of chemical features that were present within active and inactive natural products with in-vitro antiplasmodial activities (NAA) used in this study.</s>
+          <s>Such chemical features from active NAA in conjunction with the molecular scaffolds that may be identified from the active NAA could be valuable in designing antimalarial specific virtual compound library.</s>
+        </p>
+        <p>
+          <s>The knowledge of the classifier models that provide the most accurate prediction of the desired bioactivity for a particular class of compounds will enable medicinal chemist to pre-screen Machine learning approach to predict natural products with antimalarial bioactivity compounds prior to the expensive step of synthesis and in-vitro assay.</s>
+          <s>Accurate prediction of bioactivity class of compounds will improve decision-making processes in antimalarial drug design and development to achieve better and cost-effective outcomes (i.e.</s>
+          <s>drug candidate for malaria).</s>
+          <s>Overall, knowledge provided by this study could contribute significantly to and accelerate the ongoing efforts for antimalarial drug discovery, especially from natural products.</s>
+        </p>
+      </div>
+      <div>
+        <head>Supporting information</head>
+      </div>
+      <div>
+        <head>S1</head>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig 1 .</head>
+        <label>1</label>
+        <figDesc>Fig 1. KNIME workflow. Screen-shot of the KNIME workflow used to build the classifier machine-learning models. https://doi.org/10.1371/journal.pone.0204644.g001</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig 2 .</head>
+        <label>2</label>
+        <figDesc>Fig 2. The graph shows values of the accuracy (percentage of correctly classified compounds) of the four classifier models over the 10 folds cross-validation. The sequence minimization optimization (SMO) and Random Forest (RF) classifier models showed greater predictive accuracy than the Naïve Bayesian (NB) and Voted Perceptron (VP) classifier models. https://doi.org/10.1371/journal.pone.0204644.g002</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig 3 .</head>
+        <label>3</label>
+        <figDesc>Fig 3. The Receiver operating characteristics (ROC) curve for the four classifier models. The diagonal grey line represents classifier models that randomly assign compounds to bioactivity class (and will have an area under the curve (AUC) of 0.5). The blue line shown in the ROC curve of Voted perceptron (will have an AUC of 1.0) represents classifier models that perfectly predict bioactivity class of compounds. The red line is the ROC curve from the predictions by the four classifier models. The area under the ROC curve (AUC), a measure of bioactivity class discriminatory power of a classifier model, is shown on each ROC curve. https://doi.org/10.1371/journal.pone.0204644.g003</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Fig 5 .</head>
+        <label>5</label>
+        <figDesc>Fig 5. Chemical features from active and inactive compounds from NAA dataset. The blue markers represent most common substructures from active compounds (IC50 10 μM) while the red markers represents most common substructures from inactive compounds (IC50 &gt; 10 μM). The most common substructures were projected in a three-dimension (3D) space based on molecular similarity. Some of the most common substructures that are peculiar to the active and inactive compounds are highlighted. This may guide rational selection and design of active antiplasmodial compounds. NAA: natural products with in-vitro antiplasmodial activity. https://doi.org/10.1371/journal.pone.0204644.g005</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>PLOS ONE | https://doi.org/10.1371/journal.pone.</figDesc>
+        <table>0204644 September 28, 2018 
+1 / 15 
+
+a1111111111 
+a1111111111 
+a1111111111 
+a1111111111 
+a1111111111 </table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_1">
+        <head>Table 1 .</head>
+        <label>1</label>
+        <figDesc>Cost matrix used by weka "meta-cost sensitive classifier".The cost values for each possible classification are in brackets. True Positives (TP), False Positives (FP), True Negatives (TN) and False Negatives (FN) https://doi.org/10.1371/journal.pone.0204644.t001</figDesc>
+        <table>TP (0.0) 
+FN (2.0) 
+
+FP (1.0) 
+TN (0.0) 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_2">
+        <head>Table 2 .</head>
+        <label>2</label>
+        <figDesc>Evaluation parameters from the prediction of bioactivity class of an independent NAA test dataset by the four classifier models used in this study.</figDesc>
+        <table>Classifier Models 
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_3">
+        <head>Table .</head>
+        <label>.</label>
+        <figDesc>Natural products that have been tested for in-vitro antiplasmodial activities (NAA) compiled in-house from literature, PhD and Masters Theses and public chemical databases. (PDF) S2 Table. The antiplasmodial bioactivity class predictions of 450 natural compounds from a private natural product chemical library from InterBioScreen (http://www.ibscreen.com) by sequential minimization optimisation (SMO) and random forest classifier models. (PDF)</figDesc>
+        <table/>
+      </figure>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0204644 September 28, 2018</note>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0204644 September 28, 2018 8 / 15</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgments</head>
+          <p>
+            <s>The</s>
+          </p>
+        </div>
+        <div>
+          <head>Author Contributions</head>
+          <p>
+            <s>Conceptualization: Samuel Egieyeh, Alan Christoffels.</s>
+          </p>
+        </div>
+        <div>
+          <head>Data curation: Samuel Egieyeh.</head>
+          <p>
+            <s>Funding acquisition: Alan Christoffels.</s>
+          </p>
+        </div>
+        <div>
+          <head>Methodology: Samuel Egieyeh.</head>
+          <p>
+            <s>Supervision: James Syce, Sarel F. Malan, Alan Christoffels.</s>
+          </p>
+        </div>
+        <div>
+          <head>Writing -original draft: Samuel Egieyeh.</head>
+          <p>
+            <s>Writing -review &amp; editing: Samuel Egieyeh, James Syce, Sarel F. Malan, Alan Christoffels.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">The in vitro anti-malarial activity of novel semi synthetic nocathiacin I antibiotics</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Sharma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Sullivan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Mccutchan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Antimicrob Agents Chemother</title>
+              <imprint>
+                <biblScope from="4294" to="4308" unit="page"/>
+                <date type="published" when="2015"/>
+                <publisher>AAC</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">The impact of malaria on labour use and efficiency in the Sudan</title>
+              <author>
+                <persName>
+                  <forename type="first">El</forename>
+                  <surname>Tahir</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">N</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Soc Sci Med</title>
+              <imprint>
+                <biblScope unit="volume">37</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope unit="page">8235750</biblScope>
+                <date type="published" when="1993"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">The economic burden of illness for households in developing countries: a review of studies focusing on malaria, tuberculosis, and human immunodeficiency virus/acquired immunodeficiency syndrome</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Russell</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Trop Med Hyg</title>
+              <imprint>
+                <biblScope unit="volume">71</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope unit="page">15331831</biblScope>
+                <date type="published" when="2004-08"/>
+                <publisher>PMID</publisher>
+              </imprint>
+            </monogr>
+            <note>Suppl</note>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Parasite virulence and disease patterns in Plasmodium falciparum malaria</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Gupta</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Hill</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Kwiatkowski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Greenwood</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Greenwood</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Day</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proc Natl Acad Sci</title>
+              <imprint>
+                <biblScope unit="volume">91</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope unit="page">8170975</biblScope>
+                <date type="published" when="1994-04-26"/>
+                <publisher>PMID</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">The role of antibodies to Plasmodium falciparum-infected-erythrocyte surface antigens in naturally acquired immunity to malaria</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Bull</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Marsh</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Trends Microbiol</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope unit="page">11827798</biblScope>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Virulence of malaria is associated with differential expression of Plasmodium falciparum var gene subgroups in a case-control study</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kaestli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Cockburn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Cortes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Baea</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Rowe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Beck</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1086/503776</idno>
+              <ptr target="https://doi.org/10.1086/503776PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">J Infect Dis</title>
+              <imprint>
+                <biblScope unit="volume">193</biblScope>
+                <biblScope unit="issue">11</biblScope>
+                <biblScope unit="page">16652286</biblScope>
+                <date type="published" when="2006-06-01"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Antimalarial drug resistance: a review of the biology and strategies to delay emergence and spread</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Klein</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.ijantimicag.2012.12.007</idno>
+              <ptr target="https://doi.org/10.1016/j.ijantimicag.2012.12.007PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Int J Antimicrob Agents</title>
+              <imprint>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope unit="page">23394809</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Evolution: Taking advantage of drug resistance</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Burgess</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature Reviews Genetics</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="147" to="147" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Resistance to antimalarial drugs: An endless world war against Plasmodium that we risk losing</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Severini</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Menegon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Global Antimicrobial Resistance</title>
+              <imprint>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Antimalarial natural products</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Christensen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Kharazmi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bioactive Compounds from Natural Sources</title>
+              <imprint>
+                <biblScope unit="page">379</biblScope>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Plant-derived antimalarial agents: new leads and efficient phytomedicines. Part II. Non-alkaloidal natural products</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Batista</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Silva Ade</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">De</forename>
+                  <surname>Oliveira</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">B</forename>
+                </persName>
+              </author>
+              <idno type="doi">10.3390/molecules14083037</idno>
+              <ptr target="https://doi.org/10.3390/molecules14083037PMID:19701144"/>
+            </analytic>
+            <monogr>
+              <title level="j">Molecules</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope from="3037" to="3072" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <monogr>
+              <title level="m" type="main">Recent developments in antimalarial natural products isolated from medicinal plants. Mini reviews in medicinal chemistry</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Pieters</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2013"/>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope unit="page">22974400</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Antimalarial natural products: a review</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Mojab</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Avicenna Journal of Phytomedicine</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope unit="page">25050231</biblScope>
+                <date type="published" when="2012"/>
+                <publisher>PMID</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Antimalarial activity of pyrroloiminoquinones from the Australian marine sponge Zyzzya sp</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Davis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Buchanan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Duffy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Avery</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Charman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Charman</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1021/jm3002795</idno>
+              <ptr target="https://doi.org/10.1021/jm3002795PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">J Med Chem</title>
+              <imprint>
+                <biblScope unit="volume">55</biblScope>
+                <biblScope unit="issue">12</biblScope>
+                <biblScope unit="page">22686608</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Marine pharmacology in 2007-8: Marine compounds with antibacterial, anticoagulant, antifungal, anti-inflammatory, antimalarial, antiprotozoal, antituberculosis, and antiviral activities; affecting the immune and nervous system, and other miscellaneous mechanisms of action</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Mayer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Rodríguez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Berlinck</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Fusetani</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Comparative Biochemistry and Physiology Part C: Toxicology &amp; Pharmacology</title>
+              <imprint>
+                <biblScope unit="volume">153</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="191" to="222" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">PubChem: a public information system for analyzing bioactivities of small molecules</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Xiao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Suzek</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Bryant</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1093/nar/gkp456</idno>
+              <ptr target="https://doi.org/10.1093/nar/gkp456PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Nucleic Acids Res</title>
+              <imprint>
+                <biblScope unit="volume">37</biblScope>
+                <biblScope unit="page">19498078</biblScope>
+                <date type="published" when="2009-07"/>
+              </imprint>
+            </monogr>
+            <note>Web Server issue</note>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">The open access malaria box: a drug discovery catalyst for neglected diseases</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Spangenberg</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Burrows</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Kowalczyk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Mcdonald</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Wells</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Willis</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1371/journal.pone.0062906</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0062906PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">PloS one</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope unit="page">23798988</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Medicines for Malaria Venture: sustaining antimalarial drug development</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Bathurst</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Hentschel</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.pt.2006.05.011</idno>
+              <ptr target="https://doi.org/10.1016/j.pt.2006.05.011PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Trends Parasitol</title>
+              <imprint>
+                <biblScope unit="volume">22</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope unit="page">16757213</biblScope>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <monogr>
+              <title level="m" type="main">An Introduction to Statistical Learning: With Applications in R</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>James</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Witten</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Hastie</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Open Source Drug Discovery Consortium, Jaleel AU, Scaria V. Predictive models for anti-tubercular molecules using machine learning on high-throughput biological screening datasets</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Periwal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Rajappan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">BMC Res Notes</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope from="504" to="0500" unit="page"/>
+                <date type="published" when="2011-11-18"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Open Source Drug Discovery Consortium, Scaria V. Predictive modeling of anti-malarial molecules inhibiting apicoplast formation</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Jamal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Periwal</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">BMC Bioinformatics</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope from="55" to="2105" unit="page"/>
+                <date type="published" when="2013-02-15"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Cheminformatic models based on machine learning for pyruvate kinase inhibitors of Leishmania mexicana</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Jamal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Scaria</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">BMC Bioinformatics</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope from="329" to="2105" unit="page"/>
+                <date type="published" when="2013-11-19"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Plant-derived antimalarial agents: new leads and efficient phytomedicines. Part II. Non-alkaloidal natural products</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Batista</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">De Jesus Silva</forename>
+                  <surname>Júnior</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">De</forename>
+                  <surname>Ademir</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Oliveira</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.3390/molecules14083037</idno>
+              <ptr target="https://doi.org/10.3390/molecules14083037PMID:19701144"/>
+            </analytic>
+            <monogr>
+              <title level="j">Molecules</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope from="3037" to="3072" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Antimalarials from nature</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Kaur</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Jain</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Kaur</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Jain</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.bmc.2009.02.050</idno>
+              <ptr target="https://doi.org/10.1016/j.bmc.2009.02.050PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Bioorg Med Chem</title>
+              <imprint>
+                <biblScope unit="volume">17</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope unit="page">19299148</biblScope>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Potential antimalarial activity of indole alkaloids</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Frederich</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Tits</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Angenot</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.trstmh.2007.10.002</idno>
+              <ptr target="https://doi.org/10.1016/j.trstmh.2007.10.002PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Trans R Soc Trop Med Hyg</title>
+              <imprint>
+                <biblScope unit="volume">102</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">18035385</biblScope>
+                <date type="published" when="2008-01"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Antiplasmodial natural products</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Nogueira</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Lopes</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Molecules</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="2146" to="2190" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <monogr>
+              <title level="m" type="main">KNIME: The Konstanz information miner</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Berthold</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Cebron</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Dill</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Gabriel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Kötter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Meinl</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2008"/>
+                <publisher>Springer</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <monogr>
+              <title level="m" type="main">The Konstanz Information Miner 2.0</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Meinl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Cebron</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Gabriel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Dill</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Kötter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Ohl</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Prediction of biological targets for compounds using multiple-category Bayesian models trained on chemogenomics databases</title>
+              <author>
+                <persName>
+                  <forename type="first">Glick</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Nidhi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Davies</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Jenkins</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1021/ci060003g</idno>
+              <ptr target="https://doi.org/10.1021/ci060003gPMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of chemical information and modeling</title>
+              <imprint>
+                <biblScope unit="volume">46</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope unit="page">16711732</biblScope>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Prediction of drug-induced eosinophilia adverse effect by using SVM and naïve Bayesian approaches</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Yu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Xiang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Kong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Ma</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1007/s11517-014-1207-1</idno>
+              <ptr target="https://doi.org/10.1007/s11517-014-1207-1"/>
+            </analytic>
+            <monogr>
+              <title level="j">Med Biol Eng Comput</title>
+              <imprint>
+                <biblScope unit="volume">2015</biblScope>
+                <biblScope from="1" to="9" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Support vector ordinal regression</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Chu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Keerthi</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1162/neco.2007.19.3.792</idno>
+              <ptr target="https://doi.org/10.1162/neco.2007.19.3.792PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Neural Comput</title>
+              <imprint>
+                <biblScope unit="volume">19</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope unit="page">17298234</biblScope>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">LIBSVM: A library for support vector machines</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Chang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">ACM Transactions on Intelligent Systems and Technology (TIST)</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope unit="page">27</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Three useful dimensions for domain applicability in QSAR models using random forest</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Sheridan</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1021/ci300004n</idno>
+              <ptr target="https://doi.org/10.1021/ci300004nPMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of chemical information and modeling</title>
+              <imprint>
+                <biblScope unit="volume">52</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope unit="page">22385389</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">QSAR based model for discriminating EGFR inhibitors and non-inhibitors using Random forest</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Singh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Singh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Singla</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Agarwal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Raghava</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biol Direct</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope from="10" to="015" unit="page"/>
+                <date type="published" when="2015-03-25"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Real-Time Training of Voted Perceptron for Classification of EEG Data</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Martišius</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Damaševičius</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">International Journal of Artificial Intelligence</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope unit="issue">S13</biblScope>
+                <biblScope from="41" to="50" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">Further Higher Moments in Portfolio Selection and A Priori Detection of Bankruptcy, Under Multi-layer Perceptron Neural Networks, Hybrid Neuro-genetic MLPs, and the Voted Perceptron</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Loukeris</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Eleftheriadis</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">International Journal of Finance &amp; Economics</title>
+              <imprint>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">The WEKA data mining software: an update</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Hall</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Frank</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Holmes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Pfahringer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Reutemann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Witten</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">ACM SIGKDD explorations newsletter</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="10" to="18" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <monogr>
+              <title level="m" type="main">KNIME: The Konstanz information miner</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Berthold</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Cebron</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Dill</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Gabriel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Kötter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Meinl</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2008"/>
+                <publisher>Springer</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <monogr>
+              <title level="m" type="main">RDKit: Open-source cheminformatics</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Landrum</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">An introduction to variable and feature selection</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Guyon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Elisseeff</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">The Journal of Machine Learning Research</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="1157" to="1182" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Cost-sensitive feature acquisition and classification</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ji</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Carin</forename>
+                  <forename type="middle">L</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Pattern Recognit</title>
+              <imprint>
+                <biblScope unit="volume">40</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="1474" to="1485" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <monogr>
+              <title level="m" type="main">Cost curves: An improved method for visualizing classifier performance</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Drummond</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Holte</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title level="a" type="main">Comparison of different approaches to define the applicability domain of QSAR models</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Sahigara</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Mansouri</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Ballabio</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Mauri</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Consonni</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Todeschini</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.3390/molecules17054791</idno>
+              <ptr target="https://doi.org/10.3390/molecules17054791PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Molecules</title>
+              <imprint>
+                <biblScope unit="volume">17</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope unit="page">22534664</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">QSAR applicability domain estimation by projection of the training set descriptor space: a review</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Jaworska</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Nikolova-Jeliazkova</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Aldenberg</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">ATLA-NOTTINGHAM</title>
+              <imprint>
+                <biblScope unit="volume">33</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope unit="page">445</biblScope>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b44">
+            <analytic>
+              <title level="a" type="main">Moss: a program for molecular substructure mining</title>
+            </analytic>
+            <monogr>
+              <title level="m">Proceedings of the 1st international workshop on open source data mining: frequent pattern mining implementations</title>
+              <meeting>the 1st international workshop on open source data mining: frequent pattern mining implementations</meeting>
+              <imprint>
+                <publisher>ACM</publisher>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b45">
+            <analytic>
+              <title level="a" type="main">RDKit Documentation</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Landrum</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Release</title>
+              <imprint>
+                <biblScope unit="volume">1</biblScope>
+                <biblScope from="1" to="79" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b46">
+            <analytic>
+              <title level="a" type="main">Drug discovery applications for KNIME: an open source data mining platform</title>
+              <author>
+                <persName>
+                  <forename type="first">R J</forename>
+                  <surname>M P Mazanetz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Marmon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Bt Reisser</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Morao</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Current topics in medicinal chemistry</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope unit="issue">18</biblScope>
+                <biblScope unit="page">23110532</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b47">
+            <analytic>
+              <title level="a" type="main">KNIME-the Konstanz information miner: version 2.0 and beyond</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Berthold</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Cebron</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Dill</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Gabriel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Kötter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Meinl</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">AcM SIGKDD explorations Newsletter</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="26" to="31" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b48">
+            <analytic>
+              <title level="a" type="main">Can the pharmaceutical industry reduce attrition rates?</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Kola</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Landis</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1038/nrd1470</idno>
+              <ptr target="https://doi.org/10.1038/nrd1470PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Nature reviews Drug discovery</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope unit="page">15286737</biblScope>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b49">
+            <analytic>
+              <title level="a" type="main">Drug attrition during pre-clinical and clinical development: understanding and managing drug-induced cardiotoxicity</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Ferri</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Siegl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Corsini</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Herrmann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Lerman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Benghozi</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.pharmthera.2013.03.005</idno>
+              <ptr target="https://doi.org/10.1016/j.pharmthera.2013.03.005PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Pharmacol Ther</title>
+              <imprint>
+                <biblScope unit="volume">138</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope unit="page">23507039</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b50">
+            <analytic>
+              <title level="a" type="main">Reducing attrition in drug development: smart loading preclinical safety assessment</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Roberts</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Kavanagh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Mellor</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Pollard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Robinson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Platz</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.drudis.2013.11.014</idno>
+              <ptr target="https://doi.org/10.1016/j.drudis.2013.11.014PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Drug Discov Today</title>
+              <imprint>
+                <biblScope unit="volume">19</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope unit="page">24269835</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b51">
+            <analytic>
+              <title level="a" type="main">Barriers to new drug development in respiratory disease</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Barnes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Bonini</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Seeger</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Belvisi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Ward</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Holmes</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1183/09031936.00007915</idno>
+              <ptr target="https://doi.org/10.1183/09031936.00007915PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Eur Respir J</title>
+              <imprint>
+                <biblScope unit="volume">45</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope unit="page">25931481</biblScope>
+                <date type="published" when="2015-05"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b52">
+            <analytic>
+              <title level="a" type="main">Insights into the area under the receiver operating characteristic curve (AUC) as a discrimination measure in species distribution modelling</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Jiménez-Valverde</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Global Ecol Biogeogr</title>
+              <imprint>
+                <biblScope unit="volume">21</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="498" to="507" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b53">
+            <analytic>
+              <title level="a" type="main">Receiver Operating Characteristic (ROC) Curve Analysis for Medical Diagnostic Test Evaluation</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Hajian-Tilaki</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Caspian J Intern Med</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope unit="page">24009950</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

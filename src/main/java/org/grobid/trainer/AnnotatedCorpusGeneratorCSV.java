@@ -125,6 +125,7 @@ public class AnnotatedCorpusGeneratorCSV {
         }
         int totalUnmatchedAnnotations = 0;
         int totalMatchedAnnotations = 0;
+        int allMatchedDoc = 0;
 
         // go thought all annotated documents 
         m = 0;
@@ -208,7 +209,11 @@ public class AnnotatedCorpusGeneratorCSV {
                     }
                 }
 
-                
+                if (solvedAnnotations.size() == doc.getAnnotations().size()) {
+                    System.out.println("all annotations: " + doc.getAnnotations().size() + " matched");
+                    allMatchedDoc++;
+                }
+
                 if (solvedAnnotations.size() < doc.getAnnotations().size()) {
                     System.out.println((doc.getAnnotations().size() - solvedAnnotations.size()) + " unmatched annotations");
                     totalUnmatchedAnnotations += doc.getAnnotations().size() - solvedAnnotations.size();
@@ -225,6 +230,8 @@ public class AnnotatedCorpusGeneratorCSV {
 
         System.out.println("Total matched annotations: " + totalMatchedAnnotations);
         System.out.println(totalUnmatchedAnnotations + " total unmatched annotations, out of " + totalAnnotations);
+
+        System.out.println("Total documents fully matched: " + allMatchedDoc);
     }
 
 
@@ -258,6 +265,8 @@ public class AnnotatedCorpusGeneratorCSV {
         }
         int totalUnmatchedAnnotations = 0;
         int totalMatchedAnnotations = 0;
+        int allMatchedDoc = 0;
+        int allMatchedDocannotations = 0;
 
         ArticleUtilities articleUtilities = new ArticleUtilities();
 
@@ -281,24 +290,49 @@ public class AnnotatedCorpusGeneratorCSV {
 
             if (!teiFile.exists()) {
 
-                // get PDF file from DOI
-                File pdfFile = articleUtilities.getPDFDoc(doi, Source.DOI);
+                // check if the native XML file exists for this PDF
+                boolean noXMLPlos = true;
+                if (doi.indexOf("10.1371/") != -1) {
 
-                // produce TEI with GROBID
-                GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
-                                        .consolidateHeader(0)
-                                        .consolidateCitations(0)
-                                        .build();
-                Engine engine = GrobidFactory.getInstance().getEngine();
-                String tei = null;
-                try {
-                    tei = engine.fullTextToTEI(pdfFile, config);
-                } catch(Exception e) {
-                    e.printStackTrace();
+                    int ind1 = doi.indexOf("journal");
+                    String fileName = doi.substring(ind1);
+                    int ind2 = fileName.lastIndexOf(".");
+                    String plosPath = documentPath + fileName + ".xml"; 
+
+                    System.out.println(plosPath);
+                    // get the XML full text if available, otherwise PDF
+                    File f = new File(plosPath);
+                    if (f.exists()) {
+                        // transform the XML NLM file into TEI
+                        
+
+                        
+
+                        noXMLPlos = false;
+                    }
                 }
-                
-                // save TEI file
-                FileUtils.writeStringToFile(new File(teiPath), tei, UTF_8);
+
+                if (noXMLPlos) {
+
+                    // get PDF file from DOI
+                    File pdfFile = articleUtilities.getPDFDoc(doi, Source.DOI);
+
+                    // produce TEI with GROBID
+                    GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+                                            .consolidateHeader(0)
+                                            .consolidateCitations(0)
+                                            .build();
+                    Engine engine = GrobidFactory.getInstance().getEngine();
+                    String tei = null;
+                    try {
+                        tei = engine.fullTextToTEI(pdfFile, config);
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                    }
+                    
+                    // save TEI file
+                    FileUtils.writeStringToFile(new File(teiPath), tei, UTF_8);
+                }
             }
 
             try {
@@ -328,7 +362,7 @@ public class AnnotatedCorpusGeneratorCSV {
                     }
                     String localSentence = textValue.toString();
                     //System.out.println(localSentence);
-                    String localSentenceSimplified = localSentence.replace(" ", "");
+                    String localSentenceSimplified = localSentence.replace(" ", "").toLowerCase();
 
                     // match sentence and inject attributes to sentence tags
                     boolean hasMatched = false;
@@ -336,14 +370,19 @@ public class AnnotatedCorpusGeneratorCSV {
                     for(DataseerAnnotation annotation : doc.getAnnotations()) {
                         if (!solvedAnnotations.contains(k)) {
                             String sentence = annotation.getContext();
-                            String sentenceSimplified = sentence.replace(" ", "");
+                            String sentenceSimplified = sentence.replace(" ", "").toLowerCase();
                             //System.out.println(sentence);
                             if (localSentenceSimplified.equals(sentenceSimplified)) {
                                 totalMatchedAnnotations++;
-                                System.out.println("matched sentence!");
+                                System.out.println("matched sentence! " + sentence);
                                 solvedAnnotations.add(new Integer(k));
                                 // add annotation attributes to the DOM sentence
+                                // e.g. id="dataset-2" type="Spectrometry"
+                                Attribute id = new Attribute("id", String.valueOf(k));
+                                node.addAttribute(id);
 
+                                Attribute type = new Attribute("type", annotation.getRawDataType());
+                                node.addAttribute(type);
                                 break;
                             }
                         }
@@ -351,6 +390,17 @@ public class AnnotatedCorpusGeneratorCSV {
                     }
                 }
                 
+                if (solvedAnnotations.size() == doc.getAnnotations().size()) {
+                    System.out.println("all annotations: " + doc.getAnnotations().size() + " matched");
+                    allMatchedDoc++;
+                    allMatchedDocannotations += solvedAnnotations.size();
+                    // we write this document to the result folder
+                    String teiOutPutPath = xmlPath + "/" + URLEncoder.encode(doi, "UTF-8")+".tei.xml";;
+                    Writer writerTEI = new PrintWriter(new BufferedWriter(new FileWriter(teiOutPutPath)));
+                    writerTEI.write(XMLUtilities.toPrettyString(document.toXML(), 4));
+                    writerTEI.close();
+                }
+
                 if (solvedAnnotations.size() < doc.getAnnotations().size()) {
                     System.out.println((doc.getAnnotations().size() - solvedAnnotations.size()) + " unmatched annotations");
                     totalUnmatchedAnnotations += doc.getAnnotations().size() - solvedAnnotations.size();
@@ -367,11 +417,8 @@ public class AnnotatedCorpusGeneratorCSV {
 
         System.out.println("Total matched annotations: " + totalMatchedAnnotations);
         System.out.println(totalUnmatchedAnnotations + " total unmatched annotations, out of " + totalAnnotations);
+        System.out.println("Total documents fully matched: " + allMatchedDoc + "(" + allMatchedDocannotations + " annotations)");
     }
-
-
-
-
 
     public static List<nu.xom.Element> getElementsByTagName(nu.xom.Element element, String tagName) {
         nu.xom.Elements children = element.getChildElements();

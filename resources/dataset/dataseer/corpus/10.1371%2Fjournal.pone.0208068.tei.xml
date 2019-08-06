@@ -1,0 +1,2803 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:45+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Low rank and sparsity constrained method for identifying overlapping functional brain networks</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author role="corresp">
+              <persName>
+                <forename type="first">Priya</forename>
+                <surname>Aggarwal Id</surname>
+              </persName>
+              <email>*priyaa@iiitd.ac.in</email>
+              <affiliation key="aff0">
+                <orgName type="department">Indraprastha Institute of Information Technology-Delhi (IIIT-D)</orgName>
+                <orgName type="laboratory">Signal Processing and Bio-medical Imaging Lab (SBILab)</orgName>
+                <address>
+                  <settlement>New Delhi</settlement>
+                  <country key="IN">India</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Anubha</forename>
+                <surname>Gupta</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Indraprastha Institute of Information Technology-Delhi (IIIT-D)</orgName>
+                <orgName type="laboratory">Signal Processing and Bio-medical Imaging Lab (SBILab)</orgName>
+                <address>
+                  <settlement>New Delhi</settlement>
+                  <country key="IN">India</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">I</forename>
+                <forename type="middle">D</forename>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Indraprastha Institute of Information Technology-Delhi (IIIT-D)</orgName>
+                <orgName type="laboratory">Signal Processing and Bio-medical Imaging Lab (SBILab)</orgName>
+                <address>
+                  <settlement>New Delhi</settlement>
+                  <country key="IN">India</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Low rank and sparsity constrained method for identifying overlapping functional brain networks</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <note>RESEARCH ARTICLE</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <head>Abstract</head>
+          <p>
+            <s>Analysis of functional magnetic resonance imaging (fMRI) data has revealed that brain regions can be grouped into functional brain networks (fBNs) or communities.</s>
+            <s>A community in fMRI analysis signifies a group of brain regions coupled functionally with one another.</s>
+            <s>In neuroimaging, functional connectivity (FC) measure can be utilized to quantify such functionally connected regions for disease diagnosis and hence, signifies the need of devising novel FC estimation methods.</s>
+            <s>In this paper, we propose a novel method of learning FC by constraining its rank and the sum of non-zero coefficients.</s>
+            <s>The underlying idea is that fBNs are sparse and can be embedded in a relatively lower dimension space.</s>
+            <s>In addition, we propose to extract overlapping networks.</s>
+            <s>In many instances, communities are characterized as combinations of disjoint brain regions, although recent studies indicate that brain regions may participate in more than one community.</s>
+            <s>In this paper, large-scale overlapping fBNs are identified on resting state fMRI data by employing non-negative matrix factorization.</s>
+            <s>Our findings support the existence of overlapping brain networks.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Introduction</head>
+        <p>
+          <s>Functional Connectivity (FC) is a widely used measure to quantify relationship between pairs of brain regions <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b1" type="bibr">2]</ref> .</s>
+          <s>It is utilized to identify functional brain networks (fBNs) and is useful for understanding intrinsic functional organization of human brain <ref target="#b2" type="bibr">[3,</ref>
+            <ref target="#b3" type="bibr">4]</ref> .</s>
+          <s>Therefore, accurate construction of FC is one of the most essential tasks to understand the functioning of complex human brain.</s>
+        </p>
+        <p>
+          <s>Various analytical methods have been proposed for FC modeling from fMRI data such as Pearson correlation (CORR) <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b4" type="bibr">5]</ref> and the partial correlation (PCORR) <ref target="#b5" type="bibr">[6,</ref>
+            <ref target="#b6" type="bibr">7]</ref> .</s>
+          <s>Pearson correlation (CORR) is the most-widely used method for characterizing FC between different brain regions <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b4" type="bibr">5]</ref> .</s>
+          <s>Despite its popularity, this method is limited because it reveals the pair-wise relationship between two regions without accounting for the influences of other brain regions <ref target="#b7" type="bibr">[8]</ref> .</s>
+          <s>Similarly, PCORR method, i.e., the maximum likelihood estimation (MLE) of the inverse covariance matrix, only captures the pairwise information and therefore, does not fully reflect the interactions among multiple brain regions.</s>
+          <s>To solve this problem, recent methods of estimating FC rely on linear relationships between all brain regions and delineate functional relationships by representing one region's representative time-series as a linear combination of other regions' time-series.</s>
+          <s>These methods generally impose sparsity on FC coefficients because a brain region may directly interact with only a fewer other brain regions and thus, force insignificant connections to zero using the sparsity constraint <ref target="#b7" type="bibr">[8]</ref>
+            <ref target="#b8" type="bibr">[9]</ref>
+            <ref target="#b9" type="bibr">[10]</ref> .</s>
+          <s>However, this solution may yield too sparse fBNs owing to division of actual fBNs into smaller communities and hence, does not guarantee extraction of accurate communities or fBNs.</s>
+          <s>Thus, sparsity constraint alone may not capture the modular structure of brain regions belonging to the same community.</s>
+          <s>To address this problem, some previous studies employed both sparse and dense constraints to characterize FC <ref target="#b7" type="bibr">[8,</ref>
+            <ref target="#b8" type="bibr">9]</ref> .</s>
+          <s>It is observed that sparsity constraint helps in extracting sparse inter-network connections and denseness helps in extracting dense intra-network connections.</s>
+        </p>
+        <p>
+          <s>Apart from considering sparsity and denseness constraints, an informative FC graph is essentially low rank <ref target="#b10" type="bibr">[11]</ref>
+            <ref target="#b11" type="bibr">[12]</ref>
+            <ref target="#b12" type="bibr">[13]</ref> , which implies that columns and rows of FC are lying in the lower dimensional space, where rows and columns signify brain regions.</s>
+          <s>Low rank constraint provides a modular structure to fBNs, which is closer to the actual real fBNs <ref target="#b2" type="bibr">[3,</ref>
+            <ref target="#b12" type="bibr">13]</ref> .</s>
+          <s>However, none of the existing methods of estimating FC utilize low-rank assumption in the formulation.</s>
+          <s>Inspired by this insight, we propose a new multivariate method for learning FC matrix with an assumption that this matrix is reasonably low rank.</s>
+          <s>In addition, we also impose sparsity constraint to learn sparse fBNs as has been explored in the previous studies <ref target="#b7" type="bibr">[8]</ref>
+            <ref target="#b8" type="bibr">[9]</ref>
+            <ref target="#b9" type="bibr">[10]</ref> .</s>
+        </p>
+        <p>
+          <s>The proposed method is formulated as a convex minimization problem with l 1 -norm (via sparsity convex surrogate) and nuclear norm (via low rank convex surrogate) constraints.</s>
+          <s>We name the proposed method as Low-Rank Multivariate Vector Regression-based Connectivity (LR-MVRC).</s>
+          <s>We utilize popular Alternating Direction Method of Multipliers (ADMM) for solving the newly proposed objective function because it is widely used for solving joint l 1 and nuclear norm problems in different functional magnetic resonance imaging (fMRI) experiments <ref target="#b13" type="bibr">[14,</ref>
+            <ref target="#b14" type="bibr">15]</ref> .</s>
+          <s>Second contribution of the proposed work is the identification of overlapping communities.</s>
+          <s>In specific, communities are a group of tightly interconnected brain regions forming functional brain networks.</s>
+          <s>Overlapping communities imply that one brain region might be involved in multiple communities.</s>
+          <s>This sounds plausible because one stimulus, say auditory, may stimulate memory and other functional networks apart from the auditory network.</s>
+          <s>This indicates a need for identifying overlapping communities compared to the commonly identified disjoint communities <ref target="#b15" type="bibr">[16,</ref>
+            <ref target="#b16" type="bibr">17]</ref> .</s>
+          <s>A few recent studies in fMRI have indicated the existence of overlapping brain communities, for example, popular Independent Component Analysis (ICA) method in fMRI results in overlapping set of clusters <ref target="#b17" type="bibr">[18]</ref> .</s>
+          <s>In addition, a few recent studies based on functional connectivity indeed indicate overlap among various functional brain networks and suggest that brain regions may belong to several communities simultaneously <ref target="#b15" type="bibr">[16,</ref>
+            <ref target="#b16" type="bibr">17,</ref>
+            <ref target="#b18" type="bibr">19,</ref>
+            <ref target="#b19" type="bibr">20]</ref> .</s>
+          <s>Although several efforts have been made in this direction, the overlapping community structure of brain networks are still largely unclear.</s>
+          <s>Most of these studies are based on matrix factorization approaches to represent FC matrix into lower dimensional space of size K (i.e.</s>
+          <s>number of communities), where each one of the K dimensions of this space represents association of various brain regions to the corresponding community.</s>
+          <s>Existing methods largely impose external sparsity constraint on this lower dimension space so as to make community inference easy from the perspective of fBNs.</s>
+          <s>However, it is still unclear whether this type of network inference is actually sparse or dense.</s>
+        </p>
+        <p>
+          <s>Another issue of the existing methods is the utilization of CORR method to build FC, followed by, thresholding on CORR values to retain only a few top connections of FC matrix.</s>
+          <s>This may not be a reasonable assumption.</s>
+          <s>In this work, we utilize full FC matrix to detect overlapping community structure without using any predefined threshold value.</s>
+          <s>In addition, we utilize conventional matrix factorization approach to obtain overlapping fBNs.</s>
+        </p>
+        <p>
+          <s>Owing to non-negative FC matrix obtained with LR-MVRC, we utilize non-negative matrix factorization (NMF) approach without imposing any external sparsity constraint.</s>
+          <s>NMF is a popular unsupervised machine learning matrix factorization approach <ref target="#b20" type="bibr">[21]</ref> .</s>
+          <s>It has been widely used to obtain overlapping communities, especially, in the social networks <ref target="#b21" type="bibr">[22]</ref>
+            <ref target="#b22" type="bibr">[23]</ref>
+            <ref target="#b23" type="bibr">[24]</ref> .</s>
+          <s>This method has also been applied to neuroimaging data to localize co-varying structural brain regions <ref target="#b24" type="bibr">[25]</ref> , to characterize brain tumor heterogeneity <ref target="#b25" type="bibr">[26]</ref> , and to reveal altered default mode network in Attention Deficit Hyperactivity Disorder (ADHD) <ref target="#b26" type="bibr">[27]</ref> .</s>
+          <s>In this paper, NMF is used to obtain overlapping communities or fBNs using fMRI data.</s>
+          <s>The non-negativity property retained in NMF is crucial since the interpretation of results becomes straightforward.</s>
+          <s>We utilize publicly available 1000 Functional Connectomes Project resting state fMRI data to show the effectiveness of the proposed method in extracting fBNs on a group of subjects.</s>
+          <s>Please note that fBNs and communities words are used interchangeably from now onwards.</s>
+        </p>
+        <p>
+          <s>Salient contributions of the proposed work are as follows:</s>
+        </p>
+        <p>
+          <s>1. We propose a novel multivariate method for computing FC with sparsity and low-rank constraints.</s>
+        </p>
+        <p>
+          <s>2. We extract overlapping communities in contrast to non-overlapping communities extracted in general.</s>
+        </p>
+        <p>
+          <s>To validate the proposed work, it is compared with two state-of-the-art network-based community detection methods: modularity optimization and independent component analysis (ICA).</s>
+          <s>This paper is organized as follows.</s>
+          <s>Data description, proposed LR-MVRC method, its implementation and framework for detecting overlapping communities are presented in Section 2. Section 3 presents results.</s>
+          <s>In the end, discussion and conclusions are presented in Sections 4 and 5, respectively.</s>
+        </p>
+      </div>
+      <div>
+        <head>Materials and methods</head>
+      </div>
+      <div>
+        <head>Data description and preprocessing</head>
+        <p>
+          <s id="0" type="Dataset:Existing dataset">Beijing_Zang resting state fMRI data from 1000 Functional Connectomes Project (http:// fcon_1000.projects.nitrc.org/) is utilized in this paper.</s>
+          <s id="1" type="Dataset:Existing dataset">This data was collected by Beijing Normal University and consists of normal subjects (age range: 18-26 years old) scanned for a duration of 7.5 minutes resulting in 225 brain volumes.</s>
+          <s>Each brain volume consists of an acquisition of 33 axial brain slices with dimension 64 × 64.</s>
+          <s>This data has Echo Time (TE) equal to 30 ms and Repetition Time (TR) equal to 2000 ms.</s>
+          <s>We considered all 198 subjects of this dataset in this manuscript.</s>
+        </p>
+        <p>
+          <s>We carried out standard preprocessing using SPM12 (http://www.fil.ion.ucl.ac.uk/spm/ software/spm12/) toolbox as specified in <ref target="#b7" type="bibr">[8]</ref> .</s>
+          <s>Preprocessing starts with the removal of first 10 volumes.</s>
+          <s>This initial step is necessary to allow the magnetization to reach the steady state.</s>
+          <s>After this step, other remaining brain volumes are slice time corrected using the middle slice as a reference followed by motion correction.</s>
+          <s>Motion correction ensures reduction of head motion artifact from the signal.</s>
+          <s>Further, spatial normalization onto the Montreal Neurological Institute (MNI) space is performed to facilitate group-level comparisons, followed by, smoothing with a Gaussian kernel with 4 mm full width half maximum (FWHM).</s>
+          <s>Finally, we regressed out nuisance variables (6 head motion parameters, average cerebrospinal fluid (CSF) signal from ventricular masks, and average white matter signal from white matter mask) from each voxel's time series and performed bandpass filtering in the frequency range of 0.01 to 0.1 Hz to reduce low frequency drift and high frequency noise.</s>
+        </p>
+        <p>
+          <s>After preprocessing, the whole brain data is parcellated into 90 anatomical regions of interests (ROIs) via automated anatomical labeling (AAL) atlas <ref target="#b27" type="bibr">[28]</ref> .</s>
+          <s>In order to find the regionrepresentative time series for every ROI, we averaged time-series of all voxels belonging to the same ROI.</s>
+          <s>This resulted into a matrix X of dimension T × 90, where T denotes the number of time points (or the number of brain volumes) such as 215 for the given fMRI data.</s>
+          <s>Next, we normalized each column of X to obtain unit normalized time-series.</s>
+        </p>
+      </div>
+      <div>
+        <head>Proposed LR-MVRC</head>
+        <p>
+          <s>Consider a matrix X of dimension T × N, where T denotes the number of time points and N denotes the number of region of interests (ROIs).</s>
+          <s>Each column of X signifies unit normalized time-series of one brain region.</s>
+          <s>Given this matrix, we require to compute the functional connectivity matrix of dimension N × N.</s>
+          <s>Recently proposed Multivariate Vector Regression-based Connectivity (MVRC) method of identifying FC regresses time series of all regions (i.e.</s>
+          <s>columns of X) onto the time series of other regions multiplied by an FC matrix as X ¼ XW <ref target="#b7" type="bibr">[8]</ref> .</s>
+          <s>In addition, this method employs elastic-net penalty onto the FC matrix comprising of both l 1 and l 2 norms.</s>
+          <s>However, to incorporate modular structure of fBNs into FC formulation, we consider nuclear norm constraint along with l 1 norm constraint in the computation of this matrix and name the propose method as Low-Rank Multivariate Vector Regression-based Connectivity (LR-MVRC).</s>
+          <s>We formulate the proposed LR-MVRC objective function as:</s>
+        </p>
+        <formula xml:id="formula_0">miñ W 1 2 � � �X À XW � � � 2 F þ m 1 � � �W � � � 1 þ m 2 � � �W � � � � ; s:t: diagðWÞ ¼ 0;<label>ð1Þ</label>
+        </formula>
+        <p>
+          <s>where μ 1 and μ 2 are the regularization parameters associated with l 1 and nuclear norms terms, respectively.</s>
+          <s>Nuclear norm minimization implies l 1 penalty on singular values of matrixW that supports this matrix to be low-rank.</s>
+          <s>diagðWÞ ¼ 0 term ensures no self connections in the matrixW.</s>
+          <s>Finally, symmetric adjacency matrix fromW is computed as A ¼ ðjWj þjWj T Þ=2.</s>
+        </p>
+      </div>
+      <div>
+        <head>Implementation of LR-MVRC</head>
+        <p>
+          <s>Next, we introduce the algorithm to solve LR-MVRC problem.</s>
+          <s>We utilize ADMM <ref target="#b28" type="bibr">[29]</ref> that splits Eq (1) into multiple subproblems that are easier to solve.</s>
+          <s>We introduce two auxiliary variables Z 1 and Z 2 for the l 1 -norm and nuclear norm terms in Eq (1) as:</s>
+        </p>
+        <formula xml:id="formula_1">miñ W 1 2 � � �X À XW � � � 2 F þ m 1 kZ 1 k 1 þ m 2 kZ 2 k � s:t: Z 1 ¼W; Z 2 ¼W; diagðWÞ ¼ 0:<label>ð2Þ</label>
+        </formula>
+        <p>
+          <s>The augmented Lagrange function for Eq (2) can be written as:</s>
+        </p>
+        <formula xml:id="formula_2">LðW; Z 1 ; Z 2 ; Y 1 ; Y 2 Þ ¼ 1 2 � � �X À XW � � � 2 F þ m 1 kZ 1 k 1 þm 2 kZ 2 k � þ b 1 2 � � � � Z 1 ÀW þ Y 1 b 1 � � � � 2 F þ b 2 2 � � � � Z 2 ÀW þ Y 2 b 2 � � � � 2 F ;<label>ð3Þ</label>
+        </formula>
+        <p>
+          <s>where β 1 , β 2 &gt; 0 are the penalty parameters and Y 1 , Y 2 are the Lagrangian multiplier matrices.</s>
+          <s>The above equation consists of three variablesW, Z 1 and Z 2 .</s>
+          <s>This is to note that during the iterative learning for the solution ofW in Eq (3), diagðWÞ is kept to zero.</s>
+        </p>
+        <p>
+          <s>ADMM splits Eq (3) into three subproblems as described below.</s>
+          <s>Each subproblem may be treated as minimization over one variable while fixing the other two variables.</s>
+        </p>
+        <p>
+          <s>Subproblem 1: SolvingW:</s>
+        </p>
+        <formula xml:id="formula_3">miñ W 1 2 � � �X À XW � � � 2 F þ b 1 2 � � � � Z 1 ÀW þ Y 1 b 1 � � � � 2 F þ b 2 2 � � � � Z 2 ÀW þ Y 2 b 2 � � � � 2 F :<label>ð4Þ</label>
+        </formula>
+        <p>
+          <s>Update ofW, while other variables are fixed, is performed by solving the above equation as below:W</s>
+        </p>
+        <formula xml:id="formula_4">¼ ðX T X þ ðb 1 þ b 2 ÞIÞ À 1 ðX T X þ b 1 Z 1 þ Y 1 þ b 2 Z 2 þ Y 2 Þ;<label>ð5Þ</label>
+        </formula>
+        <p>
+          <s>where I is an identity matrix.</s>
+          <s>The diagonal elements ofW obtained from Eq (4) are replaced with zeros.</s>
+          <s>Subproblem 2: Solving Z 1 :</s>
+        </p>
+        <formula xml:id="formula_5">min Z 1 m 1 kZ 1 k 1 þ b 1 2 � � � � Z 1 ÀW þ Y 1 b 1 � � � � 2 F :<label>ð6Þ</label>
+        </formula>
+        <p>
+          <s>Update of Z 1 , while other variables are fixed, can be done using soft thresholding as:</s>
+        </p>
+        <formula xml:id="formula_6">Z 1 ¼ Soft 2m 1 =b 1W À Y 1 b 1 � � ;<label>ð7Þ</label>
+        </formula>
+        <p>
+          <s>where Soft is the shrinkage thresholding operator defined as <ref target="#b30" type="bibr">[30]</ref> :</s>
+        </p>
+        <formula xml:id="formula_7">Soft a ðnÞ ¼ sgnðnÞmaxð0; jnj À aÞ;<label>ð8Þ</label>
+        </formula>
+        <p>
+          <s>where sgn denotes the signum value and max denotes the maximum value.</s>
+          <s>Subproblem 3: Solving Z 2 :</s>
+        </p>
+        <formula xml:id="formula_8">min Z 2 m 2 kZ 2 k � þ b 2 2 � � � � Z 2 ÀW þ Y 2 b 2 � � � � 2 F :<label>ð9Þ</label>
+        </formula>
+        <p>
+          <s>Global minimum of convex nuclear norm minimization is obtained by soft thresholding on singular values, known as singular value thresholding (SVT) <ref type="bibr">[31]</ref> .</s>
+          <s>Hence, update of Z 2 while other variables are fixed, can be carried out using soft thresholding on singular values of Z 2 as:</s>
+        </p>
+        <formula xml:id="formula_9">Z 2 ¼ SVT 2m 2 =b 2W À Y 2 b 2 � � ;<label>ð10Þ</label>
+        </formula>
+        <p>
+          <s>where SVT is defined as:</s>
+        </p>
+        <formula xml:id="formula_10">SVT a ðnÞ ¼ U � diagðSOFT a ðnÞÞ � V T ;<label>ð11Þ</label>
+        </formula>
+        <p>
+          <s>and singular value decomposition of Z 2 is defined as</s>
+        </p>
+        <formula xml:id="formula_11">U × diag(ν) × V T .</formula>
+        <p>
+          <s>The iterations of LR-MVRC, with update of variables, is described in Algorithm 1.</s>
+        </p>
+      </div>
+      <div>
+        <head>Algorithm 1. LR-MVRC problem</head>
+        <p>
+          <s>Input: Data matrix X and parameters μ 1 , μ 2 .</s>
+          <s>Initialize:</s>
+        </p>
+        <formula xml:id="formula_12">β 1 = β 2 = 0.1, β max = 10 10 , ρ = 1.1, Y 1 ¼ Y 2 ¼W ¼ Z 1 ¼ Z 2 ¼ 0</formula>
+        <formula xml:id="formula_13">Y 1 ¼ Y 1 þ b 1 ðZ 1 ÀWÞ; Y 2 ¼ Y 2 þ b</formula>
+      </div>
+      <div>
+        <head>Functional brain network identification</head>
+        <p>
+          <s>After computing the adjacency matrix, next task is to identify communities or fBNs.</s>
+          <s>Various methods have been proposed to detect communities from FC matrix <ref target="#b32" type="bibr">[32]</ref> .</s>
+          <s>Among them, modularity is one of the most popular methods <ref target="#b33" type="bibr">[33]</ref> .</s>
+          <s>The widely used modularity method implemented in Brain Connectivity Toolbox <ref target="#b33" type="bibr">[33]</ref> yields disjoint communities, i.e., one brain region is part of only one community, although recent studies in fMRI <ref target="#b15" type="bibr">[16]</ref> demonstrate that one brain region may participate in multiple communities.</s>
+          <s>Thus, we identify overlapping communities of ROIs.</s>
+          <s>In the next section, we describe the method for detecting overlapping communities.</s>
+          <s>Detection of overlapping communities.</s>
+          <s>In this work, we utilize NMF technique to obtain overlapping communities.</s>
+          <s>NMF is a feature extraction and dimensionality reduction method of machine learning, which has been adapted to community detection recently <ref target="#b21" type="bibr">[22]</ref>
+            <ref target="#b22" type="bibr">[23]</ref>
+            <ref target="#b23" type="bibr">[24]</ref> .</s>
+          <s>This technique factorizes a non-negative input FC matrix A, approximately, into a product of two non-negative matrices as:</s>
+        </p>
+        <formula xml:id="formula_14">A ' PQ:<label>ð12Þ</label>
+        </formula>
+        <p>
+          <s>The above factorization is carried out with a particular rank K so that P is of dimension N × K and Q is of dimension K × N.</s>
+          <s>This factorization can be viewed as a representation of data in a lower (K) dimensional space.</s>
+          <s>In NMF, matrices P and Q are updated iteratively to improve the approximation to A, while maintaining non-negative matrix entries throughout.</s>
+          <s>For a given K, the algorithm runs iteratively until it finds a good approximate factorization or the stop criterion is met.</s>
+          <s>For a symmetric data matrix A, the factors P and Q can be considered as Q = P T .</s>
+          <s>In particular, NMF algorithm minimizes the cost function, representing the approximation error between the actual data A and the reduced dimension reconstruction of the data, i.e., PQ.</s>
+          <s>One of the popular cost function is the squared Euclidean distance as described below:</s>
+        </p>
+        <formula xml:id="formula_15">LðP; QÞ ¼ 1 2 X i X j ðA ij À ½PQ� ij Þ 2 :<label>ð13Þ</label>
+        </formula>
+        <p>
+          <s>The minimization of the above cost function w.r.t.</s>
+          <s>P � 0 and Q � 0 is a nonconvex problem.</s>
+          <s>This approach can be interpreted as a maximum likelihood estimation with additional non-negativity constraints.</s>
+          <s>However, the implementation details which are necessary to ensure decreasing cost function under the non-negativity constraints seem to be rather complex <ref target="#b34" type="bibr">[34]</ref> .</s>
+          <s>In addition, without any other constraint or prior to this problem, solution may lead to unstable convergence, and therefore, good initial values are necessary for more sophisticated NMF algorithms <ref target="#b35" type="bibr">[35,</ref>
+            <ref target="#b36" type="bibr">36]</ref> .</s>
+          <s>Different iterative algorithms have been proposed to solve this problem <ref target="#b35" type="bibr">[35]</ref> .</s>
+          <s>In general, at each iteration of these algorithms, one matrix is considered to be fixed and the other one is estimated.</s>
+          <s>This process continues until the convergence is achieved.</s>
+          <s>The main idea behind these approaches is that by fixing one matrix, the estimation of the other matrix becomes a convex problem that can be solved easily.</s>
+        </p>
+        <p>
+          <s>Since NMF, in general, has no unique solution, it is necessary to introduce some additional constraints reflecting some prior knowledge.</s>
+          <s>To this end, recently a Bayesian approach of NMF is proposed that imposes prior distributions on the matrices and leads to unique convergence to solution <ref target="#b37" type="bibr">[37]</ref> .</s>
+          <s>In recent overlapping communities detection work <ref target="#b21" type="bibr">[22]</ref> , it is assumed that the pairwise interaction A ij is generated by a Poisson distribution with rateÂ ij ¼ P k P ik Q kj and shrinkage prior on P ik and Q kj with hyper-parameter β k .</s>
+          <s>These additional constraints help to induce some kind of uniqueness to the NMF solution.</s>
+          <s>Further, this Bayesian NMF approach maximizes posterior density under non-negative constraints.</s>
+          <s>Keeping in view the success of this Bayesian NMF approach for overlapping communities detection, we have utilized algorithm presented in <ref target="#b21" type="bibr">[22]</ref> to solve for NMF in this work.</s>
+          <s>This algorithm starts with random initial matrices P and Q, with non-negative weights chosen from a uniform random distribution on the interval [0, 1].</s>
+          <s>In brief, these matrices are updated iteratively as</s>
+        </p>
+        <formula xml:id="formula_16">Q ð Q P T 1 þ BQ Þ: ½P T ð A PQ Þ�; P ð P 1Q T þ PB Þ : ½ð A PQ ÞQ T �;<label>ð14Þ</label>
+        </formula>
+        <p>
+          <s>where B 2 R K�K is a matrix with hyper-parameters β k on the diagonal.</s>
+          <s>For more details of this algorithm, one may refer to <ref target="#b21" type="bibr">[22]</ref> .</s>
+          <s>Code of this algorithm is available online at https://github.</s>
+          <s>com/ipsorakis/commDetNMF.</s>
+          <s>We have set the number of maximum iterations to 100 as has been done in <ref target="#b21" type="bibr">[22]</ref> .</s>
+          <s>This is to note that we ran the algorithm ten times with random initial matrices.</s>
+          <s>The solution converged to the same output matrices with some columns exchanged.</s>
+        </p>
+        <p>
+          <s>Most experiments show that the matrix P represents the final clustering partition.</s>
+          <s>In our work, we mainly utilized matrix P to determine overlapping communities of the input FC matrix.</s>
+          <s>This is to note that each column of matrix P defines one community and hence, K denotes the total number of communities.</s>
+          <s>Each column of P indicates the extent to which any brain region i belongs to that community.</s>
+          <s>Thus, we compared each column of P with a threshold and if the value of region i is more than the threshold, region i is considered to be a part of that community.</s>
+          <s>Similarly, if a region's value is less than the threshold, we delete that region from the corresponding community.</s>
+          <s>Further details about selection of this threshold is provided in the Results Section.</s>
+        </p>
+        <p>
+          <s>Thresholding of each column of P independently allows brain regions to be a part of multiple communities simultaneously and hence, detects overlapping communities.</s>
+          <s>The NMF approach of detecting communities is already used in the literature of social networks.</s>
+          <s>However, their use in brain networks is limited so far.</s>
+        </p>
+        <p>
+          <s>Choosing number of K communities.</s>
+          <s>NMF algorithm requires a given value of dimensionality K that is an important input used in matrix factorization.</s>
+          <s>However, determining the value of K is a challenge in most community discovery algorithms because the number of communities K is not known in advance.</s>
+          <s>If K is too small, some communities will be very large (in terms of more number of regions) with random grouping of ROIs.</s>
+          <s>On the contrary, if K is too large, communities will be randomly scattered and will be very small.</s>
+        </p>
+        <p>
+          <s>To determine the number of communities K, we used NMF for two different numbers of communities 8 and 15.</s>
+          <s>We chose 8 number of communities because, in general, the following eight brain networks are observed in the resting state fMRI data: Visual Network (VN),</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+        <p>
+          <s>We utilized X and computed adjacency matrix using Eq (1) for all subjects.</s>
+          <s>We used μ 1 = 0.25 in Eq (1) as was utilized previously in <ref target="#b7" type="bibr">[8]</ref> and the value of μ 2 is decided empirically to be equal to 0.1.</s>
+          <s>This value is decided based on the correspondence of identified fBNs with the ground truth atlas labels.</s>
+          <s>We averaged LR-MVRC FC matrices of all subjects and utilized NMF to obtain communities.</s>
+        </p>
+      </div>
+      <div>
+        <head>Comparison of FC methods</head>
+        <p>
+          <s>In this section, we evaluate the feasibility and the robustness of the proposed LR-MVRC method w.r.t.</s>
+          <s>traditional methods discussed below.</s>
+        </p>
+        <p>
+          <s>• Pearson correlation (CORR): This is simply a pairwise correlation between two brain regions' time series.</s>
+          <s>Pearson correlation coefficients are computed between all 90 ROIs (extracted from AAL atlas), resulting in a 90 × 90 FC matrix.</s>
+          <s>All negative values are flipped to positive values and all diagonal entries are set to zeros, as is usually done in fMRI FC analysis using CORR <ref target="#b38" type="bibr">[38]</ref> .</s>
+        </p>
+        <p>
+          <s>• Partial correlation (PCORR): Partial correlation values are assumed to be equivalent to the inverse of covariance matrix and also known as the precision matrix.</s>
+          <s>Thus, first the covariance matrix is computed.</s>
+          <s>Next, inverse of this matrix provides partial correlation values.</s>
+          <s>However, computation of inverse is itself challenging because of low rank nature of the covariance matrix.</s>
+          <s>Generalized inverse or pseudo-inverse methods have been generally used to compute partial correlation.</s>
+        </p>
+        <p>
+          <s>• MVRC method <ref target="#b7" type="bibr">[8]</ref> : MVRC method has been explained in methods section and is implemented as specified in <ref target="#b7" type="bibr">[8]</ref> .</s>
+        </p>
+        <p>
+          <s>We averaged each method's FC matrices across all subjects and compared them w.r.t.</s>
+          <s>various graph theoretical measures <ref target="#b39" type="bibr">[39]</ref> .</s>
+          <s>Degree was calculated as the sum of weighted edges connecting to a node i as D i = ∑ j A ij .</s>
+          <s>Similarly, participation coefficient (PC) arising from modularity community assignment was computed as</s>
+        </p>
+        <formula xml:id="formula_17">P i ¼ 1 À P N m s¼1 ð D is D i Þ 2 ,</formula>
+        <p>
+          <s>where D is is the number of edges of node i to nodes in module s, D i is the degree of node i, and N m is the total number of modules in the graph.</s>
+          <s>We also computed another graph theoretical measure, i.e., betweenness centrality (BC), averaged over all 90 AAL brain regions, whose high value signifies the network to be highly central or modular.</s>
+          <s>In fact, it is a network centrality measure that represents the fraction of all shortest paths in the network that pass through a given node <ref target="#b33" type="bibr">[33]</ref> .</s>
+          <s>LR-MVRC matrix in this study is extracted using l 1 and low rank constraints, while MVRC FC matrix in <ref target="#b7" type="bibr">[8]</ref> was extracted using l 1 and l 2 constraints.</s>
+          <s>As a result, we noticed that while MVRC had more connections due to the denseness imposed by l 2 norm constraint, LR-MVRC had fewer higher magnitude connections compared to MVRC due to the low rank constraint.</s>
+          <s>However, these fewer connections of LR-MVRC weighed higher than those of MVRC.</s>
+          <s>In addition, we observed same degree in both the matrices, LR-MVRC FC and MVRC FC, since we did not apply any thresholding on FC matrices.</s>
+          <s>Participation coefficients (of size 90 that is equal to the number of AAL brain regions) arising from the modularity community assignment using both the methods are statistically compared using the two-sample t-test with significance level of 0.05.</s>
+          <s>Altered PC were observed between both the matrices (p&lt;0.05).</s>
+          <s>Further, we observed BC of LR-MVRC to be more (=128) compared to that of MVRC (=96).</s>
+          <s>In conclusion, these findings indicate that the LR-MVRC FC matrix is more modular or central compared to MVRC FC.</s>
+          <s>Further, on comparing LR-MVRC method with the CORR and PCORR methods, we observed same degree with both the matrices, since we did not apply any thresholding on FC matrices.</s>
+          <s>In addition, we observed PC using CORR and PCORR methods to be statistically different w.r.t. the proposed LR-MVRC method, suggesting that the FC matrices obtained by the three methods are statistically different (p&lt;0.05).</s>
+          <s>These results are consistent with the findings on LR-MVRC and MVRC methods as discussed previously, although this is to note that we obtained fewer number of communities using modularity with CORR and PCORR methods with no community signifying any functional brain network structure.</s>
+          <s>Further details regarding this comparison is presented in the next section.</s>
+          <s>Furthermore, analysis of the average BC showed lesser values among the CORR and PCORR methods compared to the proposed LR-MVRC method.</s>
+          <s>These results indicated that there are structural differences among the networks constructed by the three methods.</s>
+        </p>
+        <p>
+          <s>Competing methods.</s>
+          <s>Modularity optimization is a leading method aimed at finding optimal non-overlapping partitions of fBNs based on modularity function <ref target="#b40" type="bibr">[40]</ref> .</s>
+          <s>Unlike NMF that finds overlapping communities, modularity optimization results in non-overlapping communities.</s>
+          <s>We performed modularity optimization on the averaged LR-MVRC adjacency matrices by using the Louvain method implemented in the Brain Connectivity Toolbox <ref target="#b33" type="bibr">[33]</ref> .</s>
+        </p>
+        <p>
+          <s>Principal and independent component analysis (PCA, ICA) are some other matrix factorization methods commonly used for projecting data into lower dimensional representation, from which the overlapping communities structure could be identified <ref target="#b41" type="bibr">[41]</ref> .</s>
+          <s>These factorization methods impose different constraints or priors in order to obtain a solution, e.g., components must be orthogonal in PCA and must be independent in ICA.</s>
+          <s>The ICA method is being extensively used in fMRI and it computes independent components directly on fMRI timeseries and identifies overlapping communities.</s>
+          <s>In this paper, fMRI time-series of all subjects are concatenated temporally and the dimensionality is reduced by using PCA <ref target="#b17" type="bibr">[18]</ref> .</s>
+          <s>PCA is generally used before ICA for dimensionality reduction.</s>
+          <s>The resulting fMRI time-series data is fed into the fastICA algorithm <ref target="#b42" type="bibr">[42]</ref> implemented by the FastICA software (https://research.ics.</s>
+          <s>aalto.fi/ica/fastica/).</s>
+        </p>
+        <p>
+          <s>To further test the performance of the proposed LR-MVRC FC identification method, all fBNs identification methods, i.e., NMF and modularity optimization are also carried out on the FC matrix constructed using the Pearson correlation (CORR).</s>
+          <s>Specifically, for each pair of ROIs, Pearson correlation is used as a metric to compute the FC.</s>
+          <s>Next, we averaged CORR adjacency matrices of all subjects and utilized it to obtain communities.</s>
+        </p>
+        <p>
+          <s>Results on fMRI dataset.</s>
+          <s>Based on the analyses of LR-MVRC and CORR FC matrices, the overall community structure obtained by NMF and modularity are shown in <ref target="#fig_1" type="figure">Fig 1.</ref>
+          </s>
+          <s>The matrices P obtained using LR-MVRC and CORR matrices with K = 8 and 15 in NMF are shown in first two columns of <ref target="#fig_1" type="figure">Fig 1.</ref> Visually, LR-MVRC matrices yield sparse overlapping community structures, while the ones derived using CORR matrices are also overlapping but are extremely dense.</s>
+          <s>More sparsity, or in other words, fewer high valued coefficients in each column of matrix P results in accurate fBN identification by applying thresholding as described in the previous section.</s>
+          <s>We considered mean plus standard deviation of each column of matrix P as a threshold value for that column or community.</s>
+          <s>Modularity optimization method (refer to third column of <ref target="#fig_1" type="figure">Fig 1)</ref> achieves greatest sparsity among all methods, but this method results in non-overlapping communities.</s>
+          <s>This is to note that this method does not require pre-defined number of communities unlike the NMF method.</s>
+          <s>Using this method, CORR based FC matrix could identify only 4 communities compared to 10 communities detected with LR-MVRC based FC matrix.</s>
+        </p>
+        <p>
+          <s>In the second row of <ref target="#fig_1" type="figure">Fig 1,</ref> we show the community structure derived by ICA.</s>
+          <s>The first and the second columns of this row display the overall community structures identified with K = 8 and 15, respectively.</s>
+          <s>For ICA method, group-level community structure is derived by concatenating fMRI time-series of all subjects.</s>
+          <s>Here, the number of communities K for ICA methods were set according to the values chosen for NMF method in this paper.</s>
+          <s>Visually, the communities derived by ICA show an overlapping structure, but they tend to produce a much denser result with only a few high or negative coefficients values.</s>
+          <s>It reveals that ICA method achieves a moderate similarity to NMF method since this method works directly on the timeseries instead of first extracting FC matrix as is done in the NMF method.</s>
+        </p>
+        <p>
+          <s>To depict sparsity differences between NMF results of LR-MVRC, CORR and PCORR more accurately, we plot sorted coefficients of matrix P in <ref target="#fig_2" type="figure">Fig 2.</ref> We plot results for both 8 and 15 value of K in NMF.</s>
+          <s>From this figure, we observe that for each value of K, LR-MVRC based results are more sparse with only a few non zero coefficients compared to those extracted from CORR and PCORR FC matrices.</s>
+        </p>
+        <p>
+          <s>Further, to explore the neuro-physiological interpretations of identified communities with LR-MVRC (refer to <ref type="table">Table 1</ref> ) and CORR, we mapped the identified communities corresponding to K = 8 onto the human brain, as shown in <ref target="#fig_3" type="figure">Figs 3 and 4. Fig 3 displays</ref> the communities derived by LR-MVRC based on the thresholding on matrix P. Eight communities derived by LR-MVRC shown in this figure refer to default mode and subcortical (C1), visual (C2), bilateral limbic (C3), cognitive control and default mode (C4), default mode and visual (C5), auditory and motor (C6), subcortical (C7), and default mode and bilateral limbic (C8) networks.</s>
+          <s>These networks are highly consistent with several well-recognized resting state fBNs discovered by previous studies <ref target="#b43" type="bibr">[43]</ref>
+            <ref target="#b44" type="bibr">[44]</ref>
+            <ref target="#b45" type="bibr">[45]</ref>
+            <ref type="bibr">[46]</ref> .</s>
+          <s>In essence, two communities (C2, C5) are related to the visual information processing, one community (C6) is related to the auditory information processing, four communities (C1, C4, C5 and C8) are associated with the well-known default mode network (DMN), and one (C6) is associated with the motor network.</s>
+          <s>C1 and C7 correspond to the subcortical network.</s>
+          <s>In addition, bilateral limbic network (C3 and C8) and https://doi.org/10.1371/journal.pone.0208068.g002</s>
+          <s>
+            <ref type="table">Table 1</ref> .</s>
+          <s>Brain networks identified using LR-MVRC with K = 8 in NMF.</s>
+          <s>Fourth column represent AAL atlas ROI indices belonging to the community K, whereas second and third columns represent the associated brain networks and number of ROIs in that community, respectively.</s>
+        </p>
+      </div>
+      <div>
+        <head>Community Networks</head>
+        <p>
+          <s>No. of nodes AAL Regions Non overlapping communities derived from LR-MVRC (see <ref target="#fig_5" type="figure">Fig 5)</ref> refer to motor (C1), visual (C2), default mode and cognitive control (C3), default mode (C4), subcortical (C5), bilateral limbic (C6), default mode and bilateral limbic (C7), cognitive control (C8), subcortical (C9) and auditory networks, which are consistent with the overlapping communities detected with LR-MVRC method (see <ref target="#fig_3" type="figure">Fig 3)</ref> .</s>
+        </p>
+        <p>
+          <s>Apart from considering K = 8 in NMF with LR-MVRC, we also present results with K = 15 in <ref target="#tab_4" type="table">Table 2</ref> .</s>
+          <s>Fifteen communities derived by LR-MVRC shown here refer to default mode and subcortical (C1), default mode and bilateral limbic (C2), bilateral limbic and subcortical (C3), default mode and subcortical (C4), motor and auditory (C5), motor and subcortical (C6), default mode and subcortical (C7), default mode and subcortical (C8), coginitive control, bilateral limbic and default mode (C9), default mode and subcortical (C10), default mode (C11), bilateral limbic (C12), cognitive control and default mode (C13), visual (C14), and default mode and subcortical (C15) networks, which are consistent with several well-recognized fBNs discovered by previous studies.</s>
+          <s>This is to note that the similarity observed in the four communities (C4, C7, C10 and C15) in <ref target="#tab_4" type="table">Table 2</ref> points to the fact that lesser value of K should have been used in the method.</s>
+          <s>A value larger than required shows repeated communities, signifying that no better partitioning can happen.</s>
+          <s>This observation can work as an initial criterion to decide the parameter K in the NMF method.</s>
+        </p>
+        <p>
+          <s>We further looked regions belonging to more than one community in LR-MVRC based NMF results.</s>
+          <s>It reveals that regions involved in more than one community span over default mode, subcortical, bilateral limbic and visual networks.</s>
+          <s>By contrast, regions related to sensorimotor and auditory participate in fewer communities.</s>
+          <s>Constrained overlapping functional brain networks</s>
+        </p>
+      </div>
+      <div>
+        <head>Effect of community number K</head>
+        <p>
+          <s>Parameter K is the number of communities in the NMF method.</s>
+          <s>On varying the value of K, different fBN structures/communities are observed.</s>
+          <s>Increasing the number K allows us to represent more and more functional communities formed in the brain (refer to <ref target="#tab_4" type="table">Table 2</ref> with K = 15).</s>
+          <s>However, as the number of communities increases, we move from underfitting to overfitting community structures, i.e., we face the trade-off between approximating complex brain structures and overfitting them, potentially capturing noise or redundant brain networks.</s>
+        </p>
+        <p>
+          <s>By starting with a large K (say 15, which is possibly double the number of communities in human brain), the effect of considering a higher number of communities can be accounted by ignoring redundant number of communities that correspond to similar fBNs.</s>
+          <s>For example, four communities in <ref target="#tab_4" type="table">Table 2</ref> are identical and correspond to default mode and subcortical networks.</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>In this paper, we propose LR-MVRC method to build functional connectivity using sparsity and low rank constraints.</s>
+          <s>It is a multivariate FC estimation method that has attracted great attention in the brain fMRI literature recently <ref target="#b7" type="bibr">[8]</ref>
+            <ref target="#b8" type="bibr">[9]</ref>
+            <ref target="#b9" type="bibr">[10]</ref> .</s>
+          <s>As a matter of fact, CORR method which exists for FC estimation for almost two decades, considers a pair of two regions while studying functional connection between them.</s>
+          <s>However, this pairwise relationships only reflects the second-order relationships between brain regions without accounting for highorder relationships which is crucial for understanding complex brain networks architecture.</s>
+          <s>To this end, the proposed multivariate method considers all regions simultaneously and regresses one region's time series onto all other regions' time series and hence, is named as multivariate regression framework.</s>
+          <s>In addition, besides identifying non-overlapping fBNs, we In this paper, we adopted region parcellation and numbering corresponding to the 90 AAL ROIs for the definition of nodes and subsequent construction of fBNs.</s>
+          <s>Multiple studies in fMRI have utilized different node definitions by using clustering or ICA-based methods.</s>
+          <s>The nodes in these studies mainly include the default mode, cognitive control, visual, auditory, subcortical and bilateral limbic networks, which are largely in accordance with the communities identified by LR-MVRC method in this paper.</s>
+        </p>
+        <p>
+          <s>More importantly, the overlapping communities derived by LR-MVRC with NMF are neuro-physiologically meaningful and comparable to the communities derived using the other most famous modularity optimization methods in the fMRI literature.</s>
+          <s>On visualizing results, we observe that most communities detected by NMF on LR-MVRC FC matrix also appear in the results derived by modularity optimization.</s>
+          <s>However, the most prominent difference is that NMF is able to capture more realistic communities because it allows overlapping communities, say, in default mode, subcortical, bilateral limbic and visual networks.</s>
+          <s>In particular, the identified overlapping regions are mostly found to be the part of frontal, parietal, and temporal brain regions.</s>
+          <s>Similar findings have been previously reported in a few recent studies <ref target="#b48" type="bibr">[48,</ref>
+            <ref target="#b49" type="bibr">49]</ref> .</s>
+          <s>On the other hand, the sensory-motor and auditory networks are observed to be formed as disjoint communities as regions associated with these networks are being reported to have high within connectivity <ref target="#b50" type="bibr">[50]</ref>
+            <ref target="#b51" type="bibr">[51]</ref>
+            <ref target="#b52" type="bibr">[52]</ref> .</s>
+        </p>
+        <p>
+          <s>ICA method works directly on fMRI time series and produces independent components or activation maps.</s>
+          <s>ICA based analysis requires expertise for rejecting components corrupted with ventricle effects, movement artifacts and sparsely-distributed noises.</s>
+          <s>For example, if K or the number of ICA components is large, it requires to discard extra noisy components (components that may not be relevant to contain fBNs).</s>
+          <s>In general, the findings can be contested, particularly, if these are to be used in clinical applications because one may reject wrong components.</s>
+          <s>In this context, LR-MVRC with NMF provides a complementary method to investigate overlapping community structure of the human brain without going through such a dilemma.</s>
+        </p>
+      </div>
+      <div>
+        <head>Limitation and future work</head>
+        <p>
+          <s>The overlapping community structure explored by the proposed method can result in a better understanding of the group-level functional brain networks.</s>
+          <s>However, capturing and analysis of individual subject's differences could be more useful in understanding individual brain architecture.</s>
+        </p>
+        <p>
+          <s>A limitation of NMF method is that the performance of NMF depends on its initialization of K to some extent.</s>
+          <s>In this paper, the value of K in NMF algorithm is initialized based on our prior knowledge of the number of fBNs.</s>
+          <s>Although this is the most popular and simple initialization strategy for NMF methods, it is still a constraint of this algorithm compared to the conventional community detection methods, such as modularity optimization, that do not require any pre-specified K.</s>
+          <s>These alternative strategies may lead to faster convergence of the algorithm.</s>
+          <s>Thus, there should be an attempt to auto-detect the number of communities K in NMF algorithm.</s>
+        </p>
+        <p>
+          <s>In this work, thresholded membership value of nodes is used as a deciding factor for the consideration of nodes in the corresponding community.</s>
+          <s>However, this approach does not provide a clear node membership to each overlapping community.</s>
+          <s>Therefore, methods accounting for crisp partitions, allowing each nodes' contribution to multiple communities are required to be considered in the future works.</s>
+          <s>A few studies have attempted to consider this <ref target="#b53" type="bibr">[53,</ref>
+            <ref target="#b54" type="bibr">54]</ref> , although these methods do not provide information about nodes' membership to each community.</s>
+          <s>Owing to this, more sophisticated methods that combine the advantages of both the above mentioned approaches can provide more useful information about the fBNs architecture <ref target="#b23" type="bibr">[24]</ref> .</s>
+        </p>
+        <p>
+          <s>Finally, the functional brain imaging data alone may not be sufficient to gain a comprehensive understanding of the brain's functional organization.</s>
+          <s>A multimodal data combination and analysis of human brain may provide better knowledge about the underlying networks' organization and guide us to a deeper understanding of the human brain.</s>
+        </p>
+      </div>
+      <div>
+        <head>Conclusions</head>
+        <p>
+          <s>In this work, we propose a Low Rank Multivariate Vector Regression-based Connectivity (LR-MVRC) method for estimating FC matrix.</s>
+          <s>Proposed method utilizes both sparsity and low rank constraints while estimating the FC matrix.</s>
+          <s>Most of the previous studies extract disjoint communities or functional brain networks, we extract overlapping communities via NMF that may be biologically more correct for understanding human brain's functional organization.</s>
+          <s>Experimental results suggest that the proposed framework can better characterize the brain networks' organization at the group level.</s>
+          <s>In conclusion, we believe that the proposed method and its potential applications could provide new insights into the functional networks' organization of the human brain.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head/>
+        <label/>
+        <figDesc>Somato-motor Network (SMN), Auditory Network (AN), Cognitive Control Network (CCN), Bilateral Limbic Network (BLN), Language Network (LN), Subcortical Network (SCN), and Default Mode Network (DMN). We chose to extract 15 number of communities because we would like to ascertain if choosing a number larger than the expected number of communities yields scattered networks.</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig 1 .</head>
+        <label>1</label>
+        <figDesc>Fig 1. First row: Community structure obtained using LR-MVRC and CORR matrices with NMF and modularity optimization methods. Second row: Community structure obtained using ICA with K = 8 and 15 in the first and second columns, respectively. In the first row, first two columns represent the matrix P obtained from LR-MVRC and CORR with K = 8 and 15 in NMF, respectively. The third column represents modularity optimization results on both LR-MVRC and CORR based adjacency matrices. https://doi.org/10.1371/journal.pone.0208068.g001</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig 2 .</head>
+        <label>2</label>
+        <figDesc>Fig 2. Illustration of sparsity of matrix P obtained with NMF. Plot of sorted coefficients of matrix P, obtained using LR-MVRC, CORR and PCORR matrices with different values of K in NMF.</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Fig 3 .</head>
+        <label>3</label>
+        <figDesc>Fig 3. Overlapping communities derived from LR-MVRC. This figure displays the communities derived from the LR-MVRC based adjacency matrix via thresholding of matrix P obtained with NMF (K = 8). Eight communities derived from LR-MVRC matrix shown in this figure refer to default mode and subcortical (C1), visual (C2), bilateral limbic (C3), cognitive control and default mode (C4), default mode and visual (C5), auditory and motor (C6), subcortical (C7), and default mode and bilateral limbic (C8) networks. https://doi.org/10.1371/journal.pone.0208068.g003</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Fig 4 .</head>
+        <label>4</label>
+        <figDesc>Fig 4. Overlapping communities derived from CORR. This figure displays the communities derived using CORR based matrix via thresholding of matrix P obtained with NMF (K = 8). https://doi.org/10.1371/journal.pone.0208068.g004</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
+        <head>Fig 5 .</head>
+        <label>5</label>
+        <figDesc>Fig 5. Non overlapping communities derived from LR-MVRC. This figure displays the communities derived using LR-MVRC based matrix via modularity optimization. Ten communities derived by LR-MVRC shown in this figure refer to motor (C1), visual (C2), default mode and cognitive control (C3), default mode (C4), subcortical (C5), bilateral limbic (C6), default mode and bilateral limbic (C7), cognitive control (C8), subcortical (C9) and auditory networks. https://doi.org/10.1371/journal.pone.0208068.g005</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>PLOS ONE | https://doi.org/10.1371/journal.pone.</figDesc>
+        <table>0208068 November 28, 2018 
+1 / 19 
+
+a1111111111 
+a1111111111 
+a1111111111 
+a1111111111 
+a1111111111 </table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_4">
+        <head>Table 2 .</head>
+        <label>2</label>
+        <figDesc>Brain networks identified using LR-MVRC with K = 15 in NMF. Fourth column represent AAL atlas ROI indices belonging to the community K, whereas second and third columns represent their corresponding associated brain networks and number of ROIs in one community, respectively.https://doi.org/10.1371/journal.pone.0208068.t002 have used NMF in this work to identify overlapping functional community structure using the resting-state fMRI data. Experimental results show that the proposed framework is capable of identifying underly- ing overlapping fBN organization of the human brain. We observe that the proposed method results in multiple fBNs such as Visual Network (VN), Somato-motor Network (SMN), Auditory Network (AN), Cognitive Control Network (CCN), Motor Network (MN), Sub- cortical Network (SCN), and Default Mode Network (DMN). These networks in resting state fMRI have been consistently identified in previous studies ([46, 47] and references within).</figDesc>
+        <table>Community Networks 
+No. of 
+nodes 
+
+AAL Regions 
+
+1 
+default mode and subcortical 
+3 
+33, 71, 78 
+
+2 
+default mode and bilateral limbic 
+15 
+3, 5, 6, 21-28, 31, 32, 87, 88 
+
+3 
+bilateral limbic and subcortical 
+7 
+42, 73-78 
+
+4 
+default mode and subcortical 
+3 
+34, 72, 77 
+
+5 
+motor and auditory 
+17 
+1, 2, 17-20, 29, 30, 57, 58, 63, 69, 70, 
+79-82 
+
+6 
+motor and subcortical 
+10 
+1, 2, 57, 58, 69-72, 77, 78 
+
+7 
+default mode and subcortical 
+3 
+34, 72, 77 
+
+8 
+default mode and subcortical 
+8 
+3, 23, 31-34, 77, 78 
+
+9 
+cognitive control, bilateral limbic and default 
+mode 
+
+12 
+15, 16, 56, 66, 83-90 
+
+10 
+default mode and subcortical 
+3 
+34, 72, 77 
+
+11 
+default mode 
+6 
+35, 36, 46, 65, 67, 68 
+
+12 
+bilateral limbic 
+9 
+37-42 
+
+13 
+cognitive control and default mode 
+12 
+7-16, 61, 62, 90 
+
+14 
+Visual 
+14 
+43-56 
+
+15 
+default mode and subcortical 
+3 
+34, 72, 77 
+
+</table>
+      </figure>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0208068 November 28, 2018</note>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0208068 November 28, 2018 12 / 19</note>
+    </body>
+    <back>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Network modelling methods for FMRI</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Smith</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Miller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Salimi-Khorshidi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Webster</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Beckmann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Nichols</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.neuroimage.2010.08.063</idno>
+              <ptr target="http://dx.doi.org/10.1016/j.neuroimage.2010.08.063.PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">NeuroImage</title>
+              <imprint>
+                <biblScope unit="volume">54</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope unit="page">20817103</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Functional connectivity in the motor cortex of resting human brain using echo-planar MRI</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Biswal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Zerrin Yetkin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Haughton</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Hyde</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1002/mrm.1910340409</idno>
+              <ptr target="https://doi.org/10.1002/mrm.1910340409PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Magn Reson Med</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope unit="page">8524021</biblScope>
+                <date type="published" when="1995"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <monogr>
+              <title level="m" type="main">Networks of the Brain</title>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Sporns</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2010"/>
+                <publisher>MIT press</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Functional and Effective Connectivity: A Review</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Friston</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1089/brain.2011.0008</idno>
+              <ptr target="https://doi.org/10.1089/brain.2011.0008PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Brain Connectivity</title>
+              <imprint>
+                <biblScope unit="volume">1</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">22432952</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Detection of functional connectivity using temporal correlations in MR images</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Hampson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Peterson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Skudlarski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Gatenby</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Gore</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1002/hbm.10022</idno>
+              <ptr target="https://doi.org/10.1002/hbm.10022PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Human Brain Mapping</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope unit="page">11835612</biblScope>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Using partial correlation to enhance structural equation modeling of functional MRI data</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Marrelec</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Horwitz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Pélégrini-Issac</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Benali</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Doyon</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.mri.2007.02.012</idno>
+              <ptr target="https://doi.org/10.1016/j.mri.2007.02.012.PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Magnetic Resonance Imaging</title>
+              <imprint>
+                <biblScope unit="volume">25</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope unit="page">17475433</biblScope>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Neurophysiological Architecture of Functional Magnetic Resonance Images of Human Brain</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Salvador</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Suckling</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Coleman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Pickard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Menon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Bullmore</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1093/cercor/bhi016</idno>
+              <ptr target="https://doi.org/10.1093/cercor/bhi016PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Cerebral Cortex</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope unit="page">15635061</biblScope>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Multivariate brain network graph identification in functional MRI</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Aggarwal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Gupta</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Garg</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.media.2017.08.007</idno>
+              <ptr target="https://doi.org/10.1016/j.media.2017.08.007.PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Medical Image Analysis</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope unit="page">28866433</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Identification of functional networks in resting state fMRI data using adaptive sparse representation and affinity propagation clustering</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.3389/fnins.2015.00383</idno>
+              <ptr target="https://doi.org/10.3389/fnins.2015.00383PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Frontiers in Neuroscience</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="page">26528123</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Connectivity strength-weighted sparse group representation-based brain network construction for MCI classification</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Yu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">An</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Wei</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Shen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                </persName>
+              </author>
+              <idno type="doi">10.1002/hbm.23524</idno>
+              <ptr target="https://doi.org/10.1002/hbm.23524PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Human Brain Mapping</title>
+              <imprint>
+                <biblScope unit="volume">38</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope unit="page">28150897</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Sparse and low-rank matrix regularization for learning time-varying Markov networks</title>
+              <author>
+                <persName>
+                  <forename type="first">Hirayama</forename>
+                  <surname>Ji</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Hyvä Rinen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ishii</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1007/s10994-016-5568-6</idno>
+              <ptr target="https://doi.org/10.1007/s10994-016-5568-6"/>
+            </analytic>
+            <monogr>
+              <title level="j">Machine Learning</title>
+              <imprint>
+                <biblScope unit="volume">105</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="335" to="366" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Improved Estimation in Time Varying Models</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Precup</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Bachman</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proceedings of the 29th International Conference on Machine Learning</title>
+              <meeting>the 29th International Conference on Machine Learning</meeting>
+              <imprint>
+                <publisher>ACM</publisher>
+                <date type="published" when="2012"/>
+                <biblScope from="1459" to="1466" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Estimating functional brain networks by incorporating a modularity prior</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Qiao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Teng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Shen</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.neuroimage.2016.07.058</idno>
+              <ptr target="https://doi.org/10.1016/j.neuroimage.2016.07.058.PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">NeuroImage</title>
+              <imprint>
+                <biblScope unit="volume">141</biblScope>
+                <biblScope unit="page">27485752</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Accelerated fMRI reconstruction using Matrix Completion with Sparse Recovery via Split Bregman</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Aggarwal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Gupta</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.neucom.2016.08.016</idno>
+              <ptr target="https://doi.org/10.1016/j.neucom.2016.08.016"/>
+            </analytic>
+            <monogr>
+              <title level="j">Neurocomputing</title>
+              <imprint>
+                <biblScope unit="volume">216</biblScope>
+                <biblScope from="319" to="330" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <monogr>
+              <title level="m" type="main">Multilinear Regression for Embedded Feature Selection with Application to fMRI Analysis</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Song</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Lu</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2017"/>
+                <biblScope from="2562" to="2568" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Overlapping communities reveal rich structure in large-scale brain networks during rest and task conditions</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Najafi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Mcmenamin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">Z</forename>
+                  <surname>Simon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Pessoa</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.neuroimage.2016.04.054</idno>
+              <ptr target="https://doi.org/10.1016/j.neuroimage.2016.04.054.PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">NeuroImage</title>
+              <imprint>
+                <biblScope unit="volume">135</biblScope>
+                <biblScope unit="page">27129758</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Understanding brain networks and brain organization</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Pessoa</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.plrev.2014.03.005</idno>
+              <ptr target="https://doi.org/10.1016/j.plrev.2014.03.005"/>
+            </analytic>
+            <monogr>
+              <title level="j">Physics of Life Reviews</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope unit="page">24819881</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Temporally-independent functional modes of spontaneous brain activity</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Smith</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Miller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Moeller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Auerbach</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Woolrich</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1073/pnas.1121329109</idno>
+              <ptr target="https://doi.org/10.1073/pnas.1121329109"/>
+            </analytic>
+            <monogr>
+              <title level="j">Proceedings of the National Academy of Sciences</title>
+              <imprint>
+                <biblScope unit="volume">109</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope from="3131" to="3136" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Identifying Sparse Connectivity Patterns in the brain using resting-state fMRI</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Eavani</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Satterthwaite</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Filipovych</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Gur</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Gur</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Davatzikos</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.neuroimage.2014.09.058</idno>
+              <ptr target="https://doi.org/10.1016/j.neuroimage.2014.09.058.PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">NeuroImage</title>
+              <imprint>
+                <biblScope unit="volume">105</biblScope>
+                <biblScope unit="page">25284301</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Collective sparse symmetric non-negative matrix factorization for identifying overlapping communities in resting-state brain functional networks</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">Q</forename>
+                  <surname>Gan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.neuroimage.2017.11.003</idno>
+              <ptr target="https://doi.org/10.1016/j.neuroimage.2017.11.003.PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">NeuroImage</title>
+              <imprint>
+                <biblScope unit="volume">166</biblScope>
+                <biblScope unit="page">29117581</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Learning the parts of objects by non-negative matrix factorization</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Seung</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1038/44565</idno>
+              <ptr target="https://doi.org/10.1038/44565PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">401</biblScope>
+                <biblScope unit="page">10548103</biblScope>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Overlapping community detection using bayesian non-negative matrix factorization</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Psorakis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Roberts</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Ebden</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Sheldon</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1103/PhysRevE.83.066114</idno>
+              <ptr target="https://doi.org/10.1103/PhysRevE.83.066114"/>
+            </analytic>
+            <monogr>
+              <title level="j">Physical Review E</title>
+              <imprint>
+                <biblScope unit="volume">83</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope unit="page">66114</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Overlapping Community Detection at Scale: A Nonnegative Matrix Factorization Approach</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Leskovec</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proceedings of the Sixth ACM International Conference on Web Search and Data Mining</title>
+              <meeting>the Sixth ACM International Conference on Web Search and Data Mining</meeting>
+              <imprint>
+                <date type="published" when="2013"/>
+                <biblScope from="587" to="596" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Overlapping community detection in complex networks using symmetric binary matrix factorization</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Ahn</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1103/PhysRevE.87.062803</idno>
+              <ptr target="https://doi.org/10.1103/PhysRevE.87.062803"/>
+            </analytic>
+            <monogr>
+              <title level="j">Phys Rev E</title>
+              <imprint>
+                <biblScope unit="volume">87</biblScope>
+                <biblScope unit="page">62803</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Finding imaging patterns of structural covariance via Non-Negative Matrix Factorization</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Sotiras</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Resnick</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Davatzikos</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.neuroimage.2014.11.045</idno>
+              <ptr target="https://doi.org/10.1016/j.neuroimage.2014.11.045.PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">NeuroImage</title>
+              <imprint>
+                <biblScope unit="volume">108</biblScope>
+                <biblScope unit="page">25497684</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <monogr>
+              <title level="m" type="main">Hierarchical non-negative matrix factorization to characterize brain tumor heterogeneity using multi-parametric MRI. NMR in Biomedicine</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Sauwen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Sima</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Van Cauter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Veraart</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Leemans</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Maes</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1002/nbm.3413</idno>
+              <ptr target="https://doi.org/10.1002/nbm.3413PMID"/>
+              <imprint>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope unit="page">26458729</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Non-negative matrix factorization of multimodal MRI, fMRI and phenotypic data reveals differential changes in default mode subnetworks in ADHD</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Anderson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Douglas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Kerr</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Haynes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Yuille</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Xie</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.neuroimage.2013.12.015</idno>
+              <ptr target="https://doi.org/10.1016/j.neuroimage.2013.12.015.PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">NeuroImage</title>
+              <imprint>
+                <biblScope unit="volume">102</biblScope>
+                <biblScope unit="page">24361664</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Automated Anatomical Labeling of Activations in SPM Using a Macroscopic Anatomical Parcellation of the MNI MRI Single-Subject Brain</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Tzourio-Mazoyer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Landeau</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Papathanassiou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Crivello</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Etard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Delcroix</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1006/nimg.2001.0978</idno>
+              <ptr target="https://doi.org/10.1006/nimg.2001.0978PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">NeuroImage</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">11771995</biblScope>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Distributed optimization and statistical learning via the alternating direction method of multipliers</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Boyd</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Parikh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Chu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Peleato</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Eckstein</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Foundations and Trends ® in Machine Learning</title>
+              <imprint>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <monogr>
+              <title/>
+              <idno type="doi">10.1561/2200000016</idno>
+              <ptr target="https://doi.org/10.1561/2200000016"/>
+              <imprint>
+                <biblScope from="1" to="122" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <monogr>
+              <title level="m" type="main">Sparse Signal Restoration</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Selesnick</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">A Singular Value Thresholding Algorithm for Matrix Completion</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Cai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Candès</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Shen</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1137/080738970</idno>
+              <ptr target="https://doi.org/10.1137/080738970"/>
+            </analytic>
+            <monogr>
+              <title level="j">SIAM J on Optimization</title>
+              <imprint>
+                <biblScope unit="volume">20</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="1956" to="1982" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <monogr>
+              <title level="m" type="main">Modular brain networks. Annual review of psychology</title>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Sporns</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Betzel</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1146/annurev-psych-122414-033634</idno>
+              <ptr target="https://doi.org/10.1146/annurev-psych-122414-033634PMID"/>
+              <imprint>
+                <date type="published" when="2016"/>
+                <biblScope unit="volume">67</biblScope>
+                <biblScope unit="page">26393868</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Complex network measures of brain connectivity: Uses and interpretations</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Rubinov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Sporns</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.neuroimage.2009.10.003</idno>
+              <ptr target="http://dx.doi.org/10.1016/j.neuroimage.2009.10.003"/>
+            </analytic>
+            <monogr>
+              <title level="j">NeuroImage</title>
+              <imprint>
+                <biblScope unit="volume">52</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope unit="page">19819337</biblScope>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <monogr>
+              <title level="m" type="main">Nonnegative matrix approximation: Algorithms and applications</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Sra</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Dhillon</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2006"/>
+              </imprint>
+              <respStmt>
+                <orgName>Computer Science Department, University of Texas at Austin</orgName>
+              </respStmt>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <monogr>
+              <title level="m" type="main">Nonnegative Matrix and Tensor Factorizations: Applications to Exploratory Multi-Way Data Analysis and Blind Source Separation</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Cichocki</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Zdunek</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Phan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Amari</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2009"/>
+                <publisher>John Wiley &amp; Sons</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">Initialization enhancer for non-negative matrix factorization</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Zheng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhu</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.engappai.2006.03.001</idno>
+              <ptr target="https://doi.org/10.1016/j.engappai.2006.03.001"/>
+            </analytic>
+            <monogr>
+              <title level="j">Engineering Applications of Artificial Intelligence</title>
+              <imprint>
+                <biblScope unit="volume">20</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="101" to="110" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <monogr>
+              <title level="m" type="main">Bayesian non-negative matrix factorization. In: International Conference on Independent Component Analysis and Signal Separation</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Schmidt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Winther</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Hansen</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2009"/>
+                <publisher>Springer</publisher>
+                <biblScope from="540" to="547" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">Functional Network Organization of the Human Brain</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Power</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Cohen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Nelson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Wig</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Barnes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Church</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.neuron.2011.09.006</idno>
+              <ptr target="https://doi.org/10.1016/j.neuron.2011.09.006PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Neuron</title>
+              <imprint>
+                <biblScope unit="volume">72</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope unit="page">22099467</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">Weight-conserving characterization of complex functional brain networks</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Rubinov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Sporns</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.neuroimage.2011.03.069</idno>
+              <ptr target="https://doi.org/10.1016/j.neuroimage.2011.03.069.PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">NeuroImage</title>
+              <imprint>
+                <biblScope unit="volume">56</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope unit="page">21459148</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Finding and evaluating community structure in networks</title>
+              <author>
+                <persName>
+                  <forename type="first">Mej</forename>
+                  <surname>Newman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Girvan</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1103/PhysRevE.69.026113</idno>
+              <ptr target="https://doi.org/10.1103/PhysRevE.69.026113"/>
+            </analytic>
+            <monogr>
+              <title level="j">Phys Rev E</title>
+              <imprint>
+                <biblScope unit="volume">69</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope unit="page">26113</biblScope>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">A method for making group inferences from functional MRI data using independent component analysis</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Calhoun</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Adali</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Pearlson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Pekar</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1002/hbm.1048</idno>
+              <ptr target="https://doi.org/10.1002/hbm.1048PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Human brain mapping</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope unit="page">11559959</biblScope>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title level="a" type="main">Fast and robust fixed-point algorithms for independent component analysis</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Hyvarinen</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1109/72.761722</idno>
+              <ptr target="https://doi.org/10.1109/72.761722PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">IEEE Transactions on Neural Networks</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope unit="page">18252563</biblScope>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">Resting-State Functional MR Imaging: A New Window to the Brain</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Barkhof</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Haller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Sarb</forename>
+                  <surname>Rombouts</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1148/radiol.14132388</idno>
+              <ptr target="https://doi.org/10.1148/radiol.14132388PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Radiology</title>
+              <imprint>
+                <biblScope unit="volume">272</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">24956047</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b44">
+            <analytic>
+              <title level="a" type="main">Reliable intrinsic connectivity networks: Test retest evaluation using ICA and dual regression approach</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Zuo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Kelly</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Adelstein</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Klein</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">X</forename>
+                  <surname>Castellanos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Milham</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.neuroimage.2009.10.080</idno>
+              <ptr target="https://doi.org/10.1016/j.neuroimage.2009.10.080.PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">NeuroImage</title>
+              <imprint>
+                <biblScope unit="volume">49</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="2163" to="2177" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b45">
+            <analytic>
+              <title level="a" type="main">Correspondence of the brain's functional architecture during activation and rest</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Smith</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Fox</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Miller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Glahn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Fox</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Mackay</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1073/pnas.0905267106</idno>
+              <ptr target="https://doi.org/10.1073/pnas.0905267106"/>
+            </analytic>
+            <monogr>
+              <title level="j">Proceedings of the National Academy of Sciences</title>
+              <imprint>
+                <biblScope unit="volume">106</biblScope>
+                <biblScope unit="issue">31</biblScope>
+                <biblScope from="13040" to="13045" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b46">
+            <analytic>
+              <title level="a" type="main">Exploring the brain network: A review on resting-state fMRI functional connectivity</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Van Den Heuvel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Heh</forename>
+                  <surname>Pol</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.euroneuro.2010.03.008</idno>
+              <ptr target="http://dx.doi.org/10.1016/j.euroneuro.2010.03.008.PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">European Neuropsychopharmacology</title>
+              <imprint>
+                <biblScope unit="volume">20</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope unit="page">20471808</biblScope>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b47">
+            <analytic>
+              <title level="a" type="main">Resting-state brain networks: literature review and clinical applications</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Rosazza</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Minati</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1007/s10072-011-0636-y</idno>
+              <ptr target="https://doi.org/10.1007/s10072-011-0636-yPMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Neurological Sciences</title>
+              <imprint>
+                <biblScope unit="volume">32</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope unit="page">21667095</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b48">
+            <analytic>
+              <title level="a" type="main">Multi-task connectivity reveals flexible hubs for adaptive task control</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Cole</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Reynolds</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Power</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Repovs</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Anticevic</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Braver</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1038/nn.3470</idno>
+              <ptr target="https://doi.org/10.1038/nn.3470PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Nature Neuroscience</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope unit="page">23892552</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b49">
+            <analytic>
+              <title level="a" type="main">Network hubs in the human brain</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Van Den Heuvel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Sporns</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.tics.2013.09.012</idno>
+              <ptr target="https://doi.org/10.1016/j.tics.2013.09.012PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Trends in Cognitive Sciences</title>
+              <imprint>
+                <biblScope unit="volume">17</biblScope>
+                <biblScope unit="issue">12</biblScope>
+                <biblScope unit="page">24231140</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b50">
+            <analytic>
+              <title level="a" type="main">The evolution of distributed association networks in the human brain</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Buckner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Krienen</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.tics.2013.09.017</idno>
+              <ptr target="https://doi.org/10.1016/j.tics.2013.09.017PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Trends in Cognitive Sciences</title>
+              <imprint>
+                <biblScope unit="volume">17</biblScope>
+                <biblScope unit="issue">12</biblScope>
+                <biblScope unit="page">24210963</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b51">
+            <analytic>
+              <title level="a" type="main">Functional Specialization and Flexibility in Human Association Cortex</title>
+              <author>
+                <persName>
+                  <forename type="first">Btt</forename>
+                  <surname>Yeo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Krienen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Eickhoff</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Yaakub</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Fox</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Buckner</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1093/cercor/bhu217</idno>
+              <ptr target="https://doi.org/10.1093/cercor/bhu217PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Cerebral Cortex</title>
+              <imprint>
+                <biblScope unit="volume">25</biblScope>
+                <biblScope unit="issue">10</biblScope>
+                <biblScope unit="page">25249407</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b52">
+            <analytic>
+              <title level="a" type="main">Community detection in weighted brain connectivity networks beyond the resolution limit</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Nicolini</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Bordier</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Bifone</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.neuroimage.2016.11.026</idno>
+              <ptr target="https://doi.org/10.1016/j.neuroimage.2016.11.026"/>
+            </analytic>
+            <monogr>
+              <title level="j">NeuroImage</title>
+              <imprint>
+                <biblScope unit="volume">146</biblScope>
+                <biblScope unit="page">27865921</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b53">
+            <analytic>
+              <title level="a" type="main">Link communities reveal multiscale complexity in networks</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Ahn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Bagrow</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Lehmann</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1038/nature09182</idno>
+              <ptr target="https://doi.org/10.1038/nature09182PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">466</biblScope>
+                <biblScope unit="page">20562860</biblScope>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b54">
+            <analytic>
+              <title level="a" type="main">Identifying overlapping communities in social networks using multi-scale local information expansion</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1140/epjb/e2012-30015-5</idno>
+              <ptr target="https://doi.org/10.1140/epjb/e2012-30015-5"/>
+            </analytic>
+            <monogr>
+              <title level="j">The European Physical Journal B</title>
+              <imprint>
+                <biblScope unit="volume">85</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope unit="page">190</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

@@ -255,7 +255,7 @@ public class DataseerClassifier {
         }
     }
 
-    public String serialize(org.w3c.dom.Document doc, Node node) {
+    public static String serialize(org.w3c.dom.Document doc, Node node) {
         DOMSource domSource = null;
         String xml = null;
         try {
