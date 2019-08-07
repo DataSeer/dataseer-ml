@@ -383,6 +383,23 @@ public class AnnotatedCorpusGeneratorCSV {
 
                                 Attribute type = new Attribute("type", annotation.getRawDataType());
                                 node.addAttribute(type);
+
+                                // we also need to add a dataseer subtype attribute to the parent <div>
+                                nu.xom.ParentNode currentNode = node;
+                                while(currentNode != null) {
+                                    currentNode = ((nu.xom.Element)currentNode).getParent();
+                                    if (currentNode != null && 
+                                        !(currentNode.getParent() instanceof nu.xom.Document) && 
+                                        ((nu.xom.Element)currentNode).getLocalName().equals("div")) {
+                                        Attribute subtype = new Attribute("subtype", "dataseer");
+                                        ((nu.xom.Element)currentNode).addAttribute(subtype);
+                                        currentNode = null;
+                                    }
+
+                                    if (currentNode != null && (currentNode.getParent() instanceof nu.xom.Document))
+                                        currentNode = null;
+                                }
+
                                 break;
                             }
                         }
