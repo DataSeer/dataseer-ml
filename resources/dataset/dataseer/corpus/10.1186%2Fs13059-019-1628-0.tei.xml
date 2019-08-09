@@ -334,7 +334,7 @@
       <div subtype="dataseer">
         <head>Design of the genome-scale CRISPR sgRNA iBAR library</head>
         <p>
-          <s id="0" type="Genetic Data:Molecular Sequence Annotation">Gene annotations were retrieved from the UCSC hg38 genome, which contains 19,210 genes.</s>
+          <s id="dataset-1" type="Genetic Data:Molecular Sequence Annotation">Gene annotations were retrieved from the UCSC hg38 genome, which contains 19,210 genes.</s>
           <s>For each gene, three different sgRNAs that had at least one mismatch in the 16-bp seed region in the genome with a high level of predicted targeting efficiency were designed using our newly developed DeepRank algorithm.</s>
           <s>We then randomly assigned four 6-bp iBARs (iBAR 6 s) to each sgRNA.</s>
           <s>We designed an additional 1000 non-targeting sgRNAs, each with four iBAR 6 s, to serve as negative controls.</s>
@@ -357,7 +357,7 @@
           <s>For each replicate, 5 × 10 6 cells were collected for genome extraction.</s>
           <s>Screening of the sgRNA iBAR-ANTXR1 library was performed using PA/LFnDTA toxin <ref target="#b30" type="bibr">[30,</ref>
             <ref target="#b31" type="bibr">31]</ref> after library-infected cells were cultured for 15 days <ref target="#b6" type="bibr">[7]</ref> .</s>
-          <s id="1" type="Genetic Data:High-Throughput Nucleotide Sequencing:HiSeq">Then, sgRNA with the iBAR coding region in genomic DNA was amplified (TransGen, AP131-13) using Primer-F and Primer-R and then subjected to high-throughput sequencing analysis (Illumina HiSeq2500) using an NEBNext Ultra DNA Library Prep Kit for Illumina (NEB E7370L).</s>
+          <s id="dataset-2" type="Genetic Data:High-Throughput Nucleotide Sequencing:HiSeq">Then, sgRNA with the iBAR coding region in genomic DNA was amplified (TransGen, AP131-13) using Primer-F and Primer-R and then subjected to high-throughput sequencing analysis (Illumina HiSeq2500) using an NEBNext Ultra DNA Library Prep Kit for Illumina (NEB E7370L).</s>
         </p>
       </div>
       <div>
@@ -396,7 +396,7 @@
       <div subtype="dataseer">
         <head>Normalization and preparation</head>
         <p>
-          <s id="2" type="Genetic Data:Sequence Analysis">We first obtained the raw counts of sgRNAs iBAR from sequencing data.</s>
+          <s id="dataset-3" type="Genetic Data:Sequence Analysis">We first obtained the raw counts of sgRNAs iBAR from sequencing data.</s>
           <s>Because the sequencing depth and sequencing error might affect the raw counts of the sgRNAs iBAR , normalization was needed before the following analysis.</s>
           <s>A size factor was estimated to normalize the raw counts with different sequencing depths.</s>
           <s>However, because a few highly enriched sgRNAs might have strong influences on the total read counts, the ratio to total read counts should not be used in the normalization.</s>
@@ -472,7 +472,7 @@
       <div subtype="dataseer">
         <head>Validation of candidate genes</head>
         <p>
-          <s id="3" type="Tabular data">To validate each gene, we chose two sgRNAs designed in the library and cloned into a lentiviral vector with a puromycin selection marker.</s>
+          <s id="dataset-4" type="Tabular data">To validate each gene, we chose two sgRNAs designed in the library and cloned into a lentiviral vector with a puromycin selection marker.</s>
           <s>We mixed two sgRNA plasmids and co-transfected them into HEK293T cells with two lentiviral package plasmids (pVSVG and pR8.74) using the X-tremeGENE HP DNA transfection reagent (Roche).</s>
           <s>The HeLa cells stably expressing Cas9 were infected with the lentivirus for 3 days and treated with 1 μg/ml puromycin for 2 days.</s>
           <s>Then, 5000 cells were added into each well, and five replicates were obtained for each group.</s>

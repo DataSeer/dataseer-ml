@@ -275,14 +275,21 @@ public class AnnotatedCorpusGeneratorCSV {
         for (Map.Entry<String, AnnotatedDocument> entry : documents.entrySet()) {
             /*if (m > 20) {
                 break;
-            }
-            m++;*/
+            }*/
+            m++;
             AnnotatedDocument doc = entry.getValue();
 
             if ((doc.getAnnotations() == null) || (doc.getAnnotations().size() == 0))
                 continue;
 
             String doi = doc.getDoi();
+            
+            /*System.out.println("\n------------------------------");
+            System.out.println(doi);
+
+            for(DataseerAnnotation annotation : doc.getAnnotations()) {
+                System.out.println(annotation.toString());
+            }*/
 
             // check if the TEI file already exists for this PDF
             String teiPath = documentPath + "/" + URLEncoder.encode(doi, "UTF-8")+".tei.xml";
@@ -308,7 +315,7 @@ public class AnnotatedCorpusGeneratorCSV {
 
                         
 
-                        noXMLPlos = false;
+                        //noXMLPlos = false;
                     }
                 }
 
@@ -351,6 +358,7 @@ public class AnnotatedCorpusGeneratorCSV {
                 nu.xom.Element root = document.getRootElement();
                 List<nu.xom.Element> nodeList = getElementsByTagName(root, "s");
 
+                List<String> dataSetIds = new ArrayList<String>();
                 for (int i = 0; i < nodeList.size(); i++) {
                     nu.xom.Element node = nodeList.get(i);
                     StringBuffer textValue = new StringBuffer();
@@ -363,14 +371,21 @@ public class AnnotatedCorpusGeneratorCSV {
                     String localSentence = textValue.toString();
                     //System.out.println(localSentence);
                     String localSentenceSimplified = localSentence.replace(" ", "").toLowerCase();
+                    localSentenceSimplified = simplifiedField(localSentenceSimplified);
 
                     // match sentence and inject attributes to sentence tags
                     boolean hasMatched = false;
                     int k = 0;
+                    
                     for(DataseerAnnotation annotation : doc.getAnnotations()) {
+                        if (annotation.getRawDataType() == null)
+                            continue;
+
                         if (!solvedAnnotations.contains(k)) {
                             String sentence = annotation.getContext();
                             String sentenceSimplified = sentence.replace(" ", "").toLowerCase();
+                            sentenceSimplified = simplifiedField(sentenceSimplified);
+
                             //System.out.println(sentence);
                             if (localSentenceSimplified.equals(sentenceSimplified)) {
                                 totalMatchedAnnotations++;
@@ -378,7 +393,15 @@ public class AnnotatedCorpusGeneratorCSV {
                                 solvedAnnotations.add(new Integer(k));
                                 // add annotation attributes to the DOM sentence
                                 // e.g. id="dataset-2" type="Spectrometry"
-                                Attribute id = new Attribute("id", String.valueOf(k));
+                                // add @corresp in case the @id is already generated
+                                String dataSetId = annotation.getDatasetId();
+                                Attribute id = null;
+                                if (dataSetIds.contains(dataSetId)) {
+                                    id = new Attribute("corresp", "#dataset-" + dataSetId);
+                                } else {
+                                    id = new Attribute("id", "dataset-" + dataSetId);
+                                    dataSetIds.add(dataSetId);
+                                }
                                 node.addAttribute(id);
 
                                 Attribute type = new Attribute("type", annotation.getRawDataType());
@@ -552,6 +575,12 @@ public class AnnotatedCorpusGeneratorCSV {
             value = value.substring(0,value.length()-1);
         value = value.replaceAll(" +", " ");
         return value.trim();
+    }
+
+    public static String simplifiedField(String field) { 
+        if (field == null)
+            return "";
+        return field.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
     }
 
     /**

@@ -1,0 +1,1755 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T08:45+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">High mutual cooperation rates in rats learning reciprocal altruism: The role of payoff matrix</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author role="corresp">
+              <persName>
+                <forename type="first">Guillermo</forename>
+                <forename type="middle">E</forename>
+                <surname>Delmasid</surname>
+              </persName>
+              <email>gedelmas@gmail.com</email>
+              <affiliation key="aff0">
+                <orgName type="department">Facultad de Ingeniería</orgName>
+                <orgName key="instit1" type="institution">Universidad de Buenos</orgName>
+                <orgName key="instit2" type="institution">Instituto de Ingeniería Biomé dica</orgName>
+                <address>
+                  <settlement>Aires, Buenos Aires</settlement>
+                  <country key="AR">Argentina</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Sergio</forename>
+                <forename type="middle">E</forename>
+                <surname>Lew</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Facultad de Ingeniería</orgName>
+                <orgName key="instit1" type="institution">Universidad de Buenos</orgName>
+                <orgName key="instit2" type="institution">Instituto de Ingeniería Biomé dica</orgName>
+                <address>
+                  <settlement>Aires, Buenos Aires</settlement>
+                  <country key="AR">Argentina</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">B</forename>
+                <forename type="middle">Silvano</forename>
+                <surname>Zanutto</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Facultad de Ingeniería</orgName>
+                <orgName key="instit1" type="institution">Universidad de Buenos</orgName>
+                <orgName key="instit2" type="institution">Instituto de Ingeniería Biomé dica</orgName>
+                <address>
+                  <settlement>Aires, Buenos Aires</settlement>
+                  <country key="AR">Argentina</country>
+                </address>
+              </affiliation>
+              <affiliation key="aff1">
+                <orgName key="lab1" type="laboratory">Instituto de Biología y Medicina Experimental (IBYME-CONICET)</orgName>
+                <orgName key="lab2" type="laboratory">Laboratorio de Biología del Comportamiento</orgName>
+                <address>
+                  <addrLine>Ciudad de Buenos Aires</addrLine>
+                  <settlement>Buenos Aires</settlement>
+                  <country key="AR">Argentina</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">High mutual cooperation rates in rats learning reciprocal altruism: The role of payoff matrix</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1371/journal.pone.0204837</idno>
+          <note>RESEARCH ARTICLE</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <head>Abstract</head>
+          <p>
+            <s>Cooperation is one of the most studied paradigms for the understanding of social interactions.</s>
+            <s>Reciprocal altruism -a special type of cooperation that is taught by means of the iterated prisoner dilemma game (iPD)-has been shown to emerge in different species with different success rates.</s>
+            <s>When playing iPD against a reciprocal opponent, the larger theoretical long-term reward is delivered when both players cooperate mutually.</s>
+            <s>In this work, we trained rats in iPD against an opponent playing a Tit for Tat strategy, using a payoff matrix with positive and negative reinforcements, that is food and timeout respectively.</s>
+            <s>We showed for the first time, that experimental rats were able to learn reciprocal altruism with a high average cooperation rate, where the most probable state was mutual cooperation (85%).</s>
+            <s>Although when subjects defected, the most probable behavior was to go back to mutual cooperation.</s>
+            <s>When we modified the matrix by increasing temptation rewards (T) or by increasing cooperation rewards (R), the cooperation rate decreased.</s>
+            <s>In conclusion, we observe that an iPD matrix with large positive reward improves less cooperation than one with small rewards, shown that satisfying the relationship among iPD reinforcement was not enough to achieve high mutual cooperation behavior.</s>
+            <s>Therefore, using positive and negative reinforcements and an appropriate contrast between rewards, rats have cognitive capacity to learn reciprocal altruism.</s>
+            <s>This finding allows to infer that the learning of reciprocal altruism has early appeared in evolution.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Introduction</head>
+        <p>
+          <s>Altruism is a behavior by an individual that may be to his disadvantage but benefits others individuals.</s>
+          <s>At first sight, Darwin's natural selection theory does not explain altruistic behavior.</s>
+          <s>Theories have been proposed to account altruist behavior: kin selection <ref target="#b0" type="bibr">[1]</ref> , group selection and reciprocal altruism <ref target="#b1" type="bibr">[2]</ref> among others.</s>
+          <s>In the reciprocal altruism theory, the loss experienced by an individual for being altruist returns later on behalf of the reciprocal partner.</s>
+          <s>Thus, in the long term, being altruist becomes the most useful strategy.</s>
+          <s>In this regard, Triver's theory of reciprocal altruism explains how natural selection favors reciprocal altruism between non-related individuals.</s>
+          <s>Perhaps the most insightful example of such behavior is the one a1111111111 a1111111111 a1111111111 a1111111111 a1111111111 observed among vampire bats, where individuals share blood with others who have previously shared their food <ref target="#b2" type="bibr">[3]</ref> .</s>
+        </p>
+        <p>
+          <s>Since 1971, Iterated Prisoner's Dilemma (iPD) has been a useful tool to study reciprocal altruism <ref target="#b3" type="bibr">[4]</ref> .</s>
+          <s>In the iPD, two players must choose between two possible behaviors: to cooperate or to defect.</s>
+          <s>Rewards and punishments are defined in a 2x2 payoff matrix.</s>
+          <s>When the game is played indefinitely, which is its iterated version, mutual cooperative behavior is favored.</s>
+          <s>When played once, to defect is the best strategy <ref target="#b4" type="bibr">[5]</ref> .</s>
+          <s>However, when the game runs indefinitely, evolutionary stable strategies (ESS) emerge <ref target="#b5" type="bibr">[6,</ref>
+            <ref target="#b6" type="bibr">7]</ref> and, under certain constraints imposed to the payoff matrix, mutual cooperation appears as the best strategy whenever reciprocity is maintained (Pareto Optimum).</s>
+          <s>Among a huge number of reciprocal strategies, tit for tat is one of the most simple ones <ref target="#b7" type="bibr">[8]</ref> .</s>
+          <s>It is based on two simple rules: to cooperate in the first trial and, in the following, to do what the other player (opponent) did in the last trial.</s>
+        </p>
+        <p>
+          <s>Among many reciprocal behaviors, reciprocity and reciprocal altruism were well documented in several species.</s>
+          <s>Although cooperation is needed to succeed in both reciprocity and reciprocal altruism, the latter adds the possibility of obtaining reward by defecting an opponent.</s>
+          <s>Some experiments show reciprocal altruism behavior by means of iPD paradigm in different ways, but the results were either low levels of cooperation <ref target="#b8" type="bibr">[9]</ref> or depended on a treatment that enhanced cooperation preference (mutualism matrix) <ref target="#b9" type="bibr">[10]</ref>
+            <ref target="#b10" type="bibr">[11]</ref>
+            <ref target="#b11" type="bibr">[12]</ref> .</s>
+          <s>Direct reciprocity, which is established between two individuals, has been observed in monkeys <ref target="#b12" type="bibr">[13]</ref>
+            <ref target="#b13" type="bibr">[14]</ref>
+            <ref target="#b14" type="bibr">[15]</ref> and in rats <ref target="#b15" type="bibr">[16]</ref>
+            <ref target="#b16" type="bibr">[17]</ref>
+            <ref target="#b17" type="bibr">[18]</ref>
+            <ref target="#b18" type="bibr">[19]</ref> .</s>
+          <s>While food quality seemed to impact on cooperative behavior, a key factor to obtain reliable cooperation levels was the opponent's behavior.</s>
+          <s>In this sense, individuals tended to be more cooperative with opponents that had cooperated in the past.</s>
+          <s>However, when reciprocal altruism is studied, differences between species come to light.</s>
+          <s>Thus, while reciprocal altruism has been proven in monkeys, birds and rats failed to reach high levels of cooperation, even for complex combinations of rewards and punishments in the payoff matrix and treatments to induce preference <ref target="#b8" type="bibr">[9,</ref>
+            <ref target="#b9" type="bibr">10,</ref>
+            <ref target="#b11" type="bibr">12,</ref>
+            <ref target="#b19" type="bibr">[20]</ref>
+            <ref target="#b20" type="bibr">[21]</ref>
+            <ref target="#b21" type="bibr">[22]</ref>
+            <ref target="#b22" type="bibr">[23]</ref> .</s>
+          <s>The reasons why some species do not learn reciprocal altruism remain obscure.</s>
+          <s>A possible explanation is that animals are not able to discriminate low contrast reward contingencies.</s>
+          <s>Indeed, it has been shown that rats fail to discriminate the amount of reward when the number of reward units is larger than three <ref target="#b23" type="bibr">[24]</ref>
+            <ref target="#b24" type="bibr">[25]</ref>
+            <ref target="#b25" type="bibr">[26]</ref> .</s>
+          <s>In this work, we designed an iPD setup to maximize the contrast among reinforcers.</s>
+          <s>The amounts of pellets were chosen in order to minimize positive reinforcement earned in each trial and to keep rats motivated (hungry), <ref target="#b26" type="bibr">[27]</ref> .</s>
+          <s>In order to evaluate if animals developed ALLC strategy by place preference (after animals learned iPD) they were trained on reversal.</s>
+          <s>We also evaluated reward maximization studying how the payoff matrix components promote or disrupt altruistic behavior.</s>
+        </p>
+      </div>
+      <div>
+        <head>Materials and methods</head>
+      </div>
+      <div>
+        <head>Subject</head>
+        <p>
+          <s>We used thirty male Long-Evans rats (weight 300-330g and two months old) provided by the IBYME-CONICET, divided in two experiments.</s>
+          <s>In the first one, eighteen rats (twelve experimental and six opponent), and in the second, twelve rats (six experimental and six opponent).</s>
+          <s>Experimental subjects were housed in pairs (to allow social interaction), and opponent rats were housed individually.</s>
+          <s>All rats were food restricted and maintained at 90-95% for experimental subjects, and 80-85% for opponents of free feeding body weight, all with tap water available ad libitum.</s>
+          <s>The housing room was at 22˚C ± 2˚C and 12/12 h light/dark cycle (with lights on at 9 am).</s>
+          <s>Pre-training was performed on a single standard operant chamber (MED associates Inc., USA) equipped with two stimulus light and retractable levers below the light and feeders.</s>
+          <s>Also the chambers were inside an anechoic chamber with white noise (with a flat power spectral density).</s>
+          <s>The iPD experiments were performed in ad hoc dual chamber equipped with levers, lights and feeders <ref target="#fig_0" type="figure">(Fig 1A)</ref> .</s>
+          <s>The chambers were connected by windows allowing rats to make olfactory and eye contact.</s>
+          <s>The lever's height was 80% of maximum height of the forepaws while rearing <ref target="#b26" type="bibr">[27]</ref> .</s>
+          <s>The dual chamber is shown in supplementary material (see <ref target="#fig_2" type="figure">S2 Fig)</ref> .</s>
+          <s>At the end of daylight, supplementary food was provided to allow rats to maintain body weight.</s>
+        </p>
+      </div>
+      <div>
+        <head>Pre-experimental training</head>
+        <p>
+          <s>All rats had a shaping procedure to learn the response (press a lever) to get a reinforcement (pellets).</s>
+          <s>To prevent animals from choosing a lever place over the other, they learned to get reward from both sides by changing the side of conditioned stimulus.</s>
+          <s>The side was changed after eight trials.</s>
+          <s>All rats learned to press the correct lighting lever after four sessions.</s>
+          <s>Each rat was trained in 2 sessions per day, each trial began with the inter-trial interval (ITI) during 5 seconds, it was followed by the conditioning stimulus (light) for either 45 seconds or until a lever was pressed.</s>
+          <s>One second before food is delivered, the feeder was lighted.</s>
+          <s>In the opponent's training, they learned to press the lever when the light was on.</s>
+          <s>In the task, the side of the active lever was chosen pseudo-randomly (allowing the same side no more than four times).</s>
+          <s>The opponent subject had to perform a fix ratio treatment up to FR = 5 to get rewards.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Experiment</head>
+        <p>
+          <s id="dataset-1" type="Tabular data">To study the reciprocal altruism in an iterated Prisoner's Dilemma game (iPD), we used a payoff matrix with positive and negative reinforcements.</s>
+          <s>Positive reinforcements were pellets (Bio-Serv 45 mg Dustless Precision Pellets) and negative reinforcement was timeout (a fix delay in starting a new trial).</s>
+          <s>The payoff of the experimental subject was according to the matrix, and the opponent's payoff was 1 pellet when the correct lighted lever was pressed.</s>
+          <s>For the opponent, when the incorrect lever was pressed, there was no contingency and no pellet was delivered.</s>
+          <s>The trial finishes after 45 seconds elapsed, or when the correct lever is pressed.</s>
+          <s>The iPD game has four possible occupancy states where experimental and opponent individual behaviors can be as follows: both cooperate (mutual cooperation, R), both do not cooperate (mutual defection, P), experimental subject does not cooperate when the opponent cooperates (T), and experimental cooperates when the opponent does not cooperate (S).</s>
+          <s>The amount of pellets preference was previously tested on a discrimination test, showing that rats prefer 2 pellets rather than 1 pellet (data not showed).</s>
+          <s>We performed two sessions per day and each session had 30 trials.</s>
+          <s>Each experimental subject was trained with the same opponent.</s>
+          <s>The training was finished after five consecutive sessions with no changes in the cooperation rate.</s>
+          <s>We defined cooperation (C) and defection (D) lever in the iPD box.</s>
+          <s>The single iPD trial procedure was as follows: (1) ITI time, (2) then, the light (CS) was turned on, (3) after this, both rats made their responses, the light was turned off and the reinforcement was delivered according to a payoff matrix, (4) if positive reinforcement was assigned, the feeder's light was turned on, and a second later a reward was delivered.</s>
+          <s>The opponent's Conditioned Stimulus (light) was controlled following a Tit for tat strategy.</s>
+          <s>The opponent received a pellet after pressing three times the lever (FR = 3, so as to be enough time in front of the window until the experimental subject choose a lever).</s>
+          <s>If negative reinforcement (timeout) was assigned, delay time started, and the opponent subject got a pellet reward.</s>
+          <s>(5) After either five seconds eating time expired or timeout was completed, a new trial started.</s>
+          <s>In the first experiment the payoff matrix was: 1 pellet for mutual cooperation (P R = 1), 2 pellets when the experimental subject defected and the opponent cooperated (P T = 2), 4 seconds of timeout for mutual defection (P P = 4seconds), and 8 seconds of timeout when the experimental subject cooperated and the opponent At the end of these experiments, the four rats with the best performance in cooperation were trained in a reversion treatment (see <ref target="#fig_0" type="figure">Fig 1F)</ref> .</s>
+          <s>When rats were trained on reversal, the sides of C and D lever were interchanged in subject and opponent chambers.</s>
+          <s>In that sense, if animals developed a place-preference behavior, they will not learn the new side in order to maximize reward.</s>
+          <s>In the second experiment we used six naive experimental rats on a different payoff matrix with greater temptation (P R = 1, P T = 3, P P = 4, P S = 8).</s>
+          <s>After training, we divided rats in two groups, depending on cooperation levels.</s>
+          <s>The first group (Treat 2A) with high cooperation rate was trained with the payoff matrix (P R = 1, P T = 5, P P = 4, P S = 8) with greater temptation for T state (Treat 3A).</s>
+          <s>The other group (with low cooperation rate, Treat 2B) was trained with the matrix (P R = 2, P T = 3, P P = 4, P S = 8, Treat 3B) that enhances cooperative behavior (in comparison with (P R = 1, P T = 3, P P = 4, P S = 8), but with low contrast between positive rewards (see <ref target="#tab_0" type="table">Table 1</ref> ).</s>
+          <s>All experimental procedures were approved by the ethics committee of the IByME-CONICET and were conducted according to the NIH Guide for Care and Use of Laboratory Animals.2.1 Subjects and Housing.</s>
+        </p>
+        <p>
+          <s>Statistic.</s>
+          <s>All statistical analyses were performed using statistics library from open source software Octave and MATLAB.</s>
+          <s>We pooled the data from the last five sessions where cooperation rate was stable (to calculate cooperation rate we counted the number of times a rat chose the cooperation lever per session).</s>
+          <s>We compared individual's means of cooperation along treatment using a two-sided Wilcoxon rank sum test.</s>
+          <s>To test whether the probability of cooperation after each outcome (T, R, P or S) was different from chance (0.5), we performed a Chisquare goodness of fit test with Bonferroni corrected value of 0.05/n.</s>
+          <s>To compare mean rate of the different outcomes for each game, we performed an ANOVA two tails test.</s>
+          <s>When significant α = 0.05, multiple post-hoc pairwise comparative tests were performed with Bonferroni corrected value of α = 0.0125.</s>
+          <s>The individual's decision rules can be described by the components of transition vectors and Markov Chain diagram.</s>
+          <s>The transition vector was made up of probabilities of cooperation when the previous trials resulted in state p(c|R −1 ), T(temptation) p(c|T −1 ), S(sucker) p(c|S −1 ) or P(punishment), p(c|P −1 ) respectively.</s>
+          <s>If every component of bar means cooperation mean).</s>
+          <s>Each animal was compared with the regression line fit to a population with cooperation level set to 60% (black continuous line).</s>
+          <s>The higher the cooperation levels, the larger the total reward and the lower the total timeout.</s>
+          <s>(E) Markov Chain diagram shows the probabilities of transition between states (p(c|T −1 ) = 0.76, p(c|R −1 ) = 0.85, p(c|S −1 ) = 0.93, p(c|P −1 ) = 0.87).</s>
+          <s>The arrow represents transitions: driven by cooperation in blue, and driven by defection in red (the arrow thickness is proportional to transition probability).</s>
+          <s>Below, bars show occupancy ratio when cooperation reaches stability.</s>
+          <s>Probabilities were: p(R) = 0.76, p(T) = 0.1, p(P) = 0.04, p(S) = 0.1.</s>
+          <s>Asterisks denote significant differences from multiple comparisons using one-way ANOVA and Bonferroni correction.</s>
+          <s>(F) Evolution cooperation rate before and after reversal.</s>
+          <s>Graphs show a moving average with samples of 3 sessions (the mean and sem from reversal on the last five sessions was 0.87 ± 0.04).</s>
+        </p>
+        <p>
+          <s>https://doi.org/10.1371/journal.pone.0204837.g001</s>
+          <s>this vector is 0.5, the agent's decision rule is random mode.</s>
+          <s>Markov Chain diagram show the graphic representation of the complete decision making rule for each rat.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+        <p>
+          <s>We trained twelve rats in iPD against an opponent that plays Tit for tat strategy.</s>
+          <s>Tit for tat is based on two simple rules: to cooperate in the first trial and, in the following, to do what the other player (opponent) did in the last trial.</s>
+          <s>
+            <ref target="#fig_0" type="figure">Fig 1A shows</ref> a schema of the different choices a subject can do in each trial.</s>
+          <s>Thus, when the subject cooperates, it receives one pellet (P R ) or eight seconds timeout (P S ) depending on whether the opponent choice was to cooperate or to defect.</s>
+          <s>On the other hand, when the subject defects, it receives 2 pellets (P T ) or four seconds timeout (P P ), according to whether the opponent choice was to cooperate or to defect respectively.</s>
+          <s>The criteria for cooperation was an established preference for pressing C lever (cooperation) over D lever (defection) in more than 60% of the trials for five or more consecutive sessions.</s>
+          <s>Eight out of twelve animals learned to cooperate (cooperation rate 0.86 ± 0.05, mean ± s.e.m), reaching criteria in 30 ± 4 sessions (mean ± s.e.m).</s>
+          <s>In <ref target="#fig_0" type="figure">Fig 1B,</ref> we show the mean cooperation levels for those animals during the last twenty three sessions before reaching criteria.</s>
+          <s>The inset in <ref target="#fig_0" type="figure">Fig 1B</ref> shows the mean cooperation level for each animal during the last five training sessions.</s>
+          <s>As a consequence of the increase in cooperation levels, the average total timeout per session decreased as training progressed (0.23 ± 0.08, mean ± sem, see <ref target="#fig_0" type="figure">Fig 1C)</ref> .</s>
+          <s>Due to the fact that different sequences of lever pressing can give the same amount of reward and/or timeout independently of the cooperation level, we analyzed the relationship between total reward and timeout for each animal in comparison to a simulated population.</s>
+          <s>A regression line was fit to a population of 100,000 simulated individuals with cooperation level set to 60%, (see <ref target="#fig_0" type="figure">Fig 1D)</ref> .</s>
+          <s>Each simulated individual had one different strategy and each one was a combination of thirty C and D choices (session length).</s>
+          <s>An individual that plays an iPD game with 60% of its choices in C will be near to the line, regardless of its strategies.</s>
+          <s>As it can be seen in the figure, for the cooperator group when the cooperation level increases, the larger are the total reward, and the lower the total timeout.</s>
+          <s>For the non cooperator group placed in the opposite side of the figure, it can be seen that both cooperation and reward were low and timeout was high.</s>
+          <s>The regression line at 60% of cooperation separates both groups (marked with a red circle in the <ref target="#fig_0" type="figure">Fig 1D)</ref> .</s>
+          <s>This shows that no behavior with low level of cooperation (subgroup in blue range) can obtain both high level of reward and small amount of timeout as in the cooperative group.</s>
+          <s>The average strategies of both group can be represented by Markov model diagram.</s>
+          <s>We built one Markov model for the group of cooperative animals (see <ref target="#fig_0" type="figure">Fig 1E)</ref> averaging occupancy state rate and transition probabilities in the group.</s>
+          <s>In the iPD there are four possible occupancy states where experimental and opponent individual behaviors can be as follows: R (both cooperate or mutual cooperation), P (both do not cooperate or mutual defection), T (experimental subject does not cooperate when the opponent cooperates), and S (experimental cooperates when the opponent does not cooperate).</s>
+          <s>The cooperative group showed that the permanency in R state was high and, whenever the animal defects (states T and P), it returns to cooperate immediately.</s>
+          <s>Indeed all conditional probabilities to cooperate given a previous outcome were near 1.</s>
+          <s>Besides, the rate of R state was the highest and other states near zero.</s>
+          <s>The probability of R state was significantly different to other states (p = &lt; 1e <ref type="bibr">−8</ref> , ANOVA two-way test, n = 8).</s>
+          <s>On the contrary, in the group of non-cooperative animals, any states were significantly different to the other p &gt; 0.05, F = 0.353, ANOVA two-way test, n = 4) and the probability to cooperate given a previous states did not evidence preference for any defined strategy (see <ref target="#tab_0" type="table">Table 1</ref> conditional probability to cooperate).</s>
+          <s>For the group of noncooperative animals Markov model (see <ref target="#fig_0" type="figure">S1 Fig, supplementary materials)</ref> .</s>
+        </p>
+        <p>
+          <s>To discard the fact that animals had a preference for one of the levers and, in consequence, their behavior biased independently of the training paradigm, we selected the best four cooperators and applied a reversal procedure immediately after cooperation was reached.</s>
+          <s>All animals learned to cooperate after reversal (cooperation rate, 0.87 ± 0.04, mean ± sem), (see <ref target="#fig_0" type="figure">Fig 1F)</ref> .</s>
+        </p>
+        <p>
+          <s>We then asked how the ratio in the amount of positive reinforcement of R and T states affects cooperation learning and maintenance.</s>
+          <s>We defined a contrast index CI that measures the relationship between the amount of reward in R and T as follows:</s>
+        </p>
+        <formula xml:id="formula_0">CI ¼ P T À P R P T þ P R</formula>
+        <p>
+          <s>Thus, in the experiment shown in <ref target="#fig_0" type="figure">Fig 1,</ref> the CI was <ref type="bibr">1 3</ref> which is the maximum contrast level constrained to a payoff matrix that favors cooperation, that is, 2P R &gt; P T + P S , assuming that S becomes a negative stimulus induced by timeout.</s>
+          <s>We trained six animals with a payoff matrix (P R = 1, P T = 3, P P = 4, P S = 8) and found that three animals learned to cooperate (0.88 ± 0.01, mean ± sem, see <ref target="#fig_2" type="figure">Fig 2A)</ref> , while others did not (0.64 ± 0.13, mean ± sem, see <ref target="#fig_2" type="figure">Fig 2B.</ref>
+          </s>
+          <s>The last group was non cooperator, since both their conditional probabilities to cooperate and occupancy R state ratios were near chance.</s>
+          <s>For details see <ref target="#tab_0" type="table">Table 1</ref> .</s>
+          <s>Then we changed the amount of reward in order to increase/decrease CI in the cooperative/non-cooperative groups.</s>
+          <s>As it can be seen, a high value of CI ¼ <ref type="bibr">2 3</ref> , related to a pay-off matrix (P R = 1, P T = 5, P P = 4, P S = 8), disrupts cooperation in cooperative group, <ref target="#fig_2" type="figure">Fig 2A.</ref>
+          </s>
+          <s>The cooperation was 0.604 ± 0.102, mean ± sem whereas before 0.88 ± 0.01).</s>
+          <s>When a lower value of CI ¼ <ref type="bibr">1 5</ref> was applied for non cooperator group and the matrix (P R = 2, P T = 3, P P = 4, P S = 8) empowers the cooperation in two out of three animals, cooperation rate 0.711 ± 0.04, mean ± sem, whereas before 0.64 ± 0.13 (see <ref target="#tab_0" type="table">Table 1</ref> ).</s>
+        </p>
+        <p>
+          <s>We analyzed how these changes in strategies impact on the amount of received reward and timeout penalties.</s>
+          <s>In the group of cooperative animals, the change in T (3 pellets to 5 pellets) increased both timeout and only a bit reward, as expected when states T, P and S become more probable.</s>
+          <s>The occupancy states ratio before and after matrix change had significant differences among all states, p &lt; 0.05 (wilcoxon ranksum test), (see <ref target="#fig_2" type="figure">Fig 2C and 2E)</ref> .</s>
+          <s>It is worth noting however that the amount of received reward is not the maximum allowed, which would be delivered in the case of an animal that alternates from state T to S indefinitely.</s>
+          <s>On the other hand, when we applied a matrix with a lower contrast CI ¼ <ref type="bibr">1 5</ref> to the group of non-cooperative animals, they enhance significantly their cooperation level, receiving more reward without significant changes in total timeout, (see <ref target="#fig_2" type="figure">Fig 2D)</ref> .</s>
+          <s>In <ref target="#fig_2" type="figure">Fig 2F,</ref> we show the state occupancy probabilities for this group before and after the change in the payoff matrix.</s>
+          <s>It can be seen that the occupancy state ratio of R had significantly increased after the change in the payoff matrix.</s>
+          <s>It can be observed a significant difference in R and P states, (p R &lt; 0.008 and p P &lt; 0.048, wilcoxon rank-sum test).</s>
+          <s>We showed that when the contrast index increased using a matrix to favor cooperation the animals learned to cooperate, but when the index increased and the matrix favor defection the animals stopped cooperating.</s>
+        </p>
+        <p>
+          <s>From the results shown in <ref target="#fig_0" type="figure">Figs 1 and 2</ref> , it is reasonable to ask whether a fine tuning in contrasted reward encourages cooperative behavior.</s>
+          <s>We have shown that eight out of twelve animalas (66%) acquired a cooperative behavior when CI was <ref type="bibr">1 3</ref> , while three out of six (50%) succeeded when CI was <ref type="bibr">1 2</ref> , as expected when temptation payoff increases.</s>
+          <s>In the same line of reasoning, animals that learned cooperation under CI ¼ <ref type="bibr">1 2</ref> disrupted their cooperative behavior when CI was increased to <ref type="bibr">2 3</ref> , while those that had not learned acquired a cooperative behavior when CI was decreased to <ref type="bibr">1 5</ref> .</s>
+          <s>
+            <ref target="#fig_4" type="figure">Fig 3A exemplifies</ref> the occupancy and transition probabilities for an animal that disrupted its cooperative behavior when CI ¼ <ref type="bibr">1 2</ref> was changed to CI ¼ .</s>
+          <s>The</s>
+        </p>
+        <p>
+          <s>Reciprocal altruism in rats: The role of payoff matrix ] (filled dots) and the cooperation was strongly affected by change of temptation payoff, decreasing when T payoff increased and matrix with changed to [R = 1, T = 5, P = 4, S = 8 and contrast CI ¼ became cooperative when CI was decreased to <ref type="bibr">1 5</ref> .</s>
+          <s>
+            <ref target="#fig_4" type="figure">Fig 3C and 3D</ref> show cooperation levels and normalized rewards.</s>
+          <s>A normalized reward was calculated as quotient between the total reward obtained in a session, and the maximum reward achieved using the best strategy.</s>
+          <s>If the opponent subject plays a Tit for tat strategy, the best strategy will depend on the pay-off matrix values.</s>
+          <s>In this way, if the matrix favors cooperation, ALLC will be the best one.</s>
+          <s>In contrast, when the payoff matrix favors no cooperation, alternate between C and D will be the best strategy.</s>
+          <s>It can be seen that both variables follow an inverted U profile as a function of contrast index CI, as expected when a delicate balance between rewards at R and T is mandatory.</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion and conclusion</head>
+        <p>
+          <s>In this work, we study the contrasted role between reinforcements in the learning of reciprocal altruism learning in rats.</s>
+          <s>Traditionally, reciprocal altruism is achieved by playing the iterated prisoner's dilemma game (iPD) when an experimental subject is confronted to a reciprocal opponent.</s>
+          <s>The payoff matrix used has positive and negative reinforcements with high contrasted between positive and negative pairs and also uses discriminating amount of reinforcements <ref target="#b24" type="bibr">[25,</ref>
+            <ref target="#b25" type="bibr">26]</ref> .</s>
+          <s>In our experiment, pellets were used as positive reinforcements, and timeout as negative reinforcement.</s>
+          <s>In this way, the positive and negative reinforcements acted as strengtheners of mutual cooperation behavior likelihood <ref target="#b27" type="bibr">[28]</ref> .</s>
+          <s>Our results show for the first time high levels of cooperation (86,11%) and mutual cooperation (76,32%) in iPD, (see <ref target="#fig_0" type="figure">Fig 1B)</ref> .</s>
+          <s>Previous published works have taught reciprocity using iPD game, showing that animals prefer short-term benefits or only improve a poor level of cooperation <ref target="#b3" type="bibr">[4,</ref>
+            <ref target="#b8" type="bibr">9,</ref>
+            <ref target="#b19" type="bibr">20,</ref>
+            <ref target="#b28" type="bibr">29,</ref>
+            <ref target="#b29" type="bibr">30]</ref> .</s>
+          <s>In other works, authors employed a special treatment to enhance cooperation preference <ref target="#b9" type="bibr">[10,</ref>
+            <ref target="#b22" type="bibr">23,</ref>
+            <ref target="#b30" type="bibr">31,</ref>
+            <ref target="#b31" type="bibr">32]</ref> .</s>
+          <s>A possible explanation is that using standard matrices (for example: P T = 6, P R = 4, P P = 1, P S = 0), animals were not able to discriminate between the amount of reinforcement obtained in the long-term in comparison to short-term <ref target="#b23" type="bibr">[24]</ref> .</s>
+          <s>For example, if a rat played four sessions [C C C C] he would get 16 pellets, and if played [C D D D] he would get 12 pellets.</s>
+          <s>In our experiment, rats using the same choices earn 4 pellets and no timeout in the first case, and 3 pellets plus a 16 seconds timeout in the second case.</s>
+        </p>
+        <p>
+          <s>A dynamic system can be represented with Markov diagrams and its associated state transition vector.</s>
+          <s>In this case, each state (T, R, P, S, see Results section) will have two associated conditional probabilities: to cooperate or not to cooperate given state.</s>
+          <s>In an IPD game with an opponent using a Tit for tat strategy, a rational player should maximize the positive reinforcement and cancel the negative reinforcement.</s>
+          <s>In this way, while the opponent performed a reciprocal behavior, the player follows an ALLC strategy with conditional cooperation probability near 1, independent of previous states (T, R, P o S).</s>
+          <s>In a pay-off matrix with addable value (as for an example (P T = 6, P R = 4, P P = 1, P S = 0), it is possible to calculate the cooperative strategy through mathematical analysis <ref target="#b32" type="bibr">[33,</ref>
+            <ref target="#b33" type="bibr">34]</ref> , but in our experiment positive and negative reinforcers have different units (pellets and time respectively).</s>
+          <s>Due to this reason, we did a (open circles) and the difference was statistically different (p &lt; 0.0062) in two of three subjects, because one had no significant difference after matrix change, p &gt; 0.05(cooperation: 0.7063).</s>
+          <s>(C) The 3D plots related cooperation, reward and timeout.</s>
+          <s>In the group of cooperative animals (filled dots), the change in T (3 pellets to 5 pellets) increased both timeout and reward in order to decrease cooperation (open circles).</s>
+          <s>The comparison between cooperation mean of both groups was significantly different, p &lt; 0.05.</s>
+          <s>(D) In the group of non-cooperative animals (filled dots), they learned to cooperate (open circles) by receiving more reward without significant changes in total timeout.</s>
+          <s>The cooperation was significantly different, p &gt; 0.05.</s>
+          <s>(E,F) The mean of occupancy state rate graph (last five sessions) from cooperative (left) and non-cooperative (right) groups (Mean ± sem).</s>
+          <s>Asterisks denote significant difference, after matrix changed, among T, R, P or S state occupancy and dash line indicates the level of equal rate in each state (that corresponds to a strategy with strongly random component).</s>
+          <s>Before changes (filled dots) and after changes (open circles).</s>
+        </p>
+        <p>
+          <s>https://doi.org/10.1371/journal.pone.0204837.g002</s>
+          <s>and pay-off matrix was changed [P T , P R , P P , P S ] = [3p, 1p, 4s, 8s] to [5p, 1p, 4s, 8s] (p = pellet and s = seconds).</s>
+          <s>The thickness of blue arrows (conditional probabilities of cooperation) become thinner after change (for values see <ref target="#tab_0" type="table">Table 1</ref> ).</s>
+          <s>(B) The opposite situation can be seen, non-cooperative animal becomes more cooperative when CI ¼ single analysis using the Markov chain diagram.</s>
+          <s>In the first experiment, we found that animals adopted two well defined strategies.</s>
+          <s>On one hand, a group of 8 animals proved to have learned a cooperative strategy while other 4 animals responded at random (see <ref target="#fig_0" type="figure">S1B Fig, Supporting information)</ref> .</s>
+          <s>The strategy of the first group, (see <ref target="#fig_0" type="figure">Fig 1E)</ref> , show that conditional probabilities to cooperation given previous state T, R, P or S were near 1 (0.760, 0.845, 0.929 and 0.870, respectively) and in this fashion after defected they immediately return to the mutual cooperation state, R. In various works, results were presented with Markov diagrams and its associated transition vector <ref target="#b9" type="bibr">[10,</ref>
+            <ref target="#b10" type="bibr">11,</ref>
+            <ref target="#b22" type="bibr">23,</ref>
+            <ref target="#b31" type="bibr">32]</ref> and showed that conditional probabilities of cooperation were not high when facing a reciprocal opponent.</s>
+          <s>In this protocol, with the matrix (P T = 2, P R = 1, P P = 4s, P S = 8s), there are two theoretical strategies that maximize appetite reinforcement: one is ALLC strategy and the other an alternating between cooperation (C) and defection (D) strategy.</s>
+          <s>The latter, also maximizes positive reinforcement when alternating between cooperation and defection options, but it also increases negative reinforcement (timeout).</s>
+          <s>In this case, ALLC strategy is the only one that maximizes positive reinforcement and minimizes the negative one (Pareto Optimum).</s>
+          <s>Since negative reinforcement is timeout, ALLC strategy gives more food per unit of time.</s>
+          <s>In this case, the role of the negative reinforcement appears.</s>
+        </p>
+        <p>
+          <s>In order to evaluate if animals developed ALLC strategy by place preference (after animals learned iPD) or by reward maximization, they were trained on reversal, (see <ref target="#fig_0" type="figure">Fig 1F)</ref> , and we observed that animals relearn reciprocal altruism when they are exposed to a new lever's contingency.</s>
+        </p>
+        <p>
+          <s>Finally, after animals adopted a strategy, we evaluated if a change in the payoff matrix could modify their behavior.</s>
+          <s>Therefore, we studied the effect of modifying positive reinforcements (see <ref target="#fig_2" type="figure">Fig 2A and 2B</ref> ).</s>
+          <s>Animals were pre-trained with a payoff matrix where alternating between C and D strategy gives more positive reinforcements than with an ALLC strategy, keeping the same negative reinforcement as in the first experiment.</s>
+          <s>We observed that only half of the animals learned to cooperate although all of them obtained the same mean amount reward (pellet) (see <ref target="#fig_2" type="figure">Fig 2C and 2D)</ref> .</s>
+          <s>The cooperative group was trained with a matrix where the pay-off T was increased <ref target="#fig_2" type="figure">(Fig 2A)</ref> , then we observed that cooperative behavior decreased.</s>
+          <s>Animals reduced frequency of R state and increased frequency of P state, proving that they preferred a small-immediate option instead of a large-delayed option.</s>
+          <s>This behavior is similar to the one observed in birds ( <ref target="#b29" type="bibr">[30]</ref> ).</s>
+          <s>In the second group, we applied a matrix that keeps the proportions of reinforcements in T and R similar to the most common matrix (P T = 3p, P R = 2p equal proportion to P T = 6p, P R = 4).</s>
+          <s>It was observed that animals modified their behavior and became more cooperative <ref target="#fig_2" type="figure">(Fig 2B)</ref> .</s>
+          <s>These results show that rats that learned to cooperate with an appropriate matrix stop cooperating when a temptation payoff (T) is sufficiently increased (matrix with high contrast index).</s>
+          <s>However, if non-cooperative animals are trained with a matrix that favors cooperation (matrix with low contrast index), they become cooperators.</s>
+          <s>In the latter case, the achieved cooperation level was comparable to results shared in diverse bibliography.</s>
+          <s>We observe that if an iPD matrix uses large positive reward, it improves less cooperation than one with small rewards, shown that satisfying the relationship among iPD reinforcement was not enough to achieve high mutual cooperation behavior.</s>
+          <s>The reciprocal altruist behavior in humans, monkeys and elephants has been studied in laboratories showing high levels of cooperation <ref target="#b12" type="bibr">[13,</ref>
+            <ref target="#b14" type="bibr">15,</ref>
+            <ref target="#b34" type="bibr">[35]</ref>
+            <ref target="#b35" type="bibr">[36]</ref>
+            <ref target="#b36" type="bibr">[37]</ref> , however in rats and birds those levels of cooperation were much lower.</s>
+          <s>Our results show that by using positive and negative reinforcements and an</s>
+        </p>
+        <p>
+          <s>The blue arrows become thicker after change (for values see <ref target="#tab_0" type="table">Table 1</ref> ).</s>
+          <s>(C, D) shows cooperation and timeout levels as a function of CI.</s>
+          <s>Here, it can be seen that both variables follow an inverted U profile in correlation with the contrast index increase and if the payoff matrix favors or not the cooperation behavior.</s>
+        </p>
+        <p>
+          <s>https://doi.org/10.1371/journal.pone.0204837.g003</s>
+          <s>appropriate contrast between rewards, rats have cognitive capacity to learn reciprocal altruism.</s>
+          <s>This finding allows to deduce learning of reciprocal altruism appeared early in evolution.</s>
+        </p>
+      </div>
+      <div>
+        <head>Supporting information</head>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig 1 .</head>
+        <label>1</label>
+        <figDesc>Fig 1. High level of cooperation in iPD. (A) Dual operant box diagram and the matrix with positive(blue) and negative(red) reinforcement is shown. The iPD game had four possible states: R(reward) mutual cooperation, P(punishment) mutual defection, T(temptation) in which subject defected and opponent cooperated and S(sucker) subject cooperated and opponent defected. The opponent´s light was driven in order to perform a Tit for tat strategy. (B,C) Time-course of cooperation and timeout rate along the last 23 games sessions. In the last 5 sessions, the mean ± sem of cooperation was 0.86 ± 0.05 and timeout was 0.23 ± 0.08. (D) Total reward versus timeout for all animals (color</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig 2 .</head>
+        <label>2</label>
+        <figDesc>Fig 2. Effect of changes in the amount of positive reinforcement of R and T. (A) The rats were pre-trained by pay-off matrix [P R = 1, P T = 3, P P = 4, P S = 8 and contrast CI ¼ 1 2</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>]</head>
+        <label/>
+        <figDesc>(open circles). There was a significant difference (red circle) in two animals with p &lt; 9.8e −06 (wilcoxon rank-sum test) and the other did not modify her behavior in spite of matrix change. (B) The cooperation enhanced when the matrix changed to [R = 2, T = 3, P = 4, S = 8 and CI ¼be seen in the example of Fig 3B. A non-cooperative animal under a CI ¼ 1 2</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Fig 3 .</head>
+        <label>3</label>
+        <figDesc>Fig 3. Markov chain diagrams and contrast index. Markov chain diagrams are shown (the size of circle means of occupancy state rate and the arrow's width are proportional to the probability of cooperate given (A) occupancy state and transition probabilities for an animal that disrupted its cooperative behavior when contrast index CI ¼ 1 2 was changed to CI ¼ 2 3</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
+        <head/>
+        <label/>
+        <figDesc>a matrix that favors cooperation. Reciprocal altruism in rats: The role of payoff matrix PLOS ONE | https://doi.org/10.1371/journal.pone.0204837 January 2, 2019</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
+        <head>S1</head>
+        <label/>
+        <figDesc>Fig. Non-cooperative rats. (A) Time-course of cooperation rate along the last 23 game ses- sions. In the last 5 sessions, the mean ± sem of cooperation was 0.36 ± 0.03. (B) Markov Chain diagram shows the probabilities of transition between states (p(c|T −1 ) = 0.44, p(c|R −1 ) = 0.38, p(c|S −1 ) = 0.32, p(c|P −1 ) = 0.32). The arrow represents transitions: driven by cooperation in blue, and driven by defection in red (the arrow thickness is proportional to transition probabil- ity). The size of circles is proportional to the state occupancy ratio. Below, bars show the occu- pancy ratio (T = 0.25, R = 0.19, P = 0.33, S = 0.23 and p &gt; 0.05, F = 0.353, ANOVA two-way test, n = 4) and transition probabilities (p(c|T −1 ) = 0.43, p(c|R −1 ) = 0.38, p(c|S −1 ) = 0.32, p(c|P −1 ) = 0.31) did not evidence preference for any defined strategy. Asterisks denote signifi- cant differences from multiple comparisons using one-way ANOVA and Bonferroni correc- tion. (EPS) S2 Fig. Scheme of dual operand conditioning chamber. Two operant boxes are placed, one in front of the other in such a way that transparent windows were aligned. In the front panel of each box, there are two light stimulus (green = on / black = off) on the top, two levers in the middle and two windows (red shadow) in down. In the subject box both lights are turned on at the same time when the trial starts, and in the opponent box only a light is on. The opponent was trained to choose the side where the light is on, but the subject has to learn which side maximizes reward. (EPS) S3 Fig. Abbreviations list. (EPS) S4 Fig. Dataset of all treatments. (PDF) Supervision: Guillermo E. Delmas, Sergio E. Lew, B. Silvano Zanutto. Validation: Guillermo E. Delmas. Visualization: Guillermo E. Delmas, B. Silvano Zanutto. Writing -original draft: Guillermo E. Delmas, B. Silvano Zanutto. Writing -review &amp; editing: Guillermo E. Delmas, Sergio E. Lew, B. Silvano Zanutto.</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head>Table 1 .</head>
+        <label>1</label>
+        <figDesc>Data summary. Treatment 1: testing of high cooperation and reversion. Treatment 2 and 3: effect in cooperation by change of pay-off matrix. The matrix changed over the group with same word (A or B).https://doi.org/10.1371/journal.pone.0204837.t001 Reciprocal altruism in rats: The role of payoff matrix PLOS ONE | https://doi.org/10.1371/journal.pone.0204837 January 2, 2019</figDesc>
+        <table>Treat 
+Groups 
+Cooperation 
+Probability State 
+Transition Probabilities 
+
+p(T) 
+p(R) 
+p(S) 
+p(p) 
+p(c|T 1 ) 
+p(c|R 1 ) 
+p(c|S 1 ) 
+p(c|P 1 ) 
+
+1 
+coop 
+0.86 ± 0.05 
+0.10 
+0.76 
+0.1 
+0.04 
+0.76 
+0.85 
+0.93 
+0.87 
+
+no coop 
+0.36 ± 0.03 
+0.44 
+0.38 
+0.32 
+0.32 
+0.25 
+0.19 
+0.33 
+0.23 
+
+reversal 
+0.87 ± 0.04 
+0.11 
+0.77 
+0.02 
+0.10 
+0.86 
+0.89 
+1.00 
+0.82 
+
+2 
+A 
+0.87 ± 0.04 
+0.09 
+0.80 
+0.03 
+0.08 
+0.65 
+0.90 
+0.87 
+0.94 
+
+B 
+0.64 ± 0.13 
+0.23 
+0.34 
+0.21 
+0.22 
+0.47 
+0.55 
+0.56 
+0.65 
+
+3 
+A 
+0.61 ± 0.10 
+0.18 
+0.44 
+0.21 
+0.17 
+0.45 
+0.64 
+0.62 
+0.78 
+
+B 
+0.71 ± 0.04 
+0.20 
+0.51 
+0.09 
+0.20 
+0.62 
+0.66 
+0.67 
+0.66 
+
+</table>
+      </figure>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0204837 January 2, 2019</note>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0204837 January 2, 2019 4 / 14</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgments</head>
+          <p>
+            <s>Supported by PICT 2012-1519 and PICT-2016-2145.</s>
+            <s>We wish to thank Lic. Melanie Marino.</s>
+          </p>
+        </div>
+        <div>
+          <head>Author Contributions</head>
+          <p>
+            <s>Conceptualization: Guillermo E. Delmas, B. Silvano Zanutto.</s>
+          </p>
+          <p>
+            <s>Data curation: Guillermo E. Delmas, Sergio E. Lew, B. Silvano Zanutto.</s>
+          </p>
+          <p>
+            <s>Formal analysis: Guillermo E. Delmas, Sergio E. Lew, B. Silvano Zanutto.</s>
+          </p>
+          <p>
+            <s>Funding acquisition: B. Silvano Zanutto.</s>
+          </p>
+          <p>
+            <s>Investigation: Guillermo E. Delmas, B. Silvano Zanutto.</s>
+          </p>
+          <p>
+            <s>Methodology: Guillermo E. Delmas, Sergio E. Lew, B. Silvano Zanutto.</s>
+          </p>
+          <p>
+            <s>Project administration: Guillermo E. Delmas, B. Silvano Zanutto.</s>
+          </p>
+          <p>
+            <s>Resources: Guillermo E. Delmas, B. Silvano Zanutto.</s>
+          </p>
+          <p>
+            <s>Software: Guillermo E. Delmas.</s>
+          </p>
+          <p>
+            <s>Reciprocal altruism in rats: The role of payoff matrix</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Group selection and kin selection</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Smith</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1038/2011145a0</idno>
+              <ptr target="https://doi.org/10.1038/2011145a0"/>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">201</biblScope>
+                <biblScope unit="issue">4924</biblScope>
+                <biblScope from="1145" to="1147" unit="page"/>
+                <date type="published" when="1964"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <monogr>
+              <title level="m" type="main">The evolution of reciprocal altruism. The Quarterly review of biology</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Trivers</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1086/406755</idno>
+              <ptr target="https://doi.org/10.1086/406755"/>
+              <imprint>
+                <date type="published" when="1971"/>
+                <biblScope unit="volume">46</biblScope>
+                <biblScope from="35" to="57" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Reciprocal altruism in bats and other mammals</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Wilkinson</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/0162-3095(88)90015-5</idno>
+              <ptr target="https://doi.org/10.1016/0162-3095(88)90015-5"/>
+            </analytic>
+            <monogr>
+              <title level="j">Ethology and Sociobiology</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="issue">2-4</biblScope>
+                <biblScope from="85" to="100" unit="page"/>
+                <date type="published" when="1988"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">2 × 2 Games played by rats: Different delays of reinforcement as payoffs</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Flood</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Lendenmann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Rapoport</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1002/bs.3830280108</idno>
+              <ptr target="https://doi.org/10.1002/bs.3830280108"/>
+            </analytic>
+            <monogr>
+              <title level="j">Systems Research and Behavioral Science</title>
+              <imprint>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="65" to="78" unit="page"/>
+                <date type="published" when="1983"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Models of cooperation based on the Prisoner's Dilemma and the Snowdrift game</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Doebeli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Hauert</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1111/j.1461-0248.2005.00773.x</idno>
+              <ptr target="https://doi.org/10.1111/j.1461-0248.2005.00773.x"/>
+            </analytic>
+            <monogr>
+              <title level="j">Ecology letters</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope from="748" to="766" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <monogr>
+              <title level="m" type="main">Game theory and economic behavior</title>
+              <author>
+                <persName>
+                  <forename type="first">Von</forename>
+                  <surname>Neumann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Morgenstern</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="1944"/>
+                <publisher>Joh Wiley and Sons</publisher>
+                <pubPlace>New York</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Equilibrium points in n-person games</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Nash</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1073/pnas.36.1.48</idno>
+              <ptr target="https://doi.org/10.1073/pnas.36.1.48"/>
+            </analytic>
+            <monogr>
+              <title level="m">Proceedings of the national academy of sciences</title>
+              <meeting>the national academy of sciences</meeting>
+              <imprint>
+                <date type="published" when="1950"/>
+                <biblScope unit="volume">36</biblScope>
+                <biblScope from="48" to="49" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">The evolution of cooperation</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Hamilton</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Axelrod</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">211</biblScope>
+                <biblScope unit="issue">27</biblScope>
+                <biblScope unit="page">7466396</biblScope>
+                <date type="published" when="1981"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Cooperation in rats playing the iterated Prisoner's Dilemma game</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Wood</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.anbehav.2016.01.010</idno>
+              <ptr target="https://doi.org/10.1016/j.anbehav.2016.01.010PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Animal behaviour</title>
+              <imprint>
+                <biblScope unit="volume">114</biblScope>
+                <biblScope unit="page">27019513</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Discounting and reciprocity in an iterated prisoner's dilemma</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Stephens</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Mclinn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Stevens</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1126/science.1078498</idno>
+              <ptr target="https://doi.org/10.1126/science.1078498PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">298</biblScope>
+                <biblScope unit="issue">5601</biblScope>
+                <biblScope unit="page">12481142</biblScope>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Accumulated gain in a Prisoner's Dilemma: which game is carried out by the players?</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ké Fi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Bonnet</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Danchin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Animal Behaviour</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope unit="issue">74</biblScope>
+                <biblScope from="1" to="6" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Long-term social bonds promote cooperation in the iterated Prisoner's Dilemma</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>St-Pierre</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Larose</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Dubois</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1098/rspb.2009.1156</idno>
+              <ptr target="https://doi.org/10.1098/rspb.2009.1156"/>
+            </analytic>
+            <monogr>
+              <title level="j">Proceedings of the Royal Society of London B: Biological Sciences</title>
+              <imprint>
+                <biblScope unit="volume">276</biblScope>
+                <biblScope from="4223" to="4228" unit="page"/>
+                <date type="published" when="1676"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Attitudinal reciprocity in food sharing among brown capuchin monkeys</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">B</forename>
+                  <surname>De Waal</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1006/anbe.2000.1471</idno>
+              <ptr target="https://doi.org/10.1006/anbe.2000.1471PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Animal Behaviour</title>
+              <imprint>
+                <biblScope unit="volume">60</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope unit="page">10973728</biblScope>
+                <date type="published" when="2000"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Capuchins do cooperate: the advantage of an intuitive task</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Mendres</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">B</forename>
+                  <surname>De Waal</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1006/anbe.2000.1512</idno>
+              <ptr target="https://doi.org/10.1006/anbe.2000.1512PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Animal Behaviour</title>
+              <imprint>
+                <biblScope unit="volume">60</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope unit="page">11032655</biblScope>
+                <date type="published" when="2000"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Give unto others: genetically unrelated cotton-top tamarin monkeys preferentially give food to those who altruistically give food back</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Hauser</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Chuang</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1098/rspb.2003.2509</idno>
+              <ptr target="https://doi.org/10.1098/rspb.2003.2509"/>
+            </analytic>
+            <monogr>
+              <title level="j">Proceedings of the Royal Society of London B: Biological Sciences</title>
+              <imprint>
+                <biblScope unit="volume">270</biblScope>
+                <biblScope from="2363" to="2370" unit="page"/>
+                <date type="published" when="1531"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Generalized reciprocity in rats</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Rutte</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Taborsky</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1371/journal.pbio.0050196</idno>
+              <ptr target="https://doi.org/10.1371/journal.pbio.0050196PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS biology</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope unit="page">17608566</biblScope>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">The influence of social experience on cooperative behaviour of rats (Rattus norvegicus): direct vs generalised reciprocity</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Rutte</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Taborsky</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1007/s00265-007-0474-3</idno>
+              <ptr target="https://doi.org/10.1007/s00265-007-0474-3"/>
+            </analytic>
+            <monogr>
+              <title level="j">Behavioral Ecology and Sociobiology</title>
+              <imprint>
+                <biblScope unit="volume">62</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="499" to="505" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Reciprocal cooperation between unrelated rats depends on cost to donor and benefit to recipient</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Schneeberger</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Dietz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Taborsky</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1186/1471-2148-12-41</idno>
+              <idno>2148-12-41 PMID: 22455399</idno>
+              <ptr target="https://doi.org/10.1186/1471"/>
+            </analytic>
+            <monogr>
+              <title level="j">BMC evolutionary biology</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">41</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Norway rats reciprocate help according to the quality of help they received</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Dolivo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Taborsky</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1098/rsbl.2014.0959</idno>
+              <ptr target="https://doi.org/10.1098/rsbl.2014.0959PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Biology letters</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope unit="page">25716088</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Prisoner's dilemma and the pigeon: Control by immediate consequences</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Green</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Price</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Hamburger</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1901/jeab.1995.64-1</idno>
+              <ptr target="https://doi.org/10.1901/jeab.1995.64-1PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of the experimental analysis of behavior</title>
+              <imprint>
+                <biblScope unit="volume">64</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">16812760</biblScope>
+                <date type="published" when="1995"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">The adaptive value of preference for immediacy: when shortsighted rules have farsighted consequences</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Stephens</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Anderson</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1093/beheco/12.3.330</idno>
+              <ptr target="https://doi.org/10.1093/beheco/12.3.330"/>
+            </analytic>
+            <monogr>
+              <title level="j">Behavioral Ecology</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="330" to="339" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">The Prisoner's Dilemma game and cooperation in the rat</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Gardner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Corbin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Beltramo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Nickell</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.2466/pr0.1984.55.3.687</idno>
+              <ptr target="https://doi.org/10.2466/pr0.1984.55.3.687"/>
+            </analytic>
+            <monogr>
+              <title level="j">Psychological Reports</title>
+              <imprint>
+                <biblScope unit="volume">55</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="687" to="696" unit="page"/>
+                <date type="published" when="1984"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Cognitive and motivational requirements for the emergence of cooperation in a rat social game</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Viana</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Gordo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Sucena</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Moita</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1371/journal.pone.0008483</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0008483PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">PloS one</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">8483</biblScope>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Counting in rats: Its functional significance and the independent cognitive processes that constitute it</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Capaldi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Miller</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Experimental Psychology: Animal Behavior Processes</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">3</biblScope>
+                <date type="published" when="1988"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Incentive theory: II. Models for choice</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Killeen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of the Experimental Analysis of Behavior</title>
+              <imprint>
+                <biblScope unit="volume">38</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="217" to="232" unit="page"/>
+                <date type="published" when="1982"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <monogr>
+              <title level="m" type="main">Journal of the experimental analysis of behavior</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Killeen</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="1985"/>
+                <biblScope unit="volume">43</biblScope>
+                <biblScope from="407" to="417" unit="page"/>
+              </imprint>
+            </monogr>
+            <note>Incentive theory: IV. Magnitude of reward</note>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">An affordance analysis of unconditioned lever pressing in rats and hamsters</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Cabrera</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Sanabria</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Á A</forename>
+                  <surname>Jiménez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Covarrubias</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.beproc.2012.10.003</idno>
+              <ptr target="https://doi.org/10.1016/j.beproc.2012.10.003PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Behavioural processes</title>
+              <imprint>
+                <biblScope unit="volume">92</biblScope>
+                <biblScope unit="page">23073500</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <monogr>
+              <title level="m" type="main">Learning and behavior</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Mazur</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2015"/>
+                <publisher>Psychology Press</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <monogr>
+              <title level="m" type="main">Teaching and learning in a probabilistic prisoner's dilemma. Behavioural Processes</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Baker</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Rachlin</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/S0376-6357(02)00015-3</idno>
+              <ptr target="https://doi.org/10.1016/S0376-6357(02)00015-3PMID"/>
+              <imprint>
+                <date type="published" when="2002"/>
+                <biblScope unit="volume">57</biblScope>
+                <biblScope unit="page">11947999</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Testing models of non-kin cooperation: mutualism and the Prisoner's Dilemma</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Clements</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Stephens</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1006/anbe.1995.0267</idno>
+              <ptr target="https://doi.org/10.1006/anbe.1995.0267"/>
+            </analytic>
+            <monogr>
+              <title level="j">Animal Behaviour</title>
+              <imprint>
+                <biblScope unit="volume">50</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="527" to="535" unit="page"/>
+                <date type="published" when="1995"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Effects of temporal clumping and payoff accumulation on impulsiveness and cooperation</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Stephens</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Mclinn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Stevens</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.beproc.2005.09.003</idno>
+              <ptr target="https://doi.org/10.1016/j.beproc.2005.09.003PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Behavioural processes</title>
+              <imprint>
+                <biblScope unit="volume">71</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">16226849</biblScope>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">The economic basis of cooperation: tradeoffs between selfishness and generosity</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Stevens</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Stephens</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1093/beheco/arh006</idno>
+              <ptr target="https://doi.org/10.1093/beheco/arh006"/>
+            </analytic>
+            <monogr>
+              <title level="j">Behavioral Ecology</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="255" to="261" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Relationship between dilemma occurrence and the existence of a weakly dominant strategy in a two-player symmetric game</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Tanimoto</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Sagara</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.biosystems.2006.07.005</idno>
+              <ptr target="https://doi.org/10.1016/j.biosystems.2006.07.005PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">BioSystems</title>
+              <imprint>
+                <biblScope unit="volume">90</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">17188808</biblScope>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Universal scaling for the dilemma strength in evolutionary games</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Kokubo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Jusup</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Tanimoto</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1016/j.plrev.2015.04.033</idno>
+              <ptr target="https://doi.org/10.1016/j.plrev.2015.04.033PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Physics of life reviews</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope unit="page">25979121</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Human cooperation in the simultaneous and the alternating Prisoner's Dilemma: Pavlov versus Generous Tit-for-Tat</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Wedekind</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Milinski</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1073/pnas.93.7.2686</idno>
+              <ptr target="https://doi.org/10.1073/pnas.93.7.2686"/>
+            </analytic>
+            <monogr>
+              <title level="j">Proceedings of the National Academy of Sciences</title>
+              <imprint>
+                <biblScope unit="volume">93</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope from="2686" to="2689" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">Human cooperation in social dilemmas: comparing the Snowdrift game with the Prisoner's Dilemma</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Kü Mmerli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Colliard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Fiechter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Petitpierre</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Russier</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Keller</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1098/rspb.2007.0793</idno>
+              <ptr target="https://doi.org/10.1098/rspb.2007.0793"/>
+            </analytic>
+            <monogr>
+              <title level="j">Proceedings of the Royal Society of London B: Biological Sciences</title>
+              <imprint>
+                <biblScope unit="volume">274</biblScope>
+                <biblScope from="2965" to="2970" unit="page"/>
+                <date type="published" when="1628"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">Elephants know when they need a helping trunk in a cooperative task</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Plotnik</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Lair</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Suphachoksahakun</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Fbm</forename>
+                  <surname>De Waal</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1073/pnas.1101765108</idno>
+              <ptr target="https://doi.org/10.1073/pnas.1101765108"/>
+            </analytic>
+            <monogr>
+              <title level="j">Proceedings of the National Academy of Sciences</title>
+              <imprint>
+                <biblScope unit="volume">108</biblScope>
+                <biblScope unit="issue">12</biblScope>
+                <biblScope from="5116" to="5121" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

@@ -185,13 +185,13 @@
       <div subtype="dataseer">
         <head>Clinical cases</head>
         <p>
-          <s id="0" type="Tabular data:Research Subjects">Canine and feline veterinary patients with spontaneous occurring, histologically confirmed cancer that presented to the Oncology Service between September 2016 and December 2017 were eligible to be enrolled in a prospective clinical study to assess the efficacy of 3D printed radiotherapy bolus.</s>
+          <s id="dataset-1" type="Tabular data:Research Subjects">Canine and feline veterinary patients with spontaneous occurring, histologically confirmed cancer that presented to the Oncology Service between September 2016 and December 2017 were eligible to be enrolled in a prospective clinical study to assess the efficacy of 3D printed radiotherapy bolus.</s>
           <s>The study was approved by the University of Minnesota Institutional Animal Care and Use Committee (IACUC, Protocol No. 1608-34034A), and written client consent was obtained for all companion animals enrolled.</s>
         </p>
         <p>
           <s>Computed tomography (CT) image acquisition and radiation planning.</s>
-          <s id="1" type="Image:Computerized Tomography scan">CT images were acquired on a helical 64-slice CT scanner (Toshiba Aquilion 64 CFX, Toshiba Medical Systems, Tustin, CA).</s>
-          <s id="2" type="Image:Computerized Tomography scan">CT scans were performed with animal patients in radiation therapy planning position, which was determined by the radiation oncologist and dependent on the tumor location and geared towards maximizing the reproducibility of repeated setup.</s>
+          <s id="dataset-2" type="Image:Computerized Tomography scan">CT images were acquired on a helical 64-slice CT scanner (Toshiba Aquilion 64 CFX, Toshiba Medical Systems, Tustin, CA).</s>
+          <s id="dataset-3" type="Image:Computerized Tomography scan">CT scans were performed with animal patients in radiation therapy planning position, which was determined by the radiation oncologist and dependent on the tumor location and geared towards maximizing the reproducibility of repeated setup.</s>
           <s>All examinations consisted of reconstructed 2-or 3-mm-thick transverse images.</s>
           <s>Intravenous contrast medium (770 mg or I/kg; Optiray 350 <ref type="bibr">[Ioversol]</ref> , Mallinckrodt Inc, Hazelwood, MO) was administered to all animals following acquisition of pre-contrast data.</s>
           <s>Non contrast-and contrast-enhanced CT studies of the tumor region were retrieved from a PACS workstation in DICOM file format and sent to a computer utilizing commercially available contouring software (MIM Maestro 6.12, MIM Software Inc., Cleveland OH).</s>
@@ -223,7 +223,7 @@
         </p>
         <p>
           <s>Time to 3D printed bolus generation.</s>
-          <s id="3" type="Tabular data">The time required to generate each 3D printed bolus was recorded for all cases.</s>
+          <s id="dataset-4" type="Tabular data">The time required to generate each 3D printed bolus was recorded for all cases.</s>
           <s>The process was divided into the following subroutines: bolus segmentation, conversion from DICOM-RT structure to 3D model (including model processing and smoothing), and 3D print time.</s>
           <s>Time reporting was limited to 0.25 hour (h) increments except for 3D print time, which was recorded by the printer precisely to the minute.</s>
         </p>
@@ -231,7 +231,7 @@
       <div subtype="dataseer">
         <head>Spatial accuracy of bolus placement for treatment</head>
         <p>
-          <s id="4" type="Image">Immediately prior to each radiation fraction, in order to verify proper patient positioning, kilovolatge (kV) CT (cone beam CT; CBCT) images on board the linear accelerator (Varian iX, Varian Medical Systems, Palo Alto CA) were obtained prior to each prescribed fraction in order to verify that patient setup and positioning match to the treatment-planning position.</s>
+          <s id="dataset-5" type="Image">Immediately prior to each radiation fraction, in order to verify proper patient positioning, kilovolatge (kV) CT (cone beam CT; CBCT) images on board the linear accelerator (Varian iX, Varian Medical Systems, Palo Alto CA) were obtained prior to each prescribed fraction in order to verify that patient setup and positioning match to the treatment-planning position.</s>
           <s>Conventional bolus (wet gauze or skinless bolus [CIVCO Medical Solutions]) was planned for all cases and used on the first treatment unless the 3D printed bolus was deemed superior by the clinician.</s>
           <s>The radiation modifier was in place at the time of CBCT, permitting an assessment of conformation, or clinical fit, to the patient's external contour <ref target="#fig_0" type="figure">(Fig 1)</ref> .</s>
           <s>At least one CBCT with the 3D printed bolus was planned for all clinical patients during the time of the study.</s>
@@ -242,13 +242,13 @@
           <s>Varian Medical Systems, Inc., Palo Alto, CA) segmentation software.</s>
           <s>The conventional bolus was also segmented on CBCT and compared.</s>
           <s>If the conventional bolus was much larger than the original bolus structure from the planning CT (i.e. the sheet of bolus was not trimmed down to a patient-specific size), the excess bolus was not included in the CBCT conventional bolus structure to avoid inappropriately penalizing the conformality score of the conventional bolus.</s>
-          <s id="5" type="Tabular data">In addition, the density of the 3D printed bolus was determined by first calculating the weight of the bolus using a calibrated scale and subsequently determining the ratio of the weight to volume of the 3D model.</s>
+          <s corresp="#dataset-5" type="Tabular data">In addition, the density of the 3D printed bolus was determined by first calculating the weight of the bolus using a calibrated scale and subsequently determining the ratio of the weight to volume of the 3D model.</s>
         </p>
         <p>
           <s>In-vivo dosimetry.</s>
-          <s id="6" type="Tabular data">To verify dose build-up under the bolus, in-vivo dosimetry measurements were performed between the bolus and skin using either radiochromic film (EBT3, Ashland Advanced Materials, Bridgewater, NJ) or Optically Stimulated Luminescence Detectors (OSLD).</s>
+          <s id="dataset-6" type="Tabular data">To verify dose build-up under the bolus, in-vivo dosimetry measurements were performed between the bolus and skin using either radiochromic film (EBT3, Ashland Advanced Materials, Bridgewater, NJ) or Optically Stimulated Luminescence Detectors (OSLD).</s>
           <s>The radiation oncologist provided the expected dose while the physicist determined the measured dose.</s>
-          <s id="7" type="Tabular data">Expected measurements were obtained by registering the film location on the cone beam CT for setup with the treatment planning CT illustrating dose distribution.</s>
+          <s corresp="#dataset-6" type="Tabular data">Expected measurements were obtained by registering the film location on the cone beam CT for setup with the treatment planning CT illustrating dose distribution.</s>
           <s>Films were calibrated using triple channel dosimetry and fit to a rational function.</s>
           <s>
             <ref target="#b23" type="bibr">[23]</ref> The calibration dose ranged from 0 to 800 cGy.</s>

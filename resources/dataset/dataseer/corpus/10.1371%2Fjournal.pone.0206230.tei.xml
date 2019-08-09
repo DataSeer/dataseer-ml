@@ -1,0 +1,2182 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T09:37+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Estimation of consumption potentiality using VIIRS night-time light data</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Luyao</forename>
+                <surname>Wangid</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Mapping and Remote Sensing</orgName>
+                <orgName type="laboratory">State Key Lab for Information Engineering in Surveying</orgName>
+                <orgName type="institution">Wuhan University</orgName>
+                <address>
+                  <settlement>Wuhan</settlement>
+                  <country key="CN">China</country>
+                </address>
+              </affiliation>
+              <affiliation key="aff1">
+                <orgName type="department">Collaborative Innovation Center of Geospatial Technology</orgName>
+                <orgName type="institution">Wuhan University</orgName>
+                <address>
+                  <settlement>Wuhan</settlement>
+                  <country key="CN">China</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Hong</forename>
+                <surname>Fan</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Mapping and Remote Sensing</orgName>
+                <orgName type="laboratory">State Key Lab for Information Engineering in Surveying</orgName>
+                <orgName type="institution">Wuhan University</orgName>
+                <address>
+                  <settlement>Wuhan</settlement>
+                  <country key="CN">China</country>
+                </address>
+              </affiliation>
+              <affiliation key="aff1">
+                <orgName type="department">Collaborative Innovation Center of Geospatial Technology</orgName>
+                <orgName type="institution">Wuhan University</orgName>
+                <address>
+                  <settlement>Wuhan</settlement>
+                  <country key="CN">China</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Yankun</forename>
+                <surname>Wang</surname>
+              </persName>
+              <affiliation key="aff2">
+                <orgName key="dep1" type="department">Shenzhen Key Laboratory of Spatial Information Smart Sensing and Services</orgName>
+                <orgName key="dep2" type="department">School of Architecture and Urban Planning</orgName>
+                <orgName key="instit1" type="institution">Research Institute for Smart Cities</orgName>
+                <orgName key="instit2" type="institution">Shenzhen University</orgName>
+                <address>
+                  <settlement>Shenzhen</settlement>
+                  <country key="CN">China</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Estimation of consumption potentiality using VIIRS night-time light data</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1371/journal.pone.0206230</idno>
+          <note>RESEARCH ARTICLE</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <head>Abstract</head>
+          <p>
+            <s>As an informative proxy measure for a range of urbanisation and socioeconomic variables, satellite-derived night-time light data have been widely used to investigate the diverse anthropogenic activities and reveal social economy development disparities from the regional to the national scale.</s>
+            <s>The new-generation night-time light data have been proven to potentially improve our understanding in the development and inequality of urban social economy due to its high spatial resolution, strong timeliness and minimal background noise.</s>
+            <s>These night-time light data are derived from the visible infrared imaging radiometer suite (VIIRS) instrument with day/night band located on the Suomi National Polar-orbiting Partnership (NPP) satellite.</s>
+            <s>This study proposed a hybrid model to estimate urban consumption potentiality based on the comprehensive information of human activities obtained from the VIIRS night-time light data.</s>
+            <s>Our method established a flexible geographically weighted regression-based estimation model based on the residential consumption data and DN values of the VIIRS data to predict the possible consumption potentiality of other urban areas in dynamic time.</s>
+            <s>The experiment conducted in Guiyang, a provincial capital in China, affirms that our model is proven to have higher accuracy compared with traditional regression models and can potentially provide guidance for improved business management and increased profit.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Introduction</head>
+        <p>
+          <s>Deeply involving the world development wave, the Chinese economy has experienced remarkable growth in the past 30 years, resulting in the rapid increase of their purchasing ability.</s>
+          <s>The gross domestic product per capita (GDPPC) improved from 241 dollars in 1978 to 8592 dollars in 2016, with the total consumption amount reaching 5.2 trillion dollars in 2016 <ref target="#b0" type="bibr">[1]</ref> .</s>
+          <s>Although online shopping has provided an extent impact for entity retail sales, its market shares are still small compared with offline shopping.</s>
+          <s>According to the National Statistics Bureau of China, the scale of online shopping was only 15% of the total Chinese retail industry in 2017.</s>
+          <s>Moreover, the increasing rate of online shopping has shown a continuously decreasing trend with DN values in the DMSP/OLS data is small (0-63), thereby resulting in the over-saturation in city centres.</s>
+          <s>Only the DMSP/OLS data from 1992-2003 are available.</s>
+          <s>Thus, many studies that use the DMSP/OLS data cannot focus on social economy problems after 2013 <ref target="#b22" type="bibr">[23]</ref> .</s>
+          <s>The DMSP/OLS data are obtained by different satellites, thereby making the equality of data different even between contiguous years.</s>
+          <s>In October 2011, the Suomi National Polar-orbiting Partnership (NPP) satellite with the visible infrared imaging radiometer suite (VIIRS) was launched by the National Oceanic and Atmospheric Administration (NOAA)/National Geophysical Data Centre (NGDC).</s>
+          <s>As the new generation of night-time light data, the VIIRS night-time light data are superior than the DMSP/OLS data in spatial and radiometric resolution (15 arc seconds, 0.5 km × 0.5 km), radiometric detection range and on-board calibration <ref target="#b23" type="bibr">[24]</ref> .</s>
+          <s>Two types of products were available in the NPP-VIIRS website (https://ngdc.noaa.gov/</s>
+          <s>eog/viirs/index.html),</s>
+          <s>namely, 'vcm' and 'vcmsl'.</s>
+          <s>'vcm' and 'vcmsl' are monthly averaging datasets that exclude and include the impact caused by stray light, respectively.</s>
+          <s>The timeliness of the NPP-VIIRS data is better than that of the DMSP/OLS data.</s>
+          <s>Moreover, the former is still updated each month, making it superior than the DMSP/OLS data in studying issues after 2013 <ref target="#b24" type="bibr">[25]</ref> .</s>
+          <s>The VIIRS data have been adopted to be a remarkable indicator of spatio-temporal human activities <ref target="#b25" type="bibr">[26]</ref> and economics <ref target="#b26" type="bibr">[27]</ref> owing to the aforementioned superiorities.</s>
+          <s>Thus, the capability of the VIIRS data makes its use in the estimation of consumption potentiality in business management possible.</s>
+          <s>Unlike other data sources, the VIIRS night-time light data have several obvious advantages for business managers.</s>
+          <s>Firstly, the artificial night-time light of VIIRS can reflect the use of public and commercial lighting, which are strongly associated with the commercial activities and the state of the economy.</s>
+          <s>Consequently, modelling the relationship between the VIIRS data and commercial potential for the retail industry through simple models is easy.</s>
+          <s>Secondly, night-time light data are timely with low cost and flexible spatial scale.</s>
+          <s>These characteristics help business managers distinguish the spatio-temporal patterns of consumers and update their business strategies, such as product distribution and advertisement strategy, each quarter or each month, in accordance to the update frequency of the VIIRS data.</s>
+          <s>The VIIRS data will potentially be a new data source with great conveniences and high accuracy for retail business management.</s>
+        </p>
+        <p>
+          <s>In previous studies, a simple linear regression model was widely adopted to reveal the relationship between the VIIRS and economy data, including the estimation of the total GDP <ref target="#b27" type="bibr">[28,</ref>
+            <ref target="#b28" type="bibr">29]</ref> .</s>
+          <s>The results only affirm a simple redistribution of the total GDP according to the DN values of each grid.</s>
+          <s>To optimise the method, Wang <ref target="#b29" type="bibr">[30]</ref> adopted the Huff Model in the estimation of consumption potential and site selection of new business facilities.</s>
+          <s>In his study, the spatial distance between target grids and city centres was considered such that the consumption potential of a grid was not just determined by its input, but also its locations in space, which was closer to reality.</s>
+        </p>
+        <p>
+          <s>This study primarily aims to prove the potentiality of new data sources with high convenience and low cost in the estimation of consumption potential and provide other practical models for retail business management.</s>
+          <s>In this study, the commercial consumption data (historical fast-moving consumer good sales data of retail shops in Guiyang, China) were combined with the VIIRS night-time light data and fed into a geographically weighted regression (GWR) model to reveal the correlational relationship between the VIIRS night-time light data and consumption potentiality.</s>
+          <s>Through spatial division, our study areas were divided into thousands of small grids that contain different DN values and historical consumption amounts in 2014.</s>
+          <s>These grids were used to train the GWR model, which was proven to have high accuracy in reflecting the correlation between DN values and consumption amount.</s>
+          <s>After precision validation, the model was subsequently used to estimate the consumption potential from 2015 to 2017.</s>
+          <s>We also compared our model with other models.</s>
+          <s>The results corroborate that our model has higher accuracy than traditional regression models and is then used to estimate the consumption potential from 2015 to 2017.</s>
+          <s>The research can potentially provide guidance for business managers to formulate improved retail business strategies.</s>
+        </p>
+        <p>
+          <s>The remaining contexts are organised as follows: Section 2 introduces the study area and data source used in the research.</s>
+          <s>Section 3 introduces the methods, including the establishment of the GWR-based regression model, the spatial inequality index and the potential estimation process.</s>
+          <s>Section 4 conducts the experiments in Guiyang, China, and regions in Guiyang were distinguished according to their market values.</s>
+          <s>Section 5 provides the conclusions and directions for future works.</s>
+        </p>
+      </div>
+      <div>
+        <head>Study areas and data source</head>
+      </div>
+      <div>
+        <head>Study areas</head>
+        <p>
+          <s>Located in the South Central of China, Guiyang is the capital city of Guizhou Province.</s>
+          <s>
+            <ref target="#fig_0" type="figure">Fig 1</ref> shows the location of Guiyang.</s>
+          <s>As one of the biggest central cities in Southwest China, Guiyang is also the national transportation hub and is a famous tourism city in China.</s>
+          <s>The natural scenery in Guiyang is unique due to its moist climate because of high average elevation (more than 1100 metres.</s>
+          <s>Known as the "Forest City', the natural scenery in Guiyang, such as the famous Huangguoshu Mountains and Waterfalls, attracts tourists from all over the world.</s>
+          <s>The overall territory area of Guiyang is 8034 square kilometres, which includes six regions and three county-level cities.</s>
+          <s>The permanent resident population in Guiyang is over 4.5 million in 2016.</s>
+        </p>
+        <p>
+          <s>The 'One Belt, One Road' programme, which is an initiative proposed by China in 2013, aims to establish a huge economic cooperation platform with distinction from China to Europe <ref target="#b30" type="bibr">[31]</ref> .</s>
+          <s>The social economy has experienced prominent development, with the total GDP reaching 56.35 billion dollars and GDPPC reaching 10.79 thousand dollars, which is more than the average level of China.</s>
+          <s>The big data industry in Guiyang has been developing rapidly, and the national big data-centre has been set in Guiyang, making it become the gathering place for the information industry and data trading businesses.</s>
+          <s>Guiyang is also a pilot city of the circular economy in China.</s>
+          <s>Thus, many new economy patterns have been developed in Guiyang.</s>
+          <s>The rapid economic development has attracted many foreign investments to establish their business chains in Guiyang, thereby making the estimation of consumption potentiality in different areas and the distribution of the commercial resource in reasonable ways challenging for business managers.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Data source</head>
+        <p>
+          <s>VIIRS night-time light dataset.</s>
+          <s>The night-time light data used in this study were the monthly VIIRS night-time light data that range from 2014 to 2016.</s>
+          <s id="dataset-1" type="Dataset:Existing dataset">The data were obtained from the official website of NOAA's National Centres for Environmental Information (https:// ngdc.noaa.gov/eog/viirs/index.html).</s>
+          <s>Three types of dataset were provided in the website: Raw (RDR), sensor (SDR) and environment data records (EDR) <ref target="#b31" type="bibr">[32]</ref> .</s>
+          <s>SDR is the production that contains radiance.</s>
+          <s>Thus, SDR is used in this study.</s>
+          <s>The SDR data are open access for the public and updated each month from May, 2011 to April, 2018.</s>
+          <s>In the original dataset obtained from the website, the effects of aurora, fires, boats and other ephemeral lights have not been removed.</s>
+          <s>Generally, the first step is to remove the effects of these background noises.</s>
+          <s>In this study, the following preparations were taken before the analysis of VIIRS.</s>
+          <s>(1) For the reduction of the influence of background noise and abnormal lights, the maximum radiance value derived from the city centre was set as the upper threshold.</s>
+          <s>We distinguished two city centres that aggregated many pixels with high DN values.</s>
+          <s>Moreover, the maximum DN value in the two centres was 125.8.</s>
+          <s>Therefore, the DN value of −125.8 was set as the upper threshold.</s>
+          <s>Pixels with large DN values were considered the outliers and should be set as 0. <ref type="formula">(2)</ref> The low threshold was obtained from the non-residential areas.</s>
+          <s>The process was realised through the overlay of the night-time light image with land use data extracted from the Landsat8 dataset.</s>
+          <s>An average DN value of −4.7 of pixels, containing lakes and rivers, was set as the lower threshold.</s>
+          <s>In this way, the light values that were smaller than the lower threshold or larger than the upper threshold were treated as noises, and their values were set as 0.</s>
+        </p>
+        <p>
+          <s>The night-time light dataset in 2016 was selected as an example to show the correction process in our study.</s>
+          <s>
+            <ref type="figure">Fig 2(A)</ref> shows the original image in the 2016 dataset, which has been clipped by the mask of Guiyang City.</s>
+          <s>The maximum digital number (DN) value in the original image was 351.29, which was far more than the regular DN values of residential areas, because the monthly night-time light data contain unstable or instantaneous light information.</s>
+          <s>We found that the maximum DN value was 125.8 and that 248 pixels with larger DN values were mainly distributed far away from the city centres through the sampling of the pixels in the city centre.</s>
+          <s>The DN values of these regions, which were far away from the city centres, were distinguished as abnormal values and adjusted to the background values of 0, such as region a <ref type="figure">(Fig 2 (B)</ref> and 2(C)).</s>
+          <s>For regions with large DN values but located in the urban areas, the DN values were adjusted to 125.8.</s>
+          <s>Another influence factor was the background noises that exist in the original image, which could result in negative values or missing data in some pixels, such as region b <ref type="figure">(Fig 2)</ref> .</s>
+          <s>The DN values of these regions were also set as 0 to eliminate the errors.</s>
+        </p>
+        <p>
+          <s>The DN value of each pixel was rounded down to integer because the DN values of nighttime light data were floating-point numbers, which could not be analysed in ArcGIS10.3:</s>
+        </p>
+        <formula xml:id="formula_0">DN new ¼ bDNc:<label>ð1Þ</label>
+        </formula>
+        <p>
+          <s>Images after processing are shown in <ref target="#fig_1" type="figure">Fig 3</ref> , and the DN values of which have been rounded down to integers.</s>
+        </p>
+        <p>
+          <s>Consumption data in Guiyang.</s>
+          <s>The retail sale data in Guiyang were obtained, including the location information and monthly fast-moving consumer goods (FMCG) (i.e., clothes, food and drinks) sales of 5837 retail shops of Guiyang between January,2015 and December,2015.</s>
+          <s>These shops include supermarkets, chain stores and groceries.</s>
+          <s>The retail data were provided by local companies for research purposes (https://github.com/SuperHandsomBoy/</s>
+          <s>Sales-data2.git).</s>
+          <s>
+            <ref target="#tab_1" type="table">Table 1</ref> shows the samples.</s>
+        </p>
+        <p>
+          <s>The number of retail shops in each Guiyang distinct was counted through spatial statistics and is shown in <ref target="#tab_2" type="table">Table 2</ref> .</s>
+          <s>The table shows that retails in Nanming distinct.</s>
+          <s>possessed the highest sales performance, with the average sales of 1386 retails, reaching 1150 dollars/month.</s>
+          <s>The left areas have three distinct, namely, Yunyan, Huaxi and Guanshanhu, and their average retail sales are more than 1000, corresponding to 1016, 1076 and 1107 dollars/month, respectively.</s>
+          <s>These regions were the core areas in the downtown of Guiyang.</s>
+          <s>The three distincts with average sales of less than 800 dollars/month were Qingzhen (748 dollars/month), Baiyun (750 dollars/month) and Xifeng (723 dollars/month).</s>
+          <s>
+            <ref target="#tab_2" type="table">Table 2</ref> shows that great imbalance existed amongst these regions.</s>
+          <s>The sales performance of the core areas of Guiyang are more obvious than that of suburban areas.</s>
+          <s>The retail shops we obtained were not all the shops in Guiyang.</s>
+          <s>However, they were all typical retail shops in each distinct with high activeness.</s>
+          <s>We have conducted some pre-processing steps, such as removing inactive shops and selecting the best time period, to enable the data to reflect the actual market situation.</s>
+        </p>
+      </div>
+      <div>
+        <head>Method</head>
+      </div>
+      <div>
+        <head>GWR model</head>
+        <p>
+          <s>In previous studies about night-time light data, the ordinary least square models (OLS) were often adopted to model the relationship between independent and dependent variables, such as the study of CO 2 diffusion <ref target="#b18" type="bibr">[19]</ref> and GDP spatialization <ref target="#b17" type="bibr">[18]</ref> .</s>
+          <s>In fact, the OLS models were only the simplified description of these relationships, which impertinently suppose the spatial equality of social economy factors.</s>
+          <s>However, the correlation between the DN values and the consumption potential cannot be modelled only through a set of constant parameters.</s>
+          <s>However, according to the 'second law of geography', spatial heterogeneity widely existed even in any social contexts <ref target="#b32" type="bibr">[33]</ref> , indicating that the pixel locations also affect their prediction values.</s>
+          <s>This basic rule is ignored, and mistakes due to low accuracy often occurred in the results of OLS when adopted in the city space.</s>
+          <s>In this study, the geographical weighted regression (GWR) model was introduced to model the relationship between DN values and market sales performance.</s>
+          <s>The GWR model is an improvement of traditional OLS models, in which spatial locations are considered in the model <ref target="#b33" type="bibr">[34]</ref> .</s>
+          <s>The GWR model is better in describing DN values and consumption potential than OLS models.</s>
+          <s>The OLS model, which imitates its ability in reflecting complex spatial issues, only has one set of parameters.</s>
+          <s>Huge differences between cities and different parts of cities, such as urban and rural areas, exist due to different development levels.</s>
+          <s>The same DN values in urban and rural areas may represent different potentials.</s>
+          <s>Therefore, the pixel locations should be considered when predicting their consumption potential.</s>
+          <s>The parameters of the GWR were set according to its DN values and locations, thereby making the model closer to reality.</s>
+          <s>In this study, the GWR model was established: between objects.</s>
+          <s>The regression coefficient is described in <ref target="#b34" type="bibr">[35]</ref> :</s>
+        </p>
+        <formula xml:id="formula_1">y i ¼ b 0 ðu i ; v i Þ þ X p k¼1 b k ðu i ; v i Þx i þ ε i ; i 2 ½1; n�;<label>ð2Þ</label>
+        </formula>
+        <formula xml:id="formula_2">b 0 ðu i ; v i Þ ¼ ðX T Wðu i ; v i ÞXÞ À 1 X T Wðu i ; v i ÞY;<label>ð3Þ</label>
+        </formula>
+        <p>
+          <s>where X represents the matrix formed by independent variables (x i ) and Y represents the vector formed by dependent variables (y i ).</s>
+          <s>Moreover, the most important parameter W(u i ,v i ) represent a weight matrix, which is determined by the spatial Euclidean distance between objects.</s>
+          <s>The weight of a point will show an inverse relation with its distance to other objects, thereby ensuring that the objects near point i have more influence on the results than those farther away.</s>
+          <s>In GWR, the confirmation of the spatial weight matrix is of great importance for the accuracy of the model and should be conducted before the analysis.</s>
+          <s>The spatial weight function was often determined by kernel functions, including Gaussian, bi-square and tri-cube types <ref target="#b34" type="bibr">[35]</ref> .</s>
+          <s>In this study, the commonly used Gaussian function was adopted:</s>
+        </p>
+        <formula xml:id="formula_3">W ij ¼ ex p À d 2 ij b 2 � � ;<label>ð4Þ</label>
+        </formula>
+        <p>
+          <s>where d ij denotes the Euclidean distance between i and j; and b denotes the bandwidth, which is used to describe the attenuation of spatial weights.</s>
+          <s>Thus, the spatial weight matrix can be finally formed.</s>
+          <s>Furthermore, each value in the matrix described the proportion of the point's distance to nearby objects in the entire distance records.</s>
+        </p>
+      </div>
+      <div>
+        <head>Spatial division and estimation of consumption potentiality</head>
+        <p>
+          <s>Investigating the consumption potential in regional scale is appropriate considering that the service area of retail shops is often regional.</s>
+          <s>Therefore, spatial division, which will divide the whole study area into numerous geographical units, is conducted before the analysis.</s>
+          <s>Three methods for space division are commonly available, including spatially weighted Voronoi diagrams, Delaunay triangulation and grid diagrams <ref target="#b29" type="bibr">[30,</ref>
+            <ref target="#b35" type="bibr">36]</ref> .</s>
+          <s>Voronoi diagrams and Delaunay triangulation consider the actual values of input and divide space into irregular units based on their values.</s>
+          <s>The units should be nonoverlapping.</s>
+          <s>The problem is when objects are nearby each other, the units that formed will be very small, even when they have high values.</s>
+          <s>Moreover, the units formed by isolated points will be very large even when their actual values are very low.</s>
+          <s>Therefore, the two methods were not appropriate for investigating retail shops, which often have relatively constant service areas of approximately 500 m × 500 m <ref target="#b36" type="bibr">[37]</ref> .</s>
+          <s>The grid diagrams are more appropriate than other methods because of their continuity in spatial division.</s>
+          <s>The grid-based method divides the study area into continuous grids with constant size.</s>
+          <s>Therefore, we finally selected 500 m × 500 m as the spatial division size, which is also close to the spatial resolution of the VIIRS night-time light data (400 m~800 m).</s>
+          <s>The specific spatial division was conducted as follows:</s>
+        </p>
+        <p>
+          <s>1.</s>
+          <s>The VIIRS night-time light data that cover the entire Guiyang City was resampled into the uniform 500 m spatial resolution.</s>
+        </p>
+        <p>
+          <s>2. The resampled image was converted into a 500 m × 500 m vector diagram.</s>
+          <s>Each vector grid in the vector diagram was coincided with a pixel in the resampled image and contained the grey value.</s>
+        </p>
+        <p>
+          <s>3. The retail shops, which were represented by vector points, were overplayed into the 500 m × 500 m vector diagram.</s>
+          <s>The number and sales of retail shops that fall into each vector grid were summed and recorded.</s>
+        </p>
+        <p>
+          <s>The grids after overlaid analysis were set as the training and test data set of GWR regression model, where the DN values in each grid were set as the input of the model and total sales were set as the output of the model.</s>
+          <s>In the process, two steps were considered to improve the processing precision.</s>
+          <s>(1) When nearby the distinct boundary, the cells were segmented by the administrative boundary, and DN or sales vales were set according to the size of the acquired area in each distinct.</s>
+          <s>(2) In a few cells, the DN values were 0, but their sales were more than 0. These places were believed to be temporary construction sites or clearance areas, which did not have stable market values.</s>
+          <s>Thus, these cells were removed from the dataset.</s>
+          <s>After the process, 1227 cells were left and selected as the study data set.</s>
+        </p>
+      </div>
+      <div>
+        <head>Distinguishing grids with the highest consumption potential considering regional development differences</head>
+        <p>
+          <s>High consumption potential is definitely an important index for business management.</s>
+          <s>However, it should not be the only index for business management.</s>
+          <s>For instance, the consumption potential of capital cities is higher than that of nearby county-level cities.</s>
+          <s>The consumption level of city centres is also higher than that of other regions even in the same city.</s>
+          <s>However, only opening retails in city centres and ignoring the market in downtown or small cities, where competitions and rent cost are often low, are unreasonable.</s>
+          <s>Through the estimation of the consumption potential of Guiyang, regions with high potential will distributed intensively in the two core areas, namely, Yunyan and Nanming.</s>
+          <s>To explore the market values of each area more reasonably, we proposed an evaluation index based on the consumption potential of grid and development speed of its belonging distinct.</s>
+          <s>We defined variable V 0 ik to describe the market values in each region:</s>
+        </p>
+        <formula xml:id="formula_4">V ik ¼ P ik � I k ; P ik &gt; 1000ðdollars=monthÞ 0; P ik � 1000ðdollars=monthÞ ) ; k ¼ 1; 2; 3 . . . ; 10;<label>ð5Þ</label>
+        </formula>
+        <formula xml:id="formula_5">( I k ¼ Average X y¼2016 y¼2014 Theil yþ1 k Theil y k ! ;<label>ð6Þ</label>
+        </formula>
+        <formula xml:id="formula_6">V 0 ik ¼ NormalizationðV ik Þ;<label>ð7Þ</label>
+        </formula>
+        <p>
+          <s>where V ik is a comprehensive consideration of the consumption potential and development level of its belonging distinct.</s>
+          <s>P ik represents the estimated consumption potentiality in grid cell i, located in distinct k, and I k represents the average development speed of distinct k.</s>
+          <s>Theil y k represents the Theil index in distinct k in time y.</s>
+          <s>The Theil index is used to describe the different developing levels amongst regions and was proposed by Theil in 1967 <ref target="#b37" type="bibr">[38]</ref> .</s>
+          <s>In this study, the Theil index is defined as follows:</s>
+        </p>
+        <formula xml:id="formula_7">Theil ¼ X N i¼1 ðDN i =DN sum Þ � ln DN i DN sum S i S sum ! ;<label>ð8Þ</label>
+        </formula>
+        <p>
+          <s>where DN i denotes the DN value in region i and DN sum denotes the total DN values in all the regions of Guiyang City.</s>
+          <s>S i denotes the sales data in region I; S sum denotes the total sales data of all regions in Guiyang City.</s>
+          <s>For the elimination of the inconvenience caused by large units in V ik , the normalization process was conducted to obtain the new index (V</s>
+        </p>
+      </div>
+      <div>
+        <head>Experiment results</head>
+      </div>
+      <div>
+        <head>Establish of the GWR model and estimation of consumption potentiality</head>
+        <p>
+          <s>The relationship between night-time light data and the actual consumption potentiality was firstly established through the historical sales information and DN values in the grids of Guiyang City in 2015.The fivefold model was adopted to train the model and evaluate its accuracy.</s>
+          <s>A total of 1227 grid cells prepared through spatial division were roughly divided into five parts (i.e.</s>
+          <s>part 1; part 2, which contains 246 grids; and parts 3-5, which contain 245 grids because 1227 cannot be divided exactly by 5), with each containing 20% of the whole grids.</s>
+          <s>In each time, one part will be selected as the test sample, and the four remaining parts are selected as the training sample.</s>
+          <s>The accuracy of each time was calculated ( <ref target="#tab_3" type="table">Table 3)</ref> .</s>
+        </p>
+        <p>
+          <s>The average accuracy is 0.841, showing that the model we established could be appropriate for describing the relationship between night-time light data with consumption data.</s>
+          <s>The results also confirmed that, when part 3 was set as the test data, the GWR model obtained the highest accuracy (0.912).</s>
+          <s>Therefore, training sample Parts 1, 2, 4 and 5 could reflect the major characteristics of the entire dataset.</s>
+          <s>Moreover, the GWR model trained through the four parts were subsequently confirmed as the final estimation model.</s>
+        </p>
+        <p>
+          <s>After establishing the GWR models, it was applied to the dataset of three years, that is, 2014, 2016 and 2017.</s>
+          <s>The sales performance of the six distinct in 2014-2017 was then estimated accordingly, and the results were shown in <ref target="#tab_4" type="table">Table 4</ref> .</s>
+          <s>
+            <ref target="#tab_4" type="table">Table 4</ref> indicates that the consumption potentiality of Guiyang gradually increased from 2014 to 2017, from 1.</s>
+        </p>
+      </div>
+      <div>
+        <head>Comparison of the performance of different models</head>
+        <p>
+          <s>The performance of the model was calculated after the estimation processes.</s>
+          <s>We compared the performance of our model and several other methods that are frequently used in estimation and prediction tasks.</s>
+          <s>The akaike information criterion (AIC) index, which is the comprehensive consideration of residual and model complexity, was used to evaluate the performance of the models.</s>
+          <s>Small index indicates that the model's performance is remarkable.</s>
+          <s>AIC can be calculated as follows:</s>
+        </p>
+        <formula xml:id="formula_8">AIC ¼ 2K À 2 lnðLÞ;<label>ð9Þ</label>
+        </formula>
+        <p>
+          <s>where K denotes the number of parameters of the model and L denotes the likelihood function of the model.</s>
+          <s>The five parts were divided and used for comparison.</s>
+          <s>In each time, one part will be selected as the test sample, and the four remaining parts are selected as the training sample.</s>
+          <s>Moreover, the average AIC will be set as the final AIC index of the model.</s>
+          <s>
+            <ref target="#tab_5" type="table">Table 5</ref> depicts the results.</s>
+          <s>
+            <ref target="#tab_5" type="table">Table 5</ref> shows that the AIC of linear regression model was 617.138.</s>
+          <s>R 2 of the polynomial regression model and that OLS values were 484.152 and 504.742, which were smaller than that of the linear regression model, respectively.</s>
+          <s>This phenomenon indicated that the simple linear regression model could not effectively reveal the rules in actual social economy factors.</s>
+          <s>The AIC of the GWR-based method is 255.286, which is much smaller than that of the three other methods.</s>
+          <s>Therefore, the performance of the GWR-based model was better than that of the three other methods.</s>
+          <s>Thus, the GWR-based model remarkably reflected the consumption potentiality with the VIIRS data.</s>
+        </p>
+      </div>
+      <div>
+        <head>Distinguishing high consumption potential areas in ten distinct</head>
+        <p>
+          <s>For the estimation of the market values in micro-scale, V 0 ik of each grid cell was calculated, and the results were counted in <ref type="table">Table 6</ref> .</s>
+          <s>
+            <ref type="table">Table 6</ref> shows that three classes were distinguished according to their V' values: Classes 1, 2 and 3. Class 1 refers to places with high V' values (0.75-1).</s>
+          <s>The estimation of consumption potentiality in these places increases rapidly year by year, indicating that the development speed in these places was higher than the average level.</s>
+          <s>Thus, economic vitality in the regions was stimulated, and their consumption potentiality increases continuously.</s>
+          <s>Class 1 refers to places with moderate V' values (0.35-0.75).</s>
+          <s>The increasing contribution rate in these places was stable, indicating that the commercial values in these places were sustainable without much risk.</s>
+          <s>The consumption potentiality in these places increases more slowly compared with that of Class 1. Class 3 refers to places with low V' values (0-0.35.)</s>
+          <s>These regions were mainly distinct of old neighbourhoods in the city, the consumption potentiality in these regions was stable, and their increasing speed declined due to the limitation of urban size.</s>
+          <s>The regions were mainly mature economy areas, and the consumption potentiality in these regions has reached their maximum value.</s>
+          <s>Thus, they could not ensure increasing profits for retail shops.</s>
+        </p>
+        <p>
+          <s>The volume of consumption potentiality and the high increasing rate of consumption potentiality are both important indexes for business managers.</s>
+          <s>Although the 73 sites in Class 1 all possessed the highest market values with their V' values larger than 0.75, the actual consumption potentiality still shows difference.</s>
+          <s>Some business managers may mainly focus on the increasing rate and ignore their current sales performance.</s>
+          <s>Regions with high development Consumption potentiality through VIIRS space were often suburbs or new urban districts with low rent and visitor flow but occupied with significant increasing rates.</s>
+          <s>Other business managers may focus on the stability and low risk of commercial places and ignore the high rent cost in these places.</s>
+          <s>In this way, the places with high market performance but relatively low increasing rate will be a remarkable choice for them.</s>
+          <s>As the V' values were the combination consideration of market quantity and increasing rate, business managers can select appropriate sites according to their preference.</s>
+          <s>In this study, the places of Class 1 were distinguished into three types with different colours as an example, as shown in <ref target="#fig_6" type="figure">Fig 5,</ref> where the places in Guiyang were divided into three colours based on their comprehensive performance.</s>
+          <s>The number of each type of places was counted and shown in <ref target="#tab_6" type="table">Table 7</ref> .</s>
+          <s>
+            <ref target="#fig_6" type="figure">Fig 5</ref> and <ref target="#tab_6" type="table">Table 7</ref> show 64 regions with red colour were places that possessed consumption potentiality 5000-7000 dollars/month and high increasing rates (I&gt;1.065).</s>
+          <s>The regions would be recommended to the investors because of their high market prospect although their temporary consumption potentiality was not very high.</s>
+          <s>It will be a good choice for business managers to locate their retail chains or supermarkets in these regions.</s>
+          <s>A total of 117 regions with orange colour refer to places that possessed consumption potentiality of approximately 7000-10000 dollars/month and moderately increasing rates.</s>
+          <s>In these places, the potential was higher than those in red regions, but their increasing rate was slower (1&lt;I�1.065).</s>
+          <s>These places were mainly distributed nearby the city centres and could be an eclectic choice for business managers.</s>
+          <s>A total of 112 regions with a transparent colour refer to places that possessed consumption potentiality more than 10000 dollars/month and low increasing rates (0�I�1).</s>
+          <s>These places were mature business centres and were suitable for business managers who wanted to avoid risks and obtain stable profit.</s>
+          <s>The biggest challenge for retails in these places was to maintain their current situation and avoid cutthroat competition with nearby places.</s>
+          <s>The distinction of these regions could help business managers discover places with high market values and formulate the most fitting business strategies to realise their expected profit.</s>
+        </p>
+      </div>
+      <div>
+        <head>Exploration of the economic development tendency</head>
+        <p>
+          <s>For the revelation of the detailed changing tendency of consumption potential in each region, the consumption potential of each region and county was calculated during 2014-2017 and is shown in <ref target="#fig_7" type="figure">Fig 6</ref> .</s>
+          <s>
+            <ref target="#fig_7" type="figure">Fig 6</ref> shows that the regional difference of the social economy development is high.</s>
+          <s>The overall contribution rate was contributed mainly by the core regions of Guiyang, including Yunyan, Nanming, Baiyun and Huaxi.</s>
+          <s>Three types of regions were distinguished according to their contribution rate: the increasing regions, including Xifeng, Kaiyang and Guanshanhu; the stable regions, including Qingzhen, Huaxi, Naming and Wudang; and the decreasing regions, including Baiyun and Yunyan.</s>
+          <s>Amongst these regions of Guiyang, Guanshanhu has gained a remarkable increase of consumption potentiality, which can be reflected by its increasing contribution rate to the Theil index.</s>
+          <s>The contribution rate of Guanshanhu increased from 8.7% to 10.6% during 2014-2015 and from 10.6% to 12% and 12.8 during 2015-2016 and 2016-2017, respectively, which show the huge benefits of setting up the big data centre in Guanshanhu.</s>
+          <s>The contribution rate of Guanshanhu even became the highest in 2017.</s>
+          <s>
+            <ref target="#fig_7" type="figure">Fig 6 also</ref> shows the continuous development of Xifeng and Kaiyang with the contribution rate increased from 5.5 to 7.1 and 7.4 to 9.7 during 2014-2017.</s>
+          <s>The influence of the core regions of Guiyang to the overall index decreased during the 4 years, showing that the economic growth speed has reduced with the industrial transformation in these years.</s>
+          <s>Baiyun distinct acquired the highest decrease, with the contribution rate decreasing from the highest rate of 17.9 in 2015 to the lowest rate of 11.7 in 2017.</s>
+          <s>The increasing rate of consumption level in Huaxi and Nanming was stable and positive <ref target="#fig_7" type="figure">(Fig 6)</ref> .</s>
+          <s>The total results affirmed that the economic center has been moving from Baiyun, that is, to Guanshanhu distinct in the core cities.</s>
+          <s>Consumption potentiality through VIIRS Moreover, the development balance amongst these regions, particularly in core cities and nearby counties, has been improved, which would bring positive effects to the equal resource allocation and resident income.</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>Benefiting from the development of remote sensing technology, night-time light data, as one of the new typical remote sensing data, has been widely used in the study of social economy.</s>
+          <s>The VIIRS night-time light data, with their high revolution and availability for the public, will be a great potential in the study of other microcosmic and complex socioeconomic issues.</s>
+          <s>Combining the business sales data with the VIIRS data, this study firstly proved the potentiality of the VIIRS data in the reflection of regional consumption potential and its ability to predict future business performances.</s>
+        </p>
+        <p>
+          <s>However, some limitations still exist in the current analysis.</s>
+          <s>The first limitation is that the original VIIRS data generally cover non-residential areas, such as parks, mountains and lacks.</s>
+          <s>The DN values in these regions have negative influence on the estimation accuracy.</s>
+          <s>Although the threshold value method has been used in this study to weaken the influence, large room for improvement to cities with much more lacks or parks, such as Wuhan and Hangzhou, still exists.</s>
+          <s>Therefore, some external data source, including Landsat and OpenStreetMap data, can be introduced to help distinguish these non-residential regions and eliminate their negative influence.</s>
+          <s>The second limitation is that we just take analysis of the yearly VIIRS data and yearly sales data.</s>
+          <s>Actually, the VIIRS data are updated per month, making it possible to reveal the monthly consumption potential changing and help business managers conduct more timely strategies.</s>
+          <s>However, the sales data of some retail shops were provided per quarter or per year.</s>
+          <s>The monthly sales data in these shops are limited.</s>
+          <s>In future works, more detailed business data can be obtained through business companies or social media platforms, thereby providing more potentiality in predicting consumption potential and optimising business strategies.</s>
+        </p>
+      </div>
+      <div>
+        <head>Conclusion</head>
+        <p>
+          <s>With the rapid development of remote sensing technology, the VIIRS satellite-derived nighttime light data were proven to have high correlation with human activities and have been used in improving business management <ref target="#b38" type="bibr">[39]</ref> .</s>
+          <s>In this study, the satellite-derived night-time light data were firstly used in the estimation of consumption potentiality in China.</s>
+          <s>As a typical commercial data source, the consumption potentiality is closely related to the human settlements and human activities.</s>
+          <s>It can be used to reflect the urban development such that the VIIRS night-time light data can be a new choice for the research of people's consumption potential.</s>
+          <s>However, previous studies often evaluated the social economy factors based on simple linear model without considering the development degree of different locations.</s>
+          <s>For the improvement of the estimation accuracy, a hybrid model was established through the GWR method and was proven superior than the three other regression models used in previous studies.</s>
+          <s>Through the experiment, three classes of places were distinguished according to their consumption potentiality.</s>
+          <s>The main contribution of this study is concluded as follows:</s>
+        </p>
+        <p>
+          <s>1.</s>
+          <s>The study introduced a new data source for business management.</s>
+          <s>Compared with traditional statistical data, the VIIRS night-time light dataset is easy to acquire and shows high correlation with human activities.</s>
+          <s>These characteristics drastically provide huge convenience for the timely estimation of market demand, thereby improving profits for the business management.</s>
+        </p>
+        <p>
+          <s>2. In this study, a GWR model was established for more accurate estimation of consumption potential.</s>
+          <s>The model could set its correlation coefficient by considering the development degree of each region, making it capable to solve business problems in different cities.</s>
+        </p>
+        <p>
+          <s>In the context, the historical consumption data just covered the year 2015, and the changes of sales performance over time were not considered.</s>
+          <s>Moreover, the distribution of consumption data was not homogeneous, which may influence the accuracy in establishing the model.</s>
+          <s>In the future work, we will consider the temporal changes of consumption data and the usage of a more external dataset to obtain accurate and precise results.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig 1 .</head>
+        <label>1</label>
+        <figDesc>Fig 1. Location and boundary of Guiyang. https://doi.org/10.1371/journal.pone.0206230.g001</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig 3 .</head>
+        <label>3</label>
+        <figDesc>Fig 3. Images from 2014 to 2017 after correlation. https://doi.org/10.1371/journal.pone.0206230.g003</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head/>
+        <label/>
+        <figDesc>where (u i ,v i ) represents the spatial locations in point i, β 0 (u i ,v i ) represents the constant term, β k (u i ,v i ) represents the regression coefficient (the spatial weight function), x i represents the value of independent variable in point i, ε i represents the error term and y i represents the dependent variable in point i. The regression coefficient β k (u i ,v i ) is identical to the weighted least squares regression, where the weights are computed on the basis of the Euclidean distance</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>0 ik</head>
+        <label>0</label>
+        <figDesc>) between 0 and 1. Moreover, cells with larger V 0 ik values possess high market values. Through the process, 1227 cells were left for the analysis, and the V 0 ik values of which were larger than 0.</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head/>
+        <label/>
+        <figDesc>19 billion dollars in 2014 to 1.57 billion dollars in 2017. Moreover, the increasing rate was stable at 8.4% and 8.5% from 2014 to 2016. The consumption potentiality increased remarkably in 2017, with the promotion over 0.17 billion dollars and increasing rate reaching 12.1%. For the determination of the growth in space, the consumption potentiality in micro-scale was estimated. Fig 4 shows the increase of consumption potentiality in different areas. Fig 4 shows the development of sales performance in Guiyang City from 2014 to 2017. The sales performance in 2014 was set as the reference, and the degree of red colour shows the increasing ratio compared with that of last year. The results in Fig 4 affirm that the total increase of consumption potentiality was relatively stable between 2014 and 2016 and that great differences existed in each distinct. Guiyang experienced a relatively high increase in the east part of the distinct during 2016 and 2017. The most evident increase of consumption potentiality was in the south regions, including Guanshanhu, Huaxi and Nanming, which were the core areas of Guiyang. In nearby counties, Xiuwen, Wudang and Qingzhen have obtained a great potential increase from 2015 to 2017.</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
+        <head>Fig 4 .</head>
+        <label>4</label>
+        <figDesc>Fig 4. Growth of consumption potentiality from 2014 to 2017. The red colours with different degrees were used to show the rangeability of consumption potentiality. https://doi.org/10.1371/journal.pone.0206230.g004</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
+        <head>Fig 5 .</head>
+        <label>5</label>
+        <figDesc>Fig 5. Market values in different sites. Grids with red colours were regions with high market values. Grids with orange colours were regions with moderate market values and grids with transparent colours were regions with low market values. https://doi.org/10.1371/journal.pone.0206230.g005</figDesc>
+      </figure>
+      <figure xml:id="fig_7">
+        <head>Fig 6 .</head>
+        <label>6</label>
+        <figDesc>Fig 6. Changing tendency of consumption potential of each distinct between 2014 and 2017. https://doi.org/10.1371/journal.pone.0206230.g006</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>PLOS ONE | https://doi.org/10.1371/journal.pone.</figDesc>
+        <table>0206230 October 26, 2018 
+1 / 19 
+
+a1111111111 
+a1111111111 
+a1111111111 
+a1111111111 
+a1111111111 </table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_1">
+        <head>Table 1 .</head>
+        <label>1</label>
+        <figDesc>Examples of consumption data.</figDesc>
+        <table>Retail ID 
+Type 
+Name 
+Lon 
+Lat 
+Sales (US dollars/month) 
+
+54116864 
+Small supermarket 
+Hualian Supermarket 
+106.717 
+26.605 
+68,152 
+
+54116360 
+Small supermarket 
+Yonghui Supermarket 
+106.715 
+26.583 
+41,516 
+
+54127706 
+Chain convenience store 
+Hanlejia 24h chain store 
+106.719 
+26.571 
+18,196 
+
+54130581 
+Groceries 
+Youjia Grocery 
+106.695 
+26.335 
+7289 
+
+https://doi.org/10.1371/journal.pone.0206230.t001 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_2">
+        <head>Table 2 .</head>
+        <label>2</label>
+        <figDesc>Information of retail shops in each distinct.https://doi.org/10.1371/journal.pone.0206230.t002 Consumption potentiality through VIIRS PLOS ONE | https://doi.org/10.1371/journal.pone.0206230 October 26, 2018</figDesc>
+        <table>ID 
+Distinct 
+Shop number 
+Average sales (dollars/month) 
+
+1 
+Yunyan 
+1851 
+1016 
+
+2 
+Nanming 
+1386 
+1150 
+
+3 
+Huaxi 
+713 
+1076 
+
+4 
+Qingzhen 
+327 
+748 
+
+5 
+Kaiyang 
+186 
+796 
+
+6 
+Baiyun 
+353 
+750 
+
+7 
+Guanshanhu 
+418 
+1107 
+
+8 
+Xiuwen 
+153 
+860 
+
+9 
+Xifeng 
+204 
+723 
+
+10 
+Wudang 
+246 
+927 
+
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_3">
+        <head>Table 3 .</head>
+        <label>3</label>
+        <figDesc>Accuracy of training with different data sets.</figDesc>
+        <table>Time 
+Training sample 
+Test sample 
+R2 
+
+1 
+Parts 1, 2, 3 and 4 
+Part5 
+0.898 
+
+2 
+Parts 1,2, 3 and 5 
+Part4 
+0.835 
+
+3 
+Parts 2, 3, 4 and 5 
+Part1 
+0.794 
+
+4 
+Parts 1, 2, 4 and 5 
+Part3 
+0.912 
+
+5 
+Parts 1, 3, 4 and 5 
+Part2 
+0.769 
+
+Average 
+0.841 
+
+https://doi.org/10.1371/journal.pone.0206230.t003 </table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_4">
+        <head>Table 4 .</head>
+        <label>4</label>
+        <figDesc>Estimation results of consumption potentiality in each year through GWR.</figDesc>
+        <table>Time 
+Consumption potentiality (billion dollars/year) 
+Increasing rate 
+
+2014 
+1.19 
+/ 
+
+2015 
+1.29 
+8.4% 
+
+2016 
+1.40 
+8.5% 
+
+2017 
+1.57 
+12.1% 
+
+https://doi.org/10.1371/journal.pone.0206230.t004 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_5">
+        <head>Table 5 .</head>
+        <label>5</label>
+        <figDesc>Comparison amongst different methods.</figDesc>
+        <table>Model 
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_6">
+        <head>Table 7 .</head>
+        <label>7</label>
+        <figDesc>Number and consumption potentiality of each site.</figDesc>
+        <table>Classes 
+Number 
+Colour 
+Potential (dollars/month) 
+I 
+
+Sites 1 
+64 
+Red 
+5000-7000 
+&gt;1.065 
+
+Sites 2 
+117 
+Orange 
+7000-10000 
+1~1.065 
+
+Sites 3 
+112 
+Transparent 
+&gt;10000 
+�1 </table>
+      </figure>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0206230 October 26, 2018</note>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0206230 October 26, 2018 19 / 19</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgments</head>
+          <p>
+            <s>The authors wish to thank Li Chuanyong, Zeng Jia, Zhao Cheng and Yang Mei for helping in the collection of the data for the experiments.</s>
+          </p>
+        </div>
+        <div>
+          <head>Author Contributions</head>
+          <p>
+            <s>Conceptualization: Luyao Wang.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Delivery Efficiency and Supplier Performance Evaluation in China's E-retailing Industry</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Yan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Systems Science &amp; Complexity</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="392" to="410" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">The Impact of the Multi-channel Retail Mix on Online Store Choice: Does Online Experience Matter?</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Melis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Campo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Breugelmans</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Lamey</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Retailing</title>
+              <imprint>
+                <biblScope unit="volume">91</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="272" to="88" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <monogr>
+              <title level="m" type="main">Omnichannel Retail Operations with Buy-Online-and-Pickup-in-Store</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Gao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Su</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2016"/>
+                <publisher>Social Science Electronic Publishing</publisher>
+                <biblScope unit="volume">63</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <monogr>
+              <title level="m" type="main">Estimation of electric demand in Japan: A bayesian spatial autoregressive AR (p) approach</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Ohtsuka</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Kakamu</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Fuzzy forecast combiner design for fast fashion demand forecasting</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Yesil</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kaya</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Siradag</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">International Symposium on Innovations in Intelligent Systems and Applications</title>
+              <imprint>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Urban Building Density Estimation Based on the VIIRS Night-time Satellite Data--a Case of Nanjing</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zheng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zeng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Shen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Qiu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science Technology &amp; Engineering</title>
+              <imprint>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Evaluation of NPP-VIIRS night-time light composite data for extracting built-up urban areas</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Shi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Huang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Yu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Yin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Huang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Wu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Remote Sensing Letters</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="358" to="66" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <monogr>
+              <title level="m" type="main">Urban Land Extraction Using VIIRS Nighttime Light Data: An Evaluation of Three Popular Methods. Remote Sensing</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Dou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>He</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Yue</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2017"/>
+                <biblScope unit="volume">9</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <monogr>
+              <title level="m" type="main">Mapping urban structure and spatial connectivity with VIIRS and OLS night light imagery. Urban Remote Sensing Event</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Small</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Elvidge</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Baugh</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Land and GDP's Function on Population Distribution in China</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Liang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Zhou</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Scientia Geographica Sinica</title>
+              <imprint>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <monogr>
+              <title level="m" type="main">Questionnaire Survey on Behavior for Natural Ventilation and Electricity Consumption in Terraced Houses: A case study of Johor Bahru City</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Kubota</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ahmad</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Relative validity of a short qualitative food frequency questionnaire for use in food consumption surveys</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>De Keyzer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Dekkers</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Van Vlaslaer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Ottevaere</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Van Oyen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">De</forename>
+                  <surname>Henauw</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                </persName>
+              </author>
+              <idno type="doi">10.1093/eurpub/cks096</idno>
+              <ptr target="https://doi.org/10.1093/eurpub/cks096PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">European Journal of Public Health</title>
+              <imprint>
+                <biblScope unit="volume">23</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope unit="page">22843611</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">The assessment of alcohol consumption by a simple self-administered questionnaire</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Giovannucci</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Colditz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Stampfer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Rimm</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Litin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Sampson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">American Journal of Epidemiology</title>
+              <imprint>
+                <biblScope unit="volume">133</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope unit="page">2021148</biblScope>
+                <date type="published" when="1991"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Peanut allergy in relation to heredity, maternal diet, and other atopic diseases: results of a questionnaire survey, skin prick testing, and food challenges</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Hourihane</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Dean</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Warner</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bmj British Medical Journal</title>
+              <imprint>
+                <biblScope unit="volume">313</biblScope>
+                <biblScope unit="issue">7064</biblScope>
+                <biblScope unit="page">1046</biblScope>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Constructing consumer profiles from social media data</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Hernandez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Hildrum</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Jain</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Wagle</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">IEEE International Conference on Big Data</title>
+              <imprint>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <monogr>
+              <title level="m" type="main">Human Activities Along Southwest Border of China: Findings Based on DMSP/ OLS Nighttime Light Data</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Tan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Bai</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2017"/>
+                <publisher>Social Science Electronic Publishing</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Can Night-Time Light Data Identify Typologies of Urbanization? A Global Assessment of Successes and Failures</title>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Seto</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Remote Sensing</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope from="3476" to="94" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <monogr>
+              <title level="m" type="main">GDP Spatialization in China Based on Nighttime Imagery</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Han</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Yao</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2012"/>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope from="128" to="164" unit="page"/>
+              </imprint>
+            </monogr>
+            <note>Journal of Geo-Information Science</note>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Evaluation of NPP-VIIRS Nighttime Light Data for Mapping Global Fossil Fuel Combustion CO2 Emissions: A Comparison with DMSP-OLS Nighttime Light Data</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Ou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1371/journal.pone.0138310</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0138310PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Plos One</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope unit="page">26390037</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <monogr>
+              <title level="m" type="main">Supporting Disaster Assessment and Response with the VIIRS Day-Night Band2015</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Schultz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Cole</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Molthan</surname>
+                </persName>
+              </author>
+              <imprint/>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Stokes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Roman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Seto</surname>
+                </persName>
+              </author>
+              <title level="m">The Urban Social and Energy Use Data Embedded in Suomi-NPP VIIRS Nighttime Lights: Algorithm Overview and Status. AGU Fall Meeting</title>
+              <imprint>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Extracting the dynamics of urban expansion in China using DMSP-OLS nighttime light data from 1992 to</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>He</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Huang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Landscape &amp; Urban Planning</title>
+              <imprint>
+                <biblScope unit="volume">106</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="62" to="72" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Expansion Analysis of Yangtze River Delta Urban Agglomeration Using DMSP/OLS Nighttime Light Imagery for 1993 to 2012</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Lu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Sun</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">ISPRS International Journal of Geo-Information</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope unit="page">52</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Monitoring bio-optical processes using NPP-VIIRS and MODIS-Aqua ocean colour products</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Arnone</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ladner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Fargion</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Martinolich</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Vandermeulen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Bowers</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Comparative Neurology</title>
+              <imprint>
+                <biblScope unit="volume">437</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="363" to="83" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">The NPOESS VIIRS Day/Night Visible Sensor</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Miller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Turk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Schueler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Julian</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Deyo</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bulletin of the American Meteorological Society</title>
+              <imprint>
+                <biblScope unit="volume">87</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Intercalibration between DMSP/OLS and VIIRS night-time light images to evaluate city light dynamics of Syria's major human settlement during Syrian Civil War</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Wu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">International Journal of Remote Sensing</title>
+              <imprint>
+                <biblScope unit="volume">38</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="1" to="18" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Diverse relationships between Suomi-NPP VIIRS night-time light and multi-scale socioeconomic activity</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Ma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Zhou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Haynie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Remote Sensing Letters</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope from="652" to="61" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <monogr>
+              <title level="m" type="main">GDP Spatialization and Economic Differences in South China Based on NPP-VIIRS Nighttime Light Imagery. Remote Sensing</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Zhao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Cheng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Zhou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2017"/>
+                <biblScope unit="volume">9</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">The Suitability of Different Nighttime Light Data for GDP Estimation at Different Spatial Scales and Regional Levels</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Dai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Hu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Zhao</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sustainability</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope unit="page">305</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Evaluating Trade Areas Using Social Media Data with a Calibrated Huff Model</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Jiang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Ye</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">ISPRS International Journal of Geo-Information</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope unit="page">112</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">The Analysis and Forecast of RMB Internationalization on One Belt and One Road</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">U</forename>
+                  <surname>Jianqiu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Cao</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Applied Energy</title>
+              <imprint>
+                <biblScope unit="volume">88</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope from="2480" to="2489" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Potential of NPP-VIIRS Nighttime Light Imagery for Modeling the Regional Economy of China</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Remote Sensing</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="3057" to="81" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <monogr>
+              <title level="m" type="main">Evaluating spatial inequality inpre-schools in Ghent, Belgium by accessibility and service area analysis with GIS. SGEM2013 Conference Proceedings</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Deruyter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Fransen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Verrecas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Maeyer</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">A systematic investigation of cross-validation in GWR model estimation: empirical analysis and Monte Carlo simulations</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Farber</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Ez</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Pá</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Geographical Systems</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="371" to="96" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Study on disparity of regional economic development based on geoinformatic Tupu and GWR model: a case of growth of GDP per capita in China from 1999 to</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Liang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Geospatial Information Technology and Applications</title>
+              <imprint>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+            <note>Geoinformatics</note>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">A vector-based algorithm to generate and update multiplicatively weighted Voronoi diagrams for points, polylines, and polygons</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Gong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Tian</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Computers &amp; Geosciences</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope unit="issue">42</biblScope>
+                <biblScope from="118" to="143" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">The Consumer Demand Estimating and Purchasing Strategies Optimizing of FMCG Retailers Based on</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Fan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Gong</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Geographic Methods. Sustainability</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope unit="page">466</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <monogr>
+              <title level="m" type="main">The Measure and Analysis on the Spatial Inequality of Urban Energy Consumption in China Based on Theil Index. China Population Resources &amp; Environment</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Jing</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <monogr>
+              <title level="m" type="main">World energy consumption pattern as revealed by DMSP-OLS nighttime light imagery. Mapping Sciences &amp; Remote Sensing</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Xie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Weng</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2016"/>
+                <biblScope unit="volume">53</biblScope>
+                <biblScope from="265" to="82" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

@@ -515,7 +515,7 @@
         <head>Materials and Methods</head>
         <p>
           <s>Participants and neural recording.</s>
-          <s id="0" type="Tabular data:Research Subjects">Five patients with pharmacoresistent focal epilepsy were included in this study.</s>
+          <s id="dataset-1" type="Tabular data:Research Subjects">Five patients with pharmacoresistent focal epilepsy were included in this study.</s>
           <s>All subjects underwent chronic intracranial encephalography (iEEG) monitoring at Northshore University Hospital to identify epileptogenic foci in the brain for later removal.</s>
           <s>Three subjects were implanted with only stereo-electroencephalographic (sEEG) depth arrays, one with a high-density grid, and one with both grid and depth electrodes (PMT, Chanhassen, MN, USA).</s>
           <s>The electrodes showing any sign of abnormal epileptiform discharges, as identified in the epileptologists' clinical reports, were excluded from the analysis.</s>
@@ -524,9 +524,9 @@
           <s>All research was performed in accordance with relevant guidelines and regulations.</s>
         </p>
         <p>
-          <s id="1" type="Electroencephalogram">Intracranial EEG (iEEG) signals were acquired continuously at 3 kHz per channel (16-bit precision, range ± 8 mV, DC) using a data acquisition module (Tucker-Davis Technologies, Alachua, FL, USA).</s>
+          <s id="dataset-2" type="Electroencephalogram">Intracranial EEG (iEEG) signals were acquired continuously at 3 kHz per channel (16-bit precision, range ± 8 mV, DC) using a data acquisition module (Tucker-Davis Technologies, Alachua, FL, USA).</s>
           <s>Either subdural or skull electrodes were used as references, as dictated by recording quality at the bedside after online visualization of the spectrogram of the signal.</s>
-          <s id="2" type="Electroencephalogram">Speech signals were recorded simultaneously with the iEEG for subsequent offline analysis.</s>
+          <s id="dataset-3" type="Electroencephalogram">Speech signals were recorded simultaneously with the iEEG for subsequent offline analysis.</s>
           <s>Two ranges of neural frequencies were used in the study.</s>
           <s>Low-frequency (0-50 Hz) components of the neural data were extracted by filtering the neural signals using an FIR lowpass filter.</s>
           <s>The high-gamma (70-150 Hz) envelope <ref target="#b35" type="bibr">36</ref> was extracted by first filtering the data into eight frequency bands between 70 and 150 Hz using IIR filters.</s>
@@ -545,7 +545,7 @@
         </p>
         <p>
           <s>Stimulus.</s>
-          <s id="3" type="Sound data">The speech materials included continuous speech stories recorded in-house by four voice actors and actresses (duration: 30 min, 11,025 Hz sampling rate).</s>
+          <s id="dataset-4" type="Sound data">The speech materials included continuous speech stories recorded in-house by four voice actors and actresses (duration: 30 min, 11,025 Hz sampling rate).</s>
           <s>Eight of the sentences (40 seconds) were used for objective tests and were presented to the patients eight times to improve the signal to noise ratio.</s>
           <s>The digit sounds were taken from the TI-46 corpus <ref target="#b34" type="bibr">35</ref> .</s>
           <s>Two female (f2 and f8) and two male (m2 and m5) speakers were chosen from the corpus, and one token per digit and speaker was used (total of 40 unique tokens).</s>
@@ -560,7 +560,7 @@
           <s>The final auditory spectrogram has a sampling frequency of 100 Hz.</s>
           <s>The audio signal was reconstructed from the auditory spectrogram using an iterative convex optimization procedure <ref target="#b42" type="bibr">43</ref> .</s>
           <s>For the vocoder-based speech synthesizer, we used the WORLD 45 (D4C edition) system.</s>
-          <s id="4" type="Tabular data">In this model, four major speech parameters were estimated, from which the speech waveform was synthesized: (1) spectral envelope, (2) f0 or fundamental frequency, (3) band aperiodicity, and (4) voiced-unvoiced (VUV) excitation label.</s>
+          <s id="dataset-5" type="Tabular data">In this model, four major speech parameters were estimated, from which the speech waveform was synthesized: (1) spectral envelope, (2) f0 or fundamental frequency, (3) band aperiodicity, and (4) voiced-unvoiced (VUV) excitation label.</s>
           <s>The dimension of each parameter was automatically calculated by the vocoder method and was based on the window size and the sampling frequency of the waveform (16 KHz).</s>
         </p>
         <p>
@@ -636,12 +636,12 @@
         </p>
         <p>
           <s>Subjective and objective evaluations.</s>
-          <s id="5" type="Tabular data">We assessed the intelligibility of the reconstructed speech using both subjective and objective tests.</s>
+          <s id="dataset-6" type="Tabular data">We assessed the intelligibility of the reconstructed speech using both subjective and objective tests.</s>
           <s>For subjective assessment, 11 participants with self-reported normal hearing listened to the reconstructed digits using headphones in a quiet environment.</s>
           <s>Each participant listened to 160 tokens including 10 digits, four speakers, and four models.</s>
           <s>The participants were asked to report the digit or to select unsure if the digit was not intelligible.</s>
-          <s id="6" type="Tabular data">In addition, the participants reported the quality of the reconstructed speech using a mean opinion score (MOS): 1 (bad), 2 (poor), 3 (fair), 4 (good), and 5 (excellent).</s>
-          <s id="7" type="Tabular data">The participants also reported the gender of the speaker.</s>
+          <s id="dataset-7" type="Tabular data">In addition, the participants reported the quality of the reconstructed speech using a mean opinion score (MOS): 1 (bad), 2 (poor), 3 (fair), 4 (good), and 5 (excellent).</s>
+          <s id="dataset-8" type="Tabular data">The participants also reported the gender of the speaker.</s>
           <s>For objective evaluation, we used the ESTOI measure <ref target="#b49" type="bibr">51</ref> which is a monaural intelligibility prediction algorithm commonly used in speech enhancement and synthesis research.</s>
           <s>The range of ESTOI measure is between zero (worst) and one (best).</s>
         </p>

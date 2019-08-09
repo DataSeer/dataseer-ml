@@ -1,0 +1,2765 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:11+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">CRISPR-Cas9 mediated targeted disruption of FAD2-2 microsomal omega-6 desaturase in soybean (Glycine max.L)</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Noor</forename>
+                <surname>Al Amin</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Naveed</forename>
+                <surname>Ahmad</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Nan</forename>
+                <surname>Wu</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Xiumin</forename>
+                <surname>Pu</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Tong</forename>
+                <surname>Ma</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Yeyao</forename>
+                <surname>Du</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Xiaoxue</forename>
+                <surname>Bo</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Nan</forename>
+                <surname>Wang</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Rahat</forename>
+                <surname>Sharif</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Piwu</forename>
+                <surname>Wang</surname>
+              </persName>
+            </author>
+            <title level="a" type="main">CRISPR-Cas9 mediated targeted disruption of FAD2-2 microsomal omega-6 desaturase in soybean (Glycine max.L)</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1186/s12896-019-0501-2</idno>
+          <note>R E S E A R C H A R T I C L E Open Access</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <head>Abstract</head>
+          <p>
+            <s>Background: Recent innovation in the field of genome engineering encompasses numerous levels of plant genome engineering which attract the substantial excitement of plant biologist worldwide.</s>
+            <s>RNA-guided CRISPR Cas9 system has appeared a promising tool in site-directed mutagenesis due to its innovative utilization in different branches of biology.</s>
+            <s>CRISPR-Cas9 nuclease system have supersedes all previously existed strategies and their associated pitfalls encountered with site-specific mutagenesis.</s>
+            <s>Results: Here we demonstrated an efficient sequence specific integration/mutation of FAD2-2 gene in soybean using CRISPR-Cas9 nuclease system.</s>
+            <s>A single guided RNA sequence was designed with the help of a number of bioinformatics tools aimed to target distinct sites of FAD2-2 loci in soybean.</s>
+            <s>The binary vector (pCas9-AtU6-sgRNA) has been successfully transformed into soybean cotyledon using Agrobacterium tumafacien.</s>
+            <s>Taken together our findings complies soybean transgenic mutants subjected to targeted mutation were surprisingly detected in our target gene.</s>
+            <s>Furthermore, the detection of Cas9 gene, BAR gene, and NOS terminator were carried out respectively.</s>
+            <s>Southern blot analysis confirmed the stable transformation of Cas9 gene into soybean.</s>
+            <s>Real time expression with qRT-PCR and Sanger sequencing analysis confirmed the efficient CRISPR-Cas9/sgRNA induced mutation within the target sequence of FAD2-2 loci.</s>
+            <s>The integration of FAD2-2 target region in the form of substitution, deletions and insertions were achieved with notably high frequency and rare off-target mutagenesis.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Background</head>
+        <p>
+          <s>Genome editing is a critical and complex tool to study the functional genomics of plants in past decades.</s>
+          <s>Amidst all previously adapted techniques such as virus-induced gene silencing, T-DNA/transposon insertion, antisense RNA, and RNA interference strategies CRISPR-Cas9 nuclease system have supersedes them all.</s>
+          <s>Producing low-quality mutants, unwanted mutations, point mutation and several other pitfalls are associated with these classical methods.</s>
+          <s>
+            <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b1" type="bibr">2]</ref> .</s>
+          <s>These advances are good enough for carrying basic plant research however genetic crop improvement and constructing new mutant libraries require new tools for more precise genome editing, and regulation of gene expression.</s>
+          <s>CRISPR-Cas9 system has remarkably captivated the title in 2011 as "methods of the year" in plant biology.</s>
+          <s>This extensive system of type II clustered regularly interspaced short palindromic repeat CRISPR-associated protein 9 (Cas9) have been reported recently in a wide variety of plants including soybean <ref target="#b2" type="bibr">[3]</ref> , Arabidopsis <ref target="#b3" type="bibr">[4]</ref> , and rice <ref target="#b4" type="bibr">[5,</ref>
+            <ref target="#b5" type="bibr">6]</ref> .</s>
+          <s>Underlying the principle of single nucleotide polymorphism, previously established ZFNs (Zinc Finger Nuclease) and TALENs (Transcription Activator-Like Effectors Nuclease) and CRISPR system paved the way for site directed mutagenesis.</s>
+          <s>The advent of targeted mutation induced by CRISPR cas9 system has been proved very simple, efficient and predictable tool in functional genomics of many plants <ref target="#b6" type="bibr">[7]</ref> .</s>
+          <s>The genetic improvement of agronomical traits such as yield, Rearrangement, disease resistance, adaptation against various stresses and controlling negative regulation of specific genes via induced target mutagenesis are the potential areas of future researches <ref target="#b7" type="bibr">[8,</ref>
+            <ref target="#b8" type="bibr">9]</ref> .</s>
+        </p>
+        <p>
+          <s>Soybean (Glycine max (L.) is an essential legume crop which provides a rich source of dietary proteins, animal feed, sustainable agricultural products, vegetable oil, and direct human consumption.</s>
+          <s>Recent advances have expanded soybean research towards the production of biodiesel from the feedstock of soybean <ref target="#b9" type="bibr">[10]</ref> .</s>
+          <s>The utilization of soybean oils with high oleic acid content resulting in monounsaturated fatty acids could be useful in minimizing various health problems <ref target="#b10" type="bibr">[11]</ref>
+            <ref target="#b11" type="bibr">[12]</ref>
+            <ref target="#b12" type="bibr">[13]</ref> .</s>
+          <s>Researchers have been proved that Soybeans genome holds two similarly identical copies (FAD2-1 and FAD2-2) of microsomal -6 desaturase <ref target="#b8" type="bibr">[9]</ref> .</s>
+          <s>The primary expression of FAD2-1 was confirmed during seed developmental processing unlike FAD2-2 which was expressing in vegetative parts as wells <ref target="#b9" type="bibr">[10,</ref>
+            <ref target="#b10" type="bibr">11]</ref> .</s>
+          <s>The conserved sequence homology of the FAD2-2 family reveals multiple isoforms such as FAD2-1A, FAD2-1B, FAD2-2B and FAD2-2C which are nearly related to their predecessor family by sharing 99% homology in amino acid sequence <ref target="#b13" type="bibr">[14]</ref>
+            <ref target="#b14" type="bibr">[15]</ref>
+            <ref target="#b15" type="bibr">[16]</ref> .</s>
+          <s>By these means, this confirmed the importance and pragmatic role of FAD2-2 family and their exploitation in the biosynthesis of peakoil in soybean <ref target="#b16" type="bibr">[17,</ref>
+            <ref target="#b17" type="bibr">18]</ref> .</s>
+        </p>
+        <p>
+          <s>The authors aimed to use CRISPR-Cas9 gene editing technology to mutate the FAD2-2 gene in soybean in order to improve the seed oil profile We generated transgenic soybean lines with the CRISPR transgene, tested for the presence of mutations in the FAD2-2 locus, assessed for off-target effects and determined impact on fatty acid profiles.</s>
+          <s>Furthermore, we provide the current advancement and applications of CRISPR-Cas9 induced mutation driven by an oligo SgRNA sequence in plants may overcome major limitations of crop genetic improvement.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+      </div>
+      <div>
+        <head>CRISPR-Cas9 construction for target mutagenesis in soybean</head>
+        <p>
+          <s>We constructed a binary vector to improve the co-delivery of Cas9 gene and sgRNA in one expression vector CRISPR-Cas9 system <ref target="#fig_0" type="figure">(Fig. 1)</ref> under the e35S promoter for Cas9 gene and Soybean U6 promoter which is important to drive sgRNA expression in plants <ref target="#b18" type="bibr">[19]</ref> .</s>
+          <s>Additionally, BAR gene was used in the same binary vector as a selectable marker gene which is derived from Streptomyces hygroscopicu, this contains modified phosphinothricin, which is solely responsible for herbicide resistance (glufosinate).</s>
+          <s>FAD2-2 microsomal omega-6 desaturase gene of soybean was selected to identify targeted mutagenesis.</s>
+          <s>The ligation of synthetic oligos (SgRNA) into CRISPR-Cas9 vector was performed according to manufacturer's protocol.</s>
+          <s>Positive clones of Agrobacterium tumefaciens (EHA105) carrying CRISPR-Cas9 were detected on YEP-kanamycin resistant medium.</s>
+          <s>Further detection was confirmed through Polymerase chain reaction with G°Taq Flexi DNA polymerase (Promega Corp, Madison, WI) using CRISPR-Cas9 specific primers (Additional file 1: <ref target="#tab_0" type="table">Table S1</ref> ) <ref target="#fig_1" type="figure">(Fig. 2a)</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Detection of positive transgenic soybean lines</head>
+        <p>
+          <s>In our study, we used BAR gene as a selectable marker to detect the presence of transgene (SgRNA-CRISPR-Cas9) in transgenic soybean plants <ref target="#fig_1" type="figure">(Fig. 2b)</ref> .</s>
+          <s>Besides this, we also detected the presence of NOS terminator gene in target transgenic lines of soybean <ref target="#fig_1" type="figure">(Fig. 2c)</ref> .</s>
+          <s>For this purpose genomic DNA was extracted using (NuClean plant Genomic DNA Kit, Beijing, China) from the selected transgenic lines of <ref target="#tab_1" type="table">Table S2</ref> ).</s>
+        </p>
+        <p>
+          <s>Consequently, further molecular detection of specific exogenous DNA (SgRNA-CRISPR-Cas9) copy number present in soybean mutant plants were analyzed by Southern blot analysis <ref target="#fig_2" type="figure">(Fig. 3)</ref> .</s>
+        </p>
+        <p>
+          <s>A single enzyme digestion pattern with (HINDIII) enables the fractionation of BAR gene present in the transgenic soybean plants.</s>
+          <s>Post hybridization all together 8 transformation events were detected with digoxigenin [DIG] 1-dUTP probe and DIG High Prime DNA Labeling chemicals separated on 0.8% agarose gel <ref target="#fig_2" type="figure">(Fig. 3)</ref> .</s>
+          <s>Various patterns of hybridization appear after immobilization of DNA onto nylon membranes <ref target="#fig_0" type="figure">Figure S1</ref> ).</s>
+        </p>
+      </div>
+      <div>
+        <head>Detection of targeted mutation in transgenic soybean</head>
+        <p>
+          <s>Agrobacterium tumefacient mediated transformation has been reported as quick, most efficient, simple and low-cost method for the molecular study of plants.</s>
+          <s>For the identification of the targeted mutagenesis, we established a binary vector system and then transformed it into soybean cotyledons via Agrobacterium mediated transformation.</s>
+          <s>Transgenic plants were selected randomly to acquire the presence of Cas9 gene in soybean transgenic plants by PCR assay using Cas9 specific primers (Additional file 1: <ref target="#tab_1" type="table">Table S2</ref> ) <ref target="#fig_3" type="figure">(Fig. 4a)</ref> .</s>
+          <s>The target gene (FAD2-2) was also amplified and successfully cloned in T1 vector.</s>
+          <s>The sequencing results verified for the presence of site-specific mutations at a specific locus.</s>
+          <s>(338,046,125, 15:+ 22245082) <ref target="#fig_3" type="figure">(Fig. 4b)</ref> .</s>
+          <s>Following sequence metrics and chromatogram ( <ref target="#fig_3" type="figure">Fig. 4c)</ref> .</s>
+          <s>We concluded that most of the mutations were found nucleotides substitutions while some were nucleotides insertion.</s>
+          <s>Only in two sequences mutations were found as a deletion in the FAD2-2 gene locus <ref target="#fig_3" type="figure">(Fig. 4b</ref> , Additional file 1: <ref target="#fig_2" type="figure">Figure S3</ref> ).</s>
+          <s>The mutations rate was observed up to 21% in transgenic soybean plants <ref target="#tab_0" type="table">(Table 1)</ref> .</s>
+          <s>However no biallelic mutations were detected according to the sequencing analysis <ref target="#fig_3" type="figure">(Fig. 4b)</ref> .</s>
+        </p>
+        <p>
+          <s>Off-target analysis in soybean transgenic plants CRISPR-Cas9 system is highly tolerated to numerous mismatches between the sgRNA and its target genes <ref target="#b19" type="bibr">[20]</ref> .</s>
+          <s>Additionally, it has high accuracy for targeted mutagenesis <ref target="#b20" type="bibr">[21]</ref> .</s>
+          <s>In the current study, we analyzed the potential off-target sites of FAD2-2-sgRNA2 in transgenic plants.</s>
+          <s>After searching on CRISPR-P website, the potential off-target sequences of FAD2-2-sgRNA2 with PAM motif were identified (including Glycine max genome database.</s>
+          <s>A total of 19 potential off-target sequences were analyzed.</s>
+          <s>The off target mutation was further verified through PCR and sequence analysis (Additional file 1: <ref target="#tab_2" type="table">Table S3</ref> ).</s>
+          <s>Transgenic soybean lines were analyzed for positive FAD2-2 (microsomal omega-6 desaturase) gene mutations and determine wherein both off-target and target mutations.</s>
+          <s>After the complete assay of total 19 potentials off targets sequences (Additional file 1: <ref target="#tab_2" type="table">Table S3</ref> ) none of the potentials off target loci demonstrate CRISPR-Cas9 induced mutation (Table 2) Our findings suggested that CRISPRCas9 system had high specificity for the targeted mutagenesis in soybean plants.</s>
+        </p>
+      </div>
+      <div>
+        <head>qRT-PCR analysis</head>
+        <p>
+          <s>The relative expression ratio of a target gene was normalized with housekeeping gene (GmActin Gene, NM_001289231) and calculated according to the given equation r = E target Δ Cq target (calibrator-sample)/ E reference Δ Cq reference (calibrator -sample) .</s>
+          <s>The promoter U6 is tissue-specific and temporally regulated and is not expressed in high frequency together in roots, stems, or leaves of soybean.</s>
+          <s>However In this study, the gene FAD2-2 under promoter U6 relatively shows higher expression in leaf compared with seed, stem and root <ref target="#fig_4" type="figure">(Fig. 5</ref> ).</s>
+        </p>
+      </div>
+      <div>
+        <head>Fatty acid profiling via NIR</head>
+        <p>
+          <s>The measurements of fatty acid analysis of 8 selected transgenic soybean lines were carried out in order to conclude our expected results.</s>
+          <s>We found drastic diversity in the increase/decrease of overall lipid contents of the mutant plants compared to wild soybean lines.</s>
+          <s>The increased Oleic acid content was recorded up to (65.90%, P6) with the least level of linoleic acid (16.08%,</s>
+          <s>P6).</s>
+          <s>Moreover P8 oleic acid level (59.58%) with the low level of linoleic acid (19.05%) while in P7 (59.12) and (21.05%) respectively.</s>
+          <s>These values depict significantly higher concentrations of oleic acid than the control (17.34%).</s>
+          <s>Besides this, the level of palmitic acid decreased up to (6.95%, P6).</s>
+          <s>These findings summarized the particular interest of the demand of high oleic acid content in soybean oil by manipulating FAD2-2 gene through a CRISPR-Cas9 system which simultaneously leads to low linoleic acid content in soybean oil <ref target="#tab_2" type="table">(Table 3)</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>Clustered regularly interspaced short palindromic repeat (CRISPR-Cas9).</s>
+          <s>CRISPR-associated Cas9 nuclease can significantly induce targeted gene editing by cleaving target DNA sequence which is guided by synthetic sgRNA sequence incorporating double-strand break (DSB) on a target site <ref target="#b21" type="bibr">[22]</ref> .</s>
+          <s>Small guide RNA is the first 20 nucleotide sequences complementary to one strand of the target DNA with an NGG motif at 3′-end (the protospacer adjacent motif, PAM) which scans a target genome for editing.</s>
+          <s>The expression of sgRNAs is carried by U3/U6 promoters, which transcribed sgRNA with the help of RNA polymerase <ref target="#b22" type="bibr">[23,</ref>
+            <ref target="#b23" type="bibr">24]</ref> .</s>
+          <s>To induce targeted genome editing in vitro efficiently requires an efficient and feasible delivery of a binary vector consist of (Cas9 and sgRNA expression cassettes) into various plants.</s>
+          <s>The inherited stability of CRISPR-Cas9 based mutations was reported previously <ref target="#b24" type="bibr">[25]</ref> which can be transferred into next progeny.</s>
+          <s>Here we have successfully demonstrated targeted genome editing in soybean using the CRISPR-Cas9 system, where most of the induced mutations were found as nucleotide substitution while some of them were nucleotide deletion and insertion <ref target="#fig_3" type="figure">(Fig. 4b)</ref> .</s>
+          <s>Our results were concordant with the previous findings <ref target="#b25" type="bibr">[26]</ref> .</s>
+          <s>The mutation efficiencies in transgenic plants were 21% <ref target="#tab_0" type="table">(Table 1)</ref> .</s>
+        </p>
+        <p>
+          <s>Fatty acid desaturases enzymes are contained in large numbers in plant.</s>
+          <s>These enzymes are mainly present in endoplasmic reticulum and chloroplast.</s>
+          <s>The fatty acid desaturases 2 (FAD2; EC 1.3.1.35)</s>
+          <s>is hydroponic transmembrane endoplasmic reticulum protein, controlling the cis double bond between c12 and c13 <ref target="#b26" type="bibr">[27]</ref> .</s>
+          <s>The FAD2-2 gene was initially reported in Arabidopsis <ref target="#b27" type="bibr">[28]</ref> , then it was further identified in several crops such as sesame (Sesamum indicum) <ref target="#b28" type="bibr">[29]</ref> , corn (Zea mays), canola (Brassica napus) <ref target="#b29" type="bibr">[30]</ref> , olive (Olea europaea) <ref target="#b30" type="bibr">[31]</ref> , soybean (Glycine max) <ref target="#b31" type="bibr">[32]</ref> , sunflower (Helianthus annuus) <ref target="#b32" type="bibr">[33]</ref> , and cotton (Gossypium hirsutum) <ref target="#b33" type="bibr">[34]</ref> .</s>
+          <s>Previously it has been stated that, the FAD2-2 gene is mainly responsible for the conversion of oleic acid into linoleic acid <ref target="#b28" type="bibr">[29,</ref>
+            <ref target="#b34" type="bibr">35]</ref> .</s>
+          <s>Therefore, producing FAD2-2 mutant could decrease the conversion of oleic acid into linoleic acid.</s>
+          <s>Moreover, the FAD2-2 gene expresses in all almost all plant tissues during oil biosynthesis but the expression level is relatively high in seeds <ref target="#b35" type="bibr">[36]</ref> .</s>
+          <s>Similarly, we observed high expression level of FAD2-2 in stem and leaves comparing to seeds in both wild types (WT) and transgenic plant (T) <ref target="#fig_4" type="figure">(Fig. 5)</ref> .</s>
+          <s>However, there is a significant difference between the expression level of WT and T seeds tissue than that to other vegetative tissues, Where T plants showed relatively low expression level of FAD2-2 gene in seeds.</s>
+          <s>The result is in line with the previously reported study by Zhang et al. <ref target="#b36" type="bibr">[37]</ref> .</s>
+          <s>These finding further provide solace to the importance of FAD2-2 genes family in the biosynthesis of oil from edible seed plants.</s>
+          <s>For instance, the oleic acid content is considered as the most important and effective molecule in enhancing the nutritional index and shelf life of soybean oil.</s>
+          <s>It also play role in decreasing the risk of type diabetes <ref target="#b37" type="bibr">[38]</ref> .</s>
+          <s>Though further study is required to produce double or triple mutant of FAD2-2 genes in order to increase the value of oleic acid contents and restrict their conversion into linoleic acid.</s>
+          <s>As it was suggested by Wang et al. in their study of FAD2-2 genes family in peanut (Arachis hypogaea L.) <ref target="#b34" type="bibr">[35]</ref> .</s>
+          <s>In our findings, we found drastic diversity through NIR spectral data of overall lipid content of mutant plants seeds in comparison with wild soybean lines ( <ref target="#tab_2" type="table">Table 3</ref> ).</s>
+          <s>The maximum increase oleic acid content was recorded up to (65.90%, P6) while the lowest linoleic acid were found (16.08%, P6).</s>
+          <s>These findings depict previous studies on FAD2-2 gene which encode ω-6 fatty acid desaturases catalyzes the conversion of oleic acid to linoleic acid in soybeans using antisense RNA technology <ref target="#b13" type="bibr">[14,</ref>
+            <ref target="#b38" type="bibr">39]</ref> .</s>
+          <s>Additionally to tackle the most efficient and recent transformation method out of all available systems is a necessary step.</s>
+          <s>In view of the fact that Agrobacterium--mediated transformation is proved the most widely used for potential applications of CRISPR-Cas9 which facilitate the efficient integration of T-DNAs consist of Cas9 and sgRNA expression cassettes in target plant <ref target="#b39" type="bibr">[40]</ref> .</s>
+          <s>We have successfully transferred a binary vector (pCas9-atU6-sgRNA) into soybean cotyledon via Agrobacterium tumafaciens (EH105).</s>
+          <s>The transgenic lines were verified with a reporter gene (BAR), NOS terminator and Cas-9 gene <ref target="#fig_1" type="figure">(Figs. 2 and 4)</ref> .</s>
+          <s>Our study signifies the exploitation of FAD2-2 gene using CRISPR-Cas9 induced mutation in soybean which results in a significant increase oleic acid content <ref target="#tab_2" type="table">(Table 3)</ref> .</s>
+          <s>Our results concluded that CRISPR-Cas9 system can play a vital role in constructing a mutant library of soybean.</s>
+        </p>
+      </div>
+      <div>
+        <head>Conclusion</head>
+        <p>
+          <s>This work showed an efficient CRISPR-Cas9 gene editing technology to encounter FAD2-2 gene of soybean for targeted mutagenesis aimed to improve the fatty acid profiling of transgenic soybean lines.</s>
+          <s>CRISPR transgene activity was detected by high throughput sequence analysis and southern blotting.</s>
+          <s>The maximum induced rate of mutation was recorded 21% with high ratio of substitution.</s>
+          <s>NIR analysis indicated the enhanced profiling of monounsaturated fatty acid content resulting in high oleic acid accumulation (65%).</s>
+        </p>
+      </div>
+      <div>
+        <head>Materials and methods</head>
+      </div>
+      <div>
+        <head>Experimental materials</head>
+        <p>
+          <s>Seeds of Glycine max L.</s>
+        </p>
+      </div>
+      <div>
+        <head>Explants preparation</head>
+        <p>
+          <s>Glycine max JN38 cultivar was selected for this study.</s>
+          <s>After that, healthy seeds were selected and sterilized with 30 ml Cl 2, (25mlNaocl, 5 ml HCl) for 16 h, which was further used for Agrobacterium-mediated transformation.</s>
+        </p>
+      </div>
+      <div>
+        <head>Vector construction</head>
+        <p>
+          <s>Prior to construction of our desired CRISPR Cas9 vector it is important to design our target synthetic sgRNA, for this purpose we extracted FASTA file of the complete Cds of (FAD2-2 microsomal omega-6 desaturase) gene having GenBank ACCESSION number (L43921) from NCBI.</s>
+          <s>A BLASTN for (FAD2-2 microsomal omega-6 desaturase) sequence has been constructed against Physcomitrella paten in order to observe potential target sites within the coding regions.</s>
+        </p>
+        <p>
+          <s>Physcomitrella paten is a model plant which is widely known for targeted gene knockouts and facilitating reverse genetics approaches.</s>
+          <s>The indication of percentage identity was recorded as 99.2% with best E. value in the exonic regions..</s>
+          <s>In line with previous studies a small guide RNA was designed at position 3:38046125, locus 15:+ 22245082 in the exonic region of FAD2-2 gene.</s>
+        </p>
+        <p>
+          <s>CRISPR-Cas9 (BGK041) plant gene knockout vector kit (Biogle Co. Ltd.</s>
+          <s>Hangzhou, China) was used to construct the expression vector of the plant.</s>
+          <s>The plasmid contain a codon-optimized Cas9 gene under the e35S promoter, sgRNA gene with U6 promoter from Soybean, NOS terminator for termination signal of the gene expression, and a reporter BAR gene <ref target="#fig_0" type="figure">(Fig. 1)</ref> .</s>
+          <s>The sgRNA scaffold (19-nt) target sequences were amplified by PCR using a pair of synthetic oligos according to manufacturers protocol (Additional file 1: <ref target="#tab_0" type="table">Table S1</ref> ).</s>
+          <s>The annealing of oligos with CRISPR-Cas9 vector was followed according to manufacturer's instructions and transformed into E.coli strain (DH5α).</s>
+        </p>
+      </div>
+      <div>
+        <head>Preparation of agrobacterium tumafecian strain</head>
+        <p>
+          <s>Agrobacterium tumefaciens strain EHA105 stock was prepared.</s>
+          <s>The transformation of EHA105 with CRISPRCas9 vector was accomplished with heat and cold shock method, followed by 45 mins shaking in LB liquid medium containing antibiotic (kanamycin 1 ml/L) and incubated overnight at 28°C.</s>
+          <s>The half colony was selected for PCR using CRISPR-Cas9 specific primers (Additional file 1: <ref target="#tab_1" type="table">Table S2</ref> ) <ref target="#fig_1" type="figure">(Fig. 2a)</ref> after selecting positive clones the remaining half was re-cultured for infection in 5 ml LB/1 ml kanamycin for overnight shaking at 28°C, 220 rpm.</s>
+        </p>
+      </div>
+      <div>
+        <head>Agrobacterium-mediated transformation of soybean</head>
+        <p>
+          <s>The cultivars JN38 (Glycine max) sterilized seeds were planted in germination media and placed in a full dark condition for 4-5 days <ref target="#fig_6" type="figure">(Fig. 6a)</ref> .</s>
+          <s>A half-seed method as described by Paz et al. <ref target="#b40" type="bibr">[41]</ref> was used for A. tumefacien mediated transformation in soybean with minor modifications.</s>
+          <s>The germinated seeds were taken and seed coat removal was done for easy bisection of seed then explants were prepared and converted to pre-culture media placed in full dark condition for a period of 3 days.</s>
+          <s>Further, the explants (cotyledon node) were injured mechanically and infected with A. tumefaciens following 20 min self-shaking.</s>
+          <s>The infected explants were re-suspended to co-cultivation media in dark place for 3 days <ref target="#fig_6" type="figure">(Fig. 6b)</ref> and then shifted to selective (S1) media and placed in a growth chamber under a controlled environment.</s>
+        </p>
+        <p>
+          <s>After 15 days incubation, the plants were observed and further transferred to selective (S2) media with herbicide treatment (glufosinate) for another period of 15 days <ref target="#fig_6" type="figure">(Fig. 6c)</ref> .</s>
+          <s>Finally, the explants which are glufosinate resistance were shifted to shooting media for 15 days <ref target="#fig_6" type="figure">(Fig. 6d)</ref> and then transferred to rooting media <ref target="#fig_6" type="figure">(Fig. 6e)</ref> .</s>
+          <s>Once root development was observed, double distilled water was added for 3 days, to make sure the damage less uprooting of plants.</s>
+          <s>The uprooted plants further shifted to the sterilized soil for acclimatization <ref target="#fig_6" type="figure">(Fig. 6f</ref> , Additional file 1: <ref type="table">Table S4</ref> ).</s>
+        </p>
+      </div>
+      <div>
+        <head>Progeny analysis of transgenic plants</head>
+        <p>
+          <s>We confirmed the presence of CRISPR-Cas9 using NOS terminator, BAR gene and Cas9 gene by PCR analysis with specific primers (Additional file 1: <ref target="#tab_2" type="table">Table S3</ref> ).</s>
+          <s>Detection with BAR gene the PCR profile includes, Master mix 12.5 μl, DNA 2 μl, R/F primers 1 μl, dd water 8.5 μl making the total volume 25 μl and was set to a control of 35 cycles of 94°C for 30s, 58°C for 30 s, and 72°C for 45 s.</s>
+          <s>However the Cas9 gene utilizes follows the PCR system as, Master Mix 12.5 μl, DNA 2 μl, both primers 1 μl, dd water 8.5 μl making the total volume 25 μl and was set to a control of 35 cycles of 94°C for 30s, 64°C for 30 s, and 72°C for 50 s.</s>
+          <s>Each PCR products were examined on 1.2% agrose gel.</s>
+        </p>
+        <p>
+          <s>Genomic DNA of the transgenic plants was extracted using a NuClean plant Genomic DNA Kit (Beijing, China) following the company protocol.</s>
+          <s>In order to identify the mutation in positive soybean plants, we amplified the target gene through Polymerase Chain Reaction with genespecific primers (Additional file 1: <ref target="#tab_2" type="table">Table S3</ref> ).</s>
+          <s>The PCR system was followed as, Master mix 12.5 μl, DNA 2 μl, primers 1 μl, dd water 8.5 μl making the total volume 25 μl and was set to a control of 35 cycles of 94°C for 30s, 56°C for 30 s, and 72°C for 50s.</s>
+          <s>The purification of selective target bands was obtained with Axygen DNA Gel Extraction Kit (Beijing, China) and then cloned into a pMD18-T vector for sequencing.</s>
+          <s>Latterly the sequencing results were analyzed for mutation through software (DNA MAN).</s>
+          <s>Several transgenic plants were selected and cloned for the detection of targeted mutation that has been acquired, (Additional file 1: <ref target="#fig_1" type="figure">Figure S2</ref> ).</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Southern blot detection of transgenic plants</head>
+        <p>
+          <s>We selected positive plants for Southern blot analysis.</s>
+          <s id="dataset-1" type="Image:Electrophoresis">Southern blot was performed with DIG High Prime DNA Labeling and Detection Starter kit 1 (for color detection with NBT/BCIP, REF 11745832910) with given manufacturer protocol.</s>
+          <s>Genomic DNA was extracted from transgenic plants using a NuClean plant Genomic DNA Kit (beijing, China).</s>
+          <s>DNA of transgenic plants was digested for overnight with hind111 and Tengo buffer and 1.2% gel was used for electrophoresis with a time interval of 2 h and then shakes in denatured solution for 2 h which was further placed in Amersham nylon membranes (Amersham) overnight.</s>
+          <s>Marker BAR gene was extracted from transgenic DNA and used as a probe for detection.</s>
+          <s>Afterward, 8 μl probe was mixed with 16 ml digoxigenin [DIG] 1-dUTP with DIG High Prime DNA Labeling chemicals.</s>
+          <s>Hybridization was performed for 2 h at 42°C and then further washed 2 times with 20 SSC.</s>
+          <s>Furtherly, blocking and detection were performed according to the manufacturer's protocol and then placed for detection at room temperature for 30 mints to 1 h.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Off-target analysis</head>
+        <p>
+          <s>During the present study, we have analyzed the Potential off target of FAD2-2 on CRISPR-P website (http://cbi.hzau.edu.cn/cgi-bin/CRISPR)</s>
+          <s>containing almost 49 plant genomes datasets including (Glycine max genomic database).</s>
+          <s>glufosinate where left side medium indicates sensitivity while right side showed resistance to herbicide (glufosinate).</s>
+          <s>d Glufosinate resistant seedlings were incubated on shoot elongation medium after 2 weeks.</s>
+          <s>e Establishment of rootswere observed after 2 weeks of incubation on rooting medium.</s>
+          <s>f A full flourish plant was shifted to sterile soil in a growth chamber</s>
+        </p>
+        <p>
+          <s>The first 19 potential off-target sites were examined on CRISPR-P website, then we searched these 19 potential off-target sequences and their loci in Glycine max genomic database and identified with PCR and sequence analysis.</s>
+        </p>
+        <p>
+          <s>We also investigate various others factors affecting the optimum or minimal off target mutation in target genome.</s>
+          <s>To avoid minimum off target mutations the selection of SgRNA within exonic region with low GC content can influence the effect of off target mutagenesis.</s>
+          <s id="dataset-2" type="Tabular data">The FAD2-2-sgRNA2 potential off target sites was identified and analyzed with sequencing analysis.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Isolation of Total RNA and semi-quantitative RT-PCR analysis</head>
+        <p>
+          <s>The Total RNA was extracted using Trizol reagent (Invitrogen, Carlsbad, CA, USA) from different tissues of transgenic and wild type soybean plantlets.</s>
+          <s>Further, purification of RNA was achieved with treatment of RNase-free DNaseI (TaKaRa, beijing, China) to eliminate genomic DNA contamination according to the protocols recommended by the manufacturer.</s>
+          <s>The first strand of cDNA was synthesized from 2.0 μg of total RNA using the M-MLV First Strand Kit (Invitrogen) and the cDNA products equivalent to 200 ng of total RNA were used as templates in a 25 μL PCR reaction system.</s>
+          <s>All conditions were followed according to previously described method <ref target="#b41" type="bibr">[42]</ref> .</s>
+          <s id="dataset-3" type="Real-Time Polymerase Chain Reaction">Semi-quantitative RT-PCR analyses for gene expression were performed on a PCR instrument (S1000™ Thermal Cycler, BIO-RAD, Foster City, CA, USA), with the conditions of 95°C for 30 s, followed by 40 cycles of 95°C for 5 s and 60°C for 30 s.</s>
+          <s>The GmActin gene (NM_001289231) was used as a positive internal control and the gene primers for the qRT-PCR were designed using conserved sequences of FAD2-2 gene.</s>
+          <s>(Additional file 1: <ref target="#tab_0" type="table">Table S1</ref> ).</s>
+        </p>
+      </div>
+      <div>
+        <head>Fatty acid profiling via NIR</head>
+        <p>
+          <s>Soybean seeds were prepared for the near-infrared transmittance instrument (Infratec 1225) as described by <ref target="#b42" type="bibr">[43]</ref> .</s>
+          <s>The Calibration samples are taken from the soybean transgenic mutants.</s>
+          <s>Fatty acid profiling consist of (Palmitic acid, stearic acid, oleic acid, linoleic and linolenic acid) were selected for the prediction of NIRs in soybean seed.</s>
+          <s>The results were significantly analyzed with statistical analysis by calculating their mean values.</s>
+        </p>
+      </div>
+      <div>
+        <head>Bioinformatics analysis</head>
+        <p>
+          <s>The complete CDs of Glycine max FAD2-2 microsomal omega-6 desaturase in FASTA format were extracted from GenBank (L43921).</s>
+          <s>This 1556 bp long fragment is then subjected to BLASTN against Physcomitrella patens genome using ENSEMBL PLANTS.</s>
+          <s>To accomplish the potential Targeted sites for sgRNA within FAD2-2 sequence the filtered sequence is further subjected to CRISPR-P, and then selected the target genome of FAD2-2 (Glycine max L.) for which we were intended to design a highly specific targeted sgRNA sequence.</s>
+        </p>
+      </div>
+      <div>
+        <head>Additional file</head>
+        <p>
+          <s>Additional file 1: <ref target="#tab_0" type="table">Table S1</ref> .</s>
+          <s>List of primers used in this study.</s>
+          <s>Synthetic sgRNA/oligos 2. CRISPR vector primers sequences 3.qRT-PCR Primers sequences.</s>
+          <s>
+            <ref target="#tab_1" type="table">Table S2</ref> .</s>
+          <s>List of primers for mutation detection.</s>
+          <s>BAR gene primers sequences b.</s>
+          <s>NOS terminator primers sequences c.</s>
+          <s>Cas9 gene primers sequences.</s>
+          <s>
+            <ref target="#tab_2" type="table">Table S3</ref> .</s>
+          <s>Potential off-target sites identified for FAD2-2 target sequence in (Glycine max) genome.</s>
+          <s>Potential off target sites were tested for FAD2-2 target sequence in soybean genome where red color indicates mismatching bases.</s>
+          <s>
+            <ref type="table">Table S4</ref> .</s>
+          <s>Different media and its composition for Agrobacterium mediated transformation of soybean (JN38).</s>
+          <s>Chemical composition of germination medium, pre-culture medium, infection medium, co-culture medium, selective medium1, selective medium2, elongation medium and rooting medium.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig. 1</head>
+        <label>1</label>
+        <figDesc>Fig. 1 The schematic diagram of CRISPR-Cas9 binary vector (BGK041). This system includes 19 bp long Synthetic guide RNA (sgRNA), NOS terminator: NOS terminator is used for the termination signal of the gene expression, small U6 expression cassettes derived from soybean, CaMV 35S: promoter used to express the glufosinate resistant gene, BAR gene: A reporter herbicide resistance gene, LB: left border and RB: right border</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig. 2</head>
+        <label>2</label>
+        <figDesc>Fig. 2 Detection of transgenic soybean plants. a Detection of CRISPR-Cas9 binary vector in Agrobacterium strain (EH105) using CRISPR specific primers where M: represents Marker or ladder and lanes 1-6 represents positive colons. b PCR analysis of BAR gene in transgenic plants of soybean, where wild type DNA (WT) and our constructed plasmid (P) were taken as negative and positive control. From 1 to 8 revealed different positive soybean plants. c Detection of NOS terminator in soybean transgenic plants. We used plasmid as positive control while (WT) represent negative, Lanes 1 to 8 indicates NOS terminator existence in soybean transformed plants. Based on these outcomes we confirmed the existence of the binary vector in soybean transgenic plants</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig. 3</head>
+        <label>3</label>
+        <figDesc>Fig. 3 Southern blot hybridization of transgenic plants with BAR probe. The genomic DNA of 8 transgenic plants selected for detection followed by digestion of genomic DNA with restriction enzymes (HindIII and Tengo buffer). Where M represents marker, (P) positive control of plasmid, (W): Wildtype DNA, and from 1 to 8 demonstrate different transgenic plants</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Fig. 4</head>
+        <label>4</label>
+        <figDesc>Fig. 4 Detection of targeted mutation in transgenic soybean plants using CRISPR-Cas9 system. a PCR Detection of Cas9 gene in different soybean transgenic plants. We used plasmid DNA (P) as positive control and wild type DNA as negative (WT). The Series of 1 to 8 express different soybean transgenic plants. b The PCR product analysis of target gene (FAD2-2) of the independent transgenic plants, which is successfully cloned and subjected to sequence analysis for mutation detection. Sequences analysis revealed efficient targeted genome editing using CRISPR-Cas9 system. Red letters in the sequence indicate mutation where, S: indicate substitution, +: represent addition or insertion while/−: indicate deletion. The letters on right side show the number of transgenic plants where the mutations occurred in transgenic lines with the same type. . c Sequencing chromatograms of soybean transgenic plant. The blue color alphabets represent nucleotide substitution</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Fig. 5</head>
+        <label>5</label>
+        <figDesc>Fig. 5 Tissue specific Quantitative real time expression analysis of CRISPR-Cas9 induced FAD2-2 gene. The relative expression level of mutant FAD2-2 gene in four different tissues of soybean including root, stem, leaf and seed. The abundance of mutant FAD2-2 transcripts was found in the leaf tissue of transgenic soybean lines. The data was normalized to that of GmActin gene (NM_001289231)</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
+        <head/>
+        <label/>
+        <figDesc>(JN38) was obtained from previ- ously stored stock in our lab (Plant biotechnology centre, Jilin Agricultural University, China). Escherichia coli strain (DH5α), Agrobacterium tumefacien strain (EHA105) and CRISPR-Cas9 vector was purchased from Biogle Co. Ltd. Hangzhou. Restriction enzymes, DNA extraction kit and DNA ligases were purchased from (Takara Biotechnology, Company Beijing). DIG High Prime DNA Labeling and Detection Starter kit 1 (for color detection with NBT/ BCIP, REF 11745832910) were purchased from (Takara Biotechnology Company Beijing).</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
+        <head>Fig. 6</head>
+        <label>6</label>
+        <figDesc>Fig. 6 Agrobacterium mediated stable transformation of soybean. From A to F showed the series of different media to acquired stable transgenic soybean plants. a Sterilized soybean seeds were germinated on germination medium.b After infection with agrobacterium the seeds were planted in co-culture medium under controlled environment. c Collection of transgenic plants on a selective medium comprising 6 mg l −1</figDesc>
+      </figure>
+      <figure xml:id="fig_7">
+        <head>Figure S1 .</head>
+        <label>S1</label>
+        <figDesc>Gels and Blots. A. Detection of CRISPR-Cas9 binary vector in Agrobacterium strain (EH105) using CRISPR specific primers (900 bp). B. Detection of NOS terminator (192 bp) and BAR gene (552 bp) in transgenic soybean. C. Southern blot of transgenic plants with BAR probe. D. Detection of Cas9 gene (663 bp) in different soybean transgenic plants. E. The PCR product analysis of target gene FAD2-2 (1556 bp) of the independent transgenic plants. Figure S2. Transgenic soybean plants mediated by Agrobacterium tumafecians. Strongest transgenic soybean plants after acclimatization.</figDesc>
+      </figure>
+      <figure xml:id="fig_8">
+        <head>Figure S3 .</head>
+        <label>S3</label>
+        <figDesc>Abbreviations CDs: Coding sequences; CRISPR: Clustered regularly interspaced short palindromic repeat; DIG: Digoxigenin; NIR: Near-infrared spectroscopy; PAM: Protospacer adjacent motif; SgRNA: Single guide RNA; TALENs: Transcription Activator-Like Effectors Nucleases; ZFNs: Zinc Finger Nucleases</figDesc>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_0">
+        <head>Table 1</head>
+        <label>1</label>
+        <figDesc>Mutation efficiency of FAD2-2 gene induced by CRISPR-Cas9 system</figDesc>
+        <table>Target gene 
+No. of 
+examined plant 
+
+No. of plants with 
+cas9 gene 
+
+No. of plants 
+with mutations 
+
+Mutation 
+efficiency % 
+
+FAD2-2 
+556 
+37 
+8 
+21% 
+
+Mutation efficiency (%) = No of plants with mutations/No of plants with Cas9 gene×100 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_1">
+        <head>Table 2</head>
+        <label>2</label>
+        <figDesc>Analysis of targeted gene mutations induced by CRISPR-Cas9 cassettes in transgenic soybean lines. Transgenic plants containing confirmed FAD2-2 mutagenesis were subjected to look for off target editing</figDesc>
+        <table>SgRNA 
+No. of putative 
+off target sites 
+
+No. of loci of putative 
+off target sites 
+
+No. of examined 
+loci 
+
+No. of plants 
+examined 
+
+No. of off target 
+mutation 
+
+FAD2-2-sgRNA2 
+20 
+19 
+12 
+8 
+0 </table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_2">
+        <head>Table 3</head>
+        <label>3</label>
+        <figDesc>The NIR analysis of complete fatty acid contents for FAD2-2 omega 6 destuarase mutants. Samples from P1-P8 represent the percentage composition of fatty acid contents in soybean transgenic lines</figDesc>
+        <table>Plant 
+Palmitic 
+Stearic 
+Oleic 
+Linoleic 
+Linolenic 
+
+Control 
+10.49 
+2.75 
+17.34 
+h ± 0.20 
+59.54 
+8.92 
+
+P1 
+9.19 
+3.76 
+45.08 
+g ± 0.04 
+31.95 
+9.12 
+
+P2 
+8.76 
+2.94 
+51.21 
+e ± 0.11 
+27.10 
+8.64 
+
+P3 
+8.60 
+2.91 
+49.27 
+f ± 0.09 
+29.82 
+8.52 
+
+P4 
+8.19 
+2.90 
+58.82 
+c ± 0.37 
+20.10 
+8.63 
+
+P5 
+7.23 
+2.50 
+54.05 
+d ± 0.08 
+26.25 
+9.10 
+
+P6 
+6.95 
+2.86 
+65.90 
+a ± 0.33 
+16.08 
+7.12 
+
+P7 
+7.95 
+2.88 
+59.12 
+b ± 0.10 
+21.05 
+8.38 
+
+P8 
+8.35 
+2.82 
+59.58 
+b ± 0.22 
+19.05 
+8.90 </table>
+      </figure>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgments</head>
+          <p>
+            <s>We are grateful to Prof. Wang Pi Wu for his kind guidance and providing lab equipment for this study.</s>
+          </p>
+        </div>
+        <div>
+          <head>Funding</head>
+          <p>
+            <s>This project was funded by the Natural science foundation of china under grant number (317710333).</s>
+          </p>
+        </div>
+        <div>
+          <head>Availability of data and materials</head>
+          <p>
+            <s>All the data which is generated and analyzed during our study are included within the article and additional files.</s>
+          </p>
+        </div>
+        <div>
+          <head>Authors' contributions</head>
+          <p>
+            <s>All authors have read and approved the manuscript and ensure that this is the case.</s>
+            <s>Data analysis:, MT, NA2, DY and NW; Formal analysis, WN, PX and DY; Funding acquisition, WP; Investigation, WP; Methodology, NA2 and NW; Software, BX; Supervision, WP; Visualization, NA1, NA2 and BX; Writingoriginal draft, NA1 and RS; Writing -review &amp; editing, NA1, NA2 and BX.</s>
+          </p>
+          <p>
+            <s>Ethics approval and consent to participate Not applicable.</s>
+          </p>
+        </div>
+        <div>
+          <head>Consent for publication</head>
+          <p>
+            <s>Not applicable.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Competing interests</head>
+          <p>
+            <s>The authors declare that they have no competing interests.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Total silencing by intron-spliced hairpin RNAs</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Smith</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Singh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Stoutjesdijk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Green</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Waterhouse</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">407</biblScope>
+                <biblScope from="319" to="339" unit="page"/>
+                <date type="published" when="2000"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Gamma Rays and EMS Induced Flower Color and Seed Mutants in Cowpea (Vignaunguiculata L. Walp)</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Girija</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Dhanavel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Gnanamurthy</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Advances in Applied Science Research</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope from="134" to="143" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Targeted mutagenesis in soybean using the CRISPR-Cas9 system</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Sun</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1038/srep10342</idno>
+              <ptr target="https://doi.org/10.1038/srep10342"/>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Rep</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="issue">10</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Multigeneration analysis reveals the inheritance, specificity, and patterns of CRISPR/Cas-induced gene modifications in Arabidopsis</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Feng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Mao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Wei</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Zheng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proc. Natl. Acad. Sci. USA</title>
+              <imprint>
+                <biblScope unit="volume">111</biblScope>
+                <biblScope from="4632" to="4639" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">The CRISPR/Cas9 system produces specific and homozygous targeted gene editing in rice in one generation</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Wei</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Gou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Feng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Mao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Plant Biotechnol J</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope from="797" to="807" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Cas9-Guide RNA Directed Genome Editing in Soybean</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">-B L</forename>
+                  <surname>Zhan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Aiqiu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Bryan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Jessica</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Lingxia</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Ward</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Clifton</forename>
+                  <forename type="middle">E</forename>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Carl</forename>
+                  <surname>Falco</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Mark</forename>
+                  <surname>Cigan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Plant Physiology</title>
+              <imprint>
+                <biblScope unit="volume">169</biblScope>
+                <biblScope from="960" to="70" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Gene targeting and editing in crop plants: a new era of precision opportunities</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Rinaldo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Ayliffe</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol Breed</title>
+              <imprint>
+                <biblScope unit="volume">35</biblScope>
+                <biblScope unit="page">40</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Large chromosomal deletions and heritable small genetic changes induced by CRISPR/Cas9 in rice</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zhou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Weeks</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Spalding</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nucleic Acids Res</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope from="10903" to="10917" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Enhanced rice blast resistance by CRISPR/Cas9-targeted mutagenesis of the ERF transcription factor gene. OsERF922</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Lei</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Hao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Gao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y-G</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Zhao</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS One</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope unit="page">154027</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <monogr>
+              <ptr target="http://www.extension.iastate.edu/agdm/crops/outlook/biodieselbalancesheet.pdf"/>
+              <title level="m">Soybean Oil and Biodiesel Usage Projections &amp; Balance Sheet</title>
+              <imprint/>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Overview of trans fatty acids: biochemistry and health effects</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Bhardwaj</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Passi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Misra</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Diabetes Metab Syndr</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="161" to="165" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">An overview of the modulatory effects of oleic acid in health and disease</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Sales-Campos</surname>
+                </persName>
+                <affiliation>
+                  <orgName type="collaboration">Mini</orgName>
+                </affiliation>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">R</forename>
+                  <surname>De Souza</surname>
+                </persName>
+                <affiliation>
+                  <orgName type="collaboration">Mini</orgName>
+                </affiliation>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Peghini</surname>
+                </persName>
+                <affiliation>
+                  <orgName type="collaboration">Mini</orgName>
+                </affiliation>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Da Silva</surname>
+                </persName>
+                <affiliation>
+                  <orgName type="collaboration">Mini</orgName>
+                </affiliation>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Cardoso</surname>
+                </persName>
+                <affiliation>
+                  <orgName type="collaboration">Mini</orgName>
+                </affiliation>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Rev Med Chem</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="201" to="211" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Potential biodiesel markets and their economic effects on the agricultural sector of the United States</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Raneses</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Glaser</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Price</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Duffield</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Ind Crop Prod</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="151" to="62" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Arabidopsis FAD2 gene encodes the enzyme that is essential for polyunsaturated lipid synthesis</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Okuley</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Lightner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Feldmann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Yadav</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Lark</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Browse</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Plant Cell</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="147" to="58" unit="page"/>
+                <date type="published" when="1994"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Identification of an animal ω-8 fatty acid desaturase by heterologous expression in Arabidopsis</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Spychalla</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Kinney</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Browse</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proc Natl Acad Sci U S A</title>
+              <imprint>
+                <biblScope unit="volume">94</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="1142" to="1149" unit="page"/>
+                <date type="published" when="1997"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">A large and functionally diverse family of Fad2 genes in safflower (Carthamustinctorius L.)</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Cao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Zhou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Wood</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">BMC Plant Biol</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">5</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Resequencing of 31 wild and cultivated soybean genomes identifies patterns of genetic diversity and selection</title>
+              <author>
+                <persName>
+                  <forename type="first">H-M</forename>
+                  <surname>Lam</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Wong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">M</forename>
+                  <surname>He</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Qin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Jian</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Shao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Ssm</forename>
+                  <surname>Sun</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Genet</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope from="1053" to="1059" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Sequencing crop genomes: approaches and applications</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Jackson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Iwata</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Schmutz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Shoemaker</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">New Phytol</title>
+              <imprint>
+                <biblScope unit="volume">191</biblScope>
+                <biblScope from="915" to="925" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Plant genome editing made easy: targeted mutagenesis in model and crop plants using the CRISPR/Cas system</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Belhaj</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Chaparro-Garcia</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Kamoun</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Nekrasov</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Plant Methods</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="page">39</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">DNA targeting specificity of RNA-guided Cas9 nucleases</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Hsu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Biotechnol</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope from="827" to="859" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Targeted mutagenesis in cotton (GossypiumhirsutumL.) using the CRISPR/Cas9 system</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1038/srep44304</idno>
+              <ptr target="https://doi.org/10.1038/srep44304"/>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Rep</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Jinek</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Chylinski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Fonfara</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Hauer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Doudna</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Charpentier</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">1</biblScope>
+                <biblScope unit="page">829</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Demonstration of CRISPR/Cas9/sgRNA-mediated targeted gene modification in Arabidopsis, tobacco, sorghum and rice</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Jiang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zhou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Bi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Fromm</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Weeks</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nucleic Acids Res</title>
+              <imprint>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope unit="issue">20</biblScope>
+                <biblScope from="188" to="780" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Multiplex and homologous recombination-mediated genome editing in Arabidopsis and Nicotiana benthamiana using guide RNA and Cas9</title>
+              <author>
+                <persName>
+                  <forename type="first">J-F</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Norville</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Aach</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mccormack</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Bush</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Church</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Sheen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature Biotechnol</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope unit="page">688</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">A robust CRISPR/Cas9 system for convenient, high-efficiency multiplex genome editing in monocot and dicot plants</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Ma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Zhu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Qiu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol Plant</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope from="1274" to="84" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Targeted mutagenesis, precise gene editing and site-specific gene insertion in maize using Cas9 and guide RNA</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Svitashev</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Young</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Schwartz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Gao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Falco</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Cigan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Plant Physiol</title>
+              <imprint>
+                <biblScope unit="volume">169</biblScope>
+                <biblScope unit="page">793</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Buchanan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Gruissem</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Jones</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biochemistry &amp; molecular biology of plants</title>
+              <imprint>
+                <biblScope unit="volume">40</biblScope>
+                <date type="published" when="2000"/>
+                <publisher>American Society of Plant Physiologists</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Arabidopsis genes involved in acyl lipid metabolism. A 2003 census of the candidates, a study of the distribution of expressed sequence tags in organs, and a web-based database</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Beisson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Koo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ruuska</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Schwender</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Pollard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Thelen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Paddock</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Salas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Savage</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Milcamps</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Plant Physiol</title>
+              <imprint>
+                <biblScope unit="volume">132</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="681" to="97" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Characterization and temporal expression of a ω-6 fatty acid desaturase cDNA from sesame (Sesamum indicum L.) seeds</title>
+              <author>
+                <persName>
+                  <forename type="first">Jin U-H</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J-W</forename>
+                  <surname>Chung</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y-S</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J-H</forename>
+                  <surname>Yi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y-B</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y-K</forename>
+                  <surname>Hyung</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N-I</forename>
+                  <surname>Pyee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J-H</forename>
+                  <surname>Chung</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C-H</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Plant Sci</title>
+              <imprint>
+                <biblScope unit="volume">161</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="935" to="976" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Manupulating desaturase activities in transgenic crop plants</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Kinney</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Cahoon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Hitz</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biochemical Society Transactions</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="1099" to="103" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Molecular cloning and characterization of genes encoding two microsomal oleate desaturases (FAD2) from olive</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Hernández</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mancha</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Martínez-Rivas</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phytochemistry</title>
+              <imprint>
+                <biblScope unit="volume">66</biblScope>
+                <biblScope unit="issue">12</biblScope>
+                <biblScope from="1417" to="1443" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Molecular cloning and characterization of a novel microsomal oleate desaturase gene from soybean</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Gai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Yu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Plant Physiol</title>
+              <imprint>
+                <biblScope unit="volume">164</biblScope>
+                <biblScope unit="issue">11</biblScope>
+                <biblScope from="1516" to="1542" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Temperature-dependent endogenous oxygen concentration regulates microsomal oleate desaturase in developing sunflower seeds</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Rolletschek</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Borisjuk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Sánchez-García</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Gotor</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Romero</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Martínez-Rivas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mancha</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Exper Botany</title>
+              <imprint>
+                <biblScope unit="volume">58</biblScope>
+                <biblScope unit="issue">12</biblScope>
+                <biblScope from="3171" to="81" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Molecular cloning and functional expression of the gene for a cotton Δ-12 fatty acid desaturase (FAD2)</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Pirtle</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Kongcharoensuntorn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Nampaisansuk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Knesek</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Chapman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Pirtle</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biochim Biophys Acta (BBA)-Gene Structure and Expression</title>
+              <imprint>
+                <biblScope unit="volume">1522</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="122" to="131" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Insights into the novel members of the FAD2 gene family involved in high-oleate fluxes in peanut</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Prakash</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>He</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Yin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genome</title>
+              <imprint>
+                <biblScope unit="volume">58</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope from="375" to="83" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">Molecular cloning and in silico analysis of novel oleate desaturase gene homologues from Brassica juncea through sub-genomic library approach</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Suresha</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Santha</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Plant Omics</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">55</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">Changes in oleic acid content of transgenic soybeans by antisense RNA mediated posttranscriptional gene silencing</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">X</forename>
+                  <surname>Qi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">Q</forename>
+                  <surname>Guo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Xing</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Yao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int J Genom</title>
+              <imprint>
+                <biblScope unit="page">921950</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">The Yin and Yang of Fatty Acids in Type 2 Diabetes Mellitus</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Palomer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Pizarro-Delgado</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Barroso</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Vázquez-Carrera</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Oleic</forename>
+                  <surname>Palmitic</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Acid</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Trends in Endocrinology &amp; Metabolism</title>
+              <imprint>
+                <biblScope unit="volume">29</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="135" to="200" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">Changes in Oleic Acid Content of Transgenic Soybeans by Antisense RNA Mediated Posttranscriptional Gene Silencing</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Xiang-Dong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Yuan-Yu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Jing</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Guang-Xun</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Dong-Quan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Guo-Jie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Yao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">X</forename>
+                  <surname>Wen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Hai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Qy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Ying</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int J Genomics</title>
+              <imprint>
+                <biblScope unit="page">921950</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">Comparative analysis of protein-protein interactions in the defense response of rice and wheat</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Cantu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">BMC Genomics</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope unit="page">166</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Improved cotyledonary node method using an alternative explant derived from mature seed for efficient Agrobacterium-mediated soybean transformation</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Paz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Martinez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Kalvig</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Fonger</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Plant Cell Rep</title>
+              <imprint>
+                <biblScope unit="volume">25</biblScope>
+                <biblScope from="206" to="219" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">Characterization of rice NADPH oxidase genes and their expression under various environmental conditions</title>
+              <author>
+                <persName>
+                  <forename type="first">G-F</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W-Q</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W-Y</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G-L</forename>
+                  <surname>Wu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C-Y</forename>
+                  <surname>Zhou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K-M</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int J Mol Sci</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope from="9440" to="58" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <monogr>
+              <title level="m" type="main">Determination of amino and fatty acid composition of soybeans using near-infrared spectroscopy". Retrospective Theses and Dissertations</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Kovalenko</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2005"/>
+                <biblScope unit="page">1245</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

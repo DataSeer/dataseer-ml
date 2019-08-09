@@ -1,0 +1,1683 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T07:54+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">SHROOM2 inhibits tumor metastasis through RhoA-ROCK pathway-dependent and -independent mechanisms in nasopharyngeal carcinoma</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Jing</forename>
+                <surname>Yuan</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Lin</forename>
+                <surname>Chen</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Jingshu</forename>
+                <surname>Xiao</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Xue-Kang</forename>
+                <surname>Qi</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Ji</forename>
+                <surname>Zhang</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Xu</forename>
+                <surname>Li</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Zifeng</forename>
+                <surname>Wang</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Yi-Fan</forename>
+                <surname>Lian</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Tong</forename>
+                <surname>Xiang</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Yuchen</forename>
+                <surname>Zhang</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Ming-Yuan</forename>
+                <surname>Chen</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Jin-Xin</forename>
+                <surname>Bei</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Yi-Xin</forename>
+                <surname>Zeng</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Lin</forename>
+                <surname>Feng</surname>
+              </persName>
+            </author>
+            <title level="a" type="main">SHROOM2 inhibits tumor metastasis through RhoA-ROCK pathway-dependent and -independent mechanisms in nasopharyngeal carcinoma</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41419-019-1325-7</idno>
+          <note>Yuan et al. Cell Death and Disease (2019) 10:58 Cell Death &amp; Disease A R T I C L E O p e n A c c e s s</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <head>Abstract</head>
+          <p>
+            <s>SHROOM2 is a key mediator of RhoA-ROCK pathway that regulates cell motility and actin cytoskeleton organization.</s>
+            <s>However, the functions of SHROOM2 beyond RhoA/ROCK signaling remain poorly understood.</s>
+            <s>Here, we report that SHROOM2 not only participates in RhoA-ROCK-induced stress fiber formation and focal adhesion, but also had an unanticipated role in suppressing epithelial-to-mesenchymal transition (EMT) and tumor metastasis.</s>
+            <s>Depletion of SHROOM2 in nasopharyngeal carcinoma (NPC) cells enhances mesenchymal characteristics and reduces epithelial markers, concomitant with increased motility, enabling the development of invasion and tumor metastasis, which are largely ROCK-independent, as ROCK inhibitor Y-27632 did not cause EMT phenotype; furthermore, combination of ROCK inhibition and SHROOM2 depletion resulted in the most robust increases in cell migration and invasion, indicating that SHROOM2 and ROCK work synergistically rather than epistatic.</s>
+            <s>Analysis of clinical samples suggested that SHROOM2 is downregulated in NPC and the expression of SHROOM2 in metastatic NPC was even lower than in the primary tumors.</s>
+            <s>Our findings uncover a non-canonical role of SHROOM2 as a potent antagonist for EMT and NPC metastasis.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Introduction</head>
+        <p>
+          <s>Metastasis is the leading cause of death in patients with solid tumors <ref target="#b0" type="bibr">1</ref> , such is true in nasopharyngeal carcinoma (NPC), a common type of cancer in Southern China and Southeast Asia but is rare worldwide <ref target="#b1" type="bibr">2</ref> .</s>
+          <s>Although NPC tends to be more sensitive to radiotherapy than other head and neck cancers, around 10% of cases present distant metastasis after radiotherapy with or without concurrent chemotherapy, which accounts for the majority of deaths from NPC <ref target="#b2" type="bibr">3</ref> .</s>
+          <s>A great effort has been devoted towards finding novel therapeutic approaches that would prevent tumor invasion and metastasis, or biomarkers which could predict the metastasis risk of cancer patients, however, limited success has been achieved, largely due to the complexity of metastasis process, which is sequentially executed by local invasion, intravasation, dissemination, extravasation and colonization, and the cancer cells must opt to different characteristics during the entire metastasis process <ref target="#b3" type="bibr">4</ref> .</s>
+          <s>In the past two decades, a process named epithelial-to-mesenchymal transition (EMT) has been proven as a key driver for cancer metastasis.</s>
+          <s>EMT program converts epithelial cells into a more mesenchymal state, enabling epithelial cells to lose their cell-to-cell junctions and the apical-basal polarity while acquiring migratory and invasive capacities, facilitating escape from the primary tumor <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref>
+            <ref target="#b6" type="bibr">[7]</ref> .</s>
+          <s>The essentiality of EMT for metastasis has been demonstrated in NPC <ref target="#b7" type="bibr">8</ref> .</s>
+          <s>However, other players in NPC metastasis other than the known EMT transcription factors have not been not fully characterized.</s>
+        </p>
+        <p>
+          <s>Rho GTPases is one of the most important families of proteins regulating the cell migration, which play crucial roles in the regulation of cell morphology, motility, cell-cell and cell-matrix adhesion.</s>
+          <s>There are more than 20 members in this family, represented by RhoA, RAC1, and CDC42 <ref target="#b8" type="bibr">9,</ref>
+            <ref target="#b9" type="bibr">10</ref> .</s>
+          <s>Rho Kinase (ROCK) is a key serine/ threonine kinase downstream of Rho which mediating the formation of RhoA-induced stress fibers and focal adhesions through phosphorylation of downstream targets, like LIM kinase, myosin light chain (MLC) and Myosin Phosphatase-Targeting Subunit 1 (MYPT1) <ref target="#b10" type="bibr">[11]</ref>
+            <ref target="#b11" type="bibr">[12]</ref>
+            <ref target="#b12" type="bibr">[13]</ref> .</s>
+          <s>ROCK has been considered as an anti-cancer target because of its role in promoting invasion and migration of various types of cancer <ref target="#b13" type="bibr">[14]</ref>
+            <ref target="#b14" type="bibr">[15]</ref>
+            <ref target="#b15" type="bibr">[16]</ref> .</s>
+          <s>The mammalian ROCK family is composed of ROCK1 and ROCK2, and the two isoforms play similar roles in vivo <ref target="#b16" type="bibr">17</ref> .</s>
+          <s>Y-27632, a selective small inhibitor of both ROCK1 and ROCK2, has been shown to suppress the invasiveness and metastasis of rat and human hepatoma cells <ref target="#b17" type="bibr">18,</ref>
+            <ref target="#b18" type="bibr">19</ref> , bladder cancer cells <ref target="#b19" type="bibr">20</ref> , colorectal cancer cells <ref target="#b20" type="bibr">21</ref> , lung cancer cells <ref target="#b21" type="bibr">22</ref> , and others.</s>
+          <s>However, ROCK inhibition by Y-27632 resulted in a dramatic stimulation in the invasion of colon cancer cell line on 3D culture system <ref target="#b22" type="bibr">23</ref> , and a recent study showed that RhoA inactivation or Y-27632 treatment promotes migration and metastasis of triple-negative breast cancer <ref target="#b23" type="bibr">24</ref> .</s>
+          <s>Moreover, RhoA inactivation by expressing a dominant negative RhoA (T19N) increases tumor growth and metastasis in colorectal and liver cancers <ref target="#b24" type="bibr">25,</ref>
+            <ref target="#b25" type="bibr">26</ref> .</s>
+          <s>The contradictory effects of Rho-ROCK pathway inhibition restrict the application of Y-27632 to anti-cancer therapy and more studies are needed to fully address the regulation of Rho-ROCK signaling pathway in tumor metastasis.</s>
+          <s>SHROOM2 belongs to SHROOM family which consists of four different yet closely related proteins, which share a PDZ domain and two conserved SD (SHROOM domain) domains, SD1 and SD2.</s>
+          <s>The SD2 domain binds to ROCK directly and mediates its activation <ref target="#b26" type="bibr">[27]</ref>
+            <ref target="#b27" type="bibr">[28]</ref>
+            <ref target="#b28" type="bibr">[29]</ref> .</s>
+          <s>SHROOM2 has been reported to be associated with the susceptibility or carcinogenesis of esophageal squamous carcinoma and colorectal cancer <ref target="#b29" type="bibr">30,</ref>
+            <ref target="#b30" type="bibr">31</ref> , however, the exact role of SHROOM2 in the development of cancer and whether it works solely downstream of ROCK have not been fully elucidated.</s>
+          <s>To answer this question, we investigated the role of SHROOM2 in NPC.</s>
+          <s>Our results suggest that SHROOM2 is downregulated in NPC and is implicated in the suppression of cancer cell invasion and metastasis by preventing EMT, which is largely independent of Rho-ROCK signaling.</s>
+          <s>These results provide novel insights into the mechanism by which SHROOM2 participates in tumor suppression.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+      </div>
+      <div>
+        <head>Downregulation of SHROOM2 in NPC</head>
+        <p>
+          <s>We first evaluated SHROOM2 expression in normal nasopharyngeal epithelial (NPE) cell lines and nasopharyngeal carcinoma (NPC) cell lines.</s>
+          <s>Quantitative PCR and Western blot analyses suggested that both mRNA and protein levels of SHROOM2 were lower in NPC cell lines than in NPE cell lines NPEC2 and NP69 <ref target="#fig_0" type="figure">(Fig. 1a, b)</ref> .</s>
+          <s>To elucidate the status of SHROOM2 in NPC clinical samples, in situ immunohistochemistry (IHC) in 60 NPC and matched normal nasopharynx tissues were performed.</s>
+          <s>In normal nasopharyngeal epithelium adjacent to the tumor, SHROOM2 staining was homogenous in all cells of the basal layer and suprabasal layers and appeared to be less intense in the more differentiated layers <ref target="#fig_0" type="figure">(Fig. 1c, right panel)</ref> .</s>
+          <s>In contrast, SHROOM2 expression was low in NPC tissues <ref target="#fig_0" type="figure">(Fig. 1c, left panel)</ref> .</s>
+          <s>The intensity of SHROOM2 staining in NPC was scored on a gray scale as negative (−), low (1+), moderate (2+), and high (3+) <ref target="#fig_0" type="figure">(Fig. 1d, top panel)</ref> .</s>
+          <s>Scoring of SHROOM2 IHC based on staining strength and the percent of positive cells revealed that SHROOM2 expression was significantly downregulated in human NPC compared to non-cancerous nasopharyngeal tissues <ref target="#fig_0" type="figure">(Fig. 1d, bottom panel)</ref> .</s>
+          <s>These results indicated that SHROOM2 might act as a suppressor in NPC development.</s>
+        </p>
+      </div>
+      <div>
+        <head>SHROOM2 suppresses migration and invasion of NPC cells</head>
+        <p>
+          <s>To investigate the role of SHROOM2 in cancer development, we overexpressed SHROOM2 in HONE1, a typical NPC cell line with characteristic of poorly differentiated squamous cell carcinomas <ref target="#b31" type="bibr">32</ref> ( <ref target="#fig_1" type="figure">Fig. 2a)</ref> .</s>
+          <s>Cell migration and invasion were determined using non-matrigel-coated or matrigel-coated transwell cell culture chambers, respectively and the results suggested SHROOM2 overexpression significantly inhibited cell migration and invasion <ref target="#fig_1" type="figure">(Fig. 2b)</ref> .</s>
+          <s>Conversely, silencing of SHROOM2 by three SHROOM2-specific shRNAs in HONE1 cells all led to evident increases in migration and invasion <ref target="#fig_1" type="figure">(Fig. 2c, d</ref> ).</s>
+          <s>In addition, scratch wound healing assay also supported a role of SHROOM2 in suppressing cell migration as quicker closure of the scratched "wound" were observed in cells lacking SHROOM2 <ref target="#fig_1" type="figure">(Fig. 2e)</ref> .</s>
+        </p>
+        <p>
+          <s>SHROOM2 has been characterized as a mediator of RhoA-ROCK pathway.</s>
+          <s>To investigate if SHROOM2 inhibits cell migration through ROCK signaling, HONE1 cells with or without SHROOM2 depletion were treated with DMSO or ROCK inhibitor Y-27632.</s>
+          <s>Surprisingly, compare with the strong induction of migration by SHROOM2 knockdown, only a slight increase in the proportion of migrated cells was observed by Y-27632 treatment.</s>
+          <s>Furthermore, migration of SHROOM2-depleted cells was further promoted by adding ROCK inhibitor Y-27632 <ref target="#fig_1" type="figure">(Fig. 2f)</ref> .</s>
+          <s>Consistently, invasion assay also obtained similar results <ref target="#fig_1" type="figure">(Fig. 2g)</ref> .</s>
+          <s>These data indicate that SHROOM2 restricts cell migration and invasion through additional mechanism other than ROCK signaling.</s>
+        </p>
+      </div>
+      <div>
+        <head>SHROOM2 suppresses metastasis of NPC</head>
+        <p>
+          <s>Having established the suppressive role of SHROOM2 in cell migration and invasion, we then examined the role of SHROOM2 in metastasis by tail vein injection of cancer cells, which primarily form metastatic nodules in the lung.</s>
+          <s>At 7 weeks after injection, mice were sacrificed, and the lungs were harvested.</s>
+          <s>The number of metastatic nodules was significantly higher in mice injected with SHROOM2 knockdown b Representative images (left) and quantification (right) of Transwell cell migration and invasion assays for HONE1 cells that stably expressing ectopic SHROOM2 or empty vector.</s>
+          <s>Scale bar: 100 μm.</s>
+          <s>Mean ± SD, n = 3. c Western blot analysis of HONE1 cells infected with control lentivirus or lentivirus carrying SHROOM2-specific shRNAs.</s>
+          <s>d Representative images (top) and quantification (bottom) of Transwell cell migration and invasion assays for control HONE1 cells or HONE1 cells with SHROOM2 knockdown by three independent shRNAs.</s>
+          <s>Scale bar: 100 μm.</s>
+          <s>Mean ± SD, n = 3. e Wound healing assays for control and SHROOM2 knockdown HONE1 cells.</s>
+          <s>Scale bar: 100 μm.</s>
+          <s>f Representative images (left) and quantification (right) of Transwell cell migration assays for control and SHROOM2 knockdown HONE1 cells treated with 20 μM Y-27632 or DMSO for 24 h.</s>
+          <s>Scale bar: 50 μm.</s>
+          <s>Mean ± SD, n = 3. g Transwell invasion assays as in f except the upper chamber was coated with Matrigel.</s>
+          <s>Scale bar: 50 μm.</s>
+          <s>*p &lt; 0.05, **p &lt; 0.01, ***p &lt; 0.001, two-tailed unpaired t-test cells than in the mice injected with control NPC cells ( <ref target="#fig_2" type="figure">Fig. 3a, b</ref> ; p = 0.031).</s>
+        </p>
+        <p>
+          <s>To further elucidate the anti-migratory and antiinvasive functions of SHROOM2, a spontaneous lymph node metastasis mouse model was established by injecting SHROOM2 knockdown NPC cells and control cells into the left hind footpad of immune-deficient nude mice, which resulting in metastasis to the popliteal lymph node.</s>
+          <s>Consistent with the results from tail vein injection, cells with SHROOM2 depletions had a significantly greater potential of lymphatic metastasis <ref target="#fig_2" type="figure">(Fig. 3c, d</ref> ).</s>
+          <s>Next, we evaluated SHROOM2 expression in 15 paired primary/metastatic NPC samples.</s>
+          <s>IHC staining revealed that the metastatic NPC tumors had lower levels of SHROOM2 compared to the primary tumors ( <ref target="#fig_2" type="figure">Fig. 3e</ref> ), further supporting a suppressive role of SHROOM2 in NPC metastasis in vivo.</s>
+          <s>On the other side, we also determined the proliferation rate of control and SHROOM2 knockdown cells, but no significant difference was observed ( <ref target="#fig_0" type="figure">Supplementary Fig. 1a</ref> ).</s>
+          <s>Furthermore, SHROOM2-depleted NPC cells exhibited a similar rate of tumor growth compared with control cells in xenograft assay <ref target="#fig_0" type="figure">(Supplementary Fig. 1b; p&gt;0.05</ref>
+          </s>
+          <s>).</s>
+          <s>Taken together, SHROOM2 mainly regulates metastatic capacity but not tumorigenicity of NPC.</s>
+        </p>
+      </div>
+      <div>
+        <head>SHROOM2 maintains epithelial morphology</head>
+        <p>
+          <s>SHROOM family is implicated in morphogenesis of native epithelial cells during development <ref target="#b32" type="bibr">33</ref> , we then examined the effect of SHROOM2 depletion on NPC cell morphology.</s>
+          <s>HONE1 cells maintain highly organized cell-cell adhesion and cell polarity, while knockdown of SHROOM2 led to loss of cell-cell contacts and cell scattering: a cobble-stone-like morphology was replaced with a spindle-like, fibroblastic appearance upon SHROOM2 depletion <ref target="#fig_3" type="figure">(Fig. 4a)</ref> .</s>
+          <s>In the colony formation assay, the majority of control HONE1 cells formed tight and regular colonies as classified as type I, with less colonies that exhibited appearance with loosely packed cells (type II) or a mosaic appearance (type III); in contrast, SHROOM2-depleted group produced more type II and type III colonies compared with the control group <ref target="#fig_3" type="figure">(Fig. 4b)</ref> .</s>
+        </p>
+        <p>
+          <s>In line with the morphology in 2D culture condition, HONE1 cells formed tightly packed spheres in soft agar, while spheres formed by SHROOM2-depleted cells were looser and more irregular <ref target="#fig_3" type="figure">(Fig. 4c, d</ref> , left).</s>
+          <s>There were no significant differences in the number of spheres formed in control group and SHROOM2-silencing groups <ref target="#fig_3" type="figure">(Fig. 4d, right)</ref> .</s>
+          <s>When cultured in Matrigel, HONE1 control cells formed well-polarized spheres, while SHROOM2-depleted cells lost the polarity and became invasive in the matrix <ref target="#fig_3" type="figure">(Fig. 4e)</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Loss of SHROOM2 induces EMT</head>
+        <p>
+          <s>To uncover the mechanisms underlying the inhibition of SHROOM2 on NPC cell migration and metastasis, an analysis of the whole transcriptome by microarray was conducted in HONE1 cells with or without SHROOM2 depletion.</s>
+          <s>Functional profiling of the differentially expressed genes suggested that the greatest proportion was enriched in EMT <ref target="#fig_4" type="figure">(Fig. 5a)</ref> , a process where epithelial cells take on characteristics of mesenchymal cells and play key roles in tumor metastasis and development.</s>
+          <s>Gene set enrichment analysis (GSEA) suggested that SHROOM2 knockdown cells displayed a more mesenchymal trait than the control cells <ref target="#fig_4" type="figure">(Fig. 5b)</ref> .</s>
+          <s>We profiled changes in EMT-related gene expression upon SHROOM2 depletion and the heat map showed an upregulation of mesenchymal markers and downregulation of epithelial markers <ref target="#fig_4" type="figure">(Fig. 5c)</ref> .</s>
+          <s>Indeed, depletion of SHROOM2 by two shRNAs in two NPC cell lines, HONE1 and SUNE1 led to EMT as evidenced by downregulation of epithelial markers E-cadherin and β-catenin and upregulation of mesenchymal markers N-cadherin and fibronectin <ref target="#fig_4" type="figure">(Fig. 5d)</ref> .</s>
+          <s>Additionally, we performed a rescue experiment by reconstituting SHROOM2-depleted cells with an shRNAresistant SHROOM2.</s>
+          <s>The downregulation of E-cadherin and upregulation of N-cadherin in the depleted cells were reversed by the reconstituted SHROOM2 <ref target="#fig_4" type="figure">(Fig. 5e)</ref> , indicating that SHROOM2 exerts a specific effect on EMT.</s>
+          <s>Besides, the microarray data revealed several adhesion molecules were significantly downregulated by loss of SHROOM2, such as tight junction proteins TJP3 (Tight Junction Protein 3) and CLDN4 (Claudin 4), desmosome proteins DSC2 (Desmocollin 2) and DSG3 (Desmoglein 3), and intermediate filament proteins CK5 (Keratin 5) and CK10 (Keratin 10), which were verified by immunofluorescence assay <ref target="#fig_4" type="figure">(Fig. 5f</ref> ) and quantitative PCR <ref target="#fig_4" type="figure">(Fig. 5g)</ref> .</s>
+          <s>These data indicate that SHROOM2 is involved in the suppression of EMT.</s>
+        </p>
+        <p>
+          <s>SRHOOM2 regulates stress fibers and focal adhesions in a ROCK-dependent manner, but inhibits EMT independently of ROCK pathway SHROOM2 has been characterized as a ROCK binding protein that mediating ROCK membrane recruitment and activation <ref target="#b26" type="bibr">27,</ref>
+            <ref target="#b27" type="bibr">28,</ref>
+            <ref target="#b33" type="bibr">34</ref> , we next tried to elucidate whether the anti-EMT function of SHROOM2 is ROCK pathwaydependent.</s>
+          <s>First, we examined the subcellular distribution of ROCK and myosin regulatory light chain (MLC2), a substrate of ROCK in control and SHROOM2-depleted cells.</s>
+          <s>Consistent with previous reports, loss of SHROOM2 greatly impaired membrane recruitment of ROCK1 and MLC2 <ref target="#fig_5" type="figure">(Fig. 6a)</ref> .</s>
+          <s>Correspondingly, phosphorylation of ROCK substrates, MLC2 and MYPT were significantly decreased upon SHROOM2 depletion <ref target="#fig_5" type="figure">(Fig. 6b)</ref> .</s>
+          <s>Next, we determined the importance of SHROOM2 in RhoA-ROCK-mediated stress fibers and focal adhesions (FAs) formation.</s>
+          <s>HONE1 cells displayed long organized stress fibers as visualized by phalloidin-fluorescence and formed discernible focal adhesions (FAs) as labeled by anti-Vinculin antibody, Vinculin is an adaptor protein linking actin stress fibers to integrin at the plasma membrane.</s>
+          <s>When the cells were treated with ROCK inhibitor Y-27632, destruction of stress fibers and FAs were observed.</s>
+          <s>On the other hand, depletion of SHROOM2 reduced actin polymerization and FAs formation to a similar extent as that seen for control cells treated with Y-27632, and addition of Y-27632 to SHROOM2 knockdown cells did not lead to appreciable further reduction on stress fibers and FAs formation <ref target="#fig_5" type="figure">(Fig. 6c)</ref> .</s>
+          <s>Besides, ROCK inhibition did not further reduce desmosome formation as demonstrated by Desmoglein1 (DSG1) and CK5 immunostaining <ref target="#fig_5" type="figure">(Fig. 6d)</ref> .</s>
+          <s>On the other side, Y-27632 treatment had no effects on E-and N-cadherin <ref target="#fig_5" type="figure">(Fig. 6e)</ref> and CK5 <ref target="#fig_5" type="figure">(Fig. 6f)</ref> expression, indicating that the anti-EMT function of SHROOM2 is independent of RhoA-ROCK pathway, while its role in stress fiber formation and focal adhesion is ROCK-dependent.</s>
+          <s>Taken together, SHROOM2 suppresses migration and metastasis of NPC cells in both ROCK-dependent and independent manner, the latter is implicated in EMT regulation.</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>Cell migration is central to metastasis.</s>
+          <s>Rho-ROCK pathway has been linked to tumor cell metastasis by regulating actin rearrangement and focal adhesions within cells.</s>
+          <s>ROCK is the most well characterized downstream effector of Rho, which is activated through several mechanisms, including binding of GTP-bound form of Rho to the Rho-binding domain (RBD) of ROCK <ref target="#b34" type="bibr">35,</ref>
+            <ref target="#b35" type="bibr">36</ref> , lipid binding to the PH domain <ref target="#b36" type="bibr">37</ref> , and binding of SHROOM to the SHROOM-binding domain (SBD) of ROCK <ref target="#b27" type="bibr">28,</ref>
+            <ref target="#b28" type="bibr">29</ref> .</s>
+          <s>Activated ROCK interacts with the actin cytoskeleton to induce stress fiber formation and assembly of focal contacts by phosphorylatin myosin light chain <ref target="#b11" type="bibr">12,</ref>
+            <ref target="#b37" type="bibr">38</ref> .</s>
+          <s>Inhibition of ROCK pathway has been shown to suppress metastasis in multiple .</s>
+          <s>Experiments were performed in triplicate and at least 100 cells were counted in each experiment.</s>
+          <s>g qPCR analysis of cell-cell junction molecules and EMT markers in control and SHROOM2-depleted cells.</s>
+          <s>Mean ± SD, n = 3. *p &lt; 0.05, **p &lt; 0.01, ***p &lt; 0.001, two-tailed unpaired t-test types of cancer <ref target="#b17" type="bibr">[18]</ref>
+            <ref target="#b18" type="bibr">[19]</ref>
+            <ref target="#b19" type="bibr">[20]</ref>
+            <ref target="#b20" type="bibr">[21]</ref>
+            <ref target="#b21" type="bibr">[22]</ref> .</s>
+          <s>However, contrasting reports have been published on the role of RhoA-ROCK pathway in tumor invasion and metastasis <ref target="#b22" type="bibr">[23]</ref>
+            <ref target="#b23" type="bibr">[24]</ref>
+            <ref target="#b24" type="bibr">[25]</ref>
+            <ref target="#b25" type="bibr">[26]</ref> .</s>
+          <s>In this study, we found that Y-27632 treatment resulting in increased NPC cell migration and invasion ( <ref target="#fig_1" type="figure">Fig. 2f and g</ref> ), concomitant with the reduced MLC phosphorylation, stress fiber and focal adhesion formation <ref target="#fig_5" type="figure">(Fig. 6)</ref> .</s>
+          <s>The cell type and contextdependent effect of Y-27632 on cell migration might result from the complex outcome of ROCK inhibition.</s>
+          <s>On one hand, disruption of F-actin bundles by ROCK inhibition impairs cell contractility, therefore Y-27632 often leads to decreased cell migration and invasion as observed in various cancer cells <ref target="#b17" type="bibr">[18]</ref>
+            <ref target="#b18" type="bibr">[19]</ref>
+            <ref target="#b19" type="bibr">[20]</ref>
+            <ref target="#b20" type="bibr">[21]</ref>
+            <ref target="#b21" type="bibr">[22]</ref> ; On the other hand, stress fibers are necessary for the maintenance of cell-cell and cell-ECM adhesion, and losing adhesion in fact facilitates the early step in metastatic dissemination, which may account for the increased migration of cancer cells as observed in this study and other reports <ref target="#b22" type="bibr">[23]</ref>
+            <ref target="#b23" type="bibr">[24]</ref>
+            <ref target="#b24" type="bibr">[25]</ref>
+            <ref target="#b25" type="bibr">[26]</ref> .</s>
+          <s>It is conceivable that the balance between the changes in contractility and adhesion dictates the net effect of Y-27632.</s>
+          <s>The notion has been further supported by the data showing that loss of SHROOM2, which resulted in a reduction in the levels of adhesion proteins like E-cadherin, tight junction proteins and desmosome proteins <ref target="#fig_4" type="figure">(Fig. 5)</ref> , further accelerates cell migration and invasion than single ROCK inhibitor treatment <ref target="#fig_1" type="figure">(Fig. 2f, g</ref> ).</s>
+          <s>Thus, our data established a new paradigm for ROCK inhibition in metastasis prevention, indicating the cellular environment should be taken into consideration when use ROCK inhibitors as anti-tumor agents.</s>
+        </p>
+        <p>
+          <s>SHROOM family consists of four isoforms, SHROOM1-4.</s>
+          <s>SHROOM family members have similar domain architecture, with SHROOM-domain 1 (SD1) and SHROOMdomain 2 (SD2) that bind F-actin and ROCK, respectively.</s>
+          <s>SHROOM use the SD2 domain to recruit ROCK to the cytoskeletion which in turn phosphorylates non-muscle myosin II to remodel cellular morphology; meanwhile, SHROOM-binding directly activates ROCK kinase by relieving autoinhibitory conformation of ROCK <ref target="#b27" type="bibr">28,</ref>
+            <ref target="#b28" type="bibr">29</ref> .</s>
+          <s>To date, the well-known functions of SHROOM are all linked to ROCK pathway.</s>
+          <s>In this study, we found that SHROOM2 works independently of ROCK in controlling EMT and migration.</s>
+          <s>SHROOM2 depletion, but not ROCK inhibition was able to induce EMT and EMT-associated cell migration and invasion.</s>
+          <s>Loss of SHROOM2 not only impedes ROCK activation, as characterized by the reduced stress fiber and FA assembly, but also shows clear phenomenon of EMT, such as a switch to mesenchymal-like morphology, downregulation of E-cadherin and upregulation of N-cadherin, all are hallmarks of EMT.</s>
+          <s>As ROCK inhibitor Y-27632 does not affect the expression of these EMT markers, which is in line with a prior report <ref target="#b38" type="bibr">39</ref> , and addition of Y-27632 further increases the motility of SHROOM2-depleted cells <ref target="#fig_1" type="figure">(Fig. 2f)</ref> , indicating that SHROOM2 and ROCK work synergistically rather than epistatic.</s>
+          <s>Whether the anti-EMT function is unique to SHROOM2 or also applicable to other SHROOM isoforms needs further investigation.</s>
+        </p>
+        <p>
+          <s>SHROOM2 loss may result in the activation of specific downstream signal transduction pathways that eventually leads to EMT, which confers traits on cancer cells facilitating completion metastasis process.</s>
+          <s>EMT is driven by multiple EMT transcription factors that includes ZEB1/2, Twist, Slug and OVOL2 <ref target="#b4" type="bibr">5,</ref>
+            <ref target="#b7" type="bibr">8</ref> .</s>
+          <s>In the microarray data, we found that ZEB1 and ZEB2 levels were markedly increased in SHROOM2-depleted cells <ref target="#fig_4" type="figure">(Fig. 5e</ref> ).</s>
+          <s>At present, we are unclear what downstream signal transduced by SHROOM2 that directly controlling EMT process.</s>
+          <s>Recently, SHROOM2 mutations have been found in patients with neural tube defect (NTD) in Chinese cohort.</s>
+          <s>Interestingly, none of these point mutations cause appreciable reduction in the interaction with ROCK <ref target="#b39" type="bibr">40</ref> .</s>
+          <s>Neural tube closure is one of the best studied development example of EMT <ref target="#b40" type="bibr">41</ref> , it is possible that these mutations abrogate the association of SHROOM2 with a unknown player in EMT program.</s>
+          <s>However, purification of SHROOM2 in 293T cells did not capture any proteins that play definite role in EMT, although ROCK protein was obtained <ref target="#fig_0" type="figure">(Supplementary table 1)</ref> .</s>
+          <s>Future studies on SHROOM2-intereacting protein network by developing approaches suitable for capturing transient and week protein-protein interactions would be helpful for elucidating the mechanisms by which SHROOM2 antagonizes EMT.</s>
+        </p>
+        <p>
+          <s>In summary, our study uncovered an anti-metastatic role of SHROOM2 through inhibition of EMT.</s>
+          <s>More complete understanding of how SHROOM and RhoA-ROCK pathway coordinately and specifically regulate cancer cell metastasis may throw light on the therapeutic approaches for advanced NPC.</s>
+        </p>
+      </div>
+      <div>
+        <head>Materials and methods</head>
+      </div>
+      <div>
+        <head>Cell culture</head>
+        <p>
+          <s>The NPC cell lines (CNE1, CNE2, S18, S26, SUNE1, 5-8 F, 6-10B, SUNE1 and HONE1) were cultured in Dulbecco's modified Eagle medium (Gibco) with 10% FBS.</s>
+          <s>The immortalized nasopharyngeal epithelium (NPE) cell lines NPEC2-Tert and NP69 were cultured in keratinocyteserum-free growth medium supplemented with 5 μg/L EGF and 50 mg/L Bovine Pituitary Extract (Gibco) as described previously <ref target="#b7" type="bibr">8,</ref>
+            <ref target="#b41" type="bibr">42</ref> .</s>
+          <s>SUNE1 and HONE1 have cell line authentication report using short tandem repeart (STR) profiling.</s>
+        </p>
+        <p>
+          <s>shRNAs, stable knockdown, and reconstitution of shRNAresistant SHROOM2</s>
+        </p>
+        <p>
+          <s>ShRNAs targeting SHROOM2 were cloned in pLKO.1-puro</s>
+          <s>vector (Sigma).</s>
+          <s>The shRNA sequences are as follows: control shRNA: 5′-TTCAATAAATTCTTGAGGTTT-3′; three SHROOM2 targeting shRNAs: 1# 5′-GATGAGA TCGTCGGCATCAAT-3′, 2# 5′-GAGCGCATCGTCTT TGACATT-3′.</s>
+          <s>3# 5′-CCACCAATTCTACCTACTACA-3′.</s>
+          <s>Stable knockdown cells were established by puromycin (2 μg/mL) selection as previously described <ref target="#b42" type="bibr">43</ref> .</s>
+          <s>SHROOM2 shRNA-resistant construct was generated by introducing silent mutations (5′-GAGCGCATTGTTTTCGATAT C-3′) in the shSHROOM2 #2 targeting sequence using PCRmediated site-directed mutagenesis and then subcloned into the lentiviral vector pLVX-IRES-hygro.</s>
+          <s>Rescue experiment was performed by transduction of shRNA-resistant pLVX-HA-SHROOM2 into SHROOM2-knockdown cells and selected with hygromycin (200 μg/mL).</s>
+        </p>
+      </div>
+      <div>
+        <head>Establishment of stable cell lines</head>
+        <p>
+          <s>To generate SHROOM2 stable cell line, SHROOM2 cDNA was cloned into the pBABE-puro vector and packaged into lentivirus by co-transfecting of packaging plasmids pMD2G and pSPAX2 into HEK293T cells using polyethylenimine (PEI; 25 kDa) method.</s>
+          <s>Forty-eight hours after transfection, the supernatant was collected and used for infection.</s>
+          <s>Stable pools were selected with medium containing 2 μg/mL puromycin (Sigma).</s>
+          <s>Empty pBABE vector was used as control.</s>
+        </p>
+      </div>
+      <div>
+        <head>Microarray analysis</head>
+        <p>
+          <s>Total RNA from HONE1 control and SHROOM2 knockdown cells was isolated with TRIzol reagent (Invitrogen).</s>
+          <s>Human Genome U133 Plus 2.0 Arrays (Affymetrix) were used for gene expression analysis by CapitalBio Corporation (Beijing, China).</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Quantitative real-time PCR</head>
+        <p>
+          <s>Total RNA was isolated with TRIzol reagent (Invitrogen) according to the manufacturer's instructions.</s>
+          <s>Firststrand cDNA was synthesized using a PrimeScript RT Reagent Kit (TaKaRa).</s>
+          <s id="dataset-1" type="Real-Time Polymerase Chain Reaction">Quantitative real-time PCR was performed using Platinum SYBR Green qPCR SuperMix (Invitrogen) according to the manufacturer's instructions.</s>
+          <s>The PCR primers used in this study are as follows: SHROOM2-F: 5′-CCTGAAGCTGGTCGTCAAAAG-3′, SHROOM2-R: 5′-CGCTGTAGGTTCGTCTGCT-3′; TJP3-F:5′-GCTTTGGCATTGCGATCTCTG-3′, TJP3-R:5′-GATGTGGTCGCCTGTCTGTAG-3′;CLDN4-F:5′-TGGGGCTACAGGTAATGGG-3′, CLDN4-R:5′-GGTC TGCGAGGTGACAATGTT-3′;DSC2-F:5′-CCAATTCC TTGTTCGATGCTAGA-3′, DSC2-R:5′-GGCCGTGTCA GATTGAACC-3′:DSG3-F:5′-GCAAAAACGTGAATGG GTGAAA-3′, DSG3-R:5′-TCCAGAGATTCGGTAGGT GATT-3′;E-cadherin-F: 5′-TGCCCAGAAAATGAAAAA GG-3′, E-cadherin-R: 5′-GTGTATGTGGCAATGCGT TC-3′; N-cadherin-F: 5′'-AGCCAACCTTAACTGAGG AGT-3′, N-cadherin-R: 5′-GGCAAGTTGATTGGAGGG ATG-3'; Vimentin-F: 5′-GAGAACTTTGCCGTTGAAG C-3′, Vimentin-R: 5′-GCTTCCTGTAGGTGGCAAT C-3′; ZEB1-F: 5′-ATGCAGCTGACTGTGAAGGT-3′, ZEB1-R: 5′-GAAAATGCATCTGGTGTTCC-3′; ZEB2-F: 5′-GTCCATGCGAACTGCCATCTGATCCGCTCT-3′, ZEB2-R: 5′-GGCTTGCAGAATCTCGCCAC-3′; CK5-F: 5′-CAGAGCCACCTTCTGCGTCCTG-3′, CK5-R: 5′-GC TGAAGCTACGACTGCCCCC-3′; CK10-F: 5′-GGTGG GAGTTATGGAGGCAG-3′, CK10-R: 5′-CGAACTTTG TCCAAGTAGGAAGC-3′; β-catenin-F: 5′-GCTACTGT TGGATTGATTCGAAATC-3′, β-catenin-R: 5′-CCCTG CTCACGCAAAGGT-3′ and GAPDH-F: 5′-TTGCCATC AATGACCCCTTCA-3′, GAPDH-R: 5′-CGCCCCACTT GATTTTGGA-3′.</s>
+        </p>
+      </div>
+      <div>
+        <head>Antibodies</head>
+        <p>
+          <s>The following antibodies were used in this study: SHROOM2 (SAB2700199), Vinculin (V9131) and Phalloidin-Tetramethylrhodamine B isothiocyanate (P1951)</s>
+        </p>
+        <p>
+          <s>were from Sigma; E-Cadherin (24E10), N-Cadherin (13116), MLC2 (3672), p-MLC2 (T18/S19) (3674), HA (3724) were from Cell Signaling Technology; ROCK1 (ab58305), CK5 (ab52635), CK10 (ab76318), Desmoglein1 (ab12077) and RAC1 (ab155938) were from abcam; p-MYPT (ABS45) was from Millipore and Fibronectin (610077) was from BD biosciences.</s>
+          <s>Horseradish peroxidase-conjugated goat antimouse/rabbit secondary antibodies were purchased from Promega.</s>
+        </p>
+        <p>
+          <s>Immunofluorescence microscopy, cell proliferation, colony formation, soft agar assays were performed as described previously <ref target="#b7" type="bibr">8,</ref>
+            <ref target="#b41" type="bibr">42</ref> .</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Migration and invasion assays</head>
+        <p>
+          <s>Cell migration and invasion were analyzed using nonmatrigel-coated transwell chambers (8 μm pore size polycarbonate filter) (FALCON) and matrigel-coated invasion chamber (Corning), respectively.</s>
+          <s>Briefly, cells were resuspended in 200 μL DMEM medium (4 × 10 4 for HONE1 cells and 8 × 10 4 for SUNE1 cells) and plated in the upper insert of a 24-well chamber.</s>
+          <s>Cells were incubated for 20 h at 37°C and cells on the upper side of the filters were removed by scrubbing with a cotton swab.</s>
+          <s>The cells on the bottom surface of the membrane were subsequently fixed with methanol for 10 min and stained with crystal violet dye for 30 min.</s>
+          <s id="dataset-2" type="Image:Microscopy">Migrated and invasive cells were counted in five randomly chosen fields using an inverted microscope (OLYMPUS, IX71).</s>
+        </p>
+      </div>
+      <div>
+        <head>Scratch wound assay</head>
+      </div>
+      <div>
+        <head n="6">× 10</head>
+        <p>
+          <s>5 SUNE1 cells and 7.5 × 10 5 HONE1 cells were seeded in a six-well plate, respectively.</s>
+          <s>After culturing for 24 h, cells were scratched with a 10 μL tip pipette to generate consistently sized wounds.</s>
+          <s>Cells at the same wound site were photographed at the times indicated after scratching.</s>
+        </p>
+      </div>
+      <div>
+        <head>3D culture assay</head>
+        <p>
+          <s>Cells from each group were collected and resuspended in Matrigel at a concentration of 5 × 10 3 per 50 μL, and plated into the center of each well in 24-well plates.</s>
+          <s>Culture medium was composed of the basal medium-advanced DMEM/F12 and supplements including GlutaMAX, B27 serum-free supplement, N2 supplement (Life technologies), 10 mM HEPES and 1 mM N-Acetyl-L-cysteine (Sigma).</s>
+          <s>Cells were then covered with culture medium and grown for 6-9 days, changing medium every 2 days.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Tissue samples and immunohistochemistry</head>
+        <p>
+          <s>The human study was approved by Ethic Committees of Sun Yat-sen University Cancer Center (Protocol No. YB2013-04).</s>
+          <s>This study was conducted under the provisions of the Declaration of Helsinki and informed written consents were obtained from all patients.</s>
+          <s>A total of 60 specimens of NPC tissue with normal tissue adjacent to the tumors were obtained from Sun yat-sen university cancer center (SYSUCC, Guangzhou, China).</s>
+          <s>Tissue samples that had been histologically and clinically confirmed were obtained from the archives of the Department of Sample Resources, Sun Yat-sen University Cancer Center.</s>
+          <s id="dataset-3" type="Tabular data">For metastasis study, an additional cohort of 15 patient samples with paired primary and metastatic tumors were collected.</s>
+          <s>Among them, 12 patients with lymphatic metastasis and 3 with liver metastasis.</s>
+        </p>
+        <p>
+          <s>Immunohistochemistry of the paraffin-embedded sections was performed as previously described <ref target="#b41" type="bibr">42</ref> .</s>
+          <s>The sections were incubated overnight at 4°C with rabbit anti-SHROOM2.</s>
+          <s>The degree of immunostaining was evaluated and scored independently by two pathologists, and the staining intensity and proportion of positively stained tumor cells were used as evaluation criteria.</s>
+          <s>The tumor cell proportion was scored as follows: 0 (no positive tumor cells), 1 (≤30% positive tumor cells), 2 (31-50% positive tumor cells), 3 (51-75% positive tumor cells), and 4 (≥76% positive tumor cells).</s>
+          <s>The staining intensity was graded according to the following criteria: 0 (no staining), 1 (weak staining, light yellow), 2 (moderate staining, yellowish brown), and 3 (intense staining, brown).</s>
+          <s>The staining index was calculated by multiplying the above two scores to yield a final score of 0, 1, 2, 3, 4, 6, 8, 9, or 12.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Animal studies</head>
+        <p>
+          <s>All the animal experiments were performed with the approval of Institutional Animal Care and Use Committee of Sun Yat-sen University (reference no.</s>
+          <s>GZR2016-105) and the animals were handled in accordance with institutional guidelines.</s>
+          <s>Female BALB/c nude mice of 5-week-old were purchased from Shanghai Laboratory Animal Center were chosen randomly to perform in vivo assay.</s>
+          <s>For tumorigenicity assay, 1 × 10 6 SHROOM2 stable knockdown cells or control cells were injected subcutaneously into the right dorsal flank of each mouse, respectively.</s>
+          <s id="dataset-4" type="Tabular data">Tumor volume (V) was measured every two days and calculated with the formula V = (length × width 2 )/2.</s>
+          <s>For tail vein assay of metastasis, SHROOM2 knockdown cells or control cells (1 × 10 6 cells) were injected intravenously though the tail vein into each nude mouse.</s>
+          <s>All mice were sacrificed 8 weeks after inoculation.</s>
+          <s>Lungs were formalin-fixed, paraffin-embedded, then sectioned 4 μm thick and stained with H&amp;E.</s>
+        </p>
+        <p>
+          <s>Spontaneous lymph node metastasis assay was performed as described previously.</s>
+          <s>Briefly, 2 × 10 5 cancer cells were injected s.c.</s>
+          <s>into the footpad of left hind limb of each nude mouse.</s>
+          <s>After seven weeks observation, the mice were sacrificed and the popliteal lymph nodes from both hind limbs were isolated using a dissecting microscope.</s>
+        </p>
+      </div>
+      <div>
+        <head>Affinity purification of SHROOM2</head>
+        <p>
+          <s>HEK293T cells stably expressing SFB (S-Flag-Streptavidin-binding peptide) -tagged SHROOM2 were amplified and subjected to TAP according to our previous methods <ref target="#b42" type="bibr">43,</ref>
+            <ref target="#b43" type="bibr">44</ref> .</s>
+          <s>Mass spectrometry (MS) were performed by Beijing Proteome Research Center.</s>
+          <s>The MS list of SHROOM2-interacting proteins can be found in Supplementary <ref type="table">Table 1</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Statistical analysis</head>
+        <p>
+          <s>Data were analyzed with the GraphPad Prism 6 software.</s>
+          <s>Two-tailed Student's t-test was used to compare the statistical differences between groups.</s>
+          <s>All p values &lt;0.05 were considered statistically significant.</s>
+        </p>
+      </div>
+      <div>
+        <head>Data availability</head>
+        <p>
+          <s>The transcriptome has been deposited in the NCBI's Gene Expression Omnibus (GEO) (http://www.ncbi.nlm.nih.gov/geo) with the accession number GSE119020.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig. 1</head>
+        <label>1</label>
+        <figDesc>Fig. 1 SHROOM2 is downregulated in NPC cell lines and tumor tissues. a Quantitative PCR analysis of SHROOM2 expression in NPE and NPC cell lines. b (left) Western blot analysis of SHROOM2 expression in cell lines as in a with β-tubulin as the loading control. (right) Quantification of western blot with ImageJ. c Immunohistochemical (IHC) image of NPC sample containing both normal adjacent epithelial and tumor tissues stained with an anti-SHROOM2 antibody, together with an enlarged view of each in the corresponding inset. Scale bar: 100 μm. d (top) Immunohistochemistry staining of SHROOM2 in NPC biopsies. Scale bar: 50 μm. (bottom) Scatterplots representing the IHC scores of SHROOM2 in 60 NPC tissues and paired adjacent normal nasopharynx tissues (two-tailed unpaired t-test)</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig. 2</head>
+        <label>2</label>
+        <figDesc>Fig. 2 SHROOM2 suppresses cell migration and invasion. a Immunobloting of SHROOM2 in HONE1 cells that stably expressing pBABE-SHROOM2. b Representative images (left) and quantification (right) of Transwell cell migration and invasion assays for HONE1 cells that stably expressing ectopic SHROOM2 or empty vector. Scale bar: 100 μm. Mean ± SD, n = 3. c Western blot analysis of HONE1 cells infected with control lentivirus or lentivirus carrying SHROOM2-specific shRNAs. d Representative images (top) and quantification (bottom) of Transwell cell migration and invasion assays for control HONE1 cells or HONE1 cells with SHROOM2 knockdown by three independent shRNAs. Scale bar: 100 μm. Mean ± SD, n = 3. e Wound healing assays for control and SHROOM2 knockdown HONE1 cells. Scale bar: 100 μm. f Representative images (left) and quantification (right) of Transwell cell migration assays for control and SHROOM2 knockdown HONE1 cells treated with 20 μM Y-27632 or DMSO for 24 h. Scale bar: 50 μm. Mean ± SD, n = 3. g Transwell invasion assays as in f except the upper chamber was coated with Matrigel. Scale bar: 50 μm. *p &lt; 0.05, **p &lt; 0.01, ***p &lt; 0.001, two-tailed unpaired t-test</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig. 3</head>
+        <label>3</label>
+        <figDesc>Fig. 3 SHROOM2 inhibits NPC metastasis. a Metastatic nodule on the lung surface driven by tail vein injection of control and SHROOM2 knockdown HONE1 cells. b (left) Lung sections stained by hematoxylin and eosin (H&amp;E) showed more metastatic nodules in SHROOM2 knockdown cells than in control cells. (right) Number of metastatic nodules formed in lung of mice injected with control and SHROOM2 knockdown cells, n = 10, two-tailed unpaired t-test. c Representative images (top) and quantification (bottom) of mice with lymph node (LN) metastasis. Control or SHROOM2 knockdown HONE1 cells were injected into the left hind foodpat of athymic mice, 7 weeks later the LN metastasis were determined by naked eye and H&amp;E staining (d), n = 8. e (top) Representative images of H&amp;E and IHC staining for SHROOM2 in 15 paired primary and metastatic NPC tumor samples. (bottom) Tissue image analysis with Image-Pro Plus 6.0 according to the average integrated optical density (IOD) per stained area (μm 2 ) (IOD/area). Five independent images taken from each group were analyzed, and the results are shown as the means ± SD (two-tailed unpaired t-test)</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Fig. 4</head>
+        <label>4</label>
+        <figDesc>Fig. 4 SHROOM2 is required for epithelial morphology maintenance. a Morphology of control and SHROOM2 knockdown HONE1 cells observed by bright field microscopy. b (top) Colonies formed by control and SHROOM2 knockdown HONE1 cells on conventional tissue culture plates. (middle) Representative colony images as classified with Type I, II and III. (bottom) Quantification of different types of colonies formed by control and SHROOM2 knockdown cells. c Morphological features of control and SHROOM2-depleted HONE1 cells in soft agar culture. Scale bar: 50 μm. d Quantification of spheres formed in c with irregular shapes (left) and total number of the spheres (right). e (top) Morphology and (bottom) quantification of spheres with irregular shape of control and SHROOM2-depleted HONE1 cells grown in Matrigel. ns not significant, *p &lt; 0.05, **p &lt; 0.01, ***p &lt; 0.001, two-tailed unpaired t-test</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Fig. 5</head>
+        <label>5</label>
+        <figDesc>Fig. 5 SHROOM2 inhibits EMT. a Gene set enrichment analysis (GSEA) of microarray data of control and SHROOM2 knockdown HONE1 cells. NES normalized enrichment score. b GSEA plot showing an enrichment of gene signatures associated with EMT between control and SHROOM2 knockdown HONE1 cells; FDR: false-discovery rate. c Heat map of the EMT-related genes up-and downregulated by SHROOM2 depletion from the microarray data. The scale is −2 to +2 in log 10. d Western blot analysis of EMT markers in HONE1 and SUNE1 cells infected with lentivirus carrying control shRNA or shRNAs targeting SHROOM2. e Reconstitution of SHROOM2 into SHROOM2-depleted HONE1 cells rescued E-and N-cadherin expression. Asterisk denotes shRNA-resistant SHROOM2. f Immunofluorescence staining of EMT markers (top) and keratins (bottom, left) in control and SHROOM2-depleted HONE1 cells. Quantification of the percentage of the positive staining was shown (bottom, right). Experiments were performed in triplicate and at least 100 cells were counted in each experiment. g qPCR analysis of cell-cell junction molecules and EMT markers in control and SHROOM2-depleted cells. Mean ± SD, n = 3. *p &lt; 0.05, **p &lt; 0.01, ***p &lt; 0.001, two-tailed unpaired t-test</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
+        <head>Fig. 6</head>
+        <label>6</label>
+        <figDesc>Fig. 6 SHROOM2 regulates stress fibers and focal adhesions via ROCK pathway but inhibits EMT independently of ROCK. a Immunofluorescence staining of ROCK and MLC2 in control and SHROOM2-depleted HONE1 cells. b Immunoblotting of phosphorylated MLC2 and MYPT in control and SHROOM2-depleted HONE1 cells. c Subcellular localization of Vinculin and Actin in control and SHROOM2-depleted cells treated with 20 μM Y-27632 or DMSO for 24 h. d Immunostaining of Desmoglein1 and CK5 in control and SHROOM2 knockdown HONE1 cells with or without Y-27632 treatment. e WB analysis of phospho-MLC2 and EMT markers in control and SHROOM2-depleted HONE1 cells with or without Y-27632 treatment as in c. f WB analysis of CK5 expression as in e</figDesc>
+      </figure>
+      <note place="foot">Official journal of the Cell Death Differentiation Association</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>This work was supported by the National Key R&amp;D Program of China (2017YFA0505600), the National Natural Science Foundation of China (81672980, 81372882, 81874129, and 81874130), the Key Program of Sun Yatsen University (16ykjc33), and the Sci-Tech Project Foundation of Guangzhou City (201707020039).</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Cancer metastases: early dissemination and late recurrences</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Friberg</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Nystrom</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cancer Growth Metastas</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope from="43" to="49" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">L K</forename>
+                  <surname>Chua</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">T S</forename>
+                  <surname>Wee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Hui</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Chan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">C. Nasopharyngeal carcinoma. Lancet</title>
+              <imprint>
+                <biblScope unit="volume">387</biblScope>
+                <biblScope from="1012" to="1024" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Nasopharyngeal carcinoma incidence and mortality in China in 2010</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Wei</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Chin. J. Cancer</title>
+              <imprint>
+                <biblScope unit="volume">33</biblScope>
+                <biblScope from="381" to="387" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Targeting tumor cell motility as a strategy against invasion and metastasis</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Wells</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Grahovac</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Wheeler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Ma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Lauffenburger</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Trends Pharmacol. Sci</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope from="283" to="289" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Nieto</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Huang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Jackson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Thiery</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Emt</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell</title>
+              <imprint>
+                <biblScope unit="volume">166</biblScope>
+                <biblScope from="21" to="45" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">EMT in metastasis: finding the right balance</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Lo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Dev. Cell</title>
+              <imprint>
+                <biblScope unit="volume">45</biblScope>
+                <biblScope from="663" to="665" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Epithelial-to-mesenchymal transition in cancer: complexity and opportunities</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Weinberg</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Front. Med</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope from="361" to="373" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">OVOL2 links stemness and metastasis via fine-tuning epithelialmesenchymal transition in nasopharyngeal carcinoma</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Qi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Theranostics</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope from="2202" to="2216" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Rho GTPases: functions and association with cancer</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Ellenbroek</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Collard</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Clin. Exp. Metastas</title>
+              <imprint>
+                <biblScope unit="volume">24</biblScope>
+                <biblScope from="657" to="672" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Role of Rho GTPases in breast cancer</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Tang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Olufemi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Nie</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Front. Biosci</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope from="759" to="776" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Regulation of myosin phosphatase by Rho and Rho-associated kinase (Rho-kinase)</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Kimura</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">273</biblScope>
+                <biblScope from="245" to="248" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Formation of actin stress fibers and focal adhesions enhanced by Rho-kinase</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Amano</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">275</biblScope>
+                <biblScope from="1308" to="1311" unit="page"/>
+                <date type="published" when="1997"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Rocks: multifunctional kinases in cell behaviour</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Riento</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Ridley</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Rev. Mol. Cell Biol</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope from="446" to="456" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Amano</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Nakayama</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Kaibuchi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">/</forename>
+                  <surname>Rho-Kinase</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Rock</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cytoskeleton</title>
+              <imprint>
+                <biblScope unit="volume">67</biblScope>
+                <biblScope from="545" to="554" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">133p53 isoform promotes tumour invasion and metastasis via interleukin-6 activation of JAK-STAT and RhoA-ROCK signalling</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Campbell</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Commun</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="page">254</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Gastrin stimulates pancreatic cancer cell directional migration by activating the Galpha12/13-RhoA-ROCK signaling pathway</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Mu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Exp. Mol. Med</title>
+              <imprint>
+                <biblScope unit="volume">50</biblScope>
+                <biblScope unit="page">59</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">ROCK-I and ROCK-II cooperatively regulate closure of eyelid and ventral body wall in mouse embryo</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Thumkeo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Shimizu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Sakamoto</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Yamada</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Narumiya</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genes Cells</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope from="825" to="834" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">An essential part for Rho-associated kinase in the transcellular invasion of tumor cells</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Itoh</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Med</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope from="221" to="225" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Inhibition of intrahepatic metastasis of human hepatocellular carcinoma by Rho-associated protein kinase inhibitor Y-27632</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Takamura</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Hepatology</title>
+              <imprint>
+                <biblScope unit="volume">33</biblScope>
+                <biblScope from="577" to="581" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Rhoassociated kinase inhibitor, Y27632, inhibits the invasion and proliferation of T24 and 5367 bladder cancer cells</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Jiang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Wen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Luo</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol. Med. Rep</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope from="7526" to="7530" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Loss of SMAD4 alters BMP signaling to promote colorectal cancer cell metastasis via activation of Rho and ROCK</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Voorneveld</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Gastroenterology</title>
+              <imprint>
+                <biblScope unit="volume">147</biblScope>
+                <biblScope unit="page">113</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Involvement of Rho/ROCK signalling in small cell lung cancer migration through human brain microvascular endothelial cells</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">FEBS Lett</title>
+              <imprint>
+                <biblScope unit="volume">580</biblScope>
+                <biblScope from="4252" to="4260" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Treatment with Y-27632, a ROCK inhibitor, increases the proinvasive nature of SW620 cells on 3D collagen type 1 matrix</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Vishnubhotla</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Bharadwaj</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Sun</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Metlushko</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Glover</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int. J. Cell Biol</title>
+              <imprint>
+                <biblScope unit="page">259142</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">ARHGAP18 downregulation by miR-200b suppresses metastasis of triple-negative breast cancer by enhancing activation of RhoA</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Humphries</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cancer Res</title>
+              <imprint>
+                <biblScope unit="volume">77</biblScope>
+                <biblScope from="4051" to="4064" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">RHOA inactivation enhances Wnt signalling and promotes colorectal cancer</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Rodrigues</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Commun</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="page">5458</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Crosstalk of Ras and Rho: activation of RhoA abates Krasinduced liver tumorigenesis in transgenic zebrafish models</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Chew</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Oncogene</title>
+              <imprint>
+                <biblScope unit="volume">33</biblScope>
+                <biblScope from="2717" to="2727" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Shroom2 regulates contractility to control endothelial morphogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Farber</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Rizaldy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Hildebrand</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol. Biol. Cell</title>
+              <imprint>
+                <biblScope unit="volume">22</biblScope>
+                <biblScope from="795" to="805" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Structure of Shroom domain 2 reveals a three-segmented coiled-coil required for dimerization, Rock binding, and apical constriction</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Mohan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol. Biol. Cell</title>
+              <imprint>
+                <biblScope unit="volume">23</biblScope>
+                <biblScope from="2131" to="2142" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Structure of the Shroom-Rho kinase complex reveals a binding interface with monomeric shroom that regulates cell morphology and stimulates kinase activity</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Zalewski</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Biol. Chem</title>
+              <imprint>
+                <biblScope unit="volume">291</biblScope>
+                <biblScope from="25364" to="25374" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">STAT3 expression, activity and functional consequences of STAT3 inhibition in esophageal squamous cell carcinomas and Barrett's adenocarcinomas</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Timme</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Oncogene</title>
+              <imprint>
+                <biblScope unit="volume">33</biblScope>
+                <biblScope from="3256" to="3266" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Common variation near CDKN1A, POLD3 and SHROOM2 influences colorectal cancer risk</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Dunlop</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Genet</title>
+              <imprint>
+                <biblScope unit="volume">44</biblScope>
+                <biblScope from="770" to="776" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Two epithelial tumor cell lines (HNE-1 and HONE-1) latently infected with Epstein-Barr virus that were derived from nasopharyngeal carcinomas</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Glaser</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proc. Natl Acad. Sci. USA</title>
+              <imprint>
+                <biblScope unit="volume">86</biblScope>
+                <biblScope from="9524" to="9528" unit="page"/>
+                <date type="published" when="1989"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Shroom family proteins regulate gamma-tubulin distribution and microtubule architecture during epithelial cell shape change</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Scherr</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Wallingford</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Development</title>
+              <imprint>
+                <biblScope unit="volume">134</biblScope>
+                <biblScope from="1431" to="1441" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Shroom3-mediated recruitment of Rho kinases to the apical cell junctions regulates epithelial and neuroepithelial planar remodeling</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Nishimura</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Takeichi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Development</title>
+              <imprint>
+                <biblScope unit="volume">135</biblScope>
+                <biblScope from="1493" to="1502" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">The small GTP-binding protein Rho binds to and activates a 160 kDa Ser/Thr protein kinase homologous to myotonic dystrophy kinase</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Ishizaki</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">EMBO J</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope from="1885" to="1893" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">Rho-associated kinase, a novel serine/threonine kinase, as a putative target for small GTP binding protein Rho</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Matsui</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">EMBO J</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope from="2208" to="2216" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">Arachidonic acid-induced Ca2+sensitization of smooth muscle contraction through activation of Rho-kinase</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Araki</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Pflug. Arch</title>
+              <imprint>
+                <biblScope unit="volume">441</biblScope>
+                <biblScope from="596" to="603" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">p160ROCK, a Rho-associated coiled-coil forming protein kinase, works downstream of Rho and induces focal adhesions</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Ishizaki</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">FEBS Lett</title>
+              <imprint>
+                <biblScope unit="volume">404</biblScope>
+                <biblScope from="118" to="124" unit="page"/>
+                <date type="published" when="1997"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">ROCK and Dia have opposing effects on adherens junctions downstream of Rho</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Sahai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Marshall</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Cell Biol</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope from="408" to="415" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">Genetic and functional analysis of SHROOM1-4 in a Chinese neural tube defect cohort</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Kuang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Finnell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Hum. Genet</title>
+              <imprint>
+                <biblScope unit="volume">137</biblScope>
+                <biblScope from="195" to="202" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Epithelial-mesenchymal transitions in development and disease</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Thiery</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Acloque</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Huang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Nieto</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell</title>
+              <imprint>
+                <biblScope unit="volume">139</biblScope>
+                <biblScope from="871" to="890" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">BET bromodomain inhibitor JQ1 preferentially suppresses EBVpositive nasopharyngeal carcinoma cells partially through repressing c-Myc</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell Death Dis</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="page">761</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title level="a" type="main">Epstein-Barr virus activates F-box protein FBXO2 to limit viral infectivity by targeting glycoprotein B for degradation</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS Pathog</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope unit="page">1007208</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">TNFRSF19 inhibits TGFbeta signaling through interaction with TGFbeta receptor type I to promote tumorigenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Deng</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cancer Res</title>
+              <imprint>
+                <biblScope unit="volume">78</biblScope>
+                <biblScope from="3469" to="3483" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

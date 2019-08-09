@@ -646,7 +646,7 @@
         <p>
           <s>The co-localization in different DNA regions was analyzed using an automated image segmentation pipeline in FIJI.</s>
           <s>Briefly, nuclei were identified and segmented based on the Hoechst signal and 3 regions with high, medium and low Hoechst levels within each nucleus were defined by k-means clustering.</s>
-          <s id="0" type="Tabular data">Subsequently, the corresponding YPet signal in each of the 3 regions was measured.</s>
+          <s id="dataset-1" type="Tabular data">Subsequently, the corresponding YPet signal in each of the 3 regions was measured.</s>
           <s>Ten cells were analyzed per cell line.</s>
         </p>
         <p>
@@ -698,7 +698,7 @@
           <s>Input samples were treated with 100 mg/ml RNase A and 400 ng ml −1 Proteinase K and reverse crosslinked at 65°C 1100 rpm overnight.</s>
           <s>Samples were purified using Qiagen MinElute PCR purification kit.</s>
           <s>Libraries were prepared with NEBNext ChIP-seq Library Prep Master Mix Set (NEB, #E6040) using insert size selection of 250 bp.</s>
-          <s id="1" type="Genetic Data:High-Throughput Nucleotide Sequencing:NextSeq">Sequencing was performed using 37 nt paired-end reads on an Illumina NextSeq 500.</s>
+          <s id="dataset-2" type="Genetic Data:High-Throughput Nucleotide Sequencing:NextSeq">Sequencing was performed using 37 nt paired-end reads on an Illumina NextSeq 500.</s>
           <s>Reads were aligned to the mouse reference genome mm10 using STAR <ref target="#b72" type="bibr">73</ref> with settings '--alignMatesGapMax 2000 --alignIntronMax 1 --alignEndsType EndtoEnd --outFilterMultimapNmax 1'.</s>
           <s>Duplicate reads were removed with Picard (Broad Institute) and reads not mapping to chromosomes 1-19, X, or Y were removed.</s>
           <s>For each sample, peaks were called with MACS2 <ref target="#b73" type="bibr">74</ref> with settings '-f BAMPE -g mm' (and '-q 0.01' for <ref target="#fig_4" type="figure">Supplementary Fig. 4a</ref> ).</s>

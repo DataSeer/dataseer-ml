@@ -1,0 +1,1857 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T07:54+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Histone methyltransferase NSD2 regulates apoptosis and chemosensitivity in osteosarcoma</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Chao</forename>
+                <surname>He</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Chao</forename>
+                <surname>Liu</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Lei</forename>
+                <surname>Wang</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Yangbai</forename>
+                <surname>Sun</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Yuhang</forename>
+                <surname>Jiang</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Yongqiang</forename>
+                <surname>Hao</surname>
+              </persName>
+            </author>
+            <title level="a" type="main">Histone methyltransferase NSD2 regulates apoptosis and chemosensitivity in osteosarcoma</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41419-019-1347-1</idno>
+          <note>He et al. Cell Death and Disease (2019) 10:65 Cell Death &amp; Disease A R T I C L E O p e n A c c e s s</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <head>Abstract</head>
+          <p>
+            <s>Osteosarcoma (OS) is a primary malignant bone tumour.</s>
+            <s>However, the genetic basis for the pathogenesis of OS remains elusive.</s>
+            <s>In this study, we uncovered the role of the histone methyltransferase NSD2 in regulating tumourigenesis and chemosensitivity in OS.</s>
+            <s>We show that NSD2 knockdown leads to increased apoptosis in OS cells in vitro and in vivo.</s>
+            <s>Additionally, NSD2 knockdown significantly enhances the efficacy of cisplatin against OS cells and accordingly inhibits properties associated with cancer stem cells (CSCs).</s>
+            <s>Furthermore, RNA sequencing (RNAseq) and Gene Ontology (GO) analysis revealed that NSD2 promotes transcription of genes associated with negative regulation of apoptotic signalling pathways and CSC properties.</s>
+            <s>The results of chromatin immunoprecipitation quantitative polymerase chain reaction (ChIP-qPCR) assays indicated that NSD2 knockdown leads to decreased H3K36me2 modification at BCL2 and SOX2 loci, thus inhibiting the transcription of these two genes that are closely correlated with apoptosis, CSC properties and chemosensitivity in OS cells.</s>
+            <s>Pathway analysis demonstrated that the ERK and AKT pathways mediate the regulation of OS progression and chemosensitivity by NSD2.</s>
+            <s>Overall, our study is the first to uncover the function of NSD2 in OS chemosensitivity.</s>
+            <s>NSD2 regulates the expression of the apoptosis regulatory proteins BCL2 and SOX2 through the ERK and AKT pathways.</s>
+            <s>Our results suggest that NSD2 is a new target for combined chemotherapy and is a prognostic factor for OS.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Introduction</head>
+        <p>
+          <s>Osteosarcoma (OS) is one of the most common malignant bone tumours and arises primarily in children and adolescents <ref target="#b0" type="bibr">1</ref> .</s>
+          <s>In adults aged &gt;65 years, OS develops as a secondary malignancy related to Paget's disease of bone <ref target="#b1" type="bibr">2</ref> .</s>
+          <s>To date, chemotherapy has been frequently included in conventional treatment of OS along with surgical resection.</s>
+          <s>Since the 1970s, the introduction of adjuvant chemotherapies to OS treatment has impressively improved the 5-year survival rate.</s>
+          <s>In addition, in patients with localized disease, the strongest predictor of overall survival is the patient's response to preoperative combination chemotherapy <ref target="#b2" type="bibr">3</ref> .</s>
+          <s>Unfortunately, the 5-year survival rate has remained at approximately 20% over the past 20 years without changing <ref target="#b3" type="bibr">4,</ref>
+            <ref target="#b4" type="bibr">5</ref> , which is partly due to chemoresistance.</s>
+          <s>Cisplatin is a National Comprehensive Cancer Network first-line chemotherapy medication commonly used for clinical treatment of OS and a variety of other tumours <ref target="#b2" type="bibr">3</ref> .</s>
+          <s>In OS patients, cisplatin shows a response rate of approximately 30%, indicating that a significant proportion of OS patients are intrinsically resistant to cisplatin.</s>
+          <s>Therefore, there is an urgent need to develop new strategies to further improve the long-term survival rates of OS patients.</s>
+        </p>
+        <p>
+          <s>Epigenetic perturbations caused by histone methyltransferases or demethylases are recognized as important contributing factors to a variety of tumours <ref target="#b5" type="bibr">6</ref> , and epigenetic markers have frequently been found to be mutated or dysregulated in multiple cancers <ref target="#b6" type="bibr">7</ref> .</s>
+          <s>NSD2, which belongs to the NSD family of histone lysine methyltransferases (HMTases) <ref target="#b7" type="bibr">8</ref> , is a histone methyltransferase that mediates dimethylation of histone 3 lysine 36 (H3K36me2); H3K36 methylation is typically a permissive marker associated with transcriptional activation <ref target="#b8" type="bibr">[9]</ref>
+            <ref target="#b9" type="bibr">[10]</ref>
+            <ref target="#b10" type="bibr">[11]</ref> .</s>
+          <s>NSD2 was first reported to function as an oncogenic gene in multiple myeloma <ref target="#b11" type="bibr">[12]</ref>
+            <ref target="#b12" type="bibr">[13]</ref>
+            <ref target="#b13" type="bibr">[14]</ref> .</s>
+          <s>In addition, NSD2 is highly expressed in many solid tumours, such as those in prostate cancer, breast cancer and head and neck cancer <ref target="#b11" type="bibr">[12]</ref>
+            <ref target="#b12" type="bibr">[13]</ref>
+            <ref target="#b13" type="bibr">[14]</ref> .</s>
+          <s>However, whether NSD2 mediates chemosensitivity in OS has not been reported.</s>
+        </p>
+        <p>
+          <s>In this study, the results indicated that NSD2 is upregulated in OS tissues compared with normal tissues and that NSD2 knockdown can enhance OS apoptosis and sensitize OS to cisplatin by directly decreasing H3K36me2 levels at BCL2 and SOX2 gene loci, as measured by chromatin immunoprecipitation (ChIP) analysis.</s>
+          <s>Pathway analysis illustrated that the extracellular signal-regulated kinase (ERK) and AKT signalling pathways are reversed when NSD2 is knocked down.</s>
+          <s>Together, our results suggest that NSD2 is a novel target for overcoming chemoresistance in OS.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+      </div>
+      <div>
+        <head>NSD2 expression is upregulated in OS and in cisplatinresistant patients</head>
+        <p>
+          <s>To assess the role and clinical relevance of NSD2 in OS, we first assessed NSD2 expression in OS and matched normal peritumoural specimens.</s>
+          <s>Real-time quantitative polymerase chain reaction (RT-qPCR) analysis showed that NSD2 mRNA expression was significantly higher in OS tissues than in matched normal tissues in 20 OS patient biopsies <ref target="#fig_0" type="figure">(Fig. 1a)</ref> .</s>
+          <s>The clinical information of the 20 OS patients is summarized in <ref type="table">Table S1</ref> .</s>
+          <s>Furthermore, NSD2 expression was higher in cisplatinresistant OS biopsies than in cisplatin-sensitive ones, as measured by immunohistochemistry (IHC) and RTqPCR <ref target="#fig_0" type="figure">(Fig. 1b, c)</ref> .</s>
+          <s>Patients with lower NSD2 expression presented better prognoses <ref target="#fig_0" type="figure">(Fig. 1d)</ref> ; the relative clinical information is listed in <ref type="table">Table S2</ref> .</s>
+          <s>Together, these findings suggest that NSD2 is upregulated in OS patients, especially in cisplatin-resistant OS patients, and that lower NSD2 expression predicts better prognoses in OS patients.</s>
+        </p>
+      </div>
+      <div>
+        <head>NSD2 knockdown promotes OS apoptosis in vitro</head>
+        <p>
+          <s>To further test the role of NSD2 in OS, we knocked down NSD2 (NSD2-KD) with a lentiviral system.</s>
+          <s>We generated NSD2-depleted 143B and HOS cells using packaged lentiviruses including two short hairpin RNA (shRNA) sequences targeting NSD2 (the sequences are listed in <ref type="table">Table S4</ref> ) that displayed similar knockdown efficiencies <ref target="#fig_1" type="figure">(Fig. 2a)</ref> .</s>
+          <s>Although previous research on myeloma has indicated that NSD2 can affect the enhancer of zeste homologue 2 (EZH2, a methyltransferase), increase histone 3 lysine 27 trimethylation (H3K27me3) levels and ultimately lead to repression of gene expression <ref target="#b14" type="bibr">15,</ref>
+            <ref target="#b15" type="bibr">16</ref> , the results in our study indicated that H3K27me3 levels were not changed significantly by knockdown of NSD2 <ref target="#fig_0" type="figure">(Fig. S1</ref> ) which is in accordance with the results of Kuo et al. <ref target="#b8" type="bibr">9</ref> .</s>
+          <s>Moreover, the results also indicated that NSD2 knockdown reduced the growth of OS cells, as measured by Cell Counting Kit-8 (CCK-8) and colony-formation assays <ref target="#fig_1" type="figure">(Fig. 2b, c)</ref> .</s>
+          <s>Notably, the outcomes of flow cytometric analysis indicated that there were no significant differences in cell cycle progression between control and NSD2-KD OS cells <ref target="#fig_1" type="figure">(Fig. S2</ref> ).</s>
+          <s>In addition, the percentage of cells that underwent apoptosis was higher among NSD2-KD OS cells than among parental cells <ref target="#fig_1" type="figure">(Fig. 2d)</ref> .</s>
+          <s>Taken together, our results indicate that NSD2 promotes tumourigenesis and inhibits apoptosis in OS.</s>
+        </p>
+      </div>
+      <div>
+        <head>NSD2 knockdown inhibits OS genesis in vivo</head>
+        <p>
+          <s>Next, we used a xenograft mouse model to determine the role of NSD2 in OS tumourigenesis.</s>
+          <s>Three groups of 6-8-week-old athymic nude mice were subcutaneously injected with control or NSD2-KD 143B cells.</s>
+          <s>Tumour volume was monitored every 7 days, and tumour weight was measured on day 21 when the mice were sacrificed.</s>
+          <s>The data indicated that there were dramatic reductions in the size and weight of OS tumours in the NSD2-KD groups compared with the control group <ref target="#fig_2" type="figure">(Fig. 3a-c)</ref> .</s>
+          <s>Then we assessed a range of markers related to tumour cell apoptosis and proliferation via IHC, the results of which indicated that the numbers of cleaved caspase 3-positive and transferase-mediated deoxyuridine triphosphate-biotin nick end labelling (TUNEL)-positive tumour cells were significantly higher in the two NSD2-KD groups than in the control group, although there were no significant differences in Ki67 expression among the groups <ref target="#fig_2" type="figure">(Fig. 3d)</ref> .</s>
+          <s>Taken together, these data support and verify the observations made in vitro and demonstrate that NSD2 knockdown suppresses OS tumourigenesis and enhances apoptosis in vivo.</s>
+        </p>
+      </div>
+      <div>
+        <head>NSD2 deficiency enhances cisplatin efficacy</head>
+        <p>
+          <s>Owing to the significant apoptotic enhancement that occurred after NSD2 knockdown in OS cells, we further estimated the synergistic effect of NSD2 on OS chemosensitivity to cisplatin.</s>
+          <s>The results of CCK-8 and colonyformation assays suggested that NSD2 knockdown significantly sensitized OS cells to cisplatin <ref target="#fig_3" type="figure">(Fig. 4a, b)</ref> , and flow cytometric analysis demonstrated that NSD2 deficiency could magnify the cytotoxic effects of cisplatin <ref target="#fig_3" type="figure">(Fig. 4c)</ref> .</s>
+          <s>The percentage of apoptotic cells was approximately two-fold greater among NSD2-KD cells than among control cells after cisplatin (1 μM) treatment.</s>
+          <s>Thus these results indicate that NSD2 knockdown can promote cisplatin efficacy in vitro.</s>
+        </p>
+      </div>
+      <div>
+        <head>NSD2 regulates cancer stem cell (CSC) properties in OS</head>
+        <p>
+          <s>Accumulating evidence indicates that a specific subset of cells in tumour cell lines or in tumour masses can be classified as CSCs <ref target="#b16" type="bibr">17</ref> .</s>
+          <s>CSCs are closely correlated with chemoresistance and tumourigenesis in many solid tumours <ref target="#b17" type="bibr">18,</ref>
+            <ref target="#b18" type="bibr">19</ref> .</s>
+          <s>Thus we explored whether NSD2 influences OS CSC properties (stemness).</s>
+          <s>The results of sphereformation experiments revealed that NSD2-KD decreased the number and size of tumourspheres in OS cells <ref target="#fig_4" type="figure">(Fig. 5a</ref> ), indicating that NSD2 knockdown was associated with reduced CSC properties.</s>
+          <s>Likewise, RT-qPCR also indicated that CD117, CD133 and SOX2 were repressed in the absence of NSD2 <ref target="#fig_4" type="figure">(Fig. 5b)</ref> .</s>
+          <s>Collectively, these findings highlight that NSD2 promotes CSC properties in OS.</s>
+        </p>
+      </div>
+      <div>
+        <head>NSD2 regulates apoptosis-and CSC-related genes</head>
+        <p>
+          <s>To gain insight into the mechanism by which NSD2 knockdown promotes apoptosis in OS cells and sensitizes the cells to cisplatin, we performed RNA sequencing (RNAseq) using parental and NSD2-KD 143B cells.</s>
+          <s>Gene Ontology (GO) analysis indicated that a number of GO terms associated with cell apoptosis and CSCs, such as "intrinsic apoptotic signalling pathway in response to DNA damage", "positive regulation of apoptotic signalling pathway", "response to drug" and "stem cell differentiation", were enriched for the genes that were differentially expressed in NSD2-KD cells compared with control cells in the presence or absence of cisplatin <ref target="#fig_5" type="figure">(Fig. 6a)</ref> .</s>
+          <s>Based on the results of GO analysis, we then analysed the expression of several genes with RT-qPCR.</s>
+          <s>The results indicated that BCL2 and Sex-determining region Y-box 2 (SOX2) were downregulated but that BAD was upregulated when NSD2 was knocked down in OS cells <ref target="#fig_5" type="figure">(Fig. 6b)</ref> .</s>
+          <s>Western blot analysis further verified that with the knockdown of NSD2, BCL2 and SOX2 were downregulated <ref target="#fig_5" type="figure">(Fig. 6c)</ref> .</s>
+          <s>BCL2 and BAD belong to the BCL2 family, which governs the intrinsic apoptosis pathway <ref target="#b19" type="bibr">[20]</ref>
+            <ref target="#b20" type="bibr">[21]</ref>
+            <ref target="#b21" type="bibr">[22]</ref>
+            <ref target="#b22" type="bibr">[23]</ref>
+            <ref target="#b23" type="bibr">[24]</ref> .</s>
+          <s>In general, BCL2 plays an antiapoptotic role, while BAD plays a proapoptotic role.</s>
+          <s>SOX2 belongs to the highly conserved HMG box family of SOX transcription factors and plays essential roles during embryogenesis as a master regulator in pluripotent embryonic stem cells <ref target="#b24" type="bibr">25</ref> .</s>
+          <s>Several recent studies have shown that exogenous upregulation of SOX2 can promote resistance to chemotherapeutics <ref target="#b25" type="bibr">[26]</ref>
+            <ref target="#b26" type="bibr">[27]</ref>
+            <ref target="#b27" type="bibr">[28]</ref>
+            <ref target="#b28" type="bibr">[29]</ref>
+            <ref target="#b29" type="bibr">[30]</ref>
+            <ref target="#b30" type="bibr">[31]</ref>
+            <ref target="#b31" type="bibr">[32]</ref>
+            <ref target="#b32" type="bibr">[33]</ref>
+            <ref target="#b33" type="bibr">[34]</ref>
+            <ref target="#b34" type="bibr">[35]</ref> .</s>
+          <s>In addition, higher SOX2 levels have been reported to correlate with poorer prognosis in cancers, such as breast, colorectal, oesophageal, ovarian, prostate, and lung cancer as well as in nasopharyngeal and sinonasal carcinoma <ref target="#b31" type="bibr">32,</ref>
+            <ref target="#b32" type="bibr">33,</ref>
+            <ref target="#b34" type="bibr">[35]</ref>
+            <ref target="#b35" type="bibr">[36]</ref>
+            <ref target="#b36" type="bibr">[37]</ref>
+            <ref target="#b37" type="bibr">[38]</ref>
+            <ref target="#b38" type="bibr">[39]</ref>
+            <ref target="#b39" type="bibr">[40]</ref>
+            <ref target="#b40" type="bibr">[41]</ref>
+            <ref target="#b41" type="bibr">[42]</ref> .</s>
+          <s>Taken together, these results indicate that NSD2 deficiency downregulates the expression of the antiapoptotic gene BCL2 and the CSC-associated gene SOX2 but upregulates the expression of the proapoptotic gene BAD.</s>
+        </p>
+        <p>
+          <s>NSD2 mediates H3K36me2 modification at BCL2 and SOX2 loci and regulates the ERK and AKT signalling pathways NSD2 is a histone methyltransferase that catalyses H3K36me2, and H3K36 methylation is a histone marker that generally promotes gene transcription.</s>
+          <s>Thus we further investigated whether NSD2 regulates BCL2 and SOX2 expression directly by modifying H3K36me2 at their gene loci.</s>
+          <s>The results of ChIP-qPCR revealed that NSD2 knockdown reduced H3K36me2 modification and NSD2 enrichment on the BCL2 and SOX2 gene promoters <ref target="#fig_2" type="figure">(Fig. 7a and Fig. S3</ref> ), indicating that knockdown of NSD2 may increase chromatin condensation at BCL2 and SOX2 gene loci and thereby blunt the transcription of these two genes in OS cells.</s>
+          <s>Moreover, pathway analysis demonstrated that 45, 69 and 61 pathways were enriched between the control (Ctrl) and cisplatin-treated (Cis) groups (circle a), the Ctrl and NSD2-KD (KD) groups (circle b) and the control with cisplatin (Ctrl+Cis) and NSD2-KD with cisplatin (KD+Cis) groups (circle c), respectively <ref target="#fig_6" type="figure">(Fig. 7b)</ref> .</s>
+          <s>Notably, 14 pathways were shared among circles a, b and c, including the phosphoinositide-3 kinase-AKT pathway and the mitogen-activated protein kinase pathway <ref target="#fig_6" type="figure">(Fig. 7c)</ref> .</s>
+          <s>Western blot analysis illustrated that phosphorylated ERK and phosphorylated AKT were downregulated upon NSD2 knockdown, while the levels of ERK and AKT were not significantly altered <ref target="#fig_6" type="figure">(Fig. 7d)</ref> .</s>
+          <s>Taken together, these results demonstrate that NSD2 directly regulates BCL2 and SOX2 expression by mediating H3K36me2 modification at their gene loci and also regulates the ERK and AKT signalling pathways <ref target="#fig_6" type="figure">(Fig. 7e)</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>OS is a highly malignant bone tumour with poor prognosis.</s>
+          <s>The conventional therapeutic treatments for OS rely on surgical resection of the tumour bulk combined with chemotherapy and/or radiotherapy and significantly improve the 5-year survival rate of OS patients up to approximately 60-70%.</s>
+          <s>However, the frequency of recurrence and chemotherapy resistance is high, and these issues are the leading contributors to decreased survival time in patients <ref target="#b42" type="bibr">43,</ref>
+            <ref target="#b43" type="bibr">44</ref> .</s>
+          <s>Thus new strategies need to be introduced into treatment regimens.</s>
+        </p>
+        <p>
+          <s>Since it is widely acknowledged that epigenetic modulation plays an important role in cancer progression and resistance to chemotherapy, introduction of agents targeting epigenetic changes could be a new anticancer therapeutic strategy to treat the chemoresistance problem in OS <ref target="#b44" type="bibr">45</ref> .</s>
+          <s>In our study, we first found that NSD2 is upregulated in OS patients, especially in those who are resistant to cisplatin treatment.</s>
+          <s>Additionally, we found that patients with lower NSD2 expression have better prognoses.</s>
+          <s>Then we conducted several experiments in vitro and in vivo, and the results demonstrated that knockdown of NSD2 enhances OS cell apoptosis and has synergistic effects with cisplatin against OS.</s>
+          <s>Lu et al. <ref target="#b45" type="bibr">46</ref> likewise reported that NSD2 knockdown could inhibit OS progression, but these researchers did not further investigate the effects of NSD2 on chemosensitivity in OS.</s>
+          <s>In our study, NSD2 knockdown also repressed the expression of genes associated with CSC properties, such as CD133, CD117 and SOX2.</s>
+          <s>CD133 (also known as prominin-1) is a cell surface transmembrane glycoprotein that has been used to identify and isolate putative CSCs in several types of solid tumours <ref target="#b39" type="bibr">40</ref> , and CD117 (KIT) is also a well-known cell surface marker for stem cells <ref target="#b46" type="bibr">47</ref> .</s>
+          <s>SOX2 has been shown to maintain OS CSCs <ref target="#b47" type="bibr">48</ref> .</s>
+          <s>Besides, Tang et al. <ref target="#b48" type="bibr">49</ref> reported that knockdown of SOX2 inhibited OS cells invasion and migration and Maurizi et al. <ref target="#b49" type="bibr">50</ref> also reported that SOX2 was required for OS development and proliferation.</s>
+          <s>Mechanistically, GO analysis revealed several apoptotic and stem cell-related terms that were enriched for differentially expressed genes between the NSD2-KD group and the control group with or without cisplatin treatment.</s>
+          <s>Upon NSD2 knockdown in OS, BCL2 and SOX2 were downregulated, but BAD was upregulated.</s>
+          <s>Pathway analysis further clarified that the ERK and AKT signalling pathways might mediate the process by which NSD2 knockdown enhances OS apoptosis and strengthens cisplatin efficacy.</s>
+        </p>
+        <p>
+          <s>However, although we revealed direct regulation of BCL2 and SOX2 expression by NSD2, the core subunits or relevant co-factors were not elucidated.</s>
+          <s>Therefore, the underlying mechanisms by which NSD2 recognizes specific genes and modulates their epigenetic modifications remain undefined.</s>
+          <s>In addition, histone methyltransferases can also be involved in methylation of non-histone proteins.</s>
+          <s>For example, the H3K36me3 methyltransferase SETD2 can directly bind to signal transducer and activator of transcription factor 1 (STAT1) and promote its d Western blot analysis of GAPDH, AKT, pAKT, ERK and pERK expression in control and NSD2-KD OS cells with or without cisplatin.</s>
+          <s>e Schematic diagram of the mechanism by which NSD2 mediates OS genesis and chemosensitivity.</s>
+          <s>NSD2 can directly increase H3K36me2 levels at BCL2 and SOX2 loci and activate ERK and AKT signalling pathways to facilitate OS genesis and chemoresistance.</s>
+          <s>*P &lt; 0.05; **P &lt; 0.01 methylation on lysine 525 (K525), leading to STAT1 phosphorylation and activation <ref target="#b50" type="bibr">51</ref> ; however, whether NSD2 mediates modification of certain non-histone proteins to regulate tumourigenesis or chemosensitivity warrants further investigation.</s>
+          <s>In summary, our evidence of the involvement of NSD2 in OS provides a new perspective regarding possible epigenetic regulation in tumourigenesis and apoptosis as well as in chemosensitivity.</s>
+          <s>The results of this study suggest that NSD2 could be a new therapeutic target in combined chemotherapy to enhance OS apoptosis and the response of OS to chemotherapy.</s>
+          <s>In addition, NSD2 could be a prognostic factor for OS.</s>
+          <s>Thus this study has elucidated new strategies for clinical OS treatment regimens.</s>
+        </p>
+      </div>
+      <div>
+        <head>Materials and methods</head>
+      </div>
+      <div>
+        <head>Patients and tissue sample collection</head>
+        <p>
+          <s>The patients with histologically confirmed OS involved in this study were hospitalized at Shanghai Ninth People's Hospital.</s>
+          <s>All participants signed informed consent documents, and all experiments were conducted according to the guidelines of the ethics committee of Shanghai Ninth People's Hospital.</s>
+          <s>The clinical information of the patients is summarized in <ref type="table">Tables S1 and S2</ref> .</s>
+          <s>Based on analysis of cisplatin efficacy, patient biopsies were divided into a cisplatin-sensitive group (inhibition rate 50-100%) and a cisplatin-resistant group (inhibition rate 0-50%).</s>
+          <s>There were no significant differences regarding age or sex between the two groups (P &gt; 0.05).</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Immunohistochemistry</head>
+        <p>
+          <s>IHC was performed on 5-μm-thick formalin-fixed paraffin-embedded slices.</s>
+          <s>After deparaffinization, rehydration, antigen retrieval and endogenous peroxidase inhibition, the samples were incubated with anti-NSD2 (Abcam), anti-TUNEL (Roche) and anti-cleaved caspase 3 (Servicebio) antibodies at 4°C for 8-10 h.</s>
+          <s>After the secondary antibody was applied, diaminobenzidine (DAKO) solution was used as a chromogen.</s>
+          <s>Furthermore, haematoxylin (Sigma) staining was performed to identify nuclei.</s>
+          <s id="dataset-1" type="Image:Microscopy">Images were acquired using a microscope (Leica DM 4000B).</s>
+        </p>
+      </div>
+      <div>
+        <head>Cell lines and cell culture</head>
+        <p>
+          <s>The human OS cell lines 143B and HOS were purchased from the American Type Culture Collection.</s>
+          <s>The cells were grown in Dulbecco's modified Eagle's medium (HyClone) with 10% foetal bovine serum (Gibco, Australia) and antibiotics (100 U/ml penicillin, 100 µg/ml Streptomycin) in a 37°C humidified atmosphere with 5% CO 2 .</s>
+        </p>
+      </div>
+      <div>
+        <head>Cell viability assay</head>
+        <p>
+          <s>A cell viability assay was performed as previously described <ref target="#b51" type="bibr">52</ref> .</s>
+          <s>In brief, cells were added into 96-well plates at a density of 5 × 10 3 cells/well and incubated with or without reagents for 72 h.</s>
+          <s>Then a 1:10 dilution of CCK-8 reagent in culture medium was added into each well, and the cells were cultured for 2 h while protected from light.</s>
+          <s>Then the optical density was read at 450 nm, and data were collected.</s>
+        </p>
+        <p>
+          <s>Real-time quantitative polymerase chain reaction RNA was isolated using TRIzol Reagent (Invitrogen), and 1 μg of each sample was subjected to RT-qPCR using a TaKaRa RT-PCR kit (Takara, Shiga, Japan) following the manufacturer's protocols.</s>
+          <s>Relative quantification (RQ) was derived from the cycle threshold (Ct) using the equation RQ = 2 −ΔΔCt .</s>
+          <s>The sequences of the primers are listed in <ref type="table">Table S3</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Western blot analysis</head>
+        <p>
+          <s>Protein was extracted under the indicated conditions, and the protein lysate was separated by 10% sodium dodecyl sulphate-polyacrylamide gel electrophoresis.</s>
+          <s>The proteins were then transferred to polyvinylidene fluoride membranes.</s>
+          <s>After being blocked in 10% non-fat milk, the membranes were incubated with specific primary and secondary antibodies.</s>
+          <s>The antibodies used were anti-SOX2 (Active Motif), anti-NSD2 (Cell Signaling Technology, CST), anti-H3K36me2 (Active Motif), antiH3K27me3 (CST), anti-BCL2 (CST), anti-GAPDH (CST), anti-H3 (Abways), anti-ERK (CST), anti-pERK (CST), anti-AKT (CST) and anti-pAKT (CST).</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Colony-formation assay</head>
+        <p>
+          <s>A colony-formation assay was conducted as previously described <ref target="#b51" type="bibr">52</ref> .</s>
+          <s>Briefly, 1000 cells were added into 6-well plates, and after cell attachment, different treatments were added.</s>
+          <s id="dataset-2" type="Tabular data:Assay">On day 7, the colonies were fixed, stained with 0.1% crystal violet and counted.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Flow cytometric analysis</head>
+        <p>
+          <s id="dataset-3" type="Flow cytometry">The percentage of cells undergoing apoptosis was evaluated by flow cytometry (Beckman Gallios).</s>
+          <s>After incubation with cisplatin for 48 h, the cells were harvested, washed and resuspended in 100 μl of binding buffer with 1 µl of 7-aminoactinomycin D (7-AAD; BD Biosciences) and 5 µl of annexin V (BD Biosciences).</s>
+          <s id="dataset-4" type="Tabular data">To assess cell proliferation, the cells with the indicated treatments for 24 h and subsequent experiments were performed using an EdU Cell Proliferation Kit (Beyotime) as instructed.</s>
+          <s>Briefly, the cells were incubated with 10 mM EdU for 2 h, washed, immobilized and permeabilized.</s>
+          <s>Then the cells were treated with Click Additive Solution for 30 min and stained with 7-AAD.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Tumoursphere formation</head>
+        <p>
+          <s>Single-cell suspensions were added to ultralowattachment plates in defined medium <ref target="#b52" type="bibr">53</ref> at a density of 1000 cells/well.</s>
+          <s>Half of the volume of the medium was changed every second day.</s>
+          <s id="dataset-5" type="Image:Microscopy">Images were obtained on day 7 under an inverted microscope.</s>
+          <s>Only spheres &gt;100 μm were quantitated.</s>
+        </p>
+      </div>
+      <div>
+        <head>Short hairpin RNAs</head>
+        <p>
+          <s>Two NSD2-specific shRNAs (sequences listed in <ref type="table">Table S4</ref> ) were designed, and a scramble nonsense sequence was used as a negative control.</s>
+          <s>Lentivirus was packaged using a threeplasmid system including pLVX-shRNA1 with targeted or nonsense sequences, psPAX2 and pMD2G.</s>
+          <s>Stable cell lines were screened with 2 μg/ml puromycin for 2 weeks.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Mice</head>
+        <p>
+          <s>Mice were bred and maintained in specific pathogenfree conditions at the animal experimental centre of Shanghai Ninth People's Hospital.</s>
+          <s>All animal experiments were approved by the ethics committee of Shanghai Ninth People's Hospital.</s>
+          <s>Twenty-four BALB/c athymic nude mice (6-8-week old) were subcutaneously injected with 1 × 10 6 of the indicated OS cells.</s>
+          <s id="dataset-6" type="Tabular data">Tumour volume was evaluated every 7 days as 1/2 (a ×b × b), where a is the major tumour axis length and b is the minor tumour axis length.</s>
+          <s id="dataset-7" type="Tabular data">Tumour weight was measured after the mice were sacrificed on day 21.</s>
+        </p>
+      </div>
+      <div>
+        <head>RNAseq and GO analysis</head>
+        <p>
+          <s>RNA samples were obtained from parental and NSD2-KD1 143B cells that were untreated or treated with cisplatin (1 μM) for 24 h.</s>
+          <s>After the proper pretreatment, the samples were sent to Oebiotech Co. Ltd. for sequencing.</s>
+          <s>Gene expression levels were analysed with the htseqcount <ref target="#b53" type="bibr">54</ref> and Cufflinks 55 programs.</s>
+          <s>All differentially expressed gene lists (q value &lt; 0.05) generated by DESeq <ref target="#b55" type="bibr">56</ref> were subsequently analysed for enrichment of biological terms with the Database for Annotation, Visualization and Integrated Discovery (DAVID) bioinformatics platform.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>ChIP-qPCR analysis</head>
+        <p>
+          <s>Control and NSD2-KD1 143B cells (2 × 10 7 cells) were crosslinked, lysed and sheared using a UCD-300 (Bioruptor) to~200-700 base pairs in length.</s>
+          <s id="dataset-8" type="Tabular data">ChIP was then performed using an EZ ChIP Kit (Millipore; 17-371) according to the manufacturer's instructions.</s>
+          <s id="dataset-9" type="Real-Time Polymerase Chain Reaction">ChIP-enriched DNA was then quantified by RT-qPCR.</s>
+          <s>The ChIP antibodies used were anti-H3K36me2 (Active Motif) and anti-NSD2 (Abcam).</s>
+          <s>The primer sequences are listed in <ref type="table">Table S3</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Statistical analysis</head>
+        <p>
+          <s>All experiments were repeated at least three times as indicated.</s>
+          <s>The mean, standard error of the mean (SEM) and p values based on two-tailed t tests were calculated with Excel (Microsoft).</s>
+          <s>Differences were considered significant at P &lt; 0.05.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig. 1</head>
+        <label>1</label>
+        <figDesc>Fig. 1 NSD2 expression is upregulated in osteosarcoma and in cisplatin-resistant patients. a NSD2 mRNA levels in 20 tumoural and matched peritumoural tissues. NSD2 expression in cisplatin-sensitive and cisplatin-resistant specimens was measured by immunohistochemistry (b) and realtime quantitative polymerase chain reaction (c). d Kaplan-Meier plot of survival time in patients with low and high NSD2 expression. IOD integrated optical density</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig. 2</head>
+        <label>2</label>
+        <figDesc>Fig. 2 NSD2 knockdown promotes osteosarcoma cell apoptosis in vitro. a Real-time quantitative polymerase chain reaction and western blot analysis of the indicated proteins in control and NSD2-KD cells. In vitro growth of control and NSD2-KD 143B and HOS cells was assessed by Cell Counting Kit-8 assay (b) and colony-formation assay (c). d Flow cytometric analysis of apoptosis in control and NSD2-KD OS cells. *P &lt; 0.05; **P &lt; 0.01 compared with the control group</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig. 3</head>
+        <label>3</label>
+        <figDesc>Fig. 3 NSD2 knockdown inhibits osteosarcoma genesis in vivo. a Macroscopic image of tumour size. Diagrams of tumour volume (b) and tumour weight (c) for mice sacrificed at the indicated time points are shown. d Haematoxylin-eosin staining and transferase-mediated deoxyuridine triphosphate-biotin nick end labelling, cleaved caspase 3 and Ki67 staining of representative tumours in the control group and two NSD2-KD groups. **P &lt; 0.01. Scale bar = 50 μm</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Fig. 4</head>
+        <label>4</label>
+        <figDesc>Fig. 4 NSD2 deficiency enhances cisplatin efficacy. In vitro growth of control and NSD2-KD 143B and HOS cells with or without cisplatin as assessed by Cell Counting Kit-8 assay (a) and colony-formation assay (b). c Apoptosis in control and NSD2-KD osteosarcoma cells with the indicated treatments was assessed by staining by Annexin V and 7-aminoactinomycin D. *P &lt; 0.05 and **P &lt; 0.01 compared with the control group</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Fig. 5</head>
+        <label>5</label>
+        <figDesc>Fig. 5 NSD2 regulates cancer stem cell properties in osteosarcoma. a Tumoursphere formation in control and NSD2-KD 143B and HOS cells. b CD117, CD133 and SOX2 mRNA expression in parental and NSD2-KD OS cells. *P &lt; 0.05; **P &lt; 0.01 compared with the control group</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
+        <head>Fig. 6</head>
+        <label>6</label>
+        <figDesc>Fig. 6 NSD2 regulates apoptosis-and cancer stem cell-related genes. a Gene Ontology analysis of differentially expressed genes in NSD2-KD cells compared with control cells without cisplatin (left panel) or with cisplatin (right panel). b Real-time quantitative polymerase chain reaction confirmation of NSD2, BCL2, BAD and SOX2 expression in control and NSD2-KD 143B cells (upper panel) and in HOS cells (lower panel). c Western blot analysis of SOX2, BCL2 and NSD2 expression in parental and NSD2-KD OS cells. *P &lt; 0.05 and **P &lt; 0.01 compared with the control group; # P &lt; 0.05 and ## P &lt; 0.01 compared with the cisplatin-treated group</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
+        <head>Fig. 7</head>
+        <label>7</label>
+        <figDesc>Fig. 7 NSD2 mediates H3K36me2 modification at BCL2 and SOX2 loci and regulates the extracellular signal-regulated kinase (ERK) and AKT signalling pathways. a Chromatin immunoprecipitation-quantitative polymerase chain reaction analysis of H3K36me2 enrichment in the BCL2 and SOX2 gene promoters in control and NSD2-KD osteosarcoma (OS) cells. b Venn diagram of the enriched pathways between the indicated groups. c Fourteen pathways shared by circles a, b and c in b. d Western blot analysis of GAPDH, AKT, pAKT, ERK and pERK expression in control and NSD2-KD OS cells with or without cisplatin. e Schematic diagram of the mechanism by which NSD2 mediates OS genesis and chemosensitivity. NSD2 can directly increase H3K36me2 levels at BCL2 and SOX2 loci and activate ERK and AKT signalling pathways to facilitate OS genesis and chemoresistance. *P &lt; 0.05; **P &lt; 0.01</figDesc>
+      </figure>
+      <note place="foot">Official journal of the Cell Death Differentiation Association</note>
+      <note n="3" place="foot">Department of Musculoskeletal Oncology, Fudan University Shanghai Cancer Center, Shanghai Medical College, Fudan University, Shanghai, China</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>This study was supported by grants from the National Key R&amp;D Program of China (2016YFC1100600), the Shanghai Ninth People's Hospital Lin+ Program (JYLJ012), and the National High Technology Research and Development Program (863 Program) (2015AA033603).</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Conflict of interest</head>
+          <p>
+            <s>The authors declare that they have no conflict of interest.</s>
+          </p>
+          <p>
+            <s>Publisher's note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Translational biology of osteosarcoma</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kansara</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Teng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Smyth</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Thomas</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Rev. Cancer</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope from="722" to="735" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <monogr>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Jaffe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Bruland</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1007/978-1-4419-0284-9</idno>
+              <ptr target="https://doi.org/10.1007/978-1-4419-0284-9"/>
+              <editor>Pediatric and Adolescent Osteosarcoma</editor>
+              <imprint>
+                <date type="published" when="2010"/>
+                <publisher>Springer</publisher>
+                <pubPlace>Boston, MA</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Benefits and adverse events in younger versus older patients receiving neoadjuvant chemotherapy for osteosarcoma: findings from a meta-analysis</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Collins</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Clin. Oncol</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope from="2303" to="2312" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Addition of pamidronate to chemotherapy for the treatment of osteosarcoma</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Meyers</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cancer</title>
+              <imprint>
+                <biblScope unit="volume">117</biblScope>
+                <biblScope from="1736" to="1744" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">The effect of adjuvant chemotherapy on relapse-free survival in patients with osteosarcoma of the extremity</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Link</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">N. Engl. J. Med</title>
+              <imprint>
+                <biblScope unit="volume">314</biblScope>
+                <biblScope from="1600" to="1606" unit="page"/>
+                <date type="published" when="1986"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">AKT-mediated stabilization of histone methyltransferase WHSC1 promotes prostate cancer metastasis</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Clin. Invest</title>
+              <imprint>
+                <biblScope unit="volume">127</biblScope>
+                <biblScope from="1284" to="1302" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">The role of histone protein modifications and mutations in histone modifiers in pediatric B-cell progenitor acute lymphoblastic leukemia</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Janczar</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cancers (Basel)</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope from="1" to="14" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">The role of NSD family histone lysine methyltransferases in cancer</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Bennett</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Swaroop</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Troche</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Licht</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cold Spring Harb. Perspect. Med</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="page">26708</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">NSD2 links dimethylation of histone H3 at lysine 36 to oncogenic programming</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Kuo</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol. Cell</title>
+              <imprint>
+                <biblScope unit="volume">44</biblScope>
+                <biblScope from="609" to="620" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">The target of the NSD family of histone lysine methyltransferases depends on the nature of the substrate</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Biol. Chem</title>
+              <imprint>
+                <biblScope unit="volume">284</biblScope>
+                <biblScope from="34283" to="34295" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Characterization of the EZH2-MMSET histone methyltransferase regulatory axis in cancer</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Asangani</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol. Cell</title>
+              <imprint>
+                <biblScope unit="volume">49</biblScope>
+                <biblScope from="80" to="93" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">The t(4;14) translocation in myeloma dysregulates both FGFR3 and a novel gene, MMSET, resulting in IgH/MMSET hybrid transcripts</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Chesi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Blood</title>
+              <imprint>
+                <biblScope unit="volume">92</biblScope>
+                <biblScope from="3025" to="3034" unit="page"/>
+                <date type="published" when="1998"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">A subset of multiple myeloma harboring the t(4;14)(p16; q32) translocation lacks FGFR3 expression but maintains an IGH/MMSET fusion transcript</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Santra</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Zhan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Tian</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Barlogie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Shaughnessy</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Blood</title>
+              <imprint>
+                <biblScope unit="volume">101</biblScope>
+                <biblScope from="2374" to="2376" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Overexpression of transcripts originating from the MMSET locus characterizes all t(4;14)(p16; q32)-positive multiple myeloma patients</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Keats</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Blood</title>
+              <imprint>
+                <biblScope unit="volume">105</biblScope>
+                <biblScope from="4060" to="4069" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Total kinetic analysis reveals how combinatorial methylation patterns are established on lysines 27 and 36 of histone H3</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zheng</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proc. Natl. Acad. Sci</title>
+              <imprint>
+                <biblScope unit="volume">109</biblScope>
+                <biblScope from="13549" to="13554" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Histone methyltransferase MMSET/NSD2 alters EZH2 binding and reprograms the myeloma epigenome through global and focal changes in H3K36 and H3K27 methylation</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Popovic</surname>
+                </persName>
+              </author>
+              <idno type="doi">10.1371/journal.pgen.1004566</idno>
+              <ptr target="https://doi.org/10.1371/journal.pgen.1004566"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS Genet</title>
+              <imprint>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Side population is enriched in tumorigenic, stem-like cancer cells, whereas ABCG2+ and ABCG2-cancer cells are similarly tumorigenic</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Patrawala</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cancer Res</title>
+              <imprint>
+                <biblScope unit="volume">65</biblScope>
+                <biblScope from="6207" to="6219" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Breast cancer, side population cells and ABCG2 expression</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Britton</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cancer Lett</title>
+              <imprint>
+                <biblScope unit="volume">323</biblScope>
+                <biblScope from="97" to="105" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Cancer stem cells in osteosarcoma</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Brown</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Tellez-Gabriel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Heymann</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cancer Lett</title>
+              <imprint>
+                <biblScope unit="volume">386</biblScope>
+                <biblScope from="189" to="195" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">The BCL2 family: Key mediators of the apoptotic response to targeted anticancer therapeutics</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Hata</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Engelman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Faber</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cancer Discov</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope from="475" to="487" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Targeting apoptosis pathways in cancer -Letter</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Safe</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cancer Prev. Res</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope unit="page">338</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">The role of apoptosis in cancer development and treatment response</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Brown</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Attardi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Rev. Cancer</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope from="231" to="237" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Apoptosis-based therapies</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Reed</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Rev. Drug Discov</title>
+              <imprint>
+                <biblScope unit="volume">1</biblScope>
+                <biblScope from="111" to="121" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Apoptosis as an HIV strategy to escape immune attack</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Gougeon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Rev. Immunol</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="392" to="404" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Concise review: the Sox2-Oct4 connection: critical players in a much larger interdependent network integrated at multiple levels</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Rizzino</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Stem Cells</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope from="1033" to="1039" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">SOX2 functions as a molecular rheostat to control the growth, tumorigenicity and drug responses of pancreatic ductal adenocarcinoma cells</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Wuebben</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Oncotarget</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope from="34890" to="34906" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Sox2 is involved in paclitaxel resistance of the prostate cancer cell line PC-3 via the PI3K/Akt pathway</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol. Med. Rep</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope from="3169" to="3176" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Cancer stem-like cells can be isolated with drug selection in human ovarian cancer cell line SKOV3</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Ma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Lai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Cheng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Guo</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Acta Biochim. Biophys. Sin. (Shanghai)</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope from="593" to="602" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Identification of a SOX2-dependent subset of tumor-and sphere-forming glioblastoma cells with a distinct tyrosine kinase inhibitor sensitivity profile</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Hägerstrand</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Neuro Oncol</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope from="1178" to="1191" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">SOX2 expression associates with stem cell state in human ovarian carcinoma</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Bareiss</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cancer Res</title>
+              <imprint>
+                <biblScope unit="volume">73</biblScope>
+                <biblScope from="5544" to="5555" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Identification of a cancer stem cell in human brain tumors</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Singh</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cancer Res</title>
+              <imprint>
+                <biblScope unit="volume">63</biblScope>
+                <biblScope from="5821" to="5828" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Sox2 promotes tamoxifen resistance in breast cancer cells</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Piva</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">EMBO Mol. Med</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope from="66" to="79" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">The emerging role of SOX2 in cell proliferation and survival and its crosstalk with oncogenic signaling in lung cancer</title>
+              <author>
+                <persName>
+                  <forename type="first">Y.-T</forename>
+                  <surname>Chou</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Stem Cells</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope from="2607" to="2619" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">SOX2 oncogenes amplified and operate to activate AKT signaling in gastric cancer and predict immunotherapy responsiveness</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Tian</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Cancer Res. Clin. Oncol</title>
+              <imprint>
+                <biblScope unit="volume">140</biblScope>
+                <biblScope from="1117" to="1124" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">SOX2 promotes tumorigenesis and increases the anti-apoptotic property of human prostate cancer cell</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Jia</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Mol. Cell Biol</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="230" to="238" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">The dark side of SOX2: cancer -a comprehensive overview</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Wuebben</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Rizzino</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Oncotarget</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope from="44917" to="44943" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">Sox2 protein expression is an independent poor prognostic indicator in stage I lung adenocarcinoma</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Sholl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Barletta</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Yeap</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Chirieac</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Hornick</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am. J. Surg. Pathol</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope from="1193" to="1198" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">Prognostic significance of SOX2 expression in nasopharyngeal carcinoma</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cancer Invest</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope from="79" to="85" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">SOX2 as prognostic factor in head and neck cancer: a systematic review and meta-analysis</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Acta Otolaryngol</title>
+              <imprint>
+                <biblScope unit="volume">134</biblScope>
+                <biblScope from="1101" to="1108" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">Correlation of CD133, OCT4, and SOX2 in rectal cancer and their association with distant recurrence after chemoradiotherapy</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Saigusa</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Ann. Surg. Oncol</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope from="3488" to="3498" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Oct3/4 and Sox2 are significantly associated with an unfavorable clinical outcome in human esophageal squamous cell carcinoma</title>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Anticancer Res</title>
+              <imprint>
+                <biblScope unit="volume">29</biblScope>
+                <biblScope from="1233" to="1241" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">Sex-determining region Y-box 2 expression predicts poor prognosis in human ovarian carcinoma</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Chang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Mercado-Uribe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Hum. Pathol</title>
+              <imprint>
+                <biblScope unit="volume">43</biblScope>
+                <biblScope from="1405" to="1412" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title level="a" type="main">Molecular pathogenesis of osteosarcoma</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kansara</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Thomas</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">DNA Cell Biol</title>
+              <imprint>
+                <biblScope unit="volume">26</biblScope>
+                <biblScope from="1" to="18" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">High dose ifosfamide in combination with high dose methotrexate, adriamycin and cisplatin in the neoadjuvant treatment of extremity osteosarcoma: preliminary results of an Italian Sarcoma Group/Scandinavian Sarcoma Group Pilot Study</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Bacci</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Chemother</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope from="198" to="206" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b44">
+            <analytic>
+              <title level="a" type="main">Cancers and the NSD family of histone lysine methyltransferases</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Morishita</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Di Luccio</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biochim. Biophys. Acta</title>
+              <imprint>
+                <biblScope unit="volume">1816</biblScope>
+                <biblScope from="158" to="163" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b45">
+            <analytic>
+              <title level="a" type="main">NSD2 promotes osteosarcoma cell proliferation and metastasis by inhibiting E-cadherin expression</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Lu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Fan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Yu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Eur. Rev. Med. Pharmacol. Sci</title>
+              <imprint>
+                <biblScope unit="volume">21</biblScope>
+                <biblScope from="928" to="936" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b46">
+            <analytic>
+              <title level="a" type="main">CD117/c-kit in cancer stem cell-mediated progression and therapeutic resistance</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Foster</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Zaidi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Young</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mobley</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Kerr</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biomedicines</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="page">31</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b47">
+            <analytic>
+              <title level="a" type="main">Sox2 maintains self renewal of tumor-initiating cells in osteosarcomas</title>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <surname>Basu-Roy</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Oncogene</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope from="2270" to="2282" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b48">
+            <analytic>
+              <title level="a" type="main">Knockdown of Sox2 inhibits OS cells invasion and migration via modulating Wnt/β-Catenin signaling pathway</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Tang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Gu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Pathol. Oncol. Res</title>
+              <imprint>
+                <biblScope unit="volume">24</biblScope>
+                <biblScope from="907" to="913" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b49">
+            <analytic>
+              <title level="a" type="main">Sox2 is required for tumor development and cancer cell proliferation in osteosarcoma</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Maurizi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Verma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Gadi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Mansukhani</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Basilico</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Oncogene</title>
+              <imprint>
+                <biblScope unit="volume">37</biblScope>
+                <biblScope from="4626" to="4632" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b50">
+            <analytic>
+              <title level="a" type="main">Methyltransferase SETD2-mediated methylation of STAT1 is critical for interferon antiviral activity</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell</title>
+              <imprint>
+                <biblScope unit="volume">170</biblScope>
+                <biblScope from="492" to="506" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b51">
+            <analytic>
+              <title level="a" type="main">Anlotinib induces hepatocellular carcinoma apoptosis and inhibits proliferation via Erk and Akt pathway</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>He</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Wu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Hao</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biochem. Biophys. Res. Commun</title>
+              <imprint>
+                <biblScope unit="volume">503</biblScope>
+                <biblScope from="3093" to="3099" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b52">
+            <analytic>
+              <title level="a" type="main">Stem-like cells in bone sarcomas: implications for tumorigenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Gibbs</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Neoplasia</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope from="967" to="976" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b53">
+            <analytic>
+              <title level="a" type="main">HTSeq--a Python framework to work with high-throughput sequencing data</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Anders</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Pyl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Huber</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bioinformatics</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope from="166" to="169" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b54">
+            <analytic>
+              <title level="a" type="main">Improving RNASeq expression estimates by correcting for fragment bias</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Roberts</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Trapnell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Donaghey</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Rinn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Pachter</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genome Biol</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope unit="page">22</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b55">
+            <monogr>
+              <title level="m" type="main">Differential expression of RNA-Seq data at the gene level -the DESeq package</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Anders</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Huber</surname>
+                </persName>
+              </author>
+              <ptr target="http://bioconductor.org/packages/release/bioc/vignettes/DESeq/inst/doc/DESeq.pdf"/>
+              <imprint>
+                <date type="published" when="2018-05"/>
+                <biblScope unit="page">25</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

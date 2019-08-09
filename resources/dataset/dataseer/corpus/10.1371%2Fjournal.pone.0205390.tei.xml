@@ -260,12 +260,12 @@
         <head n="2.2">Feature extraction using the modified PCANet model</head>
         <p>
           <s>To realize robust intrinsic features extraction, the modified PCANet must be trained to obtain the convolution filter kernels.</s>
-          <s id="0" type="Dataset:Existing dataset">Considering that the PCANet uses the image patch based training strategy, we have chosen 200 general ultrasound images from the open ultrasound database [37] to train the PCANet.</s>
+          <s id="dataset-1" type="Dataset:Existing dataset">Considering that the PCANet uses the image patch based training strategy, we have chosen 200 general ultrasound images from the open ultrasound database [37] to train the PCANet.</s>
           <s>They consist of abdomen images, urinary tract images, pediatrics images, gynaecology images and musculo skeletal joints images, among which the number of each type of ultrasound images is 40.</s>
           <s>All the 200 images are cropped to be the size of 480×320 and pre-processed by the OBNLM filter.</s>
         </p>
         <p>
-          <s id="1" type="Dataset:Existing dataset">By using the trained PCA filters, the modified PCANet can extract the intrinsic features.</s>
+          <s corresp="#dataset-1" type="Dataset:Existing dataset">By using the trained PCA filters, the modified PCANet can extract the intrinsic features.</s>
           <s>A flowchart is given to illustrate how the modified PCANet extracts the features from the considered patches of an input image.</s>
           <s>As shown in <ref target="#fig_1" type="figure">Fig 1,</ref> the original noisy ultrasound image is preprocessed by the OBNLM filter before input into the PCANet.</s>
           <s>The patches in the pre-processed ultrasound image are convoluted with the trained PCA filters to produce L 1 feature maps in the first convolutional layer.</s>

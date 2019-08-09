@@ -151,7 +151,7 @@
         <p>
           <s>The Cell Ranger pipeline (v1.3.1 10X Genomics) was used to perform sample demultiplexing, barcode processing and single-cell gene counting.</s>
           <s>Briefly, samples were demultiplexed to produce a pair of FASTQ files for each sample.</s>
-          <s id="0" type="Genetic Data:Sequence Alignment">Reads containing sequence information were aligned to the GRCh38 reference genome provided with Cell Ranger (v1.2.0).</s>
+          <s id="dataset-1" type="Genetic Data:Sequence Alignment">Reads containing sequence information were aligned to the GRCh38 reference genome provided with Cell Ranger (v1.2.0).</s>
           <s>Cell barcodes were filtered to remove empty droplets, and PCR duplicates were removed by selecting unique combinations of cell barcodes, unique molecular identifiers and gene ids with the final results being a gene expression matrix that was used for further analysis.</s>
           <s>The three samples in the first batch of organoids were aggregated using Cell Ranger with no normalisation and treated as a single dataset.</s>
         </p>
@@ -220,7 +220,7 @@
         </p>
         <p>
           <s>We also performed differential expression testing between the two datasets as a whole, which was used to identify a signature of 374 genes that represent the main differences between them.</s>
-          <s id="1" type="Tabular data">To identify cell type-specific differences between organoid and human fetal kidney, we performed differential expression testing between cells within a cluster and removed genes found in the overall differential expression signature.</s>
+          <s id="dataset-2" type="Tabular data">To identify cell type-specific differences between organoid and human fetal kidney, we performed differential expression testing between cells within a cluster and removed genes found in the overall differential expression signature.</s>
           <s>Cluster 7 in the combined nephron analysis was identified as a human fetal kidney specific podocyte cluster.</s>
           <s>To investigate the differences between these cells and other podocytes, we compared gene expression in this cluster to the general podocyte cluster (CN0).</s>
         </p>

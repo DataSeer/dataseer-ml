@@ -193,4 +193,29 @@ public class DataseerAnnotation extends Annotation {
         this.page = page;
     }
 
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+
+        builder.append("identifier: " + identifier + "\n");
+        builder.append("collectionID: " + collectionID + "\n");
+        builder.append("documentId: " + documentId + "\n");
+        builder.append("datasetId: " + datasetId + "\n");
+        builder.append("context: " + context + "\n");
+        builder.append("page: " + page + "\n");
+        builder.append("text: " + text + "\n");
+
+        builder.append("meshDataType: " + meshDataType + "\n");
+        builder.append("rawDataType: " + rawDataType + "\n");    
+        builder.append("dataType: " + dataType + "\n");
+        builder.append("dataSubType: " + dataSubType + "\n");    
+        builder.append("dataLeafType: " + meshDataType + "\n");
+        builder.append("dataKeyword: " + dataKeyword + "\n");        
+        builder.append("dataAction: " + dataAction + "\n");
+        builder.append("acquisitionEquipment: " + acquisitionEquipment + "\n");    
+        builder.append("memo: " + memo + "\n");
+        builder.append("section: " + section + "\n");    
+        builder.append("subsection: " + subsection + "\n");
+
+        return builder.toString();
+    }
 }
