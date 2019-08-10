@@ -110,6 +110,18 @@ public class DataseerAnnotation extends Annotation {
     }
 
     public void setRawDataType(String rawDataType) {
+        // also set the different datatypes
+        String[] pieces = rawDataType.split(":");
+        if (pieces.length >= 1) {
+            this.dataType = pieces[0];
+        } 
+        if (pieces.length >= 2) {
+            this.dataSubType = pieces[1];
+        } 
+        if (pieces.length == 3) {
+            this.dataLeafType = pieces[2];
+        }
+
         this.rawDataType = rawDataType;
     }
 

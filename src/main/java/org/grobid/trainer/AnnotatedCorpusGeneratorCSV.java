@@ -270,6 +270,11 @@ public class AnnotatedCorpusGeneratorCSV {
 
         ArticleUtilities articleUtilities = new ArticleUtilities();
 
+        Writer writerCSV = new PrintWriter(new BufferedWriter(
+            new FileWriter("resources/dataset/dataseer/csv/all.csv")));
+        CSVPrinter csvPrinter = new CSVPrinter(writerCSV, 
+            CSVFormat.DEFAULT.withHeader("doi", "text", "datatype", "dataSubtype", "leafDatatype"));
+
         // go thought all annotated documents 
         m = 0;
         for (Map.Entry<String, AnnotatedDocument> entry : documents.entrySet()) {
@@ -283,13 +288,19 @@ public class AnnotatedCorpusGeneratorCSV {
                 continue;
 
             String doi = doc.getDoi();
-            
-            /*System.out.println("\n------------------------------");
-            System.out.println(doi);
 
+            // this part output the text part in a csv format for classification
+            String previousContext = null;
             for(DataseerAnnotation annotation : doc.getAnnotations()) {
-                System.out.println(annotation.toString());
-            }*/
+                if (previousContext == null || 
+                    (previousContext != null && !previousContext.equals(annotation.getContext()))) {
+                    csvPrinter.printRecord(doi, annotation.getContext(), annotation.getDataType(), 
+                        annotation.getDataSubType(), annotation.getDataLeafType());
+                    csvPrinter.flush();
+                    previousContext = annotation.getContext();
+                }
+                //System.out.println(annotation.toString());
+            }
 
             // check if the TEI file already exists for this PDF
             String teiPath = documentPath + "/" + URLEncoder.encode(doi, "UTF-8")+".tei.xml";
@@ -454,6 +465,10 @@ public class AnnotatedCorpusGeneratorCSV {
             }
 
         }
+
+        csvPrinter.close();
+        // not sure the following is needed, but to be sure...
+        writerCSV.close();
 
         System.out.println("Total matched annotations: " + totalMatchedAnnotations);
         System.out.println(totalUnmatchedAnnotations + " total unmatched annotations, out of " + totalAnnotations);
