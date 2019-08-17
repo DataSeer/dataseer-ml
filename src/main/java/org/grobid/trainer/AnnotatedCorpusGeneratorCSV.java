@@ -51,13 +51,15 @@ import nu.xom.*;
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 import org.apache.commons.lang3.StringUtils;
 
-//import org.xml.sax.InputSource;
-//import org.w3c.dom.*;
-//import javax.xml.parsers.*;
+/*import javax.xml.parsers.*;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.namespace.NamespaceContext;
+import javax.xml.xpath.*;
+import org.w3c.dom.*;*/
+
 import java.io.*;
-/*import javax.xml.transform.*;
-import javax.xml.transform.dom.*;
-import javax.xml.transform.stream.*;*/
 
 import com.fasterxml.jackson.core.io.JsonStringEncoder;
 
@@ -270,9 +272,16 @@ public class AnnotatedCorpusGeneratorCSV {
 
         ArticleUtilities articleUtilities = new ArticleUtilities();
 
-        Writer writerCSV = new PrintWriter(new BufferedWriter(
-            new FileWriter("resources/dataset/dataseer/csv/all.csv")));
-        CSVPrinter csvPrinter = new CSVPrinter(writerCSV, 
+        // training file for binary classification (dataset/no_dataset)
+        Writer writerCSVBinary = new PrintWriter(new BufferedWriter(
+            new FileWriter("resources/dataset/dataseer/csv/all-binary.csv")));
+        CSVPrinter csvPrinterBinary = new CSVPrinter(writerCSVBinary, 
+            CSVFormat.DEFAULT.withHeader("doi", "text", "datatype"));
+
+        // training file with all the data types, first level
+        Writer writerCSV1 = new PrintWriter(new BufferedWriter(
+            new FileWriter("resources/dataset/dataseer/csv/all-1.csv")));
+        CSVPrinter csvPrinter1 = new CSVPrinter(writerCSV1, 
             CSVFormat.DEFAULT.withHeader("doi", "text", "datatype", "dataSubtype", "leafDatatype"));
 
         // go thought all annotated documents 
@@ -294,9 +303,14 @@ public class AnnotatedCorpusGeneratorCSV {
             for(DataseerAnnotation annotation : doc.getAnnotations()) {
                 if (previousContext == null || 
                     (previousContext != null && !previousContext.equals(annotation.getContext()))) {
-                    csvPrinter.printRecord(doi, annotation.getContext(), annotation.getDataType(), 
+                    
+                    csvPrinter1.printRecord(doi, annotation.getContext(), annotation.getDataType(), 
                         annotation.getDataSubType(), annotation.getDataLeafType());
-                    csvPrinter.flush();
+                    csvPrinter1.flush();
+
+                    csvPrinterBinary.printRecord(doi, annotation.getContext(), "dataset");
+                    csvPrinterBinary.flush();
+
                     previousContext = annotation.getContext();
                 }
                 //System.out.println(annotation.toString());
@@ -321,7 +335,7 @@ public class AnnotatedCorpusGeneratorCSV {
                     // get the XML full text if available, otherwise PDF
                     File f = new File(plosPath);
                     if (f.exists()) {
-                        // transform the XML NLM file into TEI
+                        // transform the XML NLM file into TEI with Pub2TEI command line
                         
 
                         
@@ -441,12 +455,12 @@ public class AnnotatedCorpusGeneratorCSV {
                     }
                 }
                 
+                String teiOutPutPath = xmlPath + "/" + URLEncoder.encode(doi, "UTF-8")+".tei.xml";;
                 if (solvedAnnotations.size() == doc.getAnnotations().size()) {
                     System.out.println("all annotations: " + doc.getAnnotations().size() + " matched");
                     allMatchedDoc++;
                     allMatchedDocannotations += solvedAnnotations.size();
                     // we write this document to the result folder
-                    String teiOutPutPath = xmlPath + "/" + URLEncoder.encode(doi, "UTF-8")+".tei.xml";;
                     Writer writerTEI = new PrintWriter(new BufferedWriter(new FileWriter(teiOutPutPath)));
                     writerTEI.write(XMLUtilities.toPrettyString(document.toXML(), 4));
                     writerTEI.close();
@@ -456,6 +470,71 @@ public class AnnotatedCorpusGeneratorCSV {
                     System.out.println((doc.getAnnotations().size() - solvedAnnotations.size()) + " unmatched annotations");
                     totalUnmatchedAnnotations += doc.getAnnotations().size() - solvedAnnotations.size();
                 }
+
+                // we want to inject additional "negative" sentences in the training data for the ML models,
+                // in priority sentences from the same section as the ones introducing datasets
+                // consider only documents with all annotation matched (to avoid any false negatives)
+                if (solvedAnnotations.size() == doc.getAnnotations().size()) {
+                    /*String teicontent = FileUtils.readFileToString(new File(teiOutPutPath), "UTF-8");
+                    parser = new Builder();
+                    inputStream = new ByteArrayInputStream(teicontent.getBytes(UTF_8));
+                    document = parser.build(inputStream);*/
+
+                    int nbLabeledDiv = 0;
+                    int nbLabeledSentences = 0;
+                    int nbNonLabeledSentences = 0;
+
+                    List<Element> divs = getElementsByTagName(root, "div");
+                    // the following is returning 0 node, even document.query("//div") returns 0 node, even adding namespaces, wth with xom?
+                    //Nodes nodesList = document.query("//div[@subtype='dataseer']");
+
+                    System.out.println("nb div: " + divs.size());
+                    
+                    // check if we have a sentence in this section introducing a dataset
+                    for (int i = 0; i < divs.size(); i++) {
+                        //nu.xom.Node node = nodesList.get(i);
+                        Element div = divs.get(i);
+                        // check if we have @subtype='dataseer' (xom XPath fails, with or without namespaces, :/)
+                        String attribute = div.getAttributeValue("subtype");
+                        if (attribute != null && attribute.equals("dataseer")) {
+                            nbLabeledDiv++;
+                            //Nodes nodeTest = div.query("//s[@type and string-length(@type)>0]");
+                            //Elements paragraphs = div.getChildElements("p");
+                            Elements paragraphs = div.getChildElements();
+                            System.out.println("nb paragraphs: " + paragraphs.size());
+                            for (int j = 0; j < paragraphs.size(); j++) {
+                                Element paragraph = paragraphs.get(j); 
+                                System.out.println(paragraph.getQualifiedName());
+                                if (!paragraph.getQualifiedName().equals("p"))
+                                    continue;
+                                Elements sentences = paragraph.getChildElements();
+                                System.out.println("nb sentences: " + sentences.size());
+                                for (int k = 0; k < sentences.size(); k++) {
+                                    Element sentence = sentences.get(k); 
+                                    if (!sentence.getQualifiedName().equals("s"))
+                                        continue;
+                                    String attribute2 = sentence.getAttributeValue("type");
+                                    if (attribute2 == null || attribute2.length() == 0) {
+                                        nbNonLabeledSentences++;
+                                        if (sentence.getValue() != null && sentence.getValue().length() > 0) {
+                                            csvPrinter1.printRecord(doi, sentence.getValue(), "no_dataset", null, null);
+                                            csvPrinter1.flush();
+
+                                            csvPrinterBinary.printRecord(doi, sentence.getValue(), "no_dataset");
+                                            csvPrinterBinary.flush();
+                                        }
+                                    } else
+                                        nbLabeledSentences++;
+                                }
+                            }
+                        }
+                    }
+
+                    System.out.println("nb labeled div: " + nbLabeledDiv);
+                    System.out.println("nb labeled sentences: " + nbLabeledSentences);
+                    System.out.println("nb non-labeled sentences: " + nbNonLabeledSentences);
+                }
+
             } catch (ParsingException e) {
                 e.printStackTrace();
             } catch(IOException e) {
@@ -466,9 +545,13 @@ public class AnnotatedCorpusGeneratorCSV {
 
         }
 
-        csvPrinter.close();
+        csvPrinterBinary.close();
         // not sure the following is needed, but to be sure...
-        writerCSV.close();
+        writerCSVBinary.close();
+
+        csvPrinter1.close();
+        // not sure the following is needed, but to be sure...
+        writerCSV1.close();
 
         System.out.println("Total matched annotations: " + totalMatchedAnnotations);
         System.out.println(totalUnmatchedAnnotations + " total unmatched annotations, out of " + totalAnnotations);
