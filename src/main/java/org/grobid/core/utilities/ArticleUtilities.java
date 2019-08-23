@@ -82,10 +82,14 @@ public class ArticleUtilities {
                     try {
                         identifier = urlDecode(identifier);
                         urll = getUnpaywallOAUrl(identifier);
-                        if (urll == null) {
+                        if (urll == null || urll.equals("null")) {
+                            urll = getGluttonOAUrl(identifier);
+                        }
+                        if (urll == null || urll.equals("null")) {
                             totalDOIFail++;
                             logger.warn("No Open Access PDF found via Unpaywall for DOI: " + identifier);
                             System.out.println("No Open Access PDF found via Unpaywall for DOI: " + identifier);
+                            urll = null;
                         }
                     } catch(UnsupportedEncodingException e) {
                         logger.warn("Invalid DOI identifier encoding: " + identifier, e);
@@ -177,6 +181,44 @@ public class ArticleUtilities {
             if (!urlForPdfNode.isMissingNode()) {
                 urlForPdf = urlForPdfNode.asText();
             }
+        }
+        return urlForPdf;
+    }
+
+    private static String getGluttonOAUrl(String doi)  throws Exception {
+        String host = DataseerProperties.get("grobid.dataseer.glutton.host");
+        String port = DataseerProperties.get("grobid.dataseer.glutton.port");
+        String queryUrl = "http://" + host;
+        if (port != null)
+            queryUrl += ":" + port;
+        queryUrl += "/service/oa?doi="+doi;
+        HttpClient client = new DefaultHttpClient();
+        HttpGet request = new HttpGet(queryUrl);
+
+        HttpResponse response = client.execute(request);
+
+        System.out.println("\nSending 'GET' request to URL : " + queryUrl);
+        System.out.println("Response Code : " + 
+                       response.getStatusLine().getStatusCode());
+
+        BufferedReader rd = new BufferedReader(
+                       new InputStreamReader(response.getEntity().getContent()));
+
+        StringBuffer result = new StringBuffer();
+        String line = "";
+        while ((line = rd.readLine()) != null) {
+            result.append(line);
+        }
+        String json = result.toString();
+
+        // get the best oa url if it exists
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode jsonNode = objectMapper.readTree(json);
+        // json path is best_oa_location / url_for_pdf
+        JsonNode urlForPdfNode = jsonNode.path("oaLink");
+        String urlForPdf = null;
+        if (!urlForPdfNode.isMissingNode()) {
+            urlForPdf = urlForPdfNode.asText();
         }
         return urlForPdf;
     }

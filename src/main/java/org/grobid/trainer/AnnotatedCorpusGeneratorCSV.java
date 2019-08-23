@@ -46,6 +46,8 @@ import java.net.URLEncoder;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.concurrent.*;
+import java.util.function.*;
 
 import nu.xom.*;
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
@@ -237,6 +239,22 @@ public class AnnotatedCorpusGeneratorCSV {
     }
 
 
+    private static class StreamGobbler implements Runnable {
+        private InputStream inputStream;
+        private Consumer<String> consumer;
+     
+        public StreamGobbler(InputStream inputStream, Consumer<String> consumer) {
+            this.inputStream = inputStream;
+            this.consumer = consumer;
+        }
+     
+        @Override
+        public void run() {
+            new BufferedReader(new InputStreamReader(inputStream)).lines()
+              .forEach(consumer);
+        }
+    }
+
     public void processPDF(String documentPath, String csvPath, String xmlPath) throws IOException {
 
         Map<String, AnnotatedDocument> documents = new HashMap<String, AnnotatedDocument>();
@@ -336,34 +354,68 @@ public class AnnotatedCorpusGeneratorCSV {
                     File f = new File(plosPath);
                     if (f.exists()) {
                         // transform the XML NLM file into TEI with Pub2TEI command line
-                        
+                        String pub2teiPath = DataseerProperties.get("grobid.dataseer.pub2tei.path");
+                        System.out.println(pub2teiPath);
+                        File pub2teiDir = new File(pub2teiPath);
 
-                        
+                        if (!pub2teiDir.exists() || !pub2teiDir.isDirectory()) {
+                            System.out.println("Warning: the Pub2TEI path is invalid, only PDF will be used");
+                        } else {
+                            try {
+                                ProcessBuilder builder = new ProcessBuilder();
+                                builder.directory(new File(pub2teiPath));
 
-                        //noXMLPlos = false;
+                                builder.command("java", "-jar", "Samples/saxon9he.jar", "-s:"+plosPath, "-xsl:Stylesheets/Publishers.xsl",
+                                    "-o:"+teiPath, "-dtd:off", "-a:off", "-expand:off", "-t");
+                                // java -jar Samples/saxon9he.jar -s:Samples/TestPubInput/BMJ/bmj_sample.xml -xsl:Stylesheets/Publishers.xsl -o:out.tei.xml -dtd:off -a:off -expand:off -t
+
+                                Process process = builder.start();
+                                StreamGobbler streamGobbler = new StreamGobbler(process.getInputStream(), System.out::println);
+                                Executors.newSingleThreadExecutor().submit(streamGobbler);
+                                int exitCode = process.waitFor();
+                                if (exitCode == 0)
+                                    noXMLPlos = false;
+                            } catch(Exception e) {
+                                e.printStackTrace();
+                            }
+                        }                        
                     }
                 }
 
                 if (noXMLPlos) {
+                    String pdfPath = documentPath + "/" + URLEncoder.encode(doi, "UTF-8")+".pdf";
 
-                    // get PDF file from DOI
-                    File pdfFile = articleUtilities.getPDFDoc(doi, Source.DOI);
-
-                    // produce TEI with GROBID
-                    GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
-                                            .consolidateHeader(0)
-                                            .consolidateCitations(0)
-                                            .build();
-                    Engine engine = GrobidFactory.getInstance().getEngine();
-                    String tei = null;
-                    try {
-                        tei = engine.fullTextToTEI(pdfFile, config);
-                    } catch(Exception e) {
-                        e.printStackTrace();
+                    // do we have the PDF file around?
+                    File pdfFile = new File(pdfPath);
+                    if (!pdfFile.exists()) {
+                        // get PDF file from DOI
+                        File localPdfFile = articleUtilities.getPDFDoc(doi, Source.DOI);
+                        if (localPdfFile != null) {
+                            System.out.println(localPdfFile.getPath());
+                            // save the PDF file
+                            FileUtils.copyFile(localPdfFile, pdfFile);
+                            // remove the downloaded PDF file
+                            FileUtils.deleteQuietly(localPdfFile);
+                        }
                     }
-                    
-                    // save TEI file
-                    FileUtils.writeStringToFile(new File(teiPath), tei, UTF_8);
+
+                    if (pdfFile.exists()) {
+                        // produce TEI with GROBID
+                        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+                                                .consolidateHeader(0)
+                                                .consolidateCitations(0)
+                                                .build();
+                        Engine engine = GrobidFactory.getInstance().getEngine();
+                        String tei = null;
+                        try {
+                            tei = engine.fullTextToTEI(pdfFile, config);
+                        } catch(Exception e) {
+                            e.printStackTrace();
+                        }
+                        
+                        // save TEI file
+                        FileUtils.writeStringToFile(new File(teiPath), tei, UTF_8);
+                    }
                 }
             }
 
