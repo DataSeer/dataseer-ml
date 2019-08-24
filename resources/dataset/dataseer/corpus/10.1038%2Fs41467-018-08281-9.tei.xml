@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T07:42+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:20+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -201,8 +201,10 @@
         <p>
           <s>Orbital angular momentum.</s>
           <s>In two-dimensional (2D) systems, electromagnetic waves decouple into two independent transverse electric and transverse magnetic modes whose evolution can then be represented by a scalar component as denoted by φ.</s>
-          <s>Consider a cylindrical meta-atom whose eigenfield (H z or E z ) can be written as φðr; θÞ ¼ φ 0 ðrÞexpðim θÞ;</s>
+          <s>Consider a cylindrical meta-atom whose eigenfield (H z or E z ) can be written as</s>
         </p>
+        <formula xml:id="formula_0">φðr; θÞ ¼ φ 0 ðrÞexpðim θÞ;<label>ð1Þ</label>
+        </formula>
         <p>
           <s>where r, θ are the polar coordinates and m denotes the orbital angular momentum.</s>
           <s>The phase distribution of such a meta-atom with angular momentum m = 1 is shown in <ref type="figure">Fig. 1a</ref> .</s>
@@ -222,7 +224,8 @@
           <s>When N = 1 or 2, the subspace of each angular momentum still possesses time reversal symmetry.</s>
           <s>For a system with time reversal symmetry to exhibit nontrivial topology, N must be larger than 2. A discretized example for m = 1 and N = 3 is shown in <ref type="figure">Fig. 1d</ref> .</s>
           <s>Similarly, a hexagonal lattice of metaatoms with angular momentum m = 1 in <ref type="figure">Fig. 1b</ref> can be represented by discretized nodes as shown in <ref type="figure">Fig. 1e</ref> .</s>
-          <s>For illustration purpose, we label each node with a layer number and the honeycomb lattice in <ref type="figure">Fig. 1</ref> Realization of angular-momentum-orbital coupling in 2D honeycomb lattices.</s>
+          <s>For illustration purpose, we label each node with a layer number and the honeycomb lattice in <ref type="figure">Fig. 1e</ref>
+            <ref type="figure">Fig. 1</ref> Realization of angular-momentum-orbital coupling in 2D honeycomb lattices.</s>
           <s>a Phase distribution of a mode with angular momentum m = 1.</s>
           <s>b A honeycomb lattice with sites exhibiting non-zero angular momentum.</s>
           <s>c A discrete set of N point nodes, where each carries a different phase, can emulate a mode with non-zero angular momentum.</s>
@@ -239,7 +242,7 @@
           <s>The black spheres in <ref type="figure">Fig. 1f</ref> represent the nodes which are assumed to be identical and hence the on-site energies are all set to zero.</s>
           <s>Each honeycomb lattice consists of two sublattices and hence there are 2N nodes in each unit cell.</s>
         </p>
-        <formula xml:id="formula_1">i ⋅2 ) N N -1 exp(i ⋅2 ) N 2 exp(i ⋅2 ) N j -1 2 3 exp(i ⋅ ) 3 4 exp(i ⋅ ) exp(i ⋅2 ) N j exp(i ⋅2 ) N 1</formula>
+        <formula xml:id="formula_1">B 2 B 3 1 exp(i ⋅2 ) N N -1 exp(i ⋅2 ) N 2 exp(i ⋅2 ) N j -1 2 3 exp(i ⋅ ) 3 4 exp(i ⋅ ) exp(i ⋅2 ) N j exp(i ⋅2 ) N 1</formula>
         <p>
           <s>We now proceed to introduce the angular-momentum-orbital coupling.</s>
           <s>Such couplings essentially help distinguish different angular momentums and hence modes with different angular momentum eigenvalues experience different synthetic gauge fields.</s>
@@ -287,10 +290,8 @@
         </formula>
         <p>
           <s>where τ = 1 for the K point and τ = −1 for the K' point, p= (p x , p y ) is momentum measured from the K or K' point.</s>
-          <s>The last term in Eq. <ref type="formula">(5)</ref> represents the angular-momentum-orbital coupling which is similar to the spin-orbital coupling <ref target="#b35" type="bibr">36,</ref>
+          <s>The last term in Eq. (5) represents the angular-momentum-orbital coupling which is similar to the spin-orbital coupling <ref target="#b35" type="bibr">36,</ref>
             <ref target="#b36" type="bibr">37</ref> .</s>
-        </p>
-        <p>
           <s>There is, however, a sector with m = 0 where the mass term vanishes, wherein the bands are degenerate at the K (K') point as guaranteed by time reversal symmetry.</s>
           <s>Although the whole system is invariant under time reversal, the band topology of the m = ±1 sectors can still be nontrivial as each sector on its own is not time reversal invariant.</s>
         </p>
@@ -301,12 +302,16 @@
             <ref target="#b39" type="bibr">[40]</ref>
             <ref target="#b40" type="bibr">[41]</ref> , which provides the flexibility to realize the "head to tail" connection.</s>
           <s>The transmission lines here are coaxial cables which can be regarded as one-dimensional waveguides.</s>
-          <s>These coaxial cables are then connected at nodes to form a network, which is described by a set of equations as follows 38:</s>
+          <s>These coaxial cables are then connected at nodes to form a network, which is described by a set of equations as follows <ref target="#b37" type="bibr">38</ref> :</s>
         </p>
         <formula xml:id="formula_7">Àψ j X k coth gl jk þ X k 1 sinh gl jk ψ k ¼ 0:<label>ð6Þ</label>
         </formula>
         <p>
-          <s>Here, ψ j is the voltage at the j-th node, l jk is the length of the cable connecting nodes j and k, and g ¼ iω=c 0 ð Þ ffiffi ε p with ω, c 0 and ε being the angular frequency, the speed of light in vacuum and the relative permittivity of the dielectric medium in the coaxial cables, respectively.</s>
+          <s>Here, ψ j is the voltage at the j-th node, l jk is the length of the cable connecting nodes j and k, and</s>
+        </p>
+        <formula xml:id="formula_8">g ¼ iω=c 0 ð Þ ffiffi ε p</formula>
+        <p>
+          <s>with ω, c 0 and ε being the angular frequency, the speed of light in vacuum and the relative permittivity of the dielectric medium in the coaxial cables, respectively.</s>
           <s>This network equation is equivalent to a tight-binding model with an on-site term À P k cothðgl jk Þ and a hopping term 1/sinh(gl jk ).</s>
           <s>The connecting nodes can be regarded as the discrete nodes considered previously and a cable provides coupling between two nodes.</s>
           <s>The coupling coefficient depends on the frequency, length and permittivity of the cable.</s>
@@ -316,65 +321,61 @@
         </p>
         <p>
           <s>Bulk band and angular momentum-dependent one-way edge states.</s>
-          <s>To show that the transmission line network exhibits the basic characters of the tight-binding model, we solve Eq. <ref type="formula">(6)</ref> numerically and plot the band structures in <ref target="#fig_1" type="figure">Fig. 2a, b</ref> with m = 0 and m = 1, respectively.</s>
+          <s>To show that the transmission line network exhibits the basic characters of the tight-binding model, we solve Eq. (6) numerically and plot the band structures in <ref target="#fig_0" type="figure">Fig. 2a</ref> , b with m = 0 and m = 1, respectively.</s>
           <s>The coaxial cables are connected in the way shown in <ref type="figure">Fig. 1g</ref> and periodic boundary conditions are applied in the in-plane directions.</s>
           <s>The lengths of intralayer and interlayer cables are taken to be a = 0.43 m and b = 2.06 m, respectively.</s>
           <s>The wave speed inside the cable is assumed to be 0.66c (the same as experimentally measured results).</s>
           <s>For simplicity, the loss in the cable is ignored for now.</s>
-          <s>The band structures in <ref target="#fig_1" type="figure">Fig. 2a, b</ref> are quite similar to those of the tightbinding model as shown in <ref type="figure">Supplementary Fig. 1a, b</ref> and Supplementary Note 1.</s>
+          <s>The band structures in <ref target="#fig_0" type="figure">Fig. 2a</ref> , b are quite similar to those of the tightbinding model as shown in <ref type="figure">Supplementary Fig. 1a</ref> , b and Supplementary Note 1.</s>
           <s>The band structure of m = −1 is the same as that of m = 1.</s>
           <s>For m = 0, the Dirac point appears at the K point as predicted by the tight-binding Hamiltonian where there is no σ z term.</s>
           <s>For m = 1, a band gap emerges between two bulk bands.</s>
           <s>Our system is C 6 invariant and the angular momentum-dependent Chern number of each band can be obtained using the rotational eigenvalues at high symmetry points <ref target="#b41" type="bibr">42,</ref>
             <ref target="#b42" type="bibr">43</ref> .</s>
-          <s>The Chern number of each m = 1 band is labeled in <ref target="#fig_1" type="figure">Fig. 2b</ref> (the Chern numbers have opposite signs when m = −1).</s>
+          <s>The Chern number of each m = 1 band is labeled in <ref target="#fig_0" type="figure">Fig. 2b</ref> (the Chern numbers have opposite signs when m = −1).</s>
           <s>We can see that a nontrivial band gap exists from 31 MHz to 36.3 MHz.</s>
-          <s>We also show the projected band structure along the x direction (y direction) of the m = 1 sector with the armchair (zigzag) boundaries in <ref target="#fig_1" type="figure">Fig. 2c (Fig. 2d)</ref> , where the gray area represents the projection of bulk bands, and the red and blue curves represent the edge states localized at the upper (right) and lower (left) boundaries of a strip, respectively.</s>
+          <s>We also show the projected band structure along the x direction (y direction) of the m = 1 sector with the armchair (zigzag) boundaries in <ref target="#fig_0" type="figure">Fig. 2c (Fig. 2d)</ref> , where the gray area represents the projection of bulk bands, and the red and blue curves represent the edge states localized at the upper (right) and lower (left) boundaries of a strip, respectively.</s>
           <s>The existence of these one-way edge states verifies once again the nontrivial topology of the band structure for the m = 1 sector.</s>
         </p>
         <p>
           <s>Angular momentum-dependent local Chern number.</s>
-          <s>The Chern number in <ref target="#fig_1" type="figure">Fig. 2</ref> is obtained by considering an infinite system.</s>
+          <s>The Chern number in <ref target="#fig_0" type="figure">Fig. 2</ref> is obtained by considering an infinite system.</s>
           <s>Next, we explore the topological property of a finite-size cluster.</s>
           <s>We consider a sample which is of finite size in the xy plane while the "head to tail" connection is kept such that the angular momentum remains well defined.</s>
           <s>To study the topological characteristics of a finite-size structure, we adopt the concept of the local Chern number <ref target="#b30" type="bibr">31,</ref>
             <ref target="#b31" type="bibr">32</ref> , which is defined by the antisymmetric product of the projection operators:</s>
         </p>
-        <formula xml:id="formula_8">νðPÞ ¼ 12πi X j2A X k2B X l2C P jk P kl P lj À P jl P lk P kj ;<label>ð7Þ</label>
+        <formula xml:id="formula_9">νðPÞ ¼ 12πi X j2A X k2B X l2C P jk P kl P lj À P jl P lk P kj ;<label>ð7Þ</label>
         </formula>
         <p>
-          <s>where</s>
-        </p>
-        <formula xml:id="formula_9">P ¼ P f f c</formula>
-        <p>
-          <s>ju f ihu f j is the projection operator which adds up all the eigenstates |u f 〉 below a cutoff frequency f c , and P jk ¼ hx j jPjx k i is the spatial relation between sites x j and x k .</s>
-          <s>These sites lie in three different sectors (labeled A, B and C in the counterclockwise direction) of the circular computational domain (see left panel of <ref target="#fig_2" type="figure">Fig. 3a)</ref> .</s>
+          <s>where P ¼ P f f c ju f ihu f j is the projection operator which adds up all the eigenstates |u f 〉 below a cutoff frequency f c , and P jk ¼ hx j jPjx k i is the spatial relation between sites x j and x k .</s>
+          <s>These sites lie in three different sectors (labeled A, B and C in the counterclockwise direction) of the circular computational domain (see left panel of <ref target="#fig_1" type="figure">Fig. 3a)</ref> .</s>
           <s>The cutoff frequency f c is set to 31 MHz, which is the lower band edge frequency of the nontrivial band gap.</s>
           <s>
-            <ref target="#fig_2" type="figure">Figure 3a</ref> shows a top view of the finite size 9 × 9 lattice with the computational domain at the center.</s>
+            <ref target="#fig_1" type="figure">Figure 3a</ref> shows a top view of the finite size 9 × 9 lattice with the computational domain at the center.</s>
           <s>Each sector (A, B or C) covers 120°and the computational domain is a circle with radius r.</s>
           <s>For the sites on the boundaries between two sectors, we distribute them to the adjacent sector in the clockwise direction.</s>
           <s>The value of ν as defined in Eq. <ref type="formula">(7)</ref> for such a chosen computational domain is taken as the local Chern number at the center of this circular region.</s>
           <s>The radius r of this computational region will affect the value of ν.</s>
-          <s>To explore this dependence, we plot the ν − r curve in the right panel of <ref target="#fig_2" type="figure">Fig. 3a</ref> for the 9 × 9 sample shown in the left panel, where the center of the circle is fixed at the center of the sample.</s>
-          <s>From the results shown in <ref target="#fig_1" type="figure">Fig. 2b</ref> , we expect the local Chern number to be −1 (1) for m = 1 (m = −1).</s>
+          <s>To explore this dependence, we plot the ν − r curve in the right panel of <ref target="#fig_1" type="figure">Fig. 3a</ref> for the 9 × 9 sample shown in the left panel, where the center of the circle is fixed at the center of the sample.</s>
+          <s>From the results shown in <ref target="#fig_0" type="figure">Fig. 2b</ref> , we expect the local Chern number to be −1 (1) for m = 1 (m = −1).</s>
           <s>We can see that ν goes to zero when r is too small or too large compared with the sample size, but when the radius takes intermediate values, the result converges to −1 (1) for m = 1 (m = −1), consistent with the Chern numbers calculated under periodic boundary conditions.</s>
           <s>In the following calculation, the radii of the computational region are set to 2.3a and 5a for the 3 × 3 and 9 × 9 samples, respectively.</s>
-          <s>By solving Eq. <ref type="formula">(6)</ref> , we obtain the eigen-spectrum for m = 1 as shown in the left panel of <ref target="#fig_2" type="figure">Fig. 3b</ref> , where each black dashed line corresponds to the frequency of an eigenstate.</s>
-          <s>The local Chern number ν as a function of the cutoff frequency (the summation is taken over all of the eigenstates below this frequency) is shown in the middle panel of <ref target="#fig_2" type="figure">Fig. 3b</ref> when the center of the sample is taken as the center of the computational region.</s>
+          <s>By solving Eq. <ref type="formula">(6)</ref> , we obtain the eigen-spectrum for m = 1 as shown in the left panel of <ref target="#fig_1" type="figure">Fig. 3b</ref> , where each black dashed line corresponds to the frequency of an eigenstate.</s>
+          <s>The local Chern number ν as a function of the cutoff frequency (the summation is taken over all of the eigenstates below this frequency) is shown in the middle panel of <ref target="#fig_1" type="figure">Fig. 3b</ref> when the center of the sample is taken as the center of the computational region.</s>
           <s>We see that there is a wide spectral range where ν is almost −1.</s>
           <s>This spectral range starts from about 31 MHz and ends near 36 MHz, which coincides with the lower and upper edges of the nontrivial band gap as determined by the band structure calculation.</s>
-          <s>We next set the cutoff frequency to 31 MHz (marked by the red dotted line in the left panel of <ref target="#fig_2" type="figure">Fig. 3b)</ref> , and calculate ν as a function of the center position of the computational region.</s>
-          <s>The corresponding results are shown in the right panel of <ref target="#fig_2" type="figure">Fig. 3b</ref> .</s>
+          <s>We next set the cutoff frequency to 31 MHz (marked by the red dotted line in the left panel of <ref target="#fig_1" type="figure">Fig. 3b)</ref> , and calculate ν as a function of the center position of the computational region.</s>
+          <s>The corresponding results are shown in the right panel of <ref target="#fig_1" type="figure">Fig. 3b</ref> .</s>
           <s>We see that except for the boundary region where the blue color is a lighter shade, other parts exhibit a local Chern number close to −1.</s>
-          <s>Such a nontrivial local topological property persists even when the sample size decreases to 3 × 3 as shown in <ref target="#fig_2" type="figure">Fig. 3c</ref> .</s>
+          <s>Such a nontrivial local topological property persists even when the sample size decreases to 3 × 3 as shown in <ref target="#fig_1" type="figure">Fig. 3c</ref> .</s>
           <s>Once again, the left, middle and right panels show the eigen-spectrum, local Chern number at the center, and local Chern number as a function of position, respectively.</s>
           <s>Here the cutoff frequency is also chosen as 31 MHz.</s>
         </p>
         <p>
           <s>Experimental demonstration of the topological transport.</s>
           <s>Due to the nontrivial topological property of the m = ±1 subspace and the existence of the local Chern number, finite-size samples should have angular momentum-dependent one-way edge states.</s>
-          <s>The robustness of these one-way edge states against defects and sharp corners are numerically investigated in <ref target="#fig_2" type="figure">Supplementary Figs. 3 and 4</ref> and Supplementary Note 3. Due to the complexity of the connected network, we work with a small sample.</s>
+          <s>The robustness of these one-way edge states against defects and sharp corners are numerically investigated in <ref target="#fig_1" type="figure">Supplementary Figs. 3 and 4</ref> and Supplementary Note 3. Due to the complexity of the connected network, we work with a small sample.</s>
           <s>As shown in the previous section, the nontrivial topology should be manifested in the transmission spectra even for a 3 × 3 sample.</s>
           <s>The experimental sample is shown in <ref type="figure">Fig. 4a</ref> .</s>
           <s>
@@ -399,7 +400,7 @@
           <s>Due to the complexity of the connected network, we implement a small sample in the experiment.</s>
           <s>
             <ref type="figure">Figure 5c</ref> shows the in-plane lattice structure of the experimental sample in <ref type="figure">Fig. 4a</ref> and the interlayer coupling is the same as that shown in <ref type="figure">Fig. 1g</ref> .</s>
-          <s>The parameters of the lattice are the same as those in <ref target="#fig_1" type="figure">Fig. 2</ref> .</s>
+          <s>The parameters of the lattice are the same as those in <ref target="#fig_0" type="figure">Fig. 2</ref> .</s>
           <s>We also add three additional cables to each layer in the upperright corner (indicated by the red line) as a defect to test the oneway property of the edge states (more experimental details can be found in Methods).</s>
           <s>The experimental transmission spectra of the system for m = 1 with and without the defect are shown in <ref type="figure">Fig. 5d</ref> with the red and black curves, where the gray region denotes the nontrivial gap region.</s>
           <s>It can be seen that inside the nontrivial gap region, the transmission spectra are almost the same, while they differ for frequencies below the gap region.</s>
@@ -408,6 +409,7 @@
           <s>As a comparison, the defect shown in <ref type="figure">Fig. 5a</ref> is inserted deeply into the inside of the sample, and so it will affect the propagating of the states outside the band gap more conspicuously than the defect shown in <ref type="figure">Fig. 5c</ref> .</s>
           <s>We also measure the field distribution of the edge state excitation as additional evidence of the existence and robustness of the one-way edge states.</s>
           <s>
+            <ref type="figure">Figure</ref>
             <ref type="figure">Fig. 8a-d)</ref> .</s>
           <s>We also measure the field patterns for m = 0.</s>
           <s>The wave propagates at 33.7 MHz inside the bulk band ( <ref type="figure">Supplementary Fig. 7a</ref> ) but is reflected at 49.2 MHz which falls inside the band gap ( <ref type="figure">Supplementary Fig. 7b</ref> ).</s>
@@ -464,20 +466,68 @@
       <div>
         <head>Data availability</head>
       </div>
-      <figure xml:id="fig_1">
+      <figure xml:id="fig_0">
         <head>Fig. 2</head>
         <label>2</label>
         <figDesc>Fig. 2 Band structures and edge states. a, b The bulk bands for m = 0 (a) and m = 1 (b). The Dirac point exists at K for m = 0 and the degeneracy is lifted for m = 1 bands which possess non-zero Chern numbers as labeled in (b). The band gap (gray region) between the two bands is nontrivial. The band structure for m = −1 is the same as that in (b) but the Chern numbers have opposite signs. c, d The projected bands for m = 1 along the x direction (c) and y direction (d), where the gray area represents the projected bulk bands and the red and blue curves represent the edge states localized at the upper (right) and lower (left) boundaries of a ribbon of this system. The ribbon is periodic along x (y) and truncated with an armchair (zigzag) boundary in the y (x) direction. In the calculation, the intralayer and interlayer cable lengths are a = 0.43 m and b = 2.06 m, respectively. The wave speed is 0.66c and the cable loss is ignored</figDesc>
       </figure>
-      <figure xml:id="fig_2">
+      <figure xml:id="fig_1">
         <head>Fig. 3</head>
         <label>3</label>
         <figDesc>Fig. 3 Local Chern numbers. a We use a circular computational domain for calculating the local Chern numbers at the sample center as a function of the computational domain radius for a 9 × 9 finite-size sample. The red, blue and green regions correspond to the A, B and C sectors, respectively. b, c The energy levels (left), local Chern numbers at the sample center (middle) and the local Chern number as a function of position (right) of m = 1 states for 3 × 3 and 9 × 9 samples, respectively, are shown. In the calculations, the radii of their computational domain are set to 2.3a and 5a respectively. The black lines represent the eigenfrequencies. The dotted red line in (b) in the left panel marks f = 31 MHz, which is set to the cutoff frequency in the local Chern number calculation. The middle panel shows how the local Chern number ν changes with the cutoff frequency, where the center of the computational domain is fixed at the center of the samples. Each point represents the value of ν by adding up all the eigenstates at and below this frequency</figDesc>
       </figure>
-      <figure xml:id="fig_3">
-        <head>Figure 5e Fig. 5 Fig. 4</head>
-        <label>5e54</label>
+      <figure xml:id="fig_2">
+        <head>Fig. 5 Fig. 4</head>
+        <label>54</label>
         <figDesc>Fig. 5 Transmission spectra and edge state field distributions. a The 7 × 7 network with a defect made by removing all the interlayer cables in the unit cells highlighted in red. b The simulated transmission spectra of m = 1 show that the defect disturbs the bulk transmission outside the gap region, but almost does not change the transmission inside the nontrivial gap region (gray zone). c The schematics of the experimental setup for measuring the transmission spectra of m = 1 states (with a defect as represented by the red line). d The defect does not change the transmission spectra inside the nontrivial gap range (gray zone). e, f Experimentally measured (e) and numerically calculated (f) field patterns at 34.5 MHz in the nontrivial gap frequency range for m = 1. The signal enters from the point marked by the blue arrow. The color of each node represents the value of ln|U/U max |, where U is the voltage at each node, and U max is the maximum voltage among all nodes. The edge mode passes over corners and through the defect without backward scattering. The amplitude of the edge state decreases gradually due to the intrinsic loss in the cables</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>means that the nodes in each layer</figDesc>
+        <table>a 
+b 
+
+d 
+
+1 
+
+e 
+
+c 
+
+Layer j 
+
+Layer j + 1 
+
+f 
+
+2 
+
+0 
+
+g 
+
+A 1 
+
+A 2 
+
+Layer 1 
+
+Layer 2 
+
+Layer 3 
+
+'Head-to-tail' connection 
+
+x 
+y 
+
+A 3 
+
+B 1 
+
+</table>
       </figure>
       <note place="foot">NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-018-08281-9</note>
       <note place="foot">NATURE COMMUNICATIONS | (2019) 10:434 | https://doi.org/10.1038/s41467-018-08281-9 | www.nature.com/naturecommunications</note>
@@ -490,18 +540,21 @@
           <p>
             <s>The data that support the findings of this study are available from the corresponding authors on request.</s>
           </p>
-          <p>
-            <s>Received: 16 August 2018 Accepted: 27 December 2018</s>
-          </p>
-        </div>
-        <div>
-          <head>Acknowledgements</head>
-          <p>
-            <s>This work was supported by the Research Grants Council of Hong Kong (16304717 and AoE/P-02/12).</s>
-          </p>
         </div>
       </div>
       <div type="annex">
+        <div>
+          <head>Author contributions</head>
+          <p>
+            <s>C.T.C. initiated the program and oversaw and directed the entire project.</s>
+            <s>M.X.</s>
+            <s>conceived the idea of controlling waves with angular momentum.</s>
+            <s>T.J. developed the theory and carried out the experiment.</s>
+            <s>W.-J.C. provided important suggestions for theory and experiment.</s>
+            <s>L.Y., Y. F. and W.Y.T. provided experimental support.</s>
+            <s>All authors contributed to the analysis and the discussion of results.</s>
+          </p>
+        </div>
         <div>
           <head>Additional information</head>
           <p>
@@ -516,6 +569,12 @@
           </p>
           <p>
             <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+          <p>
+            <s>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.</s>
+            <s>The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in a credit line to the material.</s>
+            <s>If material is not included in the article's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.</s>
+            <s>To view a copy of this license, visit http://creativecommons.org/ licenses/by/4.0/.</s>
           </p>
         </div>
       </div>

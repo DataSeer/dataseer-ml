@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T07:36+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:14+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -86,25 +86,20 @@
             <s>The characterization of metallic amorphous solids is more complex than the identification of crystalline matter 1 .</s>
             <s>Currently, bulk amorphous metals have become useful engineering materials in several applications despite the fact that their microscopic properties at the medium and local range are not as well understood 2 .</s>
             <s>For example, bulk amorphous alloys exhibit high strength, peculiar elastic properties, and other unusual engineering characteristics 3 .</s>
-            <s>Concurrently, several machine learning techniques have been introduced in the field of condensed matter for enhancing the understanding of phenomena in materials design <ref target="#b3" type="bibr">[4]</ref>
-              <ref target="#b4" type="bibr">[5]</ref>
-              <ref target="#b5" type="bibr">[6]</ref>
-              <ref target="#b6" type="bibr">[7]</ref> .</s>
-          </p>
-          <p>
+            <s>Concurrently, several machine learning techniques have been introduced in the field of condensed matter for enhancing the understanding of phenomena in materials design 4-7 .</s>
             <s>In this article we demonstrate that a topological inspection of the structure of the eutectic sodium-potassium (NaK) alloy using machine learning analyses predicts excellently the solidification fate of the liquid eutectic alloy leading to crystalline and amorphous solids.</s>
             <s>Indeed, our findings are in full agreement with our Metropolis Monte Carlo (MMC) simulations using the second moment approximation (SMA) potential 8 described in upcoming sections.</s>
-            <s>When looking for compositions of binary metal alloys with high glass forming ability, the eutectic and slightly off-eutectic compositions is a good place to start <ref target="#b8" type="bibr">9,</ref>
-              <ref target="#b9" type="bibr">10</ref> .</s>
-            <s>Eutectic NaK is a binary alloy formed by 22% Na and 78% K in atomic weight <ref target="#b10" type="bibr">11,</ref>
-              <ref target="#b11" type="bibr">12</ref> .</s>
+          </p>
+          <p>
+            <s>When looking for compositions of binary metal alloys with high glass forming ability, the eutectic and slightly off-eutectic compositions is a good place to start 9,10 .</s>
+            <s>Eutectic NaK is a binary alloy formed by 22% Na and 78% K in atomic weight 11,12 .</s>
             <s>This interesting alloy is liquid at room temperature, solidifies at temperatures below 260 K 12 , and is used as a coolant in nuclear reactors among other applications 13 .</s>
-            <s>Experimental measurements of the mass density have been performed for the NaK liquid phase from room to higher temperatures at the eutectic concentration <ref target="#b13" type="bibr">14</ref> .</s>
-            <s>Numerical simulations of the NaK nanoalloy at various relative concentrations <ref target="#b14" type="bibr">15</ref> showed that the magical nanostructure size with minimum excess energy corresponded to the eutectic composition.</s>
+            <s>Experimental measurements of the mass density have been performed for the NaK liquid phase from room to higher temperatures at the eutectic concentration 14 .</s>
+            <s>Numerical simulations of the NaK nanoalloy at various relative concentrations 15 showed that the magical nanostructure size with minimum excess energy corresponded to the eutectic composition.</s>
             <s>However, there are no theoretical/computational studies of the extended condensed phases of eutectic NaK.</s>
           </p>
           <p>
-            <s>Our preliminary MMC simulations of the eutectic NaK alloy gave the thermal behavior of the enthalpy and the mass density along a computational procedure that annealed the system spanning high-to-low temperatures <ref target="#b15" type="bibr">16</ref> .</s>
+            <s>Our preliminary MMC simulations of the eutectic NaK alloy gave the thermal behavior of the enthalpy and the mass density along a computational procedure that annealed the system spanning high-to-low temperatures 16 .</s>
             <s>Now we analayze the thermodynamic parameters (structure, enthalpy, system volume) exhaustively from the MMC atomistic simulations with the goal of neatly identifying the liquid, crystalline, and amorphous phases that develop along the annealing process.</s>
             <s>An independent machine learning analysis using exclusively the atomic Cartesian coordinates obtained in the simulation runs is undertaken with the goal of verifying the identification of the three condensed phases predicted by the simulation.</s>
             <s>Our machine learning strategy is based</s>
@@ -117,7 +112,7 @@
     <body>
       <div>
         <p>
-          <s>SCientifiC REPORTS | (2019) 9:704 | DOI:10.1038/s41598-018-36574-y on topological parameters determined by Voronoi-tessellating <ref target="#b16" type="bibr">17</ref> the 3D space occupied by the atoms inside the computational box.</s>
+          <s>SCientifiC REPORTS | (2019) <ref target="#b8" type="bibr">9</ref> :704 | DOI: <ref target="#b9" type="bibr">10</ref> .1038/s41598-018-36574-y on topological parameters determined by Voronoi-tessellating 17 the 3D space occupied by the atoms inside the computational box.</s>
           <s>The Voronoi tessellation has been utilized for identifying topological characteristics of liquids <ref target="#b17" type="bibr">[18]</ref>
             <ref target="#b18" type="bibr">[19]</ref>
             <ref target="#b19" type="bibr">[20]</ref> , glasses <ref target="#b1" type="bibr">2,</ref>
@@ -140,14 +135,13 @@
           <s>The Second Moment Approximation (SMA) model potential is a many-body potential that approximates the local environment of every atom mimicking the distribution of electronic states in a d-band by a bonding term U el , supplemented with the U rep Born-Mayer term for the short-range repulsion <ref target="#b7" type="bibr">8</ref> .</s>
           <s>The SMA is a classical version of the tight-binding approach.</s>
           <s>As such, the SMA differs significantly from pair-additive classical models and has a characteristic very soft spheres repulsive wall.</s>
-          <s>The SMA analytical expression is a sum, U coh = U rep + U el , with where r ij are the interatomic distances and N is the total number of atoms.</s>
+          <s>The SMA analytical expression is a sum, where r ij are the interatomic distances and N is the total number of atoms.</s>
           <s>The parameters for pure Na and K were developed in previous work <ref target="#b7" type="bibr">8</ref> .</s>
-          <s>Combination rules were employed for the Na-K pairs, with the geometric mean of the K and Na parameters for ζ 0 , ε 0 , p, q and a weighted arithmetic mean for (N K , N Na being the number of K and Na atoms).</s>
+          <s>Combination rules were employed for the Na-K pairs, with the geometric mean of the K and Na parameters for ζ 0 , ε 0 , p, q and a weighted arithmetic mean for = + r r r N N N N 0 0 0 NaK Na Na K K (N K , N Na being the number of K and Na atoms).</s>
           <s>
             <ref type="table">Table 1</ref> lists all SMA parameters used in this work.</s>
         </p>
-        <formula xml:id="formula_0">∑ ∑ ε = = = ≠ − − ( ) U e<label>(1)</label>
-        </formula>
+        <formula xml:id="formula_0">U coh = U rep + U el , with ∑ ∑ ε = = = ≠ − − ( ) U e (1)</formula>
         <p>
           <s>Although this classical modeling of the atomic interactions is not unique, we believe that the parametrization of the SMA is very appropriate for describing soft metals as the NaK alloy.</s>
         </p>
@@ -170,29 +164,32 @@
           <s>Thus, the algorithm eliminates the need of calculating the partition function Q.</s>
           <s>The acceptance or rejection for transitioning from state i to state j is given by min(1, P j /P i ).</s>
           <s>We used the isobaric-isothermal (NPT) version of the MMC <ref target="#b24" type="bibr">25</ref> .</s>
+        </p>
+        <p>
           <s>MMC NPT simulations were run for a system of 2000 atoms with periodic boundary conditions and a cutoff radius of 2.381 nm at a constant pressure of 101.325 kPa.</s>
           <s>At the alloy eutectic concentration, the computational box had 648 sodium atoms and 1352 potassium atoms.</s>
           <s>The SMA model potential was used to compute the potential energy of the atomic configurations.</s>
           <s>The initial configuration had the sodium atoms randomly distributed in the sites of a perfect bcc lattice at the pure potassium experimental density.</s>
-          <s>The remaining sites were populated with potassium atoms.</s>
+          <s>The remaining sites were populated ζ 0 (eV) ε 0 (eV) p q r 0 (nm) with potassium atoms.</s>
           <s>A new system configuration is generated once each of the 2000 atoms was attempted a move of a fixed length step in random direction.</s>
           <s>The magnitude of the atomic movements was dynamically adjusted throughout the simulation to maintain approximately a 50% rejection rate of attempted atomic moves.</s>
           <s>The volume change of the computational box was attempted once every passage over the 2000 attempted atomic moves at constant volume.</s>
           <s>Typically, in order to obtain the average values reported in the next section, 2 million passages through the full 2000 atoms were attempted after the system was sought to be in equilibrium.</s>
-        </p>
-        <formula xml:id="formula_1">ζ 0 (eV) ε 0 (eV) p q r 0 (nm)</formula>
-        <p>
           <s>For assessing cooling rates, we determine a rough estimate of the time equivalent to one MMC passage over all atoms (referred to as lattice-step).</s>
           <s>A system of N = 2000 potassium atoms was first NPT-equilibrated at 337 K and 101.325 kPa.</s>
           <s>Next, six NVT runs at the same temperature were run from different initial configurations to collect the atomic mean square displacement (MSD) as a function of lattice-steps.</s>
-          <s>From the <ref type="bibr">MSD (t)</ref>
-          </s>
+          <s>From the MSD (t)</s>
+        </p>
+        <formula xml:id="formula_1">m i N 1 6 1 = ∑ ∑ = = t t N r r [ ( ) ( ) ] /(6 ) 6tD o m self i i 2 − =</formula>
+        <p>
+          <s>and the potassium empirical value 30 D self = 3.59 × 10 −9 m 2 /s, we very roughly estimate 33 × 10 6 lattice-steps ≈1 μs in the liquid phase.</s>
+          <s>This estimate will be used in the next section when referring to cooling rates.</s>
         </p>
       </div>
       <div>
         <head>Energetics and Structure of Eutectic NaK</head>
         <p>
-          <s>The NaK alloy system was NPT equilibrated at 101.325 kPa and a high temperature of 700 K. Next, the system was annealed at constant pressure resulting in two branches of the the enthalpy and system volume below 230 K, as shown in <ref target="#fig_2" type="figure">Fig. 1</ref> .</s>
+          <s>The NaK alloy system was NPT equilibrated at 101.325 kPa and a high temperature of 700 K. Next, the system was annealed at constant pressure resulting in two branches of the the enthalpy and system volume below 230 K, as shown in <ref target="#fig_1" type="figure">Fig. 1</ref> .</s>
           <s>These two extensive properties of soft materials display such behavior <ref target="#b30" type="bibr">[31]</ref>
             <ref target="#b31" type="bibr">[32]</ref>
             <ref target="#b32" type="bibr">[33]</ref> , which is predictable for a eutectic alloy.</s>
@@ -200,23 +197,25 @@
           <s>The higher enthalpy/ volume branch corresponds to liquid states that were supercooled below 230 K and became an amorphous solid below approximately 140 K <ref target="#b30" type="bibr">[31]</ref>
             <ref target="#b31" type="bibr">[32]</ref>
             <ref target="#b32" type="bibr">[33]</ref> .</s>
-          <s>Averages in <ref target="#fig_2" type="figure">Fig. 1</ref> were calculated over 2 million lattice-steps after the system was equilibrated at each temperature.</s>
-          <s>Using the estimate of 1 MMC lattice-step ≈0.03 ps, the following cooling/warming rates were applied along the annealing process.</s>
-          <s>A first cooling process gave rise to the liquid-amorphous branch of higher enthalpy and volume in <ref target="#fig_2" type="figure">Fig. 1</ref> by: (i) cooling from 700 to 150 K at a rate of 287 K/μs, (ii) re-cooling from 170 to 150 K at a slower rate of 100 K/μs enabled the system to reach a state of crystal character at 160 K (lowest temperature the system reached a crystal state from the upper branch), (iii) cooling from 150 to 50 K at 380 K/μs.</s>
-          <s>Secondly, starting from the state with crystal character at 160 K, an annealing process gave rise to the crystalline branch of lower enthalpy and volume in <ref target="#fig_2" type="figure">Fig. 1</ref> by: (i) warming-up from 160 to 229 K at 180 K/μs until at 230 K the system reverted to the liquid-amorphous branch (229 K was the highest temperature at which the system remained crystalline), (ii) slow cooling from 229 to 50 K at a rate of 73 K/μs.</s>
         </p>
         <p>
-          <s>In <ref target="#fig_2" type="figure">Fig. 1</ref> , the amorphous-liquid branch displays a smooth behavior resulting from cooling at various rates.</s>
+          <s>Averages in <ref target="#fig_1" type="figure">Fig. 1</ref> were calculated over 2 million lattice-steps after the system was equilibrated at each temperature.</s>
+          <s>Using the estimate of 1 MMC lattice-step ≈0.03 ps, the following cooling/warming rates were applied along the annealing process.</s>
+          <s>A first cooling process gave rise to the liquid-amorphous branch of higher enthalpy and volume in <ref target="#fig_1" type="figure">Fig. 1</ref> by: (i) cooling from 700 to 150 K at a rate of 287 K/μs, (ii) re-cooling from 170 to 150 K at a slower rate of 100 K/μs enabled the system to reach a state of crystal character at 160 K (lowest temperature the system reached a crystal state from the upper branch), (iii) cooling from 150 to 50 K at 380 K/μs.</s>
+          <s>Secondly, starting from the state with crystal character at 160 K, an annealing process gave rise to the crystalline branch of lower enthalpy and volume in <ref target="#fig_1" type="figure">Fig. 1</ref> by: (i) warming-up from 160 to 229 K at 180 K/μs until at 230 K the system reverted to the liquid-amorphous branch (229 K was the highest temperature at which the system remained crystalline), (ii) slow cooling from 229 to 50 K at a rate of 73 K/μs.</s>
+        </p>
+        <p>
+          <s>In <ref target="#fig_1" type="figure">Fig. 1</ref> , the amorphous-liquid branch displays a smooth behavior resulting from cooling at various rates.</s>
           <s>Meanwhile, the crystalline branch shows the two states at 160 K and 229 K between which the warming-up process was performed plus the states resulting from a slow cooling-down from 229 K to 50 K.</s>
-          <s>The insets of <ref target="#fig_2" type="figure">Fig. 1</ref> depict the warm-up states with green triangles and the cool-down states in black dots along the crystalline branch evidencing a hysteresis as observed in other alloys <ref target="#b33" type="bibr">34</ref> .</s>
+          <s>The insets of <ref target="#fig_1" type="figure">Fig. 1</ref> depict the warm-up states with green triangles and the cool-down states in black dots along the crystalline branch evidencing a hysteresis as observed in other alloys <ref target="#b33" type="bibr">34</ref> .</s>
           <s>The annealing hysteresis is narrow in eutectic alloys because both metals melt simultaneously.</s>
           <s>The temperature above which the system did not remain crystalline while warming-up was 230 K.</s>
-          <s>This temperature is lower than 260 K, the experimental melting temperature <ref target="#b11" type="bibr">12</ref> .</s>
+          <s>This temperature is lower than 260 K, the experimental melting temperature 12 .</s>
           <s>On the other hand, the passage from liquid to supercooled liquid occurred gradually in the 240 K to 140 K range.</s>
           <s>Around 130-140 K the upper branch had an inflection point consistent with an arrest in volume changes in configuration space and the system became a long-lived metastable amorphous solid <ref target="#b30" type="bibr">31,</ref>
             <ref target="#b32" type="bibr">33</ref> .</s>
           <s>Properties of the liquid were in good agreement with experimental values, indicating that the SMA potential gives a realistic representation of the liquid alloy.</s>
-          <s>The liquid heat capacity C p = 1019 J(kgK) −1 was calculated from a fit to the enthalpy slope between Additionally, the calculated equilibrium density of the liquid at 350 K was 0.89 g/cm <ref target="#b2" type="bibr">3</ref> , comparing well with the experimental value 14 of 0.86 g/ cm <ref target="#b2" type="bibr">3</ref> .</s>
+          <s>The liquid heat capacity C p = 1019 J(kgK) −1 was calculated from a fit to the enthalpy slope between Additionally, the calculated equilibrium density of the liquid at 350 K was 0.89 g/cm 3 , comparing well with the experimental value 14 of 0.86 g/ cm <ref target="#b2" type="bibr">3</ref> .</s>
           <s>No crystal structure measurements were found in the literature.</s>
           <s>Analysis of the pair correlation function reveals clearly the different structural characteristics of the two types of solids, amorphous and crystalline, as illustrated in Figs 2 and 3, respectively.</s>
           <s>The g K−K (r) and g Na−Na (r) were calculated with NVT MMC at 110 K and 1002.5 kg/m 3 for the crystalline solid and 992.57</s>
@@ -226,13 +225,13 @@
           <s>The g Na−Na (r) shows differences between crystal and amorphous, although not as clear as for the K-K pairs.</s>
           <s>In Figs 2 and 3, the system snapshots of the two solid systems at 110 K show visually the difference between them.</s>
           <s>To help the visualization, the snapshots in these figures depict the computational box replicated three times in each Cartesian direction.</s>
-          <s>The crystalline structure in <ref target="#fig_3" type="figure">Fig. 2</ref> shows the periodic array of the atoms and the segregated Na cluster (grey) immersed in the potassium matrix (violet).</s>
+          <s>The crystalline structure in <ref target="#fig_2" type="figure">Fig. 2</ref> shows the periodic array of the atoms and the segregated Na cluster (grey) immersed in the potassium matrix (violet).</s>
           <s>This Na cluster was shaped as a raft with 3-4 atomic layers of thickness, as desiring to form a lamellar structure with large surface area.</s>
-          <s>By contrast, the solid system depicted in <ref target="#fig_4" type="figure">Fig. 3</ref> was amorphous throughout the occupied volume, had several segregated smaller Na clusters, and a significantly larger number of isolated Na atoms.</s>
+          <s>By contrast, the solid system depicted in <ref target="#fig_3" type="figure">Fig. 3</ref> was amorphous throughout the occupied volume, had several segregated smaller Na clusters, and a significantly larger number of isolated Na atoms.</s>
           <s>Snapshots in Figs. 2, 3 were drawn with Ovito <ref target="#b34" type="bibr">35</ref> .</s>
-          <s>Further analysis of the two solids structure was done at 140 K with the Adaptive Common Neighbor Analysis (a-CNA) algorithm <ref target="#b35" type="bibr">[36]</ref>
-            <ref target="#b36" type="bibr">[37]</ref>
-            <ref target="#b37" type="bibr">[38]</ref> that yielded a fingerprint of the local environment of each atom.</s>
+        </p>
+        <p>
+          <s>Further analysis of the two solids structure was done at 140 K with the Adaptive Common Neighbor Analysis (a-CNA) algorithm 36-38 that yielded a fingerprint of the local environment of each atom.</s>
           <s>In the crystalline solid, 55% of atoms had a bcc entourage and about 7% were fcc or hcp.</s>
           <s>The remaining atoms had no crystal symmetries in their local surroundings due to boundary atoms between the K matrix and the Na cluster.</s>
           <s>In contrast, in the amorphous solid none of the atoms had a bcc crystal entourage, only 10 atoms had fcc-, and 2 had ico-surroundings.</s>
@@ -245,8 +244,7 @@
           <s>The lower enthalpy branch ranging from 50-230 K pertained to a crystalline matrix of potassium atoms spanning the computational box and encasing an extended cluster of sodium atoms.</s>
           <s>Meanwhile, the inflection point in the supercooled liquid-amorphous branch around 140 K suggested that below that temperature the system had transitioned to a solid, amorphous state.</s>
           <s>The transition resembled a glass transition.</s>
-          <s>However, the amorphous solid did not display a homogeneous distribution of A system snapshot showing the formation of crystal planes and a segregated Na cluster is also depicted, violet is K and grey is Na.</s>
-          <s>Na atoms in the K amorphous matrix as expected in a glass.</s>
+          <s>However, the amorphous solid did not display a homogeneous distribution of Na atoms in the K amorphous matrix as expected in a glass.</s>
           <s>Instead, an amorphous matrix of K atoms encased several small clusters of Na atoms that were themselves also amorphous.</s>
           <s>Therefore, we associated the inflection point with a temperature at which the supercooled liquid was viscous enough to transform definitely into a solid with amorphous structure but not necessarily a glass.</s>
           <s>Such temperature depends on the cooling rate <ref target="#b30" type="bibr">[31]</ref>
@@ -262,58 +260,33 @@
           <s>A goal of our data analyses was to find out if a machine learning protocol based exclusively on the knowledge of atomic coordinates collected along the MMC trajectories would provide a plausible physical description without knowing any of the thermodynamics findings described in the previous section.</s>
           <s>Machine learning analyses require a choice of attributes, also known as descriptors or features.</s>
           <s>We decided on the use of the Voronoi cells properties as sole attributes for the machine learning strategy described in this section because a Voronoi tessellation only requires knowledge of the coordinates of a set of points.</s>
-        </p>
-        <p>
-          <s>Topological attributes based on Voronoi tessellation.</s>
-          <s>A Voronoi tessellation is a segmentation of the available space into cells that fill such space densely <ref target="#b16" type="bibr">17</ref> .</s>
-          <s>This tessellation generates groupings of planes into convex polyhedra (Voronoi cells) such that all points on the cell are closer to the central site than to any other site.</s>
-          <s>The resulting intersection of these planes is a Voronoi cell.</s>
-          <s>We defined the machine learning attributes that described the atomic packing topology based on the Voronoi tessellation of the computational box volume, such that the position of each atom in the computational box was at the center of a Voronoi cell.</s>
-          <s>Thus, a characteristic polyhedron enveloped each atom.</s>
-          <s>Voronoi cells are characterized by the total number of faces CN (coordination number) and the number of 3-, 4-, 5-, and 6-edged faces comprising the cell.</s>
-          <s>For example, CNn = 〈n 3 , n 4 , n 5 , n 6 〉 specifies a Voronoi cell with n faces, out of which there are n 3 3-edged faces, n 4 4-edged faces, etc. Certain Voronoi cells <ref target="#b1" type="bibr">2,</ref>
-            <ref target="#b21" type="bibr">22,</ref>
-            <ref target="#b38" type="bibr">39</ref> have proven useful in identifying glasses because they give rise to Z and Ze atomic arrangements where the nearest-neighbor atoms to the central atom are connected with fivefold bonds.</s>
-          <s>We have tracked the actual Voronoi cells instead of their associated polytetrahedral atomic arrangements and labeled them as cells of type Z or Ze according to their classification 2 .</s>
-          <s>All other Voronoi cells were identified by their CN type.</s>
-          <s>Voro++ <ref target="#b39" type="bibr">40</ref> with periodic boundary conditions was used to generate the tessellation of the atomic configurations saved from the MMC simulation runs.</s>
-          <s>Configurations corresponding to the green points in <ref target="#fig_2" type="figure">Fig. 1</ref> insets were not included.</s>
-        </p>
-        <p>
+          <s>
+            <ref target="#fig_1" type="figure">Fig. 1</ref> insets were not included.</s>
           <s>Not only all encountered Voronoi cells were identified, but also several properties derived from them were defined as attributes.</s>
           <s>For example, attribute f5 was defined as the number of 5-edged cell faces.</s>
           <s>Along our study, 48 different attributes were found in the structures gathered from the MMC simulation runs.</s>
           <s>
-            <ref target="#tab_2" type="table">Table 2</ref> provides a list of them.</s>
+            <ref target="#tab_1" type="table">Table 2</ref> provides a list of them.</s>
           <s>The Voronoi tessellation of the computational box containing 2000 atoms was performed for 18672 saved MMC configurations and the 48 topological attributes were calculated.</s>
-          <s>Configurations from the green points in <ref target="#fig_2" type="figure">Fig. 1</ref> inset were not included.</s>
+          <s>Configurations from the green points in <ref target="#fig_1" type="figure">Fig. 1</ref> inset were not included.</s>
           <s>Each of the 48 attributes was found a certain number of times in a given configuration, which defined its frequency of occurrence.</s>
           <s>These occurrence frequencies were entered in a data table of 18672 rows by 48 columns.</s>
           <s>Therefore, the dataset spanned a 48-dimensional space.</s>
         </p>
+      </div>
+      <div>
+        <head>Topological attributes based on Voronoi tessellation.</head>
         <p>
           <s>Attribute selection.</s>
           <s>Reducing the number of attributes is a basic selection process in machine learning.</s>
         </p>
         <p>
           <s>There are various methods for selecting the most significant attributes based on different types of ranking processes.</s>
-          <s>We used the Laplacian score <ref target="#b40" type="bibr">41</ref> for ranking the 48 topological attributes described in <ref target="#tab_2" type="table">Table 2</ref> .</s>
+          <s>We used the Laplacian score <ref target="#b40" type="bibr">41</ref> for ranking the 48 topological attributes described in <ref target="#tab_1" type="table">Table 2</ref> .</s>
           <s>This method acts as a filter for selecting attributes based on their ability of locality preservation.</s>
-          <s>The 26 top Laplacian-ranked attributes and their scores are listed in <ref target="#tab_4" type="table">Table 3</ref> .</s>
+          <s>The 26 top Laplacian-ranked attributes and their scores are listed in <ref target="#tab_2" type="table">Table 3</ref> .</s>
           <s>Our machine learning study was based on these 26 attributes such that the data table was reduced to have 18672 rows by 26 columns.</s>
           <s>The Appendix provides a figure depicting the ten top attributes and the data table is given in the Supplementary Information.</s>
-          <s>
-            <ref target="#tab_4" type="table">Table 3</ref> , a principal component analysis (PCA) <ref target="#b41" type="bibr">42</ref> was performed.</s>
-          <s>As a result, a set of 26 linearly uncorrelated attributes, called principal components (PC), were obtained.</s>
-          <s>The principal components are linear combinations of the 26 original attributes that maximize their variance.</s>
-          <s>This criterion is equivalent to minimizing the error function defined as the sum of squares in a regression analysis <ref target="#b42" type="bibr">43</ref> .</s>
-          <s>The first three PCs, PC1, PC2, PC3, yielded variances of 97%, with contributions of 63%, 32%, and 2%, respectively.</s>
-          <s>A projection of the original 18672 data set onto the planes of the leading PCs allows for a type of data clustering, as visually shown in <ref target="#fig_6" type="figure">Fig. 4</ref> .</s>
-          <s>An inspection of the data points in each of the two clusters based on what we know from the thermodynamics study, indicates that in the PC1-PC2 plane, the negative values correspond to crystalline structures (depicted blue) and the positive values correspond to the amorphous solid plus liquid data with no clear split between them.</s>
-          <s>This same type of Posterior analysis identified the crystalline data of <ref target="#fig_2" type="figure">Fig. 1</ref> as being the blue cluster and the combined amorphous and liquid regions corresponding to the gray-colored cluster.</s>
-        </p>
-        <p>
-          <s>SCientifiC REPORTS | (2019) 9:704 | DOI:10.1038/s41598-018-36574-y</s>
           <s>two-cluster split is visual in the PC1-PC3 plot of <ref target="#fig_6" type="figure">Fig. 4</ref> .</s>
           <s>Although it is common practice to use this approach for clustering data, clearly such clustering analysis is unable of discerning between the amorphous solid data and the liquid data.</s>
           <s>The PCA is also used for dimensionality reduction.</s>
@@ -357,7 +330,7 @@
           <s>We proceeded to sample a smaller dataset with 1934 points picked randomly from the 18672 data points.</s>
           <s>A table was constructed with the 3 PC attributes of the 1934-points dataset.</s>
           <s id="dataset-1" type="Dataset:Existing dataset">This reduced size dataset was used for training a classification model with three classes: liquid, crystal, amorphous, depending upon which EM cluster the samples belonged to.</s>
-          <s>The Random Forest classifier <ref target="#b46" type="bibr">47</ref> , as implemented in Weka <ref target="#b45" type="bibr">46</ref> , was used to build our model classifier with 100 random trees, trained with 10-fold validation.</s>
+          <s>The Random Forest classifier 47 , as implemented in Weka <ref target="#b45" type="bibr">46</ref> , was used to build our model classifier with 100 random trees, trained with 10-fold validation.</s>
           <s>The evaluation on the training set had a mean absolute error of 0.002 with no confusion.</s>
         </p>
         <p>
@@ -365,25 +338,27 @@
           <s>As a result, the crystalline structures classified with 100% accuracy into the crystal class.</s>
           <s>Meanwhile there was a minor confusion between the amorphous and the liquid classes, with the liquid class having 99.8% accuracy and the amorphous class a 98.9% accuracy.</s>
           <s>In total only 55 structures were classified within a class different than the EM cluster to which they belonged.</s>
-          <s>This is shown in the confusion matrix given in <ref target="#tab_5" type="table">Table 4</ref> .</s>
+          <s>This is shown in the confusion matrix given in <ref target="#tab_4" type="table">Table 4</ref> .</s>
+        </p>
+        <p>
           <s>There are 55 samples out of the confusion matrix diagonal.</s>
           <s>The 20 samples wrongly classified as liquid were distributed between 180 K and 240 K. Likewise the 35 structures wrongly classified as amorphous solid were spread from 170 K to 250 K. Summarizing, the Random Forest model built with 10% of the available MMC configurations was appropriate for classifying the remaining 90% of the configurations into the three classes that originated from the unsupervised clustering analysis: crystal, amorphous solid, and liquid.</s>
           <s>Our results demonstrate explicitly the power of machine learning in estimating thermodynamic behavior and simultaneously providing valuable guidance to machine learning of metal alloys condensed phases.</s>
         </p>
         <p>
-          <s>As illustrated in <ref target="#fig_7" type="figure">Fig. 5</ref> , configurations belonging to the amorphous and liquid classes displayed thermodynamic a smooth temperature dependence in <ref target="#fig_2" type="figure">Fig. 1</ref> .</s>
+          <s>As illustrated in <ref target="#fig_7" type="figure">Fig. 5</ref> , configurations belonging to the amorphous and liquid classes displayed thermodynamic a smooth temperature dependence in <ref target="#fig_1" type="figure">Fig. 1</ref> .</s>
           <s>Therefore, a final top down analysis of these two types of configurations was performed with the EM algorithm to yield a first layer of a hierarchical clustering <ref target="#b47" type="bibr">48</ref> .</s>
           <s>The amorphous class displayed a sharp split of samples into two sub-clusters.</s>
           <s>By identifying each sample with its temperature during the simulation, <ref target="#fig_9" type="figure">Fig. 6a</ref> illustrates visually the results.</s>
           <s>The crossing region between130-170 K was identified as the amorphous system transitioning to a volume-arrested amorphous solid.</s>
           <s>The liquid class displayed a softer split of samples into two clusters, as shown in <ref target="#fig_9" type="figure">Fig. 6b</ref> .</s>
           <s>The crossing region between 220-300 K was identified as temperatures where the system was pre-melting and melting.</s>
-          <s>Since the SMA potential of the pure metals predict melting temperature higher than experiment <ref target="#b7" type="bibr">8</ref> , it is expected that the alloy melting region spreads beyond the experimental 260 K.</s>
+          <s>Since the SMA potential of the pure metals predict melting temperature higher than experiment 8 , it is expected that the alloy melting region spreads beyond the experimental 260 K.</s>
           <s>The system behavior in these transition regions was embedded in the attributes used, which we chose not to inspect before applying the latest clustering.</s>
           <s>The Appendix includes the temperature behavior of ten top attributes.</s>
         </p>
         <p>
-          <s>As a validation of conclusions in <ref target="#fig_9" type="figure">Fig. 6</ref> , a moving interface NPT simulation <ref target="#b48" type="bibr">49</ref> was implemented by creating an initial hybrid system with half of the computational box containing the crystalline solid configuration at 150 K and the other half with the liquid configuration at several temperatures between 200-250 K.</s>
+          <s>As a validation of conclusions in <ref target="#fig_9" type="figure">Fig. 6</ref> , a moving interface NPT simulation 49 was implemented by creating an initial hybrid system with half of the computational box containing the crystalline solid configuration at 150 K and the other half with the liquid configuration at several temperatures between 200-250 K.</s>
           <s>It was clearly seen that for all temperatures below 220 K the crystalline solid prevailed by solidifying the liquid half of the box.</s>
           <s>Meanwhile for temperatures 220-250 K, the liquid configuration overcame.</s>
           <s>As the temperature neared 220 K from above, a steep increase in MMC lattice steps were required.</s>
@@ -415,7 +390,7 @@
           <s>Average values per atom of the frequency of occurrence of each attribute at each simulation temperature are given for all attributes except V K and V Na .</s>
           <s>For the latter two, a sum of all cell volumes of type K or Na is divided by the average volume of the full system.</s>
           <s>Colored points depict configurations belonging to the three EM clusters: liquid (red), crystalline solid (blue), amorphous solid (grey).</s>
-          <s>Attributes in <ref target="#fig_10" type="figure">Fig. 7(a)</ref> displayed higher values for the crystalline structures below 200 K, while attributes in <ref target="#fig_10" type="figure">Fig. 7(b)</ref> favored the amorphous solid below 200 K.</s>
+          <s>Attributes in <ref target="#fig_10" type="figure">Fig. 7(a)</ref> displayed higher values for the crystalline structures below 200 K, while attributes in <ref target="#fig_10" type="figure">Fig. 7</ref> (b) favored the amorphous solid below 200 K.</s>
           <s>Note that f5, f7, Z and Ze in <ref target="#fig_10" type="figure">Fig. 7(b)</ref> have their highest and almost constant value for temperatures below 140 K and decrease at higher temperatures.</s>
           <s>This observation, plus the visible inflection point of the enthalpy and volume at that temperature, suggested that the supercooled liquid had transitioned to a solid amorphous state below approximately 140 K.</s>
           <s>The V K and V Na illustrate the volume split assigned by the tessellation to the K and Na atoms, respectively.</s>
@@ -428,20 +403,25 @@
           <s>The Supplementary Information provides the dataset used in this work, with attributes as columns and data points as rows.</s>
         </p>
       </div>
-      <figure xml:id="fig_2">
+      <figure xml:id="fig_1">
         <head>Figure 1 .</head>
         <label>1</label>
         <figDesc>Figure 1. Average enthalpy and volume of the NaK alloy as a function of temperature showing two branches. The top branch corresponds to liquid-amorphous, while the lower branch is crystalline. Insets show in green the warming-up process leading to the crystalline branch.</figDesc>
       </figure>
-      <figure xml:id="fig_3">
+      <figure xml:id="fig_2">
         <head>Figure 2 .</head>
         <label>2</label>
         <figDesc>Figure 2. Pair correlation functions of the crystalline solid at 110 K and ρ = 1002.5 kg/m 3 . A system snapshot showing the formation of crystal planes and a segregated Na cluster is also depicted, violet is K and grey is Na.</figDesc>
       </figure>
-      <figure xml:id="fig_4">
+      <figure xml:id="fig_3">
         <head>Figure 3 .</head>
         <label>3</label>
         <figDesc>Figure 3. Pair correlation functions of the amorphous solid at 110 K and ρ = 992.57 kg/m 3 . A system snapshot showing the lack of atomic order and several Na atoms and clusters is also depicted, violet is K and grey is Na.</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head/>
+        <label/>
+        <figDesc>A Voronoi tessellation is a segmentation of the available space into cells that fill such space densely 17 . This tessellation generates groupings of planes into convex polyhedra (Voronoi cells) such that all points on the cell are closer to the central site than to any other site. The resulting intersection of these planes is a Voronoi cell. We defined the machine learning attributes that described the atomic packing topology based on the Voronoi tessellation of the computational box volume, such that the position of each atom in the computational box was at the center of a Voronoi cell. Thus, a characteristic polyhedron enveloped each atom. Voronoi cells are characterized by the total number of faces CN (coordination number) and the number of 3-, 4-, 5-, and 6-edged faces comprising the cell. For example, CNn = 〈n 3 , n 4 , n 5 , n 6 〉 specifies a Voronoi cell with n faces, out of which there are n 3 3-edged faces, n 4 4-edged faces, etc. Certain Voronoi cells 2,22,39 have proven useful in identifying glasses because they give rise to Z and Ze atomic arrangements where the nearest-neighbor atoms to the central atom are connected with fivefold bonds. We have tracked the actual Voronoi cells instead of their associated polytetrahedral atomic arrangements and labeled them as cells of type Z or Ze according to their classification 2 . All other Voronoi cells were identified by their CN type. Voro++ 40 with periodic boundary conditions was used to generate the tessellation of the atomic configurations saved from the MMC simulation runs. Configurations corresponding to the green points in</figDesc>
       </figure>
       <figure xml:id="fig_5">
         <head/>
@@ -468,27 +448,169 @@
         <label>7</label>
         <figDesc>Figure 7. Topological attributes as a function of temperature; points are averages per atom. Colors are consistent with the three EM clusters: red is liquid, black is supercooled liquid-amorphous solid, blue is crystalline solid. (a) Attributes have higher values for crystalline solid than amorphous solid below 200 K; (b) attributes have higher values for the amorphous solid than crystalline solid below 200 K.</figDesc>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_2">
-        <head>Table 2 .</head>
-        <label>2</label>
-        <figDesc>Type of the topological attributes used in this study.Principal component analysis. In order to eliminate correlations among the top 26 attributes listed in</figDesc>
-        <table>SCientifiC REPORTS | 
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>Table 1. The SMA Parameters for atomic pairs K-K 8 , Na-Na 8 , and Na-K 16 .</figDesc>
+        <table>Na 
+0.29113 
+0.015955 
+10.13 
+1.30 
+0.3698949 
+
+K 
+0.26259 
+0.020545 
+10.58 
+1.34 
+0.4367299 
+
+NaK 
+0.27649 
+0.018105 
+10.35 
+1.32 
+0.4150866 
+
+SCientifiC REPORTS | 
 (2019) 9:704 | DOI:10.1038/s41598-018-36574-y 
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_4">
+      <figure type="table" validated="false" xml:id="tab_1">
+        <head>Table 2 .</head>
+        <label>2</label>
+        <figDesc>Type of the topological attributes used in this study.</figDesc>
+        <table/>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_2">
+        <head>Table 3 ,</head>
+        <label>3</label>
+        <figDesc>a principal component analysis (PCA) 42 was performed. As a result, a set of 26 linearly uncorrelated attributes, called principal components (PC), were obtained. The principal components are linear combinations of the 26 original attributes that maximize their variance. This criterion is equivalent to minimizing the error function defined as the sum of squares in a regression analysis 43 . The first three PCs, PC1, PC2, PC3, yielded var- iances of 97%, with contributions of 63%, 32%, and 2%, respectively. A projection of the original 18672 data set onto the planes of the leading PCs allows for a type of data clustering, as visually shown in Fig. 4. An inspection of the data points in each of the two clusters based on what we know from the thermodynamics study, indicates that in the PC1-PC2 plane, the negative values correspond to crystalline structures (depicted blue) and the positive values correspond to the amorphous solid plus liquid data with no clear split between them. This same type of</figDesc>
+        <table>Rank 
+Attribute 
+Score 
+
+1 
+f5 
+0.99998 
+
+2 
+f6 
+0.99996 
+
+3 
+f4 
+0.99996 
+
+4 
+bcc 
+0.99962 
+
+5 
+f7 
+0.99940 
+
+6 
+f3 
+0.99938 
+
+7 
+faces 
+0.9986 
+
+8 
+CN14 
+0.9984 
+
+9 
+Z 
+0.9972 
+
+10 
+Ze 
+0.9947 
+
+11 
+Z12 
+0.9939 
+
+12 
+f8 
+0.9923 
+
+13 
+CN12 
+0.9915 
+
+14 
+Z13 
+0.9884 
+
+15 
+CN16 
+0.9876 
+
+16 
+V Na 
+0.9823 
+
+17 
+Ze15 
+0.9818 
+
+18 
+V K 
+0.9814 
+
+19 
+CN15 
+0.9813 
+
+20 
+Ze14 
+0.9793 
+
+21 
+CN13 
+0.9717 
+
+22 
+CN17 
+0.9707 
+
+23 
+Ze12 
+0.9421 
+
+24 
+Z14 
+0.9174 
+
+25 
+f9 
+0.9163 
+
+26 
+CN18 
+0.9128 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_3">
         <head>Table 3 .</head>
         <label>3</label>
         <figDesc>The 26 highly ranked topological attributes based on their Laplacian score.</figDesc>
         <table/>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_5">
+      <figure type="table" validated="false" xml:id="tab_4">
         <head>Table 4 .</head>
         <label>4</label>
         <figDesc>Confusion matrix for the Random Forest classification model.</figDesc>
         <table/>
       </figure>
+      <note place="foot">Principal component analysis. In order to eliminate correlations among the top 26 attributes listed in</note>
       <note place="foot">© The Author(s) 2019</note>
     </body>
     <back>
@@ -1664,8 +1786,8 @@
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b42">
-            <monogr>
-              <title level="m" type="main">Principal Components Analysis</title>
+            <analytic>
+              <title/>
               <author>
                 <persName>
                   <forename type="first">G</forename>
@@ -1673,10 +1795,12 @@
                   <surname>Duterman</surname>
                 </persName>
               </author>
+            </analytic>
+            <monogr>
+              <title level="j">Principal Components Analysis</title>
               <imprint>
                 <date type="published" when="1989"/>
                 <publisher>SAGE Publications</publisher>
-                <pubPlace>Newbury Park</pubPlace>
               </imprint>
             </monogr>
           </biblStruct>
@@ -1843,7 +1967,7 @@
                   <surname>Scientific</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/s41598-018-36574-y</idno>
+              <idno type="DOI">10.1038/s41598-018-36574-y</idno>
               <imprint>
                 <date type="published" when="2019"/>
                 <biblScope unit="volume">9</biblScope>

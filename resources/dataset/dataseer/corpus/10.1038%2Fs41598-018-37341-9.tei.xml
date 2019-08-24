@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T09:32+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-24T01:04+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -163,6 +163,16 @@
                 <forename type="first">Miklós</forename>
                 <surname>Erdélyi</surname>
               </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Department of Optics and Quantum Electronics</orgName>
+                <orgName type="institution">University of Szeged</orgName>
+                <address>
+                  <addrLine>Dóm tér 9</addrLine>
+                  <postCode>6720</postCode>
+                  <settlement>Szeged</settlement>
+                  <country key="HU">Hungary</country>
+                </address>
+              </affiliation>
             </author>
             <title level="a" type="main">mmSTORM: Multimodal localization based super-resolution microscopy OPEN</title>
           </analytic>
@@ -180,7 +190,6 @@
     <profileDesc>
       <abstract>
         <div>
-          <head>1</head>
           <p>
             <s>Super-resolution localization microscopy provides a powerful tool to study biochemical mechanisms at single molecule level.</s>
             <s>Although the lateral position of the fluorescent dye molecules can be determined routinely with high precision, measurement of other modalities such as 3D and multicolor without the degradation of the original super-resolved image is still in the focus.</s>
@@ -193,40 +202,22 @@
             <s>Single molecule localization based super-resolution microscopy (SMLM) methods such as PALM 1,2 , FPALM 3 , STORM 4 , dSTORM 5 and GSDIM 6 provide the highest spatial resolution images captured via optical microscopy techniques.</s>
             <s>In these methods temporally and spatially isolated fluorescent molecules are imaged using traditional wide-field microscope systems.</s>
             <s>The images of these point-like single emitters are fitted by the theoretical point spread function (PSF) the center of which defines the lateral position of a molecule.</s>
-            <s>A strictly controlled photoswitching process is required to keep the number of active fluorescent molecules at an optimum value during the data acquisition <ref target="#b6" type="bibr">7</ref> .</s>
+            <s>A strictly controlled photoswitching process is required to keep the number of active fluorescent molecules at an optimum value during the data acquisition 7 .</s>
             <s>In case of a high labeling density, the spatially overlapping PSFs preclude the precise localization of independent molecules, while at a low density the increased acquisition time limits the final image quality 8 .</s>
             <s>SMLM is a photon number limited technique.</s>
-            <s>Single fluorescent dyes can typically emit a few thousand photons during a single ON stage, which determines the localization precision and consequently the final image quality <ref target="#b8" type="bibr">9,</ref>
-              <ref target="#b9" type="bibr">10</ref> .</s>
+            <s>Single fluorescent dyes can typically emit a few thousand photons during a single ON stage, which determines the localization precision and consequently the final image quality 9,10 .</s>
             <s>However, the emitted photons also carry information on the axial position and the local environment of the dye molecules.</s>
             <s>The question is how to read out this extra information and reveal additional physical and chemical properties of the sample at single molecule level?</s>
-          </p>
-          <p>
             <s>Different PSF engineering methods have been proposed to determine the axial position of single fluorescent molecules.</s>
-            <s>Astigmatic <ref target="#b10" type="bibr">[11]</ref>
-              <ref target="#b11" type="bibr">[12]</ref>
-              <ref target="#b12" type="bibr">[13]</ref> approaches have been proposed to code the axial position of a single molecule into the shape of the PSF.</s>
+            <s>Astigmatic 11-13 , biplane 14,15 , double helix 16,17 , interferometric dual objective 18 and Airy-beam 19 approaches have been proposed to code the axial position of a single molecule into the shape of the PSF.</s>
             <s>The stronger the dependency, the higher the axial localization precision.</s>
             <s>However, a serious distortion of the PSF can reduce both the axial range of the localization and the lateral resolution.</s>
             <s>PSF engineering methods are quasi-3D methods, since the mapped axial range is still limited by the depth-of-field (DOF), which is typically at around 1 micron.</s>
             <s>Real 3D SMLM imaging requires either optical or mechanical sectioning 20 and is a time-consuming process.</s>
           </p>
           <p>
-            <s>In addition to the 3D spatial position of the fluorescent molecules, the emitted photons also provide information on the orientation <ref target="#b20" type="bibr">[21]</ref>
-              <ref target="#b21" type="bibr">[22]</ref>
-              <ref target="#b22" type="bibr">[23]</ref>
-              <ref target="#b23" type="bibr">[24]</ref>
-              <ref target="#b24" type="bibr">[25]</ref>
-              <ref target="#b25" type="bibr">[26]</ref>
-              <ref target="#b26" type="bibr">[27]</ref>
-              <ref target="#b27" type="bibr">[28]</ref>
-              <ref target="#b28" type="bibr">[29]</ref>
-              <ref target="#b29" type="bibr">[30]</ref> , the rotational/translational mobility and diffusion 31 and the local environment of the molecules.</s>
-            <s>These properties can be determined via the measurement of physical parameters such as polarization (anisotropy) <ref target="#b31" type="bibr">[32]</ref>
-              <ref target="#b32" type="bibr">[33]</ref>
-              <ref target="#b33" type="bibr">[34]</ref> and fluorescence emission spectra <ref target="#b34" type="bibr">[35]</ref>
-              <ref target="#b35" type="bibr">[36]</ref>
-              <ref target="#b36" type="bibr">[37]</ref> .</s>
+            <s>In addition to the 3D spatial position of the fluorescent molecules, the emitted photons also provide information on the orientation 21-30 , the rotational/translational mobility and diffusion 31 and the local environment of the molecules.</s>
+            <s>These properties can be determined via the measurement of physical parameters such as polarization (anisotropy) 32-34 and fluorescence emission spectra 35-37 .</s>
             <s>However, modification of the PSF typically affects the overall final image quality and requires a trade-off between different modalities due to the limited photon number.</s>
           </p>
           <p>
@@ -242,7 +233,7 @@
     <body>
       <div>
         <p>
-          <s>, dSTORM <ref target="#b4" type="bibr">5</ref> and GSDIM <ref target="#b5" type="bibr">6</ref> provide the highest spatial resolution images captured via optical microscopy techniques.</s>
+          <s>Single molecule localization based super-resolution microscopy (SMLM) methods such as PALM 1,2 , FPALM 3 , STORM <ref target="#b3" type="bibr">4</ref> , dSTORM <ref target="#b4" type="bibr">5</ref> and GSDIM <ref target="#b5" type="bibr">6</ref> provide the highest spatial resolution images captured via optical microscopy techniques.</s>
           <s>In these methods temporally and spatially isolated fluorescent molecules are imaged using traditional wide-field microscope systems.</s>
           <s>The images of these point-like single emitters are fitted by the theoretical point spread function (PSF) the center of which defines the lateral position of a molecule.</s>
           <s>A strictly controlled photoswitching process is required to keep the number of active fluorescent molecules at an optimum value during the data acquisition <ref target="#b6" type="bibr">7</ref> .</s>
@@ -252,8 +243,6 @@
             <ref target="#b9" type="bibr">10</ref> .</s>
           <s>However, the emitted photons also carry information on the axial position and the local environment of the dye molecules.</s>
           <s>The question is how to read out this extra information and reveal additional physical and chemical properties of the sample at single molecule level?</s>
-        </p>
-        <p>
           <s>Different PSF engineering methods have been proposed to determine the axial position of single fluorescent molecules.</s>
           <s>Astigmatic <ref target="#b10" type="bibr">[11]</ref>
             <ref target="#b11" type="bibr">[12]</ref>
@@ -275,7 +264,7 @@
             <ref target="#b26" type="bibr">[27]</ref>
             <ref target="#b27" type="bibr">[28]</ref>
             <ref target="#b28" type="bibr">[29]</ref>
-            <ref target="#b29" type="bibr">[30]</ref> , the rotational/translational mobility and diffusion <ref target="#b30" type="bibr">31</ref> and the local environment of the molecules.</s>
+            <ref target="#b29" type="bibr">[30]</ref> , the rotational/translational mobility and diffusion 31 and the local environment of the molecules.</s>
           <s>These properties can be determined via the measurement of physical parameters such as polarization (anisotropy) <ref target="#b31" type="bibr">[32]</ref>
             <ref target="#b32" type="bibr">[33]</ref>
             <ref target="#b33" type="bibr">[34]</ref> and fluorescence emission spectra <ref target="#b34" type="bibr">[35]</ref>
@@ -284,7 +273,7 @@
           <s>However, modification of the PSF typically affects the overall final image quality and requires a trade-off between different modalities due to the limited photon number.</s>
         </p>
         <p>
-          <s>The 4Pi method <ref target="#b37" type="bibr">38</ref> is based on a dual-objective configuration generating an interference pattern via counter-propagating beams inside the sample.</s>
+          <s>The 4Pi method 38 is based on a dual-objective configuration generating an interference pattern via counter-propagating beams inside the sample.</s>
           <s>Using the 4Pi type C configuration, the emitted light is collected by both objectives, which results in high detection efficiency.</s>
           <s>In the double-pass confocal transmission system interference is generated between the direct and the back reflected beams <ref target="#b38" type="bibr">39</ref> .</s>
           <s>Several dual-objective configurations have been proposed for SML microscopy, when the two images are captured by either a single <ref target="#b39" type="bibr">[40]</ref>
@@ -301,6 +290,8 @@
           <s>Dual objective configurations mostly apply two optically balanced pathways to eliminate aberrations.</s>
           <s>Such configurations require the application of identical optical components in the two arms and stable optical stages.</s>
           <s>For example, the interferometric fluorescent 3D super-resolution approach generates and captures three interference patterns under different retardation conditions using identical CCD cameras, and determines the axial position of fluorescent molecules with sub 20 nm resolution <ref target="#b17" type="bibr">18</ref> .</s>
+        </p>
+        <p>
           <s>In this paper we report the development and application of an optical setup for multimodal SMLM that can be potentially used for 3D, polarization and spectral sensitive measurements.</s>
           <s>The proposed system has several advantages over other configurations.</s>
           <s>It does not affect the primary SMLM imaging process, and yields a normal 2D super-resolved primary image.</s>
@@ -316,7 +307,7 @@
       <div>
         <head>Optical Setup Evaluation Based on Simulated and Measured PSF</head>
         <p>
-          <s>The proposed experimental setup was built on a standard inverted fluorescent microscope ( <ref target="#fig_1" type="figure">Fig. 1(a)</ref> ).</s>
+          <s>The proposed experimental setup was built on a standard inverted fluorescent microscope ( <ref target="#fig_2" type="figure">Fig. 1(a)</ref> ).</s>
           <s>The collimated excitation beam (green lines) was focused into the back focal plane of the primary microscope objective (O1).</s>
           <s>In the EPI illumination mode half of the beam could be blocked by an aperture (Ap) placed in front of the focusing lens (L1), therefore only half of the original field of view (FOV) was excited.</s>
           <s>Although the excited fluorescent molecules emit photons in the full 4Pi solid angle, the traditional image is generated by photons captured by the microscope objective O1.</s>
@@ -331,36 +322,35 @@
           <s>Alternatively, TIRF or HILO excitation can be applied to drastically reduce the throughput of the excitation beam (NA secondary &lt; NA primary ).</s>
           <s>During the measurement we used Hilo mode for the reduction of out of focus fluorescence and also to eliminate the excitation effect of the back reflected excitation beam.</s>
           <s>The secondary image was also generated via the primary objective, and the detector captured the P and S images simultaneously.</s>
-          <s>The primary and secondary images of three fluorescent beads can be seen in <ref target="#fig_1" type="figure">Fig. 1(c)</ref> .</s>
+          <s>The primary and secondary images of three fluorescent beads can be seen in <ref target="#fig_2" type="figure">Fig. 1(c)</ref> .</s>
           <s>Although all the optical components inserted into the secondary path were AR coated (see Section Optical Setup of Supplement), the intensity of the secondary image was typically around 50% of the primary one.</s>
           <s>The most significant source of light loss was the secondary microscope objective (T 647nm = 81%, T 561nm = 84%).</s>
           <s>For this reason the primary image was applied to determine the lateral position of the molecules, while the secondary image was used to evaluate the selected modality.</s>
         </p>
         <p>
           <s>The secondary arm is an open-path system, where the emitted light can be manipulated relatively easily by inserting different optical components.</s>
-          <s>Three modalities are depicted as examples in <ref target="#fig_1" type="figure">Fig. 1(b)</ref> .</s>
-          <s>Astigmatism, which can be introduced by a cylindrical lens ( <ref target="#fig_1" type="figure">Fig. 1(b,i)</ref> ), encodes the axial position of the dye molecules into an elliptical shape of the PSF and makes localization precision anisotropic, which is typically mentioned as the main drawback of this approach.</s>
+          <s>Three modalities are depicted as examples in <ref target="#fig_2" type="figure">Fig. 1(b)</ref> .</s>
+          <s>Astigmatism, which can be introduced by a cylindrical lens ( <ref target="#fig_2" type="figure">Fig. 1(b,i)</ref> ), encodes the axial position of the dye molecules into an elliptical shape of the PSF and makes localization precision anisotropic, which is typically mentioned as the main drawback of this approach.</s>
           <s>Our method does not degrade lateral super-resolution, and nor does it introduce lateral anisotropy.</s>
           <s>Furthermore, it keeps the primary image unaffected, since the axial position is only determined by the secondary image.</s>
           <s>It is worth noting that biplane 3D axial super-resolution can also be implemented by introducing a slight defocus in the secondary arm.</s>
-          <s>The emitted, partially polarized fluorescent light ( <ref target="#fig_1" type="figure">Fig. 1(b,ii)</ref> ) can also be filtered by a polarizer, selecting one particular polarization component (red dots in <ref target="#fig_1" type="figure">Fig. 1(b,ii)</ref> ).</s>
+          <s>The emitted, partially polarized fluorescent light ( <ref target="#fig_2" type="figure">Fig. 1(b,ii)</ref> ) can also be filtered by a polarizer, selecting one particular polarization component (red dots in <ref target="#fig_2" type="figure">Fig. 1(b,ii)</ref> ).</s>
           <s>In this case the captured intensities of the primary and secondary images are proportional to the total intensity and the selected linearly polarized intensity component, respectively.</s>
-          <s>After a calibration process the polarization degree ( <ref target="#b29" type="bibr">30,</ref>
-            <ref target="#b33" type="bibr">34</ref> can be determined.</s>
-          <s>The emitted fluorescence light can also be filtered spectrally ( <ref target="#fig_1" type="figure">Fig. 1(b,iii)</ref> ) in the secondary arm, so samples labeled with two different dyes can be imaged simultaneously.</s>
-          <s>The real implementation of the secondary path is depicted in <ref target="#fig_1" type="figure">Fig. S1</ref> of Supplement.</s>
-          <s>During the experiments the sample was sandwiched between two coverslips (see <ref target="#fig_2" type="figure">Fig. S2</ref> of Supplement), and the thickness of the buffer (PBS or switching) layer was typically around 25 microns.</s>
+          <s>After a calibration process the polarization degree ( )/( 2 )) 30,34 can be determined.</s>
+          <s>The emitted fluorescence light can also be filtered spectrally ( <ref target="#fig_2" type="figure">Fig. 1(b,iii)</ref> ) in the secondary arm, so samples labeled with two different dyes can be imaged simultaneously.</s>
+          <s>The real implementation of the secondary path is depicted in <ref target="#fig_2" type="figure">Fig. S1</ref> of Supplement.</s>
+          <s>During the experiments the sample was sandwiched between two coverslips (see <ref target="#fig_3" type="figure">Fig. S2</ref> of Supplement), and the thickness of the buffer (PBS or switching) layer was typically around 25 microns.</s>
           <s>The secondary and primary objectives were corrected for standard (0.17 mm) and variable (0.13 mm-0.19 mm) cover slide thicknesses, respectively.</s>
           <s>To minimize the optical aberrations introduced by the objectives, the sample was fixed to the surface of the upper coverslip and the axial distance was measured from this reference surface throughout this paper.</s>
           <s>The microscope objective in the secondary arm (O2) was a PLAN objective to minimize image curvature.</s>
-          <s>Since the secondary path is a complex system that contains several optical components the misalignment of which can introduce significant optical aberrations, the complete system was modeled (see the OSLO model in <ref target="#fig_3" type="figure">Fig. S3</ref> and more details on simulations in the Computer simulation of the optical setup section of the Supplement), and the calculated primary and secondary PSFs were evaluated by OSLO (Optics Software for Layout and Optimization) <ref target="#b46" type="bibr">47</ref> .</s>
+          <s>Since the secondary path is a complex system that contains several optical components the misalignment of which can introduce significant optical aberrations, the complete system was modeled (see the OSLO model in <ref target="#fig_4" type="figure">Fig. S3</ref> and more details on simulations in the Computer simulation of the optical setup section of the Supplement), and the calculated primary and secondary PSFs were evaluated by OSLO (Optics Software for Layout and Optimization) <ref target="#b46" type="bibr">47</ref> .</s>
           <s>
-            <ref target="#fig_2" type="figure">Figure 2</ref> depicts the comparative simulated (a and b) and measured (c and d) PSFs.</s>
+            <ref target="#fig_3" type="figure">Figure 2</ref> depicts the comparative simulated (a and b) and measured (c and d) PSFs.</s>
           <s>The total field of view (FOV) limited by the overall magnification (x100) and the chip size of the detector (8.2 × 8.2 mm 2 ) was 80 × 80 μm 2 on the sample.</s>
           <s>Due to the symmetry of the system only one quarter of the FOV is shown.</s>
-          <s>Primary and secondary images of simulated fluorescent molecules situated at x (0 μm, 20 μm, 40 μm) and y (12 μm, 26 μm, 40 μm) coordinates are depicted in <ref target="#fig_2" type="figure">Fig. 2(a,b)</ref> , respectively.</s>
+          <s>Primary and secondary images of simulated fluorescent molecules situated at x (0 μm, 20 μm, 40 μm) and y (12 μm, 26 μm, 40 μm) coordinates are depicted in <ref target="#fig_3" type="figure">Fig. 2(a,b)</ref> , respectively.</s>
           <s>Image formation close to the y = 0 axis was not possible because of the polished edge of the applied Porro prism.</s>
-          <s>In the captured images a black strip between the primary and the secondary images represents this effect <ref target="#fig_1" type="figure">(Fig. 1(c)</ref> ).</s>
+          <s>In the captured images a black strip between the primary and the secondary images represents this effect <ref target="#fig_2" type="figure">(Fig. 1(c)</ref> ).</s>
           <s>A quantitative evaluation of the primary and secondary images was given based on fitting 2D Gaussian distribution to all the simulated PSFs.</s>
           <s>Neither the primary, nor the secondary images show spatial dependence.</s>
           <s>The standard deviation of the fitted FWHM values was typically found to be below 2%.</s>
@@ -368,12 +358,11 @@
           <s>Ellipticity, defined as the ratio of the standard deviations of the fitted Gaussian curves in x and y directions (ε = σx/σy − 1 if σx &gt; σy; and ε = −σy/σx + 1 otherwise) has also been found to be independent of the lateral position of the molecule (error &lt;1%).</s>
           <s>The ellipticity calculated from measured 100 nm fluorescent beads showed no signs of lateral dependence.</s>
           <s>The deviation was caused by background noise and fitting.</s>
-          <s>The experimentally captured 3D PSF <ref target="#fig_2" type="figure">(Fig. 2(c,d)</ref> ) show a very good agreement with the simulation data (see <ref target="#fig_4" type="figure">Fig. S4</ref> of the Supplement).</s>
+          <s>The experimentally captured 3D PSF <ref target="#fig_3" type="figure">(Fig. 2(c,d)</ref> ) show a very good agreement with the simulation data (see <ref target="#fig_5" type="figure">Fig. S4</ref> of the Supplement).</s>
           <s>The P and S images of three fluorescent beads in the positions marked by x reveal a slight image degradation in the S channel.</s>
           <s>Although the images show normalized intensities, the Strehl ratio of S images were typically around 50% of the P ones.</s>
           <s>The calculated 3D PSFs as functions of position z also prove the applicability of the proposed setup for SMLM.</s>
         </p>
-        <formula xml:id="formula_0"> = − + ⊥ ⊥ P I I I I ( )/( )) or fluorescence anisotropy ( = − + ⊥ ⊥ r I I I I ( )/( 2 ))</formula>
       </div>
       <div subtype="dataseer">
         <head>Experimental Validation of 3D and Multicolor Modalities in SMLM</head>
@@ -382,12 +371,12 @@
           <s id="dataset-1" type="Image">Image stacks on F-actin filaments labeled by phalloidin-Alexa647 [ThermoFisher A22287] were captured for 2D dSTORM imaging.</s>
           <s>After the cleaning (piranha solution) and drying steps the coverslip was covered with poly-L-lysine.</s>
           <s>Labeled and washed F-actin filaments in their original buffer were dropped onto the prepared surface and incubated for 5 minutes.</s>
-          <s>After additional washing steps the buffer was changed to dSTORM switching buffer <ref target="#b4" type="bibr">5</ref> , and the sample was covered with a second cleaned coverslip.</s>
+          <s>After additional washing steps the buffer was changed to dSTORM switching buffer 5 , and the sample was covered with a second cleaned coverslip.</s>
           <s>The prepared sample was mounted onto the microscope in the very same way as discussed in the previous section.</s>
           <s>Image stacks of 10,000 frames were captured and evaluated by rainSTORM code written in Matlab <ref target="#b47" type="bibr">48</ref> .</s>
           <s>
-            <ref target="#fig_3" type="figure">Figure 3(a,d)</ref> show the primary and secondary diffraction limited fluorescence images.</s>
-          <s>The super-resolved primary and secondary dSTORM images are depicted in <ref target="#fig_3" type="figure">Fig. 3(b,e)</ref> , respectively.</s>
+            <ref target="#fig_4" type="figure">Figure 3(a,d)</ref> show the primary and secondary diffraction limited fluorescence images.</s>
+          <s>The super-resolved primary and secondary dSTORM images are depicted in <ref target="#fig_4" type="figure">Fig. 3(b,e)</ref> , respectively.</s>
           <s>The central part (the region between the primary and secondary images) is blank because of the polished edge of the applied prism.</s>
           <s>The improved resolution can be clearly seen in both cases.</s>
           <s>For example, the double actin filament marked with blue arrow can be seen clearly separated both on the P and S images, while they appear as single lines on the diffraction limited images.</s>
@@ -396,11 +385,9 @@
           <s>The green arrows mark a branch region where the intensity ratio of individual branches kept the same value.</s>
           <s>Due to the reduced photon number and the minimal image distortion introduced by the secondary arm, the quality of the S image is still high enough to resolve structures below the diffraction limit.</s>
           <s>
-            <ref target="#fig_3" type="figure">Figure 3(c,f)</ref> depict the cross-sections of primary and secondary images along the blue lines.</s>
+            <ref target="#fig_4" type="figure">Figure 3</ref> (c,f) depict the cross-sections of primary and secondary images along the blue lines.</s>
           <s>Despite the reduced number of localizations, both images provide the same separation of the selected fibrils and also keep their intensity ratio.</s>
-        </p>
-        <p>
-          <s>A statistical comparative evaluation of primary and secondary localizations can be seen in <ref target="#fig_5" type="figure">Fig. S5</ref> (see section Comparative evaluation of the primary and secondary localizations of Supplement).</s>
+          <s>A statistical comparative evaluation of primary and secondary localizations can be seen in <ref target="#fig_6" type="figure">Fig. S5</ref> (see section Comparative evaluation of the primary and secondary localizations of Supplement).</s>
           <s>The principal reason of the reduced number of localizations in the S image is the loss of intensity (photon number) in the secondary arm.</s>
           <s>The lower the intensity the higher the degradation of the captured PSFs.</s>
           <s>Localization software (rainSTORM) judges the quality of individual spots and rejects low quality (faint, elliptic, broad etc.) ones.</s>
@@ -419,7 +406,7 @@
           <s>In this section we focus on the 3D imaging of sarcomere sample.</s>
           <s id="dataset-2" type="Image">During the measurements 30,000 frames were captured and evaluated.</s>
           <s>
-            <ref target="#fig_4" type="figure">Figure 4(a)</ref> shows a typical single frame from the acquired image stack when an extra cylindrical lens with a focal length of 4000 mm (Comar 4000 Y 25) was inserted into the secondary arm (see optical arrangement in <ref target="#fig_1" type="figure">Fig. 1(b,i)</ref> ).</s>
+            <ref target="#fig_5" type="figure">Figure 4(a)</ref> shows a typical single frame from the acquired image stack when an extra cylindrical lens with a focal length of 4000 mm (Comar 4000 Y 25) was inserted into the secondary arm (see optical arrangement in <ref target="#fig_2" type="figure">Fig. 1(b,i)</ref> ).</s>
           <s>The focal length and insertion point of the cylindrical lens were optimized using a matrix optics model.</s>
           <s>
             <ref type="figure">Figure S6</ref> depicts the schematic optical arrangement and <ref type="figure">Fig. S7</ref> the calculated separation of foci as a function of the location of the cylindrical lens.</s>
@@ -429,19 +416,19 @@
           <s>While the spots in the upper section (P image) show cylindrical symmetry, the PSFs in the lower section (S image) have the well-known astigmatic shape.</s>
           <s>Fluorescence beads fixed to the coverslip were used to determine the z position as a function of ellipticity of the measured PSFs.</s>
           <s>
-            <ref target="#fig_4" type="figure">Figure 4(b)</ref> shows the normal, unfiltered 2D dSTORM image, while <ref target="#fig_4" type="figure">Fig. 4(c,d)</ref> are two ~46 nm thin sections of the reconstructed volumetric image at different z positions (915 nm and 685 nm).</s>
+            <ref target="#fig_5" type="figure">Figure 4(b)</ref> shows the normal, unfiltered 2D dSTORM image, while <ref target="#fig_5" type="figure">Fig. 4(c,d)</ref> are two ~46 nm thin sections of the reconstructed volumetric image at different z positions (915 nm and 685 nm).</s>
           <s>The dashed red lines mark the contour of the sarcomere.</s>
-          <s>In <ref target="#fig_4" type="figure">Fig. 4(b)</ref> the width of the H-zone remains practically the same all the way through the myofibril, while the two z-section images <ref target="#fig_4" type="figure">(Fig. 4(c,d)</ref> ) reveal the cylindrical shape distribution of the labeled sample.</s>
+          <s>In <ref target="#fig_5" type="figure">Fig. 4(b)</ref> the width of the H-zone remains practically the same all the way through the myofibril, while the two z-section images <ref target="#fig_5" type="figure">(Fig. 4(c,d)</ref> ) reveal the cylindrical shape distribution of the labeled sample.</s>
           <s>The magnified images of the third zone (framed with red) clearly show the double line structure and their change in length as a function of depth.</s>
           <s>It is worth noting here that the double line separated by approximately 125 nm in a single zone cannot be resolved in traditional diffraction limited microscopy.</s>
-          <s>The depth (axial) distribution of localizations belonging to a single disk was also visualized <ref target="#fig_4" type="figure">(Fig. 4(f,g)</ref> ).</s>
+          <s>The depth (axial) distribution of localizations belonging to a single disk was also visualized ( <ref target="#fig_5" type="figure">Fig. 4(f,g)</ref> ).</s>
           <s>Since the depth of field (DOF) determining the axial region for 3D imaging is around 600 nm and smaller than the typical width of the sarcomere (1.6 μm) only a section of the disc can be imaged.</s>
           <s>
-            <ref target="#fig_4" type="figure">Figure 4</ref> (f,g) show the cross-section of disks number 3 and 8.</s>
-          <s>One can realize the axial shift between the two discs caused by the tilted sample <ref target="#fig_4" type="figure">(Fig. 4(e)</ref> ).</s>
+            <ref target="#fig_5" type="figure">Figure 4(f,g)</ref> show the cross-section of disks number 3 and 8.</s>
+          <s>One can realize the axial shift between the two discs caused by the tilted sample ( <ref target="#fig_5" type="figure">Fig. 4(e)</ref> ).</s>
+          <s>The measured radius of the disk was found to be 0.8 μm and is in good agreement with previous measurements <ref target="#b49" type="bibr">50</ref> .</s>
         </p>
         <p>
-          <s>The measured radius of the disk was found to be 0.8 μm and is in good agreement with previous measurements <ref target="#b49" type="bibr">50</ref> .</s>
           <s id="dataset-3" type="Image">The STORM images were generated using localizations with a precision better than 50 nm.</s>
           <s>The mean and median values of these accepted localizations were 18.21 nm and 15.6 nm, respectively.</s>
           <s>The axial localization precision was calibrated using fluorescence beads, and given as the standard deviation of the calculated Z positions.</s>
@@ -451,19 +438,19 @@
           <s>Biplane 3D dSTORM modality.</s>
           <s>The biplane 3D STORM modality can be implemented via introducing a slight defocus between the primary and the secondary images.</s>
           <s>
-            <ref target="#fig_5" type="figure">Figure 5</ref> presents the biplane modality in a similar way as astigmatism was discussed in <ref target="#fig_4" type="figure">Fig. 4</ref> using an isolated myofibril (with labelled Tmod) stuck parallel to the coverslip.</s>
+            <ref target="#fig_6" type="figure">Figure 5</ref> presents the biplane modality in a similar way as astigmatism was discussed in <ref target="#fig_5" type="figure">Fig. 4</ref> using an isolated myofibril (with labelled Tmod) stuck parallel to the coverslip.</s>
           <s>The optimum value of defocus depends on both the sample and the required axial resolution and can be easily set by axial shift of the Porro prism and the secondary objective.</s>
           <s>During these experiments the axial separation of S and P images was 350 nm.</s>
-          <s>The captured PSFs either in the P and S channels (upper and lower sections in <ref target="#fig_5" type="figure">Fig. 5(a)</ref> ) have cylindrical symmetry and both their relative intensity and width depend on the axial position of the dye molecule.</s>
+          <s>The captured PSFs either in the P and S channels (upper and lower sections in <ref target="#fig_6" type="figure">Fig. 5(a)</ref> ) have cylindrical symmetry and both their relative intensity and width depend on the axial position of the dye molecule.</s>
           <s>
-            <ref target="#fig_5" type="figure">Figure 5(b)</ref> shows the traditional 2D super-resolved image based on the evaluation of the primary PSFs only.</s>
+            <ref target="#fig_6" type="figure">Figure 5</ref> (b) shows the traditional 2D super-resolved image based on the evaluation of the primary PSFs only.</s>
           <s id="dataset-4" type="Tabular data">Separation of the two labeled discs in an H-zone was measured to be approximately 125 nm.</s>
           <s>The axial position of a fluorescent dye molecule can be determined by comparing its primary and secondary PSFs.</s>
           <s>
-            <ref target="#fig_5" type="figure">Figure 5</ref> (c,d) depict two cross-sectional images at planes schematically marked in <ref target="#fig_5" type="figure">Fig. 5(e)</ref> .</s>
+            <ref target="#fig_6" type="figure">Figure 5</ref> (c,d) depict two cross-sectional images at planes schematically marked in <ref target="#fig_6" type="figure">Fig. 5</ref> (e).</s>
           <s>The widths of the myofibril (marked with dashed red lines) depend on the depth of the sections, however they are independent of the lateral position because (in contrast to the astigmatic measurement) the myofibril was parallel to the coverslip.</s>
-          <s>The axial separation of the two cross-sectional images was 183 nm <ref target="#fig_5" type="figure">Fig. 5(e)</ref> .</s>
-          <s>The radius of the fitted circle to the measured 3D data was 0.8 μm in good agreement with the astigmatic 3D results <ref target="#fig_5" type="figure">(Fig. 5(f)</ref> ).</s>
+          <s>The axial separation of the two cross-sectional images was 183 nm <ref target="#fig_6" type="figure">Fig. 5(e)</ref> .</s>
+          <s>The radius of the fitted circle to the measured 3D data was 0.8 μm in good agreement with the astigmatic 3D results <ref target="#fig_6" type="figure">(Fig. 5(f)</ref> ).</s>
         </p>
         <p>
           <s>The STORM images were generated using localizations with precision of better than 50 nm.</s>
@@ -473,7 +460,7 @@
         </p>
         <p>
           <s>Multicolor dSTORM modality.</s>
-          <s>The generated P and S images can also be spectrally separated by inserting an emission filter into the reference arm ( <ref target="#fig_1" type="figure">Fig. 1(b,iii)</ref> ).</s>
+          <s>The generated P and S images can also be spectrally separated by inserting an emission filter into the reference arm ( <ref target="#fig_2" type="figure">Fig. 1(b,iii)</ref> ).</s>
           <s>
             <ref type="figure">Figure 6</ref> shows an artificially colored image of the mixture of two different kinds of fluorescence beads (green beads: Applied Microspheres BV 30200 FR-CM-M, LOT: 171122 and red beads: Life Technologies T7279, LOT: 1929718) fixed on the coverslip.</s>
           <s>The beads were simultaneously excited at 647 nm and 561 nm wavelengths, and an additional emission filter for 561 nm excitation was inserted into the reference arm (Semrock FF01-582/75-25).</s>
@@ -484,8 +471,7 @@
           <s>Such an experiment proves that at low labeling density even the full frame of the detector can be applied and the proposed method does not degrade the FOV.</s>
           <s>The advantage of this configuration is that the minimum spatial offset between the two images reduces optical aberrations.</s>
           <s>However, we have to mention that implementation of multi-color dSTORM imaging using fluorescence dye molecules raises several technical challenges.</s>
-          <s>Switching between different dyes simultaneously requires an optimum photochemical environment and it only works for specific dye pairs <ref target="#b50" type="bibr">51,</ref>
-            <ref target="#b51" type="bibr">52</ref> .</s>
+          <s>Switching between different dyes simultaneously requires an optimum photochemical environment and it only works for specific dye pairs 51,52 .</s>
         </p>
       </div>
       <div>
@@ -514,32 +500,32 @@
           <s>The scale bar is 1 micron.</s>
         </p>
       </div>
-      <figure xml:id="fig_0">
+      <figure xml:id="fig_1">
         <head>Scientific</head>
         <label/>
         <figDesc>REPORTS | (2019) 9:798 | DOI:10.1038/s41598-018-37341-9</figDesc>
       </figure>
-      <figure xml:id="fig_1">
+      <figure xml:id="fig_2">
         <head>Figure 1 .</head>
         <label>1</label>
         <figDesc>Figure 1. Experimental setup of mmSTORM configuration. (a) Different modification options of the secondary image are possible via astigmatic 3D (i), polarization (ii) or spectral (iii) filters inserted between the objective and the prism. (b) Captured image frame with primary (P) and secondary (S) images of three beads (c).</figDesc>
       </figure>
-      <figure xml:id="fig_2">
+      <figure xml:id="fig_3">
         <head>Figure 2 .</head>
         <label>2</label>
         <figDesc>Figure 2. Simulated primary and secondary images of fluorescent molecules situated at lateral x (0 μm, 20 μm, 40 μm) and y (12 μm, 26 μm, 40 μm) off axis coordinates are depicted (a,b) respectively. Experimentally measured lateral (x, y) and axial (z, y) intensity distributions of the primary (c) and secondary (d) images of three fluorescent beads in the positions marked by x (a). The pixel size is 160 nm.</figDesc>
       </figure>
-      <figure xml:id="fig_3">
+      <figure xml:id="fig_4">
         <head>Figure 3 .</head>
         <label>3</label>
         <figDesc>Figure 3. Primary (a,b) and secondary (d,e) traditional fluorescence (a,d) and dSTORM super-resolved (b,e) images of F-actin filaments fixed to the coverslip. Intensity cross-sections through the marked blue lines in the primary (c) and secondary (f) images show minimal image degradation. The scale bar is 1 micron.</figDesc>
       </figure>
-      <figure xml:id="fig_4">
+      <figure xml:id="fig_5">
         <head>Figure 4 .</head>
         <label>4</label>
         <figDesc>Figure 4. Implementation of astigmatic 3D imaging in mmSTORM. The primary and secondary PSFs of Alexa Fluor dye molecules excited at 647 nm show circular and astigmatic shapes in a single image frame (a). The double disc structure of H-zone in sarcomeres has different visibility and length in the unfiltered (b) and in the STORM images reconstructed from two selected planes (c,d). The two optical sections (c,d) separated by 230 nm are marked in the schematic view of the tilted structure (e). Circles with a radius of 0.8 μm were fit to the cross-sections of zones 3 and 8 (f,g). The scale bar is 1 micron.</figDesc>
       </figure>
-      <figure xml:id="fig_5">
+      <figure xml:id="fig_6">
         <head>Figure 5 .</head>
         <label>5</label>
         <figDesc>Figure 5. Implementation of biplane 3D imaging in mmSTORM. The primary and secondary PSFs show circular shapes in a single image frame. (a) 2D super-resolved (b) and cross-sectional (c,d) dSTORM images show the two discs separately. The side-view of 4th H-zone (f) reveals the disk shape with a radius of 0.8 μm. The scale bar is 1 micron.</figDesc>
@@ -562,7 +548,15 @@
             <s>designed the optical system.</s>
             <s>T.G. built the optical system and performed all experiments.</s>
             <s>Zs.Cs.</s>
-            <s>performed the OSLO, and T.N.</s>
+            <s>performed the OSLO, and T.N. the TestSTORM simulations.</s>
+            <s>Sz.Sz.</s>
+            <s>and J.M. provided the sarcomere samples.</s>
+            <s>T.G., M.E.</s>
+            <s>and G.Sz. analysed the data.</s>
+            <s>B.B.H.K. performed the matrix optics calculations.</s>
+            <s>M.E., T.G. and Sz.Sz.</s>
+            <s>wrote the manuscript.</s>
+            <s>All authors reviewed the manuscript.</s>
           </p>
         </div>
         <div>
@@ -2121,7 +2115,7 @@
                   <surname>Scientific</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/s41598-018-37341-9</idno>
+              <idno type="DOI">10.1038/s41598-018-37341-9</idno>
               <imprint>
                 <date type="published" when="2019"/>
                 <biblScope unit="volume">9</biblScope>

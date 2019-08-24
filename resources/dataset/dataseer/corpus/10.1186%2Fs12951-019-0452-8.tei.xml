@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:15+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T21:07+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -214,8 +214,11 @@
           <s>To prepare Cas9 and sgRNA complex with PEI, 75 μg Cas9 in 0.5 mL PBS buffer was homogenized with sgRNA solution (26 μg sgRNA with 0.5 mL PBS).</s>
           <s>Then 160 μg PEI (2 kDa) was incubated with the protein solution for 10 min.</s>
         </p>
+      </div>
+      <div subtype="dataseer">
+        <head>In vitro transcription of sgRNA</head>
         <p>
-          <s>In vitro transcription of sgRNA DNA fragment templates for sgRNA transcription were generated using an oligo containing T7 promoter and 20-bp sgRNA-specific target sequence overlapping with a second reverse complement oligo containing the constant region of the sgRNA backbone.</s>
+          <s>DNA fragment templates for sgRNA transcription were generated using an oligo containing T7 promoter and 20-bp sgRNA-specific target sequence overlapping with a second reverse complement oligo containing the constant region of the sgRNA backbone.</s>
           <s>All sgRNAs were transcribed using Guide-it ™ sgRNA Screening kit (Clontech).</s>
           <s>In vitro transcribed RNA was extracted with phenol:chloroform:isoamyl alcohol (25:24:1, v/v/v), saturated with 10 nM Tris (pH 8.0) and 1 mM EDTA, precipitated with 2-propanol, and then re-dissolved in water.</s>
           <s id="dataset-2" type="Spectrometry:Spectrophotometry">sgRNA concentration was quantified using a NanoDrop spectrophotometer and visualized after agarose gel electrophoresis.</s>
@@ -246,7 +249,7 @@
         <head>DNA sequencing and efficiency analysis</head>
         <p>
           <s>Genomic DNA was isolated from cells (SNU398) or mouse liver tissue using genomic isolation kit (Bioneer) according to the manufacturer's instruction.</s>
-          <s>PCR amplicons including nuclease target sites were generated using primers listed in Additional file 1: <ref type="figure">Figures S7a</ref> and S10b.</s>
+          <s>PCR amplicons including nuclease target sites were generated using primers listed in Additional file 1: Figures S7a and S10b.</s>
           <s>To analyze DNA sequences, amplified PCR products corresponding to genomic modification were purified using PCR purification kit (Macherey-Nagel) and cloned into T-Blunt vector using PCR cloning kit (SolGent).</s>
           <s>Cloned products were sequenced by dye-terminator sequencing method (Bioneer).</s>
           <s>To analyze genomic editing efficiency, PCR products were purified with a PCR purification kit (Macherey-Nagel) and quantified.</s>
@@ -296,8 +299,8 @@
         <head>Screening sgRNA sequences for DPP-4 gene targeting</head>
         <p>
           <s>To ensure high gene targeting efficiency, we designed sgRNA sequences and delivered Cas9/sgRNA plasmids into SNU398 human liver carcinoma cells.</s>
-          <s>We cloned Streptococcus pyogenes Cas9 (SpCas9) vectors co-expressing one of the sgRNA options that recognize the DPP-4 gene and grafted a nuclear localization signal (NLS) sequence as well to enter the cell nucleus (Additional file 1: <ref type="figure">Figure S1a</ref> ) <ref target="#b14" type="bibr">[14]</ref> .</s>
-          <s>Cells transfected with Cas9/sgRNA plasmids were differentiated based on mRNA expression, protein level, and enzyme activity using quantitative real-time PCR, western blotting, and DPP-4 enzyme activity assay, respectively (Additional file 1: <ref type="figure">Figure S1b-d)</ref> .</s>
+          <s>We cloned Streptococcus pyogenes Cas9 (SpCas9) vectors co-expressing one of the sgRNA options that recognize the DPP-4 gene and grafted a nuclear localization signal (NLS) sequence as well to enter the cell nucleus (Additional file 1: <ref target="#fig_0" type="figure">Figure S1a</ref> ) <ref target="#b14" type="bibr">[14]</ref> .</s>
+          <s>Cells transfected with Cas9/sgRNA plasmids were differentiated based on mRNA expression, protein level, and enzyme activity using quantitative real-time PCR, western blotting, and DPP-4 enzyme activity assay, respectively (Additional file 1: <ref target="#fig_0" type="figure">Figure S1b</ref> -d).</s>
           <s>A further validation study showed that sgRNA2 targeting DPP-4 gene worked better than sgRNA1 in decreasing mRNA, protein expression, and enzyme activity.</s>
         </p>
       </div>
@@ -305,10 +308,10 @@
         <head>Preparation of recombinant Cas9 protein nuclease and complexing with sgRNA</head>
         <p>
           <s>Recombinant Cas9 protein was prepared following a standard procedure previously reported <ref target="#b15" type="bibr">[15]</ref> .</s>
-          <s>Recombinant Cas9 protein containing NLS was purified from Escherichia coli and complexed with in vitro-transcribed sgRNA for targeting the DPP-4 gene (Additional file 1: <ref type="table">Table S1</ref> and <ref target="#fig_0" type="figure">Figure S2a, b)</ref> .</s>
+          <s>Recombinant Cas9 protein containing NLS was purified from Escherichia coli and complexed with in vitro-transcribed sgRNA for targeting the DPP-4 gene (Additional file 1: <ref type="table">Table S1</ref> and <ref target="#fig_1" type="figure">Figure S2a</ref> , b).</s>
           <s>We then monitored cleavage of the DPP-4 gene caused by the prepared Cas9-RNP complex using an in vitro cleavage assay.</s>
           <s>Fragments (500 bp) of DPP-4 genomic DNA were allowed to react with Cas9 protein alone or Cas9-RNP complex for 1 h.</s>
-          <s>The cleavage was then determined based on agarose gel electrophoresis (Additional file 1: <ref target="#fig_0" type="figure">Figure S2c</ref> ).</s>
+          <s>The cleavage was then determined based on agarose gel electrophoresis (Additional file 1: <ref target="#fig_1" type="figure">Figure S2c</ref> ).</s>
           <s>Cas9 protein alone did not affect the genomic fragment.</s>
           <s>However, the Cas9-RNP complex showed clear gene editing activity, indicating target DPP-4 gene recognition by the sgRNA complexed with Cas9 protein.</s>
         </p>
@@ -319,17 +322,17 @@
           <s>The NL are mainly composed of biocompatible lecithin from egg yolk, which consists of phosphatidylcholine commonly found in human cell membranes <ref target="#b16" type="bibr">[16]</ref> .</s>
           <s>As part of the NL, 1,2-dioleoyl-sn-glycerol-3-[(N-(5-amino-1-carboxylpentyl)iminodiacetic acid)succinyl]-(nickel salt) (shortened name: DOGS-NTA-Ni) was incorporated to mediate encapsulation by binding with Histagged Cas9 proteins.</s>
           <s>NL particles of ~ 220 nm in size formed a spherical shape and a lipid bilayer encapsulating an aqueous soluble hydrophilic moiety by self-assembly.</s>
-          <s>Lipid compounds were homogenously dissolved in a volatile hydrophobic organic solvent and then redispersed in a buffer solution containing the Cas9-RNP complex after evaporation of the organic solvent <ref type="figure">(Fig. 1a)</ref> .</s>
+          <s>Lipid compounds were homogenously dissolved in a volatile hydrophobic organic solvent and then redispersed in a buffer solution containing the Cas9-RNP complex after evaporation of the organic solvent <ref target="#fig_0" type="figure">(Fig. 1a)</ref> .</s>
           <s>The shape, size, and surface charge of formed NL were characterized using cryo-electron microscopy (Cryo-EM), dynamic light scattering (DLS), and zeta-potential analysis, respectively (Additional file 1: <ref type="figure">Figure S3</ref> ).</s>
           <s>We optimized compositions of the NL particle carrier system after measuring the encapsulation efficiency of Cas9-RNP complexes.</s>
-          <s>NL particles comprised of lecithin and DOGS-NTA-Ni without positive polymer fusion NL@ Cas9-RNP(−), showed lower encapsulation efficiency of Cas9-RNP complexes compared to lecithin-alone particle (Lec) despite interaction between NTA-Ni and Histag <ref type="figure">(Fig. 1b)</ref> .</s>
+          <s>NL particles comprised of lecithin and DOGS-NTA-Ni without positive polymer fusion NL@ Cas9-RNP(−), showed lower encapsulation efficiency of Cas9-RNP complexes compared to lecithin-alone particle (Lec) despite interaction between NTA-Ni and Histag <ref target="#fig_0" type="figure">(Fig. 1b)</ref> .</s>
           <s>Such difference in encapsulation efficiency can be due to repulsive electrostatic interactions between lipid compounds and Cas9-RNP complexes.</s>
           <s>Based on zeta-potential analysis, Lec particles without DOGS-NTA-Ni had less negative charge (− 0.438 mV) than NL particles (− 14.6 mV).</s>
-          <s>From the zeta-potential analysis of Lec-alone particles and Lec encapsulated complex particles (Lec@Cas9-RNP), we also noticed that Cas9-RNP complexes had a slightly negative charge <ref type="figure">(Fig. 1c)</ref> .</s>
+          <s>From the zeta-potential analysis of Lec-alone particles and Lec encapsulated complex particles (Lec@Cas9-RNP), we also noticed that Cas9-RNP complexes had a slightly negative charge <ref target="#fig_0" type="figure">(Fig. 1c)</ref> .</s>
           <s>Therefore, NL exhibited less incorporation efficiency than Lecalone particle due to negative-negative repulsion.</s>
           <s>To increase the encapsulation efficiency, positively charged polyethyleneimine (PEI, 2 kDa) was utilized as a fusion material in the Cas9-RNP complex to compensate for its negative charge.</s>
           <s>PEI-fused Cas9-RNP complexes could be incorporated into the NL at a high capacity (NL@ Cas9-RNP, 95%).</s>
-          <s>They showed long-term solution stability without any aggregation <ref type="figure">(Fig. 1d)</ref> .</s>
+          <s>They showed long-term solution stability without any aggregation <ref target="#fig_0" type="figure">(Fig. 1d)</ref> .</s>
           <s>These NL particles appeared to maintain liposomal structure assembly well owing to interaction between NTA-Ni and His-tagged Cas9 protein as mentioned.</s>
           <s>However, Lec particles without DOGS-NTA-Ni exhibited destruction or sedimentation over time in solution (Additional file 1: <ref type="figure">Figure S3b</ref> , c).</s>
           <s>Taken together, these results showed that the use of PEI polymer fusion could increase the encapsulation efficiency and dispersion stability of protein-based Cas9-RNP complexes into NL.</s>
@@ -339,30 +342,26 @@
         <head>Gene editing in human cells by NL@Cas9-RNP</head>
         <p>
           <s>We first performed an in vitro cleavage assay to examine the activity of Cas9-RNP complex delivered by NL.</s>
-          <s>Transcribed sgRNA from the sequence was designed to specifically recognize the promoter gene sequence between exon 1 and exon 2 of the DPP-4 gene <ref target="#fig_0" type="figure">(Fig. 2a)</ref> .</s>
+          <s>Transcribed sgRNA from the sequence was designed to specifically recognize the promoter gene sequence between exon 1 and exon 2 of the DPP-4 gene <ref target="#fig_1" type="figure">(Fig. 2a)</ref> .</s>
           <s>To monitor cellular uptake, NL particles with fluorescent rhodamine B isothiocyanate (RITC)-labeled Cas9-RNP were incubated with SNU398 human liver carcinoma cells for 2 h.</s>
-          <s>Subsequently, Cas9 protein staining agent to indicate the delivered Cas9 protein was added to cells and the localization of Cas9-RNP complex was analyzed by confocal laser scanning microscopy (CLSM) <ref target="#fig_0" type="figure">(Fig. 2b)</ref> .</s>
+          <s>Subsequently, Cas9 protein staining agent to indicate the delivered Cas9 protein was added to cells and the localization of Cas9-RNP complex was analyzed by confocal laser scanning microscopy (CLSM) <ref target="#fig_1" type="figure">(Fig. 2b)</ref> .</s>
           <s>NL@Cas9-RNP particles were dispersed in the cytosol.</s>
           <s>Green-stained Cas9 proteins were co-localized with these particles in the cytosol as well as in the nucleus which was stained with DAPI.</s>
-          <s>To understand the uptake mechanism of NL@Cas9-RNP, SNU398 cells were stained with anti-Cas9-488 after various inhibitors at different temperatures for 24 h (Additional file 1: <ref target="#fig_1" type="figure">Figure S4)</ref> .</s>
+          <s>To understand the uptake mechanism of NL@Cas9-RNP, SNU398 cells were stained with anti-Cas9-488 after various inhibitors at different temperatures for 24 h (Additional file 1: <ref target="#fig_2" type="figure">Figure S4</ref> ).</s>
           <s>Particle internalization into cells was negatively affected by pretreatment with genistein (clathrin endocytosis inhibitor), sodium azide (metabolic/ATP inhibitor), cytochalasin B (phagocytosis inhibitor), nocodazole (macropinocytosis inhibitor), and low temperature incubation (4 °C).</s>
-          <s>Conversely, particles were normally internalized after pre-treatment of cells with chlorpromazine <ref type="figure">Fig. 1</ref> Characterization of various prepared liposomal particles.</s>
-          <s>a Schematic of the prepared NL@Cas9-RNP particle system.</s>
-          <s>b Measurement of encapsulation efficiency for various liposomal particles by assaying Cas9 protein level in the supernatant after centrifugation (upper panel shows western blotting data of supernatant, n = 3; *P &lt; 0.05, **P &lt; 0.01).</s>
-          <s>c Zeta-potential analysis data of various particles.</s>
-          <s>Lec: lecithin only liposome particle; Lec@Cas9-RNP: Cas9-RNP encapsulated Lec; NL@Cas9-RNP(−): Cas9-RNP encapsulated NL without PEI polymer fusion; NL@Cas9-RNP: PEI polymer linked Cas9-RNP encapsulated NL. d Determination of solution stability over time by measuring absorption at 430 nm through UV-Vis spectroscopy (caveolin-mediated endocytosis inhibitor).</s>
+          <s>Conversely, particles were normally internalized after pre-treatment of cells with chlorpromazine (caveolin-mediated endocytosis inhibitor).</s>
           <s>These results indicate that the cellular uptake mechanism of NL@Cas9-RNP particles mainly involves clathrin-mediated energy dependent phagocytosis and macropinocytosis.</s>
           <s>We then evaluated in vitro DPP-4 gene editing ability of NL@ Cas9-RNP in human cells.</s>
-          <s>Cas9-mediated gene deletion junctions (18 bp) at the DPP-4 locus were confirmed by sequencing analysis <ref target="#fig_0" type="figure">(Fig. 2c)</ref> .</s>
+          <s>Cas9-mediated gene deletion junctions (18 bp) at the DPP-4 locus were confirmed by sequencing analysis <ref target="#fig_1" type="figure">(Fig. 2c)</ref> .</s>
           <s>Based on sequencing results, it was apparent that DPP-4 gene disruption junctions were created upstream of the protospacer adjacent motif (PAM) sequence.</s>
           <s>NL@Cas9-RNP exhibited the highest inhibition for DPP-4 enzyme production through gene editing.</s>
-          <s>The inhibition efficiency was compared to other particles using an equal concentration of Cas9-RNP complex (Additional file 1: <ref target="#fig_3" type="figure">Figure S5</ref> ).</s>
+          <s>The inhibition efficiency was compared to other particles using an equal concentration of Cas9-RNP complex (Additional file 1: <ref target="#fig_4" type="figure">Figure S5</ref> ).</s>
           <s>We surmise that the enhanced editing capability of NL@Cas9-RNP is likely due to increased solution stability and reduced negative surface charge.</s>
           <s>Next, we verified that DPP-4 gene disruption did not cause cellular toxicity or stress using a cell viability and a cell stress assay kit, respectively (Additional file 1: <ref type="figure">Figure S6</ref> ).</s>
           <s>The various carrier particles we synthesized did not show cytotoxicity under culture conditions.</s>
           <s>The delivery system did not affect cell proliferation or differentiation.</s>
           <s>Our results confirmed that most cellular stress bio-markers expressed no significantly different between treated and untreated cells.</s>
-          <s>A slight increase in hypoxia-inducible factor 2 (HIF-2), an oxidative stress response component, and paraoxonase 1 (Pon1), a lipid metabolism component, were observed.</s>
+          <s>A c Representation of sequence deletion at human DPP-4 gene locus in SNU398 cells after gene editing by Bigdye-terminator sequencing slight increase in hypoxia-inducible factor 2 (HIF-2), an oxidative stress response component, and paraoxonase 1 (Pon1), a lipid metabolism component, were observed.</s>
           <s>However, these results have negligible impact on overall cell viability.</s>
           <s>These results confirmed that NL-based Cas9-RNP carrier system has low cytotoxicity and high biocompatibility in a cell.</s>
         </p>
@@ -370,7 +369,7 @@
       <div>
         <head>Off-target cleavage effects of NL@Cas9-RNP in cells</head>
         <p>
-          <s>To evaluate gene editing specificity, we assessed the capability of NL@Cas9-RNP to reduce genome-wide off-target effects at different positions depending on various target sequences of chromosomes (Additional file 1: <ref type="figure">Figure S7a)</ref> .</s>
+          <s>To evaluate gene editing specificity, we assessed the capability of NL@Cas9-RNP to reduce genome-wide off-target effects at different positions depending on various target sequences of chromosomes (Additional file 1: <ref type="figure">Figure S7a</ref> ).</s>
           <s>In vitro genomic editing efficiency was found to be ~ 31% by T7 endonuclease I (T7EI) assay.</s>
           <s>We exploited seven different genomic off-target sites with 3-to 5-bases mismatched sequences of chromosome (Additional file 1: <ref type="figure">Figure S7b</ref> ).</s>
           <s>Results showed that NL@ Cas9-RNP was highly specific to DPP-4 gene sequence as an on-target site.</s>
@@ -389,7 +388,7 @@
           <s>Conversely, dye-labeled bare Cas9 proteins showed different haphazard distribution pattern after injection into mouse.</s>
           <s>They were quickly degraded from the liver after injection (Additional file 1: <ref type="figure">Figure S8</ref> ).</s>
           <s>After 12 h of administration, 81.3% of particles with dye labeled Cas9 complexes were delivered to the liver (Additional file 1: <ref type="figure">Figure S9</ref> ).</s>
-          <s>After liver harvest, genomic DNA fragment deletion assay of liver tissue showed clear gene editing efficiency of 39% and an off-target effect similar to that seen in vitro (Additional file 1: <ref type="figure">Figure S10</ref> ).</s>
+          <s>After liver harvest, genomic DNA fragment deletion assay of liver tissue showed clear gene editing efficiency of 39% and an off-target effect similar to that seen in vitro (Additional file 1: <ref target="#fig_0" type="figure">Figure S10</ref> ).</s>
           <s>DPP-4 expression levels in liver tissues were also assessed using either qPCR or western blotting to evaluate the gene editing efficacy of NL@Cas9-RNP <ref type="figure">(Fig. 3c)</ref> .</s>
           <s>In db/db PBS-injected mice and scrambled sgRNA of unrelated sequence containing particle injected control mice, we observed high DPP-4 mRNA and enzyme expression in the liver.</s>
           <s>However, NL@Cas9-RNP administered db/db mice exhibited decreases for mRNA and protein levels of DPP-4.</s>
@@ -397,9 +396,9 @@
             <ref target="#b18" type="bibr">[18]</ref> .</s>
           <s>Serum GLP-1 was decreased by 28% in PBS-injected db/db mice compared to that in control mice.</s>
           <s>Both sitagliptin and NL@ Cas9-RNP treated mice showed dramatically increased serum GLP-1 concentrations (by 24% and 21%, respectively) compared to those in PBS-injected control db/db mice.</s>
-          <s>When data iscompared across organ tissues, DPP-4 mRNA expression levels were mainly decreased in the liver (Additional file 1: <ref type="figure">Figure S11</ref> ).</s>
+          <s>When data iscompared across organ tissues, DPP-4 mRNA expression levels were mainly decreased in the liver (Additional file 1: <ref target="#fig_0" type="figure">Figure S11</ref> ).</s>
           <s>These results suggest that NL particles containing Cas9-RNP does not affect other organs during the metabolic process.</s>
-          <s>H&amp;E staining of liver tissue <ref target="#fig_1" type="figure">(Fig. 4)</ref> showed that PBS-injected control db/db mice had a high content of fat pores whereas NL@Cas9-RNP treated mice exhibited decreased fat deposition in the liver.</s>
+          <s>H&amp;E staining of liver tissue <ref target="#fig_2" type="figure">(Fig. 4)</ref> showed that PBS-injected control db/db mice had a high content of fat pores whereas NL@Cas9-RNP treated mice exhibited decreased fat deposition in the liver.</s>
           <s>Therefore, partial disruption of DPP-4 gene can also influence liver fat accumulation since the DPP-4 enzyme is involved in the regulation of hepatic metabolism and non-alcoholic fatty liver disease (NAFLD) in subjects with diabetes or obesity <ref target="#b19" type="bibr">[19]</ref> .</s>
           <s>Histological analysis of the pancreas revealed that the islets of normal mice had high levels of insulin immune-reactivity while PBS-injected db/db control mice had altered islet morphology.</s>
           <s>The distribution of insulin-producing cells (β-cells) from the islet core of db/db mice was rarely detected.</s>
@@ -412,7 +411,7 @@
         <p>
           <s>In animals, oral glucose tolerance test (OGTT) can be used to indicate relative roles of insulin secretion and insulin resistance in the progression of glucose intolerance <ref target="#b20" type="bibr">[20]</ref> .</s>
           <s>OGTT was performed in starved mice for 24 h.</s>
-          <s>Glucose solution was administered orally and blood was serially sampled and analyzed for glucose concentration over time <ref target="#fig_3" type="figure">(Fig. 5a)</ref> .</s>
+          <s>Glucose solution was administered orally and blood was serially sampled and analyzed for glucose concentration over time <ref target="#fig_4" type="figure">(Fig. 5a)</ref> .</s>
           <s>The initial glucose concentration was as low as the fasting level.</s>
           <s>However, it was increased to a maximum value of approximately 520 mg/dL in db/db mice within 30 min.</s>
           <s>Blood glucose level in PBS-injected db/db mice remained above 450 mg/dL due to glucose tolerance.</s>
@@ -428,7 +427,7 @@
           <s>Only dye-conjugated Cas9 protein injection data are presented in Additional file 1: <ref type="figure">Figure S8</ref> .</s>
           <s>c Expression levels of DPP-4 mRNA (left) and protein (right) in extracted liver tissue were determined by quantitative real-time PCR and western blotting, respectively.</s>
           <s>d Serum concentration of GLP-1 from treated mice was examined quantitatively using an assay kit.</s>
-          <s>(n = 3, *P &lt; 0.05 and **P &lt; 0.01) investigation was also conducted to measure serum levels of alanine aminotransferase (ALT) and creatinine, with high levels indicating functional impairment of the liver and kidney <ref target="#fig_3" type="figure">(Fig. 5b)</ref> .</s>
+          <s>(n = 3, *P &lt; 0.05 and **P &lt; 0.01) investigation was also conducted to measure serum levels of alanine aminotransferase (ALT) and creatinine, with high levels indicating functional impairment of the liver and kidney <ref target="#fig_4" type="figure">(Fig. 5b)</ref> .</s>
           <s>Sitagliptin-treated mice showed higher levels of serum ALT and creatinine than PBS or NL@Cas9-RNP treated db/db mice.</s>
           <s>Daily administration of sitagliptin appeared to either increase hepatotoxicity and/or induce kidney dysfunction.</s>
           <s>Conversely, serum levels of these serological parameters in NL@Cas9-RNP treated mice were normal or even decreased, indicating negligible impact of NL@Cas9-RNP on liver or kidney function.</s>
@@ -454,7 +453,7 @@
           <s>NL@Cas9-RNP successfully edited this gene with very low cytotoxicity.</s>
           <s>In db/db mice, NL@Cas9-RNP particle was able to decrease levels of DPP-4.</s>
           <s>Such disruption induced up-regulation of GLP-1 concentration in the blood.</s>
-          <s>The enhanced efficacy of the gene disruption effect might be attributed to extended retention of NL in the liver given that hepatocytes can effectively uptake lecithin-based NL particles.</s>
+          <s>The Dotted circles indicate islet cores enhanced efficacy of the gene disruption effect might be attributed to extended retention of NL in the liver given that hepatocytes can effectively uptake lecithin-based NL particles.</s>
           <s>Down-regulation of DPP-4 by NL@Cas9-RNP treatment also reconciled glucose tolerance and insulin resistance in a manner similar to sitagliptin.</s>
           <s>Interestingly, blood analysis showed that unlike sitagliptin, NL@ Cas9-RNP treatment maintained normal liver and kidney function probably because of lessened drug dispensation.</s>
           <s>NL@Cas9-RNP can be applied as an effective treatment option for mitigating T2DM and its development.</s>
@@ -468,7 +467,7 @@
         <p>
           <s>Additional file 1. Information of the sgRNA sequence for DPP-4 gene targeting, characterization data for the Cas9-RNP preparation, uptake mechanism and gene editing efficiency in vitro and in vivo results after treatment of NL(Cas9-RNP) particles.</s>
           <s>
-            <ref type="figure">Figure S1</ref> .</s>
+            <ref target="#fig_0" type="figure">Figure S1</ref> .</s>
           <s>Design of sgRNA for human DPP4 gene targeting.</s>
           <s>(a) Schematic for a Cas9/sgRNA plasmid.</s>
           <s>We designed two different sequences of sgRNAs for human DPP-4 gene.</s>
@@ -481,29 +480,107 @@
             <ref type="table">Table S1</ref> .</s>
           <s>List of primer sequences for in vitro sgRNA transcription.</s>
           <s>Designed sgRNA sequence for targeting DPP-4 gene region, we prepared sgRNAs from various primer sequences in the list by in vitro transcription.</s>
-          <s>Measurement of serum ALT and renal creatinine levels to investigate liver and kidney function.</s>
-          <s>n = 3; *P &lt; 0.05, **P &lt; 0.01, ***P &lt; 0.001</s>
+          <s>
+            <ref type="figure">Figure S3</ref> .</s>
+          <s>Characterization of the nano-liposomal particle.</s>
+          <s>(a) Cryo-EM images of lecithin-alone particle (left, Lec) and NL particle (right) containing Cas9-RNP complexes.</s>
+          <s>(b) DLS data of Lec@Cas9-RNP (scale bar = 200 nm).</s>
+          <s>(c) DLS data of NL@ Cas9-RNP.</s>
+          <s>The diameter of Lec@Cas9-RNP ranged from 164.2 to 1718 nm while NL@Cas9-RNP showed a uniform size distribution with an average diameter of 220.2 nm.</s>
+          <s>
+            <ref target="#fig_2" type="figure">Figure S4</ref> .</s>
+          <s>Uptake mechanism study of NL@ Cas9-RNP particle into cells.</s>
+          <s>Assessment of the uptake mechanism using green fluorescence staining of delivered Cas9 protein with anti-Cas9-488 antibodies under various conditions such as inhibitor treatment or culture temperature change.</s>
+          <s>The nucleus is stained with DAPI (blue).</s>
+          <s>SNU398 cells were pretreated for 30 min with various inhibitors: genistein (200 μM), chlorpromazine (30 μM), nocodazole (50 μM), sodium azide (0.01%), or cytochalasin B (5 μM) at 37 °C or 4 °C before NL@Cas9-RNP treatment (Scale bar = 50 μm).</s>
+          <s>
+            <ref target="#fig_4" type="figure">Figure S5</ref> .</s>
+          <s>Gene editing efficiency in human cells.</s>
+          <s>We investigated whether various nano-liposomes were able to perform gene editing by delivering Cas9-RNP into mammalian cells.</s>
+          <s>SNU398 cells were treated with Lec@Cas9-RNP, NL@Cas9-RNP(-), or NL@Cas9-RNP.</s>
+          <s>Expression levels of DPP-4 mRNA and protein were measured using quantitative real-time PCR (a) and western blotting (b), respectively.</s>
+          <s>NL@Cas9-RNP has the highest editing efficiency with decreased mRNA (67%) and enzyme protein (87%) expression.</s>
+          <s>In particular, DPP-4 enzyme activity owing to NL@Cas9-RNP delivery was decreased by 48% compared to that of control SNU398 cells (c).</s>
+          <s>n = 3; *P &lt; 0.05, **P &lt; 0.01, ***P &lt; 0.001.</s>
+          <s>
+            <ref type="figure">Figure S6</ref> .</s>
+          <s>Cell toxicity assessment of various particles.</s>
+          <s>(a) Cell viability after treatment with various particles containing Cas9-RNP complexes using WST-1 assay.</s>
+          <s>(b) Cell stress assessment after treatment using Human Cell Stress Array kit (R&amp;D Systems).</s>
+          <s>
+            <ref type="figure">Figure S7</ref> .</s>
+          <s>Off-target effects of NL@Cas9-RNP.</s>
+          <s>(a) List of on-or off-target sequences with mismatch sites and mismatched bases shown in red.</s>
+          <s>(b) On-target or potential off-target effects in various target sequence of chromosomes (Chr#) were identified by T7EI assay.</s>
+          <s>Cas9-RNP shows deletion of the DNA on-target site in a cell.</s>
+          <s>
+            <ref type="figure">Figure S8</ref> .</s>
+          <s>In vivo monitoring.</s>
+          <s>NIR dye intensity of bare conjugated Cas9 proteins was monitored by optical imaging after injection.</s>
+          <s>
+            <ref type="figure">Figure S9</ref> .</s>
+          <s>In vivo bio-distribution data.</s>
+          <s>NL particles with dye-labeled Cas9-RNP complexes were used to determine bio-distribution in various organs.</s>
+          <s>
+            <ref target="#fig_0" type="figure">Figure S10</ref> .</s>
+          <s>In vivo gene editing efficiency.</s>
+          <s>(a) Representative sequence analysis of deletions at DPP-4 locus in db/db mice after gene editing by Bigdye-terminator sequencing (see Methods).</s>
+          <s>(b) List of various sequences of target sequences with mismatch sites and mismatched bases shown in red.</s>
+          <s>(c) On-target and potential off-target effects in various target sequence of chromosomes were identified by T7EI assay.</s>
+          <s>NL@Cas9-RNP achieved in vivo gene editing efficiency of 39% for DNA on-target site with low off-target effect in mouse liver.</s>
+          <s>
+            <ref target="#fig_0" type="figure">Figure S11</ref> .</s>
+          <s>Comparison of DPP-4 mRNA expression distribution in various organ tissues of db/db mice after treatment based on quantitative real-time PCR.</s>
+          <s>
+            <ref target="#fig_0" type="figure">Figure S12</ref> .</s>
+          <s>Sitagliptin and NL@Cas9-RNP treated mice had relatively decreased body weight compared to control mice.</s>
         </p>
       </div>
+      <div>
+        <head>Abbreviations</head>
+        <p>
+          <s>CRISPR: clustered regularly interspaced short palindromic repeats; sgRNA: single-stranded guide RNA; T2DM: type 2 diabetes mellitus; GLP-1: glucagon-like peptide-1; DPP-4: dipeptidyl peptidase-4 gene; NL: lecithin-based liposomal carrier particle; NLS: nuclear localization signal; DOGS-NTA-Ni: 1,2-dioleoyl-snglycerol-3-[(N-(5-amino-1-carboxylpentyl)iminodiacetic acid)succinyl]-(nickel salt); Cryo-EM: cryo-electron microscopy; DLS: dynamic light scattering; Lec: lecithin-alone particle; PEI: polyethyleneimine; NL@Cas9-RNP: PEI-fused Cas9-RNP complexes into the NL; RITC: rhodamine B isothiocyanate; CLSM: confocal laser scanning microscopy; PAM: protospacer adjacent motif; HIF-2: hypoxiainducible factor 2; Pon-1: paraoxonase 1; OGTT : oral glucose tolerance test; ITT: intraperitoneal insulin tolerance test; ALT: alanine aminotransferase.</s>
+        </p>
+        <p>
+          <s>Authors' contributions EC, JR and HL carried out experiments, analyzed data and wrote the manuscript.</s>
+          <s>SH, HP and KH conducted in vivo treatment and imaging analysis.</s>
+          <s>HP, HK and TJ supervised entire project and involved in the designing of all experiments and revised the manuscript.</s>
+          <s>All authors read and approved the final manuscript.</s>
+        </p>
+      </div>
+      <div>
+        <head>Author details</head>
+      </div>
       <figure xml:id="fig_0">
+        <head>Fig. 1</head>
+        <label>1</label>
+        <figDesc>Fig. 1 Characterization of various prepared liposomal particles. a Schematic of the prepared NL@Cas9-RNP particle system. b Measurement of encapsulation efficiency for various liposomal particles by assaying Cas9 protein level in the supernatant after centrifugation (upper panel shows western blotting data of supernatant, n = 3; *P &lt; 0.05, **P &lt; 0.01). c Zeta-potential analysis data of various particles. Lec: lecithin only liposome particle; Lec@Cas9-RNP: Cas9-RNP encapsulated Lec; NL@Cas9-RNP(−): Cas9-RNP encapsulated NL without PEI polymer fusion; NL@Cas9-RNP: PEI polymer linked Cas9-RNP encapsulated NL. d Determination of solution stability over time by measuring absorption at 430 nm through UV-Vis spectroscopy</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
         <head>Fig. 2</head>
         <label>2</label>
         <figDesc>Fig. 2 Delivery of NL@Cas9-RNP particles in a cell. a Schematic diagram describing the location of sgRNA to target DPP-4 gene locus. b CLSM analysis of NL@Cas9-RNP cell uptake after labeling Cas9 with RITC to display protein distribution. Blue (DAPI) indicates the nucleus; Red (RITC-labeled Cas9-RNP) and green (anti-Cas9) are for Cas9 protein; Yellow arrow indicates co-localization of Cas9 and DAPI (i.e., overlapping of green and blue) which provides evidence for the penetration of Cas9 complex into the nucleus; White arrow indicates the absence of Cas9 protein. c Representation of sequence deletion at human DPP-4 gene locus in SNU398 cells after gene editing by Bigdye-terminator sequencing</figDesc>
       </figure>
-      <figure xml:id="fig_1">
+      <figure xml:id="fig_2">
         <head>Fig. 4</head>
         <label>4</label>
         <figDesc>Fig. 4 Histological analysis data. H&amp;E and DPP-4 staining of liver tissue and insulin staining images of pancreas tissue after 28-days treatment. Dotted circles indicate islet cores</figDesc>
       </figure>
-      <figure xml:id="fig_2">
+      <figure xml:id="fig_3">
         <head>Figure S2 .</head>
         <label>S2</label>
         <figDesc>Purification and cleavage ability of the prepared Cas9-RNP complex. (a) 10% SDS-PAGE of recom- binant Cas9 protein purified from E. coli. (b) Schematic representation of</figDesc>
       </figure>
-      <figure xml:id="fig_3">
+      <figure xml:id="fig_4">
         <head>Fig. 5</head>
         <label>5</label>
         <figDesc>Fig. 5 OGTT, ITT, and serological testing results. a OGTT and ITT values at various times after administration of glucose meal or insulin. b Measurement of serum ALT and renal creatinine levels to investigate liver and kidney function. n = 3; *P &lt; 0.05, **P &lt; 0.01, ***P &lt; 0.001</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>1 College of Pharmacy, Research Institute of Pharmaceutical Science and Technology (RIPST), Ajou University, 206 Worldcup-ro, Yeongtong-gu, Suwon 16499, South Korea. 2 Bioimaging Research Team, Korea Basic Science Institute, Cheongju 28119, South Korea. 3 Moogene Medi Co. Ltd., Korea Bio Park, Daewangpangyo-ro 700, Seongnam 13488, South Korea.</figDesc>
+        <table/>
       </figure>
     </body>
     <back>
@@ -534,38 +611,6 @@
           <p>
             <s>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
           </p>
-        </div>
-      </div>
-      <div type="annex">
-        <div>
-          <ref type="figure">Figure S4</ref>
-          <p>
-            <s>. Uptake mechanism study of NL@ Cas9-RNP particle into cells.</s>
-            <s>Assessment of the uptake mechanism using green fluorescence staining of delivered Cas9 protein with anti-Cas9-488 antibodies under various conditions such as inhibitor treatment or culture temperature change.</s>
-            <s>The nucleus is stained with DAPI (blue).</s>
-            <s>SNU398 cells were pretreated for 30 min with various inhibitors: genistein (200 μM), chlorpromazine (30 μM), nocodazole (50 μM), sodium azide (0.01%), or cytochalasin B (5 μM) at 37 °C or 4 °C before NL@Cas9-RNP treatment (Scale bar = 50 μm).</s>
-            <s>
-              <ref type="figure">Figure S5</ref> .</s>
-            <s>Gene editing efficiency in human cells.</s>
-            <s>We investigated whether various nano-liposomes were able to perform gene editing by delivering Cas9-RNP into mammalian cells.</s>
-            <s>SNU398 cells were treated with Lec@Cas9-RNP, NL@Cas9-RNP(-), or NL@Cas9-RNP.</s>
-            <s>Expression levels of DPP-4 mRNA and protein were measured using quantitative real-time PCR (a) and western blotting (b), respectively.</s>
-            <s>NL@Cas9-RNP has the highest editing efficiency with decreased mRNA (67%) and enzyme protein (87%) expression.</s>
-            <s>In particular, DPP-4 enzyme activity owing to NL@Cas9-RNP delivery was decreased by 48% compared to that of control SNU398 cells (c).</s>
-            <s>n = 3; *P &lt; 0.05, **P &lt; 0.01, ***P &lt; 0.001.</s>
-            <s>
-              <ref type="figure">Figure S8</ref> .</s>
-            <s>In vivo monitoring.</s>
-            <s>NIR dye intensity of bare conjugated Cas9 proteins was monitored by optical imaging after injection.</s>
-            <s>
-              <ref type="figure">Figure S9</ref> .</s>
-            <s>In vivo bio-distribution data.</s>
-            <s>NL particles with dye-labeled Cas9-RNP complexes were used to determine bio-distribution in various organs.</s>
-            <s>Abbreviations CRISPR: clustered regularly interspaced short palindromic repeats; sgRNA: single-stranded guide RNA; T2DM: type 2 diabetes mellitus; GLP-1: glucagon-like peptide-1; DPP-4: dipeptidyl peptidase-4 gene; NL: lecithin-based liposomal carrier particle; NLS: nuclear localization signal; DOGS-NTA-Ni: 1,2-dioleoyl-snglycerol-3-[(N-(5-amino-1-carboxylpentyl)iminodiacetic acid)succinyl]-(nickel salt); Cryo-EM: cryo-electron microscopy; DLS: dynamic light scattering; Lec: lecithin-alone particle; PEI: polyethyleneimine; NL@Cas9-RNP: PEI-fused Cas9-RNP complexes into the NL; RITC: rhodamine B isothiocyanate; CLSM: confocal laser scanning microscopy; PAM: protospacer adjacent motif; HIF-2: hypoxiainducible factor 2; Pon-1: paraoxonase 1; OGTT : oral glucose tolerance test; ITT: intraperitoneal insulin tolerance test; ALT: alanine aminotransferase.</s>
-          </p>
-        </div>
-        <div>
-          <head>Authors' contributions</head>
         </div>
       </div>
       <div type="references">
@@ -924,7 +969,7 @@
               </author>
             </analytic>
             <monogr>
-              <title level="j">Proc Natl Acad Sci USA</title>
+              <title level="j">Proc Natl Acad Sci</title>
               <imprint>
                 <biblScope unit="volume">113</biblScope>
                 <biblScope from="2868" to="73" unit="page"/>

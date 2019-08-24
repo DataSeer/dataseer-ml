@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T09:25+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-24T00:55+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -139,8 +139,6 @@
             <ref target="#b4" type="bibr">5]</ref> where (x,y) is the pixel location, v(x,y) is the clean image, u(x,y) is the noisy image, η is a Gaussian noise distribution with zero-mean and variance σ 2 , and the factor γ is related to the ultrasound devices and additional processing.</s>
           <s>Extensive studies indicate that γ = 0.5 can be used to model speckle noise in the ultrasound images <ref target="#b3" type="bibr">[4,</ref>
             <ref target="#b5" type="bibr">6]</ref> .</s>
-        </p>
-        <p>
           <s>Many methods have been developed for ultrasound images despeckling <ref target="#b6" type="bibr">[7]</ref> .</s>
           <s>In general, the existing despeckling methods can be classified as the spatial domain based methods and the frequency domain based ones.</s>
           <s>The traditional spatial domain based methods, such as Frost filter <ref target="#b7" type="bibr">[8]</ref> , Kuan filter <ref target="#b8" type="bibr">[9]</ref> , squeeze box filter (SBF) <ref target="#b9" type="bibr">[10]</ref> and speckle reducing anisotropic diffusion (SRAD) filter <ref target="#b10" type="bibr">[11]</ref> , are based on the local comparison of pixels.</s>
@@ -238,7 +236,23 @@
         <p>
           <s>where L 1 is the number of filters in the first layer, I L 1 is the identity matrix of size L 1 ×L 1 , and ||�|| F denotes the Frobenius norm.</s>
           <s>The solutions of Eq (3) are the L 1 principal eigenvectors of AA T .</s>
-          <s>Therefore, the PCA filters are expressed as: from the second convolutional layer.</s>
+          <s>Therefore, the PCA filters are expressed as:</s>
+        </p>
+        <formula xml:id="formula_2">O 1 l ¼ mat k 1 ;k 2 ðq l ðAA T ÞÞ 2 R k 1 �k 2 ; l ¼ 1; 2; � � � ; L 1 ðEq 4Þ</formula>
+        <p>
+          <s>where q l (AA T ) represents the l-th principal eigenvector of AA T , and mat k 1 ;k 2 ðq l ðAA T ÞÞ is the function that maps q l (AA T ) to the matrix O 1 l .</s>
+          <s>Similar to the deep neural networks (DNNs), the multiple stages of PCA filters can be stacked for extracting higher level features.</s>
+          <s>All outputs of the first convolutional layer are utilized as the inputs of the second convolutional layer.</s>
+          <s>By repeating almost the same process as in the first convolutional layer, the leading L 2 eigenvectors are obtained as the filters in the second one.</s>
+        </p>
+        <p>
+          <s>B. The output layer.</s>
+          <s>For the p-th training image, there are L 1 outputs fF 1</s>
+        </p>
+        <formula xml:id="formula_3">p;v g L 1 v¼1</formula>
+        <p>
+          <s>from the first convolutional layer.</s>
+          <s>Similarly, each input F 1 p;v will produce L 2 corresponding outputs fF 2 p;w g L 2 w¼1 from the second convolutional layer.</s>
           <s>In the original PCANet, all these L 1 ×L 2 outputs are binarized using the Heaviside step function while each group of L 2 binary outputs is weighted summed to obtain L 1 decimal-valued images.</s>
           <s>However, the previous analysis has shown that this operation will degrade the effectiveness of the extracted features.</s>
           <s>To ensure that all those features obtained from the input image can be kept as accurate as possible, the binary hashing and block histograms will be replaced by the PReLU function <ref target="#b34" type="bibr">[34]</ref> .</s>
@@ -246,10 +260,7 @@
           <s>In this modified PCANet model, the PReLU will be utilized as the final output layer to map nonlinearity into the data to ensure the accuracy and robustness of the extracted intrinsic features.</s>
           <s>Here, the PReLU function is defined as:</s>
         </p>
-        <formula xml:id="formula_2">O 1 l ¼ mat k 1 ;k 2 ðq l ðAA T ÞÞ 2 R k 1 �k 2 ; l ¼ 1; 2; � � � ; L 1<label>ðEq</label>
-        </formula>
-        <formula xml:id="formula_3">PReLUðxÞ ¼ x if x &gt; 0 ax if x � 0 ðEq<label>5Þ</label>
-        </formula>
+        <formula xml:id="formula_4">PReLUðxÞ ¼ x if x &gt; 0 ax if x � 0 ðEq 5Þ</formula>
         <p>
           <s>( When a = 0, the function degenerates into the Rectified Linear Unit (ReLU).</s>
           <s>If a is a very small fixed value, the PReLU will be reduced to the Leaky ReLU (LReLU).</s>
@@ -267,7 +278,7 @@
         <p>
           <s corresp="#dataset-1" type="Dataset:Existing dataset">By using the trained PCA filters, the modified PCANet can extract the intrinsic features.</s>
           <s>A flowchart is given to illustrate how the modified PCANet extracts the features from the considered patches of an input image.</s>
-          <s>As shown in <ref target="#fig_1" type="figure">Fig 1,</ref> the original noisy ultrasound image is preprocessed by the OBNLM filter before input into the PCANet.</s>
+          <s>As shown in <ref target="#fig_0" type="figure">Fig 1,</ref> the original noisy ultrasound image is preprocessed by the OBNLM filter before input into the PCANet.</s>
           <s>The patches in the pre-processed ultrasound image are convoluted with the trained PCA filters to produce L 1 feature maps in the first convolutional layer.</s>
           <s>Then, each feature map is convoluted with the trained PCA filters to generate L 2 feature maps in the second convolutional layer.</s>
           <s>All the L 1 ×L 2 feature maps are processed by the PReLU function to produce the final outputs.</s>
@@ -277,7 +288,11 @@
         <head n="2.3">The modified PCANet based nonlocal means method</head>
         <p>
           <s>The main aim in this study is to improve the despeckling performance of NLM method.</s>
-          <s>To refine the calculation of structural similarity between image patches in the NLM method, the proposed where O(i,j) is the search window centered at (i,j).</s>
+          <s>To refine the calculation of structural similarity between image patches in the NLM method, the proposed where h acts as a decay parameter controlling the degree of filtering, X(i,j) and X(m,n) are the concatenated feature vectors of image patches centered at (i,j) and (m,n), respectively.</s>
+          <s>||�|| 2,α is a Gaussian weighted Euclidean distance with α denoting the standard deviation of Gaussian function.</s>
+        </p>
+        <p>
+          <s>Based on the structural similarity ω(i,j,m,n), the restored intensity NLM[I(i,j)] at (i,j) in the noisy image I is determined as: where O(i,j) is the search window centered at (i,j).</s>
         </p>
         <p>
           <s>To further improve the denoised results, the structural similarity between image patches will be refined by using the image restored by the proposed method instead of the pre-filtered results produced by the OBNLM method.</s>
@@ -287,7 +302,7 @@
       <div>
         <head n="2.4">Implementation of the proposed method</head>
         <p>
-          <s>The implementation of the proposed method is summarized in <ref target="#fig_4" type="figure">Fig 3,</ref> the detailed description is as follows.</s>
+          <s>The implementation of the proposed method is summarized in <ref target="#fig_3" type="figure">Fig 3,</ref> the detailed description is as follows.</s>
         </p>
         <p>
           <s>Step 1: Pre-processing.</s>
@@ -331,31 +346,19 @@
       <div>
         <head n="3.1">The synthetic image</head>
         <p>
-          <s>The experiment is conducted on the synthetic image corrupted by various levels of speckle noise with σ = 3, 4, 5, and 6, which is simulated based on Eq (1). is more effective in learning the different features from the noisy image, which can facilitate the accurate computation of structural similarity between image patches.</s>
-        </p>
-        <p>
-          <s>Fig 5 presents a visual comparison of restored results for the different filters operating on the synthetic image.</s>
-          <s>Obviously, speckle noise cannot be suppressed effectively by Frost and Kuan filter.</s>
-          <s>In contrast, the SBF and SRAD filters perform better in noise removal, but they cause the blurring of image details.</s>
-          <s>The evaluated NLM-based filters deliver sufficient speckle reduction.</s>
-          <s>However, the TNLM and OBNLM filters produce the artifacts as shown in <ref type="figure">Fig 5(G)</ref> and 5(H), while the NLMLS filter damages some small image structure although it can reduce the artifacts to some extent.</s>
-          <s>The DnCNN filter can facilitate enhancing the image contrast, but significant speckle noise and artifacts are observed in <ref type="figure">Fig 5(J)</ref> .</s>
-          <s>For the despeckling results based on PCANet methods, one can notice that there are obvious artifacts in <ref type="figure">Fig 5(K)</ref> and 5 (L), whereas useful structure information cannot be preserved in <ref type="figure">Fig 5(M)</ref> .</s>
-          <s>By comparison, the PPCA-NLM method has better performance in removing speckle noise and avoiding artifacts.</s>
+          <s>The experiment is conducted on the synthetic image corrupted by various levels of speckle noise with σ = 3, 4, 5, and 6, which is simulated based on Eq (1).</s>
           <s>The quantitative evaluations are also made among all the tested methods.</s>
-          <s>Two well-known evaluation indexes as peak signal-to-noise ratio (PSNR) and structural similarity index metrics (SSIM) <ref target="#b38" type="bibr">[39]</ref> are used for performance appreciation, which are defined as:</s>
+          <s>Two well-known evaluation indexes as peak signal-to-noise ratio (PSNR) and structural similarity index metrics (SSIM) <ref target="#b38" type="bibr">[39]</ref> are used for performance appreciation, which are defined as: SSIM ¼</s>
         </p>
-        <formula xml:id="formula_4">PSNR</formula>
-        <formula xml:id="formula_5">SSIM ¼ ð2mûm u þ C 1 Þð2dû u þ C 2 Þ ðmû 2 þ m 2 u þ C 1 Þðsû 2 þ s 2 u þ C 2 Þ ðEq<label>9Þ</label>
-        </formula>
+        <formula xml:id="formula_5">PSNR</formula>
+        <formula xml:id="formula_6">ð2mûm u þ C 1 Þð2dû u þ C 2 Þ ðmû 2 þ m 2 u þ C 1 Þðsû 2 þ s 2 u þ C 2 Þ ðEq 9Þ</formula>
         <p>
           <s>where W and H represent the width and height of the image, respectively.</s>
           <s>u is the noise-free image andû is the denoised image.</s>
           <s>mû and μ u are the mean intensity of imagesû and u, respectively.</s>
           <s>dûu is the covariance between imagesû and u, sû and σ u are the standard deviations of imagesû and u, respectively.</s>
           <s>C 1 and C 2 are the small constants to stabilize SSIM.</s>
-          <s>
-            <ref target="#tab_1" type="table">Tables 1 and 2</ref> list the PSNR and SSIM values for all evaluated methods operating on the synthetic image corrupted with different levels of speckle noise, where the best values are marked in bold.</s>
+          <s>Tables 1 and 2 list the PSNR and SSIM values for all evaluated methods operating on the synthetic image corrupted with different levels of speckle noise, where the best values are marked in bold.</s>
           <s>It can be seen that the DnCNN can produce the maximum PSNR at all noise levels, and the PPCA-NLM method ranks the second.</s>
           <s>However, the proposed method provides significantly higher SSIM values than the DnCNN.</s>
           <s>The overall evaluation based on the abovementioned visual inspection and the objective indexes demonstrates that the PPCA-NLM method exhibits the excellent despeckling performance for the synthetic image.</s>
@@ -365,24 +368,26 @@
         <head n="3.2">The simulated image</head>
         <p>
           <s>A more challenging and relevant ultrasound image has been generated for the "cyst" phantom based on FieldⅡ simulation, which is a program to simulate ultrasound transducer fields and ultrasound imaging using the linear acoustics.</s>
-          <s>The "cyst" phantom consists of a collection of point targets, five cyst regions, and five highly scattering regions <ref type="bibr">[40]</ref> .</s>
+          <s>The "cyst" phantom consists of a collection of point targets, five cyst regions, and five highly scattering regions [40].</s>
           <s>
-            <ref target="#fig_8" type="figure">Fig 7 presents</ref> the "cyst" phantom, the simulated image, and the despeckled results of all the tested methods.</s>
-          <s>The Frost, Kuan and SBF filters keep much noise in the images as shown in <ref target="#fig_8" type="figure">Fig 7(C)-7(E)</ref> .</s>
+            <ref target="#fig_7" type="figure">Fig 7 presents</ref> the "cyst" phantom, the simulated image, and the despeckled results of all the tested methods.</s>
+          <s>The Frost, Kuan and SBF filters keep much noise in the images as shown in <ref target="#fig_7" type="figure">Fig 7(C)-7(E)</ref> .</s>
           <s>The SRAD filter performs well in noise removal, but it leads to the blurry edges and the staircase effect in the despeckled image.</s>
           <s>All NLM-based methods smooth out speckle noise more effectively than the above-mentioned local filters.</s>
           <s>However, the TNLM and NLMLS filters cannot maintain the sharpness of point targets and the OBNLM method produces the obvious artifacts.</s>
-          <s>For the DnCNN method, many unwanted artifacts can be observed in the smooth region as shown in <ref target="#fig_8" type="figure">Fig 7(J)</ref> .</s>
-          <s>
-            <ref target="#fig_8" type="figure">From Fig 7(</ref> K)-7(M), one can see that the OPCA-NLM and RPCA-NLM filters tend to retain speckle noise, while the SPCA-NLM filter produces an over-smoothed image.</s>
-          <s>The comparison with the other eleven methods shows that the PPCA-NLM method can smooth out speckle noise well while providing the clearer boundaries of points as depicted in <ref target="#fig_8" type="figure">Fig 7(N)</ref> .</s>
+          <s>For the DnCNN method, many unwanted artifacts can be observed in the smooth region as shown in <ref target="#fig_7" type="figure">Fig 7(N)</ref> .</s>
           <s>Moreover, two other widely used evaluation indexes, i.e., equivalent number of looks (ENL) and contrast-to-noise ratio (CNR) <ref target="#b39" type="bibr">[41]</ref> are utilized to quantitatively appreciate the despeckling performance, which are defined as:</s>
         </p>
-        <formula xml:id="formula_6">ENL ¼ m 2 b s 2 b ðEq 10Þ CNR ¼ jm b À m o j ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi s 2 b þ s 2 o p ðEq 11Þ</formula>
+        <formula xml:id="formula_7">ENL ¼ m 2 b s 2 b ðEq 10Þ CNR ¼ jm b À m o j</formula>
+        <p>
+          <s>ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi</s>
+        </p>
+        <formula xml:id="formula_8">s 2 b þ s 2 o p ðEq<label>11Þ</label>
+        </formula>
         <p>
           <s>where μ b and μ o are the mean intensity of background area and object area, σ b and σ o are the standard deviation of background area and object area, respectively.</s>
-          <s>Four pairs of ROIs are selected to evaluate the despeckling performance for these tested methods, and the ROIs are marked with different colors as shown in <ref target="#fig_8" type="figure">Fig 7(B)</ref> .</s>
-          <s>The ENL and CNR are listed in <ref target="#tab_3" type="table">Tables 3 and 4</ref> , respectively.</s>
+          <s>Four pairs of ROIs are selected to evaluate the despeckling performance for these tested methods, and the ROIs are marked with different colors as shown in <ref target="#fig_7" type="figure">Fig 7(B)</ref> .</s>
+          <s>The ENL and CNR are listed in Tables 3 and 4, respectively.</s>
           <s>As regards ENL, the PPCA-NLM method provides the maximum values at all ROIs.</s>
           <s>Likewise, the proposed method performs the best for three ROIs except that its CNR is slightly less than that of the RPCA-NLM method for the blue ROI.</s>
           <s>The performance appreciation based on ENL and CNR confirms that the PPCA-NLM method is superior to other compared methods.</s>
@@ -393,18 +398,14 @@
         <p>
           <s>Three real ultrasound images are also used to further assess the effectiveness of the proposed method.</s>
           <s>
-            <ref target="#fig_9" type="figure">Fig 8 shows</ref> the despeckled results for the compared methods on a real ultrasound image of benign lymph nodes.</s>
-          <s>Visually, the Frost and Kuan filters maintain much speckle in the image as shown in <ref target="#fig_9" type="figure">Fig 8(B)</ref> and 8(C), while the SBF and SRAD filters result in the blurry object boundaries as shown in <ref target="#fig_9" type="figure">Fig 8(D) and 8(E)</ref> .</s>
-          <s>Compared with the TNLM and NLMLS filters, the PCANet based NLM filters are more effective in smoothing out speckle noise.</s>
-          <s>
-            <ref target="#tab_4" type="table">Tables 5 and 6</ref> .</s>
+            <ref target="#tab_6" type="table">Tables 5 and 6</ref> .</s>
           <s>With regard to ENL results, the PPCA-NLM method produces the maximum values at three ROIs among all the filters.</s>
           <s>In terms of CNR, the OPCA-NLM method provides the competitive results, followed by the PPCA-NLM and DnCNN methods.</s>
           <s>The above quantitative comparisons and visual inspection illustrate that the PPCA-NLM method is very suitable and practicable for despeckling the real ultrasound image.</s>
         </p>
         <p>
           <s>Besides, two other clinical ultrasound images including the fetal image and the parotid gland image are used to further display the visual impression for the TNLM, OBNLM, NLMLS, DnCNN and PPCA-NLM filters.</s>
-          <s>As indicated in <ref target="#fig_10" type="figure">Figs 9</ref> and 10, the PPCA-NLM method outperforms the compared methods in that it not only effectively removes speckle noise but also enhances the sharpness of boundaries and retains image structures very well.</s>
+          <s>As indicated in Figs 9 and 10, the PPCA-NLM method outperforms the compared methods in that it not only effectively removes speckle noise but also enhances the sharpness of boundaries and retains image structures very well.</s>
         </p>
       </div>
       <div>
@@ -423,46 +424,49 @@
         <p>
           <s>Conceptualization: Houqiang Yu, Mingyue Ding, Xuming Zhang.</s>
         </p>
+        <p>
+          <s>Data curation: Houqiang Yu, Xuming Zhang.</s>
+        </p>
       </div>
       <figure xml:id="fig_0">
-        <head/>
-        <label/>
-        <figDesc>4Þ where q l (AA T ) represents the l-th principal eigenvector of AA T , and mat k 1 ;k 2 ðq l ðAA T ÞÞ is the function that maps q l (AA T ) to the matrix O 1 l . Similar to the deep neural networks (DNNs), the multiple stages of PCA filters can be stacked for extracting higher level features. All outputs of the first convolutional layer are uti- lized as the inputs of the second convolutional layer. By repeating almost the same process as in the first convolutional layer, the leading L 2 eigenvectors are obtained as the filters in the sec- ond one. B. The output layer. For the p-th training image, there are L 1 outputs fF</figDesc>
-      </figure>
-      <figure xml:id="fig_1">
         <head>Fig 1 .</head>
         <label>1</label>
         <figDesc>Fig 1. Illustration of feature extraction of image patches using the modified PCANet. https://doi.org/10.1371/journal.pone.0205390.g001</figDesc>
       </figure>
-      <figure xml:id="fig_2">
+      <figure xml:id="fig_1">
         <head>Fig 2 .</head>
         <label>2</label>
         <figDesc>Fig 2. A detailed illustration of the construction of feature vectors based on the feature patches. https://doi.org/10.1371/journal.pone.0205390.g002</figDesc>
       </figure>
-      <figure xml:id="fig_3">
+      <figure xml:id="fig_2">
         <head/>
         <label/>
         <figDesc>Fig 4 shows the learned feature images by different activation functions based PCANet on the synthetic image with σ = 3. It can be seen from Fig 4 that the PReLU based PCANet model</figDesc>
       </figure>
-      <figure xml:id="fig_4">
+      <figure xml:id="fig_3">
         <head>Fig 3 .</head>
         <label>3</label>
         <figDesc>Fig 3. The scheme of the proposed method. https://doi.org/10.1371/journal.pone.0205390.g003</figDesc>
       </figure>
-      <figure xml:id="fig_5">
-        <head/>
-        <label/>
-        <figDesc>Furthermore, the zoomed views of a region of interest (ROI) from Fig 5 are shown in Fig 6 to demonstrate the advantage of the proposed method in preserving the small structures and edges. Clearly, Fig 6(C)-6(G) obtained with the Frost, Kuan, SBF, SRAD, and TNLM filters are unsatisfac- tory since these methods cannot provide good edge preservation. In Fig 6(H)-6(J), it can be seen that the OBNLM and NLMLS methods blur the edges and details of the rectangle, lines and circular point, while the DnCNN denoiser tends to distort the small structures and produce the obvious artifacts in the smooth region. Similarly, one can see from Fig 6(K)-6(M) that the OPCA-NLM and RPCA-NLM filters generate the blurred edges, while the SPCA-NLM filter causes serious damage to the image details. Compared with the other evaluated filters, the PPCA-NLM method is the most effective for preserving the fine structures and maintaining the edge sharpness in the image.</figDesc>
-      </figure>
-      <figure xml:id="fig_6">
-        <head>Fig 4 . g004 Fig 5 .</head>
-        <label>4g0045</label>
+      <figure xml:id="fig_4">
+        <head>Fig 4 .</head>
+        <label>4</label>
         <figDesc>Fig 4. Comparisons of the learned feature images by various activation functions in the PCANet. The top row, the second row, the third row and the bottom row show the learned feature images by the original PCANet, ReLU-based PCANet, sigmoid-based PCANet and PReLU-based PCANet models, respectively. https://doi.org/10.1371/journal.pone.0205390.g004</figDesc>
       </figure>
-      <figure xml:id="fig_7">
+      <figure xml:id="fig_5">
+        <head>Fig 5 .</head>
+        <label>5</label>
+        <figDesc>Fig 5. Visual comparison of restoration performance of the various despeckling methods on the synthetic image. (a) original image, (b) synthetic image with speckle noise (σ = 3), (c) Frost filter, (d) Kuan filter, (e) SBF filter, (f) SRAD filter, (g) TNLM filter, (h) OBNLM filter, (i) NLMLS filter, (j) DnCNN filter, (k) OPCA-NLM filter, (l) RPCA-NLM filter, (m) SPCA-NLM filter, and (n) PPCA-NLM filter.</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
         <head>Fig 6 .</head>
         <label>6</label>
         <figDesc>Fig 6. Comparison of zoomed details in Fig 5 for the twelve despeckling methods. (a) Original ROI, (b) Noisy ROI, (c) Frost filter, (d) Kuan filter, (e) SBF filter, (f) SRAD filter, (g) TNLM filter, (h) OBNLM filter, (i) NLMLS filter, (j) DnCNN filter, (k) OPCA-NLM filter, (l) RPCA-NLM filter, (m) SPCA-NLM filter, and (n) PPCA-NLM filter. https://doi.org/10.1371/journal.pone.0205390.g006</figDesc>
+      </figure>
+      <figure xml:id="fig_7">
+        <head>Fig 7 (</head>
+        <label>7</label>
+        <figDesc>J). From Fig 7(K)-7(M), one can see that the OPCA-NLM and RPCA-NLM filters tend to retain speckle noise, while the SPCA-NLM filter produces an over-smoothed image. The comparison with the other eleven methods shows that the PPCA-NLM method can smooth out speckle noise well while providing the clearer boundaries of points as depicted in</figDesc>
       </figure>
       <figure xml:id="fig_8">
         <head>Fig 7 .</head>
@@ -470,14 +474,24 @@
         <figDesc>Fig 7. Visual comparison of restoration performance of various despeckling methods on the simulated image. (a) the "cyst" phantom, (b) simulated image generated by FieldⅡ and four ROIs marked with various colors, (c) Frost filter, (d) Kuan filter, (e) SBF filter, (f) SRAD filter, (g) TNLM filter, (h) OBNLM filter, (i) NLMLS filter, (j) DnCNN filter, (k) OPCA-NLM filter, (l) RPCA-NLM filter, (m) SPCA-NLM filter, and (n) PPCA-NLM filter.</figDesc>
       </figure>
       <figure xml:id="fig_9">
+        <head/>
+        <label/>
+        <figDesc>Fig 8 shows the despeckled results for the compared methods on a real ultrasound image of benign lymph nodes. Visually, the Frost and Kuan filters maintain much speckle in the image as shown in Fig 8(B) and 8(C), while the SBF and SRAD filters result in the blurry object boundaries as shown in Fig 8(D) and 8(E). Compared with the TNLM and NLMLS fil- ters, the PCANet based NLM filters are more effective in smoothing out speckle noise.</figDesc>
+      </figure>
+      <figure xml:id="fig_10">
         <head>Fig 8 .</head>
         <label>8</label>
         <figDesc>Fig 8. Comparison of restoration performance of various despeckling methods on a real ultrasound image of benign lymph nodes. (a) original noisy image and four ROIs marked with the different colors, (b) Frost filter, (c) Kuan filter, (d) SBF filter, (e) SRAD filter, (f) TNLM filter, (g) OBNLM filter, (h) NLMLS filter, (i) DnCNN filter, (j) OPCA-NLM filter, (k) RPCA-NLM filter, (l) SPCA-NLM filter, and (m) PPCA-NLM filter.</figDesc>
       </figure>
-      <figure xml:id="fig_10">
+      <figure xml:id="fig_11">
         <head>Fig 9 .</head>
         <label>9</label>
         <figDesc>Fig 9. Comparison of restoration performance on a real fetal ultrasound image for the NLM-based and DnCNN methods. (a) original image, (b) TNLM filter, (c) OBNLM filter, (d) NLMLS filter, (e) DnCNN filter, and (f) PPCA-NLM filter. https://doi.org/10.1371/journal.pone.0205390.g009</figDesc>
+      </figure>
+      <figure xml:id="fig_12">
+        <head>Formal analysis :</head>
+        <label>analysis</label>
+        <figDesc>Xuming Zhang, Jinbo Wu. Funding acquisition: Xuming Zhang. Investigation: Houqiang Yu, Xuming Zhang. Methodology: Houqiang Yu, Xuming Zhang, Jinbo Wu. Resources: Mingyue Ding. Software: Houqiang Yu, Xuming Zhang, Jinbo Wu.</figDesc>
       </figure>
       <figure type="table" validated="false" xml:id="tab_0">
         <head>as :</head>
@@ -485,7 +499,26 @@
         <figDesc>uðx; yÞ ¼ vðx; yÞ þ vðx; yÞ g Zðx; yÞ ðEq 1Þ</figDesc>
         <table/>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_1">
+      <figure type="table" validated="false" xml:id="tab_1">
+        <head/>
+        <label/>
+        <figDesc>NLM½Iði; jÞ� ¼</figDesc>
+        <table>X 
+
+ðm;nÞ2Oði;jÞ 
+
+oði; j; m; nÞIðm; nÞ 
+
+X 
+
+ðm;nÞ2Oði;jÞ 
+
+oði; j; m; nÞ 
+ðEq 7Þ 
+
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_3">
         <head>Table 1 .</head>
         <label>1</label>
         <figDesc>The PSNR (dB) values of various despeckling methods on the synthetic image.</figDesc>
@@ -575,7 +608,7 @@ PPCA-NLM
 
 https://doi.org/10.1371/journal.pone.0205390.t001 </table>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_2">
+      <figure type="table" validated="true" xml:id="tab_4">
         <head>Table 2 .</head>
         <label>2</label>
         <figDesc>The SSIM values of various despeckling methods on the synthetic image.</figDesc>
@@ -665,7 +698,7 @@ PPCA-NLM
 
 https://doi.org/10.1371/journal.pone.0205390.t002 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_3">
+      <figure type="table" validated="false" xml:id="tab_5">
         <head>Table 3 .</head>
         <label>3</label>
         <figDesc>The ENL values of four ROIs on the simulated ultrasound image.https://doi.org/10.1371/journal.pone.0205390.t003 Table 4. The CNR values of four ROIs on the simulated ultrasound image.https://doi.org/10.1371/journal.pone.0205390.t004</figDesc>
@@ -755,10 +788,10 @@ PPCA-NLM
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_4">
+      <figure type="table" validated="false" xml:id="tab_6">
         <head>Table 5 .</head>
         <label>5</label>
-        <figDesc>The ENL values of four ROIs on a real ultrasound image.https://doi.org/10.1371/journal.pone.0205390.t005</figDesc>
+        <figDesc>The ENL values of four ROIs on a real ultrasound image.https://doi.org/10.1371/journal.pone.0205390.t005 Table 6. The CNR values of four ROIs on a real ultrasound image.https://doi.org/10.1371/journal.pone.0205390.t006</figDesc>
         <table>Methods 
 ROI 1 (blue) 
 ROI 2 (green) 
@@ -845,102 +878,6 @@ PPCA-NLM
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_5">
-        <head>Table 6 .</head>
-        <label>6</label>
-        <figDesc>The CNR values of four ROIs on a real ultrasound image.https://doi.org/10.1371/journal.pone.0205390.t006</figDesc>
-        <table>Methods 
-ROI 1 (blue) 
-ROI 2 (green) 
-ROI 3 (yellow) 
-ROI 4 (red) 
-
-Noisy image 
-9.28 
-11.79 
-5.45 
-3.80 
-
-Frost 
-10.56 
-14.15 
-6.39 
-4.18 
-
-Kuan 
-10.71 
-15.04 
-6.51 
-4.27 
-
-SBF 
-12.63 
-17.52 
-7.27 
-4.38 
-
-SRAD 
-11.46 
-16.01 
-7.41 
-4.43 
-
-TNLM 
-15.83 
-19.90 
-7.36 
-4.79 
-
-OBNLM 
-18.29 
-21.53 
-9.78 
-6.21 
-
-NLMLS 
-14.65 
-20.97 
-8.32 
-5.44 
-
-DnCNN 
-16.88 
-18.01 
-11.00 
-5.12 
-
-OPCA-NLM 
-19.86 
-21.88 
-10.16 
-6.58 
-
-RPCA-NLM 
-19.45 
-21.22 
-10.08 
-6.67 
-
-SPCA-NLM 
-18.96 
-8.15 
-6.12 
-1.91 
-
-PPCA-NLM 
-19.42 
-21.80 
-10.33 
-7.13 
-
-</table>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_6">
-        <head/>
-        <label/>
-        <figDesc>Data curation: Houqiang Yu, Xuming Zhang. Formal analysis: Xuming Zhang, Jinbo Wu.acquisition: Xuming Zhang. Investigation: Houqiang Yu, Xuming Zhang. Methodology: Houqiang Yu, Xuming Zhang, Jinbo Wu. Resources: Mingyue Ding. Software: Houqiang Yu, Xuming Zhang, Jinbo Wu.</figDesc>
-        <table>Funding </table>
-      </figure>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0205390 October 12, 2018</note>
       <note place="foot">https://doi.org/10.1371/journal.pone.0205390.g005 PCANet based NLM method for ultrasonic speckle removal PLOS ONE | https://doi.org/10.1371/journal.pone.0205390 October 12, 2018 9 / 19</note>
       <note place="foot">https://doi.org/10.1371/journal.pone.0205390.g007 PCANet based NLM method for ultrasonic speckle removal PLOS ONE | https://doi.org/10.1371/journal.pone.0205390 October 12, 2018 12 / 19</note>
@@ -950,9 +887,7 @@ PPCA-NLM
     <back>
       <div type="acknowledgement">
         <div>
-          <p>
-            <s>Supervision: Xuming Zhang.</s>
-          </p>
+          <head>Supervision: Xuming Zhang.</head>
         </div>
         <div>
           <head>Writing -original draft: Houqiang Yu.</head>
@@ -990,15 +925,16 @@ PPCA-NLM
                   <surname>Kim</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TMI.2006.889735</idno>
-              <ptr target="https://doi.org/10.1109/TMI.2006.889735PMID"/>
+              <idno type="DOI">10.1109/TMI.2006.889735</idno>
+              <idno>PMID: 17304734</idno>
+              <ptr target="https://doi.org/10.1109/TMI.2006.889735"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Medical Imaging</title>
               <imprint>
                 <biblScope unit="volume">26</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">17304734</biblScope>
+                <biblScope from="200" to="211" unit="page"/>
                 <date type="published" when="2007"/>
               </imprint>
             </monogr>
@@ -1030,7 +966,7 @@ PPCA-NLM
                   <surname>Wels</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/CVPR.2006.318</idno>
+              <idno type="DOI">10.1109/CVPR.2006.318</idno>
               <ptr target="https://doi.org/10.1109/CVPR.2006.318"/>
             </analytic>
             <monogr>
@@ -1062,15 +998,16 @@ PPCA-NLM
                   <surname>Beaty</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TMI.2006.881376</idno>
-              <ptr target="https://doi.org/10.1109/TMI.2006.881376PMID"/>
+              <idno type="DOI">10.1109/TMI.2006.881376</idno>
+              <idno>PMID: 17117777</idno>
+              <ptr target="https://doi.org/10.1109/TMI.2006.881376"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Medical Imaging</title>
               <imprint>
                 <biblScope unit="volume">25</biblScope>
                 <biblScope unit="issue">11</biblScope>
-                <biblScope unit="page">17117777</biblScope>
+                <biblScope from="1483" to="1491" unit="page"/>
                 <date type="published" when="2006"/>
               </imprint>
             </monogr>
@@ -1102,15 +1039,16 @@ PPCA-NLM
                   <surname>Barillot</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TIP.2009.2024064</idno>
-              <ptr target="https://doi.org/10.1109/TIP.2009.2024064PMID"/>
+              <idno type="DOI">10.1109/TIP.2009.2024064</idno>
+              <idno>PMID: 19482578</idno>
+              <ptr target="https://doi.org/10.1109/TIP.2009.2024064"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Image Processing</title>
               <imprint>
                 <biblScope unit="volume">18</biblScope>
                 <biblScope unit="issue">10</biblScope>
-                <biblScope unit="page">19482578</biblScope>
+                <biblScope from="2221" to="2229" unit="page"/>
                 <date type="published" when="2009"/>
               </imprint>
             </monogr>
@@ -1142,7 +1080,7 @@ PPCA-NLM
                   <surname>Zhang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.sigpro.2013.12.019</idno>
+              <idno type="DOI">10.1016/j.sigpro.2013.12.019</idno>
               <ptr target="https://doi.org/10.1016/j.sigpro.2013.12.019"/>
             </analytic>
             <monogr>
@@ -1180,7 +1118,7 @@ PPCA-NLM
                   <forename type="middle">L</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1109/31.16577</idno>
+              <idno type="DOI">10.1109/31.16577</idno>
               <ptr target="https://doi.org/10.1109/31.16577"/>
             </analytic>
             <monogr>
@@ -1244,19 +1182,19 @@ PPCA-NLM
               <author>
                 <persName>
                   <forename type="first">J</forename>
-                  <forename type="middle">C</forename>
                   <surname>Holtzman</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TPAMI.1982.4767223</idno>
-              <ptr target="http://doi.org/10.1109/TPAMI.1982.4767223PMID"/>
+              <idno type="DOI">10.1109/TPAMI.1982.4767223</idno>
+              <idno>PMID: 21869022</idno>
+              <ptr target="http://doi.org/10.1109/TPAMI.1982.4767223"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Pattern Analysis and Machine Intelligence</title>
               <imprint>
                 <biblScope unit="volume">4</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">21869022</biblScope>
+                <biblScope from="157" to="166" unit="page"/>
                 <date type="published" when="1982"/>
               </imprint>
             </monogr>
@@ -1288,7 +1226,7 @@ PPCA-NLM
                   <surname>Chavel</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TASSP.1987.1165131</idno>
+              <idno type="DOI">10.1109/TASSP.1987.1165131</idno>
               <ptr target="https://doi.org/10.1109/TASSP.1987.1165131"/>
             </analytic>
             <monogr>
@@ -1328,15 +1266,16 @@ PPCA-NLM
                   <surname>Hossack</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TIP.2010.2044962</idno>
-              <ptr target="https://doi.org/10.1109/TIP.2010.2044962PMID"/>
+              <idno type="DOI">10.1109/TIP.2010.2044962</idno>
+              <idno>PMID: 20227984</idno>
+              <ptr target="https://doi.org/10.1109/TIP.2010.2044962"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Image Processing</title>
               <imprint>
                 <biblScope unit="volume">19</biblScope>
                 <biblScope unit="issue">7</biblScope>
-                <biblScope unit="page">20227984</biblScope>
+                <biblScope from="1847" to="1860" unit="page"/>
                 <date type="published" when="2010"/>
               </imprint>
             </monogr>
@@ -1357,15 +1296,16 @@ PPCA-NLM
                   <surname>Acton</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TIP.2002.804276</idno>
-              <ptr target="https://doi.org/10.1109/TIP.2002.804276PMID"/>
+              <idno type="DOI">10.1109/TIP.2002.804276</idno>
+              <idno>PMID: 18249696</idno>
+              <ptr target="https://doi.org/10.1109/TIP.2002.804276"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Image Processing</title>
               <imprint>
                 <biblScope unit="volume">11</biblScope>
                 <biblScope unit="issue">11</biblScope>
-                <biblScope unit="page">18249696</biblScope>
+                <biblScope from="1260" to="1270" unit="page"/>
                 <date type="published" when="2002"/>
               </imprint>
             </monogr>
@@ -1403,15 +1343,16 @@ PPCA-NLM
                   <surname>Liu</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1364/BOE.8.002720</idno>
-              <ptr target="https://doi.org/10.1364/BOE.8.002720PMID"/>
+              <idno type="DOI">10.1364/BOE.8.002720</idno>
+              <idno>PMID: 28663901</idno>
+              <ptr target="https://doi.org/10.1364/BOE.8.002720"/>
             </analytic>
             <monogr>
               <title level="j">Biomedical Optics Express</title>
               <imprint>
                 <biblScope unit="volume">8</biblScope>
                 <biblScope unit="issue">5</biblScope>
-                <biblScope unit="page">28663901</biblScope>
+                <biblScope from="2720" to="2731" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -1443,15 +1384,16 @@ PPCA-NLM
                   <surname>Acheroy</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TMI.2003.809588</idno>
-              <ptr target="https://doi.org/10.1109/TMI.2003.809588PMID"/>
+              <idno type="DOI">10.1109/TMI.2003.809588</idno>
+              <idno>PMID: 12760550</idno>
+              <ptr target="https://doi.org/10.1109/TMI.2003.809588"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Medical Imaging</title>
               <imprint>
                 <biblScope unit="volume">22</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">12760550</biblScope>
+                <biblScope from="323" to="331" unit="page"/>
                 <date type="published" when="2003"/>
               </imprint>
             </monogr>
@@ -1514,7 +1456,7 @@ PPCA-NLM
                   <surname>Morel</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/CVPR.2005.38</idno>
+              <idno type="DOI">10.1109/CVPR.2005.38</idno>
               <ptr target="http://doi.org/10.1109/CVPR.2005.38"/>
             </analytic>
             <monogr>
@@ -1546,7 +1488,7 @@ PPCA-NLM
                   <forename type="first">K</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.bspc.2016.05.007</idno>
+              <idno type="DOI">10.1016/j.bspc.2016.05.007</idno>
               <ptr target="https://doi.org/10.1016/j.bspc.2016.05.007"/>
             </analytic>
             <monogr>
@@ -1597,15 +1539,16 @@ PPCA-NLM
                   <surname>Zhang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TBME.2015.2476371</idno>
-              <ptr target="https://doi.org/10.1109/TBME.2015.2476371PMID"/>
+              <idno type="DOI">10.1109/TBME.2015.2476371</idno>
+              <idno>PMID: 26353358</idno>
+              <ptr target="https://doi.org/10.1109/TBME.2015.2476371"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Biomedical Engineering</title>
               <imprint>
                 <biblScope unit="volume">63</biblScope>
                 <biblScope unit="issue">5</biblScope>
-                <biblScope unit="page">26353358</biblScope>
+                <biblScope from="1044" to="1057" unit="page"/>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -1649,15 +1592,16 @@ PPCA-NLM
                   <surname>Xu</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0100240</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0100240PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0100240</idno>
+              <idno>PMID: 24933024</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0100240"/>
             </analytic>
             <monogr>
               <title level="j">PloS ONE</title>
               <imprint>
                 <biblScope unit="volume">9</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">24933024</biblScope>
+                <biblScope unit="page">100240</biblScope>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -1689,15 +1633,16 @@ PPCA-NLM
                   <surname>Barillot</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TIP.2009.2024064</idno>
-              <ptr target="https://doi.org/10.1109/TIP.2009.2024064PMID"/>
+              <idno type="DOI">10.1109/TIP.2009.2024064</idno>
+              <idno>PMID: 19482578</idno>
+              <ptr target="https://doi.org/10.1109/TIP.2009.2024064"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Image Processing</title>
               <imprint>
                 <biblScope unit="volume">18</biblScope>
                 <biblScope unit="issue">10</biblScope>
-                <biblScope unit="page">19482578</biblScope>
+                <biblScope from="2221" to="2229" unit="page"/>
                 <date type="published" when="2009"/>
               </imprint>
             </monogr>
@@ -1741,8 +1686,9 @@ PPCA-NLM
                   <surname>Xie</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1177/0161734615600676</idno>
-              <ptr target="https://doi.org/10.1177/0161734615600676PMID:26316172"/>
+              <idno type="DOI">10.1177/0161734615600676</idno>
+              <idno>PMID: 26316172</idno>
+              <ptr target="https://doi.org/10.1177/0161734615600676"/>
             </analytic>
             <monogr>
               <title level="j">Ultrasonic Imaging</title>
@@ -1793,7 +1739,7 @@ PPCA-NLM
                   <forename type="first">S</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.neucom.2015.05.140</idno>
+              <idno type="DOI">10.1016/j.neucom.2015.05.140</idno>
               <ptr target="https://doi.org/10.1016/j.neucom.2015.05.140"/>
             </analytic>
             <monogr>
@@ -1826,7 +1772,7 @@ PPCA-NLM
                   <surname>Kong</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.mcm.2011.09.021</idno>
+              <idno type="DOI">10.1016/j.mcm.2011.09.021</idno>
               <ptr target="https://doi.org/10.1016/j.mcm.2011.09.021"/>
             </analytic>
             <monogr>
@@ -1911,15 +1857,16 @@ PPCA-NLM
                   <surname>Ochońska</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0184554</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0184554PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0184554</idno>
+              <idno>PMID: 28910352</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0184554"/>
             </analytic>
             <monogr>
               <title level="j">PloS ONE</title>
               <imprint>
                 <biblScope unit="volume">12</biblScope>
                 <biblScope unit="issue">9</biblScope>
-                <biblScope unit="page">28910352</biblScope>
+                <biblScope unit="page">184554</biblScope>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -1963,7 +1910,7 @@ PPCA-NLM
                   <surname>Anguelov</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/CVPR.2015.7298594</idno>
+              <idno type="DOI">10.1109/CVPR.2015.7298594</idno>
               <ptr target="https://doi.org/10.1109/CVPR.2015.7298594"/>
             </analytic>
             <monogr>
@@ -1995,7 +1942,7 @@ PPCA-NLM
                   <surname>Lee</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/CVPR.2016.182</idno>
+              <idno type="DOI">10.1109/CVPR.2016.182</idno>
               <ptr target="https://doi.org/10.1109/CVPR.2016.182"/>
             </analytic>
             <monogr>
@@ -2044,7 +1991,7 @@ PPCA-NLM
           <biblStruct xml:id="b27">
             <monogr>
               <title/>
-              <idno type="doi">10.1109/CVPR.2014.81</idno>
+              <idno type="DOI">10.1109/CVPR.2014.81</idno>
               <ptr target="http://doi.org/10.1109/CVPR.2014.81"/>
               <imprint>
                 <biblScope from="580" to="587" unit="page"/>
@@ -2064,7 +2011,7 @@ PPCA-NLM
                   <surname>Fast R-Cnn</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/ICCV.2015.169</idno>
+              <idno type="DOI">10.1109/ICCV.2015.169</idno>
               <ptr target="http://doi.org/10.1109/ICCV.2015.169"/>
               <title level="m">2015 IEEE Conference on Computer Vision and Pattern Recognition</title>
               <imprint>
@@ -2112,15 +2059,16 @@ PPCA-NLM
                   <surname>Zhang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0190069</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0190069PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0190069</idno>
+              <idno>PMID: 29267360</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0190069"/>
             </analytic>
             <monogr>
               <title level="j">PloS ONE</title>
               <imprint>
                 <biblScope unit="volume">12</biblScope>
                 <biblScope unit="issue">12</biblScope>
-                <biblScope unit="page">29267360</biblScope>
+                <biblScope unit="page">190069</biblScope>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -2141,7 +2089,7 @@ PPCA-NLM
                   <surname>Babu</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/CVPRW.2017.145</idno>
+              <idno type="DOI">10.1109/CVPRW.2017.145</idno>
               <ptr target="http://doi.org/10.1109/CVPRW.2017.145"/>
             </analytic>
             <monogr>
@@ -2185,15 +2133,16 @@ PPCA-NLM
                   <surname>Zhang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TIP.2017.2662206</idno>
-              <ptr target="https://doi.org/10.1109/TIP.2017.2662206PMID"/>
+              <idno type="DOI">10.1109/TIP.2017.2662206</idno>
+              <idno>PMID: 28166495</idno>
+              <ptr target="https://doi.org/10.1109/TIP.2017.2662206"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Image Processing</title>
               <imprint>
                 <biblScope unit="volume">26</biblScope>
                 <biblScope unit="issue">7</biblScope>
-                <biblScope unit="page">28166495</biblScope>
+                <biblScope from="3142" to="3155" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -2237,15 +2186,16 @@ PPCA-NLM
                   <surname>Ma</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TIP.2015.2475625</idno>
-              <ptr target="https://doi.org/10.1109/TIP.2015.2475625PMID"/>
+              <idno type="DOI">10.1109/TIP.2015.2475625</idno>
+              <idno>PMID: 26340772</idno>
+              <ptr target="https://doi.org/10.1109/TIP.2015.2475625"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Image Processing</title>
               <imprint>
                 <biblScope unit="volume">24</biblScope>
                 <biblScope unit="issue">12</biblScope>
-                <biblScope unit="page">26340772</biblScope>
+                <biblScope from="5017" to="5032" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -2270,7 +2220,7 @@ PPCA-NLM
                   <surname>Hinton</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1145/3065386</idno>
+              <idno type="DOI">10.1145/3065386</idno>
               <ptr target="https://doi.org/10.1145/3065386"/>
               <title level="m">Imagenet classification with deep convolutional neural networks. In: the 25th International Conference on Neural Information Processing Systems</title>
               <imprint>
@@ -2306,7 +2256,7 @@ PPCA-NLM
                   <surname>Sun</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/ICCV.2015.123</idno>
+              <idno type="DOI">10.1109/ICCV.2015.123</idno>
               <ptr target="https://doi.org/10.1109/ICCV.2015.123"/>
             </analytic>
             <monogr>
@@ -2350,7 +2300,7 @@ PPCA-NLM
                   <surname>Zuo</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.patcog.2017.01.016</idno>
+              <idno type="DOI">10.1016/j.patcog.2017.01.016</idno>
               <ptr target="https://doi.org/10.1016/j.patcog.2017.01.016"/>
               <imprint>
                 <date type="published" when="2017"/>
@@ -2392,7 +2342,7 @@ PPCA-NLM
                   <surname>Du</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.ins.2016.08.004</idno>
+              <idno type="DOI">10.1016/j.ins.2016.08.004</idno>
               <ptr target="https://doi.org/10.1016/j.ins.2016.08.004"/>
             </analytic>
             <monogr>
@@ -2418,7 +2368,7 @@ PPCA-NLM
                   <surname>Boulanger</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/s11263-007-0096-2</idno>
+              <idno type="DOI">10.1007/s11263-007-0096-2</idno>
               <ptr target="https://doi.org/10.1007/s11263-007-0096-2"/>
             </analytic>
             <monogr>
@@ -2459,15 +2409,16 @@ PPCA-NLM
                   <surname>Simoncelli</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TIP.2003.819861</idno>
-              <ptr target="https://doi.org/10.1109/TIP.2003.819861PMID"/>
+              <idno type="DOI">10.1109/TIP.2003.819861</idno>
+              <idno>PMID: 15376593</idno>
+              <ptr target="https://doi.org/10.1109/TIP.2003.819861"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Image Processing</title>
               <imprint>
                 <biblScope unit="volume">13</biblScope>
                 <biblScope unit="issue">4</biblScope>
-                <biblScope unit="page">15376593</biblScope>
+                <biblScope from="600" to="612" unit="page"/>
                 <date type="published" when="2004"/>
               </imprint>
             </monogr>
@@ -2511,15 +2462,16 @@ PPCA-NLM
                   <surname>Wojtkowski</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1364/OE.20.001337</idno>
-              <ptr target="https://doi.org/10.1364/OE.20.001337PMID"/>
+              <idno type="DOI">10.1364/OE.20.001337</idno>
+              <idno>PMID: 22274479</idno>
+              <ptr target="https://doi.org/10.1364/OE.20.001337"/>
             </analytic>
             <monogr>
               <title level="j">Optics Express</title>
               <imprint>
                 <biblScope unit="volume">20</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">22274479</biblScope>
+                <biblScope from="1337" to="1359" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>

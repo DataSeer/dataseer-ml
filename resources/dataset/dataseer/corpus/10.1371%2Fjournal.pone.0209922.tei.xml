@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T08:04+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:42+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -160,8 +160,9 @@
             <ref target="#b25" type="bibr">26]</ref> .</s>
           <s>This paper proposes a novel GA-SVR time series model based on indicator selection to overcome these problems, and the proposed model contributes the following: (1) In feature selection, this study applies multivariate adaptive regression spline (MARS), stepwise regression (SR), and kernel ridge regression to get the key technical indicators for investors.</s>
           <s>
-            <ref type="formula">(2)</ref> The proposed model optimizes the parameters of SVR by genetic algorithm (GA) to increase the forecast accuracy.</s>
-          <s>(3) The results could provide persuasive investment guidelines for investors.</s>
+            <ref target="#b1" type="bibr">(2)</ref> The proposed model optimizes the parameters of SVR by genetic algorithm (GA) to increase the forecast accuracy.</s>
+          <s>
+            <ref type="formula">(3)</ref> The results could provide persuasive investment guidelines for investors.</s>
         </p>
         <p>
           <s>The remaining contents of this paper are organized as follows.</s>
@@ -188,28 +189,13 @@
         <head>Multivariate adaptive regression splines</head>
         <p>
           <s>Friedman <ref target="#b45" type="bibr">[46]</ref> proposed multivariate adaptive regression splines (MARS), it is a simple nonparametric regression algorithm.</s>
-          <s>The main advantages of MARS is its capacity to grasp the , i = 9, and p c is the closing price of the trading day <ref target="#b31" type="bibr">[32]</ref>
-          </s>
+          <s>The main advantages of MARS is its capacity to grasp the , i = 9, and p c is the closing price of the trading day <ref target="#b31" type="bibr">[32]</ref> 5BIAS</s>
         </p>
-      </div>
-      <div>
-        <head>5BIAS</head>
         <p>
-          <s>The difference between the closing price and MA5, which utilizes the stock price nature of returning back to average price for analyzing the stock trends <ref target="#b30" type="bibr">[31]</ref>
-          </s>
+          <s>The difference between the closing price and MA5, which utilizes the stock price nature of returning back to average price for analyzing the stock trends <ref target="#b30" type="bibr">[31]</ref> 10BIAS</s>
         </p>
-      </div>
-      <div>
-        <head>10BIAS</head>
         <p>
-          <s>The difference between the closing price and MA10, which employs the stock price nature of returning back to average price for analyzing the stock trends <ref target="#b30" type="bibr">[31]</ref> RSI RSI measures the magnitude of recently gain to recently loss in an trial to determine overbought and oversold conditions of an asset <ref target="#b30" type="bibr">[31]</ref> 12PSY PSY12 (12 days psychological line) = (D up12 /12) � 100, D up12 is the number of days when price is going up within 12 days <ref target="#b22" type="bibr">[23]</ref>
-          </s>
-        </p>
-      </div>
-      <div>
-        <head>10WMS%R</head>
-        <p>
-          <s>Williams %R is usually drawn by using negative values.</s>
+          <s>The difference between the closing price and MA10, which employs the stock price nature of returning back to average price for analyzing the stock trends <ref target="#b30" type="bibr">[31]</ref> RSI RSI measures the magnitude of recently gain to recently loss in an trial to determine overbought and oversold conditions of an asset <ref target="#b30" type="bibr">[31]</ref> 12PSY PSY12 (12 days psychological line) = (D up12 /12) � 100, D up12 is the number of days when price is going up within 12 days <ref target="#b22" type="bibr">[23]</ref> 10WMS%R Williams %R is usually drawn by using negative values.</s>
           <s>For analysis and discussion, ignore the negative symbols.</s>
           <s>It is the best to wait the security's price until change direction before placing your trading <ref target="#b30" type="bibr">[31]</ref> MACD MACD presents the difference between a fast and slow exponential moving average (EMA) for closing prices.</s>
           <s>Fast is a short-period average, and slow is a long period one <ref target="#b30" type="bibr">[31]</ref> MO1 MO1(t) = price(t) − price(t − n), n = 1 <ref target="#b32" type="bibr">[33]</ref> MO2 MO2(t) = price(t) − price(t − n), n = 2 <ref target="#b32" type="bibr">[33]</ref> Transaction volume Transaction volume presents a basic yet very important element of market timing strategy.</s>
@@ -220,25 +206,17 @@
           <s>When λ = 1, the EMA is the identity transformation: e x t ¼ x t ; in contrast, many term x t−k effectively contribute to e x t when λ &lt; 1 <ref target="#b34" type="bibr">[35]</ref> .</s>
         </p>
         <p>
-          <s>Company-Daily price change</s>
-        </p>
-        <formula xml:id="formula_0">P ¼ P c À P o P o</formula>
-        <p>
-          <s>� 100%, P c is the close price of today and P o is the open price of today <ref target="#b35" type="bibr">[36]</ref> .</s>
+          <s>Company-Daily price change P ¼ P c À P o P o � 100%, P c is the close price of today and P o is the open price of today <ref target="#b35" type="bibr">[36]</ref> .</s>
         </p>
         <p>
-          <s>TAIEX-Daily index change</s>
-        </p>
-        <formula xml:id="formula_1">P ¼ P cT À P oT P oT</formula>
-        <p>
-          <s>� 100%, P cT is the close index of today and P oT is the open index of today <ref target="#b35" type="bibr">[36]</ref> .</s>
+          <s>TAIEX-Daily index change P ¼ P cT À P oT P oT � 100%, P cT is the close index of today and P oT is the open index of today <ref target="#b35" type="bibr">[36]</ref> .</s>
           <s>complicated data mapping and patterns of high-dimensional data, and produce more simple, easy interpretation models, and its can perform analysis on feature relative importance.</s>
           <s>In concept, MARS integrates the piecewise linear regressions into a flexible model for solving the nonlinear and complex problems.</s>
           <s>MARS establishes the final model in a two-stage procedure: Firstly, the forward stage, many spline basis functions are built, the feature can be continuous, ordinal, or categorical.</s>
           <s>Secondly, the backward stage removes the redundant spline basis functions, it uses the generalized cross-validation (GCV) criterion <ref target="#b45" type="bibr">[46]</ref> to evaluate the performance of model subsets for getting the best subset, the lower G CV value is better.</s>
           <s>Moreover, the G CV is defined as Eq (1).</s>
         </p>
-        <formula xml:id="formula_2">G CV M ð Þ ¼ 1 N X N i¼1 ½y i À f M ðx i Þ� 2 1 À CðMÞ N � � 2<label>ð1Þ</label>
+        <formula xml:id="formula_0">G CV M ð Þ ¼ 1 N X N i¼1 ½y i À f M ðx i Þ� 2 1 À CðMÞ N � � 2<label>ð1Þ</label>
         </formula>
         <p>
           <s>where N is the number of data records, C(M) denotes the penalty cost of a model containing M basis functions, the numerator is the lack of fit on the M basis function model f M (x i ), the denominator is the penalty for model complexity C(M) and y i denotes the target outputs.</s>
@@ -285,19 +263,19 @@
         <p>
           <s>Compare a company's current market price to its book value <ref target="#b40" type="bibr">[41]</ref> .</s>
         </p>
-        <formula xml:id="formula_3">Dividend Yield R ¼ D P</formula>
+        <formula xml:id="formula_1">Dividend Yield R ¼ D P ,</formula>
         <p>
-          <s>, where D is the most recent full year dividend, P is the current share price.</s>
+          <s>where D is the most recent full year dividend, P is the current share price.</s>
           <s>
             <ref target="#b41" type="bibr">[42]</ref> Return of Investment (ROI)</s>
         </p>
-        <formula xml:id="formula_4">R t ¼ ðV f À V i Þ V i</formula>
+        <formula xml:id="formula_2">R t ¼ ðV f À V i Þ V i</formula>
         <p>
           <s>� 100%, V f is the final value of an investment and V i is the initial value of an investment <ref target="#b42" type="bibr">[43]</ref> .</s>
         </p>
-        <formula xml:id="formula_5">Log (ROI) R t ¼ ln V f V i</formula>
+        <formula xml:id="formula_3">Log (ROI) R t ¼ ln V f V i � 100%</formula>
         <p>
-          <s>� 100%, V f is the final value of an investment and V i is the initial value of an investment <ref target="#b43" type="bibr">[44]</ref> .</s>
+          <s>, V f is the final value of an investment and V i is the initial value of an investment <ref target="#b43" type="bibr">[44]</ref> .</s>
         </p>
       </div>
       <div>
@@ -305,23 +283,20 @@
         <p>
           <s>This study considered sale monthly, sales growth rate, sales growth rate and the compared rate sale monthly with previous month would affect the company stock price.</s>
         </p>
+      </div>
+      <div>
+        <head>Aggregate Sales Growth</head>
         <p>
-          <s>Aggregate Sales Growth Rate</s>
+          <s>Rate</s>
         </p>
-        <formula xml:id="formula_6">R year = ([R t / R t-1 ]-1)</formula>
-        <p>
-          <s>� 100(%) R t is the total revenue in t year.</s>
-        </p>
+        <formula xml:id="formula_4">R year = ([R t / R t-1 ]-1) � 100(%) R t is the total revenue in t year.</formula>
         <p>
           <s>Sales Growth Rate R month = ([R y / R y-1 ]-1) � 100(%) R y is the monthly revenue in y year.</s>
         </p>
         <p>
           <s>Rate compared sale monthly</s>
         </p>
-        <formula xml:id="formula_7">R = [(R m − R m-1 )/ R m-1 ]</formula>
-        <p>
-          <s>� 100(%) R m is the revenue in m th month.</s>
-        </p>
+        <formula xml:id="formula_5">R = [(R m − R m-1 )/ R m-1 ] � 100(%) R m is the revenue in m th month.</formula>
       </div>
       <div>
         <head>Demand Savings Deposits</head>
@@ -330,8 +305,6 @@
           <s>When the rate is low, investors may be willing to take the risk for investment.</s>
           <s>
             <ref target="#b44" type="bibr">[45]</ref> https://doi.org/10.1371/journal.pone.0209922.t002</s>
-        </p>
-        <p>
           <s>evolve repeatedly for obtaining the optimal solution.</s>
           <s>GA has been applied successfully in economic and financial domain <ref target="#b26" type="bibr">[27,</ref>
             <ref target="#b47" type="bibr">48]</ref> .</s>
@@ -364,35 +337,33 @@
           <s>Compared to the traditional regression model, it estimates the coefficients by minimizing the square loss, SVR uses the ε-insensitivity loss function to obtain its parameters.</s>
           <s>It can be express as:</s>
         </p>
-        <formula xml:id="formula_8">L ε ðf ðxÞ; tÞ ¼ jf ðxÞ À tj À ε if jf ðxÞ À tj � ε 0 otherwise (<label>ð2Þ</label>
+        <formula xml:id="formula_6">L ε ðf ðxÞ; tÞ ¼ jf ðxÞ À tj À ε if jf ðxÞ À tj � ε 0 otherwise (<label>ð2Þ</label>
         </formula>
         <p>
           <s>where t is the desired (target) outputs, and ε defines the region of ε -insensitivity, when the predicted value falls into the band area, the loss is zero.</s>
           <s>Contrarily, if the predicted value falls outside of the band area, the loss is equal to the difference between the predicted value and the margin.</s>
+        </p>
+        <p>
           <s>Considering empirical risk and structural risk, the SVR model can use slack variables to construct a minimal quadratic programming problem.</s>
         </p>
-        <formula xml:id="formula_9">Min : 1 2 kvk 2 þ ∁ X n i¼1 ðx i þ x � i Þ subject to q i À ðv � φðx i ÞÞ À b � ε þ x i ðv � φðx i ÞÞ þ b À q i � ε þ x � i x i ; x � i � 0; for i ¼ 1; � � � ; n 8 &gt; &lt; &gt; :<label>ð3Þ</label>
+        <p>
+          <s>Min :</s>
+        </p>
+        <formula xml:id="formula_7">1 2 kvk 2 þ ∁ X n i¼1 ðx i þ x � i Þ subject to q i À ðv � φðx i ÞÞ À b � ε þ x i ðv � φðx i ÞÞ þ b À q i � ε þ x � i x i ; x � i � 0; for i ¼ 1; � � � ; n 8 &gt; &lt; &gt; :<label>ð3Þ</label>
         </formula>
         <p>
           <s>The symbols ξ i and x � i are two positive slack variables to calculate the error (qi − f(xi)) from the boundaries of the ε-insensitivity zone.</s>
-        </p>
-        <formula xml:id="formula_10">ðx i þ x � i Þ denotes the empirical risk, 1 2 kvk</formula>
-        <p>
-          <s>2 is the structural risk to prevent over-learning and the lack of applied universality and ∁ denotes the regularization constant for specifying the trade-off between the empirical risk and the regularization terms.</s>
+          <s>ðx i þ x � i Þ denotes the empirical risk, 1 2 kvk 2 is the structural risk to prevent over-learning and the lack of applied universality and ∁ denotes the regularization constant for specifying the trade-off between the empirical risk and the regularization terms.</s>
           <s>Based on the sequentially modifying coefficient C, band area width ε, and kernel function K, the optimal parameter can be solved by the Lagrange method <ref target="#b18" type="bibr">[19]</ref> .</s>
           <s>This study based on Vapnik <ref target="#b17" type="bibr">[18]</ref> utilized the SVR-based regression function, and it is defined as</s>
         </p>
-        <formula xml:id="formula_11">f ðx; zÞ ¼ X N i¼1 ða i À a � i ÞKðx; x i Þ þ b<label>ð4Þ</label>
+        <formula xml:id="formula_8">f ðx; zÞ ¼ X N i¼1 ða i À a � i ÞKðx; x i Þ þ b<label>ð4Þ</label>
         </formula>
         <p>
-          <s>where α i and a � i are the Lagrangian multipliers that satisfy the equality a i a</s>
-        </p>
-        <formula xml:id="formula_12">� i ¼ 0, α i and a � i � 0. K(x, x i )</formula>
-        <p>
-          <s>is the kernel function which represents the inner product hφ(x i ), φ(x)i.</s>
+          <s>where α i and a � i are the Lagrangian multipliers that satisfy the equality a i a � i ¼ 0, α i and a � i � 0. K(x, x i ) is the kernel function which represents the inner product hφ(x i ), φ(x)i.</s>
           <s>The radial basis function (RBF) has been widely used as the kernel function, and this study utilizes RBF because of its capabilities and simple implementation <ref target="#b49" type="bibr">[50]</ref> .</s>
         </p>
-        <formula xml:id="formula_13">Kðx; x i Þ ¼ exp ðÀ gkx i À x j k 2 Þ<label>ð5Þ</label>
+        <formula xml:id="formula_9">Kðx; x i Þ ¼ exp ðÀ gkx i À x j k 2 Þ<label>ð5Þ</label>
         </formula>
         <p>
           <s>where γ is the RBF width.</s>
@@ -421,10 +392,8 @@
           <s>To overcome these problems, this study is based on our conference paper <ref target="#b51" type="bibr">[52]</ref> to extend the proposed methods for solving the forecast problems.</s>
           <s>That is, this paper proposes a GA-SVR time series model based on feature selection to forecast the leading industry stock price.</s>
           <s>Hence, the proposed model contributes the following.</s>
-          <s>2. Modeling: Build a forecast model by using SVR and employs GA to optimize the parameters of SVR.</s>
-        </p>
-        <p>
-          <s>3. Forecasting: The optimized GA-SVR forecast model is utilized to forecast the stock price, and compare the proposed models with the listing models under the accuracy.</s>
+          <s>
+            <ref type="formula">(1)</ref> 3. Forecasting: The optimized GA-SVR forecast model is utilized to forecast the stock price, and compare the proposed models with the listing models under the accuracy.</s>
         </p>
         <p>
           <s>For easy computation, this section proposed an algorithm with six steps, the detailed step is described as follows:</s>
@@ -432,7 +401,7 @@
         <p>
           <s>Step 1: Transform trading data into technical indicators This step collected daily stock trading data (open, close, the highest, the lowest price and volume), and transformed these data into technical indicators <ref target="#b30" type="bibr">[31]</ref> , such as MA, PSY, RSI, BIAS, and WMS%R.</s>
           <s>In addition, this paper also incorporate other indicators, such as exchange rate, NT dollars to US dollars, and the momentum.</s>
-          <s>These technical indicators used are listed in <ref target="#tab_0" type="table">Tables 1 and 2</ref> , respectively.</s>
+          <s>These technical indicators used are listed in Tables 1 and 2, respectively.</s>
         </p>
         <p>
           <s>Step 2: Select key features (MARS, SR, and KRR) From step 1, the collected data has been transformed into technical indicators; this step utilized MARS, SR, and KRR to choose the key indicators.</s>
@@ -440,16 +409,17 @@
           <s>For comparing the three feature selection methods, this study selected the number of features are as similar as possible.</s>
         </p>
         <p>
-          <s>Step3: Construct the SVR forecast model To build the SVR forecast model, this step used the selected features as input features, and the RBF function is used as the kernel function, due to it can handle the nonlinear and highdimensional data.</s>
+          <s>Step3: Construct the SVR forecast model</s>
+        </p>
+        <p>
+          <s>To build the SVR forecast model, this step used the selected features as input features, and the RBF function is used as the kernel function, due to it can handle the nonlinear and highdimensional data.</s>
           <s>To build the forecasting model, three parameters that should be set: the loss function ε, the regularization constant C, and the RBF width σ.</s>
           <s>To obtain a better forecast model, this step utilizes a genetic algorithm to optimize these parameters.</s>
         </p>
         <p>
           <s>Step4: Optimize the SVR parameters by GA at minimal RMSE To get better forecasting accuracy, this step employed genetic algorithm to optimize the SVR parameters C and σ under minimal RMSE (Eq 6) for training dataset.</s>
-          <s>The RMSE is defined as: RMSE ¼ ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffiffi 1 n</s>
+          <s>The RMSE is defined as:</s>
         </p>
-        <formula xml:id="formula_14">X n t¼1 ðy t Àŷ t Þ 2 r<label>ð6Þ</label>
-        </formula>
         <p>
           <s>where y t is the real stock index,ŷ t is the forecasted stock price, and n is the number of records.</s>
         </p>
@@ -464,9 +434,10 @@
           <s>The initial population was set 80 individual solutions, and randomly generated in this substep, the SVR parameters are encoded into a chromosome by a binary string.</s>
           <s>In addition, the maximal generations, the crossover probability, the mutation probability, and are given as 2000, 0.8, and 0.08 <ref target="#b52" type="bibr">[53]</ref> respectively.</s>
         </p>
-      </div>
-      <div>
-        <head>Step4.1.2: Evaluate fitness.</head>
+        <p>
+          <s>Step4.1.2:</s>
+          <s>Evaluate fitness.</s>
+        </p>
         <p>
           <s>This sub-step uses a pre-defined fitness function (RMSE) to evaluate fitness of each chromosome for determining the goodness of fit for each solution.</s>
         </p>
@@ -479,11 +450,7 @@
           <s>The maximal number of generations is reached (2000).</s>
         </p>
         <p>
-          <s>2. The optimal solution is smaller than the given minimal RMSE, the minimal RMSE is set as 10</s>
-        </p>
-        <formula xml:id="formula_15">−5</formula>
-        <p>
-          <s>.</s>
+          <s>2. The optimal solution is smaller than the given minimal RMSE, the minimal RMSE is set as 10 −5 .</s>
         </p>
         <p>
           <s>If the criterion is not achieved then repeatedly re-run a new iterative process (Step 4.1.2</s>
@@ -496,26 +463,21 @@
           <s>Selection is to screen out the fit chromosome to be copies for increasing the offspring sharing and eliminating the poorer chromosome for decreasing the offspring sharing.</s>
           <s>Roulette wheel selection is employed to select the chromosomes for reproduction.</s>
         </p>
+      </div>
+      <div>
+        <head>Step4.1.5: Perform crossover and mutation</head>
         <p>
-          <s>Step4.1.5:</s>
-          <s>Perform crossover and mutation Re-unite the parents to produce and mutate offspring, this step one-point crossover is used.</s>
+          <s>Re-unite the parents to produce and mutate offspring, this step one-point crossover is used.</s>
           <s>Then, it selected randomly a member of the population, and changed one randomly selected bit in its bit string representation <ref target="#b2" type="bibr">[3]</ref> .</s>
         </p>
         <p>
-          <s>Step5: Forecast the stock price by using the optimized models</s>
-        </p>
-      </div>
-      <div>
-        <head>From</head>
-        <p>
-          <s>Step 4, the SVR parameters were determined.</s>
+          <s>Step5: Forecast the stock price by using the optimized models From Step 4, the SVR parameters were determined.</s>
           <s>the testing data is applied to predict the next day's stock prices by using the optimized forecast model.</s>
         </p>
         <p>
           <s>Step6: Compare the performance For evaluating the forecast accuracy, the propoesed model will be compared with the listing models under the RMSE criterion.</s>
           <s>The seven comparison models are as follows: <ref type="formula">(1)</ref>
-            <ref type="formula">(7)</ref> integrated MARS and KRR (MARS-KRR model).</s>
-          <s>Where KRR-SR model denotes using SR to build the forecast model after selecting the features by KRR, similarly other combined models have the same meanings, and the detailed abbreviations are presented in <ref target="#tab_2" type="table">Table 3</ref> .</s>
+            <ref target="#tab_3" type="table">Table 3</ref> .</s>
         </p>
       </div>
       <div subtype="dataseer">
@@ -523,7 +485,7 @@
         <p>
           <s>This study employs Taiwan's stock as experimental datasets, the selected companies are different leading industries from "business today (www.businesstoday.com.tw)" which published the 1000 largest companies from Mainland China, Taiwan, and Hong Kong.</s>
           <s id="dataset-1" type="Dataset:Existing dataset">The experimental datasets including Chunghwa Telecom (CHT), China Steel, Hon Hai, Cathay Financial Holdings and Taiwan Semiconductor Manufacturing Company (TSMC), were practically collected from 2003 to 2012.</s>
-          <s>To compare the accuracy of a long test period forecast and short test period forecast, this study implements two experiments for each dataset, and the two experimental designs are listed in <ref target="#tab_3" type="table">Table 4</ref> .</s>
+          <s>To compare the accuracy of a long test period forecast and short test period forecast, this study implements two experiments for each dataset, and the two experimental designs are listed in <ref target="#tab_4" type="table">Table 4</ref> .</s>
           <s>First, this study conducts an initial experiment to explore the performance of the GA-SVR model.</s>
           <s>The forecasting performance of the GA-SVR is compared with SR, KRR, and MARS and the results are shown in <ref type="table">Table 5</ref> .</s>
           <s>From <ref type="table">Table 5</ref> , we can see that the GA-SVR model generates the smallest RMSE by the CHT, China Steel and Hon Hai datasets.</s>
@@ -540,23 +502,20 @@
         </p>
         <p>
           <s>In comparison, this study selects the same number of features for different feature selection methods.</s>
-          <s>The selected features by MARS, SR and KRR are listed in <ref target="#tab_4" type="table">Table 6</ref> .</s>
-          <s>After finding the key features, this study constructs the forecast model by SVR and optimizes the parameters of the MARS-GA-SVR and SR-GA-SVR models by GA, the optimized parameters are listed in <ref target="#tab_5" type="table">Table 7</ref> .</s>
+          <s>The selected features by MARS, SR and KRR are listed in <ref target="#tab_5" type="table">Table 6</ref> .</s>
+          <s>After finding the key features, this study constructs the forecast model by SVR and optimizes the parameters of the MARS-GA-SVR and SR-GA-SVR models by GA, the optimized parameters are listed in <ref target="#tab_7" type="table">Table 7</ref> .</s>
         </p>
       </div>
       <div>
         <head>Experimental results</head>
         <p>
-          <s>In the section, this study verifies the performance of the proposed model by using five different industry datasets including the Chunghwa Telecom datasets (CHT), China steel datasets, Hon <ref target="#fig_4" type="figure">Fig 2)</ref> .</s>
-          <s>The RMSE for the listing models and proposed models, are shown in <ref target="#tab_6" type="table">Table 8</ref> , and the results show that the performances of proposed models are better than other models.</s>
-          <s>In the short test period, the proposed model B (SR-GA-SVR) generates the smallest RMSE in listing models as <ref target="#tab_6" type="table">Table 8</ref> .</s>
-          <s>Moreover, the proposed model A (MARS-GA-SVR) generates the smallest RMSE in the long test period (in <ref target="#tab_6" type="table">Table 8</ref> ).</s>
+          <s>In the section, this study verifies the performance of the proposed model by using five different industry datasets including the Chunghwa Telecom datasets (CHT), China steel datasets, Hon <ref target="#fig_5" type="figure">Fig 2)</ref> .</s>
+          <s>The RMSE for the listing models and proposed models, are shown in <ref target="#tab_8" type="table">Table 8</ref> , and the results show that the performances of proposed models are better than other models.</s>
+          <s>In the short test period, the proposed model B (SR-GA-SVR) generates the smallest RMSE in listing models as <ref target="#tab_8" type="table">Table 8</ref> .</s>
+          <s>Moreover, the proposed model A (MARS-GA-SVR) generates the smallest RMSE in the long test period (in <ref target="#tab_8" type="table">Table 8</ref> ).</s>
           <s>
-            <ref target="#tab_7" type="table">Table 9</ref> and <ref type="figure">Fig 3 illustrate</ref> the numerical results for the China Steel datasets.</s>
-          <s>
-            <ref type="figure">From Fig 3</ref> , the result of model A shows that the real closing price line and the forecast line in the long test period have more overlap than in the short test period.</s>
-          <s>Similarly, compared to the results in the long test period, the results generated by model B have more overlap between closing price line and the forecast line in short test period.</s>
-          <s>From <ref target="#tab_7" type="table">Table 9</ref> , the proposed models generate the smallest RMSE in the listing models.</s>
+            <ref target="#tab_9" type="table">Table 9</ref>
+            <ref target="#tab_9" type="table">Table 9</ref> , the proposed models generate the smallest RMSE in the listing models.</s>
           <s>In the short test period, the proposed model B generates the smallest RMSE.</s>
           <s>In addition, the proposed model A generates the smallest RMSE in the long period.</s>
         </p>
@@ -564,15 +523,15 @@
           <s>Experiments on the Hon Hai datasets are presented in <ref target="#tab_0" type="table">Table 10</ref> and <ref type="figure">Fig 4. Fig 4</ref> shows the excellent performance of the proposed model (the forecast line almost completely overlaps the closing price line).</s>
           <s>Form <ref target="#tab_0" type="table">Table 10</ref> , model A and model B generate the smallest RMSE in the long training period and the short training period, respectively.</s>
           <s>
-            <ref target="#tab_0" type="table">Table 11</ref> and <ref type="figure">Fig 5</ref> show the experiments for the Cathay Financial Holdings datasets.</s>
+            <ref target="#tab_0" type="table">Table 11</ref> and <ref type="figure">Fig 5 show</ref> the experiments for the Cathay Financial Holdings datasets.</s>
           <s>In <ref type="figure">Fig 5,</ref> the numerical results clearly show that the forecast line deviates from the closing price line.</s>
           <s>From <ref target="#tab_0" type="table">Table 11</ref> , the KRR-GA-SVR model generates the smallest RMSE in the short test period, and the proposed model B in the long test period generates a smaller RMSE than other models.</s>
         </p>
         <p>
           <s>Next, experiments on the TSMC datasets are illustrated in <ref target="#tab_0" type="table">Table 12</ref> and <ref type="figure">Fig 6.</ref>
           </s>
-          <s>The forecast results in <ref type="figure">Fig 6</ref> show that the forecast line obviously deviates from the closing price line.</s>
-          <s>From <ref target="#tab_0" type="table">Table 12</ref> , the proposed model B generates the smallest RMSE in the short and long test periods.</s>
+          <s>The forecast results in <ref type="figure">Fig 6 show</ref>
+          </s>
         </p>
       </div>
       <div>
@@ -580,8 +539,7 @@
         <p>
           <s>To test whether proposed model is superior to the KRR-MARS, KRR-SR, KRR-GA-SVR, MARS-SR, MARS-KRR, SR-MARS and SR-KRR models in the stock price forecasting, this study applies the Wilcoxon signed-rank test.</s>
           <s>We use RMSE to test the significance between the proposed model and the listed models.</s>
-          <s>
-            <ref target="#tab_0" type="table">Tables 13 and 14</ref> present the Z statistic of the two-tailed Wilcoxon sign test between proposed models and the listed models.</s>
+          <s>Tables 13 and 14 present the Z statistic of the two-tailed Wilcoxon sign test between proposed models and the listed models.</s>
         </p>
         <p>
           <s>From <ref target="#tab_0" type="table">Table 13</ref> , the proposed models have a significant difference (p&lt;0.05)</s>
@@ -601,11 +559,10 @@
           <s>(1) Datasets quality.</s>
           <s>From <ref target="#tab_0" type="table">Table 15</ref> , we find that of the five datasets with different fluctuations, the highest fluctuation range is the Hon Hai stock price.</s>
           <s>Despite the Hon Hai datasets having the highest fluctuation range, the proposed models can generate smaller RMSE than the listing models in the short and long test period as shown in <ref target="#tab_0" type="table">Tables 16 and 17</ref> .</s>
-          <s>Further, the China Steel stock price has the smallest fluctuation in the five datasets, and the proposed models still achieve better performance in both the short and long test periods, as shown in Tables <ref target="#tab_0" type="table">Tables 16 and 17</ref> , and we find that the accuracy of proposed models in the short test period is better than in the long test periods.</s>
-          <s>
-            <ref target="#fig_5" type="figure">From Fig 7,</ref> the figure shows that the stock indexes change dramatically in the long test periods; and the proposed models has better performance in larger price fluctuation.</s>
+          <s>Further, the China Steel stock price has the smallest fluctuation in the five datasets, and the proposed models still achieve better performance in both the short and long test periods, as shown in Tables proposed models in the short test period is better than in the long test periods.</s>
+          <s>From <ref target="#fig_6" type="figure">Fig 7,</ref> the figure shows that the stock indexes change dramatically in the long test periods; and the proposed models has better performance in larger price fluctuation.</s>
           <s>In the short test period, the results show that the proposed model B generates the smallest RMSE in the TSMC, Hon Hai, China Steel and CHT datasets, except Cathay dataset as <ref target="#tab_0" type="table">Table 16</ref> .</s>
-          <s>Because the fluctuation of Cathay price dataset in short period is smaller than other datasets as <ref target="#fig_5" type="figure">Fig 7.</ref> Therefore, we conclude that the proposed model B (SR-GA-SVR) has better performance than the listing models, especially in larger price fluctuation.</s>
+          <s>Because the fluctuation of Cathay price dataset in short period is smaller than other datasets as <ref target="#fig_6" type="figure">Fig 7.</ref> Therefore, we conclude that the proposed model B (SR-GA-SVR) has better performance than the listing models, especially in larger price fluctuation.</s>
           <s>i.e., we can confirm that the features selected by SR can effectively enhance the accuracy in the short testing period.</s>
           <s>Similarly, in the long test period, from <ref target="#tab_0" type="table">Table 17</ref> , the proposed model A (MARS-GA-SVR) has the smallest RMSE in the Hon Hai, China Steel and CHT datasets.</s>
           <s>Therefore, we conclude that MARS can also select better features for the proposed model when the stock price range changes dramatically.</s>
@@ -643,6 +600,8 @@
           <s>We find that the proposed model B almost has better performance than the listing models, especially in larger price fluctuation.</s>
           <s>i.e., the proposed model is more fit the dataset of larger price fluctuation.</s>
           <s>Finally, the research results can provide some suggestion to investors as references.</s>
+        </p>
+        <p>
           <s>In future work, several issues from this study can be extended as follows:</s>
         </p>
         <p>
@@ -654,12 +613,13 @@
         <p>
           <s>3. Employ other methods to improve proposed model, such as feature lags.</s>
         </p>
-      </div>
-      <div>
-        <head>Supporting information</head>
-      </div>
-      <div>
-        <head>S1 Dataset. Five lead-industry-index. (ZIP)</head>
+        <p>
+          <s>Supporting information S1 Dataset.</s>
+          <s>Five lead-industry-index.</s>
+        </p>
+        <p>
+          <s>(ZIP)</s>
+        </p>
       </div>
       <div>
         <head>Author Contributions</head>
@@ -678,9 +638,9 @@
         <p>
           <s>Project administration: Ming-Chi Tsai.</s>
         </p>
-        <p>
-          <s>Resources: Meei-Ing Tsai.</s>
-        </p>
+      </div>
+      <div>
+        <head>Resources: Meei-Ing Tsai.</head>
         <p>
           <s>Software: Huei-Yuan Shiu.</s>
         </p>
@@ -698,31 +658,36 @@
         </p>
       </div>
       <figure xml:id="fig_0">
-        <head>( 1 )</head>
-        <label>1</label>
-        <figDesc>This study utilizes MARS, SR, and KRR to choose the key technical indicators for investors. (2) Use a GA to optimize the SVR parameters for enhancing the forecast accuracy. (3) The results can provide the investment guidance to investors. The proposed model included three blocks as Fig 1, it can be briefly described as follows: 1. Data preprocessing: this proposed model transforms daily basic stock data (open price, the lowest price, the highest price, average price, closing price and volume) into technical indi- cators. Then utilizes MARS, SR, and KRR methods to select the key indicators.</figDesc>
-      </figure>
-      <figure xml:id="fig_1">
         <head>Fig 1 .</head>
         <label>1</label>
         <figDesc>Fig 1. Research processes of the proposed model. https://doi.org/10.1371/journal.pone.0209922.g001</figDesc>
       </figure>
+      <figure xml:id="fig_1">
+        <head/>
+        <label/>
+        <figDesc>ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffiffi 1 n X n t¼1 ðy t Àŷ t Þ 2 r</figDesc>
+      </figure>
       <figure xml:id="fig_2">
         <head/>
         <label/>
-        <figDesc>integrated KRR and SR (KRR-SR model), (2) integrated KRR and MARS (KRR-MARS model), (3) inte- grated KRR and GA-SVR (KRR-GA-SVR model), (4) integrated SR and MARS (SR-MARS model), (5) integrated SR and KRR (SR-KRR model), (6) integrated MARS and SR (MARS-SR model), and</figDesc>
+        <figDesc>integrated KRR and SR (KRR-SR model), (2) integrated KRR and MARS (KRR-MARS model), (3) inte- grated KRR and GA-SVR (KRR-GA-SVR model), (4) integrated SR and MARS (SR-MARS model), (5) integrated SR and KRR (SR-KRR model), (6) integrated MARS and SR (MARS-SR model), and (7) integrated MARS and KRR (MARS-KRR model). Where KRR-SR model denotes using SR to build the forecast model after selecting the features by KRR, similarly other combined models have the same meanings, and the detailed abbreviations are presented in</figDesc>
       </figure>
       <figure xml:id="fig_3">
         <head/>
         <label/>
-        <figDesc>Hai datasets, Cathay Financial Holdings datasets, and Taiwan Semiconductor Manufacturing Company datasets. The CHT datasets are employed in the first experiment; the computational process follows the proposed algorithm in Section 3. The predictions of the MARS-GA-SVR and SR-GA-SVR models are demonstrated in Fig 2. Fig 2 shows that the long test period results have more overlap between the forecast line and real closing price line than the results in the short test period in model A (MARS-GA-SVR). For proposed model B (SR-GA-SVR), there is more overlap between the forecast line and real close price line in the short test period results (in</figDesc>
+        <figDesc>Company datasets. The CHT datasets are employed in the first experiment; the computational process follows the proposed algorithm in Section 3. The predictions of the MARS-GA-SVR and SR-GA-SVR models are demonstrated in Fig 2. Fig 2 shows that the long test period results have more overlap between the forecast line and real closing price line than the results in the short test period in model A (MARS-GA-SVR). For proposed model B (SR-GA-SVR), there is more overlap between the forecast line and real close price line in the short test period results (in</figDesc>
       </figure>
       <figure xml:id="fig_4">
+        <head/>
+        <label/>
+        <figDesc>and Fig 3 illustrate the numerical results for the China Steel datasets. From Fig 3, the result of model A shows that the real closing price line and the forecast line in the long test period have more overlap than in the short test period. Similarly, compared to the results in the long test period, the results generated by model B have more overlap between closing price line and the forecast line in short test period. From</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
         <head>Fig 2 .</head>
         <label>2</label>
         <figDesc>Fig 2. Results of forecasting short and long test period for Chunghwa Telecom datasets. https://doi.org/10.1371/journal.pone.0209922.g002</figDesc>
       </figure>
-      <figure xml:id="fig_5">
+      <figure xml:id="fig_6">
         <head>Fig 7 .</head>
         <label>7</label>
         <figDesc>Fig 7. The closing prices of five companies from 2003 to 2012. https://doi.org/10.1371/journal.pone.0209922.g007</figDesc>
@@ -730,25 +695,21 @@
       <figure type="table" validated="false" xml:id="tab_0">
         <head>Table 1 .</head>
         <label>1</label>
-        <figDesc>Technique indicators.p c þp cÀ 1 þ...þp cÀ i 10</figDesc>
+        <figDesc>Technique indicators.MA10 MA10 10 days moving average ð Þ ¼ p c þp cÀ 1 þ...þp cÀ i</figDesc>
         <table>Indicator 
 Explanation 
 
 MA5 
 MA5 5 days moving average 
 ð 
-Þ ¼ 
+Þ ¼ p c þp cÀ 1 þ...þp cÀ i 
 
-p c þp cÀ 1 þ...þp cÀ i 
 5 
 
 , i = 4, and p c is the closing index of the 
 current day [32] 
 
-MA10 
-MA10 10 days moving average 
-ð 
-Þ ¼ 
+10 
 
 </table>
       </figure>
@@ -758,7 +719,13 @@ MA10 10 days moving average
         <figDesc>Fundamental indicators.</figDesc>
         <table/>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_2">
+      <figure type="table" validated="false" xml:id="tab_2">
+        <head/>
+        <label/>
+        <figDesc>This study utilizes MARS, SR, and KRR to choose the key technical indicators for investors. (2) Use a GA to optimize the SVR parameters for enhancing the forecast accuracy. (3) The results can provide the investment guidance to investors. The proposed model included three blocks as Fig 1, it can be briefly described as follows: 1. Data preprocessing: this proposed model transforms daily basic stock data (open price, the lowest price, the highest price, average price, closing price and volume) into technical indi- cators. Then utilizes MARS, SR, and KRR methods to select the key indicators. 2. Modeling: Build a forecast model by using SVR and employs GA to optimize the parame- ters of SVR.</figDesc>
+        <table/>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_3">
         <head>Table 3 .</head>
         <label>3</label>
         <figDesc>The meaning of model abbreviation.</figDesc>
@@ -812,10 +779,10 @@ Employing MARS to choose the key features and bulid model by GA-SVR
 
 https://doi.org/10.1371/journal.pone.0209922.t003 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_3">
+      <figure type="table" validated="false" xml:id="tab_4">
         <head>Table 4 .</head>
         <label>4</label>
-        <figDesc>The experiment of the long and short test period.Table 5. The initial performance comparisons for three companies in RMSE.</figDesc>
+        <figDesc>The experiment of the long and short test period.Table 5. The initial performance comparisons for three companies in RMSE.Hai datasets, Cathay Financial Holdings datasets, and Taiwan Semiconductor Manufacturing</figDesc>
         <table>Experiment 
 Training period 
 Testing period 
@@ -832,7 +799,7 @@ https://doi.org/10.1371/journal.pone.0209922.t004
 
 </table>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_4">
+      <figure type="table" validated="true" xml:id="tab_5">
         <head>Table 6 .</head>
         <label>6</label>
         <figDesc>Selected features by MARS, SR and KRR for five companies.</figDesc>
@@ -927,7 +894,13 @@ Note: FBAQ denotes The Final Best Ask Quote; FBBQ represents The Final Best Bid 
 
 https://doi.org/10.1371/journal.pone.0209922.t006 </table>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_5">
+      <figure type="table" validated="false" xml:id="tab_6">
+        <head/>
+        <label/>
+        <figDesc>that the forecast line obviously deviates from the closing price line. From Table 12, the proposed model B generates the smallest RMSE in the short and long test periods.</figDesc>
+        <table/>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_7">
         <head>Table 7 .</head>
         <label>7</label>
         <figDesc>The optimal parameters of GA searching for five companies.</figDesc>
@@ -1139,7 +1112,7 @@ KRR-GA-SVR
 48.0336 
 3.72557 </table>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_6">
+      <figure type="table" validated="true" xml:id="tab_8">
         <head>Table 8 .</head>
         <label>8</label>
         <figDesc>Performance comparisons for Chunghwa Telecom.</figDesc>
@@ -1190,7 +1163,7 @@ Proposed model B: Integrated SR and GA-SVR model
 
 https://doi.org/10.1371/journal.pone.0209922.t008 </table>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_7">
+      <figure type="table" validated="true" xml:id="tab_9">
         <head>Table 9 .</head>
         <label>9</label>
         <figDesc>Performance comparisons for China Steel.</figDesc>
@@ -1242,10 +1215,10 @@ https://doi.org/10.1371/journal.pone.0209922.t009
 
 </table>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_8">
+      <figure type="table" validated="false" xml:id="tab_10">
         <head>Table 10 .</head>
         <label>10</label>
-        <figDesc>Performance comparisons for Hon Hai.</figDesc>
+        <figDesc>Performance comparisons for Hon Hai.Short and Long test period. The experimental results of the forecasting models in the short and long test periods are listed in Tables 16 and 17, and we find that the accuracy of</figDesc>
         <table>model 
 Test period(year) 
 
@@ -1294,7 +1267,7 @@ https://doi.org/10.1371/journal.pone.0209922.t010
 
 </table>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_9">
+      <figure type="table" validated="true" xml:id="tab_11">
         <head>Table 11 .</head>
         <label>11</label>
         <figDesc>Performance comparisons for Cathay Financial Holdings.</figDesc>
@@ -1346,7 +1319,7 @@ https://doi.org/10.1371/journal.pone.0209922.t011
 
 </table>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_10">
+      <figure type="table" validated="true" xml:id="tab_12">
         <head>Table 12 .</head>
         <label>12</label>
         <figDesc>Performance comparisons for TSMC.</figDesc>
@@ -1398,7 +1371,7 @@ https://doi.org/10.1371/journal.pone.0209922.t012
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_11">
+      <figure type="table" validated="false" xml:id="tab_13">
         <head>Table 13 .</head>
         <label>13</label>
         <figDesc>Wilcoxon sign test for different models comparison in short period.Note: The digital in parentheses is the corresponding p-value; � :p&lt;0.1; �� :p&lt;0.05 https://doi.org/10.1371/journal.pone.0209922.t013 Table 14. Wilcoxon sign test for different models comparison in long period.Note: The digital in parentheses is the corresponding p-value; � :p&lt;0.1;</figDesc>
@@ -1436,46 +1409,25 @@ MARS
 -0.135 
 (.893) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--0.674 
-
-� 
-
+-0.674 � 
 (.5) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--0.674 
-
-� 
-
+-0.674 � 
 (.5) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
 KRR-
@@ -1491,25 +1443,16 @@ SR
 -0.405 
 (.686) 
 
--1.753 
-
-� 
-
+-1.753 � 
 (.080) 
 
 -0.405 
 (.686) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
 KRR-
@@ -1528,16 +1471,10 @@ GA-SVR
 -1.214 
 (.225) 
 
--1.753 
-
-� 
-
+-1.753 � 
 (.08) 
 
--1.753 
-
-� 
-
+-1.753 � 
 (.08) 
 
 MARS-
@@ -1547,25 +1484,16 @@ SR
 -0.405 
 (.686) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
 -0.405 
 (.686) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
 MARS-
@@ -1575,22 +1503,13 @@ KRR
 -1.483 
 (.138) 
 
--1.753 
-
-� 
-
+-1.753 � 
 (.080) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
 SR-
@@ -1600,32 +1519,20 @@ MARS
 -0.405 
 (.686) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
 SR-
 KRR 
 
 -
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
 Proposed model B 
@@ -1667,83 +1574,50 @@ MARS
 -1.214 
 (.225) 
 
--1.753 
-
-� 
-
+-1.753 � 
 (.08) 
 
--1.753 
-
-� 
-
+-1.753 � 
 (.08) 
 
--1.753 
-
-� 
-
+-1.753 � 
 (.08) 
 
--1.753 
-
-� 
-
+-1.753 � 
 (.08) 
 
 -0.944 
 (.345) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
 KRR-
 SR 
 
 -
--1.753 
-
-� 
-
+-1.753 � 
 (.08) 
 
--1.753 
-
-� 
-
+-1.753 � 
 (0.08) 
 
 -0.944 
 (.345) 
 
--1.753 
-
-� 
-
+-1.753 � 
 (0.08) 
 
 -0.135 
 (.893) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
 KRR-
@@ -1762,16 +1636,10 @@ GA-SVR
 -1.214 
 (.225) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
 MARS-
@@ -1787,16 +1655,10 @@ SR
 -0.405 
 (.686) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
 MARS-
@@ -1809,16 +1671,10 @@ KRR
 -0.405 
 (.686) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
 SR-
@@ -1828,45 +1684,30 @@ MARS
 -0.674 
 (.5) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
 SR-
 KRR 
 
 -
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
--2.023 
-
-�� 
-
+-2.023 �� 
 (.043) 
 
 Proposed model B 
 -
--1.753 
-
-� 
-
+-1.753 � 
 (.080) 
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_12">
+      <figure type="table" validated="false" xml:id="tab_14">
         <head>Table 15 .</head>
         <label>15</label>
         <figDesc>The descriptive statistics for all datasets.Note: Cathay denotes Cathay Financial Holdings https://doi.org/10.1371/journal.pone.0209922.t015 Table 16. The RMSE of all experiment for short testing period.Note: Cathay denotes Cathay Financial Holdings https://doi.org/10.1371/journal.pone.0209922.t016 Table 17. The RMSE of all experiments for long testing period.Note: Cathay denotes Cathay Financial Holdings https://doi.org/10.1371/journal.pone.0209922.t017</figDesc>
@@ -2058,7 +1899,7 @@ Proposed model B
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_13">
+      <figure type="table" validated="false" xml:id="tab_15">
         <head>Table 18 .</head>
         <label>18</label>
         <figDesc>The selected features for all datasets.https://doi.org/10.1371/journal.pone.0209922.t018</figDesc>
@@ -2538,14 +2379,15 @@ MO1
                   <surname>Tay</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TNN.2003.820556</idno>
-              <ptr target="https://doi.org/10.1109/TNN.2003.820556PMID"/>
+              <idno type="DOI">10.1109/TNN.2003.820556</idno>
+              <idno>PMID: 18244595</idno>
+              <ptr target="https://doi.org/10.1109/TNN.2003.820556"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Neural Networks</title>
               <imprint>
                 <biblScope unit="volume">14</biblScope>
-                <biblScope unit="page">18244595</biblScope>
+                <biblScope from="1506" to="1518" unit="page"/>
                 <date type="published" when="2003"/>
               </imprint>
             </monogr>
@@ -2591,14 +2433,15 @@ MO1
                   <surname>Vandaele</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/72.935093</idno>
-              <ptr target="https://doi.org/10.1109/72.935093PMID"/>
+              <idno type="DOI">10.1109/72.935093</idno>
+              <idno>PMID: 18249915</idno>
+              <ptr target="https://doi.org/10.1109/72.935093"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Neural Networks</title>
               <imprint>
                 <biblScope unit="volume">12</biblScope>
-                <biblScope unit="page">18249915</biblScope>
+                <biblScope from="809" to="821" unit="page"/>
                 <date type="published" when="2001"/>
               </imprint>
             </monogr>
@@ -2673,14 +2516,15 @@ MO1
                   <surname>Vapnik</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/72.788640</idno>
-              <ptr target="https://doi.org/10.1109/72.788640PMID"/>
+              <idno type="DOI">10.1109/72.788640</idno>
+              <idno>PMID: 18252602</idno>
+              <ptr target="https://doi.org/10.1109/72.788640"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Neural Networks</title>
               <imprint>
                 <biblScope unit="volume">10</biblScope>
-                <biblScope unit="page">18252602</biblScope>
+                <biblScope from="988" to="999" unit="page"/>
                 <date type="published" when="1999"/>
               </imprint>
             </monogr>
@@ -2961,14 +2805,15 @@ MO1
                   <surname>Kwok</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/72.870047</idno>
-              <ptr target="https://doi.org/10.1109/72.870047PMID"/>
+              <idno type="DOI">10.1109/72.870047</idno>
+              <idno>PMID: 18249842</idno>
+              <ptr target="https://doi.org/10.1109/72.870047"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Neural Networks</title>
               <imprint>
                 <biblScope unit="volume">11</biblScope>
-                <biblScope unit="page">18249842</biblScope>
+                <biblScope from="1162" to="1173" unit="page"/>
                 <date type="published" when="2000"/>
               </imprint>
             </monogr>
@@ -3232,8 +3077,8 @@ MO1
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b35">
-            <analytic>
-              <title level="a" type="main">Investigating the links between growth and real stock price changes with empirical evidence from the G-7 economies</title>
+            <monogr>
+              <title level="m" type="main">Investigating the links between growth and real stock price changes with empirical evidence from the G-7 economies. The Quarterly Review of Economics and Finance</title>
               <author>
                 <persName>
                   <forename type="first">C</forename>
@@ -3246,13 +3091,10 @@ MO1
                   <surname>Kalyvitis</surname>
                 </persName>
               </author>
-            </analytic>
-            <monogr>
-              <title level="j">The Quarterly Review of Economics and Finance</title>
               <imprint>
+                <date type="published" when="2002"/>
                 <biblScope unit="volume">42</biblScope>
                 <biblScope from="543" to="575" unit="page"/>
-                <date type="published" when="2002"/>
               </imprint>
             </monogr>
           </biblStruct>

@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:18+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T21:11+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -102,12 +102,11 @@
         </p>
         <p>
           <s>Component cell types present within kidney organoids have primarily been defined by detecting established markers of murine renal cell types by immunofluorescence.</s>
-          <s>This has identified cell types with similarity to endothelial cells (CD31 <ref target="#b1" type="bibr">[2,</ref>
+          <s>This has identified cell types with similarity to endothelial cells (CD31 + ), stroma (MEIS1 + ), nephron progenitor cells (SIX2 + , HOXD11 + , WT1 + , PAX2 + ), and epithelial structures with markers of the ureteric epithelium (PAX2 + , GATA3 + , CDH1 + ), renal vesicle (JAG1 + ), distal tubule (CDH1 + , GATA3 − ), loop of Henle (UMOD + , CDH1 + ), proximal tubule (LTL + CDH1 − , CUBN + ) and podocytes (NPHS1 + ) <ref target="#b1" type="bibr">[2,</ref>
             <ref target="#b2" type="bibr">3]</ref> .</s>
           <s>However, the extent to which cell identity is conserved beyond these key markers is unclear.</s>
           <s>Indeed, as these markers were selected based on an understanding of mouse kidney development, they are not definitive evidence of an appropriate human cell type.</s>
         </p>
-        <note type="other">)</note>
         <p>
           <s>Similarly, there can be variation between kidney organoid experiments and differentiation protocols as well as between starting cell lines.</s>
           <s>Finally, it is likely that the differentiation is imperfect, resulting in variable populations of off-target cell types.</s>
@@ -253,7 +252,8 @@
           <s>Cluster identity was established by comparison of cluster marker genes to established markers of known murine and human renal cell types <ref target="#b9" type="bibr">[10,</ref>
             <ref target="#b32" type="bibr">[33]</ref>
             <ref target="#b33" type="bibr">[34]</ref>
-            <ref target="#b34" type="bibr">[35]</ref> Fig. 1 Single-cell RNA-seq profiling of human kidney organoids reveals expected and off-target populations.</s>
+            <ref target="#b34" type="bibr">[35]</ref>
+            <ref type="figure">Fig. 1</ref> Single-cell RNA-seq profiling of human kidney organoids reveals expected and off-target populations.</s>
           <s>a tSNE plot revealing 13 distinct clusters (cluster O0 to cluster O12) identified from largest to smallest population as labelled.</s>
           <s>Clusters depicted in this figure have been referred to as organoid (O) followed by cluster number.</s>
           <s>Cluster identity indicated in colour key which includes select marker genes and highest ranking GO term for top 30 genes with positive log fold change values in each cluster.</s>
@@ -261,7 +261,11 @@
           <s>Cluster labels followed by marker genes expressed within the cluster.</s>
           <s>Clusters from this analysis have been referred to as organoid nephron (ON) followed by the cluster number.</s>
           <s>c, d Pseudotime trajectory analysis of organoid nephron cells supports a progression from nephron progenitor to podocyte, and proximal and distal nephron end points on different branches.</s>
-          <s>and by gene ontology (GO) analysis through ToppFun <ref target="#b35" type="bibr">[36]</ref> (Additional file 2).</s>
+          <s>Plot in c coloured by cluster identity in b.</s>
+          <s>Plot in D coloured by Monocle state.</s>
+          <s>e Expression of representative podocyte, nephron progenitor and tubular marker genes across the pseudotime trajectory coloured by Monocle state.</s>
+          <s>f Dot plot representing key cell type marker gene expression within organoid nephron clusters.</s>
+          <s>Dot size indicates proportion of cells in cluster expressing a gene, shading indicates the relative level of expression (low to high reflected as light to dark) and by gene ontology (GO) analysis through ToppFun <ref target="#b35" type="bibr">[36]</ref> (Additional file 2).</s>
           <s>The number and identity of clusters was largely consistent with our previous independent analysis <ref target="#b8" type="bibr">[9]</ref> , and the readily identifiable renal populations are dealt with below.</s>
           <s>Less identifiable and potentially off-target populations included a small neural population marked by ELAVL3 and ELAVL4, and a more substantial population expressing glial markers including FABP7.</s>
           <s>An additional off-target population of muscle progenitors expressing MYOD1, MYOG and PITX2 was detected for the first time <ref type="figure">(Fig. 1a)</ref> .</s>
@@ -287,20 +291,11 @@
         <p>
           <s>To interrogate the nephron and epithelial populations further, we re-clustered cells from clusters O2 (podocyte) and O9 (nephron epithelium) at multiple resolutions.</s>
           <s>We selected resolution 0.5 for analysis as this was the first resolution to split the epithelial cluster (O9) into subpopulations <ref target="#b31" type="bibr">[32]</ref> .</s>
-          <s>This re-clustering produced five organoid nephron (ON) clusters with similarity to nephron progenitor cells (ON2 marked by DAPL1, LYPD1, SIX1, CRABP2), podocyte precursors as seen in the proximal early nephron (ON1 CTGF, OLFM3, MAFB, NPHS1, low levels of LHX1 and PAX8), podocytes (ON0 marked by TCF21, PODXL, VEGFA, WT1), proximal tubule precursors (ON3 IGFBP7, FXYD2, CDH6, HNF1B), and cluster expressing markers common to the ureteric epithelium and distal nephron (EPCAM, EMX2, SPP1, MAL and PAX2 (ON4)) <ref target="#fig_2" type="figure">(Fig. 1b, Additional file 3)</ref> .</s>
+          <s>This re-clustering produced five organoid nephron (ON) clusters with similarity to nephron progenitor cells (ON2 marked by DAPL1, LYPD1, SIX1, CRABP2), podocyte precursors as seen in the proximal early nephron (ON1 CTGF, OLFM3, MAFB, NPHS1, low levels of LHX1 and PAX8), podocytes (ON0 marked by TCF21, PODXL, VEGFA, WT1), proximal tubule precursors (ON3 IGFBP7, FXYD2, CDH6, HNF1B), and cluster expressing markers common to the ureteric epithelium and distal nephron (EPCAM, EMX2, SPP1, MAL and PAX2 (ON4)) ( <ref type="figure">Fig. 1b, Additional file 3</ref> ).</s>
           <s>Though all of these cell types expressed markers conserved in mice, the top differentially expressed markers of nephron progenitor and proximal early nephron cells were recently defined markers specific to human kidney cell types <ref target="#b37" type="bibr">[38,</ref>
             <ref target="#b38" type="bibr">39]</ref> .</s>
-          <s>The EPCAM +</s>
-        </p>
-      </div>
-      <div>
-        <head>PAX2</head>
-        <p>
-          <s>+ cluster ON4 also expressed markers enriched in the distal tubule such as DEFB1 and TMEM52B.</s>
-          <s>While we could find no markers previously identified as unique to the mouse ureteric epithelium, immunofluorescence for CDH1 + GATA3</s>
-        </p>
-        <p>
-          <s>+ structures previously defined as presumptive ureteric epithelium revealed the presence of these structures at a low frequency in the organoids profiled for scRNA-seq (Additional file 1).</s>
+          <s>The EPCAM + PAX2 + cluster ON4 also expressed markers enriched in the distal tubule such as DEFB1 and TMEM52B.</s>
+          <s>While we could find no markers previously identified as unique to the mouse ureteric epithelium, immunofluorescence for CDH1 + GATA3 + structures previously defined as presumptive ureteric epithelium revealed the presence of these structures at a low frequency in the organoids profiled for scRNA-seq (Additional file 1).</s>
           <s>The reduced presence of this presumptive ureteric epithelium likely reflects the use of a 'posteriorised' differentiation using an initial culture (4 days of 8 μM CHIR).</s>
           <s>As previously described <ref target="#b2" type="bibr">[3]</ref> , this substantially reduces the presence of this epithelial segment.</s>
           <s>In addition, this cell type may be selectively lost due to inefficient dissociation.</s>
@@ -377,7 +372,7 @@
           <s>f Differentially expressed genes with largest fold changes between all organoid and all hFK cells.</s>
           <s>g Top conserved markers and differentially expressed genes between datasets for clusters from the 'combined' analysis.</s>
           <s>Cell cycle clusters not displayed.</s>
-          <s>Similar analysis for nephron clusters is presented in <ref target="#fig_2" type="figure">Fig. 3</ref> isolation and culture conditions.</s>
+          <s>Similar analysis for nephron clusters is presented in <ref type="figure">Fig. 3</ref> isolation and culture conditions.</s>
           <s>To focus on biological differences between cell types, we removed the genes identified as sample-specific from subsequent differential expression analyses between the datasets.</s>
           <s>We then compared hFK and organoid cells within each cluster to assess conserved and differentially expressed genes (Additional files 4 and 6), summarised in <ref target="#tab_0" type="table">Table 1</ref> and <ref type="figure">Fig. 1g</ref> .</s>
         </p>
@@ -424,7 +419,7 @@
           <s>Markers of hemogenic endothelial cells such as PECAM1, KDR, KIT and CDH5 <ref target="#b51" type="bibr">[52]</ref> are expressed in the organoid vasculature and, as such, it is possible that kidney organoids have some capacity to generate cells involved in the immune response.</s>
         </p>
         <p>
-          <s>Top markers of cluster C13 included genes highly expressed in blood (HBG1, HBB, HBA2), a signature primarily driven by the hFK-derived cells within the cluster as organoid-derived cells within this cluster did not share expression of these cell type-specific markers.</s>
+          <s>Top markers of cluster C13 included genes highly expressed in blood <ref type="figure">(HBG1, HBB, HBA2)</ref> , a signature primarily driven by the hFK-derived cells within the cluster as organoid-derived cells within this cluster did not share expression of these cell type-specific markers.</s>
           <s>GO analysis of upregulated organoid genes, and genes that were conserved markers between fetal and organoid cells in this cluster led to terms that were not related to blood.</s>
         </p>
       </div>
@@ -441,15 +436,28 @@
           <s>This generated seven combined nephron (CN) clusters with cells from hFK and organoid co-clustering within populations representing nephron progenitors (CN2), differentiating nephron progenitors (CN1), distal (CN4) and proximal (CN5) nephron segments, podocyte precursor (CN3) and podocyte cells (CN0).</s>
           <s>The hFK-specific podocyte cluster (CN7) noted previously was maintained in this analysis, and a new cluster of hFK stromal cells, marked by COL3A1, POSTN and MEG3 (CN6) was resolved.</s>
           <s>CN6 does not express any known nephron markers aside from TMEM100, which was reported to be specific to nephron progenitors in the human fetal kidney <ref target="#b9" type="bibr">[10]</ref> .</s>
-          <s>In the absence of other nephron progenitor markers, this cluster does not appear to be part of the nephron lineage <ref target="#fig_2" type="figure">(Fig. 3a, b)</ref> .</s>
-          <s>Cells within this stromal CN6 cluster may have been associated with the nephron lineage based on the broad expression of stromal markers within human nephron progenitor Organoid expression values for CN6 are derived from three organoid cells within this cluster cells <ref target="#b9" type="bibr">[10]</ref> .</s>
-          <s>Again, organoid nephron cells formed similar groups when clustered with the hFK data as when clustered alone <ref target="#fig_2" type="figure">(Fig. 3c)</ref> .</s>
-          <s>hFK and organoid cells contributed to most clusters with the largest contributions in the nephron progenitor and differentiating progenitor cluster <ref target="#fig_2" type="figure">(Fig. 3d)</ref> .</s>
+          <s>In the absence of other nephron progenitor markers, this cluster does not appear to be part of the nephron lineage <ref type="figure">(Fig. 3a, b)</ref> .</s>
+          <s>Cells within this stromal CN6 cluster may have been associated with the nephron lineage based on the broad expression of stromal markers within human nephron progenitor <ref type="figure">Fig. 3</ref> Comparison of nephron cell types within kidney organoids and human fetal kidney.</s>
+          <s>a, b Sample of origin and re-clustering of combined nephron (CN) lineage cells results in eight clusters.</s>
+          <s>Cluster identity and select conserved marker genes shown next to cluster colour key.</s>
+          <s>Cells for this analysis were selected from combined clusters C6, C7, C10 and C15.</s>
+          <s>c Comparison of organoid cells between organoid nephron (ON) and combined nephron (CN) clusters.</s>
+          <s>Colours show overlap in cells between clusters according to the Jaccard Index.</s>
+          <s>d Number of cells in each combined nephron cluster by dataset.</s>
+          <s>e Split dot plot showing relative expression for select marker genes within organoid and hFK cells in the combined nephron clusters.</s>
+          <s>hFK data in pink, organoid in blue.</s>
+          <s>Circle size represents the proportion of cells in the cluster expressing that gene, shading indicates expression level (low to high reflected as light to dark).</s>
+          <s>f Top differentially expressed genes between datasets within combined nephron clusters.</s>
+          <s>Chart colouring and shading as per e. Results for CN6 and CN7 are not differential expression results as few (CN6) or no (CN7) organoid cells are present within these clusters.</s>
+          <s>These instead reflect top cluster markers (CN6) or markers enriched in CN7 but not CN0 or CN3.</s>
+          <s>Organoid expression values for CN6 are derived from three organoid cells within this cluster cells <ref target="#b9" type="bibr">[10]</ref> .</s>
+          <s>Again, organoid nephron cells formed similar groups when clustered with the hFK data as when clustered alone <ref type="figure">(Fig. 3c)</ref> .</s>
+          <s>hFK and organoid cells contributed to most clusters with the largest contributions in the nephron progenitor and differentiating progenitor cluster <ref type="figure">(Fig. 3d)</ref> .</s>
           <s>hFK cells were scattered through the two organoid podocyte clusters but again a group of hFK podocyte cells remained separate.</s>
           <s>In the clusters representing the nephron epithelium, organoid cells were located in the proximal nephron cluster with few cells contributing to the distal while the hFK cells displayed the opposite pattern, consistent with the previous hFK analysis <ref target="#b9" type="bibr">[10]</ref> and the under representation of distal nephron in these organoid samples.</s>
         </p>
         <p>
-          <s>Key cell-type markers were conserved between the datasets but differential expression testing revealed underlying differences in transcriptional profiles between hFK and organoid nephron cell types ( <ref target="#tab_1" type="table">Table 2</ref> , <ref target="#fig_2" type="figure">Fig. 3e</ref> , f, Additional files 7 and 8).</s>
+          <s>Key cell-type markers were conserved between the datasets but differential expression testing revealed underlying differences in transcriptional profiles between hFK and organoid nephron cell types ( <ref target="#tab_1" type="table">Table 2</ref> , <ref type="figure">Fig. 3e</ref> , f, Additional files 7 and 8).</s>
           <s>hFK cells within nephron progenitor clusters showed enhanced expression of progenitor genes TMEM100, MEOX1, ROBO2 and DAPL1, and a small portion of organoid nephron progenitors expressed low levels of muscle progenitor genes MYOD1 and MYOG (Additional file 1).</s>
           <s>Thus, despite the conservation of key markers, this population may be adopting a muscle progenitor fate in the absence of appropriate signals to reinforce nephron progenitor identity.</s>
           <s>Alternatively, a small number of muscle progenitors may have clustered with the nephron progenitors due to similarities in their expression profiles.</s>
@@ -520,16 +528,6 @@
           <s>Overall, the data presented here builds confidence in the fidelity of organoid nephron, stromal and endothelial cell types, which will encourage disease modelling and drug screening efforts in human kidney organoids.</s>
         </p>
       </div>
-      <figure xml:id="fig_1">
-        <head/>
-        <label/>
-        <figDesc>Fig. 1 Single-cell RNA-seq profiling of human kidney organoids reveals expected and off-target populations. a tSNE plot revealing 13 distinct clusters (cluster O0 to cluster O12) identified from largest to smallest population as labelled. Clusters depicted in this figure have been referred to as organoid (O) followed by cluster number. Cluster identity indicated in colour key which includes select marker genes and highest ranking GO term for top 30 genes with positive log fold change values in each cluster. b Re-clustering of organoid nephron lineage cells from clusters O2 and O9 in a results in five nephron sub clusters as labelled. Cluster labels followed by marker genes expressed within the cluster. Clusters from this analysis have been referred to as organoid nephron (ON) followed by the cluster number. c, d Pseudotime trajectory analysis of organoid nephron cells supports a progression from nephron progenitor to podocyte, and proximal and distal nephron end points on different branches. Plot in c coloured by cluster identity in b. Plot in D coloured by Monocle state. e Expression of representative podocyte, nephron progenitor and tubular marker genes across the pseudotime trajectory coloured by Monocle state. f Dot plot representing key cell type marker gene expression within organoid nephron clusters. Dot size indicates proportion of cells in cluster expressing a gene, shading indicates the relative level of expression (low to high reflected as light to dark)</figDesc>
-      </figure>
-      <figure xml:id="fig_2">
-        <head>Fig. 3</head>
-        <label>3</label>
-        <figDesc>Fig. 3 Comparison of nephron cell types within kidney organoids and human fetal kidney. a, b Sample of origin and re-clustering of combined nephron (CN) lineage cells results in eight clusters. Cluster identity and select conserved marker genes shown next to cluster colour key. Cells for this analysis were selected from combined clusters C6, C7, C10 and C15. c Comparison of organoid cells between organoid nephron (ON) and combined nephron (CN) clusters. Colours show overlap in cells between clusters according to the Jaccard Index. d Number of cells in each combined nephron cluster by dataset. e Split dot plot showing relative expression for select marker genes within organoid and hFK cells in the combined nephron clusters. hFK data in pink, organoid in blue. Circle size represents the proportion of cells in the cluster expressing that gene, shading indicates expression level (low to high reflected as light to dark). f Top differentially expressed genes between datasets within combined nephron clusters. Chart colouring and shading as per e. Results for CN6 and CN7 are not differential expression results as few (CN6) or no (CN7) organoid cells are present within these clusters. These instead reflect top cluster markers (CN6) or markers enriched in CN7 but not CN0 or CN3. Organoid expression values for CN6 are derived from three organoid cells within this cluster</figDesc>
-      </figure>
       <figure type="table" validated="true" xml:id="tab_0">
         <head>Table 1</head>
         <label>1</label>
@@ -772,8 +770,9 @@ TUBA1A, TBUA1B, STMN1 </table>
     <back>
       <div type="acknowledgement">
         <div>
+          <head>Acknowledgements</head>
           <p>
-            <s>Availability of data and materials Both organoid datasets are available from GEO accession number GSE114802 <ref target="#b57" type="bibr">[58]</ref> and the Lindstrom fetal kidney dataset is available from GEO accession GSE102596 <ref target="#b58" type="bibr">[59]</ref> .</s>
+            <s>Single cell sequencing was performed at the Australian Genome Research Facility Genomics Innovation Hub with the assistance of J. Jabbari and A. Availability of data and materials Both organoid datasets are available from GEO accession number GSE114802 <ref target="#b57" type="bibr">[58]</ref> and the Lindstrom fetal kidney dataset is available from GEO accession GSE102596 <ref target="#b58" type="bibr">[59]</ref> .</s>
             <s>A website showing reports produced during analysis, including the exact software versions and parameters used, can be accessed at http://oshlacklab.com/combes-organoid-paper/ and the analysis code is available at https://github.com/Oshlack/combes-organoid-paper</s>
             <s>
               <ref target="#b31" type="bibr">[32]</ref> .</s>
@@ -785,7 +784,17 @@ TUBA1A, TBUA1B, STMN1 </table>
           <head>Additional files</head>
           <p>
             <s>Additional file 1: Supporting analysis for organoid data set.</s>
-            <s>Authors' contributions PE performed the organoid differentiations, single-cell isolation and immunofluorescence.</s>
+            <s>Additional file 5: Differential expression analysis between organoid and hFK samples.</s>
+            <s>Results from differential expression analysis between organoid and hFK samples used to identify a signature representing the main differences between the organoid and hFK datasets.</s>
+            <s>(XLSX 2050 kb) Additional file 6: Differential expression analysis for combined clusters.</s>
+            <s>Results from differential expression analysis for organoid and hFK cells within combined clusters.</s>
+            <s>(XLSX 2893 kb) Additional file 7: Combined nephron conserved markers.</s>
+            <s>Combined nephron cluster markers and associated GO terms.</s>
+            <s>(XLSX 673 kb) Additional file 8: Differential expression analysis for combined nephron clusters.</s>
+            <s>Results from differential expression testing between organoid and hFK cells within each combined nephron cluster after removal of the sample-enriched signature.</s>
+            <s>(XLSX 2040 kb) Additional file 9: Differential expression analysis between podocytes in CN0 vs CN7.</s>
+            <s>Results for differential gene expression testing between hFKspecific podocyte cluster CN7 and mixed organoid and hFK podocyte cluster CN0.</s>
+            <s>(XLSX 77 kb) Authors' contributions PE performed the organoid differentiations, single-cell isolation and immunofluorescence.</s>
             <s>LZ designed and performed the single-cell analysis and generated figures under the supervision of AO.</s>
             <s>ANC designed and performed the single-cell experiments and immunofluorescence and was primarily responsible for data interpretation and writing, under the supervision of MHL.</s>
             <s>All authors contributed intellectually to the project and manuscript revisions.</s>
@@ -816,9 +825,9 @@ TUBA1A, TBUA1B, STMN1 </table>
           <p>
             <s>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
           </p>
-          <p>
-            <s>Author details</s>
-          </p>
+        </div>
+        <div>
+          <head>Author details</head>
         </div>
       </div>
       <div type="references">
@@ -1590,8 +1599,8 @@ TUBA1A, TBUA1B, STMN1 </table>
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b17">
-            <analytic>
-              <title level="a" type="main">A step-by-step workflow for low-level analysis of single-cell RNA-seq data with Bioconductor</title>
+            <monogr>
+              <title level="m" type="main">A step-by-step workflow for low-level analysis of single-cell RNA-seq data with Bioconductor</title>
               <author>
                 <persName>
                   <forename type="first">A</forename>
@@ -1613,13 +1622,10 @@ TUBA1A, TBUA1B, STMN1 </table>
                   <surname>Marioni</surname>
                 </persName>
               </author>
-            </analytic>
-            <monogr>
-              <title level="j">F1000Research</title>
               <imprint>
+                <date type="published" when="2016"/>
                 <biblScope unit="volume">5</biblScope>
                 <biblScope unit="page">2122</biblScope>
-                <date type="published" when="2016"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -1861,7 +1867,7 @@ TUBA1A, TBUA1B, STMN1 </table>
                   <surname>Lefebvre</surname>
                 </persName>
               </author>
-              <idno type="doi">http:/iopscience.iop.org/article/10.1088/1742-5468/2008/10/P10008/meta</idno>
+              <idno type="DOI">http:/iopscience.iop.org/article/10.1088/1742-5468/2008/10/P10008/meta</idno>
               <ptr target="http://iopscience.iop.org/article/10.1088/1742-5468/2008/10/P10008/meta"/>
             </analytic>
             <monogr>
@@ -1872,8 +1878,8 @@ TUBA1A, TBUA1B, STMN1 </table>
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b25">
-            <analytic>
-              <title level="a" type="main">Clustering trees: a visualization for evaluating clusterings at multiple resolutions</title>
+            <monogr>
+              <title level="m" type="main">Clustering trees: a visualization for evaluating clusterings at multiple resolutions. GigaScience</title>
               <author>
                 <persName>
                   <forename type="first">L</forename>
@@ -1886,14 +1892,10 @@ TUBA1A, TBUA1B, STMN1 </table>
                   <surname>Oshlack</surname>
                 </persName>
               </author>
-            </analytic>
-            <monogr>
-              <title level="j">GigaScience</title>
               <imprint>
-                <biblScope unit="volume">7</biblScope>
-                <biblScope unit="issue">7</biblScope>
-                <biblScope unit="page">83</biblScope>
                 <date type="published" when="2018"/>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="page">83</biblScope>
               </imprint>
             </monogr>
           </biblStruct>
@@ -3228,8 +3230,8 @@ TUBA1A, TBUA1B, STMN1 </table>
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b58">
-            <monogr>
-              <title level="m" type="main">Single Cell RNA-Seq profiling human embryonic kidney cortex cells. Gene Expression Omnibus. Accession number GSE102596</title>
+            <analytic>
+              <title level="a" type="main">Single Cell RNA-Seq profiling human embryonic kidney cortex cells</title>
               <author>
                 <persName>
                   <forename type="first">A</forename>
@@ -3267,6 +3269,9 @@ TUBA1A, TBUA1B, STMN1 </table>
                   <forename type="first">A</forename>
                 </persName>
               </author>
+            </analytic>
+            <monogr>
+              <title level="j">Gene Expression Omnibus. Accession number GSE102596</title>
               <imprint>
                 <date type="published" when="2018"/>
               </imprint>

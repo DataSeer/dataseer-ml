@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T08:15+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:51+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -117,10 +117,7 @@
             <s>We make a decision whether to take an umbrella as assessing the chance of raining.</s>
             <s>Decisions are made by accounting for available information, e.g., the dark clouds through a window and/or the 30% chance of raining that the weather forecast announces.</s>
             <s>Yet we often make wrong decisions due to inadequate or noisy information.</s>
-            <s>The relations of decisions with given information were studied in the theory of decision making (DM)</s>
-          </p>
-          <p>
-            <s>1 .</s>
+            <s>The relations of decisions with given information were studied in the theory of decision making (DM) 1 .</s>
             <s>However, it is not easy that DM processes are consistently analyzed 2,3 .</s>
             <s>This is mainly because each decision maker has the different degree of "sensitivity" to a given available information; ones are more biased with the given information than others 1,4 .</s>
             <s>This is an intrinsic trait of decision makers 5 .</s>
@@ -129,11 +126,8 @@
           <p>
             <s>Our DM study is presented in a framework of game theory 6 .</s>
             <s>Game theory deals with the strategies by which players (decision makers in this paper) maximize their own rewards.</s>
-            <s>Nowadays quantum science has extended game theory to the quantum domain, revealing distinctive quantum features and opening a new avenue of applications <ref target="#b6" type="bibr">[7]</ref>
-              <ref target="#b7" type="bibr">[8]</ref>
-              <ref target="#b9" type="bibr">[9]</ref> .</s>
-            <s>As in quantum game theory, we are to investigate a quantum trait in decision makers, which originates from quantum properties <ref target="#b10" type="bibr">10,</ref>
-              <ref target="#b11" type="bibr">11</ref> , i.e. the quantum sensitivity to the available information during a DM process.</s>
+            <s>Nowadays quantum science has extended game theory to the quantum domain, revealing distinctive quantum features and opening a new avenue of applications 7-9 .</s>
+            <s>As in quantum game theory, we are to investigate a quantum trait in decision makers, which originates from quantum properties 10,11 , i.e. the quantum sensitivity to the available information during a DM process.</s>
             <s>This is intimate to an issue of quantum game theory, whether any quantum effects are revealed when no quantum strategies are involved.</s>
             <s>This has been regarded to be negative <ref target="#b12" type="bibr">12,</ref>
               <ref target="#b13" type="bibr">13</ref> .</s>
@@ -143,11 +137,7 @@
             <s>Our main result shows that the quantum decision maker is more highly sensitive than its classical counterpart to given available information, categorized to good and poor hints.</s>
             <s>This is attributed to the quantum coherence involved in the quantum DM process.</s>
             <s>We also show that the quantum sensitivity persists before the quantum coherence is completely destroyed.</s>
-            <s>These results will be applicable to reinforcement learning and preference updating <ref target="#b15" type="bibr">[15]</ref>
-              <ref target="#b16" type="bibr">[16]</ref>
-              <ref target="#b17" type="bibr">[17]</ref>
-              <ref target="#b18" type="bibr">[18]</ref>
-            </s>
+            <s>These results will be applicable to reinforcement learning and preference updating 15-18 ; they expect a risk-averse machine to learn more slowly.</s>
           </p>
         </div>
       </abstract>
@@ -156,9 +146,9 @@
   <text xml:lang="en">
     <body>
       <div>
-        <head>1</head>
+        <head>Experimental Demonstration on Quantum Sensitivity to Available Information in Decision Making</head>
         <p>
-          <s>We present an experimental illustration on the quantum sensitivity of decision making machinery.</s>
+          <s>Joong-Sung Lee 1 , Jeongho Bang 2,3 , Jinhyoung Lee 1 &amp; Kwang-Geol Lee <ref target="#b0" type="bibr">1</ref> We present an experimental illustration on the quantum sensitivity of decision making machinery.</s>
           <s>In the decision making process, we consider the role of available information, say hint, whether it influences the optimal choices.</s>
           <s>To the end, we consider a machinery method of decision making in a probabilistic way.</s>
           <s>Our main result shows that in decision making process our quantum machine is more highly sensitive than its classical counterpart to the hints we categorize into "good" and "poor".</s>
@@ -171,8 +161,7 @@
           <s>Decisions are made by accounting for available information, e.g., the dark clouds through a window and/or the 30% chance of raining that the weather forecast announces.</s>
           <s>Yet we often make wrong decisions due to inadequate or noisy information.</s>
           <s>The relations of decisions with given information were studied in the theory of decision making (DM) <ref target="#b0" type="bibr">1</ref> .</s>
-          <s>However, it is not easy that DM processes are consistently analyzed <ref target="#b1" type="bibr">2,</ref>
-            <ref target="#b2" type="bibr">3</ref> .</s>
+          <s>However, it is not easy that DM processes are consistently analyzed 2,3 .</s>
           <s>This is mainly because each decision maker has the different degree of "sensitivity" to a given available information; ones are more biased with the given information than others <ref target="#b0" type="bibr">1,</ref>
             <ref target="#b3" type="bibr">4</ref> .</s>
           <s>This is an intrinsic trait of decision makers <ref target="#b4" type="bibr">5</ref> .</s>
@@ -205,10 +194,13 @@
         <head>Results</head>
         <p>
           <s>Secret-bit guessing game.</s>
-          <s>We suggest a simple game, called the "secret-bit guessing game" (see <ref target="#fig_1" type="figure">Fig. 1a</ref> ) <ref target="#b19" type="bibr">19</ref> .</s>
+          <s>We suggest a simple game, called the "secret-bit guessing game" (see <ref type="figure">Fig. 1a</ref> ) <ref target="#b19" type="bibr">19</ref> .</s>
+        </p>
+        <p>
           <s>In this game, one player (say Alice) has a couple of cards C κ (κ = 0, 1), on each of which her secret-bit number x κ is written.</s>
           <s>The other player (say Bob) should make a guess y κ (or "strategy" in the language of game theory) at her secret-bit x κ .</s>
-          <s>By a successful guess (i.e., y κ = x κ ), Bob receives a positive score of ξ/2; however, by a wrong guess (i.e., a score among {−ξ, 0, ξ}.</s>
+          <s>By a successful guess (i.e., y κ = x κ ), Bob receives a positive score of ξ/2; however, by a wrong guess (i.e., ≠ κ κ y x ), Bob receives a penalty, i.e., a negative score of −ξ/2 (see <ref type="figure">Fig. 1b</ref> ).</s>
+          <s>After the two guesses, Bob will get a score among {−ξ, 0, ξ}.</s>
           <s>Then, Bob wins (loses) with a score of ξ (−ξ).</s>
           <s>The game ends in a draw if Bob has a score of zero.</s>
           <s>Here, we raise a question whether some (additional) hints can help Bob to increase his winning probability or score.</s>
@@ -218,45 +210,55 @@
         <p>
           <s>Classical &amp; quantum decision making algorithm.</s>
           <s>To proceed, we adopt a DM algorithm, which is assumed to work in Bob's brain.</s>
-          <s>The DM algorithm is modeled as a machinery process (see <ref target="#fig_2" type="figure">Fig. 2</ref> ), which runs with two channels: an input channel of a single bit for Alice's card number κ ∈ {0, 1}, and the other is an ancillary channel for processing the input with an output which is used for Bob's guess.</s>
+          <s>The DM algorithm is modeled as a machinery process (see <ref type="figure">Fig. 2</ref> ), which runs with two channels: an input channel of a single bit for Alice's card number κ ∈ {0, 1}, and the other is an ancillary channel for processing the input with an output which is used for Bob's guess.</s>
           <s>The ancillary channel consists of two probabilistic operations u j (j = 0, 1), each supposed to be either the identity 1 (doing nothing) or the logical-not X (flipping the signal).</s>
           <s>Here, applying u 1 is conditioned on the input κ: i.e., u 1 is applied only if κ = 1.</s>
           <s>The algorithm commences with receiving an input κ from Alice.</s>
-          <s>The two probabilistic operations u j in the ancillary channel are carried out with respect to the probabilities {0, 1} and writes on two cards C κ .</s>
+          <s>The two probabilistic operations u j in the ancillary channel are carried out with respect to the probabilities <ref type="figure">Figure 1</ref> .</s>
+          <s>Schematic picture of a secret-bit guessing game.</s>
+          <s>(a) One player Bob guesses the numbers chosen by the other player, say Alice.</s>
+          <s>Alice selects two numbers ∈ κ x {0, 1} and writes on two cards C κ .</s>
           <s>These numbers are unknown for Bob.</s>
           <s>Bob is to guess Alice's secret numbers x κ .</s>
           <s>In doing so, Bob can exploit some available information, which we call "hints.</s>
           <s>" (b) Table presents the scores which Bob will get in the game.</s>
           <s>Bob receives a score, positive of ξ/2 on a correct guess and negative of −ξ/2 on a wrong guess.</s>
-          <s>and P(u j → X) are the probabilities that u j is to be 1 and X, respectively.</s>
+        </p>
+        <formula xml:id="formula_0">→ P u ( 1) j and → = − → P u X Pu ( ) 1 ( 1) j j . Here, → P u ( 1) j</formula>
+      </div>
+      <div>
+        <head>Figure 2.</head>
+        <p>
+          <s>Bob's decision making (DM) algorithm.</s>
+          <s>A machinery with an algorithm is assumed to simulate Bob's decision-making process.</s>
+          <s>We consider and compare the machines of two types, classical and quantum.</s>
+          <s>Equipped with a DM algorithm, machine "Bob" is supposed to guess Alice's secret-bit number x κ on card C κ for each input κ ∈ {0, 1}.</s>
+          <s>The algorithm implements all possible guesses of Bob with two operations u 0 and u 1 in the ancillary channel.</s>
+          <s>The operation u 1 is conditional on input κ: i.e., u 1 is applied only if κ = 1.</s>
+          <s>In case of the quantum machine, the operations u 0 and u 1 are unitary, applied to an initial fiducial state |α〉, where each of them is composed of quantum superpositions with the identity (doing nothing) and the logical-not (flipping).</s>
+          <s>The output state in the ancillary channel is measured with outcome ∈ κ m {0, 1}.</s>
+          <s>In case of the classical counterpart, on the other hand, the operations are stochastic and work probabilistically the identity or logicalnot, to the initial fiducial bit value α, with outcome m κ .</s>
+          <s>Then, Bob's guesses at Alice's secret numbers x κ are given by <ref type="table">Table lists</ref> and P(u j → X) are the probabilities that u j is to be 1 and X, respectively.</s>
           <s>The ancillary input is prepared to a fiducial bit α in the classical case or state |α〉 in the quantum case.</s>
-          <s>It is flipped or unchanged as successively passing through u 0 and u <ref target="#b0" type="bibr">1</ref>
-            <ref target="#fig_2" type="figure">Fig. 2</ref> and/or Sec.</s>
+          <s>It is flipped or unchanged as successively passing through u 0 and u 1 .</s>
+          <s>The output is measured with an outcome ∈ m {0, 1} k .</s>
+          <s>Then, Bob's guess y κ at Alice's secret numbers x κ is made such that α = ⊕ κ κ y m for each input κ.</s>
+          <s>Note that this DM algorithm is universal in the sense that it realizes all possible guesses y κ of Bob (for more details, see <ref type="table">Table in</ref>
+            <ref type="figure">Fig. 2</ref> and/or Sec.</s>
           <s>S1-A of the Supplementary Material).</s>
         </p>
-        <formula xml:id="formula_0">→ P u ( 1) j and → = − → P u X Pu ( ) 1 ( 1) j j . Here, → P u<label>( 1)</label>
-        </formula>
+        <formula xml:id="formula_1">α = ⊕ κ κ y m .</formula>
         <p>
-          <s>Here the probabilities</s>
-        </p>
-        <formula xml:id="formula_1">→ P u ( 1) j</formula>
-        <p>
-          <s>and P(u j → X) (j = 0, 1) refer to the DM preferences <ref target="#b5" type="bibr">6</ref> .</s>
-          <s>For example, if</s>
-        </p>
-        <formula xml:id="formula_2">→ P u ( 1) j is larger than 1/2, Bob (or his brain) prefers setting → u 1 j to u j → X.</formula>
-        <p>
+          <s>Here the probabilities → P u ( 1) j and P(u j → X) (j = 0, 1) refer to the DM preferences <ref target="#b5" type="bibr">6</ref> .</s>
+          <s>For example, if → P u ( 1) j is larger than 1/2, Bob (or his brain) prefers setting → u 1 j to u j → X.</s>
           <s>We can represent these probabilities as (for j = 0, 1)</s>
         </p>
-        <formula xml:id="formula_3">→ = + → = − P u h Pu X h ( 1) 1 2 and ( ) 1 2 ,<label>(1)</label>
+        <formula xml:id="formula_2">→ = + → = − P u h Pu X h ( 1) 1 2 and ( ) 1 2 ,<label>(1)</label>
         </formula>
-        <formula xml:id="formula_4">j j j j where hint ∈ − h [ 1/2, 1/2] j .</formula>
+        <formula xml:id="formula_3">j j j j where hint ∈ − h [ 1/2, 1/2] j .</formula>
         <p>
-          <s>Note that the hints are not always informative <ref target="#b20" type="bibr">20</ref> ; for instance, a decision maker may acquire some hint fabricated with malicious, which we say poor.</s>
-          <s>We thus need to characterize the quality of given hints, which we represent by a hint vector h = (h 0 , h 1 )</s>
-        </p>
-        <p>
-          <s>T .</s>
+          <s>Note that the hints are not always informative 20 ; for instance, a decision maker may acquire some hint fabricated with malicious, which we say poor.</s>
+          <s>We thus need to characterize the quality of given hints, which we represent by a hint vector h = (h 0 , h 1 ) T .</s>
           <s>We categorize hint vectors into "good" and "poor.</s>
           <s>" A hint vector h is categorized to good if, by using it, Bob can improve his winning probability.</s>
           <s>Otherwise, it is to poor.</s>
@@ -266,24 +268,19 @@
           <s>The classical DM (cDM) is defined using the classical elements for the ancillary channel: the input α is a classical bit number and u j (j = 0, 1) is applied in a classical probabilistic way, namely, either to be 1 or to be X based on Eq. (1).</s>
           <s>In this case, the probabilistic application of u j is represented by a stochastic evolution matrix,</s>
         </p>
-        <formula xml:id="formula_5">      → → → →        . P u P u X P u X P u ( 1) ( ) ( ) ( 1) (2) j j j j</formula>
+        <formula xml:id="formula_4">      → → → →        . P u P u X P u X P u ( 1) ( ) ( ) ( 1) (2) j j j j</formula>
         <p>
           <s>On the other hand, the quantum DM (qDM) runs with the quantum state |α〉 and the application of u j is represented by a unitary matrix,</s>
         </p>
-        <formula xml:id="formula_6">        → → → − →          . φ φ − P u e P u X e P u X P u ( 1) ( ) ( ) ( 1)<label>(3)</label>
-        </formula>
-        <formula xml:id="formula_7">j i j i j j j j</formula>
+        <formula xml:id="formula_5">        → → → − →          . φ φ − P u e P u X e P u X P u ( 1) ( ) ( ) ( 1) (3) j i j i j j j j</formula>
         <p>
           <s>Here we note that the additional degree of freedom, i.e., the quantum phase φ j , is introduced in the unitary operation.</s>
-          <s>The qDM utilizes these phases with the directional condition h = (h 0 , h 1 )</s>
-        </p>
-        <p>
-          <s>T in addition to the individual components of h, according to the following rules: where Δ = |φ 1 − φ 0 | is defined as the absolute difference of the quantum phases φ j .</s>
+          <s>The qDM utilizes these phases with the directional condition h = (h 0 , h 1 ) T in addition to the individual components of h, according to the following rules: where Δ = |φ 1 − φ 0 | is defined as the absolute difference of the quantum phases φ j .</s>
           <s>These rules were built based on the postulate of "rational" game player (Bob, here) who can find the best algorithm by utilizing all available resources-which is often referred to as the theory of rationality <ref target="#b5" type="bibr">6</ref> .</s>
           <s>Actually, the rules in Eq. (4) optimizes Bob's DM algorithm and thus maximizes his winning probability (see Sec. S1-B of the Supplementary Material).</s>
           <s>It is worth noting that we run the DM process quantum-mechanically, even though we keep the game strategies classical, such as Alice's secret numbers and Bob's guesses.</s>
         </p>
-        <formula xml:id="formula_8">π π            Δ = &gt; Δ = &lt; Δ = = h h h h h h 0 if 0 , if 0, 2 if 0,<label>(4)</label>
+        <formula xml:id="formula_6">π π            Δ = &gt; Δ = &lt; Δ = = h h h h h h 0 if 0 , if 0, 2 if 0,<label>(4)</label>
         </formula>
         <p>
           <s>Quantum sensitivity to additional hints.</s>
@@ -291,35 +288,31 @@
           <s>First, we indicate that qDM allows Bob to enjoy much higher winnings with good hints.</s>
           <s>More specifically, by analyzing Bob's average score Ξ (often-called the average payoff function -a term from game theory) <ref target="#b5" type="bibr">6</ref> , we arrive at</s>
         </p>
-        <formula xml:id="formula_9">Ξ = Ξ + Γ,<label>(5)</label>
+        <formula xml:id="formula_7">Ξ = Ξ + Γ,<label>(5)</label>
         </formula>
-        <p>
-          <s>Q C</s>
-        </p>
+      </div>
+      <div>
+        <head>Q C</head>
         <p>
           <s>where the indices C and Q denote classical and quantum, respectively.</s>
           <s>Bob's quantum score differentiates from the classical by the amount of Γ.</s>
           <s>We set α = 0 and ξ = 1 for a sake of simplicity.</s>
           <s>As in Eq. (S15), the Supplementary Materials, the differential</s>
         </p>
-        <formula xml:id="formula_10">Γ =     −          −      h h 2 1 4 1 4 ,<label>(6)</label>
+        <formula xml:id="formula_8">Γ =     −          −      h h 2 1 4 1 4 ,<label>(6)</label>
         </formula>
         <p>
           <s>Q C This implies that the differential Γ becomes disadvantageous with the minus sign.</s>
           <s>Here, the most surprising fact is that, in qDM, Bob's score exhibits an abrupt transition near the boundary between good and poor hints.</s>
-        </p>
-        <note type="other">example, when the amounts of hints are small but non-zero, approximately Bob's scores Ξ +Γ  Q and Ξ −Γ  Q for the good and poor hints, respectively, if the hints are symmetric, i.e., |h 0 | = |h 1 | = |h|, where the symmetric hints were</note>
-        <formula xml:id="formula_12">Q G P ( ) ( )<label>(8)</label>
-        </formula>
-        <p>
-          <s>where we used Ξ C → 0 as |h (G,P) | → 0. Here, h (G) and h (P) respectively stand for the good and poor symmetric hints.</s>
+          <s>For example, when the amounts of hints are small but non-zero, approximately Bob's scores Ξ +Γ  Q and Ξ −Γ  Q for the good and poor hints, respectively, if the hints are symmetric, i.e., |h 0 | = |h 1 | = |h|, where the symmetric hints were taken into account as hints are usually dependent and correlated.</s>
+          <s>As the symmetric hint comes to zero, more explicitly, Bob's quantum score where we used Ξ C → 0 as |h (G,P) | → 0. Here, h (G) and h (P) respectively stand for the good and poor symmetric hints.</s>
           <s>This abrupt score-transition (which resembles quantum phase transition) <ref target="#b21" type="bibr">21</ref> is a representative of the quanum sensitivity.</s>
           <s>Without any hints, i.e., |h| = 0, however, there is no gain or loss from the quantum assumption (for detailed calculations and theoretical analyses, see Sec.</s>
           <s>S1-B of the Supplementary Material).</s>
         </p>
         <p>
           <s>Experimental demonstration.</s>
-          <s>Now, we design linear-optical settings for the proof-of-principle experiments, as drawn in <ref target="#fig_8" type="figure">Fig. 3</ref> .</s>
+          <s>Now, we design linear-optical settings for the proof-of-principle experiments, as drawn in <ref target="#fig_6" type="figure">Fig. 3</ref> .</s>
           <s>To simulate the qDM algorithm, we use single-photon light as the ancillary system input <ref target="#b22" type="bibr">22</ref> .</s>
           <s>Horizontal and vertical polarizations of the photon represent the qubit signal, such that | 〉 ↔ | 〉 H 0 and | 〉 ↔ | 〉 V 1 .</s>
           <s>The unitary operations u j (j = 0, 1) can be realized as combinations of half-wave-plate (HWP) and quarter-wave-plate (QWP).</s>
@@ -330,46 +323,37 @@
           <s>For cDM, we prepare the thermal state of light as the ancilla input, leaving no room for unexpected quantum effects on the cDM.</s>
           <s>The signal bits are also represented by the light polarization, i.e., ↔ H 0 and ↔ V 1.</s>
           <s>However, in such a cDM, application of the given hint h is limited without the ability to fully exploit the quantum superposition; i.e., the directional information of h cannot be encoded.</s>
-          <s>The classical operations u j (j = 0, 1) can thus be implemented with only HWPs placed at either</s>
-        </p>
-        <formula xml:id="formula_13">ϑ ϕ π ϑ                    =      Δ + →      =     Δ −      = → . − − P u P u 1 2 2 cos ( 1) , 1 2 2 , 1 2 cos ( 1)<label>(9)</label>
-        </formula>
-        <formula xml:id="formula_14">ϑ j = 0 (for → u 1 j ) or θ π = /4 j (for u j → X)</formula>
-        <p>
-          <s>, probabilistically, based on Eq. (1) (see <ref target="#fig_8" type="figure">Fig. 3b</ref> ).</s>
+          <s>The classical operations u j (j = 0, 1) can thus be implemented with only HWPs placed at either ϑ j = 0 (for → u 1 j ) or θ π = /4 j (for u j → X), probabilistically, based on Eq. (1) (see <ref target="#fig_6" type="figure">Fig. 3b</ref> ).</s>
           <s>The experiments are carried out for all of Alice's possible strategies, i.e., her choices of the secret bits x 0 and x 1 .</s>
         </p>
+        <formula xml:id="formula_10">ϑ ϕ π ϑ                    =      Δ + →      =     Δ −      = → . − − P u P u 1 2 2 cos ( 1) , 1 2 2 , 1 2 cos ( 1)<label>(9)</label>
+        </formula>
         <p>
           <s>In the experiments, we evaluate Bob's average scores Ξ C and Ξ Q by repeating 10 4 games for a given h = (h 0 , h 1 ) T .</s>
           <s>We perform such evaluations by varying h 0 and h 1 from −0.5 to 0.5 at 0.01 increments.</s>
           <s>Thus a given hint h is good or poor for the secret bits x κ , which holds for both in cDM and qDM.</s>
-          <s>We represent the experimental results of Ξ C and Ξ Q as density-plots in the space of h 0 and h 1 (see <ref target="#fig_9" type="figure">Fig. 4</ref> ).</s>
+          <s>We represent the experimental results of Ξ C and Ξ Q as density-plots in the space of h 0 and h 1 (see <ref target="#fig_7" type="figure">Fig. 4</ref> ).</s>
           <s>The average scores Ξ C and Ξ Q are undifferentiated at each corner point, whereas they differentiate, if far from the corners, maximally near to the origin, i.e., when the hints are very small.</s>
           <s>At the origin, i.e., h 0 = h 1 = 0, the average scores are to be zero in both DMs.</s>
           <s>Here, note that in the qDM, Bob's average score Ξ Q is discontinuous as crossing the axes, while Ξ C is continuous everywhere in the cDM.</s>
           <s>Meanwhile, Ξ Q is always higher (lower) than Ξ C for good (poor) hints.</s>
-          <s>To see these features conspicuously, we also perform experiments for the symmetric hints, i.e., |h j | = |h|, along the blue and red dashed lines in <ref target="#fig_9" type="figure">Fig. 4a,b</ref> .</s>
+          <s>To see these features conspicuously, we also perform experiments for the symmetric hints, i.e., |h j | = |h|, along the blue and red dashed lines in <ref target="#fig_7" type="figure">Fig. 4a</ref> ,b.</s>
           <s>These lines, which are toward the best and worst hints from the origin, are represented by h whose sign is positive (negative) when its quality is good (poor).</s>
-          <s>The result clearly shows the abrupt score-change between the quantum advantage Γ and disadvantage −Γ (see <ref target="#fig_10" type="figure">Fig. 5</ref> ).</s>
+          <s>The result clearly shows the abrupt score-change between the quantum advantage Γ and disadvantage −Γ (see <ref target="#fig_8" type="figure">Fig. 5</ref> ).</s>
           <s>All these results indicate that qDM exhibits higher sensitivity between the boundary for good and poor hints, as described in Eq. <ref target="#b7" type="bibr">(8)</ref> .</s>
         </p>
         <p>
           <s>Analyzing further, we consider the decoherence effects, which cause degradation of the quantum superposition, during the process of qDM.</s>
-          <s>Here, without loss of the generality, the signals transmitted in the ancillary system in qDM are assumed to be decohered (mathematically, a decay of off-diagonal elements of the density matrix of the signal state ρˆ) <ref target="#b23" type="bibr">23</ref> at a rate of 1 − γ ≤ 1.</s>
-          <s>Then, it is predicted that the decoherence effectively results in a smaller hint-sensitivity with</s>
+          <s>Here, without loss of the generality, the signals transmitted in the ancillary system in qDM are assumed to be decohered (mathematically, a decay of off-diagonal elements of the density matrix of the signal state ρˆ) 23 at a rate of 1 − γ ≤ 1.</s>
+          <s>Then, it is predicted that the decoherence effectively results in a smaller hint-sensitivity with γ Γ → − Γ.</s>
         </p>
-        <formula xml:id="formula_15">γ Γ → − Γ. (1 )<label>(10)</label>
-        </formula>
         <p>
-          <s>With this prediction, the experiments are carried out for symmetric hints |h| = |h 0 | = |h 1 |.</s>
+          <s>(1 ) <ref target="#b10" type="bibr">(10)</ref> With this prediction, the experiments are carried out for symmetric hints |h| = |h 0 | = |h 1 |.</s>
           <s>Here, the hints are assumed to be good.</s>
           <s>The experiments are repeated for 10 4 games to evaluate the average score Ξ Q .</s>
-          <s>The experimental results clearly confirm the prediction: the quantum advantages become smaller with increasing decoherence rate γ (see <ref target="#fig_11" type="figure">Fig. 6</ref> ).</s>
+          <s>The experimental results clearly confirm the prediction: the quantum advantages become smaller with increasing decoherence rate γ (see <ref target="#fig_9" type="figure">Fig. 6</ref> ).</s>
           <s>However, note that even in this case, qDM still has more advantages than cDM, unless the quantum superposition is completely washed out.</s>
           <s>This result is also quite remarkable, since quantum properties usually disappear rapidly with very small decoherence.</s>
-        </p>
-        <p>
-          <s>ScIenTIfIc REPORtS | (2019) 9:681 | DOI:10.1038/s41598-018-36945-5</s>
         </p>
       </div>
       <div>
@@ -403,99 +387,57 @@
           <s>In the qDM, to the contrary, it is discontinuous as crossing the axes, in particular the origin.</s>
           <s>The blue and red dashed lines represent the hint vectors with equal degrees |h 0 | = |h 1 |, connecting the minimal and the maximal scores.</s>
           <s>
-            <ref target="#fig_9" type="figure">Fig. 4a,b</ref> .</s>
+            <ref target="#fig_7" type="figure">Fig. 4a</ref> ,b.</s>
           <s>These lines, which are toward the best and worst hints from the origin, correspond to the case of symmetric hints, i.e., |h 0 | = |h 1 | = |h|.</s>
           <s>The red and blue points are Bob's average scores Ξ C and Ξ Q , respectively, as a function of h.</s>
           <s>Both DMs share the best and the worst scores Ξ Q,C = ±1 at = ± h 1/2, and Ξ Q,C = 0 at the origin (no hint).</s>
           <s>For all other points, Ξ Q is higher (lower) than Ξ C for good (poor) hints.</s>
           <s>As a big contrast between cDM and qDM, Ξ C is continuous in the whole range of symmetric hint h, whereas its quantum counterpart Ξ Q is clearly discontinuous at h = 0. Ξ Q abruptly changes near the origin when the hint h passes the origin, resembling critical phenomena of matters.</s>
-        </p>
-        <p>
-          <s>ScIenTIfIc REPORtS | (2019) 9:681 | DOI:10.1038/s41598-018-36945-5</s>
           <s>transmitted horizontally polarized photons are used as signal photons.</s>
           <s id="dataset-1" type="Tabular data">Signal photons were counted only when the trigger photons were detected.</s>
           <s>Here, if this post-selection is not applied, the signals toward the gate operations are the thermal state with supper-Poissonian photon statistics.</s>
-          <s>In the cDM experiments, the thermal state of light was employed as the ancillary input, which does not possess the quantum coherence (see <ref target="#fig_8" type="figure">Fig. 3</ref> ).</s>
+          <s>In the cDM experiments, the thermal state of light was employed as the ancillary input, which does not possess the quantum coherence (see <ref target="#fig_6" type="figure">Fig. 3</ref> ).</s>
         </p>
         <p>
           <s>Experimental simulation of decoherence.</s>
           <s>Effectively, the decoherence can be simulated in the experiments by setting the relative phases of the states either as 0 or as π (a phase flip) randomly with a ratio of 1 − γ/2 to γ/2.</s>
-          <s>Then, statistically, the state ρ can be described as The results clearly show that the quantum advantage, i.e., the positive differential from the cDM score decreases as increasing the decoherence rate γ, and the quantum score eventually becomes equal to the classical if completely decohered with γ = 1.</s>
+          <s>Then, statistically, the state ρ can be described as 23 The results clearly show that the quantum advantage, i.e., the positive differential from the cDM score decreases as increasing the decoherence rate γ, and the quantum score eventually becomes equal to the classical if completely decohered with γ = 1.</s>
         </p>
       </div>
       <figure xml:id="fig_0">
         <head/>
         <label/>
-        <figDesc>≠ ScIenTIfIc REPORtS | (2019) 9:681 | DOI:10.1038/s41598-018-36945-5</figDesc>
-      </figure>
-      <figure xml:id="fig_1">
-        <head>Figure 1 .</head>
-        <label>1</label>
-        <figDesc>Figure 1. Schematic picture of a secret-bit guessing game. (a) One player Bob guesses the numbers chosen by the other player, say Alice. Alice selects two numbers ∈ κ x {0, 1} and writes on two cards C κ . These numbers are unknown for Bob. Bob is to guess Alice's secret numbers x κ . In doing so, Bob can exploit some available information, which we call "hints. " (b) Table presents the scores which Bob will get in the game. Bob receives a score, positive of ξ/2 on a correct guess and negative of −ξ/2 on a wrong guess.</figDesc>
+        <figDesc>the outcomes m κ generated by the possible set of operations u 0 and u 1 in the deterministic cases. ScIenTIfIc REPORtS | (2019) 9:681 | DOI:10.1038/s41598-018-36945-5</figDesc>
       </figure>
       <figure xml:id="fig_2">
-        <head>Figure 2 .</head>
-        <label>2</label>
-        <figDesc>Figure 2. Bob's decision making (DM) algorithm. A machinery with an algorithm is assumed to simulate Bob's decision-making process. We consider and compare the machines of two types, classical and quantum. Equipped with a DM algorithm, machine "Bob" is supposed to guess Alice's secret-bit number x κ on card C κ for each input κ ∈ {0, 1}. The algorithm implements all possible guesses of Bob with two operations u 0 and u 1 in the ancillary channel. The operation u 1 is conditional on input κ: i.e., u 1 is applied only if κ = 1. In case of the quantum machine, the operations u 0 and u 1 are unitary, applied to an initial fiducial state |α〉, where each of them is composed of quantum superpositions with the identity (doing nothing) and the logical-not (flipping). The output state in the ancillary channel is measured with outcome ∈ κ m {0, 1}. In case of the classical counterpart, on the other hand, the operations are stochastic and work probabilistically the identity or logicalnot, to the initial fiducial bit value α, with outcome m κ . Then, Bob's guesses at Alice's secret numbers x κ are given by α = ⊕ κ κ y m . Table lists the outcomes m κ generated by the possible set of operations u 0 and u 1 in the deterministic cases.</figDesc>
-      </figure>
-      <figure xml:id="fig_4">
         <head/>
         <label/>
         <figDesc>this leads to an advantage for qDM since Γ ≥ 0. If the hints are poor, on the other hand, qDM makes it more difficult to make the correct guesses. In the worst case [see Eq. (S16) in the Supplementary Materials], Ξ = Ξ − Γ.</figDesc>
       </figure>
-      <figure xml:id="fig_5">
-        <head>For</head>
+      <figure xml:id="fig_3">
+        <head>ScIenTIfIc</head>
         <label/>
-        <figDesc>ScIenTIfIc REPORtS | (2019) 9:681 | DOI:10.1038/s41598-018-36945-5</figDesc>
+        <figDesc>REPORtS | (2019) 9:681 | DOI:10.1038/s41598-018-36945-5</figDesc>
       </figure>
       <figure xml:id="fig_6">
-        <head/>
-        <label/>
-        <figDesc>taken into account as hints are usually dependent and correlated. As the symmetric hint comes to zero</figDesc>
-      </figure>
-      <figure xml:id="fig_8">
         <head>Figure 3 .</head>
         <label>3</label>
         <figDesc>Figure 3. Linear-optical setups for simulating two types of DM, classical (cDM) and quantum (qDM). (a) In qDM, heralded single photons are prepared as the input light source by applying the post-selection to orthogonally polarized photon pairs generated by a type-II SPDC process (see Methods for more details). The single-photon polarizations, i.e., horizontal (H) and vertical (V), are employed as a quantum bit (qubit), an information carrier in the ancillary channel. The first operation u 0 is composed of HWP(ϑ 0 )-QWP(ϕ 0 )-QWP(π/4) with the controlling angles ϑ 0 and ϕ 0 , where HWP and QWP are half and quarter wave plates. The second operation u 1 is realized by only HWP(ϑ 1 ) with the controlling angle ϑ 1 . In this setting, u 0 and u 1 are so adjusted according to the rules in Eq. (9) together with Eq. (1). The quantum interference between the two unitary operations of the single-photon polarization is thus exploited in the qDM. (b) In cDM, the thermal state of light is employed as the ancillary input, which does not possess the quantum coherence. To do so, we do not apply the post-selection contrary to the qDM. The operations u 0,1 are implemented by only HWPs with either ϑ j = 0 (for u j → identity 1) or π ϑ = /4 j</figDesc>
       </figure>
-      <figure xml:id="fig_9">
+      <figure xml:id="fig_7">
         <head>Figure 4 .</head>
         <label>4</label>
         <figDesc>Figure 4. Average scores for Bob in the cDM and the qDM experiments. Bob's average scores for all pairs of Alice's secret bits (x 0 , x 1 ) are presented in the density plots for (a) cDM and (b) qDM experiments as described in Fig. 3. The score values are obtained by repeating 10 4 games for each hint vector h = (h 0 , h 1 ) T , on the square mesh lattice in the increments of 0.01 from −1/2 to 1/2. A hint vector h is good or poor, depending on the secret bits x κ ; for instance, = = h h 1/2 0 1</figDesc>
       </figure>
-      <figure xml:id="fig_10">
+      <figure xml:id="fig_8">
         <head>Figure 5 .</head>
         <label>5</label>
         <figDesc>Figure 5. Average scores with respect to the symmetric hints. The experimentally obtained average scores of Bob are presented along the blue and red dashed lines in Fig. 4a,b. These lines, which are toward the best and worst hints from the origin, correspond to the case of symmetric hints, i.e., |h 0 | = |h 1 | = |h|. The red and blue points are Bob's average scores Ξ C and Ξ Q , respectively, as a function of h. Both DMs share the best and the worst scores Ξ Q,C = ±1 at = ± h 1/2, and Ξ Q,C = 0 at the origin (no hint). For all other points, Ξ Q is higher (lower) than Ξ C for good (poor) hints. As a big contrast between cDM and qDM, Ξ C is continuous in the whole range of symmetric hint h, whereas its quantum counterpart Ξ Q is clearly discontinuous at h = 0. Ξ Q abruptly changes near the origin when the hint h passes the origin, resembling critical phenomena of matters.</figDesc>
       </figure>
-      <figure xml:id="fig_11">
+      <figure xml:id="fig_9">
         <head>Figure 6 .</head>
         <label>6</label>
         <figDesc>Figure 6. Decoherence effect on the qDM algorithm. (a) We consider the decoherence effect that arises between the operations u 0 and u 1 on the ancilla qubit channel for the qDM algorithm. (b) Experimental simulations are carried out for different values of the decoherence rate γ (0 to 1, 0.25 step). The symmetric hint h is assumed to be positive, h &gt; 0. Bob's average scores Ξ Q are presented for the experimental data (dots) and for the theoretical predictions of qDM (dashed lines) in Eq. (10) together with the experimental data of cDM (blue solid line). The results clearly show that the quantum advantage, i.e., the positive differential from the cDM score decreases as increasing the decoherence rate γ, and the quantum score eventually becomes equal to the classical if completely decohered with γ = 1.</figDesc>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_0">
-        <head/>
-        <label/>
-        <figDesc>Note that this DM algorithm is universal in the sense that it realizes all possible guesses y κ of Bob (for more details, see Table in</figDesc>
-        <table>. The output is measured with an outcome 
-∈ 
-m 
-{0, 1} 
-
-k 
-
-. Then, Bob's guess y κ at Alice's secret 
-numbers x κ is made such that 
-α 
-= 
-⊕ 
-
-κ 
-κ 
-
-y 
-m 
-for each input κ. </table>
       </figure>
       <note place="foot">© The Author(s) 2019</note>
     </body>
@@ -503,23 +445,29 @@ for each input κ. </table>
       <div type="acknowledgement">
         <div>
           <head>Acknowledgements</head>
-          <p>
-            <s>The</s>
-          </p>
         </div>
       </div>
       <div type="annex">
         <div>
           <head>Author Contributions</head>
-          <note type="other">J</note>
+          <p>
+            <s>J.B., J.L. and K.G.L. developed the theoretical idea.</s>
+            <s>J.S.L. and K.G.L. performed the experiments, and J.B. and J.L. provided theoretical support.</s>
+            <s>J.B. and J.S.L. wrote the manuscript.</s>
+            <s>All the authors contributed to analysis of the results.</s>
+            <s>The first two authors (J.S.L. and J.B.) contributed equally to this work and can be regarded as the main authors.</s>
+          </p>
         </div>
         <div>
           <head>Additional Information</head>
           <p>
             <s>Supplementary information accompanies this paper at https://doi.org/10.1038/s41598-018-36945-5.</s>
           </p>
+        </div>
+        <div>
+          <head>Competing Interests:</head>
           <p>
-            <s>Competing Interests: The authors declare no competing interests.</s>
+            <s>The authors declare no competing interests.</s>
           </p>
           <p>
             <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
@@ -758,7 +706,7 @@ for each input κ. </table>
                   <forename type="first">|</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1038/s41598-018-36945-5</idno>
+              <idno type="DOI">10.1038/s41598-018-36945-5</idno>
               <imprint>
                 <date type="published" when="2019"/>
                 <biblScope unit="volume">9</biblScope>

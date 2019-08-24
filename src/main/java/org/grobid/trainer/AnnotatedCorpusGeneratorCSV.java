@@ -302,6 +302,9 @@ public class AnnotatedCorpusGeneratorCSV {
         CSVPrinter csvPrinter1 = new CSVPrinter(writerCSV1, 
             CSVFormat.DEFAULT.withHeader("doi", "text", "datatype", "dataSubtype", "leafDatatype"));
 
+        Writer failedPDFWriter = new PrintWriter(new BufferedWriter(
+            new FileWriter(documentPath + "/failed-pdf.txt")));
+
         // go thought all annotated documents 
         m = 0;
         for (Map.Entry<String, AnnotatedDocument> entry : documents.entrySet()) {
@@ -396,6 +399,10 @@ public class AnnotatedCorpusGeneratorCSV {
                             FileUtils.copyFile(localPdfFile, pdfFile);
                             // remove the downloaded PDF file
                             FileUtils.deleteQuietly(localPdfFile);
+                        } else {
+                            failedPDFWriter.write(doi);
+                            failedPDFWriter.write("\n");
+                            failedPDFWriter.flush();
                         }
                     }
 
@@ -604,6 +611,8 @@ public class AnnotatedCorpusGeneratorCSV {
         csvPrinter1.close();
         // not sure the following is needed, but to be sure...
         writerCSV1.close();
+
+        failedPDFWriter.close();
 
         System.out.println("Total matched annotations: " + totalMatchedAnnotations);
         System.out.println(totalUnmatchedAnnotations + " total unmatched annotations, out of " + totalAnnotations);

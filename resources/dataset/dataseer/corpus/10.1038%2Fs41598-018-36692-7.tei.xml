@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T08:14+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:50+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -129,6 +129,8 @@
             <s>A ballistic model should also describe the transport properties of well-designed MOSFETs with channel lengths approaching or below the mean scattering length λ.</s>
             <s>On the other hand, there is a marked difference between the current-voltage (I D − V D ) characteristics from a purely ballistic model, such as the one proposed by Natori 1 , and experimental data.</s>
             <s>Although complex models can fit experimental data more precisely 2 , the simplicity of a fewer-parameter model based on a ballistic transport formalism is desirable.</s>
+          </p>
+          <p>
             <s>In Natori's model for ballistic transistors, MOSFET current-voltage (I D − V D ) relations were derived based on Landauer's formula for current through a ballistic conductor.</s>
             <s>In this work, we extend this transport model by including two physically meaningful parameters to predict device data accurately.</s>
             <s>They are transmission probability T and drain-channel coupling parameter Δ. Δ captures the effects of the longitudinal electric field in the channel and represents the fraction of the drain Fermi level that appears on the source end.</s>
@@ -140,8 +142,6 @@
             <s>Here, we use either a two-parameter fit, by fixing V T , or a three-parameter fit, where all three parameters are allowed to vary, to characterize experimental data.</s>
             <s>By allowing V T to vary, we can account for the effects of the halo implants on the channel length, for example.</s>
             <s>We relax this requirement when comparing devices over a narrower range of length where the V T variation is small.</s>
-          </p>
-          <p>
             <s>To support our model, we fabricated n-channel MOSFETs with gate lengths L ranging from 50 nm to 3 µm as we discuss in Methods.</s>
           </p>
           <p>
@@ -166,8 +166,10 @@
         <p>
           <s>In nanoscale conductors that have channel lengths comparable to the mean free path of carriers, transport approaches the ballistic limit.</s>
           <s>A ballistic model should also describe the transport properties of well-designed MOSFETs with channel lengths approaching or below the mean scattering length λ.</s>
-          <s>On the other hand, there is a marked difference between the current-voltage (I D − V D ) characteristics from a purely ballistic model, such as the one proposed by Natori <ref target="#b0" type="bibr">1</ref> , and experimental data.</s>
-          <s>Although complex models can fit experimental data more precisely <ref target="#b1" type="bibr">2</ref> , the simplicity of a fewer-parameter model based on a ballistic transport formalism is desirable.</s>
+          <s>On the other hand, there is a marked difference between the current-voltage (I D − V D ) characteristics from a purely ballistic model, such as the one proposed by Natori 1 , and experimental data.</s>
+          <s>Although complex models can fit experimental data more precisely 2 , the simplicity of a fewer-parameter model based on a ballistic transport formalism is desirable.</s>
+        </p>
+        <p>
           <s>In Natori's model for ballistic transistors, MOSFET current-voltage (I D − V D ) relations were derived based on Landauer's formula for current through a ballistic conductor.</s>
           <s>In this work, we extend this transport model by including two physically meaningful parameters to predict device data accurately.</s>
           <s>They are transmission probability T and drain-channel coupling parameter Δ. Δ captures the effects of the longitudinal electric field in the channel and represents the fraction of the drain Fermi level that appears on the source end.</s>
@@ -179,8 +181,6 @@
           <s>Here, we use either a two-parameter fit, by fixing V T , or a three-parameter fit, where all three parameters are allowed to vary, to characterize experimental data.</s>
           <s>By allowing V T to vary, we can account for the effects of the halo implants on the channel length, for example.</s>
           <s>We relax this requirement when comparing devices over a narrower range of length where the V T variation is small.</s>
-        </p>
-        <p>
           <s>To support our model, we fabricated n-channel MOSFETs with gate lengths L ranging from 50 nm to 3 µm as we discuss in Methods.</s>
         </p>
         <p>
@@ -192,10 +192,7 @@
         </p>
         <p>
           <s>Most importantly, we find that T can be assumed to be independent of drain bias.</s>
-          <s>A bias independent T is counter to the conclusions from the virtual source (VS) model, which has been successful in modeling nanoscale MOSFETs <ref target="#b1" type="bibr">[2]</ref>
-            <ref target="#b2" type="bibr">[3]</ref>
-            <ref target="#b3" type="bibr">[4]</ref>
-            <ref target="#b4" type="bibr">[5]</ref> .</s>
+          <s>A bias independent T is counter to the conclusions from the virtual source (VS) model, which has been successful in modeling nanoscale MOSFETs 2-5 .</s>
           <s>Here, we provide justifications for using a fixed T and discuss the assumptions used in each model that determine their respective values for T.</s>
         </p>
       </div>
@@ -213,20 +210,16 @@
           <s>This requires a redistribution of the current among the current carrying modes at the interface that leads to a finite contact resistance <ref target="#b5" type="bibr">6</ref> .</s>
           <s>It can also be thought of as an energy penalty that an electron has to pay in order to be funneled into the narrow channel from contacts that are comparatively wide.</s>
           <s>Here, we distinguish between this contact resistance, an intrinsic parameter that sets the ultimate resistance of a ballistic device, and series resistance, an extrinsic effect that arises from the physical size and nature of the contact to the source/ drain regions of a MOSFET.</s>
-        </p>
-        <p>
           <s>In this report, we describe a new ballistic transistor model with the fewest fitting parameters reported today.</s>
           <s>The important insight we provide is that the net occupancy of transmission modes is reduced from the original Natori's model due to a finite longitudinal electric field in the channel, which is captured in the parameter Δ.</s>
           <s>In the Appendix, we describe the origin of Δ in greater detail.</s>
         </p>
         <p>
           <s>Natori's Model for Ballistic Transistors.</s>
-          <s>In Landauer's formalism (Eq. 1) for ballistic transport <ref target="#b6" type="bibr">7</ref> , the current through any conductor is proportional to the probability T(E) that an electron can transmit through it and the quasi-Fermi levels that determine the occupancy of right-and left-moving carriers.</s>
+          <s>In Landauer's formalism (Eq. 1) for ballistic transport 7 , the current through any conductor is proportional to the probability T(E) that an electron can transmit through it and the quasi-Fermi levels that determine the occupancy of right-and left-moving carriers.</s>
           <s>In a conductor with multiple subbands, the current also depends on the number of modes M(E), which depends on energy E. Hence, the difference in the Fermi functions f 1 − f 2 determines the net transmission modes.</s>
         </p>
-        <formula xml:id="formula_0">∫ = − I q h dE T E M E f f 2 ( ) ( )( )<label>(1)</label>
-        </formula>
-        <formula xml:id="formula_1">D 1 2</formula>
+        <formula xml:id="formula_0">∫ = − I q h dE T E M E f f 2 ( ) ( )( ) (1) D 1 2</formula>
         <p>
           <s>Using Landauer's approach, K. Natori 1 derived the current-voltage (I D − V D ) characteristics of a ballistic MOSFET.</s>
           <s>Natori's model was developed for purely ballistic transistors that have channel lengths L &lt; λ, where λ is the mean scattering length, and for perfect gate coupling.</s>
@@ -234,9 +227,8 @@
           <s>
             <ref target="#fig_0" type="figure">Figure 1</ref> shows the Natori's model with T &lt; 1 to match the maximum current in our L = 60 nm device, which we show again in section IV with our modified model.</s>
           <s>In <ref target="#fig_0" type="figure">Fig. 1</ref> , it is clear that the ON-resistance (R ON ) in the low bias regime is unrealistically too small compared to the experimental data.</s>
-          <s>The goal of the present effort is to include physically relevant parameters to the original Natori's model to match</s>
+          <s>The goal of the present effort is to include physically relevant parameters to the original Natori's model to match experimental I D − V D characteristics.</s>
         </p>
-        <formula xml:id="formula_2">experimental I D − V D characteristics.</formula>
         <p>
           <s>The original model, however, serves as a benchmark for the highest current that could be achieved for a given technology node.</s>
           <s>For example, the degree of ballisticity that one can extract from it is an extremely useful parameter for assessing the scaling potential of transistors.</s>
@@ -247,17 +239,13 @@
           <s>This point is at the top of the band near the source, as we discuss below.</s>
           <s>At the top of the source, we must carefully define the quasi-Fermi levels which may be different from those of the source/drain contacts, as we discuss in the Appendix in more detail.</s>
           <s>When these parameters are properly accounted for, we show that a simple two-parameter quasi-ballistic model for nanoscale MOSFETs can be developed that matches experimental data.</s>
-          <s>Our results show that T(E) need not depend on the bias, unlike the results from previous work <ref target="#b4" type="bibr">5,</ref>
-            <ref target="#b7" type="bibr">[8]</ref>
+          <s>Our results show that T(E) need not depend on the bias, unlike the results from previous work 5, <ref target="#b7" type="bibr">[8]</ref>
             <ref target="#b8" type="bibr">[9]</ref>
             <ref target="#b9" type="bibr">[10]</ref>
             <ref target="#b10" type="bibr">[11]</ref>
             <ref target="#b11" type="bibr">[12]</ref> .</s>
-          <s>We show that this discrepancy fundamentally arises from the use of non-local parameters to determine the net occupancy of</s>
+          <s>We show that this discrepancy fundamentally arises from the use of non-local parameters to determine the net occupancy of M(E).</s>
         </p>
-      </div>
-      <div>
-        <head>M(E).</head>
       </div>
       <div>
         <head>A Two-Parameter Ballistic Model</head>
@@ -277,7 +265,7 @@
           <s>Thus, carrier scattering is significantly reduced but is not entirely absent.</s>
           <s>Most importantly, mobility no longer becomes a valid parameter.</s>
           <s>Instead, transmission (T) captures the effect of these scattering processes on the drain current.</s>
-          <s>The most natural place to assess the value for T is at the peak of the band diagram <ref target="#b7" type="bibr">8</ref> , as we show in <ref target="#fig_1" type="figure">Fig. 2</ref> .</s>
+          <s>The most natural place to assess the value for T is at the peak of the band diagram 8 , as we show in <ref target="#fig_1" type="figure">Fig. 2</ref> .</s>
           <s>This is because the carrier density there is controlled by the gate and the lateral field is small.</s>
           <s>This region is close to the source and in near equilibrium with the source quasi-Fermi level.</s>
           <s>Thus the source quasi-Fermi level determines the occupancy of the right-moving carriers.</s>
@@ -302,22 +290,20 @@
         </p>
         <p>
           <s>Here, we show that device data can be modeled accurately using a model that does not require T to vary with V D .</s>
-          <s>In the simplest form, T is given by Eq. <ref target="#b1" type="bibr">(2)</ref> .</s>
-        </p>
-        <formula xml:id="formula_3">λ λ = + T L (2) = − − I W TI F u F u v / ( ( ) ( ))<label>(3)</label>
-        </formula>
-        <formula xml:id="formula_4">D d 0 1/2 1/2</formula>
-        <p>
-          <s>Eq. <ref target="#formula_3" type="formula">(3)</ref>
-            <ref target="#formula_3" type="formula">(3)</ref> ).</s>
-          <s>The first term in (3) captures the current in the channel due to right-moving carriers and the second term captures the current due to left-moving carriers.</s>
+          <s>In the simplest form, T is given by Eq. <ref type="formula">(2)</ref> .</s>
+          <s>
+            <ref type="formula">(3)</ref> ).</s>
+          <s>The first term in <ref type="formula">(3)</ref> captures the current in the channel due to right-moving carriers and the second term captures the current due to left-moving carriers.</s>
           <s>W is the width of the device and I 0 is determined by material parameters.</s>
           <s>F 1/2 is the half order Fermi integral that can be evaluated numerically.</s>
           <s>The difference in the two F 1/2 functions accounts for the nonequilibrium carrier density in the channel under bias.</s>
-          <s>As stated earlier, the most natural place to assess the transport is at the top of the conduction band, as shown in <ref target="#fig_1" type="figure">Fig. 2</ref> 1,4,13 .</s>
+          <s>As stated earlier, the most natural place to assess the transport is at the top of the conduction band, as shown in <ref target="#fig_1" type="figure">Fig. 2</ref>
+            <ref type="bibr">1,4,13 .</ref>
+          </s>
           <s>Here v d , instead of the actual drain bias V D , is used to determine the occupancy of the left-moving carriers at the top of the source.</s>
           <s>We define v d empirically as a fraction Δ of the drain bias V D .</s>
         </p>
+        <formula xml:id="formula_1">λ λ = + T L (2) = − − I W TI F u F u v / ( ( ) ( )) (3) D d 0 1/2 1/2 Eq. (3) is the I D − V D characteristics</formula>
         <p>
           <s>T is a fitting parameter that we extract for different length devices.</s>
           <s>Due to scattering, the ON current of a MOSFET is less than the ballistic ON-current by the fraction T &lt; 1 that depends on the relative values of the channel length L and λ.</s>
@@ -329,10 +315,8 @@
           <s>This is the origin of the unrealistically small R ON predicted in the original Natori's model, as we show in <ref target="#fig_0" type="figure">Fig. 1</ref> and discussed elsewhere <ref target="#b13" type="bibr">14</ref> .</s>
           <s>We show below that by including Δ &lt; 1, we can achieve more realistic R ON values.</s>
         </p>
-      </div>
-      <div>
-        <head>Effective Drain-Quasi Fermi Level (Δ).</head>
         <p>
+          <s>Effective Drain-Quasi Fermi Level (Δ).</s>
           <s>In our model, we use Δ as a fitting parameter to account for the longitudinal electric field in the channel.</s>
           <s>This field modifies the quasi-Fermi level of the left-moving carriers at the top of the source.</s>
           <s>Since the electrical field is small there, the right moving carriers can be assumed to be in near equilibrium with the source contact.</s>
@@ -347,6 +331,8 @@
           <s>To account for the longitudinal field, we define E fd ′ that results in a larger occupancy of the left-moving modes at the top of the source.</s>
           <s>Here, E fd ′ must be above E fd , as depicted in <ref target="#fig_1" type="figure">Fig. 2</ref> , and determines the population of the left-moving carriers at the top of the band.</s>
           <s>Even if E fs is not strictly in equilibrium with the source contact, the band bending implies that E fd ′ &gt; E fd at the top of the band <ref target="#b5" type="bibr">6</ref> .</s>
+        </p>
+        <p>
           <s>Just as E fd needs to be defined locally, so must T(E).</s>
           <s>To elucidate, we show the full effective mass dispersion relationship at the peak of the band in <ref target="#fig_1" type="figure">Fig. 2(b)</ref> .</s>
           <s>Since the lateral field at the top of the source is small, the rightand left-moving carriers are expected to be well defined by local quasi-Fermi levels E fs and E fd ′, respectively.</s>
@@ -357,10 +343,9 @@
         </p>
         <p>
           <s>We now estimate E fd ′ to model experimental data.</s>
-          <s>
-            <ref target="#fig_1" type="figure">From Fig. 2</ref> , we have elected to use</s>
+          <s>From <ref target="#fig_1" type="figure">Fig. 2</ref> , we have elected to use</s>
         </p>
-        <formula xml:id="formula_5">Δ = ⋅ v V d D</formula>
+        <formula xml:id="formula_2">Δ = ⋅ v V d D</formula>
         <p>
           <s>where Δ is a constant determined by fitting to experimental data.</s>
           <s>Thus, we have E fd ′ = −q v d .</s>
@@ -385,38 +370,41 @@
           <s>The devices have channel lengths that range from L = 50 nm to 3 µm, with width W = 1 µm for all devices.</s>
           <s>The MOSFETs have an equivalent SiO 2 gate thickness of 2 nm.</s>
           <s>We determined the fitting parameters using a least-squares minimization.</s>
-        </p>
-        <p>
-          <s>R-squared Goodness of Fit.</s>
-          <s>In <ref target="#fig_2" type="figure">Fig. 3(a,b)</ref> , we show the results from L = 1 µm and 60 nm MOSFETs.</s>
-          <s>For both devices, we fit the data using a simple long-channel model given in Eq. (4) and the modified ballistic model discussed in section III.</s>
+          <s>
+            <ref target="#fig_3" type="figure">Fig. 3(a,b)</ref> , we show the results from L = 1 µm and 60 nm MOSFETs.</s>
+          <s>For both devices, we fit the data using a simple long-channel model given in Eq. <ref target="#b3" type="bibr">(4)</ref> and the modified ballistic model discussed in section III.</s>
           <s>We, however, do not expect the long-channel parameters we extract for the L = 60 nm device to be physical.</s>
           <s>Similarly, we do not expect the parameters from the quasi-ballistic model to be valid for the L = 1 µm device.</s>
           <s>This exercise, however, will help to assess the length scale at which one model is more accurate over the other.</s>
         </p>
-        <formula xml:id="formula_6">= − − µ I W C L V V V V / [ ( ) /2] (4) D ox e G T D D 2</formula>
+      </div>
+      <div>
+        <head>R-squared Goodness of Fit. In</head>
+        <formula xml:id="formula_3">= − − µ I W C L V V V V / [ ( ) /2] (4) D ox e G T D D 2</formula>
         <p>
-          <s>For the long-channel Eq. <ref type="formula">(4)</ref> , V T and electron mobility µ e are fitting parameters.</s>
+          <s>For the long-channel Eq. (4), V T and electron mobility µ e are fitting parameters.</s>
           <s>Beyond the linear region, we assume a constant current given by the saturation current determined from Eq. 4 in the usual way.</s>
           <s>We treat the two models on an equal footing by initially allowed V T to vary for both models, although we expect significant discrepancies in the results from the two models and expect some of the parameters to be not physical.</s>
         </p>
         <p>
-          <s>We confirmed a cross-over in the R-squared goodness-of-fit in <ref target="#fig_3" type="figure">Fig. 4</ref> , which is plotted for the two models as a function of channel length.</s>
+          <s>We confirmed a cross-over in the R-squared goodness-of-fit in <ref target="#fig_4" type="figure">Fig. 4</ref> , which is plotted for the two models as a function of channel length.</s>
           <s>A cross-over in R-squared values suggests that there is a length scale below which the ballistic description is the more appropriate one.</s>
         </p>
         <p>
-          <s>For the device with L = 1 µm in <ref target="#fig_2" type="figure">Fig. 3(a)</ref> , both models result in a good fit, provided that V T is allowed to vary.</s>
-          <s>However, the long-channel model is the correct model for this channel length and results in a better fit as measured by the R-squared goodness-of-fit shown in <ref target="#fig_3" type="figure">Fig. 4</ref> .</s>
+          <s>For the device with L = 1 µm in <ref target="#fig_3" type="figure">Fig. 3(a)</ref> , both models result in a good fit, provided that V T is allowed to vary.</s>
+          <s>However, the long-channel model is the correct model for this channel length and results in a better fit as measured by the R-squared goodness-of-fit shown in <ref target="#fig_4" type="figure">Fig. 4</ref> .</s>
           <s>The long-channel mobility we extract is µ e = 151 cm 2 /Vs.</s>
           <s>The quasi-ballistic model for this length device gives a reasonably good fit, albeit with a wrong V T .</s>
           <s>The threshold voltage is over 0.2 V above that of the long channel model, which is the correct one as determined by direct measurement (see the figure captions for the extracted parameters).</s>
         </p>
         <p>
-          <s>For the L = 60 nm device in <ref target="#fig_2" type="figure">Fig. 3(b)</ref> , we observe that the quasi-ballistic model provides a far better fit compared to the long-channel model.</s>
+          <s>For the L = 60 nm device in <ref target="#fig_3" type="figure">Fig. 3(b)</ref> , we observe that the quasi-ballistic model provides a far better fit compared to the long-channel model.</s>
           <s>The long-channel model requires unreasonably low values for both µ e and V T , which are not physical <ref target="#b14" type="bibr">15,</ref>
             <ref target="#b15" type="bibr">16</ref> .</s>
+        </p>
+        <p>
           <s>In order to determine the channel length below which the quasi-ballistic model would be more appropriate, both the long channel and the quasi-ballistic fits were performed for all channel lengths and the goodness of fit parameter, R-squared, was plotted as a function of length for both fits.</s>
-          <s>This is shown in <ref target="#fig_3" type="figure">Fig. 4</ref> .</s>
+          <s>This is shown in <ref target="#fig_4" type="figure">Fig. 4</ref> .</s>
           <s>We see from this figure that a crossover in R-squared occurs around L = 500 nm, although this is not the demarcation length for quasi-ballistic transport since we allowed V T to vary.</s>
           <s>Indeed, we expect each model to overestimate the range in which the underlying physics is valid because we allowed V T to vary.</s>
           <s>However, there is a clear confirmation that the modified quasi-ballistic model is a better one for highly scaled devices below a certain channel length.</s>
@@ -425,10 +413,12 @@
         <p>
           <s>We thus conclude that the addition of only two parameters to the purely ballistic model from Natori can dramatically improve the I D − V D characteristics for nanoscale transistors, which we demonstrate for the first time.</s>
         </p>
+      </div>
+      <div>
+        <head>Experimental Determination of T and Δ.</head>
         <p>
-          <s>Experimental Determination of T and Δ.</s>
-          <s>To better support the quasi-ballistic model, we examine the length dependence of transmission T. In <ref target="#fig_4" type="figure">Fig. 5</ref> , we fix V T and examine devices over a narrower range of length.</s>
-          <s>From the plot of transmission probability vs. length of all device lengths ranging from 60 nm to 0.5 µm, it was observed that only the devices with L &lt; 100 nm followed the trend given by Eq. (2).</s>
+          <s>To better support the quasi-ballistic model, we examine the length dependence of transmission T. In <ref target="#fig_5" type="figure">Fig. 5</ref> , we fix V T and examine devices over a narrower range of length.</s>
+          <s>From the plot of transmission probability vs. length of all device lengths ranging from 60 nm to 0.5 µm, it was observed that only the devices with L &lt; 100 nm followed the trend given by Eq. <ref target="#b1" type="bibr">(2)</ref> .</s>
           <s>To extract the transmission probability, the threshold voltage was fixed to 0.4 V, which was determined experimentally for these devices, and a two-parameter fit was performed.</s>
           <s>Fixing V T did not affect the quality of the fit for devices with L &lt; 100 nm.</s>
         </p>
@@ -436,17 +426,16 @@
           <s>From the fit, we extract λ = 19 nm.</s>
           <s>This implies that the quasi-ballistic model would be more applicable below 100 nm.</s>
           <s>Therefore, according to the trend in transmission probability with length, a more precise estimate of the demarcation length below which the devices enter the quasi-ballistic regime of transport is around 100 nm.</s>
-          <s>This demarcation length is further supported by other analysis we provide in <ref target="#fig_5" type="figure">Figs 6 and 7</ref> .</s>
-          <s>Our estimate for λ is significantly higher than those estimated previously <ref target="#b16" type="bibr">17</ref> .</s>
+          <s>This demarcation length is further supported by other analysis we provide in Figs 6 and 7. Our estimate for λ is significantly higher than those estimated previously <ref target="#b16" type="bibr">17</ref> .</s>
           <s>This is consistent with the fact that in our model the inversion charge that contributes to left-moving carriers persist to higher V D .</s>
           <s>The result is that fewer carriers contribute to the net current at a given V G compared to earlier models.</s>
           <s>Thus, they must be moving with longer mean scattering length.</s>
         </p>
         <p>
-          <s>We plot the extracted Δ in <ref target="#fig_5" type="figure">Fig. 6</ref> for the devices shown in <ref target="#fig_4" type="figure">Fig. 5</ref> .</s>
+          <s>We plot the extracted Δ in <ref target="#fig_6" type="figure">Fig. 6</ref> for the devices shown in <ref target="#fig_5" type="figure">Fig. 5</ref> .</s>
           <s>The striking result is that Δ is largely independent of channel length.</s>
-          <s>Therefore, the main parameter that changes with length is T. The results of <ref target="#fig_5" type="figure">Fig. 6</ref> strongly suggests that one cannot attribute Δ to an external series resistance, one possible extrinsic parameter that could affect Δ.</s>
-          <s>This is because a series resistance would create a length-dependent voltage drop and cause Δ to decrease with reduced channel length (i.e., with more current), not one that is constant with length as seen in <ref target="#fig_5" type="figure">Fig. 6</ref> .</s>
+          <s>Therefore, the main parameter that changes with length is T. The results of <ref target="#fig_6" type="figure">Fig. 6</ref> strongly suggests that one cannot attribute Δ to an external series resistance, one possible extrinsic parameter that could affect Δ.</s>
+          <s>This is because a series resistance would create a length-dependent voltage drop and cause Δ to decrease with reduced channel length (i.e., with more current), not one that is constant with length as seen in <ref target="#fig_6" type="figure">Fig. 6</ref> .</s>
           <s>Although we cannot completely rule out the effects from source and drain series resistance, their effects appear to be minimal.</s>
         </p>
         <p>
@@ -455,19 +444,17 @@
           <s>There, we show that in a quasi-ballistic conductor Δ and T are the same.</s>
           <s>In a nanoscale MOSFET, the two parameters are decoupled since the gate also influences Δ.</s>
         </p>
-      </div>
-      <div>
-        <head>Ballistic Contact</head>
         <p>
-          <s>Resistance.</s>
+          <s>Ballistic Contact Resistance.</s>
           <s>We further demonstrate the significance of T with length by extrapolating the purely ballistic resistance value by setting T = 1.</s>
-          <s>
-            <ref target="#fig_6" type="figure">In Fig. 7</ref> , the black data points represent the channel give us the contact resistance in the limit of no scattering.</s>
+          <s>In <ref target="#fig_7" type="figure">Fig. 7</ref> , the black data points represent the channel resistance, R ON , of the measured devices.</s>
+          <s>R ON is the output resistance obtained experimentally from the I D − V D data at a low value of V D (0.04 V) and V G = 1.2 V for L &lt; 100 nm devices.</s>
+          <s>Extrapolating this linear graph to L = 0 should give us the contact resistance in the limit of no scattering.</s>
           <s>This would be proportional to the quantum of resistance (1/Gc) or the contact resistance that arises due to the difference in the number of modes available between the contacts and the channel, modified by the longitudinal field.</s>
           <s>The contact resistance will be the lowest achievable resistance no matter how advanced the technology for this gate voltage.</s>
           <s>This extrapolated value is about 170 Ω-µm, or about 85 Ω-µm per contact.</s>
           <s>The theoretical minimum value of R ON can also be calculated for each of the four devices by setting the transmission probability to unity (T = 1).</s>
-          <s>These are represented by the red data points in <ref target="#fig_6" type="figure">Fig. 7</ref> .</s>
+          <s>These are represented by the red data points in <ref target="#fig_7" type="figure">Fig. 7</ref> .</s>
           <s>They are largely independent of length and average to a value of 154 Ω-µm (or 77 Ω-µm per contact), very close to the value obtained experimentally.</s>
           <s>The similarity in the two values provides important implications on the limit of R ON that can be achieved for our planar devices.</s>
         </p>
@@ -481,7 +468,7 @@
             <ref target="#b20" type="bibr">[21]</ref>
             <ref target="#b21" type="bibr">[22]</ref> , resulting in a flatter band profile than the one shown in <ref target="#fig_1" type="figure">Fig. 2</ref> .</s>
           <s>Therefore, we would expect the theoretical R ON to be smaller for a FinFET resulting from a larger Δ.</s>
-          <s>For the planar geometry, the implication from <ref target="#fig_6" type="figure">Fig. 7</ref> is that the transition to the purely ballistic R ON will take place at L ~ λ, as depicted by the solid curve near L = 19 nm.</s>
+          <s>For the planar geometry, the implication from <ref target="#fig_7" type="figure">Fig. 7</ref> is that the transition to the purely ballistic R ON will take place at L ~ λ, as depicted by the solid curve near L = 19 nm.</s>
         </p>
         <p>
           <s>Finally, we note that including the drain-induced barrier lowering (DIBL) in our model does not qualitatively change the outcome of the results, although the fit to that data improves somewhat.</s>
@@ -520,26 +507,31 @@
         <figDesc>Figure 2. (a) Band profile along the channel of a quasi-ballistic transistor depicting the effective quasi-Fermi level E fd ′ for the left-moving electrons at the source end. The factor Δ measures the fraction of E fd that appears at the top of the source. (b) The full dispersion relation at the top of the band showing that the reflected carriers have equal states as the transmitting carriers to which to reflect, which implies that 1-T is bias independent.</figDesc>
       </figure>
       <figure xml:id="fig_2">
-        <head>Figure 3 .</head>
-        <label>3</label>
-        <figDesc>Figure 3. I D − V D characteristics of n-channel MOSFETs for (a) L = 1 µm and (b) L = 60 nm. The gate voltage is stepped from 0 to 1.2 V in 0.3 V increment. For each device, we use both a long-channel model and the quasi-ballistic model to fit the data. To treat both models on an equal footing, we allow V T to vary. (a) From the long-channel model, we find µ e = 151 cm 2 /Vs and V T = 0.23 V; from the quasi-ballistic model, we have T = 0.05 and V T = 0.44 V. (b) From the long-channel model, we have µ e = 46 cm</figDesc>
+        <head>ScieNtific</head>
+        <label/>
+        <figDesc>REPORTS | (2019) 9:525 | DOI:10.1038/s41598-018-36692-7</figDesc>
       </figure>
       <figure xml:id="fig_3">
+        <head>Figure 3 .</head>
+        <label>3</label>
+        <figDesc>Figure 3. I D − V D characteristics of n-channel MOSFETs for (a) L = 1 µm and (b) L = 60 nm. The gate voltage is stepped from 0 to 1.2 V in 0.3 V increment. For each device, we use both a long-channel model and the quasi-ballistic model to fit the data. To treat both models on an equal footing, we allow V T to vary. (a) From the long-channel model, we find µ e = 151 cm 2 /Vs and V T = 0.23 V; from the quasi-ballistic model, we have T = 0.05 and V T = 0.44 V. (b) From the long-channel model, we have µ e = 46 cm 2 /Vs V T = 0.19 V; from the quasi-ballistic model, we have T = 0.22 and V T = 0.38 V.</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
         <head>Figure 4 .</head>
         <label>4</label>
         <figDesc>Figure 4. R-squared goodness of fit vs. length for long channel model (red) and quasi-ballistic model (black) treated equally by allowing V T to vary. A crossover is seen near L = 0.5 µm.</figDesc>
       </figure>
-      <figure xml:id="fig_4">
+      <figure xml:id="fig_5">
         <head>Figure 5 .</head>
         <label>5</label>
         <figDesc>Figure 5. Transmission probability T vs. Length determined by fitting the I D − V D curves to the modified Natori's model. The solid curve is a fit to Eq. (2), yielding λ = 19 nm.</figDesc>
       </figure>
-      <figure xml:id="fig_5">
+      <figure xml:id="fig_6">
         <head>Figure 6 .</head>
         <label>6</label>
         <figDesc>Figure 6. Extracted Δ vs length (L) from the fit for the devices examined in Fig. 5.</figDesc>
       </figure>
-      <figure xml:id="fig_6">
+      <figure xml:id="fig_7">
         <head>Figure 7 .</head>
         <label>7</label>
         <figDesc>Figure 7. Experimental channel resistance (R ON ) measured at V D = 0.04 V and V G = 1.2 V, and purely ballistic R ON by setting T = 1 at the same bias. The solid curve is the expected transition to the purely ballistic R ON as L is reduced below λ = 19 nm.</figDesc>
@@ -547,10 +539,9 @@
       <figure type="table" validated="false" xml:id="tab_1">
         <head/>
         <label/>
-        <figDesc>is the I D − V D characteristics given by Natori (Eq. 22 in ref. 1 ), modified by T and v d . (We note that v d needs to be normalized to the thermal voltage before using it in Eq.</figDesc>
+        <figDesc>given by Natori (Eq. 22 in ref. 1 ), modified by T and v d . (We note that v d needs to be normalized to the thermal voltage before using it in Eq.</figDesc>
         <table/>
       </figure>
-      <note n="2" place="foot">/Vs V T = 0.19 V; from the quasi-ballistic model, we have T = 0.22 and V T = 0.38 V.</note>
       <note place="foot">© The Author(s) 2019</note>
     </body>
     <back>
@@ -585,9 +576,9 @@
           <p>
             <s>Supplementary information accompanies this paper at https://doi.org/10.1038/s41598-018-36692-7.</s>
           </p>
-          <p>
-            <s>Competing Interests: The authors declare no competing interests.</s>
-          </p>
+        </div>
+        <div>
+          <head>Competing Interests: The authors declare no competing interests.</head>
           <p>
             <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
           </p>
@@ -673,7 +664,7 @@
                   <surname>Antoniadis</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/ted.2009.2024022</idno>
+              <idno type="DOI">10.1109/ted.2009.2024022</idno>
               <ptr target="https://doi.org/10.1109/ted.2009.2024022"/>
             </analytic>
             <monogr>
@@ -732,7 +723,7 @@
                   <surname>Antoniadis</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/ted.2013.2283253</idno>
+              <idno type="DOI">10.1109/ted.2013.2283253</idno>
               <ptr target="https://doi.org/10.1109/ted.2013.2283253"/>
             </analytic>
             <monogr>
@@ -864,7 +855,7 @@
                   <surname>Selmi</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/ted.2006.876387</idno>
+              <idno type="DOI">10.1109/ted.2006.876387</idno>
               <ptr target="https://doi.org/10.1109/ted.2006.876387"/>
             </analytic>
             <monogr>
@@ -885,7 +876,7 @@
                   <surname>Barral</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/ted.2008.2011681</idno>
+              <idno type="DOI">10.1109/ted.2008.2011681</idno>
               <ptr target="https://doi.org/10.1109/ted.2008.2011681"/>
             </analytic>
             <monogr>
@@ -943,7 +934,7 @@
                   <surname>Natori</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/led.2002.803765</idno>
+              <idno type="DOI">10.1109/led.2002.803765</idno>
               <ptr target="https://doi.org/10.1109/led.2002.803765"/>
             </analytic>
             <monogr>
@@ -965,7 +956,7 @@
                   <surname>Shur</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/led.2002.802679</idno>
+              <idno type="DOI">10.1109/led.2002.802679</idno>
               <ptr target="https://doi.org/10.1109/led.2002.802679"/>
             </analytic>
             <monogr>
@@ -1007,7 +998,7 @@
                   <surname>Antoniadis</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/ted.2013.2294380</idno>
+              <idno type="DOI">10.1109/ted.2013.2294380</idno>
               <ptr target="https://doi.org/10.1109/ted.2013.2294380"/>
             </analytic>
             <monogr>

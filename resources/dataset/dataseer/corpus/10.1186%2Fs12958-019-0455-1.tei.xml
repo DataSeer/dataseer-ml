@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:14+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T21:07+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -202,8 +202,11 @@
           <s>Data management and all statistical analyses were performed using SAS 9.3 (SAS Institute, Inc., Cary, NC).</s>
           <s>A two-sided p-value of &lt; 0.05 was used to determine statistical significance.</s>
         </p>
+      </div>
+      <div>
+        <head>Results</head>
         <p>
-          <s>Results 1127 gonadotropin-stimulated IUI cycles were completed between 2012 to 2015.</s>
+          <s>1127 gonadotropin-stimulated IUI cycles were completed between 2012 to 2015.</s>
           <s>8 cycles were excluded because peak EST was not measured within 36 h of LH surge or ovulation trigger.</s>
           <s>In addition, 34 cycles were removed from the study due to lack of EST measurements and 20 were removed due to lack of follow-up on pregnancy outcome.</s>
         </p>
@@ -215,7 +218,7 @@
           <s>cycles were twin gestations as defined by the presence of two gestational sacs on TVUS, with one additional cycle resulting in a triplet gestation.</s>
         </p>
         <p>
-          <s>The range of the peak EST was from 5 mm to 20 mm, and the distribution of peak EST was similar between the clinically pregnant and negative outcome cycles <ref target="#fig_1" type="figure">(Fig. 1)</ref> .</s>
+          <s>The range of the peak EST was from 5 mm to 20 mm, and the distribution of peak EST was similar between the clinically pregnant and negative outcome cycles <ref target="#fig_1" type="figure">(Fig. 1</ref> ).</s>
           <s>No pregnancies occurred when peak EST was &lt; 5.1 mm or &gt; 15 mm.</s>
         </p>
         <p>
@@ -236,8 +239,12 @@
           <s>The rates of both clinical pregnancy and conception increased with ascending peak EST category up to 14 mm (trend test: p &lt; 0.04), after which they decreased <ref target="#fig_2" type="figure">(Fig. 2)</ref> .</s>
           <s>This suggests an 'n' shaped or nonlinear relationship between the rate of both outcomes and peak EST.</s>
           <s>This distribution was somewhat unexpected, as previous studies had focused on the detrimental effect of decreased EST on cycle outcome, and not when the lining was thickened.</s>
-          <s>
-            <ref target="#tab_2" type="table">(Table 3)</ref> .</s>
+          <s>To further delineate this, piecewise generalized linear regression models for the outcomes were conducted, adjusting for potential confounders.</s>
+          <s>The results showed that the odds of clinical pregnancy increased by 38% (=exp.</s>
+          <s>(0.32)-1, p = 0.06) when peak EST increased from a category group to the next higher one before EST &lt; 14 mm, while the odds decreased by 60% (=exp.(−</s>
+          <s>0.94)-1, p = 0.17) when peak EST decreased from group 3 to group 4. The odds of conception increased by 44% (exp(0.37)-1,</s>
+          <s>p = 0.02) when the EST increased from a category to the next higher one before EST &lt; 14 mm, and the odds of conception decreased by 72% (=exp.(−</s>
+          <s>1.27)-1, p = 0.06) when the EST decreased from group 3 to group 4 <ref target="#tab_2" type="table">(Table 3)</ref> .</s>
         </p>
         <p>
           <s>To be conservative, we also conducted a multiple logistic regression analysis adjusted for potential confounders to compare both outcomes among the four peak EST groups.</s>
@@ -301,11 +308,7 @@
         </p>
         <p>
           <s>In conclusion, peak EST has a non-linear relationship with conception outcomes in gonadotropin-stimulated IUI cycles.</s>
-          <s>There is also a trend towards increasing The adjusted OR (95%CI) were determined based on Multiple logistic regression model for the outcomes with GEE approach to account for the clustering of cycles for the same patient For both models, the potential confounders adjusted for were age, dominant follicles, motile sperm count, and peak estrogen Group 1: peak EST &lt; 7 (mm); Group 2: peak EST: 7-10.4 (mm); peak EST: 10.5-13.9</s>
-          <s>(mm); Group 4: peak EST &gt; =14 (mm)</s>
-        </p>
-        <p>
-          <s>clinical pregnancy rates with increasing peak EST, up to 14 mm, beyond which pregnancy rates diminish.</s>
+          <s>There is also a trend towards increasing clinical pregnancy rates with increasing peak EST, up to 14 mm, beyond which pregnancy rates diminish.</s>
           <s>Though our study did not have a high amount of cycles in these groups, there is an indication that both extremes of EST are associated with lower odds of both clinical pregnancy and conception in FSH-IUI cycles.</s>
           <s>This non-linear relationship makes it challenging to use peak EST in isolation as a prognostic factor of IUI success.</s>
           <s>We have demonstrated from univariate and ROC analysis that absolute EST measurement is a poor predictor of outcome.</s>
@@ -527,7 +530,7 @@ cycle outcome
       <figure type="table" validated="false" xml:id="tab_2">
         <head>Table 3</head>
         <label>3</label>
-        <figDesc>Comparison of outcomes among Peak EST groups for all patients treated**Multivariable piecewise linear model with change point at peak EST = 14 ***:</figDesc>
+        <figDesc>Comparison of outcomes among Peak EST groups for all patients treated**Multivariable piecewise linear model with change point at peak EST = 14 ***: The adjusted OR (95%CI) were determined based on Multiple logistic regression model for the outcomes with GEE approach to account for the clustering of cycles for the same patient For both models, the potential confounders adjusted for were age, dominant follicles, motile sperm count, and peak estrogen Group 1: peak EST &lt; 7 (mm); Group 2: peak EST: 7-10.4 (mm); peak EST: 10.5-13.9 (mm); Group 4: peak EST &gt; =14 (mm)</figDesc>
         <table>Models: 
 </table>
       </figure>
@@ -538,6 +541,13 @@ cycle outcome
           <head>Acknowledgements</head>
           <p>
             <s>The authors would like to thank the staff at Mount Sinai Fertility for their assistance and support.</s>
+          </p>
+        </div>
+        <div>
+          <head>Funding</head>
+          <p>
+            <s>This study was supported by a Comprehensive Research Experience for Medical Students Research Stipend and the Department of Obstetrics and Gynecology Chair's Summer Student Program at the University of Toronto.</s>
+            <s>The funding body did not have a role in the design, analysis, interpretation, or any other component of this study.</s>
           </p>
         </div>
         <div>
@@ -554,7 +564,19 @@ cycle outcome
             <s>XYY performed the statistical analyses and participated in the interpretation of results.</s>
             <s>CC conceived of the research question, designed the study and revised the manuscript.</s>
             <s>All authors gave final approval for the final version to be published.</s>
-            <s>Ethics approval and consent Ethical approval was granted through the Mount Sinai Hospital Research Ethics Board.</s>
+          </p>
+        </div>
+        <div>
+          <head>Author information CC is a Clinician Investigator at Mount Sinai Hospital and an Assistant</head>
+          <p>
+            <s>Professor of Obstetrics and Gynecology at the University of Toronto.</s>
+            <s>She is a Fellow of the Royal College of Surgeons and Physicians of Canada, with dual specialization in Obstetrics and Gynecology and REI.</s>
+          </p>
+        </div>
+        <div>
+          <head>Ethics approval and consent</head>
+          <p>
+            <s>Ethical approval was granted through the Mount Sinai Hospital Research Ethics Board.</s>
             <s>Consent to participate is not applicable.</s>
           </p>
         </div>
@@ -575,9 +597,9 @@ cycle outcome
           <p>
             <s>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
           </p>
-        </div>
-        <div>
-          <head>Author details</head>
+          <p>
+            <s>Author details</s>
+          </p>
         </div>
       </div>
       <div type="references">

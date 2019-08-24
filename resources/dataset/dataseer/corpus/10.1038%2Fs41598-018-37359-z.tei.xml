@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T05:36+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T20:28+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -152,18 +152,14 @@
           <p>
             <s>Auditory stimulus reconstruction is an inverse mapping technique that finds the best approximation of the acoustic stimulus from the population of evoked neural activity.</s>
             <s>Stimulus reconstruction was originally proposed as a method to study the representational properties of the neural population 1-5 because this method enables the intuitive interpretation of the neural responses in the stimulus domain.</s>
-            <s>Reconstructing speech from the neural responses recorded from the human auditory cortex 6 , however, opens up the possibility of using this technique as a speech brain-computer interface (BCI) to restore speech in severely paralyzed patients (for a review, see these references <ref target="#b6" type="bibr">[7]</ref>
-              <ref target="#b7" type="bibr">[8]</ref>
-              <ref target="#b8" type="bibr">[9]</ref> ).</s>
-            <s>The ultimate goal of a speech neuroprosthesis is to create a direct communication pathway to the brain with the potential to benefit patients who have lost their ability to speak, which can result from a variety of clinical disorders leading to conditions such as locked-in syndrome <ref target="#b9" type="bibr">10,</ref>
-              <ref target="#b10" type="bibr">11</ref> .</s>
+            <s>Reconstructing speech from the neural responses recorded from the human auditory cortex 6 , however, opens up the possibility of using this technique as a speech brain-computer interface (BCI) to restore speech in severely paralyzed patients (for a review, see these references 7-9 ).</s>
+            <s>The ultimate goal of a speech neuroprosthesis is to create a direct communication pathway to the brain with the potential to benefit patients who have lost their ability to speak, which can result from a variety of clinical disorders leading to conditions such as locked-in syndrome 10,11 .</s>
             <s>The practicality of using speech decoding methods in a neuroprosthetic device to restore speech communication was further supported by studies showing successful decoding of speech during both overt and covert (imagined) conditions <ref target="#b11" type="bibr">[12]</ref>
               <ref target="#b12" type="bibr">[13]</ref>
               <ref target="#b13" type="bibr">[14]</ref>
               <ref target="#b14" type="bibr">[15]</ref>
               <ref target="#b15" type="bibr">[16]</ref> .</s>
-            <s>These studies showed successful decoding of imagined articulations <ref target="#b12" type="bibr">13,</ref>
-              <ref target="#b13" type="bibr">14</ref> , imagined word repetition <ref target="#b14" type="bibr">15</ref> , and silent reading of speech 16 from auditory cortical areas, including the superior temporal gyrus (STG).</s>
+            <s>These studies showed successful decoding of imagined articulations 13,14 , imagined word repetition 15 , and silent reading of speech 16 from auditory cortical areas, including the superior temporal gyrus (STG).</s>
             <s>While previous studies have established the feasibility of reconstructing speech from neural data, the quality of the reconstructed audio so far has been too low to merit subjective evaluation.</s>
             <s>For this reason, the reconstructed sounds in previous studies have been evaluated only using objective measures such as correlation or recognition accuracy <ref target="#b2" type="bibr">3,</ref>
               <ref target="#b5" type="bibr">6,</ref>
@@ -204,7 +200,23 @@
             <ref target="#b13" type="bibr">[14]</ref>
             <ref target="#b14" type="bibr">[15]</ref>
             <ref target="#b15" type="bibr">[16]</ref> .</s>
-          <s>These studies showed successful decoding of imagined articulations SCIENTIFIC RepoRTs | (2019) 9:874 | DOI:10.1038/s41598-018-37359-z</s>
+          <s>These studies showed successful decoding of imagined articulations <ref target="#b12" type="bibr">13,</ref>
+            <ref target="#b13" type="bibr">14</ref> , imagined word repetition <ref target="#b14" type="bibr">15</ref> , and silent reading of speech <ref target="#b15" type="bibr">16</ref> from auditory cortical areas, including the superior temporal gyrus (STG).</s>
+          <s>While previous studies have established the feasibility of reconstructing speech from neural data, the quality of the reconstructed audio so far has been too low to merit subjective evaluation.</s>
+          <s>For this reason, the reconstructed sounds in previous studies have been evaluated only using objective measures such as correlation or recognition accuracy <ref target="#b2" type="bibr">3,</ref>
+            <ref target="#b5" type="bibr">6,</ref>
+            <ref target="#b7" type="bibr">8,</ref>
+            <ref target="#b12" type="bibr">13,</ref>
+            <ref target="#b16" type="bibr">[17]</ref>
+            <ref target="#b17" type="bibr">[18]</ref>
+            <ref target="#b18" type="bibr">[19]</ref>
+            <ref target="#b19" type="bibr">[20]</ref>
+            <ref target="#b20" type="bibr">[21]</ref>
+            <ref target="#b21" type="bibr">[22]</ref>
+            <ref target="#b22" type="bibr">[23]</ref>
+            <ref target="#b23" type="bibr">[24]</ref>
+            <ref target="#b24" type="bibr">[25]</ref> .</s>
+          <s>The low quality of the reconstructed sound is currently a major limiting factor in actualizing speech BCI systems <ref target="#b6" type="bibr">7</ref> .</s>
         </p>
         <p>
           <s>The acoustic representation of the stimulus that is used as the decoding target can significantly impact the quality and accuracy of reconstructed sounds.</s>
@@ -232,13 +244,11 @@
           <s>These models can improve reconstruction accuracy by imposing more complete constraints on the reconstructed audio by better modeling the statistical properties of the speech signal <ref target="#b2" type="bibr">3</ref> .</s>
           <s>At the same time, nonlinear regression can invert the nonlinearly encoded speech features in neural data <ref target="#b32" type="bibr">33,</ref>
             <ref target="#b33" type="bibr">34</ref> more accurately.</s>
-          <s>We examined the effect of three factors on the reconstruction accuracy: 1) the regression technique (linear regression versus nonlinear deep neural network), 2) the representation of the speech intended for reconstruction (auditory spectrogram versus speech vocoder parameters), and 3) the neural frequency range used for regression (low frequency versus high-gamma envelope) <ref type="figure">(Fig. 1A)</ref> .</s>
+        </p>
+        <p>
+          <s>We examined the effect of three factors on the reconstruction accuracy: 1) the regression technique (linear regression versus nonlinear deep neural network), 2) the representation of the speech intended for reconstruction (auditory spectrogram versus speech vocoder parameters), and 3) the neural frequency range used for regression (low frequency versus high-gamma envelope) <ref target="#fig_0" type="figure">(Fig. 1A)</ref> .</s>
           <s>Our results showed that a deep neural network model that uses all neural frequencies to directly estimate the parameters of a speech vocoder achieves the highest subjective and objective scores, both for intelligibility and the quality of reconstruction in a digit recognition task.</s>
           <s>These results represent an important step toward successful implementation of the next generation of speech BCI systems.</s>
-          <s>
-            <ref type="figure">Figure 1</ref> .</s>
-          <s>Schematic of the speech reconstruction method.</s>
-          <s>(A) Subjects listened to natural speech sentences.</s>
           <s>The population of evoked neural activity in the auditory cortex of the listener was then used to reconstruct the speech stimulus.</s>
           <s>The responsive electrodes in an example subject are shown in red.</s>
           <s>High and low frequency bands were extracted from the neural data.</s>
@@ -262,9 +272,6 @@
       </div>
       <div>
         <head>A. Reconstruction models and targets</head>
-        <p>
-          <s>SCIENTIFIC RepoRTs | (2019) 9:874 | DOI:10.1038/s41598-018-37359-z</s>
-        </p>
       </div>
       <div>
         <head>Results</head>
@@ -275,35 +282,35 @@
           <s>All subjects had self-reported normal hearing.</s>
           <s>Subjects were presented with short continuous stories spoken by four speakers (two females, total duration: 30 minutes).</s>
           <s>To ensure that the subjects were engaged in the task, the stories were randomly paused, and the subjects were asked to repeat the last sentence.</s>
+        </p>
+        <p>
           <s>The test data consisted of continuous speech sentences and isolated digit sounds.</s>
           <s>We used eight sentences (40 seconds total) to evaluate the objective quality of the reconstruction models.</s>
-          <s>The sentences were repeated six times in random order, and the neural data was averaged over the six repetitions to reduce the effect of neural noise on comparison of reconstruction models (see Supp. <ref type="figure">Fig. 1</ref> for the effect of averaging).</s>
+          <s>The sentences were repeated six times in random order, and the neural data was averaged over the six repetitions to reduce the effect of neural noise on comparison of reconstruction models (see Supp. <ref target="#fig_0" type="figure">Fig. 1</ref> for the effect of averaging).</s>
           <s>The digit sounds were used for subjective intelligibility and quality assessment of reconstruction methods and were taken from a publicly available corpus, TI-46 <ref target="#b34" type="bibr">35</ref> .</s>
           <s>We chose 40 digit sounds (zero to nine), spoken by four speakers (two females) that were not included in the training of the models.</s>
           <s>Reconstructed digits were used as the test set to evaluate subjective intelligibility and quality of the models.</s>
           <s>Two ranges of neural frequencies were used in the study.</s>
           <s>Low-frequency (0-50 Hz) components of the neural data were extracted by filtering the neural signals using a lowpass filter.</s>
-          <s>The high-gamma envelope <ref target="#b35" type="bibr">36</ref> was extracted by filtering the neural signals (70 to 150 Hz) and calculating the Hilbert envelope <ref target="#b36" type="bibr">37</ref> .</s>
+          <s>The high-gamma envelope <ref target="#b35" type="bibr">36</ref> was extracted by filtering the neural signals (70 to 150 Hz) and calculating the Hilbert envelope 37 .</s>
         </p>
         <p>
           <s>Regression models.</s>
-          <s>The input to the regression models was a sliding window over the neural data with a duration of 300 ms <ref type="figure">(Fig. 1B)</ref> , and the hop size of 10 ms.</s>
+          <s>The input to the regression models was a sliding window over the neural data with a duration of 300 ms <ref target="#fig_0" type="figure">(Fig. 1B)</ref> , and the hop size of 10 ms.</s>
           <s>The duration of the sliding window was chosen to maximize reconstruction accuracy (Supp.</s>
           <s>
-            <ref target="#fig_2" type="figure">Fig. 2)</ref> .</s>
+            <ref target="#fig_5" type="figure">Fig. 2)</ref> .</s>
           <s>We compared the performance of linear and nonlinear regression models to reconstruct the stimulus from the neural signals.</s>
-          <s>The linear regression finds a linear mapping between the response of a population of neurons to the stimulus representation <ref target="#b2" type="bibr">3,</ref>
-            <ref target="#b5" type="bibr">6</ref> .</s>
+          <s>The linear regression finds a linear mapping between the response of a population of neurons to the stimulus representation 3,6 .</s>
           <s>This method effectively assigns a spatiotemporal filter to each electrode estimated by minimizing the mean-squared-error (MSE) between the original and reconstructed stimulus.</s>
-        </p>
-        <p>
           <s>The nonlinear regression model was implemented using a deep neural network (DNN).</s>
           <s>We designed a deep neural network architecture with two stages: (1) feature extraction and (2) feature summation networks <ref target="#b37" type="bibr">[38]</ref>
             <ref target="#b38" type="bibr">[39]</ref>
-            <ref target="#b39" type="bibr">[40]</ref> ( <ref type="figure">Fig. 1B)</ref> .</s>
+            <ref target="#b39" type="bibr">[40]</ref>
+            <ref target="#fig_0" type="figure">(Fig. 1B)</ref> .</s>
           <s>In this framework, a high-dimensional representation of the input (neural responses) is first calculated, which results in mid-level features (output of the feature extraction network).</s>
           <s>These mid-level features are then input to the feature summation network to regress the output of the model (acoustic representation).</s>
-          <s>The feature summation network in all cases was a two-layer fully connected network (FCN) with regularization, dropout <ref target="#b40" type="bibr">41</ref> , batch normalization <ref target="#b41" type="bibr">42</ref> , and nonlinearity between each layer.</s>
+          <s>The feature summation network in all cases was a two-layer fully connected network (FCN) with regularization, dropout 41 , batch normalization 42 , and nonlinearity between each layer.</s>
           <s>For feature extraction, we compared the efficacy of five different network architectures for auditory spectrogram and vocoder reconstruction (Methods, Supp.</s>
           <s>
             <ref type="table">Table 1</ref> for details of each network).</s>
@@ -312,7 +319,7 @@
           <s>
             <ref type="bibr">Tables 4,</ref>
             <ref target="#b4" type="bibr">5)</ref> .</s>
-          <s>In the combined FCN + LCN, the outputs of the two parallel networks are concatenated and used as the mid-level features <ref type="figure">(Fig. 1B)</ref> .</s>
+          <s>In the combined FCN + LCN, the outputs of the two parallel networks are concatenated and used as the mid-level features <ref target="#fig_0" type="figure">(Fig. 1B)</ref> .</s>
         </p>
         <p>
           <s>Acoustic representations.</s>
@@ -320,76 +327,82 @@
           <s>The auditory spectrogram was calculated using a model of the peripheral auditory system <ref target="#b42" type="bibr">43,</ref>
             <ref target="#b43" type="bibr">44</ref> , which estimates a time-frequency representation of the acoustic signal on a tonotopic frequency axis.</s>
           <s>The reconstruction of the waveform from the auditory spectrogram is achieved using an iterative convex optimization procedure <ref target="#b42" type="bibr">43</ref> because the phase of the signal is lost during this procedure.</s>
-          <s>For speech vocoder, we used a vocoder-based, high-quality speech synthesis algorithm (WORLD <ref target="#b44" type="bibr">45</ref> ), which synthesizes speech from four main parameters: (1) spectral envelope, (2) f0 or fundamental frequency, (3) band aperiodicity, and (4) a voiced-unvoiced (VUV) excitation label <ref type="figure">(Fig. 1C)</ref> .</s>
+        </p>
+        <p>
+          <s>For speech vocoder, we used a vocoder-based, high-quality speech synthesis algorithm (WORLD 45 ), which synthesizes speech from four main parameters: (1) spectral envelope, (2) f0 or fundamental frequency, (3) band aperiodicity, and (4) a voiced-unvoiced (VUV) excitation label <ref target="#fig_0" type="figure">(Fig. 1C)</ref> .</s>
           <s>These parameters are then used to re-synthesize the speech waveform.</s>
           <s>This model can reconstruct high-quality speech and has been shown to outperform other methods including STRAIGHT <ref target="#b45" type="bibr">46</ref> .</s>
           <s>The large numbers of the parameters in the vocoder (516 total) and the susceptibility of the synthesis quality on inaccurate estimation of parameters however pose a challenge.</s>
           <s>To remedy this, we first projected the sparse vocoder parameters onto a dense subspace in which the number of parameters can be reduced, which allows better training with a limited amount of data.</s>
-          <s>We used a dimensionality reduction technique that relies on an autoencoder (AEC) <ref target="#b46" type="bibr">47</ref> ( <ref type="figure">Fig. 1C)</ref> , which compresses the vocoder parameters into a smaller space (encoder, 256 dimensions, Supp.</s>
+          <s>We used a dimensionality reduction technique that relies on an autoencoder (AEC) <ref target="#b46" type="bibr">47</ref>
+            <ref target="#fig_0" type="figure">(Fig. 1C)</ref> , which compresses the vocoder parameters into a smaller space (encoder, 256 dimensions, Supp.</s>
           <s>
-            <ref type="table">Table 3</ref> ) and subsequently recovers (decoder) the original vocoder parameters from the compressed features <ref type="figure">(Fig. 1C)</ref> .</s>
+            <ref type="table">Table 3</ref> ) and subsequently recovers (decoder) the original vocoder parameters from the compressed features <ref target="#fig_0" type="figure">(Fig. 1C</ref> ).</s>
           <s>The compressed features (also called bottleneck features) are used as the target for the reconstruction network.</s>
           <s>By adding noise to the bottleneck features before feeding them to the decoder during training, we can make the decoder more robust to unwanted variations in amplitude, which is necessary due to the noise inherently present in the neural signals.</s>
-          <s>The autoencoder was trained on 80 hours of speech using a separate speech corpus (Wall Street Journal l <ref target="#b47" type="bibr">48</ref> ).</s>
-          <s>During the test phase, we first reconstructed the bottleneck features from the neural data, and subsequently estimated the vocoder parameters using the decoder part of the autoencoder <ref type="figure">(Fig. 1C)</ref> .</s>
+          <s>The autoencoder was trained on 80 hours of speech using a separate speech corpus (Wall Street Journal l 48 ).</s>
+          <s>During the test phase, we first reconstructed the bottleneck features from the neural data, and subsequently estimated the vocoder parameters using the decoder part of the autoencoder <ref target="#fig_0" type="figure">(Fig. 1C)</ref> .</s>
           <s>The reconstruction accuracy of individual vocoder parameters with a neural network shows varied improvement over the linear model, where pitch estimation is improved the most (%157.2),</s>
           <s>followed by aperiodicity (%18.5),</s>
           <s>spectral envelope (%6.2), and voiced-unvoiced parameter (%0.15,</s>
           <s>Supp.</s>
           <s>
-            <ref target="#fig_4" type="figure">Fig. 3</ref> ).</s>
-        </p>
-        <p>
-          <s>SCIENTIFIC RepoRTs | (2019) 9:874 | DOI:10.1038/s41598-018-37359-z</s>
+            <ref target="#fig_6" type="figure">Fig. 3</ref> ).</s>
           <s>
-            <ref target="#fig_2" type="figure">Figure 2B</ref> shows the example reconstructed auditory spectrograms from each of the four combinations of the regression models (linear regression and DNN) and acoustic representation (auditory spectrogram and vocoder).</s>
-        </p>
-        <p>
-          <s>Comparison of the auditory spectrograms in <ref target="#fig_2" type="figure">Fig. 2A</ref> shows that 1) the overall frequency profile of the speech utterance is better preserved by the DNN compared to the linear regression model, and 2) the harmonic structure of speech is recovered only in the DNN-Vocoder model.</s>
-          <s>These observations are shown more explicitly in <ref target="#fig_2" type="figure">Fig. 2B</ref> , where the magnitude power of frequency bands is shown during an unvoiced (t = 1.4 sec) and a voiced speech sound (t = 1.15 sec, shown with dashed lines).</s>
-          <s>The frequency profile of original and reconstructed auditory spectrograms during the unvoiced sound shows a more accurate reconstruction of low and high frequencies for the DNN models ( Subjective evaluation of the reconstruction accuracy.</s>
+            <ref target="#fig_5" type="figure">Figure 2B</ref> shows the example reconstructed auditory spectrograms from each of the four combinations of the regression models (linear regression and DNN) and acoustic representation (auditory spectrogram and vocoder).</s>
+          <s>Comparison of the auditory spectrograms in <ref target="#fig_5" type="figure">Fig. 2A</ref> shows that 1) the overall frequency profile of the speech utterance is better preserved by the DNN compared to the linear regression model, and 2) the harmonic structure of speech is recovered only in the DNN-Vocoder model.</s>
+          <s>These observations are shown more explicitly in <ref target="#fig_5" type="figure">Fig. 2B</ref> , where the magnitude power of frequency bands is shown during an unvoiced (t = 1.4 sec) and a voiced speech sound (t = 1.15 sec, shown with dashed lines).</s>
+          <s>The frequency profile of original and reconstructed auditory spectrograms during the unvoiced sound shows a more accurate reconstruction of low and high frequencies for the DNN models <ref type="figure">(</ref> Subjective evaluation of the reconstruction accuracy.</s>
           <s>We used the reconstructed digit sounds to assess the subjective intelligibility and quality of the reconstructed audio.</s>
           <s>Forty unique tokens were reconstructed from each model, consisting of ten digits (zero to nine) that were spoken by two male and two female speakers.</s>
           <s>The speakers that uttered the digits were different from the speakers that were used in the training, and no digit sound was included in the training of the networks.</s>
           <s>We asked 11 subjects with normal hearing to listen to the reconstructed digits from all four models (160 tokens total) in a random order.</s>
           <s>Each digit was heard only once.</s>
-          <s>The subjects then reported the digits (zero to nine, or uncertain), rated the reconstruction quality using the mean opinion score (MOS <ref target="#b48" type="bibr">49</ref> , on a scale of 1 to 5), and reported the gender of the speaker <ref target="#fig_4" type="figure">(Fig. 3A)</ref> .</s>
+          <s>The subjects then reported the digits (zero to nine, or uncertain), rated the reconstruction quality using the mean opinion score (MOS 49 , on a scale of 1 to 5), and reported the gender of the speaker <ref target="#fig_6" type="figure">(Fig. 3A)</ref> .</s>
           <s>
-            <ref target="#fig_4" type="figure">Figure 3B</ref> shows the average reported intelligibility of the digits from the four reconstruction models.</s>
+            <ref target="#fig_6" type="figure">Figure 3B</ref> shows the average reported intelligibility of the digits from the four reconstruction models.</s>
           <s>The DNN-vocoder combination achieved the best performance (75% accuracy), which is 67% higher than the baseline system (Linear regression with auditory spectrogram).</s>
           <s>
-            <ref target="#fig_4" type="figure">Figure 3B</ref> also shows that the reconstructions using DNN models are significantly better than the linear regression models (68.5% vs. 47.5%, paired t-test, p &lt; 0.001).</s>
+            <ref target="#fig_6" type="figure">Figure 3B</ref> also shows that the reconstructions using DNN models are significantly better than the linear regression models (68.5% vs. 47.5%, paired t-test, p &lt; 0.001).</s>
           <s>
-            <ref target="#fig_4" type="figure">Figure 3C</ref> shows that the subjects also rated the quality of the reconstruction significantly higher for the DNN-vocoder system than for the other three models (3.4 vs. 2.5, 2.3, and 2.1, unpaired t-test, p &lt; 0.001), meaning that the DNN-vocoder system sounds closest to natural speech.</s>
-          <s>The subjects also accurately reported the gender of the speaker significantly higher than chance for the DNN-vocoder system (80%, t-test, p &lt; 0.001) while the performance for all other methods were at chance <ref target="#fig_4" type="figure">(Fig. 3D)</ref> .</s>
+            <ref target="#fig_6" type="figure">Figure 3C</ref> shows that the subjects also rated the quality of the reconstruction significantly higher for the DNN-vocoder system than for the other three models (3.4 vs. 2.5, 2.3, and 2.1, unpaired t-test, p &lt; 0.001), meaning that the DNN-vocoder system sounds closest to natural speech.</s>
+          <s>The subjects also accurately reported the gender of the speaker significantly higher than chance for the DNN-vocoder system (80%, t-test, p &lt; 0.001) while the performance for all other methods were at chance <ref target="#fig_6" type="figure">(Fig. 3D)</ref> .</s>
           <s>The higher intelligibility and quality scores for the DNN-Voc system was consistently observed in all the ten listeners (Supp.</s>
           <s>
-            <ref target="#fig_6" type="figure">Fig. 4</ref> ).</s>
+            <ref target="#fig_8" type="figure">Fig. 4</ref> ).</s>
           <s>This result indicates the importance of accurate reconstruction of harmonics frequencies for identifying speaker dependent information, which are best captured by the DNN-Voc model.</s>
         </p>
         <p>
-          <s>Finally, <ref target="#fig_4" type="figure">Fig. 3E</ref> shows the confusion patterns in recognizing the digits for the four models, confirming again the advantage of the DNN based models, and the DNN vocoder in particular.</s>
-          <s>As shown in <ref target="#fig_4" type="figure">Fig. 3E</ref> , the discriminant acoustic features of the digit sounds are better preserved in the DNN-Voc model, enabling the listeners to correctly differentiate them from the other digits.</s>
-          <s>Linear regression models, however, failed to preserve these cues, as seen by the high confusion among digit sounds.</s>
+          <s>Finally, <ref target="#fig_6" type="figure">Fig. 3E</ref> shows the confusion patterns in recognizing the digits for the four models, confirming again the advantage of the DNN based models, and the DNN vocoder in particular.</s>
+          <s>As shown in <ref target="#fig_6" type="figure">Fig. 3E</ref> , the discriminant acoustic features of the digit sounds are better preserved in the DNN-Voc model, enabling the listeners to correctly differentiate them from the other digits.</s>
+          <s>Linear regression models, however, failed to preserve these y c n e u q e r F ) z H K (</s>
+        </p>
+      </div>
+      <div>
+        <head>A.</head>
+        <p>
+          <s>Original cues, as seen by the high confusion among digit sounds.</s>
           <s>The confusion patterns also show that some errors were associated with the shared phonetic features, for example the confusion between digits one and nine (sharing 'ey' phoneme), or four and fine (sharing the initial fricative /f/ phoneme.</s>
           <s>This result suggests a possible strategy for enabling accurate discrimination in BCI applications by selecting target sounds with a sufficient acoustic distance between them.</s>
           <s>The audio samples from different models can be found online 50 and in the supplementary materials.</s>
         </p>
         <p>
           <s>Objective evaluation of reconstructed audio.</s>
-          <s>We compared the objective reconstruction accuracy of reconstructed audio per subject using the extended short time objective intelligibility (ESTOI) <ref target="#b49" type="bibr">51</ref> measure.</s>
+          <s>We compared the objective reconstruction accuracy of reconstructed audio per subject using the extended short time objective intelligibility (ESTOI) 51 measure.</s>
           <s>ESTOI is commonly used for the intelligibility assessment of speech synthesis technologies and is calculated by measuring the distortion in spectrotemporal modulation patterns of the noisy speech signal.</s>
           <s>Therefore, ESTOI score is sensitive to both inaccurate reconstruction of the spectral profile and the inconsistencies in the reconstructed temporal patterns.</s>
           <s>The ESTOI measures were calculated from continuous speech sentences in the test set.</s>
-          <s>The average ESTOI of the reconstructed speech for all five subjects <ref target="#fig_6" type="figure">(Fig. 4A)</ref> confirms the results seen from the subjective tests, which is the superiority of DNN based models over the linear model, and that of vocoder reconstruction over the auditory spectrogram (p &lt; 0.001, t-test).</s>
-          <s>This pattern was consistent for each of the five subjects in this study, as shown in <ref target="#fig_6" type="figure">Fig. 4B</ref> alongside the electrode locations for each subject.</s>
+          <s>The average ESTOI of the reconstructed speech for all five subjects <ref target="#fig_8" type="figure">(Fig. 4A</ref> ) confirms the results seen from the subjective tests, which is the superiority of DNN based models over the linear model, and that of vocoder reconstruction over the auditory spectrogram (p &lt; 0.001, t-test).</s>
+          <s>This pattern was consistent for each of the five subjects in this study, as shown in <ref target="#fig_8" type="figure">Fig. 4B</ref> alongside the electrode locations for each subject.</s>
           <s>While the overall reconstruction accuracy varies significantly across subjects, which is likely due to the difference in the coverage of the auditory cortical areas, the relative performance of the four models was the same in all subjects.</s>
           <s>In addition, averaging the neural responses over multiple repetitions of the same speech utterance improved the reconstruction accuracy (Supp.</s>
           <s>
-            <ref type="figure">Fig. 1)</ref> because averaging reduces the effect of neural noise.</s>
+            <ref target="#fig_0" type="figure">Fig. 1</ref> ) because averaging reduces the effect of neural noise.</s>
         </p>
+      </div>
+      <div>
+        <head>Reconstruction accuracy from low and high neural frequencies.</head>
         <p>
-          <s>Reconstruction accuracy from low and high neural frequencies.</s>
           <s>There is increasing evidence that the low and high-frequency bands encode different and complementary information about the stimulus <ref target="#b50" type="bibr">52</ref> .</s>
           <s>Considering that the sampling frequency of the reconstruction target is 100 Hz, we used 0-50 Hz as a low-frequency signal, and the envelope of high gamma (70-150 Hz) as high-frequency band information.</s>
           <s>To determine what frequency bands are best to include to achieve maximum reconstruction accuracy, we tested the reconstruction accuracy in three conditions, when the regression model uses only the high-gamma envelope, a low-frequency signal, or a combination of the two.</s>
@@ -397,48 +410,20 @@
         <p>
           <s>To simplify the comparison, we used only the DNN-auditory spectrogram reconstruction model.</s>
           <s>We calculated the ESTOI scores of the reconstructed speech sound using different frequency bands.</s>
-          <s>We found that the combination of the two frequency bands significantly outperforms the reconstruction from only one of the frequency bands <ref target="#fig_7" type="figure">(Fig. 5A, p &lt; 0.001, t-test)</ref> .</s>
-          <s>This observation is consistent with the complementary encoding of the</s>
-        </p>
-      </div>
-      <div>
-        <head>LV DV DAS</head>
-        <note type="other">90 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 Lin Reg Aud Spec Lin Reg Vocoder DNN Vocoder DNN Aud Spec 2.1 2.3 2.5 3.4 4.0 40 32 48 80 100 0 0 0 100 Perceived Actual 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9</note>
-      </div>
-      <div>
-        <head>A. Behavioral experiment</head>
-        <p>
-          <s>Reconstructed digit sounds Digit?</s>
-        </p>
-        <p>
-          <s>Quality?</s>
-        </p>
-        <p>
-          <s>Gender?</s>
-        </p>
-      </div>
-      <div>
-        <head>LAS LV DV DAS LAS LV DV DAS</head>
-      </div>
-      <div>
-        <head>Listen:</head>
-        <p>
-          <s>Report: *** *** *** , which implicates the advantage of using the entire neural signal to achieve the best performance in speech neuroprosthesis applications when it is practically possible.</s>
+          <s>We found that the combination of the two frequency bands significantly outperforms the reconstruction from only one of the frequency bands <ref target="#fig_0" type="figure">(Fig. 5A, p &lt; 0.001, t-test)</ref> .</s>
+          <s>This observation is consistent with the complementary encoding of the stimulus features in the low and high-frequency bands <ref target="#b51" type="bibr">53</ref> , which implicates the advantage of using the entire neural signal to achieve the best performance in speech neuroprosthesis applications when it is practically possible.</s>
         </p>
         <p>
           <s>Effect of the number of electrodes and duration of training data.</s>
-          <s>The variability of the reconstruction accuracy across subjects <ref target="#fig_6" type="figure">(Fig. 4B)</ref> suggests an important role of neural coverage in improving the reconstruction <ref target="#b2" type="bibr">3,</ref>
-            <ref target="#b5" type="bibr">6</ref> accuracy.</s>
+          <s>The variability of the reconstruction accuracy across subjects <ref target="#fig_8" type="figure">(Fig. 4B)</ref> suggests an important role of neural coverage in improving the reconstruction 3,6 accuracy.</s>
           <s>In addition, because some of the noise signal across different electrodes is independent, reconstruction from a combination of electrodes may lead to a higher accuracy by finding a signal subspace less affected by the noise in the data <ref target="#b52" type="bibr">54</ref> .</s>
           <s>To examine the effect of the number of electrodes on the reconstruction accuracy, we first combined the electrodes of all five subjects and randomly chose N electrodes (N = 1, 2, 4, 8, 16, 32, 64, 128), twenty times for training the individual networks.</s>
           <s>The average reconstruction accuracy for each N was then used for comparison.</s>
-          <s>The results shown in <ref target="#fig_7" type="figure">Fig. 5B</ref> indicate that increasing the number of electrodes improves the reconstruction accuracy; however, the rate of improvement decreased significantly.</s>
-        </p>
-        <p>
-          <s>Finally, because the success of neural network models is largely attributed to training on large amounts of data <ref target="#b27" type="bibr">28</ref> , we examined the effect of training duration on reconstruction accuracy.</s>
+          <s>The results shown in <ref target="#fig_9" type="figure">Fig. 5B</ref> indicate that increasing the number of electrodes improves the reconstruction accuracy; however, the rate of improvement decreased significantly.</s>
+          <s>Finally, because the success of neural network models is largely attributed to training on large amounts of data 28 , we examined the effect of training duration on reconstruction accuracy.</s>
           <s>We used 128 randomly chosen electrodes and trained several neural network models each on a segment of the training data as the duration of the segments was gradually increased from 10 to 30 minutes.</s>
           <s>This process was performed twenty times for each duration by choosing a random segment of the training data, and the ESTOI score was averaged over the segments.</s>
-          <s>As expected, the results show an increased reconstruction accuracy as the duration of the training was increased <ref target="#fig_7" type="figure">(Fig. 5C)</ref> , which indicates the importance of collecting a larger duration of training data when it is practically feasible.</s>
+          <s>As expected, the results show an increased reconstruction accuracy as the duration of the training was increased <ref target="#fig_9" type="figure">(Fig. 5C)</ref> , which indicates the importance of collecting a larger duration of training data when it is practically feasible.</s>
         </p>
       </div>
       <div>
@@ -450,11 +435,10 @@
         <p>
           <s>Our results are consistent with those of previous reconstruction studies that showed the importance of nonlinear techniques in neural decoding <ref target="#b53" type="bibr">55</ref> .</s>
           <s>The previous methods have used support vector machines <ref target="#b12" type="bibr">13,</ref>
-            <ref target="#b54" type="bibr">56</ref> , linear discriminant analysis <ref target="#b55" type="bibr">57,</ref>
-            <ref target="#b56" type="bibr">58</ref> , linear regression <ref target="#b2" type="bibr">3,</ref>
-            <ref target="#b13" type="bibr">14,</ref>
-            <ref target="#b57" type="bibr">59</ref> , nonlinear embedding <ref target="#b5" type="bibr">6</ref> , and Bayes classifiers <ref target="#b14" type="bibr">15</ref> .</s>
-          <s>In recent years, deep learning <ref target="#b58" type="bibr">60</ref> has shown tremendous success in many brain-computer interface technologies <ref target="#b59" type="bibr">61</ref> , and our study extended this trend by showing the benefit of deep learning in speech neuroprosthesis research <ref target="#b53" type="bibr">55</ref> .</s>
+            <ref target="#b54" type="bibr">56</ref> , linear discriminant analysis 57,58 , linear regression 3,14,59 , nonlinear embedding 6 , and Bayes classifiers <ref target="#b14" type="bibr">15</ref> .</s>
+          <s>In recent years, deep learning 60 has shown tremendous success in many brain-computer interface technologies <ref target="#b59" type="bibr">61</ref> , and our study extended this trend by showing the benefit of deep learning in speech neuroprosthesis research <ref target="#b53" type="bibr">55</ref> .</s>
+        </p>
+        <p>
           <s>We showed that the reconstruction accuracy depends on both the number of electrodes and the duration of the data that is available for training.</s>
           <s>This is consistent with the findings of studies showing the superior advantage of deep learning models over other techniques, particularly when the amount of training data is large <ref target="#b27" type="bibr">28</ref> .</s>
           <s>We showed that the rate of improvement slows down as the number of electrodes increases.</s>
@@ -463,8 +447,7 @@
           <s>Because the duration of our training data was limited, it is possible that more training data would be needed before the benefit of additional features becomes apparent.</s>
           <s>Our experiments showed that increasing the amount of training data results in better reconstruction accuracy, therefore recording methods that can increase the amount of data available for the training of deep models are highly desirable, for example, when chronic recordings are possible in long-term implantable devices such as the NeuroPace responsive neurostimulation device (RNS) <ref target="#b60" type="bibr">62</ref> .</s>
           <s>We showed that the representation of the acoustic signal used as the target of reconstruction has an important role in the intelligibility and the quality of the reconstructed audio.</s>
-          <s>We used a vocoder representation of speech, which extends the previous studies that used a magnitude spectrogram (time-frequency representation) <ref target="#b2" type="bibr">3,</ref>
-            <ref target="#b19" type="bibr">20</ref> , speech envelope <ref target="#b20" type="bibr">21,</ref>
+          <s>We used a vocoder representation of speech, which extends the previous studies that used a magnitude spectrogram (time-frequency representation) 3,20 , speech envelope <ref target="#b20" type="bibr">21,</ref>
             <ref target="#b21" type="bibr">22</ref> , spectrotemporal modulation frequencies <ref target="#b5" type="bibr">6,</ref>
             <ref target="#b12" type="bibr">13,</ref>
             <ref target="#b22" type="bibr">23</ref> , and discrete units such as phonemes and phonetic categories <ref target="#b7" type="bibr">8,</ref>
@@ -474,7 +457,7 @@
             <ref target="#b18" type="bibr">19</ref> .</s>
           <s>Reconstruction of the auditory spectrogram, which we also used for comparison, inherently results in suboptimal audio quality because the phase of the auditory spectrogram must be approximated.</s>
           <s>The discrete units such as phonemes enable discriminative training by learning a direct map from the neural data to the class labels, which is typically more efficient than generative regression models <ref target="#b61" type="bibr">63</ref> .</s>
-          <s>The continuous nature of parameters in acoustic reconstruction however could prove advantageous for BCI applications because they provide a continuous feedback to the user <ref target="#b62" type="bibr">64</ref> , which is crucial for the subject and the BCI algorithm to coadapt to increase overall effectiveness <ref target="#b25" type="bibr">26,</ref>
+          <s>The continuous nature of parameters in acoustic reconstruction however could prove advantageous for BCI applications because they provide a continuous feedback to the user 64 , which is crucial for the subject and the BCI algorithm to coadapt to increase overall effectiveness <ref target="#b25" type="bibr">26,</ref>
             <ref target="#b26" type="bibr">27</ref> .</s>
           <s>Therefore, direct reconstruction of speech synthesis parameters is a natural choice.</s>
           <s>This choice however poses a challenge, since the vocoder quality is very sensitive to the quality of the decoding.</s>
@@ -484,7 +467,7 @@
         </p>
         <p>
           <s>We found that the combination of low frequency and the envelope of high gamma results in higher reconstruction accuracy than each frequency band alone.</s>
-          <s>This finding is consistent with those of studies that have shown the importance of an oscillatory phase <ref target="#b63" type="bibr">65</ref> in addition to the neural firing rate, which is reflected in the high-gamma frequency band <ref target="#b64" type="bibr">66</ref> .</s>
+          <s>This finding is consistent with those of studies that have shown the importance of an oscillatory phase 65 in addition to the neural firing rate, which is reflected in the high-gamma frequency band <ref target="#b64" type="bibr">66</ref> .</s>
           <s>Combining both high and low frequencies not only enables access to the complementary information in each band <ref target="#b50" type="bibr">52,</ref>
             <ref target="#b65" type="bibr">67</ref> but also allows the decoder to use the information that is encoded in the interactions between the two bands, such as cross-frequency coupling <ref target="#b51" type="bibr">53</ref> .</s>
           <s>Overall, we observed that better brain coverage, more training data, and combined neural frequency bands result in the best reconstruction accuracy, which can serve as an upper bound performance where practical limitations prevent the use of all possible factors, for example, where the brain coverage is small, or high-frequency neural signals are not accessible such as in noninvasive neuroimaging methods.</s>
@@ -498,15 +481,17 @@
             <ref target="#b15" type="bibr">[16]</ref> and showed the involvement of the auditory cortical areas, including the superior temporal gyrus (STG) in covert speech condition.</s>
           <s>Specifically, informative electrodes for speech decoding were found in Wernicke and the STG during imagined articulation <ref target="#b12" type="bibr">13,</ref>
             <ref target="#b13" type="bibr">14</ref> , covert word repetition <ref target="#b14" type="bibr">15</ref> , and reading silently <ref target="#b15" type="bibr">16</ref> .</s>
-          <s>In addition to imagined articulation, an MEG study <ref target="#b11" type="bibr">12</ref> measured the neural activity during actual and imagined hearing conditions and compared with actual and imagined articulation conditions.</s>
+          <s>In addition to imagined articulation, an MEG study 12 measured the neural activity during actual and imagined hearing conditions and compared with actual and imagined articulation conditions.</s>
           <s>This study found that the neural activity during overt and covert states were more similar in hearing than in articulation condition.</s>
           <s>Furthermore, the similarity of the response topographies found in covert and overt hearing suggested a similar neural code in the two states, which is also consistent with the findings of fMRI studies showing a similar neural substrate mediating auditory perception and imagery <ref target="#b66" type="bibr">[68]</ref>
             <ref target="#b67" type="bibr">[69]</ref>
             <ref target="#b68" type="bibr">[70]</ref> .</s>
           <s>It is also worth mentioning that the activation of the auditory cortex is not specific to speech imagery, as a recent study found simlilar response patterns also during music perception and imagery <ref target="#b69" type="bibr">71</ref> .</s>
           <s>While these studues have established the feasibility of speech decoding in covert speech perception and production, further research is needed to devise system architectures and training procedures that can optimally fine-tune a model to perform and generalize well in both overt and covert conditions.</s>
-          <s>Furthermore, expanding from the closed-set intelligible speech in this work to continuous, open-set, natural intelligible speech requires additional research, which will undoubtedly benefit from a larger amount of training data, higher-resolution neural recording technologies <ref target="#b70" type="bibr">72</ref> , and the adaptation of regression models <ref target="#b71" type="bibr">73</ref> and the subject to improve the BCI system <ref target="#b25" type="bibr">26,</ref>
+          <s>Furthermore, expanding from the closed-set intelligible speech in this work to continuous, open-set, natural intelligible speech requires additional research, which will undoubtedly benefit from a larger amount of training data, higher-resolution neural recording technologies <ref target="#b70" type="bibr">72</ref> , and the adaptation of regression models 73 and the subject to improve the BCI system <ref target="#b25" type="bibr">26,</ref>
             <ref target="#b26" type="bibr">27</ref> .</s>
+        </p>
+        <p>
           <s>In summary, we present a general framework that can be used for speech neuroprothesis technologies that can result in accurate and intelligible reconstructed speech from the human auditory cortex.</s>
           <s>Our approach takes a step toward the next generation of human-computer interaction systems and more natural communication channels for patients suffering from paralysis and locked-in syndromes.</s>
         </p>
@@ -529,7 +514,7 @@
           <s id="dataset-3" type="Electroencephalogram">Speech signals were recorded simultaneously with the iEEG for subsequent offline analysis.</s>
           <s>Two ranges of neural frequencies were used in the study.</s>
           <s>Low-frequency (0-50 Hz) components of the neural data were extracted by filtering the neural signals using an FIR lowpass filter.</s>
-          <s>The high-gamma (70-150 Hz) envelope <ref target="#b35" type="bibr">36</ref> was extracted by first filtering the data into eight frequency bands between 70 and 150 Hz using IIR filters.</s>
+          <s>The high-gamma (70-150 Hz) envelope 36 was extracted by first filtering the data into eight frequency bands between 70 and 150 Hz using IIR filters.</s>
           <s>The envelope of each band was then obtained using a Hilbert transform.</s>
           <s>We took the average of envelopes in all frequency bands as the total envelope which was then resampled to 100 Hz.</s>
           <s>The high-gamma responses were normalized based on the responses recorded during a 2-minute silence interval before each recording.</s>
@@ -537,10 +522,10 @@
         <p>
           <s>Brain maps.</s>
           <s>The electrode positions were mapped to brain anatomy using registration of the post-implant computed tomography (CT) to the pre-implant MRI via the post-op MRI <ref target="#b72" type="bibr">74</ref> .</s>
-          <s>After coregistration, the electrodes were identified on the post-implantation CT scan using BioImage Suite <ref target="#b73" type="bibr">75</ref> .</s>
+          <s>After coregistration, the electrodes were identified on the post-implantation CT scan using BioImage Suite 75 .</s>
           <s>Following coregistration, the subdural grid and strip electrodes were snapped to the closest point on the reconstructed brain surface of the pre-implantation MRI.</s>
-          <s>We used the FreeSurfer automated cortical parcellation <ref target="#b74" type="bibr">76</ref> to identify the anatomical regions in which each electrode contact was located within approximately 3 mm resolution (the maximum parcellation error of a given electrode to a parcellated area was &lt;5 voxels/mm).</s>
-          <s>We used Destrieux's parcellation because it provides higher specificity in the ventral and lateral aspects of the medial lobe <ref target="#b75" type="bibr">77</ref> .</s>
+          <s>We used the FreeSurfer automated cortical parcellation 76 to identify the anatomical regions in which each electrode contact was located within approximately 3 mm resolution (the maximum parcellation error of a given electrode to a parcellated area was &lt;5 voxels/mm).</s>
+          <s>We used Destrieux's parcellation because it provides higher specificity in the ventral and lateral aspects of the medial lobe 77 .</s>
           <s>The automated parcellation results for each electrode were closely inspected by a neurosurgeon using the patient's coregistered post-implant MRI.</s>
         </p>
         <p>
@@ -551,10 +536,8 @@
           <s>Two female (f2 and f8) and two male (m2 and m5) speakers were chosen from the corpus, and one token per digit and speaker was used (total of 40 unique tokens).</s>
           <s>Each digit was repeated six times to improve the signal to noise ratio of the neural responses.</s>
           <s>The speakers that uttered the digits were different from the speakers that narrated the stories.</s>
-        </p>
-        <p>
           <s>Acoustic representation.</s>
-          <s>The auditory spectrogram representation of speech was calculated from a model of the peripheral auditory system <ref target="#b76" type="bibr">78</ref> .</s>
+          <s>The auditory spectrogram representation of speech was calculated from a model of the peripheral auditory system 78 .</s>
           <s>The model consists of three stages: 1) a cochlear filter bank consisting of 128 constant-Q filters equally spaced on a logarithmic axis, 2) a hair cell stage consisting of a low-pass filter and a nonlinear compression function, and 3) a lateral inhibitory network, consisting of a first-order derivative along the spectral axis.</s>
           <s>Finally, the envelope of each frequency band was calculated to obtain a time-frequency representation simulating the pattern of activity on the auditory nerve <ref target="#b76" type="bibr">78</ref> .</s>
           <s>The final auditory spectrogram has a sampling frequency of 100 Hz.</s>
@@ -569,10 +552,10 @@
           <s>We used a common deep neural network architecture that consists of two stages: feature extraction and feature summation <ref target="#b37" type="bibr">[38]</ref>
             <ref target="#b38" type="bibr">[39]</ref>
             <ref target="#b39" type="bibr">[40]</ref>
-            <ref target="#fig_2" type="figure">(Fig. 2A)</ref> .</s>
+            <ref target="#fig_5" type="figure">(Fig. 2A)</ref> .</s>
           <s>In this framework, a high-dimensional representation of the input is first calculated (feature extraction), which is then used to regress the output of the model (feature summation).</s>
           <s>The feature summation and feature extraction networks are optimized jointly together during the training phase.</s>
-          <s>In all models examined, the feature summation step consisted of a two-layer fully connected network (FCN) with L2 regularization, dropout <ref target="#b40" type="bibr">41</ref> , batch normalization <ref target="#b41" type="bibr">42</ref> , and nonlinearity in each layer.</s>
+          <s>In all models examined, the feature summation step consisted of a two-layer fully connected network (FCN) with L2 regularization, dropout <ref target="#b40" type="bibr">41</ref> , batch normalization 42 , and nonlinearity in each layer.</s>
           <s>We study five different architectures for the feature extraction part of the network: the fully connected network (FCN, also known as the multilayer perceptron or MLP), the locally connected network (LCN) <ref target="#b77" type="bibr">79</ref> , convolutional neural network (CNN) <ref target="#b78" type="bibr">80</ref> , FCN + CNN, and FCN + LCN (for details of each architecture see Supp.</s>
           <s>
             <ref type="table">Table 1</ref> ).</s>
@@ -591,8 +574,8 @@
           <s>We confirmed that decoding the AEC features performed significantly better than decoding the vocoder parameters directly (Supp.</s>
           <s>
             <ref type="table">Table 2</ref> ).</s>
-          <s>The structure for the proposed deep AEC is illustrated in <ref target="#fig_2" type="figure">Fig. 2D</ref> .</s>
-          <s>To carry out decoding, we used a multilayer FCN, in which the number of the nodes changed in a descending (encoder) and then ascending order (decoder) <ref target="#fig_2" type="figure">(Fig. 2C</ref> )(Supp.</s>
+          <s>The structure for the proposed deep AEC is illustrated in <ref target="#fig_5" type="figure">Fig. 2D</ref> .</s>
+          <s>To carry out decoding, we used a multilayer FCN, in which the number of the nodes changed in a descending (encoder) and then ascending order (decoder) <ref target="#fig_5" type="figure">(Fig. 2C</ref> )(Supp.</s>
           <s>
             <ref type="table">Table 6</ref> ).</s>
           <s>The bottleneck layer of such a network (or the output of the encoder part of the pre-trained AEC) can be used as a low-dimensional reconstruction target by employing the neural network model, from which the vocoder parameters can be estimated using the decoder part of the AEC.</s>
@@ -613,16 +596,16 @@
           <s>The networks were implemented in Keras with a Tensorflow backend <ref target="#b79" type="bibr">81</ref> .</s>
           <s>Initialization of the weights was performed using a previously proposed method which was specifically developed for deep multilayer networks with rectified linear units (ReLUs) as their nonlinearities <ref target="#b80" type="bibr">82</ref> .</s>
           <s>It has been shown that using this method helps such networks converge faster.</s>
-          <s>We used batch normalization <ref target="#b41" type="bibr">42</ref> , nonlinearity, and a dropout of p = 0.3 <ref target="#b40" type="bibr">41</ref> between each layer.</s>
+          <s>We used batch normalization 42 , nonlinearity, and a dropout of p = 0.3 41 between each layer.</s>
           <s>We applied an L2 penalty (with a multiplier weight set to 0.001) on the weights of all the layers in all types of networks (including the AEC).</s>
           <s>However, we found that using additive Gaussian noise in the bottleneck of the AEC instead of dropout and regularization performed significantly better (paired t-test, p &lt; 0.001).</s>
-          <s>We used three types of nonlinearities in the networks: (1) LeakyReLU <ref target="#b81" type="bibr">83</ref> for all layers of AEC except the bottleneck and for all layers of the feature extraction part of the main network, (2) tanh for the output layer of the main network and the bottleneck of the AEC, and (3) the exponential linear unit (ELU) <ref target="#b82" type="bibr">84</ref> for the feature summation network.</s>
-          <s>Each epoch of training had a batch size of 256, and optimization was performed using Adam <ref target="#b83" type="bibr">85</ref> with an initial learning rate of 0.0001, which was reduced by a factor of two if the validation loss did not improve in four consecutive epochs.</s>
+          <s>We used three types of nonlinearities in the networks: (1) LeakyReLU 83 for all layers of AEC except the bottleneck and for all layers of the feature extraction part of the main network, (2) tanh for the output layer of the main network and the bottleneck of the AEC, and (3) the exponential linear unit (ELU) <ref target="#b82" type="bibr">84</ref> for the feature summation network.</s>
+          <s>Each epoch of training had a batch size of 256, and optimization was performed using Adam 85 with an initial learning rate of 0.0001, which was reduced by a factor of two if the validation loss did not improve in four consecutive epochs.</s>
           <s>Network training was achieved in 150 epochs and was performed for each subject separately.</s>
           <s>The loss function was a combination of MSE and Pearson's correlation coefficient for each sample: in which y is the actual label (auditory spectrogram or vocoder features) for that sample and ŷ is the reconstruction from the output layer of the network.</s>
           <s>The maximum time-lag used was τ max = 30 ms (Supp.</s>
           <s>
-            <ref target="#fig_2" type="figure">Fig. 2</ref> ).</s>
+            <ref target="#fig_5" type="figure">Fig. 2</ref> ).</s>
           <s>Because of the higher correlated activity between the neural responses of neighboring electrodes <ref target="#b84" type="bibr">86</ref> , it was important to ensure that the networks can model the local structure in the data.</s>
           <s>Because both CNN and LCN use small receptive fields that take local patterns into account, we retained the spatial organization of the electrode sites in the input to the network, meaning that the electrodes that were close to each other in the brain were arranged to be close together in the input data matrix.</s>
         </p>
@@ -642,14 +625,13 @@
           <s>The participants were asked to report the digit or to select unsure if the digit was not intelligible.</s>
           <s id="dataset-7" type="Tabular data">In addition, the participants reported the quality of the reconstructed speech using a mean opinion score (MOS): 1 (bad), 2 (poor), 3 (fair), 4 (good), and 5 (excellent).</s>
           <s id="dataset-8" type="Tabular data">The participants also reported the gender of the speaker.</s>
-          <s>For objective evaluation, we used the ESTOI measure <ref target="#b49" type="bibr">51</ref> which is a monaural intelligibility prediction algorithm commonly used in speech enhancement and synthesis research.</s>
+          <s>For objective evaluation, we used the ESTOI measure 51 which is a monaural intelligibility prediction algorithm commonly used in speech enhancement and synthesis research.</s>
           <s>The range of ESTOI measure is between zero (worst) and one (best).</s>
         </p>
         <p>
           <s>Code Availability.</s>
           <s>The codes for performing phoneme analysis, calculating high-gamma envelope, and reconstructing the auditory spectrogram are available at http://naplab.ee.columbia.edu/naplib.html</s>
-          <s>
-            <ref target="#b85" type="bibr">87</ref> .</s>
+          <s>87 .</s>
         </p>
       </div>
       <div>
@@ -659,26 +641,41 @@
         </p>
       </div>
       <figure xml:id="fig_0">
+        <head>Figure 1 .</head>
+        <label>1</label>
+        <figDesc>Figure 1. Schematic of the speech reconstruction method. (A) Subjects listened to natural speech sentences. The population of evoked neural activity in the auditory cortex of the listener was then used to reconstruct the speech stimulus. The responsive electrodes in an example subject are shown in red. High and low frequency bands were extracted from the neural data. Two types of regression models and two types of speech representations were used, resulting in four combinations: linear regression to auditory spectrogram (light blue), linear regression to vocoder (dark blue), DNN to auditory spectrogram, and DNN to vocoder (dark red). (B) The input to all models was a 300 ms sliding window containing both low frequency (LF) and the high-gamma envelope (HG). The DNN architecture consists of two modules: feature extraction and feature summation networks. Feature extraction for auditory spectrogram reconstruction was a fully connected neural network (FCN). For vocoder reconstruction, the feature extraction network consisted of an FCN concatenated with a locally connected network (LCN). The feature summation network is a two-layer fully connected neural network (FCN). (C) Vocoder parameters consist of spectral envelope, fundamental frequency (f0), voicing, and aperiodicity (total of 516 parameters). An autoencoder with a bottleneck layer was used to reduce the 516 vocoder parameters to 256. The bottleneck features were then used as the target of reconstruction algorithms. The vocoder parameters were calculated from the reconstructed bottleneck features using the decoder part of the autoencoder network.</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>SCIENTIFIC</head>
+        <label/>
+        <figDesc>RepoRTs | (2019) 9:874 | DOI:10.1038/s41598-018-37359-z</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>SCIENTIFIC</head>
+        <label/>
+        <figDesc>RepoRTs | (2019) 9:874 | DOI:10.1038/s41598-018-37359-z</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
         <head/>
         <label/>
         <figDesc>Figure 2B shows the example reconstructed auditory spectrograms from each of the four combinations of the regression models (linear regression and DNN) and acoustic representation (auditory spectrogram and vocoder). Comparison of the auditory spectrograms in Fig. 2A shows that 1) the overall frequency profile of the speech utterance is better preserved by the DNN compared to the linear regression model, and 2) the harmonic structure of speech is recovered only in the DNN-Vocoder model. These observations are shown more explicitly in Fig. 2B, where the magnitude power of frequency bands is shown during an unvoiced (t = 1.4 sec) and a voiced speech sound (t = 1.15 sec, shown with dashed lines). The frequency profile of original and reconstructed auditory spectrograms during the unvoiced sound shows a more accurate reconstruction of low and high frequencies for the DNN models (Fig. 2B left, comparison of blue and red plots). The comparison of frequency profiles during the voiced sound (Fig. 2B, right) reveals the recovery of speech harmonics only in the DNN-Vocoder model (comparison of top and bottom plots).</figDesc>
       </figure>
-      <figure xml:id="fig_2">
+      <figure xml:id="fig_5">
         <head>Figure 2 .</head>
         <label>2</label>
         <figDesc>Figure 2. Deep neural network architecture (A) An original auditory spectrogram of a speech sample is shown on top. The reconstructed auditory spectrograms of the four models are shown below. (B) Magnitude power of frequency bands during an unvoiced (t = 1.4 sec) and a voiced speech sound (t = 1.15 sec, shown with dashed lines in A) for original (top) and the four reconstruction models.</figDesc>
       </figure>
-      <figure xml:id="fig_4">
+      <figure xml:id="fig_6">
         <head>Figure 3 .</head>
         <label>3</label>
         <figDesc>Figure 3. Subjective evaluation of the reconstruction accuracy. (A) The behavioral experiment design used to test the intelligibility and the quality of the reconstructed digits. Eleven subjects listened to digit sounds (zero to nine) spoken by two male and two female speakers. The subjects were asked to report the digit, the quality on the mean-opinion-scale, and the gender of the speaker. (B) The intelligibility score for each model defined as the percentage of correct digits reported by the subject. (C) The quality score on the MOS scale. (D) The speaker gender identification rate for each model. (E) The digit confusion patterns for each of the four models. The DNN vocoder shows the least amount of confusion among the digits.</figDesc>
       </figure>
-      <figure xml:id="fig_6">
+      <figure xml:id="fig_8">
         <head>Figure 4 .</head>
         <label>4</label>
         <figDesc>Figure 4. Objective intelligibly scores for different models. (A) The average ESTOI score based on all subjects for the four models. (B) Coverage and the location of the electrodes and ESTOI score for each of the five subjects. In all subjects, the ESTOI score of the DNN vocoder was higher than in the other models.</figDesc>
       </figure>
-      <figure xml:id="fig_7">
+      <figure xml:id="fig_9">
         <head>Figure 5 .</head>
         <label>5</label>
         <figDesc>Figure 5. Effect of neural frequency range, number of electrodes, and stimulus duration on reconstruction accuracy. (A) The reconstruction ESTOI score based on high gamma, low frequency, and high gamma and low frequency combined. (B) The accuracy of reconstruction when the number of electrodes increases from one to 128. For each condition, 20 random subsets were chosen. (C) The accuracy of reconstruction when the duration of the training data increases. Each condition is the average of 20 random subsets.</figDesc>
@@ -698,11 +695,6 @@
       <div type="annex">
         <div>
           <head>Author Contributions</head>
-          <p>
-            <s>H.A., B.K., N.M., designed the experiment, evaluated the results and wrote the manuscript.</s>
-            <s>B.K., J.H., N.M., A.M. collected the data.</s>
-            <s>All authors commented on the manuscript.</s>
-          </p>
         </div>
         <div>
           <head>Additional Information</head>
@@ -711,9 +703,15 @@
           </p>
         </div>
         <div>
-          <head>Competing Interests:</head>
+          <head>Competing Interests: The authors declare no competing interests.</head>
           <p>
-            <s>The authors declare no competing interests.</s>
+            <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+          <p>
+            <s>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.</s>
+            <s>The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in a credit line to the material.</s>
+            <s>If material is not included in the article's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.</s>
+            <s>To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.</s>
           </p>
         </div>
       </div>
@@ -1569,7 +1567,7 @@
                   <surname>Mesgarani</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/ICASSP.2017.7952155</idno>
+              <idno type="DOI">10.1109/ICASSP.2017.7952155</idno>
             </analytic>
             <monogr>
               <title level="m">Acoustics, Speech and Signal Processing</title>
@@ -1682,20 +1680,16 @@
           </biblStruct>
           <biblStruct xml:id="b34">
             <monogr>
+              <title level="m" type="main">TI 46-Word LDC93S9. Linguistic Data Consortium</title>
               <author>
                 <persName>
                   <forename type="first">M</forename>
                   <surname>Liberman</surname>
                 </persName>
               </author>
-              <title level="m">TI 46-Word LDC93S9. Linguistic Data Consortium</title>
-              <meeting>
-                <address>
-                  <addrLine>Philadelphia</addrLine>
-                </address>
-              </meeting>
               <imprint>
                 <date type="published" when="1993"/>
+                <pubPlace>Philadelphia</pubPlace>
               </imprint>
             </monogr>
           </biblStruct>
@@ -3140,7 +3134,7 @@
                   <surname>Mesgarani</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/ICASSP.2017.7952275</idno>
+              <idno type="DOI">10.1109/ICASSP.2017.7952275</idno>
               <ptr target="https://doi.org/10.1109/ICASSP.2017.7952275"/>
             </analytic>
             <monogr>

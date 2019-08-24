@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T07:40+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:18+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -150,7 +150,7 @@
       <div>
         <p>
           <s>I n 1998, Carl M. Bender and Stefan Boettcher challenged the conventional wisdom of quantum mechanics that the Hamiltonian operator describing any quantum mechanical system has to be Hermitian <ref target="#b0" type="bibr">1</ref> .</s>
-          <s>They showed that Hamiltonians that are invariant under combined parity-time (PT ) symmetry transformations likewise can exhibit entirely real eigenvalue spectra <ref target="#b1" type="bibr">2</ref> .</s>
+          <s>They showed that Hamiltonians that are invariant under combined parity-time (PT ) symmetry transformations likewise can exhibit entirely real eigenvalue spectra 2 .</s>
           <s>This insight had a particularly profound impact in the field of photonics, where PT -symmetric potential landscapes can be implemented by appropriately distributing gain and loss for electromagnetic waves <ref target="#b2" type="bibr">[3]</ref>
             <ref target="#b3" type="bibr">[4]</ref>
             <ref target="#b4" type="bibr">[5]</ref> .</s>
@@ -174,17 +174,14 @@
       </div>
       <div>
         <head>Results</head>
-      </div>
-      <div>
-        <head>Theory.</head>
         <p>
-          <s>PT -symmetric systems are described by a Hamiltonian that is invariant under parity-time symmetry transformations <ref target="#b0" type="bibr">1</ref> .</s>
+          <s>Theory.</s>
+          <s>PT -symmetric systems are described by a Hamiltonian that is invariant under parity-time symmetry transformations 1 .</s>
           <s>In a more formal language, this means that if the HamiltionianĤ commutes with the PT -operator:Ĥ; PT Â Ã ¼ 0, and the Hamiltonian shares the same set of eigenstates with the PT -operator, then the entire set of eigenvalues ofĤ is real.</s>
           <s>A necessary condition for this symmetry to hold is that the underlying potential obeys the relationV Àx ð Þ ¼V Ã x ð Þ 1 .</s>
           <s>Whereas complex potentials tend to be difficult to realize in most physical systems, in 2007 it was shown that photonics provides a suitable testbed due to the complex-valued character of the refractive index <ref target="#b2" type="bibr">3,</ref>
             <ref target="#b3" type="bibr">4</ref> .</s>
-          <s>Since then, PT -symmetric systems have been explored in a variety of photonic platforms, ranging from waveguide arrays <ref target="#b5" type="bibr">6</ref> , fiber lattices <ref target="#b6" type="bibr">7</ref> , and coupled optical resonators <ref target="#b19" type="bibr">20</ref> to plasmonics <ref target="#b20" type="bibr">21</ref> and microwave cavities <ref target="#b21" type="bibr">22</ref> .</s>
-          <s>The implementation of PT -symmetry in photonics is based on the observation that the Schrödinger equation of quantum mechanics for the probability amplitude ψ (x, y, t), are formally equivalent if the potential V(x, y, t) in the Schrö-dinger equation is replaced by the refractive index profile −n(x, y, z) in the Helmholtz equation <ref target="#b22" type="bibr">23</ref> .</s>
+          <s>Since then, PT -symmetric systems have been explored in a variety of photonic platforms, ranging from waveguide arrays 6 , fiber lattices 7 , and coupled optical resonators 20 to plasmonics <ref target="#b20" type="bibr">21</ref> are formally equivalent if the potential V(x, y, t) in the Schrö-dinger equation is replaced by the refractive index profile −n(x, y, z) in the Helmholtz equation <ref target="#b22" type="bibr">23</ref> .</s>
           <s>PT -symmetry then translates into the following condition for the complex refractive index:</s>
         </p>
         <formula xml:id="formula_0">n Àx; Ày; z ð Þ¼n Ã x; y; z ð Þ<label>ð3Þ</label>
@@ -208,13 +205,12 @@
         </p>
         <p>
           <s>Setting.</s>
-          <s>We consider so-called "photonic graphene", a regular arrangement of waveguides in a honeycomb geometry (sketched in <ref target="#fig_0" type="figure">Fig. 1a</ref> ) <ref target="#b24" type="bibr">25</ref> .</s>
+          <s>We consider so-called "photonic graphene", a regular arrangement of waveguides in a honeycomb geometry (sketched in <ref type="figure">Fig. 1a)</ref>
+            <ref target="#b24" type="bibr">25</ref> .</s>
           <s>In order to establish the necessary potential condition for PT -symmetry Eq. (3), the two triangular sublattices of the honeycomb may exhibit different loss, symbolized by the yellow and blue filling of the individual lattice sites, respectively.</s>
           <s>We describe the light evolution in this system by the tightbinding approximation of Eq. (2), which reads as <ref target="#b25" type="bibr">26</ref> :</s>
         </p>
-        <formula xml:id="formula_1">i∂ z a m;n ¼ iγa m;n þ c b mÀ1;n þ b m;nþ1 þ b m;nÀ1<label>ð4aÞ</label>
-        </formula>
-        <formula xml:id="formula_2">i∂ z b m;n ¼ Àiγa m;n þ c a mþ1;n þ a m;nþ1 þ a m;nÀ1<label>ð4bÞ</label>
+        <formula xml:id="formula_1">i∂ z a m;n ¼ iγa m;n þ c b mÀ1;n þ b m;nþ1 þ b m;nÀ1 ð4aÞ i∂ z b m;n ¼ Àiγa m;n þ c a mþ1;n þ a m;nþ1 þ a m;nÀ1<label>ð4bÞ</label>
         </formula>
         <p>
           <s>The a m,n and b m,n denote the amplitudes at the lattice sites of the two sublattices, γ describes the gain/loss, and c is the coupling constant.</s>
@@ -222,16 +218,16 @@
         <p>
           <s>Launching a light beam into the waveguides results in spatial beam dynamics (governed by Eqs.</s>
           <s>(4a) and (4b)) that, for the case of neither gain nor loss in both sublattices, resembles the evolution of a single electron in carbon-based graphene according to Eq. (1).</s>
-          <s>One of the striking features of the graphene band structure is the existence of the so-called Dirac region in the vicinity of the conical intersection points ("diabolical points") between the first and the second bands, displayed in <ref target="#fig_0" type="figure">Fig. 1b</ref> .</s>
+          <s>One of the striking features of the graphene band structure is the existence of the so-called Dirac region in the vicinity of the conical intersection points ("diabolical points") between the first and the second bands, displayed in <ref type="figure">Fig. 1b</ref> .</s>
           <s>In these regions, the tight-binding Hamiltonian of our PT -symmetric photonic graphene can be expanded into a Taylor series <ref target="#b25" type="bibr">26</ref> to obtain a mathematical structure resembling the Dirac equation</s>
         </p>
-        <formula xml:id="formula_3">H ¼ c ffiffi ffi 3 pν σ 1 þ c ffiffi ffi 3 pμ σ 2 þ iγσ 3<label>ð5Þ</label>
+        <formula xml:id="formula_2">H ¼ c ffiffi ffi 3 pν σ 1 þ c ffiffi ffi 3 pμ σ 2 þ iγσ 3<label>ð5Þ</label>
         </formula>
         <p>
           <s>that describes relativistic quantum particles.</s>
           <s>Here, σ 1,2,3 are the Pauli matrices:</s>
         </p>
-        <formula xml:id="formula_4">σ 1 ¼ 0 1 1 0 ; σ 2 ¼ 0 Ài i 0 ; σ 3 ¼ 1 0 0 À1 ;<label>ð6Þ</label>
+        <formula xml:id="formula_3">σ 1 ¼ 0 1 1 0 ; σ 2 ¼ 0 Ài i 0 ; σ 3 ¼ 1 0 0 À1 ;<label>ð6Þ</label>
         </formula>
         <p>
           <s>2γ denotes the difference in loss between the sublattices, and c is the intersite hopping.</s>
@@ -241,23 +237,23 @@
           <s>Mathematically, complex eigenvalues of the Hamiltonian appear whenever the PT -operator and the Hamiltonian cease to share all of their eigenvectors.</s>
           <s>Such a system is said to have broken PT -symmetry, although the PT -operator still commutes with the Hamiltonian.</s>
           <s>This seeming paradox stems from the fact that the T -operator is anti-linear.</s>
-          <s>A graph of the real part of the graphene dispersion relation with γ c ¼ 0:32 is shown in <ref target="#fig_0" type="figure">Fig. 1c</ref> .</s>
+          <s>A graph of the real part of the graphene dispersion relation with γ c ¼ 0:32 is shown in <ref type="figure">Fig. 1c</ref> .</s>
           <s>In contrast to "conventional" (i.e., dissipation-less) graphene, the real part of the dispersion relation is now a single-sheeted hyperboloid.</s>
-          <s>The lower part of <ref target="#fig_0" type="figure">Fig. 1c</ref> shows the imaginary part of the dispersion relation, highlighting the purely imaginary eigenvalues around the original vertices.</s>
+          <s>The lower part of <ref type="figure">Fig. 1c</ref> shows the imaginary part of the dispersion relation, highlighting the purely imaginary eigenvalues around the original vertices.</s>
         </p>
         <p>
           <s>One can drive the system back into the unbroken PT -symmetry regime by applying a linear strain τ, where τ = 1 corresponds to the unstrained case.</s>
-          <s>This strain is applied as indicated in <ref target="#fig_0" type="figure">Fig. 1a</ref> by the red connections between the atoms.</s>
+          <s>This strain is applied as indicated in <ref type="figure">Fig. 1a</ref> by the red connections between the atoms.</s>
           <s>In Hermitian lattices (γ = 0), increasing the strain pushes pairs of Dirac points towards one another until they merge at τ = 2 <ref target="#b27" type="bibr">28</ref> .</s>
           <s>For any given loss factor γ, all eigenvalues of the system become real above a threshold strain τ ! 2 þ γ c 26 .</s>
           <s>Therefore, in such a setting, the structure can exhibit unbroken PT -symmetry, with the transition occurring exactly at τ ¼ 2 þ γ c .</s>
-          <s>The Hamiltonian of this system reads as 26 with Δ = c(τ − 2) denoting the gap in the spectrum <ref target="#b25" type="bibr">26</ref> .</s>
-          <s>
-            <ref target="#fig_0" type="figure">In Fig. 1d</ref> , we show the real and imaginary parts of the dispersion relation for photonic graphene with the same loss factor as in <ref target="#fig_0" type="figure">Fig. 1c</ref> in the presence of a strain given by τ ¼ 2 þ γ c þ 0:61.</s>
+          <s>The Hamiltonian of this system reads as 26 Im ( /c) <ref type="figure">Fig. 1</ref> The PT -symmetric graphene lattice.</s>
+          <s>a Due to the quantum-optical analogy between solids and waveguide lattices, the probability amplitude of a single electron in a carbon graphene lattice shares the same evolution equation as a light beam injected into a honeycomb waveguide lattice.</s>
+          <s>b The dispersion relation of a graphene lattice with no gain/loss and no strain (τ = 1), c with gain/loss and no strain (τ = 1), and d with gain/loss above the critical point (τ &gt; 2 þ γ c ), which corresponds to the unbroken PT -symmetry regime with Δ = c(τ − 2) denoting the gap in the spectrum <ref target="#b25" type="bibr">26</ref> .</s>
+          <s>In <ref type="figure">Fig. 1d</ref> , we show the real and imaginary parts of the dispersion relation for photonic graphene with the same loss factor as in <ref type="figure">Fig. 1c</ref> in the presence of a strain given by τ ¼ 2 þ γ c þ 0:61.</s>
           <s>Evidently, all eigenvalues are real, and a gap has opened in accordance with Eq. (7).</s>
         </p>
-        <formula xml:id="formula_5">H ¼ c τ À 2 ð ÞÀ 3 2 ctμ 2 þ cν 2 ! σ 1 þ ct ffiffi ffi 3 pμ σ 2 þ iγσ 3 ;<label>ð7Þ</label>
-        </formula>
+        <formula xml:id="formula_4">H ¼ c τ À 2 ð ÞÀ 3 2 ctμ 2 þ cν 2 ! σ 1 þ ct ffiffi ffi 3 pμ σ 2 þ iγσ 3 ; ð7Þ b a c d -1 -0.5 0 0.5 1 -1 -0.5 0 0.5 1 -3 -2 -1 0 1 2 3 k x [ ] k y [ ] -1 -0.5 0 0.5 1 -1 -0.5 0 0.5 1 k x [ ] k y [ ] Re ( /c) -0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4 Im ( /c) -1 -0.5 0 0.5 1 -1 -0.5 0 0.5 1 -3 -2 -1 0 1 2 3 k x [ ] k y [ ] -1 -0.5 0 0.5 1 -1 -0.5 0 0.5 1 k x [ ] k y [ ] Re ( /c) -0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4 Im ( /c) -1 -0.5 0 0.5 1 -1 -0.5 0 0.5 1 -3 -2 -1 0 1 2 3 k x [ ] k y [ ]</formula>
         <p>
           <s>Experimental methods.</s>
           <s>In order to implement the PT -symmetric photonic graphene lattice, we employ the direct laser-writing technology <ref target="#b28" type="bibr">29</ref> .</s>
@@ -266,7 +262,7 @@
           <s>
             <ref type="figure">Figure 2b</ref> shows our calibration measurements of the realized loss, as a function of dwelling time and scattering point separation.</s>
           <s>The general trends are clearly visible: the cumulative loss experienced by light propagating through the waveguides systematically increases the smaller the separations and the longer the dwelling times.</s>
-          <s>The strain is realized by reducing the distance between the waveguides with the red connection bond, shown in <ref target="#fig_0" type="figure">Fig. 1a</ref> , while the distances between the waveguides with the gray connection bonds are kept constant.</s>
+          <s>The strain is realized by reducing the distance between the waveguides with the red connection bond, shown in <ref type="figure">Fig. 1a</ref> , while the distances between the waveguides with the gray connection bonds are kept constant.</s>
         </p>
         <p>
           <s>PT -phase transition.</s>
@@ -276,8 +272,8 @@
           <s>As the strain is increased, however, the system enters the regime of unbroken PT -symmetry, resulting in a real spectrum.</s>
           <s>This transition can be readily visualized by exploiting the fact that in the broken PT -phase, the eigenvalues exhibit a wide range of different imaginary parts, and the power remaining in the lattice depends strongly on the injection site.</s>
           <s>In contrast, the unbroken PT -phase is by definition characterized by all eigenvalues having the same imaginary part and, for an infinite system, the power decay in the lattice becomes entirely independent of the excited waveguide.</s>
-          <s>Therefore, as the strain is increased above the critical value of τ ¼ 2 þ γ c , the standard deviation of the transmitted power will eventually vanish <ref target="#b13" type="bibr">14</ref> .</s>
-          <s>Furthermore, one has to take into account that the modes are non-orthogonal even in the unbroken PT -regime, hence the power is not preserved <ref target="#b2" type="bibr">3</ref> and one does not observe a sharp drop of the standard deviation at the transition point.</s>
+          <s>Therefore, as the strain is increased above the critical value of τ ¼ 2 þ γ c , the standard deviation of the transmitted power will eventually vanish 14 .</s>
+          <s>Furthermore, one has to take into account that the modes are non-orthogonal even in the unbroken PT -regime, hence the power is not preserved 3 and one does not observe a sharp drop of the standard deviation at the transition point.</s>
           <s>We demonstrate this behavior by fabricating 6 samples with γ = 0.15 cm −1 , a coupling of c = 0.475 cm −1 and strains ranging from 1 ≤ τ ≤ 2.9.</s>
           <s>In each sample, we perform 6 singlechannel excitations of bulk sites, corresponding to 3 unit cells, and measure the total power remaining in the lattice at the output facet.</s>
           <s>The extracted data is plotted in <ref type="figure">Fig. 3</ref> .</s>
@@ -286,7 +282,8 @@
         <p>
           <s>Topological phase transition.</s>
           <s>The phase transition from the broken to the unbroken PT -symmetry regime in the graphene lattice is inextricably linked to a topological phase transition related to the emergence of topological mid-gap states.</s>
-          <s>2D topological semimetal to a trivial insulator, accompanied by a change of the SSH winding number, takes place at τ = 2 <ref target="#b27" type="bibr">28,</ref>
+          <s>The red shaded area represents the calculated uncertainty arising from possible unequal incoupling in the experiment, whereas the error bars account for fluctuations of the measured data.</s>
+          <s>The blue shaded regions show the three distinct phases associated with the strain and loss parameters of our structure (see <ref type="figure">Fig. 4a)</ref> 2D topological semimetal to a trivial insulator, accompanied by a change of the SSH winding number, takes place at τ = 2 <ref target="#b27" type="bibr">28,</ref>
             <ref target="#b32" type="bibr">33,</ref>
             <ref target="#b33" type="bibr">34</ref> .</s>
           <s>For any γ &gt; 0, however, a topological mid-gap state spontaneously breaks PT -symmetry, since its real dispersive part is pinned.</s>
@@ -294,7 +291,10 @@
           <s>In other words, one can either observe unbroken PT -symmetry, or topological mid-gap states, but never both at the same time, since the two phenomena are mutually exclusive <ref target="#b34" type="bibr">35</ref> .</s>
           <s>Interestingly, a third domain is wedged between the previously discussed cases in the phase diagram.</s>
           <s>It arises when the strain τ exceeds the gap threshold determined by γ.</s>
-          <s>As the gap is closed, PT -symmetry is invariably broken-yet, as long as the hyperboloids in the real part of the dispersion relation still touch, topological mid-gap states are prevented from forming at the bearded edge <ref target="#b35" type="bibr">36</ref> .</s>
+          <s>As the gap is closed,</s>
+        </p>
+        <p>
+          <s>PT -symmetry is invariably broken-yet, as long as the hyperboloids in the real part of the dispersion relation still touch, topological mid-gap states are prevented from forming at the bearded edge <ref target="#b35" type="bibr">36</ref> .</s>
           <s>This can be intuitively explained by the shape of these states, which are known to reside exclusively within one of the sublattices, and, hence, experience solely +γ or −γ.</s>
           <s>As a consequence, the imaginary part of the mid-gap dispersion is ±γ and, from the perspective of a PT -symmetric SSH chain, this implies the disappearance of the mid-gap state for τ ≥ 2 − γ/c <ref target="#b13" type="bibr">14,</ref>
             <ref target="#b35" type="bibr">36</ref> .</s>
@@ -328,9 +328,9 @@
           <s>f For sufficiently strong strain τ &gt; 2 þ γ c , the system is finally driven into the unbroken PT -symmetric phase, where no topological mid-gap states exist either.</s>
           <s>In the left panel, the corresponding dispersion relation is shown.</s>
           <s>g Experimental image at the sample output facet, where light was injected into the marked edge waveguide and spreads into the bulk as no mid-gap state exists.</s>
-          <s>The ratio of light in the marked waveguide in proportion to the intensity of all waveguides is about 5.9%</s>
-        </p>
-        <p>
+          <s>The ratio of light in the marked waveguide in proportion to the intensity of all waveguides is about 5.9% NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-018-08104-x</s>
+          <s>ARTICLE NATURE COMMUNICATIONS | (2019) 10:435 | https://doi.org/10.1038/s41467-018-08104-x</s>
+          <s>| www.nature.com/naturecommunications</s>
           <s>developed a technology to efficiently introduce artificial losses into the system and unequivocally proved that our realized structure is indeed in the unbroken PT -symmetric phase.</s>
           <s>Moreover, we highlighted the close connection of a PT -symmetry phase transition to a topological phase transition in our graphene lattice.</s>
           <s>These findings lay the foundations for realizing 2D PT -symmetry in other wave systems beyond photonics, such as matter waves, sound waves, and possibly even plasmonics and electronic circuits.</s>
@@ -360,19 +360,59 @@
         <p>
           <s>All experimental data and any related experimental background information not mentioned in the text are available from the authors on reasonable request.</s>
         </p>
-        <p>
-          <s>Received: 11 August 2018 Accepted: 7 December 2018</s>
-        </p>
       </div>
-      <figure xml:id="fig_0">
-        <head>Fig. 1</head>
-        <label>1</label>
-        <figDesc>Fig. 1 The PT -symmetric graphene lattice. a Due to the quantum-optical analogy between solids and waveguide lattices, the probability amplitude of a single electron in a carbon graphene lattice shares the same evolution equation as a light beam injected into a honeycomb waveguide lattice. b The dispersion relation of a graphene lattice with no gain/loss and no strain (τ = 1), c with gain/loss and no strain (τ = 1), and d with gain/loss above the critical point (τ &gt; 2 þ γ c ), which corresponds to the unbroken PT -symmetry regime</figDesc>
-      </figure>
       <figure xml:id="fig_1">
         <head>Fig. 2 Fig. 3</head>
         <label>23</label>
         <figDesc>Fig. 2 Realizing artificial loss. a Schematic of the artificial scatterers introduced during the fabrication process by dwelling. b Experimentally obtainable artificial losses as a function of dwelling time and separation of the scatter centers</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>and microwave cavities 22 . The implementation of PT -symmetry in photonics is based on the observation that the Schrödinger equation of quantum mechanics for the probability amplitude ψ (x, y, t),</figDesc>
+        <table>i h 
+∂ 
+∂t 
+ψ x; y; t 
+ð 
+Þ¼À 
+
+h 2 
+2m 
+∇ 2 ψ x; y; t 
+ð 
+ÞþV x; y; t 
+ð 
+Þψ x; y; t 
+ð 
+Þ; ð1Þ 
+
+and the paraxial Helmholtz equation of electromagnetism for the 
+electric field amplitude E(x, y, z), 
+
+i 
+n 0 
+2k 0 
+
+∂ 
+∂z 
+E x; y; z 
+ð 
+Þ¼À 
+n 0 
+2k 2 
+
+0 
+
+∇ 2 E x; y; z 
+ð 
+ÞÀn x; y; z 
+ð 
+ÞE x; y; z 
+ð 
+Þ; ð2Þ 
+
+</table>
       </figure>
       <note place="foot">NATURE COMMUNICATIONS | (2019) 10:435 | https://doi.org/10.1038/s41467-018-08104-x | www.nature.com/naturecommunications</note>
       <note place="foot">NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-018-08104-x</note>
@@ -380,25 +420,7 @@
     </body>
     <back>
       <div type="acknowledgement">
-        <div>
-          <head>Acknowledgements</head>
-          <p>
-            <s>A.S. gratefully acknowledges the financial support from the Deutsche Forschungsgemeinschaft (Grants SZ 276/9-1, SZ 276/19-1, and SZ 276/20-1) and the Alfried Krupp von Bohlen und Halbach Foundation.</s>
-            <s>R.T. is supported by DFG-SFB 1170 (Project B04) and ERC-StG-Thomale-TOPOLECTRICS-336012.</s>
-            <s>The authors would also like to thank C. Otto for preparing the high-quality fused silica samples used in all the experiments presented here.</s>
-            <s>A.S. and R.T. are supported by DFG-EXC 2471 "ct.qmat".</s>
-          </p>
-        </div>
-        <div>
-          <head>Author contributions</head>
-          <p>
-            <s>M.K. and A.S. developed the idea and designed the structure.</s>
-            <s>M.K., R.T., and A.S. worked out the theory.</s>
-            <s>M.K., T.B., and L.J.M. fabricated the samples and performed the measurements.</s>
-            <s>A.S. supervised the project.</s>
-            <s>All authors discussed the results and co-wrote the paper.</s>
-          </p>
-        </div>
+        <div/>
       </div>
       <div type="annex">
         <div>
@@ -417,10 +439,12 @@
           <p>
             <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
           </p>
-        </div>
-        <div>
-          <head>Open Access</head>
-          <note type="other">This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing</note>
+          <p>
+            <s>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.</s>
+            <s>The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in a credit line to the material.</s>
+            <s>If material is not included in the article's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.</s>
+            <s>To view a copy of this license, visit http://creativecommons.org/ licenses/by/4.0/.</s>
+          </p>
         </div>
       </div>
       <div type="references">
@@ -658,7 +682,7 @@
                   <surname>Eichelkraut</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/ncomms3533</idno>
+              <idno type="DOI">10.1038/ncomms3533</idno>
               <ptr target="https://doi.org/10.1038/ncomms3533"/>
             </analytic>
             <monogr>
@@ -1290,7 +1314,7 @@
           </biblStruct>
           <biblStruct xml:id="b31">
             <analytic>
-              <title level="a" type="main">Topolectrical circuits</title>
+              <title/>
               <author>
                 <persName>
                   <forename type="first">C</forename>
@@ -1298,12 +1322,11 @@
                   <surname>Lee</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/s42005-018-0035-2</idno>
-              <idno>s42005-018-0035-2</idno>
-              <ptr target="https://doi.org/10.1038/"/>
+              <idno type="DOI">10.1038/s42005-018-0035-2</idno>
+              <ptr target="https://doi.org/10.1038/s42005-018-0035-2"/>
             </analytic>
             <monogr>
-              <title level="j">Commun. Phys</title>
+              <title level="j">Topolectrical circuits. Commun. Phys</title>
               <imprint>
                 <date type="published" when="2018"/>
               </imprint>

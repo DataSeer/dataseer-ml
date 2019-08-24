@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T07:06+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T22:40+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -353,7 +353,7 @@
         </p>
         <p>
           <s>Kappa statistics.</s>
-          <s>The results <ref target="#tab_2" type="table">(Table 2)</ref> showed that the kappa statistics of SMO and RF classifier models (0.72 and 0.65 respectively), like their accuracy values, were higher than that of the other classifier models in this study.</s>
+          <s>The results ( <ref target="#tab_2" type="table">Table 2)</ref> showed that the kappa statistics of SMO and RF classifier models (0.72 and 0.65 respectively), like their accuracy values, were higher than that of the other classifier models in this study.</s>
           <s>The results also showed that the fusion model showed a very slight increase in its Kappa statistics when compared to the individual models (RF and SMO).</s>
           <s>The value of the Kappa statistics is often used as a measure of consistency or agreement between the "ground truth" (the actual class of each compound to be classified) and classifier models' classification (the class assigned to the compounds by the classifier model).</s>
           <s>It accounts for the chance of random classification of compounds into the two bioactive classes (Active and Inactive).</s>
@@ -370,12 +370,6 @@
           <s>ROC is a plot of the true positive rate (Sensitivity) against the false positive rate (1 -Specificity) at various threshold settings.</s>
           <s>The diagonal grey line represents classifier models that randomly assign compounds to bioactivity class.</s>
           <s>The blue line shown in the ROC plot of Voted perceptron represents classifier models that perfectly predict bioactivity class of compounds.</s>
-          <s>The predictions from RF and SMO were combined (mean) using the "Prediction Fusion" node in KNIME <ref target="#b37" type="bibr">[38]</ref> .</s>
-        </p>
-        <p>
-          <s>https://doi.org/10.1371/journal.pone.0204644.t002</s>
-        </p>
-        <p>
           <s>The red line is the ROC curve from the predictions by the four classifier models in this study.</s>
           <s>In contrast to NB and VP classifier models, SMO, RF and the fusion classifier models showed ROC curves that were initially very close to the true positive rate axis (i.e.</s>
           <s>minimizing false positive rate (maximizing specificity) and maximizing true positive rates (maximizing sensitivity)).</s>
@@ -473,12 +467,16 @@
           <s>drug candidate for malaria).</s>
           <s>Overall, knowledge provided by this study could contribute significantly to and accelerate the ongoing efforts for antimalarial drug discovery, especially from natural products.</s>
         </p>
-      </div>
-      <div>
-        <head>Supporting information</head>
-      </div>
-      <div>
-        <head>S1</head>
+        <p>
+          <s>Supporting information S1 <ref type="table">Table.</ref>
+          </s>
+          <s>Natural products that have been tested for in-vitro antiplasmodial activities (NAA) compiled in-house from literature, PhD and Masters Theses and public chemical databases.</s>
+          <s>(PDF) S2 <ref type="table">Table.</ref>
+          </s>
+          <s>The antiplasmodial bioactivity class predictions of 450 natural compounds from a private natural product chemical library from InterBioScreen (http://www.ibscreen.com)</s>
+          <s>by sequential minimization optimisation (SMO) and random forest classifier models.</s>
+          <s>(PDF)</s>
+        </p>
       </div>
       <figure xml:id="fig_0">
         <head>Fig 1 .</head>
@@ -532,12 +530,6 @@ TN (0.0)
         <table>Classifier Models 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_3">
-        <head>Table .</head>
-        <label>.</label>
-        <figDesc>Natural products that have been tested for in-vitro antiplasmodial activities (NAA) compiled in-house from literature, PhD and Masters Theses and public chemical databases. (PDF) S2 Table. The antiplasmodial bioactivity class predictions of 450 natural compounds from a private natural product chemical library from InterBioScreen (http://www.ibscreen.com) by sequential minimization optimisation (SMO) and random forest classifier models. (PDF)</figDesc>
-        <table/>
-      </figure>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0204644 September 28, 2018</note>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0204644 September 28, 2018 8 / 15</note>
     </body>
@@ -546,7 +538,8 @@ TN (0.0)
         <div>
           <head>Acknowledgments</head>
           <p>
-            <s>The</s>
+            <s>The authors wish to acknowledge William Jose, Godinez Navarro and Azzaoui Kamal all of Novartis Institute for Biomedical Research (NIBR), Basel Switzerland for reading this paper and making valuable contributions.</s>
+            <s>The South African Research Chairs Initiative of the Department of Science and Technology (DST) and the National Research Foundation (NRF) of South Africa supported this work.</s>
           </p>
         </div>
         <div>
@@ -623,13 +616,14 @@ TN (0.0)
                   <forename type="middle">N</forename>
                 </persName>
               </author>
+              <idno>PMID: 8235750</idno>
             </analytic>
             <monogr>
               <title level="j">Soc Sci Med</title>
               <imprint>
                 <biblScope unit="volume">37</biblScope>
                 <biblScope unit="issue">9</biblScope>
-                <biblScope unit="page">8235750</biblScope>
+                <biblScope from="1115" to="1119" unit="page"/>
                 <date type="published" when="1993"/>
               </imprint>
             </monogr>
@@ -643,15 +637,15 @@ TN (0.0)
                   <surname>Russell</surname>
                 </persName>
               </author>
+              <idno>PMID: 15331831</idno>
             </analytic>
             <monogr>
               <title level="j">Am J Trop Med Hyg</title>
               <imprint>
                 <biblScope unit="volume">71</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">15331831</biblScope>
+                <biblScope from="147" to="155" unit="page"/>
                 <date type="published" when="2004-08"/>
-                <publisher>PMID</publisher>
               </imprint>
             </monogr>
             <note>Suppl</note>
@@ -699,15 +693,15 @@ TN (0.0)
                   <surname>Day</surname>
                 </persName>
               </author>
+              <idno>PMID: 8170975</idno>
             </analytic>
             <monogr>
               <title level="j">Proc Natl Acad Sci</title>
               <imprint>
                 <biblScope unit="volume">91</biblScope>
                 <biblScope unit="issue">9</biblScope>
-                <biblScope unit="page">8170975</biblScope>
+                <biblScope from="3715" to="3719" unit="page"/>
                 <date type="published" when="1994-04-26"/>
-                <publisher>PMID</publisher>
               </imprint>
             </monogr>
           </biblStruct>
@@ -727,13 +721,14 @@ TN (0.0)
                   <surname>Marsh</surname>
                 </persName>
               </author>
+              <idno>PMID: 11827798</idno>
             </analytic>
             <monogr>
               <title level="j">Trends Microbiol</title>
               <imprint>
                 <biblScope unit="volume">10</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">11827798</biblScope>
+                <biblScope from="55" to="58" unit="page"/>
                 <date type="published" when="2002"/>
               </imprint>
             </monogr>
@@ -780,15 +775,16 @@ TN (0.0)
                   <surname>Beck</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1086/503776</idno>
-              <ptr target="https://doi.org/10.1086/503776PMID"/>
+              <idno type="DOI">10.1086/503776</idno>
+              <idno>PMID: 16652286</idno>
+              <ptr target="https://doi.org/10.1086/503776"/>
             </analytic>
             <monogr>
               <title level="j">J Infect Dis</title>
               <imprint>
                 <biblScope unit="volume">193</biblScope>
                 <biblScope unit="issue">11</biblScope>
-                <biblScope unit="page">16652286</biblScope>
+                <biblScope from="1567" to="1574" unit="page"/>
                 <date type="published" when="2006-06-01"/>
               </imprint>
             </monogr>
@@ -802,15 +798,16 @@ TN (0.0)
                   <surname>Klein</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.ijantimicag.2012.12.007</idno>
-              <ptr target="https://doi.org/10.1016/j.ijantimicag.2012.12.007PMID"/>
+              <idno type="DOI">10.1016/j.ijantimicag.2012.12.007</idno>
+              <idno>PMID: 23394809</idno>
+              <ptr target="https://doi.org/10.1016/j.ijantimicag.2012.12.007"/>
             </analytic>
             <monogr>
               <title level="j">Int J Antimicrob Agents</title>
               <imprint>
                 <biblScope unit="volume">41</biblScope>
                 <biblScope unit="issue">4</biblScope>
-                <biblScope unit="page">23394809</biblScope>
+                <biblScope from="311" to="317" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -911,8 +908,9 @@ TN (0.0)
                   <forename type="middle">B</forename>
                 </persName>
               </author>
-              <idno type="doi">10.3390/molecules14083037</idno>
-              <ptr target="https://doi.org/10.3390/molecules14083037PMID:19701144"/>
+              <idno type="DOI">10.3390/molecules14083037</idno>
+              <idno>PMID: 19701144</idno>
+              <ptr target="https://doi.org/10.3390/molecules14083037"/>
             </analytic>
             <monogr>
               <title level="j">Molecules</title>
@@ -939,10 +937,11 @@ TN (0.0)
                   <surname>Pieters</surname>
                 </persName>
               </author>
+              <idno>PMID: 22974400</idno>
               <imprint>
                 <date type="published" when="2013"/>
                 <biblScope unit="volume">13</biblScope>
-                <biblScope unit="page">22974400</biblScope>
+                <biblScope from="1056" to="1072" unit="page"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -955,15 +954,15 @@ TN (0.0)
                   <surname>Mojab</surname>
                 </persName>
               </author>
+              <idno>PMID: 25050231</idno>
             </analytic>
             <monogr>
               <title level="j">Avicenna Journal of Phytomedicine</title>
               <imprint>
                 <biblScope unit="volume">2</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">25050231</biblScope>
+                <biblScope unit="page">52</biblScope>
                 <date type="published" when="2012"/>
-                <publisher>PMID</publisher>
               </imprint>
             </monogr>
           </biblStruct>
@@ -1011,15 +1010,16 @@ TN (0.0)
                   <surname>Charman</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1021/jm3002795</idno>
-              <ptr target="https://doi.org/10.1021/jm3002795PMID"/>
+              <idno type="DOI">10.1021/jm3002795</idno>
+              <idno>PMID: 22686608</idno>
+              <ptr target="https://doi.org/10.1021/jm3002795"/>
             </analytic>
             <monogr>
               <title level="j">J Med Chem</title>
               <imprint>
                 <biblScope unit="volume">55</biblScope>
                 <biblScope unit="issue">12</biblScope>
-                <biblScope unit="page">22686608</biblScope>
+                <biblScope from="5851" to="5858" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -1106,14 +1106,15 @@ TN (0.0)
                   <surname>Bryant</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkp456</idno>
-              <ptr target="https://doi.org/10.1093/nar/gkp456PMID"/>
+              <idno type="DOI">10.1093/nar/gkp456</idno>
+              <idno>PMID: 19498078</idno>
+              <ptr target="https://doi.org/10.1093/nar/gkp456"/>
             </analytic>
             <monogr>
               <title level="j">Nucleic Acids Res</title>
               <imprint>
                 <biblScope unit="volume">37</biblScope>
-                <biblScope unit="page">19498078</biblScope>
+                <biblScope from="623" to="656" unit="page"/>
                 <date type="published" when="2009-07"/>
               </imprint>
             </monogr>
@@ -1160,15 +1161,16 @@ TN (0.0)
                   <surname>Willis</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0062906</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0062906PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0062906</idno>
+              <idno>PMID: 23798988</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0062906"/>
             </analytic>
             <monogr>
               <title level="j">PloS one</title>
               <imprint>
                 <biblScope unit="volume">8</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">23798988</biblScope>
+                <biblScope unit="page">62906</biblScope>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -1188,15 +1190,16 @@ TN (0.0)
                   <surname>Hentschel</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.pt.2006.05.011</idno>
-              <ptr target="https://doi.org/10.1016/j.pt.2006.05.011PMID"/>
+              <idno type="DOI">10.1016/j.pt.2006.05.011</idno>
+              <idno>PMID: 16757213</idno>
+              <ptr target="https://doi.org/10.1016/j.pt.2006.05.011"/>
             </analytic>
             <monogr>
               <title level="j">Trends Parasitol</title>
               <imprint>
                 <biblScope unit="volume">22</biblScope>
                 <biblScope unit="issue">7</biblScope>
-                <biblScope unit="page">16757213</biblScope>
+                <biblScope from="301" to="307" unit="page"/>
                 <date type="published" when="2006"/>
               </imprint>
             </monogr>
@@ -1331,8 +1334,9 @@ TN (0.0)
                   <surname>Oliveira</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3390/molecules14083037</idno>
-              <ptr target="https://doi.org/10.3390/molecules14083037PMID:19701144"/>
+              <idno type="DOI">10.3390/molecules14083037</idno>
+              <idno>PMID: 19701144</idno>
+              <ptr target="https://doi.org/10.3390/molecules14083037"/>
             </analytic>
             <monogr>
               <title level="j">Molecules</title>
@@ -1371,15 +1375,16 @@ TN (0.0)
                   <surname>Jain</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.bmc.2009.02.050</idno>
-              <ptr target="https://doi.org/10.1016/j.bmc.2009.02.050PMID"/>
+              <idno type="DOI">10.1016/j.bmc.2009.02.050</idno>
+              <idno>PMID: 19299148</idno>
+              <ptr target="https://doi.org/10.1016/j.bmc.2009.02.050"/>
             </analytic>
             <monogr>
               <title level="j">Bioorg Med Chem</title>
               <imprint>
                 <biblScope unit="volume">17</biblScope>
                 <biblScope unit="issue">9</biblScope>
-                <biblScope unit="page">19299148</biblScope>
+                <biblScope from="3229" to="3256" unit="page"/>
                 <date type="published" when="2009"/>
               </imprint>
             </monogr>
@@ -1405,15 +1410,16 @@ TN (0.0)
                   <surname>Angenot</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.trstmh.2007.10.002</idno>
-              <ptr target="https://doi.org/10.1016/j.trstmh.2007.10.002PMID"/>
+              <idno type="DOI">10.1016/j.trstmh.2007.10.002</idno>
+              <idno>PMID: 18035385</idno>
+              <ptr target="https://doi.org/10.1016/j.trstmh.2007.10.002"/>
             </analytic>
             <monogr>
               <title level="j">Trans R Soc Trop Med Hyg</title>
               <imprint>
                 <biblScope unit="volume">102</biblScope>
                 <biblScope unit="issue">1</biblScope>
-                <biblScope unit="page">18035385</biblScope>
+                <biblScope from="11" to="19" unit="page"/>
                 <date type="published" when="2008-01"/>
               </imprint>
             </monogr>
@@ -1448,7 +1454,7 @@ TN (0.0)
           </biblStruct>
           <biblStruct xml:id="b26">
             <monogr>
-              <title level="m" type="main">KNIME: The Konstanz information miner</title>
+              <title level="m" type="main">The Konstanz information miner</title>
               <author>
                 <persName>
                   <forename type="first">M</forename>
@@ -1562,15 +1568,16 @@ TN (0.0)
                   <surname>Jenkins</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1021/ci060003g</idno>
-              <ptr target="https://doi.org/10.1021/ci060003gPMID"/>
+              <idno type="DOI">10.1021/ci060003g</idno>
+              <idno>PMID: 16711732</idno>
+              <ptr target="https://doi.org/10.1021/ci060003g"/>
             </analytic>
             <monogr>
               <title level="j">Journal of chemical information and modeling</title>
               <imprint>
                 <biblScope unit="volume">46</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">16711732</biblScope>
+                <biblScope from="1124" to="1133" unit="page"/>
                 <date type="published" when="2006"/>
               </imprint>
             </monogr>
@@ -1614,7 +1621,7 @@ TN (0.0)
                   <surname>Ma</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/s11517-014-1207-1</idno>
+              <idno type="DOI">10.1007/s11517-014-1207-1</idno>
               <ptr target="https://doi.org/10.1007/s11517-014-1207-1"/>
             </analytic>
             <monogr>
@@ -1641,15 +1648,16 @@ TN (0.0)
                   <surname>Keerthi</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1162/neco.2007.19.3.792</idno>
-              <ptr target="https://doi.org/10.1162/neco.2007.19.3.792PMID"/>
+              <idno type="DOI">10.1162/neco.2007.19.3.792</idno>
+              <idno>PMID: 17298234</idno>
+              <ptr target="https://doi.org/10.1162/neco.2007.19.3.792"/>
             </analytic>
             <monogr>
               <title level="j">Neural Comput</title>
               <imprint>
                 <biblScope unit="volume">19</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">17298234</biblScope>
+                <biblScope from="792" to="815" unit="page"/>
                 <date type="published" when="2007"/>
               </imprint>
             </monogr>
@@ -1690,15 +1698,16 @@ TN (0.0)
                   <surname>Sheridan</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1021/ci300004n</idno>
-              <ptr target="https://doi.org/10.1021/ci300004nPMID"/>
+              <idno type="DOI">10.1021/ci300004n</idno>
+              <idno>PMID: 22385389</idno>
+              <ptr target="https://doi.org/10.1021/ci300004n"/>
             </analytic>
             <monogr>
               <title level="j">Journal of chemical information and modeling</title>
               <imprint>
                 <biblScope unit="volume">52</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">22385389</biblScope>
+                <biblScope from="814" to="823" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -1855,7 +1864,7 @@ TN (0.0)
           </biblStruct>
           <biblStruct xml:id="b37">
             <monogr>
-              <title level="m" type="main">KNIME: The Konstanz information miner</title>
+              <title level="m" type="main">The Konstanz information miner</title>
               <author>
                 <persName>
                   <forename type="first">M</forename>
@@ -2025,15 +2034,16 @@ TN (0.0)
                   <surname>Todeschini</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3390/molecules17054791</idno>
-              <ptr target="https://doi.org/10.3390/molecules17054791PMID"/>
+              <idno type="DOI">10.3390/molecules17054791</idno>
+              <idno>PMID: 22534664</idno>
+              <ptr target="https://doi.org/10.3390/molecules17054791"/>
             </analytic>
             <monogr>
               <title level="j">Molecules</title>
               <imprint>
                 <biblScope unit="volume">17</biblScope>
                 <biblScope unit="issue">5</biblScope>
-                <biblScope unit="page">22534664</biblScope>
+                <biblScope from="4791" to="4810" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -2128,13 +2138,14 @@ TN (0.0)
                   <surname>Morao</surname>
                 </persName>
               </author>
+              <idno>PMID: 23110532</idno>
             </analytic>
             <monogr>
               <title level="j">Current topics in medicinal chemistry</title>
               <imprint>
                 <biblScope unit="volume">12</biblScope>
                 <biblScope unit="issue">18</biblScope>
-                <biblScope unit="page">23110532</biblScope>
+                <biblScope from="1965" to="1979" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -2206,15 +2217,16 @@ TN (0.0)
                   <surname>Landis</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nrd1470</idno>
-              <ptr target="https://doi.org/10.1038/nrd1470PMID"/>
+              <idno type="DOI">10.1038/nrd1470</idno>
+              <idno>PMID: 15286737</idno>
+              <ptr target="https://doi.org/10.1038/nrd1470"/>
             </analytic>
             <monogr>
               <title level="j">Nature reviews Drug discovery</title>
               <imprint>
                 <biblScope unit="volume">3</biblScope>
                 <biblScope unit="issue">8</biblScope>
-                <biblScope unit="page">15286737</biblScope>
+                <biblScope from="711" to="716" unit="page"/>
                 <date type="published" when="2004"/>
               </imprint>
             </monogr>
@@ -2258,15 +2270,16 @@ TN (0.0)
                   <surname>Benghozi</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.pharmthera.2013.03.005</idno>
-              <ptr target="https://doi.org/10.1016/j.pharmthera.2013.03.005PMID"/>
+              <idno type="DOI">10.1016/j.pharmthera.2013.03.005</idno>
+              <idno>PMID: 23507039</idno>
+              <ptr target="https://doi.org/10.1016/j.pharmthera.2013.03.005"/>
             </analytic>
             <monogr>
               <title level="j">Pharmacol Ther</title>
               <imprint>
                 <biblScope unit="volume">138</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">23507039</biblScope>
+                <biblScope from="470" to="484" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -2315,15 +2328,16 @@ TN (0.0)
                   <surname>Platz</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.drudis.2013.11.014</idno>
-              <ptr target="https://doi.org/10.1016/j.drudis.2013.11.014PMID"/>
+              <idno type="DOI">10.1016/j.drudis.2013.11.014</idno>
+              <idno>PMID: 24269835</idno>
+              <ptr target="https://doi.org/10.1016/j.drudis.2013.11.014"/>
             </analytic>
             <monogr>
               <title level="j">Drug Discov Today</title>
               <imprint>
                 <biblScope unit="volume">19</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">24269835</biblScope>
+                <biblScope from="341" to="347" unit="page"/>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -2369,15 +2383,16 @@ TN (0.0)
                   <surname>Holmes</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1183/09031936.00007915</idno>
-              <ptr target="https://doi.org/10.1183/09031936.00007915PMID"/>
+              <idno type="DOI">10.1183/09031936.00007915</idno>
+              <idno>PMID: 25931481</idno>
+              <ptr target="https://doi.org/10.1183/09031936.00007915"/>
             </analytic>
             <monogr>
               <title level="j">Eur Respir J</title>
               <imprint>
                 <biblScope unit="volume">45</biblScope>
                 <biblScope unit="issue">5</biblScope>
-                <biblScope unit="page">25931481</biblScope>
+                <biblScope from="1197" to="1207" unit="page"/>
                 <date type="published" when="2015-05"/>
               </imprint>
             </monogr>
@@ -2411,13 +2426,14 @@ TN (0.0)
                   <surname>Hajian-Tilaki</surname>
                 </persName>
               </author>
+              <idno>PMID: 24009950</idno>
             </analytic>
             <monogr>
               <title level="j">Caspian J Intern Med</title>
               <imprint>
                 <biblScope unit="volume">4</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">24009950</biblScope>
+                <biblScope from="627" to="635" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>

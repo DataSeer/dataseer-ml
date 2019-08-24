@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T08:09+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:47+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -141,7 +141,12 @@
     </fileDesc>
     <profileDesc>
       <abstract>
-        <div/>
+        <div>
+          <head>Abstract</head>
+        </div>
+        <div>
+          <head>Introduction</head>
+        </div>
       </abstract>
     </profileDesc>
   </teiHeader>
@@ -210,11 +215,7 @@
           <s>To date one study has helped to fill this gap by measuring EC aerosol from 1-40,000 nm <ref target="#b20" type="bibr">[21]</ref> .</s>
           <s>Ji et al. impinged EC aerosol into a liquid and measured the hydrodynamic diameter by dynamic light scattering.</s>
           <s>Ji et al. found a quadramodal PSD with modes around 40, 300, 2,000 and 30,000 nm, unfortunately no discussion was provided regarding potential osmotic growth of suspended EC aerosol, dissolution of EC aerosol into the water based capture solutions, nor relating hydrodynamic diameter to aerodynamic diameter.</s>
-          <s>The present study specifically fills this critical information gap by characterizing EC particle size distribution in air across a broad range of sizes <ref target="#b15" type="bibr">(16)</ref>
-            <ref target="#b16" type="bibr">(17)</ref>
-            <ref target="#b17" type="bibr">(18)</ref>
-            <ref target="#b18" type="bibr">(19)</ref>
-            <ref target="#b19" type="bibr">(20)</ref> ,000 nm), across vaping powers typical of G2 EC devices and using a mouth puff simulation.</s>
+          <s>The present study specifically fills this critical information gap by characterizing EC particle size distribution in air across a broad range of sizes (16-20,000 nm), across vaping powers typical of G2 EC devices and using a mouth puff simulation.</s>
         </p>
         <p>
           <s>Mouth puffing is a two-step process of using the oral cavity to draw a puff into the mouth at a low flow rate, then to inhale the puff from the mouth as a bolus at a high flow rate.</s>
@@ -254,12 +255,12 @@
           <s>All other dilution air was HEPA filtered compressed lab air.</s>
         </p>
       </div>
-      <div>
+      <div subtype="dataseer">
         <head>Aerosol dilution and size measurement</head>
         <p>
           <s>As is the case with traditional cigarette smoke, vaping aerosols are extremely concentrated and must be diluted prior to measurement with real-time analytical instrumentation.</s>
           <s>
-            <ref target="#fig_0" type="figure">Fig 1 illus</ref> trates the system that was developed to dilute the aerosol.</s>
+            <ref target="#fig_0" type="figure">Fig 1</ref> illustrates the system that was developed to dilute the aerosol.</s>
           <s>Many combinations of static dilution and dynamic dilution were explored leading to similar particle size modes, but the relative size of each mode was affected by time to first dilution and total dilution (S1 <ref type="figure">Fig).</ref>
           </s>
           <s>All dilution techniques yielded a bimodal distribution in the sub 600 nanometer (nm) range, which was used to screen the dilution effects.</s>
@@ -272,18 +273,11 @@
           <s>The noise observed in the 1:100 syringe + 1:26 bag dilution was deemed excessive and not worth the added uncertainty for the minimal effect it showed on PSD.</s>
         </p>
         <p>
-          <s>Based on these results a 10x syringe dilution, followed by 28x bag dilution (for aerosol storage), followed by independent dynamic dilution specific for each instrument was chosen <ref target="#fig_0" type="figure">(Fig 1)</ref> .</s>
-          <s>The chosen dilution technique was primarily focused on quickly reducing particle count concentrations to levels that would quench coagulation effects and produce particle number Experimental setup for diluting and sampling EC and cigarette aerosol.</s>
-          <s>a.) Static dilution process of conducting a 60mL puff into a 100mL glass syringe, conducting a 1:10 syringe dilution then 1:28 dilution by injecting into a Tedlar bag for aerosol sampling.</s>
-          <s>b.) System for dynamic dilution and characterization of aerosol by SMPS and APS simultaneously.</s>
-          <s>Unique dilution rates were applied to SMPS and APS to achieve aerosol concentrations within single particle counting ranges.</s>
-          <s>MFC -mass flow controller, HEPA-high efficiency particulate air.</s>
-        </p>
-      </div>
-      <div subtype="dataseer">
-        <head>−10</head>
-        <p>
-          <s>9 particles/ cm 3 in the primary aerosol, so we anticipated a 100x dilution would be necessary to quench coagulation.</s>
+          <s>Based on these results a 10x syringe dilution, followed by 28x bag dilution (for aerosol storage), followed by independent dynamic dilution specific for each instrument was chosen ( <ref target="#fig_0" type="figure">Fig 1)</ref> .</s>
+          <s>The chosen dilution technique was primarily focused on quickly reducing particle count concentrations to levels that would quench coagulation effects and produce particle number concentrations within the single particle counting range of each instrument after dynamic dilution.</s>
+          <s>Particle counts are stable for several minutes if below 10 7 particles / cm 3 .</s>
+          <s>
+            <ref target="#b14" type="bibr">[15]</ref> From initial experiments and searching the literature we expected particle counts of 10 8 −10 9 particles/ cm 3 in the primary aerosol, so we anticipated a 100x dilution would be necessary to quench coagulation.</s>
           <s>By "freezing" the particle size distribution after the mouth puff simulation, the aerosol PSDs obtained should represent particles that enter the respiratory tract when the mouth puff is inhaled.</s>
           <s>To reduce EC aerosol evaporation within the bag, the interior of the bag was coated with e-juice to pre-saturate the air with e-juice vapor.</s>
           <s>This was accomplished by allowing several EC puffs to deposit on the side walls until a noticeable film developed.</s>
@@ -390,7 +384,8 @@
           <s>The cause of failure is unknown, but is suspected to be melting of the solder joint between the non-resistive leads and resistive coil.</s>
           <s>Coil temperature was not measured in this work, but Schripp et al. <ref target="#b3" type="bibr">[4]</ref> thermographically measured a dry coil of a similar EC atomizer at 350˚C and Zhao et al. <ref target="#b4" type="bibr">[5]</ref> measured wet coil temperatures of four cig-a-like ECs from 139-231˚C.</s>
           <s>It is also noteworthy that the battery used in this study had considerable inaccuracy but in our experience newer models of similar batteries are much more accurate.</s>
-          <s>nd generation EC atomizer powered by a laboratory power supply at 9 different levels.</s>
+          <s>Particle size and mass distributions for EC aerosols and tobacco smoke.</s>
+          <s>a.) EC aerosols produced by a 2 nd generation EC atomizer powered by a laboratory power supply at 9 different levels.</s>
           <s>Nano-sized particle count decreased as power increased but micron sized particles increased as power increased.</s>
           <s>b.) Mass distribution of EC aerosol calculated from particle size distribution.</s>
           <s>Large particles make up the majority of aerosol mass.</s>
@@ -436,7 +431,7 @@
         </p>
         <p>
           <s>(DMS) which operates at a substantial vacuum and found modes at 12 and 130 nm at low dilution (1:30) and 17 and 80 nm at high dilution (1:26,500), suggesting a limited role in evaporation in fast analyzers such as DMS.</s>
-          <s>In <ref target="#fig_0" type="figure">S1 Fig we observed a left</ref> shifting of the particle size distribution as 1:6 dynamic dilution was added to the 1:26 bag dilution, this is clearly an evaporation phenomenon which resulted in lower counts and smaller particles.</s>
+          <s>In S1 Fig we observed a left shifting of the particle size distribution as 1:6 dynamic dilution was added to the 1:26 bag dilution, this is clearly an evaporation phenomenon which resulted in lower counts and smaller particles.</s>
           <s>Smaller particle sizes observed from the syringe+bag dilution are.</s>
           <s>Diluted aerosol will have fewer particle-to-particle collisions than highly concentrated aerosols and will result in modest particle growth over the minute time-scale that was needed to complete these experiments, <ref target="#fig_1" type="figure">S2 Fig illustrated how</ref> our aerosol changed over time in the nano-size range.</s>
           <s>To minimize evaporation from our bag dilution step inside of the bag was coated with e-juice and pre-filled with dilution air several minutes before the experiment.</s>
@@ -510,14 +505,8 @@
           <s>These results demonstrate the dramatic effect increasing power has on EC aerosol particle concentration and mass distribution across a wide range of particle sizes.</s>
           <s>Because e-cigarette technology has continued to evolve toward higher power devices, and the mass of vaporized ejuice increases with power, there is a great need for further research to inform the design and regulation of e-cigarette products and critical components such as batteries, atomizers and ejuice composition to ensure a safe and reliable vaping experience.</s>
         </p>
-      </div>
-      <div>
-        <head>Supporting information</head>
-      </div>
-      <div>
-        <head>S1</head>
         <p>
-          <s>Fig. Effects of dilution techniques and dilution factors on particle size distribution using a combination of static dilutions or static+dynamic dilution.</s>
+          <s>Supporting information S1 Fig. Effects of dilution techniques and dilution factors on particle size distribution using a combination of static dilutions or static+dynamic dilution.</s>
           <s>The primary consideration of these trials were to establish a dilution technique that could be uniformly applied to all test conditions to create a minimally changing aerosol that was dilute enough to measure within the instrument single particle counting range with minimal noise due to dilution correction.</s>
           <s>EC aerosol generated by EC battery at a.) minimum dial setting and b.) maximum dial setting were used for these experiments.</s>
           <s>Dilution with static (bag) and dynamic technique presented less noise than static techniques alone.</s>
@@ -527,7 +516,7 @@
       <figure xml:id="fig_0">
         <head>Fig 1 .</head>
         <label>1</label>
-        <figDesc>Fig 1. Experimental setup for diluting and sampling EC and cigarette aerosol. a.) Static dilution process of conducting a 60mL puff into a 100mL glass syringe, conducting a 1:10 syringe dilution then 1:28 dilution by injecting into a Tedlar bag for aerosol sampling. b.) System for dynamic dilution and characterization of aerosol by SMPS and APS simultaneously. Unique dilution rates were applied to SMPS and APS to achieve aerosol concentrations within single particle counting ranges. MFC -mass flow controller, HEPA-high efficiency particulate air.</figDesc>
+        <figDesc>Fig 1. Experimental setup for diluting and sampling EC and cigarette aerosol. a.) Static dilution process of conducting a 60mL puff into a 100mL glass syringe, conducting a 1:10 syringe dilution then 1:28 dilution by injecting into a Tedlar bag for aerosol sampling. b.) System for dynamic dilution and characterization of aerosol by SMPS and APS simultaneously. Unique dilution rates were applied to SMPS and APS to achieve aerosol concentrations within single particle counting ranges. MFC -mass flow controller, HEPA-high efficiency particulate air. https://doi.org/10.1371/journal.pone.0210147.g001</figDesc>
       </figure>
       <figure xml:id="fig_1">
         <head>Fig 2 .</head>
@@ -547,15 +536,13 @@
       <figure xml:id="fig_4">
         <head/>
         <label/>
-        <figDesc>. Ageing of EC aerosol diluted using 1:10 syringe + 1:27 bag to determine the effect on particle size distribution. a.) EC aerosol generated with EC battery at minimum dial set- ting and b.) maximum dial setting. Ageing causes right shifting in the nanosized particles at minimum and maximum battery voltage but minimal change in the larger mode. (TIF) S1 Table. Tubing loss calculation for each size bin within the SMPS/APS ensemble range. (TIF)</figDesc>
+        <figDesc>. Ageing of EC aerosol diluted using 1:10 syringe + 1:27 bag to determine the effect on particle size distribution. a.) EC aerosol generated with EC battery at minimum dial set- ting and b.) maximum dial setting. Ageing causes right shifting in the nanosized particles at minimum and maximum battery voltage but minimal change in the larger mode. (TIF) S1</figDesc>
       </figure>
       <figure type="table" validated="false" xml:id="tab_0">
-        <head/>
-        <label/>
-        <figDesc>https://doi.org/10.1371/journal.pone.0210147.g001 concentrations within the single particle counting range of each instrument after dynamic dilution. Particle counts are stable for several minutes if below 10 7 particles / cm 3 . [15] From initial experiments and searching the literature we expected particle counts of 10</figDesc>
-        <table>8 
-
-</table>
+        <head>Table .</head>
+        <label>.</label>
+        <figDesc>Tubing loss calculation for each size bin within the SMPS/APS ensemble range. (TIF)</figDesc>
+        <table/>
       </figure>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0210147 December 31, 2018</note>
       <note place="foot">https://doi.org/10.1371/journal.pone.0210147.g004 E-cig power and aerosol size distribution PLOS ONE | https://doi.org/10.1371/journal.pone.0210147 December 31, 2018</note>
@@ -564,7 +551,6 @@
       <div type="acknowledgement">
         <div>
           <head>Author Contributions</head>
-          <note type="other">Conceptualization</note>
         </div>
       </div>
       <div type="references">
@@ -579,14 +565,15 @@
                   <surname>Abrams</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1001/jama.2013.285347</idno>
-              <ptr target="https://doi.org/10.1001/jama.2013.285347PMID"/>
+              <idno type="DOI">10.1001/jama.2013.285347</idno>
+              <idno>PMID: 24399548</idno>
+              <ptr target="https://doi.org/10.1001/jama.2013.285347"/>
             </analytic>
             <monogr>
               <title level="j">JAMA</title>
               <imprint>
                 <biblScope unit="volume">311</biblScope>
-                <biblScope unit="page">24399548</biblScope>
+                <biblScope from="135" to="136" unit="page"/>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -677,14 +664,15 @@
                   <surname>Salthammer</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/j.1600-0668.2012.00792.x</idno>
-              <ptr target="https://doi.org/10.1111/j.1600-0668.2012.00792.xPMID"/>
+              <idno type="DOI">10.1111/j.1600-0668.2012.00792.x</idno>
+              <idno>PMID: 22672560</idno>
+              <ptr target="https://doi.org/10.1111/j.1600-0668.2012.00792.x"/>
             </analytic>
             <monogr>
               <title level="j">Indoor Air</title>
               <imprint>
                 <biblScope unit="volume">23</biblScope>
-                <biblScope unit="page">22672560</biblScope>
+                <biblScope from="25" to="31" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -773,14 +761,15 @@
                   <surname>Stolz</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1021/jp201078e</idno>
-              <ptr target="https://doi.org/10.1021/jp201078ePMID"/>
+              <idno type="DOI">10.1021/jp201078e</idno>
+              <idno>PMID: 21452849</idno>
+              <ptr target="https://doi.org/10.1021/jp201078e"/>
             </analytic>
             <monogr>
               <title level="j">The Journal of Physical Chemistry A</title>
               <imprint>
                 <biblScope unit="volume">115</biblScope>
-                <biblScope unit="page">21452849</biblScope>
+                <biblScope from="3592" to="3595" unit="page"/>
                 <date type="published" when="2011"/>
               </imprint>
             </monogr>
@@ -824,14 +813,15 @@
                   <surname>Curioni</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1021/jp300997d</idno>
-              <ptr target="https://doi.org/10.1021/jp300997dPMID"/>
+              <idno type="DOI">10.1021/jp300997d</idno>
+              <idno>PMID: 22512236</idno>
+              <ptr target="https://doi.org/10.1021/jp300997d"/>
             </analytic>
             <monogr>
               <title level="j">The Journal of Physical Chemistry A</title>
               <imprint>
                 <biblScope unit="volume">116</biblScope>
-                <biblScope unit="page">22512236</biblScope>
+                <biblScope from="4602" to="4609" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -980,14 +970,15 @@
                   <surname>Myers</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.chroma.2015.09.034</idno>
-              <ptr target="https://doi.org/10.1016/j.chroma.2015.09.034PMID"/>
+              <idno type="DOI">10.1016/j.chroma.2015.09.034</idno>
+              <idno>PMID: 26422308</idno>
+              <ptr target="https://doi.org/10.1016/j.chroma.2015.09.034"/>
             </analytic>
             <monogr>
               <title level="j">Journal of Chromatography A</title>
               <imprint>
                 <biblScope unit="volume">1418</biblScope>
-                <biblScope unit="page">26422308</biblScope>
+                <biblScope from="192" to="199" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -1088,14 +1079,15 @@
                   <surname>Conklin</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1021/acsomega.6b00489</idno>
-              <ptr target="https://doi.org/10.1021/acsomega.6b00489PMID"/>
+              <idno type="DOI">10.1021/acsomega.6b00489</idno>
+              <idno>PMID: 28393137</idno>
+              <ptr target="https://doi.org/10.1021/acsomega.6b00489"/>
             </analytic>
             <monogr>
               <title level="j">ACS omega</title>
               <imprint>
                 <biblScope unit="volume">2</biblScope>
-                <biblScope unit="page">28393137</biblScope>
+                <biblScope unit="page">1207</biblScope>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -1265,14 +1257,15 @@
                   <surname>Cheng</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1136/tobaccocontrol-2013-051476</idno>
-              <ptr target="https://doi.org/10.1136/tobaccocontrol-2013-051476PMID"/>
+              <idno type="DOI">10.1136/tobaccocontrol-2013-051476</idno>
+              <idno>PMID: 24732162</idno>
+              <ptr target="https://doi.org/10.1136/tobaccocontrol-2013-051476"/>
             </analytic>
             <monogr>
               <title level="j">Tobacco control</title>
               <imprint>
                 <biblScope unit="volume">23</biblScope>
-                <biblScope unit="page">24732162</biblScope>
+                <biblScope from="4" to="10" unit="page"/>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -1318,14 +1311,14 @@
                   <surname>Messadi</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0154447</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0154447PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0154447</idno>
+              <idno>PMID: 27223106</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0154447"/>
             </analytic>
             <monogr>
               <title level="j">PloS one</title>
               <imprint>
                 <biblScope unit="volume">11</biblScope>
-                <biblScope unit="page">27223106</biblScope>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -1451,14 +1444,15 @@
                   <surname>Hoffman</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1136/tobaccocontrol-2013-051489</idno>
-              <ptr target="https://doi.org/10.1136/tobaccocontrol-2013-051489PMID"/>
+              <idno type="DOI">10.1136/tobaccocontrol-2013-051489</idno>
+              <idno>PMID: 24732159</idno>
+              <ptr target="https://doi.org/10.1136/tobaccocontrol-2013-051489"/>
             </analytic>
             <monogr>
               <title level="j">Tobacco control</title>
               <imprint>
                 <biblScope unit="volume">23</biblScope>
-                <biblScope unit="page">24732159</biblScope>
+                <biblScope from="23" to="29" unit="page"/>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -1553,14 +1547,15 @@
                   <surname>Alderman</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3109/08958378.2012.744781</idno>
-              <ptr target="https://doi.org/10.3109/08958378.2012.744781PMID"/>
+              <idno type="DOI">10.3109/08958378.2012.744781</idno>
+              <idno>PMID: 23216158</idno>
+              <ptr target="https://doi.org/10.3109/08958378.2012.744781"/>
             </analytic>
             <monogr>
               <title level="j">Inhalation toxicology</title>
               <imprint>
                 <biblScope unit="volume">24</biblScope>
-                <biblScope unit="page">23216158</biblScope>
+                <biblScope from="976" to="984" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -1592,14 +1587,15 @@
                   <surname>Vigo</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.envpol.2013.10.010</idno>
-              <ptr target="https://doi.org/10.1016/j.envpol.2013.10.010PMID"/>
+              <idno type="DOI">10.1016/j.envpol.2013.10.010</idno>
+              <idno>PMID: 24172659</idno>
+              <ptr target="https://doi.org/10.1016/j.envpol.2013.10.010"/>
             </analytic>
             <monogr>
               <title level="j">Environmental Pollution</title>
               <imprint>
                 <biblScope unit="volume">184</biblScope>
-                <biblScope unit="page">24172659</biblScope>
+                <biblScope from="523" to="529" unit="page"/>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -1637,14 +1633,15 @@
                   <surname>Hinds Wc</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1080/0002889778507712</idno>
-              <ptr target="https://doi.org/10.1080/0002889778507712PMID"/>
+              <idno type="DOI">10.1080/0002889778507712</idno>
+              <idno>PMID: 629208</idno>
+              <ptr target="https://doi.org/10.1080/0002889778507712"/>
             </analytic>
             <monogr>
               <title level="j">The American Industrial Hygiene Association Journal</title>
               <imprint>
                 <biblScope unit="volume">39</biblScope>
-                <biblScope unit="page">629208</biblScope>
+                <biblScope from="48" to="54" unit="page"/>
                 <date type="published" when="1978"/>
               </imprint>
             </monogr>
@@ -1745,14 +1742,15 @@
                   <surname>Heyder</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1080/15298668091424933</idno>
-              <ptr target="https://doi.org/10.1080/15298668091424933PMID"/>
+              <idno type="DOI">10.1080/15298668091424933</idno>
+              <idno>PMID: 7395752</idno>
+              <ptr target="https://doi.org/10.1080/15298668091424933"/>
             </analytic>
             <monogr>
               <title level="j">The American Industrial Hygiene Association Journal</title>
               <imprint>
                 <biblScope unit="volume">41</biblScope>
-                <biblScope unit="page">7395752</biblScope>
+                <biblScope from="385" to="398" unit="page"/>
                 <date type="published" when="1980"/>
               </imprint>
             </monogr>
@@ -1774,14 +1772,15 @@
                   <surname>Valberg</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1164/arrd.1979.120.6.1325</idno>
-              <ptr target="https://doi.org/10.1164/arrd.1979.120.6.1325PMID"/>
+              <idno type="DOI">10.1164/arrd.1979.120.6.1325</idno>
+              <idno>PMID: 391112</idno>
+              <ptr target="https://doi.org/10.1164/arrd.1979.120.6.1325"/>
             </analytic>
             <monogr>
               <title level="j">American Review of Respiratory Disease</title>
               <imprint>
                 <biblScope unit="volume">120</biblScope>
-                <biblScope unit="page">391112</biblScope>
+                <biblScope from="1325" to="1373" unit="page"/>
                 <date type="published" when="1979"/>
               </imprint>
             </monogr>
@@ -1825,14 +1824,15 @@
                   <surname>Loft</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1080/08958370601051677</idno>
-              <ptr target="https://doi.org/10.1080/08958370601051677PMID"/>
+              <idno type="DOI">10.1080/08958370601051677</idno>
+              <idno>PMID: 17169858</idno>
+              <ptr target="https://doi.org/10.1080/08958370601051677"/>
             </analytic>
             <monogr>
               <title level="j">Inhalation toxicology</title>
               <imprint>
                 <biblScope unit="volume">19</biblScope>
-                <biblScope unit="page">17169858</biblScope>
+                <biblScope from="109" to="116" unit="page"/>
                 <date type="published" when="2007"/>
               </imprint>
             </monogr>

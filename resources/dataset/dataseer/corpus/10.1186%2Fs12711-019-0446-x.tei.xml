@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T07:49+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:27+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -179,7 +179,7 @@
         </p>
         <p>
           <s id="dataset-2" type="Tabular data">Phenotypes were calculated from animal herd-test records for the three yield traits plus fat and protein concentration in milk.</s>
-          <s>These phenotypes were generated using herd-test data from the first lactation, adjusted by using an ASReml-R <ref target="#b14" type="bibr">[15]</ref> model with birth year, age at calving, breed, and heterosis as linear covariates, stage of lactation as a fixed effect, season/herd as an absorbed fixed effect, and animal as a random effect.</s>
+          <s>These phenotypes were generated using herd-test data from the first lactation, adjusted by using an ASReml-R [15] model with birth year, age at calving, breed, and heterosis as linear covariates, stage of lactation as a fixed effect, season/herd as an absorbed fixed effect, and animal as a random effect.</s>
           <s id="dataset-3" type="Tabular data">Herd test records were sampled using Fourier-transform infrared spectroscopy on a combination of Milkoscan FT6000 (FOSS, Hillerød, Denmark) and Bentley FTS (Bentley, Chaska, USA) instruments.</s>
         </p>
       </div>
@@ -269,15 +269,12 @@
           <s>
             <ref target="#b20" type="bibr">[21]</ref> .</s>
           <s>The top associated variant for each of the five phenotypes is in <ref target="#tab_0" type="table">Table 1</ref> .</s>
-          <s>All QTL were significant at the genome-wide threshold 5 × 10</s>
-        </p>
-        <formula xml:id="formula_0">−8</formula>
-        <p>
-          <s>. The most significant QTL was identified for PC, followed by FC and MY, and the least significant QTL was detected for FY.</s>
+          <s>All QTL were significant at the genome-wide threshold 5 × 10 −8 .</s>
+          <s>The most significant QTL was identified for PC, followed by FC and MY, and the least significant QTL was detected for FY.</s>
           <s>QTL for PC and MY are illustrated in <ref target="#fig_0" type="figure">Fig. 1</ref> .</s>
         </p>
         <p>
-          <s>AI-REML analysis was performed, using a GRM calculated over all the autosomes, to estimate genomic heritabilities (h 2 ; <ref target="#tab_1" type="table">Table 2</ref> ).</s>
+          <s>AI-REML analysis was performed, using a GRM calculated over all the autosomes, to estimate genomic heritabilities (h 2 ; <ref type="table">Table 2</ref> ).</s>
           <s>To investigate these QTL further, the linkage disequilibrium (LD) statistics (R 2 ) between each pair of top variants were calculated <ref type="figure">(Fig. 2)</ref> .</s>
           <s>Strong LD was observed between the top variants for MY, FC, and PC (MY vs FC tag variants R 2 = 0.887; MY vs PC tag variants R 2 = 0.991).</s>
         </p>
@@ -296,88 +293,101 @@
         <head>Expression QTL analysis highlights three genes differentially expressed by genotype</head>
         <p>
           <s>To look for cis-eQTL effects that might explain the lactation QTL, gene expression levels were calculated for genes in the chr5:75-76 Mbp window, using RNAseq data representing lactating mammary tissue biopsies from 357 cows <ref target="#fig_0" type="figure">(Fig. 1c)</ref> .</s>
-          <s>Expression levels in FPKM and TPM were calculated using Stringtie (version 1.2.4) <ref target="#b24" type="bibr">[25]</ref> and are in <ref target="#tab_2" type="table">Table 3</ref> for transcripts for which FPKM was higher than 0.1.</s>
+          <s>Expression levels in FPKM and TPM were calculated using Stringtie (version 1.2.4) <ref target="#b24" type="bibr">[25]</ref> and are in <ref type="table">Table 3</ref> for transcripts for which FPKM was higher than 0.1.</s>
           <s>The gene with the highest expression level was CSF2RB, which is consistent with previous observations in murine mammary RNAseq data <ref target="#b32" type="bibr">[33]</ref> .</s>
           <s>Moderate expression was also observed for the candidate gene MYH9.</s>
           <s>However, the expression level of NCF4 was very low, at FPKM = 0.406.</s>
           <s>The highest correlation between pairs of gene expression levels was observed for TST and MPST (r = 0.545 ±0.077), which is concordant with the published observation of a shared bidirectional promoter for these two genes <ref target="#b33" type="bibr">[34]</ref> .</s>
-        </p>
-        <p>
-          <s>Association mapping was conducted for the 11 expressed genes in <ref target="#tab_2" type="table">Table 3</ref> .</s>
+          <s>Association mapping was conducted for the 11 expressed genes in <ref type="table">Table 3</ref> .</s>
           <s>To this end, gene expression data were first scaled using the variance-stabilising transformation (VST) implemented in DESeq (version 1.28.0)</s>
           <s>
             <ref target="#b26" type="bibr">[27]</ref> .</s>
           <s>A GRM was then calculated for the 357 cows representing the RNAseq dataset, and the MLMA-LOCO method was performed as described for the analysis of lactation traits.</s>
-          <s>This yielded genome-wide significant eQTL for three genes: CSF2RB (1.33 × 10 ), and TXN2 (5.85 × 10 −12 ) (see <ref target="#tab_2" type="table">Table 3</ref> and <ref target="#fig_2" type="figure">Fig. 3</ref> ).</s>
+          <s>This yielded genome-wide significant eQTL for three genes: CSF2RB (1.33 × 10 −26 ), NCF4 (4.30 × 10 −16 ), and TXN2 (5.85 × 10 −12 ) (see <ref type="table">Table 3</ref> and <ref target="#fig_1" type="figure">Fig. 3</ref> ).</s>
           <s>All three genes were located within the peaks of their respective eQTL, demonstrating regulation in cis.</s>
         </p>
         <p>
           <s>In cases in which genetic regulation of gene expression (i.e., an eQTL) underlies a complex trait QTL, we expect that both QTL share similar association signals, with the most (and least) associated variants similar between phenotypes.</s>
           <s>To test whether any of the 11 expressed genes shared similarities with the milk QTL, Pearson correlations between the log 10 p-values for each of the milk QTL and eQTL were calculated.</s>
           <s>
-            <ref type="table">Table 4</ref> shows the QTL:eQTL correlations for all five phenotypes with three significant <ref target="#tab_1" type="table">Table 2</ref> eQTL, plus the TST gene, which did not yield a genomewide significant eQTL, although it has been proposed as a candidate underlying this locus.</s>
+            <ref target="#tab_2" type="table">Table 4</ref> shows the QTL:eQTL correlations for all five phenotypes with three significant</s>
+        </p>
+      </div>
+      <div>
+        <head>Table 2 Genomic heritability estimates for milk yield and composition phenotypes</head>
+        <p>
+          <s>Phenotypes are milk fat daily yield (kg) and concentration (%), protein daily yield and concentration, and milk daily volume (L)</s>
+        </p>
+      </div>
+      <div>
+        <head>FY (kg/day) FC (%) PY (kg/day) PC (%) MY (L/day)</head>
+        <p>
+          <s>0.184 ±0.008 0.622 ±0.007 0.183 ±0.008 0.614 ±0.007 0.263 ±0.008</s>
+        </p>
+      </div>
+      <div>
+        <head>Fig. 2</head>
+        <p>
+          <s>Linkage disequilibrium (LD) observed between the top associated markers for each phenotype (R 2 ).</s>
+          <s>Markers are identified using dbSNP reference SNP ID numbers.</s>
+          <s>Phenotypes are as in <ref type="table">Table 2</ref> eQTL, plus the TST gene, which did not yield a genomewide significant eQTL, although it has been proposed as a candidate underlying this locus.</s>
           <s>The eQTL for CSF2RB has R 2 &gt;0.5 (r &gt;0.707)</s>
           <s>with three of the five milk phenotypes, while correlations for the neighbouring gene NCF4 are just below this level.</s>
           <s>Neither of the TXN2 or TST genes exhibited high correlations with any milk QTL.</s>
           <s>The eQTL for CSF2RB was also highly correlated with the NCF4 eQTL (r = 0.863 ±0.005).</s>
-          <s>A similar picture is obtained when examining the LD between the top tag markers for each QTL, with high LD observed <ref target="#fig_4" type="figure">(Fig. 4)</ref> among the tags for MY, FC, and PC with the tags for the CSF2RB and NCF4 eQTL.</s>
+          <s>A similar picture is obtained when examining the LD between the top tag markers for each QTL, with high LD observed <ref type="figure">(Fig. 4</ref> ) among the tags for MY, FC, and PC with the tags for the CSF2RB and NCF4 eQTL.</s>
         </p>
       </div>
       <div>
         <head>Evidence of multiple, differentially segregating QTL for milk yield and protein concentration</head>
         <p>
-          <s>Examining <ref target="#fig_0" type="figure">Fig. 1a</ref> (repeated in <ref target="#fig_5" type="figure">Fig. 5a</ref> ) suggested that protein concentration might be influenced by two colocated but mechanistically independent QTL, since a number of markers that are not in strong LD with the top marker nevertheless exhibit very small p-values (&lt;1 × 10</s>
-        </p>
-      </div>
-      <div>
-        <head>−60</head>
-        <p>
-          <s>).</s>
-          <s>To investigate this possibility, the top associated marker (rs208375076) was fitted as a fixed effect and the MLMA-LOCO analysis repeated using the residual, PC phenotype <ref target="#fig_5" type="figure">(Fig. 5b)</ref> .</s>
+          <s>Examining <ref target="#fig_0" type="figure">Fig. 1a</ref> (repeated in <ref target="#fig_2" type="figure">Fig. 5a</ref> ) suggested that protein concentration might be influenced by two colocated but mechanistically independent QTL, since a number of markers that are not in strong LD with the top marker nevertheless exhibit very small p-values (&lt;1 × 10 −60 ).</s>
+          <s>To investigate this possibility, the top associated marker (rs208375076) was fitted as a fixed effect and the MLMA-LOCO analysis repeated using the residual, PC phenotype <ref target="#fig_2" type="figure">(Fig. 5b)</ref> .</s>
           <s>The new top marker (rs210293314) remained highly significant (P = 1.30 × 10 −24 after adjustment, 9.31 × 10 −41 before adjustment), suggesting that it is tagging a different QTL.</s>
-          <s>Adjusting the original protein concentration phenotype for rs210293314 and repeating the MLMA-LOCO analysis yielded the result shown in <ref target="#fig_5" type="figure">Fig. 5c</ref> .</s>
+        </p>
+        <p>
+          <s>Adjusting the original protein concentration phenotype for rs210293314 and repeating the MLMA-LOCO analysis yielded the result shown in <ref target="#fig_2" type="figure">Fig. 5c</ref> .</s>
           <s>Here, the most significant marker was rs208086849, a variant that is largely statistically equivalent to the top rs208375076 marker from the original, unadjusted analysis (R 2 = 0.999).</s>
           <s>These observations suggest the presence of two QTL for milk protein percentage.</s>
-          <s>This analysis was repeated with the MY phenotype <ref target="#fig_5" type="figure">(Fig. 5d)</ref> .</s>
-          <s>This phenotype showed little evidence of a second co-locating QTL, where fitting the top associated marker (rs208473130) dropped the signal below the genome-wide significance threshold (P = 1.36 × 10 −6</s>
-        </p>
-        <p>
-          <s>for marker rs378861677; <ref target="#fig_5" type="figure">Fig. 5e</ref> ).</s>
-          <s>However, adjusting the MY phenotype by fitting rs378861677 and repeating the MLMA-LOCO analysis resulted in an increase in significance for the top marker rs208473130, from 6.64 × 10 −25 to 8.63 × 10 −29 ( <ref target="#fig_5" type="figure">Fig. 5f</ref> ), which suggests that there may indeed be an additional weak QTL, or the variant otherwise addresses some other confounding signal.</s>
+          <s>This analysis was repeated with the MY phenotype <ref target="#fig_2" type="figure">(Fig. 5d)</ref> .</s>
+          <s>This phenotype showed little evidence of a second co-locating QTL, where fitting the top associated marker (rs208473130) dropped the signal below the genome-wide significance threshold (P = 1.36 × 10 −6 for marker rs378861677; <ref target="#fig_2" type="figure">Fig. 5e</ref> ).</s>
+          <s>However, adjusting the MY phenotype by fitting rs378861677 and repeating the MLMA-LOCO analysis resulted in an increase in significance for the top marker rs208473130, from 6.64 × 10 −25 to 8.63 × 10 −29 <ref target="#fig_2" type="figure">(Fig. 5f</ref> ), which suggests that there may indeed be an additional weak QTL, or the variant otherwise addresses some other confounding signal.</s>
           <s>The variants rs208086849 (from the PC analysis in the previous paragraph) and rs208473130 show very strong LD (R 2 = 0.991), which suggests that both markers are in fact tagging the same QTL across PC and MY.</s>
           <s>In contrast, variants rs210293314 (PC analysis above) and rs378861677 show moderate to weak LD (R 2 = 0.332), which suggests that the two signals tagged by these variants are genetically distinct.</s>
         </p>
         <p>
-          <s>Most of the QTL were represented by common tagvariants, with minor allele frequencies (MAF) higher than 0.4 across the whole population ( <ref type="table">Table 5</ref> ).</s>
+          <s>Most of the QTL were represented by common tagvariants, with minor allele frequencies (MAF) higher than 0.4 across the whole population ( <ref target="#tab_3" type="table">Table 5</ref> ).</s>
           <s>The two seemingly distinct PC QTL also segregated in both breeds, as do the PY and FC QTL.</s>
           <s>One of the two MY QTL, tagged by rs378861677, was uncommon in the Jersey population (MAF = 0.01), and the FY QTL tagged by rs466308089 had a MAF of only 0.002 in Jersey cows.</s>
           <s>The minor allele of the latter QTL was also the rarest signal in the population overall, with a MAF of 0.031.</s>
         </p>
         <p>
           <s>Since at least two differentially segregating QTL were detected at the locus, they may be underpinned by different genes and/or molecular mechanisms.</s>
-          <s>To <ref target="#tab_2" type="table">(Table 3)</ref> .</s>
+          <s>To</s>
+        </p>
+      </div>
+      <div>
+        <head>Table 3 Median gene expression levels and top variants identified in eQTL analyses</head>
+        <p>
+          <s>Genes with FPKM values less than 0.1 are not shown.</s>
+          <s>Gene symbols are from VGNC and Ensembl.</s>
+          <s>Beta is the effect size of the minor allele on gene expression, measured in VST-transformed units.</s>
+          <s>Three genes have eQTL which exceed the genome-wide significance threshold 5 ×10 −8 <ref target="#b60" type="bibr">[60]</ref>
+            <ref type="table">(Table 3)</ref> .</s>
           <s>From top to bottom, the three genes are a CSF2RB, b NCF4, and c TXN2.</s>
-          <s>Colours represent correlations for each marker with the top variant for that eQTL (see <ref target="#fig_0" type="figure">Fig. 1</ref>
-          </s>
+          <s>Colours represent correlations for each marker with the top variant for that eQTL (see <ref target="#fig_0" type="figure">Fig. 1</ref> assess whether the significant, co-locating CSF2RB and NCF4 eQTL were themselves comprised of multiple, overlapping signals (i.e.</s>
+          <s>multiple cis-eQTL driven by different regulatory elements), the top associated variants were fitted as fixed effects to the gene expression phenotypes, and the analyses were rerun as above.</s>
+          <s>This yielded new top markers with p-values of 8.87 × 10 −5 and 1.75 × 10 −4 respectively, suggesting that the expression of these two genes, if influenced by multiple regulatory factors, had weak effects, or were too heavily confounded by LD to differentiate clearly.</s>
+          <s>To investigate how the eQTL might contribute to the multiple, co-locating PC QTL in comparative terms, the SNP-adjusted PC association results were used to calculate eQTL correlations, using the methodology described in the previous section.</s>
+          <s>Notably, these analyses resulted in improved correlations with eQTL.</s>
+          <s>The correlation between the CSF2RB cis-eQTL and the unadjusted PC phenotype was 0.754 ± 0.009 <ref type="figure">(Figs. 4, 6a)</ref> .</s>
+          <s>However, using the phenotype adjusted for rs210293314 yielded a correlation of 0.807 ±0.007 <ref type="figure">(Fig. 6b)</ref> .</s>
+          <s>The same pattern was observed for the NCF4 gene, for which correlations improved from 0.689 ± 0.011 to 0.843 ± 0.006 <ref type="figure">(Fig. 6c, d)</ref> .</s>
+          <s>Applying the same approach to MY (unadjusted, and adjusted by rs37886167) similar results were obtained, albeit with only marginal increases: correlations with the CSF2RB eQTL increased from 0.849 ±0.006 to 0.872 ±0.005, and correlations with the NCF4 eQTL increased from 0.681 ±0.011 to 0.713 ±0.010.</s>
         </p>
       </div>
       <div>
         <head>for legend). Grey bands indicate the location of the gene for which the eQTL is displayed</head>
-      </div>
-      <div>
-        <head>Table 4 Correlations between the − log 10 p-values for milk trait QTL and co-located eQTL</head>
-        <p>
-          <s>Pearson correlations are shown, with 95% confidence intervals.</s>
-          <s>Three genes with significant (P &lt; 5×10 and 1.75 × 10 −4 respectively, suggesting that the expression of these two genes, if influenced by multiple regulatory factors, had weak effects, or were too heavily confounded by LD to differentiate clearly.</s>
-        </p>
-        <p>
-          <s>To investigate how the eQTL might contribute to the multiple, co-locating PC QTL in comparative terms, the SNP-adjusted PC association results were used to calculate eQTL correlations, using the methodology described in the previous section.</s>
-          <s>Notably, these analyses resulted in improved correlations with eQTL.</s>
-          <s>The correlation between the CSF2RB cis-eQTL and the unadjusted PC phenotype was 0.754 ± 0.009 <ref target="#fig_4" type="figure">(Figs. 4, 6a)</ref> .</s>
-          <s>However, using the phenotype adjusted for rs210293314 yielded a correlation of 0.807 ±0.007 <ref type="figure">(Fig. 6b)</ref> .</s>
-          <s>The same pattern was observed for the NCF4 gene, for which correlations improved from 0.689 ± 0.011 to 0.843 ± 0.006 <ref type="figure">(Fig. 6c, d</ref> ).</s>
-          <s>Applying the same approach to MY (unadjusted, and adjusted by rs37886167) similar results were obtained, albeit with only marginal increases: correlations with the CSF2RB eQTL increased from 0.849 ±0.006 to 0.872 ±0.005, and correlations with the NCF4 eQTL increased from 0.681 ±0.011 to 0.713 ±0.010.</s>
-        </p>
         <p>
           <s>To investigate the possibility that secondary, co-locating PC and/or MY QTL might be caused by proteincoding variants, all variants in strong LD (R 2 &gt;0.9)</s>
           <s>with rs210293314 (secondary PC tag-SNP) or rs378861677 (secondary MY tag-SNP) were analysed using VEP as described previously.</s>
@@ -391,18 +401,20 @@
           <s>Previous work <ref target="#b27" type="bibr">[28]</ref> had identified four RNA editing sites that mapped to the introns of CSF2RB.</s>
           <s>Here, while manually examining RNAseq and WGS sequence reads mapping to the gene, a surprising number of additional RNA edits were observed (see Methods).</s>
           <s>This included 38 novel A-to-G variant sites present in the RNAseq data, yet absent from the whole-genome sequence representing the nine cows for which both data sources were available.</s>
-          <s>These sites were present in four clusters within the 3′ UTR <ref target="#fig_8" type="figure">(Fig. 7)</ref> , which had been missed from our previously published genome-wide analysis <ref target="#b27" type="bibr">[28]</ref> because it was based only on reference annotations that failed to capture the full length 3′ UTR sequence, which was evident when empirically derived gene structures from the mammary RNAseq data were used.</s>
+          <s>These sites were present in four clusters within the 3′ UTR <ref target="#fig_3" type="figure">(Fig. 7)</ref> , which had been missed from our previously published genome-wide analysis <ref target="#b27" type="bibr">[28]</ref> because it was based only on reference annotations that failed to capture <ref type="figure">Fig. 4</ref> Linkage disequilibrium between the top tag variants for milk trait QTL and co-located gene expression QTL.</s>
+          <s>Three genes with significant (P &lt; 5×10 −8 ) eQTL are included, along with the TST <ref target="#b1" type="bibr">[2]</ref> that have previously been proposed as a candidate causative gene at this locus the full length 3′ UTR sequence, which was evident when empirically derived gene structures from the mammary RNAseq data were used.</s>
           <s>Because the ADAR enzymes responsible for adenosine-to-inosine editing (A-to-G in sequence reads) target double-stranded RNA <ref target="#b34" type="bibr">[35,</ref>
             <ref target="#b35" type="bibr">36]</ref> , we predicted the potential for the sequences around the edited sites to form double-stranded RNA.</s>
-          <s>The dot-plot in <ref target="#fig_8" type="figure">Fig. 7</ref> shows that, of the 38 edited sites (red dashed lines), 37 (97.4%)</s>
+          <s>The dot-plot in <ref target="#fig_3" type="figure">Fig. 7</ref> shows that, of the 38 edited sites (red dashed lines), 37 (97.4%)</s>
           <s>sit within regions of extended complementarity (diagonal black lines), thus having the potential to form double stranded secondary structures.</s>
         </p>
         <p>
           <s>As recently reported, we have observed that a proportion of RNA-edited bases are genetically modulated for some sites <ref target="#b27" type="bibr">[28]</ref> .</s>
           <s>To investigate potential genetic regulation of RNA-editing on CSF2RB transcripts, phenotypes for the proportion of reads edited were generated (see Methods), to detect RNA editing QTL (edQTL <ref target="#b27" type="bibr">[28,</ref>
             <ref target="#b36" type="bibr">37]</ref> ).</s>
-          <s>Using the MLMA-LOCO method as applied for the eQTL analysis described above, genome-wide significant edQTL (P &lt; 5 × 10 <ref target="#b5" type="bibr">6</ref> Correlations between eQTL and the co-located protein concentration QTL for the genes CSF2RB (left) and NCF4 (right).</s>
-          <s>Panels on the top row are plotted against the original protein concentration QTL <ref target="#fig_5" type="figure">(Fig. 5a)</ref> , while panels on the bottom row are plotted against the phenotype after fitting rs210293314 <ref target="#fig_5" type="figure">(Fig. 5c)</ref> different mechanisms <ref target="#b37" type="bibr">[38]</ref>
+          <s>Using the MLMA-LOCO method as applied for the eQTL analysis described above, genome-wide significant edQTL (P &lt; 5 × 10 −8 ) were identified for 18 of the 38 sites.</s>
+          <s>Because RNA editing may impact gene expression by <ref type="figure">Fig. 6</ref> Correlations between eQTL and the co-located protein concentration QTL for the genes CSF2RB (left) and NCF4 (right).</s>
+          <s>Panels on the top row are plotted against the original protein concentration QTL <ref target="#fig_2" type="figure">(Fig. 5a)</ref> , while panels on the bottom row are plotted against the phenotype after fitting rs210293314 <ref target="#fig_2" type="figure">(Fig. 5c)</ref> different mechanisms <ref target="#b37" type="bibr">[38]</ref>
             <ref target="#b38" type="bibr">[39]</ref>
             <ref target="#b39" type="bibr">[40]</ref> , we investigated whether any edQTL were correlated with the eQTL for CSF2RB.</s>
           <s>One site, mapping to chr5:75,750,220, had a correlation of 0.849 ±0.005 between the − log 10 p-values of the edQTL and the eQTL.</s>
@@ -412,9 +424,8 @@
           <s>As an extension to the hypothesis that edQTL might underlie changes in gene expression (i.e.</s>
           <s>eQTL), we reasoned that one or more of the milk phenotype QTL might also be impacted, as evidenced by the correlation values.</s>
           <s>Investigation of this hypothesis showed correlations r higher than 0.707 between edQTL and FC, PC, and PY <ref target="#tab_4" type="table">(Table 6</ref> ).</s>
-          <s>In addition, we found very ).</s>
-          <s>Sites are labelled with the correlation between the edQTL and the milk volume (MY) QTL after adjusting for marker rs208473130 <ref target="#fig_5" type="figure">Fig. 5e</ref> , correlations in <ref target="#fig_8" type="figure">Fig. 7)</ref> .</s>
-          <s>A strong correlation (0.822) was also detected between the edQTL for chr5:75,748,760 and the PC QTL after adjusting for marker rs208375076 (PC QTL illustrated in <ref target="#fig_5" type="figure">Fig. 5b)</ref> .</s>
+          <s>In addition, we found very <ref target="#fig_2" type="figure">Fig. 5e</ref> , correlations in <ref target="#fig_3" type="figure">Fig. 7)</ref> .</s>
+          <s>A strong correlation (0.822) was also detected between the edQTL for chr5:75,748,760 and the PC QTL after adjusting for marker rs208375076 (PC QTL illustrated in <ref target="#fig_2" type="figure">Fig. 5b)</ref> .</s>
           <s>As with the analyses of candidate proteincoding variants, these results suggest other alternative (and likely overlapping) mechanisms that may account for the multiple QTL segregating at the chromosome 5 locus.</s>
         </p>
       </div>
@@ -424,18 +435,18 @@
           <s>Manual examination of the WGS alignments at the locus also revealed read depth anomalies at approximately chr5:75,781,300-75,782,800.</s>
           <s>This analysis revealed a suspected 1.5 kbp deletion variant, located between the CSF2RB and TEX33 genes (downstream of the 3′ UTR of both genes given a 'tail to tail' orientation).</s>
           <s>To attempt to derive genotypes for this variant, the copy number at this site was estimated for 560 whole-genome sequenced cattle using CNVnator 0.3 <ref target="#b29" type="bibr">[30]</ref> .</s>
-          <s>The resulting estimates of copy number formed a trimodal distribution <ref target="#fig_3" type="figure">(Fig. 8a)</ref> , which suggested a biallelic variant that could be assumed to be inherited in a Mendelian fashion <ref target="#b40" type="bibr">[41]</ref> .</s>
+          <s>The resulting estimates of copy number formed a trimodal distribution <ref type="figure">(Fig. 8a)</ref> , which suggested a biallelic variant that could be assumed to be inherited in a Mendelian fashion <ref target="#b40" type="bibr">[41]</ref> .</s>
           <s>Although one pseudogene maps to the region (LOC788541 60S ribosomal protein L7), the deleted segment appeared otherwise devoid of noteworthy genomic features.</s>
         </p>
         <p>
           <s>To investigate the candidacy of the deletion as a potential causative variant for one or more of the QTL in the region, genotypes were called from CNVnator copy number predictions (see Methods), and the LD (R 2 ) between the deletion and top QTL variants was investigated.</s>
-          <s>Strong LD (0.887) was observed with the top markers for MY (rs208473130) and PC (rs208375076), as well as with rs208086849, the top variant for PC after adjusting for the secondary QTL <ref target="#fig_3" type="figure">(Fig. 8b)</ref> .</s>
+          <s>Strong LD (0.887) was observed with the top markers for MY (rs208473130) and PC (rs208375076), as well as with rs208086849, the top variant for PC after adjusting for the secondary QTL <ref type="figure">(Fig. 8b)</ref> .</s>
           <s>A slightly lower LD score was observed for FC (R 2 = 0.807).</s>
           <s>The deletion allele was more frequent than the reference allele in the NZ dairy population (deletion = 0.547).</s>
         </p>
         <p>
           <s>The strong LD between the ~ 1.5 kbp deletion and key QTL tag variants qualified the variant as a potential candidate for these QTL; therefore, we imputed the variant into the association analysis population to test for association directly.</s>
-          <s>Using the same MLMA-LOCO analysis method that was applied for other variants, significant associations (P &lt; 5 × 10 ).</s>
+          <s>Using the same MLMA-LOCO analysis method that was applied for other variants, significant associations (P &lt; 5 × 10 −8 ) were observed for PC (P = 7.30 × 10 −71 ), FC (P = 1.08 × 10 −30 ), and MY (P = 1.18 × 10 −18 ).</s>
           <s>Although highly significant, when ranking all variants by p value, the deletion variant never ranked higher than the 400th most significant marker; however, given the very large number of associated variants in this region generally (&gt; 800 in the top 20 orders of magnitude for PC), and the fact that some of the readdepth-based genotype calls may be erroneous, the deletion remains a plausible candidate variant for future consideration of these QTL.</s>
         </p>
       </div>
@@ -447,7 +458,12 @@
         <p>
           <s>We report QTL mapping of a chromosome 5 locus for several milk yield and composition traits, with a diversity of gene expression and RNA editing QTL that could underpin these effects.</s>
           <s>We note, in particular, that some phenotypes exhibit multiple QTL that probably have distinct genetic causes.</s>
-          <s>The FC and PC QTL are both in high LD with the MY QTL, which suggests that these effects may be mediated by changes in the total volume of milk produced without concomitant changes in fat or protein production.</s>
+          <s>The FC and PC QTL are both <ref type="figure">Fig. 8</ref> a Histogram of copy number genotype calls of 560 animals from CNVnator.</s>
+          <s>Copy numbers follow a trimodal distribution, suggesting that the variant is bialleleic.</s>
+          <s>Genotype classes are coloured in gold (homozygous deletion), grey (heterozygous) and blue (homozygous wild-type).</s>
+          <s>b Deletion variant genotypes plotted against the genotypes of the rs208086849 variant.</s>
+          <s>The two variants are in strong LD (R 2 = 0.887).</s>
+          <s>Points are jittered to increase visibility in high LD with the MY QTL, which suggests that these effects may be mediated by changes in the total volume of milk produced without concomitant changes in fat or protein production.</s>
           <s>The fat and protein yield QTL are not in LD with either each other or with milk yield.</s>
           <s>However, these two QTL are less significant than the others by many orders of magnitude (see <ref target="#tab_0" type="table">Table 1</ref> ), which suggests that the lack of LD may be due to insufficient power in the dataset to identify reproducible tag variants.</s>
           <s>However, it should be noted that the MAF for the FY QTL is much lower than those for the MY and PY QTL, which suggests that this signal may indeed be discrete from the other two yield signals.</s>
@@ -495,13 +511,7 @@
       <div>
         <head>RNA editing and edQTL</head>
         <p>
-          <s>Previously, we <ref target="#b9" type="bibr">[10]</ref> reported four RNA editing sites mapping to the CSF2RB gene, one of which (chr5:75,739,106) showed a significant edQTL (smallest P = 6.68 × 10</s>
-        </p>
-      </div>
-      <div>
-        <head>−13</head>
-        <p>
-          <s>).</s>
+          <s>Previously, we <ref target="#b9" type="bibr">[10]</ref> reported four RNA editing sites mapping to the CSF2RB gene, one of which (chr5:75,739,106) showed a significant edQTL (smallest P = 6.68 × 10 −13 ).</s>
           <s>This site exhibited only modest correlations with the CSF2RB eQTL, or with the milk yield or composition QTL <ref target="#b9" type="bibr">[10]</ref> .</s>
         </p>
         <p>
@@ -533,45 +543,20 @@
         <label>1</label>
         <figDesc>Fig. 1 The genetic context of milk trait QTL. Panels a and b: QTL for the herd-test-derived phenotypes protein concentration (a) and milk yield (b). Colours represent LD (R 2 ) with the most significant marker on a continuous scale, with colours provided in the legend for every 0.2 R 2 . Panel c shows the locations of genes mapping into this window (bottom) and the numbers of RNAseq reads mapping at positions across the window (top)</figDesc>
       </figure>
-      <figure xml:id="fig_2">
+      <figure xml:id="fig_1">
         <head>Fig. 3</head>
         <label>3</label>
         <figDesc>Fig. 3 QTL plots showing eQTL for the three genes that exhibit genome-wide significant cis-eQTL (Table 3). From top to bottom, the three genes are a CSF2RB, b NCF4, and c TXN2. Colours represent correlations for each marker with the top variant for that eQTL (see Fig. 1 for legend). Grey bands indicate the location of the gene for which the eQTL is displayed</figDesc>
       </figure>
-      <figure xml:id="fig_3">
-        <head>− 8 )</head>
-        <label>8</label>
-        <figDesc>eQTL are shown, along with the TST gene [2] that has previously been proposed as a candidate causative at this locus754 ± 0.009 0.689 ± 0.011 0.059 ± 0.020 − 0.118 ± 0.020 assess whether the significant, co-locating CSF2RB and NCF4 eQTL were themselves comprised of multiple, overlapping signals (i.e. multiple cis-eQTL driven by different regulatory elements), the top associated vari- ants were fitted as fixed effects to the gene expression phenotypes, and the analyses were rerun as above. This yielded new top markers with p-values of 8.87 × 10 −5</figDesc>
-      </figure>
-      <figure xml:id="fig_4">
-        <head>Fig. 4</head>
-        <label>4</label>
-        <figDesc>Fig. 4 Linkage disequilibrium between the top tag variants for milk trait QTL and co-located gene expression QTL. Three genes with significant (P &lt; 5×10 −8 ) eQTL are included, along with the TST [2] that have previously been proposed as a candidate causative gene at this locus</figDesc>
-      </figure>
-      <figure xml:id="fig_5">
+      <figure xml:id="fig_2">
         <head>Fig. 5</head>
         <label>5</label>
         <figDesc>Fig. 5 The effect of fitting the top variant on protein concentration (a-c) and milk yield (d-f) QTL. The top panels a and d show the QTL with no marker adjustments fitted; the centre panels b and e show the QTL after fitting the top variant from the panel above; and the bottom panels c and f show the QTL after fitting the top variant from the centre panel above. The phenotypes were adjusted by fitting the following markers: b rs208375076, c rs210293314, d rs208473130, e rs378861677</figDesc>
       </figure>
-      <figure xml:id="fig_6">
-        <head>− 8 )</head>
-        <label>8</label>
-        <figDesc>were identified for 18 of the 38 sites. Because RNA editing may impact gene expression by</figDesc>
-      </figure>
-      <figure xml:id="fig_7">
-        <head>Fig.</head>
-        <label/>
-        <figDesc>Fig. 6 Correlations between eQTL and the co-located protein concentration QTL for the genes CSF2RB (left) and NCF4 (right). Panels on the top row are plotted against the original protein concentration QTL (Fig. 5a), while panels on the bottom row are plotted against the phenotype after fitting rs210293314 (Fig. 5c)</figDesc>
-      </figure>
-      <figure xml:id="fig_8">
+      <figure xml:id="fig_3">
         <head>Fig. 7</head>
         <label>7</label>
-        <figDesc>Fig. 7 Left: dotplot of the sequence from the CSF2RB 3′-UTR against its complement. Positions are relative to chr5:75,747,904. Black dots indicate that seven of the 11 surrounding nucleotides are complementary. Vertical dashed red lines indicate the locations of predicted RNA-editing sites. Sections of the region 2275-2452 are complementary to the regions 837-915, 1178-1350, 1591-1719, and 1757-1832, suggesting that the UTR is able to fold into multiple configurations. Right: the section of predicted double stranded sequence between 1184 and 1217 on the left strand (running upward), and 2411-2444 on the right strand (running downward). Edited sites are coloured based on the strength of the edQTL at that site, from blue (not significant) to red (max P = 5.22 × 10 −26</figDesc>
-      </figure>
-      <figure xml:id="fig_10">
-        <head>Fig. 8 a</head>
-        <label>8</label>
-        <figDesc>Fig. 8 a Histogram of copy number genotype calls of 560 animals from CNVnator. Copy numbers follow a trimodal distribution, suggesting that the variant is bialleleic. Genotype classes are coloured in gold (homozygous deletion), grey (heterozygous) and blue (homozygous wild-type). b Deletion variant genotypes plotted against the genotypes of the rs208086849 variant. The two variants are in strong LD (R 2 = 0.887). Points are jittered to increase visibility</figDesc>
+        <figDesc>Fig. 7 Left: dotplot of the sequence from the CSF2RB 3′-UTR against its complement. Positions are relative to chr5:75,747,904. Black dots indicate that seven of the 11 surrounding nucleotides are complementary. Vertical dashed red lines indicate the locations of predicted RNA-editing sites. Sections of the region 2275-2452 are complementary to the regions 837-915, 1178-1350, 1591-1719, and 1757-1832, suggesting that the UTR is able to fold into multiple configurations. Right: the section of predicted double stranded sequence between 1184 and 1217 on the left strand (running upward), and 2411-2444 on the right strand (running downward). Edited sites are coloured based on the strength of the edQTL at that site, from blue (not significant) to red (max P = 5.22 × 10 −26 ). Sites are labelled with the correlation between the edQTL and the milk volume (MY) QTL after adjusting for marker rs208473130</figDesc>
       </figure>
       <figure type="table" validated="false" xml:id="tab_0">
         <head>Table 1</head>
@@ -591,9 +576,7 @@ rs466308089
 IL2RB 
 − 0.015 
 0.003 
-2.40 × 10 
-
-−8 
+2.40 × 10 −8 
 
 PY (kg/day) 
 rs108985709 
@@ -601,9 +584,7 @@ rs108985709
 ELFN2 
 0.004 
 0.001 
-1.05 × 10 
-
-−8 
+1.05 × 10 −8 
 
 MY (L/day) 
 rs208473130 
@@ -611,9 +592,7 @@ rs208473130
 NCF4 
 0.216 
 0.021 
-6.64 × 10 
-
-−25 
+6.64 × 10 −25 
 
 FC (%) 
 rs379739117 
@@ -621,9 +600,7 @@ rs379739117
 RPL7 
 − 0.055 
 0.004 
-3.27 × 10 
-
-−41 
+3.27 × 10 −41 
 
 PC (%) 
 rs208375076 
@@ -631,176 +608,119 @@ rs208375076
 NCF4 
 − 0.035 
 0.002 
-7.28 × 10 
-
-−83 
+7.28 × 10 −83 
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_1">
-        <head>Table 2</head>
-        <label>2</label>
-        <figDesc>Genomic heritability estimates for milk yield and composition phenotypes Phenotypes are milk fat daily yield (kg) and concentration (%), protein daily yield and concentration, and milk daily volume (L)Fig. 2 Linkage disequilibrium (LD) observed between the top associated markers for each phenotype (R 2 ). Markers are identified using dbSNP reference SNP ID numbers. Phenotypes are as in</figDesc>
-        <table>FY (kg/day) FC (%) 
-PY (kg/day) PC (%) 
-MY (L/day) 
+      <figure type="table" validated="true" xml:id="tab_2">
+        <head>Table 4</head>
+        <label>4</label>
+        <figDesc>Correlations between the − log 10 p-values for milk trait QTL and co-located eQTL</figDesc>
+        <table>Pearson correlations are shown, with 95% confidence intervals. Three genes with significant (P &lt; 5×10 −8 ) eQTL are shown, along with the TST gene [2] that has 
+previously been proposed as a candidate causative at this locus 
 
-0.184 ±0.008 0.622 ±0.007 0.183 ±0.008 0.614 ±0.007 0.263 ±0.008 
-
-</table>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_2">
-        <head>Table 3</head>
-        <label>3</label>
-        <figDesc>Median gene expression levels and top variants identified in eQTL analyses Genes with FPKM values less than 0.1 are not shown. Gene symbols are from VGNC and Ensembl. Beta is the effect size of the minor allele on gene expression, measured in VST-transformed units. Three genes have eQTL which exceed the genome-wide significance threshold 5 ×10 −8 [60]</figDesc>
-        <table>Gene 
-Ensembl 
-FPKM 
-TPM 
-Top variant 
-MAF 
-Beta 
-SE 
-P 
-
-APOL3 
-ENSBTAG00000040244 
-0.934 
-1.166 
-rs433710540 
-0.101 
-0.128 
-0.0315 
-4.84 × 10 
-
-−5 
-
+Phenotype 
 CSF2RB 
-ENSBTAG00000009064 
-61.888 
-80.081 
-rs384734208 
-0.439 
-0.428 
-0.0401 
-1.33 × 10 
-
-−26 
-
-EIF3D 
-ENSBTAG00000001988 
-9.139 
-11.461 
-rs110614216 
-0.353 
-− 0.072 
-0.0138 
-1.66 × 10 
-
-−7 
-
-FOXRED2 
-ENSBTAG00000000015 
-0.142 
-0.179 
-rs385243246 
-0.176 
-0.036 
-0.0133 
-6.52 × 10 
-
-−3 
-
-IFT27 
-ENSBTAG00000026657 
-0.904 
-1.107 
-rs110654851 
-0.440 
-0.046 
-0.0103 
-8.01 × 10 
-
-−6 
-
-IL2RB 
-ENSBTAG00000016345 
-0.285 
-0.359 
-rs43436480 
-0.364 
-0.058 
-0.0184 
-1.61 × 10 
-
-−3 
-
-MPST 
-ENSBTAG00000030648 
-1.564 
-1.957 
-rs109488885 
-0.314 
-− 0.053 
-0.0144 
-2.40 × 10 
-
-−4 
-
-MYH9 
-ENSBTAG00000010402 
-14.448 
-17.497 
-rs377857213 
-0.034 
-0.280 
-0.0715 
-9.07 × 10 
-
-−5 
-
 NCF4 
-ENSBTAG00000007531 
-0.406 
-0.513 
-rs209273109 
-0.443 
-0.137 
-0.0168 
-4.30 × 10 
-
-−16 
-
 TST 
-ENSBTAG00000030650 
-2.131 
-2.662 
-rs109922126 
-0.073 
-− 0.152 
-0.0313 
-1.19 × 10 
-
-−6 
-
 TXN2 
-ENSBTAG00000000014 
-4.345 
-5.653 
-rs109450151 
-0.454 
-− 0.080 
-0.0116 
-5.85 × 10 
 
-−12 </table>
+FY (kg/day) 
+0.376 ± 0.017 
+0.164 ± 0.019 
+0.293 ± 0.018 
+0.024 ± 0.020 
+
+PY (kg/day) 
+0.562 ± 0.014 
+0.404 ± 0.017 
+0.425 ± 0.016 
+0.032 ± 0.020 
+
+MY (L/day) 
+0.849 ± 0.006 
+0.682 ± 0.011 
+0.306 ± 0.018 
+− 0.039 ± 0.020 
+
+FC (%) 
+0.756 ± 0.009 
+0.648 ± 0.012 
+0.104 ± 0.020 
+− 0.128 ± 0.020 
+
+PC (%) 
+0.754 ± 0.009 
+0.689 ± 0.011 
+0.059 ± 0.020 
+− 0.118 ± 0.020 </table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_3">
+        <head>Table 5</head>
+        <label>5</label>
+        <figDesc>Minor allele frequencies for each top QTL variant Allele frequencies are shown across the entire study population of cows and by breed (HF Holstein-Friesian; J Jersey) Asterisks (*) indicate breeds where the minor allele differs from that for the population as a whole. The markers listed in the top section of the table tag the primary QTL for each phenotype, while those listed in the bottom section tag secondary QTL</figDesc>
+        <table>Phenotype 
+Variant 
+MAF All 
+HF (N = 8930) 
+J (N = 3599) 
+Cross 
+(N = 15,652) 
+
+FY (kg/day) 
+rs466308089 
+0.031 
+0.042 
+0.002 
+0.032 
+
+PY (kg/day) 
+rs108985709 
+0.409 
+0.483 
+0.298 
+0.391 
+
+MY (L/day) 
+rs208473130 
+0.444 
+0.489 
+0.390 
+0.435 
+
+FC (%) 
+rs379739117 
+0.473 
+*0.476 
+0.391 
+0.464 
+
+PC (%) 
+rs208375076 
+0.446 
+0.492 
+0.391 
+0.437 
+
+MY (%) 
+rs378861677 
+0.116 
+0.182 
+0.010 
+0.101 
+
+PC (%) 
+rs210293314 
+0.276 
+0.333 
+0.184 
+0.264 </table>
       </figure>
       <figure type="table" validated="false" xml:id="tab_4">
         <head>Table 6</head>
         <label>6</label>
         <figDesc>Correlations between the − log 10 p-values for milk trait QTL and co-located edQTL Pearson correlations (with 95% confidence intervals) between the − log 10 p-values for milk trait QTL and edQTL for sites mapping to the 3′-UTR of CSF2RB.</figDesc>
-        <table>Only sites and phenotypes where the correlation exceeded 0.707 (R 
-2 &gt;0.5) are 
+        <table>Only sites and phenotypes where the correlation exceeded 0.707 (R 2 &gt;0.5) are 
 shown 
 
 Phenotype 
@@ -852,8 +772,9 @@ chr5:75,750,204
       </div>
       <div type="annex">
         <div>
+          <head>Authors' contributions</head>
           <p>
-            <s>Authors' contributions TJL performed most of the bioinformatic and statistical analyses with help from KT, CC, TJJJ, and MK; TJL, SRD, RGS, and MDL conceived of the study and experiments; SRD, BLH, RGS, RJS, and MDL were involved in supervision of the project; TJL and MDL wrote the manuscript.</s>
+            <s>TJL performed most of the bioinformatic and statistical analyses with help from KT, CC, TJJJ, and MK; TJL, SRD, RGS, and MDL conceived of the study and experiments; SRD, BLH, RGS, RJS, and MDL were involved in supervision of the project; TJL and MDL wrote the manuscript.</s>
             <s>All authors have read and approved the final manuscript.</s>
             <s>
               <ref target="#b0" type="bibr">1</ref> Research and Development, Livestock Improvement Corporation, Ruakura Road, Hamilton, New Zealand.</s>
@@ -2158,7 +2079,7 @@ chr5:75,750,204
                   <surname>Harris</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1101/304220</idno>
+              <idno type="DOI">10.1101/304220</idno>
               <ptr target="https://doi.org/10.1101/304220"/>
               <imprint>
                 <date type="published" when="2018"/>

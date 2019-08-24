@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T02:37+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T12:30+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -272,9 +272,6 @@
   <text xml:lang="en">
     <body>
       <div>
-        <formula xml:id="formula_0">a1111111111 a1111111111 a1111111111 a1111111111 a1111111111</formula>
-      </div>
-      <div>
         <head>Introduction and background</head>
         <p>
           <s>Agronomy is a multi-disciplinary scientific discipline that includes research areas such as plant molecular biology, physiology and agro-ecology.</s>
@@ -295,30 +292,30 @@
           <s>Furthermore, efficient knowledge management requires the adoption of effective data integration methodologies.</s>
           <s>This involves efficient semantic integration of the disparate data sources, making information machine-readable and interoperable.</s>
           <s>Accordingly, Semantic Web standards and technologies enforced by the W3C, and embracing Tim Berners-Lee's vision <ref target="#b11" type="bibr">[12]</ref> , offers a solution to facilitate integration and interoperability of highly diverse and distributed data resources.</s>
-          <s>The Semantic Web technologies stack includes among others the following W3C Recommendations: the Resource Description Framework (RDF) <ref target="#b12" type="bibr">[13]</ref> as a backbone language to describe resources with triples, RDF Schema (RDFS) <ref type="bibr">[14]</ref> to build lightweight data schemas, Web Ontology Language (OWL) <ref target="#b13" type="bibr">[15]</ref> to build semantically rich ontologies and the SPARQL Query Language (SPARQL) <ref target="#b14" type="bibr">[16]</ref> to query RDF data.</s>
+          <s>The Semantic Web technologies stack includes among others the following W3C Recommendations: the Resource Description Framework (RDF) <ref target="#b12" type="bibr">[13]</ref> as a backbone language to describe resources with triples, RDF Schema (RDFS) <ref target="#b13" type="bibr">[14]</ref> to build lightweight data schemas, Web Ontology Language (OWL) <ref target="#b14" type="bibr">[15]</ref> to build semantically rich ontologies and the SPARQL Query Language (SPARQL) <ref target="#b15" type="bibr">[16]</ref> to query RDF data.</s>
           <s>All of the previous languages rely on Unique Resource Identifiers (URIs) to define a resource and its components, enabling data interoperability across the Web.</s>
           <s>RDF describes a resource and its relationships/properties in the form of simple triples, i.e., Subject-Predicate-Object offering a very convenient framework for integrating data across multiple platforms assuming the platforms share some common vocabularies to describe their objects.</s>
           <s>These triples can be combined to construct large networks of information (also known as RDF graphs).</s>
-          <s>A successfully implemented Semantic Web application allows scientists to pose very complex questions through a query or a set of queries that would return highly relevant answers to those questions, facilitating the formulation of research hypotheses <ref target="#b15" type="bibr">[17,</ref>
-            <ref target="#b16" type="bibr">18]</ref> .</s>
+          <s>A successfully implemented Semantic Web application allows scientists to pose very complex questions through a query or a set of queries that would return highly relevant answers to those questions, facilitating the formulation of research hypotheses <ref target="#b16" type="bibr">[17,</ref>
+            <ref target="#b17" type="bibr">18]</ref> .</s>
         </p>
         <p>
           <s>There are other approaches to meet the current data integration challenges, e.g., data warehouses.</s>
-          <s>For instance, Intermine <ref target="#b17" type="bibr">[19]</ref> has developed a sophisticated application to accommodate the dynamic nature of biological data and simplify data integration.</s>
+          <s>For instance, Intermine <ref target="#b18" type="bibr">[19]</ref> has developed a sophisticated application to accommodate the dynamic nature of biological data and simplify data integration.</s>
           <s>However, with integrative biology gaining popularity, it is necessary to preserve and share the semantics between the various datasets and make information machine interoperable, enabling large scale analyses of information available over the Web.</s>
           <s>The Semantic Web approach provides an added value, playing a complementary role to the traditional methods of data integration.</s>
         </p>
         <p>
-          <s>In the recent years, the biomedical community has strongly embraced the Semantic Web vision as demonstrated by a number of initiatives to provide ontologies <ref target="#b18" type="bibr">[20,</ref>
-            <ref target="#b19" type="bibr">21]</ref> and use them for producing semantically rich data such as in Bio2RDF <ref target="#b20" type="bibr">[22]</ref> , OpenPHACTS <ref target="#b21" type="bibr">[23]</ref> , Linked Life Data <ref target="#b22" type="bibr">[24]</ref> , KUPKB <ref target="#b23" type="bibr">[25]</ref> , and the EBI RDF Platform <ref target="#b24" type="bibr">[26]</ref> .</s>
+          <s>In the recent years, the biomedical community has strongly embraced the Semantic Web vision as demonstrated by a number of initiatives to provide ontologies <ref target="#b19" type="bibr">[20,</ref>
+            <ref target="#b20" type="bibr">21]</ref> and use them for producing semantically rich data such as in Bio2RDF <ref target="#b21" type="bibr">[22]</ref> , OpenPHACTS <ref target="#b22" type="bibr">[23]</ref> , Linked Life Data <ref target="#b23" type="bibr">[24]</ref> , KUPKB <ref target="#b24" type="bibr">[25]</ref> , and the EBI RDF Platform <ref target="#b25" type="bibr">[26]</ref> .</s>
           <s>In particular, OpenPHACTS serves as a good example of what can be achieved by using Semantic Web knowledge bases.</s>
           <s>The OpenPHACTS Explorer (http://www.openphacts.org/open-phacts-discovery-platform/</s>
           <s>explorer) provides use case driven tools that aid in browsing and visualizing the underlying knowledge represented in RDF which is very convenient for biologists.</s>
         </p>
         <p>
           <s>Currently, there is a growing awareness within the agronomic domain towards efficient data interoperability and integration <ref target="#b1" type="bibr">[2,</ref>
-            <ref target="#b25" type="bibr">27,</ref>
-            <ref target="#b26" type="bibr">28]</ref> .</s>
+            <ref target="#b26" type="bibr">27,</ref>
+            <ref target="#b27" type="bibr">28]</ref> .</s>
           <s>The need for an umbrella approach for providing uniform data is a widely-discussed topic.</s>
           <s>For instance, the Agriculture Data Interoperability Interest Group (https://rd-alliance.org/groups/agriculture-data-interest-group-igad.html)</s>
           <s>instituted by the Research Data Alliance (RDA) and agINFRA EU project (www.aginfra.eu)</s>
@@ -326,7 +323,7 @@
           <s>Moreover, the community has recently also started to adopt AgroPortal <ref target="#b10" type="bibr">[11]</ref> as an vocabulary and ontology repository for agronomy-and related domains such as nutrition, plant sciences and biodiversity-that support browsing, searching and visualizing domain relevant ontologies, ontology alignments and creation of semantic annotations.</s>
           <s>While plant-centric ontologies are now being used to annotate data by various databases developers <ref target="#b1" type="bibr">[2,</ref>
             <ref target="#b4" type="bibr">5,</ref>
-            <ref target="#b26" type="bibr">28]</ref> , unlike in the biomedical domain, the adoption of Semantic Web in agronomy is yet to be completely exploited.</s>
+            <ref target="#b27" type="bibr">28]</ref> , unlike in the biomedical domain, the adoption of Semantic Web in agronomy is yet to be completely exploited.</s>
           <s>Given that agronomic studies involve multiple domains, publicly available knowledge bases such as EBI RDF, Linked Life Data and Bio2RDF serves only limited agronomical information.</s>
           <s>Hence, it is necessary to build on previous efforts and complete them to provide information compliant with Semantic Web principles within agronomic sciences.</s>
           <s>This adoption would certainly allow the homogenization of multi-scale information, thereby aiding in the discovery of new knowledge.</s>
@@ -345,16 +342,16 @@
       <div>
         <head>Information sources</head>
         <p>
-          <s>AgroLD was conceived to accommodate molecular and phenotypic information available on various plant species (see <ref target="#fig_1" type="figure">Fig 1)</ref> .</s>
+          <s>AgroLD was conceived to accommodate molecular and phenotypic information available on various plant species (see <ref target="#fig_0" type="figure">Fig 1)</ref> .</s>
           <s>The conceptual framework for the knowledge in AgroLD is based on well-established ontologies: GO, SO, PO, Plant Trait Ontology (TO) and Plant Environment Ontology (EO).</s>
-          <s>Among these PO, TO and EO are currently developed by the Planteome project <ref target="#b27" type="bibr">[29]</ref> (http://planteome.org).</s>
+          <s>Among these PO, TO and EO are currently developed by the Planteome project <ref target="#b28" type="bibr">[29]</ref> (http://planteome.org).</s>
           <s>Furthermore, considering the scope of the effort, we decided to build AgroLD in phases.</s>
           <s>The current phase (phase I) covers information on genes, proteins, ontology associations, homology predictions, metabolic pathways, plant traits, and germplasm, relevant to the selected species.</s>
-          <s>At this stage, we have incorporated the corresponding information from various databases, such as Gramene <ref target="#b29" type="bibr">[30]</ref> , UniprotKB <ref target="#b30" type="bibr">[31]</ref> , Gene Ontology Annotation <ref target="#b31" type="bibr">[32]</ref> , TropGeneDB <ref target="#b32" type="bibr">[33]</ref> , OryGenesDB <ref target="#b33" type="bibr">[34]</ref> , Oryza Tag Line <ref target="#b34" type="bibr">[35]</ref> , GreenPhylDB <ref target="#b35" type="bibr">[36]</ref> and SNiPlay <ref target="#b36" type="bibr">[37]</ref> .</s>
+          <s>At this stage, we have incorporated the corresponding information from various databases, such as Gramene <ref target="#b30" type="bibr">[30]</ref> , UniprotKB <ref target="#b31" type="bibr">[31]</ref> , Gene Ontology Annotation <ref target="#b32" type="bibr">[32]</ref> , TropGeneDB <ref target="#b33" type="bibr">[33]</ref> , OryGenesDB <ref target="#b34" type="bibr">[34]</ref> , Oryza Tag Line <ref target="#b35" type="bibr">[35]</ref> , GreenPhylDB <ref target="#b36" type="bibr">[36]</ref> and SNiPlay <ref target="#b37" type="bibr">[37]</ref> .</s>
           <s>The selection of these data sources was considered based on popularity among domain experts such as GOA, Gramene, and complementary information hosted by the local research community, for instance, Oryza Tag Line and GreenPhylDB.</s>
           <s>Information on the integrated databases can be found in the documentation page (http:// www.agrold.org/documentation.jsp).</s>
           <s>
-            <ref target="#tab_0" type="table">Table 1</ref> provides a break-down of the data sources and the species covered.</s>
+            <ref target="#tab_1" type="table">Table 1</ref> provides a break-down of the data sources and the species covered.</s>
         </p>
       </div>
       <div subtype="dataseer">
@@ -363,13 +360,16 @@
           <s>AgroLD relies on the RDF and SPARQL technologies for information modelling and retrieval.</s>
           <s>We use OpenLink Virtuoso (version 7.2) to store and access the RDF graphs.</s>
           <s>The data from the selected databases were parsed and converted into RDF using a semi-automated pipeline.</s>
-          <s>The pipeline consists of several parsers to handle data in a variety of formats, such as the Gene Ontology Annotation File (GAF) <ref target="#b37" type="bibr">[38]</ref> , Generic File Format (GFF3) <ref target="#b38" type="bibr">[39]</ref> , HapMap <ref target="#b39" type="bibr">[40]</ref> and Variant Call Format (VCF) <ref target="#b40" type="bibr">[41]</ref> .</s>
-          <s>The number of tuples gives an idea of the number of elements we have annotated from the data sources (e.g., 1160K Gene Ontology annotations).</s>
+          <s>The pipeline consists of several parsers to handle data in a variety of formats, such as the Gene Ontology Annotation File (GAF) <ref target="#b38" type="bibr">[38]</ref> , Generic File Format (GFF3) <ref target="#b39" type="bibr">[39]</ref> , HapMap <ref target="#b40" type="bibr">[40]</ref> and Variant Call Format (VCF) <ref target="#b41" type="bibr">[41]</ref> .</s>
+          <s>
+            <ref type="figure">Fig 2 shows</ref> the Extraction-Transform-Load (ETL) processes developed to transform in RDF various source data formats.</s>
+          <s>The source code of the ETL workflow (https://doi.org/10.5281/zenodo.1294660) is available on GitHub (https://github.com/</s>
+          <s>SouthGreenPlatform/AgroLD).</s>
           <s id="dataset-1" type="Dataset:Existing dataset">For this phase, each dataset was downloaded from curated sources and was annotated with ontology terms URIs by reusing the ontology fields when provided by the original source.</s>
           <s>Additionally, we used the AgroPortal web service API to retrieve the URI corresponding to the taxon available for some data standards such as GFF.</s>
           <s>At the end of phase 1, early 2018, the AgroLD knowledge base contains around 100 million RDF triples created by converting more than 50 datasets from 10 data sources.</s>
           <s>Additionally, when available, we used some semantic annotation already present in the datasets such as, for instances, genes or traits annotated respectively with GO or TO identifiers.</s>
-          <s>In that case, we produced additional properties with the corresponding ontologies thus adding 22% additional triples validated manually (see details in <ref target="#tab_0" type="table">Table 1</ref> ).</s>
+          <s>In that case, we produced additional properties with the corresponding ontologies thus adding 22% additional triples validated manually (see details in <ref target="#tab_1" type="table">Table 1</ref> ).</s>
           <s>The OWL versions of the candidate ontologies were directly loaded into the knowledge base but their triples are not counted in the total.</s>
           <s>We provided in the supplementary file S1 Table, a more comprehensive statistics analysis such as number of triples, classes, entities and properties for each graph stored in the knowledge base.</s>
         </p>
@@ -378,8 +378,8 @@
           <s>agrold/".</s>
           <s>The entities in the RDF graphs are linked by shared common URIs.</s>
           <s>As a design principle, we have used URI schemes made available by the sources (e.g., UniprotKB) or by Identifiers.org</s>
-          <s>registry (http://identifiers.org - <ref target="#b41" type="bibr">[42]</ref>
-            <ref target="#fig_3" type="figure">Fig 3.</ref>
+          <s>registry (http://identifiers.org - <ref target="#b42" type="bibr">[42]</ref>
+            <ref target="#fig_1" type="figure">Fig 3.</ref>
           </s>
           <s>About entity linking, we used the "key-based approach" which is the most common one.</s>
           <s>It combines the unique identifier/accession number of the entity shared with the community, with the URI basis pattern of the resource.</s>
@@ -399,11 +399,11 @@
           <s>0000085).</s>
           <s>When an equivalent property did not exist, we mapped then to the closest upper level property using rdfs:subPropertyOf e.g., the property has_trait (http://www.southgreen.fr/</s>
           <s>agrold/vocabulary/has_trait), links proteins to TO terms.</s>
-          <s>It is mapped to a more generic property, causally related to in the Relations Ontology <ref target="#b42" type="bibr">[43]</ref> .</s>
+          <s>It is mapped to a more generic property, causally related to in the Relations Ontology <ref target="#b43" type="bibr">[43]</ref> .</s>
           <s>For now, 55 mappings were identified.</s>
           <s>Furthermore, mappings are both stored side by side with ontologies in AgroPortal, which allows direct links between classes and instances of these classes in AgroLD.</s>
           <s>For example, the following link will show the external mappings for SO:0000104 (polypeptide) stored in AgroPortal: http://agroportal.lirmm.fr/ontologies/SO/?p=classes&amp;conceptid=http%3A%2F% 2Fpurl.obolibrary.org%2Fobo%2FSO_0000104&amp;jump_to_nav=true#mappings.</s>
-          <s>Additionally, classes, properties and resources (e.g., http://www.southgreen.fr/agrold/page/biocyc.pathway/ CALVIN-PWY) are dereferenced on a dedicated Pubby server <ref target="#b43" type="bibr">[44]</ref> .</s>
+          <s>Additionally, classes, properties and resources (e.g., http://www.southgreen.fr/agrold/page/biocyc.pathway/ CALVIN-PWY) are dereferenced on a dedicated Pubby server <ref target="#b44" type="bibr">[44]</ref> .</s>
           <s>For details on the graphs, URIs and properties, the reader may refer to AgroLD's documentation (http://www.agrold.</s>
           <s>org/documentation.jsp).</s>
         </p>
@@ -421,7 +421,7 @@
         </p>
         <p>
           <s>• Explore Relationships visualizer (http://www.agrold.org/relfinder.jsp),</s>
-          <s>which is an implementation of RelFinder <ref target="#b44" type="bibr">[45]</ref> that allows users to explore and visualize existing relationships between entities;</s>
+          <s>which is an implementation of RelFinder <ref target="#b45" type="bibr">[45]</ref> that allows users to explore and visualize existing relationships between entities;</s>
         </p>
         <p>
           <s>• Advanced Search (http://www.agrold.org/advancedSearch.jsp), a query form providing entity (e.g., gene) specific information retrieval.</s>
@@ -445,7 +445,7 @@
           <s>In this section, we demonstrate the complementary role of the Advanced Search and Explore Relationships query tools with that of the SPARQL Query Editor.</s>
         </p>
         <p>
-          <s>We developed the SPARQL Query Editor based on the YASQE and YASR tools <ref target="#b45" type="bibr">[46]</ref> and customized it for our system.</s>
+          <s>We developed the SPARQL Query Editor based on the YASQE and YASR tools <ref target="#b46" type="bibr">[46]</ref> and customized it for our system.</s>
           <s>The SPARQL language is a powerful tool to mine and extract meaningful information from the knowledge base.</s>
           <s>In the first example of the supplementary S3 File, we compare two queries to answer the question: "Identify wheat proteins that are involved in root development.".</s>
           <s>While the first one (S3_Q1) using a simple search-which is a direct translation of SQL-with the corresponding id ("GO_0048364", "GO_2000280") shows 73 entries, the second one (S3_Q2) using a property path query (i.e., query the descending class hierarchy for a given trait ontology term) shows 137 entries, thus more than 80% of additional results.</s>
@@ -458,10 +458,10 @@
         </p>
         <p>
           <s>For the comparison, we consider a sample question: 'Retrieving genes that participate in Calvin cycle'; (Q6 in the online list of modularized queries).</s>
-          <s>As illustrated in <ref target="#fig_4" type="figure">Fig 4,</ref> the user can run the query to retrieve the list of genes participating in the given pathway <ref target="#fig_4" type="figure">(Fig 4A)</ref> .</s>
+          <s>As illustrated in <ref target="#fig_2" type="figure">Fig 4,</ref> the user can run the query to retrieve the list of genes participating in the given pathway ( <ref target="#fig_2" type="figure">Fig 4A)</ref> .</s>
           <s>Additional information on a gene of interest can be retrieved by clicking on the URI.</s>
           <s>For example, clicking on AT1GI870 (http://identifiers.org/ensembl.plant/AT1G18270)</s>
-          <s>redirects the users to the gene information provided by Gramene/Ensembl Plants resource <ref target="#fig_4" type="figure">(Fig 4B)</ref> .</s>
+          <s>redirects the users to the gene information provided by Gramene/Ensembl Plants resource <ref target="#fig_2" type="figure">(Fig 4B)</ref> .</s>
           <s>The query can be saved and the results can be downloaded in a variety of formats such as JSON, TSV, and RDF/XML.</s>
           <s>Additionally, user defined queries could also be uploaded.</s>
         </p>
@@ -472,7 +472,7 @@
           <s>We proposed a configuration and modification of the system suitable for AgroLD.</s>
           <s>The configuration mainly concerns the SPARQL access point, the properties to be considered for the search of entities and for the description of the resources.</s>
           <s>Furthermore, we have added some biological examples to guide users.</s>
-          <s>In <ref target="#fig_5" type="figure">Fig 5,</ref> the tool is used to search for genes involved in Calvin cycle by entering the name of the entities.</s>
+          <s>In <ref target="#fig_3" type="figure">Fig 5,</ref> the tool is used to search for genes involved in Calvin cycle by entering the name of the entities.</s>
         </p>
         <p>
           <s>The Advanced Search query form is based on the REST API suite (http://www.agrold.org/</s>
@@ -480,13 +480,13 @@
           <s>developed completely within the AgroLD project.</s>
           <s>The aim of this feature is to provide non-technical users with a tool to query the knowledge base while hiding the technical aspects of SPARQL query formulation.</s>
           <s>
-            <ref target="#fig_6" type="figure">Fig 6 illustrates</ref> steps involved in retrieving information for Q6, using the query form: a.</s>
-          <s>The user selects Pathways from the list of entities and enters the pathway of interest, in this case, Calvin cycle ( <ref target="#fig_6" type="figure">Fig 6A)</ref> ; b.</s>
+            <ref target="#fig_4" type="figure">Fig 6 illustrates</ref> steps involved in retrieving information for Q6, using the query form: a.</s>
+          <s>The user selects Pathways from the list of entities and enters the pathway of interest, in this case, Calvin cycle ( <ref target="#fig_4" type="figure">Fig 6A)</ref> ; b.</s>
           <s>The list of genes involved in the pathway can be retrieved by selecting the pathway.</s>
         </p>
         <p>
-          <s>Furthermore, information on a gene of interest can be retrieved by selecting the specific gene <ref target="#fig_6" type="figure">(Fig 6B)</ref> .</s>
-          <s>For instance, clicking on AT1GI870 <ref target="#fig_6" type="figure">(Fig 6C)</ref> displays all the proteins the gene encodes and the pathways the gene participates in (apart from Calvin cycle).</s>
+          <s>Furthermore, information on a gene of interest can be retrieved by selecting the specific gene <ref target="#fig_4" type="figure">(Fig 6B)</ref> .</s>
+          <s>For instance, clicking on AT1GI870 <ref target="#fig_4" type="figure">(Fig 6C)</ref> displays all the proteins the gene encodes and the pathways the gene participates in (apart from Calvin cycle).</s>
           <s>The RESTful API supports the query form and was developed for programmatic retrieval of entity specific knowledge represented in AgroLD.</s>
           <s>The current version of the API suite (ver. 1) can be used to retrieve gene and protein information, metabolic pathways, and proteins associated with ontological terms.</s>
           <s>This is achieved by querying entity by name or identifier.</s>
@@ -496,15 +496,12 @@
         <head>User evaluation</head>
         <p>
           <s>AgroLD is being actively developed based on usability testing sessions conducted with domain experts, including doctoral students in biology, curators and senior researchers.</s>
-          <s>Test sessions were designed to measure if: • Resources integrated in AgroLD are useful;</s>
+          <s>Test sessions were designed to measure if: • AgroLD is easy to use.</s>
         </p>
         <p>
-          <s>• AgroLD is easy to use.</s>
-        </p>
-        <p>
-          <s>For the evaluation of semantic search systems, Elbedweihy et al. <ref target="#b46" type="bibr">[47]</ref> recommend a survey of users based on their experience with a few queries submitted to the system.</s>
+          <s>For the evaluation of semantic search systems, Elbedweihy et al. <ref target="#b47" type="bibr">[47]</ref> recommend a survey of users based on their experience with a few queries submitted to the system.</s>
           <s>We have used this approach to collect user opinions, comments and suggestions via a feedback form directly within the AgroLD web application.</s>
-          <s>The form includes some questions from the "System Usability Scale" questionnaires <ref target="#b47" type="bibr">[48]</ref> and other questions that we considered important.</s>
+          <s>The form includes some questions from the "System Usability Scale" questionnaires <ref target="#b48" type="bibr">[48]</ref> and other questions that we considered important.</s>
           <s>The three main criteria evaluated are:</s>
         </p>
         <p>
@@ -543,14 +540,14 @@
           <s>We may also mention the AgBioData consortium (https://www.</s>
           <s>agbiodata.org,</s>
           <s>
-            <ref target="#b1" type="bibr">[2]</ref> ) which promotes the FAIR (Findable, Accessible, Interoperable and Reusable) data principles <ref target="#b48" type="bibr">[49]</ref> within agricultural research.</s>
+            <ref target="#b1" type="bibr">[2]</ref> ) which promotes the FAIR (Findable, Accessible, Interoperable and Reusable) data principles <ref target="#b49" type="bibr">[49]</ref> within agricultural research.</s>
         </p>
         <p>
           <s>Furthermore, we observed that although the information integrated in AgroLD came from curated sources, scientists often prefer to validate these knowledge statements against assertions made in scientific articles.</s>
           <s>Currently, we have implemented an external Web Services as part of the Advanced Search Form to automatically search for publications related to a protein or gene of interest in PubMed Central and aggregates them within the result of the AgroLD query.</s>
           <s>However, this feature does not provide detailed (sentence level) assertions described in those publications.</s>
           <s>This is an area that requires further work.</s>
-          <s>With the recent developments towards making text mined (sentence level) annotations available as RDF <ref target="#b49" type="bibr">[50]</ref> , query federation can be explored to retrieve entity specific assertions.</s>
+          <s>With the recent developments towards making text mined (sentence level) annotations available as RDF <ref target="#b50" type="bibr">[50]</ref> , query federation can be explored to retrieve entity specific assertions.</s>
           <s>This would serve as an additional provenance layer.</s>
         </p>
       </div>
@@ -585,7 +582,7 @@
           <s>Further, we will improve the performance and expand the API suite to cover other entities represented in AgroLD (e.g., genomic annotation and homology information).</s>
         </p>
         <p>
-          <s>• Content: integrate information on gene expression such as IC4R <ref target="#b50" type="bibr">[51]</ref> , Gene Expression Atlas <ref target="#b51" type="bibr">[52]</ref> , on gene regulatory networks such as RiceNetDB <ref target="#b52" type="bibr">[53]</ref> and explore linking text-mined annotations from publications.</s>
+          <s>• Content: integrate information on gene expression such as IC4R <ref target="#b51" type="bibr">[51]</ref> , Gene Expression Atlas <ref target="#b52" type="bibr">[52]</ref> , on gene regulatory networks such as RiceNetDB <ref target="#b53" type="bibr">[53]</ref> and explore linking text-mined annotations from publications.</s>
           <s>Support molecular interaction networks per species and also allow knowledge transfer between species.</s>
         </p>
         <p>
@@ -609,6 +606,8 @@
           <s>For agronomic researchers to make informed decisions in their daily work it is critical to integrate information at different scales.</s>
           <s>Current traditional information systems are not able to exploit such data (i.e., genes, proteins, metabolic pathways, plant traits, and phenotypes), in efficient way.</s>
           <s>To this end, the application of Semantic Web, initiated in the biomedical domain, provides a good example to follow by capitalizing on previous experiences and addressing weaknesses.</s>
+        </p>
+        <p>
           <s>To further build on this line of research in agronomy, we have developed AgroLD.</s>
           <s>We have demonstrated the advantages of AgroLD in data integration over multiple data sources using plant domain ontologies and Semantic Web technologies.</s>
           <s>To date, AgroLD contains 100M of triples created by transforming more than 50 datasets coming from 10 data and annotating with 10 ontologies.</s>
@@ -625,49 +624,39 @@
         <head>Supporting information</head>
       </div>
       <figure xml:id="fig_0">
-        <head/>
-        <label/>
-        <figDesc>Fig 2 shows the Extraction-Transform-Load (ETL) processes developed to transform in RDF various source data formats. The source code of the ETL work- flow (https://doi.org/10.5281/zenodo.1294660) is available on GitHub (https://github.com/ SouthGreenPlatform/AgroLD).</figDesc>
-      </figure>
-      <figure xml:id="fig_1">
         <head>Fig 1 .</head>
         <label>1</label>
         <figDesc>Fig 1. Current plant species included in AgroLD. https://doi.org/10.1371/journal.pone.0198270.g001</figDesc>
       </figure>
-      <figure xml:id="fig_2">
-        <head/>
-        <label/>
-        <figDesc>Fig 2. ETL workflow for the various datasets and data formats. The workflow shows two types of process: 1) from relational databases through a CVS file export: in that case, the transformation is tailored for the database model with some Python scripts converters. 2) from standards file formats: in that case, the transformation is generic with some Python packages used as converter tools. The workflow outputs can be produce in various type of RDF format such as turtle, JSON-LD, XML. https://doi.org/10.1371/journal.pone.0198270.g002</figDesc>
-      </figure>
-      <figure xml:id="fig_3">
+      <figure xml:id="fig_1">
         <head>Fig 3 .</head>
         <label>3</label>
         <figDesc>Fig 3. Linking information in AgroLD. The figure illustrates the linking of varies information in AgroLD. https://doi.org/10.1371/journal.pone.0198270.g003</figDesc>
       </figure>
-      <figure xml:id="fig_4">
+      <figure xml:id="fig_2">
         <head>Fig 4 .</head>
         <label>4</label>
         <figDesc>Fig 4. SPARQL query editor. Figure illustrates the execution of query Q6: (a) Q6 is one the examples queries on the top-right corner (highlighted in red). On executing the query, the results are rendered below the editor; (b) the user can look up specific genes of interest by clicking on the corresponding URI, which points to the original information source (in this case EsemblPlants). https://doi.org/10.1371/journal.pone.0198270.g004</figDesc>
       </figure>
-      <figure xml:id="fig_5">
+      <figure xml:id="fig_3">
         <head>Fig 5 .</head>
         <label>5</label>
         <figDesc>Fig 5. Exploring entity relationships in AgroLD. Figure illustrates differently the results obtained for Q6 using Explore Relationships tool. The results of Q6 can be visualized by entering the concepts (Calvin cycle and gene) in the left panel. On executing the query, all the genes involved in the chosen pathway are revealed. The visualized graph can be altered based on the user interest. Additionally, a gene could be selected (circled on the left) and further explored by clicking on the More Info link which directs the user to the information source. https://doi.org/10.1371/journal.pone.0198270.g005</figDesc>
       </figure>
-      <figure xml:id="fig_6">
+      <figure xml:id="fig_4">
         <head>Fig 6 .</head>
         <label>6</label>
         <figDesc>Fig 6. Advanced search query form: Figure demonstrates the steps involved in retrieving the results for Q6 using the Advanced Search query form: (a) query Q6 can be executed by selecting the type of entity (Pathways-highlighted in red) to search and entering the name of the entity (Calvin cycle). The API then displays the matched results; (b) Clicking on the result displays the genes participating in Calvin cycle; (c) selecting a gene of interest displays more information pertaining to that gene, for instance, encoding proteins and pathways this selected gene participates in. https://doi.org/10.1371/journal.pone.0198270.g006</figDesc>
       </figure>
-      <figure xml:id="fig_7">
+      <figure xml:id="fig_5">
         <head>S1</head>
         <label/>
         <figDesc>File. AgroLD user guide. This document shows how to use the various features of the plat- form. (PDF) S2 File. Report of the online survey. Report of 3 sessions evaluating the AgroLD user inter- faces. (PDF) S3 File. Examples of SPARQL queries. Example of SPARQL queries showing the benefits of property path algorithm, and complex queries. (PDF) S1</figDesc>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_0">
+      <figure type="table" validated="false" xml:id="tab_1">
         <head>Table 1 .</head>
         <label>1</label>
-        <figDesc>Plant species and data sources in AgroLD.</figDesc>
+        <figDesc>Plant species and data sources in AgroLD.Fig 2. ETL workflow for the various datasets and data formats. The workflow shows two types of process: 1) from relational databases through a CVS file export: in that case, the transformation is tailored for the database model with some Python scripts converters. 2) from standards file formats: in that case, the transformation is generic with some Python packages used as converter tools. The workflow outputs can be produce in various type of RDF format such as turtle, JSON-LD, XML.</figDesc>
         <table>Data sources 
 URLs 
 File format 
@@ -759,15 +748,22 @@ GO,PO,TO
 TOTAL 
 92, 640K 
 
+The number of tuples gives an idea of the number of elements we have annotated from the data sources (e.g., 1160K Gene Ontology annotations). The crops &amp; 
+ontologies are referred as follows: R = rice, W = wheat, A = Arabidopsis, S = sorghum, M = maize, GO = Gene Ontology, PO = Plant Ontology, TO = Plant Trait 
+
+Ontology, EO = Plant Environment Ontology, SO = Sequence Ontology, CO = Crop Ontology (specific trait ontologies). 
+
+https://doi.org/10.1371/journal.pone.0198270.t001 
+
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_1">
+      <figure type="table" validated="false" xml:id="tab_2">
         <head/>
         <label/>
         <figDesc>). For instances, proteins from UnitProtKB are identified by the base URI: http://purl.uniprot.org/uniprot/; genes incorporated from Gra- mene/Ensembl plants are identified by the base URI: http://identifiers.org/ensembl.plant/. New URIs were minted when not provided by the sources or the by Identifiers.org such as Trop- Gene and OryGenesDB; in such cases the URIs take the form http://www.southgreen.fr/agrold/ [resource_namespace]/[identifier]. Furthermore, properties linking the entities took the form: http://www.southgreen.fr/agrold/vocabulary/[property]. An outline of how the RDF graphs are linked is shown in</figDesc>
         <table/>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_2">
+      <figure type="table" validated="false" xml:id="tab_3">
         <head>Table .</head>
         <label>.</label>
         <figDesc>AgroLD graph statistics. (PDF)</figDesc>
@@ -799,14 +795,15 @@ TOTAL
                   <surname>Stevens</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.jbi.2008.01.008</idno>
-              <ptr target="https://doi.org/10.1016/j.jbi.2008.01.008PMID"/>
+              <idno type="DOI">10.1016/j.jbi.2008.01.008</idno>
+              <idno>PMID: 18358788</idno>
+              <ptr target="https://doi.org/10.1016/j.jbi.2008.01.008"/>
             </analytic>
             <monogr>
               <title level="j">J Biomed Inform</title>
               <imprint>
                 <biblScope unit="volume">41</biblScope>
-                <biblScope unit="page">18358788</biblScope>
+                <biblScope from="687" to="693" unit="page"/>
                 <date type="published" when="2008"/>
                 <publisher>Elsevier</publisher>
               </imprint>
@@ -814,7 +811,7 @@ TOTAL
           </biblStruct>
           <biblStruct xml:id="b1">
             <analytic>
-              <title level="a" type="main">AgBioData Consortium Recommendations for Sustainable Genomics and Genetics Databases for Agriculture</title>
+              <title level="a" type="main">AgBioData Consortium Recommendations for Sustainable Genomics and Genetics Databases for</title>
               <author>
                 <persName>
                   <forename type="first">L</forename>
@@ -854,7 +851,7 @@ TOTAL
               </author>
             </analytic>
             <monogr>
-              <title level="j">Database</title>
+              <title level="j">Agriculture. Database</title>
               <imprint>
                 <biblScope from="1" to="7" unit="page"/>
                 <date type="published" when="2018"/>
@@ -903,14 +900,15 @@ TOTAL
                   <surname>Cherry</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/75556</idno>
-              <ptr target="https://doi.org/10.1038/75556PMID"/>
+              <idno type="DOI">10.1038/75556</idno>
+              <idno>PMID: 10802651</idno>
+              <ptr target="https://doi.org/10.1038/75556"/>
             </analytic>
             <monogr>
               <title level="j">Nat Genet</title>
               <imprint>
                 <biblScope unit="volume">25</biblScope>
-                <biblScope unit="page">10802651</biblScope>
+                <biblScope from="25" to="29" unit="page"/>
                 <date type="published" when="2000"/>
               </imprint>
             </monogr>
@@ -957,14 +955,14 @@ TOTAL
                   <surname>Smith</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/pcp/pcs163</idno>
-              <ptr target="https://doi.org/10.1093/pcp/pcs163PMID"/>
+              <idno type="DOI">10.1093/pcp/pcs163</idno>
+              <idno>PMID: 23220694</idno>
+              <ptr target="https://doi.org/10.1093/pcp/pcs163"/>
             </analytic>
             <monogr>
               <title level="j">Plant Cell Physiol</title>
               <imprint>
                 <biblScope unit="volume">54</biblScope>
-                <biblScope unit="page">23220694</biblScope>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -1008,14 +1006,15 @@ TOTAL
                   <surname>Hyman</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3389/fphys.2012.00326</idno>
-              <ptr target="https://doi.org/10.3389/fphys.2012.00326PMID"/>
+              <idno type="DOI">10.3389/fphys.2012.00326</idno>
+              <idno>PMID: 22934074</idno>
+              <ptr target="https://doi.org/10.3389/fphys.2012.00326"/>
             </analytic>
             <monogr>
               <title level="j">Front Physiol</title>
               <imprint>
                 <biblScope unit="volume">3</biblScope>
-                <biblScope unit="page">22934074</biblScope>
+                <biblScope unit="page">326</biblScope>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -1061,14 +1060,15 @@ TOTAL
                   <surname>Envo Consortium</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/2041-1480-4-43</idno>
-              <ptr target="https://doi.org/10.1186/2041-1480-4-43PMID"/>
+              <idno type="DOI">10.1186/2041-1480-4-43</idno>
+              <idno>PMID: 24330602</idno>
+              <ptr target="https://doi.org/10.1186/2041-1480-4-43"/>
             </analytic>
             <monogr>
               <title level="j">J Biomed Semantics</title>
               <imprint>
                 <biblScope unit="volume">4</biblScope>
-                <biblScope unit="page">24330602</biblScope>
+                <biblScope unit="page">43</biblScope>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -1113,14 +1113,14 @@ TOTAL
                   <surname>Blum</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0089606</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0089606PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0089606</idno>
+              <idno>PMID: 24595056</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0089606"/>
             </analytic>
             <monogr>
               <title level="j">PLoS One</title>
               <imprint>
                 <biblScope unit="volume">9</biblScope>
-                <biblScope unit="page">24595056</biblScope>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -1167,7 +1167,7 @@ TOTAL
                   <surname>Gardiner</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/s13007-015-0053-y</idno>
+              <idno type="DOI">10.1186/s13007-015-0053-y</idno>
               <ptr target="https://doi.org/10.1186/s13007-015-0053-yPMID"/>
             </analytic>
             <monogr>
@@ -1213,7 +1213,7 @@ TOTAL
                   <surname>Zhang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/J.COMPAG.2015.01.009</idno>
+              <idno type="DOI">10.1016/J.COMPAG.2015.01.009</idno>
               <ptr target="https://doi.org/10.1016/J.COMPAG.2015.01.009"/>
             </analytic>
             <monogr>
@@ -1265,7 +1265,7 @@ TOTAL
                   <surname>Charnomordic</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/J.COMPAG.2016.06.020</idno>
+              <idno type="DOI">10.1016/J.COMPAG.2016.06.020</idno>
               <ptr target="https://doi.org/10.1016/J.COMPAG.2016.06.020"/>
             </analytic>
             <monogr>
@@ -1322,7 +1322,7 @@ TOTAL
                   <forename type="first">V</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.compag.2017.10.012</idno>
+              <idno type="DOI">10.1016/j.compag.2017.10.012</idno>
               <ptr target="https://doi.org/10.1016/j.compag.2017.10.012"/>
             </analytic>
             <monogr>
@@ -1366,9 +1366,12 @@ TOTAL
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b12">
-            <monogr>
+            <analytic>
+              <title level="a" type="main">Resource Description Framework (RDF): Concepts and Abstract Syntax</title>
               <ptr target="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/"/>
-              <title level="m">W3C. Resource Description Framework (RDF): Concepts and Abstract Syntax</title>
+            </analytic>
+            <monogr>
+              <title level="m">W3C</title>
               <imprint>
                 <date type="published" when="2010-04"/>
               </imprint>
@@ -1377,20 +1380,28 @@ TOTAL
           </biblStruct>
           <biblStruct xml:id="b13">
             <monogr>
-              <title level="m" type="main">OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax</title>
-              <author>
-                <persName>
-                  <surname>W3c</surname>
-                </persName>
-              </author>
+              <ptr target="https://www.w3.org/TR/rdf-schema/"/>
+              <title level="m">W3C. RDF Schema 1.1 [Internet</title>
+              <imprint>
+                <date type="published" when="2018-04"/>
+                <biblScope unit="page">27</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">OWL 2 Web Ontology Language Structural Specification and Functional-Style Syntax</title>
               <ptr target="http://www.w3.org/TR/2009/REC-owl2-syntax-20091027/"/>
+            </analytic>
+            <monogr>
+              <title level="m">W3C</title>
               <imprint>
                 <date type="published" when="2010-04"/>
               </imprint>
             </monogr>
             <note>Internet</note>
           </biblStruct>
-          <biblStruct xml:id="b14">
+          <biblStruct xml:id="b15">
             <monogr>
               <title/>
               <author>
@@ -1417,7 +1428,7 @@ TOTAL
             </monogr>
             <note>SPARQL 1.1 Overview [Internet</note>
           </biblStruct>
-          <biblStruct xml:id="b15">
+          <biblStruct xml:id="b16">
             <analytic>
               <title level="a" type="main">The Translational Medicine Ontology and Knowledge Base: driving personalized medicine by bridging the gap between bench and bedside</title>
               <author>
@@ -1458,20 +1469,20 @@ TOTAL
                   <surname>Denney</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/2041-1480-2-S2-S1</idno>
-              <ptr target="https://doi.org/10.1186/2041-1480-2-S2-S1PMID"/>
+              <idno type="DOI">10.1186/2041-1480-2-S2-S1</idno>
+              <idno>PMID: 21624155</idno>
+              <ptr target="https://doi.org/10.1186/2041-1480-2-S2-S1"/>
             </analytic>
             <monogr>
               <title level="j">J Biomed Semantics</title>
               <imprint>
                 <biblScope unit="volume">2</biblScope>
-                <biblScope unit="page">21624155</biblScope>
                 <date type="published" when="2011"/>
               </imprint>
             </monogr>
             <note>Suppl 2: S1.</note>
           </biblStruct>
-          <biblStruct xml:id="b16">
+          <biblStruct xml:id="b17">
             <analytic>
               <title level="a" type="main">Finding gene regulatory network candidates using the gene expression knowledge base</title>
               <author>
@@ -1510,7 +1521,7 @@ TOTAL
                   <surname>Mironov</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/s12859-014-0386-y</idno>
+              <idno type="DOI">10.1186/s12859-014-0386-y</idno>
               <ptr target="https://doi.org/10.1186/s12859-014-0386-yPMID"/>
             </analytic>
             <monogr>
@@ -1522,7 +1533,7 @@ TOTAL
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b17">
+          <biblStruct xml:id="b18">
             <analytic>
               <title level="a" type="main">InterMine: a flexible data warehouse system for the integration and analysis of heterogeneous biological data</title>
               <author>
@@ -1562,20 +1573,21 @@ TOTAL
                   <surname>Hu</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/bioinformatics/bts577</idno>
-              <ptr target="https://doi.org/10.1093/bioinformatics/bts577PMID"/>
+              <idno type="DOI">10.1093/bioinformatics/bts577</idno>
+              <idno>PMID: 23023984</idno>
+              <ptr target="https://doi.org/10.1093/bioinformatics/bts577"/>
             </analytic>
             <monogr>
               <title level="j">Bioinformatics</title>
               <imprint>
                 <biblScope unit="volume">28</biblScope>
-                <biblScope unit="page">23023984</biblScope>
+                <biblScope from="3163" to="3168" unit="page"/>
                 <date type="published" when="2012"/>
                 <publisher>Oxford University Press</publisher>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b18">
+          <biblStruct xml:id="b19">
             <analytic>
               <title level="a" type="main">The OBO Foundry: coordinated evolution of ontologies to support biomedical data integration</title>
               <author>
@@ -1614,19 +1626,20 @@ TOTAL
                   <surname>Ceusters</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nbt1346</idno>
-              <ptr target="https://doi.org/10.1038/nbt1346PMID"/>
+              <idno type="DOI">10.1038/nbt1346</idno>
+              <idno>PMID: 17989687</idno>
+              <ptr target="https://doi.org/10.1038/nbt1346"/>
             </analytic>
             <monogr>
               <title level="j">Nat Biotechnol. Nature Publishing Group</title>
               <imprint>
                 <biblScope unit="volume">25</biblScope>
-                <biblScope unit="page">17989687</biblScope>
+                <biblScope from="1251" to="1255" unit="page"/>
                 <date type="published" when="2007"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b19">
+          <biblStruct xml:id="b20">
             <analytic>
               <title level="a" type="main">BioPortal: ontologies and integrated data resources at the click of a mouse</title>
               <author>
@@ -1668,19 +1681,20 @@ TOTAL
                   <surname>Griffith</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkp440</idno>
-              <ptr target="https://doi.org/10.1093/nar/gkp440PMID"/>
+              <idno type="DOI">10.1093/nar/gkp440</idno>
+              <idno>PMID: 19483092</idno>
+              <ptr target="https://doi.org/10.1093/nar/gkp440"/>
             </analytic>
             <monogr>
               <title level="j">Nucleic Acids Res</title>
               <imprint>
                 <biblScope unit="volume">37</biblScope>
-                <biblScope unit="page">19483092</biblScope>
+                <biblScope from="170" to="173" unit="page"/>
                 <date type="published" when="2009"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b20">
+          <biblStruct xml:id="b21">
             <analytic>
               <title level="a" type="main">Bio2RDF: towards a mashup to build bioinformatics knowledge systems</title>
               <author>
@@ -1713,20 +1727,21 @@ TOTAL
                   <surname>Morissette</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.jbi.2008.03.004</idno>
-              <ptr target="https://doi.org/10.1016/j.jbi.2008.03.004PMID"/>
+              <idno type="DOI">10.1016/j.jbi.2008.03.004</idno>
+              <idno>PMID: 18472304</idno>
+              <ptr target="https://doi.org/10.1016/j.jbi.2008.03.004"/>
             </analytic>
             <monogr>
               <title level="j">J Biomed Inform</title>
               <imprint>
                 <biblScope unit="volume">41</biblScope>
-                <biblScope unit="page">18472304</biblScope>
+                <biblScope from="706" to="716" unit="page"/>
                 <date type="published" when="2008"/>
                 <publisher>Elsevier</publisher>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b21">
+          <biblStruct xml:id="b22">
             <monogr>
               <title level="m" type="main">Open PHACTS: Semantic interoperability for drug discovery. Drug Discovery Today</title>
               <author>
@@ -1767,15 +1782,16 @@ TOTAL
                   <surname>Willighagen</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.drudis.2012.05.016</idno>
-              <ptr target="https://doi.org/10.1016/j.drudis.2012.05.016PMID"/>
+              <idno type="DOI">10.1016/j.drudis.2012.05.016</idno>
+              <idno>PMID: 22683805</idno>
+              <ptr target="https://doi.org/10.1016/j.drudis.2012.05.016"/>
               <imprint>
                 <date type="published" when="2012"/>
-                <biblScope unit="page">22683805</biblScope>
+                <biblScope from="1188" to="1198" unit="page"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b22">
+          <biblStruct xml:id="b23">
             <monogr>
               <title level="m" type="main">Expanding the Pathway and Interaction Knowledge in Linked Life Data. International Semantic Web Challenge</title>
               <author>
@@ -1807,7 +1823,7 @@ TOTAL
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b23">
+          <biblStruct xml:id="b24">
             <analytic>
               <title level="a" type="main">Developing a kidney and urinary pathway knowledge base</title>
               <author>
@@ -1834,20 +1850,20 @@ TOTAL
                   <surname>Stevens</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/2041-1480-2-S2-S7</idno>
-              <ptr target="https://doi.org/10.1186/2041-1480-2-S2-S7PMID"/>
+              <idno type="DOI">10.1186/2041-1480-2-S2-S7</idno>
+              <idno>PMID: 21624162</idno>
+              <ptr target="https://doi.org/10.1186/2041-1480-2-S2-S7"/>
             </analytic>
             <monogr>
               <title level="j">J Biomed Semantics</title>
               <imprint>
                 <biblScope unit="volume">2</biblScope>
-                <biblScope unit="page">21624162</biblScope>
                 <date type="published" when="2011"/>
               </imprint>
             </monogr>
             <note>Suppl 2: S7.</note>
           </biblStruct>
-          <biblStruct xml:id="b24">
+          <biblStruct xml:id="b25">
             <analytic>
               <title level="a" type="main">The EBI RDF platform: linked open data for the life sciences</title>
               <author>
@@ -1886,20 +1902,20 @@ TOTAL
                   <surname>Garcia</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/bioinformatics/btt765</idno>
-              <ptr target="https://doi.org/10.1093/bioinformatics/btt765PMID"/>
+              <idno type="DOI">10.1093/bioinformatics/btt765</idno>
+              <idno>PMID: 24413672</idno>
+              <ptr target="https://doi.org/10.1093/bioinformatics/btt765"/>
             </analytic>
             <monogr>
               <title level="j">Bioinformatics</title>
               <imprint>
                 <biblScope unit="volume">1</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">24413672</biblScope>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b25">
+          <biblStruct xml:id="b26">
             <analytic>
               <title level="a" type="main">Towards efficient data integration and knowledge management in the Agronomic domain</title>
               <author>
@@ -1946,7 +1962,7 @@ TOTAL
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b26">
+          <biblStruct xml:id="b27">
             <monogr>
               <title level="m" type="main">Data management and best practice for plant science</title>
               <author>
@@ -1980,17 +1996,18 @@ TOTAL
                   <surname>Bastow</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nplants.2017.86</idno>
-              <ptr target="https://doi.org/10.1038/nplants.2017.86PMID"/>
+              <idno type="DOI">10.1038/nplants.2017.86</idno>
+              <idno>PMID: 28585570</idno>
+              <ptr target="https://doi.org/10.1038/nplants.2017.86"/>
               <imprint>
                 <date type="published" when="2017"/>
                 <publisher>Nat Publ Gr. Macmillan Publishers Limited</publisher>
                 <biblScope unit="volume">3</biblScope>
-                <biblScope unit="page">28585570</biblScope>
+                <biblScope from="1" to="4" unit="page"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b27">
+          <biblStruct xml:id="b28">
             <analytic>
               <title level="a" type="main">The Planteome database: An integrated resource for reference ontologies, plant genomics and phenomics</title>
               <author>
@@ -2040,17 +2057,16 @@ TOTAL
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b28">
+          <biblStruct xml:id="b29">
             <monogr>
               <title/>
-              <idno type="doi">10.1093/nar/gkx1152</idno>
-              <ptr target="https://doi.org/10.1093/nar/gkx1152PMID"/>
-              <imprint>
-                <biblScope unit="page">29186578</biblScope>
-              </imprint>
+              <idno type="DOI">10.1093/nar/gkx1152</idno>
+              <idno>PMID: 29186578</idno>
+              <ptr target="https://doi.org/10.1093/nar/gkx1152"/>
+              <imprint/>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b29">
+          <biblStruct xml:id="b30">
             <analytic>
               <title level="a" type="main">Comparative plant genomics resources</title>
               <author>
@@ -2090,19 +2106,19 @@ TOTAL
                   <surname>Kumari</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkt1110</idno>
-              <ptr target="https://doi.org/10.1093/nar/gkt1110PMID"/>
+              <idno type="DOI">10.1093/nar/gkt1110</idno>
+              <idno>PMID: 24217918</idno>
+              <ptr target="https://doi.org/10.1093/nar/gkt1110"/>
             </analytic>
             <monogr>
               <title level="j">Nucleic Acids Res</title>
               <imprint>
                 <biblScope unit="volume">42</biblScope>
-                <biblScope unit="page">24217918</biblScope>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b30">
+          <biblStruct xml:id="b31">
             <analytic>
               <title level="a" type="main">UniProt Knowledgebase: A hub of integrated protein data</title>
               <author>
@@ -2118,18 +2134,18 @@ TOTAL
                   <surname>Consortium</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/database/bar009</idno>
-              <ptr target="https://doi.org/10.1093/database/bar009PMID"/>
+              <idno type="DOI">10.1093/database/bar009</idno>
+              <idno>PMID: 21447597</idno>
+              <ptr target="https://doi.org/10.1093/database/bar009"/>
             </analytic>
             <monogr>
               <title level="j">Database</title>
               <imprint>
-                <biblScope unit="page">21447597</biblScope>
                 <date type="published" when="2011"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b31">
+          <biblStruct xml:id="b32">
             <analytic>
               <title level="a" type="main">The GOA database in 2009-An integrated Gene Ontology Annotation resource</title>
               <author>
@@ -2169,19 +2185,19 @@ TOTAL
                   <surname>Apweiler</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkn803</idno>
-              <ptr target="https://doi.org/10.1093/nar/gkn803PMID"/>
+              <idno type="DOI">10.1093/nar/gkn803</idno>
+              <idno>PMID: 18957448</idno>
+              <ptr target="https://doi.org/10.1093/nar/gkn803"/>
             </analytic>
             <monogr>
               <title level="j">Nucleic Acids Res</title>
               <imprint>
                 <biblScope unit="volume">37</biblScope>
-                <biblScope unit="page">18957448</biblScope>
                 <date type="published" when="2009"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b32">
+          <biblStruct xml:id="b33">
             <analytic>
               <title level="a" type="main">TropGeneDB, the multi-tropical crop information system updated and extended</title>
               <author>
@@ -2208,19 +2224,19 @@ TOTAL
                   <surname>Ruiz</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gks1105</idno>
-              <ptr target="https://doi.org/10.1093/nar/gks1105PMID"/>
+              <idno type="DOI">10.1093/nar/gks1105</idno>
+              <idno>PMID: 23161680</idno>
+              <ptr target="https://doi.org/10.1093/nar/gks1105"/>
             </analytic>
             <monogr>
               <title level="j">Nucleic Acids Res</title>
               <imprint>
                 <biblScope unit="volume">41</biblScope>
-                <biblScope unit="page">23161680</biblScope>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b33">
+          <biblStruct xml:id="b34">
             <analytic>
               <title level="a" type="main">OryGenesDB: a database for rice reverse genetics</title>
               <author>
@@ -2260,19 +2276,20 @@ TOTAL
                   <surname>Morel</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkj012</idno>
-              <ptr target="https://doi.org/10.1093/nar/gkj012PMID"/>
+              <idno type="DOI">10.1093/nar/gkj012</idno>
+              <idno>PMID: 16381969</idno>
+              <ptr target="https://doi.org/10.1093/nar/gkj012"/>
             </analytic>
             <monogr>
               <title level="j">Nucleic Acids Res</title>
               <imprint>
                 <biblScope unit="volume">34</biblScope>
-                <biblScope unit="page">16381969</biblScope>
+                <biblScope from="736" to="776" unit="page"/>
                 <date type="published" when="2006"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b34">
+          <biblStruct xml:id="b35">
             <analytic>
               <title level="a" type="main">Oryza Tag Line, a phenotypic mutant database for the Génoplante rice insertion line library</title>
               <author>
@@ -2311,19 +2328,20 @@ TOTAL
                   <surname>Droc</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkm762</idno>
-              <ptr target="https://doi.org/10.1093/nar/gkm762PMID"/>
+              <idno type="DOI">10.1093/nar/gkm762</idno>
+              <idno>PMID: 17947330</idno>
+              <ptr target="https://doi.org/10.1093/nar/gkm762"/>
             </analytic>
             <monogr>
               <title level="j">Nucleic Acids Res</title>
               <imprint>
                 <biblScope unit="volume">36</biblScope>
-                <biblScope unit="page">17947330</biblScope>
+                <biblScope from="1022" to="1027" unit="page"/>
                 <date type="published" when="2008"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b35">
+          <biblStruct xml:id="b36">
             <analytic>
               <title level="a" type="main">GreenPhylDB: a database for plant comparative genomics</title>
               <author>
@@ -2357,19 +2375,20 @@ TOTAL
                   <surname>Périn</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkm934</idno>
-              <ptr target="https://doi.org/10.1093/nar/gkm934PMID"/>
+              <idno type="DOI">10.1093/nar/gkm934</idno>
+              <idno>PMID: 17986457</idno>
+              <ptr target="https://doi.org/10.1093/nar/gkm934"/>
             </analytic>
             <monogr>
               <title level="j">Nucleic Acids Res</title>
               <imprint>
                 <biblScope unit="volume">36</biblScope>
-                <biblScope unit="page">17986457</biblScope>
+                <biblScope from="991" to="998" unit="page"/>
                 <date type="published" when="2008"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b36">
+          <biblStruct xml:id="b37">
             <analytic>
               <title level="a" type="main">SNiPlay3: a web-based application for exploration and large scale analyses of genomic variations</title>
               <author>
@@ -2408,8 +2427,9 @@ TOTAL
                   <surname>Hueber</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkv351</idno>
-              <ptr target="https://doi.org/10.1093/nar/gkv351PMID:26040700"/>
+              <idno type="DOI">10.1093/nar/gkv351</idno>
+              <idno>PMID: 26040700</idno>
+              <ptr target="https://doi.org/10.1093/nar/gkv351"/>
             </analytic>
             <monogr>
               <title level="j">Nucleic Acids Res</title>
@@ -2420,7 +2440,7 @@ TOTAL
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b37">
+          <biblStruct xml:id="b38">
             <monogr>
               <title level="m" type="main">Gene Annotation File (GAF) specification</title>
               <ptr target="http://geneontology.org/page/go-annotation-file-format-20"/>
@@ -2430,14 +2450,14 @@ TOTAL
             </monogr>
             <note>The Gene Ontology Consortium. Internet. cited 20 Mar</note>
           </biblStruct>
-          <biblStruct xml:id="b38">
+          <biblStruct xml:id="b39">
             <monogr>
               <title level="m" type="main">Sequence Ontology consortium. GFF3 Specification</title>
               <imprint/>
             </monogr>
             <note>Internet</note>
           </biblStruct>
-          <biblStruct xml:id="b39">
+          <biblStruct xml:id="b40">
             <analytic>
               <title level="a" type="main">The International HapMap Project</title>
               <author>
@@ -2479,19 +2499,20 @@ TOTAL
                   <surname>Zhang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nature02168</idno>
-              <ptr target="https://doi.org/10.1038/nature02168PMID"/>
+              <idno type="DOI">10.1038/nature02168</idno>
+              <idno>PMID: 14685227</idno>
+              <ptr target="https://doi.org/10.1038/nature02168"/>
             </analytic>
             <monogr>
               <title level="j">Nature</title>
               <imprint>
                 <biblScope unit="volume">426</biblScope>
-                <biblScope unit="page">14685227</biblScope>
+                <biblScope from="789" to="796" unit="page"/>
                 <date type="published" when="2003"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b40">
+          <biblStruct xml:id="b41">
             <analytic>
               <title level="a" type="main">The variant call format and VCFtools</title>
               <author>
@@ -2532,19 +2553,20 @@ TOTAL
                   <surname>Depristo</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/bioinformatics/btr330</idno>
-              <ptr target="https://doi.org/10.1093/bioinformatics/btr330PMID"/>
+              <idno type="DOI">10.1093/bioinformatics/btr330</idno>
+              <idno>PMID: 21653522</idno>
+              <ptr target="https://doi.org/10.1093/bioinformatics/btr330"/>
             </analytic>
             <monogr>
               <title level="j">Bioinformatics</title>
               <imprint>
                 <biblScope unit="volume">27</biblScope>
-                <biblScope unit="page">21653522</biblScope>
+                <biblScope from="2156" to="2164" unit="page"/>
                 <date type="published" when="2011"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b41">
+          <biblStruct xml:id="b42">
             <analytic>
               <title level="a" type="main">Identifiers.org and MIRIAM Registry: community resources to provide persistent identification</title>
               <author>
@@ -2570,19 +2592,20 @@ TOTAL
                   <forename type="first">C</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkr1097</idno>
-              <ptr target="https://doi.org/10.1093/nar/gkr1097PMID"/>
+              <idno type="DOI">10.1093/nar/gkr1097</idno>
+              <idno>PMID: 22140103</idno>
+              <ptr target="https://doi.org/10.1093/nar/gkr1097"/>
             </analytic>
             <monogr>
               <title level="j">Nucleic Acids Res</title>
               <imprint>
                 <biblScope unit="volume">40</biblScope>
-                <biblScope unit="page">22140103</biblScope>
+                <biblScope from="580" to="586" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b42">
+          <biblStruct xml:id="b43">
             <analytic>
               <title level="a" type="main">Relations in biomedical ontologies</title>
               <author>
@@ -2621,19 +2644,19 @@ TOTAL
                   <surname>Lomax</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/gb-2005-6-5-r46</idno>
-              <ptr target="https://doi.org/10.1186/gb-2005-6-5-r46PMID"/>
+              <idno type="DOI">10.1186/gb-2005-6-5-r46</idno>
+              <idno>PMID: 15892874</idno>
+              <ptr target="https://doi.org/10.1186/gb-2005-6-5-r46"/>
             </analytic>
             <monogr>
               <title level="j">Genome Biol</title>
               <imprint>
                 <biblScope unit="volume">6</biblScope>
-                <biblScope unit="page">15892874</biblScope>
                 <date type="published" when="2005"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b43">
+          <biblStruct xml:id="b44">
             <monogr>
               <title level="m" type="main">Pubby-A Linked Data Frontend for SPARQL Endpoints</title>
               <author>
@@ -2654,7 +2677,7 @@ TOTAL
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b44">
+          <biblStruct xml:id="b45">
             <analytic>
               <title level="a" type="main">RelFinder: Revealing relationships in RDF knowledge bases</title>
               <author>
@@ -2687,7 +2710,7 @@ TOTAL
                   <surname>Stegemann</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/978-3-642-10543-2_21</idno>
+              <idno type="DOI">10.1007/978-3-642-10543-2_21</idno>
               <ptr target="https://doi.org/10.1007/978-3-642-10543-2_21"/>
             </analytic>
             <monogr>
@@ -2698,7 +2721,7 @@ TOTAL
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b45">
+          <biblStruct xml:id="b46">
             <analytic>
               <title level="a" type="main">The YASGUI Family of SPARQL Clients</title>
               <author>
@@ -2723,7 +2746,7 @@ TOTAL
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b46">
+          <biblStruct xml:id="b47">
             <monogr>
               <title level="m" type="main">Evaluating semantic search systems to identify future directions of research. The Semantic Web: ESWC 2012 Satellite Events</title>
               <author>
@@ -2764,7 +2787,7 @@ TOTAL
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b47">
+          <biblStruct xml:id="b48">
             <analytic>
               <title level="a" type="main">SUS-A quick and dirty usability scale</title>
               <author>
@@ -2783,7 +2806,7 @@ TOTAL
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b48">
+          <biblStruct xml:id="b49">
             <analytic>
               <title level="a" type="main">The FAIR Guiding Principles for scientific data management and stewardship</title>
               <author>
@@ -2823,19 +2846,19 @@ TOTAL
                   <surname>Baak</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/sdata.2016.18</idno>
-              <ptr target="https://doi.org/10.1038/sdata.2016.18PMID"/>
+              <idno type="DOI">10.1038/sdata.2016.18</idno>
+              <idno>PMID: 26978244</idno>
+              <ptr target="https://doi.org/10.1038/sdata.2016.18"/>
             </analytic>
             <monogr>
               <title level="j">Sci Data</title>
               <imprint>
                 <biblScope unit="volume">3</biblScope>
-                <biblScope unit="page">26978244</biblScope>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b49">
+          <biblStruct xml:id="b50">
             <analytic>
               <title level="a" type="main">SciLite: a platform for displaying text-mined annotations as a means to link research articles with biological data</title>
               <author>
@@ -2874,19 +2897,20 @@ TOTAL
                   <surname>Carter</surname>
                 </persName>
               </author>
-              <idno type="doi">10.12688/wellcomeopenres.10210.2</idno>
-              <ptr target="https://doi.org/10.12688/wellcomeopenres.10210.2PMID"/>
+              <idno type="DOI">10.12688/wellcomeopenres.10210.2</idno>
+              <idno>PMID: 28948232</idno>
+              <ptr target="https://doi.org/10.12688/wellcomeopenres.10210.2"/>
             </analytic>
             <monogr>
               <title level="j">Wellcome Open Res</title>
               <imprint>
                 <biblScope unit="volume">1</biblScope>
-                <biblScope unit="page">28948232</biblScope>
+                <biblScope unit="page">25</biblScope>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b50">
+          <biblStruct xml:id="b51">
             <analytic>
               <title level="a" type="main">Information Commons for Rice (IC4R)</title>
               <author>
@@ -2924,19 +2948,20 @@ TOTAL
                   <surname>Xue</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkv1141</idno>
-              <idno>D1172-D1180</idno>
-              <ptr target="https://doi.org/10.1093/nar/gkv1141PMID:26519466"/>
+              <idno type="DOI">10.1093/nar/gkv1141</idno>
+              <idno>PMID: 26519466</idno>
+              <ptr target="https://doi.org/10.1093/nar/gkv1141"/>
             </analytic>
             <monogr>
               <title level="j">Nucleic Acids Res</title>
               <imprint>
                 <biblScope unit="volume">44</biblScope>
+                <biblScope from="1172" to="1180" unit="page"/>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b51">
+          <biblStruct xml:id="b52">
             <analytic>
               <title level="a" type="main">Expression Atlas update-An integrated database of gene and protein expression in humans, animals and plants</title>
               <author>
@@ -2977,19 +3002,20 @@ TOTAL
                   <surname>Burdett</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkv1045</idno>
-              <ptr target="https://doi.org/10.1093/nar/gkv1045PMID"/>
+              <idno type="DOI">10.1093/nar/gkv1045</idno>
+              <idno>PMID: 26481351</idno>
+              <ptr target="https://doi.org/10.1093/nar/gkv1045"/>
             </analytic>
             <monogr>
               <title level="j">Nucleic Acids Res</title>
               <imprint>
                 <biblScope unit="volume">44</biblScope>
-                <biblScope unit="page">26481351</biblScope>
+                <biblScope from="746" to="752" unit="page"/>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b52">
+          <biblStruct xml:id="b53">
             <analytic>
               <title level="a" type="main">RiceNet v2: An improved network prioritization server for rice genes</title>
               <author>
@@ -3029,14 +3055,15 @@ TOTAL
                   <surname>Kim</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkv253</idno>
-              <ptr target="https://doi.org/10.1093/nar/gkv253PMID"/>
+              <idno type="DOI">10.1093/nar/gkv253</idno>
+              <idno>PMID: 25813048</idno>
+              <ptr target="https://doi.org/10.1093/nar/gkv253"/>
             </analytic>
             <monogr>
               <title level="j">Nucleic Acids Res</title>
               <imprint>
                 <biblScope unit="volume">43</biblScope>
-                <biblScope unit="page">25813048</biblScope>
+                <biblScope from="122" to="127" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>

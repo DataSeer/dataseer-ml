@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T07:54+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:32+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -115,9 +115,9 @@
           <s>This pattern is found across marine, freshwater and other environmental systems (see Knowles et al. <ref target="#b1" type="bibr">2</ref> , Wigington et al. <ref target="#b2" type="bibr">3</ref> , and Parikka et al. <ref target="#b3" type="bibr">4</ref> ), with similar patterns found in predator-prey relationships <ref target="#b4" type="bibr">5</ref> .</s>
         </p>
         <p>
-          <s>Sublinear (or less than proportional <ref target="#b5" type="bibr">6</ref> ) increases in virus abundances with microbial abundances may arise from multiple governing mechanisms.</s>
+          <s>Sublinear (or less than proportional 6 ) increases in virus abundances with microbial abundances may arise from multiple governing mechanisms.</s>
           <s>These mechanisms include PtW, whose underlying mathematical model predicts that viral abundances increase with increasing microbial abundances, albeit sublinearly (see <ref target="#fig_1" type="figure">Fig. 1b</ref> of ref. <ref target="#b1" type="bibr">2</ref> ).</s>
-          <s>Addditional mechanisms that could explain sublinear increases include variation in life history traits in antagonistic virus-microbe dynamics <ref target="#b6" type="bibr">7</ref> or trade-offs in Kill-theWinner models <ref target="#b7" type="bibr">8</ref> .</s>
+          <s>Addditional mechanisms that could explain sublinear increases include variation in life history traits in antagonistic virus-microbe dynamics 7 or trade-offs in Kill-theWinner models <ref target="#b7" type="bibr">8</ref> .</s>
           <s>As a consequence, the value of these patterns as exclusive indicators of any particular mechanism is disputed (see exchange of Weitz et al. <ref target="#b6" type="bibr">7</ref> and Knowles and Rohwer 9 , as well as the follow-up work of Knowles et al. <ref target="#b9" type="bibr">10</ref> ).</s>
           <s>Nonetheless, the possibility of using metagenomics-based methods to infer virus-host pairs and their abundance relationships could provide insights into viral strategies and their consequences in marine systems.</s>
         </p>
@@ -139,7 +139,7 @@
           <s>
             <ref target="#b10" type="bibr">11,</ref>
             <ref target="#b11" type="bibr">12</ref> ).</s>
-          <s>Upon initial inspection, many reported slopes in Coutinho et al. <ref target="#b0" type="bibr">1</ref> appear to be close to −1 (see re-plot of data in <ref target="#fig_1" type="figure">Fig. 1b, d</ref> ).</s>
+          <s>Upon initial inspection, many reported slopes in Coutinho et al. <ref target="#b0" type="bibr">1</ref> appear to be close to −1 (see re-plot of data in <ref target="#fig_1" type="figure">Fig. 1b, d)</ref> .</s>
         </p>
         <p>
           <s>This observation forms the basis for the present analysis.</s>
@@ -160,7 +160,7 @@
           <s>In practice, we implemented a two-tailed randomized permutation test to generate a sampling distribution of expected slopes with mean 0.</s>
         </p>
         <p>
-          <s>We find that only 6 genus datasets (out of 48) and 4 phylum datasets (out of 16) have significant correlations at the p = 0.05 level (see <ref target="#fig_2" type="figure">Fig. 2</ref> ).</s>
+          <s>We find that only 6 genus datasets (out of 48) and 4 phylum datasets (out of 16) have significant correlations at the p = 0.05 level (see <ref type="figure">Fig. 2</ref> ).</s>
           <s>A strict Bonferroni correction suggests a criterion for significance of p = 0.00078 given the 64 (48 + 16) total comparisons.</s>
           <s>Hence, the threshold of p = 0.05 is permissive.</s>
           <s>Whether using p = 0.05 or p = 0.01 for product-moment or rank-based correlations, our results suggest that nearly all of the relationships reported in Coutinho et al. <ref target="#b0" type="bibr">1</ref> , do not show evidence of a relationship between virus and host abundance and therefore do not provide even indirect support for PtW (see <ref type="table">Supplementary Tables 1-4</ref> for confidence intervals for all relationships examined).</s>
@@ -176,10 +176,16 @@
         </p>
         <p>
           <s>Our reanalysis raises a number of questions.</s>
-          <s>The absence of significant abundance relationships between viruses and hosts may be a consequence of analyzing correlations based on relative abundances, which can lead to spurious findings <ref target="#b12" type="bibr">13</ref> .</s>
+          <s>The absence of significant abundance relationships between viruses and hosts may be a consequence of analyzing correlations based on relative abundances, which can lead to spurious findings 13 .</s>
           <s>The absence of a relationship may also indicate that the method for host prediction developed by Coutinho et al. <ref target="#b0" type="bibr">1</ref> fails to identify genuine interactions.</s>
           <s>In that event, the absence of a correlation may reflect the absence of an underlying interaction between putative virus-host pairs.</s>
-          <s>However, correlation does not imply causation, just as the absence of correlation does not imply the absence of causation.</s>
+          <s>However, correlation does not imply causation, <ref type="figure">Fig. 2</ref> Violin plots of the 95% randomized confidence intervals (CIs) of the slope for relationships between virus and host abundances.</s>
+          <s>a-c CIs in genus datasets.</s>
+          <s>d CIs in phylym datasets.</s>
+          <s>In each panel, red dashed lines indicate the slope of the original sample.</s>
+          <s>Dark vertical lines indicate the 2.5, 50, and 97.5 percentiles.</s>
+          <s>Datasets with slopes with p ≥ 0.05 are shown in gray violin plots and datasets with slopes with p &lt; 0.05 are shown in blue violin plots.</s>
+          <s>The number of data points for each dataset is indicated in the parenthesis below the genus/phylum name just as the absence of correlation does not imply the absence of causation.</s>
           <s>Multiple studies have reported that correlation in microbe-microbe dynamics and virus-microbe dynamics may be a poor indicator of interaction <ref target="#b13" type="bibr">[14]</ref>
             <ref target="#b14" type="bibr">[15]</ref>
             <ref target="#b15" type="bibr">[16]</ref> .</s>
@@ -228,11 +234,6 @@
         <head>Fig. 1</head>
         <label>1</label>
         <figDesc>Fig. 1 Relationships between virus abundances, virus-host ratios (VHRs), and host abundances. a Genus-level relationships, virus vs. host abundances. b Genus-level relationships, VHRs vs. host abundances. c Phylum-level relationships, virus vs. host abundances. d Phylum-level relationships, VHRs vs. host abundances. Panels b and d are replotted from ref. 1 . The absence of a relationship between original, untransformed virus and host abundances (see panels a and c) should appear as a −1 slope when comparing VHR to host abundances (see panels b and d). A −1 slope is shown as a guide to readers in panels b and d</figDesc>
-      </figure>
-      <figure xml:id="fig_2">
-        <head>Fig. 2</head>
-        <label>2</label>
-        <figDesc>Fig. 2 Violin plots of the 95% randomized confidence intervals (CIs) of the slope for relationships between virus and host abundances. a-c CIs in genus datasets. d CIs in phylym datasets. In each panel, red dashed lines indicate the slope of the original sample. Dark vertical lines indicate the 2.5, 50, and 97.5 percentiles. Datasets with slopes with p ≥ 0.05 are shown in gray violin plots and datasets with slopes with p &lt; 0.05 are shown in blue violin plots. The number of data points for each dataset is indicated in the parenthesis below the genus/phylum name</figDesc>
       </figure>
       <note place="foot">NATURE COMMUNICATIONS | (2019) 10:501 | https://doi.org/10.1038/s41467-018-07950-z | www.nature.com/naturecommunications</note>
       <note place="foot">NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-018-07950-z</note>

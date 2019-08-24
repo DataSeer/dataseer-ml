@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:12+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T21:05+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -72,14 +72,20 @@
             <s>Furthermore, some host strain gene deletions that improve salicylate production may be impossible to predict.</s>
             <s>Here, a salicylate-responsive transcription factor was used to optimize the expression levels of shikimate/salicylate pathway genes in recombinant E. coli, and to screen a chromosomal transposon insertion library for improved salicylate production.</s>
           </p>
+        </div>
+        <div>
+          <head>Results:</head>
           <p>
-            <s>Results: A high-throughput colony screen was first developed based on a previously designed salicylate-responsive variant of the E. coli AraC regulatory protein ("AraC-SA").</s>
+            <s>A high-throughput colony screen was first developed based on a previously designed salicylate-responsive variant of the E. coli AraC regulatory protein ("AraC-SA").</s>
             <s>Next, a combinatorial library was constructed comprising a series of ribosome binding site sequences corresponding to a range of predicted protein translation initiation rates, for each of six pathway genes (&gt; 38,000 strain candidates).</s>
             <s>Screening for improved salicylate production allowed for the rapid identification of optimal gene expression patterns, conferring up to 123% improved production of salicylate in shake-flask culture.</s>
             <s>Finally, transposon mutagenesis and screening revealed that deletion of rnd (encoding RNase D) from the host chromosome further improved salicylate production by 27%.</s>
           </p>
+        </div>
+        <div>
+          <head>Conclusions:</head>
           <p>
-            <s>Conclusions: These results demonstrate the effectiveness of the salicylate sensor-based screening platform to rapidly identify beneficial gene expression patterns and gene knockout targets for improving production.</s>
+            <s>These results demonstrate the effectiveness of the salicylate sensor-based screening platform to rapidly identify beneficial gene expression patterns and gene knockout targets for improving production.</s>
             <s>Such customized high-throughput tools complement other cell factory engineering strategies.</s>
             <s>This approach can be generalized for the production of other shikimate-derived compounds.</s>
           </p>
@@ -116,7 +122,10 @@
       <div>
         <head>Open Access</head>
         <p>
-          <s>Microbial Cell Factories The shikimate pathway has been engineered to synthesize a range of natural products including flavonoids <ref target="#b12" type="bibr">[11]</ref> and phenylpropanoids <ref target="#b13" type="bibr">[12]</ref> .</s>
+          <s>Microbial Cell Factories *Correspondence: pccirino@uh.edu</s>
+          <s>Department of Chemical &amp; Biomolecular Engineering, University of Houston, S222 Engineering Building 1, Houston, TX 77204-4004, USA their derivatives.</s>
+          <s>The key step is a condensation of glycolytic intermediate phosphoenolpyruvate (PEP) and pentose phosphate pathway intermediate erythrose-4-phosphate (E4P), generating the precursor chorismate.</s>
+          <s>The shikimate pathway has been engineered to synthesize a range of natural products including flavonoids <ref target="#b12" type="bibr">[11]</ref> and phenylpropanoids <ref target="#b13" type="bibr">[12]</ref> .</s>
           <s>In this study, we engineered the E. coli shikimate pathway for production of the chorismate derivative salicylate.</s>
           <s>Salicylate can serve as a precursor to a range of pharmaceuticals such as aspirin and lamivudine (an anti-HIV drug), and is a starting material to cis-cis-muconic acid and adipic acid, the building block for nylon-6,6 and polyurethane <ref target="#b14" type="bibr">[13]</ref> .</s>
           <s>Previous metabolic engineering work led to the functional expression of a salicylate pathway in E. coli <ref target="#b15" type="bibr">[14]</ref> .</s>
@@ -136,20 +145,28 @@
           <s>As depicted in <ref type="figure">Fig. 1</ref> , the designed reporter system was applied to optimize the expression level of key enzymes in the shikimate pathway.</s>
           <s>A series of ribosome binding site (RBS) sequences corresponding to a spectrum of predicted translation rates were designed for each of six genes involved in the heterologous salicylate biosynthesis pathway <ref type="figure">(Fig. 1a)</ref> .</s>
           <s>Screening the combinatorial expression library resulted in isolation of several clones with enhanced salicylate production (up to 123% improvement).</s>
-          <s>Subsequently, screening a random transposon</s>
+          <s>Subsequently, screening a random transposon <ref type="figure">Fig. 1</ref> Sensor-based pathway optimization for improving salicylate production.</s>
+          <s>a Synthetic pathway for producing salicylate from glycerol.</s>
+          <s>Six genes highlighted in blue encode the key enzymes involved in salicylate biosynthesis: ppsA encodes PEP synthetase, which converts pyruvate to PEP. tktA encodes a transketolase that increases supply of E4P.</s>
+          <s>DAHP synthase encoded by aroG fbr catalyzes the aldol condensation to generate DAHP.</s>
+          <s>Shikimate kinase encoded by aroL produces chorismate.</s>
+          <s>Isochorismate synthase (encoded by entC) and isochorismate pyruvate lyase (encoded by pchB) enable the synthesis of salicylate form chorismate. b AraC-based salicylate biosensor was used to screen for clones showing enhanced salicylate production insertion library identified a knock-out gene target that further improved salicylate titer by 27%.</s>
         </p>
       </div>
       <div>
         <head>Results</head>
+      </div>
+      <div>
+        <head>Construction of AraC-based sensor system for agar plate-based high-throughput screening</head>
         <p>
-          <s>Construction of AraC-based sensor system for agar plate-based high-throughput screening AraC variant "AraC-SA" (P8G, T24L, H80G, Y82I and H93R) responds to salicylate, as described previously <ref target="#b21" type="bibr">[20]</ref> .</s>
-          <s>To assess the specificity of this sensor, we compared the response (fold activation of GFP expression under the control of promoter P BAD ) to salicylate with that of several other similar molecules (substituted benzoates) <ref type="figure">(Fig. 2b)</ref> .</s>
+          <s>AraC variant "AraC-SA" (P8G, T24L, H80G, Y82I and H93R) responds to salicylate, as described previously <ref target="#b21" type="bibr">[20]</ref> .</s>
+          <s>To assess the specificity of this sensor, we compared the response (fold activation of GFP expression under the control of promoter P BAD ) to salicylate with that of several other similar molecules (substituted benzoates) <ref target="#fig_0" type="figure">(Fig. 2b)</ref> .</s>
           <s>A concentration of 5 mM was used to compare compounds, as this amount is relevant to screening salicylate production, without major growth inhibition.</s>
           <s>Salicylate induces GFP expression over 200-fold, while there is essentially no response to the other compounds tested.</s>
           <s>The complete AraC-SA salicylate dose response is provided as Additional file 1.</s>
         </p>
         <p>
-          <s>To confirm that AraC-SA does not also respond to compounds upstream in the salicylate biosynthetic pathway (namely chorismate and isochorismate), strains expressing the full or partial salicylate pathway with the AraC-SA/GFP module were constructed <ref type="figure">(Fig. 2c)</ref> .</s>
+          <s>To confirm that AraC-SA does not also respond to compounds upstream in the salicylate biosynthetic pathway (namely chorismate and isochorismate), strains expressing the full or partial salicylate pathway with the AraC-SA/GFP module were constructed <ref target="#fig_0" type="figure">(Fig. 2c)</ref> .</s>
           <s>Only the strain expressing the full pathway produced salicylate (~ 4.5 mM after 14 h post-induction), resulting in 15-fold increased GFP fluorescence.</s>
           <s>Strains without the complete pathway exhibited only basal fluorescence signal.</s>
           <s>The AraC-SA sensor/reporter thus responds specifically to salicylate, at least in the context of salicylate biosynthesis in recombinant E. coli.</s>
@@ -158,16 +175,8 @@
           <s>In using our sensor/reporter system to screen libraries for mutants with enhanced salicylate production, a colony-based screen was developed <ref target="#b22" type="bibr">[21]</ref> .</s>
           <s>This approach provides a simple means of spatially isolating individual mutants and preventing "cheaters" from responding to salicylate produced and secreted by other mutants.</s>
           <s>To that end, a single copy of lacZ under control of P BAD was integrated into the salicylate production host strain (QH4) <ref target="#b15" type="bibr">[14]</ref> , resulting in reporter strain SQ22 for library screening.</s>
-          <s>As shown in <ref type="figure">Fig. 2d</ref> , in the presence of X-gal (5-bromo-4-cholo-3-indolyl β-d-galactopyranoside), the colony's blue color intensity resulting from LacZcatalyzed X-gal hydrolysis correlates with the salicylate concentration.</s>
+          <s>As shown in <ref target="#fig_0" type="figure">Fig. 2d</ref> , in the presence of X-gal (5-bromo-4-cholo-3-indolyl β-d-galactopyranoside), the colony's blue color intensity resulting from LacZcatalyzed X-gal hydrolysis correlates with the salicylate concentration.</s>
           <s>Further validation of this colony screen for isolating clones with enhanced salicylate production is provided in the (Additional file 2).</s>
-        </p>
-      </div>
-      <div>
-        <head>Fig. 2</head>
-        <p>
-          <s>Development of a salicylate-responsive sensor-reporter system.</s>
-          <s>a Heterologous pathway for producing salicylate from the native E. coli central metabolite chorismate.</s>
-          <s>b Fold activation of GFP expression under control of AraC-SA/P BAD , in the presence of 5 mM salicylate (SA) and similar compounds (l-ara: l-arabinose (inducer for wild-type AraC); BA: benzoic acid; 2-MOBA: 2-methoxybenzoic acid; 3-HBA: 3-hydroxybenzoic acid; 4-HBA: 4-hydroxybenzoic acid; and 2MBA: 2-methylbenzoic acid.</s>
           <s>Reported data represents mean ± std.</s>
           <s>dev., from four biological replicates.</s>
           <s>c Response of AraC sensor in E. coli strain QH4 carrying plasmid pGF29-SA (neither entC nor pchB is expressed), plasmid pFG29-SA-entC (entC but not pchB are expressed), and plasmid pFG29-SA-EP (enabling salicylate production).</s>
@@ -182,7 +191,7 @@
           <s>The RBS calculator <ref target="#b8" type="bibr">[7]</ref> was used to design a series of RBS sequences resulting in a range of predicted translation initiation strengths for the six targeted genes (entC, pchB, aroL, ppsA, tktA, aroG fbr ) (refer to Additional file 3 for details).</s>
           <s>These six genes with varied RBS sequences were assembled combinatorially into plasmid pPCC1244, leading to pathway library "QSAlib3" composed of theoretically 38,880 unique members <ref type="figure">(Fig. 3a)</ref> .</s>
           <s>Strain SQ22 containing a chromosomal P BAD -lacZ reporter was transformed with the QSAlib3 library and spread onto large, X-Gal-containing plates for screening.</s>
-          <s>Strain SQ22 is derived from strain QH4 <ref target="#b15" type="bibr">[14]</ref> having pheA and tyrA gene deletions <ref target="#tab_1" type="table">(Table 1)</ref> , which prevents conversion of chorismate to phenylalanine and tyrosine.</s>
+          <s>Strain SQ22 is derived from strain QH4 <ref target="#b15" type="bibr">[14]</ref> having pheA and tyrA gene deletions <ref target="#tab_0" type="table">(Table 1)</ref> , which prevents conversion of chorismate to phenylalanine and tyrosine.</s>
           <s>Yeast extract (5 g/L) was therefore added to our modified minimal medium to support growth.</s>
         </p>
         <p>
@@ -218,7 +227,7 @@
           <s>A suicide plasmid vector containing a transposable DNA fragment and IPTG-inducible transposase was used to generate the transposon insertion library in strain SQ22 harboring plasmid pQSA-50.</s>
           <s>The SQ22-transposon insertion library was screened using our AraC-P BAD -lacZ sensor-reporter system.</s>
           <s>After screening ~ 70,000 colonies on plates, 50 selected clones were re-screened in liquid culture for HPLC analysis.</s>
-          <s>Among these, clone QSA#228 consistently produced ~ 16.5 mM salicylate after 48 h induction, which is ~ 27% improved over parent strain SQ22 harboring mutant plasmid pQSA-50 <ref target="#fig_2" type="figure">(Fig. 4)</ref> .</s>
+          <s>Among these, clone QSA#228 consistently produced ~ 16.5 mM salicylate after 48 h induction, which is ~ 27% improved over parent strain SQ22 harboring mutant plasmid pQSA-50 <ref target="#fig_1" type="figure">(Fig. 4)</ref> .</s>
           <s>Curing the originally selected strain of plasmid, and retransforming with fresh plasmid pQSA-50 resulted in the same improvement in salicylate titer.</s>
           <s>Self-formed adaptor PCR (SEFA-PCR) analysis <ref target="#b26" type="bibr">[25]</ref> located the transposable element within the rnd gene, encoding RNase D. RNase D is an exonuclease involved in the 3′ ribonucleotide processing of tRNA <ref target="#b27" type="bibr">[26]</ref> .</s>
           <s>Direct deletion of rnd from the genomes of host strains SQ22 and QH4 resulted in similar improvements in salicylate production.</s>
@@ -237,7 +246,7 @@
           <s>It is worth noting that all six of the highest salicylateproducing mutants presented in <ref type="figure">Fig. 3b</ref> (results from RBS library screening) show similar final titers, suggesting a potential "upper limit" to production, at least for this library and under these culture conditions.</s>
           <s>At least 40 mM glycerol remained in all cultures tested (data not shown), suggesting carbon supply does not limit production.</s>
           <s>The inhibitory effects of salicylate on growth of strain QH4 are notable even at 5 mM, and more severe as salicylate concentration increases (refer to Additional file 6).</s>
-          <s>However, as noted above, salicylate titers do not exceed 5 mM until culture densities are already near maximum, and maximum culture density is not reduced as a result of increased salicylate production ( <ref type="figure">Fig. 3b</ref> and Additional file 4).</s>
+          <s>However, as noted above, salicylate titers do not exceed 5 mM until culture densities are already near maximum, and maximum culture density is not reduced as a result of increased salicylate production <ref type="figure">(Fig. 3b</ref> and Additional file 4).</s>
           <s>Nonetheless, salicylate toxicity may contribute to an upper limit on production.</s>
           <s>Further strain engineering to improve salicylate tolerance and/or export may therefore be promising approaches to further advance the commercial potential of microbial salicylate production.</s>
         </p>
@@ -262,7 +271,7 @@
       <div>
         <head>Plasmids</head>
         <p>
-          <s>Plasmids and strains used in this study are listed in <ref target="#tab_1" type="table">Table 1</ref> .</s>
+          <s>Plasmids and strains used in this study are listed in <ref target="#tab_0" type="table">Table 1</ref> .</s>
           <s>All primers used in this study are listed in Additional file 7. Primers pPCC1244-gib-for and pPCC1244-gib-rev were used to amplify lacI-Ptac-araC-SA DNA fragment from pFG29-SA, and the PCR product was assembled with PciI-and XmnI-digested pFG1, resulting in plasmid pPCC1244.</s>
         </p>
         <p>
@@ -303,7 +312,7 @@
       <div>
         <head>Strain construction</head>
         <p>
-          <s>The strains used in this study are listed in <ref target="#tab_1" type="table">Table 1</ref> .</s>
+          <s>The strains used in this study are listed in <ref target="#tab_0" type="table">Table 1</ref> .</s>
           <s>Plasmid pPCC1155-5 was integrated into the chromosome of QH4 at site HK022 as described <ref target="#b30" type="bibr">[29]</ref> .</s>
           <s>Removal of FRTflanked apramycin resistance cassette resulted in strain SQ18.</s>
           <s>A Phage λ Red disruption method <ref target="#b31" type="bibr">[30]</ref> was used to delete lacZ from the lac operon of strain SQ18, resulting in strain SQ22.</s>
@@ -315,7 +324,7 @@
         <p>
           <s>Essentially as described <ref target="#b21" type="bibr">[20]</ref> , 500 μl LB + apramycin in 2-ml-well, 96-well plate was inoculated with strain HF19 harboring pFG29-SA.</s>
           <s>These starter cultures were incubated for 6 h at 37 °C, 900 rpm, then diluted to OD 595 = 0.05 in 500 μl "biosensor medium" containing different concentrations of the compound of interest.</s>
-          <s>After 6 h, the cultures were pelleted and washed with an equal volume of phosphate-buffered saline, before measuring OD <ref type="bibr">595</ref> and fluorescence (400 nm excitation, 510 nm emission) using plate readers.</s>
+          <s>After 6 h, the cultures were pelleted and washed with an equal volume of phosphate-buffered saline, before measuring OD 595 and fluorescence (400 nm excitation, 510 nm emission) using plate readers.</s>
         </p>
       </div>
       <div subtype="dataseer">
@@ -337,27 +346,16 @@
         </p>
       </div>
       <figure xml:id="fig_0">
-        <head>*</head>
-        <label/>
-        <figDesc>Correspondence: pccirino@uh.edu Department of Chemical &amp; Biomolecular Engineering, University of Houston, S222 Engineering Building 1, Houston, TX 77204-4004, USA their derivatives. The key step is a condensation of gly- colytic intermediate phosphoenolpyruvate (PEP) and pentose phosphate pathway intermediate erythrose- 4-phosphate (E4P), generating the precursor choris- mate.</figDesc>
+        <head>Fig. 2</head>
+        <label>2</label>
+        <figDesc>Fig. 2 Development of a salicylate-responsive sensor-reporter system. a Heterologous pathway for producing salicylate from the native E. coli central metabolite chorismate. b Fold activation of GFP expression under control of AraC-SA/P BAD , in the presence of 5 mM salicylate (SA) and similar compounds (l-ara: l-arabinose (inducer for wild-type AraC); BA: benzoic acid; 2-MOBA: 2-methoxybenzoic acid; 3-HBA: 3-hydroxybenzoic acid; 4-HBA: 4-hydroxybenzoic acid; and 2MBA: 2-methylbenzoic acid. Reported data represents mean ± std. dev., from four biological replicates. c Response of AraC sensor in E. coli strain QH4 carrying plasmid pGF29-SA (neither entC nor pchB is expressed), plasmid pFG29-SA-entC (entC but not pchB are expressed), and plasmid pFG29-SA-EP (enabling salicylate production). d Colorimetric colony assay using the designed salicylate sensor system (SQ22 expressing AraC-SA growing on LB-agar plates containing X-GAL and different concentrations of salicylate)</figDesc>
       </figure>
       <figure xml:id="fig_1">
-        <head>Fig</head>
-        <label/>
-        <figDesc>Fig. 1 Sensor-based pathway optimization for improving salicylate production. a Synthetic pathway for producing salicylate from glycerol. Six genes highlighted in blue encode the key enzymes involved in salicylate biosynthesis: ppsA encodes PEP synthetase, which converts pyruvate to PEP. tktA encodes a transketolase that increases supply of E4P. DAHP synthase encoded by aroG fbr catalyzes the aldol condensation to generate DAHP. Shikimate kinase encoded by aroL produces chorismate. Isochorismate synthase (encoded by entC) and isochorismate pyruvate lyase (encoded by pchB) enable the synthesis of salicylate form chorismate. b AraC-based salicylate biosensor was used to screen for clones showing enhanced salicylate production</figDesc>
-      </figure>
-      <figure xml:id="fig_2">
         <head>Fig. 4</head>
         <label>4</label>
         <figDesc>Fig. 4 Transposon insertion library screening for improved salicylate production led to the identification of an rnd mutation in the host. Red column: Salicylate titer after 48 h fermentation of different host strains expressing plasmid pQSA-50; Black column: cell density of culture after 48 h fermentation. Reported data represents mean ± std. dev., from four independent experiments</figDesc>
       </figure>
       <figure type="table" validated="false" xml:id="tab_0">
-        <head/>
-        <label/>
-        <figDesc>. 1 Sensor-based pathway optimization for improving salicylate production. a Synthetic pathway for producing salicylate from glycerol. Six genes highlighted in blue encode the key enzymes involved in salicylate biosynthesis: ppsA encodes PEP synthetase, which converts pyruvate to PEP. tktA encodes a transketolase that increases supply of E4P. DAHP synthase encoded by aroG fbr catalyzes the aldol condensation to generate DAHP. Shikimate kinase encoded by aroL produces chorismate. Isochorismate synthase (encoded by entC) and isochorismate pyruvate lyase (encoded by pchB) enable the synthesis of salicylate form chorismate. b AraC-based salicylate biosensor was used to screen for clones showing enhanced salicylate production insertion library identified a knock-out gene target that further improved salicylate titer by 27%.</figDesc>
-        <table/>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_1">
         <head>Table 1</head>
         <label>1</label>
         <figDesc>Plasmids and strains used in this study</figDesc>
@@ -388,9 +386,15 @@ Relevant features
           </p>
         </div>
         <div>
-          <head>Consent for publication Not applicable.</head>
+          <head>Consent for publication</head>
           <p>
-            <s>Ethics approval and consent to participate Not applicable.</s>
+            <s>Not applicable.</s>
+          </p>
+        </div>
+        <div>
+          <head>Ethics approval and consent to participate</head>
+          <p>
+            <s>Not applicable.</s>
           </p>
         </div>
         <div>
@@ -466,8 +470,11 @@ Relevant features
           <p>
             <s>AcCoA: acetyl-CoA; BA: benzoic acid; DHAP: dihydroxyacetone phosphate; DAHP: 3-deoxy-d-arabino-heptulosonate-7-phosphate; E4P: erythrose-4-phosphate; F1,6P: fructose-1,6-phosphate; F6P: fructose-6-phosphate; G6P: glucose-6-phosphate; 3-HBA: 3-hydroxybenzoic acid; 4-HBA: 4-hydroxybenzoic acid; l-ara: l-arabinose; 2-MOBA: 2-methoxybenzoic acid; 2MBA: 2-methylbenzoic acid; PEP: phosphoenolpyruvate; PR: pyruvate; RBS: ribosome binding site; R5P: ribose-5-phosphate; SA: salicylate; S7P: sedoheptulose-7-phosphate; TIR: translation initiation rate; X5P: xylulose-5-phosphate.</s>
           </p>
+        </div>
+        <div>
+          <head>Authors' contributions</head>
           <p>
-            <s>Authors' contributions SQ and YL conducted the experiments and analyzed the data.</s>
+            <s>SQ and YL conducted the experiments and analyzed the data.</s>
             <s>SQ and PCC designed the experiments and prepared the manuscript.</s>
             <s>All authors read and approved the final manuscript.</s>
           </p>
@@ -548,7 +555,7 @@ Relevant features
           </biblStruct>
           <biblStruct xml:id="b3">
             <monogr>
-              <title level="m" type="main">convenient online submission • thorough peer review by experienced researchers in your field • rapid publication on acceptance • support for research data, including large and complex data types • gold Open Access which fosters wider collaboration and increased citations maximum visibility for your research</title>
+              <title level="m" type="main">convenient online submission • thorough peer review by experienced researchers in your field • rapid publication on acceptance • support for research data, including large and complex data types • gold Open Access which fosters wider collaboration and increased citations maximum visibility for your research: over 100M website views per year</title>
               <author>
                 <persName>
                   <forename type="first">•</forename>
@@ -557,11 +564,10 @@ Relevant features
               </author>
               <imprint/>
             </monogr>
-            <note>over 100M website views per year</note>
           </biblStruct>
           <biblStruct xml:id="b4">
             <monogr>
-              <title level="m">Choose BMC and benefit from</title>
+              <title level="m">Ready to submit your research ? Choose BMC and benefit from</title>
               <imprint/>
             </monogr>
           </biblStruct>
@@ -713,7 +719,7 @@ Relevant features
               </author>
             </analytic>
             <monogr>
-              <title level="j">Proc Natl Acad Sci USA</title>
+              <title level="j">Proc Natl Acad Sci</title>
               <imprint>
                 <biblScope unit="volume">108</biblScope>
                 <biblScope from="19949" to="54" unit="page"/>

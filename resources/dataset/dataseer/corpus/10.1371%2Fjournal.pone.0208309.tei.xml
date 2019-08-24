@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T05:36+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T20:29+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -177,7 +177,7 @@
           <s>While random utility model formulations have served as the predominant decision rule for discrete choice models, there is growing recognition of their limitations.</s>
           <s>The implicit compensatory nature of the formulation allows for a poor performance on an attribute (such as travel time) to be compensated by a positive performance on another attribute (such as travel cost) <ref type="bibr">[19]</ref> .</s>
           <s>In some choice occasions, such behavior is not realistic.</s>
-          <s>In recent years, motivated by research in behavioral economics, there has been considerable interest in alternative decision rules for discrete choice models such as relative advantage maximization <ref type="bibr">[20]</ref>
+          <s>In recent years, motivated by research in behavioral economics, there has been considerable interest in alternative decision rules for discrete choice models such as relative advantage maximization <ref type="bibr">[</ref>
           </s>
         </p>
       </div>
@@ -231,9 +231,9 @@
           <s>z c is a (M x 1) column vector of cyclist attributes that influences the propensity of belonging to segment s, g 0 s is a corresponding (M x 1) column vector of estimable coefficients.</s>
           <s>Within the latent class approach, the unconditional probability of a cyclist c choosing a commuting route i is given as:</s>
         </p>
-        <formula xml:id="formula_1">P c ðiÞ ¼ X S s¼1</formula>
+        <formula xml:id="formula_1">P c ðiÞ ¼ X S s¼1 ðP c ðiÞjsÞðP cs Þ</formula>
         <p>
-          <s>ðP c ðiÞjsÞðP cs Þ where P c (i)|s represents the probability of cyclist c choosing route i within the segment s.</s>
+          <s>where P c (i)|s represents the probability of cyclist c choosing route i within the segment s.</s>
           <s>Note that the decision paradigm used to obtain the conditional probability P c (i)|s may follow either utility or regret based unordered choice (traditionally multinomial logit) mechanism.</s>
         </p>
         <p>
@@ -241,11 +241,14 @@
         </p>
         <formula xml:id="formula_2">P c i ð Þjs ¼ Z Y K k¼1 expða 0 s x cik Þ P R r¼1 expða 0 s x cik ÞÞ ! f a ð Þda</formula>
         <p>
-          <s>Here, a On the other hand, if a random regret based multinomial logit model is assumed to evaluate the route choice decision, the conditional probability would be given as:</s>
+          <s>Here, a 0 s is a (L x 1) column vector of coefficients, and x cik is a (L x 1) column vector of route attributes, where f(α) is a density function specified to be normally distributed with mean 0 and variance σ 2 .</s>
         </p>
-        <formula xml:id="formula_3">P c i ð Þjs ¼ Z Y K k¼1 expðÀ R cik Þ P R r¼1 expðÀ R cik Þ ! f d ð Þdd Here, R cik ¼ P j6 ¼i P M m¼1 ln½1 þ expfd m ðx cjmk À x cimk Þg�;</formula>
         <p>
-          <s>δ m is a (Lx1) column vector of estimable coefficients associated with attribute x m ; x im and x jm are (Lx1) column vectors of route attributes for the considered alternative i and another alternative j, respectively, where f(δ) is a density function specified to be normally distributed with mean 0 and variance ρ 2 .</s>
+          <s>On the other hand, if a random regret based multinomial logit model is assumed to evaluate the route choice decision, the conditional probability would be given as:</s>
+        </p>
+        <formula xml:id="formula_3">P c i ð Þjs ¼ Z Y K k¼1 expðÀ R cik Þ P R r¼1 expðÀ R cik Þ ! f d ð Þdd</formula>
+        <p>
+          <s>Here, R cik ¼ P j6 ¼i P M m¼1 ln½1 þ expfd m ðx cjmk À x cimk Þg�; δ m is a (Lx1) column vector of estimable coefficients associated with attribute x m ; x im and x jm are (Lx1) column vectors of route attributes for the considered alternative i and another alternative j, respectively, where f(δ) is a density function specified to be normally distributed with mean 0 and variance ρ 2 .</s>
           <s>The loglikelihood function for the entire dataset with appropriate P c (i)|s is as follows:</s>
         </p>
         <formula xml:id="formula_4">LL ¼ X C c¼1 logðP c<label>ðiÞÞ</label>
@@ -264,6 +267,23 @@
         <p>
           <s>The analysis of population and decision rule heterogeneity is conducted drawing on an empirical context-impact of air pollution on bicycle route choice.</s>
           <s>While bicycling offers health benefits, there is growing recognition that the potential health benefits might be offset by increased exposure to air pollutants for bicyclists.</s>
+          <s>Several research efforts have documented the potential increased exposure to air pollution for bicyclists owing to their close proximity to traffic, high respiration rates, and longer journeys <ref type="bibr">[36]</ref>
+            <ref type="bibr">[37]</ref>
+            <ref type="bibr">[38]</ref> .</s>
+          <s>Furthermore, there is growing evidence from health research studies highlighting the potential consequences of increased air pollution exposure (for example see Weichenthal et al. <ref type="bibr">[39]</ref> ).</s>
+          <s>Thus, there is need to explore the impact of air pollution exposure on bicycling choices.</s>
+          <s>An exhaustive review of literature on bicycling related decisions (such as decision to cycle, frequency of cycling, and route choice) is beyond the scope of the paper.</s>
+          <s>Given the focus of our current study, we provide a concise summary of literature on route choice decision process for commuter cyclists (see <ref type="bibr">Anowar et al. [40]</ref> for more details).</s>
+          <s>For examining route choice, studies relied on both stated preference (SP) [41-48] and revealed preference (RP) survey data <ref type="bibr">[49]</ref>
+            <ref type="bibr">[50]</ref>
+            <ref target="#b15" type="bibr">[51]</ref>
+            <ref target="#b16" type="bibr">[52]</ref>
+            <ref target="#b17" type="bibr">[53]</ref> .</s>
+          <s>The most commonly employed analytical approaches to model route choice include binary logit (BL) or multinomial logit (MNL), mixed multinomial logit (MMNL), multinomial probit (MNP), and heuristic approaches.</s>
+          <s>The important factors affecting route choice decision include socio-demographic characteristics, bike route characteristics, traffic characteristics, environmental attributes, access to facilities (such as showers at work place), and trip characteristics.</s>
+          <s>Of these, the most significant factors are: travel time (lower is preferred), presence of incline (flat is preferred), bicycle infrastructure (continuous and exclusive/segregated routes are preferred), traffic volume (lower is preferred), and air pollution exposure (lower is preferred) <ref type="bibr">[36, 40, 41, 43-47, 49, 50, 52, 54-56]</ref> .</s>
+        </p>
+        <p>
           <s>The current study builds on the first research effort that studied the impact of air pollution exposure on bicycling route choice (see <ref type="bibr">Anowar et al.,</ref>
             <ref type="bibr">[40]</ref> ).</s>
           <s>In the previous study, the emphasis was on examining if air pollution exposure information affected route choice.</s>
@@ -277,12 +297,11 @@
         <head>Data source and experimental design</head>
         <p>
           <s id="dataset-1" type="Tabular data">In our SP survey, responses from bicyclists were collected along four dimensions.</s>
-          <s>
-            <ref type="formula">(1)</ref> Respondent's personal and household characteristics (such as gender, age, education level, employment type and schedule, nearest intersections at the place of residence and work, household income, number of persons in the household, level of automobile and bicycle ownership, and commute time in minutes); (2) Cycling habits (frequency of cycling, if accompanied by children while making the trip, regular bicycling experience in years, primary reasons for cycling, seasons of cycling, and how often they switch their usual biking route); (3) Hypothetical choice scenarios with three route options per scenario; and (4) Cyclist's perception about the characteristics of his/her usual commuting route.</s>
+          <s>(1) Respondent's personal and household characteristics (such as gender, age, education level, employment type and schedule, nearest intersections at the place of residence and work, household income, number of persons in the household, level of automobile and bicycle ownership, and commute time in minutes); (2) Cycling habits (frequency of cycling, if accompanied by children while making the trip, regular bicycling experience in years, primary reasons for cycling, seasons of cycling, and how often they switch their usual biking route); (3) Hypothetical choice scenarios with three route options per scenario; and (4) Cyclist's perception about the characteristics of his/her usual commuting route.</s>
         </p>
         <p>
           <s id="dataset-2" type="Tabular data">The experimental design for identifying the hypothetical choice scenarios for the SP game was developed considering the following attributes: roadway characteristics: grade, traffic volume, and roadway type; bike route characteristics: cycling infrastructure continuity and segregation and landmarks along the route; and air pollution: mean exposure level (in ppb) and maximum exposure level (in ppb).</s>
-          <s>A detailed description of the considered attributes and the corresponding attribute levels are presented in <ref target="#tab_2" type="table">Table 1</ref> .</s>
+          <s>A detailed description of the considered attributes and the corresponding attribute levels are presented in <ref target="#tab_1" type="table">Table 1</ref> .</s>
           <s>Considering and comparing all of these attributes would burden the respondents significantly and complicate their route choice process.</s>
           <s>Hence, an innovative partitioning technique where only five attributes were used to characterize the alternative routes in each of the SP scenarios was used.</s>
           <s>Of these five attributes, the air pollution (mean and maximum exposure) and travel time attributes were always retained.</s>
@@ -297,7 +316,7 @@
           <s>For this purpose, we devised three types of informational messages (see Supplementary information S1 Table for the messages).</s>
           <s>One (or none) of these messages was presented to the respondent in a window preceding the scenarios and following the description of attributes.</s>
           <s>The survey was designed so that information display was randomized to ensure that a quarter of the respondents received no information while the rest of them received at least one of the three messages.</s>
-          <s>The details of the experimental design, attribute selection process, and survey dissemination strategies with demographic profile of commuters are described in Anowar et al. <ref type="bibr">[40,</ref>
+          <s>The details of the experimental design, attribute selection process, and survey dissemination strategies with demographic profile of commuters are described in <ref type="bibr">Anowar et al. [40,</ref>
             <ref target="#b21" type="bibr">57]</ref> .</s>
         </p>
         <p>
@@ -305,10 +324,7 @@
           <s>Several dissemination schemes were adopted including emailing web-link to the survey to individuals, university (University of Toronto and University of Central Florida) electronic mailing lists, various bicyclist forums, organizations, and groups; uploading posts in different social media platforms including Facebook, LinkedIn, and Twitter; placing advertisement posters in public message sharing spaces alongside major roadways (in Toronto).</s>
           <s>Additionally, bicycle-related websites posted the link on their web pages.</s>
           <s>Individuals who learnt about our survey from these sources may have distributed it to their peers, colleagues, family, and friends.</s>
-          <s>Participation was completely voluntary and open to individuals over 18 years of age.</s>
-          <s>At the beginning of the survey, participants were provided with an overview of what the survey entails and what it is for.</s>
-          <s>They were given the option to proceed (I agree) or exit (I do not agree) from the survey, after reading the information.</s>
-          <s>A total of 750 cyclists responded, out which 695 cyclists completed the survey.</s>
+          <s>Participation was completely voluntary and open to individuals</s>
         </p>
       </div>
       <div>
@@ -317,7 +333,7 @@
           <s>The survey data was processed by removing incomplete information from raw data.</s>
           <s>A total of 3475 choices were compiled from 695 respondents.</s>
           <s>
-            <ref target="#fig_1" type="figure">Fig 1 presents</ref> the descriptive statistics for the 695 commuter respondents from the sample.</s>
+            <ref target="#fig_0" type="figure">Fig 1 presents</ref> the descriptive statistics for the 695 commuter respondents from the sample.</s>
           <s>The sample of respondents is composed of 58 percent male and 42 percent female cyclists.</s>
           <s>Almost three-fifths (60%) of the respondents are aged between 18-34 years, reflecting that young adults are more likely to bicycle for commute purposes than older people.</s>
           <s>Almost fifty percent of commuter cyclists holds a graduate degree while almost three-fifths of cyclists are full-time job holders.</s>
@@ -380,7 +396,7 @@
             <ref target="#b25" type="bibr">60]</ref> .</s>
           <s>The advantage of using BIC is that it imposes substantially higher penalty than other ICs on over-fitting.</s>
           <s>The model with the lowest AIC and BIC value is the preferred model.</s>
-          <s>The BIC and AIC values for the final specifications of all the models are presented in <ref target="#tab_3" type="table">Table 2</ref> .</s>
+          <s>The BIC and AIC values for the final specifications of all the models are presented in <ref target="#tab_2" type="table">Table 2</ref> .</s>
           <s>Based on these values, LCMHS with four segments (3 random regret based segment-1 random utility based segment) offers the best data fit.</s>
         </p>
       </div>
@@ -394,12 +410,11 @@
         <formula xml:id="formula_7">G S ¼ P c P cs C</formula>
         <p>
           <s>where C denotes the total number of respondents in the sample.</s>
-          <s>The shares are presented in <ref target="#tab_5" type="table">Table 3</ref> .</s>
+          <s>The shares are presented in <ref target="#tab_3" type="table">Table 3</ref> .</s>
           <s>The table offers some interesting insights.</s>
           <s>In all the latent class models with mixed choice paradigms, cyclists are more likely to be part of the segment(s) with random regret decision rule.</s>
           <s>For instance, in our best specified model, only 30% of the cyclists are likely to be allocated to the random utility based segment while the rest of them to the three random regret based segments (8%, 43%, and 19%).</s>
           <s>It is interesting to note that the split of cyclists who make their route choice decision following regret minimization concept is not equal.</s>
-          <s>Decision rule heterogeneity in bicyclist route choice</s>
         </p>
       </div>
       <div>
@@ -408,8 +423,8 @@
           <s>In addition to the best model fit, LCMHS with four segments (3 random regret based segment-1 random utility based segment) provided the most intuitive behavioral interpretation in terms of route choice decision.</s>
           <s>Hence, in this section we only discuss about the results of the best fit model in detail.</s>
           <s>
-            <ref target="#tab_6" type="table">Table 4</ref> presents the results for the segmentation component (top panel of results) and segment specific route choice models (bottom panel of results).</s>
-          <s>To provide a benchmark for the proposed model, we have also included the results for the mixed MNL model in <ref target="#tab_7" type="table">Table 5</ref> .</s>
+            <ref type="table">Table 4</ref> presents the results for the segmentation component (top panel of results) and segment specific route choice models (bottom panel of results).</s>
+          <s>To provide a benchmark for the proposed model, we have also included the results for the mixed MNL model in <ref target="#tab_5" type="table">Table 5</ref> .</s>
           <s>Latent segmentation component.</s>
           <s>The variables in the segmentation part with positive (negative) coefficient indicate increase (decrease) in the propensity of the cyclists being part of the segment.</s>
           <s>In our analysis, we considered Segment 1 as the base.</s>
@@ -430,14 +445,25 @@
           <s>Grade, traffic volume, and roadway type variables influence route choice behavior in segments 2, 3 and 4. As expected, for commuting purposes, steep roadway grades reduce the likelihood of choosing the route in both utility (Segment 2) and regret (Segment 3) segments.</s>
           <s>In Segment 2, the coefficient indicates a reduction in utility for routes with steep grade.</s>
           <s>In Segment 3, commuter bicyclists will be predisposed to lower regret toward routes with flat or moderate grades relative to routes with steep grades.</s>
-          <s>Cyclists are inclined to avoid steep grade presumably because of the discomfort from rigorous physical activity while commuting to work (see similar results in Sener et al. 46]).</s>
-          <s>High vehicular traffic volume (medium and heavy) on roadway deters cyclists from choosing the route.</s>
-          <s>In Segment 2, in particular, there is a larger drop in utility for routes with heavy traffic.</s>
-          <s>The negative coefficients for heavy traffic volume in Segment 3 and Segment 4 suggest that regret reduces if traffic volume on the non-chosen alternatives is higher, thus reducing the likelihood for opting for route with heavy traffic (see similar result in Dill and Voros <ref target="#b27" type="bibr">[62]</ref> ).</s>
+          <s>Cyclists are inclined to avoid steep grade presumably because of the discomfort from rigorous physical activity while commuting to work (see similar results in Sener et al. and <ref type="bibr">Anowar et al. [40,</ref>
+            <ref type="bibr"/>
+            <ref target="#b27" type="bibr">[62]</ref> ).</s>
           <s>The presence of increased vehicular traffic will increase the probability of conflict between cyclists with motorized vehicles; so it is expected that commuter cyclists prefer routes with lower traffic levels.</s>
           <s>In terms of roadway type, routes on minor and major arterials (relative to routes on residential roads) are less likely to be chosen for commuting purpose.</s>
           <s>The effect is more pronounced in Segment 2, the utility for a route drops significantly when that route is located on a major arterial.</s>
-          <s>In segment 3, the coefficient for major arterial is negative indicating that the regret associated with not choosing a route along major arterial is lower Decision rule heterogeneity in bicyclist route choice (relative to other alternatives).</s>
+          <s>In segment 3, the coefficient for major arterial is negative indicating that the regret associated with not choosing a route along major arterial is lower <ref type="table">Table 4</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Results of LCMS with four segments (1 RUM based segment-3 RRM based segment).</head>
+      </div>
+      <div>
+        <head>Variables</head>
+      </div>
+      <div>
+        <head>Segment-1 (RRM) Segment-2 (RUM) Segment-3 (RRM) Segment-4 (RRM)</head>
+        <p>
+          <s>Estimate Decision rule heterogeneity in bicyclist route choice (relative to other alternatives).</s>
           <s>The results are quite intuitive and could be attributed to cyclist's perception of higher level of safety on residential streets.</s>
           <s>Bike route characteristics.</s>
           <s>The effect of bike route characteristics is found significant only in Segment 2 and Segment 3 -these two classes captured respondents who are highly sensitive to cycling infrastructure.</s>
@@ -460,14 +486,6 @@
           <s>On the other hand, maximum exposure affects route choice behavior in segments 2, 3 and 4. The influence of maximum exposure is also along expected lines-increase in maximum exposure along the route reduces the probability of choosing that route (see <ref type="bibr">Anowar et al. [40]</ref> for similar results).</s>
           <s>The reader would note that between mean and maximum exposure, the influence of mean exposure is consistently larger than the influence of maximum exposure on a parts per billion basis.</s>
           <s>The higher negative coefficient for mean exposure level indicates that cyclists are more sensitive towards a constant level of pollution on a regular basis rather than instantaneous exposure to pollution.</s>
-          <s>Trip characteristics.</s>
-          <s>For commuters, travel time is an important determinant of route choice.</s>
-          <s>The variable influences route choice decision in segments 2, 3 and 4.</s>
-          <s>An increase in travel time is associated with reduction in utility or increase in regret for the route with longer travel time.</s>
-          <s>Thus, that route have a lower probability of being chosen.</s>
-          <s>Several studies have highlighted the impact of travel time along the same lines (see, <ref type="bibr">Anowar et al. [40]</ref> , Sener et al.</s>
-        </p>
-        <p>
           <s>[46] and Stinson and Bhat <ref target="#b31" type="bibr">[66]</ref> ).</s>
           <s>It is however, quite interesting that for segment 1, travel time is not a factor.</s>
           <s>The results highlight the behavior of a small population group that is focused solely on reducing their exposure to air pollution.</s>
@@ -494,7 +512,9 @@
         <p>
           <s>where β t and β r are the estimated coefficients for the two attributes for which we are calculating the trade-off.</s>
           <s>In our case, the r th attribute is travel time and the t th attribute represents the attribute for which the "willingness to travel extra" for a one-unit increase/decrease is being investigated.</s>
-          <s>The results from the trade-off exercise (for main effects only) are presented in <ref target="#tab_8" type="table">Table 6</ref> .</s>
+          <s>The results from the trade-off exercise (for main effects only) are presented in <ref target="#tab_6" type="table">Table 6</ref> .</s>
+        </p>
+        <p>
           <s>The results of the trade-off analysis provides some interesting insights.</s>
           <s>For the utility oriented segment, as expected, cyclists are willing to travel 15-45 minutes extra to avoid steep grade, medium/heavy traffic volume, and riding on routes along minor/major arterial.</s>
           <s>Moreover, they are also willing to travel in excess of 25 minutes to ride on a continuous or exclusive bike facility.</s>
@@ -504,7 +524,7 @@
         </p>
         <p>
           <s>Trade-off values from random utility paradigm is insensitive to the changes in the attribute values.</s>
-          <s>However, we can see from <ref target="#tab_8" type="table">Table 6</ref> that random regret formulation based trade-offs calculated for Segment 3 and 4 are alternative and choice set dependent and monotonically decrease with increase in travel time.</s>
+          <s>However, we can see from <ref target="#tab_6" type="table">Table 6</ref> that random regret formulation based trade-offs calculated for Segment 3 and 4 are alternative and choice set dependent and monotonically decrease with increase in travel time.</s>
           <s>For example, from trade-off values, we can see that when a chosen alternative does poorly in terms of roadway attribute (has steep grade, or has heavy vehicular traffic or is located on a major arterial), but has a faster commuting time, an increase in travel time leads to a small increase in regret while improvement in terms of road grade leads to a relatively large decrease in regret.</s>
           <s>Hence, cyclists are willing to travel more than 40, 20, and 35 minutes, respectively for travelling on a route with better grades (medium or flat), better traffic situation (medium or low), and convenient roadway type (minor or residential).</s>
           <s>Cyclists in Segment 4 are willing to travel longer than cyclists in Segment 3 to avoid heavy traffic.</s>
@@ -552,12 +572,9 @@
           <s>Our study is aimed to offer a guidance on how bicyclists respond to air quality information.</s>
           <s>Future research efforts can focus on offering additional approaches to providing air quality information in an effort to identify the most appropriate information dissemination framework.</s>
         </p>
-      </div>
-      <div>
-        <head>Supporting information</head>
-      </div>
-      <div>
-        <head>S1</head>
+        <p>
+          <s>Supporting information S1</s>
+        </p>
       </div>
       <div>
         <head>Author Contributions</head>
@@ -565,61 +582,36 @@
           <s>Conceptualization: Naveen Eluru.</s>
         </p>
       </div>
-      <div>
-        <head>Data curation: Sabreena Anowar.</head>
-        <p>
-          <s>Formal analysis: Bibhas Kumar Dey.</s>
-        </p>
-      </div>
-      <div>
-        <head>Funding acquisition: Marianne Hatzopoulou.</head>
-        <p>
-          <s>Investigation: Sabreena Anowar.</s>
-        </p>
-        <p>
-          <s>Methodology: Sabreena Anowar, Naveen Eluru.</s>
-        </p>
-        <p>
-          <s>Project administration: Marianne Hatzopoulou.</s>
-        </p>
-      </div>
       <figure xml:id="fig_0">
-        <head>0 s</head>
-        <label>0</label>
-        <figDesc>is a (L x 1) column vector of coefficients, and x cik is a (L x 1) column vector of route attributes, where f(α) is a density function specified to be normally distributed with mean 0 and variance σ 2 .</figDesc>
-      </figure>
-      <figure xml:id="fig_1">
         <head>Fig 1 .</head>
         <label>1</label>
         <figDesc>Fig 1. Socio-demographic profile of commuter cyclists. https://doi.org/10.1371/journal.pone.0208309.g001</figDesc>
       </figure>
+      <figure xml:id="fig_1">
+        <head/>
+        <label/>
+        <figDesc>Trip characteristics. For commuters, travel time is an important determinant of route choice. The variable influences route choice decision in segments 2, 3 and 4. An increase in travel time is associated with reduction in utility or increase in regret for the route with longer travel time. Thus, that route have a lower probability of being chosen. Several studies have highlighted the impact of travel time along the same lines (see, Anowar et al. [40], Sener et al.</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head/>
+        <label/>
+        <figDesc>Data curation: Sabreena Anowar.</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Formal analysis :</head>
+        <label>analysis</label>
+        <figDesc>Bibhas Kumar Dey. Funding acquisition: Marianne Hatzopoulou. Investigation: Sabreena Anowar. Methodology: Sabreena Anowar, Naveen Eluru. Project administration: Marianne Hatzopoulou.</figDesc>
+      </figure>
       <figure type="table" validated="false" xml:id="tab_0">
         <head/>
         <label/>
-        <figDesc>, contextual concavity model [21], fully-compensatory decision making [22, 23], prospect theory (PT) [24, 25] and random regret minimization (RRM) [19, 26].</figDesc>
+        <figDesc>20], contextual concavity model [21], fully-compensatory decision making [22, 23], prospect theory (PT) [24, 25] and random regret minimization (RRM) [19, 26].</figDesc>
         <table/>
       </figure>
       <figure type="table" validated="false" xml:id="tab_1">
-        <head/>
-        <label/>
-        <figDesc>and route choice) is beyond the scope of the paper. Given the focus of our current study, we provide a concise summary of literature on route choice decision process for commuter cyclists (see Anowar et al. [40] for more details). For examining route choice, studies relied on both stated preference (SP) [41-48] and revealed preference (RP) survey data [49-53]. The most commonly employed analytical approaches to model route choice include binary logit (BL) or multinomial logit (MNL), mixed multinomial logit (MMNL), multinomial probit (MNP), and heuristic approaches. The important factors affecting route choice decision include socio-demographic characteristics, bike route characteristics, traffic characteristics, environmental attributes, access to facilities (such as showers at work place), and trip charac- teristics. Of these, the most significant factors are: travel time (lower is preferred)</figDesc>
-        <table>Several research efforts have documented the potential 
-increased exposure to air pollution for bicyclists owing to their close proximity to traffic, high 
-respiration rates, and longer journeys [36-38]. Furthermore, there is growing evidence from 
-health research studies highlighting the potential consequences of increased air pollution expo-
-sure (for example see Weichenthal et al. [39]). Thus, there is need to explore the impact of air 
-pollution exposure on bicycling choices. 
-An exhaustive review of literature on bicycling related decisions (such as decision to cycle, 
-frequency of cycling, , presence of 
-incline (flat is preferred), bicycle infrastructure (continuous and exclusive/segregated routes 
-are preferred), traffic volume (lower is preferred), and air pollution exposure (lower is pre-
-ferred) [36, 40, 41, 43-47, 49, 50, 52, 54-56]. 
-</table>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_2">
         <head>Table 1 .</head>
         <label>1</label>
-        <figDesc>Attribute levels for the SP experiments.https://doi.org/10.1371/journal.pone.0208309.t001 Decision rule heterogeneity in bicyclist route choice PLOS ONE | https://doi.org/10.1371/journal.pone.0208309 November 30, 2018</figDesc>
+        <figDesc>Attribute levels for the SP experiments.https://doi.org/10.1371/journal.pone.0208309.t001 Decision rule heterogeneity in bicyclist route choice PLOS ONE | https://doi.org/10.1371/journal.pone.0208309 November 30, 2018over 18 years of age. At the beginning of the survey, participants were provided with an over- view of what the survey entails and what it is for. They were given the option to proceed (I agree) or exit (I do not agree) from the survey, after reading the information. A total of 750 cyclists responded, out which 695 cyclists completed the survey.</figDesc>
         <table>Attribute Category 
 Attribute 
 Definition of Attribute 
@@ -693,251 +685,21 @@ Travel time to destination (for commuting bicyclists only)
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_3">
+      <figure type="table" validated="false" xml:id="tab_2">
         <head>Table 2 .</head>
         <label>2</label>
         <figDesc>Goodness of fit measures.</figDesc>
         <table>Model 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_4">
-        <head/>
-        <label/>
-        <figDesc>and Anowar et al. [40,</figDesc>
-        <table/>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_5">
+      <figure type="table" validated="false" xml:id="tab_3">
         <head>Table 3 .</head>
         <label>3</label>
         <figDesc>Population share distribution.</figDesc>
         <table>Model 
 </table>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_6">
-        <head>Table 4 .</head>
-        <label>4</label>
-        <figDesc>Results of LCMS with four segments (1 RUM based segment-3 RRM based segment).</figDesc>
-        <table>Variables 
-Segment-1 (RRM) 
-Segment-2 (RUM) 
-Segment-3 (RRM) 
-Segment-4 (RRM) 
-
-Estimate 
-t-statistics 
-Estimate 
-t-statistics 
-Estimate 
-t-statistics 
-Estimate 
-t-statistics 
-
-Segmentation Component 
-
-Constant 
--
--
-0.892 
-3.225 
-2.710 
-6.854 
-0.710 
-1.836 
-
-Female (Base: Male) 
--
--
-0.869 
-3.697 
--
--
--
--
-
-Age (Base: 18-34 years) 
-
-35 or more years 
--
--
--
--
--1.119 
--4.883 
--
--
-
-Auto Ownership 
--
--
--
--
--0.498 
--3.913 
--
--
-
-Biking frequency (Base: Rarely) 
-
-Daily 
--
--
--
--
-0.546 
-2.023 
-0.795 
-2.36 
-
-Commute length (Base: Short commute) 
-
-Long Commute 
--
--
--
--
--1.013 
--2.442 
--
--
-
-Moderate to Long Commute 
--
--
--
--
--
--
--0.978 
--3.448 
-
-Route Choice Component 
-
-Roadway Characteristics 
-
-Grade (Base: Flat) 
-
-Steep 
--
--
--1.795 
--6.221 
--2.131 
--10.220 
--
--
-
-Traffic Volume (Base: Light) 
-
-Medium 
--
--
--1.027 
--3.492 
--
--
--
--
-
-Heavy 
--
--
--1.604 
--5.906 
--1.137 
--6.399 
--1.906 
--5.760 
-
-Roadway Type (Base: Residential roads) 
-
-Minor arterial 
--
--
--0.904 
--5.156 
--
--
--
--
-
-Major arterial 
--
--
--2.178 
--6.356 
--1.843 
--11.443 
--
--
-
-Bike Route Characteristics 
-
-Infrastructure Continuity (Base: Discontinuous) 
-
-Continuous 
--
--
-1.325 
-6.071 
-1.000 
-5.486 
--
--
-
-Infrastructure Segregation (Base: Shared) 
-
-Exclusive 
--
--
-1.859 
-8.215 
-1.029 
-8.136 
--
--
-
-Environmental condition 
-
-Mean Exposure 
--0.055 
--3.433 
--0.058 
--3.027 
--0.067 
--5.776 
--0.050 
--3.404 
-
-Maximum Exposure 
--
--
--0.034 
--6.957 
--0.015 
--5.723 
--0.027 
--6.984 
-
-Trip Characteristics 
-
-Travel Time 
--
--
--0.050 
--4.247 
--0.248 
--12.122 
--0.139 
--8.205 
-
-Log-likelihood at Convergence 
--2566.263 
-
-https://doi.org/10.1371/journal.pone.0208309.t004 
-
-</table>
-      </figure>
-      <figure type="table" validated="true" xml:id="tab_7">
+      <figure type="table" validated="true" xml:id="tab_5">
         <head>Table 5 .</head>
         <label>5</label>
         <figDesc>Results of RUM based mixed MNL.</figDesc>
@@ -1081,7 +843,7 @@ https://doi.org/10.1371/journal.pone.0208309.t005
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_8">
+      <figure type="table" validated="false" xml:id="tab_6">
         <head>Table 6 .</head>
         <label>6</label>
         <figDesc>Time based trade-offs.https://doi.org/10.1371/journal.pone.0208309.t006</figDesc>
@@ -1241,7 +1003,7 @@ Maximum Exposure (60 ppb)
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_9">
+      <figure type="table" validated="false" xml:id="tab_7">
         <head>Table .</head>
         <label>.</label>
         <figDesc>Exposure impact information provision. (PDF) S2 Table. Results of RRM based mixed MNL. (PDF) S3 Table. Results of RUM based latent MNL with two segments. (PDF) S4 Table. Results of RRM Based latent MNL with two segments. (PDF) S5 Table. Results of LCMHS with two segments (1 RUM based segment-1 RRM based seg- ment). (PDF) S6 Table. Results of RRM based latent MNL with three segments. (PDF) S7 Table. Results of LCMHS with three segments (1 RUM based segment-2 RRM based segment). (PDF) S8 Table. Results of LCMHS with three segments (2 RUM based segment-1 RRM based segment). (PDF) S9 Table. Results of LCMHS with four segments (2 RUM based segment-2 RRM based seg- ment). (PDF) S10 Table. Results of LCMHS with four segments (3 RUM based segment-1 RRM based segment). (PDF) S1 File. Ethics approval. (PDF) S2 File. Survey questionnaire. (PDF)</figDesc>
@@ -1257,10 +1019,7 @@ Maximum Exposure (60 ppb)
           </p>
         </div>
         <div>
-          <head>Writing -original draft:</head>
-          <p>
-            <s>Bibhas Kumar Dey, Sabreena Anowar.</s>
-          </p>
+          <head>Writing -original draft: Bibhas Kumar Dey, Sabreena Anowar.</head>
           <p>
             <s>Writing -review &amp; editing: Sabreena Anowar, Naveen Eluru.</s>
           </p>
@@ -1409,8 +1168,8 @@ Maximum Exposure (60 ppb)
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b5">
-            <analytic>
-              <title level="a" type="main">An endogenous segmentation mode choice model with an application to intercity travel</title>
+            <monogr>
+              <title level="m" type="main">An endogenous segmentation mode choice model with an application to intercity travel. Transportation science</title>
               <author>
                 <persName>
                   <forename type="first">C</forename>
@@ -1418,14 +1177,10 @@ Maximum Exposure (60 ppb)
                   <surname>Bhat</surname>
                 </persName>
               </author>
-            </analytic>
-            <monogr>
-              <title level="j">Transportation science</title>
               <imprint>
-                <biblScope unit="volume">31</biblScope>
-                <biblScope unit="issue">1</biblScope>
-                <biblScope from="34" to="48" unit="page"/>
                 <date type="published" when="1997"/>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope from="34" to="48" unit="page"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -1514,7 +1269,7 @@ Maximum Exposure (60 ppb)
                   <surname>Mannering</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.trb.2013.01.002</idno>
+              <idno type="DOI">10.1016/j.trb.2013.01.002</idno>
               <ptr target="https://doi.org/10.1016/j.trb.2013.01.002"/>
             </analytic>
             <monogr>
@@ -1573,7 +1328,7 @@ Maximum Exposure (60 ppb)
                   <surname>Ukkusuri</surname>
                 </persName>
               </author>
-              <idno type="doi">10.4271/2016-01-1439</idno>
+              <idno type="DOI">10.4271/2016-01-1439</idno>
               <ptr target="https://doi.org/10.4271/2016-01-1439"/>
             </analytic>
             <monogr>
@@ -1639,7 +1394,7 @@ Maximum Exposure (60 ppb)
                   <forename type="middle">F</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1007/s11116-014-9522-9</idno>
+              <idno type="DOI">10.1007/s11116-014-9522-9</idno>
               <ptr target="https://doi.org/10.1007/s11116-014-9522-9"/>
             </analytic>
             <monogr>
@@ -1667,7 +1422,7 @@ Maximum Exposure (60 ppb)
                   <surname>Wu</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.jairtraman.2013.04.004</idno>
+              <idno type="DOI">10.1016/j.jairtraman.2013.04.004</idno>
               <ptr target="https://doi.org/10.1016/j.jairtraman.2013.04.004"/>
             </analytic>
             <monogr>
@@ -1840,14 +1595,15 @@ Maximum Exposure (60 ppb)
                   <surname>Crouse</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.envres.2013.03.004</idno>
-              <ptr target="https://doi.org/10.1016/j.envres.2013.03.004PMID"/>
+              <idno type="DOI">10.1016/j.envres.2013.03.004</idno>
+              <idno>PMID: 23562391</idno>
+              <ptr target="https://doi.org/10.1016/j.envres.2013.03.004"/>
             </analytic>
             <monogr>
               <title level="j">Canada. Environ Res</title>
               <imprint>
                 <biblScope unit="volume">123</biblScope>
-                <biblScope unit="page">23562391</biblScope>
+                <biblScope from="58" to="61" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -2041,8 +1797,9 @@ Maximum Exposure (60 ppb)
                   <surname>Long</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1207/s15327906mbr2803_4</idno>
-              <ptr target="https://doi.org/10.1207/s15327906mbr2803_4PMID:26776893"/>
+              <idno type="DOI">10.1207/s15327906mbr2803_4</idno>
+              <idno>PMID: 26776893</idno>
+              <ptr target="https://doi.org/10.1207/s15327906mbr2803_4"/>
               <imprint>
                 <date type="published" when="1993"/>
                 <biblScope unit="volume">28</biblScope>
@@ -2223,7 +1980,7 @@ Maximum Exposure (60 ppb)
                   <surname>Buehler</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.tranpol.2005.11.001</idno>
+              <idno type="DOI">10.1016/j.tranpol.2005.11.001</idno>
               <ptr target="https://doi.org/10.1016/j.tranpol.2005.11.001"/>
             </analytic>
             <monogr>

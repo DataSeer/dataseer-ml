@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T05:33+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T20:25+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -269,7 +269,7 @@
         </p>
         <p>
           <s>Actual poll data on federal popular votes are available at different levels of aggregation through the online portal STAT-TAB of the Swiss Federal Office of Statistics (SFOS).</s>
-          <s>Data at the municipal level provides the finest resolution but is available only for votes called from <ref type="bibr">June 14, 1981</ref> , onward.</s>
+          <s>Data at the municipal level provides the finest resolution but is available only for votes called from June 14, 1981, onward.</s>
           <s>The data reflects official ballot counts following each vote day, which take place nationwide four times a year, at predetermined dates.</s>
           <s>Voters-Swiss nationals over 18 years of age-cast their vote at a local polling office within the municipality where they have registered their main residence.</s>
           <s>They may also send their vote by mail to the local polling office where they are registered one day at least before voting day.</s>
@@ -286,8 +286,8 @@
       <div>
         <head n="3.1">Federal popular votes 1981-2015 datasets</head>
         <p>
-          <s>The dataset I use concerns Swiss municipal poll stations for 290 federal popular vote objects called between <ref type="bibr">June 14, 1981</ref> , and June 14, 2015.</s>
-          <s>In order to assess the evolution of agreement between voting municipal populations, I divide the dataset in four sectional periods <ref type="bibr">(1981-1990, 1991-2000, 2001-2010 and 2011-2015</ref> ) that correspond to three calendar decades and the first half of the current calendar decade.</s>
+          <s>The dataset I use concerns Swiss municipal poll stations for 290 federal popular vote objects called between June 14, 1981, and June 14, 2015.</s>
+          <s>In order to assess the evolution of agreement between voting municipal populations, I divide the dataset in four sectional periods <ref type="bibr">(1981-1990, 1991-2000, 2001-2010 and 2011-2015)</ref> that correspond to three calendar decades and the first half of the current calendar decade.</s>
           <s>For each period, I report results that comprise all juridical types of votes and political themes.</s>
         </p>
         <p>
@@ -328,10 +328,9 @@
           <s>Perfect agreement is measured at one, while perfect disagreement is measured at minus one.</s>
           <s>The equation can generate "not a number" value in the hypothetical situation where two populations produce the same single type of outcome (all "yes" or all "no").</s>
           <s>Another advantage of the Alpha is its resilience to the number of votes considered.</s>
-          <s>In the context of the analysis I report, this enables me to compare Alpha values across periods that contain a different number of votes <ref target="#b70" type="bibr">[71]</ref>
-          </s>
+          <s>In the context of the analysis I report, this enables me to compare Alpha values across periods that contain a different number of votes <ref target="#b70" type="bibr">[71]</ref> [p.</s>
+          <s>113].</s>
         </p>
-        <formula xml:id="formula_1">[p. 113].</formula>
         <p>
           <s>Chiefly, my objective is to measure the degree of political congruence between municipal voting populations.</s>
           <s>The use of the Alpha differs in this context from content analysis where it measures reliability between coders motivated by perfect agreement.</s>
@@ -353,7 +352,14 @@
           <s>The following section outlines how I implement measures of political agreement between voting municipal populations with Network Analysis and how I identify those political communities using a network community detection algorithm.</s>
         </p>
         <p>
-          <s>Let By treating municipal vote outcomes as a network consisting of nodes (municipal voting populations) and edges (political agreement between populations), I can test whether the organization of network communities is coherent with empirical observations on the geography of political cleavages between local populations in Switzerland.</s>
+          <s>Let W denote the agreement/disagreement matrix, where the component W ij 2 [−1, 1] is the degree of agreement/disagreement that the voting municipal population i has with one other municipal voting population j.</s>
+          <s>This corresponds to an undirected weighted complete graph with municipal voting populations represented as nodes and agreement/disagreement values as edges between nodes.</s>
+          <s>Agreement W ij over binary outcomes between the voting majorities of two municipal populations is measured with the Alpha.</s>
+          <s>From W, I derive W 0 , an agreement matrix, where the component W 0 2 [0, 1] masks the value space above the definite value of agreement by chance.</s>
+          <s>This second matrix corresponds to an undirected weighted graph in which edges correspond to (positive) agreement values between voting populations.</s>
+        </p>
+        <p>
+          <s>By treating municipal vote outcomes as a network consisting of nodes (municipal voting populations) and edges (political agreement between populations), I can test whether the organization of network communities is coherent with empirical observations on the geography of political cleavages between local populations in Switzerland.</s>
           <s>To this end, I manipulate the data with the "igraph" package for Python <ref target="#b72" type="bibr">[73]</ref> .</s>
           <s>The package offers several algorithmic solutions to detect community structures in weighted graphs.</s>
           <s>Faced with the difficulty of selecting the most appropriate algorithm, I choose to use the Newman leading eigenvector "top-down" method and let the algorithm define the number of communities based on the modularity of the original network and edge weight.</s>
@@ -398,15 +404,7 @@
           <s>In keeping with recent observations, cartograms illustrate how global connectivity has become a dominant source of political differentiation between local populations.</s>
         </p>
         <p>
-          <s>In the last part of the results, I reintroduce (negative) disagreement values in DyAM by illustrating the use of egocentric networks with the municipal populations of Geneva, Zurich and Unteriberg.</s>
-          <s>For each of these examples, I consider agreement and disagreement values obtained with all other local populations over four sectional periods.</s>
-          <s>I then visualize those values with choropleth maps of Swiss municipal boundaries.</s>
-          <s>This additional implementation of the method allows me to address the political transformation of 2,275 local populations as specific case studies.</s>
-          <s>While each of the three examples I report tells a different story, agreement and disagreement values confirm overall tendencies I describe in the previous parts of the section.</s>
-          <s>Among other findings, I note the increasing agreement between voters residing in large cities, their political alignment with linguistic minorities, and the resilient divide between those populations and German-speaking communities in suburban and remote areas.</s>
-        </p>
-        <p>
-          <s>Overall, the results support the accuracy and utility of DyAM to study the evolution of geographic cleavages between local populations.</s>
+          <s>In Overall, the results support the accuracy and utility of DyAM to study the evolution of geographic cleavages between local populations.</s>
           <s>Many of the macroscopic patterns I find concur with previous research on Swiss political cleavages.</s>
           <s>Others match observations that have been hinted at but not empirically demonstrated.</s>
           <s>In comparison with other approaches, DyAM offers a stable, resilient and precise method to assess political congruence between local populations.</s>
@@ -427,8 +425,8 @@
           <s>Perfect consensus between groups of voters hardly illustrates a functioning democratic system, nor does political agreement by chance, which translates into Alpha values close to zero.</s>
           <s>I start by asking what level of political agreement/disagreement between municipal populations can be expected from a political institution such as Swiss direct democracy.</s>
           <s>
-            <ref target="#fig_0" type="figure">Fig 1 and</ref>
-            <ref target="#tab_1" type="table">Table 1</ref> help answer this question.</s>
+            <ref target="#fig_1" type="figure">Fig 1 and</ref>
+            <ref target="#tab_0" type="table">Table 1</ref> help answer this question.</s>
           <s>The former shows distributions of Alpha measures of agreement/disagreement between every pair of municipal populations for each period I report; the latter is concerned with characteristics of those distributions.</s>
         </p>
         <p>
@@ -443,7 +441,7 @@
         <p>
           <s>The plotting of agreement/disagreement value distributions for four consecutive sectional periods already highlights the political dynamic between Swiss local populations, and gives us a general sense of the evolution of the nation's political landscape.</s>
           <s>Another way to look at this data is to articulate agreement values between voting municipal populations into networks of municipal populations, thus opening the analysis to a new set of metrics and visualization techniques.</s>
-          <s>In <ref target="#tab_2" type="table">Table 2</ref> , I report characteristics of those weighted networks for the entire data and for each four sectional periods.</s>
+          <s>In <ref type="table">Table 2</ref> , I report characteristics of those weighted networks for the entire data and for each four sectional periods.</s>
           <s>Those network metrics underscore additional information on the geographic evolution of political cleavages in the Swiss population.</s>
         </p>
         <p>
@@ -451,7 +449,9 @@
           <s>Perhaps this explains why voting populations tend to be consensual.</s>
           <s>When considering positive Alpha values, Swiss municipal populations form single connected networks.</s>
           <s>Increased density from one sectional period to the next suggests some structural changes in the networks as more paired populations that disagreed in previous decades later agree with one another (although the statistical uncertainty for Alpha values closer to zero nuances this observation).</s>
-          <s>Moreover, analyses of more precise subsets of the original data show the apparent increase in political agreement is mostly due to popular initiatives and facultative referenda. .</s>
+          <s>Moreover, analyses of more precise subsets of the original data show the apparent increase in political agreement is mostly due to popular initiatives and facultative referenda.</s>
+          <s>For obligatory referenda, agreement between paired populations increases over the first thirty years, but drops for votes called between 2011 and 2015.</s>
+          <s>While the resulting network for this period is much sparser (D = 0.31, against D = 0.99 for 2001-2010), it also has the highest average Alpha value (α = 0.76, against α = 0.67 for 2001-2010).</s>
           <s>Those values suggest a strong polarization of local populations could have occurred, opposing populations that support the Parliament's legislative work, and those that strongly oppose it.</s>
           <s>Considering all votes again, slight changes in modularity and global transitivity confirm this structural change in the Swiss political landscape.</s>
           <s>The two metrics indicate agreement increases inside groups of populations that strongly agree together but might decrease between these groups.</s>
@@ -463,8 +463,7 @@
           <s>For instance, it is difficult to represent edges with a negative weight-although they are common in real world social networksbecause such values are incompatible with most spatialization algorithms <ref target="#b80" type="bibr">[81]</ref> .</s>
           <s>Yet graphic outputs of nodes and edges generate more tangible and convincing results.</s>
           <s>They also enable researchers to engage with intuitive reasoning and associations hardly reducible to variables.</s>
-          <s>
-            <ref target="#fig_2" type="figure">In Fig 2, I</ref> engage in such an approach by removing agreement values above the threshold of α = 0.8, which I find generates the most readable visualizations for the networks I report.</s>
+          <s>In <ref target="#fig_2" type="figure">Fig 2,</ref> I engage in such an approach by removing agreement values above the threshold of α = 0.8, which I find generates the most readable visualizations for the networks I report.</s>
           <s>As there is a larger uncertainty for values closer to α = 0, the resulting graphs should better translate the cognitive reading of political cleavages.</s>
           <s>Moreover, using a value well above the average measure of agreement supports the view that in politics, looking at a strong agreement is more relevant than looking at weaker one.</s>
         </p>
@@ -484,7 +483,7 @@
           <s>What appears to be a trenchant ideological split has begun to reverse.</s>
         </p>
         <p>
-          <s>Political cleavages between local populations have undergone important transformations between 1981 and 2015; in <ref target="#fig_3" type="figure">Fig 3</ref> , DyAM illustrates the changing political landscape of Switzerland with the main network components of the four sectional periods.</s>
+          <s>Political cleavages between local populations have undergone important transformations between 1981 and 2015; in <ref target="#fig_3" type="figure">Fig 3,</ref> DyAM illustrates the changing political landscape of Switzerland with the main network components of the four sectional periods.</s>
           <s>In the 1990s, a clearer divide appears between German-, French and Italian-speaking populations.</s>
           <s>Within each of these groups, the density of edges between nodes increases as two subgroups form.</s>
           <s>A decade later, political agreement between local populations continues to increase within and between linguistic groups.</s>
@@ -573,23 +572,7 @@
         <p>
           <s>By mapping egocentric networks across time provides additional insights on the evolution of mass political congruence in Switzerland.</s>
           <s>The analysis of specific local populations enables a more subtle representation of political alignments and divides.</s>
-          <s>
-            <ref target="#fig_6" type="figure">Fig 6 provides</ref> such an example with Geneva.</s>
-          <s>Over the last thirty years, voters in Geneva have sided mostly with populations residing in and around other large cities, the Romand region, Ticino and the Grisons.</s>
-          <s>Political agreement with other populations has increased almost everywhere, following a more antagonizing period in the 2000s.</s>
-          <s>The increase in especially visible in Wallis while political agreement subsists with populations of Central-Switzerland such as Unteriberg, an alpine town of over 2,000 residents.</s>
-        </p>
-        <p>
-          <s>I find similar patterns in <ref target="#fig_7" type="figure">Fig 7,</ref> which displays political disagreement and agreement with the population of Zurich.</s>
-          <s>For the financial center of the country, the most obvious transition occurs between the 1990s and the 2000s when residents of the German-speaking city distanced themselves from Eastern populations and aligned with French-speaking ones.</s>
-          <s>This represents only a brief hiatus before the political convergence of the population of Zurich with those of larger urban centers such as Geneva, Lausanne, Bern, Basel, Luzern, Winterthur and St Gallen.</s>
-          <s>Again, I find political disagreement with voters in Central-Switzerland, in the heart of the canton of Bern and in Upper-Wallis.</s>
-          <s>Across all periods, populations in and around Unteriberg, in Canton Schwyz, are those that disagree the most politically with voters of Zurich.</s>
-        </p>
-        <p>
-          <s>Because both examples above show the population of Unteriberg to be strongly opposed to possibly the most urban populations of the country-either French-speaking or Germanspeaking-, I show in <ref target="#fig_8" type="figure">Fig 8 which</ref> local populations agree and disagree politically with the periurban town.</s>
-          <s>Unsurprisingly, I find voters of Unteriberg disagree mostly with those of major Swiss cities and their surroundings, Ticino and the Grisons.</s>
-          <s>In the 1980s, this population The geographic evolution of political cleavages in Switzerland disagrees with most Swiss localities.</s>
+          <s>The geographic evolution of political cleavages in Switzerland disagrees with most Swiss localities.</s>
           <s>Subsequently, agreement values tend to increase, especially with other German-speaking populations.</s>
           <s>Still, in the last sectional period, vote outcomes in Unteriberg remain strongly opposed to larger urban municipalities of Zurich, Winterthur, St Gall and Bern, and with most of the French-speaking populations.</s>
         </p>
@@ -648,7 +631,7 @@
           <s>The transdisciplinary nature of network approaches shall also permit findings made with DyAM to connect outside of the disciplinary context in which they are produced.</s>
           <s>For example, the "geographyblind" patterns that result from DyAM also confront a fundamental assumption of geography: the idea of regionalization as the logic that governs space.</s>
           <s>In the following part, I wish to discuss how a relational approach to political behavior, which focuses on populations' similarity, nuances the idea that nearer things are more related.</s>
-          <s>Two figures offer the right material to do so: the topological evolution of political communities over four sectional periods in <ref target="#fig_5" type="figure">Fig 5</ref> and the evolution of that Swiss political landscape from the point of view of Zurich in <ref target="#fig_7" type="figure">Fig 7.</ref> Space is a complex dimension of society.</s>
+          <s>Two figures offer the right material to do so: the topological evolution of political communities over four sectional periods in <ref target="#fig_5" type="figure">Fig 5 and</ref> Space is a complex dimension of society.</s>
           <s>Addressing such complexity to better understand humans as individuals and as groups, geographers model space on an empirical as well as a conceptual level.</s>
           <s>In a diagrammatic definition, Lévy speaks of space as set of distance relationships between different social realities.</s>
           <s>To him, each space holds at least three attributes: a substance, which defines the type of distance considered; a scale, which defines the range of the distance; and a metric, which defines how the distance is measured.</s>
@@ -662,7 +645,7 @@
           <s>After 2001, political communities are practically free from linguistic regionalization.</s>
           <s>For example, one community connects major cities together with most French-, Italian-and Romansh-speaking populations, despite these populations being "not near" one another.</s>
           <s>
-            <ref type="bibr">Fig 7</ref> illustrates how the population of Zurich is more similar to those in larger cities, French-speaking municipalities and the Grisons, than with denizens of nearer areas of the canton.</s>
+            <ref target="#fig_8" type="figure">Fig 7 illustrates</ref> how the population of Zurich is more similar to those in larger cities, French-speaking municipalities and the Grisons, than with denizens of nearer areas of the canton.</s>
           <s>While both types of spatial configuration exist within each political community, the latter topological format does seem to become a dominant mode of organization in the Swiss political landscape, substituting itself to the former topographical layout.</s>
           <s>Of course, such considerations do not contradict Tobler's "first law of geography" altogether <ref target="#b85" type="bibr">[86]</ref> , but warn us about what "closer" and "related" may mean in terms of spatial relationships.</s>
           <s>While the idea behind DyAM is mostly inherited from a long-standing tradition in human geography that focuses on relations to identify geographic spaces that are relevant but hard to grasp intuitively, many aspects of the method and its applications shall be refined in subsequent analyses.</s>
@@ -752,14 +735,14 @@
         </p>
       </div>
       <figure xml:id="fig_0">
+        <head/>
+        <label/>
+        <figDesc>the last part of the results, I reintroduce (negative) disagreement values in DyAM by illustrating the use of egocentric networks with the municipal populations of Geneva, Zurich and Unteriberg. For each of these examples, I consider agreement and disagreement values obtained with all other local populations over four sectional periods. I then visualize those val- ues with choropleth maps of Swiss municipal boundaries. This additional implementation of the method allows me to address the political transformation of 2,275 local populations as spe- cific case studies. While each of the three examples I report tells a different story, agreement and disagreement values confirm overall tendencies I describe in the previous parts of the sec- tion. Among other findings, I note the increasing agreement between voters residing in large cities, their political alignment with linguistic minorities, and the resilient divide between those populations and German-speaking communities in suburban and remote areas.</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
         <head>Fig 1 .</head>
         <label>1</label>
         <figDesc>Fig 1. Measures of agreement/disagreement between Swiss municipal populations of voters. https://doi.org/10.1371/journal.pone.0208227.g001</figDesc>
-      </figure>
-      <figure xml:id="fig_1">
-        <head/>
-        <label/>
-        <figDesc>For obligatory referenda, agreement between paired populations increases over the first thirty years, but drops for votes called between 2011 and 2015. While the resulting network for this period is much sparser (D = 0.31, against D = 0.99 for 2001-2010), it also has the highest aver- age Alpha value (α = 0.76, against α = 0.67 for 2001-2010)</figDesc>
       </figure>
       <figure xml:id="fig_2">
         <head>Fig 2 .</head>
@@ -782,27 +765,31 @@
         <figDesc>Fig 5. Community partitioning of political agreement above 0.8 Alpha, votes called in four sectional periods between 1981 and 2015. (A) 1981-1990. (B) 1991-2000. (C) 2001-2010. (D) 2011-2015. Residing population size in 2012 census. Cartogram basemap: EPFL-Chôros, 2016. https://doi.org/10.1371/journal.pone.0208227.g005</figDesc>
       </figure>
       <figure xml:id="fig_6">
+        <head/>
+        <label/>
+        <figDesc>Fig 6 provides such an exam- ple with Geneva. Over the last thirty years, voters in Geneva have sided mostly with popula- tions residing in and around other large cities, the Romand region, Ticino and the Grisons. Political agreement with other populations has increased almost everywhere, following a more antagonizing period in the 2000s. The increase in especially visible in Wallis while political agreement subsists with populations of Central-Switzerland such as Unteriberg, an alpine town of over 2,000 residents. I find similar patterns in Fig 7, which displays political disagreement and agreement with the population of Zurich. For the financial center of the country, the most obvious transition occurs between the 1990s and the 2000s when residents of the German-speaking city distanced themselves from Eastern populations and aligned with French-speaking ones. This represents only a brief hiatus before the political convergence of the population of Zurich with those of larger urban centers such as Geneva, Lausanne, Bern, Basel, Luzern, Winterthur and St Gallen. Again, I find political disagreement with voters in Central-Switzerland, in the heart of the canton of Bern and in Upper-Wallis. Across all periods, populations in and around Unteri- berg, in Canton Schwyz, are those that disagree the most politically with voters of Zurich. Because both examples above show the population of Unteriberg to be strongly opposed to possibly the most urban populations of the country-either French-speaking or German- speaking-, I show in Fig 8 which local populations agree and disagree politically with the peri- urban town. Unsurprisingly, I find voters of Unteriberg disagree mostly with those of major Swiss cities and their surroundings, Ticino and the Grisons. In the 1980s, this population</figDesc>
+      </figure>
+      <figure xml:id="fig_7">
         <head>Fig 6 .</head>
         <label>6</label>
         <figDesc>Fig 6. Evolution of popular agreement/disagreement with the municipal population of Geneva. (A) 1981-1990. (B) 1991-2000. (C) 2001-2010. (D) 2011-2015. Choropleth basemap: SFOS, 2016. https://doi.org/10.1371/journal.pone.0208227.g006</figDesc>
       </figure>
-      <figure xml:id="fig_7">
+      <figure xml:id="fig_8">
         <head>Fig 7 .</head>
         <label>7</label>
         <figDesc>Fig 7. Evolution of popular agreement/disagreement with the municipal population of Zurich. (A) 1981-1990. (B) 1991-2000. (C) 2001-2010. (D) 2011-2015. Choropleth basemap: SFOS, 2016. https://doi.org/10.1371/journal.pone.0208227.g007</figDesc>
       </figure>
-      <figure xml:id="fig_8">
+      <figure xml:id="fig_9">
         <head>Fig 8 .</head>
         <label>8</label>
         <figDesc>Fig 8. Evolution of popular agreement/disagreement with the municipal population of Unteriberg. (A) 1981-1990. (B) 1991-2000. (C) 2001-2010. (D) 2011-2015. Choropleth basemap: SFOS, 2016. https://doi.org/10.1371/journal.pone.0208227.g008</figDesc>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_0">
+      <figure xml:id="fig_10">
         <head/>
         <label/>
-        <figDesc>W denote the agreement/disagreement matrix, where the component W ij 2 [−1, 1] is the degree of agreement/disagreement that the voting municipal population i has with one other municipal voting population j. This corresponds to an undirected weighted complete graph with municipal voting populations represented as nodes and agreement/disagreement values as edges between nodes. Agreement W ij over binary outcomes between the voting majorities of two municipal populations is measured with the Alpha. From W, I derive W 0 , an agreement matrix, where the component W 0 2 [0, 1] masks the value space above the definite value of agreement by chance. This second matrix corresponds to an undirected weighted graph in which edges correspond to (positive) agreement values between voting populations.</figDesc>
-        <table/>
+        <figDesc>the evolution of that Swiss political landscape from the point of view of Zurich in Fig 7.</figDesc>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_1">
+      <figure type="table" validated="true" xml:id="tab_0">
         <head>Table 1 .</head>
         <label>1</label>
         <figDesc>Characteristics of agreement/disagreement between Swiss municipal populations of voters.</figDesc>
@@ -863,37 +850,6 @@ https://doi.org/10.1371/journal.pone.0208227.t001
 
 </table>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_2">
-        <head>Table 2 .</head>
-        <label>2</label>
-        <figDesc>Characteristics of the Swiss agreement network.</figDesc>
-        <table>1981-1990 
-1991-2000 
-2001-2010 
-2011-2015 
-
-Density 
-0.959 
-0.989 
-0.991 
-0.991 
-
-Modularity 
-0.075 
-0.075 
-0.072 
-0.078 
-
-Transitivity 
-0.981 
-0.999 
-0.999 
-0.999 
-
-https://doi.org/10.1371/journal.pone.0208227.t002 
-
-</table>
-      </figure>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0208227 November 29, 2018</note>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0208227 November 29, 2018 9 / 32</note>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0208227 November 29, 2018 15 / 32</note>
@@ -928,7 +884,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Abrams</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1146/annurev.polisci.11.053106.153836</idno>
+              <idno type="DOI">10.1146/annurev.polisci.11.053106.153836</idno>
               <ptr target="https://doi.org/10.1146/annurev.polisci.11.053106.153836"/>
             </analytic>
             <monogr>
@@ -974,7 +930,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Vaughan</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1080/14649365.2011.635801</idno>
+              <idno type="DOI">10.1080/14649365.2011.635801</idno>
               <ptr target="https://doi.org/10.1080/14649365.2011.635801"/>
             </analytic>
             <monogr>
@@ -1004,7 +960,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Webster</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.polgeo.2015.07.002</idno>
+              <idno type="DOI">10.1016/j.polgeo.2015.07.002</idno>
               <ptr target="https://doi.org/10.1016/j.polgeo.2015.07.002"/>
             </analytic>
             <monogr>
@@ -1037,7 +993,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Brown</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.polgeo.2007.03.006</idno>
+              <idno type="DOI">10.1016/j.polgeo.2007.03.006</idno>
               <ptr target="https://doi.org/10.1016/j.polgeo.2007.03.006"/>
             </analytic>
             <monogr>
@@ -1059,7 +1015,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Agnew</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/0962-6298(95)00076-3</idno>
+              <idno type="DOI">10.1016/0962-6298(95)00076-3</idno>
               <ptr target="https://doi.org/10.1016/0962-6298(95"/>
             </analytic>
             <monogr>
@@ -1152,7 +1108,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Chessa</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0116046</idno>
+              <idno type="DOI">10.1371/journal.pone.0116046</idno>
               <ptr target="https://doi.org/10.1371/journal.pone.0116046"/>
             </analytic>
             <monogr>
@@ -1187,15 +1143,16 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Adamic</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1126/science.aaa1160</idno>
-              <ptr target="https://doi.org/10.1126/science.aaa1160PMID"/>
+              <idno type="DOI">10.1126/science.aaa1160</idno>
+              <idno>PMID: 25953820</idno>
+              <ptr target="https://doi.org/10.1126/science.aaa1160"/>
             </analytic>
             <monogr>
               <title level="j">Science</title>
               <imprint>
                 <biblScope unit="volume">348</biblScope>
                 <biblScope unit="issue">6239</biblScope>
-                <biblScope unit="page">25953820</biblScope>
+                <biblScope from="1130" to="1132" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -1221,15 +1178,16 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Chavalarias</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0201879</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0201879PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0201879</idno>
+              <idno>PMID: 30231018</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0201879"/>
             </analytic>
             <monogr>
               <title level="j">PLoS One</title>
               <imprint>
                 <biblScope unit="volume">13</biblScope>
                 <biblScope unit="issue">9</biblScope>
-                <biblScope unit="page">30231018</biblScope>
+                <biblScope unit="page">201879</biblScope>
                 <date type="published" when="2018"/>
               </imprint>
             </monogr>
@@ -1256,7 +1214,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Firat</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1177/0002764218759581</idno>
+              <idno type="DOI">10.1177/0002764218759581</idno>
               <ptr target="https://doi.org/10.1177/0002764218759581"/>
             </analytic>
             <monogr>
@@ -1278,7 +1236,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Krippendorff</surname>
                 </persName>
               </author>
-              <idno type="doi">10.2307/270787</idno>
+              <idno type="DOI">10.2307/270787</idno>
               <ptr target="https://doi.org/10.2307/270787"/>
             </analytic>
             <monogr>
@@ -1300,7 +1258,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Groth</surname>
                 </persName>
               </author>
-              <idno type="doi">10.2307/2492896</idno>
+              <idno type="DOI">10.2307/2492896</idno>
               <ptr target="https://doi.org/10.2307/2492896"/>
             </analytic>
             <monogr>
@@ -1322,7 +1280,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Macrae</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1086/222472</idno>
+              <idno type="DOI">10.1086/222472</idno>
               <ptr target="https://doi.org/10.1086/222472"/>
             </analytic>
             <monogr>
@@ -1365,7 +1323,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Woolstencroft</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1177/019251218000100407</idno>
+              <idno type="DOI">10.1177/019251218000100407</idno>
               <ptr target="https://doi.org/10.1177/019251218000100407"/>
             </analytic>
             <monogr>
@@ -1475,7 +1433,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Merkl</surname>
                 </persName>
               </author>
-              <idno type="doi">10.2307/2009642</idno>
+              <idno type="DOI">10.2307/2009642</idno>
               <ptr target="https://doi.org/10.2307/2009642"/>
             </analytic>
             <monogr>
@@ -1518,7 +1476,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Caramani</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1080/01402389608425131</idno>
+              <idno type="DOI">10.1080/01402389608425131</idno>
               <ptr target="https://doi.org/10.1080/01402389608425131"/>
             </analytic>
             <monogr>
@@ -1576,7 +1534,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Enos</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/ajps.12156</idno>
+              <idno type="DOI">10.1111/ajps.12156</idno>
               <ptr target="https://doi.org/10.1111/ajps.12156"/>
             </analytic>
             <monogr>
@@ -1591,7 +1549,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
           </biblStruct>
           <biblStruct xml:id="b24">
             <analytic>
-              <title level="a" type="main">Causal Effect of Intergroup Contact on Exclusionary Attitudes</title>
+              <title/>
               <author>
                 <persName>
                   <forename type="first">R</forename>
@@ -1601,7 +1559,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
               </author>
             </analytic>
             <monogr>
-              <title level="j">Proceedings of the National Academy of Sciences</title>
+              <title level="j">Causal Effect of Intergroup Contact on Exclusionary Attitudes. Proceedings of the National Academy of Sciences</title>
               <imprint>
                 <biblScope unit="page">201317670</biblScope>
                 <date type="published" when="2014"/>
@@ -1642,7 +1600,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Lijphart</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1177/001041406800100101</idno>
+              <idno type="DOI">10.1177/001041406800100101</idno>
               <ptr target="https://doi.org/10.1177/001041406800100101"/>
             </analytic>
             <monogr>
@@ -1665,7 +1623,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Hetherington</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1017/S0007123408000501</idno>
+              <idno type="DOI">10.1017/S0007123408000501</idno>
               <ptr target="https://doi.org/10.1017/S0007123408000501"/>
             </analytic>
             <monogr>
@@ -1715,7 +1673,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Bryson</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1086/230995</idno>
+              <idno type="DOI">10.1086/230995</idno>
               <ptr target="https://doi.org/10.1086/230995"/>
             </analytic>
             <monogr>
@@ -1752,7 +1710,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Pope</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1017/S002238160808050X</idno>
+              <idno type="DOI">10.1017/S002238160808050X</idno>
               <ptr target="https://doi.org/10.1017/S002238160808050X"/>
             </analytic>
             <monogr>
@@ -1841,7 +1799,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Saunders</surname>
                 </persName>
               </author>
-              <idno type="doi">10.2307/2647642</idno>
+              <idno type="DOI">10.2307/2647642</idno>
               <ptr target="https://doi.org/10.2307/2647642"/>
             </analytic>
             <monogr>
@@ -1870,7 +1828,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Jones</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.polgeo.2010.01.008</idno>
+              <idno type="DOI">10.1016/j.polgeo.2010.01.008</idno>
               <ptr target="https://doi.org/10.1016/j.polgeo.2010.01.008"/>
             </analytic>
             <monogr>
@@ -1898,7 +1856,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Krimm</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1057/pol.2009.6</idno>
+              <idno type="DOI">10.1057/pol.2009.6</idno>
               <ptr target="https://doi.org/10.1057/pol.2009.6"/>
             </analytic>
             <monogr>
@@ -1912,8 +1870,8 @@ https://doi.org/10.1371/journal.pone.0208227.t002
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b36">
-            <analytic>
-              <title level="a" type="main">US Presidential Elections and the Spatial Pattern of the American Second Demographic Transition</title>
+            <monogr>
+              <title level="m" type="main">US Presidential Elections and the Spatial Pattern of the American Second Demographic Transition. Population and Development Review</title>
               <author>
                 <persName>
                   <forename type="first">R</forename>
@@ -1926,16 +1884,12 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Neidert</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/j.1728-4457.2009.00284.x</idno>
+              <idno type="DOI">10.1111/j.1728-4457.2009.00284.x</idno>
               <ptr target="https://doi.org/10.1111/j.1728-4457.2009.00284.x"/>
-            </analytic>
-            <monogr>
-              <title level="j">Population and Development Review</title>
               <imprint>
-                <biblScope unit="volume">35</biblScope>
-                <biblScope unit="issue">2</biblScope>
-                <biblScope from="391" to="400" unit="page"/>
                 <date type="published" when="2009"/>
+                <biblScope unit="volume">35</biblScope>
+                <biblScope from="391" to="400" unit="page"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -1949,7 +1903,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Dalton</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1177/0010414008315860</idno>
+              <idno type="DOI">10.1177/0010414008315860</idno>
               <ptr target="https://doi.org/10.1177/0010414008315860"/>
             </analytic>
             <monogr>
@@ -1972,7 +1926,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Abramowitz</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.electstud.2010.04.006</idno>
+              <idno type="DOI">10.1016/j.electstud.2010.04.006</idno>
               <ptr target="https://doi.org/10.1016/j.electstud.2010.04.006"/>
             </analytic>
             <monogr>
@@ -1998,7 +1952,6 @@ https://doi.org/10.1371/journal.pone.0208227.t002
               <editor>A.A. Knopf</editor>
               <imprint>
                 <date type="published" when="1928"/>
-                <pubPlace>New York</pubPlace>
               </imprint>
             </monogr>
           </biblStruct>
@@ -2011,7 +1964,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Hug</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1017/S0007123409990160</idno>
+              <idno type="DOI">10.1017/S0007123409990160</idno>
               <ptr target="https://doi.org/10.1017/S0007123409990160"/>
             </analytic>
             <monogr>
@@ -2033,7 +1986,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Attiná</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/j.1475-6765.1990.tb00248.x</idno>
+              <idno type="DOI">10.1111/j.1475-6765.1990.tb00248.x</idno>
               <ptr target="https://doi.org/10.1111/j.1475-6765.1990.tb00248.x"/>
             </analytic>
             <monogr>
@@ -2112,7 +2065,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Krippendorff</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/j.1468-2958.2004.tb00738.x</idno>
+              <idno type="DOI">10.1111/j.1468-2958.2004.tb00738.x</idno>
               <ptr target="https://doi.org/10.1111/j.1468-2958.2004.tb00738.x"/>
             </analytic>
             <monogr>
@@ -2145,7 +2098,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>The</surname>
                 </persName>
               </author>
-              <idno type="doi">10.2307/2110636</idno>
+              <idno type="DOI">10.2307/2110636</idno>
               <ptr target="https://doi.org/10.2307/2110636"/>
             </analytic>
             <monogr>
@@ -2194,7 +2147,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Desposato</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1017/S0007123405000372</idno>
+              <idno type="DOI">10.1017/S0007123405000372</idno>
               <ptr target="https://doi.org/10.1017/S0007123405000372"/>
             </analytic>
             <monogr>
@@ -2246,13 +2199,14 @@ https://doi.org/10.1371/journal.pone.0208227.t002
               </author>
             </analytic>
             <monogr>
-              <title level="m">Elites politiques et peuple en Suisse: analyse des votations fé dérales: 1970-1987. Lausanne: Réalités sociales</title>
+              <title level="m">Elites politiques et peuple en Suisse: analyse des votations fé dérales: 1970-1987</title>
               <editor>Papadopoulos I</editor>
               <imprint>
                 <date type="published" when="1994"/>
                 <biblScope from="203" to="244" unit="page"/>
               </imprint>
             </monogr>
+            <note>Lausanne: Réalités sociales</note>
           </biblStruct>
           <biblStruct xml:id="b50">
             <monogr>
@@ -2299,7 +2253,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Fabrikant</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1068/b3304t</idno>
+              <idno type="DOI">10.1068/b3304t</idno>
               <ptr target="https://doi.org/10.1068/b3304t"/>
               <imprint>
                 <date type="published" when="2007"/>
@@ -2309,7 +2263,8 @@ https://doi.org/10.1371/journal.pone.0208227.t002
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b52">
-            <monogr>
+            <analytic>
+              <title level="a" type="main">Mining Democracy</title>
               <author>
                 <persName>
                   <forename type="first">V</forename>
@@ -2334,16 +2289,8 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Thiran</surname>
                 </persName>
               </author>
-              <author>
-                <persName>
-                  <surname>Mining</surname>
-                </persName>
-              </author>
-              <author>
-                <persName>
-                  <surname>Democracy</surname>
-                </persName>
-              </author>
+            </analytic>
+            <monogr>
               <title level="m">Proceedings of the Second Edition of the ACM Conference on Online Social Networks</title>
               <meeting>the Second Edition of the ACM Conference on Online Social Networks<address>
                   <addrLine>Dublin</addrLine>
@@ -2383,7 +2330,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Homogeneity</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1017/S0008423907070138</idno>
+              <idno type="DOI">10.1017/S0008423907070138</idno>
               <ptr target="https://doi.org/10.1017/S0008423907070138"/>
               <imprint>
                 <date type="published" when="2007"/>
@@ -2430,7 +2377,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Leuthold</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1002/j.1662-6370.2001.tb00327.x</idno>
+              <idno type="DOI">10.1002/j.1662-6370.2001.tb00327.x</idno>
               <ptr target="https://doi.org/10.1002/j.1662-6370.2001.tb00327.x"/>
             </analytic>
             <monogr>
@@ -2444,8 +2391,8 @@ https://doi.org/10.1371/journal.pone.0208227.t002
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b56">
-            <analytic>
-              <title level="a" type="main">Regionales Verhalten in Eidgenössischen Volksabstimmungen</title>
+            <monogr>
+              <title level="m" type="main">Regionales Verhalten in Eidgenössischen Volksabstimmungen. Schweizerisches Jahrbuch fü r politische Wissenschaft</title>
               <author>
                 <persName>
                   <forename type="first">G</forename>
@@ -2458,13 +2405,10 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Frischknecht</surname>
                 </persName>
               </author>
-            </analytic>
-            <monogr>
-              <title level="j">Schweizerisches Jahrbuch fü r politische Wissenschaft</title>
               <imprint>
+                <date type="published" when="1976"/>
                 <biblScope unit="volume">16</biblScope>
                 <biblScope from="181" to="201" unit="page"/>
-                <date type="published" when="1976"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -2565,7 +2509,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Fortunato</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.physrep.2009.11.002</idno>
+              <idno type="DOI">10.1016/j.physrep.2009.11.002</idno>
               <ptr target="https://doi.org/10.1016/j.physrep.2009.11.002"/>
             </analytic>
             <monogr>
@@ -2666,7 +2610,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Fowler</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.socnet.2005.11.003</idno>
+              <idno type="DOI">10.1016/j.socnet.2005.11.003</idno>
               <ptr target="https://doi.org/10.1016/j.socnet.2005.11.003"/>
             </analytic>
             <monogr>
@@ -2723,7 +2667,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Mucha</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.physa.2007.11.004</idno>
+              <idno type="DOI">10.1016/j.physa.2007.11.004</idno>
               <ptr target="https://doi.org/10.1016/j.physa.2007.11.004"/>
             </analytic>
             <monogr>
@@ -2833,7 +2777,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Krippendorff</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/BF00167603</idno>
+              <idno type="DOI">10.1007/BF00167603</idno>
               <ptr target="https://doi.org/10.1007/BF00167603"/>
             </analytic>
             <monogr>
@@ -2895,7 +2839,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Newman</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1103/PhysRevE.74.036104</idno>
+              <idno type="DOI">10.1103/PhysRevE.74.036104</idno>
               <ptr target="https://doi.org/10.1103/PhysRevE.74.036104"/>
             </analytic>
             <monogr>
@@ -2930,14 +2874,15 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Tessone</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/srep30750</idno>
-              <ptr target="https://doi.org/10.1038/srep30750PMID"/>
+              <idno type="DOI">10.1038/srep30750</idno>
+              <idno>PMID: 27476470</idno>
+              <ptr target="https://doi.org/10.1038/srep30750"/>
             </analytic>
             <monogr>
               <title level="j">Scientific Reports</title>
               <imprint>
                 <biblScope unit="volume">6</biblScope>
-                <biblScope unit="page">27476470</biblScope>
+                <biblScope unit="page">30750</biblScope>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -2986,8 +2931,8 @@ https://doi.org/10.1371/journal.pone.0208227.t002
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b77">
-            <analytic>
-              <title level="a" type="main">Langues et identité s territoriales en Suisse: les leçons géographiques d'un vote historique ou la Suisse à l'heure du rideau de rö sti</title>
+            <monogr>
+              <title level="m" type="main">Langues et identité s territoriales en Suisse: les leçons géographiques d'un vote historique ou la Suisse à l'heure du rideau de rö sti</title>
               <author>
                 <persName>
                   <forename type="first">J</forename>
@@ -2995,18 +2940,15 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Racine</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3406/geo.1994.13743</idno>
+              <idno type="DOI">10.3406/geo.1994.13743</idno>
               <ptr target="https://doi.org/10.3406/geo.1994.13743"/>
-            </analytic>
-            <monogr>
-              <title level="j">Annales de Gé ographie</title>
               <imprint>
-                <biblScope unit="volume">103</biblScope>
-                <biblScope unit="issue">576</biblScope>
-                <biblScope from="152" to="169" unit="page"/>
                 <date type="published" when="1994"/>
+                <biblScope unit="volume">103</biblScope>
+                <biblScope from="152" to="169" unit="page"/>
               </imprint>
             </monogr>
+            <note>Annales de Gé ographie</note>
           </biblStruct>
           <biblStruct xml:id="b78">
             <monogr>
@@ -3024,7 +2966,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Krippendorff</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1080/19312450709336664</idno>
+              <idno type="DOI">10.1080/19312450709336664</idno>
               <ptr target="https://doi.org/10.1080/19312450709336664"/>
               <imprint>
                 <date type="published" when="2007"/>
@@ -3138,11 +3080,8 @@ https://doi.org/10.1371/journal.pone.0208227.t002
               <imprint>
                 <date type="published" when="2005"/>
                 <biblScope from="223" to="234" unit="page"/>
-                <pubPlace>Aldershot, Hants, England</pubPlace>
+                <pubPlace>Aldershot, Hants, England; VT: Ashgate</pubPlace>
               </imprint>
-              <respStmt>
-                <orgName>VT: Ashgate</orgName>
-              </respStmt>
             </monogr>
             <note>Bordering Space. Border regions series. Burlington</note>
           </biblStruct>
@@ -3167,7 +3106,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Somer</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1177/0002764218759576</idno>
+              <idno type="DOI">10.1177/0002764218759576</idno>
               <ptr target="https://doi.org/10.1177/0002764218759576"/>
             </analytic>
             <monogr>
@@ -3196,7 +3135,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <forename type="middle">A</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0166083</idno>
+              <idno type="DOI">10.1371/journal.pone.0166083</idno>
               <ptr target="https://doi.org/10.1371/journal.pone.0166083"/>
             </analytic>
             <monogr>
@@ -3219,7 +3158,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Tobler</surname>
                 </persName>
               </author>
-              <idno type="doi">10.2307/143141</idno>
+              <idno type="DOI">10.2307/143141</idno>
               <ptr target="https://doi.org/10.2307/143141"/>
             </analytic>
             <monogr>
@@ -3299,7 +3238,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Steglich</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.socnet.2009.02.004</idno>
+              <idno type="DOI">10.1016/j.socnet.2009.02.004</idno>
               <ptr target="https://doi.org/10.1016/j.socnet.2009.02.004"/>
             </analytic>
             <monogr>
@@ -3342,7 +3281,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Handcock</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/j.1467-9531.2006.00176.x</idno>
+              <idno type="DOI">10.1111/j.1467-9531.2006.00176.x</idno>
               <ptr target="https://doi.org/10.1111/j.1467-9531.2006.00176.x"/>
             </analytic>
             <monogr>
@@ -3376,7 +3315,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Block</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1177/0081175017709295</idno>
+              <idno type="DOI">10.1177/0081175017709295</idno>
               <ptr target="https://doi.org/10.1177/0081175017709295"/>
             </analytic>
             <monogr>
@@ -3422,7 +3361,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Stadtfeld</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.socnet.2017.08.001</idno>
+              <idno type="DOI">10.1016/j.socnet.2017.08.001</idno>
               <ptr target="https://doi.org/10.1016/j.socnet.2017.08.001"/>
             </analytic>
             <monogr>
@@ -3492,7 +3431,7 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Jamelin</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1177/0042098010377371</idno>
+              <idno type="DOI">10.1177/0042098010377371</idno>
               <ptr target="https://doi.org/10.1177/0042098010377371"/>
             </analytic>
             <monogr>
@@ -3538,15 +3477,16 @@ https://doi.org/10.1371/journal.pone.0208227.t002
                   <surname>Wong</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1257/jep.32.3.259</idno>
-              <ptr target="https://doi.org/10.1257/jep.32.3.259PMID"/>
+              <idno type="DOI">10.1257/jep.32.3.259</idno>
+              <idno>PMID: 30362698</idno>
+              <ptr target="https://doi.org/10.1257/jep.32.3.259"/>
             </analytic>
             <monogr>
               <title level="j">Journal of Economic Perspectives</title>
               <imprint>
                 <biblScope unit="volume">32</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">30362698</biblScope>
+                <biblScope from="259" to="280" unit="page"/>
                 <date type="published" when="2018"/>
               </imprint>
             </monogr>

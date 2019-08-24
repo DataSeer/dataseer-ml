@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T08:01+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:39+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -162,9 +162,9 @@
       <abstract>
         <div>
           <head>Abstract</head>
-          <p>
-            <s>Background and objectives</s>
-          </p>
+        </div>
+        <div>
+          <head>Background and objectives</head>
         </div>
       </abstract>
     </profileDesc>
@@ -172,9 +172,8 @@
   <text xml:lang="en">
     <body>
       <div>
-        <formula xml:id="formula_0">a1111111111 a1111111111 a1111111111 a1111111111 a1111111111</formula>
         <p>
-          <s>PM 2.5 changed slightly.</s>
+          <s>a1111111111 a1111111111 a1111111111 a1111111111 a1111111111 PM 2.5 changed slightly.</s>
           <s>The excess mortality risk of non-accidental and circulatory diseases was higher for women, people with low education, and died outside hospital.</s>
         </p>
       </div>
@@ -183,7 +182,7 @@
         <p>
           <s>We found that short-term exposure to PM 2.5 increased the mortality risk of non-accidental and circulatory diseases among the elderly in Changchun.</s>
           <s>Women, people with low education and died outside hospital are more susceptible to PM <ref type="bibr">2.5</ref> .</s>
-          <s>NO <ref target="#b1" type="bibr">2</ref> and O 3 were also associated with an increase in mortality from non-accidental and circulatory diseases and the O 3 is a high effect.</s>
+          <s>NO 2 and O 3 were also associated with an increase in mortality from non-accidental and circulatory diseases and the O 3 is a high effect.</s>
         </p>
       </div>
       <div>
@@ -226,11 +225,12 @@
       <div>
         <head n="2.">Materials and methods</head>
       </div>
-      <div subtype="dataseer">
+      <div>
         <head n="2.1.">Data</head>
+      </div>
+      <div subtype="dataseer">
+        <head n="2.1.1.">Mortality data.</head>
         <p>
-          <s>2.1.1.</s>
-          <s>Mortality data.</s>
           <s id="dataset-1" type="Dataset:Existing dataset">Daily mortality data for residents in Changchun from January 1, 2014, to January 1, 2017, was obtained from the Jilin Provincial Center for Disease Control and Prevention.</s>
           <s>The anonymous records included age, sex, date of death, and the underlying cause of death.</s>
           <s>The underlying causes of death are classified by the International Classification of Diseases (ICD-10), in which non-accidental mortality are A00-R99 and circulatory system diseases are I00~I99.</s>
@@ -253,10 +253,7 @@
           <s>The generalized additive Poisson regression model (GAM) was used to analyse the impact of air pollutants on the mortality of people.</s>
           <s>We applied smoothing spline functions to control the effects of confounding factors such as daily mean temperature, relative humidity, secular trend and seasonality on population mortality.</s>
           <s>The day of the week (DOW) was included in the multiple regression model as a dummy variable.</s>
-          <s>The basic model was as follows: log½EðYiÞ� ¼ bZi þ sðtime; nÞ þ sðtemp; nÞ þ sðRH; nÞ þ dow þ a where:</s>
-        </p>
-        <p>
-          <s>--E(Y i ) is the expected daily death toll; --s(.) is the smoothing spline function for nonlinear variables; --β is the regression coefficient; --ν is the degree of freedom.</s>
+          <s>The basic model was as follows: --ν is the degree of freedom.</s>
           <s>The degree of freedom was selected according to minimum Akaike information criterion (AIC).</s>
           <s>We applied the following degrees of freedom (df): 7/ year for the time trend and 3 for mean temperature and average relative humidity;</s>
         </p>
@@ -274,6 +271,8 @@
           <s>Considering that there may be collinearity among air pollutants, other pollutants (PM 10 , SO 2 , NO 2 , O 3 ) are entered in the multi-pollutant model step-by-step.</s>
           <s>The excess risk (ER) was used to evaluate the increased death risk of non-accidental and circulatory diseases with each increase of 10μg/m 3 of air pollutants (ER = (RR-1)×100%; RR, relative risk).</s>
           <s>We also stratified the association of daily mortality with PM 2.5 by sex, education, and death location (died in hospital versus outside of hospital).</s>
+        </p>
+        <p>
           <s>SPSS(Version 17.0; IBM Corp, Armonk, New York, USA) was used for descriptive analysis and Spearman correlation analysis, and R software (version 3.5.0;</s>
           <s>http://www.r-project.org) was used for time series analysis, with test degree α = 0.05.</s>
         </p>
@@ -287,23 +286,21 @@
           <s>From January 2014 to January 2017, a total of 46,780 non-accidental deaths were reported among the elderly (�65 years old) in Changchun, of which 26,498 died of circulatory diseases.</s>
           <s>The mean daily deaths from non-accidental and circulatory diseases were 32.0 and 18.1, respectively.</s>
           <s>The daily average temperature was 7.0˚C, and the daily average relative humidity was 60.1%.</s>
-          <s>The daily mean concentration of PM <ref type="bibr">2.5</ref>
-          </s>
-        </p>
-      </div>
-      <div>
-        <head n="3.2.">Spearman correlation between air pollutants and weather conditions</head>
-        <p>
-          <s>PM 2.5 was positively correlated with PM 10 (r = 0.83), SO 2 (r = 0.52) and NO 2 (r = 0.72).</s>
-          <s>O 3 , mean temperature and relative humidity were negatively correlated with PM 2.5 ( <ref type="table">Table 2</ref> ).</s>
+          <s>The daily mean concentration of PM 2.5 was 55.9 μg/m 3 , with a Standard deviation (SD) of 49.5 μg/m 3 .</s>
+          <s>For the other air pollutants, the daily mean concentrations of PM <ref target="#b9" type="bibr">10</ref>
+            <ref type="bibr">PM 2.5</ref> was positively correlated with PM 10 (r = 0.83), SO 2 (r = 0.52) and NO 2 (r = 0.72).</s>
+          <s>O 3 , mean temperature and relative humidity were negatively correlated with PM 2.5 ( <ref target="#tab_2" type="table">Table 2</ref> ).</s>
           <s>
             <ref type="table">Table 3</ref> shows the excess mortality risk of non-accidental and circulatory diseases for the elderly due to PM 2.5 for each 10 μg/m 3 increase on different lag days in single pollutant models.</s>
           <s>PM 2.5 was associated with daily non-accidental mortality on lag1 and lag2 days, and the largest risk estimates were found with lag03; PM 2.5 was associated with daily circulatory disease mortality on lag1, the largest risk estimates were also found with lag03.</s>
           <s>
-            <ref type="figure">Fig 1</ref> shows the excess mortality risk to the elderly population caused by per 10 μg/m 3 increase in air pollutions.</s>
-          <s>NO 2 (lag1) and O 3 (lag0, lag1, lag2, lag01,lag02, lag03) were associated with daily non-accidental death; <ref target="#fig_1" type="figure">Fig 2</ref> shows the excess mortality risk to the elderly who die of circulatory diseases caused by per 10 μg/m 3 increase in air pollution.</s>
+            <ref target="#fig_2" type="figure">Fig 1</ref> shows the excess mortality risk to the elderly population caused by per 10 μg/m 3 increase in air pollutions.</s>
+          <s>NO 2 (lag1) and O 3 (lag0, lag1, lag2, lag01,lag02, lag03) were associated with daily non-accidental death; <ref target="#fig_3" type="figure">Fig 2</ref> shows the excess mortality risk to the elderly who die of circulatory diseases caused by per 10 μg/m 3 increase in air pollution.</s>
           <s>NO 2 (lag1, lag3, lag03) and O 3 (lag0, lag1, lag01,lag02, lag03) were associated with daily circulatory disease mortality.</s>
         </p>
+      </div>
+      <div>
+        <head n="3.2.">Spearman correlation between air pollutants and weather conditions</head>
       </div>
       <div>
         <head n="3.3.">Single pollutant model</head>
@@ -312,7 +309,7 @@
         <head n="3.4.">Co-pollutant model</head>
         <p>
           <s>In the single pollutant models, an increment of PM 2.5 by 10 μg/m 3 at lag0-3 was associated with a 0.386% (95% CI: 0.07% to 0.70%) increase in daily non-accidental mortality and a 0.44% (95% CI: 0.04% to 0.85%) increase in daily circulatory disease mortality; NO 2 was associated with increased daily circulatory disease mortality, and O 3 was associated with increased daily non-accidental mortality and daily circulatory disease mortality.</s>
-          <s>In the co-pollutant models, the risk estimates for PM 2.5 changed slightly <ref target="#tab_2" type="table">(Table 4)</ref> .</s>
+          <s>In the co-pollutant models, the risk estimates for PM 2.5 changed slightly <ref type="table">(Table 4</ref> ).</s>
         </p>
       </div>
       <div>
@@ -346,16 +343,26 @@
           <s>Additionally, the direct translocation of PM 2.5 into the circulatory system can lead to an acute cardiovascular response <ref target="#b25" type="bibr">[26]</ref>
             <ref target="#b26" type="bibr">[27]</ref>
             <ref target="#b27" type="bibr">[28]</ref> .</s>
-          <s>For the metric of mortality from non-accidental and circulatory diseases, women, people with low education and died outside hospital were found to have increased susceptibility to PM <ref type="bibr">2.5</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Lag days ER of daily non-accidental death count (%) ER of daily circulatory diseases death count (%)</head>
+        <p>
+          <s>For the metric of mortality from non-accidental and circulatory diseases, women, people with low education and died outside hospital were found to have increased susceptibility to PM 2.5 .</s>
           <s>Previous studies on the gender-specific health effects of air pollution are lacking, and the patterns are not conclusive.</s>
           <s>For example, Franklin et al. studied over 1.3 million deaths in 27 US communities and found that women were more susceptible than men to the mortality effects of PM 2.5 <ref target="#b28" type="bibr">[29]</ref> .</s>
-          <s>Hong et al. also found that elderly woman were more susceptible than elderly men to the mortality effects of PM 10 <ref target="#b29" type="bibr">[30]</ref> .</s>
-          <s>Similarly, a statement from the American Short-term effects of fine particulate matter Heart Association (AHA) concluded that particulate matter exposure may contribute to higher cardiovascular mortality in women <ref target="#b30" type="bibr">[31]</ref> .</s>
+          <s>Hong et al. also found that elderly woman were more susceptible than elderly men to the mortality effects of PM <ref target="#b9" type="bibr">10</ref>
+            <ref target="#b29" type="bibr">[30]</ref> .</s>
+          <s>Similarly, a statement from the American <ref type="table">Table 4</ref> .</s>
+          <s>Association between a 10 μg/m 3 increase in PM 2.5 (lag 03 day) and an increase in deaths using the co-pollutant model.</s>
+          <s>Heart Association (AHA) concluded that particulate matter exposure may contribute to higher cardiovascular mortality in women <ref target="#b30" type="bibr">[31]</ref> .</s>
           <s>There are some reasons that may explain the increased vulnerability of women.</s>
           <s>Inhaled particles could deposit regionally in women.</s>
           <s>
             <ref target="#b31" type="bibr">[32]</ref> ; women have fewer red blood cells than men, so women are more vulnerable to the toxic effects of air pollution <ref target="#b32" type="bibr">[33]</ref> ; in addition, the high reactivity of the airway to oxidants, hormonal status, smoking rates, and even a relatively low socioeconomic status are also possible causes <ref target="#b33" type="bibr">[34]</ref> .</s>
           <s>However, the exact reasons for the gender-specific effects of air pollution on health are unclear and deserve further investigation.</s>
+        </p>
+        <p>
           <s>Our study found that the impact on non-accidental and circulatory disease mortality from PM 2.5 is higher for those at a lower education level than for those with a higher education level, which is consistent with previous observations on individual education level <ref target="#b34" type="bibr">[35]</ref> .</s>
           <s>In epidemiological studies, education has been used as a surrogate indicator of socioeconomic status (SES) <ref target="#b35" type="bibr">[36]</ref> .</s>
           <s>It is well known that SES can affect health indicators such as mortality <ref target="#b36" type="bibr">[37]</ref> .</s>
@@ -365,10 +372,6 @@
           <s>People of a lower SES may also receive inferior medical treatment and less health care, making them more susceptible to the effects of air pollution <ref target="#b17" type="bibr">[18]</ref> .</s>
           <s>In addition, people with a lower SES may have more limited access to fish, fresh fruits and vegetables, resulting in a reduced intake of protective fatty acids and vitamins <ref target="#b40" type="bibr">[41]</ref> .</s>
         </p>
-      </div>
-      <div>
-        <head>Lag days ER of daily non-accidental death count (%) ER of daily circulatory diseases death count (%)</head>
-        <note type="other">lag0</note>
         <p>
           <s>Our results showed that the impact of PM 2.5 on mortality from non-accidental and circulatory diseases appears to be greater among people that die outside of a hospital.</s>
           <s>People outside hospital are less likely to acquire knowledge about PM 2.5 prevention and have more exposure risks.</s>
@@ -387,7 +390,7 @@
           <s>The estimation of the short-term mortality risk due to short-term exposure to PM 2.5 can also help in planning appropriate medical interventions.</s>
           <s>Some limitations exist in our study: (1) Our study was based in a single city, Changchun, and generalizations need to be made in conjunction with other evidence.</s>
           <s>
-            <ref type="formula">(2)</ref> Although it is considered reasonable to use the ambient pollutant concentration of PM 2.5 to represent individual exposure <ref target="#b42" type="bibr">[43]</ref> , there may be errors in the PM 2.5 exposure of different subgroups <ref target="#b43" type="bibr">[44]</ref> .</s>
+            <ref target="#b1" type="bibr">(2)</ref> Although it is considered reasonable to use the ambient pollutant concentration of PM 2.5 to represent individual exposure <ref target="#b42" type="bibr">[43]</ref> , there may be errors in the PM 2.5 exposure of different subgroups <ref target="#b43" type="bibr">[44]</ref> .</s>
           <s>Further studies of the relationship between PM 2.5 and mortality are needed.</s>
         </p>
       </div>
@@ -395,58 +398,40 @@
         <head n="5.">Conclusions</head>
         <p>
           <s>We found that short-term exposure to PM 2.5 increased the mortality risk of non-accidental and circulatory diseases among the elderly in Changchun.</s>
-          <s>Women, people with low education and died outside hospital are more susceptible to PM <ref type="bibr">2.5</ref> .</s>
+          <s>Women, people with low education and died outside hospital are more susceptible to PM 2.5 .</s>
           <s>NO 2 and O 3 were also associated with an increase in mortality from non-accidental and circulatory diseases and the O 3 is a high effect.</s>
         </p>
-      </div>
-      <div>
-        <head>Supporting information</head>
-      </div>
-      <div>
-        <head>S1</head>
+        <p>
+          <s>Supporting information S1</s>
+        </p>
       </div>
       <figure xml:id="fig_0">
-        <head>�</head>
+        <head/>
         <label/>
-        <figDesc>Fig 1. The excess mortality risk of non-accidental death per 10 μg/m 3 increase in air pollutants. https://doi.org/10.1371/journal.pone.0209793.g001</figDesc>
+        <figDesc>log½EðYiÞ� ¼ bZi þ sðtime; nÞ þ sðtemp; nÞ þ sðRH; nÞ þ dow þ a where: --E(Y i ) is the expected daily death toll; --s(.) is the smoothing spline function for nonlinear variables; --β is the regression coefficient;</figDesc>
       </figure>
       <figure xml:id="fig_1">
+        <head/>
+        <label/>
+        <figDesc>who died of all-nonaccidental causes 2 people who died of circulatory diseases. https://doi.org/10.1371/journal.pone.0209793.t001</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig 1 .</head>
+        <label>1</label>
+        <figDesc>Fig 1. The excess mortality risk of non-accidental death per 10 μg/m 3 increase in air pollutants. https://doi.org/10.1371/journal.pone.0209793.g001</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
         <head>Fig 2 .</head>
         <label>2</label>
         <figDesc>Fig 2. The excess mortality risk of Circulatory diseases death per 10 μg/m 3 increase in air pollutants. https://doi.org/10.1371/journal.pone.0209793.g002</figDesc>
       </figure>
-      <figure xml:id="fig_2">
-        <head>Table 5 .</head>
-        <label>5</label>
-        <figDesc>Association between a 10 μg/m 3 increase in PM 2.5 (lag 03 day) and an increase in deaths using the single pollutant model, according to sex, education and death location. Index ER of daily non-accidental death count (%) ER of daily circulatory diseases death count (In the hospital 0.24 (-0.36, 0.84) 0.12 (-0.56, 0.79) Outside the hospital 0.52 (0.10, 0.95) � 0.65 (0.15,1.15) � https://doi.org/10.1371/journal.pone.0209793.t005</figDesc>
-      </figure>
       <figure type="table" validated="false" xml:id="tab_0">
         <head/>
         <label/>
-        <figDesc>was 55.9 μg/m. For the other air pollutants, the daily mean concentrations of PM 10 , SO 2 , NO 2 and O 3 were 93.3 μg/m</figDesc>
-        <table>3 
-
-, with a Standard deviation 
-(SD) of 49.5 μg/m 
-
-3 
-
-3 
-
-, 30.7 μg/m 
-
-3 
-
-, 40.8 μg/m 
-3 and 89.1 μg/m 
-
-3 
-
-, respectively (Table 1). 
-
-</table>
+        <figDesc>, SO 2 , NO 2 and O 3 were 93.3 μg/m 3 , 30.7 μg/m 3 , 40.8 μg/m 3 and 89.1 μg/m 3 , respectively (Table 1).</figDesc>
+        <table/>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_1">
+      <figure type="table" validated="true" xml:id="tab_1">
         <head>Table 1 .</head>
         <label>1</label>
         <figDesc>Descriptive statistics.</figDesc>
@@ -460,8 +445,7 @@ Range
 
 Pollution concentration 
 
-PM 2.5 (μg/m 
-3 ) 
+PM 2.5 (μg/m 3 ) 
 55.9 
 49.5 
 25.0 
@@ -469,8 +453,7 @@ PM 2.5 (μg/m
 71.0 
 481.0 
 
-PM 10 ( μg/m 
-3 ) 
+PM 10 ( μg/m 3 ) 
 93.3 
 66.2 
 53.0 
@@ -478,8 +461,7 @@ PM 10 ( μg/m
 114.0 
 12.0 
 
-SO 2 ( μg/m 
-3 ) 
+SO 2 ( μg/m 3 ) 
 30.7 
 28.9 
 8.0 
@@ -487,8 +469,7 @@ SO 2 ( μg/m
 48.0 
 148.0 
 
-NO 2 ( μg/m 
-3 ) 
+NO 2 ( μg/m 3 ) 
 40.8 
 14.0 
 30.0 
@@ -496,11 +477,7 @@ NO 2 ( μg/m
 48.0 
 98.0 
 
-O 3 ( μg/m 
-
-3 
-
-) 
+O 3 ( μg/m 3 ) 
 89.1 
 38.1 
 58.0 
@@ -526,133 +503,13 @@ Average relative humidity (%)
 73.0 
 86.0 
 
-Daily non-accidental death counts 
-
-1 
-
-Total 
-32.0 
-6.5 
-27.0 
-32.0 
-36.0 
-39.0 
-
-Women 
-15.2 
-4.3 
-12.0 
-15.0 
-18.0 
-26.0 
-
-Men 
-16.8 
-4.4 
-14.0 
-17.0 
-20.0 
-28.0 
-
-Junior high school and below 
-24.1 
-5.6 
-20.0 
-24.0 
-28.0 
-35.0 
-
-High school degree or above 
-8.0 
-3.1 
-6.0 
-8.0 
-10.0 
-26.0 
-
-Died in the hospital 
-15.8 
-4.3 
-13.0 
-15.0 
-19.0 
-28.0 
-
-Died outside the hospital 
-16.2 
-4.5 
-13.0 
-16.0 
-19.0 
-28.0 
-
-Daily circulatory diseases death counts 
-2 (I00-I99) 
-
-Total 
-18.1 
-4.7 
-15.0 
-18.0 
-21.0 
-33.0 
-
-Women 
-9.0 
-3.3 
-7.0 
-9.0 
-11.0 
-21.0 
-
-Men 
-9.1 
-3.1 
-7.0 
-9.0 
-11.0 
-21.0 
-
-Junior high school and below 
-14.2 
-4.2 
-11.0 
-14.0 
-17.0 
-29.0 
-
-High school degree or above 
-3.9 
-2.2 
-2.0 
-4.0 
-5.0 
-16.0 
-
-Died in the hospital 
-6.7 
-2.7 
-5.0 
-6.0 
-9.0 
-17.0 
-
-Died outside the hospital 
-11.4 
-3.7 
-9.0 
-11.0 
-14.0 
-24.0 
-
-1 people who died of all-nonaccidental causes 
-2 people who died of circulatory diseases. 
-
-https://doi.org/10.1371/journal.pone.0209793.t001 
-
-Table 2. Spearman correlation between air pollutants and weather conditions. 
-
-Index 
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_2">
+        <head>Table 2 .</head>
+        <label>2</label>
+        <figDesc>Spearman correlation between air pollutants and weather conditions.</figDesc>
+        <table>Index 
 PM 2.5 
 PM 10 
 SO 2 
@@ -669,10 +526,7 @@ PM 2.5
 -
 
 PM 10 
-0.83 
-
-�� 
-
+0.83 �� 
 -
 -
 -
@@ -680,214 +534,53 @@ PM 10
 -
 
 SO 2 
-0.52 
-
-�� 
-
-0.37 
-
-�� 
-
+0.52 �� 
+0.37 �� 
 -
 -
 -
 -
 
 NO 2 
-0.72 
-
-�� 
-
-0.57 
-
-�� 
-
-0.49 
-
-�� 
-
+0.72 �� 
+0.57 �� 
+0.49 �� 
 -
 -
 -
 
 O 3 
--0.17 
-
-�� 
-
--0.03 
-
-� 
-
--0.50 
-
-�� 
-
--0.11 
-
-�� 
-
+-0.17 �� 
+-0.03 � 
+-0.50 �� 
+-0.11 �� 
 -
 -
 
 Mean temperature 
--0.34 
-
-�� 
-
--0.21 
-
-�� 
-
--0.81 
-
-�� 
-
--0.25 
-
-�� 
-
-0.70 
-
-�� 
-
+-0.34 �� 
+-0.21 �� 
+-0.81 �� 
+-0.25 �� 
+0.70 �� 
 -
 
 Average relative humidity 
--0.02 
-
-�� 
-
--0.22 
-
-�� 
-
--0.05 
-
-�� 
-
--0.09 
-
-�� 
-
--0.23 
-
-�� 
-
-0.09 
-
-� 
+-0.02 �� 
+-0.22 �� 
+-0.05 �� 
+-0.09 �� 
+-0.23 �� 
+0.09 � 
 
 � P&lt;0.05 
 �� P&lt;0.01. 
 
 https://doi.org/10.1371/journal.pone.0209793.t002 
 
-Short-term effects of fine particulate matter 
-
-PLOS ONE | https://doi.org/10.1371/journal.pone.0209793 December 31, 2018</table>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_2">
-        <head>Table 4 .</head>
-        <label>4</label>
-        <figDesc>Association between a 10 μg/m</figDesc>
-        <table>3 increase in PM 2.5 (lag 03 day) and an increase in deaths using the co-pol-
-lutant model. 
-
-Pollutant model 
-ER of daily non-accidental death count 
-(%) 
-
-ER of daily circulatory diseases death count 
-(%) 
-
-Single pollutant 
-model 
-
-PM 2.5 
-0.36 (0.07, 0.70) 
-
-� 
-
-0.44 (0.04, 0.85) 
-
-� 
-
-PM 10 
-0.21 (-0.03, 0.46) 
-0.25 (-0.06, 0.57) 
-
-SO 2 
-0.65 (-0.96, 2.02) 
-0.85 (-0.84, 2.57) 
-
-NO 2 
-1.08 (-0.03, 2.20) 
-1.48 (0.05, 2.92) 
-
-� 
-
-O 3 
-1.13 (0.50, 1.77) 
-
-� 
-
-1.34 (0.54, 2.15) 
-
-� 
-
-Co-pollutant model 
-
-PM 2.5 +PM 10 
-0.63 (-0.03, 1.30) 
-0.68 (-0.18, 1.54) 
-
-PM 2.5 +SO 2 
-0.39 (0.04, 0.73) 
-
-� 
-
-0.43 (-0.01, 0.86) 
-
-PM 2.5 +NO 2 
-0.33 (-0.08, 0.75) 
-0.30 (-0.23, 0.83) 
-
-PM 2.5 +O 3 
-0.24 (-0.09, 0.57) 
-0.28 (-0.14, 0.70) 
-
-PM 2.5 +PM 10 +SO 2 
-0.64 (-0.06, 1.34) 
-0.66 (-0.24, 1.56) 
-
-PM 2.5 +PM 10 +NO 2 
-0.58 (-0.16, 1.33) 
-0.50 (-0.46, 1.47) 
-
-PM 2.5 +PM 10 +O 3 
-0.62 (-0.05, 1.28) 
-0.65 (-0.20, 1.51) 
-
-PM 2.5 +SO 2 +NO 2 
-0.33 (-0.08, 0.75) 
-0.30 (-0.23, 0.83) 
-
-PM 2.5 +SO 2 +O 3 
-0.22 (-0.14, 0.57) 
-0.23 (-0.23, 0.68) 
-
-PM 2.5 +NO 2 +O 3 
-0.18 (-0.24, 0.60) 
-0.11 (-0.43, 0.66) 
-
-� P&lt;0.05 
-
-https://doi.org/10.1371/journal.pone.0209793.t004 
-
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_3">
+      <figure type="table" validated="false" xml:id="tab_5">
         <head>Table .</head>
         <label>.</label>
         <figDesc>Site coordinates. (XLSX)Conceptualization: Yangming Qu, Yang Pan, Bo Li.curation: Yangming Qu, Yang Pan, Huikun Niu.analysis: Yangming Qu, Yang Pan, Yinghua He. Writing -original draft: Yangming Qu, Yang Pan. Writing -review &amp; editing: Meiqi Li, Lu Li, Jianwei Liu, Bo Li.</figDesc>
@@ -915,11 +608,12 @@ Data Formal </table>
                   <surname>Fang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1155/2017/5806185</idno>
-              <ptr target="https://doi.org/10.1155/2017/5806185PMID"/>
+              <idno type="DOI">10.1155/2017/5806185</idno>
+              <idno>PMID: 29124065</idno>
+              <ptr target="https://doi.org/10.1155/2017/5806185"/>
               <imprint>
                 <date type="published" when="2017"/>
-                <biblScope unit="page">29124065</biblScope>
+                <biblScope unit="page">5806185</biblScope>
               </imprint>
             </monogr>
           </biblStruct>
@@ -962,7 +656,7 @@ Data Formal </table>
                   <surname>Wang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/s11356-014-3301-1</idno>
+              <idno type="DOI">10.1007/s11356-014-3301-1</idno>
               <ptr target="https://doi.org/10.1007/s11356-014-3301-1PMID"/>
             </analytic>
             <monogr>
@@ -1004,14 +698,15 @@ Data Formal </table>
                   <surname>Kabir</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.envint.2014.10.005</idno>
-              <ptr target="https://doi.org/10.1016/j.envint.2014.10.005PMID"/>
+              <idno type="DOI">10.1016/j.envint.2014.10.005</idno>
+              <idno>PMID: 25454230</idno>
+              <ptr target="https://doi.org/10.1016/j.envint.2014.10.005"/>
             </analytic>
             <monogr>
               <title level="j">Environment International</title>
               <imprint>
                 <biblScope unit="volume">74</biblScope>
-                <biblScope unit="page">25454230</biblScope>
+                <biblScope from="136" to="143" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -1055,14 +750,15 @@ Data Formal </table>
                   <forename type="first">A</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1289/ehp.1206124</idno>
-              <ptr target="https://doi.org/10.1289/ehp.1206124PMID"/>
+              <idno type="DOI">10.1289/ehp.1206124</idno>
+              <idno>PMID: 23687008</idno>
+              <ptr target="https://doi.org/10.1289/ehp.1206124"/>
             </analytic>
             <monogr>
               <title level="j">Environmental Health Perspectives</title>
               <imprint>
                 <biblScope unit="volume">121</biblScope>
-                <biblScope unit="page">23687008</biblScope>
+                <biblScope from="932" to="938" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -1094,14 +790,15 @@ Data Formal </table>
                   <surname>Schwartz</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1289/ehp.1104660</idno>
-              <ptr target="https://doi.org/10.1289/ehp.1104660PMID"/>
+              <idno type="DOI">10.1289/ehp.1104660</idno>
+              <idno>PMID: 22456598</idno>
+              <ptr target="https://doi.org/10.1289/ehp.1104660"/>
             </analytic>
             <monogr>
               <title level="j">Environ Health Perspect</title>
               <imprint>
                 <biblScope unit="volume">120</biblScope>
-                <biblScope unit="page">22456598</biblScope>
+                <biblScope from="965" to="970" unit="page"/>
                 <date type="published" when="2009"/>
               </imprint>
             </monogr>
@@ -1196,14 +893,14 @@ Data Formal </table>
                   <surname>Schwartz</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0088578</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0088578PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0088578</idno>
+              <idno>PMID: 24516670</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0088578"/>
             </analytic>
             <monogr>
               <title level="j">PLoS One</title>
               <imprint>
                 <biblScope unit="volume">9</biblScope>
-                <biblScope unit="page">24516670</biblScope>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -1243,14 +940,15 @@ Data Formal </table>
                   <surname>Schwartz</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1097/EDE.0b013e318294beaa</idno>
-              <ptr target="https://doi.org/10.1097/EDE.0b013e318294beaaPMID"/>
+              <idno type="DOI">10.1097/EDE.0b013e318294beaa</idno>
+              <idno>PMID: 23676266</idno>
+              <ptr target="https://doi.org/10.1097/EDE.0b013e318294beaa"/>
             </analytic>
             <monogr>
               <title level="j">Epidemiology</title>
               <imprint>
                 <biblScope unit="volume">24</biblScope>
-                <biblScope unit="page">23676266</biblScope>
+                <biblScope from="555" to="561" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -1290,21 +988,22 @@ Data Formal </table>
                   <surname>Cassee</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.scitotenv.2013.05.062</idno>
-              <ptr target="https://doi.org/10.1016/j.scitotenv.2013.05.062PMID"/>
+              <idno type="DOI">10.1016/j.scitotenv.2013.05.062</idno>
+              <idno>PMID: 23787105</idno>
+              <ptr target="https://doi.org/10.1016/j.scitotenv.2013.05.062"/>
             </analytic>
             <monogr>
               <title level="j">Sci Total Environ</title>
               <imprint>
                 <biblScope unit="volume">463</biblScope>
-                <biblScope unit="page">23787105</biblScope>
+                <biblScope from="20" to="26" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b10">
             <analytic>
-              <title level="a" type="main">Addressing Global Mortality from Ambient PM2.5</title>
+              <title level="a" type="main">Addressing Global Mortality from Ambient</title>
               <author>
                 <persName>
                   <forename type="first">J</forename>
@@ -1332,14 +1031,15 @@ Data Formal </table>
                   <surname>Brauer</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1021/acs.est.5b01236</idno>
-              <ptr target="https://doi.org/10.1021/acs.est.5b01236PMID"/>
+              <idno type="DOI">10.1021/acs.est.5b01236</idno>
+              <idno>PMID: 26077815</idno>
+              <ptr target="https://doi.org/10.1021/acs.est.5b01236"/>
             </analytic>
             <monogr>
               <title level="j">Environ Sci Technol</title>
               <imprint>
                 <biblScope unit="volume">49</biblScope>
-                <biblScope unit="page">26077815</biblScope>
+                <biblScope from="8057" to="8066" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -1367,14 +1067,15 @@ Data Formal </table>
                   <surname>Sacks</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/jes.2012.114</idno>
-              <ptr target="https://doi.org/10.1038/jes.2012.114PMID"/>
+              <idno type="DOI">10.1038/jes.2012.114</idno>
+              <idno>PMID: 23250195</idno>
+              <ptr target="https://doi.org/10.1038/jes.2012.114"/>
             </analytic>
             <monogr>
               <title level="j">J Expo Sci Environ Epidemiol</title>
               <imprint>
                 <biblScope unit="volume">23</biblScope>
-                <biblScope unit="page">23250195</biblScope>
+                <biblScope from="457" to="465" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -1395,12 +1096,13 @@ Data Formal </table>
                   <surname>Conboy-Ellis</surname>
                 </persName>
               </author>
+              <idno>PMID: 14763373</idno>
             </analytic>
             <monogr>
               <title level="j">Nurs Clin North Am</title>
               <imprint>
                 <biblScope unit="volume">38</biblScope>
-                <biblScope unit="page">14763373</biblScope>
+                <biblScope from="725" to="735" unit="page"/>
                 <date type="published" when="2003"/>
               </imprint>
             </monogr>
@@ -1459,14 +1161,15 @@ Data Formal </table>
                   <surname>Dentener</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1021/acs.est.5b03709</idno>
-              <ptr target="https://doi.org/10.1021/acs.est.5b03709PMID"/>
+              <idno type="DOI">10.1021/acs.est.5b03709</idno>
+              <idno>PMID: 26595236</idno>
+              <ptr target="https://doi.org/10.1021/acs.est.5b03709"/>
             </analytic>
             <monogr>
               <title level="j">Environ Sci Technol</title>
               <imprint>
                 <biblScope unit="volume">50</biblScope>
-                <biblScope unit="page">26595236</biblScope>
+                <biblScope from="79" to="88" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -1542,21 +1245,22 @@ Data Formal </table>
                   <surname>Tian</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.scitotenv.2017.09.266</idno>
-              <ptr target="https://doi.org/10.1016/j.scitotenv.2017.09.266PMID"/>
+              <idno type="DOI">10.1016/j.scitotenv.2017.09.266</idno>
+              <idno>PMID: 28988091</idno>
+              <ptr target="https://doi.org/10.1016/j.scitotenv.2017.09.266"/>
             </analytic>
             <monogr>
               <title level="j">Sci Total Environ</title>
               <imprint>
                 <biblScope unit="volume">615</biblScope>
-                <biblScope unit="page">28988091</biblScope>
+                <biblScope from="558" to="563" unit="page"/>
                 <date type="published" when="2018"/>
               </imprint>
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b17">
             <analytic>
-              <title level="a" type="main">A time-stratified case-crossover study of fine particulate matter air pollution and mortality in Guangzhou</title>
+              <title level="a" type="main">A time-stratified case-crossover study of fine particulate matter air pollution and mortality in Guangzhou, China</title>
               <author>
                 <persName>
                   <forename type="first">C</forename>
@@ -1593,11 +1297,11 @@ Data Formal </table>
                   <surname>Chen</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/s00420-011-0707-7</idno>
+              <idno type="DOI">10.1007/s00420-011-0707-7</idno>
               <ptr target="https://doi.org/10.1007/s00420-011-0707-7PMID"/>
             </analytic>
             <monogr>
-              <title level="j">China. Int Arch Occup Environ Health</title>
+              <title level="j">Int Arch Occup Environ Health</title>
               <imprint>
                 <biblScope unit="volume">85</biblScope>
                 <biblScope unit="page">21960028</biblScope>
@@ -1691,14 +1395,15 @@ Data Formal </table>
                   <surname>Xu</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1164/rccm.201609-1862OC</idno>
-              <ptr target="https://doi.org/10.1164/rccm.201609-1862OCPMID"/>
+              <idno type="DOI">10.1164/rccm.201609-1862OC</idno>
+              <idno>PMID: 28248546</idno>
+              <ptr target="https://doi.org/10.1164/rccm.201609-1862OC"/>
             </analytic>
             <monogr>
               <title level="j">Am J Respir Crit Care Med</title>
               <imprint>
                 <biblScope unit="volume">196</biblScope>
-                <biblScope unit="page">28248546</biblScope>
+                <biblScope from="73" to="81" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -1731,14 +1436,15 @@ Data Formal </table>
                   <surname>Anderson</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.envint.2017.10.023</idno>
-              <ptr target="https://doi.org/10.1016/j.envint.2017.10.023PMID"/>
+              <idno type="DOI">10.1016/j.envint.2017.10.023</idno>
+              <idno>PMID: 29174689</idno>
+              <ptr target="https://doi.org/10.1016/j.envint.2017.10.023"/>
             </analytic>
             <monogr>
               <title level="j">China. Environ Int</title>
               <imprint>
                 <biblScope unit="volume">111</biblScope>
-                <biblScope unit="page">29174689</biblScope>
+                <biblScope from="52" to="59" unit="page"/>
                 <date type="published" when="2018"/>
               </imprint>
             </monogr>
@@ -1768,14 +1474,15 @@ Data Formal </table>
                   <surname>Ricci</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.yrtph.2013.05.006</idno>
-              <ptr target="https://doi.org/10.1016/j.yrtph.2013.05.006PMID"/>
+              <idno type="DOI">10.1016/j.yrtph.2013.05.006</idno>
+              <idno>PMID: 23707535</idno>
+              <ptr target="https://doi.org/10.1016/j.yrtph.2013.05.006"/>
             </analytic>
             <monogr>
               <title level="j">S. cities. Regul Toxicol Pharmacol</title>
               <imprint>
                 <biblScope unit="volume">66</biblScope>
-                <biblScope unit="page">23707535</biblScope>
+                <biblScope from="336" to="346" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -1819,14 +1526,15 @@ Data Formal </table>
                   <surname>Zanobetti</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1097/EDE.0000000000000614</idno>
-              <ptr target="https://doi.org/10.1097/EDE.0000000000000614PMID"/>
+              <idno type="DOI">10.1097/EDE.0000000000000614</idno>
+              <idno>PMID: 28005571</idno>
+              <ptr target="https://doi.org/10.1097/EDE.0000000000000614"/>
             </analytic>
             <monogr>
               <title level="j">Epidemiology</title>
               <imprint>
                 <biblScope unit="volume">28</biblScope>
-                <biblScope unit="page">28005571</biblScope>
+                <biblScope from="207" to="214" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -1866,12 +1574,13 @@ Data Formal </table>
                   <surname>Cascio</surname>
                 </persName>
               </author>
+              <idno>PMID: 12762579</idno>
             </analytic>
             <monogr>
               <title level="j">Eur Respir J Suppl</title>
               <imprint>
                 <biblScope unit="volume">40</biblScope>
-                <biblScope unit="page">12762579</biblScope>
+                <biblScope from="76" to="80" unit="page"/>
                 <date type="published" when="2003"/>
               </imprint>
             </monogr>
@@ -1921,14 +1630,15 @@ Data Formal </table>
                   <surname>Anderson</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1080/08958370490439470</idno>
-              <ptr target="https://doi.org/10.1080/08958370490439470PMID"/>
+              <idno type="DOI">10.1080/08958370490439470</idno>
+              <idno>PMID: 15204749</idno>
+              <ptr target="https://doi.org/10.1080/08958370490439470"/>
             </analytic>
             <monogr>
               <title level="j">Inhal Toxicol</title>
               <imprint>
                 <biblScope unit="volume">16</biblScope>
-                <biblScope unit="page">15204749</biblScope>
+                <biblScope from="335" to="343" unit="page"/>
                 <date type="published" when="2004"/>
               </imprint>
             </monogr>
@@ -1972,7 +1682,7 @@ Data Formal </table>
                   <surname>Sorriento</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/s10741-017-9606-7</idno>
+              <idno type="DOI">10.1007/s10741-017-9606-7</idno>
               <ptr target="https://doi.org/10.1007/s10741-017-9606-7PMID"/>
               <imprint>
                 <date type="published" when="2017"/>
@@ -1983,7 +1693,7 @@ Data Formal </table>
           </biblStruct>
           <biblStruct xml:id="b26">
             <analytic>
-              <title level="a" type="main">The role of metal components in the cardiovascular effects of PM2.5</title>
+              <title level="a" type="main">The role of metal components in the cardiovascular effects of</title>
               <author>
                 <persName>
                   <forename type="first">J</forename>
@@ -2021,14 +1731,14 @@ Data Formal </table>
                   <surname>Zhang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0083782</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0083782PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0083782</idno>
+              <idno>PMID: 24386277</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0083782"/>
             </analytic>
             <monogr>
               <title level="j">PLoS One</title>
               <imprint>
                 <biblScope unit="volume">8</biblScope>
-                <biblScope unit="page">24386277</biblScope>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -2056,14 +1766,14 @@ Data Formal </table>
                   <surname>Wold</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0023116</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0023116PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0023116</idno>
+              <idno>PMID: 21850256</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0023116"/>
             </analytic>
             <monogr>
               <title level="j">PLoS One</title>
               <imprint>
                 <biblScope unit="volume">6</biblScope>
-                <biblScope unit="page">21850256</biblScope>
                 <date type="published" when="2011"/>
               </imprint>
             </monogr>
@@ -2142,21 +1852,22 @@ Data Formal </table>
                   <surname>Christiani</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1289/ehp.02110187</idno>
-              <ptr target="https://doi.org/10.1289/ehp.02110187PMID"/>
+              <idno type="DOI">10.1289/ehp.02110187</idno>
+              <idno>PMID: 11836148</idno>
+              <ptr target="https://doi.org/10.1289/ehp.02110187"/>
             </analytic>
             <monogr>
               <title level="j">Environ Health Perspect</title>
               <imprint>
                 <biblScope unit="volume">110</biblScope>
-                <biblScope unit="page">11836148</biblScope>
+                <biblScope from="187" to="191" unit="page"/>
                 <date type="published" when="2002"/>
               </imprint>
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b30">
             <analytic>
-              <title level="a" type="main">Particulate matter air pollution and cardiovascular disease: An update to the scientific statement from the American Heart Association</title>
+              <title level="a" type="main">Particulate matter air pollution and cardiovascular disease: An update to the scientific statement from the</title>
               <author>
                 <persName>
                   <forename type="first">R</forename>
@@ -2195,14 +1906,15 @@ Data Formal </table>
                   <surname>Diez-Roux</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1161/CIR.0b013e3181dbece1</idno>
-              <ptr target="https://doi.org/10.1161/CIR.0b013e3181dbece1PMID"/>
+              <idno type="DOI">10.1161/CIR.0b013e3181dbece1</idno>
+              <idno>PMID: 20458016</idno>
+              <ptr target="https://doi.org/10.1161/CIR.0b013e3181dbece1"/>
             </analytic>
             <monogr>
-              <title level="j">Circulation</title>
+              <title level="j">American Heart Association. Circulation</title>
               <imprint>
                 <biblScope unit="volume">121</biblScope>
-                <biblScope unit="page">20458016</biblScope>
+                <biblScope from="2331" to="2378" unit="page"/>
                 <date type="published" when="2010"/>
               </imprint>
             </monogr>
@@ -2224,21 +1936,22 @@ Data Formal </table>
                   <surname>Hu</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1152/jappl.1998.84.6.1834</idno>
-              <ptr target="https://doi.org/10.1152/jappl.1998.84.6.1834PMID"/>
+              <idno type="DOI">10.1152/jappl.1998.84.6.1834</idno>
+              <idno>PMID: 9609774</idno>
+              <ptr target="https://doi.org/10.1152/jappl.1998.84.6.1834"/>
             </analytic>
             <monogr>
               <title level="j">J Appl Physiol</title>
               <imprint>
                 <biblScope unit="volume">84</biblScope>
-                <biblScope unit="page">9609774</biblScope>
+                <biblScope from="1834" to="1844" unit="page"/>
                 <date type="published" when="1985"/>
               </imprint>
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b32">
             <analytic>
-              <title level="a" type="main">Personal PM2.5 exposure and markers of oxidative stress in blood</title>
+              <title level="a" type="main">exposure and markers of oxidative stress in blood</title>
               <author>
                 <persName>
                   <forename type="first">M</forename>
@@ -2276,14 +1989,15 @@ Data Formal </table>
                   <surname>Knudsen</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1289/ehp.111-1241344</idno>
-              <ptr target="https://doi.org/10.1289/ehp.111-1241344PMID"/>
+              <idno type="DOI">10.1289/ehp.111-1241344</idno>
+              <idno>PMID: 12573899</idno>
+              <ptr target="https://doi.org/10.1289/ehp.111-1241344"/>
             </analytic>
             <monogr>
               <title level="j">Environ Health Perspect</title>
               <imprint>
                 <biblScope unit="volume">111</biblScope>
-                <biblScope unit="page">12573899</biblScope>
+                <biblScope from="161" to="166" unit="page"/>
                 <date type="published" when="2003"/>
               </imprint>
             </monogr>
@@ -2298,14 +2012,15 @@ Data Formal </table>
                   <surname>Clougherty</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1289/ehp.0900994</idno>
-              <ptr target="https://doi.org/10.1289/ehp.0900994PMID"/>
+              <idno type="DOI">10.1289/ehp.0900994</idno>
+              <idno>PMID: 20123621</idno>
+              <ptr target="https://doi.org/10.1289/ehp.0900994"/>
             </analytic>
             <monogr>
               <title level="j">Environ Health Perspect</title>
               <imprint>
                 <biblScope unit="volume">118</biblScope>
-                <biblScope unit="page">20123621</biblScope>
+                <biblScope from="167" to="176" unit="page"/>
                 <date type="published" when="2010"/>
               </imprint>
             </monogr>
@@ -2344,14 +2059,15 @@ Data Formal </table>
                   <surname>Song</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1289/ehp.10851</idno>
-              <ptr target="https://doi.org/10.1289/ehp.10851PMID"/>
+              <idno type="DOI">10.1289/ehp.10851</idno>
+              <idno>PMID: 18795161</idno>
+              <ptr target="https://doi.org/10.1289/ehp.10851"/>
             </analytic>
             <monogr>
               <title level="j">Environ Health Perspect</title>
               <imprint>
                 <biblScope unit="volume">116</biblScope>
-                <biblScope unit="page">18795161</biblScope>
+                <biblScope from="1183" to="1188" unit="page"/>
                 <date type="published" when="2008"/>
               </imprint>
             </monogr>
@@ -2377,14 +2093,15 @@ Data Formal </table>
                   <surname>Schwartz</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/aje/kwj116</idno>
-              <ptr target="https://doi.org/10.1093/aje/kwj116PMID"/>
+              <idno type="DOI">10.1093/aje/kwj116</idno>
+              <idno>PMID: 16554348</idno>
+              <ptr target="https://doi.org/10.1093/aje/kwj116"/>
             </analytic>
             <monogr>
               <title level="j">Am J Epidemiol</title>
               <imprint>
                 <biblScope unit="volume">163</biblScope>
-                <biblScope unit="page">16554348</biblScope>
+                <biblScope from="849" to="859" unit="page"/>
                 <date type="published" when="2006"/>
               </imprint>
             </monogr>
@@ -2452,14 +2169,14 @@ Data Formal </table>
                   <surname>Lambert</surname>
                 </persName>
               </author>
+              <idno>PMID: 8184446</idno>
             </analytic>
             <monogr>
               <title level="j">Toxicol Ind Health</title>
               <imprint>
                 <biblScope unit="volume">9</biblScope>
-                <biblScope unit="page">8184446</biblScope>
+                <biblScope from="843" to="878" unit="page"/>
                 <date type="published" when="1993"/>
-                <publisher>PMID</publisher>
               </imprint>
             </monogr>
           </biblStruct>
@@ -2490,14 +2207,15 @@ Data Formal </table>
                   <surname>Jantunen</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/sj.jea.7500162</idno>
-              <ptr target="https://doi.org/10.1038/sj.jea.7500162PMID"/>
+              <idno type="DOI">10.1038/sj.jea.7500162</idno>
+              <idno>PMID: 11477519</idno>
+              <ptr target="https://doi.org/10.1038/sj.jea.7500162"/>
             </analytic>
             <monogr>
               <title level="j">J Expo Anal Environ Epidemiol</title>
               <imprint>
                 <biblScope unit="volume">11</biblScope>
-                <biblScope unit="page">11477519</biblScope>
+                <biblScope from="216" to="223" unit="page"/>
                 <date type="published" when="2001"/>
               </imprint>
             </monogr>
@@ -2526,14 +2244,14 @@ Data Formal </table>
                   <surname>Clayton</surname>
                 </persName>
               </author>
+              <idno>PMID: 10189626</idno>
             </analytic>
             <monogr>
               <title level="j">J Expo Anal Environ Epidemiol</title>
               <imprint>
                 <biblScope unit="volume">9</biblScope>
-                <biblScope unit="page">10189626</biblScope>
+                <biblScope from="49" to="55" unit="page"/>
                 <date type="published" when="1999"/>
-                <publisher>PMID</publisher>
               </imprint>
             </monogr>
           </biblStruct>
@@ -2626,14 +2344,15 @@ Data Formal </table>
                   <surname>Xu</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.scitotenv.2011.08.029</idno>
-              <ptr target="https://doi.org/10.1016/j.scitotenv.2011.08.029PMID"/>
+              <idno type="DOI">10.1016/j.scitotenv.2011.08.029</idno>
+              <idno>PMID: 21908017</idno>
+              <ptr target="https://doi.org/10.1016/j.scitotenv.2011.08.029"/>
             </analytic>
             <monogr>
               <title level="j">Sci Total Environ</title>
               <imprint>
                 <biblScope unit="volume">409</biblScope>
-                <biblScope unit="page">21908017</biblScope>
+                <biblScope from="4923" to="4928" unit="page"/>
                 <date type="published" when="2011"/>
               </imprint>
             </monogr>
@@ -2673,6 +2392,7 @@ Data Formal </table>
               <title level="j">J Expo Sci Environ Epidemiol</title>
               <imprint>
                 <biblScope unit="volume">17</biblScope>
+                <biblScope unit="issue">2</biblScope>
                 <biblScope from="2" to="10" unit="page"/>
                 <date type="published" when="2007"/>
               </imprint>
@@ -2720,14 +2440,15 @@ Data Formal </table>
                   <surname>Dockery</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1289/ehp.00108419</idno>
-              <ptr target="https://doi.org/10.1289/ehp.00108419PMID"/>
+              <idno type="DOI">10.1289/ehp.00108419</idno>
+              <idno>PMID: 10811568</idno>
+              <ptr target="https://doi.org/10.1289/ehp.00108419"/>
             </analytic>
             <monogr>
               <title level="j">Environ Health Perspect</title>
               <imprint>
                 <biblScope unit="volume">108</biblScope>
-                <biblScope unit="page">10811568</biblScope>
+                <biblScope from="419" to="426" unit="page"/>
                 <date type="published" when="2000"/>
               </imprint>
             </monogr>

@@ -1,0 +1,2550 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-24T01:04+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Detecting sequences of system states in temporal networks</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author role="corresp">
+              <persName>
+                <forename type="first">Naoki</forename>
+                <surname>Masuda</surname>
+              </persName>
+              <email>naoki.masuda@bristol.ac.uk</email>
+              <affiliation key="aff0">
+                <orgName key="dep1" type="department">Department of engineering Mathematics</orgName>
+                <orgName key="dep2" type="department">Merchant Venturers Building</orgName>
+                <orgName type="institution">University of Bristol</orgName>
+                <address>
+                  <addrLine>Woodland Road</addrLine>
+                  <postCode>BS8 1UB</postCode>
+                  <settlement>Clifton, Bristol</settlement>
+                  <country key="GB">United Kingdom</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">&amp;amp;</forename>
+                <surname>Petter Holme</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName key="dep1" type="department">Department of engineering Mathematics</orgName>
+                <orgName key="dep2" type="department">Merchant Venturers Building</orgName>
+                <orgName type="institution">University of Bristol</orgName>
+                <address>
+                  <addrLine>Woodland Road</addrLine>
+                  <postCode>BS8 1UB</postCode>
+                  <settlement>Clifton, Bristol</settlement>
+                  <country key="GB">United Kingdom</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Detecting sequences of system states in temporal networks</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41598-018-37534-2</idno>
+          <note type="submission">Received: 10 October 2018 Accepted: 5 December 2018</note>
+          <note>1 Scientific RepoRts | (2019) 9:795 | https:// 2 institute of innovative Research, tokyo institute of technology, Nagatsuta-cho 4259, Midori-ku, Yokohama, Kanagawa, 226-8503, Japan. Correspondence and requests for materials should be addressed to n.M. (</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>Many time-evolving systems in nature, society and technology leave traces of the interactions within them.</s>
+            <s>These interactions form temporal networks that reflect the states of the systems.</s>
+            <s>In this work, we pursue a coarse-grained description of these systems by proposing a method to assign discrete states to the systems and inferring the sequence of such states from the data.</s>
+            <s>such states could, for example, correspond to a mental state (as inferred from neuroimaging data) or the operational state of an organization (as inferred by interpersonal communication).</s>
+            <s>our method combines a graph distance measure and hierarchical clustering.</s>
+            <s>Using several empirical data sets of social temporal networks, we show that our method is capable of inferring the system's states such as distinct activities in a school and a weekday state as opposed to a weekend state.</s>
+            <s>We expect the methods to be equally useful in other settings such as temporally varying protein interactions, ecological interspecific interactions, functional connectivity in the brain and adaptive social networks.</s>
+          </p>
+          <p>
+            <s>Many systems composed of interacting elements can be represented as networks, and nowadays it can be quite easy to obtain large amounts of interactions from such a system.</s>
+            <s>One challenge for network science 1,2 is to condense the information obtained from such streams of data into simplified, more narrative, pictures of what happens in the system.</s>
+            <s>For networks that are static in time, this has been well studied as the problem of community detection in networks 3 .</s>
+            <s>However, many networks in the real world are changing over time.</s>
+            <s>This change is interesting in its own right because it reflects the forces acting upon the system.</s>
+            <s>Furthermore, if the timescale of network change is similar to that of dynamic processes relevant to the system (e.g., information spreading, gene expression, transportation), the dynamics of the network might affect, and be affected by, the dynamics on the network.</s>
+            <s>As a consequence, traditional network theory developed for static networks may not apply.</s>
+            <s>Coarse-graining the data (i.e., inferring the meso-scale structure of a network such as communities) is one such example, where straightforward generalizations from static networks do not work.</s>
+            <s>This knowledge gap motivates the study of temporal (i.e., time-varying) networks, in which nodes and/or edges are time-stamped.</s>
+            <s>We now know that the temporality of networks does change our understanding of networks in many cases and provides us with richer information and more efficient manipulative tools 4-8 .</s>
+          </p>
+          <p>
+            <s>Let us consider human social behaviour as an example.</s>
+            <s>Research has shown that human behaviour can often be accurately modelled by dynamical processes depending on discrete states.</s>
+            <s>For example, email correspondence behaviour of individuals was modelled as a two-state point process in which an individual was assumed to switch between an active state and a normal state, supplemented by circadian and weekly modulations of the event rate 9 .</s>
+            <s>The event rate in the active rate was assumed to be larger than that in the normal state.</s>
+            <s>A similar model accounted for historical letter correspondence behaviour of celebrity 10 .</s>
+            <s>These and other 11-14 discrete-state models have been useful in explaining empirical data such as long-tailed distributions of inter-event times.</s>
+            <s>The philosophy underlying these models is that a system such as an individual human can be modelled by a sequence of discrete states between which the system stochastically switches (akin to the dynamics in a hidden Markov model <ref target="#b14" type="bibr">15,</ref>
+              <ref target="#b15" type="bibr">16</ref> ).</s>
+          </p>
+          <p>
+            <s>In the present study, we hypothesise that the state of a networked system as a whole, rather than behaviour of individual nodes, is encoded in the edges (i.e., pairwise interactions) of the network and can be summarized as a time series of state changes.</s>
+            <s>An obvious example of this would be day-time versus night-time states of human interaction, with the former possibly having more frequent interaction than the latter.</s>
+            <s>Another type of state change may be between weekdays and weekends 9 .</s>
+            <s>Biological, ecological, engineered and other temporal networks 4,6 may also be characterised by switching behaviour.</s>
+            <s>We show in the present study that we can distinguish discrete states of temporal networks that have similar event rates nevertheless different in internal structure</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <p>
+          <s>Many systems composed of interacting elements can be represented as networks, and nowadays it can be quite easy to obtain large amounts of interactions from such a system.</s>
+          <s>One challenge for network science 1,2 is to condense the information obtained from such streams of data into simplified, more narrative, pictures of what happens in the system.</s>
+          <s>For networks that are static in time, this has been well studied as the problem of community detection in networks <ref target="#b2" type="bibr">3</ref> .</s>
+          <s>However, many networks in the real world are changing over time.</s>
+          <s>This change is interesting in its own right because it reflects the forces acting upon the system.</s>
+          <s>Furthermore, if the timescale of network change is similar to that of dynamic processes relevant to the system (e.g., information spreading, gene expression, transportation), the dynamics of the network might affect, and be affected by, the dynamics on the network.</s>
+          <s>As a consequence, traditional network theory developed for static networks may not apply.</s>
+          <s>Coarse-graining the data (i.e., inferring the meso-scale structure of a network such as communities) is one such example, where straightforward generalizations from static networks do not work.</s>
+          <s>This knowledge gap motivates the study of temporal (i.e., time-varying) networks, in which nodes and/or edges are time-stamped.</s>
+          <s>We now know that the temporality of networks does change our understanding of networks in many cases and provides us with richer information and more efficient manipulative tools <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref>
+            <ref target="#b6" type="bibr">[7]</ref>
+            <ref target="#b7" type="bibr">[8]</ref> .</s>
+        </p>
+        <p>
+          <s>Let us consider human social behaviour as an example.</s>
+          <s>Research has shown that human behaviour can often be accurately modelled by dynamical processes depending on discrete states.</s>
+          <s>For example, email correspondence behaviour of individuals was modelled as a two-state point process in which an individual was assumed to switch between an active state and a normal state, supplemented by circadian and weekly modulations of the event rate <ref target="#b8" type="bibr">9</ref> .</s>
+          <s>The event rate in the active rate was assumed to be larger than that in the normal state.</s>
+          <s>A similar model accounted for historical letter correspondence behaviour of celebrity <ref target="#b9" type="bibr">10</ref> .</s>
+          <s>These and other <ref target="#b10" type="bibr">[11]</ref>
+            <ref target="#b11" type="bibr">[12]</ref>
+            <ref target="#b12" type="bibr">[13]</ref>
+            <ref target="#b13" type="bibr">[14]</ref> discrete-state models have been useful in explaining empirical data such as long-tailed distributions of inter-event times.</s>
+          <s>The philosophy underlying these models is that a system such as an individual human can be modelled by a sequence of discrete states between which the system stochastically switches (akin to the dynamics in a hidden Markov model <ref target="#b14" type="bibr">15,</ref>
+            <ref target="#b15" type="bibr">16</ref> ).</s>
+        </p>
+        <p>
+          <s>In the present study, we hypothesise that the state of a networked system as a whole, rather than behaviour of individual nodes, is encoded in the edges (i.e., pairwise interactions) of the network and can be summarized as a time series of state changes.</s>
+          <s>An obvious example of this would be day-time versus night-time states of human interaction, with the former possibly having more frequent interaction than the latter.</s>
+          <s>Another type of state change may be between weekdays and weekends <ref target="#b8" type="bibr">9</ref> .</s>
+          <s>Biological, ecological, engineered and other temporal networks 4,6 may also be characterised by switching behaviour.</s>
+          <s>We show in the present study that we can distinguish discrete states of temporal networks that have similar event rates nevertheless different in internal structure of the time-stamped network.</s>
+          <s>We also show that such different states are often interpretable.</s>
+          <s>We refer to the inferred transitory dynamics between discrete states as system state dynamics of temporal networks (or simply state dynamics).</s>
+          <s>To determine the state dynamics, we use distance measures for static graphs to categorise static networks at different times, which we call the snapshots, into groups; we regard each group as a state of the temporal network.</s>
+          <s>Change-point and anomaly detection for temporal networks is also concerned with detecting changes of networks over time <ref target="#b6" type="bibr">7,</ref>
+            <ref target="#b16" type="bibr">[17]</ref>
+            <ref target="#b17" type="bibr">[18]</ref>
+            <ref target="#b18" type="bibr">[19]</ref>
+            <ref target="#b19" type="bibr">[20]</ref>
+            <ref target="#b20" type="bibr">[21]</ref> .</s>
+          <s>A main difference between our system state dynamics and these methods is that detection of system state dynamics is concerned with not only the change, but what is before and after the change.</s>
+          <s>System states are furthermore recurrent by nature.</s>
+          <s>If a state is visited only once in the entire observation period, it would be practically unclear whether to regard it as a state characterising the system or as an anomaly.</s>
+          <s>While change-point detection focus on the change, our approach is more akin to dimensional reduction 22 of the network.</s>
+        </p>
+      </div>
+      <div>
+        <head>Methods</head>
+        <p>
+          <s>The flow of the proposed analysis is schematically shown in <ref type="figure">Fig. 1</ref> .</s>
+          <s>MATLAB code to calculate and visualise state dynamics for temporal network input data is provided on Github 23 .</s>
+          <s>First, we transform a given data set of temporal networks into a sequence of static networks, i.e., snapshots.</s>
+          <s>Each snapshot accounts for a non-overlapping time window of length τ 7 .</s>
+          <s>In other words, the tth snapshot network is given by all the events between node pairs that have occurred in time window [(t − 1)τ, tτ).</s>
+          <s>Second, we measure the pairwise distance between all pairs of snapshot networks.</s>
+          <s>Third, we run a clustering algorithm on the distance matrix to categorise the snapshots into discrete states.</s>
+          <s>Each of these three subroutines, i.e., division of temporal network data into snapshots, a graph distance measure and a clustering algorithm applied to the distance matrix, is conventional.</s>
+          <s>The value of the present method is to combine these pieces together as a single data analysis pipeline to extract state dynamics of temporal networks.</s>
+          <s>We explain the distance measures between static networks, our clustering method and the empirical data sets of temporal networks in the following subsections.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Figure 1.</head>
+        <p>
+          <s>Workflow for calculating the system state dynamics of temporal networks.</s>
+          <s>One first specifies the size of the time window, τ, to divide the given temporal network data into a sequence of snapshot networks, or the corresponding adjacency matrices of length t max .</s>
+          <s>Each snapshot network is allowed to be directed and/ or weighted.</s>
+          <s>Then, the distance between each pair of snapshot networks, d(i, j) (1 ≤ i, j ≤ t max ), is calculated.</s>
+          <s>Visualisation of the distance matrix or the similarity matrix (which is straightforward to obtain from the distance matrix) would present a recognisable signature of system state dynamics if the temporal network data are inherited with clear system state dynamics.</s>
+          <s>Formally, one runs a hierarchical (or other) clustering method on the distance matrix and regards a cluster as a state.</s>
+          <s>The number associated with the leaf in the dendrogram represents the discretised time.</s>
+          <s>Finally, the system state dynamics are obtained as a time sequence of the states.</s>
+          <s>Distance measures.</s>
+          <s>To categorise snapshot networks into discrete groups, we need a distance measure for static networks.</s>
+          <s>There are a variety of graph distance measures <ref target="#b22" type="bibr">[24]</ref>
+            <ref target="#b23" type="bibr">[25]</ref>
+            <ref target="#b24" type="bibr">[26]</ref>
+            <ref target="#b25" type="bibr">[27]</ref> .</s>
+          <s>We use seven state-of-the-art distance measures explained below.</s>
+          <s>We assume undirected networks, whereas the extension of the proposed methods to the case of directed temporal networks is straightforward.</s>
+          <s>The graph edit distance is defined as the number of edits needed to transform one network to another <ref target="#b22" type="bibr">24,</ref>
+            <ref target="#b23" type="bibr">25,</ref>
+            <ref target="#b26" type="bibr">28</ref> .</s>
+          <s>Denote the number of nodes and edges in network G by N(G) and M(G), respectively.</s>
+          <s>The graph edit distance between two networks G 1 and G 2 is given by</s>
+        </p>
+        <formula xml:id="formula_0">∩ ∩ = + − + + − d N G N G N G G M G M G M G G ( ) ( ) 2 ( ) ( ) ( ) 2 ( ) ,<label>(1)</label>
+        </formula>
+        <formula xml:id="formula_1">1 2 1 2 1 2 1 2</formula>
+        <p>
+          <s>where d denotes the distance, ∩ G G 1 2 is the network composed of the nodes and edges that commonly exist in G 1 and G 2 .</s>
+          <s>When analysing temporal network data, one usually knows the label of each node that is commonly used across different time points.</s>
+          <s>Therefore, one does not need to match G 1 and G 2 by permuting nodes.</s>
+          <s>In contrast, the graph edit distance usually involves graph matching.</s>
+          <s>Despite this discrepancy, we decided to use the graph edit distance simply as one of the several graph distance measures to be compared.</s>
+        </p>
+        <p>
+          <s>DELTACON is a scalable measure of network distance <ref target="#b25" type="bibr">27</ref> .</s>
+          <s>It first calculates affinity between all pairs of nodes separately for G 1 and G 2 using a belief propagation algorithm.</s>
+          <s>Then, one calculates a distance between the affinity matrix for G 1 and that for G 2 .</s>
+          <s>Because our networks are not large in terms of the number of nodes, we use the original version of DELTACON, not a faster approximate version <ref target="#b25" type="bibr">27</ref> .</s>
+          <s>We use the MATLAB code offered by the authors of ref. <ref target="#b25" type="bibr">27</ref> for computing DELTACON.</s>
+        </p>
+        <p>
+          <s>The other five distance measures are spectral in nature.</s>
+          <s>In general, spectral distances are based on the comparison between the eigenvalues of the two matrices defining the networks, such as the adjacency or Laplacian matrices <ref target="#b27" type="bibr">29</ref> .</s>
+          <s>Because the Laplacian matrices have been shown to be superior to the adjacency matrix when applied to the spectral distance 29 , we investigate the following five variants of Laplacian spectral distance measures.</s>
+          <s>First, we distinguish between the combinatorial Laplacian matrix and the normalized Laplacian matrix <ref target="#b28" type="bibr">[30]</ref>
+            <ref target="#b29" type="bibr">[31]</ref>
+            <ref target="#b30" type="bibr">[32]</ref> .</s>
+          <s>The combinatorial Laplacian matrix is defined by L = D − A, where A is the adjacency matrix and D is the diagonal matrix whose ith diagonal element is equal to the degree of node i.</s>
+          <s>The normalised Laplacian matrix is given by</s>
+        </p>
+        <formula xml:id="formula_2">L′ = D − 1/2 LD −1/2 = I − D −1/2 AD −1/2 , where I is the identity matrix. We denote the eigenvalues of either type of Laplacian matrix by λ λ λ = ≤ ≤ ≤  0 N 1 2 ,</formula>
+        <p>
+          <s>where N is the number of nodes.</s>
+          <s>The quantum spectral Jensen-Shannon divergence was proposed as a similarity measure for networks <ref target="#b24" type="bibr">26</ref> .</s>
+          <s>It is an entropy-based measure.</s>
+          <s>To define the entropy, we first define the density matrix by ρ = ∑</s>
+        </p>
+        <formula xml:id="formula_3">β β λ − = − e e / L i N 1 i ,</formula>
+        <p>
+          <s>where β is a parameter representing the amount of time for which a diffusion process is run on the network.</s>
+          <s>A large value of β implies that the distance between networks is defined based on their differences in relatively global structure.</s>
+          <s>Note that the eigenvalues of ρ sum up to one such that ρ is qualified as a density matrix in the sense of quantum mechanics.</s>
+          <s>The von Neumann entropy is defined by</s>
+        </p>
+        <formula xml:id="formula_4">ρ λ λ = −∑ =   S( ) log i N i i 1 2 , where λ  i is the ith eigen- value of ρ.</formula>
+        <p>
+          <s>Given the two density matrices ρ 1 and ρ 2 that correspond to networks G 1 and G 2 , respectively, the distance measure based on the Jensen-Shannon divergence is given by</s>
+        </p>
+        <formula xml:id="formula_5">ρ ρ ρ ρ =     +      − + . d S S S 2 1 2 [ ( ) ( )]<label>(2)</label>
+        </formula>
+        <formula xml:id="formula_6">1 2 1 2</formula>
+        <p>
+          <s>The other four Laplacian spectral distance measures are defined as follows.</s>
+          <s>For each of L and L′, we consider the following two types of spectral distance.</s>
+          <s>The unnormalized spectrum distance for either type of Laplacian matrix is defined by <ref target="#b27" type="bibr">29,</ref>
+            <ref target="#b31" type="bibr">33</ref> ∑ λ</s>
+        </p>
+        <formula xml:id="formula_7">λ = − . = + − + − d G G [ ( ) ( )] (3) i n N i N i 1 1 1 1 2 2 eig Remember that λ N+1−i (G)</formula>
+        <p>
+          <s>is the ith largest eigenvalue of the Laplacian matrix of network G.</s>
+          <s>The integer n eig is the number of eigenvalues to be considered in the calculation of the distance.</s>
+          <s>We set n eig = N.</s>
+          <s>The normalised spectrum distance for either type of Laplacian matrix is defined by</s>
+        </p>
+        <formula xml:id="formula_8">λ λ λ λ = ∑ − ∑ ∑ . = + − + − = + − = + − d G G G G [ ( ) ( )] max{ [ ( )] , [ ( )] } (4) i n N i N i i n N i i n N i 1 1 1 1 2 2 1 1 1 2 1 1 2 2 eig eig e ig</formula>
+        <p>
+          <s>Note that the normalisation factor of the denominator on the RHS of Eq. (4) is often given as the minimum rather than the maximum <ref target="#b22" type="bibr">24,</ref>
+            <ref target="#b32" type="bibr">34</ref> .</s>
+          <s>We decided to use the maximum because the use of the maximum bounds d by 2 from above, whereas the distance defined with the minimum can yield arbitrarily large distances.</s>
+        </p>
+        <p>
+          <s>states of temporal networks.</s>
+          <s>We view a temporal network as a sequence of t max static networks (i.e., snapshots).</s>
+          <s>We assign to each of the t max snapshots a state as follows.</s>
+          <s>On the distance matrix between the snapshots, d(i, j), where 1 ≤ i, j ≤ t max , we apply a standard hierarchical clustering algorithm and regard each cluster as a state.</s>
+          <s>We used the shortest distance to define the distance between clusters.</s>
+          <s>We used "linkage" and "cluster" in-built functions in MATLAB with the default option.</s>
+        </p>
+        <p>
+          <s>The hierarchical clustering provides partitions of the snapshots into states with all possible numbers of states, C, i.e., 1 ≤ C ≤ t max .</s>
+          <s>Given that there are many criteria with which to determine the number of clusters <ref target="#b33" type="bibr">35</ref> , we determined the final number of states using the Dunn's index defined by <ref target="#b35" type="bibr">36</ref> Scientific RepoRts | (2019) 9:795 | https:</s>
+        </p>
+        <formula xml:id="formula_9">//doi.org/10.1038/s41598-018-37534-2 ′ ′ . ≤ ≠ ′≤ ∈ ∈′ ≤ ≤ ′ ′∈ ″ ″ d i j d i j min m in ( , ) max m ax ( , ) (5) c c C i c j c c C i j c 1 t h state, t h state 1 , th state</formula>
+        <p>
+          <s>The numerator in Eq. (5) represents the smallest distance between two states among all pairs of states.</s>
+          <s>The denominator represents the largest diameter of the state among all states.</s>
+          <s>We adopt the value of C (2 ≤ C ≤ t max ) that maximises the Dunn's index.</s>
+          <s>Note that some other popular indices for determining the number of clusters in hierarchical clustering, such as the Calinski-Harabasz index <ref target="#b36" type="bibr">37</ref> , are not applicable because they require the centroid of the data points in a cluster, which is not a priori defined for networks.</s>
+          <s>empirical data.</s>
+          <s>We will use four data sets of empirical temporal networks.</s>
+          <s>All the data sets represent either interaction between a group of people or their physical proximity.</s>
+          <s>We also investigated other similar data sets, such as those used in ref. <ref target="#b37" type="bibr">38</ref> , but did not find notable state dynamics.</s>
+          <s>Basic properties of the data sets are shown in <ref type="table">Table 1</ref> .</s>
+        </p>
+        <p>
+          <s id="dataset-1" type="Dataset:Existing dataset">The primary school data set was gathered by the Sociopatterns organisation using radio-frequency identification devices (RFID).</s>
+          <s>This technology records proximity between humans within about 1.5 m distance.</s>
+          <s>The participants of the study were 232 primary school children and 10 teachers in France 39 .</s>
+          <s>They were recorded over two consecutive days in October 2009, between 8:45 am and 5:20 pm on the first day and between 8:30am and 5:05 pm on the second day.</s>
+          <s>There were N = 242 nodes.</s>
+        </p>
+        <p>
+          <s id="dataset-2" type="Dataset:Existing dataset">We used a data set gathered with iMote sensors carried by groups of users in Cambridge, UK.</s>
+          <s>The data set was downloaded from CRAWDAD 40 .</s>
+          <s>We refer to the data set as the Cambridge data set.</s>
+          <s id="dataset-3" type="Dataset:Existing dataset">The Cambridge data set was recorded from students belonging to the Systems Research Group in the Computer Laboratory of the University of Cambridge.</s>
+          <s>The recording covered approximately five days between the 25th of January, 2005, Tuesday at 2 pm and the 31st of January, 2005, Monday in the afternoon.</s>
+          <s>Twelve participants yielded data without technical problems in their devices.</s>
+          <s>The other nodes correspond to external devices.</s>
+          <s>There are N = 223 nodes in total.</s>
+        </p>
+        <p>
+          <s>The Reality Mining data set comes from an experiment conducted on students of Massachusetts Institute of Technology.</s>
+          <s>The students were given smartphones, and their pairwise proximity was recorded via the Bluetooth channel <ref target="#b39" type="bibr">41</ref> .</s>
+          <s>We use a subset of this data set, which was also used in ref. <ref target="#b40" type="bibr">42</ref> .</s>
+          <s>The sample had N = 64 individuals recorded for approximately 8.5 hours.</s>
+        </p>
+        <p>
+          <s>The Copenhagen Bluetooth data set is a subset of the data described in ref. <ref target="#b41" type="bibr">43</ref> .</s>
+          <s id="dataset-4" type="Dataset:Existing dataset">Like the previous data sets, this data set was also recorded via the Bluetooth channel of smartphones.</s>
+          <s id="dataset-5" type="Dataset:Existing dataset">The data were acquired in an over year long experiment where around 1,000 university students were equipped with smartphones, reporting data of their communication over different channels.</s>
+          <s>We use a threshold on the received signal strength indicator of −75.</s>
+          <s>The subset of this data set that we use covers four weeks involving N = 703 people.</s>
+          <s>For privacy reasons, the exact date and time of the contacts were unavailable to us.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+        <p>
+          <s>Comparison between different distance measures on classification of static networks.</s>
+          <s>Before analysing temporal networks, we first compared static networks generated by different models.</s>
+          <s>The purpose of this analysis was to compare performances of the different graph distance measures introduced in section 2.1 in distinguishing static network samples generated by two different models (or one model with two different parameter values).</s>
+          <s>This exercise is relevant to our method because, in our method, snapshots of a temporal network are clustered into groups (i.e., states) according to a measure of graph distance between pairs of snapshots, which are static networks.</s>
+          <s>Therefore, a graph distance measure that yields a good discrimination performance for the static networks in this section is expected to be also a good performer in the next section, where we calculate state dynamics of temporal networks for empirical data sets.</s>
+          <s>We seek such good performers in this section.</s>
+        </p>
+        <p>
+          <s>In fact, the event rate averaged over all pairs of nodes and a time window is one of the simplest measurements of temporal networks.</s>
+          <s>We are not interested in the states of temporal networks that simply correspond to different event rates.</s>
+          <s>Therefore, in this section, we compared two ensembles of static networks with approximately the same edge density.</s>
+        </p>
+        <p>
+          <s>First, we compared the regular random graph (RRG) and the Barabási-Albert (BA) model <ref target="#b42" type="bibr">44</ref> .</s>
+          <s>We generated RRGs using the configuration model with N = 100 nodes and the degree of each node equal to six.</s>
+          <s>We generated networks from the BA model with parameters m 0 = 3 and m = 3, where m 0 is the number of nodes that initially form a clique in the process of growing a network, and m is the number of edges that each new node added to the network initially has.</s>
+          <s>These parameter values yield mean degree ≈6, while the degree obeys a power-law distribution with power-law exponent three.</s>
+          <s>In the BA model, the node index is randomly assigned to the N nodes, and therefore the node index is not correlated with the age or the degree of the node.</s>
+          <s>For each distance measure, we carried out the following three comparisons.</s>
+          <s>First, we calculated the distance between two networks generated by the RRG.</s>
+          <s>Second, we calculated the distance between two degree-heterogeneous networks generated by the BA model.</s>
+          <s>Third, we calculated the distance between a network generated by the RRG and a network generated by the BA model.</s>
+          <s>In each case, we generated 10 3 pairs of networks and calculated the average and standard deviation of the distance between a pair of networks.</s>
+          <s>All the networks used in these comparisons are independent samples.</s>
+          <s>The values of the distance are shown in <ref target="#fig_0" type="figure">Fig. 2(a)</ref> .</s>
+          <s>The distance values were scaled such that the average distance between the RRG and BA model corresponds to one in the figure.</s>
+          <s>The figure indicates that, for the edit distance and DELTACON, the distance between the RRG and BA model is not significantly larger than between a pair of RRGs and between a pair of BA networks.</s>
+          <s>These distance measures would take small values when edges between particular pairs of nodes exist in both of the two networks.</s>
+          <s>Because the RRG and BA models are stochastic algorithms, this situation does not often happen even for a pair of networks generated by the same model.</s>
+          <s>In applications to temporal networks, it is probably too demanding to require that events between the same pair of nodes should happen in many node pairs for two snapshots to be judged to be similar.</s>
+          <s>The Jensen-Shannon divergence discriminates the RRG and BA when β = 1 but not when β = 0.1 or β = 10.</s>
+          <s>The other four spectral distance measures discriminate the RRG and the BA model in the sense that the RRG-BA distance is significantly larger than the RRG-RRG and BA-BA distances.</s>
+        </p>
+        <p>
+          <s>We next turn to another pair of models, which are the Lancichinetti-Fortunato-Radicchi (LFR) benchmark with different parameter values.</s>
+          <s>The LFR benchmark generates networks with community structure 45 .</s>
+          <s>The model creates networks having a heterogeneous degree distribution and a heterogeneous distribution of community size.</s>
+          <s>Parameter μ tunes the extent of mixing of different communities, such that a fraction μ of edges incident to each node goes to different communities.</s>
+          <s>A small value of μ implies a strong community structure.</s>
+          <s>We compare networks generated with μ = 0.1 and those generated with μ = 0.9.</s>
+          <s>We set N = 100, the mean degree to six, the largest degree to N/4 = 25, the power-law exponent for the degree distribution to two and the power-law exponent for the distribution of community size to one.</s>
+          <s>It should be noted that the degree distribution is independent of μ.</s>
+          <s>Therefore, the two groups of networks to be compared differ in the strength of the community structure but not in the degree distribution, presenting a more difficult classification problem than the previous one.</s>
+          <s>For example, the edges of a social temporal network in a primary school 39 are mostly confined within classes during the classroom time, corresponding to strong community structure.</s>
+          <s>In contrast, pupils tend to be mixed across classes during playtime, probably corresponding to weak community structure.</s>
+        </p>
+        <p>
+          <s>The network distance is compared between pairs of networks generated with μ = 0.1 and 0.9 in <ref target="#fig_0" type="figure">Fig. 2(b)</ref> .</s>
+          <s>The discrimination between μ = 0.1 and μ = 0.9 is unsuccessful with the edit distance in the sense that the distance between μ = 0.1 and μ = 0.9 is not statistically larger than that between a pair of LFR networks generated with the same μ values.</s>
+          <s>With DELTACON, the distance between μ = 0.1 and μ = 0.9 is significantly larger than the other two cases.</s>
+          <s>However, the values of the distance are close among the three cases.</s>
+          <s>The Jensen-Shannon spectral divergence also fails for the three values of β.</s>
+          <s>The unnormalised and normalised spectral distances are not successful when they are combined with the combinatorial Laplacian matrix, which is presumably for the following reason.</s>
+          <s>The community structure and the lack thereof are reflected by the small eigenvalues of the Laplacian matrix <ref target="#b44" type="bibr">46,</ref>
+            <ref target="#b45" type="bibr">47</ref> .</s>
+          <s>In contrast, the largest eigenvalue of the combinatorial Laplacian matrix is proportional to the largest node degree in the network <ref target="#b46" type="bibr">48</ref> .</s>
+          <s>Because the largest degree depends on samples of networks, the fluctuation in the largest eigenvalue would be a dominant contributor to the spectral distance.</s>
+          <s>Then, the spectral distance under-represents the discrepancy between small eigenvalues in the two networks, which are related to community structure, in particular for degree-heterogeneous networks.</s>
+          <s>In contrast, <ref target="#fig_0" type="figure">Fig. 2(b)</ref> indicates that the spectral distances applied to the normalised Laplacian matrices discriminate between LFR networks with μ = 0.1 and those with μ = 0.9.</s>
+          <s>It should be noted that the largest eigenvalue of the normalised Laplacian matrix does not scale with the largest degree of the node in the network, i.e., λ N ≤ 2 <ref target="#b28" type="bibr">30,</ref>
+            <ref target="#b29" type="bibr">31</ref> .</s>
+          <s>Given the results shown in <ref target="#fig_0" type="figure">Fig. 2</ref> , in the next section, we will focus on the two spectral distance measures applied to normalized Laplacian matrices of snapshots of temporal networks.</s>
+          <s>extracting states in temporal networks.</s>
+          <s>In this section, we examine state dynamics in empirical temporal networks.</s>
+          <s>For each data set, we have to specify the duration of the time window, τ, to partition the temporal network into a sequence of t max snapshots.</s>
+          <s>The choice of τ is arbitrary and is shown in <ref type="table">Table 1</ref> .</s>
+          <s>We calculate the unnormalised or normalised spectrum distances between each pair of normalised Laplacian matrices corresponding to two snapshots.</s>
+          <s>For visualisation purposes, we transform the distance matrix to a similarity matrix, where the similarity between two snapshots t 1 and t 2 is defined as</s>
+        </p>
+        <formula xml:id="formula_10">= − ′ ″ ≤ ′ ≤ ″ t t d t t d t t sim( , ) 1 ( , )/max ( , )</formula>
+        <p>
+          <s>t t t 1 2 1 2 1 , max , such that 0 ≤ sim(t 1 , t 2 ) ≤ 1.</s>
+          <s>The distance value of zero between two snapshots corresponds to the similarity value of one.</s>
+        </p>
+        <p>
+          <s>The results for the primary school data for the unnormalised and normalised spectral distances are shown in <ref target="#fig_1" type="figure">Fig. 3(a,b)</ref> , respectively.</s>
+          <s>A snapshot accounts for τ = 20 min.</s>
+          <s>Each of the two consecutive days spans 25 time windows.</s>
+          <s>The results for the two days are concatenated in the figure.</s>
+          <s>The upper matrix is the similarity matrix.</s>
+          <s>We notice that the snapshots during the lunch time are close to each other and across the two days.</s>
+          <s>The snapshots in other periods are also close to each other, albeit to a lesser extent.</s>
+          <s>The average number of events for an individual in a time window is shown in the middle panel.</s>
+          <s>The lunch-time snapshots are not characterised by event rates that are different from those in different time windows.</s>
+          <s>The panel to the bottom is the time series of the state of the temporal network.</s>
+          <s>Dunn's index suggested two states, i.e., a lunch-time state and a class-time state, with both spectral distance measures.</s>
+          <s>The present results are consistent with an analysis of a single day of the same data set using graph signal processing <ref target="#b47" type="bibr">49</ref> .</s>
+          <s>That study showed that different modes are dominant in the lunchtime and in the other times of the day.</s>
+        </p>
+        <p>
+          <s>Similar results were obtained for the Cambridge data set with τ = 1 hour.</s>
+          <s>We excluded the last six hours because the average event rate was extremely low during the period.</s>
+          <s>Both the unnormalised and normalised spectral distances concluded relatively many states <ref type="figure">(Fig. 4(a)</ref> ).</s>
+          <s>Some of the states are characterised by different mean activity rates (large event rates in states 7, 8, 10 and 11 and small event rates in state 3 and 4 in <ref type="figure">Fig. 4(a)</ref> ; large event rates in states 3 and 5 and small event rates in states 6, 8 and 9 in <ref type="figure">Fig. 4(b)</ref> ).</s>
+          <s>However, other states are not simply characterised by the mean event rate.</s>
+          <s>For example, state 2 in <ref type="figure">Fig. 4(a)</ref> , equivalently, state 2 in <ref type="figure">Fig. 4(b)</ref> , is composed of earlier snapshots with elevated event rates and later snapshots with un-elevated event rates.</s>
+          <s>In addition, state 5 in <ref type="figure">Fig. 4(a)</ref> , equivalently, state 7 in <ref type="figure">Fig. 4(b)</ref> , appears in two chunks of time that are separated by many hours.</s>
+          <s>In fact, the snapshots in the two chunks are fairly close to each other in the spectral distance.</s>
+        </p>
+        <p>
+          <s>The results for the Reality Mining data with τ = 10 min are shown in <ref type="figure">Fig. 5</ref> .</s>
+          <s>With the unnormalised spectral distance, the network occasionally and briefly visits state 2, which is not characterised by a changed mean event <ref type="figure">(Fig. 5(a)</ref> ).</s>
+          <s>This result is consistent with a visual inspection of the similarity matrix.</s>
+          <s>The normalised spectral distance identifies the same state (state 1 in <ref type="figure">Fig. 5(b)</ref> ) and also other states.</s>
+          <s>In particular, state 5 is composed of several early snapshots and some snapshots in time windows from 39 to 46, which stand out in the similarity matrix.</s>
+        </p>
+        <p>
+          <s>The results for the Copenhagen Bluetooth data with τ = 1 day are shown in <ref target="#fig_3" type="figure">Fig. 6</ref> .</s>
+          <s>For both spectral distance measures, the similarity matrix suggests that the weekdays and weekends constitute distinct states.</s>
+          <s>The hierarchical clustering identifies these two states with either distance measure.</s>
+          <s>It should be noted that the average event rate provides sufficient information for one to distinguish between the weekdays and the weekends; the communication is considerably sparser on weekends than weekdays.</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>We proposed a methodology to use graph similarity scores to construct a sequence of states of temporal networks.</s>
+          <s>We tested this framework with two spectrum distances combined with the normalized Laplacian matrix.</s>
+          <s>Across different data sets, the method revealed states of the temporal networks.</s>
+          <s>Some networks were categorised into discrete states although the event rate was not specifically modulated over time.</s>
+        </p>
+        <p>
+          <s>The present study has not systematically investigated distance measures for networks.</s>
+          <s>A consistent finding in the present study is that distance measures based on the comparison of individual nodes and edges (i.e., graph edit distance and DELTACON) are probably too stringent.</s>
+          <s>It was the case in the comparison between static network models <ref target="#fig_0" type="figure">(Fig. 2)</ref> .</s>
+          <s>We additionally confirmed that the edit distance and DELTACON performed poorly for the primary school and Copenhagen Bluetooth data, in which the states were relatively clear-cut and interpretable <ref target="#fig_4" type="figure">(Fig. 7)</ref> .</s>
+          <s>Apart from that, the present method can be combined with other graph distance measures such as graph kernels 25 , graph embedding 25 or those based on feature vectors <ref target="#b48" type="bibr">50,</ref>
+            <ref target="#b49" type="bibr">51</ref> .</s>
+          <s>Our spectral distances implicitly ignore the node identities when comparing snapshots.</s>
+          <s>In practice, this information is often available.</s>
+          <s>In such cases, graph distance measures that take the node identity into account may yield better results.</s>
+          <s>For example, state dynamics may be induced by activation of different network communities at different times.</s>
+          <s>If so, a graph distance measure that exploits community structure of networks 52 may yield better results than with the Laplacian or other graph distances.</s>
+        </p>
+        <p>
+          <s>Many systems are composed of different layers of networks <ref target="#b51" type="bibr">53,</ref>
+            <ref target="#b52" type="bibr">54</ref> .</s>
+          <s>There are algorithms to categorise individual layers of a multilayer network into groups <ref target="#b24" type="bibr">26,</ref>
+            <ref target="#b53" type="bibr">55</ref> .</s>
+          <s>A temporal network can be regarded as a multilayer network if one regards each snapshot network as a layer.</s>
+          <s>Therefore, these previous methods are directly applicable to the current framework.</s>
+          <s>On the other hand, a more standard approach to regard a temporal network as a multilayer network is to connect two snapshots of the temporal network if and only if they are consecutive in time <ref target="#b6" type="bibr">7,</ref>
+            <ref target="#b51" type="bibr">53,</ref>
+            <ref target="#b52" type="bibr">54,</ref>
+            <ref target="#b54" type="bibr">56</ref> .</s>
+          <s>In the present study, we did not connect snapshots across different times.</s>
+          <s>Doing so would bind temporally close snapshots into the same state such that the system state dynamics would experience less switching.</s>
+          <s>Introducing inertia to the state dynamics by connecting consecutive snapshots or by other means may be useful to enhance interpretability of the results for some data.</s>
+          <s>The idea of system state dynamics in temporal networks has recently been advocated for time-varying neuroimaging data, called chronnectome <ref target="#b55" type="bibr">57,</ref>
+            <ref target="#b56" type="bibr">58</ref> .</s>
+          <s>For those data, networks are correlational, so-called the functional networks, and are composed of brain regions of interest used as nodes and the correlation value (or its thresholded version) conventionally used as edges <ref target="#b57" type="bibr">[59]</ref>
+            <ref target="#b58" type="bibr">[60]</ref>
+            <ref target="#b59" type="bibr">[61]</ref> .</s>
+          <s>Chronnectome analysis has revealed, for example, different patterns in system state dynamics between patients and controls <ref target="#b55" type="bibr">57,</ref>
+            <ref target="#b60" type="bibr">62</ref> .</s>
+          <s>The present framework can be regarded as chronnectome for general temporal networks including non-correlational ones, with general graph distance measures.</s>
+          <s>Its applicability is not limited to social or neuronal temporal networks.</s>
+          <s>For example, protein-protein interaction networks are also suggested to be dynamic, where "date-hub" proteins choreograph temporality of networks by binding different partners at different times and locations <ref target="#b61" type="bibr">63,</ref>
+            <ref target="#b62" type="bibr">64</ref> .</s>
+          <s>Ecological interspecific interaction networks are also dynamic, and the network dynamics affect stability of an ecosystem <ref target="#b63" type="bibr">65</ref> .</s>
+          <s>Our method applied to these and other systems may tell us the state of the system at each time point as well as the function of the system associated with the individual states.</s>
+          <s>A small number of leading principal components of time series obtained from human behaviour can predict much of the behaviour of the individual.</s>
+          <s>Such principal components are termed the eigenbehaviours <ref target="#b64" type="bibr">66</ref> .</s>
+          <s>This method is orthogonal to our approach.</s>
+          <s>In the eigenbehaviour analysis, each eigenbehaviour, i.e., principal component, is the time series of behaviour, and hence is derived from the entire observation time window.</s>
+          <s>Therefore, The length of a time window is τ = 20 min and τ = 1 day for the primary school data and Copenhagen bluetooth data, respectively.</s>
+          <s>We observe that the system state dynamics are much more blurred with the edit distance or DELTACON than with the Laplacian spectral distances <ref target="#fig_1" type="figure">(Figs. 3 and 6</ref> ).</s>
+          <s>an eigenbehaviour, if measured for a temporal network, will be spread over time in general.</s>
+          <s>In particular, different eigenmodes may be simultaneously active.</s>
+          <s>In contrast, our method is a partition of the time axis into discrete states.</s>
+          <s>The present algorithm and its variants can be applied to adaptive networks, in which, by definition, nodes change their behaviour in response to the system state of the network and dynamic processes occurring on it (e.g., epidemic processes) <ref target="#b65" type="bibr">67,</ref>
+            <ref target="#b66" type="bibr">68</ref> .</s>
+          <s>If an adaptive network and the dynamical process on top of it evolve towards an equilibrium, state dynamics are irrelevant except in the transient because the system state will not change forever after the transient.</s>
+          <s>However, if the eventual dynamics are of non-equilibrium nature, the present method may be able to find transitions between distinct states that characterise the network dynamics in a dynamic equilibrium.</s>
+          <s>One example is the "diplomat's dilemma", in which agents simultaneously try to achieve a high centrality value and low degree.</s>
+          <s>Reference <ref target="#b67" type="bibr">69</ref> shows how these conflicting optimisation criteria (because the degree and centrality are usually positively correlated) lead to a situation where the system can undergo sudden structural reorganisations after long periods of quiescence.</s>
+          <s>In this model, the present method may detect active and quiescent periods as distinct states.</s>
+        </p>
+        <p>
+          <s>A limitation of the present approach is the assumption that the entire system can be described by a single system state.</s>
+          <s>In fact, we found nontrivial interpretable results in only one of the four data sets that we investigated (i.e., primary school data set).</s>
+          <s>In many cases, one could argue that it makes more sense to describe different groups in the data as having their own system state.</s>
+          <s>If our method is complemented by a community detection component, this problem could be circumvented.</s>
+          <s>However, community detection in temporal networks is notoriously hard to tackle with a principled approach <ref target="#b68" type="bibr">70</ref> .</s>
+          <s>Another limitation is arbitrariness in the choice of the subroutines and parameter values.</s>
+          <s>For example, there are myriads of distance measures for networks <ref target="#b23" type="bibr">25,</ref>
+            <ref target="#b25" type="bibr">27</ref> .</s>
+          <s>In addition, hierarchical clustering comes with various options in how to connect different clusters, and there are many other data clustering methods <ref target="#b69" type="bibr">71</ref> .</s>
+          <s>Furthermore, there are other methods for determining the number of groups apart from the Dunn's index <ref target="#b33" type="bibr">35</ref> .</s>
+          <s>Our choice of the length of the time window was also arbitrary.</s>
+          <s>The purpose of the present study was to present a new characterisation of temporal networks.</s>
+          <s>More exhaustive examinations of these variations are left as future work.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Figure 2 .</head>
+        <label>2</label>
+        <figDesc>Figure 2. Distance between pairs of static networks with seven graph distance measures. (a) Regular random graphs (denoted by RRG) and the BA model. (b) LFR model with different parameter values. The bar graphs present the average of the distance values over 10 3 pairs of networks sampled from each model. The distance values are normalised by that for the average of the distance between (a) the RRG and BA pair or (b) the LFR network with μ = 0.1 and that with μ = 0.9. The error bars represent a standard deviation calculated from the 10 3 pairs of networks.</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Figure 3 .</head>
+        <label>3</label>
+        <figDesc>Figure 3. System state dynamics for the primary school data. (a) Unnormalised spectral distance. (b) Normalised distance. The top panels show similarity matrices. The middle panels show the number of events per individual in each time window. The bottom panels show the system state dynamics. The index is the discrete time, each one corresponding to a time window. The length of a time window is τ = 20 min.</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Figure 4 .Figure 5 .</head>
+        <label>45</label>
+        <figDesc>Figure 4. Results for the Cambridge data. (a) Unnormalised spectral distance. (b) Normalised spectral distance. We set τ = 1 hour.</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Figure 6 .</head>
+        <label>6</label>
+        <figDesc>Figure 6. Results for the Copenhagen Bluetooth data. (a) Unnormalised spectral distance. (b) Normalised spectral distance. We set τ = 1 day.</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Figure 7 .</head>
+        <label>7</label>
+        <figDesc>Figure 7. System state dynamics with the graph edit distance and DELTACON. (a) Primary school data with the edit distance. (b) Primary school data with DELTACON. (c) Copenhagen Bluetooth data with the edit distance. (d) Copenhagen Bluetooth data with DELTACON. The length of a time window is τ = 20 min and τ = 1 day for the primary school data and Copenhagen bluetooth data, respectively. We observe that the system state dynamics are much more blurred with the edit distance or DELTACON than with the Laplacian spectral distances (Figs. 3 and 6).</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_2">
+        <head/>
+        <label/>
+        <figDesc>Table 1. Properties of the temporal network data. Variable N represents the number of nodes; "Resolution" indicates the time resolution with which the data were originally collected; τ is the length of the time window to create snapshot networks; t max is the number of time windows.</figDesc>
+        <table>Data 
+N 
+Resolution 
+τ 
+t max 
+
+Primary school 
+242 
+20 s 
+20 m 50 
+
+Cambridge 
+223 
+1 s 
+1 h 
+145 
+
+Reality Mining 
+64 
+5 s 
+10 m 51 
+
+Copenhagen Bluetooth 
+703 
+1 s 
+1 d 
+27 
+
+Scientific RepoRts | 
+(2019) 9:795 | https://doi.org/10.1038/s41598-018-37534-2 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_3">
+        <head/>
+        <label/>
+        <figDesc>Scientific RepoRts | (2019) 9:795 | https://doi.org/10.1038/s41598-018-37534-2</figDesc>
+        <table/>
+      </figure>
+      <note place="foot">© The Author(s) 2019</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>We thank Sune Lehmann for discussion and providing the Copenhagen Bluetooth data set.</s>
+            <s>We thank Lorenzo Livi for discussion.</s>
+            <s>N.M. acknowledges the support provided through JST CREST Grant Number JPMJCR1304.</s>
+            <s>P.H. was supported by JSPS KAKENHI Grant Number JP 18H01655.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Author Contributions</head>
+        </div>
+        <div>
+          <head>Additional Information</head>
+          <p>
+            <s>Competing Interests: The authors declare no competing interests.</s>
+          </p>
+          <p>
+            <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+          <p>
+            <s>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.</s>
+            <s>The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in a credit line to the material.</s>
+            <s>If material is not included in the article's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.</s>
+            <s>To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <monogr>
+              <title level="m" type="main">Networks -An Introduction</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Newman</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2010"/>
+                <publisher>Oxford University Press</publisher>
+                <pubPlace>Oxford</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">A.-L</forename>
+                  <surname>Barabási</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Network Science</title>
+              <imprint>
+                <date type="published" when="2016"/>
+                <publisher>Cambridge University Press</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Community detection in graphs</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Fortunato</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rep</title>
+              <imprint>
+                <biblScope unit="volume">486</biblScope>
+                <biblScope from="75" to="174" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Holme</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Saramäki</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rep</title>
+              <imprint>
+                <biblScope unit="volume">519</biblScope>
+                <biblScope from="97" to="125" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Holme</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Saramäki</surname>
+                </persName>
+              </author>
+              <title level="m">Temporal Networks</title>
+              <meeting>
+                <address>
+                  <addrLine>Berlin</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <publisher>Springer-Verlag</publisher>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Modern temporal network theory: A colloquium</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Holme</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Eur. Phys. J. B</title>
+              <imprint>
+                <biblScope unit="volume">88</biblScope>
+                <biblScope unit="page">234</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <monogr>
+              <title level="m" type="main">A Guide to Temporal Networks</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Masuda</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Lambiotte</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2016"/>
+                <publisher>World Scientific</publisher>
+                <pubPlace>Singapore</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Masuda</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Holme</surname>
+                </persName>
+              </author>
+              <title level="m">Temporal Network Epidemiology</title>
+              <meeting>
+                <address>
+                  <addrLine>Berlin</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <publisher>Springer</publisher>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">A Poissonian explanation for heavy tails in e-mail communication</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Malmgren</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Stouffer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Motter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">A N</forename>
+                  <surname>Amaral</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proc. Natl. Acad. Sci. USA 105</title>
+              <meeting>Natl. Acad. Sci. USA 105</meeting>
+              <imprint>
+                <date type="published" when="2008"/>
+                <biblScope from="18153" to="18158" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">On universality in human correspondence activity</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Malmgren</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Stouffer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">S L O</forename>
+                  <surname>Campanharo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Amaral</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">325</biblScope>
+                <biblScope from="1696" to="1700" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Universal features of correlated bursty behaviour</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Karsai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Kaski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A.-L</forename>
+                  <surname>Barabási</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Kertész</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1038/srep00397</idno>
+              <ptr target="https://doi.org/10.1038/srep00397"/>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Rep</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Modelling bursty time series</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Vajna</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Tóth</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Kertész</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1088/1367-2630/15/10/103023</idno>
+              <ptr target="https://doi.org/10.1088/1367-2630/15/10/103023"/>
+            </analytic>
+            <monogr>
+              <title level="j">New J. Phys</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope unit="page">103023</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Modeling temporal activity patterns in dynamic social networks</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Raghavan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Ver Steeg</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Galstyan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Tartakovsky</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">IEEE Trans. Comput. Soc. Syst</title>
+              <imprint>
+                <biblScope unit="volume">1</biblScope>
+                <biblScope from="89" to="107" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Two-state Markov-chain Poisson nature of individual cellphone call statistics</title>
+              <author>
+                <persName>
+                  <forename type="first">Z.-Q</forename>
+                  <surname>Jiang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W.-J</forename>
+                  <surname>Xie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M.-X</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W.-X</forename>
+                  <surname>Zhou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Sornette</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Stat. Mech</title>
+              <imprint>
+                <biblScope unit="page">73210</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">A tutorial on hidden Markov models and selected applications in speech recognition</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Rabiner</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proc. IEEE</title>
+              <imprint>
+                <biblScope unit="volume">77</biblScope>
+                <biblScope from="257" to="286" unit="page"/>
+                <date type="published" when="1989"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Bishop</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Pattern Recognition and Machine Learning</title>
+              <imprint>
+                <date type="published" when="2006"/>
+                <publisher>Springer</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Anomaly detection: A survey</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Chandola</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Banerjee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Kumar</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">ACM Comput. Surveys</title>
+              <imprint>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope unit="page">15</biblScope>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Detecting change points in the large-scale structure of evolving networks</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Peel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Clauset</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proc. Twenty-Ninth AAAI Conf. Artificial Intelligence</title>
+              <meeting>Twenty-Ninth AAAI Conf. Artificial Intelligence</meeting>
+              <imprint>
+                <date type="published" when="2014"/>
+                <biblScope from="2914" to="2920" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Graph based anomaly detection and description: A survey</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Akoglu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Tong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Koutra</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Data Min. Knowl. Disc</title>
+              <imprint>
+                <biblScope unit="volume">29</biblScope>
+                <biblScope from="626" to="688" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Fast change point detection on dynamic social networks</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Chakrabarti</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Sivakoff</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Parthasarathy</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proc. Twenty-Sixth Intl. Joint Conf. Artif. Intel. (IJCAI-17)</title>
+              <meeting>Twenty-Sixth Intl. Joint Conf. Artif. Intel. (IJCAI-17)</meeting>
+              <imprint>
+                <date type="published" when="2017"/>
+                <biblScope from="2992" to="2998" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Concept drift and anomaly detection in graph streams</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Zambon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Alippi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Livi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">IEEE Trans. Neur. Netw. Learn. Syst</title>
+              <imprint>
+                <biblScope unit="volume">29</biblScope>
+                <biblScope from="5592" to="5605" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <monogr>
+              <title level="m" type="main">Spectral dimension reduction of complex dynamical networks</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Laurence</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Doyon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Dubé</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Desrosiers</surname>
+                </persName>
+              </author>
+              <ptr target="https://arxiv.org/abs/1809.08285"/>
+              <imprint>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+            <note type="report_type">Preprint at</note>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Anomaly detection in time series of graphs using ARMA processes</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Pincombe</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">ASOR Bull</title>
+              <imprint>
+                <biblScope unit="volume">24</biblScope>
+                <biblScope from="1" to="10" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">The graph matching problem</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Livi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Rizzi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Pattern Anal. Appl</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope from="253" to="283" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Spectral entropies as information-theoretic tools for complex network comparison</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>De Domenico</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Biamonte</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1103/PhysRevX.6.041062</idno>
+              <ptr target="https://doi.org/10.1103/PhysRevX.6.041062"/>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. X</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="page">41062</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">DELTACON: Principled massive-graph similarity function with attribution</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Koutra</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Shah</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Vogelstein</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Gallagher</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Faloutsos</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">ACM Trans. Knowl. Disc. Data</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope unit="page">28</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">A survey of graph edit distance</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Gao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Xiao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Tao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Pattern Anal. Appl</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope from="113" to="129" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <monogr>
+              <title level="m" type="main">A study of graph spectra for comparing graphs and trees. Pattern Recog</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Wilson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Zhu</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2008"/>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope from="2833" to="2841" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">R K</forename>
+                  <surname>Chung</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Spectral Graph Theory</title>
+              <imprint>
+                <date type="published" when="1997"/>
+                <publisher>American Mathematical Society</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <monogr>
+              <title level="m" type="main">An Introduction to the Theory of Graph Spectra</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Cvetković</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Rowlinson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Simić</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2010"/>
+                <publisher>Cambridge University Press</publisher>
+                <pubPlace>Cambridge</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Random walks and diffusion on networks</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Masuda</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Porter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Lambiotte</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rep. 716</title>
+              <imprint>
+                <biblScope unit="volume">717</biblScope>
+                <biblScope from="1" to="58" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Graph matching and clustering using spectral partitions</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Qiu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Hancock</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Pattern Recog</title>
+              <imprint>
+                <biblScope unit="volume">39</biblScope>
+                <biblScope from="22" to="34" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <monogr>
+              <title level="m" type="main">A Graph-theoretic Approach to Enterprise Network Dynamics</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Bunke</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Dickinson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kraetzl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Wallis</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2007"/>
+                <publisher>Birkhäuser</publisher>
+                <pubPlace>Boston, MA</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <monogr>
+              <title level="m" type="main">An extensive comparative study of cluster validity indices. Pattern Recog</title>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Arbelaitz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Gurrutxaga</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Muguerza</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Pérez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Perona</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2013"/>
+                <biblScope unit="volume">46</biblScope>
+                <biblScope from="243" to="256" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title/>
+              <idno type="DOI">10.1038/s41598-018-37534-2</idno>
+              <ptr target="https://doi.org/10.1038/s41598-018-37534-2"/>
+            </analytic>
+            <monogr>
+              <title level="j">Scientific RepoRts |</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="page">795</biblScope>
+                <date type="published" when="2019"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">A fuzzy relative of the ISODATA process and its use in detecting compact well-separated clusters</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Dunn</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Cybern</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="32" to="57" unit="page"/>
+                <date type="published" when="1974"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">A dendrite method for cluster analysis</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Caliński</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Harabasz</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Comm. Stat</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="1" to="27" unit="page"/>
+                <date type="published" when="1974"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <monogr>
+              <title level="m" type="main">Impact of misinformation in temporal network epidemiology</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Holme</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Rocha</surname>
+                </persName>
+              </author>
+              <ptr target="https://arxiv.org/abs/1704.02406"/>
+              <imprint>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+            <note type="report_type">Preprint at</note>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">High-resolution measurements of face-to-face contact patterns in a primary school</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Stehlé</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1371/journal.pone.0023176</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0023176"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS One</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">Reality mining: Sensing complex social systems</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Eagle</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Pentland</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Pers. Ubiquit. Comput</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope from="255" to="268" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Causality-driven slow-down and speed-up of diffusion in non-Markovian temporal networks</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Scholtes</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1038/ncomms6024</idno>
+              <ptr target="https://doi.org/10.1038/ncomms6024"/>
+            </analytic>
+            <monogr>
+              <title level="j">Nature Communications</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">Measuring large-scale social networks with high resolution</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Stopczynski</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1371/journal.pone.0095978</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0095978"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS One</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title level="a" type="main">Emergence of scaling in random networks</title>
+              <author>
+                <persName>
+                  <forename type="first">A.-L</forename>
+                  <surname>Barabási</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Albert</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">286</biblScope>
+                <biblScope from="509" to="512" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">Benchmarks for testing community detection algorithms on directed and weighted graphs with overlapping communities</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Lancichinetti</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Fortunato</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. E</title>
+              <imprint>
+                <biblScope unit="volume">80</biblScope>
+                <biblScope unit="page">16118</biblScope>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b44">
+            <analytic>
+              <title level="a" type="main">Detecting community structure in networks</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E J</forename>
+                  <surname>Newman</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Eur. Phys. J. B</title>
+              <imprint>
+                <biblScope unit="volume">38</biblScope>
+                <biblScope from="321" to="330" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b45">
+            <analytic>
+              <title level="a" type="main">Synchronization reveals topological scales in complex networks</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Arenas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Díaz-Guilera</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Pérez-Vicente</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">96</biblScope>
+                <biblScope unit="page">114102</biblScope>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b46">
+            <analytic>
+              <title level="a" type="main">Algebraic connectivity of graphs</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Fiedler</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Czech. Math. J</title>
+              <imprint>
+                <biblScope unit="volume">23</biblScope>
+                <biblScope from="298" to="305" unit="page"/>
+                <date type="published" when="1973"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b47">
+            <analytic>
+              <title level="a" type="main">Extraction of temporal network structures from graph-based signals</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Hamon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Borgnat</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Flandrin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Robardet</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">IEEE Trans. Signal Info. Proc. Netw</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope from="215" to="226" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b48">
+            <analytic>
+              <title level="a" type="main">Clustering graphs by weighted substructure mining</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Tsuda</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Kudo</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proc. 23rd Intl. Conf. Machine Learning (ICML'06)</title>
+              <meeting>23rd Intl. Conf. Machine Learning (ICML'06)</meeting>
+              <imprint>
+                <date type="published" when="2006"/>
+                <biblScope from="953" to="960" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b49">
+            <analytic>
+              <title level="a" type="main">Network similarity via multiple social theories</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Berlingerio</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Koutra</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Eliassi-Rad</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Faloutsos</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proc. 2013 IEEE/ACM Intl. Conf. Adv. Soc. Netw. Anal. Mining (ASONAM'13)</title>
+              <meeting>2013 IEEE/ACM Intl. Conf. Adv. Soc. Netw. Anal. Mining (ASONAM'13)</meeting>
+              <imprint>
+                <date type="published" when="2013"/>
+                <biblScope from="1439" to="1440" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b50">
+            <analytic>
+              <title level="a" type="main">Taxonomies of networks from community structure</title>
+              <author>
+                <persName>
+                  <forename type="first">J.-P</forename>
+                  <surname>Onnela</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. E</title>
+              <imprint>
+                <biblScope unit="volume">86</biblScope>
+                <biblScope unit="page">36104</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b51">
+            <analytic>
+              <title level="a" type="main">The structure and dynamics of multilayer networks</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Boccaletti</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rep</title>
+              <imprint>
+                <biblScope unit="volume">544</biblScope>
+                <biblScope from="1" to="122" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b52">
+            <analytic>
+              <title level="a" type="main">Multilayer networks</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kivelä</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Comp. Netw</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope from="203" to="271" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b53">
+            <analytic>
+              <title level="a" type="main">Extracting information from multiplex networks</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Iacovacci</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Bianconi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Chaos</title>
+              <imprint>
+                <biblScope unit="volume">26</biblScope>
+                <biblScope unit="page">65306</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b54">
+            <analytic>
+              <title level="a" type="main">Community structure in time-dependent, multiscale, and multiplex networks</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Mucha</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Richardson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Macon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Porter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J.-P</forename>
+                  <surname>Onnela</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">328</biblScope>
+                <biblScope from="876" to="878" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b55">
+            <analytic>
+              <title level="a" type="main">The chronnectome: Time-varying connectivity networks as the next frontier in fMRI data discovery</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Calhoun</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Miller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Pearlson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Adalı</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Neuron</title>
+              <imprint>
+                <biblScope unit="volume">84</biblScope>
+                <biblScope from="262" to="274" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b56">
+            <analytic>
+              <title level="a" type="main">Comparing test-retest reliability of dynamic functional connectivity methods</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Choe</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">NeuroImage</title>
+              <imprint>
+                <biblScope unit="volume">158</biblScope>
+                <biblScope from="155" to="175" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b57">
+            <analytic>
+              <title level="a" type="main">Complex brain networks: Graph theoretical analysis of structural and functional systems</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Bullmore</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Sporns</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Rev. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope from="186" to="198" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b58">
+            <monogr>
+              <title level="m" type="main">Networks of the Brain</title>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Sporns</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2011"/>
+                <publisher>MIT Press</publisher>
+                <pubPlace>Cambridge, MA</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b59">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Bassett</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Sporns</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Network Neuroscience</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">20</biblScope>
+                <biblScope from="353" to="364" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b60">
+            <analytic>
+              <title level="a" type="main">Network dynamics in the healthy and epileptic developing brain</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Rosch</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Baldeweg</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Moeller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Baier</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1162/NETN_a_00026</idno>
+              <ptr target="https://doi.org/10.1162/NETN_a_00026"/>
+            </analytic>
+            <monogr>
+              <title level="j">Netw. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope from="41" to="59" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b61">
+            <analytic>
+              <title level="a" type="main">Evidence for dynamically organized modularity in the yeast protein-protein interaction network</title>
+              <author>
+                <persName>
+                  <forename type="first">J.-D</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Han</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">430</biblScope>
+                <biblScope from="88" to="93" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b62">
+            <analytic>
+              <title level="a" type="main">Dynamic modular architecture of protein-protein interaction networks beyond the dichotomy of 'date' and 'party' hubs</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Chang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1038/srep01691</idno>
+              <ptr target="https://doi.org/10.1038/srep01691"/>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Rep</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <date type="published" when="1691"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b63">
+            <analytic>
+              <title level="a" type="main">Fluctuating interaction network and time-varying stability of a natural fish community</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Ushio</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">554</biblScope>
+                <biblScope from="360" to="363" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b64">
+            <analytic>
+              <title level="a" type="main">Identifying structure in routine</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Eagle</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Pentland</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Eigenbehaviors</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Behav. Ecol. Sociobiol</title>
+              <imprint>
+                <biblScope unit="volume">63</biblScope>
+                <biblScope from="1057" to="1066" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b65">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Gross</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Sayama</surname>
+                </persName>
+              </author>
+              <title level="m">Adaptive Networks</title>
+              <meeting>
+                <address>
+                  <addrLine>Berlin</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <publisher>Springer</publisher>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b66">
+            <analytic>
+              <title level="a" type="main">Modeling complex systems with adaptive networks</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Sayama</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Comput. Math Appl</title>
+              <imprint>
+                <biblScope unit="volume">65</biblScope>
+                <biblScope from="1645" to="1664" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b67">
+            <analytic>
+              <title level="a" type="main">Dynamics of networking agents competing for high centrality and low degree</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Holme</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Ghoshal</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">96</biblScope>
+                <biblScope unit="page">98701</biblScope>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b68">
+            <analytic>
+              <title level="a" type="main">Community discovery in dynamic networks: A survey</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Rossetti</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Cazabet</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">ACM Comput. Surv</title>
+              <imprint>
+                <biblScope unit="volume">51</biblScope>
+                <biblScope unit="page">35</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b69">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Duda</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Hart</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Stork</surname>
+                </persName>
+              </author>
+              <title level="m">Pattern Classification. Second Edition</title>
+              <meeting>
+                <address>
+                  <addrLine>New York, NY</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <publisher>John Wiley &amp; Sons, Inc</publisher>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

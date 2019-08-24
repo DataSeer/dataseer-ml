@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T07:40+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:19+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -169,14 +169,14 @@
         <p>
           <s>We hypothesized that the positioning on the target sequence of the Cas9 protein relative to the deaminase domain (i.e., their physical distance) and the rigidity of the connection between these two domains of the base editor determine the width of the editing window, and hence the precision of the base editor.</s>
           <s>In previous studies, a <ref target="#b15" type="bibr">16</ref> amino acid (aa) flexible linker (XTEN) has been identified as the best compromise between editing efficiency and specificity <ref target="#b15" type="bibr">16</ref> .</s>
-          <s>Using L-canavanine selection in yeast <ref target="#b16" type="bibr">17</ref> , we first investigated the effects of length and rigidity of the linker between APOBEC1 and nCas9 (Cas9 nickase) on base editing precision and efficiency when targeting several sites in the Can1 gene ( <ref type="figure">Fig. 1; Supplementary Figure 1</ref> ) that contain Cs within the activity window of the base editor BE3 (ref.</s>
+          <s>Using L-canavanine selection in yeast <ref target="#b16" type="bibr">17</ref> , we first investigated the effects of length and rigidity of the linker between APOBEC1 and nCas9 (Cas9 nickase) on base editing precision and efficiency when targeting several sites in the Can1 gene ( <ref target="#fig_3" type="figure">Fig. 1; Supplementary Figure 1</ref> ) that contain Cs within the activity window of the base editor BE3 (ref.</s>
           <s>
             <ref target="#b15" type="bibr">16</ref> ).</s>
           <s>L-Canavanine is a highly toxic analog of the proteinogenic amino acid arginine, and mutations inactivating the uptake protein Can1 confer resistance to canavanine.</s>
-          <s>We used an inducible base editor construct, determined the optimal induction time, and then tested 10 different rigid linker sequences (containing the amino acid proline that, due to its secondary amine, confers conformational rigidity) in comparison to the commonly used XTEN flexible linker ( <ref type="figure">Supplementary Figures 1 and 2)</ref> .</s>
-          <s>Consistent with previous reports <ref target="#b15" type="bibr">16</ref> , the base editor BE3 (containing the XTEN linker) allowed editing at all Cs within a window of nine nucleotides ( <ref target="#fig_3" type="figure">Fig. 1; Supplementary Figure 3)</ref> .</s>
+          <s>We used an inducible base editor construct, determined the optimal induction time, and then tested 10 different rigid linker sequences (containing the amino acid proline that, due to its secondary amine, confers conformational rigidity) in comparison to the commonly used XTEN flexible linker ( <ref target="#fig_3" type="figure">Supplementary Figures 1 and 2)</ref> .</s>
+          <s>Consistent with previous reports <ref target="#b15" type="bibr">16</ref> , the base editor BE3 (containing the XTEN linker) allowed editing at all Cs within a window of nine nucleotides ( <ref target="#fig_3" type="figure">Fig. 1; Supplementary Figure 3</ref> ).</s>
           <s>Omission of the linker sequence or use of a very short rigid linker (i.e., the 3 aa linker PAP) abolished editing nearly completely.</s>
-          <s>Interestingly, rigid linkers of 5-7 aa made editing substantially more precise, with the seven aa linker PAPAPAP largely restricting editing to positions −15 and −16 <ref type="figure">(Fig. 1)</ref> .</s>
+          <s>Interestingly, rigid linkers of 5-7 aa made editing substantially more precise, with the seven aa linker PAPAPAP largely restricting editing to positions −15 and −16 <ref target="#fig_3" type="figure">(Fig. 1)</ref> .</s>
           <s>Longer linkers resulted in reduced editing accuracy, suggesting that a seven aa rigid linker is optimal.</s>
         </p>
         <p>
@@ -189,8 +189,8 @@
           <s>Previous work has mostly investigated the activity of base editors in favorable sequence contexts, with relatively few C targets within the protospacer sequence.</s>
           <s>To develop a more rigorous (and Can1-independent) assay for base editor specificity, we also investigated the worst-case scenario, in which all nucleotides within the BE3 activity window are Cs (i.e., a nonacytidine motif from −13 to −21).</s>
           <s>Analysis of editing products by deep sequencing revealed that base editors with 5-7 aa rigid linkers mainly edited at positions C -14 to C -16 .</s>
-          <s>These editors showed greatly improved site selectivity and a narrowed editing window, while retaining up to 90% of the editing efficiency of the original BE3 <ref type="figure">(Supplementary Figure 5a, b)</ref> .</s>
-          <s>Importantly, when editing product distribution was analyzed, BE3-treated sequences mostly contained four simultaneously edited bases, whereas short rigid linker-containing base editors predominantly generate products with one to three edited bases <ref type="figure">(Supplementary Figure 5c)</ref> , thus providing further evidence for short rigid linkers leading to more precise editing.</s>
+          <s>These editors showed greatly improved site selectivity and a narrowed editing window, while retaining up to 90% of the editing efficiency of the original BE3 ( <ref type="figure">Supplementary Figure 5a, b)</ref> .</s>
+          <s>Importantly, when editing product distribution was analyzed, BE3-treated sequences mostly contained four simultaneously edited bases, whereas short rigid linker-containing base editors predominantly generate products with one to three edited bases (Supplementary <ref type="figure">Figure 5c)</ref> , thus providing further evidence for short rigid linkers leading to more precise editing.</s>
         </p>
         <p>
           <s>Engineering of improved CDA1-based editors.</s>
@@ -199,10 +199,9 @@
           <s>To better understand what influences the width of the activity window, we generated four constructs for direct comparison of N-and C-terminal fusions of APOBEC1 and CDA1 to nCas9, initially using the XTEN linker <ref type="figure">(Fig. 2a)</ref> .</s>
           <s>When the APOBEC1 domain was fused to the C-terminus of nCas9 (cBE3), the editing activity was very low <ref type="figure">(Fig. 2b, c)</ref> , consistent with previous observations <ref target="#b15" type="bibr">16</ref> .</s>
           <s>By contrast, when CDA1 was fused to either the N-terminus or the C-terminus of nCas9, both fusions exhibited high editing efficiency.</s>
-          <s>However, there was a remarkable difference in the width of the editing window, in that the N-terminal CDA1 (nCDA1-BE3) triggered editing in a much broader window when tested on either an oligo(C) substrate or target sites in the Can1 gene ( <ref type="figure">Fig. 2b, c</ref> ; Supplementary <ref target="#fig_8" type="figure">Figure 6</ref> ).</s>
+          <s>However, there was a remarkable difference in the width of the editing window, in that the N-terminal CDA1 (nCDA1-BE3) triggered editing in a <ref target="#fig_8" type="figure">Figure 6</ref> ).</s>
           <s>The C-terminal fusion showed a more specific editing activity, peaking from C −16 to C −19 , consistent with previous reports <ref target="#b16" type="bibr">17</ref> .</s>
         </p>
-        <formula xml:id="formula_0">BE-P(AP)10 BE-A(EAAAK)2A BE-A(EAAAK)3A 0 C -1 1 / C -1 2 C -1 5 / C -1 6 C -1 8 / C -1 9 C -1 3 C -1 7 C -1 1 / C -1 2 C -1 5 / C -1 6 C -1 8 / C -1 9 C -1 3 C -1 7 C -1 1 / C -1 2 C -1 5 / C -1 6 C -1 8 / C -1 9 C -1 3 C -1 7 C -1 1 / C -1 2 C -1 5 / C -1 6 C -1 8 / C -1 9 C -1 3 C -1 7 C -1 1 / C -1 2 C -1 5 / C -1 6 C -1 8 / C -1 9 C -1 3 C -1 7 C -1 1 / C -1 2 C -1 5 / C -1 6 C -1 8 / C -1 9 C -1 3 C -1 7 C -1 1 / C -1 2 C -1 5 / C -1 6 C -1 8 / C -1 9 C -1 3 C -1 7 C -1 1 / C -1 2 C -1 5 / C -1 6 C -1 8 / C -1 9 C -1 3 C -1 7 C -1 1 / C -1 2 C -1 5 / C -1 6 C -1 8 / C -1 9 C -1 3 C -1 7 C -1 1 / C -1 2 C -1 5 / C -1 6 C -1 8 / C -1 9 C -1 3 C -1 7 C -1 1 / C -1 2 C -1 5 / C -1 6 C -1 8 / C -1 9 C -1 3 C -1 7 C -1 1 / C -1 2 C -1 5 / C -1 6 C -1 8 / C -1 9 C -1 3 C -1 7</formula>
         <p>
           <s>Comparative assessment of the specificity of previously generated base editors and our base editors on several genomic target sequences showed that, in many cases, some level of discrimination between adjacent Cs is possible, but the achievable precision depends on the sequence context and on the base editor used (Supplementary <ref type="figure">Figure 7)</ref> .</s>
           <s>In general, the nCDA1-BE3 and cCDA1-BE3 editors display less dependence on the neighboring nucleotides and can edit target Cs efficiently even when located immediately after an A (e.g., Can1-7 in <ref type="figure">Supplementary Figure 7)</ref> , a context that is only very inefficiently edited by APOBEC1-based editors.</s>
@@ -210,41 +209,39 @@
         </p>
         <p>
           <s>In an attempt to further narrow the activity window of CDA1 editors, we removed the linker between CDA1 and Cas9, generating versions nCDA1-NL-BE3 and cCDA1-NL-BE3.</s>
-          <s>Surprisingly, both linkerless fusions showed an unaltered activity window with largely unchanged editing efficiency at each C within it (Supplementary <ref type="figure">Figure 9)</ref> .</s>
+          <s>Surprisingly, both linkerless fusions showed an unaltered activity window with largely unchanged editing efficiency at each C within it (Supplementary <ref type="figure">Figure 9</ref> ).</s>
           <s>This result suggests that the termini of CDA1 are inherently flexible and may act as linker-like sequences.</s>
           <s>We, therefore, tested the impact of N-and C-terminal truncations (removing potential linker-like fragments) on base editing.</s>
         </p>
         <p>
           <s>A nuclear export signal (NES) was reported to reside in the Cterminus of the CDA1 homolog AID (ref.</s>
           <s>
-            <ref target="#b26" type="bibr">27</ref> ), and its location corresponds to residues 199 to 208 in CDA1 <ref target="#fig_3" type="figure">(Fig. 3a)</ref> .</s>
+            <ref target="#b26" type="bibr">27</ref> ), and its location corresponds to residues 199 to 208 in CDA1 <ref type="figure">(Fig. 3a)</ref> .</s>
           <s>Deletion of the NES from AID increased the deamination efficiency of the enzyme <ref target="#b27" type="bibr">[28]</ref>
             <ref target="#b28" type="bibr">[29]</ref>
             <ref target="#b29" type="bibr">[30]</ref> .</s>
-          <s>We generated a series of 22 base editors with Cterminally truncated CDA1 versions fused to nCas9 <ref target="#fig_3" type="figure">(Fig. 3b</ref> ) and tested them on two oligo(C) motifs ( <ref target="#fig_5" type="figure">Fig. 4</ref> ; <ref type="figure">Supplementary Figures 10 and 11</ref> ).</s>
+          <s>We generated a series of 22 base editors with Cterminally truncated CDA1 versions fused to nCas9 <ref type="figure">(Fig. 3b</ref> ) and tested them on two oligo(C) motifs ( <ref target="#fig_5" type="figure">Fig. 4</ref> ; <ref target="#fig_3" type="figure">Supplementary Figures 10 and 11</ref> ).</s>
           <s>While removal of the NES had only small effects on editing efficiency and specificity (nCDA1Δ198-BE3), larger deletions made editing more precise and substantially narrowed the activity window of the base editors <ref target="#fig_5" type="figure">(Fig. 4)</ref> .</s>
-          <s>The enzyme tolerated truncations up to amino acid residue 158 without a significant loss in editing efficiency ( <ref target="#fig_5" type="figure">Fig. 4</ref> ; Supplementary <ref type="figure">Figures 10 and 11</ref> ).</s>
-          <s>The major gain in site selectivity was seen with the removal of at least 13-14 amino acids from the Cterminus of CDA1 (nCDA1Δ195-BE3, nCDA1Δ194-BE3; <ref target="#fig_5" type="figure">Fig. 4</ref> ; Supplementary <ref type="table">Table 1)</ref> .</s>
-          <s>Larger deletions had similar beneficial</s>
+          <s>The enzyme tolerated truncations up to amino acid residue 158 without a significant loss in editing efficiency ( <ref target="#fig_5" type="figure">Fig. 4</ref> ; Supplementary <ref target="#fig_3" type="figure">Figures 10 and 11</ref> ).</s>
+          <s>The major gain in site selectivity was seen with the removal of at least 13-14 amino acids from the Cterminus of CDA1 (nCDA1Δ195-BE3, nCDA1Δ194-BE3; <ref target="#fig_5" type="figure">Fig. 4</ref>
+          </s>
         </p>
-        <formula xml:id="formula_1">C-to-T mutation (%) nBE3 nCDA1-BE3 cCDA1-BE3 cBE3 0 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-</formula>
-        <formula xml:id="formula_2">nBE3 cBE3 nCDA1-BE3 cCDA1-BE3 a b c nSpCas9 APOBEC1 UGI NLS PgalL XTEN nSpCas9 CDA1 UGI NLS PgalL XTEN nSpCas9 CDA1 UGI NLS PgalL XTEN cBE3 nCDA1-BE3 cCDA1-BE3 nSpCas9 APOBEC1 UGI NLS PgalL XTEN nBE3 C -2 0 C -1 8 / C -1 9 C -1 7 C -1 5 / C -1 6 C -1 3 C -1 1 / C -1 2 -21 -20 -19 -18 -17 -13 -14 -15 -16 -6 -7</formula>
+        <formula xml:id="formula_0">C-to-T mutation (%) nBE3 nCDA1-BE3 cCDA1-BE3 cBE3 0 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6</formula>
+        <formula xml:id="formula_1">nBE3 cBE3 nCDA1-BE3 cCDA1-BE3 a b c nSpCas9 APOBEC1 UGI NLS PgalL XTEN nSpCas9 CDA1 UGI NLS PgalL XTEN nSpCas9 CDA1 UGI NLS PgalL XTEN cBE3 nCDA1-BE3 cCDA1-BE3 nSpCas9 APOBEC1 UGI NLS PgalL XTEN nBE3 C -2 0 C -1 8 / C -1 9 C -1 7 C -1 5 / C -1 6 C -1 3 C -1 1 / C -1 2 -21 -20 -19 -18 -17 -13 -14 -15 -16 -6 -7</formula>
         <p>
-          <s>Fig <ref type="figure">. 2</ref> Comparison of N-and C-terminal deaminase fusions to nCas9.</s>
+          <s>Fig. 2 Comparison of N-and C-terminal deaminase fusions to nCas9.</s>
           <s>a Structure of nBE3 (=BE3; ref. <ref target="#b15" type="bibr">16</ref> ), cBE3, nCDA1-BE3, and cCDA1-BE3 driven by the GalL inducible promoter.</s>
           <s>In all constructs, the XTEN linker separates the nucleoside deaminase domain from the nCas9 domain.</s>
           <s>nSpCas9: Streptococcus pyogenes Cas9 nickase.</s>
           <s>b Base editors with the deaminase at the N-terminus show broadened base editing windows.</s>
-          <s>The sequence of the target (C) <ref target="#b8" type="bibr">9</ref> motif is shown with the numbers representing the position of possible editing targets (red) relative to the PAM (blue).</s>
+          <s>The sequence of the target (C) 9 motif is shown with the numbers representing the position of possible editing targets (red) relative to the PAM (blue).</s>
           <s>% of C-to-T editing represents the percentage of total sequencing reads with the target C converted to T. c Base editing outcome of nBE3, cBE3, nCDA1-BE3, and cCDA1-BE3 targeting several sites containing target Cs at different positions (indicated on the x-axis) in the Can1 gene (cf.</s>
           <s>
-            <ref type="figure">Supplementary Figure 1</ref> ; Supplementary <ref type="table">Table 4)</ref> .</s>
+            <ref target="#fig_3" type="figure">Supplementary Figure 1</ref> ; <ref type="table">Supplementary Table 4</ref> ).</s>
           <s>Values and error bars represent the mean and standard deviation of three independent biological replicates.</s>
-          <s>Source data underlying panels b and c are provided as a Source Data file <ref type="figure">Fig. 1</ref> Rigid linkers narrow the width of the editing window of BE3. a Protospacers and PAM (blue) sequences of the genomic loci tested, with the target Cs shown in red.</s>
-          <s>Subscript numbers indicate the positions of the cytidines relative to the PAM.</s>
-          <s>C-to-T editing at any of the indicated Cs inactivates the Can1 transporter and thus causes resistance to canavanine <ref target="#b16" type="bibr">17</ref> effects on editing precision, although some of them displayed slightly reduced overall editing efficiency ( <ref target="#fig_5" type="figure">Fig. 4</ref> ; <ref type="figure">Supplementary Figures 10 and 11</ref> ).</s>
+          <s>Source data underlying panels b and c are provided as a Source Data file effects on editing precision, although some of them displayed slightly reduced overall editing efficiency ( <ref target="#fig_5" type="figure">Fig. 4</ref> ; <ref target="#fig_3" type="figure">Supplementary Figures 10 and 11</ref> ).</s>
           <s>Unlike the full-length base editor, the bestperforming truncated variants showed a clear preference for one or two Cs within the oligo(C) stretch (e.g., nCDA1Δ194-BE3 for C −18 and, to a lesser extent, C −17 within the (C) 9 motif: <ref target="#fig_5" type="figure">Fig. 4a</ref> ; nCDA1Δ192-BE3 and nCDA1Δ190-BE3 for C −18 in the (C) 8 motif: <ref target="#fig_5" type="figure">Fig. 4b</ref> ).</s>
-          <s>By contrast, truncations at the N-terminus of CDA1 in cCDA1-BE3 had no significant effect on the width of the editing window (Supplementary <ref type="figure">Figure 12)</ref> .</s>
+          <s>By contrast, truncations at the N-terminus of CDA1 in cCDA1-BE3 had no significant effect on the width of the editing window (Supplementary <ref target="#fig_3" type="figure">Figure 12)</ref> .</s>
           <s>Tests on oligo(C) motifs represent the most stringent assays for site selectivity of base editors.</s>
           <s>However, such long C stretches would only rarely be targets of genome editing with base editors in vivo.</s>
           <s>To assess whether base editors with C-terminally truncated CDA1 domains also show superior performance in more natural (heteropolymeric) genomic sequence contexts, we targeted four sites in the Can1 gene, each of which contains at least one additional C directly adjacent or close to position C −18 .</s>
@@ -254,9 +251,8 @@
           <s>We also investigated the indel frequency and base editing purity at these sites when treated by narrowed-window base editors.</s>
           <s>We found that the frequency of editing errors was very low, consistent with what has been reported for other base editors (Supplementary <ref target="#fig_3" type="figure">Figure 13)</ref> .</s>
         </p>
-        <formula xml:id="formula_3">CTTCCCCCCCCCATGTTCCGAGATCGG -21</formula>
-        <note type="other">-20 -19 -18 -17 -16 -15 -14 -13 -7 -</note>
-        <formula xml:id="formula_4">C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6</formula>
+        <formula xml:id="formula_2">b nCDA1-NL-BE3 nCDA1Δ198-BE3 nCDA1Δ195-BE3 nCDA1Δ194-BE3 nCDA1Δ193-BE3 nCDA1Δ192-BE3 nCDA1Δ191-BE3 nCDA1Δ190-BE3 nCDA1Δ189-BE3 nCDA1Δ188-BE3 nCDA1Δ186-BE3 nCDA1Δ184-BE3 nCDA1Δ182-BE3 nCDA1Δ180-BE3 nCDA1Δ178-BE3 nCDA1Δ176-BE3 nCDA1Δ170-BE3 nCDA1Δ167-BE3 nCDA1Δ165-BE3 nCDA1Δ163-BE3 nCDA1Δ161-BE3 nCDA1Δ158-BE3</formula>
+        <formula xml:id="formula_3">nCDA1-BE3 nCDA1Δ195-BE3 nCDA1-BE3 nCDA1Δ194-BE3 nCDA1-BE3 nCDA1Δ190-BE3 nCDA1-BE3 nCDA1Δ188-BE3 nCDA1-BE3 nCDA1Δ182-BE3 70 (C) 8 motif TATACCCCCCCCTATATGGTAAAAAGG a b C-to-T editing (%) nCDA1Δ192-BE3 nCDA1-BE3 nCDA1Δ176-BE3 nCDA1-BE3 nCDA1Δ176-BE3 nCDA1-BE3 nCDA1-BE3 nCDA1Δ192-BE3 nCDA1Δ198-BE3 nCDA1-BE3 (C) 9 motif C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6</formula>
         <p>
           <s>Finally, we also determined the base editing outcome in individual colonies obtained by the canavanine selection method.</s>
           <s>While nCDA1-BE3 and cCDA1-BE3 yielded only 1 and 6 colonies (out of total 24 randomly picked colonies), respectively, that carried the specifically C −18 edited Can1 gene biallelically (i.e., in a homozygous fashion), the base editors with truncated CDA1 domains yielded 18-24 colonies that were homozygous for the allele only edited at position C −18 .</s>
@@ -271,14 +267,15 @@
         <head>Discussion</head>
         <p>
           <s>In this work, we have developed two alternative strategies to effectively reduce the width of the editing window and, in this way, greatly increase the precision of C-to-T base editors.</s>
-          <s>The use of stiff, proline-rich linkers of specific lengths can significantly narrow the editing window and thus improve the accuracy of editing <ref type="figure">(Fig. 1)</ref> .</s>
+          <s>The use of stiff, proline-rich linkers of specific lengths can significantly narrow the editing window and thus improve the accuracy of editing <ref target="#fig_3" type="figure">(Fig. 1)</ref> .</s>
           <s>We attribute this to a more narrowly defined distance between the nucleoside deaminase domain and the nCas9 domain of the fusion protein that is likely to result in more precise positioning of the deaminase domain on the target sequence.</s>
         </p>
         <p>
           <s>At first glance, fusions of CDA1 to the N-terminus of nCas9 seemed to be a poor choice <ref type="figure">(Fig. 2)</ref> .</s>
           <s>However, our finding that large parts of the C-terminus of CDA1 are dispensable for deaminase function offered the possibility to substantially shorten the distance between the deaminase domain and the nCas9 domain.</s>
-          <s>Interestingly, this approach resulted in a substantial gain in editing precision and product purity <ref target="#fig_3" type="figure">(Figs. 3-6</ref> ; <ref target="#fig_3" type="figure">Supplementary Figures 10, 11 and 13</ref> ).</s>
-          <s>It is important to note that, in our study, we used the most stringent assays and the worst-case scenarios in that our target sequences of base editing contained multiple cytidines in close proximity or were even entirely comprised of cytidines ((C) <ref target="#b7" type="bibr">8</ref> or (C) 9 motifs).</s>
+          <s>Interestingly, this approach resulted in a substantial gain in editing precision and product purity (Figs.</s>
+          <s>3-6; <ref target="#fig_3" type="figure">Supplementary Figures 10, 11 and 13</ref> ).</s>
+          <s>It is important to note that, in our study, we used the most stringent assays and the worst-case scenarios in that our target sequences of base editing contained multiple cytidines in close proximity or were even entirely comprised of cytidines ((C) 8 or (C) 9 motifs).</s>
           <s>Although our base editors with C-terminally truncated CDA1 domains readily outperformed current base editors, they unsurprisingly, still showed some level of imprecision on these extreme substrates.</s>
           <s>However, when tested on more normal sequence contexts, our best-performing editors displayed absolute precision in that they (i) produced only correctly edited clones despite the presence of another C directly adjacent to the target C and (ii) edited the target sequence with very high efficiency and accuracy in both alleles of the target gene ( <ref target="#fig_8" type="figure">Fig. 6</ref> ; <ref type="table">Table 1</ref> ).</s>
         </p>
@@ -295,7 +292,7 @@
             <ref target="#b33" type="bibr">[34]</ref>
             <ref target="#b34" type="bibr">[35]</ref> .</s>
         </p>
-        <formula xml:id="formula_5">D A 1 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 n C D A 1 Δ 1 9 0 -B E 3 n C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 n C D A 1 Δ 1 9 0 -B E 3 n C D A 1 Δ 1 8 9 -B E 3 n C D A 1 Δ 1 8 8 -B E 3 n C D A 1 Δ 1 8 4 -B E 3 n C D A 1 Δ 1 8 0 -B E 3 n C D A 1 Δ 1 7 6 -B E 3 n C D A 1 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 n C D A 1 Δ 1 9 0 -B E 3 n C D A 1 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 n C D A 1 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3</formula>
+        <formula xml:id="formula_4">T -18 C -17 C -15 n C D A 1 -B E 3 n C D A 1 Δ 1 9 8 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 n C D A 1 Δ 1 9 0 -B E 3 n C D A 1 Δ 1 8 9 -B E 3 n C D A 1 Δ 1 8 8 -B E 3 n C D A 1 Δ 1 8 4 -B E 3 n C D A 1 Δ 1 8 0 -B E 3 n C D A 1 Δ 1 7 6 -B E 3 N o t tr e a te d n C D A 1 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 n C D A 1 Δ 1 9 8 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 n C D A 1 Δ 1 9 0 -B E 3 N o t tr e a te d n C D A 1 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 n C D A 1 Δ 1 9 8 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 N o t tr e a te d n C D A 1 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 n C D A 1 Δ 1 9 8 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 N o t tr e a te d n C D A 1 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 n C D A 1 Δ 1 9 0 -B E 3 n C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 n C D A 1 Δ 1 9 0 -B E 3 n C D A 1 Δ 1 8 9 -B E 3 n C D A 1 Δ 1 8 8 -B E 3 n C D A 1 Δ 1 8 4 -B E 3 n C D A 1 Δ 1 8 0 -B E 3 n C D A 1 Δ 1 7 6 -B E 3 n C D A 1 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 n C D A 1 Δ 1 9 0 -B E 3 n C D A 1 -B E 3 c C D A 1 -B E</formula>
         <p>
           <s>Highly precise base editors will be essential for future applications of genome editing in gene therapy, site-directed mutagenesis in vivo, and precision breeding.</s>
           <s>A narrower editing window means fewer target nucleotides.</s>
@@ -331,7 +328,7 @@
           <s>Insertion of three PCR fragments (covering XTEN and APOBEC1) produced base editor cBE3 (Supplementary <ref type="table">Table 3</ref> ).</s>
           <s>The CDA1 protein truncations were generated by PCR amplification <ref type="table">(Supplementary Table 3)</ref> , and cloned into SpeI/Sbf1-digested BE3 or AscI/SphI-digested cBE3 vectors to produce the ΔCDA1-Cas and Cas-ΔCDA1 vector series, respectively.</s>
           <s>To produce YEE-BE3, the mutated APOBEC1 from plasmid pCMV-dCpf1-BE-YEE (provided by the laboratory of Jia Chen, Shanghai, China, and obtained from Addgene) was PCRamplified and cloned into SpeI/Sbf1-digested BE3.</s>
-          <s>To generate plasmids expressing sgRNAs that target-specific sites <ref target="#fig_5" type="figure">(Supplementary Table 4)</ref> , the protospacer sequences were introduced by PCR amplification (as part of the primer sequence; see <ref type="table">Supplementary Table 3)</ref> , and the resulting PCR products were cloned into the ClaI/KpnI-digested vector p426-SNR52p-gRNA.CAN1.Y-SUP4t with the InFusion HD Cloning Kit (Clontech, CA, USA).</s>
+          <s>To generate plasmids expressing sgRNAs that target-specific sites <ref type="table">(Supplementary Table 4</ref> ), the protospacer sequences were introduced by PCR amplification (as part of the primer sequence; see <ref type="table">Supplementary Table 3)</ref> , and the resulting PCR products were cloned into the ClaI/KpnI-digested vector p426-SNR52p-gRNA.CAN1.Y-SUP4t with the InFusion HD Cloning Kit (Clontech, CA, USA).</s>
         </p>
         <p>
           <s>Yeast transformation and genomic DNA extraction.</s>
@@ -341,8 +338,7 @@
           <s>Transgenic clones were selected on SC-U-L media and confirmed by PCR analyses (Supplementary <ref type="table">Table 3</ref> ).</s>
           <s>Yeast genomic DNA was extracted according to a published protocol <ref target="#b36" type="bibr">37</ref> .</s>
           <s id="dataset-1" type="Genetic Data:Sequence Analysis">PCR products were purified (PCR Purification kit; Macherey-Nagel) and then sequenced.</s>
-          <s>For each base editor, 24 canavanine-resistant colonies were randomly picked from the selection plate followed by sequencing of the Can1 locus.</s>
-          <s>The major types of edited products are listed in the first column of the CAN1 mutagenesis.</s>
+          <s>CAN1 mutagenesis.</s>
           <s>Yeast colonies were picked, suspended in 3 mL SC medium with 2% glucose and without leucine and uracil, and grown to a stationary phase.</s>
           <s>The cells were then pelleted, washed twice in sterile water, and then resuspended in SC induction medium with 2% galactose and 1% raffinose, but without leucine and uracil, to an OD 600 of 0.3.</s>
           <s>The cells were incubated for 20 h prior to plating on YPAD rich or SC media plates without arginine but with 60 mg/mL L-canavanine (Sigma).</s>
@@ -394,11 +390,11 @@
       <figure xml:id="fig_0">
         <head/>
         <label/>
-        <figDesc>| (2019) 10:439 | https://doi.org/10.1038/s41467-018-08034-8 | www.nature.com/naturecommunications</figDesc>
+        <figDesc>| (2019) 10:439 | https://doi.org/10.1038/s41467-018-08034-8 | www.nature.com/naturecommunications much broader window when tested on either an oligo(C) sub- strate or target sites in the Can1 gene (Fig. 2b, c; Supplementary</figDesc>
       </figure>
       <figure xml:id="fig_3">
-        <head>Fig. 3</head>
-        <label>3</label>
+        <head>Fig. 1</head>
+        <label>1</label>
         <figDesc>Fig. 1 Rigid linkers narrow the width of the editing window of BE3. a Protospacers and PAM (blue) sequences of the genomic loci tested, with the target Cs shown in red. Subscript numbers indicate the positions of the cytidines relative to the PAM. C-to-T editing at any of the indicated Cs inactivates the Can1 transporter and thus causes resistance to canavanine 17 . b Editing efficiency and specificity of the base editors tested as determined by canavanine selection. The x-axis represents the target Cs within the protospacers. The y-axis shows their C-to-T editing frequency (see Methods and Supplementary Figure 1). Sequences of canavanine-resistant mutants aligned with the corresponding reference sequences are shown in Supplementary Figure 3. Values and error bars represent the mean and standard deviation of three independent biological replicates. Source data are provided as a Source Data file</figDesc>
       </figure>
       <figure xml:id="fig_5">
@@ -422,9 +418,50 @@
         <figDesc>Fig. 6 Analysis of base editing patterns and efficiencies in single yeast colonies selected for canavanine resistance. A comparison of base editing frequencies for nCDA1-BE3, cCDA1-BE3, and selected base editors with truncated CDA1 domains is shown. Yeast cells were transformed with plasmids expressing the base editor and an sgRNA targeting the Can1-5 site. The target sequence is shown with the cytidines that can potentially undergo editing in red and the PAM in blue. If C-to-T conversion occurs at position −18 or −19 or both, the Can1 gene will be inactivated and the cell becomes resistant to canavanine. Values and error bars reflect the mean and standard deviation of three biological replicates. Source data are provided as a Source Data file. See also Table 1</figDesc>
       </figure>
       <figure type="table" validated="false" xml:id="tab_1">
+        <head/>
+        <label/>
+        <figDesc>Fig. 3 Design of base editors with truncated CDA1 domains. a Amino acid sequence alignment of CDA1 and human AID. The catalytic domain HxE-PCxxC and the nuclear export signal (NES) are indicated by black horizontal lines. The alignment was created by CLUSTALW (ref. 38 ; https://www.genome.jp/ tools-bin/clustalw) and graphically formatted with the help of the ESPript 3.0 server 39 (http://espript.ibcp.fr/ESPript/ESPript/). Identical amino acid residues are shaded in red, similar residues in yellow. b Schematic representation of base editors with C-terminal CDA1 truncations (named after the last CDA1 residue included)ARTICLE NATURE COMMUNICATIONS | (2019) 10:439 | https://doi.org/10.1038/s41467-018-08034-8 | www.nature.com/naturecommunications</figDesc>
+        <table>nCDA1Δ154-BE3 
+
+58 
+
+117 
+
+176 
+
+208 
+
+NES 
+
+Catalytic domain 
+
+* * 
+* * 
+* 
+
+Catalytic domain 
+NES 
+
+AID 
+CDA1 
+
+AID 
+CDA1 
+
+AID 
+CDA1 
+
+AID 
+CDA1 
+
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-018-08034-8 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_3">
         <head>Table 1 Table 1</head>
         <label>11</label>
-        <figDesc>Base editors with CDA1 truncations exhibit many more homozygous C −19 T −18 colonies than nCDA1-BE3 and cCDA1-BE3−19 T −18 /T −19 T −18 Heterozygous</figDesc>
+        <figDesc>Base editors with CDA1 truncations exhibit many more homozygous C −19 T −18 colonies than nCDA1-BE3 and cCDA1-BE3−19 T −18 /T −19 T −18 HeterozygousFor each base editor, 24 canavanine-resistant colonies were randomly picked from the selection plate followed by sequencing of the Can1 locus. The major types of edited products are listed in the first column of the table, and the colony numbers representing each product type are given. For nCDA1-BE3, the genotype of the remaining colony is C −19 T −18 /T −19 C −18 ; for nCDA1Δ194-BE3, the remaining two colonies are C −19 T −18 /T −19 C −18 and T −19 T −18 /T −19 C −18 , respectively</figDesc>
         <table>nCDA1 
 -BE3 
 
@@ -478,13 +515,7 @@ T −19 T −18 Homozygous
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_2">
-        <head/>
-        <label/>
-        <figDesc>table, and the colony numbers representing each product type are given. For nCDA1-BE3, the genotype of the remaining colony is C −19 T −18 /T −19 C −18 ; for nCDA1Δ194-BE3, the remaining two colonies are C −19 T −18 /T −19 C −18 and T −19 T −18 /T −19 C −18 , respectively</figDesc>
-        <table/>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_3">
+      <figure type="table" validated="false" xml:id="tab_4">
         <head/>
         <label/>
         <figDesc>High-throughput sequencing data have been deposited in the National Center for Biotechnology Information Sequence Read Archive database under accession code PRJNA503986 . A reporting summary for this article is available as a Supplementary Information file. The source data underlying Figs. 1, 2b, c, 4a, b, 5 and 6, and Supplementary Figures 2, 4-9, 11-13 are provided as a Source Data file. Received: 11 November 2018 Accepted: 12 December 2018</figDesc>
@@ -506,15 +537,6 @@ T −19 T −18 Homozygous
       </div>
       <div type="annex">
         <div>
-          <head>Author contributions</head>
-          <p>
-            <s>R.B., D.K., and J.T. designed the research.</s>
-            <s>J.T. performed most of experiments.</s>
-            <s>F.Z. performed bioinformatic analyses.</s>
-            <s>R.B. and J.T. wrote the manuscript.</s>
-          </p>
-        </div>
-        <div>
           <head>Additional information</head>
           <p>
             <s>Supplementary Information accompanies this paper at https://doi.org/10.1038/s41467-018-08034-8.</s>
@@ -524,6 +546,20 @@ T −19 T −18 Homozygous
           <head>Competing interests:</head>
           <p>
             <s>The authors declare no competing interests.</s>
+          </p>
+          <p>
+            <s>Reprints and permission information is available online at http://npg.nature.com/</s>
+            <s>reprintsandpermissions/ Journal peer review information: Nature Communications thanks the anonymous reviewers for their contributions to the peer review of this work.</s>
+            <s>[Peer reviewer reports are available.]</s>
+          </p>
+          <p>
+            <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+          <p>
+            <s>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.</s>
+            <s>The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in a credit line to the material.</s>
+            <s>If material is not included in the article's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.</s>
+            <s>To view a copy of this license, visit http://creativecommons.org/ licenses/by/4.0/.</s>
           </p>
         </div>
       </div>

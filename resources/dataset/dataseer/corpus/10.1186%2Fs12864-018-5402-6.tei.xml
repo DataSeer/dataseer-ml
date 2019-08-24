@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T08:39+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-24T00:15+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -143,11 +143,8 @@
       <abstract>
         <div>
           <head>Abstract</head>
-        </div>
-        <div>
-          <head>Background:</head>
           <p>
-            <s>The honeybee (Apis mellifera) represents a model organism for social insects displaying behavioral plasticity.</s>
+            <s>Background: The honeybee (Apis mellifera) represents a model organism for social insects displaying behavioral plasticity.</s>
             <s>This is reflected by an age-dependent task allocation.</s>
             <s>The most protruding tasks are performed by young nurse bees and older forager bees that take care of the brood inside the hive and collect food from outside the hive, respectively.</s>
             <s>The molecular mechanism leading to the transition from nurse bees to foragers is currently under intense research.</s>
@@ -163,12 +160,7 @@
             <s>In line with previous findings of circular RNAs in Drosophila, circAmrsmep2 accumulates with increasing age of the insect.</s>
             <s>In contrast, the levels of circAmrad appear age-independent and correlate with the bee's task.</s>
             <s>Its parental gene is related to amnesia-resistant memory.</s>
-          </p>
-        </div>
-        <div>
-          <head>Conclusions:</head>
-          <p>
-            <s>We provide the first characterization of circRNAs in a social insect.</s>
+            <s>Conclusions: We provide the first characterization of circRNAs in a social insect.</s>
             <s>Many of the RNAs identified here show homologies to circular RNAs found in Drosophila and Bombyx, indicating that circular RNAs are a common feature among insects.</s>
             <s>We find that exon circularization is correlated to DNA-methylation at the flanking introns.</s>
             <s>The levels of circAmrad suggest a task-dependent abundance that is decoupled from age.</s>
@@ -260,11 +252,7 @@
         </p>
         <p>
           <s>A vast majority of BSJs was flanked by a canonical GT/AG splice signal.</s>
-          <s>Only five circRNAs did not show a b c <ref type="figure">Fig. 1</ref> Identified circRNAs by RNA-Seq.</s>
-          <s>a Two independent algorithms were used to predict circRNAs: segemehl in conjunction with testrealign (green) reported 2725 BSJs while BWA with CIRI2 reported 1922 BSJs.</s>
-          <s>The overlap was considered as low stringency set (yellow).</s>
-          <s>The high stringency set additionally requires an enrichment through RNase R treatment and compelling read coverage from at least two independent sequencing libraries.</s>
-          <s>We picked some of the most significant circRNAs that were highly abundant or showed a particularly differential expression pattern between nurse or forager bee libraries.</s>
+          <s>Only five circRNAs did not show a b c We picked some of the most significant circRNAs that were highly abundant or showed a particularly differential expression pattern between nurse or forager bee libraries.</s>
           <s>Presence and circularity of these selected circRNAs were verified further by additional PCR experiments, see Additional file 2. TaqMan based Real-Time PCR assays were used to examine the expression levels in nurse or forager bee for two salient circRNAs in an independent experimental approach, see "Quantification in nurses and foragers".</s>
           <s>A complete list of all 254 high confidence circRNAs including read levels and putative homologs in D. melanogaster and B. mori can be found in Additional file 3.</s>
           <s>An excerpt of the most prominent entities is shown in <ref target="#tab_1" type="table">Table 1</ref> .</s>
@@ -297,7 +285,7 @@
           <s>Consistent with this is also the enrichment of rhodopsin signaling and memory-related genes.</s>
           <s>Nurse bees take care of the brood inside the hive, where it is dark and the requirements to memory are different from those of foragers <ref target="#b43" type="bibr">[43]</ref> .</s>
           <s>After task transition to forager bees, they start to collect food from outside the hive, mostly at daylight, and need to find their way back to the hive afterward.</s>
-          <s>A need for adaptation of rhodopsin All circRNAs were significantly enriched in E + over the non-enriched set E − .</s>
+          <s>A need for adaptation of rhodopsin LG7 109 6.9 0.570 • All circRNAs were significantly enriched in E + over the non-enriched set E − .</s>
           <s>Set refers to the RNA-Seq libraries in which the circRNA was enriched in addition (see <ref target="#tab_2" type="table">Table 2</ref> ).</s>
           <s>The host gene is given according to the RefSeq GCF_000002195.4 annotation along with the corresponding BeeBase identifier <ref target="#b76" type="bibr">[74]</ref> .</s>
           <s>The respective chromosome is indicated in the Chr.</s>
@@ -448,12 +436,21 @@
         <head>Discussion</head>
         <p>
           <s>We remark that all circRNAs reported here are expressed in the brain of nurse and forager bees.</s>
-          <s>In contrast, 2513 circRNAs reported for D. melanogaster <ref target="#b35" type="bibr">[35]</ref> and 3916 for a b</s>
-        </p>
-      </div>
-      <div>
-        <head>-test).</head>
-        <p>
+          <s>In contrast, 2513 circRNAs reported for D. melanogaster <ref target="#b35" type="bibr">[35]</ref> and 3916 for a b <ref type="figure">Fig. 6</ref> Occurrence of putative miRNA target sites in circRNA exons.</s>
+          <s>a Putative target sites normalized by exon length in differentially conserved sets.</s>
+          <s>"All targets" represents no conservation at all.</s>
+          <s>Apis represents conservation only in closely related species.</s>
+          <s>Eusocial insects are sufficiently distant to consider conservation relevant.</s>
+          <s>The number of miRNA binding sites conserved in this set is significantly higher (p &lt; 0.001, Students t-test) than in the control.</s>
+          <s>The absolute number of potential binding sites in the respective sets is given in parentheses below.</s>
+          <s>b Illustration of miRNAs with potential target sites in circRNAs conserved even in eusocial insects.</s>
+          <s>Only miRNAs with at least ten target sites and an at least five-fold enrichment over control are shown.</s>
+          <s>Error bars indicate standard deviation in fold enrichment between different controls (N=42) a b <ref type="figure">Fig. 7</ref> Expression analysis.</s>
+          <s>TaqMen expression analysis of (a) circAmrsmep2 and (b) circAmrad in brains of nurse bees and foragers from colonies with a typical age structure and SCCs consisting of bees of the same age.</s>
+          <s>The expression is given relative to nurse bees.</s>
+          <s>Bars show relative mean expression with standard error.</s>
+          <s>The number of biological replicates is indicated in the bars.</s>
+          <s>Significant differences are indicated (*p &lt; 0.05, **p &lt; 0.01, Two-tailed unpaired Students t-test).</s>
           <s>In contrast to circAmrsmep2 the expression of circAmrad seems correlated with the allocated task rather than the bees' age B. mori <ref target="#b34" type="bibr">[34]</ref> are based on samples of different developmental stages, tissues and even cultured cells and do not ensure RNase R enrichment.</s>
           <s>All analyses were performed using the high stringency set which requires a notable amount of supporting JSRs along with a significant enrichment through RNase R treatment.</s>
           <s>We argue that the enrichment control is necessary to discern genuine circRNAs from potential trans-splicing or exon-shuffling events.</s>
@@ -495,7 +492,7 @@
           <s>Its host gene is orthologous to the radish gene in D. melanogaster, which is known to play a crucial role in the amnesia-resistant memory (ARM).</s>
           <s>Unlike the long-term memory ARM does not require protein de novo synthesis <ref target="#b60" type="bibr">[60]</ref> and thus represents a low costs memory form <ref target="#b61" type="bibr">[61,</ref>
             <ref target="#b62" type="bibr">62]</ref> .</s>
-          <s>Rad also exhibits circRNAs in the fly <ref target="#tab_1" type="table">(Table 1</ref> ), but whether this circRNA is involved in ARM or whether ARM is also present in honeybees, has not yet been investigated.</s>
+          <s>Rad also exhibits circRNAs in the fly ( <ref target="#tab_1" type="table">Table 1</ref> ), but whether this circRNA is involved in ARM or whether ARM is also present in honeybees, has not yet been investigated.</s>
         </p>
         <p>
           <s>Studying circRNAs in the context of synaptic plasticity and neuronal processes promises further insights into the mechanism of task allocation and behavioral regulation of honeybees and probably also of other insects.</s>
@@ -559,7 +556,6 @@
           <s id="dataset-1" type="Genetic Data:Sequence Analysis">The RNA quality was ensured using an Agilent 2100 Bioanalyzer.</s>
           <s>Quality measurements, library preparation and Illumina © sequencing (125 nt paired-end) were performed by GATC Biotech AG (Konstanz, Germany).</s>
           <s>All RNA-Sequencing data was made publicly available via bioproject PRJNA345404, see <ref target="#tab_2" type="table">Table 2</ref> .</s>
-          <s>Samples were taken from brains of nurse bees, forager bees or a blend of both</s>
         </p>
       </div>
       <div>
@@ -585,11 +581,7 @@
         <formula xml:id="formula_0">norm (n • ) = n • N 1,000,000 RPKM g<label>(1)</label>
         </formula>
         <p>
-          <s>with</s>
-        </p>
-        <formula xml:id="formula_1">RPKM g = n g l g 1,000</formula>
-        <p>
-          <s>N 1,000,000 <ref target="#b1" type="bibr">(2)</ref> We divided the identified circular RNAs into two sets limited by different stringency levels.</s>
+          <s>with RPKM g = n g l g 1,000 N 1,000,000 <ref target="#b1" type="bibr">(2)</ref> We divided the identified circular RNAs into two sets limited by different stringency levels.</s>
           <s>The low stringency set contains all circRNAs picked up by both approaches (testrealign and CIRI2) with at least three JSRs.</s>
           <s>In the high stringency set, we only considered BSJs with more than ten JSRs across all libraries as suggested in literature <ref target="#b35" type="bibr">[35]</ref> .</s>
           <s>Thereby, the BSJ has to be found in library E + and at least one other independent RNase R treated library.</s>
@@ -696,15 +688,10 @@
         <label>45</label>
         <figDesc>Fig. 4 Introns flanking circRNAs. a Flanking introns upstream (left) and downstream (right) of circRNAs (yellow) are significantly longer (t-test with p &lt; 0.001 for both) than those of a random control (gray). b BLAST bitscores of the best reverse complementary match of the shorter circRNA flanking intron to the other (yellow) compared to control intron pairs (gray). Introns flanking circRNAs are visibly longer than random introns but show similar bitscores for reverse complementary matches of equal intron lengths (correlation ρ = 0.5). Notably, shorter introns in the control frequently exhibit relatively high bitscores, indicating that short complementarity regions are common among intron pairs</figDesc>
       </figure>
-      <figure xml:id="fig_3">
-        <head>Fig. 6 Fig. 7</head>
-        <label>67</label>
-        <figDesc>Fig. 6 Occurrence of putative miRNA target sites in circRNA exons. a Putative target sites normalized by exon length in differentially conserved sets. "All targets" represents no conservation at all. Apis represents conservation only in closely related species. Eusocial insects are sufficiently distant to consider conservation relevant. The number of miRNA binding sites conserved in this set is significantly higher (p &lt; 0.001, Students t-test) than in the control. The absolute number of potential binding sites in the respective sets is given in parentheses below. b Illustration of miRNAs with potential target sites in circRNAs conserved even in eusocial insects. Only miRNAs with at least ten target sites and an at least five-fold enrichment over control are shown. Error bars indicate standard deviation in fold enrichment between different controls (N=42)</figDesc>
-      </figure>
       <figure type="table" validated="false" xml:id="tab_0">
         <head/>
         <label/>
-        <figDesc>See Materials and Methods for details. These 254 candidates are most likely genuine circRNAs and are therefore used for further analysis. b Strong evidence is found in three independent sequencing libraries for 139 candidates. The remaining 115 are well supported by two samples. Note that all candidates were also identified as enriched in E + vs E − . c 122 host genes are orthologous to host genes of circRNAs identified in either Drosophila or Bombyx in previous studies such a canonical splice site (see Additional file 1). In one case an annotation was not possible. The BSJ spans two exons that are (presumably) not spliced together. The coding exon of gene CG45167 (homolog of B52 in D. melanogaster) and its immediate downstream exon which starts with the 5'-UTR are not present in any cur- rently annotated transcript variant. Details are illustrated in Additional file 1.</figDesc>
+        <figDesc>Fig. 1 Identified circRNAs by RNA-Seq. a Two independent algorithms were used to predict circRNAs: segemehl in conjunction with testrealign (green) reported 2725 BSJs while BWA with CIRI2 reported 1922 BSJs. The overlap was considered as low stringency set (yellow). The high stringency set additionally requires an enrichment through RNase R treatment and compelling read coverage from at least two independent sequencing libraries. See Materials and Methods for details. These 254 candidates are most likely genuine circRNAs and are therefore used for further analysis. b Strong evidence is found in three independent sequencing libraries for 139 candidates. The remaining 115 are well supported by two samples. Note that all candidates were also identified as enriched in E + vs E − . c 122 host genes are orthologous to host genes of circRNAs identified in either Drosophila or Bombyx in previous studies such a canonical splice site (see Additional file 1). In one case an annotation was not possible. The BSJ spans two exons that are (presumably) not spliced together. The coding exon of gene CG45167 (homolog of B52 in D. melanogaster) and its immediate downstream exon which starts with the 5'-UTR are not present in any cur- rently annotated transcript variant. Details are illustrated in Additional file 1.</figDesc>
         <table/>
       </figure>
       <figure type="table" validated="true" xml:id="tab_1">
@@ -937,12 +924,6 @@ LG1
 ame_circ_0001340 
 LOC411229 
 GB42567 
-LG7 
-109 
-6.9 
-0.570 
-• 
-
 </table>
       </figure>
       <figure type="table" validated="true" xml:id="tab_2">
@@ -979,6 +960,8 @@ Forager
 RNase R 
 5,931,097 
 
+Samples were taken from brains of nurse bees, forager bees or a blend of both 
+
 </table>
       </figure>
     </body>
@@ -1008,16 +991,14 @@ RNase R
       <div type="annex">
         <div>
           <head>Additional files</head>
-          <note type="other">Additional</note>
           <p>
-            <s>Authors' contributions ML and MT conceived the study.</s>
-            <s>ML and CT advised on the sequencing procedure.</s>
-            <s>CE grew bees and conducted the RNA-Seq preparation and experiments.</s>
-            <s>CT carried out the bioinformatic analysis.</s>
-            <s>CT and CE performed PCR verifications of circular transcripts.</s>
-            <s>MT carried out the quantification assays.</s>
-            <s>ML, MT and CT wrote the manuscript.</s>
-            <s>All authors read and approved the final manuscript.</s>
+            <s>Additional file 1: Splicing.</s>
+            <s>PDF showing the splice site motif of circRNAs and details on exceptions.</s>
+            <s>(PDF 547 kb) Additional file 2: Verification of circRNAs via PCR.</s>
+            <s>Results of the circularity validation through PCR.</s>
+            <s>(PDF 582 kb) Additional file 3: List of circRNAs in honeybee identified here.</s>
+            <s>Excel table of all circRNAs identified here.</s>
+            <s>The data is presented analogous to <ref type="table">Table 1</ref> but addressing additional information and details for all RNA-Seq libraries.</s>
           </p>
         </div>
         <div>
@@ -1085,7 +1066,7 @@ RNase R
                   <surname>Fondrk</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/s002650050557</idno>
+              <idno type="DOI">10.1007/s002650050557</idno>
               <ptr target="https://doi.org/10.1007/s002650050557"/>
             </analytic>
             <monogr>
@@ -1125,7 +1106,7 @@ RNase R
                   <forename type="middle">E</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1098/rspb.2000.1345</idno>
+              <idno type="DOI">10.1098/rspb.2000.1345</idno>
               <ptr target="https://doi.org/10.1098/rspb.2000.1345"/>
             </analytic>
             <monogr>
@@ -1154,7 +1135,7 @@ RNase R
                   <surname>Calderone</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/s00040-002-8273-3</idno>
+              <idno type="DOI">10.1007/s00040-002-8273-3</idno>
               <ptr target="https://doi.org/10.1007/s00040-002-8273-3"/>
             </analytic>
             <monogr>
@@ -1196,7 +1177,7 @@ RNase R
                   <surname>Strambi</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1126/science.246.4926.109</idno>
+              <idno type="DOI">10.1126/science.246.4926.109</idno>
               <ptr target="https://doi.org/10.1126/science.246.4926.109"/>
               <imprint>
                 <date type="published" when="1989"/>
@@ -1239,7 +1220,7 @@ RNase R
                   <surname>Scheiner</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1002/cne.23500</idno>
+              <idno type="DOI">10.1002/cne.23500</idno>
               <ptr target="https://doi.org/10.1002/cne.23500"/>
             </analytic>
             <monogr>
@@ -1293,7 +1274,7 @@ RNase R
                   <surname>Thamm</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1242/jeb.152496</idno>
+              <idno type="DOI">10.1242/jeb.152496</idno>
               <ptr target="https://doi.org/10.1242/jeb.152496"/>
             </analytic>
             <monogr>
@@ -1326,7 +1307,7 @@ RNase R
                   <surname>Scheiner</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.jinsphys.2017.09.009</idno>
+              <idno type="DOI">10.1016/j.jinsphys.2017.09.009</idno>
               <ptr target="https://doi.org/10.1016/j.jinsphys.2017.09.009"/>
             </analytic>
             <monogr>
@@ -1360,7 +1341,7 @@ RNase R
                   <surname>Robinson</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/364238a0</idno>
+              <idno type="DOI">10.1038/364238a0</idno>
               <ptr target="https://doi.org/10.1038/364238a0"/>
             </analytic>
             <monogr>
@@ -1410,7 +1391,7 @@ RNase R
                   <surname>Robinson</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1101/lm.5.1.115</idno>
+              <idno type="DOI">10.1101/lm.5.1.115</idno>
               <ptr target="https://doi.org/10.1101/lm.5.1.115"/>
             </analytic>
             <monogr>
@@ -1444,9 +1425,8 @@ RNase R
                   <surname>Menzel</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/S0163-1047(05)80025-1</idno>
-              <idno>1016/ S0163-1047(05</idno>
-              <ptr target="https://doi.org/10"/>
+              <idno type="DOI">10.1016/S0163-1047(05)80025-1</idno>
+              <ptr target="https://doi.org/10.1016/S0163-1047"/>
             </analytic>
             <monogr>
               <title level="j">Behav Neural Biol</title>
@@ -1499,7 +1479,7 @@ RNase R
                   <surname>Rößler</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1002/dneu.22195</idno>
+              <idno type="DOI">10.1002/dneu.22195</idno>
               <ptr target="https://doi.org/10.1002/dneu.22195"/>
             </analytic>
             <monogr>
@@ -1536,7 +1516,7 @@ RNase R
                   <surname>Fahrbach</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1523/JNEUROSCI.21-16-06395.2001</idno>
+              <idno type="DOI">10.1523/JNEUROSCI.21-16-06395.2001</idno>
               <ptr target="https://doi.org/10.1523/JNEUROSCI.21-16-06395"/>
             </analytic>
             <monogr>
@@ -1570,7 +1550,7 @@ RNase R
                   <surname>Rössler</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1159/000092309</idno>
+              <idno type="DOI">10.1159/000092309</idno>
               <ptr target="https://doi.org/10.1159/000092309"/>
             </analytic>
             <monogr>
@@ -1628,7 +1608,7 @@ RNase R
                   <forename type="first">W</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1002/dneu.22290</idno>
+              <idno type="DOI">10.1002/dneu.22290</idno>
               <ptr target="https://doi.org/10.1002/dneu.22290"/>
             </analytic>
             <monogr>
@@ -1656,7 +1636,7 @@ RNase R
                   <surname>Maleszka</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/gb-2002-3-2-research0007</idno>
+              <idno type="DOI">10.1186/gb-2002-3-2-research0007</idno>
               <ptr target="https://doi.org/10.1186/gb-2002-3-2-research0007"/>
             </analytic>
             <monogr>
@@ -1707,7 +1687,7 @@ RNase R
                   <surname>Su</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.jinsphys.2010.11.015</idno>
+              <idno type="DOI">10.1016/j.jinsphys.2010.11.015</idno>
               <ptr target="https://doi.org/10.1016/j.jinsphys.2010.11.015"/>
             </analytic>
             <monogr>
@@ -1757,7 +1737,7 @@ RNase R
           <biblStruct xml:id="b19">
             <analytic>
               <title/>
-              <idno type="doi">10.1002/dneu.20929</idno>
+              <idno type="DOI">10.1002/dneu.20929</idno>
               <ptr target="https://doi.org/10.1002/dneu.20929"/>
             </analytic>
             <monogr>
@@ -1823,7 +1803,7 @@ RNase R
                   <surname>Robinson</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1073/pnas.0606909103</idno>
+              <idno type="DOI">10.1073/pnas.0606909103</idno>
               <ptr target="https://doi.org/10.1073/pnas.0606909103"/>
             </analytic>
             <monogr>
@@ -1893,7 +1873,7 @@ RNase R
                   <surname>Li</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1021/acs.jproteome.5b00632</idno>
+              <idno type="DOI">10.1021/acs.jproteome.5b00632</idno>
               <ptr target="https://doi.org/10.1021/acs.jproteome.5b00632"/>
             </analytic>
             <monogr>
@@ -1974,7 +1954,7 @@ RNase R
                   <surname>Li</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1021/acs.jproteome.7b00371</idno>
+              <idno type="DOI">10.1021/acs.jproteome.7b00371</idno>
               <ptr target="https://doi.org/10.1021/acs.jproteome.7b00371"/>
             </analytic>
             <monogr>
@@ -2032,7 +2012,7 @@ RNase R
                   <surname>Li</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/s41598-017-02192-3</idno>
+              <idno type="DOI">10.1038/s41598-017-02192-3</idno>
               <ptr target="https://doi.org/10.1038/s41598-017-02192-3"/>
               <imprint>
                 <date type="published" when="1973"/>
@@ -2091,7 +2071,7 @@ RNase R
                   <surname>Li</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1021/pr500843j</idno>
+              <idno type="DOI">10.1021/pr500843j</idno>
               <ptr target="https://doi.org/10.1021/pr500843j"/>
             </analytic>
             <monogr>
@@ -2120,7 +2100,7 @@ RNase R
                   <surname>Whitfield</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/j.1365-2583.2010.01010.x</idno>
+              <idno type="DOI">10.1111/j.1365-2583.2010.01010.x</idno>
               <ptr target="https://doi.org/10.1111/j.1365-2583.2010.01010.x"/>
             </analytic>
             <monogr>
@@ -2196,7 +2176,7 @@ RNase R
                   <surname>Su</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/j.1365-2583.2012.01135.x</idno>
+              <idno type="DOI">10.1111/j.1365-2583.2012.01135.x</idno>
               <ptr target="https://doi.org/10.1111/j.1365-2583.2012.01135.x"/>
             </analytic>
             <monogr>
@@ -2281,7 +2261,7 @@ RNase R
                   <surname>Elsik</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/gb-2007-8-6-r97</idno>
+              <idno type="DOI">10.1186/gb-2007-8-6-r97</idno>
               <ptr target="https://doi.org/10.1186/gb-2007-8-6-r97"/>
             </analytic>
             <monogr>
@@ -2395,7 +2375,7 @@ RNase R
                   <surname>Rajewsky</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nature11928</idno>
+              <idno type="DOI">10.1038/nature11928</idno>
               <ptr target="https://doi.org/10.1038/nature11928"/>
             </analytic>
             <monogr>
@@ -2435,7 +2415,7 @@ RNase R
                   <surname>Ni</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/s13238-015-0202-0</idno>
+              <idno type="DOI">10.1007/s13238-015-0202-0</idno>
               <idno>s13238-015-0202-0</idno>
               <ptr target="https://doi.org/10.1007/"/>
             </analytic>
@@ -2466,7 +2446,7 @@ RNase R
                   <surname>Sharpless</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nbt.2890</idno>
+              <idno type="DOI">10.1038/nbt.2890</idno>
               <ptr target="https://doi.org/10.1038/nbt.2890"/>
             </analytic>
             <monogr>
@@ -2516,7 +2496,7 @@ RNase R
                   <surname>Brown</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pgen.1003777</idno>
+              <idno type="DOI">10.1371/journal.pgen.1003777</idno>
               <ptr target="https://doi.org/10.1371/journal.pgen.1003777"/>
             </analytic>
             <monogr>
@@ -2593,7 +2573,7 @@ RNase R
                   <surname>Kadener</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.molcel.2014.08.019</idno>
+              <idno type="DOI">10.1016/j.molcel.2014.08.019</idno>
               <ptr target="https://doi.org/10.1016/j.molcel.2014.08.019"/>
             </analytic>
             <monogr>
@@ -2656,7 +2636,7 @@ RNase R
                   <surname>Kjems</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nature11993</idno>
+              <idno type="DOI">10.1038/nature11993</idno>
               <ptr target="https://doi.org/10.1038/nature11993"/>
             </analytic>
             <monogr>
@@ -2708,7 +2688,7 @@ RNase R
                   <surname>Cheng</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.ibmb.2017.09.003</idno>
+              <idno type="DOI">10.1016/j.ibmb.2017.09.003</idno>
               <ptr target="https://doi.org/10.1016/j.ibmb.2017.09.003"/>
             </analytic>
             <monogr>
@@ -2781,7 +2761,7 @@ RNase R
                   <surname>Lai</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.celrep.2014.10.062</idno>
+              <idno type="DOI">10.1016/j.celrep.2014.10.062</idno>
               <ptr target="https://doi.org/10.1016/j.celrep.2014.10.062"/>
             </analytic>
             <monogr>
@@ -2843,7 +2823,7 @@ RNase R
                   <surname>Wilusz</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1101/gad.270421.115</idno>
+              <idno type="DOI">10.1101/gad.270421.115</idno>
               <ptr target="https://doi.org/10.1101/gad.270421.115"/>
             </analytic>
             <monogr>
@@ -2895,7 +2875,7 @@ RNase R
                   <forename type="first">A</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkl151</idno>
+              <idno type="DOI">10.1093/nar/gkl151</idno>
               <ptr target="https://doi.org/10.1093/nar/gkl151"/>
             </analytic>
             <monogr>
@@ -2925,7 +2905,7 @@ RNase R
                   <surname>Deutscher</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1074/jbc.M606744200</idno>
+              <idno type="DOI">10.1074/jbc.M606744200</idno>
               <ptr target="https://doi.org/10.1074/jbc.M606744200"/>
             </analytic>
             <monogr>
@@ -2965,7 +2945,7 @@ RNase R
                   <surname>Zou</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pcbi.1005420</idno>
+              <idno type="DOI">10.1371/journal.pcbi.1005420</idno>
               <ptr target="https://doi.org/10.1371/journal.pcbi.1005420"/>
             </analytic>
             <monogr>
@@ -2999,7 +2979,7 @@ RNase R
                   <surname>Wang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1002/1873-3468.12500</idno>
+              <idno type="DOI">10.1002/1873-3468.12500</idno>
               <ptr target="https://doi.org/10.1002/1873-3468.12500"/>
             </analytic>
             <monogr>
@@ -3063,7 +3043,7 @@ RNase R
                   <surname>Yeates</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/1741-7007-7-34</idno>
+              <idno type="DOI">10.1186/1741-7007-7-34</idno>
               <ptr target="https://doi.org/10.1186/1741-7007-7-34"/>
             </analytic>
             <monogr>
@@ -3103,7 +3083,7 @@ RNase R
                   <surname>Bartel</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/s13059-014-0409-z</idno>
+              <idno type="DOI">10.1186/s13059-014-0409-z</idno>
               <ptr target="https://doi.org/10.1186/s13059-014-0409-z"/>
             </analytic>
             <monogr>
@@ -3174,7 +3154,7 @@ RNase R
                   <surname>Robinson</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1242/jeb.053421</idno>
+              <idno type="DOI">10.1242/jeb.053421</idno>
               <ptr target="https://doi.org/10.1242/jeb.053421"/>
             </analytic>
             <monogr>
@@ -3244,7 +3224,7 @@ RNase R
                   <surname>Sharpless</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1261/rna.035667.112</idno>
+              <idno type="DOI">10.1261/rna.035667.112</idno>
               <ptr target="https://doi.org/10.1261/rna.035667.112"/>
             </analytic>
             <monogr>
@@ -3273,7 +3253,7 @@ RNase R
                   <surname>Wilusz</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1101/gad.251926.114</idno>
+              <idno type="DOI">10.1101/gad.251926.114</idno>
               <ptr target="https://doi.org/10.1101/gad.251926.114"/>
             </analytic>
             <monogr>
@@ -3331,7 +3311,7 @@ RNase R
                   <surname>Bindereif</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.celrep.2014.12.002</idno>
+              <idno type="DOI">10.1016/j.celrep.2014.12.002</idno>
               <ptr target="https://doi.org/10.1016/j.celrep.2014.12.002"/>
             </analytic>
             <monogr>
@@ -3390,7 +3370,7 @@ RNase R
                   <surname>Madden</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/1471-2105-10-421</idno>
+              <idno type="DOI">10.1186/1471-2105-10-421</idno>
               <ptr target="https://doi.org/10.1186/1471-2105-10-421"/>
             </analytic>
             <monogr>
@@ -3456,7 +3436,7 @@ RNase R
                   <forename type="middle">L</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1186/1748-7188-6-26</idno>
+              <idno type="DOI">10.1186/1748-7188-6-26</idno>
               <ptr target="https://doi.org/10.1186/1748-7188-6-26"/>
             </analytic>
             <monogr>
@@ -3502,7 +3482,7 @@ RNase R
                   <surname>Terada</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1074/jbc.M511100200</idno>
+              <idno type="DOI">10.1074/jbc.M511100200</idno>
               <ptr target="https://doi.org/10.1074/jbc.M511100200"/>
             </analytic>
             <monogr>
@@ -3554,7 +3534,7 @@ RNase R
                   <surname>Maleszka</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pbio.1000506</idno>
+              <idno type="DOI">10.1371/journal.pbio.1000506</idno>
               <ptr target="https://doi.org/10.1371/journal.pbio.1000506"/>
             </analytic>
             <monogr>
@@ -3659,7 +3639,7 @@ RNase R
                   <surname>Ruden</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/1471-2164-14-666</idno>
+              <idno type="DOI">10.1186/1471-2164-14-666</idno>
               <ptr target="https://doi.org/10.1186/1471-2164-14-666"/>
             </analytic>
             <monogr>
@@ -3727,7 +3707,7 @@ RNase R
                   <surname>Feinberg</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nn.3218</idno>
+              <idno type="DOI">10.1038/nn.3218</idno>
               <ptr target="https://doi.org/10.1038/nn.3218"/>
             </analytic>
             <monogr>
@@ -3847,7 +3827,7 @@ RNase R
                   <surname>Oberdoerffer</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nature10442</idno>
+              <idno type="DOI">10.1038/nature10442</idno>
               <ptr target="https://doi.org/10.1038/nature10442"/>
             </analytic>
             <monogr>
@@ -3948,7 +3928,7 @@ RNase R
                   <surname>Robinson</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1073/pnas.1310735110</idno>
+              <idno type="DOI">10.1073/pnas.1310735110</idno>
               <ptr target="https://doi.org/10.1073/pnas.1310735110"/>
             </analytic>
             <monogr>
@@ -3988,7 +3968,7 @@ RNase R
                   <surname>Maleszka</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1002/2211-5463.12084</idno>
+              <idno type="DOI">10.1002/2211-5463.12084</idno>
               <ptr target="https://doi.org/10.1002/2211-5463.12084"/>
             </analytic>
             <monogr>
@@ -4112,7 +4092,7 @@ RNase R
                   <forename type="first">N</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.molcel.2015.03.027</idno>
+              <idno type="DOI">10.1016/j.molcel.2015.03.027</idno>
               <ptr target="https://doi.org/10.1016/j.molcel.2015.03.027"/>
             </analytic>
             <monogr>
@@ -4141,7 +4121,7 @@ RNase R
                   <surname>Felix</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.bbamem.2011.12.011</idno>
+              <idno type="DOI">10.1016/j.bbamem.2011.12.011</idno>
               <ptr target="https://doi.org/10.1016/j.bbamem.2011.12.011"/>
             </analytic>
             <monogr>
@@ -4177,7 +4157,7 @@ RNase R
                   <surname>Gundelfinger</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/S0959-4388(00)00093-3</idno>
+              <idno type="DOI">10.1016/S0959-4388(00)00093-3</idno>
               <idno>1016/S0959-4388(00)00093-3</idno>
               <ptr target="https://doi.org/10"/>
             </analytic>
@@ -4213,8 +4193,7 @@ RNase R
                   <surname>Quinn</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1073/pnas.0608377103</idno>
-              <idno>17496-00</idno>
+              <idno type="DOI">10.1073/pnas.0608377103</idno>
               <ptr target="https://doi.org/10.1073/pnas.0608377103"/>
             </analytic>
             <monogr>
@@ -4222,6 +4201,7 @@ RNase R
               <imprint>
                 <biblScope unit="volume">103</biblScope>
                 <biblScope unit="issue">46</biblScope>
+                <biblScope from="17496" to="17496" unit="page"/>
                 <date type="published" when="2006"/>
               </imprint>
             </monogr>
@@ -4242,7 +4222,7 @@ RNase R
                   <surname>Kawecki</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1126/science.1111331</idno>
+              <idno type="DOI">10.1126/science.1111331</idno>
               <ptr target="https://doi.org/10.1126/science.1111331"/>
               <imprint>
                 <date type="published" when="2005"/>
@@ -4286,7 +4266,7 @@ RNase R
                   <forename type="first">M</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1016/0092-8674(94)90398-0</idno>
+              <idno type="DOI">10.1016/0092-8674(94)90398-0</idno>
               <idno>1016/0092-8674(94)90398-0</idno>
               <ptr target="https://doi.org/10"/>
             </analytic>
@@ -4333,7 +4313,7 @@ RNase R
                   <surname>Kubo</surname>
                 </persName>
               </author>
-              <idno type="doi">10.2108/zs160043</idno>
+              <idno type="DOI">10.2108/zs160043</idno>
               <ptr target="https://doi.org/10.2108/zs160043"/>
             </analytic>
             <monogr>
@@ -4374,7 +4354,7 @@ RNase R
                   <surname>Rössler</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1242/jeb.124859</idno>
+              <idno type="DOI">10.1242/jeb.124859</idno>
               <ptr target="https://doi.org/10.1242/jeb.124859"/>
             </analytic>
             <monogr>
@@ -4464,7 +4444,7 @@ RNase R
           <biblStruct xml:id="b66">
             <analytic>
               <title/>
-              <idno type="doi">10.1186/gb-2014-15-2-r34</idno>
+              <idno type="DOI">10.1186/gb-2014-15-2-r34</idno>
               <ptr target="https://doi.org/10.1186/gb-2014-15-2-r34"/>
             </analytic>
             <monogr>
@@ -4492,7 +4472,7 @@ RNase R
                   <surname>Durbin</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/bioinformatics/btp324</idno>
+              <idno type="DOI">10.1093/bioinformatics/btp324</idno>
               <ptr target="https://doi.org/10.1093/bioinformatics/btp324"/>
             </analytic>
             <monogr>
@@ -4526,14 +4506,14 @@ RNase R
                   <surname>Zhao</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/bib/bbx014</idno>
+              <idno type="DOI">10.1093/bib/bbx014</idno>
               <ptr target="https://doi.org/10.1093/bib/bbx014"/>
               <imprint/>
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b69">
             <monogr>
-              <title level="m" type="main">Suitability of three common reference genes for quantitative real-time PCR in honey bees</title>
+              <title level="m" type="main">Suitability of three common reference genes for quantitative real-time PCR</title>
               <author>
                 <persName>
                   <forename type="first">T</forename>
@@ -4566,11 +4546,12 @@ RNase R
               </author>
               <imprint/>
             </monogr>
+            <note>in honey bees</note>
           </biblStruct>
           <biblStruct xml:id="b70">
             <analytic>
               <title/>
-              <idno type="doi">10.1007/s13592-012-0184-3</idno>
+              <idno type="DOI">10.1007/s13592-012-0184-3</idno>
               <ptr target="https://doi.org/10.1007/s13592-012-0184-3"/>
             </analytic>
             <monogr>
@@ -4644,7 +4625,7 @@ RNase R
                   <surname>Kriventseva</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkw1119</idno>
+              <idno type="DOI">10.1093/nar/gkw1119</idno>
               <ptr target="https://doi.org/10.1093/nar/gkw1119"/>
             </analytic>
             <monogr>
@@ -4673,7 +4654,7 @@ RNase R
                   <surname>Andrews</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/bioinformatics/btr167</idno>
+              <idno type="DOI">10.1093/bioinformatics/btr167</idno>
               <ptr target="https://doi.org/10.1093/bioinformatics/btr167"/>
             </analytic>
             <monogr>
@@ -4702,7 +4683,7 @@ RNase R
                   <surname>Salzberg</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nmeth.1923</idno>
+              <idno type="DOI">10.1038/nmeth.1923</idno>
               <ptr target="https://doi.org/10.1038/nmeth.1923"/>
             </analytic>
             <monogr>
@@ -4735,7 +4716,7 @@ RNase R
                   <surname>Mirbase</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkt1181</idno>
+              <idno type="DOI">10.1093/nar/gkt1181</idno>
               <ptr target="https://doi.org/10.1093/nar/gkt1181"/>
             </analytic>
             <monogr>
@@ -4772,7 +4753,7 @@ RNase R
                   <surname>Bartel</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.cell.2004.12.035</idno>
+              <idno type="DOI">10.1016/j.cell.2004.12.035</idno>
               <ptr target="https://doi.org/10.1016/j.cell.2004.12.035"/>
             </analytic>
             <monogr>
@@ -4836,7 +4817,7 @@ RNase R
                   <surname>Hagen</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/nar/gkv1208</idno>
+              <idno type="DOI">10.1093/nar/gkv1208</idno>
               <ptr target="https://doi.org/10.1093/nar/gkv1208"/>
             </analytic>
             <monogr>

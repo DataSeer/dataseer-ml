@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T07:23+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T22:59+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -225,9 +225,9 @@
       <abstract>
         <div>
           <head>Abstract</head>
-          <p>
-            <s>Background</s>
-          </p>
+        </div>
+        <div>
+          <head>Background</head>
         </div>
       </abstract>
     </profileDesc>
@@ -366,7 +366,8 @@
             <ref target="#b29" type="bibr">32]</ref> .</s>
           <s id="dataset-2" type="Tabular data:Immunoassay">Finally, the HCC of each sample was measured using the Cortisol Salivary ELISA kit (Alpco Diagnostics) with phosphate buffered saline (PBS) at pH 8.0.</s>
           <s>The manufacturer directions for correct usage were provided with the reagent.</s>
-          <s>The cross reactivity, as reported by the manufacturer, is as follows: Assay variations.</s>
+          <s>The cross reactivity, as reported by the manufacturer, is as follows: Prednisolone 13.6%, Corticosterone 7.6%, Deoxycosticosterone 7.2%, Progesterone 7.2%, Cortisone 6.2%, Deoxycortisol 5.6%, Pednisone 5.6%, and Dexamethasone 1.6%.</s>
+          <s>No cross-reaction was detected with DHEAS and Tetrahydrocortisone. Assay variations.</s>
           <s>The intra-assay variation precision was analysed on three hair samples, which were assayed eight times on the same calibrator curve.</s>
           <s>The intra-assay coefficients of variance were 5.3% at 2.6 ug/dl, 5.4% at 3.3 ug/dl, and 12.4% at 4.4 ug/dl, respectively.</s>
           <s>For inter-assay precision three hair samples were analysed on eight separate runs and the coefficients of variance were 13.7% at 2.2 ug/dl, 1% at 3.3 ug/dl, and 10.2% at 4.2 ug/dl, respectively.</s>
@@ -390,7 +391,7 @@
         <head>Statistical analyses</head>
         <p>
           <s>All data were explored and HCC outliers of more than three standard deviations (SD) were excluded <ref target="#b30" type="bibr">[33]</ref> (general sample: n = 8; pregnant women: n = 3).</s>
-          <s>Due to the fact that HCCs were not normally distributed, as indicated by the Kolmogorov-Smirnov test, all values were log- and eta-squared values of 0.02, 0.13 and 0.25 were considered as small, medium and large respectively <ref target="#b31" type="bibr">[34]</ref> .</s>
+          <s>Due to the fact that HCCs were not normally distributed, as indicated by the Kolmogorov-Smirnov test, all values were log- <ref target="#b31" type="bibr">[34]</ref> .</s>
           <s>Finally, a multiple linear regression was run, with all relevant confounders (defined as p &lt; 0.05) of HCC entered simultaneously.</s>
           <s>This allowed for mutual adjustment and, as such, enabled us to identify the most relevant confounders of HCC.</s>
           <s>The statistical significance level was set at alpha = .05.</s>
@@ -436,12 +437,16 @@
         <p>
           <s>For the general sample, as can be seen in <ref target="#tab_0" type="table">Table 1</ref> , age was significantly associated with HCC with a negative correlation and a low effect size (r 2 = .03),</s>
           <s>see <ref target="#fig_0" type="figure">Fig 1.</ref> Participants with different levels of education showed statistically significant differences in HCC, with higher levels of HCC for the participants with a higher education than participants with a primary education, according to post-hoc analysis.</s>
-          <s>However, eta squared shows a low effect size for education of .19.</s>
+          <s>However, eta squared shows a low effect size for education of .</s>
+          <s>
+            <ref target="#b16" type="bibr">19</ref> .</s>
           <s>Employment status was also significantly associated with HCC; post-hoc analysis showed that retired participants had lower levels of HCC than all others participants, but eta squared show a low effect size for employment status of .07.</s>
           <s>The Student's t-test show statistically significant differences for the use of contraceptives, hair dyes and regular physical exercise; with higher levels of HCC for participants with natural hair, females using contraceptives, and participants who practiced regular physical exercise.</s>
           <s>Cohen's d showed a low effect size for hair dyes (d = .25)</s>
           <s>and physical exercise (d = .11)</s>
-          <s>and a medium effect size for the use of contraceptives (d = .45).</s>
+          <s>and a medium effect size for the use of contraceptives (d = .</s>
+          <s>
+            <ref target="#b42" type="bibr">45)</ref> .</s>
         </p>
         <p>
           <s>For the subsample of pregnant women, bivariate Pearson correlations showed no significant relation between HCC during the three trimesters and age and BMI.</s>
@@ -460,8 +465,12 @@
           <s>Use of contraceptives, valid only for females, was included in a regression analysis, along with the rest of the variables and run only for female participants.</s>
           <s>Bivariate Pearson correlation and Spearman correlation below .80</s>
           <s>indicated no collinearity between variables <ref target="#b30" type="bibr">[33]</ref> .</s>
-          <s>Only education level and regular physical exercise remained predictors of HCC for the general sample (see <ref target="#tab_2" type="table">Table 3</ref>
-          </s>
+          <s>Only education level and regular physical exercise remained predictors of HCC for the general sample (see <ref target="#tab_2" type="table">Table 3</ref> for the complete model).</s>
+          <s>Using only these significant variables in a regression analysis resulted in an explained variance of the regression model of .03</s>
+          <s>(adjusted r 2 ).</s>
+          <s>For females, when introducing the use of contraceptives along with the other variables, only regular physical exercise remains a predictor of HCC.</s>
+          <s>The regression analysis for regular physical exercise resulted in an explained variance of the regression model of .01</s>
+          <s>(adjusted r 2 ).</s>
         </p>
       </div>
       <div>
@@ -517,7 +526,7 @@
             <ref target="#b24" type="bibr">27]</ref> , others studies find the same relation <ref target="#b32" type="bibr">[35,</ref>
             <ref target="#b33" type="bibr">36,</ref>
             <ref target="#b36" type="bibr">39]</ref> that appears in the results of the present study.</s>
-          <s>According to <ref type="bibr">Burke [42]</ref> , combined oral contraceptives increase cortisol production, but this depends on the dose of oestrogen and, when considering the complex effect of estrogen on the hepatic metabolism of steroids, it is not surprising that results showing that HCC can be dependent on oral contraceptives use are mixed.</s>
+          <s>According to Burke <ref target="#b39" type="bibr">[42]</ref> , combined oral contraceptives increase cortisol production, but this depends on the dose of oestrogen and, when considering the complex effect of estrogen on the hepatic metabolism of steroids, it is not surprising that results showing that HCC can be dependent on oral contraceptives use are mixed.</s>
           <s>The use of hair dyes and their effect on HCC also has mixed results.</s>
           <s>In our study, natural hair was related to lower HCC according to previous studies <ref target="#b28" type="bibr">[31,</ref>
             <ref target="#b40" type="bibr">43]</ref> , while other studies show no effect of hair dyes <ref target="#b17" type="bibr">[20,</ref>
@@ -530,7 +539,7 @@
           <s>Previous works have shown an increase of HCC during pregnancy <ref target="#b21" type="bibr">[24,</ref>
             <ref target="#b42" type="bibr">45]</ref> , while others has shown lower levels in the second trimester related to postpartum depression symptoms <ref target="#b22" type="bibr">[25]</ref> , however our results did not show statistically significant differences between trimesters, this highlight the need for more research to clarify how HCC vary during pregnancy in relation to others variables.</s>
           <s>In relation to sociodemographic variables, our results show higher levels of HCC in pregnant women with lower levels of education (secondary level or less) than women with higher levels of education (university education).</s>
-          <s>To our knowledge, only the study by Braig <ref target="#b43" type="bibr">[46]</ref> assesses the relation between HCC and educational level and finds the same results, whereby, pregnant women with university studies level had lower levels of HCC than pregnant women with lower levels of education.</s>
+          <s>To our knowledge, only the study by <ref type="bibr">Braig [46]</ref> assesses the relation between HCC and educational level and finds the same results, whereby, pregnant women with university studies level had lower levels of HCC than pregnant women with lower levels of education.</s>
           <s>However, we do not find interactions of HCC with age, BMI, previous miscarriages, employment status, physical exercise, use of hair dyes or dependent children.</s>
           <s>In relation to BMI, Braig <ref target="#b43" type="bibr">[46]</ref> finds higher levels of HCC only in obese participants, while Scharlau <ref target="#b44" type="bibr">[47]</ref> finds no relation between HCC and BMI.</s>
           <s>In relation to employment status, Braig <ref target="#b43" type="bibr">[46]</ref> finds higher levels of HCC in multiple jobholding individuals, but not in the unemployed or in women with only one form of employment.</s>
@@ -581,11 +590,6 @@
         <figDesc>Fig 1. Age plotted against hair cortisol concentrations. The line shows unadjusted correlation. Linear regression adjusted for age: log-transformed Hair Cortisol Concentrations. r 2 = .03, p &lt; .001.</figDesc>
       </figure>
       <figure xml:id="fig_1">
-        <head/>
-        <label/>
-        <figDesc>for the complete model). Using only these signifi- cant variables in a regression analysis resulted in an explained variance of the regression model of .03 (adjusted r 2 ). For females, when introducing the use of contraceptives along with the other variables, only regular physical exercise remains a predictor of HCC. The regression analysis for regular physical exercise resulted in an explained variance of the regression model of .01 (adjusted r 2 ).</figDesc>
-      </figure>
-      <figure xml:id="fig_2">
         <head>10 .</head>
         <label>10</label>
         <figDesc>Yang HZ, Lan J, Meng YJ, Wan XJ, Han DW. A preliminary study of steroid reproductive hormones in human hair. J Steroid Biochem Mol Biol. 1998; 67: 447-450. https://doi.org/10.1016/S0960-0760(98) 00120-4 PMID: 10030694 11. Cirimele V, Kintz P, Dumestre V, Goulle JP, Ludes B. Identification of ten corticosteroids in human hair by liquid chromatographyionspray mass spectrometry. Forensic Sci Int. 2000; 107: 381-388. https:// doi.org/10.1016/S0379-0738(99)00180-2 PMID: 10689588</figDesc>
@@ -593,7 +597,7 @@
       <figure type="table" validated="false" xml:id="tab_0">
         <head>Table 1 .</head>
         <label>1</label>
-        <figDesc>Socio-demographic, lifestyle and hair-characteristic variables from the general sample and their relation to Hair Cortisol Concentrations (HCC) expressed in pg/mg.Significant at the p &lt; .05 level. https://doi.org/10.1371/journal.pone.0204807.t001 Prednisolone 13.6%, Corticosterone 7.6%, Deoxycosticosterone 7.2%, Progesterone 7.2%, Cor- tisone 6.2%, Deoxycortisol 5.6%, Pednisone 5.6%, and Dexamethasone 1.6%. No cross-reac- tion was detected with DHEAS and Tetrahydrocortisone.</figDesc>
+        <figDesc>Socio-demographic, lifestyle and hair-characteristic variables from the general sample and their relation to Hair Cortisol Concentrations (HCC) expressed in pg/mg.Significant at the p &lt; .05 level. https://doi.org/10.1371/journal.pone.0204807.t001</figDesc>
         <table>Variable 
 Descriptive 
 HCC (pg/mg) 
@@ -607,10 +611,7 @@ Effect size
 Age 
 37.98 (15.66) 
 r = -186 
-.001 
-
-Ã 
-
+.001 Ã 
 .03 
 
 Sex 
@@ -632,10 +633,7 @@ Primary school
 114.12 (121.67) 
 3,525 
 F = 3.38 
-.01 
-
-Ã 
-
+.01 Ã 
 .19 
 
 Secondary school 
@@ -656,10 +654,7 @@ Student
 123.88 (110.38) 
 3,525 
 F = 13.45 
-.001 
-
-Ã 
-
+.001 Ã 
 .07 
 
 Employed 
@@ -706,10 +701,7 @@ Yes
 175.79 (159.96) 
 258 
 t = -2.06 
-.004 
-
-Ã 
-
+.004 Ã 
 .45 
 
 No 
@@ -735,10 +727,7 @@ Natural
 140.78 (143.84) 
 527 
 t = 2.20 
-.04 
-
-Ã 
-
+.04 Ã 
 .23 
 
 Dyed 
@@ -751,10 +740,7 @@ Yes
 137.84 (117.11) 
 527 
 t = -2.54 
-.01 
-
-Ã 
-
+.01 Ã 
 .11 
 
 No 
@@ -784,9 +770,7 @@ M (SD)
 
 F 
 p value 
-r 
-
-2 
+r 2 
 
 Age 
 32.95 (3.67) 
@@ -806,14 +790,8 @@ Secondary education
 556.46 (577.9) 
 408.8 (349.39) 
 304.09 (282.86) 
-.03 
-
-Ã 
-
-.03 
-
-Ã 
-
+.03 Ã 
+.03 Ã 
 .01 
 
 Higher education 
@@ -915,16 +893,9 @@ Note.
         <figDesc>Mutually adjusted confounders of log-transformed hair cortisol concentration; multiple linear regression.</figDesc>
         <table>β 
 p value 
-r 
-
-2 
-
-Model r 
-
-2 
-
-r 
-2 adj 
+r 2 
+Model r 2 
+r 2 adj 
 
 Age 
 -.077 
@@ -934,10 +905,7 @@ Age
 
 Education 
 .105 
-.03 
-
-Ã 
-
+.03 Ã 
 .019 
 
 Employment status 
@@ -950,7 +918,15 @@ Hair dye
 
 Physical exercise 
 .104 
-.01 </table>
+.01 Ã 
+.012 
+
+Note. 
+Ã Significant at the p &lt; .05 level. 
+
+Model fit: F(5,523) = 6.53; p &lt; .001. 
+
+https://doi.org/10.1371/journal.pone.0204807.t003 </table>
       </figure>
       <figure type="table" validated="true" xml:id="tab_3">
         <head>Table 4 .</head>
@@ -1060,14 +1036,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Siegel</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1146/annurev.clinpsy.1.102803.144141</idno>
-              <ptr target="https://doi.org/10.1146/annurev.clinpsy.1.102803.144141PMID"/>
+              <idno type="DOI">10.1146/annurev.clinpsy.1.102803.144141</idno>
+              <idno>PMID: 17716101</idno>
+              <ptr target="https://doi.org/10.1146/annurev.clinpsy.1.102803.144141"/>
             </analytic>
             <monogr>
               <title level="j">Annu. Rev. Clin. Psychol</title>
               <imprint>
                 <biblScope unit="volume">1</biblScope>
-                <biblScope unit="page">17716101</biblScope>
+                <biblScope from="607" to="628" unit="page"/>
                 <date type="published" when="2005"/>
               </imprint>
             </monogr>
@@ -1141,14 +1118,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Hegadoren</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1177/1099800402238334</idno>
-              <ptr target="https://doi.org/10.1177/1099800402238334PMID"/>
+              <idno type="DOI">10.1177/1099800402238334</idno>
+              <idno>PMID: 12408215</idno>
+              <ptr target="https://doi.org/10.1177/1099800402238334"/>
             </analytic>
             <monogr>
               <title level="j">Biol Res Nurs</title>
               <imprint>
                 <biblScope unit="volume">4</biblScope>
-                <biblScope unit="page">12408215</biblScope>
+                <biblScope from="92" to="103" unit="page"/>
                 <date type="published" when="2002"/>
               </imprint>
             </monogr>
@@ -1186,9 +1164,9 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Faresjö</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/1472-6890-11-12</idno>
-              <idno>1186/ 1472-6890-11-12 PMID: 22026917</idno>
-              <ptr target="https://doi.org/10"/>
+              <idno type="DOI">10.1186/1472-6890-11-12</idno>
+              <idno>PMID: 22026917</idno>
+              <ptr target="https://doi.org/10.1186/1472-6890-11-12"/>
             </analytic>
             <monogr>
               <title level="j">BMC Clin Pathol</title>
@@ -1228,14 +1206,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Kudielka</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1002/smi.2439</idno>
-              <ptr target="https://doi.org/10.1002/smi.2439PMID"/>
+              <idno type="DOI">10.1002/smi.2439</idno>
+              <idno>PMID: 22888074</idno>
+              <ptr target="https://doi.org/10.1002/smi.2439"/>
             </analytic>
             <monogr>
               <title level="j">Stress and Health</title>
               <imprint>
                 <biblScope unit="volume">29</biblScope>
-                <biblScope unit="page">22888074</biblScope>
+                <biblScope from="143" to="149" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -1268,14 +1247,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Cacioppo</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1073/pnas.0605053103</idno>
-              <ptr target="https://doi.org/10.1073/pnas.0605053103PMID"/>
+              <idno type="DOI">10.1073/pnas.0605053103</idno>
+              <idno>PMID: 17075058</idno>
+              <ptr target="https://doi.org/10.1073/pnas.0605053103"/>
             </analytic>
             <monogr>
               <title level="j">Proc Natl Acad Sci</title>
               <imprint>
                 <biblScope unit="volume">103</biblScope>
-                <biblScope unit="page">17075058</biblScope>
+                <biblScope from="17058" to="17063" unit="page"/>
                 <date type="published" when="2006"/>
               </imprint>
             </monogr>
@@ -1319,14 +1299,14 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Wardle</surname>
                 </persName>
               </author>
+              <idno>PMID: 10204975</idno>
             </analytic>
             <monogr>
               <title level="j">Psychosom Med</title>
               <imprint>
                 <biblScope unit="volume">61</biblScope>
-                <biblScope unit="page">10204975</biblScope>
+                <biblScope from="214" to="224" unit="page"/>
                 <date type="published" when="1999"/>
-                <publisher>PMID</publisher>
               </imprint>
             </monogr>
           </biblStruct>
@@ -1358,12 +1338,13 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Coutts</surname>
                 </persName>
               </author>
+              <idno>PMID: 9799871</idno>
             </analytic>
             <monogr>
               <title level="j">J Endocrinol</title>
               <imprint>
                 <biblScope unit="volume">159</biblScope>
-                <biblScope unit="page">9799871</biblScope>
+                <biblScope from="5" to="8" unit="page"/>
                 <date type="published" when="1998"/>
               </imprint>
             </monogr>
@@ -1377,14 +1358,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Wennig</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/S0379-0738(99)00146-2</idno>
-              <ptr target="https://doi.org/10.1016/S0379-0738(99)00146-2PMID"/>
+              <idno type="DOI">10.1016/S0379-0738(99)00146-2</idno>
+              <idno>PMID: 10689559</idno>
+              <ptr target="https://doi.org/10.1016/S0379-0738(99"/>
             </analytic>
             <monogr>
               <title level="j">Forensic Sci Int</title>
               <imprint>
                 <biblScope unit="volume">107</biblScope>
-                <biblScope unit="page">10689559</biblScope>
+                <biblScope from="146" to="148" unit="page"/>
                 <date type="published" when="2000"/>
               </imprint>
             </monogr>
@@ -1422,8 +1404,9 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Koren</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.forsciint.2009.12.040</idno>
-              <ptr target="https://doi.org/10.1016/j.forsciint.2009.12.040PMID"/>
+              <idno type="DOI">10.1016/j.forsciint.2009.12.040</idno>
+              <idno>PMID: 20096513</idno>
+              <ptr target="https://doi.org/10.1016/j.forsciint.2009.12.040"/>
             </analytic>
             <monogr>
               <title level="j">Forensic Sci Int</title>
@@ -1471,14 +1454,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Meyer</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.ygcen.2006.01.005</idno>
-              <ptr target="https://doi.org/10.1016/j.ygcen.2006.01.005PMID"/>
+              <idno type="DOI">10.1016/j.ygcen.2006.01.005</idno>
+              <idno>PMID: 16483573</idno>
+              <ptr target="https://doi.org/10.1016/j.ygcen.2006.01.005"/>
             </analytic>
             <monogr>
               <title level="j">Gen. Comp. Endocrinol</title>
               <imprint>
                 <biblScope unit="volume">147</biblScope>
-                <biblScope unit="page">16483573</biblScope>
+                <biblScope from="255" to="261" unit="page"/>
                 <date type="published" when="2006"/>
               </imprint>
             </monogr>
@@ -1523,14 +1507,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Jamardo</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.lfs.2015.10.006</idno>
-              <ptr target="https://doi.org/10.1016/j.lfs.2015.10.006PMID"/>
+              <idno type="DOI">10.1016/j.lfs.2015.10.006</idno>
+              <idno>PMID: 26454227</idno>
+              <ptr target="https://doi.org/10.1016/j.lfs.2015.10.006"/>
             </analytic>
             <monogr>
               <title level="j">Life Sci</title>
               <imprint>
                 <biblScope unit="volume">141</biblScope>
-                <biblScope unit="page">26454227</biblScope>
+                <biblScope from="188" to="192" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -1562,14 +1547,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Van Uum</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.psyneuen.2011.09.009</idno>
-              <ptr target="https://doi.org/10.1016/j.psyneuen.2011.09.009PMID"/>
+              <idno type="DOI">10.1016/j.psyneuen.2011.09.009</idno>
+              <idno>PMID: 21974976</idno>
+              <ptr target="https://doi.org/10.1016/j.psyneuen.2011.09.009"/>
             </analytic>
             <monogr>
               <title level="j">Psychoneuroendocrinology</title>
               <imprint>
                 <biblScope unit="volume">37</biblScope>
-                <biblScope unit="page">21974976</biblScope>
+                <biblScope from="589" to="601" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -1614,14 +1600,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Styrishave</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.jchromb.2016.02.029</idno>
-              <ptr target="https://doi.org/10.1016/j.jchromb.2016.02.029PMID"/>
+              <idno type="DOI">10.1016/j.jchromb.2016.02.029</idno>
+              <idno>PMID: 26945133</idno>
+              <ptr target="https://doi.org/10.1016/j.jchromb.2016.02.029"/>
             </analytic>
             <monogr>
               <title level="j">J of Chromatogr</title>
               <imprint>
                 <biblScope unit="volume">1017</biblScope>
-                <biblScope unit="page">26945133</biblScope>
+                <biblScope from="45" to="51" unit="page"/>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -1664,14 +1651,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Van Rossum</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.psyneuen.2012.11.015</idno>
-              <ptr target="https://doi.org/10.1016/j.psyneuen.2012.11.015PMID"/>
+              <idno type="DOI">10.1016/j.psyneuen.2012.11.015</idno>
+              <idno>PMID: 23253896</idno>
+              <ptr target="https://doi.org/10.1016/j.psyneuen.2012.11.015"/>
             </analytic>
             <monogr>
               <title level="j">Psychoneuroendocrinology</title>
               <imprint>
                 <biblScope unit="volume">38</biblScope>
-                <biblScope unit="page">23253896</biblScope>
+                <biblScope from="1220" to="1235" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -1722,14 +1710,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <forename type="middle">H</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.jpsychires.2015.08.007</idno>
-              <ptr target="https://doi.org/10.1016/j.jpsychires.2015.08.007PMID"/>
+              <idno type="DOI">10.1016/j.jpsychires.2015.08.007</idno>
+              <idno>PMID: 26424422</idno>
+              <ptr target="https://doi.org/10.1016/j.jpsychires.2015.08.007"/>
             </analytic>
             <monogr>
               <title level="j">J Psychiatr Res</title>
               <imprint>
                 <biblScope unit="volume">70</biblScope>
-                <biblScope unit="page">26424422</biblScope>
+                <biblScope from="38" to="49" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -1775,14 +1764,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Shields</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.annepidem.2014.11.022</idno>
-              <ptr target="https://doi.org/10.1016/j.annepidem.2014.11.022PMID"/>
+              <idno type="DOI">10.1016/j.annepidem.2014.11.022</idno>
+              <idno>PMID: 25534254</idno>
+              <ptr target="https://doi.org/10.1016/j.annepidem.2014.11.022"/>
             </analytic>
             <monogr>
               <title level="j">Ann Epidemiol</title>
               <imprint>
                 <biblScope unit="volume">25</biblScope>
-                <biblScope unit="page">25534254</biblScope>
+                <biblScope from="90" to="95" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -1804,14 +1794,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Van Rossum</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1530/EJE-15-0313</idno>
-              <ptr target="https://doi.org/10.1530/EJE-15-0313PMID"/>
+              <idno type="DOI">10.1530/EJE-15-0313</idno>
+              <idno>PMID: 25924811</idno>
+              <ptr target="https://doi.org/10.1530/EJE-15-0313"/>
             </analytic>
             <monogr>
               <title level="j">Eur J Endocrinol</title>
               <imprint>
                 <biblScope unit="volume">173</biblScope>
-                <biblScope unit="page">25924811</biblScope>
+                <biblScope from="1" to="10" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -1854,14 +1845,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>El</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/cen.12551</idno>
-              <ptr target="https://doi.org/10.1111/cen.12551PMID"/>
+              <idno type="DOI">10.1111/cen.12551</idno>
+              <idno>PMID: 25039686</idno>
+              <ptr target="https://doi.org/10.1111/cen.12551"/>
             </analytic>
             <monogr>
               <title level="j">Clin Endocrinol</title>
               <imprint>
                 <biblScope unit="volume">81</biblScope>
-                <biblScope unit="page">25039686</biblScope>
+                <biblScope from="820" to="825" unit="page"/>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -1905,14 +1897,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <forename type="first">S</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.psyneuen.2016.12.017</idno>
-              <ptr target="https://doi.org/10.1016/j.psyneuen.2016.12.017PMID"/>
+              <idno type="DOI">10.1016/j.psyneuen.2016.12.017</idno>
+              <idno>PMID: 28135674</idno>
+              <ptr target="https://doi.org/10.1016/j.psyneuen.2016.12.017"/>
             </analytic>
             <monogr>
               <title level="j">Psychoneuroendocrinology</title>
               <imprint>
                 <biblScope unit="volume">77</biblScope>
-                <biblScope unit="page">28135674</biblScope>
+                <biblScope from="261" to="274" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -1941,22 +1934,23 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Sandman</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.npep.2013.10.007</idno>
-              <ptr target="https://doi.org/10.1016/j.npep.2013.10.007PMID"/>
+              <idno type="DOI">10.1016/j.npep.2013.10.007</idno>
+              <idno>PMID: 24210135</idno>
+              <ptr target="https://doi.org/10.1016/j.npep.2013.10.007"/>
             </analytic>
             <monogr>
               <title level="j">Neuropeptides</title>
               <imprint>
                 <biblScope unit="volume">47</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">24210135</biblScope>
+                <biblScope from="363" to="370" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b22">
-            <monogr>
-              <title level="m" type="main">Hair cortisol levels, psychological stress and psychopathological symptoms as predictors of postpartum depression. PloS one</title>
+            <analytic>
+              <title level="a" type="main">Hair cortisol levels, psychological stress and psychopathological symptoms as predictors of postpartum depression</title>
               <author>
                 <persName>
                   <forename type="first">R</forename>
@@ -1995,12 +1989,16 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Peralta-Ramirez</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0182817</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0182817PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0182817</idno>
+              <idno>PMID: 28846691</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0182817"/>
+            </analytic>
+            <monogr>
+              <title level="j">PloS one</title>
               <imprint>
-                <date type="published" when="2017"/>
                 <biblScope unit="volume">12</biblScope>
-                <biblScope unit="page">28846691</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <date type="published" when="2017"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -2045,15 +2043,16 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <forename type="middle">L</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1002/dev.21433</idno>
-              <ptr target="https://doi.org/10.1002/dev.21433PMID"/>
+              <idno type="DOI">10.1002/dev.21433</idno>
+              <idno>PMID: 27255609</idno>
+              <ptr target="https://doi.org/10.1002/dev.21433"/>
             </analytic>
             <monogr>
               <title level="j">Developmental psychobiology</title>
               <imprint>
                 <biblScope unit="volume">59</biblScope>
                 <biblScope unit="issue">1</biblScope>
-                <biblScope unit="page">27255609</biblScope>
+                <biblScope from="123" to="127" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -2095,15 +2094,16 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Williams</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.annepidem.2013.09.006</idno>
-              <ptr target="https://doi.org/10.1016/j.annepidem.2013.09.006PMID"/>
+              <idno type="DOI">10.1016/j.annepidem.2013.09.006</idno>
+              <idno>PMID: 24184029</idno>
+              <ptr target="https://doi.org/10.1016/j.annepidem.2013.09.006"/>
             </analytic>
             <monogr>
               <title level="j">Ann Epidemiol</title>
               <imprint>
                 <biblScope unit="volume">23</biblScope>
                 <biblScope unit="issue">12</biblScope>
-                <biblScope unit="page">24184029</biblScope>
+                <biblScope from="797" to="811" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -2111,12 +2111,13 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
           <biblStruct xml:id="b25">
             <analytic>
               <title level="a" type="main">Ethical principles of psychologists and code of conduct</title>
+              <idno>PMID: 12613157</idno>
             </analytic>
             <monogr>
               <title level="j">Am Psychol</title>
               <imprint>
                 <biblScope unit="volume">57</biblScope>
-                <biblScope unit="page">12613157</biblScope>
+                <biblScope from="1060" to="1073" unit="page"/>
                 <date type="published" when="2002"/>
                 <publisher>American Psychological Association</publisher>
               </imprint>
@@ -2125,14 +2126,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
           <biblStruct xml:id="b26">
             <analytic>
               <title level="a" type="main">Ethical Principles of Psychologists and Code of Conduct</title>
-              <idno type="doi">10.1037/a0020168</idno>
-              <ptr target="https://doi.org/10.1037/a0020168PMID"/>
+              <idno type="DOI">10.1037/a0020168</idno>
+              <idno>PMID: 20642307</idno>
+              <ptr target="https://doi.org/10.1037/a0020168"/>
             </analytic>
             <monogr>
               <title level="j">Am Psychol</title>
               <imprint>
                 <biblScope unit="volume">65</biblScope>
-                <biblScope unit="page">20642307</biblScope>
+                <biblScope unit="page">493</biblScope>
                 <date type="published" when="2002"/>
                 <publisher>American Psychological Association</publisher>
               </imprint>
@@ -2142,13 +2144,14 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
           <biblStruct xml:id="b27">
             <analytic>
               <title level="a" type="main">World Medical Association Declaration of Helsinki. Ethical principles for medical research involving human subjects</title>
-              <idno>373. PMID: 11357217</idno>
+              <idno>PMID: 11357217</idno>
             </analytic>
             <monogr>
               <title level="j">Bulletin of the World Health Organization</title>
               <imprint>
                 <biblScope unit="volume">79</biblScope>
                 <biblScope unit="issue">4</biblScope>
+                <biblScope unit="page">373</biblScope>
                 <date type="published" when="2001"/>
               </imprint>
             </monogr>
@@ -2188,7 +2191,7 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Van Uum</surname>
                 </persName>
               </author>
-              <idno type="doi">10.25011/cim.v30i5.2894</idno>
+              <idno type="DOI">10.25011/cim.v30i5.2894</idno>
               <ptr target="https://doi.org/10.25011/cim.v30i5.2894"/>
             </analytic>
             <monogr>
@@ -2239,14 +2242,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Lu</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.jchromb.2013.04.026</idno>
-              <ptr target="https://doi.org/10.1016/j.jchromb.2013.04.026PMID"/>
+              <idno type="DOI">10.1016/j.jchromb.2013.04.026</idno>
+              <idno>PMID: 23685429</idno>
+              <ptr target="https://doi.org/10.1016/j.jchromb.2013.04.026"/>
             </analytic>
             <monogr>
               <title level="j">J Chromatogr</title>
               <imprint>
                 <biblScope unit="volume">929</biblScope>
-                <biblScope unit="page">23685429</biblScope>
+                <biblScope from="187" to="194" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -2312,14 +2316,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Stalder</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3109/10253890.2012.654479</idno>
-              <ptr target="https://doi.org/10.3109/10253890.2012.654479PMID"/>
+              <idno type="DOI">10.3109/10253890.2012.654479</idno>
+              <idno>PMID: 22356099</idno>
+              <ptr target="https://doi.org/10.3109/10253890.2012.654479"/>
             </analytic>
             <monogr>
               <title level="j">Stress</title>
               <imprint>
                 <biblScope unit="volume">15</biblScope>
-                <biblScope unit="page">22356099</biblScope>
+                <biblScope from="578" to="588" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -2366,14 +2371,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Lips</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1210/jc.2012-3663</idno>
-              <ptr target="https://doi.org/10.1210/jc.2012-3663PMID"/>
+              <idno type="DOI">10.1210/jc.2012-3663</idno>
+              <idno>PMID: 23596141</idno>
+              <ptr target="https://doi.org/10.1210/jc.2012-3663"/>
             </analytic>
             <monogr>
               <title level="j">J Clin Endocrinol Metab</title>
               <imprint>
                 <biblScope unit="volume">98</biblScope>
-                <biblScope unit="page">23596141</biblScope>
+                <biblScope from="2078" to="2083" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -2417,14 +2423,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Kirschbaum</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.psyneuen.2011.08.007</idno>
-              <ptr target="https://doi.org/10.1016/j.psyneuen.2011.08.007PMID"/>
+              <idno type="DOI">10.1016/j.psyneuen.2011.08.007</idno>
+              <idno>PMID: 21917384</idno>
+              <ptr target="https://doi.org/10.1016/j.psyneuen.2011.08.007"/>
             </analytic>
             <monogr>
               <title level="j">Psychoneuroendocrinology</title>
               <imprint>
                 <biblScope unit="volume">37</biblScope>
-                <biblScope unit="page">21917384</biblScope>
+                <biblScope from="602" to="610" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -2469,14 +2476,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Stalder</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.psyneuen.2013.10.007</idno>
-              <ptr target="https://doi.org/10.1016/j.psyneuen.2013.10.007PMID"/>
+              <idno type="DOI">10.1016/j.psyneuen.2013.10.007</idno>
+              <idno>PMID: 24275012</idno>
+              <ptr target="https://doi.org/10.1016/j.psyneuen.2013.10.007"/>
             </analytic>
             <monogr>
               <title level="j">Psychoneuroendocrinology</title>
               <imprint>
                 <biblScope unit="volume">39</biblScope>
-                <biblScope unit="page">24275012</biblScope>
+                <biblScope from="132" to="140" unit="page"/>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -2521,12 +2529,13 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Frissa</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.psyneuen.2016.11.011</idno>
-              <ptr target="https://doi.org/10.1016/j.psyneuen.2016.11.011PMID"/>
+              <idno type="DOI">10.1016/j.psyneuen.2016.11.011</idno>
+              <idno>PMID: 27923182</idno>
+              <ptr target="https://doi.org/10.1016/j.psyneuen.2016.11.011"/>
               <imprint>
                 <date type="published" when="2017"/>
                 <biblScope unit="volume">76</biblScope>
-                <biblScope unit="page">27923182</biblScope>
+                <biblScope from="144" to="153" unit="page"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -2569,14 +2578,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Van Uum</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3109/10253890.2014.974028</idno>
-              <ptr target="https://doi.org/10.3109/10253890.2014.974028PMID"/>
+              <idno type="DOI">10.3109/10253890.2014.974028</idno>
+              <idno>PMID: 25287135</idno>
+              <ptr target="https://doi.org/10.3109/10253890.2014.974028"/>
             </analytic>
             <monogr>
               <title level="j">Stress</title>
               <imprint>
                 <biblScope unit="volume">18</biblScope>
-                <biblScope unit="page">25287135</biblScope>
+                <biblScope from="35" to="41" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -2621,15 +2631,16 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Holsboer-Trachsler</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3109/10253890.2013.823599</idno>
-              <ptr target="https://doi.org/10.3109/10253890.2013.823599PMID"/>
+              <idno type="DOI">10.3109/10253890.2013.823599</idno>
+              <idno>PMID: 23855828</idno>
+              <ptr target="https://doi.org/10.3109/10253890.2013.823599"/>
             </analytic>
             <monogr>
               <title level="j">Stress</title>
               <imprint>
                 <biblScope unit="volume">16</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">23855828</biblScope>
+                <biblScope from="593" to="599" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -2644,7 +2655,7 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Burke</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1136/jcp.s1-3.1.11</idno>
+              <idno type="DOI">10.1136/jcp.s1-3.1.11</idno>
               <ptr target="https://doi.org/10.1136/jcp.s1-3.1.11"/>
             </analytic>
             <monogr>
@@ -2699,14 +2710,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Kivimäki</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.psyneuen.2016.07.214</idno>
-              <ptr target="https://doi.org/10.1016/j.psyneuen.2016.07.214PMID"/>
+              <idno type="DOI">10.1016/j.psyneuen.2016.07.214</idno>
+              <idno>PMID: 27498290</idno>
+              <ptr target="https://doi.org/10.1016/j.psyneuen.2016.07.214"/>
             </analytic>
             <monogr>
               <title level="j">Psychoneuroendocrinology</title>
               <imprint>
                 <biblScope unit="volume">73</biblScope>
-                <biblScope unit="page">27498290</biblScope>
+                <biblScope from="148" to="156" unit="page"/>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -2749,14 +2761,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Van Rossum</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.psyneuen.2015.06.011</idno>
-              <ptr target="https://doi.org/10.1016/j.psyneuen.2015.06.011PMID"/>
+              <idno type="DOI">10.1016/j.psyneuen.2015.06.011</idno>
+              <idno>PMID: 26176863</idno>
+              <ptr target="https://doi.org/10.1016/j.psyneuen.2015.06.011"/>
             </analytic>
             <monogr>
               <title level="j">Psychoneuroendocrinology</title>
               <imprint>
                 <biblScope unit="volume">60</biblScope>
-                <biblScope unit="page">26176863</biblScope>
+                <biblScope from="182" to="194" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -2788,12 +2801,13 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Dettenborn</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.psyneuen.2008.08.024</idno>
-              <ptr target="https://doi.org/10.1016/j.psyneuen.2008.08.024PMID"/>
+              <idno type="DOI">10.1016/j.psyneuen.2008.08.024</idno>
+              <idno>PMID: 18947933</idno>
+              <ptr target="https://doi.org/10.1016/j.psyneuen.2008.08.024"/>
               <imprint>
                 <date type="published" when="2009"/>
                 <biblScope unit="volume">34</biblScope>
-                <biblScope unit="page">18947933</biblScope>
+                <biblScope from="32" to="37" unit="page"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -2836,12 +2850,13 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Kirschbaum</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.psyneuen.2014.12.006</idno>
-              <ptr target="https://doi.org/10.1016/j.psyneuen.2014.12.006PMID"/>
+              <idno type="DOI">10.1016/j.psyneuen.2014.12.006</idno>
+              <idno>PMID: 25553388</idno>
+              <ptr target="https://doi.org/10.1016/j.psyneuen.2014.12.006"/>
               <imprint>
                 <date type="published" when="2015"/>
                 <biblScope unit="volume">52</biblScope>
-                <biblScope unit="page">25553388</biblScope>
+                <biblScope from="289" to="296" unit="page"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -2884,15 +2899,16 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Thiery</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1080/10253890.2017.1392507</idno>
-              <ptr target="https://doi.org/10.1080/10253890.2017.1392507PMID"/>
+              <idno type="DOI">10.1080/10253890.2017.1392507</idno>
+              <idno>PMID: 29073819</idno>
+              <ptr target="https://doi.org/10.1080/10253890.2017.1392507"/>
             </analytic>
             <monogr>
               <title level="j">Stress</title>
               <imprint>
                 <biblScope unit="volume">21</biblScope>
                 <biblScope unit="issue">1</biblScope>
-                <biblScope unit="page">29073819</biblScope>
+                <biblScope from="43" to="50" unit="page"/>
                 <date type="published" when="2018"/>
               </imprint>
             </monogr>
@@ -2938,12 +2954,13 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Van Rossum</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1097/FTD.0000000000000148</idno>
-              <ptr target="https://doi.org/10.1097/FTD.0000000000000148PMID"/>
+              <idno type="DOI">10.1097/FTD.0000000000000148</idno>
+              <idno>PMID: 25387254</idno>
+              <ptr target="https://doi.org/10.1097/FTD.0000000000000148"/>
               <imprint>
                 <date type="published" when="2015"/>
                 <biblScope unit="volume">37</biblScope>
-                <biblScope unit="page">25387254</biblScope>
+                <biblScope from="71" to="75" unit="page"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -2987,14 +3004,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Elbert</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.psyneuen.2011.02.012</idno>
-              <ptr target="https://doi.org/10.1016/j.psyneuen.2011.02.012PMID"/>
+              <idno type="DOI">10.1016/j.psyneuen.2011.02.012</idno>
+              <idno>PMID: 21411229</idno>
+              <ptr target="https://doi.org/10.1016/j.psyneuen.2011.02.012"/>
             </analytic>
             <monogr>
               <title level="j">Psychoneuroendocrinology</title>
               <imprint>
                 <biblScope unit="volume">36</biblScope>
-                <biblScope unit="page">21411229</biblScope>
+                <biblScope from="1193" to="1200" unit="page"/>
                 <date type="published" when="2011"/>
               </imprint>
             </monogr>
@@ -3040,14 +3058,15 @@ https://doi.org/10.1371/journal.pone.0204807.t004 </table>
                   <surname>Van Uum</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1055/s-0029-1220771</idno>
-              <ptr target="https://doi.org/10.1055/s-0029-1220771PMID"/>
+              <idno type="DOI">10.1055/s-0029-1220771</idno>
+              <idno>PMID: 19609841</idno>
+              <ptr target="https://doi.org/10.1055/s-0029-1220771"/>
             </analytic>
             <monogr>
               <title level="j">Exp Clin Endocrinol Diabetes</title>
               <imprint>
                 <biblScope unit="volume">118</biblScope>
-                <biblScope unit="page">19609841</biblScope>
+                <biblScope from="133" to="138" unit="page"/>
                 <date type="published" when="2010"/>
               </imprint>
             </monogr>

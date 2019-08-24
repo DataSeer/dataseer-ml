@@ -2,20 +2,21 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T08:30+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-24T00:05+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
     </encodingDesc>
     <fileDesc>
       <titleStmt>
-        <title level="a" type="main">Using Baidu Search Engine to Monitor AIDS Epidemics Inform for Targeted intervention of HIV/AIDS in China</title>
+        <title level="a" type="main">Using Baidu Search Engine to Monitor AIDS Epidemics Inform for Targeted intervention of HIV/AIDS in China OPEN</title>
       </titleStmt>
       <publicationStmt>
         <publisher/>
         <availability status="unknown">
           <licence/>
         </availability>
+        <date type="published">Published: xx xx xxxx</date>
       </publicationStmt>
       <sourceDesc>
         <biblStruct>
@@ -148,11 +149,12 @@
                 </address>
               </affiliation>
             </author>
-            <author>
+            <author role="corresp">
               <persName>
                 <forename type="first">Hao</forename>
                 <surname>Liang</surname>
               </persName>
+              <email>lianghao@gxmu.edu.cn</email>
               <affiliation key="aff0">
                 <orgName type="department">School of Public Health</orgName>
                 <orgName type="laboratory">Guangxi Key Laboratory of AIDS Prevention and Treatment &amp; Guangxi Universities Key Laboratory of Prevention and Control of Highly Prevalent Disease</orgName>
@@ -189,15 +191,16 @@
                 </address>
               </affiliation>
             </author>
-            <title level="a" type="main">Using Baidu Search Engine to Monitor AIDS Epidemics Inform for Targeted intervention of HIV/AIDS in China</title>
+            <title level="a" type="main">Using Baidu Search Engine to Monitor AIDS Epidemics Inform for Targeted intervention of HIV/AIDS in China OPEN</title>
           </analytic>
           <monogr>
             <imprint>
-              <date/>
+              <date type="published">Published: xx xx xxxx</date>
             </imprint>
           </monogr>
           <idno type="DOI">10.1038/s41598-018-35685-w</idno>
-          <note>1 SCIeNTIfIC REpORTS | (2019) 9:320 |</note>
+          <note type="submission">Received: 6 July 2018 Accepted: 9 November 2018</note>
+          <note>1 SCIeNTIfIC REpORTS | (2019) 9:320 | Correspondence and requests for materials should be addressed to H.L. (email:</note>
         </biblStruct>
       </sourceDesc>
     </fileDesc>
@@ -215,6 +218,22 @@
             <s>We showed that there are close correlations of the same trends between BDI and HIV/AIDS reports cases for both increasing and decreasing AIDS epidemic.</s>
             <s>Therefore, the Baidu search query data may be a good useful indicator for reliably monitoring and predicting HIV/AIDS epidemic in China.</s>
           </p>
+          <p>
+            <s>Since the first AIDS case was reported in 1981, the virus has caused more than 60 million infections and more than 30 million deaths worldwide, making it the greatest threat to human health 1 .</s>
+            <s>The severity of the AIDS epidemic and its perniciousness is also a social problem that needs an urgent solution.</s>
+            <s>In recent years, the epidemic pattern of HIV/AIDS in China has gradually diversified and the scope of surveillance is continuously expanding.</s>
+            <s>The traditional way of monitoring disease is to count the number of cases over a period of time by setting up sentinel hospitals throughout the country.</s>
+            <s>A more modern way of monitoring diseases is to access the monitoring data that is released by the health department after sorting out the statistics.</s>
+            <s>This method is collected by artificial means, covering a large area and for a period of time, which usually takes a lot of manpower, materials and time.</s>
+            <s>Moreover, some HIV-infected patients may not be willing to report their symptoms to a doctor because of private issues and official data are usually released after two weeks of reported illness 2 .</s>
+            <s>This lag in AIDS data collection and reporting is an impediment to the control of the epidemic.</s>
+          </p>
+          <p>
+            <s>The Internet search engine has become an important platform for public access to information as well as data archive, with the latter serving as research source in various disciplines.</s>
+            <s>Research objects based on Internet data have not only been developed in the fields of economy, finance, and marketing such as products sales, trend of gas prices and stock market 3-5 , but also in medical research and epidemic analysis of infectious diseases.</s>
+            <s>It can provide health authorities with important information regarding the emergence and spread of diseases in the city to complement traditional epidemic surveillance systems 6 .</s>
+            <s>Google Trends was used to obtain a global search of Ebola during the Ebola outbreak from November 1st to December 27th, 2014 7 , and applied provided real-time</s>
+          </p>
         </div>
       </abstract>
     </profileDesc>
@@ -223,7 +242,7 @@
     <body>
       <div>
         <p>
-          <s>SCIeNTIfIC REpORTS | (2019) 9:320 | DOI:10.1038/s41598-018-35685-w</s>
+          <s>SCIeNTIfIC REpORTS | (2019) <ref target="#b8" type="bibr">9</ref> :320 | DOI: <ref target="#b9" type="bibr">10</ref> .1038/s41598-018-35685-w</s>
           <s>tracking of the flu outbreaks <ref target="#b7" type="bibr">[8]</ref>
             <ref target="#b8" type="bibr">[9]</ref>
             <ref target="#b9" type="bibr">[10]</ref>
@@ -239,8 +258,6 @@
           <s>In March 2018, its market share in China was 73.02% which is far higher than search engine markets such as Google <ref target="#b17" type="bibr">17,</ref>
             <ref target="#b18" type="bibr">18</ref> .</s>
           <s>We therefore use the internet search data provided by the Baidu index to survey the HIV/AIDS epidemics in China.</s>
-        </p>
-        <p>
           <s>We compare the internet data to the number of conventional epidemic reports in the same period to determine the relevance of Internet search behavior.</s>
           <s>Spatial difference analysis of the data is also performed to find the differences in spatial distribution of the AIDS-related search data.</s>
           <s>Lastly, we developed an Autoregressive Integrated Moving Average with Exogenous Variables (ARIMAX) model based on the keyword search index of the Internet and examined whether it improved the model's forecasting ability <ref target="#b19" type="bibr">19</ref> .</s>
@@ -256,16 +273,21 @@
           <s>Among the five categories of 50 keywords, we found that the keyword "AIDS", "Prostitute", "Short version for Gay", "HIV" and "Sexual services" had the highest average index of search per month, and the keyword "Snow-mouth disease", "AIDS testing Center", "Best testing time for AIDS", "AIDS-testing" and "AIDS low fever" search index was at a relatively low level.</s>
           <s>Besides, keywords in the Etiology and General category of AIDS had higher search index than other categories.</s>
         </p>
+      </div>
+      <div>
+        <head>Correlation analysis. Spearman's rank analysis on the correlation between Baidu Search index and HIV/</head>
         <p>
-          <s>Correlation analysis.</s>
-          <s>Spearman's rank analysis on the correlation between Baidu Search index and HIV/ AIDS reported cases found that 11 out of the 50 keywords are not related to epidemic, 20 keywords have weak sequential time-series correlation.</s>
-          <s>Only 19 search keywords have significantly correlated to the reported cases, of which correlation coefficient is greater than 0.6 <ref target="#tab_2" type="table">(Table 2)</ref> .</s>
+          <s>AIDS reported cases found that 11 out of the 50 keywords are not related to epidemic, 20 keywords have weak sequential time-series correlation.</s>
+          <s>Only 19 search keywords have significantly correlated to the reported cases, of which correlation coefficient is greater than 0.6 ( <ref target="#tab_2" type="table">Table 2</ref> ).</s>
           <s>We then illustrated the time-series comparison curve between the Baidu index of several keywords and the monthly number of reported cases in China.</s>
           <s>As <ref target="#fig_0" type="figure">Fig. 1</ref> shows, although the four keywords have different search frequencies and relative ratios, their trends are the same, which increased or decreased with the search index rising and falling phenomenon.</s>
         </p>
         <p>
           <s>Cross-correlations analysis and composite index.</s>
-          <s>We carried out time-lapse correlation analysis of search keywords and obtained 17 keywords with the maximum cross-correlation coefficients above 0.5 in <ref target="#tab_3" type="table">Table 3</ref> .</s>
+          <s>We carried out time-lapse correlation analysis of search keywords and obtained 17 keywords with the maximum cross-correlation coefficients above 0.5 in <ref type="table">Table 3</ref> .</s>
+          <s>This picture shows the time-series comparison curve between the Baidu search index and the national monthly report case number for the four keywords "AIDS spread, " "pimple, " "thrush, " and "Initial symptoms of HIV".</s>
+          <s>(The X-axis date interval is month.</s>
+          <s>The Y-axis uses three coordinates, which the black Y-axis shows the number of monthly report cases, the red Y axis is the Baidu search index of the keywords and the blue Y-axis is the ratio of the search index to the monthly report cases); BDI: Baidu Search index.</s>
         </p>
       </div>
       <div>
@@ -276,14 +298,23 @@
           <s>We also displayed AIDS related Baidu Composite Index (Baidu CI) trends in both annual and monthly time dimensions, and found a constant increase of it from 2011 to 2016 <ref target="#fig_1" type="figure">(Fig. 2)</ref> .</s>
           <s>Moreover, The Baidu CI has two small and one big surge respectively in July, August and December of each year.</s>
         </p>
+      </div>
+      <div>
+        <head>Regional analysis of correlation between search index and AIDS epidemic. AIDS epidemic</head>
         <p>
-          <s>Regional analysis of correlation between search index and AIDS epidemic.</s>
-          <s>AIDS epidemic in China has a big regional discrepancies among her 31 mainland provinces with 5 to 6 provinces reporting more than half of China's total HIV/AIDS cases.</s>
+          <s>in China has a big regional discrepancies among her 31 mainland provinces with 5 to 6 provinces reporting more than half of China's total HIV/AIDS cases.</s>
           <s>We compared two provinces with very high epidemic (Sichuan, Guangxi), two provinces (Xinjiang and Chongqing) with middle level epidemic and two major cities (Beijing, Shanghai) with low level epidemic <ref target="#fig_2" type="figure">(Fig. 3)</ref> .</s>
           <s>It is found that in the regions with high AIDS epidemic, the search index of various keywords is also relatively high.</s>
           <s>In contrast, in Beijing and Shanghai the number of HIV/AIDS cases is far lower than other provinces, but the search index of kinds of keywords is still at a relatively high level.</s>
           <s>General and epidemiologic keywords had a much higher search index than keywords related to diagnostic, symptomatic and treatment.</s>
           <s>This result was indicated, as individuals generally use keywords that are easy to comprehend and that are widely used.</s>
+          <s>
+            <ref type="table">Table 3</ref> .</s>
+          <s>Cross-correlation between monthly HIV/AIDS report cases and Baidu search index data.</s>
+          <s>CCF: CrossCorrelation Function.</s>
+        </p>
+        <p>
+          <s>SCIeNTIfIC REpORTS | (2019) 9:320 | DOI:10.1038/s41598-018-35685-w</s>
           <s>Furthermore, we also found that there are significant differences in spatial distribution of the correlation between different keywords and the number of real cases.</s>
           <s>Although the search index for assorted keywords in Shanghai is high, the correlation between the search index and the number of HIV/AIDS is lower than that of Beijing and Sichuan provinces with the same keyword search volume.</s>
           <s>In Guangxi and Xinjiang province, on the one hand, the correlation between keyword searches and the number of AIDS cases was significantly lower than that of Sichuan and Chongqing province which had the same epidemic and search volume, and on the other hand, it showed a relatively weak negative correlation trend ( <ref target="#fig_0" type="figure">Supplementary Fig. S1</ref> ).</s>
@@ -299,9 +330,9 @@
           <s>The unit root test indicated that the sequence was non-stationary (the null hypothesis was that the sequence was non-stationary, P &gt; 0.05).</s>
         </p>
         <p>
-          <s>The differential sequence y has trailing properties both in autocorrelation coefficient (ACF) and partial autocorrelation coefficient (PACF) <ref target="#fig_2" type="figure">(Supplementary Fig. S3a</ref> ).</s>
+          <s>The differential sequence y has trailing properties both in autocorrelation coefficient (ACF) and partial autocorrelation coefficient (PACF) <ref target="#fig_2" type="figure">(Supplementary Fig. S3a)</ref> .</s>
           <s>According to the minimum information quantity AIC order criterion, the model ARIMA (0, 1, 2) (1, 0, 0) 12 is finally fitted after several attempts.</s>
-          <s>In addition, the parameter tests are all significant non-zero <ref target="#tab_5" type="table">(Table 4</ref> , P &lt; 0.05).</s>
+          <s>In addition, the parameter tests are all significant non-zero <ref target="#tab_4" type="table">(Table 4</ref> , P &lt; 0.05).</s>
           <s>Residual autocorrelation test shows that the residual series belong to the white noise sequence ( <ref target="#fig_2" type="figure">Supplementary Fig. S3b</ref> ).</s>
         </p>
       </div>
@@ -309,12 +340,12 @@
         <head>ARIMA model with external variables (ARIMAX).</head>
         <p>
           <s>In the ARIMAX model, both the input sequence (x1 t ) and the output sequence (y1 t ) are stationary.</s>
-          <s>Establishing co-correlation coefficient plots for different delay orders, we can see that differencing Baidu CI has a significant lag effect with differencing HIV/AIDS report cases and the parameters obtained after estimating the model are significantly non-zero, moreover, the residual autocorrelation test shows a random distribution that there is no autocorrelation in the residual <ref target="#tab_5" type="table">(Table 4</ref> , <ref target="#fig_4" type="figure">Fig. 5</ref> ).</s>
+          <s>Establishing co-correlation coefficient plots for different delay orders, we can see that differencing Baidu CI has a significant lag effect with differencing HIV/AIDS report cases and the parameters obtained after estimating the model are significantly non-zero, moreover, the residual autocorrelation test shows a random distribution that there is no autocorrelation in the residual <ref target="#tab_4" type="table">(Table 4</ref> , <ref target="#fig_4" type="figure">Fig. 5</ref> ).</s>
         </p>
         <p>
           <s>The Ljung-Box test of the residuals for all models could not reject the null hypothesis that the model exhibit significantly effective (P &gt; 0.05).The ARIMAX model with BDI as predictor showed a better goodness of fit than the model without external variables (AIC = 839.42</s>
           <s>vs 1184.78,</s>
-          <s>respectively), and besides that the model including BDI showed a smaller MAPE than others for the forecast accuracy ((MAPE = 6.11%, the smaller the better <ref target="#tab_5" type="table">(Table 4</ref> ).</s>
+          <s>respectively), and besides that the model including BDI showed a smaller MAPE than others for the forecast accuracy ((MAPE = 6.11%, the smaller the better ( <ref target="#tab_4" type="table">Table 4</ref> ).</s>
           <s>The predicted cases of the final fit of the predictive model are basically consistent with the measured cases, which are within the 95% confidence interval ( <ref target="#fig_3" type="figure">Supplementary Fig. S4</ref> ).</s>
         </p>
       </div>
@@ -325,7 +356,7 @@
             <ref target="#b20" type="bibr">[20]</ref>
             <ref target="#b21" type="bibr">[21]</ref>
             <ref target="#b22" type="bibr">[22]</ref> .</s>
-          <s>The official AIDS epidemic data in China is mainly generated by traditional monitoring systems in regions that lacked human and material resources, and where the regulatory system is less efficient <ref target="#b1" type="bibr">2</ref> .</s>
+          <s>The official AIDS epidemic data in China is mainly generated by traditional monitoring systems in regions that lacked human and material resources, and where the regulatory system is less efficient 2 .</s>
           <s>This deficiency increased the risk of AIDS transmission and complexity of disease control.</s>
           <s>The detection system based on Internet search can avoid the delays and irregular reports of traditional detection systems <ref target="#b23" type="bibr">23,</ref>
             <ref target="#b24" type="bibr">24</ref> .</s>
@@ -441,7 +472,7 @@
           <s>(here and later mentioned places are called keywords tool) was used for further obtaining correlative keywords and did some statistical analysis of collected numbers <ref target="#b32" type="bibr">31,</ref>
             <ref target="#b35" type="bibr">34</ref> .</s>
           <s>In addition, due to different people typing in entirely different words when searching the same information, especially when searching in Chinese language, where one meaning can be expressed in several ways, hence, some of the keywords represent the same meaning <ref target="#b38" type="bibr">37</ref> .</s>
-          <s>Other keywords were dug by using semantic correlation analysis from Microblog, Post Bar, and online Encyclopedia <ref target="#b32" type="bibr">31</ref> .</s>
+          <s>Other keywords were dug by using semantic correlation analysis from Microblog, Post Bar, and online Encyclopedia 31 .</s>
           <s>Finally, we initially acquired 100 related keywords about AIDS search behavior.</s>
           <s>However, some researches had indicated that more keywords do not necessarily assure better model fit and it's not easily reproducible by research fellows with a finite resource <ref target="#b9" type="bibr">10,</ref>
             <ref target="#b39" type="bibr">38</ref> .</s>
@@ -464,7 +495,7 @@
             <ref target="#b41" type="bibr">40</ref> .</s>
           <s>The lag value with the maximum correlation coefficient for each keyword was selected for inclusion in subsequent AIDS Search Index composition analysis.</s>
           <s>Then, considering the remaining keyword numbers and strength of the Spearman's correlations coefficient, we deleted the words with maximum correlation coefficients less than 0.5 in each time lag and those correlations that were statistically insignificant.</s>
-          <s>Finally, 17 keywords were detected with distinct non-lag in results of the cross-correlation analysis <ref target="#tab_3" type="table">(Table 3)</ref> .</s>
+          <s>Finally, 17 keywords were detected with distinct non-lag in results of the cross-correlation analysis <ref type="table">(Table 3)</ref> .</s>
         </p>
         <p>
           <s>AIDS search index composition.</s>
@@ -478,10 +509,10 @@
             <ref target="#b32" type="bibr">31,</ref>
             <ref target="#b42" type="bibr">41</ref> .</s>
           <s>The search index composition method and keywords weight counts are as Eqs 1 and 2. In the above formulae, k denotes the potential time lag, n represents the number of keywords included at each time lag, ρ ki is the Spearman's rank correlation coefficient of included keyword (i) with specific time lag(k), keyword ki and weight ki denotes the i th keyword monthly Baidu Index and the weight of it with specific time lag(k).</s>
-        </p>
-        <p>
           <s>Spatial difference analysis.</s>
           <s>In order to better observe the network search behavior of different types of people, it is necessary to carefully analyze the spatial distribution of each type of keyword.</s>
+        </p>
+        <p>
           <s>Firstly, we selected Chongqing and Sichuan areas which with significantly increased AIDS epidemic, the Beijing and Shanghai regions where the epidemic progressed tardily, and the Xinjiang and Guangxi provinces with reduced epidemics as an example.</s>
           <s>Furthermore, according to the components of the national search index composition and the actual inclusion of Baidu search engine data in each region, a total of five categories of 17 keywords were selected for analysis.</s>
           <s>Thirdly, for better visualization of these data, we used the Search intensity indicator, which is calculated the total number of each keyword search indices and divided by number of Internet users in each provinces.</s>
@@ -500,15 +531,17 @@
           <s>More information (ie, Baidu search index and Google search queries) can be utilized by the ARIMAX model than the ARIMA model, it makes use of multiple regression analysis and time series analysis that could improve the forecasting ability <ref target="#b43" type="bibr">42,</ref>
             <ref target="#b46" type="bibr">45</ref> .</s>
           <s>Therefore, we used the ARIMA model that combines Baidu Composite Index (AIDS search index) and can examine the relationship between keywords and AIDS.</s>
-          <s>The following equation was used to obtain the predicting disease series: are respectively the residual autoregressive coefficient polynomial and the residual moving average coefficient polynomial; r i is the residual sequence, and a t is the white noise sequence with zero mean.</s>
+          <s>The following equation was used to obtain the predicting disease series:</s>
+        </p>
+        <formula xml:id="formula_0">∑ µ Θ Φ = + + = y B B B x r ( ) ( ) (3) t i k i i l it i 1 i Θ Φ = r B B a ( ) ( ) (4) i i i t In the formula Θ B ( ) i , Φ B ( ) i</formula>
+        <p>
+          <s>and l i were the autoregressive coefficients polynomial, moving average coefficient polynomial and a lag operator of the ith input variables respectively; x it denotes external variables AIDS Search Index k ; r i was the regression residual sequence; and Θ B ( ) i and Φ B ( ) i are respectively the residual autoregressive coefficient polynomial and the residual moving average coefficient polynomial; r i is the residual sequence, and a t is the white noise sequence with zero mean.</s>
           <s>y t was the dependent variable <ref target="#b47" type="bibr">46,</ref>
             <ref target="#b48" type="bibr">47</ref> .</s>
-          <s>The predicting precision of the model was checked by the goodness of fit between the observed and predicted of HIV/AIDS report cases using the mean absolute percentage error (MAPE) <ref target="#b49" type="bibr">[48]</ref>
-            <ref target="#b50" type="bibr">[49]</ref>
-            <ref target="#b51" type="bibr">[50]</ref> , equation was as follow: It means that predicted cases from the models have a better accuracy for the reported case when the MAPE values are small.</s>
         </p>
-        <formula xml:id="formula_0">∑ µ Θ Φ = + + = y B B B x r ( ) ( )<label>(3)</label>
-        </formula>
+        <p>
+          <s>The predicting precision of the model was checked by the goodness of fit between the observed and predicted of HIV/AIDS report cases using the mean absolute percentage error (MAPE) <ref target="#b49" type="bibr">48</ref> It means that predicted cases from the models have a better accuracy for the reported case when the MAPE values are small.</s>
+        </p>
         <p>
           <s>The modeling process of ARIMA and ARIMAX was analyzed by SAS 9.4 statistical software and the rest of the statistical analysis were performed using IBM SPSS 19.0.</s>
           <s>Furthermore, each variable with P&lt;0.05 were considered to be significant in the analysis and construction process.</s>
@@ -543,11 +576,6 @@
         <head>SCIeNTIfIC</head>
         <label/>
         <figDesc>REpORTS | (2019) 9:320 | DOI:10.1038/s41598-018-35685-w</figDesc>
-      </figure>
-      <figure xml:id="fig_6">
-        <head/>
-        <label/>
-        <figDesc>i were the autoregressive coefficients polynomial, moving average coefficient polynomial and a lag operator of the ith input variables respectively; x it denotes external variables AIDS Search Index k ; r i was the regression residual sequence; and Θ B ( ) i and Φ B ( ) i</figDesc>
       </figure>
       <figure type="table" validated="true" xml:id="tab_2">
         <head>Table 2 .</head>
@@ -627,16 +655,7 @@ How to check AIDS
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_3">
-        <head>Table 3 .</head>
-        <label>3</label>
-        <figDesc>Cross-correlation between monthly HIV/AIDS report cases and Baidu search index data. CCF: Cross- Correlation Function.</figDesc>
-        <table>SCIeNTIfIC REpORTS | 
-(2019) 9:320 | DOI:10.1038/s41598-018-35685-w 
-
-</table>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_5">
+      <figure type="table" validated="false" xml:id="tab_4">
         <head>Table 4 .</head>
         <label>4</label>
         <figDesc>Characteristics of ARIMAX models: coefficients, standard errors, P value for coefficients and Ljung- Box test of residuals, MAPE, AIC. ARIMA: autoregressive integrated moving average model, ARIMAX: ARIMA with external variables, AIC: Akaike information criterion, MAPE: mean absolute percentage error, MA: moving average, SAR: seasonal autoregressive, SMA: seasonal moving average.</figDesc>
@@ -676,10 +695,7 @@ How to check AIDS
           </p>
         </div>
         <div>
-          <head>Competing Interests:</head>
-          <p>
-            <s>The authors declare no competing interests.</s>
-          </p>
+          <head>Competing Interests: The authors declare no competing interests.</head>
           <p>
             <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
           </p>
@@ -696,14 +712,9 @@ How to check AIDS
           <biblStruct xml:id="b0">
             <analytic>
               <title/>
-              <author>
-                <persName>
-                  <surname>Unaids</surname>
-                </persName>
-              </author>
             </analytic>
             <monogr>
-              <title level="j">AIDS by the numbers. Unaids</title>
+              <title level="j">Unaids. AIDS by the numbers. Unaids</title>
               <imprint>
                 <date type="published" when="2016"/>
               </imprint>
@@ -1041,7 +1052,7 @@ How to check AIDS
           <biblStruct xml:id="b12">
             <analytic>
               <title/>
-              <idno type="doi">10.1038/s41598-018-35685-w</idno>
+              <idno type="DOI">10.1038/s41598-018-35685-w</idno>
             </analytic>
             <monogr>
               <title level="j">SCIeNTIfIC REpORTS |</title>
@@ -1093,6 +1104,7 @@ How to check AIDS
               <title level="j">BMC Cancer</title>
               <imprint>
                 <biblScope unit="volume">11</biblScope>
+                <biblScope unit="issue">1</biblScope>
                 <biblScope unit="page">442</biblScope>
                 <date type="published" when="2011"/>
               </imprint>
@@ -1590,7 +1602,7 @@ How to check AIDS
           </biblStruct>
           <biblStruct xml:id="b33">
             <analytic>
-              <title level="a" type="main">Predicting the hand, foot, and mouth disease incidence using search engine query data and climate variables: an ecological study in Guangdong, China</title>
+              <title level="a" type="main">Predicting the hand, foot, and mouth disease incidence using search engine query data and climate variables: an ecological study in Guangdong</title>
               <author>
                 <persName>
                   <forename type="first">Z</forename>
@@ -1599,7 +1611,7 @@ How to check AIDS
               </author>
             </analytic>
             <monogr>
-              <title level="j">Bmj Open</title>
+              <title level="j">China. Bmj Open</title>
               <imprint>
                 <biblScope unit="volume">7</biblScope>
                 <biblScope unit="page">16263</biblScope>
@@ -2131,7 +2143,7 @@ How to check AIDS
           <biblStruct xml:id="b52">
             <analytic>
               <title/>
-              <idno type="doi">10.1038/s41598-018-35685-w</idno>
+              <idno type="DOI">10.1038/s41598-018-35685-w</idno>
             </analytic>
             <monogr>
               <title level="j">SCIeNTIfIC REpORTS |</title>

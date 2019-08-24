@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T09:12+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-24T00:44+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -223,7 +223,7 @@
           <s>Once installed it behaves very similarly regardless of platform, but the installation steps vary.</s>
         </p>
         <p>
-          <s>For Microsoft Windows users, Blaunet can be installed directly in R via The installation procedures are more involved for OS X users.</s>
+          <s>For The installation procedures are more involved for OS X users.</s>
           <s>More details are provided in the S1 File Manual for the Blaunet Graphic User Interface Package.</s>
         </p>
       </div>
@@ -237,9 +237,9 @@
         <head>R&gt; library(Blaunet) R&gt; blaunetgui()</head>
         <p>
           <s>A first-time installation of Blaunet will install a number of dependent packages (see section below).</s>
-          <s>Blaunet will be launched in a new window as a menu-based graphical user interface, in the manner of <ref target="#fig_2" type="figure">Fig 1.</ref>
+          <s>Blaunet will be launched in a new window as a menu-based graphical user interface, in the manner of <ref target="#fig_1" type="figure">Fig 1.</ref>
           </s>
-          <s>As shown in <ref target="#fig_2" type="figure">Fig 1,</ref> the main interface of Blaunet includes five elementsthe menu bar, the toolbar, the text frame showing current working directory, the "Set Working Directory" bar, and the general information of Blaunet, from top to bottom.</s>
+          <s>As shown in <ref target="#fig_1" type="figure">Fig 1,</ref> the main interface of Blaunet includes five elementsthe menu bar, the toolbar, the text frame showing current working directory, the "Set Working Directory" bar, and the general information of Blaunet, from top to bottom.</s>
         </p>
       </div>
       <div>
@@ -251,8 +251,12 @@
           <s>(1-4) gWidgets, gWidgetsRGtk2, RGtk2, and cairoDevice packages, which function to build the graphic interface of Blaunet;</s>
         </p>
         <p>
-          <s>(5-7) plot3D, plot3Drgl, and rgl packages, which function to make 3D plots; (8-11) network, sna, ergm, and statnet.common</s>
-          <s>packages, which function to do network operations and analysis; and (12-13) haven and foreign packages, which function to import and export data file between R and other statistical software, such as SAS, SPSS, Stata, and Microsoft Excel.</s>
+          <s>(5-7) plot3D, plot3Drgl, and rgl packages, which function to make 3D plots; <ref target="#b7" type="bibr">(8)</ref>
+            <ref target="#b8" type="bibr">(9)</ref>
+            <ref target="#b9" type="bibr">(10)</ref>
+            <ref target="#b10" type="bibr">(11)</ref> network, sna, ergm, and statnet.common</s>
+          <s>packages, which function to do network operations and analysis; and <ref target="#b11" type="bibr">(12)</ref>
+            <ref target="#b12" type="bibr">(13)</ref> haven and foreign packages, which function to import and export data file between R and other statistical software, such as SAS, SPSS, Stata, and Microsoft Excel.</s>
         </p>
         <p>
           <s>Upon executing blaunetgui() for the first time, Microsoft Windows users will be prompted to install GTK++ if they do not have it installed already</s>
@@ -280,7 +284,7 @@
           <s>TwoCities.rda,</s>
           <s>and gss74_87.rda)</s>
           <s>are fully anonymized and de-identified.</s>
-          <s>As shown in <ref target="#fig_1" type="figure">Fig 2,</ref> all the example datasets are available under the "data" folder, a subdirectory of the Blaunet install location.</s>
+          <s>As shown in <ref target="#fig_0" type="figure">Fig 2,</ref> all the example datasets are available under the "data" folder, a subdirectory of the Blaunet install location.</s>
         </p>
         <p>
           <s>BSANet.rda.</s>
@@ -303,7 +307,17 @@
           <s>Thus the former should be loaded/opened using the attribute file icon while the later using the network file icon.</s>
         </p>
         <p>
-          <s>TwoCities <ref type="bibr">1974, 1975, 1977, 1978, 1980, 1983, 1984, 1986, and 1987</ref> ; and the group affiliation information includes membership in 16 types of organizations.</s>
+          <s>TwoCities.rda.</s>
+          <s>This dataset is excerpted, with permission, from the Social Capital Benchmark Survey, which was collected by Professor Robert D. Putnam of the Saguaro Seminar: Civic Engagement in America, a project of the John F. Kennedy School of Government at Harvard University and numerous community foundations nationwide, and made available through the Roper Center for Public Opinion Research.</s>
+          <s>The dataset contains 1,008 individuals from two cities in the United States: Bismarck, North Dakota, and Grand Rapids, Michigan.</s>
+          <s>The sociodemographic information includes 4 individual characteristics-age, income, education level, and work time; and the group affiliation information includes membership in 18 voluntary organizations.</s>
+          <s>There are also six other assorted variables.</s>
+        </p>
+        <p>
+          <s>gss74_87.rda.</s>
+          <s>This dataset is excerpted from the General Social Survey, 1972-2012, available from both the Interuniversity Consortium for Political and Social Research (ICPSR) website (http://www.icpsr.umich.edu/icpsrweb/NACJD/studies/34802)</s>
+          <s>and the NORC website (http:// gss.norc.org/get-the-data/).</s>
+          <s>The sociodemographic information includes the education level and occupational prestige scores of <ref type="bibr">13,865 respondents surveyed in 1974, 1975, 1977, 1978, 1980, 1983, 1984, 1986, and 1987</ref> ; and the group affiliation information includes membership in 16 types of organizations.</s>
         </p>
       </div>
       <div>
@@ -369,7 +383,7 @@
         </p>
         <p>
           <s>The salient dimension identification function is the first item under the "Analysis" menu.</s>
-          <s>As shown in <ref target="#fig_3" type="figure">Fig 3,</ref> the example dataset schlattr.rda</s>
+          <s>As shown in <ref target="#fig_2" type="figure">Fig 3,</ref> the example dataset schlattr.rda</s>
           <s>&amp; schlnet.rda is loaded and all 20 sociodemographic variables are screened to identify the salient dimensions for 3 groups-study group, artistic group, and sports team.</s>
           <s>An automated iterative procedure is implemented in Blaunet for selecting a set of dimensions that is appropriate for constructing a Blau space for the population under study.</s>
         </p>
@@ -390,9 +404,9 @@
         <formula xml:id="formula_1">P Y o2ð1;mÞ ¼ y o2ð1;mÞ ¼ 1 k e y hcav y ij Iðx i ¼x j Þþy hcov y ij jx i À x j jþy net net ij y ij :<label>ð2Þ</label>
         </formula>
         <p>
-          <s>In Eq (2), Y o2 <ref type="bibr">(1,m)</ref> is the symmetric co-membership matrix for the oth social entity with the state y o2 <ref type="bibr">(1,m)</ref> .</s>
+          <s>In Eq <ref type="formula">(2)</ref> , Y o2 <ref type="bibr">(1,m)</ref> is the symmetric co-membership matrix for the oth social entity with the state y o2 <ref type="bibr">(1,m)</ref> .</s>
           <s>The x i and x j are the vectors of statistics on each sociodemographic trait for a pair of individuals i and j.</s>
-          <s>As shown in <ref target="#fig_4" type="figure">Fig 4,</ref> categorical variables are differentiated from continuous variables.</s>
+          <s>As shown in <ref target="#fig_3" type="figure">Fig 4,</ref> categorical variables are differentiated from continuous variables.</s>
           <s>For categorical variables, this homophily effect is estimated as θ hcav .</s>
           <s>This is implemented by using the nodematch term in the ergm package <ref target="#b45" type="bibr">[46]</ref> of statnet <ref target="#b47" type="bibr">[48,</ref>
             <ref target="#b48" type="bibr">49]</ref> .</s>
@@ -412,19 +426,11 @@
           <s>While prior Blau space analysis has used categorical variables as dimensions <ref target="#b0" type="bibr">[1]</ref> , this required including them as proportions of an organization that falls into a particular category (e.g., proportion female).</s>
           <s>While this method works for organizations to a degree, it is ineffective for individuals, who occupy discrete values.</s>
           <s>The standard practice in Blaunet is to input categorical variables during the modelling stage of the analysis.</s>
+          <s>Test score (PPVT, the horizontal axis) and Body Mass Index (BMI, the vertical axis) are used as the two salient dimensions for the study group and gang group.</s>
         </p>
       </div>
       <div>
         <head>Niche plot</head>
-        <p>
-          <s>Blaunet provides the niche plotting feature introduced by McPherson <ref target="#b0" type="bibr">[1]</ref> .</s>
-          <s>Niches of social entities can be represented in the Blau space as boxes (in 2-dimensions) or cuboids (in 3-dimensions) overlaying the points that indicate the individuals who belong to them.</s>
-        </p>
-        <p>
-          <s>The niche plot function is the second item under the "Analysis" menu.</s>
-          <s>As shown in <ref target="#fig_6" type="figure">Fig 6</ref> , the example dataset schlattr.csv</s>
-          <s>&amp; schlnet.csv is loaded and the Peabody Picture Vocabulary Test score (PPVT, the horizontal axis) and Body Mass Index (BMI, the vertical axis) are used as the two salient dimensions for the study group and gang group.</s>
-        </p>
         <p>
           <s>The niche for each group is centered on the mean value of each dimension and extends 1.5 standard deviations (following the default breadth set by McPherson <ref target="#b0" type="bibr">[1]</ref> , but configurable in Blaunet) above and below the mean, as shown in <ref target="#fig_7" type="figure">Fig 7.</ref> The area inside each group's box in <ref target="#fig_8" type="figure">Fig 8 is</ref> its niche in the two-dimensional space, and the intersection of the boxes is the region in which the two groups are competing for the same type of members.</s>
           <s>The members of the study group (blue box) tend to have higher PPVT scores (82 to 127) than those of the gang group (61 to 90).</s>
@@ -484,9 +490,9 @@
         </formula>
         <p>
           <s>where x 0 indicates the value on a given dimension and k is the number of dimensions in Blau space.</s>
-          <s>For categorical dimensions, a pair of individuals that belong to the same category (e.g., both are African-Americans or married) are assigned a value of zero (i.</s>
+          <s>For categorical dimensions, a pair of individuals that belong to the same category (e.g., both are African-Americans or married) are assigned a value of zero (i.e., x 0 pi À x 0 pj ¼ 0), and otherwise are assigned a value of one (i.e., x 0 pi À x 0 pj ¼ 1).</s>
+          <s>Continuous variables are standardized to the unit interval as</s>
         </p>
-        <note type="other">e., x 0 pi À x 0 pj ¼ 0), and otherwise are assigned a value of one (i.e., x 0 pi À x 0 pj ¼ 1). Continuous variables are standardized to the unit interval as</note>
         <formula xml:id="formula_3">x 0 pi ¼ x pi À minðx pi Þ maxðx pi Þ À minðx pi Þ ;<label>ð4Þ</label>
         </formula>
         <p>
@@ -494,8 +500,6 @@
           <s>The conversion enables the score x 0 in Eq (3) to take any value between zero and one.</s>
           <s>Consequently, all dimensions range from zero to one.</s>
           <s>Thus, for n individuals in the Blau space, the distance from the focal individual to any other individual along the k dimensions is calculated n-1 times and a distance matrix of dimensions n by n is generated.</s>
-        </p>
-        <p>
           <s>Let us begin with the example dataset BSANet.rda,</s>
           <s>which includes attribute, affiliation, and network data.</s>
           <s>The attribute data includes individual names as node ids, three salient dimensions (i.e., age, income, education), and two group affiliation indicators (i.e., conservative and liberal) for 10 persons in two ecologies (i.e., New York and San Francisco).</s>
@@ -508,14 +512,14 @@
           <s>In this case there is no edge between any individual in New York City and that in San Francisco.</s>
           <s>The adjacency matrix in <ref type="table">Table 3</ref> can be displayed by clicking the second item under the "Browse" menu.</s>
           <s>The adjacency matrix can be plotted as a network graph by clicking the first item under the "Graph" menu.</s>
-          <s>As shown in <ref target="#fig_2" type="figure">Fig 10,</ref> Blaunet users can choose whether vertex names/labels will appear in the graph, how to define the vertex color, sides (e.g., starts from a minimum of 3-sided or a triangle), and size, as well as what type of layout will be applied.</s>
+          <s>As shown in <ref target="#fig_1" type="figure">Fig 10,</ref> Blaunet users can choose whether vertex names/labels will appear in the graph, how to define the vertex color, sides (e.g., starts from a minimum of 3-sided or a triangle), and size, as well as what type of layout will be applied.</s>
         </p>
         <p>
-          <s>Red circles in <ref target="#fig_2" type="figure">Fig 11 are</ref> used to indicate individuals in New York City (the first five egos listed in the adjacency matrix) while cyan circles are used to indicate those in San Francisco (the last five).</s>
+          <s>Red circles in <ref target="#fig_1" type="figure">Fig 11 are</ref> used to indicate individuals in New York City (the first five egos listed in the adjacency matrix) while cyan circles are used to indicate those in San Francisco (the last five).</s>
         </p>
         <p>
           <s>The Blau bubble analysis menu is accessed by clicking the last item under the "Analysis" menu.</s>
-          <s>As shown in <ref target="#fig_1" type="figure">Fig 12, all 3 dimensions (age, income, educ)</ref> in BSANet.rda</s>
+          <s>As shown in <ref target="#fig_0" type="figure">Fig 12, all 3 dimensions (age, income, educ)</ref> in BSANet.rda</s>
           <s>are utilized to perform the Blau bubble (proximity) analysis, while the city variable is selected to identify the ecology.</s>
         </p>
         <p>
@@ -524,9 +528,8 @@
           <s>When the radius is set to 0, only those whose sociodemographic characteristics completely match with the focal individual will be classified as possible similar others.</s>
           <s>At the other extreme, when the radius is set as 1, all individuals in <ref type="table">Table 3</ref> .</s>
           <s>Network data in the BSANet.rda. the Blau space will be captured.</s>
-          <s>By default, Blaunet assigns a radius of 0.333 for building the Blau bubbles, as shown in <ref target="#fig_2" type="figure">Fig 13</ref> .</s>
-          <s>Blaunet presents at least three types of results for Blau bubble (proximity) analysis.</s>
-          <s>When network information is loaded in Blaunet, an additional "Blau Bubble list" becomes available, as shown in <ref target="#fig_2" type="figure">Fig 14.</ref>
+          <s>By default, Blaunet assigns a radius of 0.333 for building the Blau bubbles, as shown in <ref target="#fig_1" type="figure">Fig 13.</ref> Blaunet presents at least three types of results for Blau bubble (proximity) analysis.</s>
+          <s>When network information is loaded in Blaunet, an additional "Blau Bubble list" becomes available, as shown in <ref target="#fig_1" type="figure">Fig 14.</ref>
           </s>
           <s>The first result is the "Blau Distance Matrix" as shown in <ref target="#tab_3" type="table">Table 4</ref> , with a score of 0 on Dis ij indicates perfect similarity between individuals i and j, and a score of 1 indicates perfect dissimilarity.</s>
         </p>
@@ -578,15 +581,15 @@
         <p>
           <s>The niche analysis function is the third item under the "Analysis" menu.</s>
           <s>Let us consider an example using the dataset BSANet.rda,</s>
-          <s>illustrated in <ref target="#fig_2" type="figure">Fig 15.</ref>
+          <s>illustrated in <ref target="#fig_1" type="figure">Fig 15.</ref>
           </s>
           <s>The variable person is selected as the node id, the variable city as the ecology id, all 3 sociodemographic measures (age, income, educ) are selected as the salient dimensions, memberships in a liberal or conservative organization (grp_conservative, grp_liberal) are selected as group affiliation indicators, and since network relational information is available, the "Network included" box is checked.</s>
         </p>
         <p>
-          <s>After setting the deviation range for each salient dimension, niche analysis provides at least 6 types of results, as shown in <ref target="#fig_2" type="figure">Fig 16.</ref>
+          <s>After setting the deviation range for each salient dimension, niche analysis provides at least 6 types of results, as shown in <ref target="#fig_1" type="figure">Fig 16.</ref>
           </s>
           <s>When network information is loaded in Blaunet, an additional "Dyadic Result" is also available.</s>
-          <s>In "Niche Breadth Summary", following McPherson <ref target="#b0" type="bibr">[1]</ref> , Blaunet calculates niche breadth as the mean ± 1.5 standard deviation (by default) for each specific sociodemographic dimension as shown in <ref target="#fig_8" type="figure">Fig 8 and Fig 9.</ref> As shown in <ref type="table">Table 7</ref> , members of the New York conservative group (John and Mary) have a mean income of 3.50 and a standard deviation of 2.12.</s>
+          <s>In "Niche Breadth Summary", following McPherson <ref target="#b0" type="bibr">[1]</ref> , Blaunet calculates niche breadth as the mean ± 1.5 standard deviation (by default) for each specific sociodemographic dimension as shown in <ref target="#fig_8" type="figure">Fig 8 and Fig 9.</ref> As shown in <ref target="#tab_6" type="table">Table 7</ref> , members of the New York conservative group (John and Mary) have a mean income of 3.50 and a standard deviation of 2.12.</s>
           <s>Thus the niche breadth for the conservative group in New York City ranges from 0.32 to 6.68 on the dimension "income".</s>
           <s>Note that when a salient dimension can only take positive values (e.g., all three dimensions in this case), if the result of the "mean minus 1.5 times the standard deviation" calculation is negative then we force the low bound to be 0 (e.g., this is the case with the low bounds of income for the niche of the New York liberal group as well as the niche of the San Francisco conservative group.</s>
           <s>It is also the case for the parameter education level for the niche of the San Francisco conservative group).</s>
@@ -598,7 +601,7 @@
           <s>A value of 0 indicates that an individual is an outsider, that of 1 indicates that the individual is an exclusive (suggesting an organizational monopoly), and a value of 2 or more indicates that the individual is a manifolder (i.e., belongs to multiple niches and is a potential recruit for several social entities).</s>
           <s>The 5th column "NicheList" provides a list indicating which niche(s) each individual belongs to.</s>
           <s>The 6th to 8th columns indicate whether each individual is an outsider, insider &amp; exclusive, and insider &amp; manifolder (0 = no and 1 = yes).</s>
-          <s>In <ref type="table">Table 9</ref> , the 13th and 14th columns show a mixing member/nicher status for each social entity (i.e., neither member nor nicher, non-member but in niche, member not in niche, or member &amp; nicher).</s>
+          <s>In <ref target="#tab_7" type="table">Table 9</ref> , the 13th and 14th columns show a mixing member/nicher status for each social entity (i.e., neither member nor nicher, non-member but in niche, member not in niche, or member &amp; nicher).</s>
           <s>The last two columns "Spanner" and "NumSpannedTo" only show up when the network information is available and loaded in memory.</s>
           <s>An individual is a spanner if he or she is outside the niche of a particular social entity but another individual he or she has tied to is an insider, and thus he or she can span to the niche of that social entity through this tie.</s>
           <s>Therefore, the column "Spanner" indicates whether each individual is a spanner to other social entities through his or her existing ties (0 = no and 1 = yes) and the column "NumSpannedTo" indicates how many social entities the individual has spanned to through ties to other individuals.</s>
@@ -628,8 +631,14 @@
           <s>The column "OrgMem" lists how many actual members are in each social entity that construct its niche.</s>
           <s>The column "NicheMem" lists how many individuals are in each niche.</s>
           <s>The column "PredictedNichemem" lists the predicted number of individuals in the niche base, which is a product of the niche-by-niche matrix of competition coefficients in <ref target="#tab_1" type="table">Table 11</ref> and the column "OrgMem" in <ref target="#tab_1" type="table">Table 12</ref> .</s>
-          <s>The column "NichExc" lists how many <ref type="table">Table 7</ref> .</s>
-          <s>Niche breadth summary for the "Blau" object generated from BSANet.rda.</s>
+          <s>The column "NichExc" lists how many individuals are exclusive to that niche and only to that niche.</s>
+          <s>The column "NicheOvr" lists the number of individuals who overlap with other niches.</s>
+          <s>The column "MemExc" lists how many individuals are actually members of the social entity but are not in its niche.</s>
+          <s>The column "ExclusivePercent" lists the percentages of exclusives over all nichers.</s>
+          <s>For example, the San Francisco conservative group has five actual members (i.e., Bryan, Wendy, Aude, Mona, and Bruce), three nichers (i.e., Bryan, Aude, and Mona), one exclusive (i.e., Bryan) with an exclusive percentage of 33.33%.</s>
+          <s>It also has two niche insiders who are also located in the overlapping area with the niche of the San Francisco liberal group (i.e., Aude and Mona), and two actual members who are located outside of its niche (i.e., Wendy and Bruce).</s>
+        </p>
+        <p>
           <s>A third output at the meso level-the bivariate "Correlation Matrix"-gives the correlation coefficients among the number of organizations and niches the node occupies and his or her values on the selected salient dimensions.</s>
           <s>As shown in <ref target="#tab_1" type="table">Table 13</ref> , the correlation coefficient between the total number of organizations and niches is 0.73.</s>
           <s>Those between age and income, between age and educational level, and between income and education level are -0.03,</s>
@@ -637,15 +646,9 @@
           <s>Since the three dimensions are not highly correlated with one another, each dimension provides non-redundant information and allows social differentiation along the other two dimensions.</s>
           <s>This suggests that the individuals' locations on one dimension are not related to their locations on the other dimensions <ref target="#b0" type="bibr">[1,</ref>
             <ref target="#b22" type="bibr">23]</ref> .</s>
-          <s>Since, in this case, the network information is also available and loaded in memory, some network measures (e.g., out-degree, <ref type="table">Table 9</ref> .</s>
-          <s>The second part of nodal output for the "Blau" object generated from BSANet.rda-New</s>
-          <s>York city.</s>
-          <s>in-degree, and eigenvector centrality measures) are added to the correlation matrix.</s>
+          <s>Since, in this case, the network information is also available and loaded in memory, some network measures (e.g., out-degree, in-degree, and eigenvector centrality measures) are added to the correlation matrix.</s>
           <s>In this case, they are perfectly correlated.</s>
         </p>
-      </div>
-      <div>
-        <head>GROUPS</head>
       </div>
       <div>
         <head>Niche dynamics analysis</head>
@@ -658,55 +661,49 @@
           <s>This rotation feature allows one to detect more details by selecting optimal values for horizontal or vertical angles.</s>
         </p>
         <p>
-          <s>As shown in <ref target="#fig_2" type="figure">Fig 17 the example dataset gss74_87</ref> .rda is loaded in memory.</s>
-          <s>The variable ID is selected as the node id, survey year (YEAR) as the ecology id, occupational prestige (PRES-TIGE) and education level (EDUC) as the salient dimensions, and memberships in labor unions (MEMUNION), literary or art groups (MEMLIT), and professional groups (MEM-PROF) as the group affiliation indicators.</s>
-        </p>
-        <p>
-          <s>After setting the deviation rage for each salient dimension, the survey year 1978 is chosen to illustrate the feature of cross-sectional niche dynamics analysis, as shown in <ref target="#fig_2" type="figure">Fig 18.</ref> Blaunet allows its users to re-categorize the salient dimensions from continuous variables to categorical ones.</s>
+          <s>As shown in <ref type="figure">Fig</ref> Blaunet allows its users to re-categorize the salient dimensions from continuous variables to categorical ones.</s>
           <s>In gss74_87.rda</s>
-          <s>both occupational prestige and education level have been recoded into 10 categories, so we only need to drag the handle to a maximum value of 10 for each salient dimension, as shown in <ref target="#fig_2" type="figure">Fig 19.</ref>
+          <s>both occupational prestige and education level have been recoded into 10 categories, so we only need to drag the handle to a maximum value of 10 for each salient dimension, as shown in <ref target="#fig_1" type="figure">Fig 19.</ref>
           </s>
           <s>The carrying capacity indicates the distribution of potential members-or niche insiders-for selected social entities.</s>
-          <s>As shown in <ref target="#fig_1" type="figure">Fig 20,</ref> both education level and occupational prestige are categorized into 10 equal intervals, resulting in 100 quadrants in the two-dimensional space.</s>
+          <s>As shown in <ref target="#fig_0" type="figure">Fig 20,</ref> both education level and occupational prestige are categorized into 10 equal intervals, resulting in 100 quadrants in the two-dimensional space.</s>
           <s>The proportions of niche insiders over the 100 quadrants are averaged across 3 selected social entities-labor unions, literary or art groups, and professional groups-and plotted along the vertical axis in the three-dimensional plot.</s>
           <s>The red color surrounds the peak where carrying capacity reaches its maximum value, while the blue color covers the flat areas where there are almost no potential members.</s>
           <s>Centered on the mean education level and mean occupational prestige of their actual members, all three types of organizations are located at areas where the carrying capacity is not very high.</s>
           <s>The only difference between the carrying capacity and the membership rate is that the latter refers to the distribution of actual members instead of potential members, over the 100 quadrants.</s>
-          <s>As shown in <ref target="#fig_1" type="figure">Fig 21,</ref> all three groups are located at areas where the membership rate is not so high either.</s>
+          <s>As shown in <ref target="#fig_0" type="figure">Fig 21,</ref> all three groups are located at areas where the membership rate is not so high either.</s>
         </p>
         <p>
           <s>The intensity of exploitation plot shows the competitive dynamic that drives the gradient of high and low opportunities for social entities in Blau space.</s>
           <s>To estimate this measure, the arithmetic difference between the carrying capacity and the membership rate is calculated.</s>
           <s>Next, the surface constructed by the 100 quadrants is smoothed using a polynomial regression model.</s>
           <s>The polynomial regression equation in this case is Y = 0.02468601-0.01529415</s>
-        </p>
-        <formula xml:id="formula_4">Ã PRESTIGE + 0.002871434 Ã PRESTIGE 2 -0.0001603333 Ã PRESTIGE 3 -0.001731003 Ã EDUC-0.00 04662787 Ã EDUC 2 + 0.00006042156 Ã EDUC 3 + 0.0002174276 Ã PRESTIGE Ã EDUC.</formula>
-        <p>
+          <s>Ã PRESTIGE + 0.002871434 Ã PRESTIGE 2 -0.0001603333</s>
+          <s>Ã PRESTIGE 3 -0.001731003</s>
+          <s>Ã EDUC-0.00</s>
+          <s>04662787 Ã EDUC 2 + 0.00006042156 Ã EDUC 3 + 0.0002174276 Ã PRESTIGE Ã EDUC.</s>
           <s>These procedures are implemented in Blaunet automatically.</s>
-          <s>As shown in <ref target="#fig_1" type="figure">Fig 22,</ref> social entities are expected to move away from the red peak areas where potential members are overexploited and towards the blue valley areas where potential members are underexploited <ref target="#b22" type="bibr">[23]</ref> .</s>
+          <s>As shown in <ref target="#fig_0" type="figure">Fig 22,</ref> social entities are expected to move away from the red peak areas where potential members are overexploited and towards the blue valley areas where potential members are underexploited <ref target="#b22" type="bibr">[23]</ref> .</s>
           <s>In the Blaunet package example data, we can see that professional groups are located at an area with great opportunities to gain more members with lower levels of both occupational prestige and education, suggesting a niche movement in this direction.</s>
           <s>Literary or art groups would be expected to keep their niche position over the same level of occupational prestige but may move their niche position toward the area of Blau space with lower levels of education.</s>
           <s>Labor unions are expected to move their niches to areas with a relatively higher level of occupational prestige but a lower level of education.</s>
           <s>Longitudinal analysis.</s>
           <s>McPherson and Ranger-Moore <ref target="#b22" type="bibr">[23]</ref> have also used the predicted niche movement equations to model the niche dynamics longitudinally.</s>
           <s>When the example dataset gss74_87.rda is loaded in Blaunet, we have sociodemographic and group affiliation information collected along 2 dimensions-occupational prestige and education-for 16 types of organizations over 9 time points.</s>
-          <s>We let Blaunet know that we plan to perform longitudinal analysis by selecting "all" in <ref target="#fig_2" type="figure">Fig 18,</ref> instead of a single year 1978.</s>
+          <s>We let Blaunet know that we plan to perform longitudinal analysis by selecting "all" in <ref target="#fig_1" type="figure">Fig 18,</ref> instead of a single year 1978.</s>
           <s>The dependent variable is the niche movement, indicated by the observed change in the means along each dimension for each type of organization across 8 = 9-1 time periods.</s>
           <s>Carrying capacity, membership rate, and intensity of exploitation introduced earlier in this subsection are now calculated for the first 8 time points.</s>
           <s>For each type of organization at each time point, 10 points are evenly selected on the right side between the mean (which is not included in the 10 points) and the upper bound of niche breadth (i.e., mean + 1.5 standard deviation by default).</s>
           <s>Then, another 10 points are evenly selected on the left side between the low bound of the niche breadth (i.e., mean-1.5 standard deviation by default) and the mean (which is not included in the 10 points) and along each dimension.</s>
-          <s>Since the mean itself is not included, for occupational prestige the quadrants for the 10 points on each side are [Mean OCC ± (0. <ref target="#b14" type="bibr">15</ref> the values of exploitation in each dimension are cumulated on each side by inserting the quadrants of the 10 points into the polynomial regression equation automatically generated by Blaunet.</s>
+          <s>Since the mean itself is not included, for occupational prestige the quadrants for the <ref target="#b9" type="bibr">10</ref> the values of exploitation in each dimension are cumulated on each side by inserting the quadrants of the 10 points into the polynomial regression equation automatically generated by Blaunet.</s>
           <s>If the right cumulant is greater than the left cumulant, the organization should move its niche to the under-exploited area in the left direction.</s>
           <s>If the right cumulant is equal to the left cumulant, the organization is in an equilibrium status and no niche movement is anticipated.</s>
           <s>And if the right cumulant is less than the left cumulant, the organization should move its niche to the under-exploited area to the right.</s>
-          <s>In this way the explanatory variables are defined as</s>
+          <s>In this way the explanatory variables are defined as Net opportunity t;j;k ¼ Left cumulant t;j;k À Right cumulant t;j;k ð5Þ</s>
         </p>
-      </div>
-      <div>
-        <head>Net opportunity t;j;k ¼ Left cumulant t;j;k À Right cumulant t;j;k ð5Þ</head>
         <p>
           <s>where t varies over the first 8 time points, j varies over the 16 organizational types, and k varies over the 2 dimensions-occupational prestige and education.</s>
-          <s>Finally, 128 = (9-1) Ã 16 records with two explanatory variables and two dependent variables for each record are generated to estimate the predicted niche movement equations as Nich movement t;j;OCC ¼ 0:03067 þ 0:98923 Ã Net opportunity t;j;OCC ð6Þ</s>
+          <s>Finally, 128 = (9-1) Ã 16 records with two explanatory variables and two dependent variables for each record are generated to estimate the predicted niche movement equations as Nich movement t;j;OCC ¼ 0:03067 þ 0:98923 Ã Net opportunity t;j;OCC</s>
         </p>
         <p>
           <s>Nich movement t;j;EDUC ¼ 0:09113 þ 2:50393 Ã Net opportunity t;j;EDUC ð7Þ</s>
@@ -756,29 +753,29 @@
         <head>Supporting information</head>
       </div>
       <figure xml:id="fig_0">
-        <head/>
-        <label/>
-        <figDesc>R&gt; install.packages('Blaunet', repos = "http://cran.r-project.org", dependencies = TRUE) Linux users should have X11 installed and GTK+ environment built in terminal via $ sudo apt-get install libglpk-dev $ sudo apt-get install libgtk2.0-dev $ sudo apt-get build-dep r-cran-rgl Then install Blaunet in R via R&gt; install.packages('Blaunet', repos = "http://cran.r-project.org", dependencies = TRUE)</figDesc>
-      </figure>
-      <figure xml:id="fig_1">
         <head>Fig 2 .</head>
         <label>2</label>
         <figDesc>Fig 2. Interface for loading data. https://doi.org/10.1371/journal.pone.0204990.g002</figDesc>
       </figure>
-      <figure xml:id="fig_2">
+      <figure xml:id="fig_1">
         <head>Fig 1 .</head>
         <label>1</label>
         <figDesc>Fig 1. Main interface of Blaunet. https://doi.org/10.1371/journal.pone.0204990.g001</figDesc>
       </figure>
-      <figure xml:id="fig_3">
+      <figure xml:id="fig_2">
         <head>Fig 3 .</head>
         <label>3</label>
         <figDesc>Fig 3. Graphic interface for salient dimension suggestion. https://doi.org/10.1371/journal.pone.0204990.g003</figDesc>
       </figure>
-      <figure xml:id="fig_4">
+      <figure xml:id="fig_3">
         <head>Fig 4 .</head>
         <label>4</label>
         <figDesc>Fig 4. Identifying categorical variables among the set of dimensions. https://doi.org/10.1371/journal.pone.0204990.g004</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head/>
+        <label/>
+        <figDesc>Blaunet provides the niche plotting feature introduced by McPherson [1]. Niches of social entities can be represented in the Blau space as boxes (in 2-dimensions) or cuboids (in 3-dimensions) overlaying the points that indicate the individuals who belong to them. The niche plot function is the second item under the "Analysis" menu. As shown in Fig 6, the example dataset schlattr.csv &amp; schlnet.csv is loaded and the Peabody Picture Vocabulary</figDesc>
       </figure>
       <figure xml:id="fig_5">
         <head>Fig 5 .</head>
@@ -836,21 +833,31 @@
         <figDesc>Fig 15. Interface for niche analysis. https://doi.org/10.1371/journal.pone.0204990.g015</figDesc>
       </figure>
       <figure xml:id="fig_16">
+        <head/>
+        <label/>
+        <figDesc>17 the example dataset gss74_87.rda is loaded in memory. The variable ID is selected as the node id, survey year (YEAR) as the ecology id, occupational prestige (PRES- TIGE) and education level (EDUC) as the salient dimensions, and memberships in labor unions (MEMUNION), literary or art groups (MEMLIT), and professional groups (MEM- PROF) as the group affiliation indicators. After setting the deviation rage for each salient dimension, the survey year 1978 is chosen to illustrate the feature of cross-sectional niche dynamics analysis, as shown in Fig 18.</figDesc>
+      </figure>
+      <figure xml:id="fig_17">
         <head>Fig 18 .</head>
         <label>18</label>
         <figDesc>Fig 18. Interface for selection ecology. https://doi.org/10.1371/journal.pone.0204990.g018</figDesc>
       </figure>
-      <figure xml:id="fig_17">
+      <figure xml:id="fig_18">
+        <head/>
+        <label/>
+        <figDesc>Fig 20. Carrying capacity in three-dimensional Blau space. https://doi.org/10.1371/journal.pone.0204990.g020</figDesc>
+      </figure>
+      <figure xml:id="fig_19">
         <head>Fig 21 .</head>
         <label>21</label>
         <figDesc>Fig 21. Membership rate in three-dimensional Blau space. https://doi.org/10.1371/journal.pone.0204990.g021</figDesc>
       </figure>
-      <figure xml:id="fig_18">
+      <figure xml:id="fig_20">
         <head>Fig 22 .</head>
         <label>22</label>
         <figDesc>Fig 22. Intensity of exploitation in three-dimensional Blau space. https://doi.org/10.1371/journal.pone.0204990.g022</figDesc>
       </figure>
-      <figure xml:id="fig_19">
+      <figure xml:id="fig_21">
         <head>S1</head>
         <label/>
         <figDesc>File. Manual for the Blaunet Graphic User Interface Package. (PDF) Validation: Michael Genkin, Cheng Wang, Matthew E. Brashears. Visualization: Michael Genkin, Cheng Wang. Writing -original draft: Michael Genkin, Cheng Wang. Writing -review &amp; editing: Michael Genkin, Cheng Wang, Matthew E. Brashears.</figDesc>
@@ -858,8 +865,22 @@
       <figure type="table" validated="false" xml:id="tab_0">
         <head/>
         <label/>
-        <figDesc>.rda. This dataset is excerpted, with permission, from the Social Capital Bench- mark Survey, which was collected by Professor Robert D. Putnam of the Saguaro Seminar: Civic Engagement in America, a project of the John F. Kennedy School of Government at Har- vard University and numerous community foundations nationwide, and made available through the Roper Center for Public Opinion Research. The dataset contains 1,008 individuals from two cities in the United States: Bismarck, North Dakota, and Grand Rapids, Michigan. The sociodemographic information includes 4 individual characteristics-age, income, educa- tion level, and work time; and the group affiliation information includes membership in 18 voluntary organizations. There are also six other assorted variables. gss74_87.rda. This dataset is excerpted from the General Social Survey, 1972-2012, available from both the Interuniversity Consortium for Political and Social Research (ICPSR) website (http://www.icpsr.umich.edu/icpsrweb/NACJD/studies/34802) and the NORC website (http:// gss.norc.org/get-the-data/). The sociodemographic information includes the education level and occupational prestige scores of 13,865 respondents surveyed in</figDesc>
-        <table/>
+        <figDesc>Microsoft Windows users, Blaunet can be installed directly in R via</figDesc>
+        <table>R&gt; install.packages('Blaunet', repos = "http://cran.r-project.org", 
+dependencies = TRUE) 
+
+Linux users should have X11 installed and GTK+ environment built in terminal via 
+
+$ sudo apt-get install libglpk-dev 
+$ sudo apt-get install libgtk2.0-dev 
+$ sudo apt-get build-dep r-cran-rgl 
+
+Then install Blaunet in R via 
+
+R&gt; install.packages('Blaunet', repos = "http://cran.r-project.org", 
+dependencies = TRUE) 
+
+</table>
       </figure>
       <figure type="table" validated="false" xml:id="tab_1">
         <head>Table 1 .</head>
@@ -1183,10 +1204,48 @@ Bruce
 
 https://doi.org/10.1371/journal.pone.0204990.t006 </table>
       </figure>
+      <figure type="table" validated="true" xml:id="tab_6">
+        <head>Table 7 .</head>
+        <label>7</label>
+        <figDesc>Niche breadth summary for the "Blau" object generated from BSANet.rda.</figDesc>
+        <table>GROUPS 
+age 
+income 
+educ 
+ecologyNames 
+
+grp_conservative 
+4.94-77.06 
+0.32-6.68 
+7.00-7.00 
+New York 
+
+grp_liberal 
+16.15-45.85 
+0.00-7.24 
+0.76-9.24 
+New York 
+
+grp_conservative1 
+17.25-39.95 
+0.00-8.47 
+0.28-8.92 
+San Francisco 
+
+grp_liberal1 
+18.06-41.94 
+0.81-8.69 
+0.00-8.42 
+San Francisco 
+
+https://doi.org/10.1371/journal.pone.0204990.t007 
+
+</table>
+      </figure>
       <figure type="table" validated="false" xml:id="tab_7">
-        <head/>
-        <label/>
-        <figDesc>Table 10. Dyadic output for the "Blau" object generated from BSANet.rda.</figDesc>
+        <head>Table 9 .</head>
+        <label>9</label>
+        <figDesc>The second part of nodal output for the "Blau" object generated from BSANet.rda-New York city.Table 10. Dyadic output for the "Blau" object generated from BSANet.rda.</figDesc>
         <table>11 
 12 
 13 
@@ -1238,158 +1297,7 @@ Non-member but in niche
 
 https://doi.org/10.1371/journal.pone.0204990.t009 
 
-Ego 
-Alter 
-CoNicher 
-CoOutsider 
-Straddler 
-Spanner 
-EucDist 
-MahalanobisDist 
-
-Amir 
-Mark 
-0 
-0 
-1 
-0 
-14.14214 
-1.576603 
-
-Emma 
-John 
-1 
-0 
-0 
-1 
-15.09967 
-2.801218 
-
-Emma 
-Mary 
-0 
-0 
-0 
-2 
-20.42058 
-2.771355 
-
-John 
-Emma 
-1 
-0 
-0 
-1 
-15.09967 
-2.801218 
-
-John 
-Mary 
-1 
-0 
-0 
-1 
-34.1321 
-2.661715 
-
-Mark 
-Amir 
-0 
-0 
-1 
-0 
-14.14214 
-1.576603 
-
-Mary 
-Emma 
-0 
-0 
-0 
-2 
-20.42058 
-2.771355 
-
-Mary 
-John 
-1 
-0 
-0 
-1 
-34.1321 
-2.661715 
-
-Aude 
-Wendy 
-1 
-0 
-0 
-1 
-8.774964 
-1.880606 
-
-Aude 
-Bryan 
-1 
-0 
-0 
-1 
-3.316625 
-1.0905 
-
-Bruce 
-Mona 
-1 
-0 
-0 
-1 
-12.32883 
-2.827745 
-
-Bryan 
-Wendy 
-0 
-0 
-0 
-2 
-10.48809 
-2.784402 
-
-Bryan 
-Aude 
-1 
-0 
-0 
-1 
-3.316625 
-1.0905 
-
-Mona 
-Bruce 
-1 
-0 
-0 
-1 
-12.32883 
-2.827745 
-
-Wendy 
-Bryan 
-0 
-0 
-0 
-2 
-10.48809 
-2.784402 
-
-Wendy 
-Aude 
-1 
-0 
-0 
-1 
-8.774964 
-1.880606 </table>
+</table>
       </figure>
       <figure type="table" validated="false" xml:id="tab_8">
         <head>Table 11 .</head>
@@ -1538,12 +1446,6 @@ eigenvector
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_10">
-        <head/>
-        <label/>
-        <figDesc>, 0.30, 0.45, 0.60, 0.75, 0.90, 1.05, 1.20, 1.35, 1.50) Ã SD OCC , Mean EDUC ]. For education the quadrants for the 10 points on each side are [Mean OCC , Mean EDUC ± (0.15, 0.30, 0.45, 0.60, 0.75, 0.90, 1.05, 1.20, 1.35, 1.50) Ã SD EDUC ]. Note that the deviance range (1.5 by default) is configurable in Blaunet. Next, Fig 20. Carrying capacity in three-dimensional Blau space. https://doi.org/10.1371/journal.pone.0204990.g020</figDesc>
-        <table/>
-      </figure>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0204990 October 1, 2018</note>
     </body>
     <back>
@@ -1556,9 +1458,6 @@ eigenvector
         </div>
         <div>
           <head>Author Contributions</head>
-          <p>
-            <s>Conceptualization: Michael Genkin, Cheng Wang, Matthew E. Brashears.</s>
-          </p>
         </div>
       </div>
       <div type="references">
@@ -1780,14 +1679,15 @@ eigenvector
                   <surname>Davis</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.ssresearch.2017.06.002</idno>
-              <ptr target="https://doi.org/10.1016/j.ssresearch.2017.06.002PMID"/>
+              <idno type="DOI">10.1016/j.ssresearch.2017.06.002</idno>
+              <idno>PMID: 28888279</idno>
+              <ptr target="https://doi.org/10.1016/j.ssresearch.2017.06.002"/>
             </analytic>
             <monogr>
               <title level="j">Soc Sci Res</title>
               <imprint>
                 <biblScope unit="volume">67</biblScope>
-                <biblScope unit="page">28888279</biblScope>
+                <biblScope from="115" to="128" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -1879,14 +1779,14 @@ eigenvector
                   <surname>Tian</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0106052</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0106052PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0106052</idno>
+              <idno>PMID: 25188391</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0106052"/>
             </analytic>
             <monogr>
               <title level="j">PLoS ONE</title>
               <imprint>
                 <biblScope unit="volume">9</biblScope>
-                <biblScope unit="page">25188391</biblScope>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -1945,14 +1845,15 @@ eigenvector
                   <surname>Péli</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0144574</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0144574PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0144574</idno>
+              <idno>PMID: 26656107</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0144574"/>
             </analytic>
             <monogr>
               <title level="j">PLoS ONE</title>
               <imprint>
                 <biblScope unit="volume">10</biblScope>
-                <biblScope unit="page">26656107</biblScope>
+                <biblScope unit="page">144574</biblScope>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -2586,14 +2487,15 @@ eigenvector
                   <surname>Genkin</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.ssresearch.2015.12.004</idno>
-              <ptr target="https://doi.org/10.1016/j.ssresearch.2015.12.004PMID"/>
+              <idno type="DOI">10.1016/j.ssresearch.2015.12.004</idno>
+              <idno>PMID: 27194666</idno>
+              <ptr target="https://doi.org/10.1016/j.ssresearch.2015.12.004"/>
             </analytic>
             <monogr>
               <title level="j">Soc Sci Res</title>
               <imprint>
                 <biblScope unit="volume">58</biblScope>
-                <biblScope unit="page">27194666</biblScope>
+                <biblScope from="279" to="291" unit="page"/>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -2693,12 +2595,13 @@ eigenvector
                   <surname>Centola</surname>
                 </persName>
               </author>
+              <idno>PMID: 26421341</idno>
             </analytic>
             <monogr>
               <title level="j">Am J Sociol</title>
               <imprint>
                 <biblScope unit="volume">120</biblScope>
-                <biblScope unit="page">26421341</biblScope>
+                <biblScope from="1295" to="1338" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -2802,7 +2705,7 @@ eigenvector
                   <surname>Morris</surname>
                 </persName>
               </author>
-              <idno type="doi">10.18637/jss.v024.i03</idno>
+              <idno type="DOI">10.18637/jss.v024.i03</idno>
               <ptr target="https://doi.org/10.18637/jss.v024.i03"/>
             </analytic>
             <monogr>
@@ -2881,7 +2784,7 @@ eigenvector
                   <forename type="middle">M</forename>
                 </persName>
               </author>
-              <idno type="doi">10.18637/jss.v024.i09</idno>
+              <idno type="DOI">10.18637/jss.v024.i09</idno>
               <ptr target="https://doi.org/10.18637/jss.v024.i09"/>
             </analytic>
             <monogr>
@@ -2929,7 +2832,7 @@ eigenvector
                   <surname>Morris</surname>
                 </persName>
               </author>
-              <idno type="doi">10.18637/jss.v024.i01</idno>
+              <idno type="DOI">10.18637/jss.v024.i01</idno>
               <ptr target="https://doi.org/10.18637/jss.v024.i01"/>
             </analytic>
             <monogr>
@@ -2984,7 +2887,7 @@ eigenvector
                   <surname>De Vries</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/j.1360-0443.2007.01905.x</idno>
+              <idno type="DOI">10.1111/j.1360-0443.2007.01905.x</idno>
               <ptr target="https://doi.org/10.1111/j.1360-0443.2007.01905.xPMID"/>
             </analytic>
             <monogr>
@@ -3079,14 +2982,15 @@ eigenvector
                   <surname>Kaufman</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1073/pnas.1109739109</idno>
-              <ptr target="https://doi.org/10.1073/pnas.1109739109PMID"/>
+              <idno type="DOI">10.1073/pnas.1109739109</idno>
+              <idno>PMID: 22184242</idno>
+              <ptr target="https://doi.org/10.1073/pnas.1109739109"/>
             </analytic>
             <monogr>
               <title level="j">PNAS USA</title>
               <imprint>
                 <biblScope unit="volume">109</biblScope>
-                <biblScope unit="page">22184242</biblScope>
+                <biblScope from="68" to="72" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -3204,14 +3108,15 @@ eigenvector
                   <surname>Huang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1073/pnas.1306440110</idno>
-              <ptr target="https://doi.org/10.1073/pnas.1306440110PMID"/>
+              <idno type="DOI">10.1073/pnas.1306440110</idno>
+              <idno>PMID: 23918373</idno>
+              <ptr target="https://doi.org/10.1073/pnas.1306440110"/>
             </analytic>
             <monogr>
               <title level="j">PNAS</title>
               <imprint>
                 <biblScope unit="volume">110</biblScope>
-                <biblScope unit="page">23918373</biblScope>
+                <biblScope from="13774" to="13779" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>

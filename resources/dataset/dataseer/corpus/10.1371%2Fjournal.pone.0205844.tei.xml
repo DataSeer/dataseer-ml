@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T09:31+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-24T01:04+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -201,11 +201,8 @@
     <body>
       <div>
         <formula xml:id="formula_0">a1111111111 a1111111111 a1111111111 a1111111111 a1111111111</formula>
-      </div>
-      <div>
-        <head>Introduction</head>
         <p>
-          <s>Quantum information-a field at the intersection of physics, mathematics, and computer science-seeks to harness the power of quantum systems for computing and communication technologies <ref target="#b0" type="bibr">[1,</ref>
+          <s>Introduction Quantum information-a field at the intersection of physics, mathematics, and computer science-seeks to harness the power of quantum systems for computing and communication technologies <ref target="#b0" type="bibr">[1,</ref>
             <ref target="#b1" type="bibr">2]</ref> .</s>
           <s>This field is currently undergoing rapid development as a series of candidate quantum computing platforms grow in scale and complexity <ref target="#b2" type="bibr">[3]</ref>
             <ref target="#b3" type="bibr">[4]</ref>
@@ -286,7 +283,7 @@
         <p>
           <s>A generic gate-defined double dot device is presented in <ref target="#fig_0" type="figure">Fig 1A.</ref>
           </s>
-          <s>The barrier gate electrodes, labeled in <ref target="#fig_0" type="figure">Fig 1A as</ref> V Bi (i = 1, 2, 3), are used to confine electron density to certain regions, forming islands of electrons.</s>
+          <s>The barrier gate electrodes, labeled in <ref target="#fig_0" type="figure">Fig 1A</ref> as V Bi (i = 1, 2, 3), are used to confine electron density to certain regions, forming islands of electrons.</s>
           <s>The plunger gates, labeled V Pj (j = 1, 2), shift the chemical potential in a given dot relative to the chemical potentials of the contacts (reservoirs of electrons, labeled in <ref target="#fig_0" type="figure">Fig 1A as</ref> the source and drain) that are assumed to be kept at a fixed chemical potential.</s>
           <s>In our simulations, the electron islands are generated in a 1D channel designed in a 2DEG.</s>
         </p>
@@ -295,7 +292,7 @@
           <s>Depending on the relation between the chemical potential μ and the electrostatic potential V(x), alternating regions of electron density islands and barriers are formed (see <ref target="#fig_0" type="figure">Fig 1B)</ref> , i.e., the state of the device is established.</s>
           <s>For the 5-gate device the possible states are a barrier or quantum point contact (QPC), single dot (SD), double dot (DD), and short circuit (SC) (see <ref target="#fig_0" type="figure">Fig 1C)</ref> .</s>
           <s>To go from the potential profile to experimentally measurable characteristics of the device, we use a physical model described in the following section.</s>
-          <s>The flow of the data simulation is visualized in <ref target="#fig_3" type="figure">Fig 2.</ref>
+          <s>The flow of the data simulation is visualized in <ref target="#fig_2" type="figure">Fig 2.</ref>
           </s>
         </p>
       </div>
@@ -304,8 +301,6 @@
         <p>
           <s>In our model, we use the theory of many-electron systems developed by Thomas and Fermi <ref target="#b25" type="bibr">[24]</ref> , treating the electronic density n(x) as the main variable.</s>
           <s>While such an approach lacks the quantitative details of a full simulation, it reproduces the minimum qualitative features of the system sufficient for machine learning, as we will show.</s>
-        </p>
-        <p>
           <s>Electron transport.</s>
           <s>As mentioned earlier, in the transport simulations, we assume that the externally created 1D potential V(x) is given.</s>
           <s>In particular, the barrier voltages are set to V Bi = −200mV, for i = 1, 2, 3.</s>
@@ -320,7 +315,18 @@
         <p>
           <s>with the starting solution n(x) = 0. Here, β is the inverse temperature, � 0 is the conduction band minimum, and gð�Þ ¼ g 0 ¼ m� pℏ 2 is the density of states in the conduction band set to a constant g 0 for a 2DEG.</s>
           <s>The conduction band minimum itself is modified because of the presence of the electron density, hence the need for self-consistency.</s>
-          <s>The modified band minimum is calculated as .</s>
+          <s>The modified band minimum is calculated as</s>
+        </p>
+        <formula xml:id="formula_2">� 0 0 ðxÞ ¼ � 0 À eVðxÞ þ Z Kðx; x 0 Þnðx 0 Þdx 0 ;<label>ð2Þ</label>
+        </formula>
+        <p>
+          <s>where � 0 0 ðxÞ is the new spatially varying band minimum, V(x) is the externally applied potential, and Kðx; x 0 Þ ¼ K 0 ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi</s>
+        </p>
+        <formula xml:id="formula_3">ðxÀ x 0 Þ 2 þs 2 p</formula>
+        <p>
+          <s>gives the Coulomb potential between points x and x 0 .</s>
+          <s>K 0 sets the energy scale of the interaction and R K(x, x 0 )n(x 0 ) dx 0 gives the effective Coulomb potential created as a result of the electron density n(x).</s>
+          <s>A softening parameter σ has been added to the The simulation for a device begins by setting gate voltages and calculating the potential profile V(x).</s>
           <s>This potential profile, along with other physical parameters, is used to calculate the electron-density self-consistently along the 1D channel.</s>
           <s>The state of the channel, e.g., the number of dots is known at this stage.</s>
           <s>The electron density is used to construct a capacitance model.</s>
@@ -329,8 +335,6 @@
           <s>The final output for a single set of gate voltages consists of the device state (state labels), current, charges, and sensor conductance(s).</s>
           <s>The simulation is repeated for every point in the space of plunger gate voltages for a single device and then across an ensemble of device geometries.</s>
         </p>
-        <formula xml:id="formula_2">� 0 0 ðxÞ ¼ � 0 À eVðxÞ þ Z Kðx; x 0 Þnðx 0 Þdx 0 ;<label>ð2Þ</label>
-        </formula>
         <p>
           <s>https://doi.org/10.1371/journal.pone.0205844.g002</s>
           <s>denominator to help model the effective 1D interaction for a higher dimensional gas of electrons as would be present in the device and to prevent a numerical singularity at x = x 0 .</s>
@@ -345,14 +349,12 @@
           <s>Let Q be the vector containing the integer charges on the islands and Z be the induced charge from the depletion gates.</s>
           <s>The energy of such a capacitance model is given as:</s>
         </p>
-        <formula xml:id="formula_3">E ¼ ðQ À ZÞ T 1 2C � � À 1 ðQ À ZÞ<label>ð3Þ</label>
-        </formula>
-        <formula xml:id="formula_4">¼ X i;j E i;j ðQ À ZÞ i ðQ À ZÞ j ;<label>ð4Þ</label>
+        <formula xml:id="formula_4">E ¼ ðQ À ZÞ T 1 2C � � À 1 ðQ À ZÞ ð3Þ ¼ X i;j E i;j ðQ À ZÞ i ðQ À ZÞ j ;<label>ð4Þ</label>
         </formula>
         <p>
-          <s>where C is the capacitance matrix and</s>
+          <s>where C is the capacitance matrix and E i;</s>
         </p>
-        <formula xml:id="formula_5">E i;j ¼ 1 2C À � À 1 i;j .</formula>
+        <formula xml:id="formula_5">j ¼ 1 2C À � À 1 i;j .</formula>
         <p>
           <s>The objective behind constructing a capacitance model is to find the stable configuration of charges Q that leads to the minimum energy E. The Thomas-Fermi electron density n(x) gives an estimate of the inverse capacitance elements as</s>
         </p>
@@ -362,6 +364,8 @@
           <s>where δ i,j is the Kronecker delta function and c k is the coefficient that sets the scale for the kinetic energy of the Fermi sea on each island.</s>
           <s>The integration subscript R i denotes that the integration is to be performed only over the i th island.</s>
           <s>The denominator normalizes to the total number of electrons on each island.</s>
+        </p>
+        <p>
           <s>The islands of electron density are separated by potential barriers.</s>
           <s>Quantum mechanically, it is possible for electrons to tunnel into adjacent islands or contacts.</s>
           <s>We calculate a tunneling rate for a single electron from the islands to one another or to the contacts under the WKB approximation.</s>
@@ -371,7 +375,7 @@
         </p>
         <p>
           <s>Charge sensor model.</s>
-          <s>In our simulations, in addition to finding the current, we also calculate the response of a sensor to the charge on the islands (see <ref target="#fig_3" type="figure">Fig 2)</ref> .</s>
+          <s>In our simulations, in addition to finding the current, we also calculate the response of a sensor to the charge on the islands (see <ref target="#fig_2" type="figure">Fig 2)</ref> .</s>
           <s>A charge sensor is a device capable of sensing the electrostatic environment around it <ref target="#b26" type="bibr">[25]</ref> .</s>
           <s>It can be constructed in two principal ways: using a quantum point contact (QPC) or using a single dot (SD).</s>
           <s>In both cases, the current through the sensor is sensitive to the change in potential at the sensor's position.</s>
@@ -412,9 +416,8 @@
         <p>
           <s>• σ = 2 nm -prevents blowup at x = 0 in the interaction,</s>
         </p>
-        <formula xml:id="formula_10">• g 0 = 0.5 eV −1 nm −1</formula>
         <p>
-          <s>-sets the scale for the density of states,</s>
+          <s>• g 0 = 0.5 eV −1 nm −1 -sets the scale for the density of states,</s>
         </p>
         <p>
           <s>• c k = 1 meVnm-gives the kinetic term for the 2DEG.</s>
@@ -441,7 +444,7 @@
         <p>
           <s>Each file contains information about a single simulated device.</s>
           <s>While the units are not included as part of the dataset, they are provided here for completeness.</s>
-          <s>The generated devices are stored as dictionaries with the following five elements (keys) in them (the type of each element in the dictionary is given in the brackets): For the structure of full data files, see <ref target="#fig_6" type="figure">Fig 3.</ref> For a detailed reference list for the simulated data (i.e., 'output'), refer to <ref type="table">Table 2</ref> , and for a reference list for the physical parameters of the device (i.e., 'physics'), see <ref type="table">Table 3</ref> .</s>
+          <s>The generated devices are stored as dictionaries with the following five elements (keys) in them (the type of each element in the dictionary is given in the brackets): For the structure of full data files, see <ref target="#fig_5" type="figure">Fig 3.</ref> For a detailed reference list for the simulated data (i.e., 'output'), refer to <ref type="table">Table 2</ref> , and for a reference list for the physical parameters of the device (i.e., 'physics'), see <ref type="table">Table 3</ref> .</s>
         </p>
       </div>
       <div>
@@ -450,7 +453,7 @@
           <s>The data stored in the 'output' correspond to a 2D map (100 × 100 pixel) from the space of plunger gate voltages (V P1 , V P2 ) to current, charge, state, and sensor maps (each stored separately).</s>
           <s>These maps can be used as observables (current, charge, sensor) and labels (state) for machine learning training and testing.</s>
           <s>
-            <ref target="#fig_9" type="figure">Fig 4 shows</ref> a preview of a sample of each of the generated data types.</s>
+            <ref target="#fig_8" type="figure">Fig 4 shows</ref> a preview of a sample of each of the generated data types.</s>
           <s>The Python code that allows for visualizing the 'output' data is included in the Jupyter notebook (S1 File).</s>
         </p>
       </div>
@@ -473,7 +476,7 @@
         </p>
         <p>
           <s>The accuracy of the learner is defined as a percentage of correctly identified images (supervised learning).</s>
-          <s>To account for the uneven distribution of representatives between classes in the training sets (see <ref target="#fig_10" type="figure">Fig 5A for</ref> a typical distribution of the states in the training set), we used a weighted average of F1 scores of each class to find accuracy for each iteration <ref target="#b32" type="bibr">[31]</ref> .</s>
+          <s>To account for the uneven distribution of representatives between classes in the training sets (see <ref type="figure">Fig 5A for</ref> a typical distribution of the states in the training set), we used a weighted average of F1 scores of each class to find accuracy for each iteration <ref target="#b32" type="bibr">[31]</ref> .</s>
           <s>Note that in our tests, we did not focus on achieving a high recognition accuracy but rather on verifying the consistency of the accuracy rate between iterations.</s>
           <s>The overall average accuracy of the learner for the current data is 96.3%, with a standard deviation (std dev) of 0.5% and for the charge sensor data the average accuracy is 95.9% (std dev = 0.6%).</s>
           <s>The training takes about 4.5 min (std dev = 1.1 min) for the current data and about 4.6 min (std dev = 0.2 min) for the charge sensor data on a 2014 MacBook Pro.</s>
@@ -485,17 +488,26 @@
           <s>For the charge sensor data, the average accuracy is 22.4% (std dev = 26.1%)</s>
           <s>for SC, 92.8% (std dev = 2.1%) for QPC, 94.0% (std dev = 0.8%) for SD, and 97.4% (std dev = 0.4%) for DD.</s>
           <s>
-            <ref target="#fig_10" type="figure">Fig 5B shows</ref> visualization of the performance of a ML algorithm described earlier, per state, on a sample simulated current-based dataset.</s>
+            <ref type="figure">Fig 5B shows</ref> visualization of the performance of a ML algorithm described earlier, per state, on a sample simulated current-based dataset.</s>
           <s>The lower accuracy for SC is caused by the significantly lower number of SC images in the training and evaluation sets.</s>
           <s>The parameters of the ML algorithm, such as the number of convolutional and pooling layers, the number and size of dense layers, the optimizer and learning rate, batch size and number of steps can be modified to further improve the performance of the trained network.</s>
         </p>
         <p>
           <s>The goal of the project presented in Ref. <ref target="#b22" type="bibr">[22]</ref> was to auto-tune the device to a DD configuration.</s>
           <s>Thus, the main task of the ML algorithm was to distinguish between SD and DD states.</s>
+          <s>
+            <ref target="#fig_0" type="figure">V_P1_vec' and 'V_P2_vec')</ref> .</s>
+          <s>The 'output' dictionaries include four variables, as defined in the table.</s>
           <s>The low number of QPC and SC states does not affect performance of the trained network.</s>
           <s>In order to obtain a training set that includes more comparable numbers of all types of states one can, e.g., apply affine transformations on the underrepresented type to reach the desired states distribution.</s>
           <s>As has been shown in Ref. <ref target="#b22" type="bibr">[22]</ref> , however, the network trained on the QFlow lite dataset can be employed to auto-tune simulated and, in principle, experimental devices.</s>
         </p>
+      </div>
+      <div>
+        <head>Table 2. The single device simulation output (stored as 'output') is a list of 10 000 dictionaries, holding the simulated data for each point in the plunger voltage space (defined by vectors '</head>
+      </div>
+      <div>
+        <head>Key</head>
       </div>
       <div>
         <head>QFlow lite suite: Working with the data</head>
@@ -504,32 +516,21 @@
           <s>The physical parameters of the devices, stored as a dictionary 'physics'.</s>
           <s>Fixed values are given explicitly.</s>
           <s>Varied parameters, given in angle brackets, were randomly sampled from a Gaussian distribution with the given mean value μ and standard deviation set to 0.05|μ| (unless stated otherwise).</s>
-        </p>
-      </div>
-      <div>
-        <head>Key Description Value</head>
-        <p>
-          <s>attempt_rate_coef controls the strength of the attempt rate factor 1 barrier_current a scale for the current set to the device when in barrier mode 1 arb.</s>
-          <s>unit barrier_tunnel_rate a tunnel rate set when the device is in barrier mode while calculating the tunnel probability 10.0 beta effective temperature used for self-consistent calculation of the electron density n(x) 1000(eV) modify the network's architecture, to train the network, and to test it on their own experimental data.</s>
+          <s>modify the network's architecture, to train the network, and to test it on their own experimental data.</s>
           <s>QFlow lite is written in Python and operated through a Jupyter notebook-based interface <ref target="#b34" type="bibr">[32]</ref> .</s>
           <s>It can be accessed on GitHub <ref target="#b35" type="bibr">[33]</ref> .</s>
-          <s>The software comes with a "User Guide" that includes the software dependencies required for successful execution of the code, a manual .</s>
-          <s>The code used to generate these plots can be found in S1 File.</s>
-        </p>
-        <note type="other">−</note>
-        <p>
-          <s>https://doi.org/10.1371/journal.pone.0205844.g004</s>
-          <s>Machine learning with the QFlow lite dataset explaining the workflow of QFlow lite, and guidance on how to convert the experimental data to a format compatible with the trained network.</s>
-        </p>
-        <p>
-          <s>After initializing the QFlow class that accompanies the QFlow lite suite (Step 1), the user can modify the size of the images that will be generated for training <ref type="bibr">(</ref> Step 2).</s>
+          <s>The software comes with a "User Guide" that includes the software dependencies required for successful execution of the code, a manual explaining the workflow of QFlow lite, and guidance on how to convert the experimental data to a format compatible with the trained network.</s>
+          <s>After initializing the QFlow class that accompanies the QFlow lite suite (Step 1), the user can modify the size of the images that will be generated for training (Step 2).</s>
           <s>The total time to generate the training set from the 1001 stored primitives on a 2014 MacBook Pro is about 2.5 minutes (a default of 10 subregions per data file, 30 × 30 pixels each, and 10,010 effective realizations).</s>
           <s>The size of the training images can be modified directly within the QFlow lite suite.</s>
           <s>The number of images generated from each device has to be changed within the class itself.</s>
           <s>Once the training set is established, the user can preview the data.</s>
           <s>A sample of a single and double dot, together with the label of each region, are generated.</s>
-          <s>The label indicates the actual state, as well as the fraction of each type of state within the given image, and is in the format: [SC, QPC, SD, DD] (see <ref type="figure">Fig 6 for a sample preview output)</ref> .</s>
+          <s>The label indicates the actual state, as well as the fraction of each type of state within the given image, and is in the format: [SC, QPC, SD, DD] (see <ref type="figure">Fig 6 for</ref> a sample preview output).</s>
         </p>
+      </div>
+      <div>
+        <head>Key</head>
         <p>
           <s>Within</s>
         </p>
@@ -575,11 +576,13 @@
           <s>In the future, we intend to expand our approach to systems with a larger number of dots in both one as well as two dimensions.</s>
           <s>This should enable ML approaches to take over device control as experiments go from the routine few to the challenging many.</s>
           <s>The fruitful exchange between modern machine learning techniques and quantum technology thus presents an exciting and promising pathway for realizing scalable quantum dot devices for computing and other applications.</s>
+        </p>
+        <p>
+          <s>Supporting information S1 File.</s>
+          <s>Data visualization code.</s>
+          <s>A Jupyter notebook-based code for converting the NumPy files to csv format and for previewing the simulated data.</s>
           <s>Taylor.</s>
         </p>
-      </div>
-      <div>
-        <head>Supporting information</head>
       </div>
       <figure xml:id="fig_0">
         <head>Fig 1 .</head>
@@ -592,58 +595,47 @@
         <figDesc>https://doi.org/10.1371/journal.pone.0205844.g001</figDesc>
       </figure>
       <figure xml:id="fig_2">
-        <head>where � 0 0</head>
-        <label>0</label>
-        <figDesc>ðxÞ is the new spatially varying band minimum, V(x) is the externally applied poten- tial, and Kðx; x 0 Þ ¼ K 0 ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ðxÀ x 0 Þ 2 þs 2 p gives the Coulomb potential between points x and x 0 . K 0 sets the energy scale of the interaction and R K(x, x 0 )n(x 0 ) dx 0 gives the effective Coulomb potential cre- ated as a result of the electron density n(x). A softening parameter σ has been added to the</figDesc>
-      </figure>
-      <figure xml:id="fig_3">
         <head>Fig 2 .</head>
         <label>2</label>
         <figDesc>Fig 2. Data simulation flow chart. The simulation for a device begins by setting gate voltages and calculating the potential profile V(x). This potential profile, along with other physical parameters, is used to calculate the electron-density self-consistently along the 1D channel. The state of the channel, e.g., the number of dots is known at this stage. The electron density is used to construct a capacitance model. The model predicts the stable charge states on the dots and the current through the device. The sensor conductance is calculated using the charge states. The final output for a single set of gate voltages consists of the device state (state labels), current, charges, and sensor conductance(s). The simulation is repeated for every point in the space of plunger gate voltages for a single device and then across an ensemble of device geometries.</figDesc>
       </figure>
-      <figure xml:id="fig_4">
+      <figure xml:id="fig_3">
         <head>Table 1 .</head>
         <label>1</label>
         <figDesc>Mean values for the parameters defining simulated 5-gates devices: Height of the potential profile (V 0 ) at the gate position (x 0 ), the height at which barriers were fixed (h), and the radius of the barrier gates (r 0 ). The device size along x-axis is 120 nm, with the center positioned at x 0 = 0 nm. Gate V 0 (mV) x 0 (nm) h (nm) r 0 (nm)://doi.org/10.1371/journal.pone.0205844.t001 Machine learning with the QFlow lite dataset PLOS ONE | https://doi.org/10.1371/journal.pone.0205844 October 17, 2018</figDesc>
       </figure>
-      <figure xml:id="fig_5">
+      <figure xml:id="fig_4">
         <head/>
         <label/>
         <figDesc>'type': information about what data is in the file [string], 'V_P1_vec': voltage range for the first plunger (0 to 0.4 V) [numpy.array], 'V_P2_vec': voltage range for the second plunger (0 to 0.4 V) [numpy.array], 'output': the simulated data [list]; 'physics': physical parameters of the device [dictionary];</figDesc>
       </figure>
-      <figure xml:id="fig_6">
+      <figure xml:id="fig_5">
         <head>Fig 3 .</head>
         <label>3</label>
         <figDesc>Fig 3. Data structure. The generic data structure tree for the data files. The data type is given in square brackets. The simulation output is highlighted in gray. See Tables 2 and 3 for a reference list. https://doi.org/10.1371/journal.pone.0205844.g003</figDesc>
       </figure>
-      <figure xml:id="fig_7">
-        <head>Table 2 .</head>
-        <label>2</label>
-        <figDesc>The single device simulation output (stored as 'output') is a list of 10 000 dictionaries, holding the simu- lated data for each point in the plunger voltage space (defined by vectors 'V_P1_vec' and 'V_P2_vec'). The 'output' dictionaries include four variables, as defined in the table. Key Description Type 'charge' an information about the number of charges on each dot (with a default value 0 for short circuit and a barrier) tuple 'current' a current through the device at infinitesimal bias float 'sensor' an output of the charge sensors, evaluated as the electrostatic potential at the sensor locations list 'state' a numeric label determining the state of the device, distinguishing between a single dot (1), a double dot (2), a short circuit (-1), and a barrier (0) integer https://doi.org/10.1371/journal.pone.0205844.t002</figDesc>
-      </figure>
-      <figure xml:id="fig_8">
+      <figure xml:id="fig_6">
         <head/>
         <label/>
-        <figDesc>the problem to be used in the electron density integral, (only when polylogarithm function is used to calculate the electron density, for a 2DEG a direct analytic integral of the Fermi function is useddictionary of parameters defining each of the five gates: alpha: lever arm (same for all gates) h1.0i h: distance of the gate from the electron density (same for all gates) h50.0 nmi mean: position of the gate along linear arrayrho: radius of the cylindrical gate (same for all gates) h5.0 nmi screen: the screening length (same for all gates)of the system used in the transport calculations 50 μeV mu Fermi level (assumed to be equal for both leads) 0.1 eV sensor_gate_coeff weight applied while including the potential of the gate in calculating the sensor output 0.1 sensors the position of the two charge sensors in the 2DEG plane, stored as (horizontal position with respect to the center of the device, vertical position with respect to the dots which are assumed to be located on the x-axis) [(−20,50), (20,50)] nm short_circuit_current an arbitrary high current value given to the device when in short circuit mode 100 arb.spanning the size of the device (−60, 60) nm https://doi.org/10.1371/journal.pone.0205844.t003</figDesc>
+        <figDesc>' a current through the device at infinitesimal bias float 'sensor' an output of the charge sensors, evaluated as the electrostatic potential at the sensor locations list 'state' a numeric label determining the state of the device, distinguishing between a single dot (1), a double dot (2), a short circuit (-1), and a barrier (0) integer https://doi.org/10.1371/journal.pone.0205844.t002</figDesc>
       </figure>
-      <figure xml:id="fig_9">
+      <figure xml:id="fig_7">
+        <head/>
+        <label/>
+        <figDesc>rate set when the device is in barrier mode while calculating the tunnel probability 10.0 beta effective temperature used for self-consistent calculation of the electron density n(x) 1000(eV) −1 bias difference in the chemical potential between the source and drain 100μeV c_k kinetic term for the 2DEG h1 meV nmi D dimension of the problem to be used in the electron density integral, (only when polylogarithm function is used to calculate the electron density, for a 2DEG a direct analytic integral of the Fermi function is used) 2 g_0 coefficient of the density of states h1.0(eV nm) −1 i gates the dictionary of parameters defining each of the five gates: alpha: lever arm (same for all gates) h1.0i h: distance of the gate from the electron density (same for all gates) h50.0 nmi mean: position of the gate along linear arrayrho: radius of the cylindrical gate (same for all gates) h5.0 nmi screen: the screening length (same for all gates)of the system used in the transport calculations 50 μeV mu Fermi level (assumed to be equal for both leads) 0.1 eV sensor_gate_coeff weight applied while including the potential of the gate in calculating the sensor output 0.1 sensors the position of the two charge sensors in the 2DEG plane, stored as (horizontal position with respect to the center of the device, vertical position with respect to the dots which are assumed to be located on the x-axis) [(−20,50), (20,50)] nm short_circuit_current an arbitrary high current value given to the device when in short circuit mode 100 arb.spanning the size of the device (−60, 60) nm https://doi.org/10.1371/journal.pone.0205844.t003</figDesc>
+      </figure>
+      <figure xml:id="fig_8">
         <head>Fig 4 .</head>
         <label>4</label>
-        <figDesc>Fig 4. Data visualization. A) Current, B) charge, C) charge sensor, and D) state data as a function of plunger gate voltages (2D map 100 × 100 pixels). Note that the data is unitless. For current, the data in the figure is re-scaled by a factor of 10 4</figDesc>
+        <figDesc>Fig 4. Data visualization. A) Current, B) charge, C) charge sensor, and D) state data as a function of plunger gate voltages (2D map 100 × 100 pixels). Note that the data is unitless. For current, the data in the figure is re-scaled by a factor of 10 4 . The code used to generate these plots can be found in S1 File. https://doi.org/10.1371/journal.pone.0205844.g004</figDesc>
       </figure>
-      <figure xml:id="fig_10">
-        <head>Fig 5 .</head>
-        <label>5</label>
-        <figDesc>Fig 5. State distribution. A) A typical distribution of states in a sample training set (N = 9009). B) A visualization of the performance of the ML algorithm on sample simulated data (N = 1001). https://doi.org/10.1371/journal.pone.0205844.g005</figDesc>
-      </figure>
-      <figure xml:id="fig_11">
-        <head>S1</head>
+      <figure xml:id="fig_9">
+        <head/>
         <label/>
-        <figDesc>File. Data visualization code. A Jupyter notebook-based code for converting the NumPy files to csv format and for previewing the simulated data. (IPYNB) S2 File. Sample raw data. A NumPy file with a single simulated device data. (NPY) S3 File. Sample converted data. The S2 File converted to csv format using the Jupyter note- book-based code provided in S1 File. (CSV) Author Contributions Conceptualization: Justyna P. Zwolak, Sandesh S. Kalantre, Stephen Ragole, Jacob M. Taylor. Data curation: Justyna P. Zwolak, Sandesh S. Kalantre. Formal analysis: Sandesh S. Kalantre, Jacob M. Taylor. Funding acquisition: Jacob M. Taylor. Investigation: Justyna P. Zwolak, Sandesh S. Kalantre, Xingyao Wu, Jacob M. Taylor. Methodology: Justyna P. Zwolak, Sandesh S. Kalantre, Stephen Ragole, Jacob M. Taylor. Project administration: Jacob M. Taylor. Software: Justyna P. Zwolak, Sandesh S. Kalantre, Stephen Ragole. Supervision: Jacob M. Taylor. Validation: Justyna P. Zwolak. Visualization: Justyna P. Zwolak, Sandesh S. Kalantre. Writing -original draft: Justyna P. Zwolak. Writing -review &amp; editing: Sandesh S. Kalantre, Xingyao Wu, Stephen Ragole, Jacob M.</figDesc>
+        <figDesc>(IPYNB) S2 File. Sample raw data. A NumPy file with a single simulated device data. (NPY) S3 File. Sample converted data. The S2 File converted to csv format using the Jupyter note- book-based code provided in S1 File. (CSV) Author Contributions Conceptualization: Justyna P. Zwolak, Sandesh S. Kalantre, Stephen Ragole, Jacob M. Taylor. Data curation: Justyna P. Zwolak, Sandesh S. Kalantre. Formal analysis: Sandesh S. Kalantre, Jacob M. Taylor. Funding acquisition: Jacob M. Taylor. Investigation: Justyna P. Zwolak, Sandesh S. Kalantre, Xingyao Wu, Jacob M. Taylor. Methodology: Justyna P. Zwolak, Sandesh S. Kalantre, Stephen Ragole, Jacob M. Taylor. Project administration: Jacob M. Taylor. Software: Justyna P. Zwolak, Sandesh S. Kalantre, Stephen Ragole. Supervision: Jacob M. Taylor. Validation: Justyna P. Zwolak. Visualization: Justyna P. Zwolak, Sandesh S. Kalantre. Writing -original draft: Justyna P. Zwolak. Writing -review &amp; editing: Sandesh S. Kalantre, Xingyao Wu, Stephen Ragole, Jacob M.</figDesc>
       </figure>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0205844 October 17, 2018</note>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0205844 October 17, 2018 10 / 17</note>
-      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0205844 October 17, 2018 12 / 17</note>
     </body>
     <back>
       <div type="acknowledgement">
@@ -704,14 +696,15 @@
                   <forename type="middle">L</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nature08812</idno>
-              <ptr target="https://doi.org/10.1038/nature08812PMID"/>
+              <idno type="DOI">10.1038/nature08812</idno>
+              <idno>PMID: 20203602</idno>
+              <ptr target="https://doi.org/10.1038/nature08812"/>
             </analytic>
             <monogr>
               <title level="j">Nature</title>
               <imprint>
                 <biblScope unit="volume">464</biblScope>
-                <biblScope unit="page">20203602</biblScope>
+                <biblScope from="45" to="53" unit="page"/>
                 <date type="published" when="2010"/>
               </imprint>
             </monogr>
@@ -764,14 +757,14 @@
                   <surname>Steffen</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/s41534-016-0004-0</idno>
+              <idno type="DOI">10.1038/s41534-016-0004-0</idno>
               <ptr target="https://doi.org/10.1038/s41534-016-0004-0"/>
             </analytic>
             <monogr>
-              <title level="m">npj Quantum Information</title>
+              <title level="j">npj Quantum Information</title>
               <imprint>
-                <date type="published" when="2017"/>
                 <biblScope unit="volume">3</biblScope>
+                <date type="published" when="2017"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -797,14 +790,15 @@
                   <surname>Wineland</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nature00784</idno>
-              <ptr target="https://doi.org/10.1038/nature00784PMID"/>
+              <idno type="DOI">10.1038/nature00784</idno>
+              <idno>PMID: 12066177</idno>
+              <ptr target="https://doi.org/10.1038/nature00784"/>
             </analytic>
             <monogr>
               <title level="j">Nature</title>
               <imprint>
                 <biblScope unit="volume">417</biblScope>
-                <biblScope unit="page">12066177</biblScope>
+                <biblScope from="709" to="711" unit="page"/>
                 <date type="published" when="2002"/>
               </imprint>
             </monogr>
@@ -857,15 +851,16 @@
                   <surname>Hensinger</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1126/sciadv.1601540</idno>
-              <ptr target="https://doi.org/10.1126/sciadv.1601540PMID"/>
+              <idno type="DOI">10.1126/sciadv.1601540</idno>
+              <idno>PMID: 28164154</idno>
+              <ptr target="https://doi.org/10.1126/sciadv.1601540"/>
             </analytic>
             <monogr>
               <title level="j">Sci Adv</title>
               <imprint>
                 <biblScope unit="volume">3</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">28164154</biblScope>
+                <biblScope unit="page">1601540</biblScope>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -904,7 +899,7 @@
                   <surname>Vandersypen</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1063/1.5025928</idno>
+              <idno type="DOI">10.1063/1.5025928</idno>
               <ptr target="https://doi.org/10.1063/1.5025928"/>
             </analytic>
             <monogr>
@@ -953,7 +948,7 @@
                   <surname>Petta</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1103/PhysRevApplied.6.054013</idno>
+              <idno type="DOI">10.1103/PhysRevApplied.6.054013</idno>
               <ptr target="https://doi.org/10.1103/PhysRevApplied.6.054013"/>
             </analytic>
             <monogr>
@@ -1006,15 +1001,16 @@
                   <surname>Steudtner</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1126/sciadv.aar3960</idno>
-              <ptr target="https://doi.org/10.1126/sciadv.aar3960PMID"/>
+              <idno type="DOI">10.1126/sciadv.aar3960</idno>
+              <idno>PMID: 29984303</idno>
+              <ptr target="https://doi.org/10.1126/sciadv.aar3960"/>
             </analytic>
             <monogr>
               <title level="j">Sci Adv</title>
               <imprint>
                 <biblScope unit="volume">4</biblScope>
                 <biblScope unit="issue">7</biblScope>
-                <biblScope unit="page">29984303</biblScope>
+                <biblScope unit="page">3960</biblScope>
                 <date type="published" when="2018"/>
               </imprint>
             </monogr>
@@ -1060,7 +1056,7 @@
                   <surname>Nayak</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1103/PhysRevB.95.235305</idno>
+              <idno type="DOI">10.1103/PhysRevB.95.235305</idno>
               <ptr target="https://doi.org/10.1103/PhysRevB.95.235305"/>
             </analytic>
             <monogr>
@@ -1113,15 +1109,16 @@
                   <surname>Smelyanskiy</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1126/science.aao4309</idno>
-              <ptr target="https://doi.org/10.1126/science.aao4309PMID"/>
+              <idno type="DOI">10.1126/science.aao4309</idno>
+              <idno>PMID: 29650670</idno>
+              <ptr target="https://doi.org/10.1126/science.aao4309"/>
             </analytic>
             <monogr>
               <title level="j">Science</title>
               <imprint>
                 <biblScope unit="volume">360</biblScope>
                 <biblScope unit="issue">6385</biblScope>
-                <biblScope unit="page">29650670</biblScope>
+                <biblScope from="195" to="199" unit="page"/>
                 <date type="published" when="2018"/>
               </imprint>
             </monogr>
@@ -1135,7 +1132,7 @@
                   <surname>Saffman</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1088/0953-4075/49/20/202001</idno>
+              <idno type="DOI">10.1088/0953-4075/49/20/202001</idno>
               <ptr target="https://doi.org/10.1088/0953-4075/49/20/202001"/>
             </analytic>
             <monogr>
@@ -1191,7 +1188,7 @@
               </author>
               <author>
                 <persName>
-                  <surname>Ieee;</surname>
+                  <surname>Ieee</surname>
                 </persName>
               </author>
               <imprint>
@@ -1236,7 +1233,7 @@
                   <surname>Schoelkopf</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1103/PhysRevA.69.062320</idno>
+              <idno type="DOI">10.1103/PhysRevA.69.062320</idno>
               <ptr target="https://doi.org/10.1103/PhysRevA.69.062320"/>
             </analytic>
             <monogr>
@@ -1271,7 +1268,7 @@
                   <surname>Monroe</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/npjqi.2016.34</idno>
+              <idno type="DOI">10.1038/npjqi.2016.34</idno>
               <ptr target="https://doi.org/10.1038/npjqi.2016.34"/>
             </analytic>
             <monogr>
@@ -1322,14 +1319,15 @@
                   <surname>Pichler</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nature24622</idno>
-              <ptr target="https://doi.org/10.1038/nature24622PMID"/>
+              <idno type="DOI">10.1038/nature24622</idno>
+              <idno>PMID: 29189778</idno>
+              <ptr target="https://doi.org/10.1038/nature24622"/>
             </analytic>
             <monogr>
               <title level="j">Nature</title>
               <imprint>
                 <biblScope unit="volume">551</biblScope>
-                <biblScope unit="page">29189778</biblScope>
+                <biblScope from="579" to="584" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -1369,7 +1367,7 @@
                   <surname>Vandersypen</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1103/RevModPhys.79.1217</idno>
+              <idno type="DOI">10.1103/RevModPhys.79.1217</idno>
               <ptr target="https://doi.org/10.1103/RevModPhys.79.1217"/>
             </analytic>
             <monogr>
@@ -1416,7 +1414,7 @@
                   <surname>Vandersypen</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1063/1.4952624</idno>
+              <idno type="DOI">10.1063/1.4952624</idno>
               <ptr target="https://doi.org/10.1063/1.4952624"/>
             </analytic>
             <monogr>
@@ -1520,7 +1518,7 @@
                   <surname>Reichl</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1063/1.5031034</idno>
+              <idno type="DOI">10.1063/1.5031034</idno>
               <ptr target="https://doi.org/10.1063/1.5031034"/>
             </analytic>
             <monogr>
@@ -1556,11 +1554,10 @@
               </author>
             </analytic>
             <monogr>
-              <title level="m">Advances in neural information processing systems</title>
+              <title level="m">Advances in neural information processing systems 25</title>
               <editor>Pereira F, Burges CJC, Bottou L, Weinberger KQ</editor>
               <imprint>
                 <date type="published" when="2012"/>
-                <biblScope unit="volume">25</biblScope>
               </imprint>
             </monogr>
           </biblStruct>
@@ -1611,7 +1608,7 @@
                   <forename type="middle">P</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1103/RevModPhys.75.1</idno>
+              <idno type="DOI">10.1103/RevModPhys.75.1</idno>
               <ptr target="https://doi.org/10.1103/RevModPhys.75.1"/>
             </analytic>
             <monogr>
@@ -1823,7 +1820,7 @@
                 <date type="published" when="2018-03-20"/>
               </imprint>
             </monogr>
-            <note>cited. Internet</note>
+            <note>Internet</note>
           </biblStruct>
           <biblStruct xml:id="b31">
             <monogr>
@@ -2048,7 +2045,6 @@
           </biblStruct>
           <biblStruct xml:id="b38">
             <monogr>
-              <title level="m" type="main">IBM's 100 Icons of Progress</title>
               <author>
                 <persName>
                   <forename type="first">Deep</forename>
@@ -2056,11 +2052,12 @@
                 </persName>
               </author>
               <ptr target="http://www-03.ibm.com/ibm/history/ibm100/us/en/icons/deepblue/"/>
+              <title level="m">IBM's 100 Icons of Progress</title>
               <imprint>
                 <date type="published" when="2011-09-13"/>
               </imprint>
             </monogr>
-            <note>cited. Internet</note>
+            <note>Internet</note>
           </biblStruct>
           <biblStruct xml:id="b39">
             <analytic>
@@ -2071,14 +2068,15 @@
                   <surname>Gibney</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/529445a</idno>
-              <ptr target="https://doi.org/10.1038/529445aPMID"/>
+              <idno type="DOI">10.1038/529445a</idno>
+              <idno>PMID: 26819021</idno>
+              <ptr target="https://doi.org/10.1038/529445a"/>
             </analytic>
             <monogr>
               <title level="j">Nature</title>
               <imprint>
                 <biblScope unit="volume">529</biblScope>
-                <biblScope unit="page">26819021</biblScope>
+                <biblScope from="445" to="446" unit="page"/>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -2123,8 +2121,9 @@
                   <surname>Van Den Driessche</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nature16961</idno>
-              <ptr target="https://doi.org/10.1038/nature16961PMID:26819042"/>
+              <idno type="DOI">10.1038/nature16961</idno>
+              <idno>PMID: 26819042</idno>
+              <ptr target="https://doi.org/10.1038/nature16961"/>
             </analytic>
             <monogr>
               <title level="j">Nature</title>
@@ -2183,7 +2182,7 @@
               </author>
               <author>
                 <persName>
-                  <surname>Ieee;</surname>
+                  <surname>Ieee</surname>
                 </persName>
               </author>
               <imprint>
@@ -2205,7 +2204,6 @@
                 <date type="published" when="2018-01-02"/>
               </imprint>
             </monogr>
-            <note>cited</note>
           </biblStruct>
           <biblStruct xml:id="b44">
             <analytic>
@@ -2224,7 +2222,7 @@
                 <date type="published" when="2018-03-22"/>
               </imprint>
             </monogr>
-            <note>cited. Internet</note>
+            <note>Internet</note>
           </biblStruct>
           <biblStruct xml:id="b45">
             <analytic>
@@ -2243,7 +2241,6 @@
                 <date type="published" when="2016-12-22"/>
               </imprint>
             </monogr>
-            <note>cited</note>
           </biblStruct>
           <biblStruct xml:id="b46">
             <monogr>
@@ -2260,7 +2257,7 @@
                 <date type="published" when="2017-11-24"/>
               </imprint>
             </monogr>
-            <note>cited. Internet</note>
+            <note>Internet</note>
           </biblStruct>
           <biblStruct xml:id="b47">
             <analytic>
@@ -2302,7 +2299,7 @@
                   <forename type="first">M</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1186/1759-4499-2-1</idno>
+              <idno type="DOI">10.1186/1759-4499-2-1</idno>
               <ptr target="https://doi.org/10.1186/1759-4499-2-1PMID"/>
             </analytic>
             <monogr>
@@ -2353,14 +2350,14 @@
                   <surname>Soldatova</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1098/rsif.2014.1289</idno>
-              <ptr target="https://doi.org/10.1098/rsif.2014.1289PMID"/>
+              <idno type="DOI">10.1098/rsif.2014.1289</idno>
+              <idno>PMID: 25652463</idno>
+              <ptr target="https://doi.org/10.1098/rsif.2014.1289"/>
             </analytic>
             <monogr>
               <title level="j">J R Soc Interface</title>
               <imprint>
                 <biblScope unit="volume">12</biblScope>
-                <biblScope unit="page">25652463</biblScope>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -2375,7 +2372,7 @@
                   <surname>Ashoori</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/379413a0</idno>
+              <idno type="DOI">10.1038/379413a0</idno>
               <ptr target="https://doi.org/10.1038/379413a0"/>
             </analytic>
             <monogr>
@@ -2403,7 +2400,7 @@
                   <surname>Wang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1088/1751-8113/41/6/065304</idno>
+              <idno type="DOI">10.1088/1751-8113/41/6/065304</idno>
               <ptr target="https://doi.org/10.1088/1751-8113/41/6/065304"/>
             </analytic>
             <monogr>
@@ -2432,14 +2429,15 @@
                   <surname>Fedichkin</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/srep34226</idno>
-              <ptr target="https://doi.org/10.1038/srep34226PMID"/>
+              <idno type="DOI">10.1038/srep34226</idno>
+              <idno>PMID: 27681057</idno>
+              <ptr target="https://doi.org/10.1038/srep34226"/>
             </analytic>
             <monogr>
               <title level="j">Sci Rep</title>
               <imprint>
                 <biblScope unit="volume">6</biblScope>
-                <biblScope unit="page">27681057</biblScope>
+                <biblScope unit="page">34226</biblScope>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -2487,15 +2485,16 @@
                   <surname>Petta</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1126/science.aaa2501</idno>
-              <ptr target="https://doi.org/10.1126/science.aaa2501PMID"/>
+              <idno type="DOI">10.1126/science.aaa2501</idno>
+              <idno>PMID: 25593187</idno>
+              <ptr target="https://doi.org/10.1126/science.aaa2501"/>
             </analytic>
             <monogr>
               <title level="j">Science</title>
               <imprint>
                 <biblScope unit="volume">347</biblScope>
                 <biblScope unit="issue">6219</biblScope>
-                <biblScope unit="page">25593187</biblScope>
+                <biblScope from="285" to="287" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -2516,7 +2515,7 @@
                   <surname>Divincenzo</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1103/PhysRevA.57.120</idno>
+              <idno type="DOI">10.1103/PhysRevA.57.120</idno>
               <ptr target="https://doi.org/10.1103/PhysRevA.57.120"/>
             </analytic>
             <monogr>
@@ -2564,7 +2563,7 @@
                   <surname>See</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1088/1464-4266/7/7/001</idno>
+              <idno type="DOI">10.1088/1464-4266/7/7/001</idno>
               <ptr target="https://doi.org/10.1088/1464-4266/7/7/001"/>
             </analytic>
             <monogr>
@@ -2609,7 +2608,7 @@
                   <surname>Felle</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/s41467-018-03251-7</idno>
+              <idno type="DOI">10.1038/s41467-018-03251-7</idno>
               <idno>s41467-018-03251-7 PMID: 29491362</idno>
               <ptr target="https://doi.org/10.1038/"/>
             </analytic>

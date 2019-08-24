@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T08:08+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:46+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -137,7 +137,16 @@
           <s>Among executive functions, the ability to inhibit and change actions in order to regulate impulses and attain long-term goals has a central place.</s>
           <s>A core experimental method used to measure the concept of response inhibition is the Stop-signal task, originally developed by Logan and Cowan <ref target="#b0" type="bibr">[1]</ref> .</s>
           <s>In this task, on a majority of trials (Go-trials) a Go-signal is presented, to which participants have to respond as quickly as possible, producing the Go-reaction time (Go-RT).</s>
-          <s>On a minority of trials (Stop-trials), the Go-signal is followed at some delay (the Stop-signal delay, SSD) by a Stop-signal, which instructs the participant to withhold the Go- did not have any additional role in the study design, data collection and analysis, decision to publish, or preparation of the manuscript.</s>
+          <s>On a minority of trials (Stop-trials), the Go-signal is followed at some delay (the Stop-signal delay, SSD) by a Stop-signal, which instructs the participant to withhold the Go-</s>
+        </p>
+        <formula xml:id="formula_0">PLOS</formula>
+        <formula xml:id="formula_1">¼ 1 À 2 � ErrorRate ð Þ þ 1 À 2 À SSD Threshold ð Þ Slope � � þ ErrorRate<label>ð1Þ</label>
+        </formula>
+        <p>
+          <s>pðerrorjSSD; Threshold; Slope; ErrorRateÞ ¼ 1 À pðsuccessjSSD; Threshold; Slope; ErrorRateÞ</s>
+        </p>
+        <p>
+          <s>The Threshold parameter governs at which SSD p(error) is 0.5, the Slope determines the rise of did not have any additional role in the study design, data collection and analysis, decision to publish, or preparation of the manuscript.</s>
           <s>The specific roles of these authors are articulated in the 'author contributions.</s>
         </p>
         <p>
@@ -150,14 +159,16 @@
           <s>Step 1: At the outset of Stop-trial 1, p 0 represents our prior knowledge of the participant's performance.</s>
           <s>For each SSD and response that is possible in trial 1, we can compute the posterior probability of each parameter vector λ, according to Bayes' theorem:</s>
         </p>
-        <formula xml:id="formula_0">p</formula>
+        <formula xml:id="formula_3">p 0 ljSSD; response ð Þ ¼ p 0 ðlÞ � pðresponsejl; SSDÞ P l p 0 ðlÞ � pðresponsejl; SSDÞ<label>ð3Þ</label>
+        </formula>
         <p>
           <s>where p(response|λ,SSD) is the psychometric function in Eqs 1 and 2. Thus, for each SSD we might present in the upcoming trial 1, and for each response the participant might give in return, we compute the posterior distribution over the parameter space.</s>
         </p>
         <p>
           <s>Step 2: For each of these possible SSD-response combinations we compute the entropy H 0 of the resulting posterior distribution p 0 (λ|SSD,response) as:</s>
         </p>
-        <formula xml:id="formula_2">H</formula>
+        <formula xml:id="formula_4">H 0 ðSSD; responseÞ ¼ À X l p 0 ðljSSD; responseÞ � logðp 0 ðljSSD; responseÞÞ<label>ð4Þ</label>
+        </formula>
         <p>
           <s>The entropy function stems from information theory and quantifies the amount of information necessary to fully specify the state of a system <ref target="#b5" type="bibr">[6]</ref> .</s>
           <s>In the current context, the entropy of each posterior distribution quantifies how much information is still needed to completely specify which vector λ in parameter space corresponds to our participant's performance vector λ participant .</s>
@@ -166,7 +177,7 @@
         <p>
           <s>Step 3: Since the entropy function in Eq 4 is also dependent on the participant's response, we compute the current likelihood of the two possible responses (success, error) for each SSD, using the prior probability distribution p 0 (λ) and the psychometric functions in Eqs 1 and 2: Step 6: At the end of the task, after n Stop-trials have been concluded, we derive the parameter vector most likely to match our participant's parameter vector λ participant by computing the expected value of λ:</s>
         </p>
-        <formula xml:id="formula_4">E½l� ¼ X l l � p n ðlÞ<label>ð8Þ</label>
+        <formula xml:id="formula_5">E½l� ¼ X l l � p n ðlÞ<label>ð8Þ</label>
         </formula>
         <p>
           <s>In a number of Stop-signal task simulations and behavioral experiments, Livesey and Livesey <ref target="#b3" type="bibr">[4]</ref> showed that the PSI method can quickly and accurately estimate the SSRT.</s>
@@ -200,12 +211,12 @@
         <p>
           <s>In terms of the formulation above, this means changing Eq 4 so as not to compute the entropy H 0 (SSD,response) of the full posteriors, but instead to compute:</s>
         </p>
-        <formula xml:id="formula_5">H 0À marginal ðSSD; responseÞ ¼ À X l p 0 ðThresholdjSSD; responseÞ � logðp 0 ðThresholdjSSD; responseÞÞ<label>ð9Þ</label>
+        <formula xml:id="formula_6">H 0À marginal ðSSD; responseÞ ¼ À X l p 0 ðThresholdjSSD; responseÞ � logðp 0 ðThresholdjSSD; responseÞÞ<label>ð9Þ</label>
         </formula>
         <p>
           <s>where p 0 (Threshold|SSD,response) is the marginalized posterior distribution:</s>
         </p>
-        <formula xml:id="formula_6">p 0 ðThreshold ¼ tjSSD; responseÞ ¼ X s X e p 0 ðThreshold ¼ t; Slope ¼ s; ErrorRate ¼ ejSSD; responseÞ<label>ð10Þ</label>
+        <formula xml:id="formula_7">p 0 ðThreshold ¼ tjSSD; responseÞ ¼ X s X e p 0 ðThreshold ¼ t; Slope ¼ s; ErrorRate ¼ ejSSD; responseÞ<label>ð10Þ</label>
         </formula>
         <p>
           <s>Since we implement these recommendations, we will refer to the method we tested as the PSI marginal method from now on, and will refer to the method proposed by Livesey and Livesey as the original PSI method.</s>
@@ -278,10 +289,10 @@
         <p>
           <s>Experiment 1 was mostly explorative in nature to elucidate the behavior of the PSI marginal method in a task involving Go-response slowing.</s>
           <s>
-            <ref target="#fig_3" type="figure">See Fig 1</ref> for an example participant with gradual Go-response slowing in the PSI marginal method's block.</s>
+            <ref target="#fig_1" type="figure">See Fig 1</ref> for an example participant with gradual Go-response slowing in the PSI marginal method's block.</s>
           <s>Since the maximum SSD offered was 1200 ms, the Go-RTs of this participant exceeded this SSD after about half the experimental run.</s>
-          <s>In terms of the two methods' response to Go-RT slowing, the behavior illustrated in <ref target="#fig_3" type="figure">Fig 1 causes a problem</ref> for the PSI method.</s>
-          <s>As can be seen in <ref target="#fig_4" type="figure">Fig 2,</ref> when Go-RTs exceed the maximum threshold considered by the algorithm (at Change-trial 9), the critical SSD (equal to the threshold parameter) receiving the highest probability reaches the upper end of the parameter space, in this case 1200 ms, and the method is not able to estimate the participant's true critical SSD.</s>
+          <s>In terms of the two methods' response to Go-RT slowing, the behavior illustrated in <ref target="#fig_1" type="figure">Fig 1 causes</ref> a problem for the PSI method.</s>
+          <s>As can be seen in <ref target="#fig_2" type="figure">Fig 2,</ref> when Go-RTs exceed the maximum threshold considered by the algorithm (at Change-trial 9), the critical SSD (equal to the threshold parameter) receiving the highest probability reaches the upper end of the parameter space, in this case 1200 ms, and the method is not able to estimate the participant's true critical SSD.</s>
           <s>In effect, the PSI marginal method is not able to keep up with the slowed Go-RTs.</s>
           <s>Notice that the SSRT is ultimately computed with the expected parameter combination, not the maximum probability parameters, but nevertheless reaching the boundary of the parameter space invalidates the method's SSRT estimates.</s>
           <s>Furthermore, when the mean Go-RT has slowed down considerably, the critical SSD estimated by the method is, after a sufficient number of trials, based on this slowed Go-RT.</s>
@@ -295,17 +306,8 @@
           <s>This is especially true if the experiment contains multiple conditions and thus, the amount of response slowing between the different conditions' interleaved trials is larger.</s>
           <s>However, an accuracy of around 0.5 is necessary for an accurate computation of the SSRT.</s>
           <s>Although the PSI marginal method is not explicitly designed to converge at 0.5, it also usually settles around this value.</s>
-          <s>In <ref target="#fig_5" type="figure">Fig 3</ref> , the proportion of successful change trials is plotted, averaged over bins of 8 Change-trials, for the two different methods and with participants split into two groups, based on whether they showed substantial Go-response slowing.</s>
-          <s>From the figure it becomes clear that only the staircase Probabilities are averaged over the error rate dimension, colors indicate the probability of a parameter combination, the point of maximum probability is indicated in black.</s>
-          <s>Colors range from minimum to maximum probability per distribution.</s>
-          <s>Around Change-trial 9, the most likely threshold parameter reaches the boundaries of the method's parameter space.</s>
-        </p>
-        <p>
-          <s>https://doi.org/10.1371/journal.pone.0210065.g002</s>
-        </p>
-        <p>
-          <s>The PSI adjusted method PLOS ONE | https://doi.org/10.1371/journal.pone.0210065</s>
-          <s>December 31, 2018method for non-slowing participants was able to maintain an accuracy of about 0.5 throughout the experiment.</s>
+          <s>In <ref target="#fig_3" type="figure">Fig 3,</ref> the proportion of successful change trials is plotted, averaged over bins of 8 Change-trials, for the two different methods and with participants split into two groups, based on whether they showed substantial Go-response slowing.</s>
+          <s>From the figure it becomes clear that only the staircase method for non-slowing participants was able to maintain an accuracy of about 0.5 throughout the experiment.</s>
           <s>Slowing participants were able to achieve a substantially higher accuracy, for both the staircase and PSI marginal method.</s>
           <s>Non-slowing participants for the PSI marginal method, on the other hand, stayed below 0.5 performance for the length of the experiment.</s>
         </p>
@@ -334,7 +336,7 @@
           <s>Thus, we estimate SSRT directly, instead of the threshold parameter.</s>
           <s>The relation between SSRT and threshold is:</s>
         </p>
-        <formula xml:id="formula_7">Threshold ¼ meanGoRT À SSRT<label>ð11Þ</label>
+        <formula xml:id="formula_8">Threshold ¼ meanGoRT À SSRT<label>ð11Þ</label>
         </formula>
         <p>
           <s>Since the psychometric function is defined in terms of the threshold parameter, we use Eq 11 to convert a given SSRT value to its corresponding threshold value.</s>
@@ -342,8 +344,6 @@
           <s>Since during response slowing, the Go-RT changes throughout the task, the first step in each Stop-trial is to estimate the current mean Go-RT.</s>
           <s>This is done via linear regression: over a sliding window including the last several Gotrials, the Go-RTs are regressed on their respective trial numbers.</s>
           <s>The resulting linear regression equation is used to predict the Go-RT of the current trial, which serves as an estimate of meanGo-RT in Eq 11.</s>
-        </p>
-        <p>
           <s>The logic behind this is that a participant's SSRT is a characteristic not changing with response slowing.</s>
           <s>The slowing only affects the threshold parameter, which indicates the SSD at which p(error) = 0.5.</s>
           <s>This threshold trails behind the continuously slowing Go-RT, while the distance between the Go-RT and the threshold (the SSRT) remains constant.</s>
@@ -388,7 +388,7 @@
         <p>
           <s>In contrast to the behavioral experiment, in the simulations we used a function of the form</s>
         </p>
-        <formula xml:id="formula_8">p error ð Þ ¼ ErrorRate þ 1 À 2 � ErrorRate 1 þ e À Slope�ðSSDÀ ThresholdÞ<label>ð12Þ</label>
+        <formula xml:id="formula_9">p error ð Þ ¼ ErrorRate þ 1 À 2 � ErrorRate 1 þ e À Slope�ðSSDÀ ThresholdÞ<label>ð12Þ</label>
         </formula>
         <p>
           <s>to model the psychophysical performance.</s>
@@ -410,14 +410,14 @@
       <div>
         <head>Results</head>
         <p>
-          <s>As <ref target="#fig_6" type="figure">Fig 4A shows</ref> , the correlations between all four methods' SSRT estimates and the true SSRTs develop similarly over the course of the experiment, reaching the 0.9 mark around 18 trials and further increasing from there.</s>
+          <s>As <ref target="#fig_4" type="figure">Fig 4A shows</ref> , the correlations between all four methods' SSRT estimates and the true SSRTs develop similarly over the course of the experiment, reaching the 0.9 mark around 18 trials and further increasing from there.</s>
           <s>No substantial differences between the methods are obvious.</s>
           <s>
-            <ref target="#fig_6" type="figure">Fig 4B</ref> shows the mean absolute deviation of SSRT estimates for the different methods.</s>
+            <ref target="#fig_4" type="figure">Fig 4B shows</ref> the mean absolute deviation of SSRT estimates for the different methods.</s>
           <s>Again, the time course over the experiment is generally similar for the different methods, with only a small underperformance of the PSI methods between trials ten to 25, corresponding to a mean absolute deviation of around 2.5 ms after 12 trials.</s>
         </p>
         <p>
-          <s>The most interesting result is depicted in <ref target="#fig_6" type="figure">Fig 4C,</ref> where the linear slope between a method's SSRT estimate and the true SSRT is plotted over the course of the experiment.</s>
+          <s>The most interesting result is depicted in <ref target="#fig_4" type="figure">Fig 4C,</ref> where the linear slope between a method's SSRT estimate and the true SSRT is plotted over the course of the experiment.</s>
           <s>This can be seen as an index of biased SSRT estimation, with slopes smaller than one meaning lower SSRTs are being overestimated or higher SSRTs being underestimated, or both.</s>
           <s>An unbiased estimation would result in slopes of one.</s>
           <s>As can be seen, there is a clear ordering of performance for the different methods, with the PSI methods performing best and equally well, the staircase integration method performing worse and the staircase mean method performing worst.</s>
@@ -441,12 +441,12 @@
       <div>
         <head>Results</head>
         <p>
-          <s>As <ref target="#fig_7" type="figure">Fig 5A shows</ref> , when Go-responses are slowed over the course of the experiment, the correlations for the staircase and PSI adjusted method are fairly similar to when responses are not being slowed.</s>
+          <s>As <ref target="#fig_5" type="figure">Fig 5A shows,</ref> when Go-responses are slowed over the course of the experiment, the correlations for the staircase and PSI adjusted method are fairly similar to when responses are not being slowed.</s>
           <s>The PSI marginal method's performance, however, deteriorates from around trial 12 onwards, due to it not being able to react to the slowing Go-responses (and changing critical SSDs).</s>
           <s>Not visible in the graphic, the correlation coefficients for the PSI marginal method decrease until 0.2 at trial 100.</s>
         </p>
         <p>
-          <s>In <ref target="#fig_7" type="figure">Fig 5B,</ref> it can be seen that the staircase-integration method, the staircase-mean method and the PSI marginal method all at some point deteriorate in performance due to not being able to keep up with the slowing Go-RTs.</s>
+          <s>In <ref target="#fig_5" type="figure">Fig 5B,</ref> it can be seen that the staircase-integration method, the staircase-mean method and the PSI marginal method all at some point deteriorate in performance due to not being able to keep up with the slowing Go-RTs.</s>
           <s>The staircase-integration method performs best until around trial 30, while the staircase-mean method stops improving at a mean absolute deviation of around 35 ms.</s>
           <s>While initially performing worse than the staircase-integration method, the PSI adjusted method is able to keep up with slowing Go-RTs and steadily decrease absolute deviation.</s>
           <s>The deviations for the staircase-and PSI marginal method eventually increase to around 80 and 275 ms, respectively.</s>
@@ -502,7 +502,7 @@
           <s>Correlations, mean absolute deviations and linear slopes were computed as for simulations 1 and 2. To compare the performance of the two methods to the case of no Go-response slowing, we also show the results of simulation 1 again (in black), in which Go-RTs were constant.</s>
         </p>
         <p>
-          <s>As can be seen in <ref target="#fig_8" type="figure">Fig 6,</ref> the effects of Go-RT slowing on the PSI marginal method's performance are already apparent before the boundaries of the parameter space are reached (trial 1 to 100): the stronger the response slowing, the lower the correlation between simulated and estimated SSRTs <ref target="#fig_8" type="figure">(Fig 6A)</ref> , ranging from around 0.9 between trials 25 and 75 for 5 ms slowing, to around 0.75 for 15 ms of slowing.</s>
+          <s>As can be seen in <ref target="#fig_6" type="figure">Fig 6,</ref> the effects of Go-RT slowing on the PSI marginal method's performance are already apparent before the boundaries of the parameter space are reached (trial 1 to 100): the stronger the response slowing, the lower the correlation between simulated and estimated SSRTs <ref target="#fig_6" type="figure">(Fig 6A)</ref> , ranging from around 0.9 between trials 25 and 75 for 5 ms slowing, to around 0.75 for 15 ms of slowing.</s>
           <s>When the boundaries of the parameter space are reached (and crossed; after the red line), correlation coefficients start to decrease more strongly.</s>
         </p>
         <p>
@@ -511,15 +511,15 @@
           <s>Not shown here, the results also indicate that the increased absolute deviation during the first 100 trials is mainly due to incorrect estimation of the Go-RT and only to a lesser extent the result of erroneous estimation of the critical SSD.</s>
         </p>
         <p>
-          <s>In the linear slopes between simulated and estimated SSRTs <ref target="#fig_8" type="figure">(Fig 6C)</ref> , the pattern is not so clear while participants remain inside parameter space: while slopes seem to slightly oscillate around 1, especially for stronger response slowing, the marked deterioration of performance for the PSI marginal method only begins after the threshold parameter space was left, with slopes sharply declining.</s>
+          <s>In the linear slopes between simulated and estimated SSRTs <ref target="#fig_6" type="figure">(Fig 6C)</ref> , the pattern is not so clear while participants remain inside parameter space: while slopes seem to slightly oscillate around 1, especially for stronger response slowing, the marked deterioration of performance for the PSI marginal method only begins after the threshold parameter space was left, with slopes sharply declining.</s>
         </p>
         <p>
-          <s>As visible in <ref target="#fig_9" type="figure">Fig 7</ref> , the PSI adjusted method is able deal with response slowing both when participants remain inside the parameter space as well as when they leave parameter space.</s>
+          <s>As visible in <ref target="#fig_7" type="figure">Fig 7,</ref> the PSI adjusted method is able deal with response slowing both when participants remain inside the parameter space as well as when they leave parameter space.</s>
           <s>In mean absolute deviation as well as linear slopes, some gradation is visible, with stronger response slowing leading the decreased performance (insets), but the size of these effects is not comparable to the PSI marginal method's deterioration of performance.</s>
           <s>The PSI adjusted method</s>
         </p>
         <p>
-          <s>In <ref type="figure">Fig 8, we</ref> show the entropy of the PSI marginal method's posterior distributions over the course of the simulated experiments, separately for 5, 10 and 15 ms response slowing per Stoptrial.</s>
+          <s>In <ref type="figure">Fig 8,</ref> we show the entropy of the PSI marginal method's posterior distributions over the course of the simulated experiments, separately for 5, 10 and 15 ms response slowing per Stoptrial.</s>
           <s>Furthermore, for each degree of response slowing, we separately show the entropy for threshold parameter (summed over slope and error rate), slope (summed over threshold and error rate) as well as error rate (summed over threshold and slope parameters).</s>
           <s>The parameter dominating the overall entropy, which can be envisioned as the sum of all three entropies, is the threshold parameter.</s>
           <s>It is clear that after a short drop in entropy for the threshold parameter (until trial 25 for 5 ms), the value increases gradually until trial 100.</s>
@@ -567,10 +567,10 @@
       <div>
         <head>Results</head>
         <p>
-          <s>We present the results of Experiment 2 in a similar manner to Experiment 1. Figs 9 and 10 are taken from a participant showing Go-response slowing similar to the example participant from Experiment 1 <ref target="#fig_3" type="figure">(Figs 1 and 2</ref> ).</s>
+          <s>We present the results of Experiment 2 in a similar manner to Experiment 1. Figs 9 and 10 are taken from a participant showing Go-response slowing similar to the example participant from Experiment 1 <ref target="#fig_1" type="figure">(Figs 1 and 2)</ref> .</s>
           <s>Even though there is considerable slowing, the SSRT estimate of the PSI adjusted method is fairly stable across change trials, allowing the method to optimally sample SSDs despite Go-responses being slowed.</s>
           <s>
-            <ref target="#fig_3" type="figure">Fig 11 compares</ref> the PSI marginal and PSI adjusted method with respect to their parameter estimates over the course of the experiment.</s>
+            <ref target="#fig_1" type="figure">Fig 11 compares</ref> the PSI marginal and PSI adjusted method with respect to their parameter estimates over the course of the experiment.</s>
           <s>For the PSI marginal method (Experiment 1), there is a considerable number of participants, specifically those slowing their Go-responses, for which the threshold parameter receiving the highest probability in the posterior distribution reaches the method's upper boundary, thus limiting the method's ability to estimate the true SSRT.</s>
           <s>Furthermore, a smaller number of participants reach the lower boundary of the PSI marginal method's parameter space.</s>
           <s>These are participants showing particularly fast Goresponses.</s>
@@ -585,14 +585,14 @@
         <p>
           <s>Another problem we noted for the PSI marginal method and staircase in Experiment 1 was that for slowing participants, accuracy levels substantially deviated from 0.5.</s>
           <s>
-            <ref target="#fig_3" type="figure">As Fig 12 shows</ref> , the PSI adjusted method is successful at maintaining accuracy at roughly 0.5 throughout the experiment, for both slowing and non-slowing participants.</s>
+            <ref target="#fig_1" type="figure">As Fig 12 shows</ref> , the PSI adjusted method is successful at maintaining accuracy at roughly 0.5 throughout the experiment, for both slowing and non-slowing participants.</s>
           <s>As in Experiment 1, the staircase method is only able to maintain this intended accuracy level for non-slowing participants.</s>
         </p>
         <p>
-          <s>As for experiment 1, we included further results on the relation between SSRT estimates of the staircase-and PSI method in the supplementary material ( <ref target="#fig_7" type="figure">S5 Fig).</ref>
+          <s>As for experiment 1, we included further results on the relation between SSRT estimates of the staircase-and PSI method in the supplementary material (S5 <ref type="figure">Fig).</ref>
           </s>
           <s>A further question relevant to the PSI adjusted method is how many trials are optimal when estimating Go-RTs through linear regression.</s>
-          <s>While the up-to 40 trial long window used by us to predict current mean Go-RT appears to have worked fine, we present additional analysis of Go-RTs in supplementary S6 <ref type="figure">Fig, in which mean</ref> and standard deviation of the residuals of the RT prediction are shown, as a function of different window sizes.</s>
+          <s>While the up-to 40 trial long window used by us to predict current mean Go-RT appears to have worked fine, we present additional analysis of Go-RTs in <ref target="#fig_6" type="figure">supplementary S6 Fig, in</ref> which mean and standard deviation of the residuals of the RT prediction are shown, as a function of different window sizes.</s>
           <s>While the variability The PSI adjusted method of residuals reaches a stable minimum with window sizes larger than 10 to 15 trials for both slowing and non-slowing subjects, the mean residual stays between -1 and 1 ms roughly between window sizes of 1 and 30 trials.</s>
           <s>Thus, according to our behavioral data, window sizes over 10 to 15 trials, but not substantially larger than 30 trials, are recommended.</s>
           <s>It should be noted that the optimal window size depends on the timescale and form of changes in RTs, which in turn likely depend on the specific task, such that other numbers of trials might be better suited to predict Go-RT in different tasks.</s>
@@ -613,7 +613,7 @@
           <s>When this is achieved, as in our proposed PSI adjusted method, this method can offer improved performance over the staircase method even under considerable response slowing.</s>
         </p>
         <p>
-          <s>Another interesting result most clearly visible in <ref target="#fig_6" type="figure">Fig 4</ref> is that the traditional staircase combined with the mean method is considerably worse for estimating SSRTs at low trial numbers than when combined with the integration method.</s>
+          <s>Another interesting result most clearly visible in <ref target="#fig_4" type="figure">Fig 4 is</ref> that the traditional staircase combined with the mean method is considerably worse for estimating SSRTs at low trial numbers than when combined with the integration method.</s>
           <s>This performance decrement is visible when inspecting the slope between simulated and estimated SSRTs, showing that either smaller SSRTs are overestimated or larger SSRTs are underestimated.</s>
           <s>The cause of this behavior is that when using the mean method, it is assumed that the SSDs offered up to this point correspond to a performance of 0.5.</s>
           <s>However, since the staircase takes a certain time to reach that performance level, the SSDs subtracted from the mean Go-RT will introduce a certain bias, which varies depending on the true SSRT of the participant.</s>
@@ -621,22 +621,14 @@
         </p>
         <p>
           <s>A further benefit of the PSI methods not discussed so far is that for every point during the experiment, they provide a likelihood distribution over the parameters underlying the participant's performance, and thus a likelihood distribution over the SSRT estimate at that point.</s>
-          <s>This allows computing a confidence interval of sorts around the updated SSRT estimate after every Stop-trial (similar to the illustration of SSRT estimation in <ref target="#fig_9" type="figure">Fig 7)</ref> .</s>
+          <s>This allows computing a confidence interval of sorts around the updated SSRT estimate after every Stop-trial (similar to the illustration of SSRT estimation in <ref target="#fig_7" type="figure">Fig 7)</ref> .</s>
           <s>This opens up interesting new experimental opportunities, such as only running a Stop-signal task until a certain level of confidence in SSRT has been reached, or dynamically controlling stimulus presentation based on the SSRTs that are likely or unlikely for a participant.</s>
         </p>
         <p>
           <s>As shown in the results section of Experiment 2, there appears to be a residual effect of Goresponse slowing on SSRT estimation even for the PSI adjusted method.</s>
           <s>This is likely the result of less than optimal estimation of Go-RTs for this method, particularly an underestimation of Go-RTs.</s>
           <s>The mechanism behind this is the following: when participants have longer Go-RTs than estimated by the method, they are capable of still stopping for SSDs that would be too long under their actual SSRT, thus leading to a reduced estimated SSRT.</s>
-          <s>Since the PSI adjusted method presented here predicts Go-RTs by linearly regressing previous RTs on trial number, <ref target="#fig_4" type="figure">As Fig 2,</ref> the PSI adjusted method's posterior distribution for the example participant.</s>
-          <s>Colors indicate probability of the parameter combinations, the error rate dimension was averaged over.</s>
-          <s>Despite considerable Go-response slowing, the parameters receiving the highest probability do not reach the upper boundaries of the parameter space.</s>
-        </p>
-        <p>
-          <s>https://doi.org/10.1371/journal.pone.0210065.g010</s>
-        </p>
-        <p>
-          <s>The PSI adjusted method it is clear that any kind of non-linear change in response times cannot be accommodated.</s>
+          <s>Since the PSI adjusted method presented here predicts Go-RTs by linearly regressing previous RTs on trial number, The PSI adjusted method it is clear that any kind of non-linear change in response times cannot be accommodated.</s>
           <s>Furthermore, the PSI adjusted method only predicts mean Go-RTs, thereby ignoring other properties of the Go-RT distribution, such as variance and skewness, which would be taken into account under the ex-Gaussian parameterization of the RT distribution.</s>
           <s>As a future improvement to the method, more flexible and behaviorally realistic models of response slowing could be used to better capture changes in RTs throughout the experiment.</s>
           <s>It stands to reason that this would further improve the statistical properties of the PSI adjusted method.</s>
@@ -688,12 +680,22 @@
           <s>In order to split participants into a slowed and non-slowed group, regression coefficients (progressive slowing) and intercepts (initial slowing) per participant were used as x-and y-coordinates, respectively.</s>
           <s>Then, a separating line along the main diagonal was found that splits the participants of each experiment into roughly two equally sized groups.</s>
           <s>The upper-right group is referred to as "slowing", wheres the lower-left is referred to as "non-slowing".</s>
-          <s>The example participants from The two methods' SSRT estimates are plotted against each other, separately for slowed and non-slowed subjects.</s>
+          <s>The example participants from Figs 1 and 9 are shown in red.</s>
+          <s>(TIF)</s>
+        </p>
+      </div>
+      <div>
+        <head>Supporting information</head>
+      </div>
+      <div>
+        <head>S3 Fig. Relationship between staircase-and PSI marginal method's SSRT estimates in Experiment 1.</head>
+        <p>
+          <s>The two methods' SSRT estimates are plotted against each other, separately for slowed and non-slowed subjects.</s>
           <s>SSRTs were averaged over the four different experimental conditions.</s>
           <s>The two groups were determined as described for experiment 1, but based on the intercept and slope parameters averaged over the staircase-and PSI method's run.</s>
           <s>Correlation coefficients are displayed, but due to the reduced sample size were non-significant.</s>
-          <s>
-            <ref target="#tab_1" type="table">Table.</ref>
+          <s>Accuracy of RT prediction is visualized as mean residual of predicted Go-RT (in ms; left column) and standard deviaiton of residuals (right column), for slowed (top row) and non-slowed subjects (bottom row) separately, for different trial window sizes.</s>
+          <s>(TIFF) S1 <ref type="table">Table.</ref>
           </s>
           <s>Summary of behavioral performance in Experiment 1. Behavioral performance in the staircase-and PSI marginal method's block of Experiment 1.</s>
           <s>The side (left, right) is the side on which the reaction had to be changed in the event of a Change-signal.</s>
@@ -701,112 +703,78 @@
           <s>CSRTs are the Change-signal task equivalent of SSRTs.</s>
           <s>For the staircase block the CSRTs were computed using the integration method, for the PSI marginal block the expected parameter corresponding to the critical SSD was derived from the ultimate posterior distribution and subtracted from the mean Go-RT.</s>
           <s>CIEs are the Changesignal task equivalent of the Stop interference effect (SIE) and are computed by subtracting a hand's regular Go-RT from that hand's RT when the other hand has to be inhibited.</s>
-          <s>(DOCX) Project administration: Bjoern Falkenburger, Barbara Drueke.</s>
-        </p>
-      </div>
-      <div>
-        <head>Supporting information</head>
-      </div>
-      <div>
-        <head>S2</head>
-        <p>
-          <s>Resources: Siegfried Gauggel.</s>
-        </p>
-        <p>
-          <s>Software: Lorenz Weise.</s>
-        </p>
-        <p>
-          <s>Supervision: Siegfried Gauggel.</s>
-        </p>
-        <p>
-          <s>Validation: Siegfried Gauggel.</s>
-        </p>
-        <p>
-          <s>Visualization: Lorenz Weise.</s>
-        </p>
-        <p>
           <s>Writing -original draft: Lorenz Weise.</s>
         </p>
       </div>
-      <figure xml:id="fig_0">
-        <head/>
-        <label/>
-        <figDesc>0 ljSSD; response ð Þ ¼ p 0 ðlÞ � pðresponsejl; SSDÞ P l p 0 ðlÞ � pðresponsejl; SSDÞ</figDesc>
-      </figure>
       <figure xml:id="fig_1">
-        <head/>
-        <label/>
-        <figDesc>ðljSSD; responseÞ � logðp 0 ðljSSD; responseÞÞ</figDesc>
-      </figure>
-      <figure xml:id="fig_3">
         <head>Fig 1 .</head>
         <label>1</label>
         <figDesc>Fig 1. Go-RT slowing in Experiment 1. A participant's Go-RTs for one condition. The line indicates the increasing number of Change-trials in that condition, the circles are Go-RTs. https://doi.org/10.1371/journal.pone.0210065.g001</figDesc>
       </figure>
-      <figure xml:id="fig_4">
+      <figure xml:id="fig_2">
         <head>Fig 2 .</head>
         <label>2</label>
-        <figDesc>Fig 2. Likelihood estimates during Experiment 1. The PSI marginal method's posterior distributions for the example participant. Probabilities are averaged over the error rate dimension, colors indicate the probability of a parameter combination, the point of maximum probability is indicated in black. Colors range from minimum to maximum probability per distribution. Around Change-trial 9, the most likely threshold parameter reaches the boundaries of the method's parameter space.</figDesc>
+        <figDesc>Fig 2. Likelihood estimates during Experiment 1. The PSI marginal method's posterior distributions for the example participant. Probabilities are averaged over the error rate dimension, colors indicate the probability of a parameter combination, the point of maximum probability is indicated in black. Colors range from minimum to maximum probability per distribution. Around Change-trial 9, the most likely threshold parameter reaches the boundaries of the method's parameter space. https://doi.org/10.1371/journal.pone.0210065.g002</figDesc>
       </figure>
-      <figure xml:id="fig_5">
+      <figure xml:id="fig_3">
         <head>Fig 3 .</head>
         <label>3</label>
         <figDesc>Fig 3. Accuracy throughout Experiment 1. The proportion of successful Change-trials (averaged over bins of 8 trials) of the PSI marginal and Staircase methods. Participants were split into two groups based on whether they showed substantial Go-response slowing. https://doi.org/10.1371/journal.pone.0210065.g003</figDesc>
       </figure>
-      <figure xml:id="fig_6">
+      <figure xml:id="fig_4">
         <head>Fig 4 .</head>
         <label>4</label>
         <figDesc>Fig 4. Different methods' performance with stationary GO-RTs. Performance of the PSI marginal method, PSI adjusted method, and the staircase method with stationary Go-RTs. (A) Correlations of estimated SSRTs with simulated SSRTs. (B) Mean absolute deviation between estimated and simulated SSRTs. (C) Linear slope between estimated and simulated SSRTs. Filled areas indicate the standard error of the mean over the 150 simulated experiments. https://doi.org/10.1371/journal.pone.0210065.g004</figDesc>
       </figure>
-      <figure xml:id="fig_7">
+      <figure xml:id="fig_5">
         <head>Fig 5 .</head>
         <label>5</label>
         <figDesc>Fig 5. Different methods' performance with slowing GO-RTs. Performance of the PSI marginal method, PSI adjusted method, and the staircase method with increasing Go-RTs. (A) Correlations (B) Mean absolute deviation (C) Linear slope. Filled areas indicate the standard error of the mean. https://doi.org/10.1371/journal.pone.0210065.g005</figDesc>
       </figure>
-      <figure xml:id="fig_8">
+      <figure xml:id="fig_6">
         <head>Fig 6 .</head>
         <label>6</label>
         <figDesc>Fig 6. PSI marginal method's performance for different degrees of slowing inside parameter space. Panel A shows correlation coefficients between simulated and estimated SSRTs, panel B shows mean absolute deviation between simulated and estimated SSRTs, panel C shows mean linear slope relating simulated and estimated SSRTs. Colors indicate different degrees of response slowing. Until trial 100 (red line), all simulated participants are inside the method's respective parameter space. https://doi.org/10.1371/journal.pone.0210065.g006</figDesc>
       </figure>
-      <figure xml:id="fig_9">
+      <figure xml:id="fig_7">
         <head>Fig 7 .</head>
         <label>7</label>
         <figDesc>Fig 7. PSI adjusted method's performance for different degrees of slowing inside parameter space. As in Fig 6, but now the performance of the PSI adjusted method is depicted. https://doi.org/10.1371/journal.pone.0210065.g007</figDesc>
       </figure>
-      <figure xml:id="fig_10">
+      <figure xml:id="fig_8">
         <head>Fig 10 .</head>
         <label>10</label>
-        <figDesc>Fig 10. Likelihood estimates during Experiment 2. As Fig 2, the PSI adjusted method's posterior distribution for the example participant. Colors indicate probability of the parameter combinations, the error rate dimension was averaged over. Despite considerable Go-response slowing, the parameters receiving the highest probability do not reach the upper boundaries of the parameter space.</figDesc>
+        <figDesc>Fig 10. Likelihood estimates during Experiment 2. As Fig 2, the PSI adjusted method's posterior distribution for the example participant. Colors indicate probability of the parameter combinations, the error rate dimension was averaged over. Despite considerable Go-response slowing, the parameters receiving the highest probability do not reach the upper boundaries of the parameter space. https://doi.org/10.1371/journal.pone.0210065.g010</figDesc>
       </figure>
-      <figure xml:id="fig_11">
+      <figure xml:id="fig_9">
         <head>Fig 11 .</head>
         <label>11</label>
         <figDesc>Fig 11. Parameter estimates for Experiment 1 and 2. Highest probability parameters for the PSI marginal method (Experiment 1) and PSI adjusted method (Experiment 2) over the course of the experiment. The participants were split intro groups depending on whether the showed go-response slowing. Every line represents one of the stop-change task's conditions of one participant; thus, there are four lines per participant. Black lines indicate a parameter reaching the upper end of the parameter space, red lines indicate parameters reaching the lower end. Parameter estimates were slightly smoothed using a cubic spline to facilitate visual inspection. Note that while maximum probability parameters are shown, SSRTs are eventually computed based on the expected parameters. https://doi.org/10.1371/journal.pone.0210065.g011</figDesc>
       </figure>
-      <figure xml:id="fig_12">
+      <figure xml:id="fig_10">
         <head>Fig 12 .</head>
         <label>12</label>
         <figDesc>Fig 12. Accuracy throughout Experiment 2. As Fig 3, the proportion of successful Change-trials for the PSI adjusted and Staircase methods, separately for slowed and non-slowed participants. https://doi.org/10.1371/journal.pone.0210065.g012</figDesc>
       </figure>
-      <figure xml:id="fig_13">
+      <figure xml:id="fig_11">
         <head>S1</head>
         <label/>
         <figDesc>Fig. Illustration of the horse race model. The relationship between Go-signal, Stop-signal, SSD, SSRT and the Go-RT distribution in the Stop-signal task. (TIF) S2 Fig. Initial-and progressive slowing of Go-RTs.</figDesc>
       </figure>
-      <figure xml:id="fig_14">
+      <figure xml:id="fig_12">
         <head/>
         <label/>
-        <figDesc>Figs 1 and 9 are shown in red. (TIF) S3 Fig. Relationship between staircase-and PSI marginal method's SSRT estimates in Experiment 1.</figDesc>
+        <figDesc>(TIFF) S4 Fig. Different method's performance for different degrees of response slowing. Perfor- mance of the four different methods (purple-staircase, mean method; blue-staircase, integration method; green-PSI marginal method; red-PSI adjusted method) under different degrees of response slowing. (TIF) S5 Fig. Relationship between staircase-and PSI adjusted method's SSRT estimates in Experiment 2. As in S3 Fig, but for experiment 2. Correlation coefficients were again non-sig- nificant due to small sample size. (TIFF) S6 Fig. Accuracy of Go-RT prediction for different trial numbers.</figDesc>
       </figure>
-      <figure xml:id="fig_15">
+      <figure xml:id="fig_13">
         <head/>
         <label/>
-        <figDesc>(TIFF) S4 Fig. Different method's performance for different degrees of response slowing. Perfor- mance of the four different methods (purple-staircase, mean method; blue-staircase, integration method; green-PSI marginal method; red-PSI adjusted method) under different degrees of response slowing. (TIF) S5 Fig. Relationship between staircase-and PSI adjusted method's SSRT estimates in Experiment 2. As in S3 Fig, but for experiment 2. Correlation coefficients were again non-sig- nificant due to small sample size. (TIFF) S6 Fig. Accuracy of Go-RT prediction for different trial numbers. Accuracy of RT predic- tion is visualized as mean residual of predicted Go-RT (in ms; left column) and standard deviaiton of residuals (right column), for slowed (top row) and non-slowed subjects (bottom row) separately, for different trial window sizes. (TIFF) S1</figDesc>
+        <figDesc>(DOCX) S2 Table. Summary of behavioral performance in Experiment 2. (DOCX) Author Contributions Conceptualization: Lorenz Weise, Maren Boecker, Siegfried Gauggel, Bjoern Falkenburger, Barbara Drueke. Data curation: Lorenz Weise, Maren Boecker. Formal analysis: Lorenz Weise, Maren Boecker, Barbara Drueke. Funding acquisition: Bjoern Falkenburger, Barbara Drueke. Investigation: Lorenz Weise. Methodology: Lorenz Weise, Maren Boecker, Siegfried Gauggel, Barbara Drueke. Project administration: Bjoern Falkenburger, Barbara Drueke. Resources: Siegfried Gauggel. Software: Lorenz Weise. Supervision: Siegfried Gauggel. Validation: Siegfried Gauggel. Visualization: Lorenz Weise.</figDesc>
       </figure>
       <figure type="table" validated="false" xml:id="tab_0">
         <head/>
         <label/>
-        <figDesc>PLOS ONE | https://doi.org/10.1371/journal.pone.</figDesc>
+        <figDesc>ONE | https://doi.org/10.1371/journal.pone.</figDesc>
         <table>0210065 December 31, 2018 
 1 / 28 
 
@@ -818,45 +786,7 @@ a1111111111 p successjSSD; Threshold; Slope; ErrorRate
 ð 
 Þ 
 
-¼ 1 À 2 � ErrorRate 
-ð 
-Þ þ 1 À 2 
-
-À 
-
-SSD 
-Threshold 
-
-ð 
-Þ 
-
-Slope 
-
-� 
-� 
-þ ErrorRate 
-ð1Þ 
-
-pðerrorjSSD; Threshold; Slope; ErrorRateÞ 
-¼ 1 À pðsuccessjSSD; Threshold; Slope; ErrorRateÞ 
-ð2Þ 
-
-The Threshold parameter governs at which SSD p(error) is 0.5, the Slope determines the rise of 
-
-The PSI adjusted method 
-
-PLOS ONE | https://doi.org/10.1371/journal.pone.0210065 December 31, 2018 
-2 / 28 
-
 </table>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_1">
-        <head>Table .</head>
-        <label>.</label>
-        <figDesc>Summary of behavioral performance in Experiment 2. (DOCX)Conceptualization: Lorenz Weise, Maren Boecker, Siegfried Gauggel, Bjoern Falkenburger, Barbara Drueke.curation: Lorenz Weise, Maren Boecker.analysis: Lorenz Weise, Maren Boecker, Barbara Drueke.acquisition: Bjoern Falkenburger, Barbara Drueke. Investigation: Lorenz Weise. Methodology: Lorenz Weise, Maren Boecker, Siegfried Gauggel, Barbara Drueke.</figDesc>
-        <table>Author Contributions 
-
-Data Formal Funding </table>
       </figure>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0210065 December 31, 2018</note>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0210065 December 31, 2018 28 / 28</note>
@@ -864,8 +794,9 @@ Data Formal Funding </table>
     <back>
       <div type="annex">
         <div>
+          <head>Writing -review &amp; editing: Maren Boecker, Siegfried Gauggel, Bjoern Falkenburger, Barbara</head>
           <p>
-            <s>Writing -review &amp; editing: Maren Boecker, Siegfried Gauggel, Bjoern Falkenburger, Barbara Drueke.</s>
+            <s>Drueke.</s>
           </p>
         </div>
       </div>
@@ -915,8 +846,9 @@ Data Formal Funding </table>
                   <surname>Logan</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.neubiorev.2008.08.014</idno>
-              <ptr target="https://doi.org/10.1016/j.neubiorev.2008.08.014PMID:18822313"/>
+              <idno type="DOI">10.1016/j.neubiorev.2008.08.014</idno>
+              <idno>PMID: 18822313</idno>
+              <ptr target="https://doi.org/10.1016/j.neubiorev.2008.08.014"/>
             </analytic>
             <monogr>
               <title level="j">Neuroscience and biobehavioral reviews</title>
@@ -952,8 +884,9 @@ Data Formal Funding </table>
                   <surname>Logan</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1177/0956797612457390</idno>
-              <ptr target="https://doi.org/10.1177/0956797612457390PMID:23399493"/>
+              <idno type="DOI">10.1177/0956797612457390</idno>
+              <idno>PMID: 23399493</idno>
+              <ptr target="https://doi.org/10.1177/0956797612457390"/>
             </analytic>
             <monogr>
               <title level="j">Psychol Sci</title>
@@ -983,8 +916,9 @@ Data Formal Funding </table>
                   <surname>Livesey</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0165525</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0165525PMID:27880815"/>
+              <idno type="DOI">10.1371/journal.pone.0165525</idno>
+              <idno>PMID: 27880815</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0165525"/>
             </analytic>
             <monogr>
               <title level="j">PloS one</title>
@@ -1014,15 +948,16 @@ Data Formal Funding </table>
                   <surname>Tyler</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/S0042-6989(98)00285-5</idno>
-              <ptr target="https://doi.org/10.1016/S0042-6989(98)00285-5PMID"/>
+              <idno type="DOI">10.1016/S0042-6989(98)00285-5</idno>
+              <idno>PMID: 10492833</idno>
+              <ptr target="https://doi.org/10.1016/S0042-6989(98"/>
             </analytic>
             <monogr>
               <title level="j">Vision Res</title>
               <imprint>
                 <biblScope unit="volume">39</biblScope>
                 <biblScope unit="issue">16</biblScope>
-                <biblScope unit="page">10492833</biblScope>
+                <biblScope from="285" to="290" unit="page"/>
                 <date type="published" when="1999"/>
               </imprint>
             </monogr>
@@ -1062,8 +997,9 @@ Data Formal Funding </table>
                   <surname>Wager</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1037/a0016802</idno>
-              <ptr target="https://doi.org/10.1037/a0016802PMID:20364928"/>
+              <idno type="DOI">10.1037/a0016802</idno>
+              <idno>PMID: 20364928</idno>
+              <ptr target="https://doi.org/10.1037/a0016802"/>
               <imprint>
                 <date type="published" when="2010"/>
                 <biblScope unit="volume">36</biblScope>
@@ -1088,8 +1024,9 @@ Data Formal Funding </table>
                   <surname>Logan</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1037/a0012726</idno>
-              <ptr target="https://doi.org/10.1037/a0012726PMID"/>
+              <idno type="DOI">10.1037/a0012726</idno>
+              <idno>PMID: 19485695</idno>
+              <ptr target="https://doi.org/10.1037/a0012726"/>
               <imprint>
                 <date type="published" when="2009"/>
                 <biblScope unit="volume">35</biblScope>
@@ -1115,8 +1052,9 @@ Data Formal Funding </table>
                   <surname>Logan</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1037/a0033049</idno>
-              <ptr target="https://doi.org/10.1037/a0033049PMID:23668253"/>
+              <idno type="DOI">10.1037/a0033049</idno>
+              <idno>PMID: 23668253</idno>
+              <ptr target="https://doi.org/10.1037/a0033049"/>
             </analytic>
             <monogr>
               <title level="j">J Exp Psychol Hum Percept Perform</title>
@@ -1150,15 +1088,16 @@ Data Formal Funding </table>
                   <surname>Drueke</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.ijpsycho.2012.09.009</idno>
-              <ptr target="https://doi.org/10.1016/j.ijpsycho.2012.09.009PMID"/>
+              <idno type="DOI">10.1016/j.ijpsycho.2012.09.009</idno>
+              <idno>PMID: 23026439</idno>
+              <ptr target="https://doi.org/10.1016/j.ijpsycho.2012.09.009"/>
             </analytic>
             <monogr>
               <title level="j">International Journal of Psychophysiology</title>
               <imprint>
                 <biblScope unit="volume">87</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">23026439</biblScope>
+                <biblScope from="234" to="277" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -1178,14 +1117,15 @@ Data Formal Funding </table>
                   <surname>Verbruggen</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.biopsycho.2016.10.005</idno>
-              <ptr target="https://doi.org/10.1016/j.biopsycho.2016.10.005PMID"/>
+              <idno type="DOI">10.1016/j.biopsycho.2016.10.005</idno>
+              <idno>PMID: 27756580</idno>
+              <ptr target="https://doi.org/10.1016/j.biopsycho.2016.10.005"/>
             </analytic>
             <monogr>
               <title level="j">Biological psychology</title>
               <imprint>
                 <biblScope unit="volume">123</biblScope>
-                <biblScope unit="page">27756580</biblScope>
+                <biblScope from="250" to="68" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -1213,8 +1153,8 @@ Data Formal Funding </table>
                   <surname>Logan</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1037/0096-1523.34.5.1212</idno>
-              <ptr target="https://doi.org/10.1037/0096-1523.34.5.1212PMID"/>
+              <idno type="DOI">10.1037/0096-1523.34.5.1212</idno>
+              <ptr target="https://doi.org/10.1037/0096-1523.34.5.1212"/>
               <imprint>
                 <date type="published" when="2008"/>
                 <biblScope unit="volume">34</biblScope>
@@ -1232,8 +1172,8 @@ Data Formal Funding </table>
                   <surname>Prins</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1167/13.7.3</idno>
-              <ptr target="https://doi.org/10.1167/13.7.3PMID"/>
+              <idno type="DOI">10.1167/13.7.3</idno>
+              <ptr target="https://doi.org/10.1167/13.7.3"/>
             </analytic>
             <monogr>
               <title level="j">J Vis</title>
@@ -1254,15 +1194,15 @@ Data Formal Funding </table>
                   <surname>Prins</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1167/12.6.25</idno>
-              <ptr target="https://doi.org/10.1167/12.6.25PMID"/>
+              <idno type="DOI">10.1167/12.6.25</idno>
+              <idno>PMID: 22715196</idno>
+              <ptr target="https://doi.org/10.1167/12.6.25"/>
             </analytic>
             <monogr>
               <title level="j">J Vis</title>
               <imprint>
                 <biblScope unit="volume">12</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">22715196</biblScope>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -1296,16 +1236,16 @@ Data Formal Funding </table>
                   <surname>Vink</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.biopsych.2011.07.028</idno>
-              <idno>2011/09/10</idno>
-              <ptr target="https://doi.org/10.1016/j.biopsych.2011.07.028PMID"/>
+              <idno type="DOI">10.1016/j.biopsych.2011.07.028</idno>
+              <idno>PMID: 21903198</idno>
+              <ptr target="https://doi.org/10.1016/j.biopsych.2011.07.028"/>
             </analytic>
             <monogr>
               <title level="j">Biological psychiatry</title>
               <imprint>
                 <biblScope unit="volume">70</biblScope>
                 <biblScope unit="issue">12</biblScope>
-                <biblScope unit="page">21903198</biblScope>
+                <biblScope from="1151" to="1159" unit="page"/>
                 <date type="published" when="2011"/>
               </imprint>
             </monogr>
@@ -1334,8 +1274,9 @@ Data Formal Funding </table>
                   <surname>Logan</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1098/rstb.2016.0193</idno>
-              <ptr target="https://doi.org/10.1098/rstb.2016.0193PMID:28242727"/>
+              <idno type="DOI">10.1098/rstb.2016.0193</idno>
+              <idno>PMID: 28242727</idno>
+              <ptr target="https://doi.org/10.1098/rstb.2016.0193"/>
             </analytic>
             <monogr>
               <title level="m">Philosophical transactions of the Royal Society of London Series B, Biological sciences</title>
@@ -1376,15 +1317,16 @@ Data Formal Funding </table>
                   <surname>Schall</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1037/0033-295X.114.2.376</idno>
-              <ptr target="https://doi.org/10.1037/0033-295X.114.2.376PMID"/>
+              <idno type="DOI">10.1037/0033-295X.114.2.376</idno>
+              <idno>PMID: 17500631</idno>
+              <ptr target="https://doi.org/10.1037/0033-295X.114.2.376"/>
             </analytic>
             <monogr>
               <title level="j">Psychol Rev</title>
               <imprint>
                 <biblScope unit="volume">114</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">17500631</biblScope>
+                <biblScope from="376" to="97" unit="page"/>
                 <date type="published" when="2007"/>
               </imprint>
             </monogr>
@@ -1423,13 +1365,13 @@ Data Formal Funding </table>
                   <surname>Du Plessis</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/ejn.12879</idno>
-              <idno>1086-94. Epub 2015/04/ 03</idno>
-              <ptr target="https://doi.org/10.1111/ejn.12879PMID"/>
+              <idno type="DOI">10.1111/ejn.12879</idno>
+              <idno>PMID: 25832122</idno>
+              <ptr target="https://doi.org/10.1111/ejn.12879"/>
               <imprint>
                 <date type="published" when="2015"/>
                 <biblScope unit="volume">41</biblScope>
-                <biblScope unit="page">25832122</biblScope>
+                <biblScope from="1086" to="94" unit="page"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -1468,9 +1410,9 @@ Data Formal Funding </table>
                   <surname>Aron</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1162/jocn.2009.21307</idno>
-              <idno>WOS:000279057500010</idno>
-              <ptr target="https://doi.org/10.1162/jocn.2009.21307PMID"/>
+              <idno type="DOI">10.1162/jocn.2009.21307</idno>
+              <idno>PMID: 19583473; WOS:000279057500010</idno>
+              <ptr target="https://doi.org/10.1162/jocn.2009.21307"/>
             </analytic>
             <monogr>
               <title level="j">Journal of cognitive neuroscience</title>
@@ -1522,8 +1464,9 @@ Data Formal Funding </table>
                   <surname>Wang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1162/jocn_a_00888</idno>
-              <ptr target="https://doi.org/10.1162/jocn_a_00888PMID:26439269"/>
+              <idno type="DOI">10.1162/jocn_a_00888</idno>
+              <idno>PMID: 26439269</idno>
+              <ptr target="https://doi.org/10.1162/jocn_a_00888"/>
             </analytic>
             <monogr>
               <title level="j">Journal of cognitive neuroscience</title>
@@ -1564,8 +1507,9 @@ Data Formal Funding </table>
                   <surname>Li</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.neuroimage.2015.06.032</idno>
-              <ptr target="https://doi.org/10.1016/j.neuroimage.2015.06.032PMID:26095091"/>
+              <idno type="DOI">10.1016/j.neuroimage.2015.06.032</idno>
+              <idno>PMID: 26095091</idno>
+              <ptr target="https://doi.org/10.1016/j.neuroimage.2015.06.032"/>
             </analytic>
             <monogr>
               <title level="j">NeuroImage</title>
@@ -1600,7 +1544,8 @@ Data Formal Funding </table>
                   <surname>Aron</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1152/jn.00704.2011</idno>
+              <idno type="DOI">10.1152/jn.00704.2011</idno>
+              <idno>PMID: 22013239</idno>
               <ptr target="https://doi.org/10.1152/jn.00704"/>
             </analytic>
             <monogr>

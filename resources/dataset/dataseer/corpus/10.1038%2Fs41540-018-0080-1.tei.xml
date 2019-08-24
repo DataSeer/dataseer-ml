@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:25+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T21:18+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -67,6 +67,23 @@
             <s>Comparison of simulations revealed that the retarded shoot growth in the mutant resulted from an increased assimilate transport to sink organs.</s>
             <s>Due to its central function in sucrose cycling and sugar signaling, our findings suggest an important role of hexokinase-1 for carbon allocation to either shoot growth or assimilate export.</s>
           </p>
+          <p>
+            <s>npj Systems Biology and Applications (2019) 5:4 ; https://doi.org/10.1038/s41540-018-0080-1</s>
+          </p>
+        </div>
+        <div>
+          <head>INTRODUCTION</head>
+          <p>
+            <s>With rising interest in plant biomass for nutritional, pharmaceutical, and energetic use, understanding of parameters that determine growth will become more and more important.</s>
+            <s>However, modeling of plant growth is hampered by the dependence of resource allocation to either shoot or root on environmental parameters and the inability to record the root/ shoot ratio non-invasively during the growth phase.</s>
+            <s>To circumvent this problem, indirect parameters have been deployed to estimate the fraction of assimilates that are allocated to leaf growth and root formation, respectively.</s>
+            <s>Models based on the transportresistance model by Thornley 1 focus on either shoot functions like starch metabolism 2 and leaf area 3 or root functions like water and nutrient uptake 4 or sink strength.</s>
+            <s>5 All these models handle biomass gain on a day-to-day basis, even though diurnal fluctuation of light intensity can be incorporated.</s>
+            <s>Models based on "optimal partitioning" 6 or on the "balanced growth hypothesis" 7 are powerful at quantitatively describing the impact of environmental perturbations, but are insufficient at quantifying allocation for high-resolution in time.</s>
+            <s>Poorter et al. 8 demonstrated that even ontogenetic shifts in the root/shoot ratio could not be represented by these models.</s>
+            <s>In contrast, modeling of metabolic dynamics is possible at hourly or even smaller time steps, thus restraining the simulation of the metabolic base of growth.</s>
+            <s>Investigations of hourly resolved growth patterns of leaves in most cases rely on video capturing studies and have yielded</s>
+          </p>
         </div>
       </abstract>
     </profileDesc>
@@ -79,10 +96,11 @@
           <s>With rising interest in plant biomass for nutritional, pharmaceutical, and energetic use, understanding of parameters that determine growth will become more and more important.</s>
           <s>However, modeling of plant growth is hampered by the dependence of resource allocation to either shoot or root on environmental parameters and the inability to record the root/ shoot ratio non-invasively during the growth phase.</s>
           <s>To circumvent this problem, indirect parameters have been deployed to estimate the fraction of assimilates that are allocated to leaf growth and root formation, respectively.</s>
-          <s>Models based on the transportresistance model by <ref type="bibr">Thornley</ref> 1 focus on either shoot functions like starch metabolism <ref target="#b1" type="bibr">2</ref> and leaf area <ref target="#b2" type="bibr">3</ref> or root functions like water and nutrient uptake <ref target="#b3" type="bibr">4</ref> or sink strength.</s>
+          <s>Models based on the transportresistance model by <ref type="bibr">Thornley</ref>
+            <ref target="#b0" type="bibr">1</ref> focus on either shoot functions like starch metabolism 2 and leaf area 3 or root functions like water and nutrient uptake 4 or sink strength.</s>
           <s>
             <ref target="#b4" type="bibr">5</ref> All these models handle biomass gain on a day-to-day basis, even though diurnal fluctuation of light intensity can be incorporated.</s>
-          <s>Models based on "optimal partitioning" <ref target="#b5" type="bibr">6</ref> or on the "balanced growth hypothesis" <ref target="#b6" type="bibr">7</ref> are powerful at quantitatively describing the impact of environmental perturbations, but are insufficient at quantifying allocation for high-resolution in time.</s>
+          <s>Models based on "optimal partitioning" 6 or on the "balanced growth hypothesis" 7 are powerful at quantitatively describing the impact of environmental perturbations, but are insufficient at quantifying allocation for high-resolution in time.</s>
           <s>Poorter et al. <ref target="#b7" type="bibr">8</ref> demonstrated that even ontogenetic shifts in the root/shoot ratio could not be represented by these models.</s>
           <s>In contrast, modeling of metabolic dynamics is possible at hourly or even smaller time steps, thus restraining the simulation of the metabolic base of growth.</s>
           <s>Investigations of hourly resolved growth patterns of leaves in most cases rely on video capturing studies and have yielded diverging results.</s>
@@ -93,7 +111,8 @@
             <ref target="#b10" type="bibr">11</ref> In soybean and tobacco, leaf growth appeared to prevail in the dark period, <ref target="#b11" type="bibr">12,</ref>
             <ref target="#b12" type="bibr">13</ref> while it was stronger during daytime in Arabidopsis.</s>
           <s>
-            <ref target="#b13" type="bibr">14</ref> Mielewczik et al. <ref target="#b14" type="bibr">15</ref> found that leaf growth tightly correlated with air humidity, while it did not correlate with temperature.</s>
+            <ref target="#b13" type="bibr">14</ref>
+            <ref type="bibr">Mielewczik et al. 15</ref> found that leaf growth tightly correlated with air humidity, while it did not correlate with temperature.</s>
           <s>This reflects an important aspect of the imaging experiments: they document leaf expansion rather than structural carbon gain, and are thus strongly depending on the leaf water status.</s>
           <s>Growth is a complex phenomenon, integrating various metabolic pathways.</s>
           <s>Not only is the uptake of CO 2 crucial for plant biomass production, but also sugar biosynthesis, carbon allocation to sink tissue, and respiration.</s>
@@ -124,19 +143,28 @@
         <head>RESULTS</head>
         <p>
           <s>Photosynthesis and allocation of carbon to shoot and root Based on 9-13 independent CO 2 -exchange measurements over complete diurnal cycles (see Materials and methods) mean net photosynthesis (NPS) was calculated (µmol CO 2 gFW −1 h −1 ).</s>
-          <s>As shown in <ref target="#fig_0" type="figure">Fig. 1a</ref> for Ler and gin2-1 under the high light condition.</s>
+          <s>As shown in <ref type="figure">Fig. 1a</ref> , the CO 2 -fixation rate was approximately 130 µmol CO 2 gFW −1 h −1 for both, Ler and gin2-1 under control condition.</s>
+          <s>CO 2 -fixation rates differed significantly (p &lt; 0.005) between the high light and control condition.</s>
+          <s>Under high light the rate increased almost 2.4-fold for Ler, reaching 310 µmol CO 2 gFW −1 h −1 and 2.5-fold for gin2-1, reaching approximately 330 µmol CO 2 gFW −1 h −1 .</s>
+          <s>Shoot respiration was not significantly affected by either genotype or condition during the night, reaching on average 28 µmol CO 2 gFW −1 h −1 for Ler and 37 µmol CO 2 gFW −1 h −1 for gin2-1 under the control condition and about 45 µmol CO 2 gFW −1 h −1 for Ler and gin2-1 under the high light condition.</s>
           <s>Minor deflections around the day/night transition resulted from fitting curves to the measured data.</s>
-          <s>The daily structural carbon gain of shoot tissue was calculated from the daily increment of net photosynthesis (see <ref target="#fig_0" type="figure">Fig. 1a</ref> ) as described in Materials and methods (Eq.</s>
+          <s>The daily structural carbon gain of shoot tissue was calculated from the daily increment of net photosynthesis (see <ref type="figure">Fig. 1a</ref> ) as described in Materials and methods (Eq.</s>
           <s>1), amounting to 120 µmol C 6 gFW −1 for Ler control, 100 µmol C 6 gFW −1 for gin2-1 at control, and 135 µmol C 6 gFW −1 for Ler but only 85 µmol C 6 gFW −1 for gin2-1 at high light.</s>
           <s>The data revealed a large discrepancy between the ratio of photosynthesis and shoot structural carbon gain for Ler and gin2-1 especially under high light, which could have resulted from either increased assimilate export to sink organs or build-up of excess carbon storage pools.</s>
           <s>To test the latter possibility, quantitatively relevant metabolite pools were analyzed.</s>
         </p>
         <p>
           <s>Central carbon metabolism As quantitatively relevant central metabolites, starch, hexose phosphates (HP), glucose (Glc), fructose (Frc), sucrose (Suc), amino acids (Aa), malate (Mal), fumarate (Fum), and citrate (Cit) were determined in 2 h intervals over a full diurnal cycle <ref type="figure">(Fig. S9</ref> ).</s>
-          <s>After <ref target="#tab_5" type="table">Table 4</ref> one diurnal cycle under control conditions each pool returned to the starting value.</s>
+          <s>After <ref type="figure">Fig. 1</ref> a Means of net photosynthesis rates of Ler (black) and gin2-1 (orange) under normal (solid lines) and high light (dashed lines) conditions over a complete diurnal cycle (n = 9-13).</s>
+          <s>Day and night are implicated with white and black bars on top.</s>
+          <s>b Bar graphs of hexose phosphates (n = 3 or 4) within the first hour of the light phase, 8:00 to 9:00, under high light conditions in the gin2-1 mutant.</s>
+          <s>Individual data points (black dots) are layered over the respective bar.</s>
+          <s>c, d Schematic topology of the simulated models for central metabolism with the basic model in panel c and the final, complex model in panel d.</s>
+          <s>CaAa carbonic-and amino acids, HP hexose phosphates, Suc sucrose, Glc glucose, Frc fructose, Exp export, SC structural carbon (all compounds with long residence time like cell wall or proteins), Mal/Fum malate and fumarate, Cit citrate, Aa amino acids.</s>
+          <s>For detailed information of the reaction rates (r1 to r17) see <ref target="#tab_3" type="table">Table 4</ref> one diurnal cycle under control conditions each pool returned to the starting value.</s>
           <s>However, after one day in high light, the metabolite values are significantly higher, except for citrate.</s>
           <s>The data represent means for six independent complete A. thaliana rosettes exposed to either normal or high light condition.</s>
-          <s>Significant effects of light condition or genotype are listed in <ref target="#tab_1" type="table">Table 1</ref> .</s>
+          <s>Significant effects of light condition or genotype are listed in <ref target="#tab_0" type="table">Table 1</ref> .</s>
           <s>Main differences between genotypes occurred for soluble sugars and malate under both conditions and for citrate and amino acids for the control condition only.</s>
           <s>Only citrate was lower in Ler as compared to gin2-1, and thus Ler displayed a larger pool of fixed carbon.</s>
           <s>Almost all metabolite concentrations increased under high light in both genotypes, again with the exception of citrate.</s>
@@ -144,7 +172,7 @@
         </p>
         <p>
           <s>As for metabolites, the maximal reaction rates of the enzymes participating in sucrose cycling <ref target="#b23" type="bibr">24,</ref>
-            <ref target="#b24" type="bibr">25</ref> were determined at saturating substrate concentration in 2 h intervals over a full diurnal cycle <ref target="#fig_0" type="figure">(Fig. S10)</ref> .</s>
+            <ref target="#b24" type="bibr">25</ref> were determined at saturating substrate concentration in 2 h intervals over a full diurnal cycle <ref type="figure">(Fig. S10</ref> ).</s>
           <s>Since no subcellular compartmentation was implemented in the model, activity of acidic and neutral invertase (Inv) were measured separately, but then summed up as one combined maximal reaction rate to represent the whole sucrolytic capacity of the leaf tissue.</s>
           <s>As expected, significant differences were observed for hexokinase activity (glucokinase and fructokinase) between Ler and gin2-1 under control as well as high light conditions.</s>
           <s>Surprisingly the fructokinase activity was lower in high light as compared to control condition in Ler.</s>
@@ -159,51 +187,61 @@
           <s>All carbon that was not contained in one of the metabolite pools was considered to either contribute to structural carbon formation in the source tissue or be exported to sink organs, which, in the chosen experimental setup, are represented solely by the root system.</s>
           <s>Exported assimilates are either used for root respiration or used root structural carbon formation.</s>
           <s>This was not further resolved, because root material was not accessible in soil grown plants.</s>
-          <s>Model development started from a simple model as introduced by Nägele et al. <ref target="#b23" type="bibr">24</ref> This model comprised NPS as input, four carbohydrates, hexose phosphates as central hub, one combined pool of carboxylic and amino acids (CaAa), and three possible outputs: (i) shoot structural carbon gain, (ii) export of sucrose to sink organs and (iii) respiratory release of CO 2 from CaAa during the night <ref target="#fig_0" type="figure">(Fig. 1c)</ref> .</s>
-          <s>The final model shown in <ref target="#fig_0" type="figure">Fig. 1d</ref> was built up in seven steps, each increasing the complexity by adding regulatory and/or metabolic details, which are listed in <ref target="#tab_2" type="table">Table 2</ref> .</s>
+          <s>Model development started from a simple model as introduced by Nägele et al. <ref target="#b23" type="bibr">24</ref> This model comprised NPS as input, four carbohydrates, hexose phosphates as central hub, one combined pool of carboxylic and amino acids (CaAa), and three possible outputs: (i) shoot structural carbon gain, (ii) export of sucrose to sink organs and (iii) respiratory release of CO 2 from CaAa during the night <ref type="figure">(Fig. 1c)</ref> .</s>
+          <s>The final model shown in <ref type="figure">Fig. 1d</ref> was built up in seven steps, each increasing the complexity by adding regulatory and/or metabolic details, which are listed in <ref target="#tab_1" type="table">Table 2</ref> .</s>
           <s>The final model contained several branch points, two cycles and various regulatory terms affecting enzyme activities.</s>
           <s>The two cycles are: (i) the sucrose cycle, in which HP are used as substrate by SPS to produce sucrose, which is then degraded by Inv to glucose and fructose, each of which can be re-phosphorylated to HP by hexokinase (Hxk), and (ii) the tricarboxylic acid cycle (TCA).</s>
           <s>The last step of sucrose cycling is restricted in the gin2-1 mutant as gin2-1 does not possess the HXK1 enzyme.</s>
-          <s>This resulted in five-to seven-fold reduction in sucrose cycling in the mutant as calculated from the flux through r6 <ref type="figure">(Fig. S8)</ref> .</s>
+          <s>This resulted in five-to seven-fold reduction in sucrose cycling in the mutant as calculated from the flux through r6 <ref type="figure">(Fig. S8</ref> ).</s>
         </p>
         <p>
           <s>Sole input for the final model is still CO 2 fixation, but the output of the system has become more complex, as amino acids are now able to leave the system through either structural carbon formation in the source tissue or export, and respiration of CO 2 is now only possible from the Mal/Fum pool.</s>
           <s>The Cit pool is linked to the Aa and Mal/Fum pool through interconversion terms and does therefore contribute indirectly to the output of the system.</s>
           <s>During the night photosynthesis is stalled, and carbon used for respiration, metabolite interconversions, or sink export must originate from starch degradation.</s>
           <s>Again, HPs are the central hub for metabolite interconversions.</s>
-          <s>Although the HP concentration is in the sub-micromolar range, the simulated flux through this pool was found to be very high, as all carbon will be fixed in the form of HP <ref target="#fig_0" type="figure">(Fig. 1c, d</ref> ) and thus, the highest fluxes, CO 2 -fixation and starch synthesis/degradation, will contribute to flux through the HP pool.</s>
+          <s>Although the HP concentration is in the sub-micromolar range, the simulated flux through this pool was found to be very high, as all carbon will be fixed in the form of HP <ref type="figure">(Fig. 1c, d)</ref> and thus, the highest fluxes, CO 2 -fixation and starch synthesis/degradation, will contribute to flux through the HP pool.</s>
           <s>Almost every model showed an HP peak at the beginning of the light phase, especially for gin2-1 models.</s>
           <s>To test if this was real, we sampled gin2-1 plants every 10 min during the first hour after light-on under high light condition to maximize the light effect and analyzed HP content.</s>
-          <s>We were unable to confirm this peak in the samples <ref target="#fig_0" type="figure">(Fig. 1b)</ref> .</s>
+          <s>We were unable to confirm this peak in the samples <ref type="figure">(Fig. 1b)</ref> .</s>
           <s>We therefore conclude that it is an artifact, probably arising from the on/off behavior of the CO 2 -fixation and the 2-h time resolution of the metabolic profile used for model simulations.</s>
         </p>
       </div>
       <div>
         <head>Model characteristics</head>
         <p>
-          <s>The final model was developed in seven steps as listed in <ref target="#tab_2" type="table">Table 2</ref>
-            <ref type="table">(Table 3)</ref> , while representation of the in vivo situation became more exact.</s>
+          <s>The final model was developed in seven steps as listed in <ref target="#tab_1" type="table">Table 2</ref> .</s>
+        </p>
+        <p>
+          <s>Each of these steps addressed a limitation of the previous model, thus allowing to refine understanding of essential features of the metabolic system.</s>
+          <s>For example, a strict switch between starch synthesis and degradation was necessary to prevent overflow of the hexose-phosphate pool (Model 01 vs. 02, compare Figures S1 and S2), a constant respiratory activity over the full diurnal cycle was necessary to prevent deflections in the pool of carbonic and amino acids (Model 02 vs. 03, compare <ref target="#fig_0" type="figure">Figures S2 and S3)</ref> , and the possibility of interconverting Cit and Mal/Fum was needed to faithfully map levels of carbonic acids (Model 04 vs. 05, compare <ref type="figure">Figures S4 and S5)</ref> .</s>
+          <s>A more detailed explanation of each modeling step is given in the supplementary material (Text_S1, "Model characteristics").</s>
+          <s>Despite increasing complexity, the model retained its accuracy, as the values for the cost function did not rise to values higher 0.018 <ref target="#tab_2" type="table">(Table 3)</ref> , while representation of the in vivo situation became more exact.</s>
           <s>The final model was used to simulate the dataset for the high light conditions without additional modifications, thus underlining the general validity of the approach.</s>
-          <s>Under normal light conditions ( <ref target="#fig_2" type="figure">Fig. 2)</ref> , the models were able to accurately predict concentrations of most metabolites, except for HP in gin2-1.</s>
+          <s>Under normal light conditions ( <ref target="#fig_0" type="figure">Fig. 2)</ref> , the models were able to accurately predict concentrations of most metabolites, except for HP in gin2-1.</s>
           <s>Here, three artificial peaks occurred: the first right after light-on, a second at 6 h into the light, and the third at the day/night transition.</s>
           <s>Both genotypes displayed steady gain of structural carbon during the day, but not during the night.</s>
           <s>This is not an obvious outcome, since carbon flux from metabolite degradation (e.g.</s>
           <s>starch) is higher than the respiration rate.</s>
-          <s>This <ref type="table">Table 3</ref> .</s>
-          <s>excess carbon could have been allocated to shoot structural carbon formation in the night.</s>
+          <s>This .</s>
+          <s>e,f glucose (blue), sucrose (turquois), fructose (green), and hexose phosphates (olive) excess carbon could have been allocated to shoot structural carbon formation in the night.</s>
           <s>However, in optimal simulations, the excess carbon was allocated to the sink tissue.</s>
           <s>Sink export occurred throughout the whole diurnal cycle for Ler under both conditions and for gin2-1 under high light.</s>
           <s>However, mean export rates were 2-2.5-fold higher for Ler (day, night control: 9.4 C 6 /h, 4.8 C 6 /h; day, night high light: 21 C 6 /h, 8 C 6 /h) and 5-to 10-fold higher for gin2-1 (day/night control: 11.5 C 6 /h, 1.1 C 6 /h; day/night high light: 30 C 6 /h, 6.5 C 6 /h) during the day than during the night, and the export rates for gin2-1 during the day were generally 1.2-to 1.5-fold higher than the export rates for Ler.</s>
           <s>Although gin2-1 had a low sink export rate during the night under control conditions, export still sufficed for roots maintenance metabolism.</s>
           <s>The higher sink export in gin2-1 resulted in an equal reduction in shoot structural carbon formation.</s>
           <s>This points to an important role of hexokinase-1 in carbon allocation by coordinating sucrose cycling and sugar sensing.</s>
-          <s>Simulations of the final model for high light are shown in <ref target="#fig_3" type="figure">Fig. 3</ref> .</s>
+          <s>Simulations of the final model for high light are shown in <ref target="#fig_1" type="figure">Fig. 3</ref> .</s>
           <s>Minor miss-alignments were observed for Mal/Fum in Ler and gin2-1 and for Frc in Ler.</s>
           <s>Except for soluble sugars, only small differences in metabolite concentrations between the two genotypes were observed.</s>
           <s>However, large deviations occurred for structural carbon.</s>
           <s>For both genotypes, the curve of structural carbon gain showed constant rise for the source tissue during the light phase with a delay of 6 h at dawn in Ler that was absent in gin2-1.</s>
           <s>Shoot structural carbon gain was not more than 3 µmol C 6 gFW −1 during the night and therefore negligible for both genotypes and conditions.</s>
-          <s>DISCUSSION Plant growth represents the integrated output of numerous molecular processes which are involved in photosynthetic CO 2 uptake, sugar biosynthesis, carbon allocation, and mitochondrial respiration.</s>
+        </p>
+      </div>
+      <div>
+        <head>DISCUSSION</head>
+        <p>
+          <s>Plant growth represents the integrated output of numerous molecular processes which are involved in photosynthetic CO 2 uptake, sugar biosynthesis, carbon allocation, and mitochondrial respiration.</s>
           <s>To link metabolic regulation in central primary metabolism of Arabidopsis with growth processes, we developed a dynamic mathematical model to simulate structural carbon allocation to shoot tissue under varying environmental conditions.</s>
           <s>In previous studies, we have observed non-intuitive coherences between metabolic enzymes, carbon allocation and growth.</s>
           <s>
@@ -219,7 +257,7 @@
           <s>Brauner et al. <ref target="#b25" type="bibr">26</ref> reported that higher photosynthetic efficiency of gin2-1 did not translate into a higher growth rate because of elevated assimilate export to the root system, where respiratory activity was increased.</s>
           <s>Elevated sugar levels were discussed as the cause for increased export, but data presented here offer an alternative possibility.</s>
           <s>According to Meyer et al. <ref target="#b26" type="bibr">27</ref> high growth rates correlate with a metabolic signature comprising low levels of central metabolites like hexose phosphates, sucrose, and carboxylates, thus indicating that fast growth drains the pools of central metabolites.</s>
-          <s>Comparing Ler and the gin2-1 mutant, we detected lower levels of sugars and malate in gin2-1 under high light conditions, while hexose phosphates remained unchanged (see <ref target="#tab_1" type="table">Table 1</ref> and <ref type="figure">Fig. S9</ref> ).</s>
+          <s>Comparing Ler and the gin2-1 mutant, we detected lower levels of sugars and malate in gin2-1 under high light conditions, while hexose phosphates remained unchanged (see <ref target="#tab_0" type="table">Table 1</ref> and <ref type="figure">Fig. S9)</ref> .</s>
           <s>Thus, insufficient build-up of central metabolites could be the cause of slower growth, and elevated sugar export might be its consequence.</s>
           <s>This would point to the inability of gin2-1 to sense the sugar content being the cause of slow growth.</s>
         </p>
@@ -227,15 +265,14 @@
           <s>To sort this out, we developed a dynamic metabolic model that simulates the diurnal course of structural carbon formation in the source tissue and C-export, as a function of net photosynthesis and dynamics of metabolite pools.</s>
           <s>Because structural carbon gain of the shoot and assimilate export from leaves to the root are competing output terms in the model, it was necessary to set a margin for at least one of the two.</s>
           <s>For daily shoot structural carbon gain this was achieved by calculating the increment of total net photosynthesis (NPS) within 24 h assuming that specific leaf area (SLA) did not change within 24 h, the gain in specific NPS (NPS/gFW) would then reflect extension of the leaf rosette and therefore leaf growth (Eq.</s>
-          <s>
-            <ref target="#formula_1" type="formula">(1)</ref> , see Materials and methods).</s>
+          <s>(1), see Materials and methods).</s>
           <s>This concept is supported by Tocquin et al. <ref target="#b27" type="bibr">28</ref> who found that SLA, although depending on atmospheric CO 2 concentration, N-supply, and plant age, remained remarkably constant in adult Arabidopsis plants during vegetative growth.</s>
         </p>
         <p>
           <s>With a limit set to the proportion of photosynthate allocated to shoot structural carbon, a ratio of carbon use for root and shoot of 0.5 to 0.6 was obtained.</s>
-          <s>Considering the high respiratory activity of the root, this is in agreement with the root/shoot ratio reported for Arabidopsis, <ref target="#b25" type="bibr">26</ref> thus supporting our concept.</s>
+          <s>Considering the high respiratory activity of the root, this is in agreement with the root/shoot ratio reported for Arabidopsis, 26 thus supporting our concept.</s>
           <s>All model simulations placed leaf structural carbon formation into the light phase with almost constant rates that declined within the last 2 h of the light phase, except for Ler under control condition, where structural carbon gain ceased already 6 h before the night.</s>
-          <s>This reflects imaging data obtained by <ref type="bibr">Wiese et al.</ref> 14 who reported leaf expansion predominantly in the early morning.</s>
+          <s>This reflects imaging data obtained by Wiese et al. 14 who reported leaf expansion predominantly in the early morning.</s>
           <s>As stated above, leaf expansion and biomass deposition are not interchangeable.</s>
           <s>Nevertheless, simulations indicate that for Arabidopsis these phenomena might be linked.</s>
         </p>
@@ -267,13 +304,10 @@
           <s>
             <ref target="#b32" type="bibr">33</ref> The diurnal profile of citrate, which is opposite to the other primary metabolites, would fit with our finding of structural carbon formation during the light phase, reaching its lowest level at light-off, when growth ceases.</s>
         </p>
-      </div>
-      <div>
-        <head>Model development</head>
         <p>
-          <s>We increased model complexity stepwise to better map the in vivo situation of the metabolic system.</s>
+          <s>Model development We increased model complexity stepwise to better map the in vivo situation of the metabolic system.</s>
           <s>Although an increasing number of kinetic model parameters lead to an expansion of parameter space, optimization yielded a similar cost function.</s>
-          <s>The calculated cost function (see Materials and methods) remained in a range between 0.002 and 0.018 <ref type="table">(Table 3</ref> ), indicating that model accuracy remained high <ref target="#fig_0" type="figure">(Fig. 1c, d)</ref> .</s>
+          <s>The calculated cost function (see Materials and methods) remained in a range between 0.002 and 0.018 <ref target="#tab_2" type="table">(Table 3</ref> ), indicating that model accuracy remained high <ref type="figure">(Fig. 1c, d)</ref> .</s>
           <s>However, for the high light condition the cost function increased almost three-fold to 0.018 for Ler and 0.0067 for gin2-1.</s>
           <s>It must be considered that the calculated cost function is only giving the sum of squared deviations between simulated and measured data.</s>
           <s>This in turn means that a large error in metabolites with low abundance, such as HP and sugars, will contribute only very little to the cost function, while small errors in metabolites that are highly abundant, like starch, are contributing eminently to the cost function.</s>
@@ -293,8 +327,9 @@
             <ref target="#b33" type="bibr">[34]</ref>
             <ref target="#b34" type="bibr">[35]</ref>
             <ref target="#b35" type="bibr">[36]</ref>
-            <ref target="#b36" type="bibr">[37]</ref> For example the model of Seaton et al. <ref target="#b34" type="bibr">35</ref>
-            <ref target="#b33" type="bibr">34</ref> demonstrated that, when the sucrose pool is modeled as starch degradation product, sucrose runs over, when starch degradation occurs during the light phase.</s>
+            <ref target="#b36" type="bibr">[37]</ref> For example the model of Seaton et al. <ref target="#b34" type="bibr">35</ref> comprised a simple differential equation for starch metabolism that is a function of light availability, and thus can only assume the values 1 or 0. The equation will therefore either give starch synthesis or degradation.</s>
+          <s>With this equation Seaton et al. were able to explain all environmental perturbations of starch metabolism tested.</s>
+          <s>In contrast, Feugier and Satake 34 demonstrated that, when the sucrose pool is modeled as starch degradation product, sucrose runs over, when starch degradation occurs during the light phase.</s>
           <s>In our model, the starch degradation product is HP, and simulations based on a steady transition between starch synthesis and degradation showed similar results, emphasizing the importance of this step in model development.</s>
           <s>HP accumulation turned out to be stronger in the gin2-1 mutant as compared to the wild type.</s>
           <s>Although this might not be expected considering the lack of glucokinase activity, it has already been observed by Moore et al. <ref target="#b22" type="bibr">23</ref> The accumulation of glucose-6-phosphate could further reduce sucrose cycling in the gin2-1 mutant by inhibition of invertase, thus aggravating the effect of the mutation.</s>
@@ -304,7 +339,7 @@
             <ref target="#b38" type="bibr">[39]</ref>
             <ref target="#b39" type="bibr">[40]</ref> It is experimentally very difficult to measure photosynthesis and respiration simultaneously.</s>
           <s>Although it is generally accepted that mitochondrial respiration is needed to provide C skeletons for amino acid synthesis, <ref target="#b37" type="bibr">38</ref> the question as to what extend respiration takes place in an illuminated leaf is under debate.</s>
-          <s>In vivo measurements in French bean <ref target="#b38" type="bibr">39</ref> did not support respiration during the day, while measurements in maize leaves <ref target="#b39" type="bibr">40</ref> revealed the opposite.</s>
+          <s>In vivo measurements in French bean 39 did not support respiration during the day, while measurements in maize leaves <ref target="#b39" type="bibr">40</ref> revealed the opposite.</s>
           <s>A constant respiration activity of leaf cells throughout the diurnal cycle based on the measured dark respiration improved simulation of the combined pool of carboxylates and amino acids in both genotypes, while it had little effect on carbohydrates.</s>
           <s>Our model simulations are therefore in support of a constant respiratory activity, which removed the kink in the simulated combined CaAa pool that occurred at day/ night transition, when respiration was allowed only during the dark phase.</s>
         </p>
@@ -337,11 +372,7 @@
       <div>
         <head>Plant material and growth conditions</head>
         <p>
-          <s>A. thaliana (L.) Heynh., accession Landsberg erecta (Ler) and the gin2-1 knockout mutant of hexokinase-1 (At4g29130), were grown in a 1:1 mixture of GS90 soil and vermiculite in a growth chamber with a 8 h/16 h light/dark regime (120 μmol m −2 s</s>
-        </p>
-        <formula xml:id="formula_0">−1</formula>
-        <p>
-          <s>; 22°C/16°C).</s>
+          <s>A. thaliana (L.) Heynh., accession Landsberg erecta (Ler) and the gin2-1 knockout mutant of hexokinase-1 (At4g29130), were grown in a 1:1 mixture of GS90 soil and vermiculite in a growth chamber with a 8 h/16 h light/dark regime (120 μmol m −2 s −1 ; 22°C/16°C).</s>
           <s>After 5 weeks, plants were transferred to long day and a 16 h/8 h light/dark regime was applied (120 μmol m −2 s −1 ; 22°C/16°C).</s>
           <s>The relative humidity was 70%.</s>
           <s>Plants were watered regularly and fertilized with standard nitrogen-phosphate-potassium fertilizer immediately after pricking, ten days before and four days after transfer to long-day condition.</s>
@@ -415,7 +446,7 @@
           <s>Specific structural carbon formation of the shoot for one day was calculated after measuring photosynthetic activities.</s>
           <s>Based on the assumption that growth of leaves will increase photosynthesis, 2,48 the following equation was defined to calculate leaf structural carbon gain:</s>
         </p>
-        <formula xml:id="formula_1">Z t2 t1 rPS1dt=gFW1 ¼ Z t2 t1 rPS2dt=gFW2:<label>(1)</label>
+        <formula xml:id="formula_0">Z t2 t1 rPS1dt=gFW1 ¼ Z t2 t1 rPS2dt=gFW2:<label>(1)</label>
         </formula>
         <p>
           <s>rPS1 and rPS2 are the photosynthesis rate on day 1 and day 2, respectively; gFW2 is the fresh weight after gas exchange measurement; gFW1 is the objective term.</s>
@@ -431,15 +462,18 @@
         <p>
           <s>To model the central carbohydrate metabolism in Arabidopsis leaves the following set of ordinary differential equations (ODE) was set up (ODEs of model 08, final).</s>
         </p>
-        <formula xml:id="formula_2">d=dtHP ¼ 1=6 Ã r1 À r3 À r4 À r5 þ r7 þ r8 À r15 À r14 À r11; d=dtStarch ¼ r3 þ r4; d=dtBM ¼ r10 þ r11; d=dtexp ¼ 2 Ã r13 þ r12; d=dtSuc ¼ 1=2 Ã r5 À r6 À r13; d=dtGlc ¼ r6 À r7; d=dtFrc ¼ r6 À r8; d=dtAa ¼ r9 À r10 À r12; d=dtCit ¼ r14 À r9 À r16 þ r17; d=dtMF ¼ r15 þ 1=6 Ã r2 þ r16 À r17:</formula>
         <p>
-          <s>A detailed list of rate equation descriptions and corresponding citations can be found in <ref target="#tab_5" type="table">Table 4</ref> and a full model description can be found as supplementary text file (Text_S1, "Final model").</s>
-          <s>According to Rohwer and Botha <ref target="#b48" type="bibr">49</ref> as well as Nägele et al. <ref target="#b23" type="bibr">24</ref> terms for enzyme inhibition for the modeled Michaelis-Menten kinetics were applied.</s>
+          <s>d=dtHP ¼ 1=6 Ã r1 À r3 À r4 À r5 þ r7 þ r8 À r15 À r14 À r11;</s>
+        </p>
+        <formula xml:id="formula_1">d=dtStarch ¼ r3 þ r4; d=dtBM ¼ r10 þ r11; d=dtexp ¼ 2 Ã r13 þ r12; d=dtSuc ¼ 1=2 Ã r5 À r6 À r13; d=dtGlc ¼ r6 À r7; d=dtFrc ¼ r6 À r8; d=dtAa ¼ r9 À r10 À r12; d=dtCit ¼ r14 À r9 À r16 þ r17; d=dtMF ¼ r15 þ 1=6 Ã r2 þ r16 À r17:</formula>
+        <p>
+          <s>A detailed list of rate equation descriptions and corresponding citations can be found in <ref target="#tab_3" type="table">Table 4</ref> and a full model description can be found as supplementary text file (Text_S1, "Final model").</s>
+          <s>According to Rohwer and Botha 49 as well as Nägele et al. <ref target="#b23" type="bibr">24</ref> terms for enzyme inhibition for the modeled Michaelis-Menten kinetics were applied.</s>
           <s>Hexokinase activity was modeled with competitive inhibition by the hexose (fructose for glucokinase and glucose for fructokinase).</s>
           <s>Invertase was modeled with fructose as a competitive inhibitor and glucose as noncompetitive inhibitor.</s>
           <s>
-            <ref target="#b46" type="bibr">47</ref> K M values were modeled as a constant parameter during the 24 h cycle, whereas the maximal reaction rates (V m ) were adjustable within the measured borders (V m ± SD, see <ref target="#fig_0" type="figure">Fig. S10</ref> ).</s>
-          <s>To adjust K M for competitive inhibition we implemented inhibition terms that modify the K M value by taking the actual substrate concentration into account (see <ref target="#tab_5" type="table">Table 4</ref> for more details).</s>
+            <ref target="#b46" type="bibr">47</ref> K M values were modeled as a constant parameter during the 24 h cycle, whereas the maximal reaction rates (V m ) were adjustable within the measured borders (V m ± SD, see <ref type="figure">Fig. S10</ref> ).</s>
+          <s>To adjust K M for competitive inhibition we implemented inhibition terms that modify the K M value by taking the actual substrate concentration into account (see <ref target="#tab_3" type="table">Table 4</ref> for more details).</s>
           <s>Reaction rates were doubled according to the RGT rule for the high light models as the temperature was almost 10°C higher under this condition.</s>
           <s>Interconversions without defined enzyme kinetics were modeled as mass balance equations (r9-r17).</s>
           <s>Stoichiometric factors were applied when metabolite interconversions included a change in the number of C atoms of substrates and products: all metabolites were expressed as C 6 -body, except for sucrose that is expressed as C 12 and CO 2 , which is C 1 .</s>
@@ -448,34 +482,24 @@
           <s>For HP to Suc and for Suc to Exp the stoichiometric factor is 2, as 1/2 Suc can be formed from one HP and two C 6 export bodies can be formed from one Suc molecule.</s>
           <s>Rates for photosynthesis and respiration were calculated from measure data as smoothing spline over 24 h.</s>
           <s>Starch synthesis during the day and degradation during the night were calculated separately by the first derivative of the interpolation of the measured data giving a positive sign for starch synthesis and a negative sign for its degradation and zeros for synthesis during the night and degradation during the day.</s>
-          <s>Detailed description of model parameters can be found in <ref target="#tab_5" type="table">Table 4</ref> .</s>
+          <s>Detailed description of model parameters can be found in <ref target="#tab_3" type="table">Table 4</ref> .</s>
           <s>Unknown parameters were identified by minimizing the cost function (sum of squared errors between simulated and measured data).</s>
-          <s>This was performed using a particle-swarm pattern search method for bound constrained global optimization <ref target="#b49" type="bibr">50</ref> implemented in the software packages Systems Biology Toolbox2 and the SBPD Extension Package <ref target="#b50" type="bibr">51</ref> for the numerical software Matlab® (version R2014a) Data analysis and statistics Data evaluation, normalization, and visualization were performed in Microsoft Excel® (Microsoft Office version 2010, http://www.microsoft.</s>
+          <s>This was performed using a particle-swarm pattern search method for bound constrained global optimization 50 implemented in the software packages Systems Biology Toolbox2 and the SBPD Extension Package 51 for the numerical software Matlab® (version R2014a) Data analysis and statistics Data evaluation, normalization, and visualization were performed in Microsoft Excel® (Microsoft Office version 2010, http://www.microsoft.</s>
           <s>com) and the numerical software Matlab (version R2014a).</s>
           <s>Analysis of variance with Tukey's HSD (Honestly Significant Difference) test using a significance cutoff of P &lt; 0.05 were performed with the R software (The R Project for Statistical Computing; http://www.r-project.org/).</s>
         </p>
       </div>
       <figure xml:id="fig_0">
-        <head>Fig. 1 a</head>
-        <label>1</label>
-        <figDesc>Fig. 1 a Means of net photosynthesis rates of Ler (black) and gin2-1 (orange) under normal (solid lines) and high light (dashed lines) conditions over a complete diurnal cycle (n = 9-13). Day and night are implicated with white and black bars on top. b Bar graphs of hexose phosphates (n = 3 or 4) within the first hour of the light phase, 8:00 to 9:00, under high light conditions in the gin2-1 mutant. Individual data points (black dots) are layered over the respective bar. c, d Schematic topology of the simulated models for central metabolism with the basic model in panel c and the final, complex model in panel d. CaAa carbonic-and amino acids, HP hexose phosphates, Suc sucrose, Glc glucose, Frc fructose, Exp export, SC structural carbon (all compounds with long residence time like cell wall or proteins), Mal/Fum malate and fumarate, Cit citrate, Aa amino acids. For detailed information of the reaction rates (r1 to r17) see Table 4</figDesc>
-      </figure>
-      <figure xml:id="fig_1">
-        <head>5</head>
-        <label>5</label>
-        <figDesc>List of the cost function (sum of squared errors between the measured and simulated data points) for each step after model optimization (n =</figDesc>
-      </figure>
-      <figure xml:id="fig_2">
         <head>Fig. 2</head>
         <label>2</label>
         <figDesc>Fig. 2 Simulated results for the final Model_ 08 under control condition. Dotted lines represent means of measured data ± SD (n = 6), solid lines represent means of model simulations (n = 5) for Ler (a, c, e) and gin2-1 (b, d, f). Day and night are indicated with white and black bars on top. Sucrose is expressed as C 12 . a, b starch (black), structural carbon (red), export (pink). c, d malate/fumarate pool (gray), citrate (orange), and amino acids (yellow). e,f glucose (blue), sucrose (turquois), fructose (green), and hexose phosphates (olive)</figDesc>
       </figure>
-      <figure xml:id="fig_3">
+      <figure xml:id="fig_1">
         <head>Fig. 3</head>
         <label>3</label>
         <figDesc>Fig. 3 Simulated results for the final Model_08 under high light condition. Dotted lines represent means of measured data ± SD (n = 6), solid lines represent means of model simulations (n = 5) for Ler (a, c, e) and gin2-1 (b, d, f). Day and night are indicated with white and black bars on top. Sucrose is expressed as C 12 . a, b Starch (black), structural carbon (red), export (pink). c, d Malate/fumarate pool (gray), citrate (orange), and amino acids (yellow). e, f Glucose (blue), sucrose (turquois), fructose (green), and hexose phosphates (olive)</figDesc>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_1">
+      <figure type="table" validated="false" xml:id="tab_0">
         <head>Table 1 .</head>
         <label>1</label>
         <figDesc>Comparison of means for central carbon metabolites over a 24 h cycle for either the genotypes (Ler and gin2-1), or the light regime (high light and control condition).Sta starch, HP hexose phosphates, Glc glucose, Frc fructose, Suc sucrose, Mal malate, Fum fumarate, Cit citrate, Aa amino acids, N control condition, HL</figDesc>
@@ -546,7 +570,7 @@ variance, Tukey HSD, n.s. not significant)
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_2">
+      <figure type="table" validated="false" xml:id="tab_1">
         <head>Table 2 .</head>
         <label>2</label>
         <figDesc>List of the different models, their variation compared to the previous model, and the outcome or idea for the next modelHP hexose phosphates, CaAa carbonic-and amino acids, Cit citrate, MalFum malate and fumarate pool, Glc glucose, Frc fructose, SPS sucrose-phosphate- synthase, Inv invertase, SC structural carbon</figDesc>
@@ -611,16 +635,58 @@ Final model
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_4">
-        <head/>
-        <label/>
-        <figDesc>comprised a simple differential equation for starch metabolism that is a function of light availability, and thus can only assume the values 1 or 0. The equation will therefore either give starch synthesis or degradation. With this equation Seaton et al. were able to explain all environmental perturbations of starch metabolism tested. In contrast, Feugier and Satake</figDesc>
-        <table/>
+      <figure type="table" validated="true" xml:id="tab_2">
+        <head>Table 3 .</head>
+        <label>3</label>
+        <figDesc>List of the cost function (sum of squared errors between the</figDesc>
+        <table>measured and simulated data points) for each step after model 
+optimization (n = 5 ± SD) 
+
+Model no. 
+Ler 
+gin2-1 
+
+01 
+0.0055 ± 0.00015 
+0.0026 ± 0.00044 
+
+02 
+0.0101 ± 0.00023 
+0.0043 ± 0.0011 
+
+03 
+0.0136 ± 0.0022 
+0.0051 ± 0.00035 
+
+04 
+0.0072 ± 0.00053 
+0.0101 ± 0.00033 
+05 
+0.0075 ± 0.00033 
+0.0021 ± 0.0001 
+
+06 
+0.0136 ± 0.00031 
+0.0061 ± 0.0012 
+
+07 
+0.0074 ± 0.00038 
+0.0018 ± 0 
+
+08 N 
+0.0059 ± 0.000055 
+0.0019 ± 0.00015 
+
+08 HL 
+0.0179 ± 0.005 
+0.0067 ± 0.000045 
+
+</table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_5">
+      <figure type="table" validated="false" xml:id="tab_3">
         <head>Table 4 .</head>
         <label>4</label>
-        <figDesc>Description of parameters and constraints used in the models and their respective source whenever available{0.01,10} Cit formation from MF as MBE r17 mf_cit•MF Assumed and optimized mf_cit ∈ {0.01,10} SPS sucrose-phosphate-synthase, Inv invertase, Hxk hexokinase, GlcK glucokinase, FrcK fructokinase, Frc fructose, Glc glucose, HP hexose phosphate, Exp export, SC structural carbon, Suc sucrose, Cit citrate, MF malate/fumarate, Aa amino acids, MM Michaelis-Menten kinetic, MBE mass balance equation. K M are given in mM and V m in µmol h −1 gFW</figDesc>
+        <figDesc>Description of parameters and constraints used in the models and their respective source whenever available{0.01,10} Cit formation from MF as MBE r17 mf_cit•MF Assumed and optimized mf_cit ∈ {0.01,10} SPS sucrose-phosphate-synthase, Inv invertase, Hxk hexokinase, GlcK glucokinase, FrcK fructokinase, Frc fructose, Glc glucose, HP hexose phosphate, Exp export, SC structural carbon, Suc sucrose, Cit citrate, MF malate/fumarate, Aa amino acids, MM Michaelis-Menten kinetic, MBE mass balance equation. K M are given in mM and V m in µmol h −1 gFW −1</figDesc>
         <table>Name 
 Symbol 
 Constraints/range 
@@ -728,24 +794,15 @@ Measured and splined
 Inv activity as MM 
 r6 
 ( V m 6•Suc)/((km6•(1 + Frc/Ki6a) + Suc)•(1 + Glc/Ki6b)) 
-Measured and splined 
-
-24,47,49 
-
+Measured and splined 24,47,49 
 GlcK activity as MM 
 r7 
 ( V m 7 •Glc)/(km7 •(1 + Frc/Ki7) + Glc) 
-Measured and splined 
-
-49 
-
+Measured and splined 49 
 FrcK activity as MM 
 r8 
 ( V m 8 •Frc)/(km8• (1 + Glc/Ki8) + Frc) 
-Measured and splined 
-
-49 
-
+Measured and splined 49 
 Aa synthesis from Cit as MBE 
 r9 
 r_ca •Cit 
@@ -785,7 +842,7 @@ MF formation from Cit as MBE
 r16 
 cit_mf•Cit 
 Assumed and optimized 
-cit_mf ∈ −1 </table>
+cit_mf ∈ </table>
       </figure>
       <note place="foot">Published in partnership with the Systems Biology Institute npj Systems Biology and Applications (2019) 4</note>
       <note place="foot">© The Author(s) 2019</note>
@@ -805,24 +862,11 @@ cit_mf ∈ −1 </table>
           <head>DATA AVAILABILITY</head>
           <p>
             <s>Raw data can be made available by the authors upon request.</s>
+            <s>Competing interests: The authors declare no competing interests.</s>
           </p>
         </div>
         <div>
           <head>AUTHOR CONTRIBUTION</head>
-          <p>
-            <s>L.K. designed the study, conducted experiments, developed the model, and wrote the manuscript.</s>
-            <s>T.N. provided the basal model and assisted in model development.</s>
-            <s>A. G.H. designed the study and wrote the manuscript.</s>
-          </p>
-        </div>
-        <div>
-          <head>ADDITIONAL INFORMATION</head>
-          <p>
-            <s>Supplementary information accompanies the paper on the npj Systems Biology and Applications website (https://doi.org/10.1038/s41540-018-0080-1).</s>
-          </p>
-          <p>
-            <s>Competing interests: The authors declare no competing interests.</s>
-          </p>
           <p>
             <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
           </p>

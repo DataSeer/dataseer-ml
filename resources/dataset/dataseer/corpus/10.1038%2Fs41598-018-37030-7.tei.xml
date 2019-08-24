@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:03+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T20:56+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -79,6 +79,16 @@
                 <forename type="middle">W</forename>
                 <surname>Fleischer</surname>
               </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Department of Electrical Engineering</orgName>
+                <orgName type="institution">Princeton University</orgName>
+                <address>
+                  <postCode>08544</postCode>
+                  <settlement>Princeton</settlement>
+                  <region>NJ</region>
+                  <country key="US">USA</country>
+                </address>
+              </affiliation>
             </author>
             <title level="a" type="main">Nonlinear Imaging using Object- Dependent Illumination OPEN</title>
           </analytic>
@@ -96,7 +106,6 @@
     <profileDesc>
       <abstract>
         <div>
-          <head>1</head>
           <p>
             <s>Nonlinear imaging systems can surpass the limits of linear optics, but nearly all rely on physical media and atomic/molecular response to work.</s>
             <s>These materials are constrained by their physical properties, such as frequency selectivity, environmental sensitivity, time behavior, and fixed nonlinear response.</s>
@@ -108,9 +117,7 @@
           <p>
             <s>Feedback is a natural way to engineer nonlinearity, as it creates a functional relationship between input and output.</s>
             <s>Commonly used in control systems, feedback can act to amplify 1 , filter 2 , and process signals 3 .</s>
-            <s>Historically, there have been two main applications, with two distinct approaches and methodologies: logical operations, with a focus on small degrees of freedom and stable processing, e.g.</s>
-            <s>
-              <ref target="#b3" type="bibr">4</ref> and dynamical systems, with an emphasis on large degrees of freedom and instability, e.g.</s>
+            <s>Historically, there have been two main applications, with two distinct approaches and methodologies: logical operations, with a focus on small degrees of freedom and stable processing, e.g. 4 and dynamical systems, with an emphasis on large degrees of freedom and instability, e.g.</s>
             <s>pattern formation 5 .</s>
             <s>Here, we combine and extend these approaches to improve information transfer in nonlinear imaging systems.</s>
           </p>
@@ -122,16 +129,17 @@
             <s>The resulting feedback loop between the (digital) image of the object and the (digital) pattern of illumination effectively creates a nonlinearity that can be controlled electro-optically.</s>
             <s>Unlike nonlinearities that are determined -and limited -by physical media, such as crystals and polymers, SLMs are robust to the environment, respond well to wide ranges of intensity, bandwidth, and coherence, and can generate nearly any mathematical form.</s>
             <s>This nonlinear tunability (on a pixel-by-pixel basis), both by itself and for optimization on different figures of merit (such as contrast, resolution, edge detection, etc.), distinguishes our approach from earlier attempts at feedback 6 .</s>
+          </p>
+          <p>
             <s>Our feedback generalizes two well-known pathways in computational imaging: adaptive optics and structured illumination.</s>
             <s>In the former, aberrations along an optical path are "pre-compensated" by first measuring and then correcting for the distortions, e.g. using deformable mirror arrays.</s>
             <s>This has enabled a revolution in remote sensing and ground-based astronomy, e.g. for imaging through a varying atmosphere, and is used routinely in ophthalmology for optical examination of the retina.</s>
-            <s>It is also experiencing resurgence in imaging through turbid media, such as paint and fog <ref target="#b6" type="bibr">7,</ref>
-              <ref target="#b7" type="bibr">8</ref> , in which scatterers randomize the information from object to image.</s>
+            <s>It is also experiencing resurgence in imaging through turbid media, such as paint and fog 7,8 , in which scatterers randomize the information from object to image.</s>
             <s>However, the adaptation is independent of the object, used instead for correcting the path along the rest of the optical system.</s>
           </p>
           <p>
             <s>In structured illumination, a patterned light source adds information at the input of the system, allowing more information about the object to be extracted (deconvolved) at the output.</s>
-            <s>Examples include Zernike masks for phase observation 9 , periodic masks for improved resolution 10,11 and depth sectioning 12 , Bessel 13 and Airy 14 beams for extended depth of focus, and random masks, which enable single-pixel cameras <ref target="#b14" type="bibr">15</ref> and coherence engineering <ref target="#b15" type="bibr">16,</ref>
+            <s>Examples include Zernike masks for phase observation 9 , periodic masks for improved resolution 10,11 and depth sectioning 12 , Bessel 13 and Airy 14 beams for extended depth of focus, and random masks, which enable single-pixel cameras 15 and coherence engineering <ref target="#b15" type="bibr">16,</ref>
               <ref target="#b16" type="bibr">17</ref> .</s>
             <s>As in adaptive optics, though, all these techniques use illumination patterns that are independent of the sample.</s>
           </p>
@@ -146,36 +154,6 @@
   <text xml:lang="en">
     <body>
       <div>
-        <p>
-          <s>Feedback is a natural way to engineer nonlinearity, as it creates a functional relationship between input and output.</s>
-          <s>Commonly used in control systems, feedback can act to amplify <ref target="#b0" type="bibr">1</ref> , filter <ref target="#b1" type="bibr">2</ref> , and process signals <ref target="#b2" type="bibr">3</ref> .</s>
-          <s>Historically, there have been two main applications, with two distinct approaches and methodologies: logical operations, with a focus on small degrees of freedom and stable processing, e.g.</s>
-          <s>
-            <ref target="#b3" type="bibr">4</ref> and dynamical systems, with an emphasis on large degrees of freedom and instability, e.g.</s>
-          <s>pattern formation <ref target="#b4" type="bibr">5</ref> .</s>
-          <s>Here, we combine and extend these approaches to improve information transfer in nonlinear imaging systems.</s>
-        </p>
-        <p>
-          <s>The experimental design is shown in <ref target="#fig_0" type="figure">Fig. 1a</ref> .</s>
-          <s>The method consists of two basic steps.</s>
-          <s>First, a standard image is obtained using uniform illumination.</s>
-          <s>Second, the measured pattern is fed into a spatial light modulator (SLM) and used to re-illuminate the object.</s>
-          <s>The resulting feedback loop between the (digital) image of the object and the (digital) pattern of illumination effectively creates a nonlinearity that can be controlled electro-optically.</s>
-          <s>Unlike nonlinearities that are determined -and limited -by physical media, such as crystals and polymers, SLMs are robust to the environment, respond well to wide ranges of intensity, bandwidth, and coherence, and can generate nearly any mathematical form.</s>
-          <s>This nonlinear tunability (on a pixel-by-pixel basis), both by itself and for optimization on different figures of merit (such as contrast, resolution, edge detection, etc.), distinguishes our approach from earlier attempts at feedback <ref target="#b5" type="bibr">6</ref> .</s>
-          <s>Our feedback generalizes two well-known pathways in computational imaging: adaptive optics and structured illumination.</s>
-          <s>In the former, aberrations along an optical path are "pre-compensated" by first measuring and then correcting for the distortions, e.g. using deformable mirror arrays.</s>
-          <s>This has enabled a revolution in remote sensing and ground-based astronomy, e.g. for imaging through a varying atmosphere, and is used routinely in ophthalmology for optical examination of the retina.</s>
-          <s>It is also experiencing resurgence in imaging through turbid media, such as paint and fog <ref target="#b6" type="bibr">7,</ref>
-            <ref target="#b7" type="bibr">8</ref> , in which scatterers randomize the information from object to image.</s>
-          <s>However, the adaptation is independent of the object, used instead for correcting the path along the rest of the optical system.</s>
-        </p>
-        <p>
-          <s>In structured illumination, a patterned light source adds information at the input of the system, allowing more information about the object to be extracted (deconvolved) at the output.</s>
-          <s>Examples include Zernike masks for phase observation <ref target="#b8" type="bibr">9</ref> , periodic masks for improved resolution <ref target="#b9" type="bibr">10,</ref>
-            <ref target="#b10" type="bibr">11</ref> and depth sectioning <ref target="#b11" type="bibr">12</ref> , Bessel <ref target="#b12" type="bibr">13</ref> and Airy 14 beams for extended depth of focus, and random masks, which enable single-pixel cameras <ref target="#b14" type="bibr">15</ref> and coherence engineering <ref target="#b15" type="bibr">16,</ref>
-            <ref target="#b16" type="bibr">17</ref> SCiEntifiC REPORTs | (2019) 9:725 | DOI:10.1038/s41598-018-37030-7</s>
-        </p>
         <p>
           <s>objects but is optimized for none of them.</s>
           <s>The introduction of feature-based illumination, through feedback, will improve information transfer and all metrics of image quality.</s>
@@ -194,14 +172,11 @@
           <s>Nonlinear phase reconstruction.</s>
           <s>While the method can be applied to any type of image (provided there is a signal to bootstrap), phase reconstruction is particularly important.</s>
           <s>Phase contains most of the information in the signal, is crucial for a variety of important applications, and responds particularly well to nonlinearity <ref target="#b17" type="bibr">18</ref> .</s>
-          <s>Consequently, we experimentally demonstrate the method by nonlinearly improving the imaging of a phase object <ref target="#fig_0" type="figure">(Fig. 1c)</ref> .</s>
-        </p>
-        <p>
-          <s>We use a modified version of the Gerchberg-Saxton (GS) method <ref target="#b18" type="bibr">19</ref> to retrieve the phase, taking advantage of the fact that phase matching from the nonlinear illumination-object feedback provides a strict constraint on the behavior of the algorithm <ref target="#b19" type="bibr">20</ref> .</s>
-          <s>As the shape of the object is not known a priori, we first record a defocused intensity (I U = |A U | 2 ) that is obtained using uniform illumination <ref target="#fig_0" type="figure">(Fig. 1d)</ref> .</s>
-          <s>The amplitude distribution, |A U |, is then fed into a SLM as a phase modulation φ SLM ∝|A U |, enabling a second intensity measurement (I D = |A D | 2 ) with designer illumination <ref target="#fig_0" type="figure">(Fig. 1e)</ref> .</s>
-          <s>As in previous examples of nonlinear imaging <ref target="#b17" type="bibr">18,</ref>
-            <ref target="#b20" type="bibr">21</ref> , we use a self-defocusing nonlinearity; this enables sufficient wave mixing to enhance imaging while suppressing the fast instabilities common to self-focusing systems.</s>
+          <s>Consequently, we experimentally demonstrate the method by nonlinearly improving the imaging of a phase object <ref target="#fig_1" type="figure">(Fig. 1c)</ref> .</s>
+          <s>We use a modified version of the Gerchberg-Saxton (GS) method <ref target="#b18" type="bibr">19</ref> to retrieve the phase, taking advantage of the fact that phase matching from the nonlinear illumination-object feedback provides a strict constraint on the behavior of the algorithm 20 .</s>
+          <s>As the shape of the object is not known a priori, we first record a defocused intensity (I U = |A U | 2 ) that is obtained using uniform illumination <ref target="#fig_1" type="figure">(Fig. 1d)</ref> .</s>
+          <s>The amplitude distribution, |A U |, is then fed into a SLM as a phase modulation φ SLM ∝|A U |, enabling a second intensity measurement (I D = |A D | 2 ) with designer illumination <ref target="#fig_1" type="figure">(Fig. 1e)</ref> .</s>
+          <s>As in previous examples of nonlinear imaging 18,21 , we use a self-defocusing nonlinearity; this enables sufficient wave mixing to enhance imaging while suppressing the fast instabilities common to self-focusing systems.</s>
         </p>
         <p>
           <s>From the two images I U and I D , the nonlinear phase retrieval algorithm proceeds in a manner similar to GS reconstruction.</s>
@@ -209,26 +184,26 @@
           <s>The phase modulation φ SLM is then added to the phase of the field in order to simulate the action of the SLM, and the new field is forward-propagated to the camera plane.</s>
           <s>This simulated amplitude is then replaced by the amplitude of the actual measurement (A D ), and the field is backward-propagated to the sample plane again.</s>
           <s>After subtraction of the phase modulation φ SLM from the phase of the field at the sample plane, the new field is once again forward-propagated to the camera plane, followed by replacement of the numerical amplitude by the measured amplitude A U. The process is repeated until convergence.</s>
-          <s>A pseudocode for this algorithm is shown in <ref target="#fig_0" type="figure">Fig. 1b</ref> .</s>
+          <s>A pseudocode for this algorithm is shown in <ref target="#fig_1" type="figure">Fig. 1b</ref> .</s>
         </p>
         <p>
           <s>As a phase object, we used a sample consisting of a glass plate with the three characters "DIC" etched on it.</s>
-          <s>The in-focus image of the sample is shown in <ref target="#fig_0" type="figure">Fig. 1c</ref> .</s>
+          <s>The in-focus image of the sample is shown in <ref target="#fig_1" type="figure">Fig. 1c</ref> .</s>
           <s>As the object is thin and transparent, no intensity modulation appear on the image in focus apart from scattering from the character edges.</s>
-          <s>In <ref target="#fig_0" type="figure">Fig. 1d</ref> ,e, we show the measured diffraction intensity distributions in the detector plane (out-of-focus) with uniform and designer (feedback) illumination, respectively.</s>
+          <s>In <ref target="#fig_1" type="figure">Fig. 1d</ref> ,e, we show the measured diffraction intensity distributions in the detector plane (out-of-focus) with uniform and designer (feedback) illumination, respectively.</s>
           <s>In general, more diffraction fringes are visible in the latter image, since the illumination has the shape of the object itself.</s>
           <s>The second pass of illumination effectively doubles the diffraction pattern, giving at least a two-fold increase in phase sensitivity to the object.</s>
-          <s>Larger multiplication is of course possible <ref target="#b20" type="bibr">21</ref> , especially with cascaded interactions <ref target="#b21" type="bibr">22</ref> , with potentially exponential improvement upon repeated iteration.</s>
+          <s>Larger multiplication is of course possible 21 , especially with cascaded interactions <ref target="#b21" type="bibr">22</ref> , with potentially exponential improvement upon repeated iteration.</s>
           <s>We compare our nonlinear algorithm with a variation of the GS algorithm for linear propagation, for the same defocused distance.</s>
           <s>The conventional algorithm relies on one in-focus and one out-of-focus intensity measurement using uniform illumination.</s>
-          <s>Simulation results are shown in <ref target="#fig_1" type="figure">Fig. 2a,b</ref> .</s>
+          <s>Simulation results are shown in <ref target="#fig_2" type="figure">Fig. 2a</ref> ,b.</s>
           <s>In real imaging cases, the target is unknown and the reconstructed phase error cannot be accessed; in the simulation test case, the ground truth is chosen a priori, and we can quantitatively measure the reconstructed phase error</s>
         </p>
         <formula xml:id="formula_0">  = ∑ | − | ∑ | | f r g r g r ER ( ) ( ) ( ) (1) r S r S</formula>
         <p>
           <s>where f(r), g(r), and S are the reconstructed image, the ground truth, and the image space, respectively.</s>
-          <s>As expected, the nonlinear reconstruction <ref target="#fig_1" type="figure">(Fig. 2b)</ref> is about 2x better than the linear reconstruction <ref target="#fig_1" type="figure">(Fig. 2a</ref> ) in term of the phase error (ER 0.8 vs. 1.5).</s>
-          <s>The experimental counterparts, shown in <ref target="#fig_1" type="figure">Fig. 2c,d</ref> , confirm the result that the nonlinear algorithm provides much better reconstruction than the linear algorithm.</s>
+          <s>As expected, the nonlinear reconstruction ( <ref target="#fig_2" type="figure">Fig. 2b)</ref> is about 2x better than the linear reconstruction ( <ref target="#fig_2" type="figure">Fig. 2a</ref> ) in term of the phase error (ER 0.8 vs. 1.5).</s>
+          <s>The experimental counterparts, shown in <ref target="#fig_2" type="figure">Fig. 2c</ref> ,d, confirm the result that the nonlinear algorithm provides much better reconstruction than the linear algorithm.</s>
           <s>For quantitative comparison, we define contrast and resolution as:</s>
         </p>
         <formula xml:id="formula_1">= − Contrast I I (2) DIC B KG = ∇ ∈ − R I ( ) (3) x x DICE 1</formula>
@@ -238,13 +213,13 @@
           <s>By these metrics, the nonlinear algorithm yields a 260% improvement in contrast (1.50 vs. 0.58) and a 15% improvement in resolution (14.8 vs 17.1 microns) over linear reconstruction.</s>
           <s>Another advantage of the digital system, and the corresponding algorithm, is the ability to work for different degrees of spatial coherence.</s>
           <s>We demonstrate this experimentally by making the illumination beam partially spatially coherent by passing it through a rotating diffuser <ref target="#b22" type="bibr">23</ref> .</s>
-          <s>The performance of linear and nonlinear modulation, in terms of contrast and resolution, are shown in <ref target="#fig_2" type="figure">Fig. 3j</ref> ,k, respectively.</s>
+          <s>The performance of linear and nonlinear modulation, in terms of contrast and resolution, are shown in <ref target="#fig_3" type="figure">Fig. 3j</ref> ,k, respectively.</s>
           <s>In all cases, the figures of merit for linear propagation get worse monotonically as the degree of coherence is decreased (consistent with a progressive decrease in visibility of diffraction fringes <ref target="#b23" type="bibr">24</ref> ).</s>
           <s>In the nonlinear case, both contrast and resolution are improved simultaneously beyond their linear limits.</s>
           <s>[This win-win situation, normally an engineering trade-off in linear systems <ref target="#b24" type="bibr">25</ref> , is a general feature of nonlinear imaging systems <ref target="#b20" type="bibr">21</ref> .]</s>
           <s>For designer illumination, the contrast actually improves with decreasing coherence, up to an optimal value, while the system resolution is relatively constant above and below this value.</s>
           <s>The former is a stochastic resonance effect <ref target="#b25" type="bibr">26</ref> , peaking when the smallest significant feature of the object (the stroke width of the DIC characters, ~167 μm) matches the spatial correlation length of the illumination (characterized by the speckle spatial frequency 3.75 × 10 4 rad/m).</s>
-          <s>The latter results from improved visibility due to mean-field (DC) scattering <ref target="#b20" type="bibr">21</ref> .</s>
+          <s>The latter results from improved visibility due to mean-field (DC) scattering 21 .</s>
         </p>
       </div>
       <div>
@@ -253,24 +228,19 @@
           <s>Theoretically, the improvements in image quality are unlimited <ref target="#b10" type="bibr">11,</ref>
             <ref target="#b20" type="bibr">21</ref> .</s>
           <s>In practice, there are many factors that hinder the performance.</s>
-          <s>These include the usual trade-off between pixel size and dynamic range in the camera and SLM <ref target="#b26" type="bibr">27</ref> , pixel-mapping and tone-mapping mismatches between devices, amplitude corruption in the phase modulation, and genuine issues of noise.</s>
-          <s>There are also frame-rate limitations if multiple iterations are desired, and issues of convergence and computational complexity as a function of basis, method of phase retrieval <ref target="#b27" type="bibr">28</ref> , type of nonlinearity, and desired spatial detail (e.g.</s>
+          <s>These include the usual trade-off between pixel size and dynamic range in the camera and SLM 27 , pixel-mapping and tone-mapping mismatches between devices, amplitude corruption in the phase modulation, and genuine issues of noise.</s>
+          <s>There are also frame-rate limitations if multiple iterations are desired, and issues of convergence and computational complexity as a function of basis, method of phase retrieval 28 , type of nonlinearity, and desired spatial detail (e.g.</s>
           <s>different class of response for individual SLM pixels).</s>
-        </p>
-        <p>
           <s>The best approach to retrieving (estimating) the phase object is to maximize the information in the encoded illumination.</s>
-          <s>This is given by the most widespread sampling in phase space, which for the experimental setup here corresponds to the most diverse distribution of phase on the modulator <ref target="#fig_3" type="figure">(Fig. 4)</ref> .</s>
-          <s>Using variance as a measure, we find that σ µ α α</s>
+          <s>This is given by the most widespread sampling in phase space, which for the experimental setup here corresponds to the most diverse distribution of phase on the modulator <ref target="#fig_4" type="figure">(Fig. 4)</ref> .</s>
+          <s>Using variance as a measure, we find that σ µ</s>
         </p>
-        <formula xml:id="formula_2">= − = − E X A B [( ) ] exp( ) SLM C 2 2 2</formula>
+        <formula xml:id="formula_2">α α = − = − E X A B [( ) ] exp( ) SLM C 2 2 2</formula>
         <p>
           <s>, where X represents the pixel value on the SLM, μ = E[X] is the mean value of all the pixels, and α is the modulation power.</s>
           <s>This stretched-exponential form suggests a nontrivial (i.e.</s>
-          <s>non-diffusive) optical flow as the object modes are mixed by the modulator <ref target="#b25" type="bibr">26,</ref>
-            <ref target="#b28" type="bibr">[29]</ref>
-            <ref target="#b29" type="bibr">[30]</ref>
-            <ref target="#b30" type="bibr">[31]</ref> .</s>
-          <s>As shown in <ref target="#fig_2" type="figure">Fig. 3a</ref> i, the optimal system response ranges from a strict proportionality to amplitude φ γ = I ( ) SLM U for the coherent case to a more conventional Kerr nonlinearity φ γ = I ( ) SLM U for the incoherent case.</s>
+          <s>non-diffusive) optical flow as the object modes are mixed by the modulator 26,29-31 .</s>
+          <s>As shown in <ref target="#fig_3" type="figure">Fig. 3a</ref> i, the optimal system response ranges from a strict proportionality to amplitude φ γ = I ( ) SLM U for the coherent case to a more conventional Kerr nonlinearity φ γ = I ( ) SLM U for the incoherent case.</s>
           <s>These optimum transfer functions can be understood by considering the extremes of nonlinear response.</s>
           <s>For very weak response, there is little difference between linear and nonlinear output, and therefore little gain in information.</s>
           <s>Stronger responses give more significant differences, evidenced by more pronounced intensity fringes as modes interfere, until high-intensity regions start dominating the image.</s>
@@ -279,7 +249,7 @@
           <s>More details of this response are given in the Supplemental Information.</s>
         </p>
         <p>
-          <s>The quality of the reconstructed image using the nonlinear algorithm is comparable to what we obtained in a previous work using a nonlinear photorefractive crystal <ref target="#b17" type="bibr">18</ref> .</s>
+          <s>The quality of the reconstructed image using the nonlinear algorithm is comparable to what we obtained in a previous work using a nonlinear photorefractive crystal 18 .</s>
           <s>In that system, the intensity pattern of the object induced an index change in the crystal, creating a self-reinforcing diffraction grating during light propagation.</s>
           <s>Here, the object-dependent pattern on the spatial light modulator creates a similar grating (computer-generated hologram) in the plane of the SLM, which acts more like an iterative map.</s>
           <s>In both cases, the nonlinear feedback means that the grating structure is automatically phase-matched with the object, guaranteeing an optimized diffraction pattern.</s>
@@ -305,35 +275,51 @@
         </p>
         <p>
           <s>From the uniform-and designer-illuminated images I U and I D , the nonlinear phase retrieval algorithm proceeds as follows: (1) An object field u rec with amplitude A U and initial uniform phase = 0 is numerically back-propagated from the (out-of-focus) camera plane to the (in-focus) sample plane.</s>
+          <s>(2) A phase modulation SLM is added to the phase of u rec to simulate the action of the SLM.</s>
+        </p>
+        <p>
+          <s>(3) The new field is forward-propagated to the camera plane, yielding a field u′ D with amplitude A′ D .</s>
+          <s>(4) The simulated amplitude A′ D is replaced by the amplitude of the actual measurement A D .</s>
+          <s>
+            <ref target="#b4" type="bibr">(5)</ref> The field is back-propagated again to the sample plane, yielding a new field u rec .</s>
+          <s>
+            <ref target="#b5" type="bibr">(6)</ref> The phase modulation SLM is subtracted from the phase of u rec .</s>
+          <s>
+            <ref target="#b6" type="bibr">(7)</ref> The field is forward-propagated, yielding an estimate of the un-modulated image amplitude A′ U .</s>
+          <s>
+            <ref target="#b7" type="bibr">(8)</ref> A new field is generated by replacing A′ U with the actual measurement A U .</s>
+          <s>At this point, the algorithm restarts from step 1.</s>
+        </p>
+        <p>
           <s>This algorithm effectively interpolates between the infinitesimal displacement of transport-of-intensity algorithms <ref target="#b33" type="bibr">34</ref> and the infinite (far-field) displacement of the Gerchberg-Saxton algorithm <ref target="#b18" type="bibr">19</ref> .</s>
           <s>That is, it works for any distance of defocus, subject to the limits of Fresnel diffraction (which can be modified by changing the propagator).</s>
           <s>The method also works for arbitrary degrees of spatial coherence, as in this case the algorithm converges on an overall envelope phase <ref target="#b34" type="bibr">35</ref> .</s>
         </p>
       </div>
       <figure xml:id="fig_0">
+        <head>SCiEntifiC</head>
+        <label/>
+        <figDesc>REPORTs | (2019) 9:725 | DOI:10.1038/s41598-018-37030-7</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
         <head>Figure 1 .</head>
         <label>1</label>
         <figDesc>Figure 1. Principle of nonlinear digital imaging. (a) Experimental setup. A collimated laser beam is first sent onto a reflective SLM. The surface of the SLM is imaged onto the object via a 4-f lens relay. A CCD camera collects the light transmitted through the sample at a defocused distance ∆z = 4.5 cm. (b) Pseudo-code for the image retrieval algorithm (see Methods for details). (c-e) Experimental intensity measured at (c) the focal plane, (d) the defocused plane with uniform illumination, and (e) the defocused plane with nonlinear (designer) illumination.</figDesc>
       </figure>
-      <figure xml:id="fig_1">
+      <figure xml:id="fig_2">
         <head>Figure 2 .</head>
         <label>2</label>
         <figDesc>Figure 2. Comparison between linear and nonlinear reconstructions. (a,b) Simulation of phase reconstruction with (a) the linear algorithm and (b) the nonlinear algorithm. (c,d) Experimental phase reconstruction with (c) the linear algorithm and (d) the nonlinear algorithm using partially coherent light (corresponding to a speckle spatial frequency of 2.5 × 10 4 rad/m).</figDesc>
       </figure>
-      <figure xml:id="fig_2">
+      <figure xml:id="fig_3">
         <head>Figure 3 .</head>
         <label>3</label>
         <figDesc>Figure 3. Experimental results as a function of nonlinear strength and power. (a-i) Show the phase variance (a,d,g), contrast (b,e,h) and resolution (c,f,i) of the nonlinear reconstructions. (a-c) Show the nonlinear reconstructions for coherent illumination while (d-f) and (g-i) are reconstructions for partially coherent illumination with speckle spatial frequency 2.3 × 10 4 rad/m and 4.9 × 10 4 rad/m, respectively. (j,k) Comparison of linear (blue) and nonlinear (red) reconstructions for (j) contrast and (k) resolution. Full coherence is given by zero spatial frequency, and the nonlinearity is fixed at modulation power = 0.5 and modulation strength = 1.5π. The dashed line corresponds to the spatial frequency (3.75 × 10 4 rad/m), at which the illumination speckle size becomes comparable to the DIC character stroke width. When the spatial frequency exceeds this value, the image quality becomes worse as the statistics washes out the diffraction fringes.</figDesc>
       </figure>
-      <figure xml:id="fig_3">
+      <figure xml:id="fig_4">
         <head>Figure 4 .</head>
         <label>4</label>
         <figDesc>Figure 4. Diversity of phase modulation. (a-e) Modulation φ SLM = γI α for coherent light (strength γ = 2π). The largest phase/information diversity (for better sampling) occurs when α = 0.5. (f) Shows the relation between diversity/variance and modulation power. Lower and upper curves represent modulation strengths γ = 2π and 4π, while solid, dashed, and dotted lines denote coherent and partially coherent illumination with speckle spatial frequency 2.3 × 10 4 rad/m (Incoherent_1) and 4.9 × 10 4 rad/m (Incoherent_2). Blue: experiment; red: theoretical fits for stretched exponential σ α α = − A B exp( ) SLM C 2 2 , with A = 33 and 132 for the lower and upper curves, B = {4.9, 4.1, 3.7}, and C = {0.8, 0.7, 0.6} for the coherent and incoherent cases.</figDesc>
-      </figure>
-      <figure xml:id="fig_4">
-        <head>( 2 )</head>
-        <label>2</label>
-        <figDesc>A phase modulation SLM is added to the phase of u rec to simulate the action of the SLM. (3) The new field is forward-propagated to the camera plane, yielding a field u′ D with amplitude A′ D . (4) The simulated amplitude A′ D is replaced by the amplitude of the actual measurement A D . (5) The field is back-propagated again to the sample plane, yielding a new field u rec . (6) The phase modulation SLM is subtracted from the phase of u rec . (7) The field is forward-propagated, yielding an estimate of the un-modulated image amplitude A′ U . (8) A new field is generated by replacing A′ U with the actual measurement A U . At this point, the algorithm restarts from step 1.</figDesc>
       </figure>
       <note place="foot">© The Author(s) 2019</note>
     </body>
@@ -359,9 +345,9 @@
           <p>
             <s>Supplementary information accompanies this paper at https://doi.org/10.1038/s41598-018-37030-7.</s>
           </p>
-          <p>
-            <s>Competing Interests: The authors declare no competing interests.</s>
-          </p>
+        </div>
+        <div>
+          <head>Competing Interests: The authors declare no competing interests.</head>
           <p>
             <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
           </p>
@@ -461,7 +447,7 @@
                   <surname>Lee</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1117/12.7972421</idno>
+              <idno type="DOI">10.1117/12.7972421</idno>
               <ptr target="https://doi.org/10.1117/12.7972421"/>
             </analytic>
             <monogr>
@@ -1124,7 +1110,7 @@
                   <surname>Fleischer</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/Nphys486</idno>
+              <idno type="DOI">10.1038/Nphys486</idno>
               <ptr target="https://doi.org/10.1038/Nphys486"/>
             </analytic>
             <monogr>
@@ -1293,7 +1279,7 @@
           <biblStruct xml:id="b35">
             <analytic>
               <title/>
-              <idno type="doi">10.1038/s41598-018-37030-7</idno>
+              <idno type="DOI">10.1038/s41598-018-37030-7</idno>
             </analytic>
             <monogr>
               <title level="j">SCiEntifiC REPORTs |</title>

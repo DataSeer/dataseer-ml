@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:13+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T21:06+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -113,7 +113,7 @@
           <s>During the last decade there has been great interest in systems used for health monitoring and safety <ref target="#b0" type="bibr">[1]</ref>
             <ref target="#b1" type="bibr">[2]</ref>
             <ref target="#b2" type="bibr">[3]</ref>
-            <ref type="bibr">[4]</ref>
+            <ref target="#b3" type="bibr">[4]</ref>
             <ref target="#b4" type="bibr">[5]</ref> .</s>
           <s>One of the key aspects in such systems is to store medical data efficiently in order to capture health status across time.</s>
           <s>Towards this direction, a number of electronic health records (EHR), or electronic medical records (EMR), have been developed.</s>
@@ -144,7 +144,7 @@
         </p>
         <p>
           <s>The Health Informatics Technical Committee (TC251) of the European Committee for Standardization (CEN/ TC251) <ref target="#b19" type="bibr">[20]</ref> has completed a European Standard for the communication of the EHR, called CEN EN13606 whose reference model became an ISO standard in February 2008 under the name ISO 13606.</s>
-          <s>Exploiting this ISO, the openEHR consortium <ref type="bibr">[21]</ref> maintains an architecture designed to support the constructions of distributed, patient-centered, life-long, shared care health records.</s>
+          <s>Exploiting this ISO, the openEHR consortium [21] maintains an architecture designed to support the constructions of distributed, patient-centered, life-long, shared care health records.</s>
         </p>
         <p>
           <s>OpenEHR is an open standard specification that is used to facilitate storage, management, retrieval and exchange of health data between different healthcare providers or other interest groups.</s>
@@ -258,7 +258,7 @@
           <s>Developers focus only on the technical components of VPM system, while healthcare specialists develop the structural model based on domain concepts archetypes.</s>
           <s>This enables domain specialists to directly organize and present healthcare information and interactions, and to control the framework without intervention from the system supplier.</s>
           <s>5.</s>
-          <s>The VPM coupled with several modules and tools <ref type="bibr">(i)</ref> facilitates the analysis of the collected data and feature extraction, (ii) supports the physician in his/her decision process ranging from general health preservation monitoring to critical situation management, and (iii) allows a personalized feedback to the older person which ultimately can be linked with lifestyle change suggestions, behavior guidelines and medical intervention strategies.</s>
+          <s>The VPM coupled with several modules and tools (i) facilitates the analysis of the collected data and feature extraction, (ii) supports the physician in his/her decision process ranging from general health preservation monitoring to critical situation management, and (iii) allows a personalized feedback to the older person which ultimately can be linked with lifestyle change suggestions, behavior guidelines and medical intervention strategies.</s>
           <s>6.</s>
           <s>The methodology for the one-to-one mapping between openEHR archetypes and the column-families NoSQL schema described in this paper is shared in a public open source repository <ref target="#b49" type="bibr">[52]</ref> and can be considered as a notable guide for others, as not many works have focused on the use of NoSQL solutions in archetype-based systems and more specifically none of them has described a methodology for the aforementioned mapping.</s>
         </p>
@@ -300,26 +300,11 @@
         </p>
         <p>
           <s>• Observations: they correspond to raw information, as they have been measured by devices, reported by patients or noticed by doctors (test findings, symptoms noticed etc.).</s>
-        </p>
-        <p>
           <s>• Evaluations: they include interpreted clinical information (in contrast to Observations which are uninterpreted) which have been been assessed by doctors.</s>
           <s>In this subclass, the knowledge knowledge is extracted from the initial measurements leading to a conclusion.</s>
           <s>For instance, Problem/Diagnosis archetype belongs to this category.</s>
-        </p>
-        <p>
           <s>• Instructions: they refer to commands about future that should be performed or steps that should be followed.</s>
           <s>A typical example of this archetype category is a medication order.</s>
-        </p>
-        <p>
-          <s>• Actions: they refer to activities that have already taken place.</s>
-          <s>Actions are often used to record in what extent the Instructions have been followed.</s>
-        </p>
-        <p>
-          <s>4. CLUSTER Class is used for the description of entities which are important for the modeling of many clinical concepts or scenarios and that is why archetypes of this category can be utilized in any ENTRY or other CLUSTER archetypes.</s>
-          <s>Their use is characterized by recursiveness.</s>
-          <s>Common examples are symptom, size, body location etc.</s>
-        </p>
-        <p>
           <s>In addition, there is a type of archetypes, based on an Information Model named DEMOGRAPHIC <ref target="#b20" type="bibr">[22]</ref> which includes archetypes for the modeling of demographic information.</s>
         </p>
         <p>
@@ -331,77 +316,21 @@
         <head>FrailSafe virtual patient model research methodology Requirements</head>
         <p>
           <s>The requirements necessary to meet the objectives of our study (FrailSafe project <ref type="bibr">[47]</ref> ) and the basic characteristics of the corresponding virtual patient model representation scheme are presented in detail in this subsection.</s>
-          <s>The requirement analysis was performed by our clinical partners (Department of Neurology -University of Patras <ref target="#b56" type="bibr">[58]</ref> , Materia Group <ref target="#b57" type="bibr">[59]</ref> , Inserm [60]) after studying the stateof-the-art of frailty and selecting a set of clinical entities that constitutes a coherent virtual patient model for monitoring health status and preventing age-related decline.</s>
-          <s>The entities were selected following the extended classical clinical evaluation, namely the comprehensive geriatric assessment (CGA) <ref target="#b58" type="bibr">[61]</ref> and augmented with measurements from novel high technology instruments, constituting the FrailSafe system.</s>
+          <s>The requirement analysis was performed by our clinical partners (Department of Neurology -University of Patras [58], Materia Group <ref target="#b55" type="bibr">[59]</ref> , Inserm [60]) after studying the stateof-the-art of frailty and selecting a set of clinical entities that constitutes a coherent virtual patient model for monitoring health status and preventing age-related decline.</s>
+          <s>The entities were selected following the extended classical clinical evaluation, namely the comprehensive geriatric assessment (CGA) <ref target="#b56" type="bibr">[61]</ref> and augmented with measurements from novel high technology instruments, constituting the FrailSafe system.</s>
           <s>The CGA quantifies frailty by evaluating a person's medical history and prescription, cognitive and emotional status, physiological, social and other life conditions.</s>
-          <s>The quantification of these aspects of a person's global health condition is done by using questionnaires, standardized scales and cumulative indices <ref target="#b59" type="bibr">[62]</ref>
-            <ref target="#b60" type="bibr">[63]</ref>
-            <ref target="#b61" type="bibr">[64]</ref>
-            <ref target="#b62" type="bibr">[65]</ref>
-            <ref target="#b63" type="bibr">[66]</ref>
-            <ref target="#b64" type="bibr">[67]</ref>
-            <ref target="#b65" type="bibr">[68]</ref> , and this evaluation is repeated throughout the study's duration.</s>
+          <s>The quantification of these aspects of a person's global health condition is done by using questionnaires, standardized scales and cumulative indices <ref target="#b57" type="bibr">[62]</ref>
+            <ref target="#b58" type="bibr">[63]</ref>
+            <ref target="#b59" type="bibr">[64]</ref>
+            <ref target="#b60" type="bibr">[65]</ref>
+            <ref target="#b61" type="bibr">[66]</ref>
+            <ref target="#b62" type="bibr">[67]</ref>
+            <ref target="#b63" type="bibr">[68]</ref> , and this evaluation is repeated throughout the study's duration.</s>
           <s id="dataset-1" type="Tabular data">In order to avoid selection bias, all major variables from each domain (physiological, cognitive, etc) were used to define the clinical entities.</s>
           <s>In general the VPM is designed to be personalized, in a sense that the frailty related entities are categorized into data related to the user identification, medical data essential to the clinicians, summary of the integrated sensor recordings, and analyzed data.</s>
         </p>
         <p>
           <s>The entities can be divided into four main classes which are further separated into subcategories:</s>
-        </p>
-        <p>
-          <s>1. Personal details: This category includes all the requirements which are related to the patient's personal information.</s>
-          <s>It can be divided into three subcategories:</s>
-        </p>
-        <p>
-          <s>• Identification details: This subclass involves all the requirements which are related to the identification of the person, such as his/her name.</s>
-        </p>
-        <p>
-          <s>• Demographics details: This subclass involves all the requirements concerning demographic information, such as gender and age.</s>
-        </p>
-        <p>
-          <s>• Contact details: This category relates to the documentation of contact details of the patients or older people.</s>
-        </p>
-      </div>
-      <div>
-        <head n="2.">Monitoring parameters:</head>
-        <p>
-          <s>This category includes the representation of the collected data from medical questionnaires, sensing devices and serious games used to access the older people's cognitive and physiological state.</s>
-          <s>More specifically, the data can be distributed in the following subcategories:</s>
-        </p>
-        <p>
-          <s>• Physiological measurements, such as heart rate or respiratory rate.</s>
-        </p>
-        <p>
-          <s>• Physical/functional measurements, such as motor and strength condition.</s>
-        </p>
-        <p>
-          <s>• Psychological measurements, such as depression and anxiety.</s>
-        </p>
-        <p>
-          <s>• Social interaction and behavioral parameters, such as number of phone calls per week.</s>
-        </p>
-        <p>
-          <s>• Cognitive measurements, such as progress in VR/AR games and deficiencies in electronic written text.</s>
-        </p>
-        <p>
-          <s>• Lifestyle parameters, such as alcohol consumption and indoor/outdoor activity levels.</s>
-        </p>
-        <p>
-          <s>• Nutrition-dependent entities, such as body mass index (BMI) and body fat.</s>
-        </p>
-        <p>
-          <s>• General condition, such as unintentional weight loss.</s>
-        </p>
-        <p>
-          <s>• Wellness, such as self-rated health status.</s>
-        </p>
-        <p>
-          <s>• Environmental factors, such as number of steps to access house.</s>
-        </p>
-        <p>
-          <s>• Medical domain, such as number of co-morbidities.</s>
-        </p>
-        <p>
-          <s>• Frailty metric.</s>
         </p>
       </div>
       <div>
@@ -413,8 +342,6 @@
         </p>
         <p>
           <s>• Alerts related to detection or prediction of acute or sudden events, such as instability or fall.</s>
-        </p>
-        <p>
           <s>• Notifications about change or critical evolution of a clinical metric.</s>
         </p>
         <p>
@@ -464,10 +391,12 @@
           <s id="dataset-2" type="Tabular data">More specifically, in FrailSafe project except for the abstract medical information, sensor raw data is also collected in a real-time scenario.</s>
           <s>The frequency of the measurements is very high (e.g.</s>
           <s>25Hz), hence the DBMS has to be capable of managing hundreds of gigabytes of data efficiently in real-time.</s>
-          <s>HBase is considered as the most suitable option as: <ref type="formula">(1)</ref> it is distributed and scalable, (2) it is optimized for fast read/write access to Big Data, (3) it can host very large tables with billions of rows × millions of columns <ref target="#b66" type="bibr">[70]</ref> .</s>
+          <s>HBase is considered as the most suitable option as: <ref target="#b0" type="bibr">(1)</ref> it is distributed and scalable, (2) it is optimized for fast read/write access to Big Data, (3) it can host very large tables with billions of rows × millions of columns <ref target="#b64" type="bibr">[70]</ref> .</s>
         </p>
         <p>
-          <s>In HBase only column families are defined by the <ref type="formula">(2)</ref> A Row is a group of column families, (3) A column family is a group of columns, (4) A column is a group of key value pairs <ref target="#b67" type="bibr">[71]</ref> .</s>
+          <s>In HBase only column families are defined by the table schema.</s>
+          <s>A table can consist of multiple column families, each of which can have any number of columns.</s>
+          <s>In general, the table design logic in HBase is the following: (1) A table is a group of rows, (2) A Row is a group of column families, (3) A column family is a group of columns, (4) A column is a group of key value pairs <ref target="#b65" type="bibr">[71]</ref> .</s>
         </p>
         <p>
           <s>The idea behind the design of an archetype-based Database schema was to incorporate the openEHR archetypes' structure into a table schema with respect to HBase table-design logic.</s>
@@ -479,14 +408,15 @@
           <s>However, the labels "Description" and "Attribution" should be excluded, as they contain common details related to the archetype and not to the concept they represent, such as original author, translators, purpose, use etc., and there is no point in storing such information for every record in the database.</s>
           <s>Hence, this information could be stored in a separate table.</s>
         </p>
+      </div>
+      <div>
+        <head>• Population of the column families with columns</head>
         <p>
-          <s>• Population of the column families with columns for storage of the information represented by the <ref type="figure">Fig. 1</ref> Typical examples of openEHR archetypes structure archetype in a particular use-case scenario.</s>
+          <s>for storage of the information represented by the <ref type="figure">Fig. 1</ref> Typical examples of openEHR archetypes structure archetype in a particular use-case scenario.</s>
           <s>Since usually the archetypes contain more fields than required for the representation of the corresponding concepts, columns have to be created only for the storage of data related to the used fields of the archetypes.</s>
           <s>Additionally, each archetype may require different table columns for its storage.</s>
           <s>If for example one would like to store the "Weight" and "Comment" fields of the label "Data" and "Any event" of the label "Events" for the representation of Body weight <ref type="figure">(Fig. 1)</ref> , then three separate columns should be added to the HBase table as shown in <ref target="#tab_1" type="table">Table 1</ref> .</s>
           <s>Similarly, if one would like to store additionally the "Systolic" and "Any event" fields for the representation of Blood pressure <ref type="figure">(Fig. 2)</ref> , then more columns would be added to the HBase table.</s>
-        </p>
-        <p>
           <s>• Determination of the rowkey structure which will be common for all column families.</s>
           <s>The name of the archetype has to be included in the rowkey to avoid a possible overlap of data in cases where the fields of the used archetypes have common names.</s>
           <s>Thus, by including the archetype name into the rowkey, data related to different archetypes are stored in different rows.</s>
@@ -506,14 +436,14 @@
         <p>
           <s>The requirement analysis of the project resulted in the definition of a VPM which includes information about frailty-related entities that cover every important aspect of an older person' s health and life in the most meaningful way.</s>
           <s>In this way a coherent personalized profile is constituted and can be used for health status monitoring and age-related decline prevention.</s>
-          <s>In <ref target="#tab_2" type="table">Tables 2, 3, 4 and 5</ref> all these entities can be seen in detail.</s>
-          <s>More specifically, <ref target="#tab_2" type="table">Table 2</ref> consists of identification and demographic details which are collected once and remain unchanged or change rarely.</s>
+          <s>In <ref target="#tab_3" type="table">Tables 2, 3, 4 and 5</ref> all these entities can be seen in detail.</s>
+          <s>More specifically, <ref target="#tab_3" type="table">Table 2</ref> consists of identification and demographic details which are collected once and remain unchanged or change rarely.</s>
           <s>
-            <ref target="#tab_3" type="table">Table 3</ref> consists of elements measured by the FrailSafe devices.</s>
+            <ref type="table">Table 3</ref> consists of elements measured by the FrailSafe devices.</s>
           <s>FrailSafe devices and sensors record a large amount of data corresponding to several parameters like blood pressure, pulse waves velocity, heart and respiratory rate, physical strength and activity, postural and movement information, localization and cognitive performance.</s>
           <s>
             <ref target="#tab_4" type="table">Table 4</ref> contains information about VPM entities that are monitored during clinical assessment sessions which take place once every six months.</s>
-          <s>During these sessions the CGA <ref target="#b58" type="bibr">[61]</ref> is employed, which is a laborious and generally time consuming complex procedure, initially analytic and eventually synthetic, requiring skills and expertise.</s>
+          <s>During these sessions the CGA <ref target="#b56" type="bibr">[61]</ref> is employed, which is a laborious and generally time consuming complex procedure, initially analytic and eventually synthetic, requiring skills and expertise.</s>
           <s>
             <ref target="#tab_5" type="table">Table 5</ref> includes i) events that are related to abnormal health measurements, and ii) recommendations that are given as input by the clinicians in cases of of abnormalities or unusual events.</s>
           <s>The events can trigger alerts responsible for the notification of the health care provider or the individuals' family members.</s>
@@ -522,10 +452,10 @@
       <div>
         <head>Description of the archetypes utilized</head>
         <p>
-          <s>The adapted methodology resulted in the definition of 22 coherent and clinically meaningful parameters that cover every aspect of the concepts to be represented as shown in column "Parameters" in <ref target="#tab_2" type="table">Tables 2, 3</ref> , 4 and 5. Furthermore, aiming at the comprehensive representation of the required concepts, each of the 22 parameters contains conceptually smaller objects used to express different aspects.</s>
+          <s>The adapted methodology resulted in the definition of 22 coherent and clinically meaningful parameters that cover every aspect of the concepts to be represented as shown in column "Parameters" in Tables 2, 3, 4 and 5. Furthermore, aiming at the comprehensive representation of the required concepts, each of the 22 parameters contains conceptually smaller objects used to express different aspects.</s>
           <s>For instance, the parameter "Heart Rate" which describes the general concept, consists of the following specialized objects: daily statistics (average,max, etc.) for heart rate, RR-interval, heart rate variability, position of the body or activity performed during the measurements; device used for the measurements, and any abnormal events occurred.</s>
           <s>These objects represent the project recordings about heart rate.</s>
-          <s>Following the same process for each of the parameters, numerous specific objects were generated and are shown in the column "Parameters Content" in <ref target="#tab_3" type="table">Table 3</ref> .</s>
+          <s>Following the same process for each of the parameters, numerous specific objects were generated and are shown in the column "Parameters Content" in <ref type="table">Table 3</ref> .</s>
           <s>As mentioned in the previous section, the next step of our methodology was to define a mapping between the aforementioned parameters and openEHR archetypes.</s>
           <s>This mapping resulted in:</s>
         </p>
@@ -538,29 +468,27 @@
         <p>
           <s>respiration.v1"</s>
           <s>archetype represented almost all the required objects for the representation of the "Respiration Rate" parameter except for the position of the subject during the data acquisition and the device used for the measurement.</s>
-          <s>So, this archetype had to be extended by adding a "State.Position" and "Protocol.Device" field using the openEHR archetype editor <ref target="#fig_0" type="figure">(Fig. 3)</ref> .</s>
-          <s>3. Development of 28 new archetypes to represent the parameters related to frailty, that were not yet modeled by existing openEHR archetypes <ref target="#fig_1" type="figure">(Fig. 4)</ref> .</s>
-          <s>In <ref target="#tab_2" type="table">Tables 2, 3</ref> , 4 and 5 only 19 of them can be shown as another 9 archetypes had to be designed for the representation of the rest of the games apart from Game1.</s>
+          <s>So, this archetype had to be extended by adding a "State.Position" and "Protocol.Device" field using the openEHR archetype editor <ref target="#fig_0" type="figure">(Fig. 3</ref> ). 3. Development of 28 new archetypes to represent the parameters related to frailty, that were not yet modeled by existing openEHR archetypes <ref target="#fig_1" type="figure">(Fig. 4)</ref> .</s>
+          <s>In Tables 2, 3, 4 and 5 only 19 of them can be shown as another 9 archetypes had to be designed for the representation of the rest of the games apart from Game1.</s>
         </p>
       </div>
       <div>
         <head>Produced NoSQL database</head>
         <p>
           <s>In this subsection, the NoSQL schema resulted from the methodology described in "Methods" section is discussed.</s>
-          <s>As mentioned before, the column families of the table in which the VPM data are stored are mapped to the labels of the (reused, modified or developed) archetypes, as shown in <ref target="#tab_2" type="table">Tables 2, 3</ref> , 4 and 5.</s>
+          <s>As mentioned before, the column families of the table in which the VPM data are stored are mapped to the labels of the (reused, modified or developed) archetypes, as shown in Tables 2, 3, 4 and 5.</s>
           <s>For example, the required labels for the representation of "Blood Pressure" are: Data, State, Protocol, Events.</s>
           <s>These labels include all the required items of the incorporated archetypes, which in this case are: Systolic, Diastolic, Pulse, Position, Device, Any event.</s>
         </p>
         <p>
-          <s>Following the same procedure for every parameter of <ref target="#tab_2" type="table">Tables 2, 3</ref> , 4 and 5, the final column-family NoSQL schema of the produced Database is generated.</s>
+          <s>Following the same procedure for every parameter of Tables 2, 3, 4 and 5, the final column-family NoSQL schema of the produced Database is generated.</s>
           <s>Two different HBase tables are used for the storage of the data based on the nature of the stored information (subject-specific or temporal parameters), which consequently necessitates the use of corresponding tables for updates.</s>
           <s>More specifically:</s>
         </p>
         <p>
           <s>• The first table is used for storing the personal details of the participants/patients, which are static and hence, rarely altered.</s>
-        </p>
-        <p>
-          <s>• The second table stores all the dynamically changing parameters, which are aggregated daily or at regular intervals.</s>
+          <s>
+            <ref type="table">• The second table stores all the dynamically changing</ref> parameters, which are aggregated daily or at regular intervals.</s>
         </p>
       </div>
       <div>
@@ -597,10 +525,52 @@
       <figure type="table" validated="false" xml:id="tab_0">
         <head/>
         <label/>
-        <figDesc>table schema. A table can consist of multiple column families, each of which can have any number of columns. In gen- eral, the table design logic in HBase is the following: (1) A table is a group of rows,</figDesc>
-        <table/>
+        <figDesc>• Actions: they refer to activities that have already taken place. Actions are often used to record in what extent the Instructions have been followed.</figDesc>
+        <table>4. CLUSTER Class is used for the description of entities 
+which are important for the modeling of many 
+clinical concepts or scenarios and that is why 
+archetypes of this category can be utilized in any 
+ENTRY or other CLUSTER archetypes. Their use is 
+characterized by recursiveness. Common examples 
+are symptom, size, body location etc. 
+
+</table>
       </figure>
       <figure type="table" validated="false" xml:id="tab_1">
+        <head>1 .</head>
+        <label>1</label>
+        <figDesc>Personal details: This category includes all theSocial interaction and behavioral parameters, such as number of phone calls per week. • Cognitive measurements, such as progress in VR/AR games and deficiencies in electronic written text. • Lifestyle parameters, such as alcohol consumption and indoor/outdoor activity levels. • Nutrition-dependent entities, such as body mass index (BMI) and body fat. • General condition, such as unintentional weight loss. • Wellness, such as self-rated health status. • Environmental factors, such as number of steps to access house. • Medical domain, such as number of co-morbidities. • Frailty metric.</figDesc>
+        <table>requirements which are related to the patient's 
+personal information. It can be divided into three 
+subcategories: 
+
+• Identification details: This subclass involves all 
+the requirements which are related to the 
+identification of the person, such as his/her 
+name. 
+• Demographics details: This subclass involves all 
+the requirements concerning demographic 
+information, such as gender and age. 
+• Contact details: This category relates to the 
+documentation of contact details of the patients 
+or older people. 
+
+2. Monitoring parameters: This category includes the 
+representation of the collected data from medical 
+questionnaires, sensing devices and serious games 
+used to access the older people's cognitive and 
+physiological state. More specifically, the data can be 
+distributed in the following subcategories: 
+
+• Physiological measurements, such as heart rate 
+or respiratory rate. 
+• Physical/functional measurements, such as 
+motor and strength condition. 
+• Psychological measurements, such as 
+depression and anxiety. 
+• </table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_2">
         <head>Table 1</head>
         <label>1</label>
         <figDesc>Example: Result of the archetypes -Hbase table schema mapping</figDesc>
@@ -608,10 +578,10 @@
 Data 
 </table>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_2">
+      <figure type="table" validated="false" xml:id="tab_3">
         <head>Table 2</head>
         <label>2</label>
-        <figDesc>Mapping between VPM personal details and Archetypes</figDesc>
+        <figDesc>Mapping between VPM personal details and ArchetypesEHR-CLUSTER.red_wings_game.v0 Data.(Max Force,...,Force over game duration) Bold text indicates newly developed archetypes or added archetype items</figDesc>
         <table>Parameters 
 Parameters Content 
 openEHR Archetypes Existing/New 
@@ -632,142 +602,6 @@ Details.(Country identifier,...)
 
 EHR-CLUSTER.telecom_details.v0 
 Items.(Email Address,...) </table>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_3">
-        <head>Table 3</head>
-        <label>3</label>
-        <figDesc>Mapping between VPM device-measured parameters (related to measurements from the FrailSafe devices) and ArchetypesEHR-CLUSTER.red_wings_game.v0 Data.(Max Force,...,Force over game duration) Bold text indicates newly developed archetypes or added archetype items</figDesc>
-        <table>Parameters 
-
-Parameters content 
-
-openEHR Archetypes Existing/New 
-
-Archetype items Used/Added 
-
-Heart rate 
--Daily statistics (average,max, etc.) for: 
-heart rate,rr-interval,heart rate variability when: 
-1)sitting/standing,2)walking,3)lying, 
-
-4)walking upstairs/downstairs, 5)in transition 
--Device used,-Abnormal Events 
-
-EHR-OBSERVATION.pulse.v1 
-
-EHR-CLUSTER.device.v1 
-
-Data.Rate (beats per min), 
-Data.Variability, 
-
-State.Position, 
-Events.Maximum, Events.Any event, 
-Protocol.device 
-
-EHR-OBSERVATION.ecg_test_result.v0 
-
-Data.RR Rate 
-
-EHR-CLUSTER.level_of_exertion.v1 
-
-Items.Exercise.Description (e.g. walking) 
-
-Respiration Rate 
--Daily statistics (average,max, etc.) for: 
-respiration rate, breathing amplitude when: 
-1)sitting/standing,2)walking,3)lying, 
-
-4)walking upstairs/downstairs, 5)in transition 
--Device used,-Abnormal Events 
-
-EHR-OBSERVATION.respiration.v1 
-
-EHR-CLUSTER.device.v1 
-
-Data.Rate (beats per min), 
-Data.Depth 
-State.Position, 
-
-Events.Any event, 
-Protocol.device 
-
-EHR-CLUSTER.level_of_exertion.v1 
-
-Items.Exercise.Description (e.g. walking) 
-
-Blood pressure 
--Mean daily systolic/diastolic/pulse value 
--Device used, -Abnormal Events 
-
-EHR-OBSERVATION.blood_pressure.v1 
-
-EHR-CLUSTER.device.v1 
-
-Data.(Systolic, Diastolic, Pulse Pressure) 
-(mm[Hg]), Events.Any event, 
-Protocol.device 
-
-Arterial stiffness 
--PulseAmplification, Augmentation Index75, 
-
-Vascular Resistance, Cardiac Output, 
-Stroke Volume Cardiac Index, Augmentation, 
-Reflection Coefficient, Pulse Wave Velocity, 
-
-Mean stiffness value daily, -Device used 
-
-EHR-OBSERVATION.arterial_stiffness.v0 
-
-EHR-CLUSTER.device.v1 
-
-Data.(Pulse Amplification,..., Stiffness), 
-Protocol.Device 
-
-Indoor activities 
-
-Mean time spent daily: 
-1)in the living room, 2)in the restroom, 3)in the bedroom, 
-4)indoors in general, 
-5)walking inside, 6)sitting/standing, 7)lying 
-
-EHR-OBSERVATION.activities.v0 
-
-EHR-CLUSTER.device.v1 
-
-Data.Duration (min), 
-Data.Description, Data.Place, 
-Protocol.Device 
-
-Outdoor mobility pattern 
-
-Daily values for: 
-1) total distance covered, 2) total duration, 
-3) total number of steps, 4) radius covered, 
-5) area covered, 6) average walk speed, 
-7) total walk time, 8) total stop time, 
-9) total vehicle time, 10) walk time percentage, 
-11) vehicle time percentage, 12) stop time percentage, 
-13) number of tracks, 14) track average distance, 
-15) track average duration, 16) track maximum distance, 
-17) track maximum duration 
-
-EHR-OBSERVATION. 
-outdoor_mobility_pattern.v0 EHR-CLUSTER.device.v1 
-
-Data.(Distance, 
-Duration,...,Track maximum duration), 
-Protocol.Device 
-
-Game1 
-Daily values for: 1) Max force, 2) Average max force, 
-3) Average endurance, 4) Max endurance, 5) Average score, 
-6) Max score, 7) Average game duration, 8) Max game duration 
-Daily statistics for: 
-9) Height over game duration, 10) Distance over game duration, 
-11) Speed over game duration, 12) Lives over game duration, 
-13) Force over game duration 
-
-</table>
       </figure>
       <figure type="table" validated="false" xml:id="tab_4">
         <head>Table 4</head>
@@ -931,8 +765,11 @@ Frailty phenotype categorization by Fried [62]
             <s>All authors have given their approval of the final version to be published.</s>
             <s>All authors read and approved the final manuscript.</s>
           </p>
+        </div>
+        <div>
+          <head>Ethics approval and consent to participate</head>
           <p>
-            <s>Ethics approval and consent to participate Not applicable.</s>
+            <s>Not applicable.</s>
           </p>
         </div>
         <div>
@@ -1206,8 +1043,8 @@ Frailty phenotype categorization by Fried [62]
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b6">
-            <analytic>
-              <title level="a" type="main">Virtual user models for the elderly and disabled for automatic simulated accessibility and ergonomy evaluation of designs</title>
+            <monogr>
+              <title level="m" type="main">Virtual user models for the elderly and disabled for automatic simulated accessibility and ergonomy evaluation of designs</title>
               <author>
                 <persName>
                   <forename type="first">N</forename>
@@ -1232,14 +1069,11 @@ Frailty phenotype categorization by Fried [62]
                   <surname>Tzovaras</surname>
                 </persName>
               </author>
-            </analytic>
-            <monogr>
-              <title level="j">Univ Access Inf Soc</title>
               <imprint>
-                <biblScope unit="volume">12</biblScope>
-                <biblScope unit="issue">4</biblScope>
-                <biblScope from="403" to="428" unit="page"/>
                 <date type="published" when="2013"/>
+                <publisher>Univ Access Inf Soc</publisher>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope from="403" to="428" unit="page"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -1501,7 +1335,7 @@ Frailty phenotype categorization by Fried [62]
                   <surname>Zanstra</surname>
                 </persName>
               </author>
-              <idno type="doi">10.2759/38514</idno>
+              <idno type="DOI">10.2759/38514</idno>
               <ptr target="https://doi.org/10.2759/38514"/>
               <imprint>
                 <date type="published" when="2009"/>
@@ -1616,6 +1450,7 @@ Frailty phenotype categorization by Fried [62]
                 <biblScope from="262" to="270" unit="page"/>
               </imprint>
             </monogr>
+            <note>Telemed e-Health</note>
           </biblStruct>
           <biblStruct xml:id="b16">
             <analytic>
@@ -2930,7 +2765,6 @@ Frailty phenotype categorization by Fried [62]
             <monogr>
               <title level="m">2018 IEEE 20th International Conference on e-Health Networking</title>
               <imprint>
-                <publisher>IEEE</publisher>
                 <date type="published" when="2018"/>
                 <biblScope from="1" to="6" unit="page"/>
               </imprint>
@@ -3095,35 +2929,6 @@ Frailty phenotype categorization by Fried [62]
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b55">
-            <analytic>
-              <title/>
-              <author>
-                <persName>
-                  <forename type="first">/Adl1</forename>
-                </persName>
-              </author>
-            </analytic>
-            <monogr>
-              <title level="j">4.html. Accessed</title>
-              <imprint>
-                <biblScope unit="volume">8</biblScope>
-                <date type="published" when="2019-01"/>
-              </imprint>
-            </monogr>
-          </biblStruct>
-          <biblStruct xml:id="b56">
-            <monogr>
-              <ptr target="http://www.med.upatras.gr/en/Pages/research/clinics.aspx"/>
-              <title level="m">?LabId=15. Accessed</title>
-              <imprint>
-                <date type="published" when="2019-01-08"/>
-              </imprint>
-              <respStmt>
-                <orgName>Department of Neurology, School of Medicine, University of Patras</orgName>
-              </respStmt>
-            </monogr>
-          </biblStruct>
-          <biblStruct xml:id="b57">
             <monogr>
               <title/>
               <author>
@@ -3139,7 +2944,7 @@ Frailty phenotype categorization by Fried [62]
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b58">
+          <biblStruct xml:id="b56">
             <monogr>
               <title level="m" type="main">Geriatric Assessment Technology: The State of the Art</title>
               <author>
@@ -3156,7 +2961,7 @@ Frailty phenotype categorization by Fried [62]
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b59">
+          <biblStruct xml:id="b57">
             <analytic>
               <title level="a" type="main">Frailty in older adults: evidence for a phenotype</title>
               <author>
@@ -3234,7 +3039,7 @@ Frailty phenotype categorization by Fried [62]
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b60">
+          <biblStruct xml:id="b58">
             <analytic>
               <title level="a" type="main">Assessing the nutritional status of the elderly: The mini nutritional assessment as part of the geriatric evaluation</title>
               <author>
@@ -3267,7 +3072,7 @@ Frailty phenotype categorization by Fried [62]
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b61">
+          <biblStruct xml:id="b59">
             <analytic>
               <title level="a" type="main">The montreal cognitive assessment, moca: a brief screening tool for mild cognitive impairment</title>
               <author>
@@ -3287,7 +3092,7 @@ Frailty phenotype categorization by Fried [62]
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b62">
+          <biblStruct xml:id="b60">
             <analytic>
               <title level="a" type="main">mini-mental state": a practical method for grading the cognitive state of patients for the clinician</title>
               <author>
@@ -3322,7 +3127,7 @@ Frailty phenotype categorization by Fried [62]
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b63">
+          <biblStruct xml:id="b61">
             <analytic>
               <title level="a" type="main">Geriatric Depression Scale (GDS): recent evidence and development of a shorter version</title>
               <author>
@@ -3350,7 +3155,7 @@ Frailty phenotype categorization by Fried [62]
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b64">
+          <biblStruct xml:id="b62">
             <analytic>
               <title level="a" type="main">Assessing self-maintenance: activities of daily living, mobility, and instrumental activities of daily living</title>
               <author>
@@ -3370,7 +3175,7 @@ Frailty phenotype categorization by Fried [62]
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b65">
+          <biblStruct xml:id="b63">
             <analytic>
               <title level="a" type="main">Assessment of older people: self-maintaining and instrumental activities of daily living</title>
               <author>
@@ -3398,7 +3203,7 @@ Frailty phenotype categorization by Fried [62]
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b66">
+          <biblStruct xml:id="b64">
             <monogr>
               <title/>
               <author>
@@ -3413,7 +3218,7 @@ Frailty phenotype categorization by Fried [62]
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b67">
+          <biblStruct xml:id="b65">
             <monogr>
               <title level="m" type="main">HBase: the Definitive Guide: Random Access to Your Planet-size Data</title>
               <author>

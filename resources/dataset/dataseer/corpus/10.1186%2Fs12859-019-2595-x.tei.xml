@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T05:16+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T20:05+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -153,15 +153,19 @@
         <p>
           <s>Xia et al. <ref target="#b11" type="bibr">[12]</ref> and Durno et al. <ref target="#b12" type="bibr">[13]</ref> independently developed theoretical approximations for the p-value.</s>
           <s>Let s D be the LS score with maximum delay of D between X t and Y t .</s>
-          <s>Xia et al. <ref target="#b11" type="bibr">[12]</ref>
-          </s>
+          <s>Xia et al. <ref target="#b11" type="bibr">[12]</ref> approximated the p-value by</s>
         </p>
-        <formula xml:id="formula_0">approximated the p-value by L D s D /(σ √ n) , where L D (x) ≈ 1 − 8 2D+1 ∞ k=1 1 x 2 + 1 (2k − 1) 2 π 2 exp − (2k − 1) 2 π 2 2x 2 2D+1 ,<label>(1)</label>
+        <formula xml:id="formula_0">L D s D /(σ √ n) , where L D (x) ≈ 1 − 8 2D+1 ∞ k=1 1 x 2 + 1 (2k − 1) 2 π 2 exp − (2k − 1) 2 π 2 2x 2 2D+1 ,<label>(1)</label>
         </formula>
         <p>
           <s>and n is the number of time points.</s>
+          <s>If both X t and Y t are i.i.d,</s>
         </p>
-        <formula xml:id="formula_1">= E φ Z 2 1 + 2 ∞ k=1 E φ (Z 1 Z k+1 ), with Z t = X t Y t .</formula>
+        <formula xml:id="formula_1">σ 2 = var(X t Y t ).</formula>
+        <p>
+          <s>If both X t and Y t are first order Markov chains (such as DNA sequences in the identification of CpG islands <ref target="#b15" type="bibr">[16]</ref> ),</s>
+        </p>
+        <formula xml:id="formula_2">σ 2 = E φ Z 2 1 + 2 ∞ k=1 E φ (Z 1 Z k+1 ), with Z t = X t Y t .</formula>
         <p>
           <s>Details on these approximations are given in Additional file 1.</s>
         </p>
@@ -172,6 +176,19 @@
           <s>Time series data in general depend on each other and cannot be best modelled by Markov chains.</s>
           <s>Moreover, it is challenging to obtain σ 2 defined above for Markov models.</s>
           <s>Therefore, we provide a data driven approach for evaluating the statistical significance of LS score for dependent time series data.</s>
+          <s>Assume X t and Y t are weakly stationary time series with mean 0.</s>
+          <s>Here a time series X t is weakly stationary if E|X t | 2 &lt; ∞, E(X t ) is a constant (independent of t) and Cov(X t , X t+k ) depends only on time delay k.</s>
+          <s>Under the null hypothesis H 0 that the two time series are not associated, Z t = X t Y t is also weakly stationary with mean 0. Using similar arguments as in <ref target="#b11" type="bibr">[12]</ref> , we can show that the p-value can again be approximated by</s>
+        </p>
+        <formula xml:id="formula_3">L D s D /(ω √ n) ,</formula>
+        <p>
+          <s>where the function L D is given in Eq. 1</s>
+        </p>
+        <p>
+          <s>and ω = lim n→∞ var n i=1 Z i /n is referred to as the long-run variance.</s>
+          <s>The details of theoretical derivations are given in the Additional file 1.</s>
+        </p>
+        <p>
           <s>The estimate of ω plays a crucial role in deriving the statistical significance of LS score and has an enormous impact on the validity of local similarity analysis for dependent data.</s>
           <s>Following Andrew <ref target="#b16" type="bibr">[17]</ref> , we used an autoregressive (AR)(1) plug-in data dependent method to estimate the long-run variance.</s>
           <s>The autoregressive model specifies that the current value depends linearly on its own previous values.</s>
@@ -179,21 +196,23 @@
         <p>
           <s>Letγ z (k) be the sample autocovariance function of Z t , defined as:</s>
         </p>
-        <formula xml:id="formula_2">γ z (k) = 1 n n−|k| j=1 Z j −Z Z j+|k| −Z , k = 1, 2, · · · , n − 1,<label>(2)</label>
+        <formula xml:id="formula_4">γ z (k) = 1 n n−|k| j=1 Z j −Z Z j+|k| −Z , k = 1, 2, · · · , n − 1,<label>(2)</label>
         </formula>
-        <formula xml:id="formula_3">ω 2 n =γ x (0)γ y (0) + 2 b w k=1 1 − k b w γ x (k)γ y (k),<label>(3)</label>
+        <p>
+          <s>whereZ = 1 n n i=1 Z i is the mean of Z t .</s>
+          <s>Under the null hypothesis H 0 , we can approximateγ z (k) byγ x (k)γ y (k) if the means of X t and Y t are zero, whereγ x (k),γ y (k) and γ z (k) are the sample autocovariance functions of X t , Y t and Z t , respectively.</s>
+          <s>We can estimate ω bŷ</s>
+        </p>
+        <formula xml:id="formula_5">ω 2 n =γ x (0)γ y (0) + 2 b w k=1 1 − k b w γ x (k)γ y (k),<label>(3)</label>
         </formula>
         <p>
           <s>where b ω is the bandwidth parameter b ω = 1.1447(τ n) 1/3 <ref target="#b16" type="bibr">[17]</ref> ,</s>
         </p>
-        <formula xml:id="formula_4">τ = 4φ 2 1 −φ 2 2 ,φ = n i=2û tût−1 n i=2û 2 t ,û t = Z t −Z.<label>(4)</label>
+        <formula xml:id="formula_6">τ = 4φ 2 1 −φ 2 2 ,φ = n i=2û tût−1 n i=2û 2 t ,û t = Z t −Z.<label>(4)</label>
         </formula>
         <p>
           <s>In summary, given time series X t and Y t , we first calculate their LS score s D using the dynamic programming algorithm in <ref target="#b6" type="bibr">[7]</ref> .</s>
-          <s>We then estimate the long-run variance using Eq. 3. Finally, the statistical significance of the LS score for dependent data can be approximated as</s>
-        </p>
-        <formula xml:id="formula_5">L D (s D /(ω n √ n)).</formula>
-        <p>
+          <s>We then estimate the long-run variance using Eq. 3. Finally, the statistical significance of the LS score for dependent data can be approximated as L D (s D /(ω n √ n)).</s>
           <s>Since we estimate the long-run variance from real data, we refer to the new method as data driven LSA (DDLSA).</s>
         </p>
       </div>
@@ -214,17 +233,31 @@
         <p>
           <s>We evaluated the size and power of six different methods for determining the statistical significance of associations between factors in time series data.</s>
           <s>The six methods are described as follows.</s>
-          <s>D are at least as high as s D , the LS score between X t and Y t .</s>
+        </p>
+        <p>
+          <s>1 PCC.</s>
+          <s>Pearson correlation coefficient (PCC) is widely used to identify correlation between random variables.</s>
+          <s>If the random variables X t and Y t are from a bivariate normal distribution and their PCC is r, the statistic t = r (n − 2)/(1 − r 2 ) has a Student's t-distribution with degrees of freedom n − 2 under the null hypothesis H 0 . 2 SRCC.</s>
+          <s>Spearman rank correlation coefficient (SRCC, r s ) between X t and Y t is defined as Pearson correlation coefficient between the rank values of those two variables.</s>
+          <s>We can test for the significance of r s using t = r s (n − 2)/ 1 − r 2 s , which follows approximately a Student t-distribution with degrees of freedom n − 2.</s>
+        </p>
+        <p>
+          <s>3 Theoretical LSA (TLSA).</s>
+          <s>We used the procedures in <ref target="#b11" type="bibr">[12]</ref> to calculate the p-value of the LS score between X t and Y t .</s>
+          <s>4 Permutation test.</s>
+          <s>We fixed one time series Y t and reshuffled X t for N = 1000 times.</s>
+          <s>Assuming that X</s>
+        </p>
+        <formula xml:id="formula_7">(k) t , k = 1, · · · , N were the permutations of X t , we computed the LS score between X (k) t and Y t , denoted as s (k)</formula>
+        <p>
+          <s>D .</s>
+          <s>Then the p-value was approximated by the fraction of times that s (k) D are at least as high as s D , the LS score between X t and Y t .</s>
           <s>5 LSAres.</s>
           <s>We adopted the AR or ARMA models to obtain the residuals of data, and calculated the statistical significance of the residuals through TLSA, which was regarded as the significance between X t and Y t .</s>
           <s>6 DDLSA.</s>
           <s>In DDLSA, the time series data need to be centered first.</s>
-          <s>Specifically, time series data</s>
-        </p>
-        <formula xml:id="formula_6">t , k = 1, · · · , N</formula>
-        <formula xml:id="formula_7">X t , t = 1, 2, · · · , n are centered asX t = X t −X t , whereX t = 1 n n t=1 X t is the sample mean of X t .Ỹ t is defined analogously. We utilized L D s D / ω n</formula>
-        <p>
-          <s>√ n to calculate the approximate statistical significance of X t andỸ t and took it as the significance between X t and Y t .</s>
+          <s>Specifically, time series data X t , t = 1, 2, · · · , n are centered asX t = X t −X t , whereX t = 1 n n t=1 X t is the sample mean of X t .Ỹ t is defined analogously.</s>
+          <s>We utilized L D s D / ω n √ n to calculate the approximate statistical significance of X t andỸ t and took it as the significance between X t and Y t .</s>
         </p>
       </div>
       <div>
@@ -240,7 +273,11 @@
         <p>
           <s>(2) The ARMA(1,1) model:</s>
         </p>
-        <formula xml:id="formula_9">X t = ρ 1 X t−1 + ε X t + 0.5 ε X t−1 Y t = ρ 2 Y t−1 + ε Y t + 0.5 ε Y t−1 (6)</formula>
+        <formula xml:id="formula_9">X t = ρ 1 X t−1 + ε X t + 0.5 ε X t−1 Y t = ρ 2 Y t−1 + ε Y t + 0.5 ε Y t−1<label>(6)</label>
+        </formula>
+        <p>
+          <s>(3) The ARMA(1,1)-TAR(1) model:</s>
+        </p>
         <formula xml:id="formula_10">X t = ρ 1 X t−1 + ε X t + 0.5 ε X t−1 Y t = ρ 2 Y t−1 + ε Y t , Y t−1 ≤ −1 0.5 Y t−1 + ε Y t , Y t−1 &gt; −1<label>(7)</label>
         </formula>
         <p>
@@ -264,37 +301,31 @@
         <p>
           <s>where</s>
         </p>
-        <formula xml:id="formula_12">ε X 1 , ε Y 1 ∼ N(0, 1), ε X t ∼ N 0, 1 − ρ 2 1 , ε Y t ∼ N 0, 1 − ρ 2</formula>
+        <formula xml:id="formula_12">ε X 1 , ε Y 1 ∼ N(0, 1), ε X t ∼ N 0, 1 − ρ 2 1 , ε Y t ∼ N 0, 1 − ρ 2 2 , t = 2</formula>
         <p>
-          <s>2 , t = 2, · · · , n and they are independent.</s>
-          <s>For simplicity and symmetry, we generated time series data that were correlated within the middle interval of length np as follows, where p is the fraction of the time interval that the two time series were correlated (shown in <ref target="#fig_4" type="figure">Fig. 1</ref> ).</s>
+          <s>, · · · , n and they are independent.</s>
+          <s>For simplicity and symmetry, we generated time series data that were correlated within the middle interval of length np as follows, where p is the fraction of the time interval that the two time series were correlated (shown in <ref type="figure">Fig. 1</ref> ).</s>
           <s>We first generated X t using Eq. 8. Second, let</s>
         </p>
-        <formula xml:id="formula_13">Y t = 1 √ 1+σ 2 (X t + ξ t )</formula>
-        <p>
-          <s>in the middle np time points of the entire series where</s>
-        </p>
-        <formula xml:id="formula_14">ξ t ∼ N 0, σ 2 , σ 2 = 1 − ρ 2 /ρ 2 .</formula>
+        <formula xml:id="formula_13">Y t = 1 √ 1+σ 2 (X t + ξ t ) in the middle np time points of the entire series where ξ t ∼ N 0, σ 2 , σ 2 = 1 − ρ 2 /ρ 2 .</formula>
         <p>
           <s>In the remaining n − np time points, Y t were generated by the AR(1) model (Eq.</s>
           <s>8) with ρ 2 = ρ 1 / 1 + σ 2 .</s>
           <s>We generated the time series data this way so that X t followed a stationary AR(1) model, Y t approximately followed a stationary AR(1) model, and X t and Y t were correlated in the middle np time points with correlation coefficient ρ.</s>
-        </p>
-        <p>
           <s>The bivariate AR model We also investigated another model, referred to as the bivariate AR(1) model, that was used in <ref target="#b17" type="bibr">[18]</ref> (Chapter 7, page 290).</s>
         </p>
-        <formula xml:id="formula_15">X 1 = ε X 1 , X t = ρ 1 X t−1 + ε X t , t = 2, · · · , n, Y 1 = ε Y 1 , Y t = ρ 2 Y t−1 + ε Y t , t = 2, · · · , n,<label>(9)</label>
+        <formula xml:id="formula_14">X 1 = ε X 1 , X t = ρ 1 X t−1 + ε X t , t = 2, · · · , n, Y 1 = ε Y 1 , Y t = ρ 2 Y t−1 + ε Y t , t = 2, · · · , n,<label>(9)</label>
         </formula>
         <p>
           <s>where</s>
         </p>
-        <formula xml:id="formula_16">ε X 1 , ε Y 1 ∼ N(0, 1), ε X t ∼ N 0, 1 − ρ 2 1 , ε Y t ∼ N 0, 1 − ρ 2</formula>
+        <formula xml:id="formula_15">ε X 1 , ε Y 1 ∼ N(0, 1), ε X t ∼ N 0, 1 − ρ 2 1 , ε Y t ∼ N 0, 1 − ρ 2 2 , t = 2</formula>
         <p>
-          <s>2 , t = 2, · · · , n and the noise terms have correlation coefficients: <ref target="#fig_4" type="figure">Fig. 1</ref> Diagrammatic sketch of data generating process in the local and bivariate AR models.</s>
+          <s>, · · · , n and the noise terms have correlation coefficients: <ref type="figure">Fig. 1</ref> Diagrammatic sketch of data generating process in the local and bivariate AR models.</s>
           <s>The middle intervals of X t and Y t are correlated and both ends of them are independent.</s>
-          <s>Here · is the floor function which returns the greatest integer less than or equal to the input cor ε</s>
+          <s>Here · is the floor function which returns the greatest integer less than or equal to the input</s>
         </p>
-        <formula xml:id="formula_17">X 1 , ε Y 1 = ρ, cor ε X t , ε Y t = (1 − ρ 1 ρ 2 )ρ 1 − ρ 2 1 1 − ρ 2 2 , t = 2, · · · , n, cor ε X i , ε Y j = 0, i, j = 1, · · · , n, i = j.<label>(10)</label>
+        <formula xml:id="formula_16">cor ε X 1 , ε Y 1 = ρ, cor ε X t , ε Y t = (1 − ρ 1 ρ 2 )ρ 1 − ρ 2 1 1 − ρ 2 2 , t = 2, · · · , n, cor ε X i , ε Y j = 0, i, j = 1, · · · , n, i = j.<label>(10)</label>
         </formula>
         <p>
           <s>The variances of both X t and Y t are 1 and cor(X t , Y t ) = ρ.</s>
@@ -331,14 +362,14 @@
           <s>5), ARMA(1,1) (Eq. 6) and ARMA(1,1)-TAR(1) (Eq.</s>
           <s>7) models.</s>
           <s>We chose six different pairs of autoregressive coefficients from -0.5 to 0.8 and the number of time points n from 100 to 1000.</s>
-          <s>The results are shown in <ref target="#tab_5" type="table">Tables 1, 2 and 3</ref> for the three models, respectively.</s>
+          <s>The results are shown in <ref target="#tab_0" type="table">Tables 1, 2 and 3</ref> for the three models, respectively.</s>
           <s>For TLSA, Permutation test, LSAres and DDLSA, we set the maximum time delay D = 0 for simplicity.</s>
           <s>For LSAres, we needed to specify the generative models for X t and Y t .</s>
           <s>For given data, the generative models are most likely unknown.</s>
           <s>We used AR or ARMA models as generative models and denoted the resulting methods as LSAres(AR) and LSAres(ARMA), respectively.</s>
           <s>Throughout the simulations, we let the prespecified error rate to be 0.05.</s>
           <s>
-            <ref target="#tab_5" type="table">Table 1</ref> shows that, except for the case of ρ 1 = 0, ρ 2 = 0, the empirical type I error rates of PCC, SRCC, TLSA and the permutation approaches are all larger than the prespecified type I error.</s>
+            <ref target="#tab_0" type="table">Table 1</ref> shows that, except for the case of ρ 1 = 0, ρ 2 = 0, the empirical type I error rates of PCC, SRCC, TLSA and the permutation approaches are all larger than the prespecified type I error.</s>
           <s>When ρ 1 = 0, ρ 2 = 0, the empirical type I error rates of PCC, SRCC, TLSA and the permutation approaches are well controlled, which is reasonable as the time series are independent bivariate normally distributed.</s>
           <s>Further, the empirical type I error of TLSA is somewhat smaller than the significance level of 0.05 indicating that TLSA is conservative, consistent with findings in <ref target="#b11" type="bibr">[12]</ref> .</s>
           <s>The results of LSAres and DDLSA are similar to that of TLSA.</s>
@@ -347,7 +378,7 @@
           <s>Their type I error approaches the significance level as the number of time points increases.</s>
           <s>The performances of LSAres(AR) and LSAres(ARMA) are similar.</s>
           <s>
-            <ref target="#tab_6" type="table">Tables 2 and 3</ref> show the similar results for ARMA(1,1) and ARMA(1,1)-TAR(1) models, respectively.</s>
+            <ref target="#tab_1" type="table">Tables 2 and 3</ref> show the similar results for ARMA(1,1) and ARMA(1,1)-TAR(1) models, respectively.</s>
           <s>Under the ARMA(1,1) and ARMA(1,1)-TAR(1) models with ρ 1 = −0.5, ρ 2 = −0.5,</s>
           <s>X t are i.i.d.. Therefore, the type I error rates of PCC, SRCC, TLSA and permutation approaches are well controlled.</s>
           <s>However, the empirical type I error rates are much larger than the pre-specified type I error rate of 0.05 under all the other parameter settings.</s>
@@ -364,19 +395,14 @@
           <s>Since PCC, SRCC, permutation and TLSA could not control type I error, we only investigated the power of LSAres and DDLSA.</s>
           <s>In the local AR model, we let ρ 1 = 0.5, ρ = 0.3, 0.4, 0.5, p from 0.2 to 1, and the number of time points n from 20 to 300.</s>
           <s>
-            <ref target="#fig_3" type="figure">Figure 2</ref> shows the power of DDLSA and LSAres as a function of the number of time points.</s>
+            <ref type="figure">Figure 2</ref> shows the power of DDLSA and LSAres as a function of the number of time points.</s>
           <s>The power of both LSAres and DDLSA increases with the number of time points n, percentage of correlation p, and serial correlation ρ.</s>
           <s>In particular, when the two The first and second columns represent different autoregressive coefficients and number of time points, respectively.</s>
           <s>Note that we used the residuals from the estimated AR(p) or ARMA(p, q) models by maximum likelihood estimate and the order selection was based on the Akaike Information criterion (AIC).</s>
           <s>The number of permutations was 1000.</s>
-          <s>The pre-specified type I error was 0.05 and the number of replications was 10000 time series are associated in 60% of the time interval (p = 0.6) with correlation (ρ = 0.5), the power of DDLSA is greater than 0.9 when the number of time points n is at least 100.</s>
-          <s>Under the AR model, the power of DDLSA is higher than that of LSAres.</s>
-          <s>Although we only show the results for ρ 1 = 0. <ref target="#fig_0" type="figure">Fig. 3</ref> .</s>
+          <s>The pre-specified type I error was 0.05 and the number of replications was 10000 <ref type="figure">Fig. 3</ref> .</s>
           <s>However, the power of LSAres is higher than that of DDLSA, different from the local AR model.</s>
-          <s>Overall, LSAres in testing local association is more useful than DDLSA if we know that the The first and second columns represent different autoregressive coefficients and number of time points, respectively.</s>
-          <s>Note that we used the residuals from the estimated AR(p) or ARMA(p, q) models by maximum likelihood estimate and the order selection was based on the Akaike Information criterion (AIC).</s>
-          <s>The number of permutations was 1000.</s>
-          <s>The pre-specified type I error was 0.05 and the number of replications was 10000</s>
+          <s>Overall, LSAres in testing local association is more useful than DDLSA if we know that the <ref type="figure">Fig. S4-S6</ref> .</s>
         </p>
       </div>
       <div>
@@ -389,25 +415,22 @@
           <s>Second, we identified significantly locally associated OTU pairs with both p-value and false discovery rate The first and second columns represent different autoregressive coefficients and number of time points, respectively.</s>
           <s>Note that we used the residuals from the estimated AR(p) or ARMA(p, q) models by maximum likelihood estimate and the order selection was based on the Akaike Information criterion (AIC).</s>
           <s>The number of permutations was 1000.</s>
-          <s>The pre-specified type I error was 0.05 and the number of replications was 10000</s>
-        </p>
-        <p>
-          <s>(FDR) below 0.05 and compared the performance of TLSA, DDLSA and LSAres with time delay up to 3. For LSAres, the residuals were found based on the ARMA(p,q) model and the orders were selected based on the AIC criterion.</s>
+          <s>The pre-specified type I error was 0.05 and the number of replications was 10000 (FDR) below 0.05 and compared the performance of TLSA, DDLSA and LSAres with time delay up to 3. For LSAres, the residuals were found based on the ARMA(p,q) model and the orders were selected based on the AIC criterion.</s>
           <s>In our study, we used FDR or Q-value to adjust for multiple hypothesis testing using the qvalue package in R <ref target="#b21" type="bibr">[22]</ref> .</s>
-          <s>Restricting the p-value P ≤ 0.05 and q-value Q ≤ 0.05, 317 pairs of significant associations are found among all 820 OTU pairs by TLSA, 189</s>
-        </p>
-        <p>
-          <s>by DDLSA, and 224 by LSAres, respectively <ref target="#tab_8" type="table">(Table 4)</ref> .</s>
-          <s>Among the associations found by TLSA, 143 (∼ 45%) are not significant by DDLSA, and 111 (∼ 35%) are not significant by LSAres <ref type="figure">(Fig. 5)</ref> .</s>
+          <s>Restricting the p-value P ≤ 0.05 and q-value Q ≤ 0.05, 317 pairs of significant associations are found among all 820 OTU pairs by TLSA, 189 by DDLSA, and 224 by LSAres, respectively <ref target="#tab_3" type="table">(Table 4)</ref> .</s>
+          <s>Among the associations found by TLSA, 143 (∼ 45%) are not significant by DDLSA, and 111 (∼ 35%) are not significant by LSAres <ref type="figure">(Fig. 5</ref> ).</s>
           <s>Such associations identified by TLSA but not by DDLSA or LSAres may be false positives caused by the autocorrelation of the raw data.</s>
-          <s>If we combine associated pairs from DDLSA and LSAres, i.e. we define significant pairs as those found significant by either DDLSA or LSAres, 239 (∼ 89%) pairs out of 270 in total found by DDLSA or LSAres are also significant by TLSA.</s>
+          <s>If we combine associated pairs from DDLSA and LSAres, i.e. we define significant pairs as those found significant by either DDLSA or LSAres, 239 (∼ 89%) pairs out of 270 in total <ref type="figure">Fig. 2</ref> The power of LSAres and DDLSA in testing for the local association of two time series data under the local AR model.</s>
+          <s>Ten thousand random samples were generated from the local AR model with ρ 1 = 0.5.</s>
+          <s>The LSAres approach used the residuals from the estimated ARMA(p, q) model by maximum likelihood estimate and the order was selected using the AIC criterion.</s>
+          <s>The type I error is 0.05 found by DDLSA or LSAres are also significant by TLSA.</s>
           <s>This finding is interesting, and it suggests that the combination of DDLSA and LSAres exhibits better performance than each alone.</s>
           <s>Note that DDLSA also finds some associations missed by LSAres and vice versa.</s>
           <s>For instance, DDLSA finds 189 and LSAres finds 224 significant associations but only 143 are found by both LSAres and DDLSA.</s>
           <s>Therefore, either DDLSA or LSAres is not a substitute but a complementary approach to the other one.</s>
           <s>For a comprehensive analysis of a data set, one should apply both approaches.</s>
           <s>
-            <ref target="#tab_8" type="table">Table 4</ref> shows the results with more strict criteria of P ≤ 0.01 and Q ≤ 0.01.</s>
+            <ref target="#tab_3" type="table">Table 4</ref> shows the results with more strict criteria of P ≤ 0.01 and Q ≤ 0.01.</s>
           <s>We carefully investigated one of the OTU pairs identified by TLSA but not by DDLSA and LSAres: Leptotrichia and Kingella <ref type="figure">(Fig. 6)</ref> .</s>
           <s>The association is significant by TLSA within a time interval of length 129 starting from the first time point with 3 days delay where Leptotrichia precedes Kingella (P-value = 0.003 and Q-value = 0.007 by TLSA) , while not significant by DDLSA (P-value = 0.16, Q-value = 0.38) and LSAres (P-value = 0.50, Q-value = 0.55).</s>
           <s>The autocorrelograms of the two OTUs show that both of them have the strong autocorrelation, where TLSA can't control the type I error.</s>
@@ -419,7 +442,9 @@
           <s>We considered only the common OTUs in the two samples.</s>
           <s>The two individuals shared 40 and 41 OTUs in the feces and tongue samples, respectively.</s>
           <s>Let S1 and S2 be the sets of significant associations between common OTUs of the two samples.</s>
-          <s>The Sorensen index is defined as</s>
+          <s>The Sorensen index is defined as 2|S 1 ∩S 2 | |S 1 |+|S 2 | , where S 1 ∩ S 2 is the intersection of S 1 and S 2 and | · | is the number of OTU pairs in a set.</s>
+          <s>Using LSAres, we identified 91 (Q s = 0.35) and 177 (Q s = 0.55) shared significant associations in the feces and tongue samples 'F4' and 'M3' , respectively.</s>
+          <s>Using DDLSA, the corresponding numbers are 61 (Q s = 0.32) and 122 (Q s = 0.46).</s>
         </p>
       </div>
       <div>
@@ -431,16 +456,13 @@
           <s>Therefore, the abundance profiles of bacteria are possibly similar at the same time point of every year.</s>
           <s>However, the abundance may be somewhat different in some years.</s>
           <s>For example, both Verrucomicrobiales and Alphaproteobacteria are more abundant in the third year.</s>
-          <s>In addition, a total of 33 out of 75 factors are significant autocorrelated based on the Box-Ljung test at the 5% significance level, including 9 environment factors and 24</s>
-        </p>
-        <p>
-          <s>OTUs.</s>
-          <s>We applied TLSA, DDLSA and LSAres to obtain significant associations of these 75 factors and <ref target="#tab_8" type="table">Table 4</ref> shows the number of identified significant associations.</s>
+          <s>In addition, a total of 33 out of 75 factors are significant autocorrelated based on the Box-Ljung test at the 5% significance level, including 9 environment factors and 24 OTUs.</s>
+          <s>We applied TLSA, DDLSA and LSAres to obtain significant associations of these 75 factors and <ref target="#tab_3" type="table">Table 4</ref> shows the number of identified significant associations.</s>
           <s>Among 2550 pairwise associations of all 75 factors, 761, 371 and 98 pairs were found significant with time delay 3 with both P-value and Q-value ≤ 0.05 by TLSA, DDLSA and LSAres, respectively.</s>
           <s>The relatively large number of significant associations identified by TLSA contain a large fraction of false positives since the dependency of the time series is not considered.</s>
           <s>The DDLSA and LSAres reduce the number of significant associations resulting from the factors' autocorrelation.</s>
           <s>
-            <ref target="#fig_7" type="figure">Figure 8</ref> shows the Venn diagram illustrating the relationship of the sets of significant associations using the three approaches.</s>
+            <ref type="figure">Figure 8</ref> shows the Venn diagram illustrating the relationship of the sets of significant associations using the three approaches.</s>
           <s>There are 61 pairs found by all three methods.</s>
           <s>All the 98 associations found by LSAres are also significant by TLSA.</s>
           <s>This could be due to the periodicity of OTUs that makes ARMA model unsuitable for this dataset.</s>
@@ -462,10 +484,7 @@
         <p>
           <s>In this paper, we developed a theoretical statistical significance approximation of local similarity score for dependent time series data, which substitutes long-run variance based on nonparametric kernel estimate for sample variance.</s>
           <s>Moreover, we developed another method to approximate the statistical significance by using raw data's residuals from a predefined model.</s>
-          <s>We considered different dependent time series models to evaluate the type I error and power of our methods compared with others, i.e.</s>
-        </p>
-        <p>
-          <s>original TLSA, permutation test, PCC and SRCC.</s>
+          <s>We considered different dependent time series models to evaluate the type I error and power of our methods compared with others, i.e. original TLSA, permutation test, PCC and SRCC.</s>
           <s>Results from our simulations showed that our methods can control type I error reasonably, but the other four approaches cannot.</s>
           <s>Through simulations, we showed that DDLSA performs better than LSAres for the local AR model, but LSAres works better than DDLSA in the bivariate AR model.</s>
           <s>Therefore, these two methods complement each other under different correlation scenarios.</s>
@@ -487,121 +506,21 @@
         </p>
       </div>
       <figure xml:id="fig_0">
-        <head>( 3 )</head>
-        <label>3</label>
-        <figDesc>The ARMA(1,1)-TAR(1) model:</figDesc>
+        <head/>
+        <label/>
+        <figDesc>time series are associated in 60% of the time interval (p = 0.6) with correlation (ρ = 0.5), the power of DDLSA is greater than 0.9 when the number of time points n is at least 100. Under the AR model, the power of DDLSA is higher than that of LSAres. Although we only show the results for ρ 1 = 0.5 and time lag D = 0, the results from other simulations with different autocorrelation param- eters and time delays are similar to the result shown here. The simulation results under the local AR model with time delay D &gt; 0 are shown in Additional file 3: Fig. S1-S3. Similar to the simulations under the local AR model, we also investigated the power of DDLSA and LSAres with different parameters under the bivariate AR model and the results are shown in</figDesc>
       </figure>
       <figure xml:id="fig_1">
-        <head/>
-        <label/>
-        <figDesc>5 and time lag D = 0, the results from other simulations with different autocorrelation param- eters and time delays are similar to the result shown here. The simulation results under the local AR model with time delay D &gt; 0 are shown in Additional file 3: Fig. S1-S3. Similar to the simulations under the local AR model, we also investigated the power of DDLSA and LSAres with different parameters under the bivariate AR model and the results are shown in</figDesc>
-      </figure>
-      <figure xml:id="fig_2">
-        <head/>
-        <label/>
-        <figDesc>time series come from the pre-defined model, such as the ARMA model. The simulated results for the power of DDLSA and LSAres under the bivariate AR(1) model with time delay D &gt; 0 are shown in Additional file 3: Fig. S4-S6.</figDesc>
-      </figure>
-      <figure xml:id="fig_3">
-        <head>Fig. 2</head>
-        <label>2</label>
-        <figDesc>Fig. 2 The power of LSAres and DDLSA in testing for the local association of two time series data under the local AR model. Ten thousand random samples were generated from the local AR model with ρ 1 = 0.5. The LSAres approach used the residuals from the estimated ARMA(p, q) model by maximum likelihood estimate and the order was selected using the AIC criterion. The type I error is 0.05</figDesc>
-      </figure>
-      <figure xml:id="fig_4">
-        <head>2|S 1</head>
-        <label>1</label>
-        <figDesc>∩S 2 | |S 1 |+|S 2 | , where S 1 ∩ S 2 is the intersection of S 1 and S 2 and | · | is the number of OTU pairs in a set. Using LSAres, we identified 91 (Q s = 0.35) and 177 (Q s = 0.55) shared significant associations in the feces and tongue samples 'F4' and 'M3' , respectively. Using DDLSA, the corresponding numbers are 61 (Q s = 0.32) and 122 (Q s = 0.46).</figDesc>
-      </figure>
-      <figure xml:id="fig_5">
         <head>Fig. 3 Fig. 4</head>
         <label>34</label>
         <figDesc>Fig. 3 The power of LSAres and DDLSA in testing for the local association of two time series data under the bivariate AR model. Ten thousand random samples were generated from the bivariate AR model with ρ 1 = 0.5, ρ 2 = 0.5. The LSAres approach used the residuals from the estimated ARMA(p, q) model by maximum likelihood estimate and order was selected using the AIC criterion. The type I error is 0.05</figDesc>
       </figure>
-      <figure xml:id="fig_6">
+      <figure xml:id="fig_2">
         <head>Fig. 5 Fig. 6 Fig. 7</head>
         <label>567</label>
         <figDesc>Fig. 5 Venn diagram of the relationship among significant associated pairs found by the TLSA, DDLSA and LSAres in the MPHM dataset. Red, green and blue colors represent the number of pairs found by TLSA, DDLSA and LSAres, respectively</figDesc>
       </figure>
-      <figure xml:id="fig_7">
-        <head>Fig. 8</head>
-        <label>8</label>
-        <figDesc>Fig. 8 Venn diagram of the relationship among significant pairs found by the TLSA, DDLSA and LSAres in the PML dataset. Red, green and blue colors represent the number of pairs found by TLSA, DDLSA and LSAres, respectively</figDesc>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_1">
-        <head/>
-        <label/>
-        <figDesc>Assume X t and Y t are weakly stationary time series with mean 0. Here a time series X t is weakly station- ary if E|X t | 2 &lt; ∞, E(X t ) is a constant (independent of t) and Cov(X t , X t+k ) depends only on time delay k. Under the null hypothesis H 0 that the two time series are not associated, Z t = X t Y t is also weakly station- ary with mean 0. Using similar arguments as in [12], we can show that the p-value can again be approximated by</figDesc>
-        <table>L D s D /(ω 
-√ 
-n) , where the function L D is given in Eq. 1 
-
-and ω = lim n→∞ var 
-
-n 
-
-i=1 Z i /n is referred to as the 
-long-run variance. The details of theoretical derivations 
-are given in the Additional file 1. 
-</table>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_2">
-        <head/>
-        <label/>
-        <figDesc>are the sample autocovariance functions of X t , Y t and Z t , respectively. We can estimate ω bŷ</figDesc>
-        <table>whereZ = 
-
-1 
-n 
-
-n 
-
-i=1 Z i is the mean of Z t . Under the null 
-hypothesis H 0 , we can approximateγ z (k) byγ x (k)γ y (k) if 
-the means of X t and Y t are zero, whereγ x (k),γ y (k) and 
-γ z (k) </table>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_3">
-        <head/>
-        <label/>
-        <figDesc>Theoretical LSA (TLSA). We used the procedures in [12] to calculate the p-value of the LS score between X t and Y t . 4 Permutation test. We fixed one time series Y t and reshuffled X t for N = 1000 times. Assuming that X</figDesc>
-        <table>1 PCC. Pearson correlation coefficient (PCC) is widely 
-used to identify correlation between random 
-variables. If the random variables X t and Y t are from 
-a bivariate normal distribution and their PCC is r, the 
-statistic t = r (n − 2)/(1 − r 2 ) has a Student's 
-t-distribution with degrees of freedom n − 2 under 
-the null hypothesis H 0 . 
-2 SRCC. Spearman rank correlation coefficient (SRCC, 
-r s ) between X t and Y t is defined as Pearson 
-correlation coefficient between the rank values of 
-those two variables. We can test for the significance 
-
-of r s using t = r s (n − 2)/ 1 − r 2 
-s , which follows 
-approximately a Student t-distribution with degrees 
-of freedom n − 2. 
-3 (k) 
-
-</table>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_4">
-        <head/>
-        <label/>
-        <figDesc>were the permutations of X t , we computed the LS score between X</figDesc>
-        <table>(k) 
-
-t and Y t , denoted 
-as s 
-
-(k) 
-
-D . Then the p-value was approximated by the 
-fraction of times that s 
-
-(k) 
-
-</table>
-      </figure>
-      <figure type="table" validated="true" xml:id="tab_5">
+      <figure type="table" validated="true" xml:id="tab_0">
         <head>Table 1</head>
         <label>1</label>
         <figDesc>The empirical type I error rates for the six different methods (the third to ninth column): PCC, SRCC, TLSA, permutation, LSAres(AR), LSAres(ARMA), and DDLSA, based on the AR(1) model</figDesc>
@@ -893,7 +812,7 @@ DDLSA
 
 </table>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_6">
+      <figure type="table" validated="true" xml:id="tab_1">
         <head>Table 2</head>
         <label>2</label>
         <figDesc>The empirical type I error rates for the six different methods (the third to ninth column): PCC, SRCC, TLSA, permutation, LSAres (AR), LSAres (ARMA), and DDLSA, based on the ARMA(1,1) model</figDesc>
@@ -1183,9 +1102,16 @@ DDLSA
 0.0415 
 0.0428 
 
-</table>
+The first and second columns represent different autoregressive coefficients and number of time points, respectively. Note that we used the residuals from the estimated 
+AR(p) or ARMA(p, q) models by maximum likelihood estimate and the order selection was based on the Akaike Information criterion (AIC). The number of permutations was 
+1000. The pre-specified type I error was 0.05 and the number of replications was 10000 
+
+time series come from the pre-defined model, such as 
+the ARMA model. The simulated results for the power of 
+DDLSA and LSAres under the bivariate AR(1) model with 
+time delay D &gt; 0 are shown in Additional file 3: </table>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_7">
+      <figure type="table" validated="true" xml:id="tab_2">
         <head>Table 3</head>
         <label>3</label>
         <figDesc>The empirical type I error rates for the six different methods (the third to ninth column): PCC, SRCC, TLSA, permutation, LSAres (AR), LSAres (ARMA), and DDLSA, based on the ARMA(1,1)-TAR(1) model</figDesc>
@@ -1477,7 +1403,7 @@ DDLSA
 
 </table>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_8">
+      <figure type="table" validated="true" xml:id="tab_3">
         <head>Table 4</head>
         <label>4</label>
         <figDesc>The numbers of significant associations found by TLSA, DDLSA and LSAres with different thresholds in the MPHM and PML data sets</figDesc>
@@ -2629,9 +2555,11 @@ PML
                 </persName>
               </author>
               <ptr target="http://github.com/jdstorey/qvalue"/>
-              <imprint/>
+              <imprint>
+                <date type="published" when="2015"/>
+              </imprint>
             </monogr>
-            <note>R package version 2.12.0. 2015.</note>
+            <note>R package version 2.12.0.</note>
           </biblStruct>
           <biblStruct xml:id="b22">
             <analytic>
@@ -2672,18 +2600,14 @@ PML
               </author>
             </analytic>
             <monogr>
-              <title level="m">Basic Mechanisms of the EEG. Brain Dynamics</title>
+              <title level="j">Brain Dynamics</title>
               <editor>Zschocke S, Speckmann EJ</editor>
-              <meeting>
-                <address>
-                  <addrLine>Boston: Birkhäuser</addrLine>
-                </address>
-              </meeting>
               <imprint>
-                <date type="published" when="1993"/>
                 <biblScope from="41" to="61" unit="page"/>
+                <date type="published" when="1993"/>
               </imprint>
             </monogr>
+            <note>Basic Mechanisms of the EEG</note>
           </biblStruct>
         </listBibl>
       </div>

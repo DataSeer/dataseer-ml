@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T08:19+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:55+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -253,13 +253,13 @@
       <div>
         <head>Database searching</head>
         <p>
-          <s>The calibrated experimental peptide masses or MS/MS average mass data files were imported into MASCOT [27] for searches against the Uniprot mammalia database (234,491 sequences and 90,265,790 residues Uniprot 20.06.2016).</s>
+          <s>The calibrated experimental peptide masses or MS/MS average mass data files were imported into MASCOT <ref target="#b26" type="bibr">[27]</ref> for searches against the Uniprot mammalia database (234,491 sequences and 90,265,790 residues Uniprot 20.06.2016).</s>
           <s>The matches to protein sequence are based on m/z ratios.</s>
           <s>For positive identification of proteins search mass tolerance parameters were set at two missed cleavages per peptide, modification of the cysteine by carbamidomethylation or methionine by oxidation and a protein mass tolerance of 1.5 Da and a peptide mass tolerance of 0.5 Da, with 2+ and 3+ peptide charge states.</s>
         </p>
         <p>
           <s>Search match stringencies to obtain a correct identification included a total protein (P &lt; 0.05) and individual peptide score (P &lt; 0.05) for at least two peptides, which were found in duplicate samples and protein extracts from each of the 6 sheep analysed.</s>
-          <s>Alternatively MS/MS mass data files (*.wiff ) were imported into PEAKS studio software <ref target="#b26" type="bibr">[28]</ref> for searches against the ovine Ensembl database (Oar_3.1pep.fasta</s>
+          <s>Alternatively MS/MS mass data files (*.wiff ) were imported into PEAKS studio software <ref target="#b27" type="bibr">[28]</ref> for searches against the ovine Ensembl database (Oar_3.1pep.fasta</s>
           <s>Ensembl 21.05.2017).</s>
           <s>For MS/MS identifications search tolerances used were two missed cleavages per peptide, modification of the cysteine by carbamidomethylation or methionine by oxidation and a protein mass tolerance of 20 ppm and a peptide mass tolerance of 0.1 Da.</s>
           <s>Search match stringencies included a de novo average local confidence (ALC) score ≥ 50%, false discovery rate (FDR peptide-spectrum matches) at 2.0%, protein score − 10logP ≥ 20, at least two unique peptides matches per protein, with a sequence coverage &gt; 3%, in the 6 biological replicates.</s>
@@ -270,13 +270,13 @@
         <p>
           <s>Additional annotation information was provided by cross-referencing Ensembl ovine database identifications to the Uniprot mammalia database.</s>
           <s>Subcellular location and functional assignment of ovine proteins was based on gene ontology description, as well as domain information from the Uniprot annotations.</s>
-          <s>In addition, these were cross checked with subcellular location based on sequence specific information from the Ensembl ovine database using the top score generated using WoLF PSort website <ref target="#b27" type="bibr">[29]</ref> .</s>
+          <s>In addition, these were cross checked with subcellular location based on sequence specific information from the Ensembl ovine database using the top score generated using WoLF PSort website <ref target="#b28" type="bibr">[29]</ref> .</s>
         </p>
         <p>
           <s>Membrane protein prediction was based on TMHMM, β strand, GPI anchor, N-terminal signal peptide cleavage sites (SigP) and transit peptide domains.</s>
-          <s>Proteins with one or more transmembrane domains were determined with THMHH server v 2.0 <ref target="#b28" type="bibr">[30]</ref> and SignalP using 4.1 sever <ref target="#b29" type="bibr">[31]</ref> .</s>
+          <s>Proteins with one or more transmembrane domains were determined with THMHH server v 2.0 <ref target="#b29" type="bibr">[30]</ref> and SignalP using 4.1 sever <ref target="#b30" type="bibr">[31]</ref> .</s>
           <s>Those with β strand associated with β barrel proteins were determined from information in Uniprot mammalia annotations.</s>
-          <s>Glycosylphosphatidylinositol (GPI) anchor domains were predicted using big-PI predictor <ref target="#b30" type="bibr">[32]</ref> .</s>
+          <s>Glycosylphosphatidylinositol (GPI) anchor domains were predicted using big-PI predictor <ref target="#b31" type="bibr">[32]</ref> .</s>
         </p>
       </div>
       <div>
@@ -293,8 +293,8 @@
           <s>Upon dissection the epithelium was removed as entire sheets or pieces from the underlying LP and required further bead beating to homogenise the intact cells.</s>
           <s>An example of the epithelium removed from one isolated papillae is shown by histological section and trichrome staining in <ref target="#fig_0" type="figure">Fig.1</ref> .</s>
           <s>As shown only a few epithelium cells remained attached to the LP indicating the separation of the layers occurred in the basement membrane.</s>
-          <s>The specificity of the enzyme <ref target="#b31" type="bibr">[33,</ref>
-            <ref target="#b32" type="bibr">34]</ref> allowed us to isolate the epithelium layer from the LP without undue force to reduce tearing.</s>
+          <s>The specificity of the enzyme <ref target="#b32" type="bibr">[33,</ref>
+            <ref target="#b33" type="bibr">34]</ref> allowed us to isolate the epithelium layer from the LP without undue force to reduce tearing.</s>
           <s>Technical variation between samples due to the dissection procedure was accounted for by biological and technical replication described in the methods.</s>
         </p>
         <p>
@@ -314,10 +314,8 @@
       <div>
         <head>Subcellular location of epithelium proteins</head>
         <p>
-          <s>The predicted subcellular location of epithelium proteins in the combined cytosol and membrane fraction is shown in Isolated lamina propria tissue stained an aquablue -light blue colour after being separated from the epithelium.</s>
-          <s>Scale in μm is drawn on each plate had a subcellular location in the cytosol (n = 221) or extracellular (n = 85) compartment.</s>
-          <s>Around a quarter were predicted as plasma membrane (n = 49) or associated with membranes of organelles such as mitochondria (n = 127) endoplasmic reticulum (ER; n = 41) or nucleus (n = 47).</s>
-          <s>Analysis showed that 215 were predicted to be membrane proteins <ref target="#fig_1" type="figure">(Fig. 2b)</ref> .</s>
+          <s>The predicted subcellular location of epithelium proteins in the combined cytosol and membrane fraction is shown in <ref type="figure">Fig. 2a</ref> .</s>
+          <s>More than half of the proteins identified Analysis showed that 215 were predicted to be membrane proteins <ref type="figure">(Fig. 2b)</ref> .</s>
           <s>These include 91 proteins with a transmembrane domain (TMHMM), 67 with a β strand associated with β barrel proteins and 13 with a GPI anchor and N-terminal signalP.</s>
           <s>In addition, 27 had a TMD and SignalP associated with the secretion of proteins in association with a cell membrane.</s>
           <s>β strand and a transit peptide sequence related to location in the mitochondria were found in 17 proteins.</s>
@@ -326,7 +324,7 @@
       <div>
         <head>Gene Ontology (GO) terms for biological functions of epithelial proteins</head>
         <p>
-          <s>The predominant functions of the proteins found in the cytosol fraction <ref target="#fig_1" type="figure">(Fig. 2c)</ref> were intermediate filaments (IF) and other cytoskeletal proteins (15%).</s>
+          <s>The predominant functions of the proteins found in the cytosol fraction <ref type="figure">(Fig. 2c)</ref> were intermediate filaments (IF) and other cytoskeletal proteins (15%).</s>
           <s>Seven percent were involved in metabolite transport and cell attachment, 12% lipid metabolism or 13% protein metabolism whereas only 1% was involved in carbohydrate metabolism.</s>
           <s>Many proteins involved in producing cellular energy were identified (7%).</s>
           <s>Other groups of proteins found were those that play a role in the regulation of calcium (Ca 2+ ) homeostasis or binding (4%), detoxification, oxidation and chaperones (18%).</s>
@@ -339,7 +337,15 @@
           <s>Throughout the vertebrate body, epithelium may be classified according to its morphology and spatial expression pattern of keratins.</s>
           <s>The location of keratin expression changes from the basal layers to the corneum during differentiation and has been modelled in stratified epithelium, skin.</s>
           <s>We found evidence that the rumen is a stratified epithelium with keratin expression found in skin.</s>
-          <s>Pairs such as KRT5 and KRT14 usually found in <ref target="#tab_0" type="table">(Table 1)</ref> .</s>
+          <s>Pairs such as KRT5 and KRT14 usually found in <ref type="figure">Fig. 2</ref> The following graphs represent the proteins identified using the Ensembl Ovine aries database from rumen epithelial tissue of 6 sheep.</s>
+          <s>Panel a.</s>
+          <s>A pie diagram of the distribution of subcellular compartment assigned to proteins identified.</s>
+          <s>Panel b.</s>
+          <s>A pie chart to show the proportions of predicted membrane proteins.</s>
+          <s>Panel c.</s>
+          <s>The biological function of proteins identified in the rumen epithelial cytosol and membrane fraction the s.</s>
+          <s>basale at the start of differentiation were identified.</s>
+          <s>Keratins associated with basal or suprabasal layers including 17 type II and 12 type I soft epithelial keratins were identified <ref target="#tab_0" type="table">(Table 1)</ref> .</s>
           <s>Keratins associated with the late cornified envelope (LCE) on the surface or in the s.</s>
           <s>granulosum and s. corneum included 4 type II and 7 type I hard epithelial keratins usually found in hair, hoof or horn.</s>
           <s>Four keratin associated proteins (KAP) and 1 small proline-rich protein were also identified.</s>
@@ -403,8 +409,8 @@
       <div>
         <head>Mitochondrial associated membranes (MAM)</head>
         <p>
-          <s>Several of the proteins identified play a role in interactions between organelles such as the ER and MAM proteins or chaperones <ref target="#b33" type="bibr">[35,</ref>
-            <ref target="#b34" type="bibr">36]</ref> .</s>
+          <s>Several of the proteins identified play a role in interactions between organelles such as the ER and MAM proteins or chaperones <ref target="#b34" type="bibr">[35,</ref>
+            <ref target="#b35" type="bibr">36]</ref> .</s>
           <s>These include voltage-dependent anion-selective channel protein (VDAC1, VDAC2 and VDAC3; Additional file 1) and chaperones 78 kDa glucose regulated proteins (HSPA9 and HSPA5), calnexin (CANX) and ER resident protein 44 (Erp44) also known as protein disulfide-isomerase (PDIA).</s>
         </p>
       </div>
@@ -454,29 +460,27 @@
             <ref target="#b21" type="bibr">[22]</ref> .</s>
           <s>In these studies, proteins were profiled while the epithelium and LP was attached.</s>
           <s>Although, <ref target="#b21" type="bibr">[22]</ref> identified higher numbers of proteins (n = 813) than we did, the diet of the animals, which has a marked effect on rumen epithelium, was not defined and the representation of keratin proteins was surprisingly low (6%).</s>
-          <s>Previously the separation of the epithelium from the underlying LP has only been attempted by laser capture microdissection for gene expression assays <ref target="#b35" type="bibr">[37]</ref> .</s>
+          <s>Previously the separation of the epithelium from the underlying LP has only been attempted by laser capture microdissection for gene expression assays <ref target="#b36" type="bibr">[37]</ref> .</s>
           <s>Our successful use of dispase II for enzymatic separation of tissue layers indicates the basement membrane between the S. basale to the LP contains fibronectin and collagen IV, not dissimilar to the skin epidermis.</s>
           <s>Here we present the highlights of our findings using the procedure to isolate the epithelial proteins.</s>
         </p>
         <p>
           <s>Our results represent the epithelium proteins exposed to a fibrous diet containing 90% DM, 16.3% CP, 50.6% NDF and 9.9 MJ ME /kg DM.</s>
-          <s>In general, the ratio of acetate and butyrate to propionate is greater on a roughage-based diet <ref target="#b36" type="bibr">[38]</ref> than a concentrate diet.</s>
+          <s>In general, the ratio of acetate and butyrate to propionate is greater on a roughage-based diet <ref target="#b37" type="bibr">[38]</ref> than a concentrate diet.</s>
           <s>Unlike other reports of goats fed low, medium and high energy diets <ref target="#b20" type="bibr">[21]</ref> or dairy sheep fed a concentrate supplemented diet <ref target="#b21" type="bibr">[22]</ref> , the fibrous diet we fed was accompanied by the presence of hard keratins in rumen epithelium.</s>
           <s>These have previously been found in hair, hoof or horn.</s>
           <s>Since intermediate filaments perform the function of responding to external forces, this is not surprising.</s>
           <s>Our result validates previous reports on gene expression in full thickness rumen wall tissue of sheep fed different quality fibrous diets <ref target="#b0" type="bibr">[1]</ref> .</s>
           <s>They reported the gene expression of KFAP and the cornified envelope genes such as small proline-rich proteins in rumen tissue.</s>
-          <s>It is possible that the extraction procedure we used did not solubilise some of these proteins as it has been found that different Accession number for Uniprot mammalia and Ensembl Ovine aries database, gene name, protein name, probability score (−10logP), number of peptides matched (Pep.) and sequence coverage (Cov.</s>
-          <s>%) are shown.</s>
-          <s>Details of the protein identifications are found in Additional file 1: <ref target="#tab_0" type="table">Table S1</ref> concentrations of urea are required to solubilise KFAP <ref target="#b37" type="bibr">[39]</ref> .</s>
+          <s>It is possible that the extraction procedure we used did not solubilise some of these proteins as it has been found that different <ref target="#tab_0" type="table">Table S1</ref> concentrations of urea are required to solubilise KFAP <ref target="#b38" type="bibr">[39]</ref> .</s>
           <s>Our evidence reveals that the surface layer of the epithelium appears to contain hardened cornified epithelium that would be expected to form a barrier to nutrients and ions.</s>
           <s>The tight junctions formed between the cells that are thought to affect the paracellular permeation of small molecules to basal layers of the epithelium.</s>
           <s>Proteins contributing to cell-cell attachment such as desmosome and hemi desmosome plaques were identified.</s>
         </p>
         <p>
           <s>Subunits of active transporter Na + /K + -ATPase's indirectly involved in nutrient transport were detected which is a membrane protein with up to 10 TMHMM.</s>
-          <s>It is surprising that some of the previously reported membrane bound transporter of SCFA, lactate and pyruvate, such as SLC16 <ref target="#b38" type="bibr">[40]</ref> , were not detected using our method despite profiling a membrane fraction.</s>
-          <s>Additionally, membrane bound transporters of proteins and nitrogenous compounds such as aquaporin's <ref target="#b11" type="bibr">[12]</ref> and peptides SLC15A1 <ref target="#b12" type="bibr">[13]</ref> , or Na + -glucose cotransporters (SLC2A1; SGLT-1) <ref target="#b39" type="bibr">[41]</ref> were not identified.</s>
+          <s>It is surprising that some of the previously reported membrane bound transporter of SCFA, lactate and pyruvate, such as SLC16 <ref target="#b39" type="bibr">[40]</ref> , were not detected using our method despite profiling a membrane fraction.</s>
+          <s>Additionally, membrane bound transporters of proteins and nitrogenous compounds such as aquaporin's <ref target="#b11" type="bibr">[12]</ref> and peptides SLC15A1 <ref target="#b12" type="bibr">[13]</ref> , or Na + -glucose cotransporters (SLC2A1; SGLT-1) <ref target="#b40" type="bibr">[41]</ref> were not identified.</s>
           <s>It is likely other proteins motifs were not detected because of their low abundance, as only 8% of the proteins identified had a subcellular assignment to the plasma membrane or were associated with organelle membranes.</s>
           <s>Presumably using more sensitive technologies with a data dependent acquisition approach and the use of ion spectral libraries such as the SWATH-MS technique will improve the coverage of these proteins.</s>
         </p>
@@ -491,12 +495,12 @@
         </p>
         <p>
           <s>Those proteins that play a key role in epithelial biology in other tissue such as skin or the upper digestive tract were identified.</s>
-          <s>EGFR is one such cytokine receptor that has been reported in transcript studies in the rumen wall in dairy cows <ref target="#b40" type="bibr">[42]</ref> .</s>
-          <s>The stimulatory effect of EGF via its receptor on cell growth has been shown in isolated rumen epithelium cell cultures <ref target="#b41" type="bibr">[43]</ref> .</s>
+          <s>EGFR is one such cytokine receptor that has been reported in transcript studies in the rumen wall in dairy cows <ref target="#b41" type="bibr">[42]</ref> .</s>
+          <s>The stimulatory effect of EGF via its receptor on cell growth has been shown in isolated rumen epithelium cell cultures <ref target="#b42" type="bibr">[43]</ref> .</s>
           <s>Identification of EGFR and several proteins with EGF repeats indicates that these cytokines are likely involved in the regulation of growth and differentiation of the rumen epithelium, probably in the basal cells.</s>
           <s>Our identification of TGFβ induced protein (TGFβ1) is novel in rumen epithelium.</s>
-          <s>This protein has been found to be secreted, induced by TGFβ and associated with normal skin and adhesion of dermal fibroblasts <ref target="#b42" type="bibr">[44]</ref> or keratinocytes <ref target="#b43" type="bibr">[45]</ref> .</s>
-          <s>In a study of calf rumen epithelium development during weaning, TGFβ1 was found to be an important transcriptional regulator of gene expression networks on certain diets <ref target="#b44" type="bibr">[46]</ref> .</s>
+          <s>This protein has been found to be secreted, induced by TGFβ and associated with normal skin and adhesion of dermal fibroblasts <ref target="#b43" type="bibr">[44]</ref> or keratinocytes <ref target="#b44" type="bibr">[45]</ref> .</s>
+          <s>In a study of calf rumen epithelium development during weaning, TGFβ1 was found to be an important transcriptional regulator of gene expression networks on certain diets <ref target="#b45" type="bibr">[46]</ref> .</s>
           <s>Little is known about the exact function of this cytokine in adult tissue, which presents an opportunity for a more thorough exploration of its function in the rumen epithelium.</s>
           <s>Other cell specific factors that have diverse regulatory functions in cells, were enzymes associated with prostaglandin and arachidonic acid metabolism.</s>
         </p>
@@ -516,18 +520,15 @@
           <s>In addition to structural, nutrient transport and metabolism proteins, those that regulate cell growth, differentiation and signalling are reported.</s>
         </p>
       </div>
-      <div>
-        <head>Additional file</head>
-      </div>
       <figure xml:id="fig_0">
         <head>Fig. 1</head>
         <label>1</label>
         <figDesc>Fig. 1 Panel a. A representative tissue section of the tip of a rumen papillae magnified with a 10× objective using a light microscope and stained with trichrome. The lamina propria (LP) is stained aquablue, s. basale (SB) and s. spinosum (SS) is stained purple and outer s. granulosum (SG) and s. corneum (SC) stained maroon. Panel b. Epithelium tissue isolated enzymatically stained a purple/maroon colour and layers labelled as above. Panel c. Isolated lamina propria tissue stained an aquablue -light blue colour after being separated from the epithelium. Scale in μm is drawn on each plate</figDesc>
       </figure>
       <figure xml:id="fig_1">
-        <head>Fig. 2</head>
-        <label>2</label>
-        <figDesc>Fig. 2 The following graphs represent the proteins identified using the Ensembl Ovine aries database from rumen epithelial tissue of 6 sheep. Panel a. A pie diagram of the distribution of subcellular compartment assigned to proteins identified. Panel b. A pie chart to show the proportions of predicted membrane proteins. Panel c. The biological function of proteins identified in the rumen epithelial cytosol and membrane fraction</figDesc>
+        <head/>
+        <label/>
+        <figDesc>Abbreviations ALC: Average local confidence; ATP: Adenosine triphosphate; Ca 2+ : Calcium; CBB: Coomassie brilliant blue; CH 3 CN: Acetonitrile; Cl − : Chloride; CP: Crude protein; Da: Dalton; DM: Dry matter; DTT: Dithiothreitol; EGF: Epidermal growth factor; ER: Endoplasmic reticulum; FDR: False discovery rate; GPI: Glycosylphosphatidylinositol; H + : Hydrogen; HCO 3 − : Bicarbonate; IDA: Information dependent acquisition mode; IF: Intermediate filaments; K + : Potassium; KAP: Keratin associated proteins; LC MS / MS: Liquid chromatography tandem mass spectrometry; LCE: Late cornified envelope; LDS: Lithium dodecyl sulfate; LP: Lamina propria; m/z: Mass to charge ratio; MAM: Mitochondrial associated membranes; MJ ME /kg DM: Megajoules of metabolisable energy per kg of dry matter; MWCO: Molecular weight cut off; Na + : Sodium; NADH: Reduced nicotinamide adenine dinucleotide; NDF: Neutral</figDesc>
       </figure>
       <figure type="table" validated="true" xml:id="tab_0">
         <head>Table 1</head>
@@ -843,8 +844,7 @@ RNA
 P53791 
 ENSOARG00000011955 
 SLC5A1 
-Na 
-+ glucose cotransporter 1 
+Na + glucose cotransporter 1 
 Plasma membrane 
 RNA 
 
@@ -857,25 +857,21 @@ ENSOARP00000017034
 SLC9A2 
 SLC9A3 
 
-NHE, Na 
-+ /H 
-+ exchanger 
+NHE, Na + /H + exchanger 
 Plasma membrane 
 RNA 
 
 W5PAD4 
 ENSOARP00000007393 
 SLC26A3 
-Cl 
-− /bicarbonate exchanger 
+Cl − /bicarbonate exchanger 
 Plasma membrane 
 Protein 
 
 W5PZ07 
 ENSOARP00000015693 
 CLCA2 
-Cl 
-− channel accessory 2 
+Cl − channel accessory 2 
 Plasma membrane 
 Protein 
 
@@ -888,9 +884,7 @@ ENSOARP00000010054
 AT1A1 
 AT1B1 
 
-Na 
-+ /K 
-+ ATPase transporting subunits 
+Na + /K + ATPase transporting subunits 
 Plasma membrane 
 Protein 
 
@@ -1360,12 +1354,7 @@ Complex V-ATP Synthase (EC 3.6.3.10 and EC 3.6.3.14)
 W5P471 
 ENSOARP00000005223 
 ATP4A 
-ATPase H 
-
-+ 
-
-/K 
-+ transporting subunit 4A 
+ATPase H + /K + transporting subunit 4A 
 49.23 
 6 
 4 
@@ -1389,8 +1378,7 @@ Hydrogen ion transmembrane transporter activity
 W5NY50 
 ENSOARP00000003098 
 ATP5A1 
-ATP synthase H 
-+ transporting subunit 5A1 
+ATP synthase H + transporting subunit 5A1 
 181.52 
 29 
 14 
@@ -1398,8 +1386,7 @@ ATP synthase H
 W5PEP7 
 ENSOARP00000008911 
 ATP5B 
-ATP synthase H 
-+ transporting subunit 5B 
+ATP synthase H + transporting subunit 5B 
 236 
 46 
 25 
@@ -1407,8 +1394,7 @@ ATP synthase H
 W5PP37 
 ENSOARP00000012213 
 ATP5H 
-ATP synthase H 
-+ transporting subunit 5H 
+ATP synthase H + transporting subunit 5H 
 153.27 
 38 
 6 
@@ -1416,18 +1402,17 @@ ATP synthase H
 W5PF18 
 ENSOARP00000009033 
 ATP5I 
-ATP synthase H 
-+ transporting subunit 5I 
+ATP synthase H + transporting subunit 5I 
 42.72 
 39 
 2 
 
 </table>
       </figure>
-      <figure type="table" validated="true" xml:id="tab_4">
+      <figure type="table" validated="false" xml:id="tab_4">
         <head>Table 4</head>
         <label>4</label>
-        <figDesc>A summary of proteins identified that have a biological functions to regulate growth, differentiation and cell signalling as a cytokine or steroid</figDesc>
+        <figDesc>A summary of proteins identified that have a biological functions to regulate growth, differentiation and cell signalling as a cytokine or steroidAccession number for Uniprot mammalia and Ensembl Ovine aries database, gene name, protein name, probability score (−10logP), number of peptides matched (Pep.) and sequence coverage (Cov. %) are shown. Details of the protein identifications are found in Additional file 1:</figDesc>
         <table>Uniprot No. 
 Ensembl No. 
 Gene name 
@@ -1508,12 +1493,6 @@ Progesterone receptor membrane component 2
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_5">
-        <head/>
-        <label/>
-        <figDesc>Additional file 1: Categories and characterisation of all proteins identifiied in the rumen epithelium proteome. (XLSX 186 kb) Abbreviations ALC: Average local confidence; ATP: Adenosine triphosphate; Ca 2+ : Calcium; CBB: Coomassie brilliant blue; CH 3 CN: Acetonitrile; Cl − : Chloride; CP: Crude protein; Da: Dalton; DM: Dry matter; DTT: Dithiothreitol; EGF: Epidermal growth factor; ER: Endoplasmic reticulum; FDR: False discovery rate; GPI: Glycosylphosphatidylinositol; H + : Hydrogen; HCO 3 − : Bicarbonate; IDA: Information dependent acquisition mode; IF: Intermediate filaments; K + : Potassium; KAP: Keratin associated proteins; LC MS / MS: Liquid chromatography tandem mass spectrometry; LCE: Late cornified envelope; LDS: Lithium dodecyl sulfate; LP: Lamina propria; m/z: Mass to charge ratio; MAM: Mitochondrial associated membranes; MJ ME /kg DM: Megajoules of metabolisable energy per kg of dry matter; MWCO: Molecular weight cut off; Na + : Sodium; NADH: Reduced nicotinamide adenine dinucleotide; NDF: Neutral detergent fibre; PBS: Phosphate buffered saline; RFI: Residual feed intake; s.: Stratum; SCFA: Short chain fatty acids; SDS: Sodium dodecyl sulfate; SignalP: Signal peptide; SLC family: Solute carrier protein family; TGFα: Transforming growth factor alpha; TMHMM: Transmembrane proteins helices based on hidden Markov model; Tris: Tris (hydroxymethyl) aminomethane; β: Beta</figDesc>
-        <table/>
-      </figure>
     </body>
     <back>
       <div type="acknowledgement">
@@ -1522,6 +1501,9 @@ Progesterone receptor membrane component 2
           <p>
             <s>We thank Margaret Cameron for assistance with collection and histology of tissue.</s>
             <s>Thanks also to Jody McNally, Brad Hine and Peter Hunt for assisting us with access to equipment at CSIRO Agriculture FD McMaster Pastoral Research Laboratory Chiswick, Armidale NSW Australia.</s>
+            <s>
+              <ref target="#b1" type="bibr">2</ref> School of Rural Medicine, University of New England, Armidale, NSW 2351, Australia.</s>
+            <s>3 NSW Department of Primary Industries, Orange Agricultural Institute, Orange, NSW 2800, Australia.</s>
           </p>
         </div>
       </div>
@@ -1539,16 +1521,6 @@ Progesterone receptor membrane component 2
           <p>
             <s>The datasets used and/or analysed during the current study are available from the corresponding author on reasonable request.</s>
             <s>All data generated or analysed during this study are included in this published article and its additional file.</s>
-          </p>
-          <p>
-            <s>Authors' contributions VO and JB designed the experiment, JB, AD, KA were involved in the design and development of the tissue and protein extraction procedure.</s>
-            <s>JB, AD, KA prepared the samples for analysis by MS / MS.</s>
-            <s>JC prepared the samples for and acquired the MS/MS data.</s>
-            <s>JB, AD, DE and DW performed the analysis of the data.</s>
-            <s>JB, VO and DW wrote and revised the manuscript.</s>
-            <s>All authors have read and approved the final manuscript.</s>
-          </p>
-          <p>
             <s>Authors' information Not applicable.</s>
           </p>
         </div>
@@ -1565,12 +1537,6 @@ Progesterone receptor membrane component 2
           <head>Competing interests</head>
           <p>
             <s>The authors declare that they have no competing interests.</s>
-          </p>
-        </div>
-        <div>
-          <head>Author details</head>
-          <p>
-            <s>1 NSW Department of Primary Industries, Extensive Livestock Industry Centre, University of New England, Trevenna Rd, Armidale, NSW 2351, Australia.</s>
           </p>
         </div>
       </div>
@@ -2148,7 +2114,7 @@ Progesterone receptor membrane component 2
           </biblStruct>
           <biblStruct xml:id="b14">
             <analytic>
-              <title level="a" type="main">Altered Na + /K hay/concentrate diet</title>
+              <title level="a" type="main">Altered Na + /K + -ATPase expression plays a role in rumen epithelium adaptation in sheep fed hay ad libitum or a mixed hay/concentrate diet</title>
               <author>
                 <persName>
                   <forename type="first">J</forename>
@@ -2505,7 +2471,7 @@ Progesterone receptor membrane component 2
                   <surname>Robinson</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1071/AN17141</idno>
+              <idno type="DOI">10.1071/AN17141</idno>
             </analytic>
             <monogr>
               <title level="j">Anim Prod Sci</title>
@@ -2648,6 +2614,15 @@ Progesterone receptor membrane component 2
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b26">
+            <monogr>
+              <ptr target="http://www.matrixscience.com/Accessed"/>
+              <title level="m">Mascot daemon software</title>
+              <imprint>
+                <date type="published" when="2016-07-20"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
             <analytic>
               <title level="a" type="main">PEAKS DB: De novo sequencing assisted database search for sensitive and accurate peptide identification</title>
               <author>
@@ -2696,7 +2671,7 @@ Progesterone receptor membrane component 2
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b27">
+          <biblStruct xml:id="b28">
             <analytic>
               <title level="a" type="main">PSORT: protein localization predictor</title>
               <author>
@@ -2748,7 +2723,7 @@ Progesterone receptor membrane component 2
             </monogr>
             <note>Web Server issue</note>
           </biblStruct>
-          <biblStruct xml:id="b28">
+          <biblStruct xml:id="b29">
             <analytic>
               <title level="a" type="main">Predicting transmembrane protein topology with a hidden Markov model: application to complete genomes</title>
               <author>
@@ -2786,7 +2761,7 @@ Progesterone receptor membrane component 2
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b29">
+          <biblStruct xml:id="b30">
             <monogr>
               <title level="m" type="main">Predicting secretory proteins with SignalP</title>
               <author>
@@ -2805,7 +2780,7 @@ Progesterone receptor membrane component 2
             </monogr>
             <note>Protein function prediction</note>
           </biblStruct>
-          <biblStruct xml:id="b30">
+          <biblStruct xml:id="b31">
             <analytic>
               <title level="a" type="main">Prediction of potential GPI-modification sites in proprotein sequences</title>
               <author>
@@ -2836,7 +2811,7 @@ Progesterone receptor membrane component 2
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b31">
+          <biblStruct xml:id="b32">
             <analytic>
               <title level="a" type="main">Evaluation of dermal substitute in a novel co-transplantation model with autologous epidermal sheet</title>
               <author>
@@ -2885,7 +2860,7 @@ Progesterone receptor membrane component 2
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b32">
+          <biblStruct xml:id="b33">
             <analytic>
               <title level="a" type="main">A proteomic characterization of the plasma membrane of human epidermis by high-throughput mass spectrometry</title>
               <author>
@@ -2937,7 +2912,7 @@ Progesterone receptor membrane component 2
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b33">
+          <biblStruct xml:id="b34">
             <analytic>
               <title level="a" type="main">Calcium signaling around mitochondria associated membranes (MAMs)</title>
               <author>
@@ -2988,7 +2963,7 @@ Progesterone receptor membrane component 2
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b34">
+          <biblStruct xml:id="b35">
             <analytic>
               <title level="a" type="main">New functions of mitochondria associated membranes in cellular signalling</title>
               <author>
@@ -3020,7 +2995,7 @@ Progesterone receptor membrane component 2
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b35">
+          <biblStruct xml:id="b36">
             <analytic>
               <title level="a" type="main">Technical note: use of laser dissection for the localisation of tissue-specific global gene expression in rumen papillae</title>
               <author>
@@ -3066,7 +3041,7 @@ Progesterone receptor membrane component 2
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b36">
+          <biblStruct xml:id="b37">
             <analytic>
               <title level="a" type="main">The digestion of pasture plants by sheep. I. Ruminal production of volatile fatty acids by sheep offered diets of ryegrass and forage oats</title>
               <author>
@@ -3093,7 +3068,7 @@ Progesterone receptor membrane component 2
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b37">
+          <biblStruct xml:id="b38">
             <analytic>
               <title level="a" type="main">Characterisation of low abundance wool proteins through novel differential extraction techniques</title>
               <author>
@@ -3146,7 +3121,7 @@ Progesterone receptor membrane component 2
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b38">
+          <biblStruct xml:id="b39">
             <monogr>
               <title level="m" type="main">Transport of Na + and Cl − across forestomach epithelium: mechanism and interaction with short chain fatty acids</title>
               <author>
@@ -3171,7 +3146,7 @@ Progesterone receptor membrane component 2
             </monogr>
             <note>Physiological aspects of digestion and metabolism in ruminants</note>
           </biblStruct>
-          <biblStruct xml:id="b39">
+          <biblStruct xml:id="b40">
             <analytic>
               <title level="a" type="main">Transport of ketone bodies and lactate in the sheep ruminal epithelium by monocarboxylate transporter 1</title>
               <author>
@@ -3221,7 +3196,7 @@ Progesterone receptor membrane component 2
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b40">
+          <biblStruct xml:id="b41">
             <analytic>
               <title level="a" type="main">Transcriptional regulators transforming growth factor-β1 and estrogenrelated receptor-α identified as putative mediators of calf rumen epithelial tissue development and function during weaning</title>
               <author>
@@ -3287,7 +3262,7 @@ Progesterone receptor membrane component 2
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b41">
+          <biblStruct xml:id="b42">
             <analytic>
               <title level="a" type="main">Abundance of ruminal bacteria, epithelial gene expression, and systemic biomarkers of metabolism and inflammation are altered during the peripartal period in dairy cows</title>
               <author>
@@ -3337,7 +3312,7 @@ Progesterone receptor membrane component 2
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b42">
+          <biblStruct xml:id="b43">
             <analytic>
               <title level="a" type="main">The proliferative actions of insulin, insulin-like growth factor-1, epidermal growth factor, butyrate and propionate on ruminal epithelium cells in vitro</title>
               <author>
@@ -3357,7 +3332,7 @@ Progesterone receptor membrane component 2
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b43">
+          <biblStruct xml:id="b44">
             <analytic>
               <title level="a" type="main">Beta Ig-h3, a novel secretory protein inducible by transforming growth factorbeta, is present in normal skin and promotes the adhesion and spreading of dermal fibroblasts in vitro</title>
               <author>
@@ -3415,7 +3390,7 @@ Progesterone receptor membrane component 2
               </imprint>
             </monogr>
           </biblStruct>
-          <biblStruct xml:id="b44">
+          <biblStruct xml:id="b45">
             <analytic>
               <title level="a" type="main">Transforming growth factor-betainduced protein (TGFBI)/(βig-H3): a matrix protein with dual functions in ovarian cancer</title>
               <author>

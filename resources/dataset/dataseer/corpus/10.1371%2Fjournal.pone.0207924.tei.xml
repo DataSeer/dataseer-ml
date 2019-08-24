@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:35+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T22:03+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -108,9 +108,9 @@
       <abstract>
         <div>
           <head>Abstract</head>
-          <p>
-            <s>Background</s>
-          </p>
+        </div>
+        <div>
+          <head>Background</head>
         </div>
       </abstract>
     </profileDesc>
@@ -195,17 +195,6 @@
         <p>
           <s>In order to identify key search terms, an online search of news stories was conducted about the deadliest mass shootings in modern U.S. history <ref target="#b45" type="bibr">[46]</ref> from the most popular <ref target="#b46" type="bibr">[47]</ref> liberal and conservative media <ref target="#b47" type="bibr">[48]</ref> , extracting some of the common language used to define the first two groups below.</s>
           <s>The sets of search terms that follow are not intended to be all-inclusive, but to provide a basis to demonstrate the methodology, as well as provide initial insights over the nature of relationships between the different variables over time.</s>
-        </p>
-        <p>
-          <s>• VA: Google searches related to interest in violent attacks, comprised of any of the following key search terms: VA1 = {Shooting}, VA2 = {Shootings}, VA3 = {Gun Violence}, VA4 = {Massacre}, VA5 = {Terrorist Attack};</s>
-        </p>
-        <p>
-          <s>• GC: Google searches related to interest in gun control and regulation, comprised of any of the following key search terms: GC1 = {Gun Control}, GC2 = {Gun Laws}, GC3 = {Gun Rights}, GC4 = {Gun Safety}, GC5 = {Gun Regulations}; and</s>
-        </p>
-        <p>
-          <s>• GP: Google searches related to interest in gun purchase/ownership, comprised of any of the following key search terms: GP1 = {Gun Purchase}, GC2 = {Buy Gun}, GC3 = {Buy Weapon}, GC4 = {Concealed Weapon}, GC5 = {Concealed Carry}.</s>
-        </p>
-        <p>
           <s>Word order in Google Trends is irrelevant, so both Gun Purchase and Purchase Gun are included within Gun Purchase.</s>
           <s>However, prepositions and articles are relevant, so search terms were defined as the minimum possible intersection of words in a common search (for example, Buy Gun includes searches such as How to Buy a Gun and Where to Buy a Gun).</s>
           <s>Plural versus singular forms of a word are also relevant, so both Shooting and Shootings were included, since they may reflect not only the nature of the violent attacks (single location versus potential multiple locations), but also intertemporal concerns (single shooting versus a perceived shooting spree).</s>
@@ -214,11 +203,11 @@
         </p>
         <p>
           <s>All data is normalized in Google Trends with a common upper bound, and the combination variables (VA, GC, and GP) were normalized based on the key search term with the largest observed monthly searches within each set.</s>
-          <s>This, in turn, has the advantage of scaling model parameters more homogeneously across experiments, as reflected in the top right panel of <ref target="#fig_1" type="figure">Fig 1, which</ref> shows the distribution of each combination variable (on the log scale).</s>
+          <s>This, in turn, has the advantage of scaling model parameters more homogeneously across experiments, as reflected in the top right panel of <ref target="#fig_2" type="figure">Fig 1,</ref> which shows the distribution of each combination variable (on the log scale).</s>
           <s>Google Trends additionally eliminates searches by the same individuals (i.e., originating from the same IP addresses) over short periods of time, though this unit of time is not explicitly defined by Google, nor whether it is constant or common for all searches.</s>
         </p>
         <p>
-          <s>The largest values in the data coincided with key events across all variables, outlining the endogenous nature of the relationships.</s>
+          <s>The</s>
         </p>
       </div>
       <div>
@@ -256,7 +245,15 @@
           <s>These relationships are reflected linearly in the model through parameters β 31 and β 32 , respectively.</s>
         </p>
         <p>
-          <s>• Variables follow an SVAR <ref type="formula">(1)</ref> Model equations.</s>
+          <s>• Variables follow an SVAR(1) model: No relevant seasonal components are assumed in the data.</s>
+          <s>A Markovian structure is assumed, so that immediately previous values contain all necessary prior information about autoregressive trends.</s>
+          <s>This assumption can be easily relaxed-for example by introducing seasonal components in gun purchases.</s>
+          <s>Although a single autoregressive lag is an initial assumption in the model, Akaike Information Criterion (AIC = -10.32)</s>
+          <s>tests <ref target="#b51" type="bibr">[52]</ref> for best model fit validated this choice of a single lag.</s>
+          <s>The series are all stationary according to the Augmented Dickie Fuller test (ADF: p�0.01).</s>
+        </p>
+        <p>
+          <s>Model equations.</s>
           <s>The SVAR system of equations of interest has the following N = 3-dimensional autoregressive form:</s>
         </p>
         <formula xml:id="formula_0">A 0 x t ¼ a þ mt þ A 1 x tÀ 1 þ e t</formula>
@@ -274,10 +271,14 @@
         </p>
         <formula xml:id="formula_2">VA t ¼ a 1 þ m 1 t þ ε VA t GC t ¼ a 2 þ m 2 t þ b 21 VA t þ ε GC t GP t ¼ a 3 þ m 3 t þ b 31 VA t þ b 32 GC t þ ε GP t</formula>
         <p>
-          <s>The bottom right quadrant in <ref target="#fig_1" type="figure">Fig 1 represents</ref> the SVAR relationships between the aforementioned variables in graphical form, where t-1 represents the previous observation period, and t represents the current observation period.</s>
+          <s>The bottom right quadrant in <ref target="#fig_2" type="figure">Fig 1 represents</ref> the SVAR relationships between the aforementioned variables in graphical form, where t-1 represents the previous observation period, and t represents the current observation period.</s>
           <s>The analysis was performed in R, using the vars package <ref target="#b53" type="bibr">[54]</ref> .</s>
           <s>
-            <ref target="#tab_2" type="table">Table 1</ref> also shows the variance decomposition for the SVAR relationship among the different factors for different lag times.</s>
+            <ref target="#tab_0" type="table">Table 1</ref> includes estimates for the b components of A 0 , which represent the contemporaneous causal linear relationships between the variables of interest (VA, GC, and GP).</s>
+          <s>Positive relationships between VA and GC (b 21 = 0.47) and between GC and GP (b 32 = 0.36) were observed.</s>
+          <s>The contemporaneous relationship between VA and GP was, surprisingly, significantly smaller (b 31 = 0.07).</s>
+          <s>
+            <ref target="#tab_0" type="table">Table 1</ref> also shows the variance decomposition for the SVAR relationship among the different factors for different lag times.</s>
           <s>After 12 months, for example, 20% of the long term, stationary variability in GC interest was explained through shocks in VA (17%) and GP (4%) interests.</s>
           <s>Similarly, after a year, 26% of the long term variability in GP interest was explained by shocks in VA (4%) and GC (22%) interests.</s>
           <s>These results indicate that, although there was a minor association between VA and GP, the majority of the impact on GP interest came from GC.</s>
@@ -291,8 +292,7 @@
       <div>
         <head>Causal relationships and variance decomposition</head>
         <p>
-          <s>Finally, <ref target="#tab_2" type="table">Table 1</ref> presents estimates for the autoregressive components, which indicate not too dissimilar autoregressive behaviors among the variables, which is further reflected in the impulse-response functions in <ref target="#fig_3" type="figure">Fig 2</ref> .</s>
-          <s>Online interest regarding violent attacks, gun control, and gun purchase: A causal analysis</s>
+          <s>Finally, <ref target="#tab_0" type="table">Table 1</ref> presents estimates for the autoregressive components, which indicate not too dissimilar autoregressive behaviors among the variables, which is further reflected in the impulse-response functions in Online interest regarding violent attacks, gun control, and gun purchase: A causal analysis</s>
         </p>
       </div>
       <div>
@@ -301,7 +301,7 @@
           <s>The impact of shocks in each variable on all variables is best explored through their impulseresponse functions <ref target="#b54" type="bibr">[55]</ref> .</s>
           <s>Impulse-response functions represent the effect over time of independent shocks of one of the variables on all the variables in the system, keeping all other variables unchanged.</s>
           <s>
-            <ref target="#fig_3" type="figure">Fig 2</ref> shows a lattice graph with the impact of increases of one standard deviation in each variable (impulse) on each of the variables (response) over the following 12 months.</s>
+            <ref target="#fig_4" type="figure">Fig 2 shows</ref> a lattice graph with the impact of increases of one standard deviation in each variable (impulse) on each of the variables (response) over the following 12 months.</s>
           <s>Each figure contains the 95% bootstrap confidence interval for the impulse response function.</s>
           <s>Shocks in VA translated to statistically significant increased interest in GC, which lasted up to ten months before disappearing, but a statistically non-significant impact on GP over time.</s>
           <s>However, shocks in GC significantly impacted GP over the following ten to twelve months.</s>
@@ -328,7 +328,7 @@
           <s>Cell values represent the β coefficients for contemporaneous pairwise (causal) relationships between the variables in bold from the corresponding columns (causes) and rows (effects).</s>
           <s>Online interest regarding violent attacks, gun control, and gun purchase: A causal analysis</s>
         </p>
-        <formula xml:id="formula_3">C VA1 VA2 VA3 VA4 VA5 C VA1 VA2 VA3 VA4 VA5 C GC1 GC2 GC3 GC4 GC5 GP1 GC1 0</formula>
+        <formula xml:id="formula_3">C VA1 VA2 VA3 VA4 VA5 C VA1 VA2 VA3 VA4 VA5 C GC1 GC2 GC3 GC4 GC5 GP1 GC1 0.</formula>
         <p>
           <s>Control, and Buy Gun as the search terms), indicated a relationship between VA2 and GC1 of b21 = 0.65.</s>
           <s>Similarly, the relationship between gun control and gun purchase (right block in <ref type="table">Table 2</ref> ) was consistently positive, with b32 = 0.42 in this example, and only 1 negative result out of 125 relationships explored).</s>
@@ -434,38 +434,31 @@
         </p>
       </div>
       <figure xml:id="fig_0">
-        <head/>
+        <head>•</head>
         <label/>
-        <figDesc>The largest values of VA occurred in December of 2012 (Sandy Hook school shooting), June of 2016 (Orlando night club shooting) and October of 2017 (Las Vegas concert shooting). The largest values for GC occurred the months of and following the Sandy Hook shooting, as well as April of 2013 (Boston Marathon attacks). The largest values for GP also occurred the months of and following the Sandy Hook shooting and in December of 2015 (San Bernardino shooting). Time series plots for each of the combination variables, transformed to logarithmic scale, are presented in the left panel of Fig 1.</figDesc>
+        <figDesc>VA: Google searches related to interest in violent attacks, comprised of any of the following key search terms: VA1 = {Shooting}, VA2 = {Shootings}, VA3 = {Gun Violence}, VA4 = {Massacre}, VA5 = {Terrorist Attack}; • GC: Google searches related to interest in gun control and regulation, comprised of any of the following key search terms: GC1 = {Gun Control}, GC2 = {Gun Laws}, GC3 = {Gun Rights}, GC4 = {Gun Safety}, GC5 = {Gun Regulations}; and • GP: Google searches related to interest in gun purchase/ownership, comprised of any of the following key search terms: GP1 = {Gun Purchase}, GC2 = {Buy Gun}, GC3 = {Buy Weapon}, GC4 = {Concealed Weapon}, GC5 = {Concealed Carry}.</figDesc>
       </figure>
       <figure xml:id="fig_1">
+        <head/>
+        <label/>
+        <figDesc>largest values in the data coincided with key events across all variables, outlining the endogenous nature of the relationships. The largest values of VA occurred in December of 2012 (Sandy Hook school shooting), June of 2016 (Orlando night club shooting) and October of 2017 (Las Vegas concert shooting). The largest values for GC occurred the months of and following the Sandy Hook shooting, as well as April of 2013 (Boston Marathon attacks). The largest values for GP also occurred the months of and following the Sandy Hook shooting and in December of 2015 (San Bernardino shooting). Time series plots for each of the combination variables, transformed to logarithmic scale, are presented in the left panel of Fig 1.</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
         <head>Fig 1 .</head>
         <label>1</label>
         <figDesc>Fig 1. Time series representation (left), corresponding density representation (top right), and directed acyclic graphical representation of the relationships between study variables (bottom right), where t-1 represents the previous observation period for the variable and t represents the current observation period. Arrows represent the directionality of the causal relationships. Vertical lines mark the dates of several violent attacks (from left to right: Sandy Hook Elementary School, Boston Marathon, San Bernardino regional center, Orlando night club, and Las Vegas concert), which coincide with the peaks of these series. https://doi.org/10.1371/journal.pone.0207924.g001</figDesc>
       </figure>
-      <figure xml:id="fig_2">
+      <figure xml:id="fig_3">
         <head/>
         <label/>
-        <figDesc>1 includes estimates for the b components of A 0 , which represent the contemporaneous causal linear relationships between the variables of interest (VA, GC, and GP). Positive rela- tionships between VA and GC (b 21 = 0.47) and between GC and GP (b 32 = 0.36) were observed. The contemporaneous relationship between VA and GP was, surprisingly, signifi- cantly smaller (b 31 = 0.07).</figDesc>
+        <figDesc>Fig 2.</figDesc>
       </figure>
-      <figure xml:id="fig_3">
+      <figure xml:id="fig_4">
         <head>Fig 2 .</head>
         <label>2</label>
         <figDesc>Fig 2. 12-month impulse-response functions (solid line), with corresponding 95% confidence intervals (dotted lines), representing the impact of one standard deviation moves in the impulse variable on the corresponding response variable. https://doi.org/10.1371/journal.pone.0207924.g002</figDesc>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_0">
-        <head/>
-        <label/>
-        <figDesc>model: No relevant seasonal components are assumed in the data. A Markovian structure is assumed, so that immediately previous values contain all necessary prior information about autoregressive trends. This assumption can be easily relaxed-for example by introducing seasonal components in gun purchases. Although a single autoregres- sive lag is an initial assumption in the model, Akaike Information Criterion (AIC = -10.32) tests [52] for best model fit validated this choice of a single lag. The series are all stationary according to the Augmented Dickie Fuller test (ADF: p�0.01).</figDesc>
-        <table/>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_1">
-        <head>Table</head>
-        <label/>
-        <figDesc/>
-        <table/>
-      </figure>
-      <figure type="table" validated="true" xml:id="tab_2">
+      <figure type="table" validated="true" xml:id="tab_0">
         <head>Table 1 .</head>
         <label>1</label>
         <figDesc>Parameter estimates (and corresponding standard errors) and forecast error variance decomposition for the SVAR model (decomposition over 1, 2, 3, 6 and 12 months of shocks in the impulse variable [rows] over the response variables [columns]).</figDesc>
@@ -483,11 +476,7 @@ Forecast Error Variance
 Decomposition 
 
 α 
-μ 
-� 10 
-
-3 
-
+μ � 10 3 
 VA 
 GC 
 GP 
@@ -758,15 +747,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Iii</surname>
                 </persName>
               </author>
-              <idno type="doi">10.2105/AJPH.2013.301409</idno>
-              <ptr target="https://doi.org/10.2105/AJPH.2013.301409PMID"/>
+              <idno type="DOI">10.2105/AJPH.2013.301409</idno>
+              <idno>PMID: 24028252</idno>
+              <ptr target="https://doi.org/10.2105/AJPH.2013.301409"/>
             </analytic>
             <monogr>
               <title level="j">American Journal of Public Health</title>
               <imprint>
                 <biblScope unit="volume">103</biblScope>
                 <biblScope unit="issue">11</biblScope>
-                <biblScope unit="page">24028252</biblScope>
+                <biblScope from="2098" to="2105" unit="page"/>
                 <date type="published" when="1981"/>
               </imprint>
             </monogr>
@@ -798,8 +788,9 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Galea</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/epirev/mxv012</idno>
-              <ptr target="https://doi.org/10.1093/epirev/mxv012PMID:26905895"/>
+              <idno type="DOI">10.1093/epirev/mxv012</idno>
+              <idno>PMID: 26905895</idno>
+              <ptr target="https://doi.org/10.1093/epirev/mxv012"/>
             </analytic>
             <monogr>
               <title level="j">Epidemiologic Reviews</title>
@@ -831,15 +822,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Jones</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1001/jama.2016.8752</idno>
-              <ptr target="https://doi.org/10.1001/jama.2016.8752PMID"/>
+              <idno type="DOI">10.1001/jama.2016.8752</idno>
+              <idno>PMID: 27332876</idno>
+              <ptr target="https://doi.org/10.1001/jama.2016.8752"/>
             </analytic>
             <monogr>
               <title level="j">Journal of the American Medical Association</title>
               <imprint>
                 <biblScope unit="volume">316</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">27332876</biblScope>
+                <biblScope from="291" to="299" unit="page"/>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -891,13 +883,14 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Hemenway</surname>
                 </persName>
               </author>
+              <idno>PMID: 8637158</idno>
             </analytic>
             <monogr>
               <title level="j">Journal of the American Medical Association</title>
               <imprint>
                 <biblScope unit="volume">275</biblScope>
                 <biblScope unit="issue">22</biblScope>
-                <biblScope unit="page">8637158</biblScope>
+                <biblScope from="1719" to="1722" unit="page"/>
                 <date type="published" when="1996"/>
               </imprint>
             </monogr>
@@ -917,15 +910,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Hemenway</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.amjmed.2015.10.025</idno>
-              <ptr target="https://doi.org/10.1016/j.amjmed.2015.10.025PMID"/>
+              <idno type="DOI">10.1016/j.amjmed.2015.10.025</idno>
+              <idno>PMID: 26551975</idno>
+              <ptr target="https://doi.org/10.1016/j.amjmed.2015.10.025"/>
             </analytic>
             <monogr>
               <title level="j">The American Journal of Medicine</title>
               <imprint>
                 <biblScope unit="volume">129</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">26551975</biblScope>
+                <biblScope from="266" to="273" unit="page"/>
                 <date type="published" when="2010"/>
               </imprint>
             </monogr>
@@ -947,15 +941,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Macleish</surname>
                 </persName>
               </author>
-              <idno type="doi">10.2105/AJPH.2014.302242</idno>
-              <ptr target="https://doi.org/10.2105/AJPH.2014.302242PMID"/>
+              <idno type="DOI">10.2105/AJPH.2014.302242</idno>
+              <idno>PMID: 25496006</idno>
+              <ptr target="https://doi.org/10.2105/AJPH.2014.302242"/>
             </analytic>
             <monogr>
               <title level="j">American Journal of Public Health</title>
               <imprint>
                 <biblScope unit="volume">105</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">25496006</biblScope>
+                <biblScope from="240" to="249" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -1038,13 +1033,14 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Lester</surname>
                 </persName>
               </author>
+              <idno>PMID: 9224169</idno>
             </analytic>
             <monogr>
               <title level="j">American Journal of Public Health</title>
               <imprint>
                 <biblScope unit="volume">87</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">9224169</biblScope>
+                <biblScope from="918" to="921" unit="page"/>
                 <date type="published" when="1997"/>
               </imprint>
             </monogr>
@@ -1128,15 +1124,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Madoff</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1056/NEJMp0900702</idno>
-              <ptr target="https://doi.org/10.1056/NEJMp0900702PMID"/>
+              <idno type="DOI">10.1056/NEJMp0900702</idno>
+              <idno>PMID: 19423867</idno>
+              <ptr target="https://doi.org/10.1056/NEJMp0900702"/>
             </analytic>
             <monogr>
               <title level="j">The New England Journal of Medicine</title>
               <imprint>
                 <biblScope unit="volume">360</biblScope>
                 <biblScope unit="issue">21</biblScope>
-                <biblScope unit="page">19423867</biblScope>
+                <biblScope from="2153" to="2155" unit="page"/>
                 <date type="published" when="2009"/>
               </imprint>
             </monogr>
@@ -1156,15 +1153,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Postmarket</surname>
                 </persName>
               </author>
-              <idno type="doi">10.2196/jmir.2614</idno>
-              <ptr target="https://doi.org/10.2196/jmir.2614PMID"/>
+              <idno type="DOI">10.2196/jmir.2614</idno>
+              <idno>PMID: 23778053</idno>
+              <ptr target="https://doi.org/10.2196/jmir.2614"/>
             </analytic>
             <monogr>
               <title level="j">Journal of Medical Internet Research</title>
               <imprint>
                 <biblScope unit="volume">15</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">23778053</biblScope>
+                <biblScope unit="page">124</biblScope>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -1218,15 +1216,15 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Mccormick</surname>
                 </persName>
               </author>
-              <idno type="doi">10.2196/jmir.3341</idno>
-              <ptr target="https://doi.org/10.2196/jmir.3341PMID"/>
+              <idno type="DOI">10.2196/jmir.3341</idno>
+              <idno>PMID: 25348028</idno>
+              <ptr target="https://doi.org/10.2196/jmir.3341"/>
             </analytic>
             <monogr>
               <title level="j">Journal of Medical Internet Research</title>
               <imprint>
                 <biblScope unit="volume">16</biblScope>
                 <biblScope unit="issue">10</biblScope>
-                <biblScope unit="page">25348028</biblScope>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -1303,7 +1301,7 @@ https://doi.org/10.1371/journal.pone.0207924.t001
           <biblStruct xml:id="b20">
             <monogr>
               <title level="m" type="main">Online interest regarding violent attacks, gun control, and gun purchase: A causal analysis PLOS ONE |</title>
-              <idno type="doi">10.1371/journal.pone.0207924</idno>
+              <idno type="DOI">10.1371/journal.pone.0207924</idno>
               <ptr target="https://doi.org/10.1371/journal.pone.0207924"/>
               <imprint>
                 <date type="published" when="2018-11-28"/>
@@ -1359,15 +1357,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Ludwig</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1001/jama.2013.38</idno>
-              <ptr target="https://doi.org/10.1001/jama.2013.38PMID"/>
+              <idno type="DOI">10.1001/jama.2013.38</idno>
+              <idno>PMID: 23295618</idno>
+              <ptr target="https://doi.org/10.1001/jama.2013.38"/>
             </analytic>
             <monogr>
               <title level="j">JAMA</title>
               <imprint>
                 <biblScope unit="volume">309</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">23295618</biblScope>
+                <biblScope from="551" to="552" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -1457,15 +1456,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Kobinson</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1001/jama.2017.16446</idno>
-              <ptr target="https://doi.org/10.1001/jama.2017.16446PMID"/>
+              <idno type="DOI">10.1001/jama.2017.16446</idno>
+              <idno>PMID: 29052721</idno>
+              <ptr target="https://doi.org/10.1001/jama.2017.16446"/>
             </analytic>
             <monogr>
               <title level="j">JAMA</title>
               <imprint>
                 <biblScope unit="volume">318</biblScope>
                 <biblScope unit="issue">18</biblScope>
-                <biblScope unit="page">29052721</biblScope>
+                <biblScope from="1763" to="1764" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -1535,18 +1535,22 @@ https://doi.org/10.1371/journal.pone.0207924.t001
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b27">
-            <monogr>
-              <title level="m" type="main">Digital media, political polarization and challenges to democracy. Information, Communication &amp; Society</title>
+            <analytic>
+              <title level="a" type="main">Digital media, political polarization and challenges to democracy. Information</title>
               <author>
                 <persName>
                   <forename type="first">M</forename>
                   <surname>Beaufort</surname>
                 </persName>
               </author>
+            </analytic>
+            <monogr>
+              <title level="j">Communication &amp; Society</title>
               <imprint>
-                <date type="published" when="2018"/>
                 <biblScope unit="volume">21</biblScope>
+                <biblScope unit="issue">7</biblScope>
                 <biblScope from="915" to="920" unit="page"/>
+                <date type="published" when="2018"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -1586,15 +1590,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Drazen</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1056/NEJMe1713203</idno>
-              <ptr target="https://doi.org/10.1056/NEJMe1713203PMID"/>
+              <idno type="DOI">10.1056/NEJMe1713203</idno>
+              <idno>PMID: 28976811</idno>
+              <ptr target="https://doi.org/10.1056/NEJMe1713203"/>
             </analytic>
             <monogr>
               <title level="j">New England Journal of Medicine</title>
               <imprint>
                 <biblScope unit="volume">377</biblScope>
                 <biblScope unit="issue">17</biblScope>
-                <biblScope unit="page">28976811</biblScope>
+                <biblScope from="1679" to="1680" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -1616,7 +1621,7 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Haider-Markel</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1177/2053168018794060</idno>
+              <idno type="DOI">10.1177/2053168018794060</idno>
               <ptr target="https://doi.org/10.1177/2053168018794060"/>
             </analytic>
             <monogr>
@@ -1657,7 +1662,7 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Jang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1080/15213269.2017.1421471</idno>
+              <idno type="DOI">10.1080/15213269.2017.1421471</idno>
               <ptr target="https://doi.org/10.1080/15213269.2017.1421471"/>
             </analytic>
             <monogr>
@@ -1689,15 +1694,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Quinn</surname>
                 </persName>
               </author>
-              <idno type="doi">10.2196/jmir.2270</idno>
-              <ptr target="https://doi.org/10.2196/jmir.2270PMID"/>
+              <idno type="DOI">10.2196/jmir.2270</idno>
+              <idno>PMID: 23238600</idno>
+              <ptr target="https://doi.org/10.2196/jmir.2270"/>
             </analytic>
             <monogr>
               <title level="j">Journal of Medical Internet Research</title>
               <imprint>
                 <biblScope unit="volume">14</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">23238600</biblScope>
+                <biblScope unit="page">165</biblScope>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -1764,15 +1770,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Watts</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1073/pnas.1005962107</idno>
-              <ptr target="https://doi.org/10.1073/pnas.1005962107PMID"/>
+              <idno type="DOI">10.1073/pnas.1005962107</idno>
+              <idno>PMID: 20876140</idno>
+              <ptr target="https://doi.org/10.1073/pnas.1005962107"/>
             </analytic>
             <monogr>
               <title level="j">Proceedings of the National Academy of Sciences of the United States of America</title>
               <imprint>
                 <biblScope unit="volume">107</biblScope>
                 <biblScope unit="issue">41</biblScope>
-                <biblScope unit="page">20876140</biblScope>
+                <biblScope from="17486" to="17490" unit="page"/>
                 <date type="published" when="2010"/>
               </imprint>
             </monogr>
@@ -1994,15 +2001,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Mohebbi</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0023610</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0023610PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0023610</idno>
+              <idno>PMID: 21886802</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0023610"/>
             </analytic>
             <monogr>
               <title level="j">PLoS One</title>
               <imprint>
                 <biblScope unit="volume">6</biblScope>
                 <biblScope unit="issue">8</biblScope>
-                <biblScope unit="page">21886802</biblScope>
+                <biblScope unit="page">23610</biblScope>
                 <date type="published" when="2011"/>
               </imprint>
             </monogr>
@@ -2016,15 +2024,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Santillana</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/cid/ciw660</idno>
-              <ptr target="https://doi.org/10.1093/cid/ciw660PMID"/>
+              <idno type="DOI">10.1093/cid/ciw660</idno>
+              <idno>PMID: 27678086</idno>
+              <ptr target="https://doi.org/10.1093/cid/ciw660"/>
             </analytic>
             <monogr>
               <title level="j">Clinical Infectious Diseases</title>
               <imprint>
                 <biblScope unit="volume">64</biblScope>
                 <biblScope unit="issue">1</biblScope>
-                <biblScope unit="page">27678086</biblScope>
+                <biblScope from="42" to="43" unit="page"/>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -2070,15 +2079,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Santillana</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pcbi.1005607</idno>
-              <ptr target="https://doi.org/10.1371/journal.pcbi.1005607PMID"/>
+              <idno type="DOI">10.1371/journal.pcbi.1005607</idno>
+              <idno>PMID: 28727821</idno>
+              <ptr target="https://doi.org/10.1371/journal.pcbi.1005607"/>
             </analytic>
             <monogr>
               <title level="j">PLoS Computational Biology</title>
               <imprint>
                 <biblScope unit="volume">13</biblScope>
                 <biblScope unit="issue">7</biblScope>
-                <biblScope unit="page">28727821</biblScope>
+                <biblScope unit="page">1005607</biblScope>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -2125,14 +2135,15 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Brilliant</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nature07634</idno>
-              <ptr target="https://doi.org/10.1038/nature07634PMID"/>
+              <idno type="DOI">10.1038/nature07634</idno>
+              <idno>PMID: 19020500</idno>
+              <ptr target="https://doi.org/10.1038/nature07634"/>
             </analytic>
             <monogr>
               <title level="j">Nature</title>
               <imprint>
                 <biblScope unit="volume">457</biblScope>
-                <biblScope unit="page">19020500</biblScope>
+                <biblScope from="1012" to="1014" unit="page"/>
                 <date type="published" when="2009"/>
               </imprint>
             </monogr>
@@ -2167,15 +2178,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Carrasco</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0152802</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0152802PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0152802</idno>
+              <idno>PMID: 27028399</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0152802"/>
             </analytic>
             <monogr>
               <title level="j">PLoS One</title>
               <imprint>
                 <biblScope unit="volume">11</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">27028399</biblScope>
+                <biblScope unit="page">152802</biblScope>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -2190,10 +2202,9 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Segarra</surname>
                 </persName>
               </author>
+              <idno>2018-01-03</idno>
               <ptr target="http://time.com/4967879/deadliest-mass-shootings-las-vegas/Accessed"/>
-              <imprint>
-                <biblScope from="2018" to="2019" unit="page"/>
-              </imprint>
+              <imprint/>
             </monogr>
             <note>WebCite Cache ID 6xNcam3xs</note>
           </biblStruct>
@@ -2218,10 +2229,9 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Rosenstiel</surname>
                 </persName>
               </author>
+              <idno>2018-01-03</idno>
               <ptr target="http://www.journalism.org/2011/05/09/top-25/Accessed"/>
-              <imprint>
-                <biblScope from="2018" to="2019" unit="page"/>
-              </imprint>
+              <imprint/>
             </monogr>
             <note>WebCite Cache ID 6xNcdvZpy</note>
           </biblStruct>
@@ -2330,7 +2340,7 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Yamane</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/soc4.12450</idno>
+              <idno type="DOI">10.1111/soc4.12450</idno>
               <ptr target="https://doi.org/10.1111/soc4.12450"/>
               <imprint>
                 <date type="published" when="2017"/>
@@ -2463,13 +2473,13 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Kruglanski</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0182408</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0182408PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0182408</idno>
+              <idno>PMID: 28800365</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0182408"/>
             </analytic>
             <monogr>
               <title level="j">PLoS One</title>
               <imprint>
-                <biblScope unit="page">28800365</biblScope>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -2491,15 +2501,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Shah</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1001/jama.2016.16215</idno>
-              <ptr target="https://doi.org/10.1001/jama.2016.16215PMID"/>
+              <idno type="DOI">10.1001/jama.2016.16215</idno>
+              <idno>PMID: 28030692</idno>
+              <ptr target="https://doi.org/10.1001/jama.2016.16215"/>
             </analytic>
             <monogr>
               <title level="j">JAMA</title>
               <imprint>
                 <biblScope unit="volume">317</biblScope>
                 <biblScope unit="issue">1</biblScope>
-                <biblScope unit="page">28030692</biblScope>
+                <biblScope from="84" to="85" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -2521,15 +2532,16 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Rivara</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1001/jama.2012.208207</idno>
-              <ptr target="https://doi.org/10.1001/jama.2012.208207PMID"/>
+              <idno type="DOI">10.1001/jama.2012.208207</idno>
+              <idno>PMID: 23262635</idno>
+              <ptr target="https://doi.org/10.1001/jama.2012.208207"/>
             </analytic>
             <monogr>
               <title level="j">JAMA</title>
               <imprint>
                 <biblScope unit="volume">309</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">23262635</biblScope>
+                <biblScope from="549" to="50" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -2598,12 +2610,12 @@ https://doi.org/10.1371/journal.pone.0207924.t001
                   <surname>Duggan</surname>
                 </persName>
               </author>
-              <ptr target="http://www.pewinternet.org/2015/06/26/americans-internet-access-2000-2015/Accessed"/>
+              <idno>2017-10-11. WebCite Cache ID 6xNd8UJx2</idno>
+              <ptr target="http://www.pewinternet.org/2015/06/26/americans-internet-access-2000-2015"/>
               <imprint>
-                <biblScope from="2017" to="2027" unit="page"/>
+                <date type="published" when="2000"/>
               </imprint>
             </monogr>
-            <note>WebCite Cache ID 6xNd8UJx2</note>
           </biblStruct>
         </listBibl>
       </div>

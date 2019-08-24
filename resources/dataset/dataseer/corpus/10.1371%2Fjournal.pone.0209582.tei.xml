@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T07:56+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:34+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -193,7 +193,7 @@
           <s>In vitro experiments have demonstrated that macrophages migrate in response to signals from TGF-β and TNF-α <ref target="#b21" type="bibr">[22,</ref>
             <ref target="#b22" type="bibr">23]</ref> .</s>
           <s>Thus, we used chemotactic functions, f TGF,M1 and f TNF,M1 , respectively, to incorporate migration into the present model.</s>
-          <s>S2 <ref type="table">Table lists</ref> the parameters for these functions.</s>
+          <s>S2 <ref type="table">Table lists the parameters for</ref> these functions.</s>
           <s>However, like a previous in silico study <ref target="#b18" type="bibr">[19]</ref> , we specified that these chemotactic functions would equal zero below a threshold platelet concentration (10 � 10 −12 cells/mL) to prevent non-physiological re-initiation of inflammation.</s>
           <s>While this concentration is not rooted in physiology, it is nonetheless useful computationally and has been established as a technique to prevent non-physiological re-initiation of inflammation in the model <ref target="#b18" type="bibr">[19]</ref> .</s>
           <s>Injury to the knee causes the production of chemoattractants, such as TNF-α and TGF-β, which lead to monocyte migration from the bloodstream to the synovium.</s>
@@ -219,7 +219,7 @@
       <div>
         <head n="2.3">Feedback modulation of concentrations</head>
         <p>
-          <s>We used feedback functions to describe the changes in production of a given substance by other substances based on numerous cellular-level in vitro experiments, which we cite in S2 <ref target="#tab_4" type="table">Table.</ref>
+          <s>We used feedback functions to describe the changes in production of a given substance by other substances based on numerous cellular-level in vitro experiments, which we cite in S2 <ref target="#tab_3" type="table">Table.</ref>
           </s>
           <s>In this procedure, we modeled negative feedback with the monotonically decreasing function</s>
         </p>
@@ -253,32 +253,31 @@
         <p>
           <s>where C x is the concentration of substance x, k x,M1 is the baseline production rate of substance x by M1 macrophages, k x,M2 is the production rate of substance x by M2 macrophages, k x,SF is the baseline production rate of substance x by SFs, C M1 is the concentration of M1 macrophages, C M2 is the concentration of M2 macrophages, C SF is the concentration of SFs, k d,x is the degradation rate for substance x, g j,x describes the feedback regulation of substance x by substance j in M1 macrophages, g n,x describes the feedback regulation of substance x by substance n in SFs, and ∏ j is the product operator.</s>
           <s>
-            <ref target="#tab_1" type="table">Table 2</ref> shows the specific equations for each substance using symbolic representation of the model parameters.</s>
-        </p>
-        <formula xml:id="formula_6">¼ k M;in f TGF;M1 þ f TNF;M1 À � À k M1M2 f M1M2 C M1 À k d;M C M1 M2 Macrophages 0 cells mL 0 cells mL dC M2 dt ¼ k M1M2 f M1M2 C M1 À k d;M C M2 SFs 5 � 10 5 cells mL dC SF dt</formula>
-        <p>
-          <s>Here, we illustrate how we formulated the kinetic equations for IL-1β, relating the general form that we present in Eq 6 to the specific equations in <ref target="#tab_1" type="table">Table 2</ref> .</s>
+            <ref type="table">Table 2</ref> shows the specific equations for each substance using symbolic representation of the model parameters.</s>
+          <s>Here, we illustrate how we formulated the kinetic equations for IL-1β, relating the general form that we present in Eq 6 to the specific equations in <ref type="table">Table 2</ref> .</s>
           <s>First, we found the coefficients that described baseline IL-1β production by M1, M2, and SFs using Eq 1 and data from published reports <ref target="#b28" type="bibr">[28,</ref>
-            <ref target="#b29" type="bibr">29]</ref> , which we cited in S1 <ref target="#tab_4" type="table">Table.</ref>
+            <ref target="#b29" type="bibr">29]</ref> , which we cited in S1 <ref target="#tab_3" type="table">Table.</ref>
           </s>
-          <s>This procedure led to numerical values for the coefficients k IL1,M1 , k IL1,M2 , and k IL1,SF , which were also listed in S1 <ref target="#tab_4" type="table">Table.</ref>
+          <s>This procedure led to numerical values for the coefficients k IL1,M1 , k IL1,M2 , and k IL1,SF , which were also listed in S1 <ref target="#tab_3" type="table">Table.</ref>
           </s>
           <s>Second, we used data from another published report <ref target="#b30" type="bibr">[30]</ref> (also cited in S1 <ref type="table">Table)</ref> to formulate the decay coefficient, k d,IL1 , using Eq 2. Third, we formulated the functions that describe feedback regulation of IL-1β production in M1 macrophages.</s>
           <s>In these cells, IL-1β is down regulated by IL-10 and TGF-β and up regulated by estrogen (E2) and IL-6 (see <ref target="#fig_0" type="figure">Fig 1)</ref> .</s>
           <s>We used Eq 3 and previously reported in vitro data from two studies to estimate the feedback parameters for IL-10 and TGF-β down regulation of IL-1β in M1 macrophages <ref target="#b31" type="bibr">[31,</ref>
-            <ref target="#b32" type="bibr">32]</ref> , leading to the expressions g IL10, <ref type="bibr">IL1</ref> and g TGF, <ref type="bibr">IL1</ref> .</s>
+            <ref target="#b32" type="bibr">32]</ref> , leading to the expressions g IL10,IL1 and g TGF,IL1 .</s>
           <s>We used Eq 4 and previously reported in vitro data from two other studies to estimate the feedback parameters for E2 and IL-6 up regulation of IL-1β <ref target="#b5" type="bibr">[6,</ref>
             <ref target="#b33" type="bibr">33]</ref> , leading to the expressions f E2,IL1 and f IL6,IL1 , which we incorporate into Eq 5 to obtain the feedback up regulation functions g E2,IL1 = 1 + f E2,IL1 and g IL6,IL1 = 1+ f IL6,IL1 .</s>
           <s>Fourth, we formulated the functions that describe feedback regulation of IL-1β production by SFs.</s>
-          <s>In the case of IL-1β feedback regulation in SFs, all of the regulators are positive, so we use Eqs 4 and 5 and data from published in vitro studies to obtain the feedback functions g TNF,IL1 = 1+ f TNF,IL1 , and <ref target="#b29" type="bibr">[29,</ref>
+          <s>In the case of IL-1β feedback regulation in SFs, all of the regulators are positive, so we use Eqs 4 and 5 and data from published in vitro studies to obtain the feedback functions g TNF,IL1 = 1+ f TNF,IL1 , and g IL1,IL1 = 1+ f IL1,IL1 <ref target="#b29" type="bibr">[29,</ref>
             <ref target="#b34" type="bibr">34]</ref> .</s>
           <s>These functions represented up regulation of SF IL-1β production by TNF-α and IL-1β, respectively.</s>
           <s>Finally, we combined terms to obtain the final equation for IL-1β concentration.</s>
-          <s>We obtained the first additive term, <ref target="#tab_1" type="table">Table 2</ref> and follows from Eqs 1-6.</s>
-          <s>We used this same procedure to find the rest of the equations in <ref target="#tab_1" type="table">Table 2</ref> and listed the resulting parameters and feedback functions in S1 and S2 Tables.</s>
+          <s>We obtained the first additive term, k IL1,M1 g IL10,IL1 g TGF, <ref type="bibr">IL1</ref> (1 + f E2,IL1 )(1 + f IL6,IL1 )C M1 , by multiplying the M1 production coefficient for IL-1β (k IL1,M1 ) by all four M1 feedback functions (∏ j g j,x ) and the concentration of M1 macrophages (see <ref type="table">S2 Table for</ref> a list of feedback functions and their parameters).</s>
+          <s>We obtained the second additive term by multiplying the M2 IL-1β production coefficient (k IL1,M2 ) by the concentration of M2 macrophages (C M2 ).</s>
+          <s>We obtained the third additive term by multiplying the SF production coefficient for IL-1β (k IL1,SF ) by the SF feedback functions (∏ n g n,x ) and the concentration of SFs, C SF , leading to the term k IL1,SF (1 + f TNF,IL1 )(1 + f IL1,IL1 )C SF .</s>
+          <s>And we obtained the final additive term by multiplying the negative of the decay coefficient for IL-1β (−k d,IL1 ) by the present concentration of IL-1β (C IL1 ), leading to the term −k d,IL1 C IL1 .</s>
+          <s>Summing all of these additive terms led to the expression for the change in concentration of IL-1β listed in <ref type="table">Table 2</ref> and follows from Eqs 1-6.</s>
+          <s>We used this same procedure to find the rest of the equations in <ref type="table">Table 2</ref> and listed the resulting parameters and feedback functions in S1 and S2 Tables.</s>
         </p>
-        <formula xml:id="formula_7">g IL1,IL1 = 1+ f IL1,IL1</formula>
-        <formula xml:id="formula_8">k IL1,M1 g IL10,IL1 g TGF,IL1 (1 + f E2,IL1 )(1 + f IL6,IL1 )C M1 ,</formula>
         <p>
           <s>To summarize our approach for formulating the equations that describe time evolution of concentration, we note that there are four key calculations required to formulate the parameters for each substance in the model: 1) calculation of the production coefficients, 2) calculation of the degradation coefficients, 3) calculation of feedback down-regulation functions, and 4) calculation of feedback up-regulation functions.</s>
           <s>To clarify this procedure and facilitate reproducibility, we demonstrate an example of each of these calculations in S1 Text, which also includes the citations for the studies we used to estimate the parameters.</s>
@@ -290,20 +289,29 @@
         <p>
           <s>The first step toward understanding the cascade of inflammation after an injury is understanding the initial conditions in the healthy joint before injury has occurred.</s>
           <s>We attempted to reflect the cellular environment of a healthy knee with our model by running a preliminary simulation in which we only allowed the SFs to produce cytokines in the absence of macrophages.</s>
-          <s>We then used the steady-state concentrations that resulted from this simulation as the</s>
-        </p>
-        <formula xml:id="formula_9">[24] dC IL1 dt ¼ k IL1;M1 g IL10;IL1 g TGF;IL1 1 þ f E2;IL1 À � 1 þ f IL6;IL1 À � C M1 þ k IL1;M2 C M2 þ k IL1;SF 1 þ f TNF;IL1 À � 1 þ f IL1;IL1 À � C SF À k d;IL1 C IL1 TNF-α 0:155 pg mL 0 pg mL [24] dC TNF dt ¼ k TNF;M1 g IL10;TNF g TGF;TNF ð1 þ f IL6;TNF Þg T;TNF g PR;TNF C M1 þ k TNF;M2 C M2 þ k TNF;SF 1 þ f IL1;TNF À � C SF À k d;TNF C TNF IL-6 � 0:023 pg mL 64 � 120 pg mL [24] dC IL6 dt ¼ k IL6;M1 g IL10;IL6 1 þ f TGF;IL6 À � g E;IL6 g PR;IL6 C M1 þ k IL6;M2 C M2 þ k IL6;SF 1 þ f IL1;IL6 À � 1 þ f TNF;IL6 À � C SF À k d;IL6 C IL6 IL-10 � 0:073 pg mL 1 � 6 pg mL [24] dC IL10 dt ¼ k IL10;M1 1 þ f TGF;IL10 À � 1 þ f T;IL10 À � 1 þ f IL6;IL10 À � g E2;IL10 C M1 þ k IL10;M2 C M2 þ k IL10;SF C SF À k d;IL10 C IL10 TGF-β ��� 5:684 pg mL 0 pg mL [25] dC TGF dt ¼ k TGF;P C P þ k TGF;M1 C M1 þ k TGF;M2 C M2 þ k TGF;SF 1 þ f TNF;TGF À � C SF À k d;</formula>
-        <formula xml:id="formula_10">C M1 þ k TIMP;M2 C M2 þ k TIMP;SF 1 þ f TNF;TIMPb À � 1 þ f IL1;TIMPb À � 1 þ f IL6;TIMP À � C SF À k d;TIMP C TIMP MMP-9 �� 0 pg mL 960 pg mL [27] dC MMP9 dt ¼ k MMP9;M1 1 þ f IL1;MMP9 À � 1 þ f TNF;MMP9 À � g IL6;MMP9 C M1 þ k MMP9;M2 C M2 À k d;MMP9 C MMP9 MMP-1 1413 pg mL 3729 pg mL [26] dC MMP1 dt ¼ k MMP1;M1 C M1 þ k MMP1;SF 1 þ f TNF;MMP1 À � 1 þ f IL1;MMP1 À � C SF À k d;MMP1 C MMP1 �</formula>
-        <p>
-          <s>In some cases, the margin of error for the measurements extended below a concentration of 0 pg/mL, suggesting that the experimental data may have been non-normally distributed, may have had extreme outliers, or may have been averaged over a small number of samples.</s>
-          <s>However, very few studies report concentrations of cytokines in healthy joints, and the ones cited here serve as an adequate starting point for comparisons.</s>
+          <s>We then used the steady-state concentrations that resulted from this simulation as the <ref type="table">Table 2</ref> .</s>
+          <s>Equations for cellular products.</s>
         </p>
       </div>
       <div>
-        <head>��</head>
+        <head>Model</head>
         <p>
-          <s>Our estimate of initial MMP-9 concentration is lower than the concentration reported in a healthy knee.</s>
-          <s>However, this will lead to a conservative estimate of its concentration once an inflammatory stimulus is included in the model.</s>
+          <s>Variable Initial Value (from Model Steady State)</s>
+        </p>
+      </div>
+      <div>
+        <head>Concentration in</head>
+      </div>
+      <div>
+        <head>Healthy Synovium</head>
+      </div>
+      <div>
+        <head>Ref. Equation</head>
+        <formula xml:id="formula_6">IL-1β � 0:037 pg mL 1 � 2 pg mL [24] dC IL1 dt ¼ k IL1;M1 g IL10;IL1 g TGF;IL1 1 þ f E2;IL1 À � 1 þ f IL6;IL1 À � C M1 þ k IL1;M2 C M2 þ k IL1;SF 1 þ f TNF;IL1 À � 1 þ f IL1;IL1 À � C SF À k d;IL1 C IL1 TNF-α 0:155 pg mL 0 pg mL [24] dC TNF dt ¼ k TNF;M1 g IL10;TNF g TGF;TNF ð1 þ f IL6;TNF Þg T;TNF g PR;TNF C M1 þ k TNF;M2 C M2 þ k TNF;SF 1 þ f IL1;TNF À � C SF À k d;TNF C TNF IL-6 � 0:023 pg mL 64 � 120 pg mL [24] dC IL6 dt ¼ k IL6;M1 g IL10;IL6 1 þ f TGF;IL6 À � g E;IL6 g PR;IL6 C M1 þ k IL6;M2 C M2 þ k IL6;SF 1 þ f IL1;IL6 À � 1 þ f TNF;IL6 À � C SF À k d;IL6 C IL6 IL-10 � 0:073 pg mL 1 � 6 pg mL [24] dC IL10 dt ¼ k IL10;M1 1 þ f TGF;IL10 À � 1 þ f T;IL10 À � 1 þ f IL6;IL10 À � g E2;IL10 C M1 þ k IL10;M2 C M2 þ k IL10;SF C SF À k d;IL10 C IL10 TGF-β ��� 5:684 pg mL 0 pg mL [25] dC TGF dt ¼ k TGF;P C P þ k TGF;M1 C M1 þ k TGF;M2 C M2 þ k TGF;SF 1 þ f TNF;TGF À � C SF À k d;</formula>
+        <formula xml:id="formula_7">C M1 þ k TIMP;M2 C M2 þ k TIMP;SF 1 þ f TNF;TIMPb À � 1 þ f IL1;TIMPb À � 1 þ f IL6;TIMP À � C SF À k d;TIMP C TIMP MMP-9 �� 0 pg mL 960 pg mL [27] dC MMP9 dt ¼ k MMP9;M1 1 þ f IL1;MMP9 À � 1 þ f TNF;MMP9 À � g IL6;MMP9 C M1 þ k MMP9;M2 C M2 À k d;MMP9 C MMP9 MMP-1 1413 pg mL 3729 pg mL [26] dC MMP1 dt ¼ k MMP1;M1 C M1 þ k MMP1;SF 1 þ f TNF;MMP1 À � 1 þ f IL1;MMP1 À � C SF À k d;MMP1 C MMP1 �</formula>
+        <p>
+          <s>In some cases, the margin of error for the measurements extended below a concentration of 0 pg/mL, suggesting that the experimental data may have been non-normally distributed, may have had extreme outliers, or may have been averaged over a small number of samples.</s>
+          <s>However, very few studies report concentrations of cytokines in healthy joints, and the ones cited here serve as an adequate starting point for comparisons.</s>
         </p>
         <p>
           <s>initial conditions for subsequent simulations where we included macrophages.</s>
@@ -319,8 +327,11 @@
           <s>We used Latin Hypercube Sampling, a statistical sensitivity analysis method commonly used in computer simulation applications, to account for uncertainty in the nominal parameters that we found using Eqs 1-5.</s>
           <s>With Latin Hypercube Sampling, we randomly varied each production and decay coefficient within a range of ±60% of its nominal value (S1 <ref type="table">Table)</ref> , generating 2000 unique parameter sets and 2000 corresponding solutions of the differential equations.</s>
           <s>We next determined the median and interquartile range for each respective cytokine at every time point to generate margins of error for our results.</s>
-          <s>Fig 2 schematically depicts this statistical sampling technique.</s>
+          <s>
+            <ref target="#fig_1" type="figure">Fig 2 schematically</ref> depicts this statistical sampling technique.</s>
           <s>We generated these margins of error in the absence of hormones to facilitate comparisons with independent in vivo data that did not account for hormonal effects <ref target="#b37" type="bibr">[37]</ref> .</s>
+        </p>
+        <p>
           <s>We then performed two analyses of hormonal effects on the post-injury inflammatory response using concentrations reported in Greenspan et al. <ref target="#b38" type="bibr">[38]</ref> .</s>
           <s>First, we used the nominal parameter set to examine the effects of isolated hormones at single concentrations using three scenarios: 1) estrogen alone (143 pM); 2) estrogen plus progesterone (143 pM and 990 pM, respectively); and 3) testosterone alone (20 nM).</s>
           <s>Second, after examining the effects of isolated hormone concentrations at single concentrations with the nominal parameter set, we performed simulations with combined estrogen and testosterone with ranges of possible concentrations, since males have non-negligible levels of circulating estrogen and females have detectable concentrations of testosterone in the blood <ref target="#b38" type="bibr">[38]</ref> .</s>
@@ -342,12 +353,21 @@
       <div>
         <head n="2.8">Statistical analysis</head>
         <p>
-          <s>We used Kruskal-Wallis to test for differences between "Female Peak E," "Female Low E," and "Male" at a t = 1 day and Mann-Whitney U testing with the Bonferroni correction to do pairwise hypothesis testing post hoc.</s>
+          <s>We used Kruskal-Wallis to test for differences between "Female Peak E," "Female Low E," and "Male" at a t = 1 day and Mann-Whitney U testing with the Bonferroni correction to do <ref type="table">Table)</ref> .</s>
+          <s>B. Parametric Variations.</s>
+          <s>We varied these parameters between 40% and 160% (±60%) of their nominal values, generating a 2000 element row vector associated with every parameter.</s>
+          <s>The values in these row vectors were evenly spaced and sorted in ascending order.</s>
+          <s>C. Parameter Matrix [P].</s>
+          <s>Next, we randomized the order of each individual row vector before stacking the vectors into a Γ by 2000 matrix, <ref type="bibr">[P]</ref> , where Γ represented the number of nominal parameters (and, therefore, the number of row vectors) in the model.</s>
+          <s>Because of the randomization and stacking, each individual column in [P] represented a randomly varied parameter set that we could use in the differential equations.</s>
+          <s>D. Latin Hypercube Sampling Process.</s>
+          <s>We selected column i from [P] to generate the ith parameter set and solved the differential equations.</s>
+          <s>After solving the equations with all pairwise hypothesis testing post hoc.</s>
           <s>We then repeated these tests at the start of each subsequent day up to t = 20 days using the MATLAB R2017b Statistics and Machine Learning Toolbox.</s>
           <s>S1 Scripts contains the .m</s>
           <s>file for this statistical analysis.</s>
           <s>
-            <ref target="#tab_1" type="table">Table 2</ref> ("Initial Value (from Model Steady State)" column) shows the initial conditions that resulted from running the simulation in the absence of an inflammatory stimulus (SFs only, no macrophages) and the column entitled, "Concentration in Healthy Synovium," shows the in vivo concentrations of these substances in healthy knee joints.</s>
+            <ref type="table">Table 2</ref> ("Initial Value (from Model Steady State)" column) shows the initial conditions that resulted from running the simulation in the absence of an inflammatory stimulus (SFs only, no macrophages) and the column entitled, "Concentration in Healthy Synovium," shows the in vivo concentrations of these substances in healthy knee joints.</s>
           <s>Our data appear to capture the same order of magnitude as experimentally measured quantities in the cases of TIMP-1, MMP-1, and TNF-α.</s>
           <s>Our data also appear to be in the experimentally reported confidence intervals in the cases of IL-1β, IL-6, and IL-10.</s>
           <s>In the cases of TGF-β and MMP-9, our initial conditions do not appear to show close agreement.</s>
@@ -367,20 +387,12 @@
           <s>
             <ref target="#fig_3" type="figure">Fig 3 shows</ref> that independent in vivo cytokine concentration data (that is, data not used for parameter estimation or model formulation) appear to confirm the salient features of the bottom-up model output: a peak concentration that occurs shortly after injury and a gradual decrease in concentration over 20 days.</s>
           <s>Further, we note that the bottom-up model results and the experimental values show approximate numerical agreement at most time points in <ref target="#fig_3" type="figure">Fig 3.</ref> Unfortunately, only one independent in vivo study reported the time-course of synovial cytokine concentration after ACL injury in vivo and that study did not include all the substances modeled here <ref target="#b37" type="bibr">[37]</ref> .</s>
-          <s>
-            <ref target="#fig_0" type="figure">S1 Fig shows the time-course</ref> of concentrations for the substances that were not included in <ref target="#b37" type="bibr">[37]</ref> .</s>
+          <s>S1 Fig shows the time-course of concentrations for the substances that were not included in <ref target="#b37" type="bibr">[37]</ref> .</s>
           <s>However, while in vivo time-course data do not exist for some of the substances in the model, in vivo data for single time points after injury have been reported for the remaining substances.</s>
-          <s>We include these data in S4 <ref target="#tab_4" type="table">Table.</ref>
+          <s>We include these data in S4 <ref target="#tab_3" type="table">Table.</ref>
           </s>
           <s>The data in S4 Table appear to show reasonable order-of-magnitude agreement with the concentrations of cytokines, MMPs, and TIMP-1 in S1 <ref type="figure">Fig.</ref>
           </s>
-          <s>
-            <ref type="bibr">Fig 4</ref> demonstrates that isolated estrogen leads to higher concentrations of IL-1β and TNF-α, as well as lower IL-10 concentration compared with male levels of isolated testosterone.</s>
-        </p>
-      </div>
-      <div>
-        <head n="3.3">Hormonal considerations</head>
-        <p>
           <s>2000 randomly varied parameter sets, we determined the median and interquartile range of the results at every time point for every substance, generating the likelihood time responses for concentration under parametric uncertainties.</s>
           <s>This parametric uncertainty analysis helped us account for uncertainties in the in vitro experiments that we used to estimate the nominal values, such as varied experimental conditions and limited numbers of samples.</s>
           <s>Furthermore, this analysis helped us account for biological differences that exist between the in vitro experiments from which we formulated the parameters and the in vivo states that we sought to model.</s>
@@ -390,17 +402,21 @@
           <s>Estrogen and testosterone ranges for males and females.</s>
           <s>These concentrations were obtained from <ref target="#b38" type="bibr">Greenspan et al. (2004)</ref>
             <ref target="#b38" type="bibr">[38]</ref> .</s>
+          <s>Sex hormone effects on post-injury synovial inflammation</s>
         </p>
       </div>
       <div>
-        <head>Minimum E (pM)</head>
-        <p>
-          <s>Maximum E (pM) Minimum T (nM) Maximum T (nM) Sex hormone effects on post-injury synovial inflammation</s>
-        </p>
+        <head n="3.3">Hormonal considerations</head>
+      </div>
+      <div>
+        <head>Minimum E (pM) Maximum E (pM) Minimum T (nM) Maximum T (nM)</head>
+      </div>
+      <div>
+        <head>Male</head>
         <p>
           <s>Progesterone does not appear to attenuate the pro-inflammatory effects of estrogen at a physiologically relevant concentration.</s>
           <s>
-            <ref type="figure">Fig 5</ref> shows the median and interquartile range for cytokine concentrations when the model parameters and sex hormone concentrations are varied simultaneously.</s>
+            <ref type="figure">Fig 5 shows</ref> the median and interquartile range for cytokine concentrations when the model parameters and sex hormone concentrations are varied simultaneously.</s>
           <s>The "Female Peak E" condition leads to significant elevation of IL-1β and MMP-1, and significant suppression of IL-10 compared to the "Male" condition.</s>
           <s>The "Female Low E" condition also appears to elevate IL-1β and MMP-1 and suppress IL-10 compared to the "Male" condition, but to a lesser degree than the "Female Peak E" condition.</s>
           <s>Nonetheless, the differences between "Female Low E" and "Male" remain significant through the duration of the simulation for IL-1β and IL-10 and until t = 19 days for MMP-1.</s>
@@ -419,7 +435,7 @@
           <s>After estimating the nominal parameters from these in vitro studies, we performed Latin Hypercube sampling to account for uncertainties in our estimated parameters, generating 2000 model solutions.</s>
           <s>We used the results from those 2000 statistically varied solutions to compare our model results to independent experimental data post hoc.</s>
           <s>For this comparison, we found that our results captured the salient features of data from the only available in vivo study that reported the time course of cytokine concentration in the synovium after an acute ACL injury <ref target="#b37" type="bibr">[37]</ref> for a select subset of substances in our model <ref target="#fig_3" type="figure">(Fig 3)</ref> .</s>
-          <s>Further, we found that the rest of the substances in our model appear to agree with concentration data from single time points after ACL injury (S1 <ref target="#fig_4" type="figure">Fig and S4</ref>
+          <s>Further, we found that the rest of the substances in our model appear to agree with concentration data from single time points after ACL injury (S1 <ref target="#fig_2" type="figure">Fig and S4</ref>
             <ref type="table">Table)</ref> .</s>
         </p>
         <p>
@@ -429,8 +445,15 @@
           <s>We found that female combinations of estrogen and testosterone ("Female Low E" and "Female Peak E" conditions) both led to higher concentrations of pro-inflammatory IL-1β and TNF-α and lower concentrations of IL-10 compared to the "Male" condition.</s>
           <s>Further, model simulations indicated that the "Female Peak E" condition led to increased MMP-1 production compared with the "Male" condition.</s>
           <s>Together, these results suggest that estrogen, which varies in concentration through the menstrual cycle, has the potential to affect the course of the inflammatory process after knee injury.</s>
-          <s>To our knowledge, this is the first model that can be used as a platform to study hormonal influences on post-injury inflammation while addressing some of the biological complexity of the postinjury synovium.</s>
+          <s>To our <ref target="#b37" type="bibr">[37]</ref> .</s>
+          <s>Simulation results shown as median (solid gray lines) ± IQR (gray bands).</s>
+          <s>In vivo comparison data are shown as circles with error bars.</s>
+          <s>See S1 <ref target="#fig_2" type="figure">Fig and S4</ref> Table for independent comparisons of the rest of the substances in the model.</s>
+          <s>knowledge, this is the first model that can be used as a platform to study hormonal influences on post-injury inflammation while addressing some of the biological complexity of the postinjury synovium.</s>
         </p>
+      </div>
+      <div>
+        <head>Model results for latin hypercube sampling analysis of IL-1β, TNF-α, and IL-10 compared to independent in vivo synovial concentrations following anterior cruciate ligament (ACL) injury</head>
       </div>
       <div>
         <head n="4.2">Model assumptions</head>
@@ -438,7 +461,12 @@
           <s>Our systems biology approach is consistent with other in silico studies of inflammatory processes in other model systems <ref target="#b16" type="bibr">[17]</ref>
             <ref target="#b17" type="bibr">[18]</ref>
             <ref target="#b18" type="bibr">[19]</ref> .</s>
-          <s>As such, the approach relies on estimated rate Effects of combined estrogen and testosterone at physiological levels for males and females (median ± IQR).</s>
+          <s>As such, the approach relies on estimated rate https://doi.org/10.1371/journal.pone.0209582.g004</s>
+        </p>
+      </div>
+      <div>
+        <head>Fig 5. Effects of combined estrogen and testosterone at physiological levels for males and females (median ± IQR).</head>
+        <p>
           <s>Blue: combined T and E at concentrations for adult males; red solid: females with combined T and E at concentrations for females in the early follicular phase (Female Low E); green dotted: combined T and E for females with a steady estrogen concentration that varies around the peak value of estrogen during the menstrual cycle (Female Peak E).</s>
           <s>Kruskal-Wallis testing and post hoc Mann-Whitney U testing (with the Bonferroni correction) reveal highly significant differences between hormonal conditions at nearly all time points for all substances (analysis included in S1 Scripts).</s>
           <s>For IL-1β, IL-10, and MMP-1, there are significant differences between every possible hormone pair: "Male" is significantly different from "Female Peak E;" "Male" is significantly different from "Female Low E;" and "Female Peak E" is significantly different from "Female Low E." The difference in MMP-1 concentration between "Male" and "Female Low E" lose significance at t = 19 days and t = 20 days.</s>
@@ -451,10 +479,7 @@
           <s>Thus, we argue that the present model represents a first step toward understanding post-injury knee inflammation at the systems level that would otherwise be quite difficult to examine experimentally.</s>
         </p>
         <p>
-          <s>In our model of the acutely ACL-injured knee joint, we included a number of cytokines, chemokines, and growth factors that contribute to sex hormonal regulation of MMPs <ref target="#b5" type="bibr">[6]</ref>
-            <ref target="#b6" type="bibr">[7]</ref>
-            <ref target="#b7" type="bibr">[8]</ref>
-            <ref target="#b37" type="bibr">37</ref> , 39], while we chose to exclude other cytokines and molecules implicated in joint inflammation.</s>
+          <s>In our model of the acutely ACL-injured knee joint, we included a number of cytokines, chemokines, and growth factors that contribute to sex hormonal regulation of MMPs <ref type="bibr">[6-8, 37, 39]</ref> , while we chose to exclude other cytokines and molecules implicated in joint inflammation.</s>
           <s>For example, we did not include IL-8 (also known as CXCL8), even though, in some cases, it has been detected in the knee joint after injury <ref target="#b39" type="bibr">[39]</ref> .</s>
           <s>Traditionally, IL-8 acts primarily as a chemoattractant for neutrophils <ref target="#b40" type="bibr">[40]</ref> , but evidence suggests neutrophils do not infiltrate the knee joint after ACL injury and during OA <ref target="#b11" type="bibr">[12,</ref>
             <ref target="#b41" type="bibr">[41]</ref>
@@ -465,8 +490,6 @@
           <s>Furthermore, we chose to exclude damage associated molecular patterns (DAMPs) from our analysis, even though they can play an important role in the joint after ACL injury and during the initiation and progression of OA.</s>
           <s>DAMPs, which can result from tissue damage, can activate toll-like receptors (TLRs) and perpetuate inflammation in the long term <ref target="#b45" type="bibr">[45]</ref> .</s>
           <s>Unfortunately, not enough quantitative data exist to allow us to formulate parameters that describe this process, so we were unable to include DAMPs in the present model.</s>
-        </p>
-        <p>
           <s>In the present model, we included "platelets" as a tool to initiate the inflammatory response because the cellular and molecular initiators of the inflammatory response after joint injury are not well understood <ref target="#b46" type="bibr">[46]</ref> .</s>
           <s>However, we did not investigate clotting nor other effects of platelets.</s>
           <s>We specified that the platelets would release TGF-β, then rapidly decrease in concentration to negligible levels within hours of the onset of inflammation.</s>
@@ -481,7 +504,8 @@
             <ref target="#b4" type="bibr">[5]</ref>
             <ref target="#b5" type="bibr">[6]</ref>
             <ref target="#b6" type="bibr">[7]</ref>
-            <ref target="#b7" type="bibr">[8]</ref> .</s>
+            <ref target="#b7" type="bibr">[8]</ref>
+          </s>
         </p>
       </div>
       <div>
@@ -519,7 +543,7 @@
       <div>
         <head n="4.4">Verification considerations</head>
         <p>
-          <s>Running the model in the absence of an inflammatory stimulus, we found that most our predictions agreed reasonably with experimentally reported concentrations in healthy knees <ref target="#tab_1" type="table">(Table 2)</ref> .</s>
+          <s>Running the model in the absence of an inflammatory stimulus, we found that most our predictions agreed reasonably with experimentally reported concentrations in healthy knees <ref type="table">(Table 2</ref> ).</s>
           <s>However, we note that the experimental confidence intervals for IL-1β, IL-6, and IL-10 extended below zero; that is, the measured error was larger than the mean value of the measurements.</s>
           <s>For example, the mean concentration of IL-6 was 64 pg/mL while its standard deviation was 120 pg/mL.</s>
           <s>Such large errors may be a result of non-normally distributed data or small sample sizes.</s>
@@ -554,7 +578,7 @@
         </p>
         <p>
           <s>Irie et al. reported the time course of concentration for IL-6 in addition to the time course for IL-1β, TNF-α, and IL-10 <ref target="#b37" type="bibr">[37]</ref> .</s>
-          <s>However, the concentrations for IL-6 in their time course data appear to be two orders of magnitude higher than other reported IL-6 concentrations in the synovium at single time points after ACL injury and in other joint pathologies (see <ref type="table">S4 Table)</ref> , while the concentrations of IL-1β, TNF-α, and IL-10 appear to be consistent with numerical values from comparable measurements (S4 <ref type="table">Table)</ref> .</s>
+          <s>However, the concentrations for IL-6 in their time course data appear to be two orders of magnitude higher than other reported IL-6 concentrations in the synovium at single time points after ACL injury and in other joint pathologies (see <ref target="#tab_0" type="table">S4 Table), while the concentrations of IL-1β, TNF-α, and IL-10 appear to be consistent with numerical values from comparable measurements (S4 Table)</ref> .</s>
           <s>Thus, due to the disagreement in experimental IL-6 concentrations, it is impossible to make a confident comparison of our data.</s>
           <s>Nevertheless, we note that our results, shown in S1 <ref type="figure">Fig, seem</ref> to quantitatively agree with several other IL-6 measurements from synovial fluid, which we report in S4 Table.</s>
         </p>
@@ -606,14 +630,14 @@
         <figDesc>Fig 1. A. Depiction of monocyte and macrophage migration and transformation. Injury to the knee causes the production of chemoattractants, such as TNF-α and TGF-β, which lead to monocyte migration from the bloodstream to the synovium. The synovium is indicated by the gray dashed box. Monocytes transform into pro-inflammatory M1 macrophages. The molecular processes that drive transformation to M1 cells are not modeled. Instead, a 12-hour delay is incorporated into the model as a way to account for the time it takes for monocytes to transform, as previously described [19]. IL-10 drives the transformation of M1 cells to anti-inflammatory M2 macrophages [21]. Both M1 and M2 cells can migrate out of the synovium. B. Cellular production and feedback regulation of a subset of the substances incorporated in the model. M1 and SF both produce IL-10, IL-1, IL-6, and MMP-1. IL-10 down-regulates M1 production of IL-1 and IL-6, while IL-1 upregulates SF production of IL-1, IL-6, and MMP-1. IL-6 up-regulates M1 IL-10 and up-regulates M1 IL-1. Estrogen (E) upregulates M1 production of IL-1 and down-regulates M1 production of IL-10 and IL-6, while testosterone (T) up-regulates M1 production of IL-10. Progesterone (P) down-regulates M1 IL-6. M1: pro-inflammatory macrophage. M2: antiinflammatory macrophage. SF: synovial fibroblast. E: estrogen. T: testosterone.</figDesc>
       </figure>
       <figure xml:id="fig_1">
-        <head/>
-        <label/>
-        <figDesc>by multiplying the M1 production coefficient for IL-1β (k IL1,M1 ) by all four M1 feedback functions (∏ j g j,x ) and the concentration of M1 macrophages (see S2 Table for a list of feedback functions and their parameters). We obtained the second additive term by multiply- ing the M2 IL-1β production coefficient (k IL1,M2 ) by the concentration of M2 macrophages (C M2 ). We obtained the third additive term by multiplying the SF production coefficient for IL-1β (k IL1,SF ) by the SF feedback functions (∏ n g n,x ) and the concentration of SFs, C SF , leading to the term k IL1,SF (1 + f TNF,IL1 )(1 + f IL1,IL1 )C SF . And we obtained the final additive term by mul- tiplying the negative of the decay coefficient for IL-1β (−k d,IL1 ) by the present concentration of IL-1β (C IL1 ), leading to the term −k d,IL1 C IL1 . Summing all of these additive terms led to the expression for the change in concentration of IL-1β listed in</figDesc>
-      </figure>
-      <figure xml:id="fig_2">
         <head>Fig 2 .</head>
         <label>2</label>
         <figDesc>Fig 2. Summary of model formulation process. A. Estimation of Nominal Parameter Values. The first step in the modeling process was to estimate the nominal production and decay rate coefficients (see section 2.1) from N = 23 published in vitro studies (cited in S1 Table). B. Parametric Variations. We varied these parameters between 40% and 160% (±60%) of their nominal values, generating a 2000 element row vector associated with every parameter. The values in these row vectors were evenly spaced and sorted in ascending order. C. Parameter Matrix [P]. Next, we randomized the order of each individual row vector before stacking the vectors into a Γ by 2000 matrix, [P], where Γ represented the number of nominal parameters (and, therefore, the number of row vectors) in the model. Because of the randomization and stacking, each individual column in [P] represented a randomly varied parameter set that we could use in the differential equations. D. Latin Hypercube Sampling Process. We selected column i from [P] to generate the ith parameter set and solved the differential equations. After solving the equations with all</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig 4</head>
+        <label>4</label>
+        <figDesc>Fig 4 demonstrates that isolated estrogen leads to higher concentrations of IL-1β and TNF-α, as well as lower IL-10 concentration compared with male levels of isolated testosterone.</figDesc>
       </figure>
       <figure xml:id="fig_3">
         <head>Fig 3 .</head>
@@ -623,9 +647,14 @@
       <figure xml:id="fig_4">
         <head>Fig 4 .</head>
         <label>4</label>
-        <figDesc>Fig 4. Using the nominal parameter set, sex hormones modulate post-injury IL-1β, TNF-α, and IL-10. E Only: low estrogen concentration, as for the early follicular phase (143 pM); E + P: low levels of estrogen and progesterone, as for the early follicular phase (143 pM estrogen, 990 pM progesterone); T Only: testosterone concentration in the normal range for an adult male (20 nM). https://doi.org/10.1371/journal.pone.0209582.g004</figDesc>
+        <figDesc>Fig 4. Using the nominal parameter set, sex hormones modulate post-injury IL-1β, TNF-α, and IL-10. E Only: low estrogen concentration, as for the early follicular phase (143 pM); E + P: low levels of estrogen and progesterone, as for the early follicular phase (143 pM estrogen, 990 pM progesterone); T Only: testosterone concentration in the normal range for an adult male (20 nM).</figDesc>
       </figure>
       <figure xml:id="fig_5">
+        <head/>
+        <label/>
+        <figDesc>.</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
         <head>S1</head>
         <label/>
         <figDesc>Text. Sample calculations. (DOCX) S1 Fig. Cell, cytokine, MMP, and TIMP concentrations in the absence of hormonal effects for substances in the model that are not depicted in Fig 3. (TIF) S1</figDesc>
@@ -633,76 +662,69 @@
       <figure type="table" validated="false" xml:id="tab_0">
         <head>Table 1 .</head>
         <label>1</label>
-        <figDesc>Equations for cellular migration.</figDesc>
+        <figDesc>Equations for cellular migration.Formulations of f TGF,M1 and f TNF,M1 , and the values of their parameters can be found in S2 Table.</figDesc>
         <table>Model Variable 
 Initial Value 
 Concentration in Healthy Synovium 
 Equation 
 
 "Platelets" 
-2 � 10 
+2 � 10 8 cells 
 
-8 cells 
 mL 
 
-0 
+0 cells 
 
-cells 
 mL 
 
 dC P 
-dt 
 
-¼ À k d;P C P 
-
+dt ¼ À k d;P C P 
 M1 Macrophages 
-0 
+0 cells 
 
-cells 
 mL 
 
-0 
+0 cells 
 
-cells 
 mL 
 
 dC M1 
-dt 
 
-</table>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_1">
-        <head>Table 2 .</head>
-        <label>2</label>
-        <figDesc>Equations for cellular products.</figDesc>
-        <table>Model 
-Variable 
-Initial Value (from 
-Model Steady State) 
+dt ¼ k M;in f TGF;M1 þ f TNF;M1 
 
-Concentration in 
-
-Healthy Synovium 
-
-Ref. Equation 
-
-IL-1β 
-
+À 
 � 
+À k M1M2 f M1M2 C M1 À k d;M C M1 
 
-0:037 
+M2 Macrophages 
+0 cells 
 
-pg 
 mL 
 
-1 � 2 
+0 cells 
 
-pg 
 mL 
+
+dC M2 
+
+dt ¼ k M1M2 f M1M2 C M1 À k d;M C M2 
+SFs 
+5 � 10 5 cells 
+
+mL 
+
+dC SF 
+
+dt ¼ 0 
+
+https://doi.org/10.1371/journal.pone.0209582.t001 
+
+Sex hormone effects on post-injury synovial inflammation 
 
 </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_4">
+      <figure type="table" validated="false" xml:id="tab_3">
         <head>Table .</head>
         <label>.</label>
         <figDesc>Production and decay coefficients. (DOCX) S2 Table. Feedback functions and coefficients. (DOCX) S3 Table. Effect of progesterone on peak TNF concentrations. (DOCX) S4 Table. Experimental Measurements of Synovial Fluid Concentrations of Cytokines, MMPs, and TIMP-1. (DOCX) S1 Scripts. MATLAB Files for all simulations and analysis. (ZIP)Conceptualization: Bethany Powell, Igal Szleifer, Yasin Y. Dhaher. Formal analysis: Bethany Powell. Funding acquisition: Yasin Y. Dhaher. Investigation: Bethany Powell. Methodology: Bethany Powell, Yasin Y. Dhaher. Project administration: Yasin Y. Dhaher. Software: Bethany Powell. Supervision: Igal Szleifer. 54. Pedersen BK. Anti-inflammatory effects of exercise: role in diabetes and cardiovascular disease. Euro- pean journal of clinical investigation. 2017; 47(8):600-11. https://doi.org/10.1111/eci.12781 PMID: 28722106 55. Szabo G, Saha B. Alcohol's effect on host defense. Alcohol research: current reviews. 2015; 37(2):159. 56. Salamonsen LA. Current concepts of the mechanisms of menstruation: a normal process of tissue destruction. Trends in endocrinology and metabolism: TEM. 1998; 9(8):305-9. PMID: 18406294. 57. Edd SN, Favre J, Blazek K, Omoumi P, Asay JL, Andriacchi TP. Altered gait mechanics and elevated serum pro-inflammatory cytokines in asymptomatic patients with MRI evidence of knee cartilage loss. Osteoarthritis and cartilage / OARS, Osteoarthritis Research Society. 2017; 25(6):899-906. https://doi. org/10.1016/j.joca.2016.12.029 PMID: 28064033.</figDesc>
@@ -752,12 +774,13 @@ mL
                   <surname>Roos</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1002/art.20589</idno>
-              <ptr target="https://doi.org/10.1002/art.20589PMID"/>
+              <idno type="DOI">10.1002/art.20589</idno>
+              <idno>PMID: 15476248</idno>
+              <ptr target="https://doi.org/10.1002/art.20589"/>
               <imprint>
                 <date type="published" when="2004"/>
                 <biblScope unit="volume">50</biblScope>
-                <biblScope unit="page">15476248</biblScope>
+                <biblScope from="3145" to="52" unit="page"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -804,8 +827,9 @@ mL
                   <surname>Irrgang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1177/0363546511424720</idno>
-              <ptr target="https://doi.org/10.1177/0363546511424720PMID:22021585"/>
+              <idno type="DOI">10.1177/0363546511424720</idno>
+              <idno>PMID: 22021585</idno>
+              <ptr target="https://doi.org/10.1177/0363546511424720"/>
               <imprint>
                 <date type="published" when="2011"/>
                 <biblScope unit="volume">39</biblScope>
@@ -828,19 +852,20 @@ mL
                   <surname>Nagase</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.bbapap.2011.06.020</idno>
-              <ptr target="https://doi.org/10.1016/j.bbapap.2011.06.020PMID:21777704"/>
+              <idno type="DOI">10.1016/j.bbapap.2011.06.020</idno>
+              <idno>PMCID: PMC3219800</idno>
+              <ptr target="https://doi.org/10.1016/j.bbapap.2011.06.020"/>
             </analytic>
             <monogr>
               <title level="j">Biochimica et biophysica acta</title>
               <imprint>
                 <biblScope unit="volume">1824</biblScope>
                 <biblScope unit="issue">1</biblScope>
-                <biblScope unit="page">3219800</biblScope>
+                <biblScope from="133" to="178" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
-            <note>PubMed Central PMCID</note>
+            <note>PubMed Central</note>
           </biblStruct>
           <biblStruct xml:id="b3">
             <analytic>
@@ -881,15 +906,16 @@ mL
                   <surname>Krust</surname>
                 </persName>
               </author>
-              <idno type="doi">10.4049/jimmunol.0902383</idno>
-              <ptr target="https://doi.org/10.4049/jimmunol.0902383PMID"/>
+              <idno type="DOI">10.4049/jimmunol.0902383</idno>
+              <idno>PMID: 20554954</idno>
+              <ptr target="https://doi.org/10.4049/jimmunol.0902383"/>
             </analytic>
             <monogr>
               <title level="j">Journal of immunology</title>
               <imprint>
                 <biblScope unit="volume">185</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">20554954</biblScope>
+                <biblScope from="1169" to="76" unit="page"/>
                 <date type="published" when="2010"/>
               </imprint>
             </monogr>
@@ -933,15 +959,16 @@ mL
                   <surname>Gao</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3109/08820139.2014.917095</idno>
-              <ptr target="https://doi.org/10.3109/08820139.2014.917095PMID"/>
+              <idno type="DOI">10.3109/08820139.2014.917095</idno>
+              <idno>PMID: 24960169</idno>
+              <ptr target="https://doi.org/10.3109/08820139.2014.917095"/>
             </analytic>
             <monogr>
               <title level="j">Immunol Invest</title>
               <imprint>
                 <biblScope unit="volume">43</biblScope>
                 <biblScope unit="issue">7</biblScope>
-                <biblScope unit="page">24960169</biblScope>
+                <biblScope from="693" to="704" unit="page"/>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -995,12 +1022,13 @@ mL
                   <forename type="first">V</forename>
                 </persName>
               </author>
+              <idno>PMID: 10415638</idno>
             </analytic>
             <monogr>
               <title level="j">Annals of the New York Academy of Sciences</title>
               <imprint>
                 <biblScope unit="volume">876</biblScope>
-                <biblScope unit="page">10415638</biblScope>
+                <biblScope from="426" to="435" unit="page"/>
                 <date type="published" when="1999"/>
               </imprint>
             </monogr>
@@ -1048,19 +1076,20 @@ mL
                   <surname>James</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0103969</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0103969PMID:25080336"/>
+              <idno type="DOI">10.1371/journal.pone.0103969</idno>
+              <idno>PMC4117574</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0103969"/>
             </analytic>
             <monogr>
               <title level="j">PloS one</title>
               <imprint>
                 <biblScope unit="volume">9</biblScope>
                 <biblScope unit="issue">7</biblScope>
-                <biblScope unit="page">4117574</biblScope>
+                <biblScope unit="page">103969</biblScope>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
-            <note>PubMed Central PMCID</note>
+            <note>PubMed Central</note>
           </biblStruct>
           <biblStruct xml:id="b7">
             <analytic>
@@ -1101,16 +1130,16 @@ mL
                   <surname>Zhou</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.imlet.2012.04.007</idno>
-              <idno>25-30. Epub 2012/05/ 02</idno>
-              <ptr target="https://doi.org/10.1016/j.imlet.2012.04.007PMID"/>
+              <idno type="DOI">10.1016/j.imlet.2012.04.007</idno>
+              <idno>PMID: 22546503</idno>
+              <ptr target="https://doi.org/10.1016/j.imlet.2012.04.007"/>
             </analytic>
             <monogr>
               <title level="j">Immunology letters</title>
               <imprint>
                 <biblScope unit="volume">146</biblScope>
                 <biblScope unit="issue">1-2</biblScope>
-                <biblScope unit="page">22546503</biblScope>
+                <biblScope from="25" to="30" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -1154,15 +1183,16 @@ mL
                   <surname>Hisamitsu</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1211/jpp.58.3.0010</idno>
-              <ptr target="https://doi.org/10.1211/jpp.58.3.0010PMID"/>
+              <idno type="DOI">10.1211/jpp.58.3.0010</idno>
+              <idno>PMID: 16536903</idno>
+              <ptr target="https://doi.org/10.1211/jpp.58.3.0010"/>
             </analytic>
             <monogr>
               <title level="j">J Pharm Pharmacol</title>
               <imprint>
                 <biblScope unit="volume">58</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">16536903</biblScope>
+                <biblScope from="359" to="66" unit="page"/>
                 <date type="published" when="2006"/>
               </imprint>
             </monogr>
@@ -1190,13 +1220,14 @@ mL
                   <surname>Kovanen</surname>
                 </persName>
               </author>
+              <idno>PMID: 8892653</idno>
             </analytic>
             <monogr>
               <title level="j">Journal of immunology</title>
               <imprint>
                 <biblScope unit="volume">157</biblScope>
                 <biblScope unit="issue">9</biblScope>
-                <biblScope unit="page">8892653</biblScope>
+                <biblScope from="4159" to="65" unit="page"/>
                 <date type="published" when="1996"/>
               </imprint>
             </monogr>
@@ -1234,15 +1265,16 @@ mL
                   <surname>Yamamoto</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.jos.2016.01.004</idno>
-              <ptr target="https://doi.org/10.1016/j.jos.2016.01.004PMID"/>
+              <idno type="DOI">10.1016/j.jos.2016.01.004</idno>
+              <idno>PMID: 26876621</idno>
+              <ptr target="https://doi.org/10.1016/j.jos.2016.01.004"/>
             </analytic>
             <monogr>
               <title level="j">J Orthop Sci</title>
               <imprint>
                 <biblScope unit="volume">21</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">26876621</biblScope>
+                <biblScope from="381" to="389" unit="page"/>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -1286,8 +1318,9 @@ mL
                   <surname>Yamamoto</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1177/036354659502300622</idno>
-              <ptr target="https://doi.org/10.1177/036354659502300622PMID:8600748"/>
+              <idno type="DOI">10.1177/036354659502300622</idno>
+              <idno>PMID: 8600748</idno>
+              <ptr target="https://doi.org/10.1177/036354659502300622"/>
               <imprint>
                 <date type="published" when="1995"/>
                 <biblScope unit="volume">23</biblScope>
@@ -1305,15 +1338,16 @@ mL
                   <surname>Guery</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.jbspin.2012.09.010</idno>
-              <ptr target="https://doi.org/10.1016/j.jbspin.2012.09.010PMID"/>
+              <idno type="DOI">10.1016/j.jbspin.2012.09.010</idno>
+              <idno>PMID: 23141100</idno>
+              <ptr target="https://doi.org/10.1016/j.jbspin.2012.09.010"/>
             </analytic>
             <monogr>
               <title level="j">Joint Bone Spine</title>
               <imprint>
                 <biblScope unit="volume">79</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">23141100</biblScope>
+                <biblScope from="560" to="562" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -1328,15 +1362,16 @@ mL
                   <surname>Straub</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1210/er.2007-0001</idno>
-              <ptr target="https://doi.org/10.1210/er.2007-0001PMID"/>
+              <idno type="DOI">10.1210/er.2007-0001</idno>
+              <idno>PMID: 17640948</idno>
+              <ptr target="https://doi.org/10.1210/er.2007-0001"/>
             </analytic>
             <monogr>
               <title level="j">Endocr Rev</title>
               <imprint>
                 <biblScope unit="volume">28</biblScope>
                 <biblScope unit="issue">5</biblScope>
-                <biblScope unit="page">17640948</biblScope>
+                <biblScope from="521" to="74" unit="page"/>
                 <date type="published" when="2007"/>
               </imprint>
             </monogr>
@@ -1380,13 +1415,14 @@ mL
                   <surname>Macho</surname>
                 </persName>
               </author>
+              <idno>PMID: 15841793</idno>
             </analytic>
             <monogr>
               <title level="j">Endocr Regul</title>
               <imprint>
                 <biblScope unit="volume">38</biblScope>
                 <biblScope unit="issue">4</biblScope>
-                <biblScope unit="page">15841793</biblScope>
+                <biblScope from="143" to="152" unit="page"/>
                 <date type="published" when="2004"/>
               </imprint>
             </monogr>
@@ -1432,8 +1468,9 @@ mL
                   <surname>Dannenberg</surname>
                 </persName>
               </author>
-              <idno type="doi">10.4049/jimmunol.1301906</idno>
-              <ptr target="https://doi.org/10.4049/jimmunol.1301906PMID:24285838"/>
+              <idno type="DOI">10.4049/jimmunol.1301906</idno>
+              <idno>PMID: 24285838</idno>
+              <ptr target="https://doi.org/10.4049/jimmunol.1301906"/>
             </analytic>
             <monogr>
               <title level="j">Journal of immunology</title>
@@ -1489,8 +1526,9 @@ mL
                   <surname>Vadigepalli</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1039/c5mb00488h</idno>
-              <ptr target="https://doi.org/10.1039/c5mb00488hPMID:26440115"/>
+              <idno type="DOI">10.1039/c5mb00488h</idno>
+              <idno>PMID: 26440115</idno>
+              <ptr target="https://doi.org/10.1039/c5mb00488h"/>
             </analytic>
             <monogr>
               <title level="j">Mol Biosyst</title>
@@ -1519,7 +1557,8 @@ mL
                   <surname>Sherratt</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1006/jtbi.2000.2012</idno>
+              <idno type="DOI">10.1006/jtbi.2000.2012</idno>
+              <idno>PMID: 10887905</idno>
               <ptr target="https://doi.org/10.1006/jtbi.2000"/>
             </analytic>
             <monogr>
@@ -1527,7 +1566,7 @@ mL
               <imprint>
                 <biblScope unit="volume">204</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">10887905</biblScope>
+                <biblScope from="257" to="88" unit="page"/>
                 <date type="published" when="2000"/>
               </imprint>
             </monogr>
@@ -1560,15 +1599,16 @@ mL
                   <surname>Mitrophanov</surname>
                 </persName>
               </author>
-              <idno type="doi">10.4049/jimmunol.1302481</idno>
-              <ptr target="https://doi.org/10.4049/jimmunol.1302481PMID"/>
+              <idno type="DOI">10.4049/jimmunol.1302481</idno>
+              <idno>PMID: 24453259</idno>
+              <ptr target="https://doi.org/10.4049/jimmunol.1302481"/>
             </analytic>
             <monogr>
               <title level="j">Journal of immunology</title>
               <imprint>
                 <biblScope unit="volume">192</biblScope>
                 <biblScope unit="issue">4</biblScope>
-                <biblScope unit="page">24453259</biblScope>
+                <biblScope from="1824" to="1858" unit="page"/>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -1604,12 +1644,13 @@ mL
                   <surname>Roos</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1177/0363546507307396</idno>
-              <ptr target="https://doi.org/10.1177/0363546507307396PMID"/>
+              <idno type="DOI">10.1177/0363546507307396</idno>
+              <idno>PMID: 17761605</idno>
+              <ptr target="https://doi.org/10.1177/0363546507307396"/>
               <imprint>
                 <date type="published" when="2007"/>
                 <biblScope unit="volume">35</biblScope>
-                <biblScope unit="page">17761605</biblScope>
+                <biblScope from="1756" to="69" unit="page"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -1652,15 +1693,16 @@ mL
                   <surname>Takeda</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1182/blood-2003-04-1228</idno>
-              <ptr target="https://doi.org/10.1182/blood-2003-04-1228PMID"/>
+              <idno type="DOI">10.1182/blood-2003-04-1228</idno>
+              <idno>PMID: 12907458</idno>
+              <ptr target="https://doi.org/10.1182/blood-2003-04-1228"/>
             </analytic>
             <monogr>
               <title level="j">Blood</title>
               <imprint>
                 <biblScope unit="volume">102</biblScope>
                 <biblScope unit="issue">12</biblScope>
-                <biblScope unit="page">12907458</biblScope>
+                <biblScope from="4123" to="4132" unit="page"/>
                 <date type="published" when="2003"/>
               </imprint>
             </monogr>
@@ -1694,15 +1736,15 @@ mL
                   <surname>Kamanna</surname>
                 </persName>
               </author>
+              <idno>PMID: 8793801</idno>
             </analytic>
             <monogr>
               <title level="j">Journal of the American Society of Nephrology: JASN</title>
               <imprint>
                 <biblScope unit="volume">7</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">8793801</biblScope>
+                <biblScope from="914" to="937" unit="page"/>
                 <date type="published" when="1996"/>
-                <publisher>PMID</publisher>
               </imprint>
             </monogr>
           </biblStruct>
@@ -1750,17 +1792,18 @@ mL
                   <surname>Roberts</surname>
                 </persName>
               </author>
+              <idno>PMCPMC298948</idno>
             </analytic>
             <monogr>
-              <title level="j">Proceedings of the National Academy of Sciences of the United States of America</title>
+              <title level="m">Proceedings of the National Academy of Sciences of the United States of America</title>
+              <meeting>the National Academy of Sciences of the United States of America</meeting>
               <imprint>
-                <biblScope unit="volume">84</biblScope>
-                <biblScope unit="issue">16</biblScope>
-                <biblScope unit="page">298948</biblScope>
                 <date type="published" when="1987"/>
+                <biblScope unit="volume">84</biblScope>
+                <biblScope from="5788" to="92" unit="page"/>
               </imprint>
             </monogr>
-            <note>PMID: 2886992; PubMed Central PMCID</note>
+            <note>PubMed Central</note>
           </biblStruct>
           <biblStruct xml:id="b23">
             <analytic>
@@ -1806,9 +1849,9 @@ mL
                   <surname>Saris</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/s13075-014-0441-0</idno>
-              <idno>s13075-014-0441-0 PMID: 25256035</idno>
-              <ptr target="https://doi.org/10.1186/"/>
+              <idno type="DOI">10.1186/s13075-014-0441-0</idno>
+              <idno>PMID: 25256035</idno>
+              <ptr target="https://doi.org/10.1186/s13075-014-0441-0"/>
             </analytic>
             <monogr>
               <title level="j">Arthritis research &amp; therapy</title>
@@ -1843,16 +1886,15 @@ mL
                   <surname>Huang</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/s12013-013-9548-1</idno>
-              <idno>s12013-013-9548-1 PMID: 23471663</idno>
-              <ptr target="https://doi.org/10.1007/"/>
+              <idno type="DOI">10.1007/s12013-013-9548-1</idno>
+              <ptr target="https://doi.org/10.1007/s12013-013-9548-1PMID"/>
             </analytic>
             <monogr>
               <title level="j">Cell biochemistry and biophysics</title>
               <imprint>
                 <biblScope unit="volume">67</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope from="607" to="620" unit="page"/>
+                <biblScope unit="page">23471663</biblScope>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -1900,8 +1942,9 @@ mL
                   <surname>Krawetz</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/1471-2474-13-126</idno>
-              <ptr target="https://doi.org/10.1186/1471-2474-13-126PMID:22824140"/>
+              <idno type="DOI">10.1186/1471-2474-13-126</idno>
+              <idno>PMID: 22824140</idno>
+              <ptr target="https://doi.org/10.1186/1471-2474-13-126"/>
             </analytic>
             <monogr>
               <title level="j">BMC Musculoskelet Disord</title>
@@ -1955,7 +1998,7 @@ mL
                   <surname>Higgins</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/s11999-015-4441-4</idno>
+              <idno type="DOI">10.1007/s11999-015-4441-4</idno>
               <ptr target="https://doi.org/10.1007/s11999-015-4441-4PMID"/>
             </analytic>
             <monogr>
@@ -1970,21 +2013,9 @@ mL
           </biblStruct>
           <biblStruct xml:id="b27">
             <monogr>
-              <title/>
-              <author>
-                <persName>
-                  <forename type="first">Pubmed</forename>
-                  <surname>Central</surname>
-                </persName>
-              </author>
-              <author>
-                <persName>
-                  <forename type="first">Pmcid</forename>
-                </persName>
-              </author>
-              <imprint>
-                <biblScope unit="page">4562930</biblScope>
-              </imprint>
+              <title level="m" type="main">PubMed Central</title>
+              <idno>PMCID: PMCPMC4562930</idno>
+              <imprint/>
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b28">
@@ -2003,13 +2034,14 @@ mL
                   <surname>Reen</surname>
                 </persName>
               </author>
+              <idno>PMID: 11823533</idno>
             </analytic>
             <monogr>
               <title level="j">Journal of immunology</title>
               <imprint>
                 <biblScope unit="volume">168</biblScope>
                 <biblScope unit="issue">4</biblScope>
-                <biblScope unit="page">11823533</biblScope>
+                <biblScope from="1968" to="77" unit="page"/>
                 <date type="published" when="2002"/>
               </imprint>
             </monogr>
@@ -2045,12 +2077,13 @@ mL
                   <surname>Lin</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1002/jor.21261</idno>
-              <ptr target="https://doi.org/10.1002/jor.21261PMID"/>
+              <idno type="DOI">10.1002/jor.21261</idno>
+              <idno>PMID: 20957732</idno>
+              <ptr target="https://doi.org/10.1002/jor.21261"/>
               <imprint>
                 <date type="published" when="2011"/>
                 <biblScope unit="volume">29</biblScope>
-                <biblScope unit="page">20957732</biblScope>
+                <biblScope from="495" to="500" unit="page"/>
               </imprint>
             </monogr>
             <note>Journal of orthopaedic research: official publication of the Orthopaedic Research Society</note>
@@ -2089,15 +2122,16 @@ mL
                   <surname>Heinrich</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1002/eji.1830190821</idno>
-              <ptr target="https://doi.org/10.1002/eji.1830190821PMID"/>
+              <idno type="DOI">10.1002/eji.1830190821</idno>
+              <idno>PMID: 2476319</idno>
+              <ptr target="https://doi.org/10.1002/eji.1830190821"/>
             </analytic>
             <monogr>
               <title level="j">Eur J Immunol</title>
               <imprint>
                 <biblScope unit="volume">19</biblScope>
                 <biblScope unit="issue">8</biblScope>
-                <biblScope unit="page">2476319</biblScope>
+                <biblScope from="1485" to="90" unit="page"/>
                 <date type="published" when="1989"/>
               </imprint>
             </monogr>
@@ -2126,13 +2160,14 @@ mL
                   <surname>Fisher</surname>
                 </persName>
               </author>
+              <idno>PMID: 8811054</idno>
             </analytic>
             <monogr>
               <title level="j">Clin Immunol Immunopathol</title>
               <imprint>
                 <biblScope unit="volume">80</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">8811054</biblScope>
+                <biblScope from="321" to="325" unit="page"/>
                 <date type="published" when="1996"/>
               </imprint>
             </monogr>
@@ -2165,13 +2200,14 @@ mL
                   <surname>Feldmann</surname>
                 </persName>
               </author>
+              <idno>PMID: 2542408</idno>
             </analytic>
             <monogr>
               <title level="j">Journal of immunology</title>
               <imprint>
                 <biblScope unit="volume">142</biblScope>
                 <biblScope unit="issue">12</biblScope>
-                <biblScope unit="page">2542408</biblScope>
+                <biblScope from="4295" to="300" unit="page"/>
                 <date type="published" when="1989"/>
               </imprint>
             </monogr>
@@ -2217,14 +2253,14 @@ mL
                   <surname>Dinarello</surname>
                 </persName>
               </author>
-              <idno>1990/01/01. PMID</idno>
+              <idno>PMID: 2294996</idno>
             </analytic>
             <monogr>
               <title level="j">Blood</title>
               <imprint>
                 <biblScope unit="volume">75</biblScope>
                 <biblScope unit="issue">1</biblScope>
-                <biblScope unit="page">2294996</biblScope>
+                <biblScope from="40" to="47" unit="page"/>
                 <date type="published" when="1990"/>
               </imprint>
             </monogr>
@@ -2257,7 +2293,7 @@ mL
                   <surname>Puvanakrishnan</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/s00296-011-2146-x</idno>
+              <idno type="DOI">10.1007/s00296-011-2146-x</idno>
               <ptr target="https://doi.org/10.1007/s00296-011-2146-xPMID"/>
             </analytic>
             <monogr>
@@ -2312,14 +2348,15 @@ mL
                   <surname>Grodzinsky</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.abb.2016.02.008</idno>
-              <ptr target="https://doi.org/10.1016/j.abb.2016.02.008PMID"/>
+              <idno type="DOI">10.1016/j.abb.2016.02.008</idno>
+              <idno>PMID: 26874194</idno>
+              <ptr target="https://doi.org/10.1016/j.abb.2016.02.008"/>
             </analytic>
             <monogr>
               <title level="j">Arch Biochem Biophys</title>
               <imprint>
                 <biblScope unit="volume">594</biblScope>
-                <biblScope unit="page">26874194</biblScope>
+                <biblScope from="37" to="53" unit="page"/>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -2354,15 +2391,16 @@ mL
                   <surname>Sheng</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.fertnstert.2003.10.027</idno>
-              <ptr target="https://doi.org/10.1016/j.fertnstert.2003.10.027PMID"/>
+              <idno type="DOI">10.1016/j.fertnstert.2003.10.027</idno>
+              <idno>PMID: 15136083</idno>
+              <ptr target="https://doi.org/10.1016/j.fertnstert.2003.10.027"/>
             </analytic>
             <monogr>
               <title level="j">Fertility and sterility</title>
               <imprint>
                 <biblScope unit="volume">81</biblScope>
                 <biblScope unit="issue">5</biblScope>
-                <biblScope unit="page">15136083</biblScope>
+                <biblScope from="1235" to="1244" unit="page"/>
                 <date type="published" when="2004"/>
               </imprint>
             </monogr>
@@ -2388,13 +2426,14 @@ mL
                   <surname>Iwaso</surname>
                 </persName>
               </author>
+              <idno>PMID: 12649034</idno>
             </analytic>
             <monogr>
               <title level="j">Knee</title>
               <imprint>
                 <biblScope unit="volume">10</biblScope>
                 <biblScope unit="issue">1</biblScope>
-                <biblScope unit="page">12649034</biblScope>
+                <biblScope from="93" to="99" unit="page"/>
                 <date type="published" when="2003"/>
               </imprint>
             </monogr>
@@ -2462,12 +2501,13 @@ mL
                   <surname>Gaddi</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1002/jor.22208</idno>
-              <ptr target="https://doi.org/10.1002/jor.22208PMID"/>
+              <idno type="DOI">10.1002/jor.22208</idno>
+              <idno>PMID: 22886741</idno>
+              <ptr target="https://doi.org/10.1002/jor.22208"/>
               <imprint>
                 <date type="published" when="2013"/>
                 <biblScope unit="volume">31</biblScope>
-                <biblScope unit="page">22886741</biblScope>
+                <biblScope from="315" to="336" unit="page"/>
               </imprint>
             </monogr>
             <note>Journal of orthopaedic research: official publication of the Orthopaedic Research Society</note>
@@ -2511,7 +2551,7 @@ mL
                   <surname>Matsushima</surname>
                 </persName>
               </author>
-              <idno>1994/11/01. PMID: 7964163</idno>
+              <idno>PMID: 7964163</idno>
             </analytic>
             <monogr>
               <title level="j">J Leukoc Biol</title>
@@ -2566,15 +2606,16 @@ mL
                   <surname>Toes</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.joca.2012.08.027</idno>
-              <ptr target="https://doi.org/10.1016/j.joca.2012.08.027PMID"/>
+              <idno type="DOI">10.1016/j.joca.2012.08.027</idno>
+              <idno>PMID: 22960092</idno>
+              <ptr target="https://doi.org/10.1016/j.joca.2012.08.027"/>
             </analytic>
             <monogr>
               <title level="j">Osteoarthritis Research Society</title>
               <imprint>
                 <biblScope unit="volume">20</biblScope>
                 <biblScope unit="issue">12</biblScope>
-                <biblScope unit="page">22960092</biblScope>
+                <biblScope from="1484" to="99" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -2622,15 +2663,16 @@ mL
                   <surname>Meng</surname>
                 </persName>
               </author>
-              <idno type="doi">10.4049/jimmunol.1303188</idno>
-              <ptr target="https://doi.org/10.4049/jimmunol.1303188PMID"/>
+              <idno type="DOI">10.4049/jimmunol.1303188</idno>
+              <idno>PMID: 25681337</idno>
+              <ptr target="https://doi.org/10.4049/jimmunol.1303188"/>
             </analytic>
             <monogr>
               <title level="j">Journal of immunology</title>
               <imprint>
                 <biblScope unit="volume">194</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">25681337</biblScope>
+                <biblScope from="2810" to="2818" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -2679,8 +2721,9 @@ mL
                   <surname>Ramaker</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0097329</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0097329PMID:24892866"/>
+              <idno type="DOI">10.1371/journal.pone.0097329</idno>
+              <idno>PMID: 24892866</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0097329"/>
             </analytic>
             <monogr>
               <title level="j">PloS one</title>
@@ -2737,9 +2780,9 @@ mL
                   <forename type="first">L</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0072494</idno>
-              <idno>e72494. Epub 2013/08/21</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0072494PMID:23951325"/>
+              <idno type="DOI">10.1371/journal.pone.0072494</idno>
+              <idno>PMID: 23951325</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0072494"/>
             </analytic>
             <monogr>
               <title level="j">PloS one</title>
@@ -2782,9 +2825,9 @@ mL
                   <surname>Agrawal</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/s11010-017-3047-4</idno>
-              <idno>2017/05/06</idno>
-              <ptr target="https://doi.org/10.1007/s11010-017-3047-4PMID:28474284"/>
+              <idno type="DOI">10.1007/s11010-017-3047-4</idno>
+              <idno>PMID: 28474284</idno>
+              <ptr target="https://doi.org/10.1007/s11010-017-3047-4"/>
             </analytic>
             <monogr>
               <title level="j">Mol Cell Biochem</title>
@@ -2819,8 +2862,9 @@ mL
                   <surname>Scanzello</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.joca.2015.08.015</idno>
-              <ptr target="https://doi.org/10.1016/j.joca.2015.08.015PMID:26521728"/>
+              <idno type="DOI">10.1016/j.joca.2015.08.015</idno>
+              <idno>PMID: 26521728</idno>
+              <ptr target="https://doi.org/10.1016/j.joca.2015.08.015"/>
             </analytic>
             <monogr>
               <title level="j">Osteoarthritis and cartilage / OARS</title>
@@ -2870,13 +2914,14 @@ mL
                   <surname>Metcalfe</surname>
                 </persName>
               </author>
+              <idno>PMID: 7585220</idno>
             </analytic>
             <monogr>
               <title level="j">Nat Med</title>
               <imprint>
                 <biblScope unit="volume">1</biblScope>
                 <biblScope unit="issue">9</biblScope>
-                <biblScope unit="page">7585220</biblScope>
+                <biblScope from="932" to="939" unit="page"/>
                 <date type="published" when="1995"/>
               </imprint>
             </monogr>
@@ -2912,15 +2957,15 @@ mL
                   <surname>Sporn</surname>
                 </persName>
               </author>
+              <idno>PMID: 3163692</idno>
             </analytic>
             <monogr>
               <title level="j">The Journal of biological chemistry</title>
               <imprint>
                 <biblScope unit="volume">263</biblScope>
                 <biblScope unit="issue">16</biblScope>
-                <biblScope unit="page">3163692</biblScope>
+                <biblScope from="7646" to="54" unit="page"/>
                 <date type="published" when="1988"/>
-                <publisher>PMID</publisher>
               </imprint>
             </monogr>
           </biblStruct>
@@ -2940,7 +2985,7 @@ mL
                   <surname>Parodi</surname>
                 </persName>
               </author>
-              <idno>2005/10/07. PMID: 16206954</idno>
+              <idno>PMID: 16206954</idno>
             </analytic>
             <monogr>
               <title level="j">Semin Arthritis Rheum</title>
@@ -2968,16 +3013,16 @@ mL
                   <surname>Nath</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.contraception.2010.04.004</idno>
-              <idno>2010/10/12</idno>
-              <ptr target="https://doi.org/10.1016/j.contraception.2010.04.004PMID"/>
+              <idno type="DOI">10.1016/j.contraception.2010.04.004</idno>
+              <idno>PMID: 20933114</idno>
+              <ptr target="https://doi.org/10.1016/j.contraception.2010.04.004"/>
             </analytic>
             <monogr>
               <title level="j">Contraception</title>
               <imprint>
                 <biblScope unit="volume">82</biblScope>
                 <biblScope unit="issue">5</biblScope>
-                <biblScope unit="page">20933114</biblScope>
+                <biblScope from="410" to="417" unit="page"/>
                 <date type="published" when="2010"/>
               </imprint>
             </monogr>
@@ -3005,16 +3050,16 @@ mL
                   <surname>Bradbury</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1152/ajpcell.00281.2013</idno>
-              <idno>2013/11/08</idno>
-              <ptr target="https://doi.org/10.1152/ajpcell.00281.2013PMID"/>
+              <idno type="DOI">10.1152/ajpcell.00281.2013</idno>
+              <idno>PMID: 24196532</idno>
+              <ptr target="https://doi.org/10.1152/ajpcell.00281.2013"/>
             </analytic>
             <monogr>
               <title level="j">Am J Physiol Cell Physiol</title>
               <imprint>
                 <biblScope unit="volume">306</biblScope>
                 <biblScope unit="issue">1</biblScope>
-                <biblScope unit="page">24196532</biblScope>
+                <biblScope from="3" to="18" unit="page"/>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -3055,8 +3100,9 @@ mL
                   <surname>Kraus</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3899/jrheum.140382</idno>
-              <ptr target="https://doi.org/10.3899/jrheum.140382PMID:25593231"/>
+              <idno type="DOI">10.3899/jrheum.140382</idno>
+              <idno>PMID: 25593231</idno>
+              <ptr target="https://doi.org/10.3899/jrheum.140382"/>
             </analytic>
             <monogr>
               <title level="j">The Journal of rheumatology</title>

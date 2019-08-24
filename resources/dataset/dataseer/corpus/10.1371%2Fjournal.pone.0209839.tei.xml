@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T08:02+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:40+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -252,22 +252,22 @@
           <s>Leaving the lapse rate free when fitting a psychometric function has been shown to reduce estimation bias introduced by isolated scattered lapses <ref target="#b28" type="bibr">[28]</ref> .</s>
           <s>Note that this range was chosen identical to our previous work <ref type="bibr">[25]</ref> and is larger than the proposed range [0, 0.06] by <ref target="#b28" type="bibr">[28]</ref> .</s>
           <s>This was motivated by the desire to account for a potentially higher probability of inattention in elderly or neurologically impaired subjects (for which such assessments are primarily designed), which was confirmed in <ref target="#b24" type="bibr">[23]</ref> .</s>
+          <s>The actual slope (first order derivative) of ψ(x) at the inflexion point α is</s>
         </p>
         <formula xml:id="formula_0">b ¼ 1 ffi ffi ffi ffi ffiffi 2p p 1 s :<label>ð2Þ</label>
         </formula>
-        <p>
-          <s>The actual slope (first order derivative) of ψ(x) at the inflexion point α is</s>
-        </p>
         <formula xml:id="formula_1">b inflection ¼ ð1 À g À lÞ ffi ffi ffi ffi ffiffi 2p p 1 s :<label>ð3Þ</label>
         </formula>
         <p>
           <s>This definition of the slope carries as units one over the units of the stimulus, in the present work [1/˚], and can be used to compare the slope values across studies using different types of sigmoidal functions F(x) <ref target="#b29" type="bibr">[29]</ref> .</s>
-          <s>To do arithmetic calculations on the slope (e.g., arithmetic mean), it is reasonable to normalize the slope with the following nonlinear function to a range [0, 1] with arbitrary units [a.u.]:</s>
+          <s>To do arithmetic calculations on the slope (e.g., arithmetic mean), it is reasonable to normalize the slope with the following nonlinear function to a range</s>
         </p>
-        <formula xml:id="formula_2">b inflection ½a:u:� ¼ arctan ðb inflection Þ p=2 :<label>ð4Þ</label>
+        <formula xml:id="formula_2">[0, 1] with arbitrary units [a.u.]: b inflection ½a:u:� ¼ arctan ðb inflection Þ p=2 :<label>ð4Þ</label>
         </formula>
         <p>
           <s>If this nonlinear transformation is not performed, errors in slope estimation can diverge towards infinite for two almost identically steep psychometric functions, which would lead to a distortion when comparing to errors in shallow psychometric functions.</s>
+        </p>
+        <p>
           <s>Using computer simulations, the estimation quality of psychophysical sampling procedures can be calculated by comparing the estimated values of the different parameters of a psychometric function with the true values (i.e., parameter values of the psychometric function to be estimated) <ref target="#b0" type="bibr">[1]</ref> .</s>
           <s>Following this work, the estimation performance of PEST was evaluated with computer simulations using the same parameter values as used in the present behavioral study (x 0 = 5.5˚, Δx 0 = ±2˚, P t = 75%, W = 1, Δx min = ±0.1˚,</s>
           <s>trials max@x = 20, trials max = 120).</s>
@@ -334,10 +334,8 @@
         <formula xml:id="formula_8">log 1 þ s 2 noise m 2 noise � � s :<label>ð10Þ</label>
         </formula>
         <p>
-          <s>The slope including intra-subject variability was modeled with a beta distribution with a support [0, 1]:</s>
+          <s>The slope including intra-subject variability was modeled with a beta distribution with a support [0, 1]: b T inflection ½a:u:�; noise � Beða Be ; b Be Þ:</s>
         </p>
-        <formula xml:id="formula_9">b T inflection ½a:u:�; noise � Beða Be ; b Be Þ:<label>ð11Þ</label>
-        </formula>
         <p>
           <s>The mean μ noise of Beða Be ; b Be Þ was defined to correspond to the normalized slope at the inflection of the template:</s>
         </p>
@@ -354,26 +352,35 @@
         </p>
         <formula xml:id="formula_12">s noise ¼ max m noise</formula>
         <p>
-          <s>ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffiffi</s>
+          <s>ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffiffi 1 À m noise 1 þ m noise r ;</s>
         </p>
-        <formula xml:id="formula_13">1 À m noise 1 þ m noise r ;</formula>
         <p>
-          <s>ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi m noise ðm</s>
+          <s>ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi m noise ðm 2 noise À 2m noise þ 1Þ 2 À m noise</s>
         </p>
-        <formula xml:id="formula_14">2 noise À 2m noise þ 1Þ 2 À m noise s ! :<label>ð14Þ</label>
+        <formula xml:id="formula_13">s ! :<label>ð14Þ</label>
         </formula>
         <p>
-          <s>With μ noise and σ noise , the two parameters of the beta distribution Beða Be ; b Be Þ could be T inflection ½a:u:�; noise were drawn from the log-normal and beta distributions, respectively, simulating intra-subject variability across the five measurements.</s>
+          <s>With μ noise and σ noise , the two parameters of the beta distribution Beða Be ; b Be Þ could be Enhancing psychophysical simulations with intra-subject variability calculated:</s>
+        </p>
+        <formula xml:id="formula_14">a Be ¼ m noise ðÀ m 2 noise þ m noise À s 2 noise Þ s 2 noise and ð15Þ b Be ¼ a Be 1 À m noise m noise � � :<label>ð16Þ</label>
+        </formula>
+        <p>
+          <s>No noise was modeled on the lapse rate λ T and on the guess rate γ T = 0.5.</s>
+          <s>The psychometric functions to be used for the simulated PEST sequences were of the form c T noise ðx; a T noise ; b T noise ; g T ; l T Þ.</s>
+          <s>For the threshold, 16 equally distributed noise levels ν α 2 [0, 1.5], and for the slope, 14 noise levels ν β 2 [0, 1] with a twice as high grid density 2 [0.7, 1], were simulated.</s>
+        </p>
+      </div>
+      <div>
+        <head n="2.2.3">Procedure.</head>
+        <p>
+          <s>For each combination of ν α and ν β , the PEST sequence of the 2AFC task was simulated five times for the whole set of templates C T n a ;n b .</s>
+          <s>For each single simulated sequence, new random variables a T noise and b T inflection ½a:u:�; noise were drawn from the log-normal and beta distributions, respectively, simulating intra-subject variability across the five measurements.</s>
           <s>The identical PEST parameters as in the behavioral study were used for the computer simulations.</s>
           <s>Responses to a specific level x were simulated by comparing a randomly generated number 2 Uð0; 1Þ to c T noise ðxÞ of the respective template.</s>
           <s>A smaller random number generated a correct response, and a larger random number a false response.</s>
         </p>
         <p>
-          <s>The simulation of the whole set C T n a ;n b was repeated N simulations = 1000 times for each combination of ν α and ν β with new randomly sampled parameters (i.e., α</s>
-        </p>
-        <formula xml:id="formula_15">T , β T , γ T , λ T</formula>
-        <p>
-          <s>) from the population distribution models.</s>
+          <s>The simulation of the whole set C T n a ;n b was repeated N simulations = 1000 times for each combination of ν α and ν β with new randomly sampled parameters (i.e., α T , β T , γ T , λ T ) from the population distribution models.</s>
         </p>
         <p>
           <s>The psychometric functions from the simulated PEST sequences were estimated identically to the behavioral study, including the bias correction.</s>
@@ -390,18 +397,17 @@
             <ref target="#b37" type="bibr">35]</ref> .</s>
         </p>
         <p>
-          <s>Identically, for each set C T n a ;n b</s>
-        </p>
-        <p>
-          <s>, distributions of N simulations values for the reliability of the estimated thresholds as well as its lower and upper CI bounds for each combination of ν α and ν β were generated.</s>
+          <s>Identically, for each set C T n a ;n b , distributions of N simulations values for the reliability of the estimated thresholds as well as its lower and upper CI bounds for each combination of ν α and ν β were generated.</s>
           <s>From these N simulations reliability values, the arithmetic mean � r T n a ;n b was calculated.</s>
           <s>In this two-dimensional noise space an iso-reliability contour where the reliability of the simulated experiment matched the reliability of the behavioral study (� r T n a ;n b ¼ r) was calculated (set of ν α and ν β pairs).</s>
           <s>To obtain a smoother contour, the reliability surface was interpolated with a spline on a finer grid (by halving the grid intervals three times in each dimension).</s>
+        </p>
+        <p>
           <s>To find which ν α and ν β pair of the iso-reliability contour corresponds the best to the intrasubject variability of the behavioral study, for each of the N simulations per pair, histograms of the parameters of the estimated psychometric functions from the computer simulation were compared to histograms of the parameters of the psychometric functions originating from the behavioral data.</s>
           <s>This was done by calculating the cosine similarity between the two vectors of histogram bin counts (h and h T , for the behavioral and simulated data, respectively) for the parameters α, β inflection, b.c.</s>
           <s>[a.u.] , and λ:</s>
         </p>
-        <formula xml:id="formula_16">similarity T i ¼ cos ðy i Þ ¼ h i � h T i kh i k 2 kh T i k 2 8i 2 fa; b; lg;<label>ð17Þ</label>
+        <formula xml:id="formula_15">similarity T i ¼ cos ðy i Þ ¼ h i � h T i kh i k 2 kh T i k 2 8i 2 fa; b; lg;<label>ð17Þ</label>
         </formula>
         <p>
           <s>where a similarity of 1 represents identical histograms.</s>
@@ -410,13 +416,16 @@
           <s>[a.u.] , and λ: 0.25, 0.05, and 0.005.</s>
           <s>To obtain an overall similarity, the three calculated similarities were multiplied with each other.</s>
         </p>
-        <formula xml:id="formula_17">s T n a ;n b ¼ Y i2fa;b;lg similarity T i ;<label>ð18Þ</label>
+        <formula xml:id="formula_16">s T n a ;n b ¼ Y i2fa;b;lg similarity T i ;<label>ð18Þ</label>
         </formula>
         <p>
           <s>From these N simulations overall similarity values, the arithmetic mean � s T n a ;n b was calculated.</s>
           <s>The iso-reliability contour was projected onto the similarity surface in the two-dimensional noise space after a spline interpolation, identical to what was done for the reliability.</s>
           <s>The interpolated ν α and ν β pair on the iso-reliability contour with the highest average overall similarity was chosen as the best model to estimate intra-subject variability (n a andn b ).</s>
-          <s>(corresponding to no method variability) was computed based directly on the templates with intra-subject noise, but without simulating the psychophysical experiment.</s>
+        </p>
+        <p>
+          <s>For a new set of psychometric functions C T n a ;n b with the optimal noise model, the simulation was repeated N simulations times, and the parameter distributions as well as � r T n a ;n b and � s T n a ;n b were calculated.</s>
+          <s>In addition, the maximum attainable reliabilityr T n a ;n b (corresponding to no method variability) was computed based directly on the templates with intra-subject noise, but without simulating the psychophysical experiment.</s>
         </p>
         <p>
           <s>To illustrate the intra-subject variability on a psychometric function, a population average model was computed by averaging the individual subject models.</s>
@@ -428,10 +437,14 @@
         <head n="3">Results</head>
         <p>
           <s>The test-retest reliability coefficient of the behavioral study and its confidence interval was r = 0.212 [0.077, 0.394].</s>
-          <s>The simulated reliability � r T n a ;n b for different ν α and ν β pairs as well as the matched iso-reliability contour at r are shown in <ref target="#fig_4" type="figure">Fig 3.</ref> In case of no intra-subject variability, the reliability would correspond to � r T n a ¼0;n b ¼0 ¼ 0:768 [0.662, 0.859] for the psychophysical paradigm and sampling procedure used in this work (i.e., maximum attainable reliability using these methods for the present population of interest).</s>
+          <s>The simulated reliability � r T n a ;n b for different ν α and ν β pairs as well as the matched iso-reliability contour at r are shown in <ref target="#fig_2" type="figure">Fig 3.</ref> In case of no intra-subject variability, the reliability would correspond to � r T n a ¼0;n b ¼0 ¼ 0:768 [0.662, 0.859] for the psychophysical paradigm and sampling procedure used in this work (i.e., maximum attainable reliability using these methods for the present population of interest).</s>
         </p>
         <p>
-          <s>The overall similarity � s T n a ;n b (combined for threshold, slope, and lapse rate) is visualized in For illustration purposes, the effect of intra-subject variability on the shape of the psychometric function is shown in <ref type="figure">Fig 6</ref> for the population average model ψ(x; α = 1.696, β = 1.708, γ = 0.500, λ = 0.036) and the noise level pairn a ,n b , together with the distributions of threshold and slope resulting from method and intra-subject variability.</s>
+          <s>The overall similarity � s T n a ;n b (combined for threshold, slope, and lapse rate) is visualized in <ref target="#fig_3" type="figure">Fig 4,</ref> together with the same projected iso-reliability contour.</s>
+          <s>The maximum overall similarity on the contour was found for the noise level pairn a ¼ 0:363 andn b ¼ 0:849 (� s T n a ;n b ¼ 0:764), corresponding to the best intra-subject variability model estimate.</s>
+          <s>The similarities of the distributions of the parameters of the psychometric functions are shown individually in <ref target="#fig_4" type="figure">Fig 5.</ref> The simulated reliability at this noise level pair was � r T n a ;n b ¼ 0:207 [0.076, 0.384].</s>
+          <s>The maximum attainable reliability without method variability (i.e., assuming a perfect assessment) for the identified intra-subject variability model would ber T n a ;n b ¼ 0:552 [0.403, 0.704].</s>
+          <s>For illustration purposes, the effect of intra-subject variability on the shape of the psychometric function is shown in <ref target="#fig_5" type="figure">Fig 6</ref> for the population average model ψ(x; α = 1.696, β = 1.708, γ = 0.500, λ = 0.036) and the noise level pairn a ,n b , together with the distributions of threshold and slope resulting from method and intra-subject variability.</s>
           <s>For the threshold estimation, the nAUC was higher for the method variability compared to the intra-subject variability, whereas for the slope estimation, the opposite was the case.</s>
           <s>The maximum difference in estimation performance in terms of PCTw/iB was 42.5% at a threshold tolerance of ±0.210˚, and 38.1% at a slope tolerance of ±0.299.</s>
         </p>
@@ -442,19 +455,7 @@
           <s>In this work we presented an approach to quantify intra-subject variability in psychophysical testing.</s>
           <s>This was achieved by introducing and adjusting a statistical noise model in computer simulations to match the test-retest reliability and histograms of the parameters of the estimated psychometric functions of a behavioral dataset.</s>
           <s>Using this approach we estimated the intra-subject variability of healthy subjects in a psychophysical assessment of proprioceptive perception at the wrist using a 2AFC paradigm, and compared the intra-subject variability with the inherent method variability of PEST.</s>
-          <s>Enhancing psychophysical simulations with intra-subject variability Histogram similarity for the optimal intra-subject variability.</s>
-          <s>Histograms of the parameters of the psychometric functions of the behavioral data (gray fill, 33 × 5 data points) versus the simulated data (black outline, 33 × 5 simulated data points averaged over 1000 simulations) with optimal noise level at the pairn a ,n b .</s>
-        </p>
-      </div>
-      <div>
-        <head>Fig 6. Illustration of intra-subject variability. (Top)</head>
-        <p>
-          <s>For each stimulus level x the distribution of proportion correct is plotted as a heat map based on 1000 templates created with the population average model (bold black sigmoid) and the intra-subject variability models usingn a andn b .</s>
-          <s>(Middle) The dashed black distribution curves correspond to the parametric log-normal and beta intra-subject variability models.</s>
-          <s>The histograms (black outline) as well as the dashed black lines for the means show the parameter distributions of the 1000 templates including intra-subject variability.</s>
-          <s>The white triangles indicate the threshold and slope of the population average model (without noise).</s>
-          <s>As a comparison, the inherent method variability (histogram with gray fill) for the same population average model without intra-subject variability is plotted.</s>
-          <s>(Bottom) The percentage of estimates within a tolerance interval (percentage within bounds, The results showed that for a matched reliability, the similarity between the behavioral and simulated datasets was excellent for the optimal pair of intra-subject threshold and slope variability.</s>
+          <s>Enhancing psychophysical simulations with intra-subject variability Enhancing psychophysical simulations with intra-subject variability The results showed that for a matched reliability, the similarity between the behavioral and simulated datasets was excellent for the optimal pair of intra-subject threshold and slope variability.</s>
           <s>Furthermore, the identified intra-subject variability of the threshold was larger compared to the method variability, whereas the opposite was the case for the slope.</s>
         </p>
       </div>
@@ -475,9 +476,9 @@
           <s>When assuming invariant subjects (i.e., no intra-subject variability), the test-retest reliability for the threshold would be 39.2% higher compared to when the estimated intra-subject variability is included in the simulation, but a perfect method (i.e., no method variability) would be assumed.</s>
           <s>This is also reflected by the nAUC for the threshold (a nonparametric metric to evaluate the variability of estimation errors), which is higher by 16.4% for the simulated case with method variability only.</s>
           <s>Based on these findings, if the assessment was to be improved, one could suggest to address factors influencing the intra-subject variability, before optimizing the psychophysical sampling procedure, as even with a perfect method, the reliability would ceil atr T n a ;n b ¼ 0:552 due to intra-subject variability.</s>
-          <s>This can also be seen in <ref type="figure">Fig 6 (Middle, left)</ref> where the distribution of estimates is narrower for the method variability compared to the one for intra-subject variability.</s>
+          <s>This can also be seen in <ref target="#fig_5" type="figure">Fig 6 (Middle, left)</ref> where the distribution of estimates is narrower for the method variability compared to the one for intra-subject variability.</s>
           <s>It can also be observed that the method variability follows a unimodal distribution, resembling a log-normal probability density function, as it can be expected from the theoretical definition of the threshold parameter with positive semi-infinite support.</s>
-          <s>On the contrary, the slope estimates suffer from poor method performance and, according to the U-shaped estimate distribution (histogram with gray fill in <ref type="figure">Fig 6 (Middle, right)</ref> ), outcome measures are predominantly severely under-or overestimated.</s>
+          <s>On the contrary, the slope estimates suffer from poor method performance and, according to the U-shaped estimate distribution (histogram with gray fill in <ref target="#fig_5" type="figure">Fig 6 (Middle, right)</ref> ), outcome measures are predominantly severely under-or overestimated.</s>
           <s>This poor slope estimation performance given the settings of the sampling procedure and the short PCTw/iB) around the parameters of the population average model is plotted against the size of the interval (gray: method variability, black: intra-subject variability), together with the absolute difference of percentage (|Δ|, dashed black line).</s>
           <s>For both method and intra-subject variability, the normalized area under the curve (nAUC) is calculated.</s>
         </p>
@@ -513,8 +514,7 @@
           <s>It would be possible model the lapse rate including intra-subject variability with a beta distribution as for the slope, but with an adapted support.</s>
           <s>However, for the sake of simplicity, this was omitted here.</s>
           <s>As a matter of fact, as the histogram similarity is almost 1 for the lapse rate parameter, it shows that using a constant lapse rate (within the range [0, 0.1]) for each individual subject also leads to realistic simulations and that adding an additional intrasubject variability model for the lapse rate may not be necessary.</s>
-          <s>
-            <ref target="#fig_6" type="figure">While Fig 5 suggests</ref> that there may be cases with lapse rates higher than 0.1, this would correspond to subjects not paying attention to every fifth trial, which is very high for healthy subjects.</s>
+          <s>While <ref target="#fig_4" type="figure">Fig 5 suggests</ref> that there may be cases with lapse rates higher than 0.1, this would correspond to subjects not paying attention to every fifth trial, which is very high for healthy subjects.</s>
           <s>More likely, this bimodal result (lapse rates around 0 and around 0.1) may arise from the fitting procedure and the short number of trials per PEST sequence.</s>
           <s>To identify the origin of these results, further studies comparing different fitting procedures with longer sequences would be required.</s>
           <s>When identifying the best model of intra-subject variability, the noise level pair ν α , ν β , where overall similarity is the highest, may not lie on the iso-reliability contour corresponding to the reliability r of the behavioral data.</s>
@@ -533,8 +533,6 @@
           <s>While they can be used to evaluate different procedures and their method variability, existing computer simulations are often not representative of real-world scenarios, as critical aspects such as the intra-subject variability are neglected.</s>
           <s>As a matter of fact, intra-subject variability cannot be directly quantified from behavioral data.</s>
           <s>This work introduces a new approach based on the combination of computer simulations and behavioral data to separate method variability from intra-subject variability and to estimate and model intra-subject variability in psychophysical experiments.</s>
-        </p>
-        <p>
           <s>Given a realistic model of the population, different psychophysical procedures can be simulated and compared, and the procedures can be tuned to the specific application and target population.</s>
           <s>Quantifying the method and intra-subject variability allows putting them into perspective when developing assessments.</s>
           <s>Given the intra-subject variability, it allows simulating an experiment with an ideal psychophysical method (i.e., finding the theoretically maximally attainable performance of an assessment).</s>
@@ -561,97 +559,24 @@
         <figDesc>Fig 2. Definition of psychometric function and its parameters. Psychometric function ψ(x; α, β, γ, λ) (bold black sigmoid) and cumulative Gaussian function F Gauss (x; μ, σ) (bold gray sigmoid) in the case of a two-alternative forced choice (2AFC) task. The thin gray curve is the underlying Gaussian probability density function. The inflection points are indicated as circles in the respective colors. https://doi.org/10.1371/journal.pone.0209839.g002</figDesc>
       </figure>
       <figure xml:id="fig_2">
-        <head/>
-        <label/>
-        <figDesc>For a new set of psychometric functions C T n a ;n b with the optimal noise model, the simulation was repeated N simulations times, and the parameter distributions as well as � r T n a ;n b and � s T n a ;n b were calculated. In addition, the maximum attainable reliabilityr T n a ;n b</figDesc>
-      </figure>
-      <figure xml:id="fig_3">
-        <head>Fig 4 ,</head>
-        <label>4</label>
-        <figDesc>Fig 4, together with the same projected iso-reliability contour. The maximum overall similarity on the contour was found for the noise level pairn a ¼ 0:363 andn b ¼ 0:849 (� s T n a ;n b ¼ 0:764), corresponding to the best intra-subject variability model estimate. The similarities of the distributions of the parameters of the psychometric functions are shown individually in Fig 5. The simulated reliability at this noise level pair was � r T n a ;n b ¼ 0:207 [0.076, 0.384]. The maximum</figDesc>
-      </figure>
-      <figure xml:id="fig_4">
         <head>Fig 3 .</head>
         <label>3</label>
         <figDesc>Fig 3. Simulated reliability and iso-reliability contour of behavioral study. For each pair of intra-subject threshold noise ν α and slope noise ν β , the simulated reliability averaged across N simulations = 1000 simulations (� r T n a ;n b ) is represented as a heat map. The dashed white line indicates the iso-reliability contour corresponding to the reliability obtained from the behavioral study (r = 0.212). https://doi.org/10.1371/journal.pone.0209839.g003</figDesc>
       </figure>
-      <figure xml:id="fig_5">
+      <figure xml:id="fig_3">
         <head>Fig 4 .</head>
         <label>4</label>
         <figDesc>Fig 4. Best intra-subject variability estimate based on overall similarity. For each pair of intra-subject threshold noise ν α and slope noise ν β , the overall similarity (combined for threshold, slope, and lapse rate) averaged across N simulations = 1000 simulations (� s T n a ;n b ) is represented as a heat map. The dashed white iso-reliability contour is identical to Fig 3. The noise level pair on the contour with the highest overall similarity (� s T n a ;n b ¼ 0:764) is indicated with a black dot. https://doi.org/10.1371/journal.pone.0209839.g004</figDesc>
       </figure>
-      <figure xml:id="fig_6">
+      <figure xml:id="fig_4">
         <head>Fig 5 .</head>
         <label>5</label>
-        <figDesc>Fig 5. Histogram similarity for the optimal intra-subject variability. Histograms of the parameters of the psychometric functions of the behavioral data (gray fill, 33 × 5 data points) versus the simulated data (black outline, 33 × 5 simulated data points averaged over 1000 simulations) with optimal noise level at the pairn a ,n b .</figDesc>
+        <figDesc>Fig 5. Histogram similarity for the optimal intra-subject variability. Histograms of the parameters of the psychometric functions of the behavioral data (gray fill, 33 × 5 data points) versus the simulated data (black outline, 33 × 5 simulated data points averaged over 1000 simulations) with optimal noise level at the pairn a ,n b . https://doi.org/10.1371/journal.pone.0209839.g005</figDesc>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_0">
-        <head/>
-        <label/>
-        <figDesc>Procedure. For each combination of ν α and ν β , the PEST sequence of the 2AFC task was simulated five times for the whole set of templates C</figDesc>
-        <table>Enhancing psychophysical simulations with intra-subject variability calculated: 
-
-a Be ¼ 
-m noise ðÀ m 
-
-2 
-
-noise þ m noise À s 
-
-2 
-
-noise Þ 
-s 2 
-
-noise 
-
-and 
-ð15Þ 
-
-b Be ¼ a Be 
-1 À m noise 
-m noise 
-
-� 
-� 
-: 
-ð16Þ 
-
-No noise was modeled on the lapse rate λ 
-T and on the guess rate γ 
-T = 0.5. The 
-
-psychometric functions to be used for the simulated PEST sequences were of the form 
-c 
-
-T 
-
-noise ðx; a 
-
-T 
-
-noise ; b 
-
-T 
-
-noise ; g 
-T ; l 
-T Þ. For the threshold, 16 equally distributed noise levels ν α 2 [0, 1.5], 
-
-and for the slope, 14 noise levels ν β 2 [0, 1] with a twice as high grid density 2 [0.7, 1], were 
-simulated. 
-2.2.3 T 
-n a ;n b 
-
-. For each single simulated 
-
-sequence, new random variables a 
-
-T 
-
-noise and b 
-
-</table>
+      <figure xml:id="fig_5">
+        <head>Fig 6 .</head>
+        <label>6</label>
+        <figDesc>Fig 6. Illustration of intra-subject variability. (Top) For each stimulus level x the distribution of proportion correct is plotted as a heat map based on 1000 templates created with the population average model (bold black sigmoid) and the intra-subject variability models usingn a andn b . (Middle) The dashed black distribution curves correspond to the parametric log-normal and beta intra-subject variability models. The histograms (black outline) as well as the dashed black lines for the means show the parameter distributions of the 1000 templates including intra-subject variability. The white triangles indicate the threshold and slope of the population average model (without noise). As a comparison, the inherent method variability (histogram with gray fill) for the same population average model without intra-subject variability is plotted. (Bottom) The percentage of estimates within a tolerance interval (percentage within bounds,</figDesc>
       </figure>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0209839 December 31, 2018</note>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0209839 December 31, 2018 12 / 18</note>
@@ -693,15 +618,15 @@ noise and b
                   <surname>Gassert</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0207217</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0207217PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0207217</idno>
+              <idno>PMID: 30485350</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0207217"/>
             </analytic>
             <monogr>
               <title level="j">PLOS ONE</title>
               <imprint>
                 <biblScope unit="volume">13</biblScope>
                 <biblScope unit="issue">11</biblScope>
-                <biblScope unit="page">30485350</biblScope>
                 <date type="published" when="2018"/>
               </imprint>
             </monogr>
@@ -732,7 +657,7 @@ noise and b
           </biblStruct>
           <biblStruct xml:id="b2">
             <analytic>
-              <title level="a" type="main">Experimental Validation of a Rapid, Adaptive Robotic Assessment of the MCP Joint Angle Difference Threshold</title>
+              <title level="a" type="main">Adaptive Robotic Assessment of the MCP Joint Angle Difference Threshold</title>
               <author>
                 <persName>
                   <forename type="first">M</forename>
@@ -774,6 +699,7 @@ noise and b
                 <biblScope from="3" to="10" unit="page"/>
               </imprint>
             </monogr>
+            <note>Experimental Validation of a Rapid</note>
           </biblStruct>
           <biblStruct xml:id="b3">
             <analytic>
@@ -791,7 +717,7 @@ noise and b
                   <surname>Nevill</surname>
                 </persName>
               </author>
-              <idno type="doi">10.2165/00007256-199826040-00002</idno>
+              <idno type="DOI">10.2165/00007256-199826040-00002</idno>
               <idno>2165/ 00007256-199826040-00002 PMID: 9820922</idno>
               <ptr target="https://doi.org/10"/>
             </analytic>
@@ -820,7 +746,7 @@ noise and b
                   <surname>Theory</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/j.1745-3992.1992.tb00260.x</idno>
+              <idno type="DOI">10.1111/j.1745-3992.1992.tb00260.x</idno>
               <ptr target="https://doi.org/10.1111/j.1745-3992.1992.tb00260.x"/>
               <imprint>
                 <date type="published" when="1992"/>
@@ -852,15 +778,16 @@ noise and b
                   <surname>Lankhorst</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/ptj/73.6.386</idno>
-              <ptr target="https://doi.org/10.1093/ptj/73.6.386PMID"/>
+              <idno type="DOI">10.1093/ptj/73.6.386</idno>
+              <idno>PMID: 8497513</idno>
+              <ptr target="https://doi.org/10.1093/ptj/73.6.386"/>
             </analytic>
             <monogr>
               <title level="j">Physical Therapy</title>
               <imprint>
                 <biblScope unit="volume">73</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">8497513</biblScope>
+                <biblScope from="386" to="395" unit="page"/>
                 <date type="published" when="1993"/>
               </imprint>
             </monogr>
@@ -928,7 +855,7 @@ noise and b
                   <forename type="first">C</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1121/1.1910407</idno>
+              <idno type="DOI">10.1121/1.1910407</idno>
               <ptr target="https://doi.org/10.1121/1.1910407"/>
             </analytic>
             <monogr>
@@ -970,7 +897,7 @@ noise and b
                   <surname>Plos One |</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0209839</idno>
+              <idno type="DOI">10.1371/journal.pone.0209839</idno>
               <ptr target="https://doi.org/10.1371/journal.pone.0209839"/>
               <imprint>
                 <date type="published" when="2018-12-31"/>
@@ -986,7 +913,7 @@ noise and b
                   <surname>Findlay</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3758/BF03208300</idno>
+              <idno type="DOI">10.3758/BF03208300</idno>
               <ptr target="https://doi.org/10.3758/BF03208300"/>
               <imprint>
                 <date type="published" when="1978"/>
@@ -1004,7 +931,7 @@ noise and b
                   <surname>Pentland</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3758/BF03204398</idno>
+              <idno type="DOI">10.3758/BF03204398</idno>
               <ptr target="https://doi.org/10.3758/BF03204398"/>
               <imprint>
                 <date type="published" when="1980"/>
@@ -1023,14 +950,15 @@ noise and b
                   <surname>Hall</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1121/1.385912</idno>
-              <ptr target="https://doi.org/10.1121/1.385912PMID"/>
+              <idno type="DOI">10.1121/1.385912</idno>
+              <idno>PMID: 7240589</idno>
+              <ptr target="https://doi.org/10.1121/1.385912"/>
             </analytic>
             <monogr>
               <title level="j">The Journal of the Acoustical Society of America</title>
               <imprint>
                 <biblScope unit="volume">69</biblScope>
-                <biblScope unit="page">7240589</biblScope>
+                <biblScope unit="page">1763</biblScope>
                 <date type="published" when="1981"/>
               </imprint>
             </monogr>
@@ -1050,7 +978,7 @@ noise and b
                   <surname>Williams</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3758/BF03203075</idno>
+              <idno type="DOI">10.3758/BF03203075</idno>
               <ptr target="https://doi.org/10.3758/BF03203075"/>
             </analytic>
             <monogr>
@@ -1064,8 +992,8 @@ noise and b
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b15">
-            <monogr>
-              <title level="m" type="main">The step method: A new adaptive psychophysical procedure. Perception &amp; Psychophysics</title>
+            <analytic>
+              <title level="a" type="main">The step method: A new adaptive psychophysical procedure</title>
               <author>
                 <persName>
                   <forename type="first">W</forename>
@@ -1073,12 +1001,16 @@ noise and b
                   <surname>Simpson</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3758/BF03208065</idno>
+              <idno type="DOI">10.3758/BF03208065</idno>
               <ptr target="https://doi.org/10.3758/BF03208065"/>
+            </analytic>
+            <monogr>
+              <title level="j">Perception &amp; Psychophysics</title>
               <imprint>
-                <date type="published" when="1989"/>
                 <biblScope unit="volume">45</biblScope>
+                <biblScope unit="issue">6</biblScope>
                 <biblScope from="572" to="576" unit="page"/>
+                <date type="published" when="1989"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -1098,7 +1030,7 @@ noise and b
                   <surname>Fitzhugh</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3758/BF03208169</idno>
+              <idno type="DOI">10.3758/BF03208169</idno>
               <ptr target="https://doi.org/10.3758/BF03208169"/>
             </analytic>
             <monogr>
@@ -1120,7 +1052,7 @@ noise and b
                   <surname>Kaernbach</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3758/BF03214307</idno>
+              <idno type="DOI">10.3758/BF03214307</idno>
               <ptr target="https://doi.org/10.3758/BF03214307"/>
             </analytic>
             <monogr>
@@ -1143,15 +1075,16 @@ noise and b
                   <surname>Green</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1121/1.406696</idno>
-              <ptr target="https://doi.org/10.1121/1.406696PMID"/>
+              <idno type="DOI">10.1121/1.406696</idno>
+              <idno>PMID: 8473622</idno>
+              <ptr target="https://doi.org/10.1121/1.406696"/>
             </analytic>
             <monogr>
               <title level="j">The Journal of the Acoustical Society of America</title>
               <imprint>
                 <biblScope unit="volume">93</biblScope>
                 <biblScope unit="issue">4</biblScope>
-                <biblScope unit="page">8473622</biblScope>
+                <biblScope from="2096" to="2105" unit="page"/>
                 <date type="published" when="1993"/>
               </imprint>
             </monogr>
@@ -1193,15 +1126,16 @@ noise and b
                   <surname>Supowit</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/0042-6989(94)90039-6</idno>
-              <ptr target="https://doi.org/10.1016/0042-6989(94)90039-6PMID"/>
+              <idno type="DOI">10.1016/0042-6989(94)90039-6</idno>
+              <idno>PMID: 8160402</idno>
+              <ptr target="https://doi.org/10.1016/0042-6989(94"/>
             </analytic>
             <monogr>
               <title level="j">Vision Research</title>
               <imprint>
                 <biblScope unit="volume">34</biblScope>
                 <biblScope unit="issue">7</biblScope>
-                <biblScope unit="page">8160402</biblScope>
+                <biblScope from="90039" to="90045" unit="page"/>
                 <date type="published" when="1994"/>
               </imprint>
             </monogr>
@@ -1257,7 +1191,7 @@ noise and b
                   <surname>Antolini</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3758/BF03193747</idno>
+              <idno type="DOI">10.3758/BF03193747</idno>
               <ptr target="https://doi.org/10.3758/BF03193747"/>
               <imprint>
                 <date type="published" when="2007"/>
@@ -1276,15 +1210,16 @@ noise and b
                   <surname>Oldfield</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/0028-3932(71)90067-4</idno>
-              <ptr target="https://doi.org/10.1016/0028-3932(71)90067-4PMID"/>
+              <idno type="DOI">10.1016/0028-3932(71)90067-4</idno>
+              <idno>PMID: 5146491</idno>
+              <ptr target="https://doi.org/10.1016/0028-3932(71)90067-4"/>
             </analytic>
             <monogr>
               <title level="j">Neuropsychologia</title>
               <imprint>
                 <biblScope unit="volume">9</biblScope>
                 <biblScope unit="issue">1</biblScope>
-                <biblScope unit="page">5146491</biblScope>
+                <biblScope from="97" to="113" unit="page"/>
                 <date type="published" when="1971"/>
               </imprint>
             </monogr>
@@ -1378,7 +1313,7 @@ noise and b
                   <surname>Gassert</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1186/s12984-018-0387-6</idno>
+              <idno type="DOI">10.1186/s12984-018-0387-6</idno>
               <ptr target="https://doi.org/10.1186/s12984-018-0387-6PMID"/>
             </analytic>
             <monogr>
@@ -1425,14 +1360,15 @@ noise and b
                   <surname>Gassert</surname>
                 </persName>
               </author>
-              <idno type="doi">10.2147/CIA.S129601</idno>
-              <ptr target="https://doi.org/10.2147/CIA.S129601PMID"/>
+              <idno type="DOI">10.2147/CIA.S129601</idno>
+              <idno>PMID: 28435235</idno>
+              <ptr target="https://doi.org/10.2147/CIA.S129601"/>
             </analytic>
             <monogr>
               <title level="j">Clin Interv Aging</title>
               <imprint>
                 <biblScope unit="volume">12</biblScope>
-                <biblScope unit="page">28435235</biblScope>
+                <biblScope from="635" to="643" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -1472,7 +1408,7 @@ noise and b
                   <surname>Gassert</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3758/s13414-018-1521-z</idno>
+              <idno type="DOI">10.3758/s13414-018-1521-z</idno>
               <ptr target="https://doi.org/10.3758/s13414-018-1521-z"/>
             </analytic>
             <monogr>
@@ -1487,18 +1423,18 @@ noise and b
           </biblStruct>
           <biblStruct xml:id="b26">
             <analytic>
-              <title level="a" type="main">Adaptive control of mechanical impedance by coactivation of antagonist muscles. Autom Control</title>
+              <title level="a" type="main">Adaptive control of mechanical impedance by coactivation of antagonist muscles</title>
               <author>
                 <persName>
                   <forename type="first">N</forename>
                   <surname>Hogan</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TAC.1984.1103644</idno>
+              <idno type="DOI">10.1109/TAC.1984.1103644</idno>
               <ptr target="https://doi.org/10.1109/TAC.1984.1103644"/>
             </analytic>
             <monogr>
-              <title level="j">IEEE Trans</title>
+              <title level="j">Autom Control, IEEE Trans</title>
               <imprint>
                 <biblScope unit="volume">29</biblScope>
                 <biblScope unit="issue">8</biblScope>
@@ -1545,7 +1481,7 @@ noise and b
                   <surname>Hill</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3758/BF03194544</idno>
+              <idno type="DOI">10.3758/BF03194544</idno>
               <ptr target="https://doi.org/10.3758/BF03194544"/>
             </analytic>
             <monogr>
@@ -1567,7 +1503,7 @@ noise and b
                   <surname>Strasburger</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3758/BF03194547</idno>
+              <idno type="DOI">10.3758/BF03194547</idno>
               <ptr target="https://doi.org/10.3758/BF03194547"/>
             </analytic>
             <monogr>
@@ -1603,15 +1539,16 @@ noise and b
                   <surname>Marshall</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1121/1.401930</idno>
-              <ptr target="https://doi.org/10.1121/1.401930PMID"/>
+              <idno type="DOI">10.1121/1.401930</idno>
+              <idno>PMID: 1939903</idno>
+              <ptr target="https://doi.org/10.1121/1.401930"/>
             </analytic>
             <monogr>
               <title level="j">The Journal of the Acoustical Society of America</title>
               <imprint>
                 <biblScope unit="volume">90</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">1939903</biblScope>
+                <biblScope from="1385" to="1397" unit="page"/>
                 <date type="published" when="1991"/>
               </imprint>
             </monogr>
@@ -1639,15 +1576,15 @@ noise and b
                   <surname>Wichmann</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1167/11.6.16</idno>
-              <ptr target="https://doi.org/10.1167/11.6.16PMID"/>
+              <idno type="DOI">10.1167/11.6.16</idno>
+              <idno>PMID: 21606382</idno>
+              <ptr target="https://doi.org/10.1167/11.6.16"/>
             </analytic>
             <monogr>
               <title level="j">J Vis</title>
               <imprint>
                 <biblScope unit="volume">11</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">21606382</biblScope>
                 <date type="published" when="2011"/>
               </imprint>
             </monogr>
@@ -1668,7 +1605,8 @@ noise and b
                   <surname>Maunsell</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1523/JNEUROSCI.3063-11.2011</idno>
+              <idno type="DOI">10.1523/JNEUROSCI.3063-11.2011</idno>
+              <idno>PMID: 22049423</idno>
               <ptr target="https://doi.org/10.1523/JNEUROSCI.3063-11"/>
             </analytic>
             <monogr>
@@ -1676,7 +1614,7 @@ noise and b
               <imprint>
                 <biblScope unit="volume">31</biblScope>
                 <biblScope unit="issue">44</biblScope>
-                <biblScope unit="page">22049423</biblScope>
+                <biblScope from="15802" to="15806" unit="page"/>
                 <date type="published" when="2011"/>
               </imprint>
             </monogr>
@@ -1698,15 +1636,16 @@ noise and b
                   <surname>Fleiss</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1037/0033-2909.86.2.420</idno>
-              <ptr target="https://doi.org/10.1037/0033-2909.86.2.420PMID"/>
+              <idno type="DOI">10.1037/0033-2909.86.2.420</idno>
+              <idno>PMID: 18839484</idno>
+              <ptr target="https://doi.org/10.1037/0033-2909.86.2.420"/>
             </analytic>
             <monogr>
               <title level="j">Psychol Bull</title>
               <imprint>
                 <biblScope unit="volume">86</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">18839484</biblScope>
+                <biblScope from="420" to="428" unit="page"/>
                 <date type="published" when="1979"/>
               </imprint>
             </monogr>
@@ -1725,7 +1664,7 @@ noise and b
                   <surname>Plos One |</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0209839</idno>
+              <idno type="DOI">10.1371/journal.pone.0209839</idno>
               <ptr target="https://doi.org/10.1371/journal.pone.0209839"/>
               <imprint>
                 <date type="published" when="2018-12-31"/>
@@ -1749,15 +1688,16 @@ noise and b
                   <surname>Downham</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1097/01.phm.0000176452.17771.20</idno>
-              <ptr target="https://doi.org/10.1097/01.phm.0000176452.17771.20PMID"/>
+              <idno type="DOI">10.1097/01.phm.0000176452.17771.20</idno>
+              <idno>PMID: 16141752</idno>
+              <ptr target="https://doi.org/10.1097/01.phm.0000176452.17771.20"/>
             </analytic>
             <monogr>
               <title level="j">Am J Phys Med Rehabil</title>
               <imprint>
                 <biblScope unit="volume">84</biblScope>
                 <biblScope unit="issue">9</biblScope>
-                <biblScope unit="page">16141752</biblScope>
+                <biblScope from="719" to="723" unit="page"/>
                 <date type="published" when="2005"/>
               </imprint>
             </monogr>
@@ -1792,15 +1732,16 @@ noise and b
                   <surname>Bouter</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.jclinepi.2005.10.015</idno>
-              <ptr target="https://doi.org/10.1016/j.jclinepi.2005.10.015PMID"/>
+              <idno type="DOI">10.1016/j.jclinepi.2005.10.015</idno>
+              <idno>PMID: 16980142</idno>
+              <ptr target="https://doi.org/10.1016/j.jclinepi.2005.10.015"/>
             </analytic>
             <monogr>
               <title level="j">J Clin Epidemiol</title>
               <imprint>
                 <biblScope unit="volume">59</biblScope>
                 <biblScope unit="issue">10</biblScope>
-                <biblScope unit="page">16980142</biblScope>
+                <biblScope from="1033" to="1039" unit="page"/>
                 <date type="published" when="2006"/>
               </imprint>
             </monogr>
@@ -1822,12 +1763,13 @@ noise and b
                   <surname>Tyler</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/S0042-6989(98)00285-5</idno>
-              <ptr target="https://doi.org/10.1016/S0042-6989(98)00285-5PMID"/>
+              <idno type="DOI">10.1016/S0042-6989(98)00285-5</idno>
+              <idno>PMID: 10492833</idno>
+              <ptr target="https://doi.org/10.1016/S0042-6989(98"/>
               <imprint>
                 <date type="published" when="1999"/>
                 <biblScope unit="volume">39</biblScope>
-                <biblScope unit="page">10492833</biblScope>
+                <biblScope from="285" to="290" unit="page"/>
               </imprint>
             </monogr>
           </biblStruct>

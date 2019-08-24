@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T07:50+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:28+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -81,8 +81,11 @@
             <s>However, this requires imputation to WGS, often with a limited number of sequenced animals for the target population.</s>
             <s>The objective of this study was to investigate imputation to WGS in two pig lines using a multi-line reference population and, subsequently, to investigate the effect of using these imputed WGS (iWGS) for GWAS.</s>
           </p>
+        </div>
+        <div>
+          <head>Methods:</head>
           <p>
-            <s>Methods: Phenotypes and genotypes were available on 12,184 Large White pigs (LW-line) and 4943 Dutch Landrace pigs (DL-line).</s>
+            <s>Phenotypes and genotypes were available on 12,184 Large White pigs (LW-line) and 4943 Dutch Landrace pigs (DL-line).</s>
             <s>Imputed 660 K and 80 K genotypes for the LW-line and DL-line, respectively, were imputed to iWGS using Beagle v.4.1.</s>
             <s>Since only 32 LW-line and 12 DL-line boars were sequenced, 142 animals from eight commercial lines were added.</s>
             <s>GWAS were performed for each line using the 80 K and 660 K SNPs, the genotype scores of iWGS SNPs that had an imputation accuracy (Beagle R 2 ) higher than 0.6, and the dosage scores of all iWGS SNPs.</s>
@@ -223,11 +226,7 @@
         </p>
         <p>
           <s>where x ij (x ik ) is the genotype coded 0, 1, or 2 for the ith SNP of the j(k)th individual, N is the total number of markers, and p i is the MAF of the ith SNP.</s>
-          <s>The percentage of phenotypic variance explained by the ith SNP was estimated as</s>
-        </p>
-        <formula xml:id="formula_0">2p i (1−p i ) * b 2 var(phenotype) * 100</formula>
-        <p>
-          <s>, where b is the estimated allele substitution effect.</s>
+          <s>The percentage of phenotypic variance explained by the ith SNP was estimated as 2p i (1−p i ) * b 2 var(phenotype) * 100 , where b is the estimated allele substitution effect.</s>
         </p>
       </div>
       <div>
@@ -240,14 +239,11 @@
           <s>For the LW-line, the number of independent chromosomal segments was 776.4,</s>
           <s>648.1 and 782.3 for the 80 K and 660 K SNP panels and the iWGS genotype scores, respectively.</s>
           <s>For the DL-line, the number of independent chromosomal segments was 249.5, 277.4,</s>
-          <s>and 280.6 y = 1µ + xb + u + e,</s>
-        </p>
-        <formula xml:id="formula_1">G ik = 1 N � i G ijk =      1 N � i (x ij −2p i )(x ik −2p i ) 2p i (1−p i ) , j � = k 1 + 1 N � i x 2 ij −(1+2p i )x ij +2p 2 i 2p i (1−p i ) , j = k      , van den Berg et al. Genet Sel Evol (2019) 51:2</formula>
-        <p>
-          <s>for the 80 K and 660 K SNP panels and the iWGS genotype scores, respectively.</s>
+          <s>and 280.6 for the 80 K and 660 K SNP panels and the iWGS genotype scores, respectively.</s>
           <s>Since, within a line, the numbers of independent chromosomal segments were similar between SNP densities, the same significance threshold was used for all densities within a line.</s>
           <s>As a result, a SNP was considered significant when it was associated with a − log 10 (p value) higher than 4.2 and 3.7 for the LW-line and the DL-line, respectively.</s>
         </p>
+        <formula xml:id="formula_0">y = 1µ + xb + u + e, G ik = 1 N � i G ijk =      1 N � i (x ij −2p i )(x ik −2p i ) 2p i (1−p i ) , j � = k 1 + 1 N � i x 2 ij −(1+2p i )x ij +2p 2 i 2p i (1−p i ) , j = k      ,</formula>
         <p>
           <s>To identify QTL regions, SNPs on each chromosome were ranked based on their p values and, starting with the SNP with the highest − log 10 (p value), all significant SNPs within a 0.5-Mb region to the left and right of the SNP were assigned to that QTL region.</s>
           <s>This procedure was repeated until all significant SNPs were assigned to a QTL region.</s>
@@ -264,10 +260,7 @@
         <p>
           <s>An overview of the number of SNPs available for each SNP density and line is in <ref target="#tab_1" type="table">Table 1</ref> .</s>
           <s>In total, 26.1 × 10 6 SNPs were available in the sequenced reference animals, of which 17.6 × 10 6 and 21.7 × 10 6 segregated in the iWGS data for the DL-line and the LW-line, respectively.</s>
-          <s>After quality control, 5.4 × 10 <ref target="#b5" type="bibr">6</ref> SNPs with iWGS dosage scores and 3.5 × 10 6 SNPs with genotype scores remained for the LW-line, and 5.8 × 10</s>
-        </p>
-        <p>
-          <s>6 SNPs with iWGS dosage scores and 2.5 × 10 6 SNPs with genotype scores remained for the DL-line.</s>
+          <s>After quality control, 5.4 × 10 6 SNPs with iWGS dosage scores and 3.5 × 10 6 SNPs with genotype scores remained for the LW-line, and 5.8 × 10 6 SNPs with iWGS dosage scores and 2.5 × 10 6 SNPs with genotype scores remained for the DL-line.</s>
           <s>Not all SNPs on the SNP panels were present in the WGS data, i.e., for the LW-line, 91.2% of the 80 K SNPs and 88.8% of the 660 K SNPs were present in the WGS data, and for the DL-line 89.7% of the 80 K SNPs were present in the WGS data.</s>
         </p>
       </div>
@@ -278,7 +271,14 @@
           <s>The LW-line 660 K genotypes were imputed to iWGS with an average Beagle R 2 of 0.49; after removing SNPs with an Beagle R 2 lower than 0.6, the average R 2 was equal to 0.93.</s>
           <s>The DL-line 80 K genotypes were imputed to iWGS with an average Beagle R 2 of 0.39 and of 0.84 after removing SNPs with an imputation Beagle R 2 &lt; 0.6.</s>
           <s>Before filtering and quality control, the Beagle R 2 varied between ( <ref target="#fig_0" type="figure">Fig. 1</ref> ) and within chromosomes (see Additional file 2: <ref target="#fig_0" type="figure">Figures S1 and S2</ref> ).</s>
-          <s>For the LW-line, the lowest and highest Beagle R 2 were obtained for chromosome <ref target="#b12" type="bibr">13</ref> , increased with increasing MAF based on the iWGS genotype scores for each target line <ref target="#fig_1" type="figure">(Fig. 2)</ref> .</s>
+          <s>For the LW-line, the lowest and highest Beagle R 2 were obtained for chromosome 13 (0.45) and 10 (0.55), respectively.</s>
+          <s>For the DL-line, the lowest and highest R 2 were obtained for chromosome 15 (0.35) and 12 (0.43), respectively.</s>
+          <s>Beagle R 2 also varied along each chromosome for both lines.</s>
+          <s>Some regions had a low SNP coverage of SNPs, resulting in lower Beagle R 2 in neighbouring regions, as illustrated by the region around 105.5 Mb on chromosome 7 for the DL-line (see Additional file 2: <ref target="#fig_0" type="figure">Figures S1 and S2</ref> ).</s>
+        </p>
+        <p>
+          <s>Imputation accuracy, i.e.</s>
+          <s>Beagle R 2 , increased with increasing MAF based on the iWGS genotype scores for each target line <ref target="#fig_1" type="figure">(Fig. 2)</ref> .</s>
           <s>The most pronounced increase in accuracy of imputation was observed for the 0.00-0.15</s>
           <s>MAF range.</s>
           <s>When MAF increased above 0.15, Beagle R 2 reached a plateau at about 0.9 for the LW-line and 0.7 for the DL-line.</s>
@@ -288,16 +288,13 @@
       <div>
         <head>GWAS</head>
         <p>
-          <s>An overview of the GWAS results based on the 80 K and 660 K SNP genotypes (based on iWGS for the DL-line), and based on the iWGS genotype and dosage scores <ref target="#tab_2" type="table">(Table 2)</ref> ; for the LW-line and DL-line, the number of QTL regions detected increased to 132 and 217, respectively.</s>
-        </p>
-        <p>
-          <s>The Manhattan plots for each SNP density and for both lines showed a clear peak on chromosome 7 <ref target="#fig_2" type="figure">(Figs. 3, 4)</ref> , reaching a -log10(adjusted p-value) of at least 10 for each SNP density for both lines.</s>
+          <s>An overview of the GWAS results based on the 80 K and 660 K SNP genotypes (based on iWGS for the DL-line), and based on the iWGS genotype and dosage scores The Manhattan plots for each SNP density and for both lines showed a clear peak on chromosome 7 <ref target="#fig_2" type="figure">(Figs. 3, 4)</ref> , reaching a -log10(adjusted p-value) of at least 10 for each SNP density for both lines.</s>
           <s>The peak was located between 103 and 105 Mb but, within this window, the position of the most significant SNP differed between SNP densities.</s>
           <s>In addition, for the LW-line, strong significant QTL regions were identified on chromosomes 10 and 16 for all densities, and on chromosomes 2 and 12 for the higher SNP density.</s>
           <s>For the DL-line, strong significant QTL regions were identified on chromosome 12 and 16 for all densities, and on chromosomes 2 and 10 for the higher SNP density.</s>
         </p>
         <p>
-          <s>Along with the number of significant QTL regions increasing with increasing SNP density, the number of QTL regions that explained a higher percentage of the phenotypic variance increased <ref type="figure">(Figs. 5, 6</ref> ).</s>
+          <s>Along with the number of significant QTL regions increasing with increasing SNP density, the number of QTL regions that explained a higher percentage of the phenotypic variance increased <ref type="figure">(Figs. 5, 6)</ref> .</s>
           <s>For example, for the DL-line, the number of QTL that explained more than 1% of the phenotypic variance increased from 22 to 123 for the iWGS dosage scores versus 80 K genotypes.</s>
           <s>However, it should be noted that the percentage of variance explained, as computed here, is not cumulative because SNPs were tested one at a time and, therefore, the estimated effects of neighbouring SNPs were not independent due to LD.</s>
         </p>
@@ -379,8 +376,6 @@
             <ref target="#b44" type="bibr">[43]</ref>
             <ref target="#b45" type="bibr">[44]</ref> .</s>
           <s>For the DLline, we found a QTL region on chromosome 2 at about 76.5 Mb that was close to another casein kinase 1 gamma gene (casein kinase 1 gamma 2).</s>
-        </p>
-        <p>
           <s>Compared to the DL-line, more QTL regions were identified for the LW-line when 660 K genotypes and genotype scores were used but fewer QTL regions were identified when 80 K genotypes or dosage scores were used for GWAS.</s>
           <s>This was unexpected because the DL-line has a smaller population size and more DL-line iWGS genotype scores were removed because of low imputation accuracy.</s>
           <s>Therefore, the power to detect associations was expected to be lower in the DL-line than in the LWline <ref target="#b46" type="bibr">[45]</ref> .</s>
@@ -441,7 +436,7 @@
           <s>Moreover, the most significant SNPs in the QTL regions explained more of the phenotypic variance when using dosage scores.</s>
           <s>Genotype scores may not capture as much phenotypic variation because some information is lost due to inaccurate imputation.</s>
           <s>For example, for the DL-line, a clear peak was detected on chromosome 2 at approximately 56 Mb with dosage scores but not with genotype scores <ref target="#fig_5" type="figure">(Fig. 7)</ref> .</s>
-          <s>In this region, many SNPs did not pass the quality control for the iWGS genotype score scenario, because imputation accuracy for this region was low <ref type="figure">(Fig. 8)</ref> .</s>
+          <s>In this region, many SNPs did not pass the quality control for the iWGS genotype score scenario, because imputation accuracy for this region was low <ref type="figure">(Fig. 8</ref> ).</s>
           <s>In addition, the Manhattan plot based on iWGS genotype scores <ref target="#fig_5" type="figure">(Fig. 7)</ref> showed a very odd pattern, with an 8-Mb region from 56 to 64 Mb including SNPs that had the same significance level.</s>
           <s>This region displays high LD (i.e., with an average (± SD) LD r 2 of 0.46 (± 0.07)), and thus the SNPs in this regions had approximately the same imputation accuracy and dosage scores, and thus, the same significance level.</s>
         </p>
@@ -479,6 +474,10 @@
       </div>
       <div>
         <head>Funding</head>
+        <p>
+          <s>This study was financially supported by NWO-TTW, the Dutch Ministry of Economic Affairs (TKI Agri &amp; Food project 16022, code BO-22.04-011-001-ASG-LR), and the Breed4Food partners Cobb Europe, CRV, Hendrix Genetics and Topigs Norsvin.</s>
+          <s>The use of the HPC cluster was made possible by CAT-AgroFood (Shared Research Facilities, Wageningen University and Research).</s>
+        </p>
       </div>
       <figure xml:id="fig_0">
         <head>Fig. 1</head>
@@ -509,19 +508,6 @@
         <head>Fig. 7</head>
         <label>7</label>
         <figDesc>Fig. 7 Manhattan plot for number of teats for the DL-line using imputed whole-genome sequence dosage or genotype scores, zoomed-in on chromosome 2. Manhattan plot for number teats of the DL-line population using a iWGS genotype scores, b iWGS dosage scores zoomed-in on chromosome 2</figDesc>
-      </figure>
-      <figure xml:id="fig_6">
-        <head/>
-        <label/>
-        <figDesc>This study was financially supported by NWO-TTW, the Dutch Ministry of Eco- nomic Affairs (TKI Agri &amp; Food project 16022, code BO-22.04-011-001-ASG-LR), and the Breed4Food partners Cobb Europe, CRV, Hendrix Genetics and Topigs Norsvin. The use of the HPC cluster was made possible by CAT-AgroFood (Shared Research Facilities, Wageningen University and Research).</figDesc>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_0">
-        <head/>
-        <label/>
-        <figDesc>(0.45) and 10 (0.55), respectively. For the DL-line, the lowest and highest R 2 were obtained for chromosome 15 (0.35) and 12 (0.43), respectively. Beagle R 2 also varied along each chromosome for both lines. Some regions had a low SNP coverage of SNPs, resulting in lower Beagle R 2 in neighbouring regions, as illustrated by the region around 105.5 Mb on chromosome 7 for the DL-line (see Additional file 2: Figures S1 and S2). Imputation accuracy, i.e. Beagle R</figDesc>
-        <table>2 
-
-</table>
       </figure>
       <figure type="table" validated="true" xml:id="tab_1">
         <head>Table 1</head>
@@ -639,11 +625,8 @@ iWGS_dosage
             <s>The adapted subroutines in GCTA.</s>
             <s>Patches for the program GCTA (Version 1.26.0) to be able to run GWAS with dosage scores.</s>
           </p>
-        </div>
-        <div>
-          <head>Additional file 2.</head>
           <p>
-            <s>Figures S1 and S2 contain the Beagle R 2 of imputation on chromosome 7 for the LW-line and DL-line, respectively, and <ref type="figure">Figure S3</ref> shows the minor allele frequency of the most significant SNPs identified in the DL-line with iWGS genotype scores plotted against their minor allele frequency in the LW-line.</s>
+            <s>Additional file 2. Figures S1 and S2 contain the Beagle R 2 of imputation on chromosome 7 for the LW-line and DL-line, respectively, and <ref type="figure">Figure S3</ref> shows the minor allele frequency of the most significant SNPs identified in the DL-line with iWGS genotype scores plotted against their minor allele frequency in the LW-line.</s>
           </p>
         </div>
         <div>
@@ -757,7 +740,7 @@ iWGS_dosage
                 </persName>
               </author>
               <imprint>
-                <date type="published" when="2017-06-26"/>
+                <date type="published" when="2017-06"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -2297,7 +2280,7 @@ iWGS_dosage
           </biblStruct>
           <biblStruct xml:id="b40">
             <monogr>
-              <title level="m" type="main">convenient online submission • thorough peer review by experienced researchers in your field • rapid publication on acceptance • support for research data, including large and complex data types • gold Open Access which fosters wider collaboration and increased citations maximum visibility for your research</title>
+              <title level="m" type="main">convenient online submission • thorough peer review by experienced researchers in your field • rapid publication on acceptance • support for research data, including large and complex data types • gold Open Access which fosters wider collaboration and increased citations maximum visibility for your research: over 100M website views per year</title>
               <author>
                 <persName>
                   <forename type="first">•</forename>
@@ -2306,11 +2289,10 @@ iWGS_dosage
               </author>
               <imprint/>
             </monogr>
-            <note>over 100M website views per year</note>
           </biblStruct>
           <biblStruct xml:id="b41">
             <monogr>
-              <title level="m">Choose BMC and benefit from</title>
+              <title level="m">Ready to submit your research ? Choose BMC and benefit from</title>
               <imprint/>
             </monogr>
           </biblStruct>

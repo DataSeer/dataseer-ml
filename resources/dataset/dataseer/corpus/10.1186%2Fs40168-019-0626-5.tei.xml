@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:15+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T21:08+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -141,7 +141,7 @@
       <div>
         <head>Simulated virome dataset</head>
         <p>
-          <s>Normalised genome abundance of 572 members of a published simulated community, <ref target="#fig_1" type="figure">(Fig. 1a)</ref> [20] the proportion of genome recovered and the degree of fragmentation were assessed by aligning the resulting contigs from each assembler to the reference genomes <ref target="#fig_1" type="figure">(Fig. 1b)</ref> .</s>
+          <s>Normalised genome abundance of 572 members of a published simulated community, <ref target="#fig_2" type="figure">(Fig. 1a)</ref> [20] the proportion of genome recovered and the degree of fragmentation were assessed by aligning the resulting contigs from each assembler to the reference genomes <ref target="#fig_2" type="figure">(Fig. 1b)</ref> .</s>
           <s>MetaVelvet was not included in this analysis as it failed to reach completion after 7 days.</s>
           <s>Approximately half of the genomes in the community featured an average recovered genome fraction less than 75% and exhibited higher degrees of fragmentation (&gt; 10 contigs per genome on average) across all assemblers.</s>
           <s>For 87 of the 572 genomes, there was an average recovered genome fraction of less than 20% across all assemblers (the low recovered genome fraction of VICUNA was excluded as an outlier).</s>
@@ -149,7 +149,7 @@
           <s>The remaining three genomes were present at higher normalised abundances (50-80th percentile) but featured some of the highest proportions of genomic repeats (70th-90th percentile).</s>
         </p>
         <p>
-          <s>Normalised genome abundance within the community had a strong positive correlation with recovered genome fraction across all assemblers (Additional file 5: <ref target="#tab_0" type="table">Table S1</ref> ) and was verified using a linear model <ref target="#tab_1" type="table">(Additional file 5: Table S2)</ref> , with the exception of SOAPdenovo2, which was negative.</s>
+          <s>Normalised genome abundance within the community had a strong positive correlation with recovered genome fraction across all assemblers (Additional file 5: <ref target="#tab_0" type="table">Table S1</ref> ) and was verified using a linear model (Additional file 5: <ref target="#tab_1" type="table">Table S2)</ref> , with the exception of SOAPdenovo2, which was negative.</s>
           <s>Normalised abundance also correlated negatively with the degree of fragmentation (number of contigs) across all assemblers except Velvet which was positively correlated and Geneious which was not significant (Additional file 5: <ref target="#tab_0" type="table">Table S1</ref> ).</s>
           <s>None of the genomes in the lower 30th percentile of normalised abundance featured an average recovered genome fraction greater than 75%, further exemplifying the impact of low sequencing coverage.</s>
           <s>However, high abundance did not consistently improve genome recovery, and of the 172 genomes in the top 30% of normalised abundance, 20 featured an average genome fraction below 50%.</s>
@@ -188,7 +188,7 @@
           <s>A number of assemblers had a sensitivity greater than 97%; however, each returned greater than 7000 contigs, inferring a high degree of fragmentation <ref target="#tab_1" type="table">(Table 2)</ref> .</s>
           <s>MIRA assembled (partial or complete) 559 of the genomes with a false positive count of just four.</s>
           <s>
-            <ref target="#fig_1" type="figure">Fig. 1</ref> Relationship between percentage of each genome recovered (genome fraction), the number of contigs generated for each combination of genome and assembler and the abundance and proportion of repeats for each genome.</s>
+            <ref target="#fig_2" type="figure">Fig. 1</ref> Relationship between percentage of each genome recovered (genome fraction), the number of contigs generated for each combination of genome and assembler and the abundance and proportion of repeats for each genome.</s>
           <s>a, b Genomes are ordered by their average genome fraction across all assemblers from high to low along the x-axis.</s>
           <s>a (main) Relative abundance, normalised by genome length is plotted along yaxis with upper limit of 0.75% and colour of bars determined by proportion of repeat regions in each genome.</s>
           <s>Blue bars represent genomes with a high proportion of genomic repeats (4th quartile of all genomes) and red represents all other genomes below this quartile.</s>
@@ -203,26 +203,19 @@
         <head>Mock community dataset</head>
         <p>
           <s>Two mock viral communities were used to investigate the impact of high and low abundance ssDNA viruses on assembly performance.</s>
-          <s>Mock A <ref target="#tab_2" type="table">(Table 3a)</ref> contained 12 viral genomes, 10 of which were at equal abundance (9.82% of the total community) and 2 ssDNA genomes (NC_001330 and NC_001422) at low abundance (0.92%).</s>
-          <s>Analysis of this community showed that although some assemblers, namely CLC, Geneious, SPAdes (single cell) and VICUNA, detected all 12 genomes, this was at the expense of a large number of false positives (1143, 53, 1513 and 4969, respectively).</s>
-          <s>Velvet and MetaVelvet generated no false positives but failed to assemble three genomes, while ABySS (for both k-mers) generated a large number of false positives and failed to assemble four and six genomes, respectively.</s>
-          <s>IDBA UD and Ray Meta outperformed the other assemblers with an equal number of contigs to genomes (12), followed by MEGAHIT, SPAdes (default) and SPAdes (meta) with 13, 14 and 14.</s>
-          <s>Mock B <ref target="#tab_2" type="table">(Table 3b</ref> ) also contained 12 genomes but with a higher abundance of ssDNA genomes NC_001330 and NC_001422 (32.47%).</s>
-          <s>VICUNA assemblies of mock B improved upon those from mock A as no false positives were generated, while the false positive rate in the MIRA <ref type="table">Tables S5-S6)</ref> .</s>
+          <s>Mock A <ref target="#tab_2" type="table">(Table 3a)</ref> contained 12 viral genomes, 10 of which were at equal abundance (9.82% of the total community) and 2 ssDNA genomes and SOAPdenovo2 had the lowest sensitivity.</s>
+          <s>Despite being a relatively simple community consisting of 12 members, not all assemblers were able to recover all members (Additional file 5: <ref type="table">Tables S5-S6)</ref> .</s>
           <s>A greater number of assemblers (six) failed to assemble all members of mock B than mock A (four).</s>
-          <s>ABySS(k-mer 63), ABySS(k-mer 127), Velvet and MetaVelvet failed to assemble 6, 4, 3 and 3 genomes, respectively, in mock A and 6, 4,1 and 1 genomes, respectively, in mock B. In addition, MIRA and SOAPdenovo2 failed to assemble 1 and 2 genomes, respectively, in mock B.</s>
-        </p>
-        <p>
-          <s>All but three VICUNA assemblies in mock A exhibited a high level of fragmentation, generating 34.7 ± 35 (mean ± standard deviation) contigs per genome.</s>
+          <s>ABySS(k-mer 63), ABySS(k-mer 127), Velvet and MetaVelvet failed to assemble 6, 4, 3 and 3 genomes, respectively, in mock A and 6, 4,1 and 1 genomes, respectively, in mock B. In addition, MIRA and SOAPdenovo2 failed to assemble 1 and 2 genomes, respectively, in mock B. All but three VICUNA assemblies in mock A exhibited a high level of fragmentation, generating 34.7 ± 35 (mean ± standard deviation) contigs per genome.</s>
           <s>Fragmentation was also seen in MIRA assemblies to a lesser degree with 7.4 ± 10 contigs per genome on average.</s>
           <s>There was a high rate of fragmentation in CLC with one community member generating 144 contigs for genome KF302035.</s>
           <s>Average recovered genome fraction of 85.4 ± 6.4% was skewed by ABySS (k-mer 63), ABySS (k-mer 127), Velvet, MetaVelvet, SOAPdenovo2 and VICUNA which recovered on average 49.5%, 66.6%, 73.8%, 73.8%, 29.7% and 76.6%, respectively.</s>
-          <s>All other assemblers recovered over 99% of each genome in the community (Additional file 6: <ref target="#fig_1" type="figure">Figure S1</ref> ).</s>
+          <s>All other assemblers recovered over 99% of each genome in the community (Additional file 6: <ref target="#fig_2" type="figure">Figure S1</ref> ).</s>
         </p>
         <p>
           <s>Closer inspection of the two ssDNA genomes present at lower relative abundance highlighted significant differences in the average number of indels across all assemblies of the NC_001330 and NC_001422 genomes versus other members of the community (p value = 0.037).</s>
           <s>These genomes exhibited an average of 41.7 ± 18.5 and 9.4 ± 20.4 indels per 100 kb, while all other genomes featured an average of 7.8 ± 18.9 indels per 100 kb.</s>
-          <s>The low abundant ssDNA genomes NC_001330 and NC_001422 also featured the highest average mismatches per 100 kb at 148.7 ± 3 and 302.5 ± 10.7, respectively (Additional file 6: <ref target="#fig_1" type="figure">Figure S1</ref> ).</s>
+          <s>The low abundant ssDNA genomes NC_001330 and NC_001422 also featured the highest average mismatches per 100 kb at 148.7 ± 3 and 302.5 ± 10.7, respectively (Additional file 6: <ref target="#fig_2" type="figure">Figure S1</ref> ).</s>
         </p>
         <p>
           <s>The degree of fragmentation observed by VICUNA and MIRA in mock B was lower than in mock A with a mean of 1.3 ± 0.89 and 5.3 ± 7.7 contigs per genome, respectively.</s>
@@ -231,7 +224,7 @@
           <s>The majority of assemblies exhibited 147.9 ± 0 and 297 ± 1 mismatches per 100 kb for NC_001330 and NC_001422 (high abundance ssDNA), respectively, identical values to those measured in mock A. Velvet and MetaVelvet were exceptions with 184.2 and 860.2 for genome NC_001422 and NC_001330.</s>
           <s>A similar pattern of high values across a narrow range was also observed with the number of indels, with 49.3 to 32.9 present in all assemblies NC_001330.</s>
           <s>Genome NC_001422 featured 18.57 indels across all SPAdes assemblies (all parameters) and 860.2 across both Velvet and Metavelvet assemblies.</s>
-          <s>All other assemblers which successfully recovered this genome did not feature any indels (Additional file 6: <ref target="#fig_1" type="figure">Figure S1</ref> ).</s>
+          <s>All other assemblers which successfully recovered this genome did not feature any indels (Additional file 6: <ref target="#fig_2" type="figure">Figure S1</ref> ).</s>
         </p>
       </div>
       <div>
@@ -242,14 +235,14 @@
           <s>Six assemblers recovered over 99% of the Q33 genome in a single contig-SPAdes (meta) 99.74%, MEGAHIT (99.6%),</s>
           <s>VICUNA (99.6%),</s>
           <s>Ray Meta (99.6%),</s>
-          <s>CLC (99.5%) and Geneious (99.1) <ref type="figure">(Fig. 3)</ref> .</s>
+          <s>CLC (99.5%) and Geneious (99.1) <ref target="#fig_1" type="figure">(Fig. 3)</ref> .</s>
           <s>However, only MEGAHIT assembled the Q33 genome with a contig equal in length to the genome itself.</s>
           <s>SPAdes (meta) and CLC generated assemblies shorter than the reference genome by 86 and 141 bases.</s>
           <s>VICUNA (723), Geneious (1765) and Ray Meta (9884) each generated assemblies longer than the reference genome.</s>
           <s>SPAdes (default), SPAdes (single cell), IDBA UD and SPAdes (single cell + careful) each assembled Q33 in 2, 3, 4, 5 and 5 contigs, respectively.</s>
           <s>Ray Meta and VICUNA assemblies had the lowest number of mismatches and indels per 100 kb; however, Ray Meta exhibited the highest rate of misassemblies (two relocations, one inversion).</s>
           <s>All assemblers featured a minimum of one local misassembly with the exception of SPAdes (meta) which did not feature any.</s>
-          <s>The six best assemblies of the Q33 genome and the genome itself are syntenic (although occasionally on the reverse strand), and the start and end point were not conserved <ref type="figure">(Fig. 3)</ref> .</s>
+          <s>The six best assemblies of the Q33 genome and the genome itself are syntenic (although occasionally on the reverse strand), and the start and end point were not conserved <ref target="#fig_1" type="figure">(Fig. 3)</ref> .</s>
         </p>
       </div>
       <div>
@@ -270,7 +263,7 @@
       <div>
         <head>Read depth analysis N50 and longest contig length</head>
         <p>
-          <s>For both the N50 <ref type="figure">(Fig. 4c)</ref> and the longest contig length <ref type="figure">(Fig. 4d)</ref> , there was a large amount of variation between samples for the majority of assemblers.</s>
+          <s>For both the N50 <ref type="figure">(Fig. 4c</ref> ) and the longest contig length <ref type="figure">(Fig. 4d)</ref> , there was a large amount of variation between samples for the majority of assemblers.</s>
           <s>The longest contig length showed a large increase at the final sequencing depth.</s>
           <s>Particular assemblers, namely SPAdes (default), SPAdes (meta), MEGAHIT and ABySS (k-mer 127), produced longer contigs as the sequence depth was increased.</s>
         </p>
@@ -295,9 +288,7 @@
           <s>Fragmented assemblies of individual genomes within microbial communities hamper downstream analysis and limit the conclusions which can be drawn from metagenomic data such as taxonomic and functional profiles <ref target="#b10" type="bibr">[11]</ref> .</s>
           <s>Consequently, the percentage genome recovery and degree of fragmentation were assessed across each assembler, with SPAdes (default, meta and single cell) each performing well.</s>
           <s>VICUNA performed very poorly, recovering only four contigs with high numbers of mismatches and misassemblies, despite having performed well with other datasets and being designed to address challenges of heterogeneous viral populations <ref target="#b56" type="bibr">[57]</ref> .</s>
-          <s>This failure may reflect the computational challenges relating to the format of the simulated reads, as benchmarks carried <ref type="figure">Fig. 3</ref> Mauve output of the Q33 reference genome (top) along with of the six assemblers which recovered &gt; 99% of the genome with a single contig.</s>
-          <s>Assembly regions outside of locally collinear blocks which do not share homology to the reference genome are highlighted by a black outline.</s>
-          <s>Reverse complement of assemblies in the opposite orientation to the reference were plotted for visualisation purposes (VICUNA, CLC, Geneious) out within the VICUNA study itself only include actual sequencing reads <ref target="#b56" type="bibr">[57]</ref> .</s>
+          <s>This failure may reflect the computational challenges relating to the format of the simulated reads, as benchmarks carried out within the VICUNA study itself only include actual sequencing reads <ref target="#b56" type="bibr">[57]</ref> .</s>
           <s>However, similar poor performance has been previously observed in virome assembly comparison using VICUNA and 454 reads <ref target="#b52" type="bibr">[53]</ref> .</s>
           <s>For those assemblers which could recover greater than 90% of the reference genome in a single contig, SPAdes (default) outperformed SPAdes (meta).</s>
           <s>This may be explained by a lack of strain variants in the dataset and the fact that SPAdes (meta) was optimised to combine strain variants of each species to form consensus sequences.</s>
@@ -312,13 +303,11 @@
           <s>Highly abundant genomes also caused similar recovery and fragmentation issues across all assemblers, which is of particular importance due to the prevalence of extremely high abundance genomes in viral data (crAssphage, certain ssDNA viruses).</s>
           <s>As both abundance extremes are common in virome data, their impact must be considered when designing virome studies (i.e.</s>
           <s>sequencing depth).</s>
-          <s>As relative abundance alone did not fully explain the variation in genome fraction recovered, the role of genomic repeats (a well-established assembly challenge <ref target="#b0" type="bibr">[1]</ref>
-            <ref type="figure">Fig. 4</ref> a Time, measured in seconds, for each assembly to reach completion successfully for each read subset.</s>
+          <s>As relative abundance alone did not fully explain the variation in genome fraction recovered, the role of genomic repeats (a well-established assembly challenge <ref target="#b0" type="bibr">[1]</ref> ) was also investigated.</s>
+          <s>However, genomic repeats <ref type="figure">Fig. 4</ref> a Time, measured in seconds, for each assembly to reach completion successfully for each read subset.</s>
           <s>b The maximum RAM, measured in MB, used for each assembly for each read subset.</s>
           <s>c Mean N50 length and d mean contig length for four samples for each assembly across the read subsets after filtering contigs less than 1000 bases.</s>
           <s>Points represent the mean time for the four samples while error bars are the standard error could explain the variation in genome fraction recovered to a lesser degree than relative abundance, suggesting other factors contribute to poor genome recovery.</s>
-        </p>
-        <p>
           <s>Compositional differences between final assemblies and viromes themselves must be taken into account when drawing conclusions about virome composition and setting parameters for downstream analysis.</s>
           <s>Challenges such as genomic content and strain variation are not currently addressed in human virome assembly strategies and impact the reconstruction of certain members of a virome.</s>
           <s>Hybrid sequencing, which uses both long and short reads to resolve genomic regions associated with poor assembly <ref target="#b54" type="bibr">[55]</ref> , is a promising new technology which could address current virome assembly challenges.</s>
@@ -499,7 +488,7 @@
           <s>
             <ref type="table">Table S5</ref> .</s>
           <s>Number of aligned and unaligned contigs generated by each assembler for mock community A. <ref type="table">Table S6</ref> .</s>
-          <s>Number of aligned and unaligned contigs generated by each assembler for mock community B. (XLSX 33 kb) Additional file 6: <ref target="#fig_1" type="figure">Figure S1</ref> .</s>
+          <s>Number of aligned and unaligned contigs generated by each assembler for mock community B. (XLSX 33 kb) Additional file 6: <ref target="#fig_2" type="figure">Figure S1</ref> .</s>
           <s>Analysis of recovered genome fraction and indel/mismatch counts for mock communities A and B. Triangles represent N/ A values for mismatches and indels caused by assembly failures.</s>
           <s>(PDF 293 kb)</s>
         </p>
@@ -513,6 +502,11 @@
         <figDesc>Fig. 2 Number of contigs each assembler recovered to a minimum genome fraction of 90% in a single contig</figDesc>
       </figure>
       <figure xml:id="fig_1">
+        <head>Fig. 3</head>
+        <label>3</label>
+        <figDesc>Fig. 3 Mauve output of the Q33 reference genome (top) along with of the six assemblers which recovered &gt; 99% of the genome with a single contig. Assembly regions outside of locally collinear blocks which do not share homology to the reference genome are highlighted by a black outline. Reverse complement of assemblies in the opposite orientation to the reference were plotted for visualisation purposes (VICUNA, CLC, Geneious)</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
         <head>Additional file 1 :</head>
         <label>1</label>
         <figDesc>Simulated virome MetaQUAST output. (HTML 6369 kb) Additional file 2: Mock virome A MetaQUAST output. (HTML 528 kb) Additional file 3: Mock virome B MetaQUAST output. (HTML 528 kb) Additional file 4: Q33-spiked virome QUAST output. (HTML 360 kb) Additional file 5:</figDesc>
@@ -531,10 +525,7 @@
         <table>False positives 
 False negative 
 True positives 
-No. of contigs returned 
-
-a 
-
+No. of contigs returned a 
 Sensitivity 
 
 ABSS (k-mer 63) 
@@ -656,14 +647,11 @@ a
       <figure type="table" validated="false" xml:id="tab_2">
         <head>Table 3</head>
         <label>3</label>
-        <figDesc>The number of false positive and false negative contigs generated by each assembler for (a) mock community A and (b) mock community B along with the sensitivity rates for eachassembler increased from none to 94 in mock A. IDBA UD performed best followed by SPAdes (default), Ray Meta, MEGAHIT and SPAdes (meta) based on sensitivity and number of contigs, while ABySS (both k-mer sizes) and SOAPdenovo2 had the lowest sensitivity. Despite be- ing a relatively simple community consisting of 12 mem- bers, not all assemblers were able to recover all members (Additional file 5:</figDesc>
+        <figDesc>The number of false positive and false negative contigs generated by each assembler for (a) mock community A and (b) mock community B along with the sensitivity rates for eachassembler increased from none to 94 in mock A. IDBA UD performed best followed by SPAdes (default), Ray Meta, MEGAHIT and SPAdes (meta) based on sensitivity and number of contigs, while ABySS (both k-mer sizes)</figDesc>
         <table>False positives 
 False negative 
 True positive 
-No. of contigs returned 
-
-a 
-
+No. of contigs returned a 
 Sensitivity 
 
 A 
@@ -898,241 +886,6 @@ a
 
 12 in community </table>
       </figure>
-      <figure type="table" validated="false" xml:id="tab_3">
-        <head/>
-        <label/>
-        <figDesc>) was also investigated. However, genomic repeats</figDesc>
-        <table>0 
-
-1000 
-
-2000 
-
-3000 
-
-4000 
-
-300k 
-600k 
-900k 
-1.2m 
-1.5m 
-1.8m 
-2.1m 
-2.4m 
-2.7m 
-3.0m 
-3.3m 
-3.5m 
-
-Sequencing Depth (reads) 
-
-Time (seconds) 
-
-Sequencing Depth 
-
-Time (seconds) 
-
-MIRA 
-
-Vicuna 
-
-Abyss 63 
-
-Abyss 127 
-
-SPAdes careful SC 
-
-IDBA UD 
-
-MEGAHIT 
-
-SPAdes meta 
-SPAdes SC 
-
-SOAPdenovo2 
-
-SPAdes 
-
-Ray Meta 
-
-Velvet 
-
-0 
-
-2500 
-
-5000 
-
-7500 
-
-300k 
-600k 
-900k 
-1.2m 
-1.5m 
-1.8m 
-2.1m 
-2.4m 
-2.7m 
-3.0m 
-3.3m 
-3.5m 
-
-Sequencing Depth (reads) 
-
-Max RAM usage (kbytes) 
-
-Sequencing Depth 
-
-Max RAM usage (Gbytes) 
-
-MIRA 
-
-Vicuna 
-
-Velvet 
-
-Abyss 63 Abyss 127 
-
-SPAdes SC careful 
-
-IDBA UD 
-
-MEGAHIT 
-
-SPAdes meta 
-
-Ray Meta 
-
-SPAdes SC 
-
-SOAPdenovo2 
-SPAdes 
-
-Ray Meta 
-
-0 
-
-20000 
-
-40000 
-
-60000 
-
-80000 
-
-300k 
-600k 
-900k 
-1.2m 
-1.5m 
-1.8m 
-2.1m 
-2.4m 
-2.7m 
-3.0m 
-3.3m 
-3.5m 
-
-Sequencing Depth (reads) 
-
-N50 
-
-Abyss 63 
-
-Abyss 127 
-
-SPAdes SC careful 
-
-IDBA UD 
-
-MEGAHIT 
-
-SPAdes meta 
-
-SPAdes SC 
-
-SOAPdenovo2 
-
-SPAdes 
-
-Ray Meta 
-
-Velvet 
-
-Vicuna 
-
-MIRA 
-
-CLC 
-
-Geneious 
-
-0 
-
-200000 
-
-400000 
-
-600000 
-
-300k 
-600k 
-900k 
-1.2m 
-1.5m 
-1.8m 
-2.1m 
-2.4m 
-2.7m 
-3.0m 
-3.3m 
-3.5m 
-
-Sequencing Depth (reads) 
-
-Longest contig length 
-
-Abyss 63 
-
-Abyss 127 
-
-SPAdes SC careful 
-
-IDBA UD 
-
-MEGAHIT 
-
-SPAdes meta 
-
-SPAdes SC 
-
-SOAPdenovo2 
-
-SPAdes 
-
-Ray Meta 
-
-Velvet 
-
-Vicuna 
-
-MIRA 
-
-Geneious 
-
-CLC 
-Geneious 
-
-A 
-B 
-
-C 
-D 
-
-</table>
-      </figure>
     </body>
     <back>
       <div type="acknowledgement">
@@ -1140,23 +893,15 @@ D
           <head>Acknowledgements</head>
           <p>
             <s>We thank the authors of all datasets used in this study for the availability of their data.</s>
+            <s>Authors declare that all other data supporting the findings of this study are available within the article and its additional files.</s>
           </p>
         </div>
         <div>
           <head>Funding</head>
-          <p>
-            <s>This research was conducted with the financial support of Science Foundation Ireland (SFI) under Grant Number SFI/12/RC/2273 a Science Foundation Ireland's Spokes Programme which is co-funded under the European Regional Development Fund under Grant Number SFI/14/SP APC/B3032, and a research grant from Janssen Biotech, Inc.</s>
-          </p>
         </div>
       </div>
       <div type="annex">
         <div>
-          <head>Availability of data and materials</head>
-          <p>
-            <s>The Sequencing reads which support this study are available from the following links.</s>
-            <s>
-              <ref type="bibr">Mock</ref> Authors declare that all other data supporting the findings of this study are available within the article and its additional files.</s>
-          </p>
           <p>
             <s>Authors' contributions FJR conceived the study.</s>
             <s>FJR and TDSS designed the experiments.</s>
@@ -3629,8 +3374,8 @@ D
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b48">
-            <analytic>
-              <title level="a" type="main">Reproducible protocols for metagenomic analysis of human faecal phageomes</title>
+            <monogr>
+              <title level="m" type="main">Reproducible protocols for metagenomic analysis of human faecal phageomes. Microbiome</title>
               <author>
                 <persName>
                   <forename type="first">A</forename>
@@ -3699,14 +3444,10 @@ D
                   <surname>Dalmasso</surname>
                 </persName>
               </author>
-            </analytic>
-            <monogr>
-              <title level="j">Microbiome</title>
               <imprint>
-                <biblScope unit="volume">6</biblScope>
-                <biblScope unit="issue">1</biblScope>
-                <biblScope unit="page">68</biblScope>
                 <date type="published" when="2018"/>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="page">68</biblScope>
               </imprint>
             </monogr>
           </biblStruct>

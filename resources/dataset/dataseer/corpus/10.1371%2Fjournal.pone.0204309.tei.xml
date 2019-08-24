@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:56+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T22:27+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -86,11 +86,13 @@
         <p>
           <s>Natural biological materials often exhibit unprecedented combinations of multiple mechanical properties <ref target="#b0" type="bibr">[1]</ref> and functional performance <ref target="#b1" type="bibr">[2,</ref>
             <ref target="#b2" type="bibr">3]</ref> .</s>
-          <s>Yet, comparisons are commonly displayed on two-or three-dimensional property charts <ref target="#b3" type="bibr">[4]</ref> , like the strength-modulus chart in <ref target="#fig_0" type="figure">Fig 1A.</ref>
+          <s>Yet, comparisons are commonly displayed on two-or three-dimensional property charts <ref target="#b3" type="bibr">[4]</ref> , like the strength-modulus chart in <ref type="figure">Fig 1A.</ref>
           </s>
-          <s>Such data is usually extracted from stress-strain (or force-displacement) curves, like those in <ref target="#fig_0" type="figure">Fig 1B-1E</ref> .</s>
+          <s>Such data is usually extracted from stress-strain (or force-displacement) curves, like those in <ref type="figure">Fig 1B-1E</ref> .</s>
           <s>Depending on the mode of loading (tension, compression, bending, etc.), a stressstrain plot contains a distinct set of multidimensional property data that describes a material's behavior, including, for example, its stiffness, strength, toughness, resilience, and strain to failure.</s>
           <s>As a result, comparisons of different structures across different modes of loading typically involve a concurrent analysis of multiple orthogonal plots comparing N 3 properties <ref target="#b4" type="bibr">[5]</ref> .</s>
+        </p>
+        <p>
           <s>Here, we introduce a relatively simple and accessible method using radar charts (radial, multiaxis plots-also called star, polar, wheel, spider, web, kiviat, or circular parallel coordinate charts) <ref target="#b5" type="bibr">[6]</ref>
             <ref target="#b6" type="bibr">[7]</ref>
             <ref target="#b7" type="bibr">[8]</ref> to compare the multidimensional performance of mechanical systems across N ! 3 properties.</s>
@@ -117,7 +119,7 @@
           <s>Specifically, we analyze the mechanical property distributions of several structural biological materials and collagenous tissues exhibiting a wide range of functionalities, whose different properties were compiled from literature.</s>
           <s>Agreeing with conventional wisdom, our analyses reveal clear trade-offs between stiffness versus strain to failure and several distinctive property-function correlations.</s>
           <s>We also demonstrate the extended potential of radar charts, beyond material comparisons, with a case study on Darwin's finches, whose beaks show a distinct trade-off between feeding versus singing performance.</s>
-          <s>Thus, we propose</s>
+          <s>Thus, we propose that the polygonal structure of data unique to radar charts permits the use of simple shape descriptors to compare the relative multidimensional mechanics of natural systems.</s>
         </p>
       </div>
       <div>
@@ -133,31 +135,14 @@
           <s>In most cases, these data were taken from two or three (at most five) different studies.</s>
           <s>For each system, effort was made to collect as much data as possible from a single source or research group, such that data plotted on the radar charts would be as consistent and representative as possible.</s>
           <s>We also cross-checked multiple literature sources to verify accuracy of compiled datasets, which resulted in no missing data (except for some measures of density).</s>
-          <s>The captions and notes of S1-S6 <ref type="table">Tables provide additional information</ref> on the types of data sources and any unit conversion factors that were applied to the data, which are reported as averages, standard deviations, standard errors, and/or ranges.</s>
+          <s>The captions and notes of S1-S6 Tables provide additional information on the types of data sources and any unit conversion factors that were applied to the data, which are reported as averages, standard deviations, standard errors, and/or ranges.</s>
           <s>All plots, including radar charts, were generated using MS Excel 2016 (Microsoft, Redmond, WA) and MATLAB R2018a (MathWorks, Natick, MA).</s>
         </p>
-      </div>
-      <div>
-        <head>Axis sorting</head>
         <p>
-          <s>Mechanical properties (axes) were sorted using a custom MATLAB routine, which searched for the appropriate permutation of axes resulting in maximal total area.</s>
-          <s>To explain the permutation scheme, we use for an example the collagenous tissues dataset (S5 <ref type="table">Table)</ref> .</s>
-          <s>The "permutated radar chart" yielding a maximal total area used for shape descriptor analyses.</s>
-          <s>(c) The property profile of dentin (red), illustrating its area (A), centroidal distance (R), and the x,y-coordinates of point (a,b) located at the intersection of a vector passing through the profile's centroid and the perimeter of a unit circle; the area of the property space (grey) of a regular pentagon is A 5 % 2.4.</s>
-          <s>(d) The relative first moment of area Q 0 about the outer limits of the property space (a,b) for the five materials across all 12 permutations; notice that the maximum values for Q 0 are nearly equivalent to those of the maximal area permutation.</s>
-          <s>Legend: dentin = red; bone = yellow; tendon = green; skin = blue; cartilage = purple; total permutation area (Ã) = black dashed line (right axis).</s>
-        </p>
-        <p>
-          <s>https://doi.org/10.1371/journal.pone.0204309.g002</s>
-        </p>
-        <p>
-          <s>properties (axes), the number of circular permutations is:</s>
+          <s>properties (axes), the number of circular permutations is: <ref type="table">Fig 2A shows the 12 possible permutations for the collagenous tissues dataset,</ref> where the vertices of each profile are mean value coordinates <ref target="#b20" type="bibr">[21]</ref> of each property normalized by its maximum:</s>
         </p>
         <formula xml:id="formula_0">N ¼ ðN À 1Þ! 2 :<label>ð1Þ</label>
         </formula>
-        <p>
-          <s>Fig 2A shows the 12 possible permutations for the collagenous tissues dataset, where the vertices of each profile are mean value coordinates <ref target="#b20" type="bibr">[21]</ref> of each property normalized by its maximum:</s>
-        </p>
         <formula xml:id="formula_1">p ij ¼ P ij =maxP i<label>ð2Þ</label>
         </formula>
         <p>
@@ -208,34 +193,30 @@
         <formula xml:id="formula_6">m pq ¼ P N i¼1 m pq;T i Á signðiÞ<label>ð7Þ</label>
         </formula>
         <p>
-          <s>where sign(i) is the sign of triangle T i , which is positive when tan .</s>
+          <s>where sign(i) is the sign of triangle T i , which is positive when tan À 1 y i x i !</s>
+          <s>tan À 1 y iþ1</s>
+        </p>
+        <p>
+          <s>x iþ1 and negative otherwise.</s>
+          <s>The first three lower-order moments describe a profile's area and centroidal distance from the origin: A = m 00 and R ¼ ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi ffi .</s>
           <s>The moments about a point (a, b) located at the intersection of a vector passing through the profile's centroid and the perimeter of a unit circle centered at the origin is defined as (see <ref type="figure">Fig 2C)</ref> :</s>
         </p>
-        <formula xml:id="formula_7">À 1 y i x i ! tan À 1 y iþ1 x iþ1</formula>
-        <formula xml:id="formula_8">M pq ¼ R R ðx À</formula>
-        <formula xml:id="formula_9">M 10 ¼ m 10 1 À m 00 ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi m 2 10 þ m 2 01 p ! ;<label>ð9Þ</label>
-        </formula>
-        <formula xml:id="formula_10">M 01 ¼ m 01 1 À m 00 ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi m 2 10 þ m 2 01 p ! :<label>ð10Þ</label>
-        </formula>
+        <formula xml:id="formula_7">M pq ¼ R R ðx À</formula>
         <p>
           <s>Then, the magnitude of the first moment of area about (a,b) can be expressed in terms of the profile area (A) and the Euclidean distance of its centroid from the origin (R):</s>
         </p>
-        <formula xml:id="formula_11">Q ¼ ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi M 2 10 þ M 2 01 p ¼ Að1 À RÞ;<label>ð11Þ</label>
+        <formula xml:id="formula_9">Q ¼ ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi M 2 10 þ M 2 01 p ¼ Að1 À RÞ;<label>ð11Þ</label>
         </formula>
         <p>
           <s>This metric is much like the moment of a physical quantity (in physics) or the mean of a distribution function (in statistics) <ref target="#b19" type="bibr">[20]</ref> .</s>
           <s>By analogy, we define the relative multidimensional performance of a system as its profile's normalized first moment of area relative to the boundary of the property space:</s>
         </p>
-        <formula xml:id="formula_12">Q 0 ¼ Q Q N ¼ A A N 1 À R ð Þ<label>ð12Þ</label>
+        <formula xml:id="formula_10">Q 0 ¼ Q Q N ¼ A A N 1 À R ð Þ<label>ð12Þ</label>
         </formula>
         <p>
           <s>where A N and Q N are the zeroth and first moments of area about (a,b) of the property space, which is defined as a regular N-sided polygon of unit circumradius with its centroid at the origin, representing "maximal performance" with p i = 1 across all N properties.</s>
           <s>In <ref type="figure">Fig 2C,</ref> A 5 % 2.4 is the area of a regular pentagon with a unit circumradius.</s>
-          <s>Notably, the property space converges from a regular N-sided polygon where</s>
-        </p>
-        <formula xml:id="formula_13">A N ¼ 1 2</formula>
-        <p>
-          <s>N sinð2p=NÞ when N ! 3 to a unit circle where A 1 = π when N !</s>
+          <s>Notably, the property space converges from a regular N-sided polygon where A N ¼ 1 2 N sinð2p=NÞ when N ! 3 to a unit circle where A 1 = π when N !</s>
           <s>1; although, higher-dimensional data (N ) 10) are likely not well represented using radar charts because of dimensional "crowding" and limitations on the information processing capacity of humans <ref target="#b23" type="bibr">[24]</ref> .</s>
           <s>Albeit, axis-sorting could increase this capacity by clustering correlated dimensions.</s>
           <s>Finally, we calculated Q 0 for all possible permutations of the different datasets.</s>
@@ -249,7 +230,7 @@
           <s>To demonstrate, we compared the compactness of profiles corresponding to the dataset for Darwin's finches (S6 <ref type="table">Table)</ref> .</s>
           <s>This metric is calculated as the perimetric ratio of a circle of equal area to that of a profile:</s>
         </p>
-        <formula xml:id="formula_14">C ¼ 2 ffiffiffiffiffiffi pA p P<label>ð13Þ</label>
+        <formula xml:id="formula_11">C ¼ 2 ffiffiffiffiffiffi pA p P<label>ð13Þ</label>
         </formula>
         <p>
           <s>where A and P are a profile's area and perimeter, respectively.</s>
@@ -262,27 +243,25 @@
         <head>Property-function correlations of biological materials</head>
         <p>
           <s>Structural biological materials are commonly classified by their mechanical properties <ref target="#b0" type="bibr">[1]</ref> , form and function <ref target="#b1" type="bibr">[2,</ref>
-            <ref target="#b2" type="bibr">3]</ref> (see <ref target="#fig_0" type="figure">Fig 1)</ref> .</s>
+            <ref target="#b2" type="bibr">3]</ref> (see <ref type="figure">Fig 1)</ref> .</s>
           <s>Here, we compare four structural classes of natural biological materials: tension ties, load-bearing beams, protective shells, and porous foams.</s>
           <s>The selected materials were chosen for their representative, yet widely disparate functionalities.</s>
-          <s>Their mechanical behaviors, form and function are briefly discussed in Box 1, with their normalized property profiles shown in <ref target="#fig_4" type="figure">Fig 3</ref> .</s>
+          <s>Their mechanical behaviors, form and function are briefly discussed in Box 1, with their normalized property profiles shown in <ref target="#fig_2" type="figure">Fig 3</ref> .</s>
           <s>For more details, readers are referred to the original data sources (see reference list in Supporting Information).</s>
-        </p>
-        <p>
-          <s>As illustrated in <ref target="#fig_4" type="figure">Fig 3,</ref> the selected materials show a wide range of mechanical functionalities, depicted by their different performance profiles.</s>
+          <s>As illustrated in <ref target="#fig_2" type="figure">Fig 3,</ref> the selected materials show a wide range of mechanical functionalities, depicted by their different performance profiles.</s>
           <s>Practically speaking, no one property is necessarily the best descriptor of a functional task or application.</s>
           <s>Instead, a combination of two or more properties is often necessary to describe a material's functional performance.</s>
-          <s>For example, the radar chart comparing tension ties in <ref target="#fig_4" type="figure">Fig 3A shows</ref> spider silk as the stiffest (E), strongest (σ T ), and toughest (u T ) fiber of the comparison.</s>
+          <s>For example, the radar chart comparing tension ties in <ref target="#fig_2" type="figure">Fig 3A shows</ref> spider silk as the stiffest (E), strongest (σ T ), and toughest (u T ) fiber of the comparison.</s>
           <s>In contrast, mammalian tendons and mussel byssal threads exhibit similar damping indices (tan δ), but respectively high resilience (u R ) and extensibility (ε) that distinguish their unique functions-i.e., tendons store and release energy; byssal threads absorb and dissipate energy.</s>
           <s>Hence, the sequence of axes defined on the permutated radar chart suggests that fiber stiffness, strength, and toughness are correlated with bearing high tensile loads, while fiber damping, resilience, and extensibility are correlated with the transfer and dissipation of strain energy (for this specific comparison).</s>
-          <s>Likewise, the other three radar charts in <ref target="#fig_4" type="figure">Fig 3B-3D</ref> show some distinctive property correlations: for the beams, the elastic modulus (E) is correlated with all modes of strength (σ T , σ C , and σ F ); for the shells and foams, the moduli (E and G) are correlated with hardness (H)-i.e., stiffer materials are generally stronger and harder.</s>
+          <s>Likewise, the other three radar charts in <ref target="#fig_2" type="figure">Fig 3B-3D</ref> show some distinctive property correlations: for the beams, the elastic modulus (E) is correlated with all modes of strength (σ T , σ C , and σ F ); for the shells and foams, the moduli (E and G) are correlated with hardness (H)-i.e., stiffer materials are generally stronger and harder.</s>
           <s>However, unlike tension ties, enhanced toughness (u T and K IC ), and strain to failure (ε), come at the cost of diminishing stiffness (E and G) in the beams, shells, and foams; and impact strength (IS) is correlated with strain to failure (ε).</s>
         </p>
         <p>
-          <s>As shown, the materials of each class that are more rigid, with large E, generally exhibit different/opposing property profiles than those that are more flexible, with large ε (see <ref target="#fig_4" type="figure">Fig 3)</ref> .</s>
+          <s>As shown, the materials of each class that are more rigid, with large E, generally exhibit different/opposing property profiles than those that are more flexible, with large ε (see <ref target="#fig_2" type="figure">Fig 3)</ref> .</s>
           <s>Damage-tolerant or tough materials, on the other hand, are not necessarily rigid or flexible, but instead tend to be of higher strength.</s>
           <s>For example, spider silk, turtle carapace, and balsa wood all show strong correlations between strength (σ) and toughness (u T or K IC ).</s>
-          <s>The only exception here is feather rachis; when compared with bone and bamboo, it exhibits relatively low strength across all modes of loading (see <ref target="#fig_4" type="figure">Fig 3B)</ref> .</s>
+          <s>The only exception here is feather rachis; when compared with bone and bamboo, it exhibits relatively low strength across all modes of loading (see <ref target="#fig_2" type="figure">Fig 3B)</ref> .</s>
           <s>In engineering design, strength and toughness are often considered mutually exclusive properties <ref target="#b35" type="bibr">[36]</ref> .</s>
           <s>However, recent studies show that many natural materials overcome this conflict (validating our results) via hierarchical toughening mechanisms spanning from the molecular to macro-scale <ref target="#b36" type="bibr">[37]</ref>
             <ref target="#b37" type="bibr">[38]</ref>
@@ -293,9 +272,12 @@
         <head>Tensile properties of collagenous tissues</head>
         <p>
           <s>Dentin, bone, tendon, skin, and cartilage are collagen-based materials found in many vertebrates, and perform a diversity of tasks from skeletal support and mobility to shock absorption Box 1. Structural biological materials.</s>
-          <s>The general structure and function of four classes of biological materials: tension ties, loadbearing beams, protective shells, and porous foams (compare with <ref target="#fig_0" type="figure">Figs 1 and 3)</ref> Tension ties: Structural elements typically in the form of thin fibers that carry tensile loads.</s>
+          <s>The general structure and function of four classes of biological materials: tension ties, loadbearing beams, protective shells, and porous foams (compare with Figs 1 and 3)</s>
+        </p>
+        <p>
+          <s>Tension ties: Structural elements typically in the form of thin fibers that carry tensile loads.</s>
           <s>
-            <ref target="#fig_4" type="figure">Fig 3A compares</ref> three types of natural tie materials: spider silk (dragline) is a tough, semi-crystalline fiber used for safety lines and the framing of spider webs <ref target="#b24" type="bibr">[25]</ref> ; mammal tendon is a resilient, partially-mineralized fiber that stores and releases energy for mobility and locomotion <ref target="#b25" type="bibr">[26]</ref> ; mussel byssus threads are gradient networks of highly-extensible fibers with abrasion-resistant coatings that the mollusks use to anchor onto wet (or dry) substrates <ref target="#b26" type="bibr">[27]</ref> .</s>
+            <ref target="#fig_2" type="figure">Fig 3A compares</ref> three types of natural tie materials: spider silk (dragline) is a tough, semi-crystalline fiber used for safety lines and the framing of spider webs <ref target="#b24" type="bibr">[25]</ref> ; mammal tendon is a resilient, partially-mineralized fiber that stores and releases energy for mobility and locomotion <ref target="#b25" type="bibr">[26]</ref> ; mussel byssus threads are gradient networks of highly-extensible fibers with abrasion-resistant coatings that the mollusks use to anchor onto wet (or dry) substrates <ref target="#b26" type="bibr">[27]</ref> .</s>
         </p>
       </div>
       <div>
@@ -303,40 +285,37 @@
         <p>
           <s>Structural elements typically in the form of straight, often cylindrical beams, columns, or shafts that carry flexural moments and/or axial loads.</s>
           <s>
-            <ref target="#fig_4" type="figure">Fig 3B compares</ref> three types of natural beam materials: bamboo culm is a stiff, fibrous material with a hierarchical porosity gradient that supports the tall, hollow plants <ref target="#b27" type="bibr">[28]</ref> ; cortical bone is a strong, mineralized material organized into compact osteons that carry a multitude of skeletal moments and axial loads <ref target="#b28" type="bibr">[29]</ref> ; feather rachis is a resilient, sandwich composite of lightweight foam surrounded by a dense cortex that supports flexural moments during flight <ref target="#b29" type="bibr">[30]</ref> .</s>
+            <ref target="#fig_2" type="figure">Fig 3B compares</ref> three types of natural beam materials: bamboo culm is a stiff, fibrous material with a hierarchical porosity gradient that supports the tall, hollow plants <ref target="#b27" type="bibr">[28]</ref> ; cortical bone is a strong, mineralized material organized into compact osteons that carry a multitude of skeletal moments and axial loads <ref target="#b28" type="bibr">[29]</ref> ; feather rachis is a resilient, sandwich composite of lightweight foam surrounded by a dense cortex that supports flexural moments during flight <ref target="#b29" type="bibr">[30]</ref> .</s>
         </p>
         <p>
           <s>Protective shells: Structural elements typically in the form of thin shells or coverings that protect against damage from abrasion, puncture, fracture, and/or impact.</s>
           <s>
-            <ref target="#fig_4" type="figure">Fig 3C compares</ref> three types of natural shell materials: mollusk nacre is a rigid, highly-mineralized material organized into brick-and-mortar microstructures that protect the soft-bodied mollusks from abrasion and puncture <ref target="#b30" type="bibr">[31]</ref> ; turtle carapace is a tough, fracture-resistant material composed of interlocking layered scutes that protect the animals from a variety of environmental threats and predators <ref target="#b31" type="bibr">[32]</ref> ; bovid horn is a resilient, energy-absorbent material that protects bovids, such as bighorn sheep, from impact during head-butting rituals and courtship <ref target="#b32" type="bibr">[33]</ref> .</s>
+            <ref target="#fig_2" type="figure">Fig 3C compares</ref> three types of natural shell materials: mollusk nacre is a rigid, highly-mineralized material organized into brick-and-mortar microstructures that protect the soft-bodied mollusks from abrasion and puncture <ref target="#b30" type="bibr">[31]</ref> ; turtle carapace is a tough, fracture-resistant material composed of interlocking layered scutes that protect the animals from a variety of environmental threats and predators <ref target="#b31" type="bibr">[32]</ref> ; bovid horn is a resilient, energy-absorbent material that protects bovids, such as bighorn sheep, from impact during head-butting rituals and courtship <ref target="#b32" type="bibr">[33]</ref> .</s>
         </p>
         <p>
           <s>Porous foams: Structural elements typically in the form of scaffold-like foams that reduce weight and transfer flexural moments and/or axial loads.</s>
           <s>
-            <ref target="#fig_4" type="figure">Fig 3D compares</ref> three types of natural foam materials: coral skeleton is a rigid, highly-mineralized material that supports the organisms under variable ocean currents and protects them from predators <ref target="#b33" type="bibr">[34]</ref> ; cancellous bone is a lightweight, mineralized material organized into trabecular networks that redistribute stresses from cortical bone during load-bearing activities <ref target="#b28" type="bibr">[29]</ref> ; balsa wood is a lightweight, highly-porous material that supports the large, fast-growing trees <ref target="#b34" type="bibr">[35]</ref> .</s>
+            <ref target="#fig_2" type="figure">Fig 3D compares</ref> three types of natural foam materials: coral skeleton is a rigid, highly-mineralized material that supports the organisms under variable ocean currents and protects them from predators <ref target="#b33" type="bibr">[34]</ref> ; cancellous bone is a lightweight, mineralized material organized into trabecular networks that redistribute stresses from cortical bone during load-bearing activities <ref target="#b28" type="bibr">[29]</ref> ; balsa wood is a lightweight, highly-porous material that supports the large, fast-growing trees <ref target="#b34" type="bibr">[35]</ref> .</s>
           <s>and protection <ref target="#b39" type="bibr">[40,</ref>
             <ref target="#b40" type="bibr">41]</ref> .</s>
-          <s>Their tensile properties are plotted in <ref target="#fig_5" type="figure">Fig 4A,</ref> illustrating the profiles occupy distinct regions of the property space correlated with form and function, as summarized in Box 2. <ref target="#fig_5" type="figure">Fig 4B shows</ref> representative microstructures of each material; for details readers are referred to the image sources <ref target="#b41" type="bibr">[42]</ref>
+          <s>Their tensile properties are plotted in <ref target="#fig_3" type="figure">Fig 4A,</ref> illustrating the profiles occupy distinct regions of the property space correlated with form and function, as summarized in Box 2. <ref target="#fig_3" type="figure">Fig 4B shows</ref> representative microstructures of each material; for details readers are referred to the image sources <ref target="#b41" type="bibr">[42]</ref>
             <ref target="#b42" type="bibr">[43]</ref>
             <ref target="#b43" type="bibr">[44]</ref>
             <ref target="#b44" type="bibr">[45]</ref>
             <ref target="#b45" type="bibr">[46]</ref> .</s>
         </p>
         <p>
-          <s>Notice, the sequence of properties defined in <ref target="#fig_5" type="figure">Fig 4A is</ref> similar, but not identical to <ref target="#fig_4" type="figure">Fig 3A.</ref>
+          <s>Notice, the sequence of properties defined in <ref target="#fig_3" type="figure">Fig 4A is</ref> similar, but not identical to <ref target="#fig_2" type="figure">Fig 3A.</ref>
           </s>
           <s>Although both charts compare tensile properties, our axis-sorting scheme produces different property correlations, suggesting that different functions are defined by unique property combinations.</s>
-          <s>Also apparent in <ref target="#fig_5" type="figure">Fig 4A is</ref> the "gap" on the chart, whose area represents the relative intensity of a trade-off, in this case between stiffness (E) and extensibility (ε).</s>
-          <s>Thus, like inferences from <ref target="#fig_4" type="figure">Fig 3,</ref> rigid and flexible tissues tend to exhibit opposing property profiles.</s>
+          <s>Also apparent in <ref target="#fig_3" type="figure">Fig 4A is</ref> the "gap" on the chart, whose area represents the relative intensity of a trade-off, in this case between stiffness (E) and extensibility (ε).</s>
+          <s>Thus, like inferences from <ref target="#fig_2" type="figure">Fig 3,</ref> rigid and flexible tissues tend to exhibit opposing property profiles.</s>
         </p>
         <p>
           <s>Another way to compare materials is by the degree of similarity between two profiles (from 0 to 1), which we measured using the Jaccard index (Eq 5) <ref target="#b21" type="bibr">[22]</ref> .</s>
-          <s>This metric suggests that dentin and bone are the most similar materials of the bunch, with the highest index of J = 0.440, whereas dentin and cartilage are the most dissimilar, with the lowest index of J = 0.003 (see <ref target="#fig_5" type="figure">Fig 4C)</ref> .</s>
-          <s>Interestingly, dentin and bone are dense, mineralized materials both composed of parallel arrays of microtubules (see <ref target="#fig_5" type="figure">Fig 4B)</ref> , microscopic features among hierarchies of structural mechanisms that dictate their relatively rigid, damage-tolerant behaviors <ref target="#b39" type="bibr">[40]</ref> .</s>
-          <s>Conversely, dentin and cartilage have the most contrasting densities (~2.2 gÁcm -3 vs~1.0 gÁcm -3</s>
-        </p>
-        <p>
-          <s>) and microstructures (parallel tubule arrays vs gradient fiber networks); they also generally perform opposing functions: crushing versus cushioning <ref target="#b39" type="bibr">[40]</ref> .</s>
+          <s>This metric suggests that dentin and bone are the most similar materials of the bunch, with the highest index of J = 0.440, whereas dentin and cartilage are the most dissimilar, with the lowest index of J = 0.003 (see <ref target="#fig_3" type="figure">Fig 4C)</ref> .</s>
+          <s>Interestingly, dentin and bone are dense, mineralized materials both composed of parallel arrays of microtubules (see <ref target="#fig_3" type="figure">Fig 4B)</ref> , microscopic features among hierarchies of structural mechanisms that dictate their relatively rigid, damage-tolerant behaviors <ref target="#b39" type="bibr">[40]</ref> .</s>
+          <s>Conversely, dentin and cartilage have the most contrasting densities (~2.2 gÁcm -3 vs~1.0 gÁcm -3 ) and microstructures (parallel tubule arrays vs gradient fiber networks); they also generally perform opposing functions: crushing versus cushioning <ref target="#b39" type="bibr">[40]</ref> .</s>
           <s>Under physiological conditions (e.g., biting, support/mobility, and joint motion), axial stresses frequently develop parallel to the tubules/fibers <ref target="#b51" type="bibr">[52]</ref>
             <ref target="#b52" type="bibr">[53]</ref>
             <ref target="#b53" type="bibr">[54]</ref> .</s>
@@ -347,7 +326,7 @@
           <s>After exploring these and several higher-order moments, we find that the relative first moment of area about the outer limit of the property space (Eq 12) is most informative.</s>
           <s>For mechanical comparisons, the area and centroidal distance of a profile offer loose measures of performance (" A = " performance) and multidimensionality (# R = " multidimensionality).</s>
           <s>By this notion, a combination of the two, as in Eq 12, provides a relative approximation of multidimensional performance (from 0 to 1).</s>
-          <s>As shown in <ref target="#fig_5" type="figure">Fig 4D,</ref> tendon exhibits the highest "multidimensional performance" of the group (Q 0 = 0.25).</s>
+          <s>As shown in <ref target="#fig_3" type="figure">Fig 4D,</ref> tendon exhibits the highest "multidimensional performance" of the group (Q 0 = 0.25).</s>
           <s>This result makes sense because the axes of the radar chart all represent tensile properties, and tendon is the only material that predominantly carries tensile stresses.</s>
           <s>In contrast, the other four materials often support multidirectional, site-dependent normal and shear stresses.</s>
         </p>
@@ -356,31 +335,31 @@
         <head>Feeding vs singing performance of Darwin's finches</head>
         <p>
           <s>Beyond material comparisons, radar charts are also suitable for comparing "non-material" systems that may exhibit or require a specific balance of properties.</s>
-          <s>To demonstrate, the feeding and singing performance of Darwin's finches are shown in <ref target="#fig_6" type="figure">Fig 5A</ref> and 5B.</s>
+          <s>To demonstrate, the feeding and singing performance of Darwin's finches are shown in <ref target="#fig_4" type="figure">Fig 5A and 5B</ref> .</s>
           <s>Past studies correlate beak morphology <ref target="#b54" type="bibr">[55]</ref> with maximum gape <ref target="#b55" type="bibr">[56]</ref> , tip and base bite forces <ref target="#b56" type="bibr">[57]</ref> , opening and closing velocities <ref target="#b55" type="bibr">[56]</ref> , and vocal potential (note: minimal vocal deviations <ref target="#b57" type="bibr">[58]</ref> were inversed to evaluate maximal vocal potentials; see Supporting Information).</s>
-          <s>The sequence of properties defined in <ref target="#fig_6" type="figure">Fig 5A supports published hypotheses [56]</ref> , indicating a trade-off between feeding versus singing performance.</s>
+          <s>The sequence of properties defined in <ref target="#fig_4" type="figure">Fig 5A supports published hypotheses [56]</ref> , indicating a trade-off between feeding versus singing performance.</s>
           <s>Remarkably, close correlations exist between tip and base bite forces and between opening and closing velocities.</s>
           <s>Gape, the maximum distance between a beak's tips, is sorted between tip bite force and opening velocity-all properties measured at the beaks' tips <ref target="#b55" type="bibr">[56,</ref>
             <ref target="#b56" type="bibr">57]</ref> .</s>
           <s>Vocal potential, on the other hand, is sorted next to closing velocity, suggesting that singing performance depends more on a bird's ability to close, rather than open its beak.</s>
           <s>In calculating the Jaccard indices of all pairs of birds, we find that G. scandens and C. pallida have the most similar profiles (J = 0.878), while G. magnirostris and C. olivacea have the least similar profiles (J = 0.097).</s>
           <s>
-            <ref target="#fig_6" type="figure">Fig 5C</ref> shows plots of these intersections and unions.</s>
+            <ref target="#fig_4" type="figure">Fig 5C</ref> shows plots of these intersections and unions.</s>
           <s>Our results agree with past reports <ref target="#b58" type="bibr">[59,</ref>
             <ref target="#b59" type="bibr">60]</ref> : G. scandens and C. pallida have specialized, elongated beaks for probing and tool-handling <ref target="#b58" type="bibr">[59]</ref> .</s>
-          <s>In contrast, G. magnirostris and C. olivacea have the most dissimilar beak morphologies <ref target="#b59" type="bibr">[60]</ref> ; they also happen to be top performers at opposing tasks, clearly defined by the trade-off in <ref target="#fig_6" type="figure">Fig 5A between</ref> bite force (feeding) and vocal potential (singing).</s>
+          <s>In contrast, G. magnirostris and C. olivacea have the most dissimilar beak morphologies <ref target="#b59" type="bibr">[60]</ref> ; they also happen to be top performers at opposing tasks, clearly defined by the trade-off in <ref target="#fig_4" type="figure">Fig 5A between</ref> bite force (feeding) and vocal potential (singing).</s>
         </p>
         <p>
-          <s>Shape moment analyses <ref target="#fig_6" type="figure">(Fig 5D)</ref> suggest that G. magnirostris and C. olivacea exhibit the greatest performance (with the largest profile areas, A), and G. magnirostris and G. scandens are the most specialized (with the largest centroidal distances, R).</s>
+          <s>Shape moment analyses <ref target="#fig_4" type="figure">(Fig 5D)</ref> suggest that G. magnirostris and C. olivacea exhibit the greatest performance (with the largest profile areas, A), and G. magnirostris and G. scandens are the most specialized (with the largest centroidal distances, R).</s>
           <s>When combined in Eq 12, values for Q 0 suggests that G. fortis and C. olivacea exhibit the greatest multidimensional performance.</s>
           <s>However, C. olivacea exhibits the lowest bite force of the comparison, yet high performance across the other four properties related to signing performance.</s>
           <s>G. fortis, on the other hand, is not a top performer at any one property, but performs fairly well across all properties.</s>
           <s>Thus, in the case of Darwin's finches, Q 0 is a measure of multidimensional performance, and not necessarily multifunctional performance.</s>
           <s>Therefore, we also measured the profiles' compactness (Eq 13).</s>
           <s>
-            <ref target="#fig_6" type="figure">Fig 5D compares</ref> this metric, where more compact profiles are more uniformly distributed across all dimensions, and thus more multifunctional.</s>
+            <ref target="#fig_4" type="figure">Fig 5D compares this metric,</ref> where more compact profiles are more uniformly distributed across all dimensions, and thus more multifunctional.</s>
           <s>Accordingly, G. Box 2. Collagenous tissues.</s>
-          <s>The general structure and function of five collagen-based materials: dentin, bone, tendon, skin, and cartilage (compare with <ref target="#fig_5" type="figure">Fig 4)</ref> Dentin is~2.2 gÁcm -3 and composed of mineralized collagen (~70% mineral) organized into parallel arrays of microtubules; the material is relatively stiff and strong to withstand tooth bite forces <ref target="#b46" type="bibr">[47]</ref> .</s>
+          <s>The general structure and function of five collagen-based materials: dentin, bone, tendon, skin, and cartilage (compare with <ref target="#fig_3" type="figure">Fig 4)</ref> Dentin is~2.2 gÁcm -3 and composed of mineralized collagen (~70% mineral) organized into parallel arrays of microtubules; the material is relatively stiff and strong to withstand tooth bite forces <ref target="#b46" type="bibr">[47]</ref> .</s>
         </p>
         <p>
           <s>Bone (cortical) is~2.0 gÁcm -3 and composed of mineralized collagen (~65% mineral) organized into compact osteons surrounding Haversian canals (microtubules); the material is strong, yet relatively stiff and tough to provide body support and joint mobility <ref target="#b47" type="bibr">[48]</ref> .</s>
@@ -389,18 +368,10 @@
           <s>Tendon is~1.3 gÁcm -3 and composed of hydrated collagen (~55-70% water) organized into parallel arrays of aligned fibers; the material is tough and fairly resilient to store and transfer energy during activity <ref target="#b48" type="bibr">[49]</ref> .</s>
         </p>
         <p>
-          <s>Skin (mammalian) is~1.1 gÁcm -3 and composed of hydrated collagen (~30-70% water)</s>
+          <s>Skin (mammalian) is~1.1 gÁcm -3 and composed of hydrated collagen (~30-70% water) organized into layered networks of interwoven fibers; the material is relatively pliable (extensible, resilient, tough) to provide flexible protection <ref target="#b49" type="bibr">[50]</ref> .</s>
         </p>
         <p>
-          <s>organized into layered networks of interwoven fibers; the material is relatively pliable (extensible, resilient, tough) to provide flexible protection <ref target="#b49" type="bibr">[50]</ref> .</s>
-        </p>
-        <p>
-          <s>Cartilage (articular) is~1.0 gÁcm -3 and composed of hydrated collagen (~80% water)</s>
-        </p>
-        <p>
-          <s>organized into a gradient network of fibers; the material is relatively extensible to cushion joint motion <ref target="#b50" type="bibr">[51]</ref> .</s>
-        </p>
-        <p>
+          <s>Cartilage (articular) is~1.0 gÁcm -3 and composed of hydrated collagen (~80% water) organized into a gradient network of fibers; the material is relatively extensible to cushion joint motion <ref target="#b50" type="bibr">[51]</ref> .</s>
           <s>Note: All tissues described above contain collagen, as well as additional minerals, proteins, or other molecules and water.</s>
           <s>For purposes of this report, only the two primary constituents are described for each material: collagen + mineral or water.</s>
           <s>For further information on these tissues, readers are referred to <ref target="#b39" type="bibr">[40,</ref>
@@ -426,8 +397,8 @@
           <s>Like other radial projections <ref target="#b60" type="bibr">[61]</ref>
             <ref target="#b61" type="bibr">[62]</ref>
             <ref target="#b62" type="bibr">[63]</ref> , the scaling, rotation, addition or elimination of a radar chart's axes could be applied to assign preference to a particular property (or set of properties).</s>
-          <s>For instance, the performance of Darwin's finches compared in <ref target="#fig_6" type="figure">Fig 5 is</ref> limited by the number and type of properties plotted as well as how closely each property describes the functions of interest: feeding versus singing.</s>
-          <s>As shown in <ref target="#fig_6" type="figure">Fig 5A</ref> , we suggest feeding is described by five of the six properties, whereas singing is described by four of the six, which more heavily weights feeding over singing <ref type="bibr">(5:4)</ref> .</s>
+          <s>For instance, the performance of Darwin's finches compared in <ref target="#fig_4" type="figure">Fig 5 is</ref> limited by the number and type of properties plotted as well as how closely each property describes the functions of interest: feeding versus singing.</s>
+          <s>As shown in <ref target="#fig_4" type="figure">Fig 5A,</ref> we suggest feeding is described by five of the six properties, whereas singing is described by four of the six, which more heavily weights feeding over singing <ref type="bibr">(5:4)</ref> .</s>
           <s>One possibility to correct such bias could be accomplished by selective scaling-e.g., increasing the axis for vocal potential; another, by changing the angles between axes-e.g., rotating tip and base bite force (or opening and closing velocity) closer together, and thus increasing the angle(s) between vocal potential and the other properties.</s>
           <s>Lastly, two or more closely related properties could be collapsed into one-e.g., combining tip and base bite force (or opening and closing velocity) into, simply, bite force (or velocity).</s>
           <s>Similarly, other projection transformations <ref target="#b63" type="bibr">[64,</ref>
@@ -442,7 +413,7 @@
           <s>Additionally, algebraic combinations of two or more metrics can reveal new information.</s>
           <s>For example, Q 0 is a simple combination of the area and centroid of a profile, A(1 −R), relative to the area of the property space, A N .</s>
           <s>We chose this metric (Eq 12) because of its intuitive definition, where larger areas equal higher performance, and smaller centroidal distances equal higher multidimensionality (or multifunctionality in the case of functional properties).</s>
-          <s>Therefore, we caution against the use of arbitrary descriptors with little to no explicable abstraction, and suggest that multiple descriptors should be compared to best understand the multidimensional mechanics of most comparative systems (as illustrated in <ref target="#fig_6" type="figure">Fig 5C and 5D</ref> ).</s>
+          <s>Therefore, we caution against the use of arbitrary descriptors with little to no explicable abstraction, and suggest that multiple descriptors should be compared to best understand the multidimensional mechanics of most comparative systems (as illustrated in <ref target="#fig_4" type="figure">Fig 5C and 5D</ref> ).</s>
         </p>
       </div>
       <div>
@@ -463,7 +434,7 @@
           <s>In materials selection and design, for instance, radar charts could complement traditional materials property charts (Ashby plots) <ref target="#b3" type="bibr">[4]</ref> .</s>
           <s>That is, key property-function correlations identified using radar charts could narrow the search field of properties to be investigated via Ashby plots.</s>
           <s>In reverse, Ashby plots could narrow the search field of material classes for radar chart analyses aimed at amplifying design multi-functionality.</s>
-          <s>In another way, structural or morphological measurements coupled with radar charts could reveal structure-property-function design rules for material systems-e.g., the fibrous microstructure of tendon is strong, tough and resilient, functioning as a robust tension tie (see <ref target="#fig_5" type="figure">Fig 4)</ref> .</s>
+          <s>In another way, structural or morphological measurements coupled with radar charts could reveal structure-property-function design rules for material systems-e.g., the fibrous microstructure of tendon is strong, tough and resilient, functioning as a robust tension tie (see <ref target="#fig_3" type="figure">Fig 4)</ref> .</s>
           <s>Thus, when combined with other exploratory strategies <ref target="#b77" type="bibr">[78,</ref>
             <ref target="#b78" type="bibr">79]</ref> , radar charts show much promise across a wide range of disciplines where multidimensional datasets are ubiquitous.</s>
         </p>
@@ -487,81 +458,67 @@
           <s>The code is used to output plots of all possible permutations, the maximal area permutation, its profile areas, centroids, relative moments, and compactness, as well as the Jaccard indices of all pairs of profiles.</s>
           <s>(DOCX) S1 References.</s>
           <s>Additional supporting references for the six datasets (S1-S6 Tables).</s>
-          <s>
-            <ref target="#fig_4" type="figure">Fig 3A displayed</ref> as normalized averages (lines) and standard deviations/ranges (shaded regions); averages calculated from minimum and maximum values of reported deviations/ranges.</s>
-          <s>Properties: density (ρ), elastic modulus (E), tensile strength (σ T ), resilience (u R ), damping loss factor (tan δ), strain to failure (ε), toughness (u T ).</s>
-          <s>(DOCX) <ref type="table">Table.</ref>
+          <s>(DOCX) S1 <ref type="formula">(lines)</ref> and standard deviations/ ranges (shaded regions); averages calculated from minimum and maximum values of reported deviations/ranges.</s>
+          <s>Properties: density (ρ), elastic modulus (E), tensile strength (σ), toughness (u T ), and extensibility or strain to failure (ε); tensile resilience (u R ) calculated by: u R = σ 2 /2E.</s>
+          <s>(DOCX) S6 <ref target="#tab_1" type="table">Table.</ref>
           </s>
           <s>Darwin's finches.</s>
-          <s>Feeding and singing performance averages (standard deviations) are compiled from: base and tip bite forces of male birds <ref target="#b56" type="bibr">[57]</ref> ; maximum gape, opening and closing velocity of unspecified genders <ref target="#b55" type="bibr">[56]</ref> ; vocal potentials (VP) of male birds calculated from {vocal deviations (VD)} <ref target="#b57" type="bibr">[58]</ref>
-          </s>
+          <s>Feeding and singing performance averages (standard deviations) are compiled from: base and tip bite forces of male birds <ref target="#b56" type="bibr">[57]</ref> ; maximum gape, opening and closing velocity of unspecified genders <ref target="#b55" type="bibr">[56]</ref> ;</s>
         </p>
-        <formula xml:id="formula_15">(DOCX) S1</formula>
       </div>
-      <div>
-        <head>S2</head>
-      </div>
-      <figure xml:id="fig_0">
-        <head>Fig 1 .</head>
-        <label>1</label>
-        <figDesc>Fig 1. Mechanical properties of structural biological materials. (a) Mechanical property chart comparing the strength and modulus of twelve natural materials (see Box 1); (b-e) representative stress-strain curves of the four structural classes of materials. Notes: Guidelines shown in (a) are derived material indices for elastic hinges (σ/E) and springs (σ</figDesc>
-      </figure>
       <figure xml:id="fig_1">
         <head/>
         <label/>
-        <figDesc>Fig 2. Methods of axis-sorting and shape moments using radar charts. (a) All possible permutations of the N = 5 mechanical properties of the collagenous tissues dataset, where the instance resulting in a maximal total area (12) is boxed with a dashed line. (b) The "permutated radar chart" yielding a maximal total area used for shape descriptor analyses. (c) The property profile of dentin (red), illustrating its area (A), centroidal distance (R), and the x,y-coordinates of point (a,b) located at the intersection of a vector passing through the profile's centroid and the perimeter of a unit circle; the area of the property space (grey) of a regular pentagon is A 5 % 2.4. (d) The relative first moment of area Q 0 about the outer limits of the property space (a,b) for the five materials across all 12 permutations; notice that the maximum values for Q 0 are nearly equivalent to those of the maximal area permutation. Legend: dentin = red; bone = yellow; tendon = green; skin = blue; cartilage = purple;</figDesc>
+        <figDesc>aÞ p ðy À bÞ q f ðx; yÞdxdy ð8Þ where (a,b) are defined as a ¼ m 10 =m 10 and m 01 are first-order shape moments (Eq 6). Accordingly, M 10 and M 01 can reduce to: M 10 ¼ m</figDesc>
       </figure>
       <figure xml:id="fig_2">
-        <head/>
-        <label/>
-        <figDesc>. The first three lower-order moments describe a profile's area and centroidal distance from the origin: A = m 00 and R ¼</figDesc>
-      </figure>
-      <figure xml:id="fig_3">
-        <head/>
-        <label/>
-        <figDesc>aÞ p ðy À bÞ q f ðx; yÞdxdy ð8Þ where (a,b) are defined as a ¼ m 10 =m 10 and m 01 are first-order shape moments (Eq 6). Accordingly, M 10 and M 01 can reduce to:</figDesc>
-      </figure>
-      <figure xml:id="fig_4">
         <head>Fig 3 .</head>
         <label>3</label>
         <figDesc>Fig 3. Multidimensional mechanics of structural biological materials. Normalized, permutated radar charts comparing four structural classes of natural materials (see Box 1). Legend (units): elastic and shear moduli, E and G (GPa); strain to failure, ε (%); tensile, compressive and flexural strength, σ T , σ C and σ F (MPa); toughness, u T (MJÁm -3 ) or u T Ã (kJÁm -2 ); fracture toughness, K IC (MPaÁm 1/2 ); resilience, u R (%); damping loss factor, tan δ (no units); hardness, H (MPa); impact strength, IS (kJÁm -2 ). Notes: Data averages (lines) and standard deviations/errors/ranges (shaded regions) are listed in S1-S4 Tables, compiled from numerous sources (see Supporting Information); for reference, maximum values of each average property are displayed on the axes. https://doi.org/10.1371/journal.pone.0204309.g003</figDesc>
       </figure>
-      <figure xml:id="fig_5">
+      <figure xml:id="fig_3">
         <head>Fig 4 .</head>
         <label>4</label>
         <figDesc>Fig 4. Tensile properties of dentin, bone, tendon, skin, and cartilage. (a) Normalized, permutated radar charts comparing five collagenous tissues (see Box 2), where the profile averages (lines) and standard deviations/ranges (shaded regions) are shown on the outer edges; the center plot illustrates a trade-off between stiffness (E) and extensibility (ε). (b) Micrographs illustrating key microstructural features correlating each material with its unique property profile; images adapted from literature [42-46] or provided by J. McKittrick (dentin and bone), for illustrative purposes only. Scale bars: (from left to right, top to bottom) 5 μm; 150 μm; 5 μm; 25 μm; 2 μm. (c) Radar charts showing the intersections and unions of dentin-bone (top) and dentin-cartilage (bottom). (d) Comparisons of the profile areas, A (dotted bars), centroidal distances, R (hatched bars), and relative first moments of area, Q 0 (solid bars). Legend (units): elastic modulus, E (GPa); tensile strength, σ (MPa); toughness, u T (MJÁm -3 ); resilience, u R † (MPa); extensibility, ε (%). Notes: Data are listed in S5 Table, compiled from numerous sources (see Supporting Information); for reference, maximum values of each average property are displayed on the axes. https://doi.org/10.1371/journal.pone.0204309.g004</figDesc>
       </figure>
-      <figure xml:id="fig_6">
+      <figure xml:id="fig_4">
         <head>Fig 5 .</head>
         <label>5</label>
         <figDesc>Fig 5. Feeding vs singing performance of Darwin's finches. (a) Normalized, permutated radar chart comparing eight Darwin's finches, showing the properties correlated with feeding and singing performance as well as the distinct functional trade-off between base bite force and vocal potential. (b) Individual profiles of Darwin's finches, showing their reported averages (lines) and ranges (shaded regions). (c) Radar charts illustrating the intersections and unions of G. scandens-C. pallida (left) and G. magnirostris-C. olivacea (right). (d) Comparisons of the profile areas, A, centroidal distances, R, relative first moments of area, Q 0 , and compactness, C; colored bars callout the two maxima of each shape descriptor as referred in the text. Legend: base bite force (BBF), tip bite force (TBF), gape (G), opening velocity (OV), closing velocity (CV), vocal potential (VP). Notes: Beak sketches are adapted from literature [58]. Data are listed in S6 Table, compiled from numerous sources (see Supporting Information). https://doi.org/10.1371/journal.pone.0204309.g005</figDesc>
       </figure>
-      <figure xml:id="fig_7">
+      <figure xml:id="fig_5">
         <head/>
         <label/>
-        <figDesc>by the equation: VP j = max(VD) + min(VD) − VD j . Data in Fig 5A and 5B displayed as normalized averages (lines) and standard deviations (shaded regions). (DOCX) Project administration: Michael M. Porter. Software: Pooya Niksiar. Validation: Pooya Niksiar. Writing -original draft: Michael M. Porter. Writing -review &amp; editing: Michael M. Porter, Pooya Niksiar.</figDesc>
+        <figDesc>Fig 3B displayed as normalized averages (lines) and ranges (shaded regions); averages calcu- lated from minimum and maximum values of reported ranges. Properties: density (ρ), elastic modulus (E), tensile strength (σ T ), toughness (u T ), strain to failure (ε), compressive strength (σ C ), flexural strength (σ F ). (DOCX) S3</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
+        <head/>
+        <label/>
+        <figDesc>vocal potentials (VP) of male birds calculated from {vocal deviations (VD)} [58] by the equation: VP j = max(VD) + min(VD) − VD j . Data in Fig 5A and 5B displayed as normalized averages (lines) and standard deviations (shaded regions). (DOCX) Project administration: Michael M. Porter. Software: Pooya Niksiar. Validation: Pooya Niksiar. Writing -original draft: Michael M. Porter. Writing -review &amp; editing: Michael M. Porter, Pooya Niksiar.</figDesc>
       </figure>
       <figure type="table" validated="false" xml:id="tab_0">
         <head/>
         <label/>
-        <figDesc>Table. Tension ties. Mechanical property data are compiled from: Spider silk: major ampullate silk of Nephila edulis [80], frame silk of Araneus sericatus [81] and unspecified spe- cies [82]; Mammal tendon: collagen of adult mammalian tendon [83], human Achilles tendon [84] and rabbit Achilles tendon [85]; Mussel byssus: byssal threads of Mytilus galloprovincialis [86] and Mytilus californianus [83, 87]. Data reported as averages and (standard deviations) or [ranges] depending on source; data in</figDesc>
+        <figDesc>Table. Tension ties. Mechanical property data are compiled from: Spider silk: major ampullate silk of Nephila edulis [80], frame silk of Araneus sericatus [81] and unspecified spe- cies [82]; Mammal tendon: collagen of adult mammalian tendon [83], human Achilles tendon [84] and rabbit Achilles tendon [85]; Mussel byssus: byssal threads of Mytilus galloprovincialis [86] and Mytilus californianus [83, 87]. Data reported as averages and (standard deviations) or [ranges] depending on source; data in Fig 3A displayed as normalized averages (lines) and standard deviations/ranges (shaded regions); averages calculated from minimum and maxi- mum values of reported deviations/ranges. Properties: density (ρ), elastic modulus (E), tensile strength (σ T ), resilience (u R ), damping loss factor (tan δ), strain to failure (ε), toughness (u T ). (DOCX) S2 Table. Load-bearing beams. Mechanical property data are compiled from: Bamboo culm: trunk of Neosinocalamus affinis [88], internodes of Phyllostachys pubescens [89] and unspeci- fied region of Sinocalamus affinis [90]; Cortical bone: adult human Haversian [91] and bovine femur [92, 93]; Feather rachis: flight feathers of Larus californicus [94] and feather keratin of Struthio camelus [95]. Data reported as averages and [ranges] depending on source; data in</figDesc>
         <table/>
       </figure>
       <figure type="table" validated="false" xml:id="tab_1">
-        <head/>
-        <label/>
-        <figDesc>Table. Load-bearing beams. Mechanical property data are compiled from: Bamboo culm: trunk of Neosinocalamus affinis [88], internodes of Phyllostachys pubescens [89] and unspeci- fied region of Sinocalamus affinis [90]; Cortical bone: adult human Haversian [91] and bovine femur [92, 93]; Feather rachis: flight feathers of Larus californicus [94] and feather keratin of Struthio camelus [95]. Data reported as averages and [ranges] depending on source; data in Fig 3B displayed as normalized averages (lines) and ranges (shaded regions); averages calcu- lated from minimum and maximum values of reported ranges. Properties: density (ρ), elastic modulus (E), tensile strength (σ T ), toughness (u T ), strain to failure (ε), compressive strength (σ C ), flexural strength (σ F ). (DOCX) S3 Table. Protective shells. Mechanical property data are compiled from: Mollusk nacre: shells of Pinctada [96] and Haliotis rufescens [97-99]; Turtle carapace: bony scutes and sutures of Trachemys scripta elegans [100-102], four species of turtles [103] and unspecified tortoise species [104]; Bovid horn: sheath keratin of Ovis Canadensis [42, 98, 105] and Oryx gazelle [106]. Data reported as averages and (standard error) or [ranges] depending on source; data in Fig 3C displayed as normalized averages (lines) and standard errors/ranges (shaded regions); averages calculated from minimum and maximum values of reported errors/ranges. Properties: density (ρ), elastic modulus (E), hardness (H), flexural strength (σ F ), fracture toughness (K IC ), strain to failure (ε), impact strength (IS). (DOCX) S4 Table. Porous foams. Mechanical property data are compiled from: Coral skeleton: sclerac- tinian coral, Porites Cylindrica [107] and several species of gorgonian corals [108]; Cancellous bone: human knees [109], human vertebrae and tibiae [110] and bovine tibiae [111]; Balsa wood: trunk of Ochroma pyramidale [112-114]. Data reported as averages and (standard devi- ations) or [ranges] depending on source; data in Fig 3D displayed as normalized averages (lines) and standard deviations/ranges (shaded regions); averages calculated from minimum and maximum values of reported deviations/ranges. Properties: density (ρ), elastic modulus (E), hardness (H), shear modulus (G), strain to failure (ε), compressive strength (σ C ), tough- ness (u T ). (DOCX) S5 Table. Collagenous tissues. Mechanical property data are compiled from: Dentin: human teeth [52, 115], bovine teeth [116] and unspecified [117]. Bone: adult human Haversian [91] and bovine femur [92, 93]; Tendon: collagen of adult mammals [83], human Achilles [84] and rabbit Achilles [85]; Skin: human back [118] and unspecified [119]; Cartilage: porcine tem- poro-mandibular joint disc (TMJ) [120] and femoral articular of unspecified species [121]. Data reported as averages and (standard deviations) or [ranges] and {calculations} depending on source; data in Fig 4A displayed as normalized averages (lines) and standard deviations/ ranges (shaded regions); averages calculated from minimum and maximum values of reported deviations/ranges. Properties: density (ρ), elastic modulus (E), tensile strength (σ), toughness (u T ), and extensibility or strain to failure (ε); tensile resilience (u R ) calculated by: u R = σ</figDesc>
-        <table>2 
-
-/2E. 
-(DOCX) 
-
-S6 </table>
+        <head>Table .</head>
+        <label>.</label>
+        <figDesc>Protective shells. Mechanical property data are compiled from: Mollusk nacre: shells of Pinctada [96] and Haliotis rufescens [97-99]; Turtle carapace: bony scutes and sutures of Trachemys scripta elegans [100-102], four species of turtles [103] and unspecified tortoise species [104]; Bovid horn: sheath keratin of Ovis Canadensis [42, 98, 105] and Oryx gazelle [106]. Data reported as averages and (standard error) or [ranges] depending on source; data in Fig 3C displayed as normalized averages (lines) and standard errors/ranges (shaded regions); averages calculated from minimum and maximum values of reported errors/ranges. Properties: density (ρ), elastic modulus (E), hardness (H), flexural strength (σ F ), fracture toughness (K IC ), strain to failure (ε), impact strength (IS). (DOCX) S4 Table. Porous foams. Mechanical property data are compiled from: Coral skeleton: sclerac- tinian coral, Porites Cylindrica [107] and several species of gorgonian corals [108]; Cancellous bone: human knees [109], human vertebrae and tibiae [110] and bovine tibiae [111]; Balsa wood: trunk of Ochroma pyramidale [112-114]. Data reported as averages and (standard devi- ations) or [ranges] depending on source; data in Fig 3D displayed as normalized averages (lines) and standard deviations/ranges (shaded regions); averages calculated from minimum and maximum values of reported deviations/ranges. Properties: density (ρ), elastic modulus (E), hardness (H), shear modulus (G), strain to failure (ε), compressive strength (σ C ), tough- ness (u T ). (DOCX) S5 Table. Collagenous tissues. Mechanical property data are compiled from: Dentin: human teeth [52, 115], bovine teeth [116] and unspecified [117]. Bone: adult human Haversian [91] and bovine femur [92, 93]; Tendon: collagen of adult mammals [83], human Achilles [84] and rabbit Achilles [85]; Skin: human back [118] and unspecified [119]; Cartilage: porcine tem- poro-mandibular joint disc (TMJ) [120] and femoral articular of unspecified species [121]. Data reported as averages and (standard deviations) or [ranges] and {calculations} depending on source; data in Fig 4A displayed as normalized averages</figDesc>
+        <table/>
       </figure>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0204309 September 28, 2018</note>
     </body>
     <back>
       <div type="acknowledgement">
+        <div>
+          <head>Axis sorting</head>
+          <p>
+            <s>Mechanical properties (axes) were sorted using a custom MATLAB routine, which searched for the appropriate permutation of axes resulting in maximal total area.</s>
+            <s>To explain the permutation scheme, we use for an example the collagenous tissues dataset (S5 <ref type="table">Table)</ref> .</s>
+          </p>
+        </div>
         <div>
           <head>Acknowledgments</head>
           <p>
@@ -621,15 +578,16 @@ S6 </table>
                   <surname>Chen</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1126/science.1220854</idno>
-              <ptr target="https://doi.org/10.1126/science.1220854PMID"/>
+              <idno type="DOI">10.1126/science.1220854</idno>
+              <idno>PMID: 23413348</idno>
+              <ptr target="https://doi.org/10.1126/science.1220854"/>
             </analytic>
             <monogr>
               <title level="j">Science</title>
               <imprint>
                 <biblScope unit="volume">339</biblScope>
                 <biblScope unit="issue">6121</biblScope>
-                <biblScope unit="page">23413348</biblScope>
+                <biblScope from="773" to="782" unit="page"/>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>
@@ -664,15 +622,16 @@ S6 </table>
                   <surname>Meyers</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1002/adma.201502403</idno>
-              <ptr target="https://doi.org/10.1002/adma.201502403PMID"/>
+              <idno type="DOI">10.1002/adma.201502403</idno>
+              <idno>PMID: 26305858</idno>
+              <ptr target="https://doi.org/10.1002/adma"/>
             </analytic>
             <monogr>
               <title level="j">Advanced Materials</title>
               <imprint>
                 <biblScope unit="volume">27</biblScope>
                 <biblScope unit="issue">37</biblScope>
-                <biblScope unit="page">26305858</biblScope>
+                <biblScope from="5455" to="76" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -787,15 +746,16 @@ S6 </table>
                   <surname>Riesenfeld</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TVCG.2009.23</idno>
-              <ptr target="https://doi.org/10.1109/TVCG.2009.23PMID"/>
+              <idno type="DOI">10.1109/TVCG.2009.23</idno>
+              <idno>PMID: 19590103</idno>
+              <ptr target="https://doi.org/10.1109/TVCG.2009.23"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Visualization and Computer Graphics</title>
               <imprint>
                 <biblScope unit="volume">15</biblScope>
                 <biblScope unit="issue">5</biblScope>
-                <biblScope unit="page">19590103</biblScope>
+                <biblScope from="759" to="76" unit="page"/>
                 <date type="published" when="2009"/>
               </imprint>
             </monogr>
@@ -878,15 +838,16 @@ S6 </table>
                   <surname>Pascucci</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TVCG.2016.2640960</idno>
-              <ptr target="https://doi.org/10.1109/TVCG.2016.2640960PMID"/>
+              <idno type="DOI">10.1109/TVCG.2016.2640960</idno>
+              <idno>PMID: 28113321</idno>
+              <ptr target="https://doi.org/10.1109/TVCG.2016.2640960"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Visualization and Computer Graphics</title>
               <imprint>
                 <biblScope unit="volume">23</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">28113321</biblScope>
+                <biblScope from="1249" to="68" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -931,15 +892,16 @@ S6 </table>
                   <surname>Weiskopf</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TVCG.2016.2598495</idno>
-              <ptr target="https://doi.org/10.1109/TVCG.2016.2598495PMID"/>
+              <idno type="DOI">10.1109/TVCG.2016.2598495</idno>
+              <idno>PMID: 27875141</idno>
+              <ptr target="https://doi.org/10.1109/TVCG.2016.2598495"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Visualization and Computer Graphics</title>
               <imprint>
                 <biblScope unit="volume">23</biblScope>
                 <biblScope unit="issue">1</biblScope>
-                <biblScope unit="page">27875141</biblScope>
+                <biblScope from="241" to="50" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -991,15 +953,16 @@ S6 </table>
                   <surname>Rafaeli</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TVCG.2015.2467322</idno>
-              <ptr target="https://doi.org/10.1109/TVCG.2015.2467322PMID"/>
+              <idno type="DOI">10.1109/TVCG.2015.2467322</idno>
+              <idno>PMID: 26529525</idno>
+              <ptr target="https://doi.org/10.1109/TVCG.2015.2467322"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Visualization and Computer Graphics</title>
               <imprint>
                 <biblScope unit="volume">22</biblScope>
                 <biblScope unit="issue">1</biblScope>
-                <biblScope unit="page">26529525</biblScope>
+                <biblScope from="569" to="78" unit="page"/>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -1145,11 +1108,12 @@ S6 </table>
               </author>
             </analytic>
             <monogr>
-              <title level="j">Proceedings of International Workshop on Visual Form</title>
+              <title level="m">Proceedings of International Workshop on Visual Form</title>
+              <meeting>International Workshop on Visual Form</meeting>
               <imprint>
+                <date type="published" when="1997"/>
                 <biblScope unit="volume">443</biblScope>
                 <biblScope unit="page">451</biblScope>
-                <date type="published" when="1997"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -1277,13 +1241,14 @@ S6 </table>
                   <surname>Miller</surname>
                 </persName>
               </author>
-              <idno>81. PMID: 13310704</idno>
+              <idno>PMID: 13310704</idno>
             </analytic>
             <monogr>
               <title level="j">Psychological Review</title>
               <imprint>
                 <biblScope unit="volume">63</biblScope>
                 <biblScope unit="issue">2</biblScope>
+                <biblScope unit="page">81</biblScope>
                 <date type="published" when="1956"/>
               </imprint>
             </monogr>
@@ -1381,15 +1346,16 @@ S6 </table>
                   <surname>Fratzl</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1126/science.1181044</idno>
-              <ptr target="https://doi.org/10.1126/science.1181044PMID"/>
+              <idno type="DOI">10.1126/science.1181044</idno>
+              <idno>PMID: 20203014</idno>
+              <ptr target="https://doi.org/10.1126/science.1181044"/>
             </analytic>
             <monogr>
               <title level="j">Science</title>
               <imprint>
                 <biblScope unit="volume">328</biblScope>
                 <biblScope unit="issue">5975</biblScope>
-                <biblScope unit="page">20203014</biblScope>
+                <biblScope from="216" to="236" unit="page"/>
                 <date type="published" when="2010"/>
               </imprint>
             </monogr>
@@ -1433,15 +1399,16 @@ S6 </table>
                   <surname>Ghavami</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.actbio.2011.06.008</idno>
-              <ptr target="https://doi.org/10.1016/j.actbio.2011.06.008PMID"/>
+              <idno type="DOI">10.1016/j.actbio.2011.06.008</idno>
+              <idno>PMID: 21704742</idno>
+              <ptr target="https://doi.org/10.1016/j.actbio.2011.06.008"/>
             </analytic>
             <monogr>
               <title level="j">Acta Biomaterialia</title>
               <imprint>
                 <biblScope unit="volume">7</biblScope>
                 <biblScope unit="issue">10</biblScope>
-                <biblScope unit="page">21704742</biblScope>
+                <biblScope from="3796" to="803" unit="page"/>
                 <date type="published" when="2011"/>
               </imprint>
             </monogr>
@@ -1610,14 +1577,15 @@ S6 </table>
                   <surname>Mckittrick</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.actbio.2017.09.043</idno>
-              <ptr target="https://doi.org/10.1016/j.actbio.2017.09.043PMID"/>
+              <idno type="DOI">10.1016/j.actbio.2017.09.043</idno>
+              <idno>PMID: 28974475</idno>
+              <ptr target="https://doi.org/10.1016/j.actbio.2017.09.043"/>
             </analytic>
             <monogr>
               <title level="j">Acta Biomaterialia</title>
               <imprint>
                 <biblScope unit="volume">64</biblScope>
-                <biblScope unit="page">28974475</biblScope>
+                <biblScope from="1" to="14" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -1691,15 +1659,16 @@ S6 </table>
                   <surname>Ritchie</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nmat3115</idno>
-              <ptr target="https://doi.org/10.1038/nmat3115PMID"/>
+              <idno type="DOI">10.1038/nmat3115</idno>
+              <idno>PMID: 22020005</idno>
+              <ptr target="https://doi.org/10.1038/nmat3115"/>
             </analytic>
             <monogr>
               <title level="j">Nature Materials</title>
               <imprint>
                 <biblScope unit="volume">10</biblScope>
                 <biblScope unit="issue">11</biblScope>
-                <biblScope unit="page">22020005</biblScope>
+                <biblScope from="817" to="839" unit="page"/>
                 <date type="published" when="2011"/>
               </imprint>
             </monogr>
@@ -1857,14 +1826,15 @@ S6 </table>
                   <surname>Meyers</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.jmbbm.2015.05.023</idno>
-              <ptr target="https://doi.org/10.1016/j.jmbbm.2015.05.023PMID"/>
+              <idno type="DOI">10.1016/j.jmbbm.2015.05.023</idno>
+              <idno>PMID: 26144973</idno>
+              <ptr target="https://doi.org/10.1016/j.jmbbm.2015.05.023"/>
             </analytic>
             <monogr>
               <title level="j">Journal of the Mechanical Behavior of Biomedical Materials</title>
               <imprint>
                 <biblScope unit="volume">52</biblScope>
-                <biblScope unit="page">26144973</biblScope>
+                <biblScope from="22" to="50" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -1959,15 +1929,16 @@ S6 </table>
                   <surname>Mckittrick</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.actbio.2011.11.010</idno>
-              <ptr target="https://doi.org/10.1016/j.actbio.2011.11.010PMID"/>
+              <idno type="DOI">10.1016/j.actbio.2011.11.010</idno>
+              <idno>PMID: 22115696</idno>
+              <ptr target="https://doi.org/10.1016/j.actbio.2011.11.010"/>
             </analytic>
             <monogr>
               <title level="j">Acta Biomaterialia</title>
               <imprint>
                 <biblScope unit="volume">8</biblScope>
                 <biblScope unit="issue">3</biblScope>
-                <biblScope unit="page">22115696</biblScope>
+                <biblScope from="1080" to="92" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -2007,15 +1978,16 @@ S6 </table>
                   <surname>Williams</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.jbiomech.2010.06.009</idno>
-              <ptr target="https://doi.org/10.1016/j.jbiomech.2010.06.009PMID"/>
+              <idno type="DOI">10.1016/j.jbiomech.2010.06.009</idno>
+              <idno>PMID: 20678772</idno>
+              <ptr target="https://doi.org/10.1016/j.jbiomech.2010.06.009"/>
             </analytic>
             <monogr>
               <title level="j">Journal of Biomechanics</title>
               <imprint>
                 <biblScope unit="volume">43</biblScope>
                 <biblScope unit="issue">14</biblScope>
-                <biblScope unit="page">20678772</biblScope>
+                <biblScope from="2785" to="91" unit="page"/>
                 <date type="published" when="2010"/>
               </imprint>
             </monogr>
@@ -2061,14 +2033,15 @@ S6 </table>
                   <surname>Ritchie</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/ncomms7649</idno>
-              <ptr target="https://doi.org/10.1038/ncomms7649PMID"/>
+              <idno type="DOI">10.1038/ncomms7649</idno>
+              <idno>PMID: 25812485</idno>
+              <ptr target="https://doi.org/10.1038/ncomms7649"/>
             </analytic>
             <monogr>
               <title level="j">Nature Communications</title>
               <imprint>
                 <biblScope unit="volume">6</biblScope>
-                <biblScope unit="page">25812485</biblScope>
+                <biblScope unit="page">6649</biblScope>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -2113,14 +2086,15 @@ S6 </table>
                   <surname>Koyama</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.jbiomech.2017.06.031</idno>
-              <ptr target="https://doi.org/10.1016/j.jbiomech.2017.06.031PMID"/>
+              <idno type="DOI">10.1016/j.jbiomech.2017.06.031</idno>
+              <idno>PMID: 28688538</idno>
+              <ptr target="https://doi.org/10.1016/j.jbiomech.2017.06.031"/>
             </analytic>
             <monogr>
               <title level="j">Journal of Biomechanics</title>
               <imprint>
                 <biblScope unit="volume">60</biblScope>
-                <biblScope unit="page">28688538</biblScope>
+                <biblScope from="134" to="175" unit="page"/>
                 <date type="published" when="2017"/>
               </imprint>
             </monogr>
@@ -2225,15 +2199,16 @@ S6 </table>
                   <surname>Kjaer</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1152/physrev.00031.2003</idno>
-              <ptr target="https://doi.org/10.1152/physrev.00031.2003PMID"/>
+              <idno type="DOI">10.1152/physrev.00031.2003</idno>
+              <idno>PMID: 15044685</idno>
+              <ptr target="https://doi.org/10.1152/physrev.00031.2003"/>
             </analytic>
             <monogr>
               <title level="j">Physiological Reviews</title>
               <imprint>
                 <biblScope unit="volume">84</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">15044685</biblScope>
+                <biblScope from="649" to="98" unit="page"/>
                 <date type="published" when="2004"/>
               </imprint>
             </monogr>
@@ -2282,15 +2257,16 @@ S6 </table>
                   <forename type="middle">A</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1177/1941738109350438</idno>
-              <ptr target="https://doi.org/10.1177/1941738109350438PMID"/>
+              <idno type="DOI">10.1177/1941738109350438</idno>
+              <idno>PMID: 23015907</idno>
+              <ptr target="https://doi.org/10.1177/1941738109350438"/>
             </analytic>
             <monogr>
               <title level="j">Sports Health</title>
               <imprint>
                 <biblScope unit="volume">1</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">23015907</biblScope>
+                <biblScope from="461" to="469" unit="page"/>
                 <date type="published" when="2009"/>
               </imprint>
             </monogr>
@@ -2342,15 +2318,16 @@ S6 </table>
                   <surname>Vashishth</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.orthres.2005.02.008</idno>
-              <ptr target="https://doi.org/10.1016/j.orthres.2005.02.008PMID"/>
+              <idno type="DOI">10.1016/j.orthres.2005.02.008</idno>
+              <idno>PMID: 16140189</idno>
+              <ptr target="https://doi.org/10.1016/j.orthres.2005.02.008"/>
             </analytic>
             <monogr>
               <title level="j">Journal of Orthopaedic Research</title>
               <imprint>
                 <biblScope unit="volume">23</biblScope>
                 <biblScope unit="issue">5</biblScope>
-                <biblScope unit="page">16140189</biblScope>
+                <biblScope from="1047" to="53" unit="page"/>
                 <date type="published" when="2005"/>
               </imprint>
             </monogr>
@@ -2420,15 +2397,16 @@ S6 </table>
                   <surname>Dirckx</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0129479</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0129479PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0129479</idno>
+              <idno>PMID: 26068929</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0129479"/>
             </analytic>
             <monogr>
               <title level="j">PLOS ONE</title>
               <imprint>
                 <biblScope unit="volume">10</biblScope>
                 <biblScope unit="issue">6</biblScope>
-                <biblScope unit="page">26068929</biblScope>
+                <biblScope unit="page">129479</biblScope>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -2531,15 +2509,16 @@ S6 </table>
                   <surname>Podos</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/35051570</idno>
-              <ptr target="https://doi.org/10.1038/35051570PMID"/>
+              <idno type="DOI">10.1038/35051570</idno>
+              <idno>PMID: 11196640</idno>
+              <ptr target="https://doi.org/10.1038/35051570"/>
             </analytic>
             <monogr>
               <title level="j">Nature</title>
               <imprint>
                 <biblScope unit="volume">409</biblScope>
                 <biblScope unit="issue">6817</biblScope>
-                <biblScope unit="page">11196640</biblScope>
+                <biblScope from="185" to="193" unit="page"/>
                 <date type="published" when="2001"/>
               </imprint>
             </monogr>
@@ -2714,15 +2693,16 @@ S6 </table>
                   <surname>Sanchez</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TVCG.2015.2467324</idno>
-              <ptr target="https://doi.org/10.1109/TVCG.2015.2467324PMID"/>
+              <idno type="DOI">10.1109/TVCG.2015.2467324</idno>
+              <idno>PMID: 26529721</idno>
+              <ptr target="https://doi.org/10.1109/TVCG.2015.2467324"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Visualization and Computer Graphics</title>
               <imprint>
                 <biblScope unit="volume">22</biblScope>
                 <biblScope unit="issue">1</biblScope>
-                <biblScope unit="page">26529721</biblScope>
+                <biblScope from="619" to="647" unit="page"/>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -2769,15 +2749,16 @@ S6 </table>
                   <surname>Van Wijk</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TVCG.2011.201</idno>
-              <ptr target="https://doi.org/10.1109/TVCG.2011.201PMID"/>
+              <idno type="DOI">10.1109/TVCG.2011.201</idno>
+              <idno>PMID: 22034351</idno>
+              <ptr target="https://doi.org/10.1109/TVCG.2011.201"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Visualization and Computer Graphics</title>
               <imprint>
                 <biblScope unit="volume">17</biblScope>
                 <biblScope unit="issue">12</biblScope>
-                <biblScope unit="page">22034351</biblScope>
+                <biblScope from="2310" to="2316" unit="page"/>
                 <date type="published" when="2011"/>
               </imprint>
             </monogr>
@@ -2883,13 +2864,14 @@ S6 </table>
                   <surname>Lehman</surname>
                 </persName>
               </author>
+              <idno>PMID: 10753108</idno>
             </analytic>
             <monogr>
               <title level="j">Science</title>
               <imprint>
                 <biblScope unit="volume">288</biblScope>
                 <biblScope unit="issue">5463</biblScope>
-                <biblScope unit="page">10753108</biblScope>
+                <biblScope from="100" to="106" unit="page"/>
                 <date type="published" when="2000"/>
               </imprint>
             </monogr>
@@ -2925,15 +2907,16 @@ S6 </table>
                   <surname>Hulsey</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/icb/45.2.256</idno>
-              <ptr target="https://doi.org/10.1093/icb/45.2.256PMID"/>
+              <idno type="DOI">10.1093/icb/45.2.256</idno>
+              <idno>PMID: 21676769</idno>
+              <ptr target="https://doi.org/10.1093/icb/45.2.256"/>
             </analytic>
             <monogr>
               <title level="j">Integrative and Comparative Biology</title>
               <imprint>
                 <biblScope unit="volume">45</biblScope>
                 <biblScope unit="issue">2</biblScope>
-                <biblScope unit="page">21676769</biblScope>
+                <biblScope from="256" to="62" unit="page"/>
                 <date type="published" when="2005"/>
               </imprint>
             </monogr>
@@ -2954,7 +2937,7 @@ S6 </table>
                   <surname>Arnold</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/j.1558-5646.1983.tb00236.x</idno>
+              <idno type="DOI">10.1111/j.1558-5646.1983.tb00236.x</idno>
               <ptr target="https://doi.org/10.1111/j.1558-5646.1983.tb00236.xPMID"/>
             </analytic>
             <monogr>
@@ -3004,15 +2987,16 @@ S6 </table>
                   <surname>Mayo</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1126/science.1217405</idno>
-              <ptr target="https://doi.org/10.1126/science.1217405PMID"/>
+              <idno type="DOI">10.1126/science.1217405</idno>
+              <idno>PMID: 22539553</idno>
+              <ptr target="https://doi.org/10.1126/science.1217405"/>
             </analytic>
             <monogr>
               <title level="j">Science</title>
               <imprint>
                 <biblScope unit="volume">336</biblScope>
                 <biblScope unit="issue">6085</biblScope>
-                <biblScope unit="page">22539553</biblScope>
+                <biblScope from="1157" to="60" unit="page"/>
                 <date type="published" when="2012"/>
               </imprint>
             </monogr>
@@ -3146,15 +3130,16 @@ S6 </table>
                   <surname>Ritchie</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1038/nmat4089</idno>
-              <ptr target="https://doi.org/10.1038/nmat4089PMID"/>
+              <idno type="DOI">10.1038/nmat4089</idno>
+              <idno>PMID: 25344782</idno>
+              <ptr target="https://doi.org/10.1038/nmat4089"/>
             </analytic>
             <monogr>
               <title level="j">Nature Materials</title>
               <imprint>
                 <biblScope unit="volume">14</biblScope>
                 <biblScope unit="issue">1</biblScope>
-                <biblScope unit="page">25344782</biblScope>
+                <biblScope from="23" to="36" unit="page"/>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -3219,15 +3204,16 @@ S6 </table>
                   <surname>Möller</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1109/TVCG.2014.2346321</idno>
-              <ptr target="https://doi.org/10.1109/TVCG.2014.2346321PMID"/>
+              <idno type="DOI">10.1109/TVCG.2014.2346321</idno>
+              <idno>PMID: 26356930</idno>
+              <ptr target="https://doi.org/10.1109/TVCG.2014.2346321"/>
             </analytic>
             <monogr>
               <title level="j">IEEE Transactions on Visualization and Computer Graphics</title>
               <imprint>
                 <biblScope unit="volume">20</biblScope>
                 <biblScope unit="issue">12</biblScope>
-                <biblScope unit="page">26356930</biblScope>
+                <biblScope from="2161" to="70" unit="page"/>
                 <date type="published" when="2014"/>
               </imprint>
             </monogr>
@@ -3274,13 +3260,14 @@ S6 </table>
                   <surname>Savig</surname>
                 </persName>
               </author>
-              <idno>595. PMID: 23967480</idno>
+              <idno>PMID: 23967480</idno>
             </analytic>
             <monogr>
               <title level="j">Nature Methods</title>
               <imprint>
                 <biblScope unit="volume">10</biblScope>
                 <biblScope unit="issue">7</biblScope>
+                <biblScope unit="page">595</biblScope>
                 <date type="published" when="2013"/>
               </imprint>
             </monogr>

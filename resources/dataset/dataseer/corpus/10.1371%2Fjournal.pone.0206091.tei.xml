@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T09:34+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-24T01:06+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -123,7 +123,7 @@
           <s>The population size estimator, b N , is the total number of sampled particles, times the sampling period.</s>
           <s>The precision of the method was tested <ref target="#b16" type="bibr">[17]</ref> on two images with manually annotated particle positions, yielding planar point patterns e.g.</s>
           <s>
-            <ref target="#fig_1" type="figure">Fig 2A.</ref>
+            <ref target="#fig_2" type="figure">Fig 2A.</ref>
           </s>
           <s>As the method is unbiased, the only source of error comes from sampling variance which can be estimated empirically via Monte Carlo resampling under identical conditions (see Section Simulation procedure).</s>
           <s>The empirical variance of the population size estimator was computed among 32 2 = 1024 Monte Carlo replications of the estimator for each given grid of quadrats.</s>
@@ -131,12 +131,6 @@
           <s>
             <ref target="#b19" type="bibr">[20]</ref> .</s>
           <s>Only heads marked with yellow arrowheads are counted in the quadrat, the rest are not because they hit the extended forbidden edge (in red).</s>
-        </p>
-        <p>
-          <s>https://doi.org/10.1371/journal.pone.0206091.g001</s>
-          <s>https://doi.org/10.1371/journal.pone.0206091.g002</s>
-        </p>
-        <p>
           <s>Simplified procedure for efficient and unbiased population size estimation Some practical criteria were given <ref target="#b16" type="bibr">[17]</ref> to choose the grid parameters.</s>
           <s>However, in practice, the choice of starting values for these parameters may not be obvious to every user.</s>
           <s>Moreover, note that these practical criteria were only checked to be valid on two pictures.</s>
@@ -160,10 +154,7 @@
         <p>
           <s>• N: Population size, i.e. number of particles in the target population.</s>
         </p>
-        <p>
-          <s>• b N : Population size estimator.</s>
-        </p>
-        <formula xml:id="formula_0">b N ¼ T 2 t 2 � Q:<label>ð1Þ</label>
+        <formula xml:id="formula_0">• b N : Population size estimator. b N ¼ T 2 t 2 � Q:<label>ð1Þ</label>
         </formula>
         <p>
           <s>• Q: Total number of particles sampled by the quadrats.</s>
@@ -181,9 +172,8 @@
           <s>• CE e ð b N Þ: Empirical coefficient of error of b N , calculated via Monte Carlo replications (Eq 7).</s>
         </p>
         <p>
-          <s>Here we propose two alternative grid parameters, f and n 0 , which are related to t and T as shown in <ref target="#fig_1" type="figure">Fig 2B:</ref> • f:</s>
+          <s>Here we propose two alternative grid parameters, f and n 0 , which are related to t and T as shown in <ref target="#fig_2" type="figure">Fig 2B:</ref> • f: Sampling fraction, f = t 2 /T 2 .</s>
         </p>
-        <formula xml:id="formula_1">Sampling fraction, f = t 2 /T 2 .</formula>
         <p>
           <s>• n 0 : Initial number of quadrats, n 0 = B x B y /T 2 where B x , B y represent image width and height in pixels, respectively.</s>
         </p>
@@ -197,7 +187,7 @@
           <s>The main steps of the standard CountEm method <ref target="#b16" type="bibr">[17]</ref> are:</s>
         </p>
         <p>
-          <s>1. Crop the image, excluding empty regions as in <ref target="#fig_1" type="figure">Fig 2A.</ref>
+          <s>1. Crop the image, excluding empty regions as in <ref target="#fig_2" type="figure">Fig 2A.</ref>
           </s>
           <s>This step is optional but highly recommended to increase efficiency.</s>
         </p>
@@ -208,9 +198,9 @@
           <s>3. Superimpose the grid uniformly at random on the image, e.g.</s>
           <s>
             <ref target="#fig_0" type="figure">Fig 1A.</ref> Optionally, the grid might be tilted at will by a given fixed angle in order to avoid alignments of quadrat and particle rows which would increase the variance <ref target="#b20" type="bibr">[21]</ref> .</s>
-        </p>
-        <p>
-          <s>4. Manually count the total number, Q, of particles captured by the quadrats.</s>
+          <s>
+            <ref target="#b3" type="bibr">4</ref> .</s>
+          <s>Manually count the total number, Q, of particles captured by the quadrats.</s>
           <s>Use the forbidden line rule to ensure unbiasedness: only particles intersecting the quadrat, and not touching the extended forbidden line (in red in <ref target="#fig_0" type="figure">Fig 1C)</ref> , are counted.</s>
         </p>
         <p>
@@ -228,8 +218,11 @@
         <p>
           <s>1. Apply standard CountEm step 1).</s>
         </p>
+      </div>
+      <div>
+        <head>2.</head>
         <p>
-          <s>2. Choose suitable values of f and n 0 .</s>
+          <s>Choose suitable values of f and n 0 .</s>
           <s>Tentatively one may start with n 0 = 100 and f = 0.04.</s>
         </p>
         <p>
@@ -238,14 +231,8 @@
         <p>
           <s>4. By cursory inspection, check that Q and the number of nonempty quadrats are approximately in the following ranges depending on the desired coefficient of error:</s>
         </p>
+        <formula xml:id="formula_1">• Q ≳ 50 and n ≳ 20 ¼) CE e ð b N Þ ≲ 15%. • Q ≳ 100 and n ≳ 30 ¼) CE e ð b N Þ ≲ 10%. • Q � 200 and n � 50 ¼) CE e ð b N Þ � 5%.</formula>
         <p>
-          <s>• Q ≳ 50 and n ≳ 20 ¼) CE e ð b N Þ ≲ 15%.</s>
-        </p>
-        <p>
-          <s>• Q ≳ 100 and n ≳ 30 ¼) CE e ð b N Þ ≲ 10%.</s>
-        </p>
-        <p>
-          <s>• Q � 200 and n � 50 ¼) CE e ð b N Þ � 5%.</s>
           <s>If Q looks too low, then go back to step 2) and increase f.</s>
           <s>On the other hand if n is too low, go back to step 2) and increase n 0 .</s>
         </p>
@@ -285,7 +272,7 @@
         </p>
         <p>
           <s>The empirical squared coefficient of error, CE 2 e ð b N Þ, was computed by Monte Carlo resampling for each of the 51 point patterns in the crowd counting dataset.</s>
-          <s>The dataset is described in Section The crowd counting dataset, whereas the details on the calculation of CE</s>
+          <s>The dataset is described in Section The crowd counting dataset, whereas the details on the calculation of CE 2 e ð b N Þ are shown in Section Simulation procedure.</s>
         </p>
       </div>
       <div subtype="dataseer">
@@ -295,14 +282,14 @@
           <s>The crowd sizes, N, vary from 96 to 4633.</s>
           <s>50 of the images and their corresponding point patterns (see <ref target="#fig_3" type="figure">Fig 3)</ref> were borrowed from the UCF dataset <ref target="#b11" type="bibr">[12]</ref> .</s>
           <s>The additional image is the spectators image countem.unican.es</s>
-          <s>shown in <ref target="#fig_0" type="figure">Figs 1 and 2</ref> , which was already analyzed in our previous paper <ref target="#b16" type="bibr">[17]</ref> together with the image corresponding to the largest crowd of the dataset (N = 4633).</s>
+          <s>shown in Figs 1 and 2, which was already analyzed in our previous paper <ref target="#b16" type="bibr">[17]</ref> together with the image corresponding to the largest crowd of the dataset (N = 4633).</s>
         </p>
       </div>
       <div>
         <head>Simulation procedure</head>
         <p>
           <s>The empirical squared coefficient of error CE 2 e ð b N Þ was computed by Monte Carlo resampling on the 51 point sets for different choices of parameters {f, n 0 }.</s>
-          <s>The corresponding parameters {t, T} were calculated as follows <ref target="#fig_1" type="figure">(Fig 2B)</ref> : Simplified procedure for efficient and unbiased population size estimation</s>
+          <s>The corresponding parameters {t, T} were calculated as follows ( <ref target="#fig_2" type="figure">Fig 2B)</ref> : Simplified procedure for efficient and unbiased population size estimation</s>
         </p>
         <formula xml:id="formula_2">T ¼ ffi ffi ffi ffi ffi ffi ffi ffi ffi B x B y n 0 s ; t ¼ T ffi ffiffi f p :<label>ð2Þ</label>
         </formula>
@@ -356,13 +343,7 @@
         <formula xml:id="formula_7">CE 2 e � b N � ¼ Var e � b N � =N 2 :<label>ð7Þ</label>
         </formula>
         <p>
-          <s>Results: Justification of the recommended parameter values • 10 3 ≲ N ≲ 10 4 ¼) 0:1 ≲ f ≲ 0:01.</s>
-          <s>Therefore f = 0.04 could be a reasonable starting value.</s>
-          <s>If the number of particles per quadrat looks higher than 5, a new run with lower f is recommended.</s>
-          <s>On the other hand if the resulting Q is low, f can be increased for a second run.</s>
-        </p>
-        <p>
-          <s>• N ≳ 10 4 ¼) f ≲ 0:01.</s>
+          <s>Results: Justification of the recommended parameter values Simplified procedure for efficient and unbiased population size estimation</s>
         </p>
       </div>
       <div>
@@ -386,9 +367,14 @@
         <figDesc>Fig 1. The CountEm method. (A): Spectators in a football match (Reprinted from [17] under a CC BY license, with permission from Raúl Cancio, Bilbao, 1966). A square grid of quadrats was superimposed uniformly at random to estimate the total number of spectators in the image. The quadrat marked with a yellow arrowhead is magnified in (C). (B): Square grid of quadrats with parameters t, T. (C): Forbidden line rule to remove edge effects in manual counting [20]. Only heads marked with yellow arrowheads are counted in the quadrat, the rest are not because they hit the extended forbidden edge (in red).</figDesc>
       </figure>
       <figure xml:id="fig_1">
+        <head/>
+        <label/>
+        <figDesc>https://doi.org/10.1371/journal.pone.0206091.g001</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
         <head>Fig 2 .</head>
         <label>2</label>
-        <figDesc>Fig 2. Parameter selection. (A): Point pattern of the N = 1120 manually annotated crowd positions corresponding to Fig 1A. The bounding box is plotted in blue. (B): Relation between parameters {f, n 0 } and {t, T}. Box size T is the area of the bounding box divided by the initial number of quadrats, n 0 . Quadrat size, t, is the box size times the square root of the sampling fraction, f. (C): Random superimposition of the grid of quadrats (B) on point pattern (A). The grid was tilted 30˚with respect to the x axis.</figDesc>
+        <figDesc>Fig 2. Parameter selection. (A): Point pattern of the N = 1120 manually annotated crowd positions corresponding to Fig 1A. The bounding box is plotted in blue. (B): Relation between parameters {f, n 0 } and {t, T}. Box size T is the area of the bounding box divided by the initial number of quadrats, n 0 . Quadrat size, t, is the box size times the square root of the sampling fraction, f. (C): Random superimposition of the grid of quadrats (B) on point pattern (A). The grid was tilted 30˚with respect to the x axis. https://doi.org/10.1371/journal.pone.0206091.g002</figDesc>
       </figure>
       <figure xml:id="fig_3">
         <head>Fig 3 .</head>
@@ -401,14 +387,31 @@
         <figDesc>Figs 4 and 5 allow us to justify the tentative values for parameters {f, n 0 } (step 2) and the practical criteria related to sample size, Q, and number of nonempty quadrats, n, (step 4) given in the simplified estimation protocol proposed above.</figDesc>
       </figure>
       <figure xml:id="fig_5">
+        <head>Fig 4 .</head>
+        <label>4</label>
+        <figDesc>Fig 4. Empirical squared coefficient of error for fixed parameter values. (A, B, C): Empirical squared coefficient of error of the 51 point patterns in the crowd counting dataset, for fixed sampling fractions f = 0.02, 0.04, 0.06 respectively. Population and sample sizes are shown on the x axis. Blue and red color represent initial number of quadrats n 0 = 50, 100 respectively. Broken horizontal lines correspond to 5%, 10% and 15%, whereas the vertical broken is drawn at sample size Q = 50. (D, E, F): Analogous plots for nonempty quadrats n. Broken horizontal lines correspond to 20, 30 and 50 quadrats. https://doi.org/10.1371/journal.pone.0206091.g004</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
         <head>Fig 5 .</head>
         <label>5</label>
         <figDesc>Fig 5. Empirical coefficient of error for optimal parameter values. (A): Empirical coefficient of error, obtained with sampling fractions adapted to each of the 51 point patterns considered in Fig 4. Blue, red and green colors represent sample sizes Q = 50, Q = 100 and Q = 200 respectively. Initial number of quadrats was set to n 0 = 100 for all cases. (B): Analogous plots for nonempty quadrats n. The broken horizontal lines are as in Fig 4.</figDesc>
       </figure>
-      <figure xml:id="fig_6">
+      <figure xml:id="fig_7">
         <head/>
         <label/>
-        <figDesc>https://doi.org/10.1371/journal.pone.0206091.g005 Simplified procedure for efficient and unbiased population size estimation There is no upper limit for N with CountEm, since only Q and n are relevant for the result- ing coefficient of error. Fig 4 shows the approximately linear dependence of CEQ. Counting more than Q = 200 particles is not worthwhile in most cases. Fig 5 shows that doubling Q from 100 to 200 does only slightly reduce the error.</figDesc>
+        <figDesc>https://doi.org/10.1371/journal.pone.0206091.g005</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>There is no upper limit for N with CountEm, since only Q and n are relevant for the result- ing coefficient of error. Fig 4 shows the approximately linear dependence of CE 2� with respect to Q. Counting more than Q = 200 particles is not worthwhile in most cases. Fig 5 shows that doubling Q from 100 to 200 does only slightly reduce the error.</figDesc>
+        <table>e 
+
+� 
+b 
+N 
+
+</table>
       </figure>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0206091 October 29, 2018 3 / 11</note>
       <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0206091 October 29, 2018</note>
@@ -425,36 +428,6 @@
           <head>Author Contributions</head>
           <p>
             <s>Conceptualization: Marcos Cruz.</s>
-          </p>
-          <p>
-            <s>Formal analysis: Marcos Cruz, Javier González-Villa.</s>
-          </p>
-        </div>
-        <div>
-          <head>Funding acquisition: Marcos Cruz.</head>
-          <p>
-            <s>Investigation: Marcos Cruz.</s>
-          </p>
-          <p>
-            <s>Methodology: Marcos Cruz, Javier González-Villa.</s>
-          </p>
-          <p>
-            <s>Software: Javier González-Villa.</s>
-          </p>
-        </div>
-        <div>
-          <head>Supervision: Marcos Cruz.</head>
-          <p>
-            <s>Validation: Marcos Cruz.</s>
-          </p>
-          <p>
-            <s>Visualization: Marcos Cruz, Javier González-Villa.</s>
-          </p>
-        </div>
-        <div>
-          <head>Writing -original draft: Marcos Cruz.</head>
-          <p>
-            <s>Writing -review &amp; editing: Marcos Cruz, Javier González-Villa.</s>
           </p>
         </div>
       </div>
@@ -495,7 +468,7 @@
                   <surname>Yip</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/j.1740-9713.2011.00502.x</idno>
+              <idno type="DOI">10.1111/j.1740-9713.2011.00502.x</idno>
               <ptr target="https://doi.org/10.1111/j.1740-9713.2011.00502.x"/>
               <imprint>
                 <date type="published" when="2011"/>
@@ -520,7 +493,7 @@
                   <surname>Green</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/ecog.01736</idno>
+              <idno type="DOI">10.1111/ecog.01736</idno>
               <ptr target="https://doi.org/10.1111/ecog.01736"/>
             </analytic>
             <monogr>
@@ -561,7 +534,7 @@
                   <surname>Boomer</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1016/j.biocon.2015.12.006</idno>
+              <idno type="DOI">10.1016/j.biocon.2015.12.006</idno>
               <ptr target="https://doi.org/10.1016/j.biocon.2015.12.006"/>
               <imprint>
                 <date type="published" when="2016"/>
@@ -615,7 +588,7 @@
                   <surname>Stafford</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/s10750-016-3004-3</idno>
+              <idno type="DOI">10.1007/s10750-016-3004-3</idno>
               <ptr target="https://doi.org/10.1007/s10750-016-3004-3"/>
             </analytic>
             <monogr>
@@ -651,12 +624,13 @@
                   <surname>Porter</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/gcb.13743</idno>
-              <ptr target="https://doi.org/10.1111/gcb.13743PMID"/>
+              <idno type="DOI">10.1111/gcb.13743</idno>
+              <idno>PMID: 28578561</idno>
+              <ptr target="https://doi.org/10.1111/gcb.13743"/>
               <imprint>
                 <date type="published" when="2017"/>
                 <biblScope unit="volume">23</biblScope>
-                <biblScope unit="page">28578561</biblScope>
+                <biblScope from="4958" to="4969" unit="page"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -683,15 +657,15 @@
                   <surname>Bird</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0122588</idno>
-              <ptr target="https://doi.org/10.1371/journal.pone.0122588PMID"/>
+              <idno type="DOI">10.1371/journal.pone.0122588</idno>
+              <idno>PMID: 25874997</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0122588"/>
             </analytic>
             <monogr>
               <title level="j">PloS one</title>
               <imprint>
                 <biblScope unit="volume">10</biblScope>
                 <biblScope unit="issue">4</biblScope>
-                <biblScope unit="page">25874997</biblScope>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -720,14 +694,15 @@
                   <surname>Mcdonald</surname>
                 </persName>
               </author>
-              <idno type="doi">10.7717/peerj.1831</idno>
-              <ptr target="https://doi.org/10.7717/peerj.1831PMID"/>
+              <idno type="DOI">10.7717/peerj.1831</idno>
+              <idno>PMID: 27020132</idno>
+              <ptr target="https://doi.org/10.7717/peerj.1831"/>
             </analytic>
             <monogr>
               <title level="j">PeerJ</title>
               <imprint>
                 <biblScope unit="volume">4</biblScope>
-                <biblScope unit="page">27020132</biblScope>
+                <biblScope unit="page">1831</biblScope>
                 <date type="published" when="2016"/>
               </imprint>
             </monogr>
@@ -789,7 +764,7 @@
                   <surname>Zerubia</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1080/00063657.2011.588195</idno>
+              <idno type="DOI">10.1080/00063657.2011.588195</idno>
               <ptr target="https://doi.org/10.1080/00063657.2011.588195"/>
               <imprint>
                 <date type="published" when="2011"/>
@@ -864,8 +839,9 @@
               </author>
             </analytic>
             <monogr>
-              <title level="m">IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE</title>
+              <title level="m">IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</title>
               <imprint>
+                <publisher>IEEE</publisher>
                 <date type="published" when="2013"/>
                 <biblScope from="2547" to="2554" unit="page"/>
               </imprint>
@@ -893,15 +869,16 @@
                   <surname>Preis</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1098/rsos.150162</idno>
-              <ptr target="https://doi.org/10.1098/rsos.150162PMID"/>
+              <idno type="DOI">10.1098/rsos.150162</idno>
+              <idno>PMID: 26064667</idno>
+              <ptr target="https://doi.org/10.1098/rsos.150162"/>
             </analytic>
             <monogr>
               <title level="j">Royal Society Open Science</title>
               <imprint>
                 <biblScope unit="volume">2</biblScope>
                 <biblScope unit="issue">5</biblScope>
-                <biblScope unit="page">26064667</biblScope>
+                <biblScope unit="page">150162</biblScope>
                 <date type="published" when="2015"/>
               </imprint>
             </monogr>
@@ -953,7 +930,7 @@
                   <forename type="middle">T</forename>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0156342</idno>
+              <idno type="DOI">10.1371/journal.pone.0156342</idno>
               <ptr target="https://doi.org/10.1371/journal.pone.0156342"/>
             </analytic>
             <monogr>
@@ -982,7 +959,7 @@
                   <surname>Francis</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/jofo.12171</idno>
+              <idno type="DOI">10.1111/jofo.12171</idno>
               <ptr target="https://doi.org/10.1111/jofo.12171"/>
             </analytic>
             <monogr>
@@ -1060,7 +1037,7 @@
                   <surname>Cruz-Orive</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1371/journal.pone.0141868</idno>
+              <idno type="DOI">10.1371/journal.pone.0141868</idno>
               <ptr target="https://doi.org/10.1371/journal.pone.0141868"/>
             </analytic>
             <monogr>
@@ -1090,12 +1067,12 @@
                   <surname>Reed</surname>
                 </persName>
               </author>
-              <editor>Oxford: Bios/ Taylor &amp; Francis</editor>
               <imprint>
                 <date type="published" when="2005"/>
+                <pubPlace>Oxford: Bios/ Taylor &amp; Francis</pubPlace>
               </imprint>
             </monogr>
-            <note>2nd ed.</note>
+            <note>2nd ed</note>
           </biblStruct>
           <biblStruct xml:id="b18">
             <analytic>
@@ -1110,7 +1087,7 @@
                   <surname>Stereology</surname>
                 </persName>
               </author>
-              <idno type="doi">10.5566/ias.1767</idno>
+              <idno type="DOI">10.5566/ias.1767</idno>
               <ptr target="https://doi.org/10.5566/ias.1767"/>
             </analytic>
             <monogr>
@@ -1131,7 +1108,7 @@
                   <surname>Gundersen</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1111/j.1365-2818.1977.tb00062.x</idno>
+              <idno type="DOI">10.1111/j.1365-2818.1977.tb00062.x</idno>
               <ptr target="https://doi.org/10.1111/j.1365-2818.1977.tb00062.x"/>
             </analytic>
             <monogr>
@@ -1171,7 +1148,7 @@
                   <surname>Nielsen</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1046/j.1365-2818.1999.00457.x</idno>
+              <idno type="DOI">10.1046/j.1365-2818.1999.00457.x</idno>
               <ptr target="https://doi.org/10.1046/j.1365-2818.1999.00457.xPMID"/>
             </analytic>
             <monogr>

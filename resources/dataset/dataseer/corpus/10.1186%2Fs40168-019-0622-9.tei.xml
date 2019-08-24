@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T07:39+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T23:18+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -162,7 +162,7 @@
           <s>Before inoculation, the number of larvated eggs was quantified using light microscopy and a volume equivalent to 175 eggs/fish was delivered to tanks.</s>
           <s>An equivalent amount of unexposed mock inoculum was added to the unexposed tanks.</s>
           <s>To maximize the potential that fish would become infected, the volume of each tanks was lowered to 4.5 L and the water flow was shut off for 24 h, after which the flow was returned.</s>
-          <s>After exposure, recipient fish were mixed and randomly separated into three 3-L tanks of parasite-exposed (hereafter, exposed) fish (N = 105, 35 fish/tank) and three 3-L tanks of parasite-unexposed (hereafter, unexposed) fish (N = 105, 35 fish/tank; Additional file 1: <ref target="#fig_0" type="figure">Figure S1</ref> ).</s>
+          <s>After exposure, recipient fish were mixed and randomly separated into three 3-L tanks of parasite-exposed (hereafter, exposed) fish (N = 105, 35 fish/tank) and three 3-L tanks of parasite-unexposed (hereafter, unexposed) fish (N = 105, 35 fish/tank; Additional file 1: <ref type="figure">Figure S1</ref> ).</s>
           <s>Sex ratios were similar between exposed (66 female, 35 male) and unexposed (71 female, 33 male) groups (numbers do not sum to 105 due to mortality, ambiguous sex, and sample removal due to a low number of sequences).</s>
           <s>The length of fish between exposed and unexposed groups was also similar (mean unexposed 26.39 mm, standard deviation unexposed 1.36, mean exposed 25.97 mm, standard deviation exposed 2.25; Additional file 2).</s>
         </p>
@@ -185,7 +185,8 @@
             <ref target="#b19" type="bibr">[20]</ref> ).</s>
           <s>The impact of sex on parasite burden in the exposed fish was evaluated using a Wilcoxon rank sum test in R.</s>
         </p>
-        <formula xml:id="formula_0">Weight ¼ β 0 þ β 1 sex ð</formula>
+        <formula xml:id="formula_0">Weight ¼ β 0 þ β 1 sex<label>ð</label>
+        </formula>
       </div>
       <div subtype="dataseer">
         <head>Microscopic analysis</head>
@@ -291,7 +292,9 @@
           <s>The glmmTMB package allows the use of two negative binomial distributions in which the variance increases linearly or quadratically with the mean.</s>
           <s>Rather than selecting one of these profiles, we fit the following model using both approximations of the negative binomial distribution:</s>
         </p>
-        <formula xml:id="formula_4">Abundance exposure þ dpe þ burden þ total histopathology score</formula>
+        <p>
+          <s>Abundance exposure þ dpe þ burden þ total histopathology score</s>
+        </p>
         <p>
           <s>The intercept of tanks (random effect) was allowed to vary as previous work has indicated that co-housing may influence microbial community composition <ref target="#b30" type="bibr">[31]</ref> .</s>
           <s>For each model, a single zero-inflation parameter was applied to all observations (i.e., ziformula =~1).</s>
@@ -300,7 +303,10 @@
           <s>Genera with prevalence in fish &gt; 10% were used in downstream visualization.</s>
         </p>
         <p>
-          <s>Machine learning to predict exposure, parasite burden, and histopathology Random forest analysis (R, randomForest v4.6.12;</s>
+          <s>Machine learning to predict exposure, parasite burden, and histopathology</s>
+        </p>
+        <p>
+          <s>Random forest analysis (R, randomForest v4.6.12;</s>
           <s>
             <ref target="#b31" type="bibr">[32]</ref> ) determined if microbial abundance predicts P. tomentosa exposure, burden, or resulting pathology scores.</s>
           <s>Before building classification trees, the genera abundance table was filtered to exclude genera present in &lt; 10% of fish.</s>
@@ -337,17 +343,17 @@
         <head>P. tomentosa infection induces progressive weight loss and gut lesions</head>
         <p>
           <s>To quantify the impact of P. tomentosa infection in zebrafish, we followed the progressive impacts of the infection on parasite burden, weight loss, and gut pathology in 105 exposed and 105 unexposed fish.</s>
-          <s>Worm burden was first observed at 7 dpe <ref target="#fig_0" type="figure">(Fig. 1b)</ref> and peaked at 30 dpe.</s>
-          <s>Early time points were dominated by larval and immature worms (Additional file 5: <ref type="figure">Figure S2B</ref> , Additional file 7: <ref target="#fig_2" type="figure">Figure S3A</ref> , B), which declined in abundance beginning at 43 dpe.</s>
-          <s>Sexually mature female worms with eggs (Additional file 7: <ref target="#fig_2" type="figure">Figure S3C</ref> , E) were observed beginning at 30 dpe and were consistently found throughout the remainder of the study (Additional file 5: <ref type="figure">Figure S2C</ref> ).</s>
+          <s>Worm burden was first observed at 7 dpe <ref type="figure">(Fig. 1b)</ref> and peaked at 30 dpe.</s>
+          <s>Early time points were dominated by larval and immature worms (Additional file 5: <ref type="figure">Figure S2B</ref> , Additional file 7: <ref target="#fig_1" type="figure">Figure S3A</ref> , B), which declined in abundance beginning at 43 dpe.</s>
+          <s>Sexually mature female worms with eggs (Additional file 7: <ref target="#fig_1" type="figure">Figure S3C</ref> , E) were observed beginning at 30 dpe and were consistently found throughout the remainder of the study (Additional file 5: <ref type="figure">Figure S2C</ref> ).</s>
           <s>Parasite prevalence increased from 47% at 7 dpe to a peak of 93% at 43 dpe before falling slightly to8 3% for the remainder of the study (Additional file 5: <ref type="figure">Figure S2E</ref> ).</s>
           <s>Interestingly, despite high prevalence and robust burden, P. tomentosa resulted in infrequent mortality (1 of 105) during the experiment.</s>
           <s>Consistent with our previous work <ref target="#b27" type="bibr">[28]</ref> , sex did not significantly influence parasite burden (Wilcoxon rank sum, p = 0.41; Additional file 5: <ref type="figure">Figure S2D</ref> , F).</s>
         </p>
         <p>
           <s>Profound weight loss and emaciation is a common sign of severe P. tomentosa infection.</s>
-          <s>Exposed fish declined in weight and condition factor, a length normalized measure of weight, as compared to unexposed controls following peak burden <ref target="#fig_0" type="figure">(Fig. 1c</ref> , Additional file 8: <ref target="#fig_3" type="figure">Figure S4</ref> ).</s>
-          <s>These differences were consistent across male and female fish, indicating that P. tomentosa infection effects weight loss in both sexes similarly (Additional file 8: <ref target="#fig_3" type="figure">Figure S4</ref> ).</s>
+          <s>Exposed fish declined in weight and condition factor, a length normalized measure of weight, as compared to unexposed controls following peak burden <ref type="figure">(Fig. 1c</ref> , Additional file 8: <ref type="figure">Figure S4</ref> ).</s>
+          <s>These differences were consistent across male and female fish, indicating that P. tomentosa infection effects weight loss in both sexes similarly (Additional file 8: <ref type="figure">Figure S4</ref> ).</s>
           <s>However, this decrease was highly variable across individuals, which indicates that additional factors may impact weight loss in exposed fish.</s>
           <s>Stepwise multiple linear regression uncovered the set of experimental factors that best predicts and possibly influences fish weight.</s>
           <s>The optimal regression included the factors sex, histopathology score, and length (mm) (F 3, 200 = 103.3,</s>
@@ -361,49 +367,44 @@
           <s>Intestines were scored (0-3) for both inflammation and hyperplasia <ref type="figure">(Fig. 2a, b)</ref> .</s>
           <s>A total histopathology score, which was the sum of the inflammation and hyperplasia scores (range 0-6), was also calculated <ref type="figure">(Fig. 2c)</ref> .</s>
           <s>Throughout the infection, worms were almost exclusively detected in the epithelium and lumen and pathological changes were most often confined to the lamina propria and epithelium.</s>
-          <s>However, two fish exhibited chronic coelomitis (Additional file 7: <ref target="#fig_2" type="figure">Figure S3F</ref> , G), with a worm in the coelom of one fish, at 43 dpe, and two fish exhibited small cell carcinomas with neoplastic cells invading through the tunica muscularis at 86 dpe.</s>
+          <s>However, two fish exhibited chronic coelomitis (Additional file 7: <ref target="#fig_1" type="figure">Figure S3F</ref> , G), with a worm in the coelom of one fish, at 43 dpe, and two fish exhibited small cell carcinomas with neoplastic cells invading through the tunica muscularis at 86 dpe.</s>
         </p>
         <p>
-          <s>Histopathological changes were only observed in exposed animals, and the intestines of all unexposed animals appear clinically normal <ref target="#fig_2" type="figure">(Fig. 3a)</ref> .</s>
-          <s>Early in the infection (e.g., 7 and 10 dpe), pathological changes were observed in <ref type="figure">Fig. 2</ref> Longitudinal histopathological changes during P. tomentosa infection.</s>
-          <s>a Inflammation, b hyperplasia, and c total histopathology score in animals exposed to P. tomentosa across the length of experiment many fish.</s>
-          <s>However, the extent of severity at these time points was mild <ref target="#fig_2" type="figure">(Fig. 3b)</ref> , with only two exposed fish scored higher than mild (score 1) for hyperplasia or inflammation.</s>
+          <s>Histopathological changes were only observed in exposed animals, and the intestines of all unexposed animals appear clinically normal <ref target="#fig_1" type="figure">(Fig. 3a)</ref> .</s>
+          <s>Early in the infection (e.g., 7 and 10 dpe), pathological changes were observed in hyperplasia, and c total histopathology score in animals exposed to P. tomentosa across the length of experiment many fish.</s>
+          <s>However, the extent of severity at these time points was mild <ref target="#fig_1" type="figure">(Fig. 3b)</ref> , with only two exposed fish scored higher than mild (score 1) for hyperplasia or inflammation.</s>
           <s>Worms were larger at 21 dpe than at earlier time points, but no sexually mature females were observed.</s>
           <s>Concurrent with increased worm size and number, 13% of exposed fish were scored with severe (score 3) hyperplasia at 21 dpe.</s>
-          <s>The extent of hyperplasia remained elevated after 21 dpe, with severe hyperplasia manifesting in several individuals at later time points <ref target="#fig_2" type="figure">(Fig. 3c)</ref> .</s>
-          <s>Beginning at 21 dpe, the underlying lamina propria exhibited mild to moderate chronic inflammation (Additional file 7: <ref target="#fig_2" type="figure">Figure S3D</ref> ).</s>
+          <s>The extent of hyperplasia remained elevated after 21 dpe, with severe hyperplasia manifesting in several individuals at later time points <ref target="#fig_1" type="figure">(Fig. 3c)</ref> .</s>
+          <s>Beginning at 21 dpe, the underlying lamina propria exhibited mild to moderate chronic inflammation (Additional file 7: <ref target="#fig_1" type="figure">Figure S3D</ref> ).</s>
           <s>The extent of the inflammatory response in the lamina propria increased until 43 dpe.</s>
-          <s>It remained similar at 59 dpe <ref target="#fig_2" type="figure">(Fig. 2b, Fig. 3d</ref> ) but declined at 86 dpe.</s>
+          <s>It remained similar at 59 dpe <ref target="#fig_1" type="figure">(Fig. 2b, Fig. 3d</ref> ) but declined at 86 dpe.</s>
         </p>
         <p>
           <s>Despite decreases in worm burden at time points late in infection, total histopathology score remained high largely due to elevated levels of hyperplasia.</s>
           <s>In addition, some of the most severe lesions were observed at later time points.</s>
-          <s>For example, two fish exhibited prominent flattening of the intestinal folds, one at 43 and one at 86 dpe <ref target="#fig_2" type="figure">(Fig. 3e)</ref> .</s>
+          <s>For example, two fish exhibited prominent flattening of the intestinal folds, one at 43 and one at 86 dpe <ref target="#fig_1" type="figure">(Fig. 3e)</ref> .</s>
           <s>At the final time point examined (i.e., 86 dpe), intestinal neoplasms were observed in two exposed fish.</s>
-          <s>This diagnosis was confirmed by the observation of de-differentiated epithelial cells invading through the lamina propria and tunica muscularis and into the serosa <ref target="#fig_2" type="figure">(Fig. 3f )</ref> .</s>
+          <s>This diagnosis was confirmed by the observation of de-differentiated epithelial cells invading through the lamina propria and tunica muscularis and into the serosa <ref target="#fig_1" type="figure">(Fig. 3f )</ref> .</s>
         </p>
       </div>
       <div>
         <head>Pseudocapillaria tomentosa infection associates with altered microbiome diversity</head>
         <p>
           <s>To determine if parasite infection or the subsequent histopathological changes in the gut influence microbiome diversity, we calculated Shannon entropy in exposed and unexposed fish.</s>
-          <s>Parasite infection resulted in elevated Shannon entropy at multiple time points when compared to unexposed controls <ref target="#fig_3" type="figure">(Fig. 4a</ref> , Additional file 11: <ref type="figure">Figure S5</ref> ).</s>
+          <s>Parasite infection resulted in elevated Shannon entropy at multiple time points when compared to unexposed controls <ref type="figure">(Fig. 4a</ref> , Additional file 11: <ref target="#fig_2" type="figure">Figure S5</ref> ).</s>
           <s>We used stepwise linear regression to identify parameters that best explained the variation in Shannon entropy.</s>
           <s>The optimal regression equation included the factors dpe, exposure, parasite burden, and the interaction between time and exposure (F 4,201 = 11.83,</s>
-          <s>R 2 = 0.17, p = 1.199 × 10</s>
-        </p>
-      </div>
-      <div>
-        <head>−08</head>
-        <p>
-          <s>).</s>
+          <s>R 2 = 0.17, p = 1.199 × 10 −08 ).</s>
           <s>Of these parameters, dpe and exposure had significant positive slopes (Additional file 12: <ref type="table">Table S3</ref> ).</s>
           <s>These results indicated that Shannon entropy was elevated in exposed animals and increased over time upon initiation of infection.</s>
           <s>The interaction between exposure and time produced a significant negative slope, which indicates that time's effect on Shannon entropy differs between unexposed and exposed animals.</s>
-        </p>
-        <p>
-          <s>Exposure to P. tomentosa is also associated with altered community structure of the zebrafish gut microbiome <ref target="#fig_3" type="figure">(Fig. 4b)</ref> .</s>
-          <s>Permutational multivariate analysis of variance (PERMANOVA) indicated that microbial communities were significantly stratified by exposure ( ).</s>
+          <s>Exposure to P. tomentosa is also associated with altered community structure of the zebrafish gut microbiome <ref type="figure">(Fig. 4b)</ref> .</s>
+          <s>Permutational multivariate analysis of variance (PERMANOVA) indicated that microbial communities were significantly stratified by exposure (F 1, 108 = 46.4,</s>
+          <s>R 2 = 0.16, p = 1.6 × 10 −03 ), days post exposure (F 1, 108 = 15.6,</s>
+          <s>R 2 = 0.05, p = 1.6 × 10 −03 ), sex (F 1,108 = 3.1, R 2 = 0.01, p = 0.03), parasite burden (F 1, 108 = 11.0,</s>
+          <s>R 2 = 0.04, p = 1.6 × 10 −03 ), condition factor (F 1, 108 = 4.7, R 2 = 0.02, p = 5.6 × 10 −03 ), and histopathology score (F 1, 108 = 4.8, R 2 = 0.02, p = 5.6 × 10 −03 ), as well as the interaction between exposure and days post exposure (F 1, 108 = 13.1,</s>
+          <s>R 2 = 0.04, p = 1.6 × 10 −03 ).</s>
           <s>Microbial community diversity was not associated with tank (F 9, 108 = 1.2, R 2 = 0.004, p = 0.28).</s>
           <s>Unexposed animals had significantly elevated levels of beta-dispersion with regard to the exposed animals (F 1, 235 = 4.6, p = 0.03).</s>
           <s>We next asked if parasite burden or infection-induced histopathology was associated with the dispersion observed along the primary axis in an MDS analysis (MDS1), as it Hematoxylin and eosin stained sections of parasite exposed and unexposed intestines (a-f).</s>
@@ -414,7 +415,7 @@
           <s>e Extensive flattening of epithelial folds (E) and moderate expansion of lamina propria (L) due to chronic inflammation (hyperplasia 3, inflammation 2) at 86 dpe.</s>
           <s>f A carcinoma in an exposed fish at 86 dpe with neoplastic epithelial cells proliferating in the lamina propria (L), invading through tunica muscularis (M), and nests of neoplastic cells (S) present in the serosa.</s>
           <s>Scale bars = 50 μm visually appeared that this axis best stratified the exposed and unexposed animals.</s>
-          <s>Both histopathology (τ = 0.41, p = 1.7 × 10 −14 ; <ref target="#fig_3" type="figure">Fig. 4c, d</ref> ) and total parasite burden (τ = 0.38, p = 2.9 × 10 −13 ; <ref target="#fig_3" type="figure">Fig. 4e</ref> , f ) are significantly associated with MDS1.</s>
+          <s>Both histopathology (τ = 0.41, p = 1.7 × 10 −14 ; <ref type="figure">Fig. 4c</ref> , d) and total parasite burden (τ = 0.38, p = 2.9 × 10 −13 ; <ref type="figure">Fig. 4e</ref> , f ) are significantly associated with MDS1.</s>
           <s>Together, these data suggest that the microbiome might contribute to P. tomentosa success and subsequent infection-associated pathologies.</s>
         </p>
       </div>
@@ -425,23 +426,23 @@
           <s>Briefly, a baseline negative binomial generalized linear model with only exposure and days post exposure variables was constructed.</s>
           <s>A second model that included genus abundance, exposure, and days post exposure was then constructed for each genus individually.</s>
           <s>The Akaike information criterion was used to select the best-fit model for each genus.</s>
-          <s>We found numerous associations between microbial abundance and parasite burden <ref target="#fig_0" type="figure">(Fig. 5, Additional file 13</ref> ).</s>
+          <s>We found numerous associations between microbial abundance and parasite burden <ref target="#fig_1" type="figure">(Fig. 5, Additional file 13</ref> ).</s>
           <s>The significant negative slopes for the abundance of members of the genera Plesiomonas, Shewanella, and Cetobacterium indicate that the abundance of these taxa negatively associates with parasite burden.</s>
           <s>Conversely, significant positive slopes were observed for the majority (186 of 198) of genera examined, including the abundant genera Pseudomonas and Pelomonas, which reveal that their abundance increases as parasite burden increases.</s>
         </p>
         <p>
           <s>Notably, we observed a significant positive slope of abundance for the genus Mycoplasma, which previously has been associated with hyperplastic and neoplastic lesions in the intestine of zebrafish <ref target="#b21" type="bibr">[22]</ref> .</s>
-          <s>Several of the 16S sequence variants that corresponded to the genus Mycoplasma in our study formed a monophyletic clade with the Mycoplasma sequence variant previously associated with hyperplastic lesions (i.e., the Burns et al. sequence, Additional file 14: <ref target="#fig_4" type="figure">Figure S6</ref> ).</s>
-          <s>The combined abundance of this clade was also elevated in exposed animals (W = 8128, p = 0.03; Additional file 15: <ref type="figure">Figure S7A</ref> ) and was associated with intestinal hyperplasia score (τ = 0.21, p = 3.0 × 10 −04 ).</s>
-          <s>Similarly, the summed abundance of all the sequence variants corresponding to the genus Mycoplasma was also elevated in exposed animals (W = 8297, p = 0.01; Additional file 15: <ref type="figure">Figure S7B</ref> ) and correlated with intestinal hyperplasia score (τ = 0.21, p = 3.3 × 10</s>
+          <s>Several of the 16S sequence variants that corresponded to the genus Mycoplasma in our study formed a monophyletic clade with the Mycoplasma sequence variant previously associated with hyperplastic lesions (i.e., the Burns et al. sequence, Additional file 14: <ref target="#fig_3" type="figure">Figure S6</ref> ).</s>
+          <s>The combined abundance of this clade was also elevated in exposed animals (W = A B C D E F <ref type="figure">Fig. 4</ref> Pseudocapillaria tomentosa exposure is associated with altered microbiome composition.</s>
+          <s>a Shannon entropy in exposed (red boxes) and unexposed animals.</s>
+          <s>Nonmetric multidimensional scaling plots of exposed and unexposed microbiomes colored by b days post exposure, c total histopathology score (gray points = N/A), and e total parasite burden (gray points = N/A).</s>
+          <s>Correlations between d total histopathology score and MDS1 and f total parasite burden and MDS1.</s>
+          <s>Blue lines indicate the loess best-fit line and the shaded gray area represents the standard error <ref type="figure">Figure S7A</ref> ) and was associated with intestinal hyperplasia score (τ = 0.21, p = 3.0 × 10 −04 ).</s>
+          <s>Similarly, the summed abundance of all the sequence variants corresponding to the genus Mycoplasma was also elevated in exposed animals (W = 8297, p = 0.01; Additional file 15: <ref type="figure">Figure S7B</ref> ) and correlated with intestinal hyperplasia score (τ = 0.21, p = 3.3 × 10 −04 ).</s>
         </p>
-      </div>
-      <div>
-        <head>−04</head>
         <p>
-          <s>).</s>
           <s>To clarify how changes in the gut microenvironment (i.e., parasite infection) influence microbial communities in the gut, we used negative binomial generalized linear models to quantify the impacts of parasite exposure, burden, histopathology, and time on each genus.</s>
-          <s>The abundance of several taxa is significantly associated with parasite exposure, time, and severity of infection <ref target="#fig_4" type="figure">(Fig. 6</ref> , Additional file 16).</s>
+          <s>The abundance of several taxa is significantly associated with parasite exposure, time, and severity of infection <ref target="#fig_3" type="figure">(Fig. 6</ref> , Additional file 16).</s>
           <s>The highly prevalent genus Plesiomonas had significantly negative slopes for exposure, time, and parasite burden, indicating that the abundance of this genus is lower in exposed animals and decreases as parasite burden increases.</s>
           <s>Similarly, the genus Fusobacterium also had significant negative slopes for exposure; however, the slope of histopathology score and burden was significantly positive.</s>
           <s>This finding indicates that while the abundance of these taxa was lower in exposed animals overall, their abundance increases as histopathology score and burden increases.</s>
@@ -496,8 +497,6 @@
             <ref target="#b38" type="bibr">39]</ref> .</s>
           <s>Concordantly, prominent inflammation and hyperplasia in the gut of exposed fish corresponded with maximal alpha-diversity.</s>
           <s>We cannot, however, rule out possible confounding factors including the contribution of the parasite's microbiome or the inoculum's microbiome in our experiments.</s>
-        </p>
-        <p>
           <s>We also observed significant elevation of beta-dispersion in unexposed fish and associations between days post exposure and microbiome beta-diversity.</s>
           <s>While the cause of this variation is unclear, it is notable that there are two distinct clusters of unexposed fish (cluster 1 comprising days 10, 21, 30, 43 dpe and cluster 2 comprising days 0, 7, 59, 86 dpe) raising the possibility that these changes represent enterotype switching <ref target="#b43" type="bibr">[44,</ref>
             <ref target="#b44" type="bibr">45]</ref> .</s>
@@ -536,7 +535,7 @@
         <p>
           <s>(See figure on previous page.)</s>
           <s>
-            <ref target="#fig_4" type="figure">Fig. 6</ref> Microbial abundance is associated with parasite burden and histopathology.</s>
+            <ref target="#fig_3" type="figure">Fig. 6</ref> Microbial abundance is associated with parasite burden and histopathology.</s>
           <s>A heat map of coefficients from converged zero-inflated negative binomial generalized linear mixed effects models with lowest AIC.</s>
           <s>The color of each cell represents the direction of the slope (red is negative, blue is positive).</s>
           <s>Gray colored cells indicate that a model without an interaction parameter was selected as it had the lowest AIC.</s>
@@ -603,21 +602,21 @@
         </p>
       </div>
       <figure xml:id="fig_0">
-        <head>Fig. 1</head>
-        <label>1</label>
+        <head>Fig. 1 Fig. 2</head>
+        <label>12</label>
         <figDesc>Fig. 1 Sampling strategy and physiological manifestations of P. tomentosa exposure. a Exposure and sampling strategy. b The number of worms observed in the intestine of individual fish (wet mount) at each sampling time point. c Weights of unexposed (blue boxes) and exposed fish (red boxes) at each sampling time point</figDesc>
       </figure>
-      <figure xml:id="fig_2">
+      <figure xml:id="fig_1">
         <head>Fig. 3</head>
         <label>3</label>
         <figDesc>Fig. 3 Pathologic changes in fish infected with Pseudocapillaria tomentosa. Hematoxylin and eosin stained sections of parasite exposed and unexposed intestines (a-f). a A representative unexposed, control fish with minimal cellularity in the lamina propria and numerous goblet cells (arrows). b Intestine of a P. tomentosa-exposed fish at 7 dpe exhibiting mild hyperplasia (score 1) and containing numerous larval worms (arrows). c An exposed fish at 59 dpe exhibiting severe hyperplasia (score 3) with increased basilar nuclei (E) extending to near the brush border in some locations, numerous rodlet cells (arrows), and expanded lamina propria (L) due to chronic inflammation. d Chronic inflammation, inflammation score 3, with extensive expansion of the lamina propria (L), largely dysplastic epithelium (E), and loss of epithelial cell polarity (hyperplasia score 3) in an exposed fish at 59 dpe. e Extensive flattening of epithelial folds (E) and moderate expansion of lamina propria (L) due to chronic inflammation (hyperplasia 3, inflammation 2) at 86 dpe. f A carcinoma in an exposed fish at 86 dpe with neoplastic epithelial cells proliferating in the lamina propria (L), invading through tunica muscularis (M), and nests of neoplastic cells (S) present in the serosa. Scale bars = 50 μm</figDesc>
       </figure>
-      <figure xml:id="fig_3">
-        <head>Fig. 4</head>
-        <label>4</label>
-        <figDesc>Fig. 4 Pseudocapillaria tomentosa exposure is associated with altered microbiome composition. a Shannon entropy in exposed (red boxes) and unexposed animals. Nonmetric multidimensional scaling plots of exposed and unexposed microbiomes colored by b days post exposure, c total histopathology score (gray points = N/A), and e total parasite burden (gray points = N/A). Correlations between d total histopathology score and MDS1 and f total parasite burden and MDS1. Blue lines indicate the loess best-fit line and the shaded gray area represents the standard error</figDesc>
+      <figure xml:id="fig_2">
+        <head>Fig. 5</head>
+        <label>5</label>
+        <figDesc>Fig. 5 Parasite burden is associated with microbial abundance. A heat map of coefficients from negative binomial generalized linear models with lowest AIC. The color of each cell represents the direction of the slope (red is negative, blue is positive). An asterisk in a cell indicates q &lt; 0.15</figDesc>
       </figure>
-      <figure xml:id="fig_4">
+      <figure xml:id="fig_3">
         <head>Fig. 6 (</head>
         <label>6</label>
         <figDesc>Fig. 6 (See legend on next page.)</figDesc>
@@ -630,6 +629,12 @@
           <head>Acknowledgements</head>
           <p>
             <s>The authors thank the members of the Oregon State University Center for Genome Research and Biocomputing for technical assistance with sequencing and maintenance of our computational infrastructure.</s>
+          </p>
+        </div>
+        <div>
+          <head>Funding</head>
+          <p>
+            <s>This study was supported in part by NIH ORIP 5 R24 OD010998 to MLK, NIH NIAID R21 AI135641, National Council for Scientific and Technological Development (CNPq 202030/2014-8) grant to MLM, National Sciences Foundation Award #1557192 to TJS, National Institute of Environmental Health Sciences supported Environmental Health Sciences Center P30 ES000210 and a pilot grant to TJS, and institutional funds to TJS.</s>
           </p>
         </div>
         <div>
@@ -658,16 +663,30 @@
             <s>Additional file 1: <ref type="figure">Figure S1</ref> .</s>
             <s>Parasite exposure.</s>
             <s>A diagram of the methodology used to expose fish to parasite or mock inoculum.</s>
-            <s>(PDF 10870 kb) Additional file 2: Authors' contributions CAG, TJS, MLK, and MLM conceived and designed the study.</s>
-            <s>MLM, CAG, VW, STS, and IRH conducted the experiments and contributed to the analysis of results.</s>
-            <s>CAG, TJS, MLK, MLM, and STS contributed to the preparation and editing of the manuscript.</s>
-            <s>All authors read and approved the final manuscript.</s>
-          </p>
-        </div>
-        <div>
-          <head>Ethics approval and consent to participate</head>
-          <p>
-            <s>The use of zebrafish in this study was approved by the Institutional Animal Care and Use Committee at Oregon State University (permit number: 4800).</s>
+            <s>(PDF 10870 kb) Additional file 2: Additional file 5: <ref type="figure">Figure S2</ref> .</s>
+            <s>Parasite burden across time.</s>
+            <s>A) A histogram of total worm burden in exposed fish.</s>
+            <s>B) Total immature worm burden by wet mount C) Total mature worm burden by wet mount.</s>
+            <s>D) Total worm burden by wet mount in male and female fish.</s>
+            <s>E) Parasite prevalence in exposed animals by day.</s>
+            <s>Additional file 8: <ref type="figure">Figure S4</ref> .</s>
+            <s>Parasite exposure associated with decrease in weight and condition factor if zebrafish.</s>
+            <s>A) Weight of P. tomentosa exposed (red boxes) and unexposed (blue boxes) zebrafish.</s>
+            <s>B) Condition factor of P. tomentosa exposed and unexposed zebrafish.</s>
+            <s>Plots are split to demonstrate the impact of exposure on female (F) and male (M) fish.</s>
+            <s>(PDF 46 kb) Additional file 9: Additional file 11: <ref type="figure">Figure S5</ref> .</s>
+            <s>Temporal variation in microbiome diversity in exposed and unexposed fish.</s>
+            <s>Nonmetric multidimensional scaling plots of A) unexposed and B) exposed zebrafish gut microbiomes colored by days post exposure.</s>
+            <s>(PDF 42 kb) Additional file 12: Additional file 14: <ref type="figure">Figure S6</ref> .</s>
+            <s>Mycoplasma spp.</s>
+            <s>sequence variants are closely related to sequence variants associated with gut tumors formation in zebrafish.</s>
+            <s>A phylogenetic tree of sequence variants associated with the genus Mycoplasma and Mycoplasma spp.</s>
+            <s>16S rRNA gene sequences from the Silva database.</s>
+            <s>Blue colored branches and labels indicate sequence variants from the current study, and red branches and tip labels are from a Mycoplasma sp.</s>
+            <s>associated with tumorigenesis in zebrafish.</s>
+            <s>(PDF 31 kb) Additional file 15: <ref type="figure">Figure S7</ref> .</s>
+            <s>Mycoplasma sequence variant abundance is elevated in exposed animals.</s>
+            <s>Ethics approval and consent to participate The use of zebrafish in this study was approved by the Institutional Animal Care and Use Committee at Oregon State University (permit number: 4800).</s>
           </p>
         </div>
         <div>
@@ -1468,7 +1487,7 @@
                 <pubPlace>New York</pubPlace>
               </imprint>
             </monogr>
-            <note>4th ed.</note>
+            <note>4th ed</note>
           </biblStruct>
           <biblStruct xml:id="b19">
             <analytic>
@@ -2136,8 +2155,8 @@
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b35">
-            <analytic>
-              <title level="a" type="main">Adaptation via symbiosis: recent spread of a Drosophila defensive symbiont</title>
+            <monogr>
+              <title level="m" type="main">Adaptation via symbiosis: recent spread of a Drosophila defensive symbiont. Science (80-. )</title>
               <author>
                 <persName>
                   <forename type="first">J</forename>
@@ -2171,13 +2190,10 @@
                   <surname>Perlman</surname>
                 </persName>
               </author>
-            </analytic>
-            <monogr>
-              <title level="j">Science (80-. )</title>
               <imprint>
+                <date type="published" when="2010"/>
                 <biblScope unit="volume">329</biblScope>
                 <biblScope from="212" to="217" unit="page"/>
-                <date type="published" when="2010"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -2251,7 +2267,7 @@
                   <surname>Swann</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1093/infdis/jix234</idno>
+              <idno type="DOI">10.1093/infdis/jix234</idno>
               <ptr target="https://doi.org/10.1093/infdis/jix234"/>
             </analytic>
             <monogr>
@@ -2876,7 +2892,7 @@
               </author>
             </analytic>
             <monogr>
-              <title level="j">Proc Natl Acad Sci</title>
+              <title level="j">Proc Natl Acad Sci U S A</title>
               <imprint>
                 <biblScope unit="volume">92</biblScope>
                 <biblScope from="10197" to="201" unit="page"/>
@@ -4000,6 +4016,7 @@
           </biblStruct>
           <biblStruct xml:id="b76">
             <analytic>
+              <title level="a" type="main">Avermectins , new family of potent anthelmintic Agents: producing organism and fermentation</title>
               <author>
                 <persName>
                   <forename type="first">R</forename>
@@ -4042,11 +4059,11 @@
               </author>
             </analytic>
             <monogr>
-              <title level="m">new family of potent anthelmintic Agents: producing organism and fermentation</title>
+              <title level="j">Antimicrob Agents Chemother</title>
               <imprint>
-                <date type="published" when="1979"/>
                 <biblScope unit="volume">15</biblScope>
                 <biblScope from="361" to="368" unit="page"/>
+                <date type="published" when="1979"/>
               </imprint>
             </monogr>
           </biblStruct>
@@ -4090,7 +4107,7 @@
                   <surname>Kathirvel</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1007/s10532-018-9831-3</idno>
+              <idno type="DOI">10.1007/s10532-018-9831-3</idno>
               <ptr target="https://doi.org/10.1007/s10532-018-9831-3"/>
             </analytic>
             <monogr>

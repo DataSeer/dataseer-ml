@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:13+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T21:05+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -139,8 +139,7 @@
             <ref target="#b14" type="bibr">15]</ref> (http:// www.gtexportal.org).</s>
           <s id="dataset-1" type="Dataset:Existing dataset">We chose the "Whole blood" data set (with data for 23,152 genes), as it contains a very large amount of measurements per gene (338), which allows us to use the full data set as a reasonably accurate reference point.</s>
           <s>As an auxiliary test set for further confirmation, we also downloaded a separate data set obtained from mouse brains from the Gene Expression Omnibus <ref target="#b19" type="bibr">[20]</ref> , with the identifier GSE26500 <ref target="#b20" type="bibr">[21]</ref> .</s>
-          <s>This set was chosen to serve as an independent test compared to our human set, while exhibiting a comparable number of genes <ref target="#b24" type="bibr">(25,</ref>
-            <ref type="bibr">698</ref> ) and a reasonably large number of samples (198) in order to evaluate the reference co-expression.</s>
+          <s>This set was chosen to serve as an independent test compared to our human set, while exhibiting a comparable number of genes (25,698) and a reasonably large number of samples (198) in order to evaluate the reference co-expression.</s>
         </p>
         <p>
           <s>Based on these gene-expression data sets, we simulate three levels of low-quality data by sampling nested sets of 10, 20 or 50 measurements (which we hereby refer to as points).</s>
@@ -166,8 +165,6 @@
         </formula>
         <p>
           <s>where w ab denotes the absolute value of the correlation score between genes a and b.</s>
-        </p>
-        <p>
           <s>We then evaluate the performance of the measures on low-quality sets against the reference set, using two rank-based tests: (A) Jaccard index for the top 1000 pairs in each low-quality set as compared to the reference sets, and (B) Spearman correlation between the co-expression/wTO scores in the low-quality sets and the reference sets.</s>
         </p>
         <p>
@@ -247,7 +244,7 @@
           <s>The improvement from soft thresholding is greater for higher-quality sets, partially off-setting the loss in predictive power seen in the non-soft-thresholded sets.</s>
           <s>Notably, soft-thresholded wTO consistently outperforms base bicor at 50-point quality, but not as much as it does for lower qualities.</s>
           <s>This is in contrast to the non-soft-thresholded case, where basic bicor outperforms wTO with regards to predicting reference bicor at 50-point quality.</s>
-          <s>Similar to the nonsoft-thresholded case, we find that despite the overlap for 50-point quality, the best-performing gene sets for base bicor are also the best-performing for soft-thresholded wTO, with soft-thresholded wTO outperforming base bicor for each of the 20 tested gene sets (as shown in <ref type="table">Table 2</ref> , p = 1.3 · 10 −4 , Wilcoxon test; see also Additional file 3: Performance improvement from WTO in a soft-thresholded network).</s>
+          <s>Similar to the nonsoft-thresholded case, we find that despite the overlap for 50-point quality, the best-performing gene sets for base bicor are also the best-performing for soft-thresholded wTO, with soft-thresholded wTO outperforming base bicor for each of the 20 tested gene sets (as shown in <ref target="#tab_1" type="table">Table 2</ref> , p = 1.3 · 10 −4 , Wilcoxon test; see also Additional file 3: Performance improvement from WTO in a soft-thresholded network).</s>
         </p>
         <p>
           <s>As an additional test, we evaluated the performance of wTO by determining the expected number of false positives on gene expression sets consisting of identically distributed random data points.</s>
@@ -255,8 +252,7 @@
           <s>The major benefit of this choice was that since the Spearman correlation is a non-parametric measure, and only takes into account the relative ranking of genes, we could generate random data by any distribution we saw fit (requiring only that each data point was independent) without impacting the result.</s>
         </p>
         <p>
-          <s>For the sake of simplicity, expression data was therefore drawn from a uniform distribution on <ref type="bibr">[ 0,</ref>
-            <ref target="#b0" type="bibr">1]</ref> .</s>
+          <s>For the sake of simplicity, expression data was therefore drawn from a uniform distribution on [ 0, 1].</s>
           <s>By this process, we generated 20 groups of randomized data sets, containing 1000 genes (effectively, fixed numerical labels serving no other purpose than identification).</s>
           <s>In order to remain comparable to our analysis of whole-blood data, each of these 20 groups consist of four nested sets of 10, 20, 50 and 338 data points per gene.</s>
         </p>
@@ -265,7 +261,7 @@
           <s>Any gene pair in the correlation and wTO networks produced from the randomized data sets (which, naturally, contains no true positives) was then flagged as a false positive if it exceeded the corresponding cut-offs.</s>
         </p>
         <p>
-          <s>As shown in <ref target="#tab_1" type="table">Table 3</ref> , while base correlation returns a substantial number of false positives at lower qualities (predictably decreasing as the quality increases and the cut-off becomes more stringent), wTO performs far better, returning no false positives, even at the lowest cut-off chosen and lowest quality.</s>
+          <s>As shown in <ref target="#tab_2" type="table">Table 3</ref> , while base correlation returns a substantial number of false positives at lower qualities (predictably decreasing as the quality increases and the cut-off becomes more stringent), wTO performs far better, returning no false positives, even at the lowest cut-off chosen and lowest quality.</s>
         </p>
       </div>
       <div>
@@ -283,7 +279,7 @@
         </p>
         <p>
           <s>Since community detection is one of the main motivations for WGCNA's use of wTO, it is important to assess <ref type="figure">Fig. 3</ref> Comparison of fidelity to full-sample data between soft-thresholded correlation (bicor) and wTO of the soft-thresholded network.</s>
-          <s>Note that soft-thresholding does not affect the relative ranking of base edge weights, and as such there is no difference between using a soft-thresholded base correlation and a non-soft-thresholded base correlation as the reference <ref type="table">Table 2</ref> Wilcoxon test results for wTO versus base bicor performance using soft-thresholded base correlation networks the community structure of the resulting networks.</s>
+          <s>Note that soft-thresholding does not affect the relative ranking of base edge weights, and as such there is no difference between using a soft-thresholded base correlation and a non-soft-thresholded base correlation as the reference the community structure of the resulting networks.</s>
           <s>In fact, we find that using wTO has a dramatic impact on the community structure of the resulting network, with a substantial reduction of the number of modules identified across all set qualities.</s>
           <s>Furthermore, the wTO-based networks contain fewer distinct modules (and this number remains low and constant across our tested quality levels) than the when using the base correlation, for which the number of identified modules increases as the data quality is reduced (Additional files 7 and 8).</s>
           <s>We also note that the modularity of the best partition, as identified by the Louvain algorithm <ref target="#b25" type="bibr">[26]</ref> , is lower for high-quality base correlation sets, and for wTO-based networks as a whole (Additional files 9 and 10).</s>
@@ -366,6 +362,28 @@ P-value
 </table>
       </figure>
       <figure type="table" validated="true" xml:id="tab_1">
+        <head>Table 2</head>
+        <label>2</label>
+        <figDesc>Wilcoxon test results for wTO versus base bicor performance using soft-thresholded base correlation networks</figDesc>
+        <table>Quality (points) 
+# of sets with superior wTO performance 
+P-value 
+
+10 
+20 
+1.3 · 10 −4 
+
+20 
+20 
+1.3 · 10 −4 
+
+50 
+0 
+1.3 · 10 −4 
+
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_2">
         <head>Table 3</head>
         <label>3</label>
         <figDesc>False positive rates (FPR) for wTO and Spearman correlation networks obtained from random gene expression data</figDesc>

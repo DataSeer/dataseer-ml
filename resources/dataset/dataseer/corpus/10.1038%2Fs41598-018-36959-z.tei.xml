@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:07+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T21:00+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -122,8 +122,15 @@
                 <orgName type="institution">Pontificia Universidad Católica de Valparaíso</orgName>
                 <address>
                   <postCode>2950</postCode>
-                  <settlement>Valparaíso, Bremerhaven</settlement>
-                  <country>Chile., Germany</country>
+                  <settlement>Valparaíso</settlement>
+                  <country key="CL">Chile</country>
+                </address>
+              </affiliation>
+              <affiliation key="aff4">
+                <orgName type="institution">Huinay Scientific Field Station</orgName>
+                <address>
+                  <settlement>Puerto Montt</settlement>
+                  <country key="CL">Chile</country>
                 </address>
               </affiliation>
             </author>
@@ -132,18 +139,27 @@
                 <forename type="first">Jürgen</forename>
                 <surname>Laudien</surname>
               </persName>
+              <affiliation key="aff5">
+                <orgName type="institution">Alfred-Wegener-Institut Helmholtz-Zentrum für Polar-und Meeresforschung</orgName>
+                <address>
+                  <postCode>27568</postCode>
+                  <settlement>Bremerhaven</settlement>
+                  <country key="DE">Germany</country>
+                </address>
+              </affiliation>
             </author>
             <author>
               <persName>
                 <forename type="first">Uwe</forename>
                 <surname>Brand</surname>
               </persName>
-              <affiliation key="aff4">
+              <affiliation key="aff6">
                 <orgName type="department">Department of Earth Sciences</orgName>
                 <orgName type="institution">Brock University</orgName>
                 <address>
-                  <addrLine>1812 Sir Isaac Brock Way, St. Catharines</addrLine>
+                  <addrLine>1812 Sir Isaac Brock Way</addrLine>
                   <postCode>L2S 3A1</postCode>
+                  <settlement>St. Catharines</settlement>
                   <region>Ontario</region>
                   <country key="CA">Canada</country>
                 </address>
@@ -170,20 +186,22 @@
                 <forename type="middle">G</forename>
                 <surname>Checa</surname>
               </persName>
-              <affiliation key="aff5">
+              <affiliation key="aff7">
                 <orgName key="dep1" type="department">Departamento de Estratigrafía y Paleontología</orgName>
-                <orgName key="dep2" type="department">Facultad de Ciencias Universidad de Granada</orgName>
+                <orgName key="dep2" type="department">Facultad de Ciencias</orgName>
+                <orgName type="institution">Universidad de Granada</orgName>
                 <address>
                   <postCode>18071</postCode>
                   <settlement>Granada</settlement>
                   <country key="ES">Spain</country>
                 </address>
               </affiliation>
-              <affiliation key="aff6">
-                <orgName type="laboratory">Andaluz de Ciencias de la Tierra, CSIC-Universidad de Granada</orgName>
-                <orgName type="institution">Instituto</orgName>
+              <affiliation key="aff8">
+                <orgName key="instit1" type="institution">Instituto Andaluz de Ciencias de la Tierra</orgName>
+                <orgName key="instit2" type="institution">CSIC-Universidad de Granada</orgName>
                 <address>
-                  <addrLine>18100, Armilla</addrLine>
+                  <postCode>18100</postCode>
+                  <settlement>Armilla</settlement>
                   <country key="ES">Spain</country>
                 </address>
               </affiliation>
@@ -234,25 +252,7 @@
           <p>
             <s>Brachiopods are extant shell-forming, marine, sessile organisms abundant throughout the Phanerozoic, particularly during the Paleozoic when they dominated the marine benthic ecosystem.</s>
             <s>They are of interest to modern and paleo-environment research, as they cover most of the geological record and live in a wide range of marine habitats (e.g.</s>
-            <s>
-              <ref target="#b0" type="bibr">[1]</ref>
-              <ref target="#b1" type="bibr">[2]</ref>
-              <ref target="#b2" type="bibr">[3]</ref>
-              <ref target="#b3" type="bibr">[4]</ref>
-              <ref target="#b4" type="bibr">[5]</ref>
-              <ref target="#b6" type="bibr">[6]</ref>
-              <ref target="#b7" type="bibr">[7]</ref>
-              <ref target="#b8" type="bibr">[8]</ref>
-              <ref target="#b9" type="bibr">[9]</ref>
-              <ref target="#b10" type="bibr">[10]</ref>
-              <ref target="#b11" type="bibr">[11]</ref>
-              <ref target="#b12" type="bibr">[12]</ref>
-              <ref target="#b13" type="bibr">[13]</ref>
-              <ref target="#b14" type="bibr">[14]</ref>
-              <ref target="#b15" type="bibr">[15]</ref>
-              <ref target="#b16" type="bibr">[16]</ref>
-              <ref target="#b17" type="bibr">[17]</ref>
-              <ref target="#b18" type="bibr">[18]</ref> ).</s>
+            <s>1-18 ).</s>
             <s>Their shells consist mainly of low-Mg calcite, which is assumed to crystallize in equilibrium with seawater with only small or negligible "vital effects".</s>
           </p>
           <p>
@@ -268,12 +268,11 @@
               <ref target="#b26" type="bibr">26</ref> .</s>
             <s>In recent brachiopods, the morphology and dimension of fibres are characteristic for a given brachiopod species and are evolutionarily adapted to the animal's habitat <ref target="#b27" type="bibr">27,</ref>
               <ref target="#b28" type="bibr">28</ref> .</s>
+          </p>
+          <p>
             <s>Brachiopod shells are also of interest to material science, as these are important prototypes for bioinspired light-weight and energy-efficient hybrid materials.</s>
             <s>In these materials, advantageous mechanical properties of one component not only compensate for adverse properties of other's (e.g.</s>
-            <s>
-              <ref target="#b29" type="bibr">[29]</ref>
-              <ref target="#b30" type="bibr">[30]</ref>
-              <ref target="#b31" type="bibr">[31]</ref> ), but additional gain is derived from the overall composite nature of the biological hard tissue (e.g.</s>
+            <s>29-31 ), but additional gain is derived from the overall composite nature of the biological hard tissue (e.g.</s>
             <s>32 ).</s>
             <s>The mineral component provides high elastic modulus and high compressive strength, while its inferior tensile strength and brittleness is compensated by the</s>
           </p>
@@ -285,7 +284,7 @@
     <body>
       <div>
         <p>
-          <s>Scientific RepoRts | (2019) 9:598 | DOI:10.1038/s41598-018-36959-z</s>
+          <s>Scientific RepoRts | (2019) <ref target="#b9" type="bibr">9</ref> :598 | DOI: <ref target="#b10" type="bibr">10</ref> .1038/s41598-018-36959-z</s>
           <s>high tensile strength and pliability of the organic matrix.</s>
           <s>The hierarchical nature of the composite hard tissue provides overall toughness and fracture toughness <ref target="#b33" type="bibr">[33]</ref>
             <ref target="#b34" type="bibr">[34]</ref>
@@ -307,7 +306,7 @@
             <ref target="#b42" type="bibr">[42]</ref>
             <ref target="#b43" type="bibr">[43]</ref>
             <ref target="#b44" type="bibr">[44]</ref>
-            <ref target="#b45" type="bibr">[45]</ref> ), the latter being always cross-linked within the hard tissue (e.g.</s>
+            <ref target="#b45" type="bibr">[45]</ref> , the latter being always cross-linked within the hard tissue (e.g.</s>
           <s>
             <ref target="#b29" type="bibr">[29]</ref>
             <ref target="#b30" type="bibr">[30]</ref>
@@ -316,6 +315,8 @@
           <s>Accordingly, in fibrous composite materials (man-made or biological) the matrix is always pliant and flexible.</s>
           <s>Biopolymer matrices are plasticized with water <ref target="#b30" type="bibr">30,</ref>
             <ref target="#b31" type="bibr">31</ref> , whereas, when the matrix is a mineral, the latter is always softer relative to the hardness of the constituting fibres <ref target="#b46" type="bibr">46</ref> .</s>
+        </p>
+        <p>
           <s>In biological carbonate hard-tissue the fibres are not simple rods, as it is often the case in man-made fibrous composite materials.</s>
           <s>Instead, they have highly variable lengths and thicknesses, have elaborate morphologies <ref target="#b27" type="bibr">27,</ref>
             <ref target="#b28" type="bibr">28</ref> and are interleaved in three dimension <ref target="#b47" type="bibr">47,</ref>
@@ -328,7 +329,9 @@
             <ref target="#b49" type="bibr">[49]</ref>
             <ref target="#b50" type="bibr">[50]</ref>
             <ref target="#b51" type="bibr">[51]</ref> .</s>
-          <s>Shell formation of brachiopods has been described based mostly on macroscopic morphological observations <ref target="#b25" type="bibr">25</ref> ,52-54 .</s>
+        </p>
+        <p>
+          <s>Shell formation of brachiopods has been described based mostly on macroscopic morphological observations 25,52-54 .</s>
           <s>Williams <ref target="#b55" type="bibr">[55]</ref>
             <ref target="#b56" type="bibr">[56]</ref>
             <ref target="#b57" type="bibr">[57]</ref>
@@ -355,9 +358,10 @@
           <s>The scheme in <ref target="#fig_0" type="figure">Fig. 1a</ref> was deduced from our FE-SEM and TEM observations and depicts the spatial relationship between the different shell layers of the modern brachiopod Magellania venosa and their topological relation to the outer and inner mantle epithelia (OME, IME).</s>
         </p>
         <p>
-          <s>The shell of Magellania venosa (Dixon,) <ref target="#b61" type="bibr">61</ref> consists of the periostracum, a purely organic layer, and two mineralized layers, the primary and the fibrous layer <ref target="#fig_0" type="figure">(Fig. 1a)</ref> .</s>
+          <s>The shell of Magellania venosa <ref type="bibr">(Dixon,)</ref>
+            <ref target="#b61" type="bibr">61</ref> consists of the periostracum, a purely organic layer, and two mineralized layers, the primary and the fibrous layer <ref target="#fig_0" type="figure">(Fig. 1a)</ref> .</s>
           <s>All three layers are secreted by the outer mantle epithelium (OME) cells of the animal.</s>
-          <s>The primary shell layer, located between the periostracum and the fibrous shell portion (Figs 1a,b and A1a, A2a) is secreted near the commissure and ceases to grow in thickness when the fibres <ref target="#fig_0" type="figure">(Fig. 1a)</ref> start to develop.</s>
+          <s>The primary shell layer, located between the periostracum and the fibrous shell portion (Figs 1a,b and A1a, A2a) is secreted near the commissure and ceases to grow in thickness when the fibres <ref target="#fig_0" type="figure">(Fig. 1a</ref> ) start to develop.</s>
           <s>Hence, growth of the shell in extension occurs by secretion of the primary layer at the commissure, while growth in shell thickness takes mainly place with secretion of fibres some tens of micrometers away from the commissure <ref target="#fig_0" type="figure">(Fig. 1a)</ref> .</s>
           <s>The fibres (Figs 1b, 2 and A1b, A2) in Magellania venosa have four sides: one convex side facing proximally, two concave sides facing laterally and one concave side facing distally.</s>
           <s>The fibres are separated from each other by an organic membrane (Figs 3 and A1a, A1b, A2f), but this membrane does not form a sheath around individual calcite fibre's.</s>
@@ -379,19 +383,19 @@
           <s>The internal structure often displays curved rows, growth lines, which follow the convex proximal surface of the fibre (white arrows in <ref target="#fig_1" type="figure">Fig. 2a)</ref> .</s>
           <s>
             <ref target="#fig_3" type="figure">Figure 4</ref> shows FE-SEM micrographs of polished surfaces of chemically fixed <ref target="#fig_3" type="figure">(Fig. 4a</ref> ) and high-pressure frozen and freeze-substituted ( <ref target="#fig_3" type="figure">Fig. 4b-f</ref> ) shell portions embedded in EPON resin.</s>
-          <s>High pressure freezing followed by freeze-substitution in acetone containing OsO <ref target="#b3" type="bibr">4</ref> and uranyl acetate ensures minimal shrinkage of the soft tissue and negligible dissolution of the calcite during preparation.</s>
+          <s>High pressure freezing followed by freeze-substitution in acetone containing OsO 4 and uranyl acetate ensures minimal shrinkage of the soft tissue and negligible dissolution of the calcite during preparation.</s>
           <s>We find that the outer mantle epithelium is always in close contact with the proximal, convex side of the fibres.</s>
           <s>On the basal side, mantle epithelium cells are connected to the basal lamina of the connective tissue by large hemidesmosomes (red dots in <ref target="#fig_3" type="figure">Fig. 4a</ref> ).</s>
           <s>In high pressure frozen and freeze-substituted samples, at sites of mineral secretion, apical cell membrane cannot be distinguished Scientific RepoRts | (2019) 9:598 | DOI:10.1038/s41598-018-36959-z</s>
           <s>from basal surfaces of fibres <ref target="#fig_3" type="figure">(Fig. 4c,e)</ref> .</s>
           <s>This indicates that in Magellania venosa extrapallial space between fibres and OME cells is either absent or only very few nanometers wide.</s>
           <s>As <ref target="#fig_3" type="figure">Fig. 4c</ref> ,e visualize, in unetched samples, the organic membrane that lines the proximal, convex side of a fibre cannot be distinguished from the calcite of the fibre.</s>
-          <s>However, when etched, the membrane becomes visible (yellow arrows in <ref target="#fig_3" type="figure">Fig. 4b,d,f)</ref> .</s>
+          <s>However, when etched, the membrane becomes visible (yellow arrows in <ref target="#fig_3" type="figure">Fig. 4b</ref> ,d,f).</s>
           <s>Hence, there is a close connection between the membrane that lines the calcite of the fibres, in that this organic membrane is an integral part of fibres.</s>
           <s>The close connection between fibre calcite and membrane lining is also clearly visible in our AFM images ( <ref target="#fig_2" type="figure">Fig. 3b</ref> ; black and red stars at the basal, convex surface of a fibre).</s>
         </p>
         <p>
-          <s>In unetched samples <ref target="#fig_3" type="figure">(Fig. 4c</ref> ,e) the organic membrane is not visible in FE-SEM images as during freeze-substitution OsO <ref target="#b3" type="bibr">4</ref> and uranyl acetate have no access to them.</s>
+          <s>In unetched samples <ref target="#fig_3" type="figure">(Fig. 4c</ref> ,e) the organic membrane is not visible in FE-SEM images as during freeze-substitution OsO 4 and uranyl acetate have no access to them.</s>
           <s>In etched samples, we find between the organic membrane lining at the proximal, convex part of a fibre and the distal section of the adjacent concave fibre surface a recess (Figs 3b, 4e,c and A2).</s>
           <s>This might be due to higher solubility of the mineral at distal fibre surfaces and can be explained by inhibition of calcite crystal growth at these sites.</s>
           <s>This leads to the formation of nanocrystalline calcite with higher solubility.</s>
@@ -402,53 +406,35 @@
           <s>Accordingly, etching of high pressure frozen and freeze-substituted shell portions with an aqueous solution at a pH of 9 containing 0.1 molar HEPES and 2,5% glutaraldehyde does not result in dissolution of the mineral (amorphous or crystalline) of the developing fibres.</s>
           <s>Hence, the dissolution features that we observed in the chemically fixed samples <ref target="#fig_3" type="figure">(Fig. 4a)</ref> can be traced back to the effect of aqueous solutions that were used in the course of that preparation method.</s>
           <s>They do not indicate a possible presence of an amorphous precursor, amorphous calcium carbonate (ACC), within the fibres.</s>
-          <s>Furthermore, we do not find selective dissolution of the calcite between epithelial cells and at the sites of mineral secretion (red arrows in <ref target="#fig_3" type="figure">Fig. 4d,f)</ref> .</s>
+          <s>Furthermore, we do not find selective dissolution of the calcite between epithelial cells and at the sites of mineral secretion (red arrows in <ref target="#fig_3" type="figure">Fig. 4d</ref> ,f).</s>
           <s>As ACC readily dissolves at a pH of 9, this is a good indication that the calcite of fibres forms directly and most probably not via a disordered mineral phase, such as amorphous calcium carbonate.</s>
           <s>TEM imaging of chemically fixed and decalcified shell samples (Figs 5-7) allows us to investigate the ultrastructure of OME cells, the organelle distribution within them, and the topological relation of OME cells to the organic membrane that lines the proximal, convex surface of adjacent fibres.</s>
         </p>
         <p>
           <s>Apical membranes of OME cells are always present in the investigated samples, in contrast to membrane that lines the basal (proximal), convex surface of fibres.</s>
-          <s>We find regions where the organic membrane lining at the basal (proximal) surface of the fibre is lacking (red arrows in <ref target="#fig_5" type="figure">Fig. 6a</ref> ), is incomplete ( <ref target="#fig_4" type="figure">Figs 5 and 7)</ref> , or is fully developed (black arrows in <ref target="#fig_5" type="figure">Fig. 6b</ref> ).</s>
+          <s>We find regions where the organic membrane lining at the basal (proximal) surface of the fibre is lacking (red arrows in <ref target="#fig_5" type="figure">Fig. 6a</ref> ), is incomplete <ref target="#fig_4" type="figure">(Figs 5 and 7)</ref> , or is fully developed (black arrows in <ref target="#fig_5" type="figure">Fig. 6b</ref> ).</s>
           <s>When both membranes are present, apical cell and organic membranes, at the basal surface of the fibres, OME cells are attached to the organic membrane of the fibres via apical hemidesmosomes (green arrows in <ref target="#fig_5" type="figure">Fig. 6b</ref> ).</s>
-          <s>At sites where the organic membrane at the proximal, convex surface of the fibre is lacking, OME cells do not contain any hemidesmosomes or tonofilaments (Figs 5b and 6a).</s>
+          <s>At sites where the organic membrane at the proximal, convex surface of the fibre is lacking, OME cells do not contain any hemidesmosomes or tonofilaments <ref target="#fig_4" type="figure">(Figs 5b and 6a</ref> ).</s>
           <s>At these sites, mineral transport from OME cells to adjacent fibres, thus active secretion, is still in progress.</s>
-          <s>Analysing an epithelial length of 189 µm we find that 14 regions with a total length of 98 µm are attached to the shell via hemidesmosomes and 10 regions with a total length of 91 µm are not ( <ref target="#fig_4" type="figure">Fig. A5-c)</ref> .</s>
+          <s>Analysing an epithelial length of 189 µm we find that 14 regions with a total length of 98 µm are attached to the shell via hemidesmosomes <ref target="#fig_4" type="figure">Fig. A5-c)</ref> .</s>
           <s>Thus, at a given time, about 52% of the OME is not secreting mineral and only a maximum of about 48% of the OME is involved in fibre mineralization.</s>
           <s>Contrasting to observations by Williams and co-workers 25,56-60 , we do not find a one-by-one relationship between epithelial cells and fibres.</s>
-          <s>Instead, we often observe either one cell below two or more fibres or interdigitating epithelial cells below one fibre <ref target="#fig_7" type="figure">(Fig. 7)</ref> .</s>
-          <s>In regions where the organic membrane at the proximal, convex side of the fibre is not fully developed, cross sections through fibres reveal that secretion of the extracellular organic membrane starts at the two lateral edges (corners in the two-dimensional cross-section) of the fibre <ref target="#fig_4" type="figure">(Fig. 5a</ref> ) and progresses from here until the proximal, convex surface of the fibre is fully covered with the organic lining.</s>
+          <s>Instead, we often observe either one cell below two or more fibres or interdigitating epithelial cells below one fibre <ref target="#fig_6" type="figure">(Fig. 7)</ref> .</s>
+          <s>In regions where the organic membrane at the proximal, convex side of the fibre is not fully developed, cross sections through fibres reveal that secretion of the extracellular organic membrane starts at the two lateral edges (corners in the two-dimensional cross-section) of the fibre <ref target="#fig_4" type="figure">(Fig. 5a)</ref> and progresses from here until the proximal, convex surface of the fibre is fully covered with the organic lining.</s>
           <s>The formation of the basal membrane lining at the convex side of the fibre represents the terminal step in fibre secretion.</s>
           <s>It also separates the outer mantle epithelium cell from the compartment in which the fibre is mineralized.</s>
           <s>Where the fibre basal membrane is absent, the compartment in which calcite mineralization takes place is in direct contact with cell membranes, such that either by pumps or ion exchange mineral components can be transported into the compartment of calcite crystallization.</s>
-        </p>
-      </div>
-      <div>
-        <head>Discussion</head>
-        <p>
-          <s>Fibre secretion and microstructure generation in Magellania venosa.</s>
-          <s>Elongated, cylindrical mineral units are structural elements in bivalve, gastropod and brachiopod shells and are either prismatic-columnar, foliated, fibrous or acicular in shape (e.g.</s>
-          <s>
-            <ref target="#b62" type="bibr">[62]</ref>
-            <ref target="#b63" type="bibr">[63]</ref>
-            <ref target="#b64" type="bibr">[64]</ref> ).</s>
-          <s>Even though prismatic-columnar, foliated and acicular microstructures prevail, in some classes of the phyla Mollusca and Brachiopoda assemblies of fibres are of major importance to the overall structure of the hard tissue and may constitute entire shell layers.</s>
-          <s>Fibrous microstructures prevail in the shell of Mytiloida and Cavolinioidea (Mollusca) and in Rhynchonellata and Terebratulida (Brachiopoda).</s>
           <s>In most cases fibres are made of calcite (with the exception of the shells of the marine cavolinioidean gastropods, where they are made of aragonite) and vary in shape and dimension depending on the taxa.</s>
-          <s>Rudwick <ref type="bibr">52,</ref>
-            <ref target="#b53" type="bibr">53</ref> , Rosenberg <ref target="#b65" type="bibr">65</ref> and Rowel and Grant 66 described shell architecture and growth in modern and fossil brachiopods.</s>
-          <s>Williams and co-workers <ref target="#b25" type="bibr">25,</ref>
-            <ref target="#b56" type="bibr">[56]</ref>
-            <ref target="#b57" type="bibr">[57]</ref>
-            <ref target="#b58" type="bibr">[58]</ref>
-            <ref target="#b59" type="bibr">[59]</ref>
-            <ref target="#b60" type="bibr">[60]</ref> investigated brachiopod shell mineralization and hypothesized from SEM and TEM observations that (i) the same cell of the outer mantle epithelium lobe is able to perform different secretory tasks and secretes sequentially all layers of the shell, (ii) based on similar cross-sections between fibre and outline of the cell, a fibre is formed by one cell only, and (iii) each fibre is entirely encased by an organic membrane.</s>
+          <s>Rudwick 52,53 , Rosenberg <ref target="#b65" type="bibr">65</ref> and Rowel and Grant 66 described shell architecture and growth in modern and fossil brachiopods.</s>
+          <s>Williams and co-workers 25,56-60 investigated brachiopod shell mineralization and hypothesized from SEM and TEM observations that (i) the same cell of the outer mantle epithelium lobe is able to perform different secretory tasks and secretes sequentially all layers of the shell, (ii) based on similar cross-sections between fibre and outline of the cell, a fibre is formed by one cell only, and (iii) each fibre is entirely encased by an organic membrane.</s>
         </p>
         <p>
           <s>In our study, we did not observe any features to support these findings.</s>
-          <s>Instead, we observed that near the commissure, the OME consists of many cell layers, while, further away towards central shell portions, OME cells form a single layer (for a detailed study see <ref target="#b67" type="bibr">67</ref> ).</s>
+          <s>Instead, we observed that near the commissure, the OME consists of many cell layers, while, further away towards central shell portions, OME cells form a single layer (for a detailed study see 67 ).</s>
           <s>We did not find any similarities in cross-section dimensions between cells and fibres.</s>
           <s>Cross sections of OME cells varied and we observed roundish as well as elongated cross-sections of mantle epithelial cells <ref target="#b67" type="bibr">67</ref> .</s>
-          <s>Furthermore, we found that neighbouring cells, each of them attached to the same fibre cooperate in fibre secretion <ref target="#b67" type="bibr">67</ref> ( <ref target="#fig_5" type="figure">Fig. 7 this study and 67</ref> ).</s>
+          <s>Furthermore, we found that neighbouring cells, each of them attached to the same fibre cooperate in fibre secretion <ref target="#b67" type="bibr">67</ref>
+            <ref target="#fig_5" type="figure">(Fig. 7 this study and 67</ref> ).</s>
           <s>We observed that epithelial cells are only in contact with the proximal, convex side of the fibre and never in contact with their concave sides (not even in puncta).</s>
           <s>Thus, the membrane, that is formed in the final step of fibre secretion, is exclusively deposited onto the basal, convex surface of a fibre.</s>
           <s>It is the matrix membrane located between fibres, or the extracellular matrix within the shell (Figs 5a, 6b and A1b, A2f, A3a).</s>
@@ -463,70 +449,81 @@
             <ref target="#b69" type="bibr">[69]</ref>
             <ref target="#b70" type="bibr">[70]</ref> .</s>
           <s>However, a basic difference unique to biologic composites is that fabrication of synthetic composites occurs in at least two steps.</s>
-          <s>First, the scaffold is formed and, in a subsequent step, the scaffold is reinforced with another material <ref target="#b68" type="bibr">68,</ref>
-            <ref target="#b70" type="bibr">70</ref> ( <ref target="#fig_0" type="figure">Fig. 1 in 68</ref> , <ref target="#fig_4" type="figure">Fig. 5 in 70</ref> ).</s>
+          <s>First, the scaffold is formed and, in a subsequent step, the scaffold is reinforced with another material 68,70 ( <ref target="#fig_0" type="figure">Fig. 1 in 68 , Fig. 5 in 70</ref> ).</s>
           <s>The generation of biological hard tissue follows a different pathway.</s>
           <s>It is a layer-by-layer formational process comprising the sequential deposition of mineral and, when and where needed, secretion of a biopolymer membrane, or vice versa.</s>
           <s>The latter are, for example, the polymer lining at the convex surface of a brachiopod fibre at termination of fibre formation (this study) or an interlamellar or surface membrane during molluscan nacre growth <ref target="#b71" type="bibr">71,</ref>
             <ref target="#b72" type="bibr">72</ref> .</s>
           <s>When brachiopod fibre and nacreous tablet formation are compared, significant differences emerge in biopolymer/mineral deposition and, hence, microstructure generation.</s>
           <s>In the case of modern brachiopod fibres, during secretion, mantle epithelium cells are always in direct contact with the mineral (this study), whereas in molluscs the nacreous tablets are never in direct contact with epithelial cells.</s>
-          <s>There is always an interlamellar (in bivalves) or surface (in gastropods) membrane between secreting mantle cells and the growing aragonite platelets <ref target="#b72" type="bibr">72</ref> (and references therein).</s>
-          <s>In bivalve nacre, the aragonite is always deposited between a few (two or three), and in gastropod nacre even between many (a few tens) interlamellar membranes <ref target="#fig_7" type="figure">(Fig. 7A,B</ref> ,F,G in <ref target="#b72" type="bibr">72</ref> ).</s>
+          <s>There is always an interlamellar (in bivalves) or surface (in gastropods) membrane between secreting mantle cells and the growing aragonite platelets 72 (and references therein).</s>
+          <s>In bivalve nacre, the aragonite is always deposited between a few (two or three), and in gastropod nacre even between many (a few tens) interlamellar membranes <ref target="#fig_6" type="figure">(Fig. 7A,B</ref> ,F,G in 72 ).</s>
           <s>When brachiopod fibres form, secretion of the biopolymer membrane covering the convex surface of the fibre is the last and terminal step in fibre growth.</s>
           <s>In contrast, when nacre forms, aragonite tablet formation is started with the consecutive self-assembly by liquid crystallization of interlamellar membranes.</s>
           <s>This leads to the formation of compartments that become successively infiltrated along mineral bridges by aragonite and ultimately filled with nacreous tablets (e.g.</s>
           <s>
-            <ref target="#fig_7" type="figure">Fig. 7A</ref> ,F,C in <ref target="#b72" type="bibr">72</ref> and references therein).</s>
+            <ref target="#fig_6" type="figure">Fig. 7A</ref> ,F,C in 72 and references therein).</s>
           <s>Accordingly, we find modern brachiopod shell and molluscan nacre development as two divergent microstructure generation processes <ref target="#fig_1" type="figure">(Fig. A7a and 72</ref> ).</s>
-          <s>One is biologically controlled through direct cellular contact and activity with the mineral as it is the case for brachiopods, the other is physically controlled through the self-organization of extracellular matrix membranes as it is the case for molluscan nacre <ref target="#fig_1" type="figure">(Fig. A7a and 72</ref> ).</s>
+          <s>One is biologically controlled through direct cellular contact and activity with the mineral as it is the case for brachiopods, the other is physically controlled through the self-organization of extracellular matrix membranes as it is the case for molluscan nacre <ref target="#fig_1" type="figure">(Fig. A7a and 72 )</ref> .</s>
           <s>In summary, in many man-made biomimetic composites the eventually mineralized organic matrix is fully developed prior to mineral infiltration.</s>
           <s>Formation of molluscan nacre resembles to some extent the formation of biomimetic composites, as it occurs through mineralization of a preformed biopolymer matrix.</s>
           <s>However, nacre growth is a dynamic process, the mineralization front advances with ongoing shell growth.</s>
           <s>During shell growth, extracellular matrix formation progresses steadily and it is successively mineralized.</s>
-          <s>Brachiopod fibre formation is a strictly layer-by-layer deposition process, where both, secretion of the mineral and the biopolymer is controlled synchronously by mantle epithelial cells <ref target="#fig_7" type="figure">(Fig. A7a)</ref> .</s>
+          <s>Brachiopod fibre formation is a strictly layer-by-layer deposition process, where both, secretion of the mineral and the biopolymer is controlled synchronously by mantle epithelial cells <ref target="#fig_6" type="figure">(Fig. A7a</ref> ).</s>
         </p>
         <p>
           <s>Fibre shape generation in Magellania venosa.</s>
           <s>Brachiopod fibrous layer microstructure, such as fibre morphology and their arrangement in stacks, is characteristic of modern terebratulide and rhynchonellide brachiopod shells (see the compilation of <ref target="#b27" type="bibr">27,</ref>
             <ref target="#b28" type="bibr">28</ref> ).</s>
-          <s>It differs from that in other biological hard tissues, for example, calcite fibres in Mytilus edulis shells <ref target="#fig_5" type="figure">(Fig. A6)</ref> .</s>
-          <s>In the latter, fibre shape is more cylindrical and the mode of interlocking is less regular <ref target="#fig_5" type="figure">(Figure A6b</ref> ) <ref target="#b73" type="bibr">73</ref> .</s>
-          <s>The mode of assembly of fibres in modern brachiopod shells shows similarities in cross-section to the "brick-wall" arrangement of nacreous tablets in bivalve nacre <ref target="#fig_7" type="figure">(Fig. A7b)</ref> .</s>
+          <s>It differs from that in other biological hard tissues, for example, calcite fibres in Mytilus edulis shells <ref target="#fig_5" type="figure">(Fig. A6</ref> ).</s>
+          <s>In the latter, fibre shape is more cylindrical and the mode of interlocking is less regular <ref target="#fig_5" type="figure">(Figure A6b)</ref>
+            <ref target="#b73" type="bibr">73</ref> .</s>
+          <s>The mode of assembly of fibres in modern brachiopod shells shows similarities in cross-section to the "brick-wall" arrangement of nacreous tablets in bivalve nacre <ref target="#fig_6" type="figure">(Fig. A7b)</ref> .</s>
           <s>Hence, the staggered organization of basic mineral units, irrespective of these being tablets or fibres, is obviously a type of microstructure that is of high value to many shelled organisms and was and is utilized in very different aquatic habitats.</s>
           <s>Furthermore, it was developed within the geologic record by many organisms of different phylae.</s>
           <s>Hence, basic mineral unit (fibre, tablet) morphology and mode of interlinkage is essential to the organism, as an adequately constructed shell guaranties protection of the soft tissue and, thus, survival of the organism in its chosen habitat (e.g.</s>
           <s>
             <ref target="#b74" type="bibr">74</ref> ).</s>
-          <s>Observations on the unique morphology of brachiopod fibres led us to develop a model for fibre shape generation <ref type="figure">(Fig. 8</ref> ) and fibre elongation <ref target="#fig_8" type="figure">(Fig. 9)</ref> for the shell of Magellania venosa.</s>
+        </p>
+        <p>
+          <s>Observations on the unique morphology of brachiopod fibres led us to develop a model for fibre shape generation <ref type="figure">(Fig. 8</ref> ) and fibre elongation <ref target="#fig_7" type="figure">(Fig. 9</ref> ) for the shell of Magellania venosa.</s>
           <s>This model may be applicable to other modern and fossil terebratulide and rhynchonellide brachiopod species that produce a shell layer with a fibrous microstructure.</s>
           <s>Our model is based on the following observations: (i) only about 50% of the epithelium secretes mineral at any given time as the remaining part of the epithelium is tightly attached to the shell via hemidesmosomes and therefore cannot secrete any mineral.</s>
+          <s>(ii) The extrapallial space either does not exist or is very narrow what indicates that mineral secretion is under tight cellular control.</s>
+          <s>(iii) At large epithelial lengths, sites of mineral secretion alternate with sites that do not secrete any mineral.</s>
+          <s>(iv) Only the convex part of any individual fibre is covered with an organic membrane.</s>
+          <s>(v) Secretion of the organic lining of the proximal convex surface of the fibre proceeds from the sides to its central part.</s>
+        </p>
+        <p>
           <s>Fibre formation starts with the disintegration of apical hemidesmosomes and the detachment of a small region of the outer mantle epithelium from the organic membrane lining of a previously secreted and finished portion of a fibre (black arrows in <ref target="#fig_0" type="figure">Fig. 8, sketch 1)</ref> .</s>
           <s>This induces mineral accretion at this site by the underlying cell or cells.</s>
           <s>In cross section, this detached region appears to be small at the beginning.</s>
           <s>However, it increases in size and thickness with progressive fibre growth <ref target="#fig_0" type="figure">(Fig. 8, sketch 1)</ref> .</s>
-          <s>Once the fibre has reached its full width, the underlining With ongoing secretion, the proximal convex surface of the growing fibre is lined with a membrane until full coverage is achieved of the convex fibre surface (blue stars in <ref target="#fig_1" type="figure">Fig. 8, sketch 2)</ref> .</s>
+          <s>Once the fibre has reached its full width, the underlining <ref target="#fig_1" type="figure">Fig. 8, sketch 2)</ref> .</s>
+          <s>With ongoing secretion, the proximal convex surface of the growing fibre is lined with a membrane until full coverage is achieved of the convex fibre surface (blue stars in <ref target="#fig_1" type="figure">Fig. 8, sketch 2)</ref> .</s>
           <s>Once the latter is completed, apical OME cell membrane attaches itself immediately via apical hemidesmosomes to extracellular organic membranes at the proximal side of the fibres <ref type="figure">(Fig. 8)</ref> .</s>
           <s>In between fully secreted fibres, epithelial cell membranes are still in direct contact with the calcite of the fibre and carry on with mineral secretion of these (not yet finished) fibres (Figs 5a, 7 and 8, sketch 2).</s>
           <s>The attachment of mantle epithelia to extracellular membrane portions at the proximal convex surface of the fibres is essential for stabilization of the whole secretion system.</s>
           <s>This is important for both, for fully developed fibres and fibres that are still actively in the secretion process.</s>
           <s>Additional proof for the above described model of fibre growth was observed in AFM images.</s>
           <s>The striation patterns that we find on cross-sections of transversely and longitudinally cut fibres (white arrows in <ref target="#fig_1" type="figure">Fig. 2a)</ref> supports the incremental addition of mineral to the growing fibre by successively retreating OME cells.</s>
-          <s>Mineral secretion ceases when the organic membrane forming at the two edges (corners in the two-dimensional cross-section) of a fibre merges (Figs 5, 7 and 8 sketch 2), and the membrane lining fully covers the proximal, convex fibre surface.</s>
+          <s>Mineral secretion ceases when the organic membrane forming at the two edges (corners in the two-dimensional cross-section) of a fibre merges <ref target="#fig_1" type="figure">(Figs 5, 7 and 8 sketch 2)</ref> , and the membrane lining fully covers the proximal, convex fibre surface.</s>
         </p>
         <p>
           <s>We did not observe a one-to-one relationship between epithelial cells and calcite fibres, hence, each epithelial cell may contribute to the formation of many fibres when the shell grows in thickness.</s>
           <s>
-            <ref target="#fig_8" type="figure">Figure 9</ref> shows a model for fibre elongation and depicts a sequence of four moments in time <ref target="#fig_0" type="figure">(Fig. 9, sketches 1-4)</ref> .</s>
+            <ref target="#fig_7" type="figure">Figure 9</ref> shows a model for fibre elongation and depicts a sequence of four moments in time <ref target="#fig_0" type="figure">(Fig. 9, sketches 1-4)</ref> .</s>
           <s>The model emphasises how individual fibres are formed by many cells with each cell being engaged in the secretion of just a short segment of a fibre (e.g., <ref target="#fig_4" type="figure">Fig. A5</ref> ).</s>
-          <s>We depict three individual cells (A-C in <ref target="#fig_8" type="figure">Fig. 9</ref> ) contributing from right to left to the elongation of three different fibres.</s>
+          <s>We depict three individual cells (A-C in <ref target="#fig_7" type="figure">Fig. 9</ref> ) contributing from right to left to the elongation of three different fibres.</s>
           <s>In our model, individual epithelial cells do not need to move along the inner shell surface, nor does our model imply sliding of the cells as fibres grow across the shell.</s>
-          <s>Instead, elongation of fibres is brought about by repeated changes in sites where (i) regions of a cell secrete the organic membrane at the proximal, convex surface of a fibre (blue lines in <ref target="#fig_8" type="figure">Fig. 9</ref> ), (ii) stay attached to it and (iii) elongate the fibre by mineral secretion after detachment from the organic membrane.</s>
+          <s>Instead, elongation of fibres is brought about by repeated changes in sites where (i) regions of a cell secrete the organic membrane at the proximal, convex surface of a fibre (blue lines in <ref target="#fig_7" type="figure">Fig. 9</ref> ), (ii) stay attached to it and (iii) elongate the fibre by mineral secretion after detachment from the organic membrane.</s>
           <s>This can also easily explain why the brachiopod fibre calcite composite is produced in a plywood-like manner, where, in stacks of parallel aligned fibres, the direction of the morphological fibre axis is changed.</s>
           <s>This is difficult or impossible to envisage with the 'conveyor belt' model of Williams <ref target="#b56" type="bibr">[56]</ref>
             <ref target="#b57" type="bibr">[57]</ref>
             <ref target="#b58" type="bibr">[58]</ref>
             <ref target="#b60" type="bibr">60</ref> .</s>
+        </p>
+        <p>
           <s>In summary, when the shell grows in thickness, each epithelial cell contributes to the formation of many fibres and cooperates with its neighbours.</s>
           <s>In the native state, cells assume a near hexagonal pattern, so that each cell <ref type="figure">Figure 8</ref> .</s>
           <s>Schematic model illustrating calcite fibre shape formation for terebratulide and possibly rhynchonellide brachiopods.</s>
@@ -585,35 +582,12 @@
           <s>We investigated fibre shell formation of the modern brachiopod Magellania venosa from Patagonian Comau Fjord (southern Chile).</s>
           <s>Brachiopods were collected by scientific SCUBA divers at about 21 m water depth, average water temperature was 11 °C and salinity 30.3.</s>
           <s>Samples that were chemically fixed and decalcified had a longitudinal axis length between 5 and 7 mm; shells that were fixed by high pressure freezing and subsequent freeze substitution had a longitudinal axis length of about 4-5 mm.</s>
-          <s>EDTA and 1.0 v/v % glutaraldehyde stabilized at a pH of 8.0.</s>
-          <s>All samples were washed three times with 0.1 M Na-cacodylate buffer (7.7 pH) and postfixed in the same buffer containing 1% OsO 4 and 0.9% K 4 Fe(CN) 6 ·3H 2 O for one hour.</s>
-          <s>After washing with bi-distilled water, the samples were dehydrated in an ascending series of isopropanol solutions <ref type="bibr">(30, 50, 70 and 90%)</ref> , and contrasted with 2% uranyl acetate (in 100% ethanol) for 30 minutes, washed 3 times for 30 minutes each in 100% isopropanol and two times for 5 minutes in propyleneoxide and subsequently embedded in EPON resin.</s>
-        </p>
-        <p>
-          <s>High-pressure freezing and freeze substitution.</s>
-          <s>M. venosa individuals no longer than 6 mm were dissected in culture seawater.</s>
-          <s>With scalpels pieces of shell with the mantle epithelium attached were cut from the commissure and central region of dorsal and ventral valves.</s>
-          <s>Samples were transferred to hexadecane and placed in aluminium planchets with an outer diameter of 3 mm and a 200 µm deep cavity, and covered with the flat side of planchets.</s>
-          <s>Samples were then high pressure frozen with a Wohlwend HPF Compact 01 high-pressure freezer (Engineering Office M. Wohlwend GmbH) within 30 ms at a pressure of 2.3 × 10 8 Pa.</s>
-          <s>The planchet sandwiches were then opened and freeze substituted overnight in 0.2% OsO 4 , 0.1% uranyl acetate and 5% H 2 O in acetone ranging from −90 °C to <ref type="bibr">20 °C 75</ref> .</s>
-          <s>Samples were then embedded in EPON resin.</s>
-          <s>Embedded samples were cut open using a diamond trimming knife (Diatome, Liechtenstein) and a Reichert Ultracut ultra microtome (Leica) to expose the mineralised shell.</s>
-        </p>
-        <p>
-          <s>Sample preparation for AFM imaging.</s>
-          <s>For AFM imaging shell pieces of modern Magellania venosa shells were cut in longitudinal section from the umbo to the commissure and embedded in epoxy resin.</s>
-          <s>Embedded sample surfaces were polished in 5 sequential mechanical steps down to a grain size of 1 µm.</s>
-          <s>For the final step, etch-polishing was applied for three hours with a colloidal alumina suspension in a vibratory polisher.</s>
-          <s>Subsequently, the samples were washed in Milli-Q water in an ultrasonic bath and rinsed with 80% ethanol.</s>
-        </p>
-        <p>
-          <s>Sample preparation for microstructure characterisation.</s>
-          <s>For Electron Backscatter Diffraction (EBSD) analyses 5 × 5 mm pieces were cut out of the shell and embedded in epoxy resin.</s>
-          <s>The surface of the embedded samples was subjected to several sequential mechanical grinding and polishing steps down to a grain size of 1 μm.</s>
-          <s>The final Scientific RepoRts | (2019) 9:598 | DOI:10.1038/s41598-018-36959-z</s>
           <s>step consisted of polishing with colloidal alumina (particle size ~0.06 μm) in a vibratory polisher.</s>
           <s>Finally, samples were coated with 4-6 nm of carbon.</s>
         </p>
+      </div>
+      <div>
+        <head>Sample preparation. Chemical fixation and decalcification.</head>
       </div>
       <div subtype="dataseer">
         <head>Methods</head>
@@ -634,17 +608,15 @@
           <s>Samples were then mounted on aluminium holders using self-adhesive carbon pads and conductive glue and coated with 4 nm of carbon using a BAF 300 (BAL-TEC, Balzers, Liechtenstein).</s>
           <s id="dataset-3" type="Image:Microscopy">Samples were analysed with a Hitachi S5200 field emission scanning electron microscope (FE-SEM).</s>
           <s>For chemically fixed samples we used the secondary electron signal at 4 kV.</s>
-          <s>To obtain material density contrast at high resolution for the high pressure frozen/freeze substituted samples, we used the converted backscattered electron signal to obtain so-called composite-rich images <ref target="#b77" type="bibr">77</ref> at 4 kV acceleration voltage and 20 µA emission current in analysis mode of the microscope.</s>
+          <s>To obtain material density contrast at high resolution for the high pressure frozen/freeze substituted samples, we used the converted backscattered electron signal to obtain so-called composite-rich images 77 at 4 kV acceleration voltage and 20 µA emission current in analysis mode of the microscope.</s>
           <s>To test if the fibrous layer contained highly soluble mineral phases (e.g., an amorphous precursor phase of calcite) we first removed the 4 nm carbon layer using a diamond knife.</s>
           <s>The sample was then etched and organic material fixed simultaneously for 40 seconds using a 0.1 M HEPES (pH = 9.0) and 2.5% glutaraldehyde solution.</s>
           <s>Immediately after etching, the samples were dehydrated in 100% isopropanol 3 times for 10 seconds and were critical point dried in a BAL-TEC CPD 030 (Liechtenstein) device.</s>
           <s>The dried samples were coated with 3 nm platinum.</s>
           <s corresp="#dataset-3" type="Image:Microscopy">Then, the same regions of the sample were imaged again in the Hitachi S5200 FE-SEM.</s>
         </p>
-      </div>
-      <div subtype="dataseer">
-        <head>Atomic Force Microscopy (AFM).</head>
         <p>
+          <s>Atomic Force Microscopy (AFM).</s>
           <s id="dataset-4" type="Image:Microscopy">Samples were measured in contact mode with a JPK NanoWizard II AFM using silicon cantilevers.</s>
           <s>The measurements of height, lateral and vertical deflection traces were processed with the NanoWizard ® IP image processing software and Gwyddion free and open source software.</s>
           <s>We used the "Gold" scale for colour.</s>
@@ -652,10 +624,8 @@
           <s>With lateral deflection traces, we observed the different components within the shell (e.g., the organic membrane of the calcite fibres has a different interaction with the cantilever tip than the calcite of the fibres).</s>
           <s>We show all AFM results with vertical as well as lateral deflection trace measurements.</s>
         </p>
-      </div>
-      <div subtype="dataseer">
-        <head>Electron backscatter diffraction (EBSD).</head>
         <p>
+          <s>Electron backscatter diffraction (EBSD).</s>
           <s id="dataset-5" type="Image:Microscopy">EBSD measurements were carried out on a Hitachi SU5000 field emission SEM, equipped with an Oxford EBSD detector.</s>
           <s>The SEM was operated at 20 kV and measurements were indexed with the CHANNEL 5 HKL software.</s>
           <s>In this study information obtained from EBSD measurements is presented as band contrast measurement images.</s>
@@ -708,24 +678,28 @@
         <figDesc>Figure 6. TEM micrographs of chemically fixed and decalcified contact between epithelium and fibre calcite in modern Magellania venosa. Samples were taken from the central region of the shell. (a) With ongoing mineralization, the membrane lining the proximal, convex part of the fibre is not yet developed (red arrows). (b) Apical cell membrane attached to organic membranes of the fibres by apical hemidesmosomes (green arrows), the latter being connected to basal hemidesmosomes (orange arrows) via tonofilaments (tf). Cells below fibres in the process of active mineral secretion do not contain any tonofilaments.</figDesc>
       </figure>
       <figure xml:id="fig_6">
-        <head/>
-        <label/>
-        <figDesc>(ii) The extrapallial space either does not exist or is very narrow what indicates that mineral secretion is under tight cellular control. (iii) At large epithelial lengths, sites of mineral secretion alternate with sites that do not secrete any mineral. (iv) Only the convex part of any individual fibre is covered with an organic membrane. (v) Secretion of the organic lining of the proximal convex surface of the fibre proceeds from the sides to its central part.</figDesc>
-      </figure>
-      <figure xml:id="fig_7">
         <head>Figure 7 .</head>
         <label>7</label>
         <figDesc>Figure 7. TEM micrographs and deduced schematic showing the interlinkage of three cells below an almost fully secreted fibre. Well visible are tonofilaments within cells 2 and 3 (yellow and red arrows) that connect the apical cell membrane to the organic membrane at the proximal, convex side of the fibre by hemidesmosomes.</figDesc>
       </figure>
-      <figure xml:id="fig_8">
+      <figure xml:id="fig_7">
         <head>Figure 9 .</head>
         <label>9</label>
         <figDesc>Figure 9. Schematic model illustrating calcite fibre elongation for terebratulide and rhynchonellide brachiopods. A stack of longitudinally cut fibres is shown. Fibre growth occurs through the coordinated interaction of neighbouring cells (A to C). These are stationary and secrete both, the organic basal lining as well as the calcite of the fibre, and this in the required proportion necessary for the developing fibre (stages 1 to 4). Elongation of fibres takes place by repeated continuous changes in the position of growing fibres relative to cells: (i) attached either to the organic membrane lining the convex surface of the fibre or (ii) to the calcite of the fibre. The organic membrane lining the fibre is indicated with blue lines. Due to the absence of a one-by-one relationship between epithelial cells and calcite fibres, as the shell grows in thickness, each epithelial cell contributes to the formation of more than one fibre and secretes both calcium carbonate and organic material at different portions.</figDesc>
       </figure>
-      <figure xml:id="fig_9">
+      <figure xml:id="fig_8">
         <head/>
         <label/>
-        <figDesc>Sample preparation. Chemical fixation and decalcification. A total of 8 small samples of the shell with the mantle tissue attached were first dissected from central and commissure regions of both ventral and dorsal valves. We used two different fixation media. Fixation medium A was prepared by mixing equal volumes of filtered seawater from the culture of Magellania venosa containing 2% paraformaldehyde and 2% glutaraldehyde with a solution of 0.35 mol L −1 saccharose and 0.17 mol L −1 NaCl in 0.2 mol L −1 Na-cacodylate buffer (pH 7.7). Fixation medium B was prepared in the same way, however, with 3.2% paraformaldehyde and 4% glutaraldehyde in the filtered seawater. No differences in preservation of the structures was observed between the fixation procedures and media. After 17 hours in fixation solution at 4 °C, 8 samples, one from each region and valve of the animals, were decalcified for 14 days in a solution containing 0.25 mol L −1 HEPES, 0.05 mol L −1</figDesc>
+        <figDesc>A total of 8 small samples of the shell with the mantle tissue attached were first dissected from central and commissure regions of both ventral and dorsal valves. We used two different fixation media. Fixation medium A was prepared by mixing equal volumes of filtered seawater from the culture of Magellania venosa containing 2% paraformaldehyde and 2% glutaraldehyde with a solution of 0.35 mol L −1 saccharose and 0.17 mol L −1 NaCl in 0.2 mol L −1 Na-cacodylate buffer (pH 7.7). Fixation medium B was prepared in the same way, however, with 3.2% paraformaldehyde and 4% glutaraldehyde in the filtered seawater. No differences in preservation of the structures was observed between the fixation procedures and media. After 17 hours in fixation solution at 4 °C, 8 samples, one from each region and valve of the animals, were decalcified for 14 days in a solution containing 0.25 mol L −1 HEPES, 0.05 mol L −1 EDTA and 1.0 v/v % glutaraldehyde stabilized at a pH of 8.0. All samples were washed three times with 0.</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>1 M Na-cacodylate buffer (7.7 pH) and postfixed in the same buffer containing 1% OsO 4 and 0.9% K 4 Fe(CN) 6 ·3H 2 O for one hour. After washing with bi-distilled water, the samples were dehydrated in an ascending series of isopropanol solutions (30, 50, 70 and 90%), and contrasted with 2% uranyl acetate (in 100% ethanol) for 30 minutes, washed 3 times for 30 minutes each in 100% isopropanol and two times for 5 minutes in propyleneoxide and subsequently embedded in EPON resin. High-pressure freezing and freeze substitution. M. venosa individuals no longer than 6 mm were dissected in culture seawater. With scalpels pieces of shell with the mantle epithelium attached were cut from the commis- sure and central region of dorsal and ventral valves. Samples were transferred to hexadecane and placed in alu- minium planchets with an outer diameter of 3 mm and a 200 µm deep cavity, and covered with the flat side of planchets. Samples were then high pressure frozen with a Wohlwend HPF Compact 01 high-pressure freezer (Engineering Office M. Wohlwend GmbH) within 30 ms at a pressure of 2.3 × 10 8 Pa. The planchet sandwiches were then opened and freeze substituted overnight in 0.2% OsO 4 , 0.1% uranyl acetate and 5% H 2 O in acetone ranging from −90 °C to 20 °C 75 . Samples were then embedded in EPON resin. Embedded samples were cut open using a diamond trimming knife (Diatome, Liechtenstein) and a Reichert Ultracut ultra microtome (Leica) to expose the mineralised shell.preparation for AFM imaging. For AFM imaging shell pieces of modern Magellania venosa shells were cut in longitudinal section from the umbo to the commissure and embedded in epoxy resin. Embedded sample surfaces were polished in 5 sequential mechanical steps down to a grain size of 1 µm. For the final step, etch-polishing was applied for three hours with a colloidal alumina suspension in a vibratory polisher. Subsequently, the samples were washed in Milli-Q water in an ultrasonic bath and rinsed with 80% ethanol.preparation for microstructure characterisation. For Electron Backscatter Diffraction (EBSD) analyses 5 × 5 mm pieces were cut out of the shell and embedded in epoxy resin. The surface of the embedded samples was subjected to several sequential mechanical grinding and polishing steps down to a grain size of 1 μm. The final</figDesc>
+        <table>Sample Sample Scientific RepoRts | 
+(2019) 9:598 | DOI:10.1038/s41598-018-36959-z 
+
+</table>
       </figure>
       <note place="foot">© The Author(s) 2019</note>
     </body>
@@ -744,22 +718,17 @@
       <div type="annex">
         <div>
           <head>Author Contributions</head>
-          <p>
-            <s>M.S.R. and A.Z. performed all EM analytical work: biochemical preparation, FE-SEM, TEM, imaging and morphometry data analysis.</s>
-            <s>U.R. helped with TEM imaging and evaluation of morphometric data sets.</s>
-            <s>M.S.R. performed all AFM imaging.</s>
-            <s>E.G., A.Z., M.S.R. wrote the manuscript.</s>
-            <s>U.B., A.C., W.S., A.E., X.Y. contributed to the final version of the manuscript.</s>
-            <s>V.H., J.L., D.H. took care of sampling, transport and culturing of live Magellania venosa.</s>
-          </p>
         </div>
         <div>
           <head>Additional Information</head>
           <p>
             <s>Supplementary information accompanies this paper at https://doi.org/10.1038/s41598-018-36959-z.</s>
           </p>
+        </div>
+        <div>
+          <head>Competing Interests:</head>
           <p>
-            <s>Competing Interests: The authors declare no competing interests.</s>
+            <s>The authors declare no competing interests.</s>
           </p>
           <p>
             <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
@@ -926,7 +895,7 @@
           <biblStruct xml:id="b5">
             <analytic>
               <title/>
-              <idno type="doi">10.1038/s41598-018-36959-z</idno>
+              <idno type="DOI">10.1038/s41598-018-36959-z</idno>
             </analytic>
             <monogr>
               <title level="j">Scientific RepoRts |</title>
@@ -971,7 +940,7 @@
                   <surname>Richardson</surname>
                 </persName>
               </author>
-              <title level="m">Ecology of articulated brachiopods in Treatise on Invertebrate Paleontology. Part H, Revised, Brachiopoda</title>
+              <title level="m">Treatise on Invertebrate Paleontology. Part H, Revised, Brachiopoda</title>
               <editor>1. (ed. Kaesler, R. L.</editor>
               <imprint>
                 <publisher>Geological Society of America and University of Kansas</publisher>
@@ -1111,7 +1080,7 @@
                   <surname>Lebold</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1130/B31330.1</idno>
+              <idno type="DOI">10.1130/B31330.1</idno>
               <ptr target="https://doi.org/10.1130/B31330.1"/>
             </analytic>
             <monogr>
@@ -1496,7 +1465,7 @@
                   <surname>Studart</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1002/adma.201201471</idno>
+              <idno type="DOI">10.1002/adma.201201471</idno>
               <ptr target="https://doi.org/10.1002/adma.201201471"/>
             </analytic>
             <monogr>
@@ -2025,7 +1994,7 @@
                   <surname>Studart</surname>
                 </persName>
               </author>
-              <idno type="doi">10.1002/adfm.201300340</idno>
+              <idno type="DOI">10.1002/adfm.201300340</idno>
               <ptr target="https://doi.org/10.1002/adfm.201300340"/>
             </analytic>
             <monogr>
@@ -2130,13 +2099,15 @@
           <biblStruct xml:id="b52">
             <analytic>
               <title level="a" type="main">The growth and form of brachiopod shells</title>
-              <idno type="doi">10.1038/s41598-018-36959-z52</idno>
+              <idno type="DOI">10.1038/s41598-018-36959-z52</idno>
+              <ptr target="DOI:10.1038/s41598-018-36959-z52"/>
             </analytic>
             <monogr>
               <title level="j">Scientific RepoRts |</title>
               <editor>Rudwick, M. J. S</editor>
               <imprint>
                 <biblScope unit="volume">9</biblScope>
+                <biblScope unit="page">598</biblScope>
                 <date type="published" when="1959"/>
               </imprint>
             </monogr>
@@ -2154,7 +2125,7 @@
               </author>
               <imprint>
                 <date type="published" when="1970"/>
-                <pubPlace>Hutchinson</pubPlace>
+                <publisher>Hutchinson</publisher>
               </imprint>
             </monogr>
           </biblStruct>
@@ -2588,7 +2559,7 @@
                   <surname>Checa</surname>
                 </persName>
               </author>
-              <idno type="doi">10.3389/fmars.2018.00353</idno>
+              <idno type="DOI">10.3389/fmars.2018.00353</idno>
               <ptr target="https://doi.org/10.3389/fmars.2018.00353"/>
             </analytic>
             <monogr>

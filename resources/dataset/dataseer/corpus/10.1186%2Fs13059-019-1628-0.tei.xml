@@ -2,7 +2,7 @@
   <teiHeader xml:lang="en">
     <encodingDesc>
       <appInfo>
-        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-07-08T06:19+0000">
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-08-23T21:12+0000">
           <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
         </application>
       </appInfo>
@@ -158,19 +158,19 @@
           <s>Ideally, the embedded iBAR should not affect the efficiency of the gRNA in guiding the Cas9 or dCas9 nuclease to the target site.</s>
           <s>We decided to place the barcode sequence in the tetra loop of the gRNA scaffold outside of the Cas9-sgRNA ribonucleoprotein complex, which has been subjected to frequent alterations for various purposes maintaining enough activity of its upstream guide sequence <ref target="#b11" type="bibr">[11,</ref>
             <ref target="#b16" type="bibr">16]</ref> .</s>
-          <s>We arbitrarily designed a 6-nt-long iBAR (iBAR 6 ) that gave rise to 4096 barcode combinations, providing sufficient variation for our purposes <ref target="#fig_0" type="figure">(Fig. 1a)</ref> .</s>
+          <s>We arbitrarily designed a 6-nt-long iBAR (iBAR 6 ) that gave rise to 4096 barcode combinations, providing sufficient variation for our purposes <ref type="figure">(Fig. 1a)</ref> .</s>
           <s>To determine whether the insertions of these extra iBAR sequences affected the gRNA activities, we constructed a library of a pre-determined sgRNA targeting the anthrax toxin receptor gene ANTXR1 <ref target="#b17" type="bibr">[17]</ref> in combination with all 4096 types of iBAR <ref target="#b5" type="bibr">6</ref> .</s>
           <s>This special sgRNA iBAR-ANTXR1 library was constructed in HeLa cells that constantly express Cas9 <ref target="#b6" type="bibr">[7,</ref>
             <ref target="#b7" type="bibr">8]</ref> through lentiviral transduction at a low MOI of 0.3.</s>
-          <s>After three rounds of PA/LFnDTA toxin treatment and enrichment, the sgRNA along with its iBAR <ref target="#b5" type="bibr">6</ref> sequences from toxin-resistant cells were examined through NGS analysis as previously reported <ref target="#b6" type="bibr">[7]</ref> .</s>
+          <s>After three rounds of PA/LFnDTA toxin treatment and enrichment, the sgRNA along with its iBAR 6 sequences from toxin-resistant cells were examined through NGS analysis as previously reported <ref target="#b6" type="bibr">[7]</ref> .</s>
           <s>The majority of sgRNAs i-BAR-ANTXR1 and the sgRNAs ANTXR1 without barcodes were significantly enriched, whereas almost all the non-targeting control sgRNAs were absent in the resistant cell populations.</s>
-          <s>Importantly, the enrichment levels of sgRNAs iBAR-ANTXR1 with different iBAR 6 s appeared to be random between two biological replicates <ref target="#fig_0" type="figure">(Fig. 1b)</ref> .</s>
-          <s>After calculating the nucleotide frequency at each position of iBAR <ref target="#b5" type="bibr">6</ref> , we failed to observe any bias of nucleotides from either of the replicates <ref target="#fig_0" type="figure">(Fig. 1c)</ref> .</s>
-          <s>Additionally, the GC contents in iBAR <ref target="#b5" type="bibr">6</ref> did not seem to affect the sgRNA cutting efficiency (Additional file 1: <ref target="#fig_0" type="figure">Figure S1</ref> ).</s>
+          <s>Importantly, the enrichment levels of sgRNAs iBAR-ANTXR1 with different iBAR 6 s appeared to be random between two biological replicates <ref type="figure">(Fig. 1b)</ref> .</s>
+          <s>After calculating the nucleotide frequency at each position of iBAR 6 , we failed to observe any bias of nucleotides from either of the replicates <ref type="figure">(Fig. 1c)</ref> .</s>
+          <s>Additionally, the GC contents in iBAR 6 did not seem to affect the sgRNA cutting efficiency (Additional file 1: <ref type="figure">Figure S1</ref> ).</s>
           <s>However, there was a small number of iBAR 6 s whose affiliated sgRNA ANTXR1 did not perform well in either screening replicate (Additional file 2: <ref type="table">Table S1</ref> ).</s>
           <s>To rule out the possibility that these iBAR 6 s had negative effects on sgRNA activity, we selected six different iBARs from the bottom of the sgRNA iBAR-ANTXR1 ranking for further investigation.</s>
-          <s>Compared to the control sgRNA ANTXR1 without a barcode, all six of these sgRNAs showed comparable efficiency in generating both DNA double-stranded breaks (DSBs) at target sites ( <ref target="#fig_0" type="figure">Fig. 1d)</ref> and ANTXR1 gene disruption leading to the toxin resistance phenotype <ref target="#fig_0" type="figure">(Fig. 1e)</ref> .</s>
-          <s>We further confirmed the negligible effects of iBARs on sgRNA efficiency by four different sgRNAs targeting CSPG4, MLH1, and MSH2, respectively (Additional file 1: <ref target="#fig_1" type="figure">Figure S2</ref> ).</s>
+          <s>Compared to the control sgRNA ANTXR1 without a barcode, all six of these sgRNAs iBAR-ANTXR1 showed comparable efficiency in generating both DNA double-stranded breaks (DSBs) at target sites <ref type="figure">(Fig. 1d)</ref> and ANTXR1 gene disruption leading to the toxin resistance phenotype <ref type="figure">(Fig. 1e)</ref> .</s>
+          <s>We further confirmed the negligible effects of iBARs on sgRNA efficiency by four different sgRNAs targeting CSPG4, MLH1, and MSH2, respectively (Additional file 1: <ref type="figure">Figure S2</ref> ).</s>
           <s>Taken together, these results indicate that this re-designed sgRNA iBAR retains sufficient activity of sgRNA, making it possible to generally apply this strategy in CRISPR-pooled screens.</s>
         </p>
         <p>
@@ -182,7 +182,7 @@
           <s>Taking the iBAR into consideration, we assessed the consistency of any sgRNA count change among all the associated iBARs within the same experimental replicate.</s>
           <s>This process effectively eliminates free riders that were associated with functional sgRNAs due to lentiviral infection at a high MOI in cell library construction.</s>
           <s>Specifically, for the iBAR system, we purposely adjusted the model-estimated variance for only those sgRNAs whose fold changes with multiple iBARs were in opposite directions, resulting in increased P values for these outliers.</s>
-          <s>Finally, we identified hit genes based on sgRNA scores and technical variance between biological replicates ( <ref target="#fig_1" type="figure">Fig. 2</ref> and "Methods" section).</s>
+          <s>Finally, we identified hit genes based on sgRNA scores and technical variance between biological replicates ( <ref type="figure">Fig. 2</ref> and "Methods" section).</s>
           <s>We developed this specific MAGeCK-based algorithm named MAGeCK iBAR for the analysis of gRNA i-BAR library screening that is open source and freely available for download ("Methods" section).</s>
         </p>
         <p>
@@ -191,33 +191,33 @@
         <p>
           <s>We then constructed an sgRNA iBAR library covering every annotated human gene.</s>
           <s>For each of the 19,210 human genes, three unique sgRNAs were designed using our newly developed DeepRank method ("Methods" section), each of which was randomly assigned four iBAR 6 s.</s>
-          <s>In addition, 1000 non-targeting sgRNAs, each with four iBAR 6 s, were included as negative controls (Additional file 2: <ref target="#tab_1" type="table">Table S2</ref> ).</s>
+          <s>In addition, 1000 non-targeting sgRNAs, each with four iBAR 6 s, were included as negative controls (Additional file 2: <ref type="table">Table S2</ref> ).</s>
           <s>For the ease of statistical comparison, every set of three unique non-targeting sgRNAs was artificially named a negative control gene.</s>
-          <s>The 85-nt sgRNA iBAR oligos were designed in silico (Additional file 1: <ref target="#fig_2" type="figure">Figure S3</ref> ), synthesized using array synthesis, and cloned as a pooled library into a lentiviral backbone.</s>
-          <s>Cas9-expressing HeLa cells were containing all 4096 types of iBAR <ref target="#b5" type="bibr">6</ref> .</s>
-          <s>Fold changes between the reference and toxin treatment groups were calculated using the normalized abundances of sgRNAs <ref type="bibr">ANTXR1</ref> .</s>
+          <s>The 85-nt sgRNA iBAR oligos were designed in silico (Additional file 1: <ref target="#fig_0" type="figure">Figure S3</ref> ), synthesized using array synthesis, and cloned as a pooled library into a lentiviral backbone.</s>
+          <s>Cas9-expressing HeLa cells were a c b e d <ref type="figure">Fig. 1</ref> A design-based CRISPR screening via the gRNA iBAR method.</s>
+          <s>a Schematic diagram of an sgRNA with an internal barcode (iBAR).</s>
+          <s>A 6-nt barcode (iBAR 6 ) was embedded in the tetra loop of the sgRNA scaffold.</s>
+          <s>b CRISPR screening of a collection of one particular sgRNA ANTXR1 containing all 4096 types of iBAR <ref target="#b5" type="bibr">6</ref> .</s>
+          <s>Fold changes between the reference and toxin treatment groups were calculated using the normalized abundances of sgRNAs ANTXR1 .</s>
           <s>A density plot of barcodes and non-targeting sgRNAs is presented.</s>
           <s>Corr: Pearson correlation.</s>
           <s>c Effects of nucleotides at each position of the iBAR on fold changes of guide RNAs.</s>
           <s>d Indels generated by sgRNA iBAR-ANTXR1 associated with six barcodes that appeared to be the worst in conferring cell resistance to PA/LFnDTA from the above screening.</s>
           <s>Percentages of cleavage efficiency in the T7E1 assay were measured using Image Lab software, and data are presented as the mean ± s.d.</s>
           <s>(n = 3).</s>
-          <s>All primers used are listed in Additional file 3: <ref type="table">Table S9</ref> .</s>
-          <s>e MTT viability assay for the effects of the indicated sgRNA iBAR-ANTXR1 on the susceptibility of cells to PA/LFnDTA transduced with the sgRNA iBAR library lentivirus at three different MOIs (0.3, 3, and 10) with 400-fold coverage for sgRNAs to generate cell libraries, in which each sgRNA iBAR was covered 100-fold.</s>
-          <s>To evaluate the effect of iBAR design for CRISPR screening at different MOIs, we performed a positive screening to identify genes that mediate the cytotoxicity of Clostridium difficile toxin B (TcdB), one of the key virulence factors of this anaerobic bacillus <ref target="#b19" type="bibr">[19]</ref> .</s>
+          <s>All primers used are listed in Additional file 3: <ref target="#tab_1" type="table">Table S9</ref> .</s>
+          <s>e MTT viability assay for the effects of the indicated sgRNA iBAR-ANTXR1 on the susceptibility of cells to PA/LFnDTA <ref target="#b19" type="bibr">[19]</ref> .</s>
           <s>We have previously reported the first identification of the functional receptor of TcdB, CSPG4 <ref target="#b20" type="bibr">[20]</ref> , whose coding gene was also identified and ranked at the very top from a genome-scale CRISPR library screening <ref target="#b21" type="bibr">[21]</ref> .</s>
           <s>In this reported CRISPR screening, UGP2 gene was also top-ranked hit, and FZD2 was identified and confirmed to encode the secondary receptor that mediates the TcdB's killing effect on host cells.</s>
           <s>Of note, the role of FZD2 was significantly dwarfed by CSPG4 so that the FZD2 gene could only be identified using the truncated TcdB that had CSPG4-interacting region deleted <ref target="#b21" type="bibr">[21]</ref> .</s>
-          <s>In our screens on TcdB, we used MAGeCK iBAR (Additional file 2: <ref type="table">Table S3</ref> ) and MAGeCK (Additional file 3 <ref type="table">: Table S4</ref> ) to analyze data from iBAR and the conventional CRISPR screens, respectively.</s>
+          <s>In our screens on TcdB, we used MAGeCK iBAR (Additional file 2: <ref type="table">Table S3</ref> ) and MAGeCK (Additional file 3: <ref type="table">Table S4</ref> ) to analyze data from iBAR and the conventional CRISPR screens, respectively.</s>
           <s>We consequently obtained top-ranked genes (FDR &lt; 0.15) from both.</s>
-        </p>
-        <p>
-          <s>For screening at a low MOI of 0.3, CSPG4 and UGP2 were identified and ranked at the top <ref target="#fig_2" type="figure">(Fig. 3a)</ref> , consistent with the previous report <ref target="#b21" type="bibr">[21]</ref> .</s>
-          <s>When taking iBARs into account, we identified FZD2 in addition to CSPG4 and UGP2 <ref target="#fig_2" type="figure">(Fig. 3b)</ref> .</s>
+          <s>For screening at a low MOI of 0.3, CSPG4 and UGP2 were identified and ranked at the top <ref target="#fig_0" type="figure">(Fig. 3a)</ref> , consistent with the previous report <ref target="#b21" type="bibr">[21]</ref> .</s>
+          <s>When taking iBARs into account, we identified FZD2 in addition to CSPG4 and UGP2 <ref target="#fig_0" type="figure">(Fig. 3b)</ref> .</s>
           <s>Because FZD2 is a proven receptor of TcdB which plays much weaker role than CSPG4 in HeLa cells <ref target="#b21" type="bibr">[21]</ref> , these results demonstrated that iBAR method offered superior quality and sensitivity to conventional CRISPR screening when constructing cell library at a low MOI.</s>
-          <s>In addition, rankings of CSPG4 and UGP2 were far more consistent in CRISPR iBAR screening between two experimental replicates, again indicating the much higher quality for the new method <ref target="#fig_2" type="figure">(Fig. 3a, b)</ref> .</s>
-          <s>At high MOIs (3 and 10), CSPG4 and UGP2 could be isolated from both CRISPR and CRISPR iBAR screens, but the data quality was significantly higher with the latter <ref target="#fig_2" type="figure">(Fig. 3c-f</ref> ).</s>
-          <s>In general, the higher the MOI, the worse the signal-to-noise rate for the .</s>
+          <s>In addition, rankings of CSPG4 and UGP2 were far more consistent in CRISPR iBAR screening between two experimental replicates, again indicating the much higher quality for the new method ( <ref target="#fig_0" type="figure">Fig. 3a, b)</ref> .</s>
+          <s>At high MOIs (3 and 10), CSPG4 and UGP2 could be isolated from both CRISPR and CRISPR iBAR screens, but the data quality was significantly higher with the latter <ref target="#fig_0" type="figure">(Fig. 3c-f</ref> ).</s>
+          <s>In general, the higher the MOI, the worse the signal-to-noise rate for the <ref type="figure">Fig. 2</ref> Schematic of CRISPR-pooled screening using sgRNA iBAR .</s>
           <s>For a given sgRNA iBAR library, four different iBAR 6 s were randomly assigned to each sgRNA.</s>
           <s>The sgRNA iBAR library was introduced into target cells through lentiviral infection with a high MOI (i.e.,~3).</s>
           <s>After library screening, sgRNAs with their associated iBARs from enriched cells were determined through NGS.</s>
@@ -226,33 +226,31 @@
           <s>The P value of each sgRNA iBAR was calculated using the mean and modified variance.</s>
           <s>Robust rank aggregation (RRA) scores of all genes were considered to identify hit genes.</s>
           <s>A lower RRA score corresponded to a stronger enrichment of the hit genes traditional method.</s>
-          <s>At a MOI of 10, the number of false-positive hits was drastically increased in the conventional method, but not in CRISPR iBAR screening <ref target="#fig_2" type="figure">(Fig. 3e, f )</ref> .</s>
-          <s>Impressively, CSPG4 and UGP2 remained top ranked from CRISPR iBAR screening even at an MOI of 10, although the data quality slightly declined <ref target="#fig_2" type="figure">(Fig. 3f)</ref> .</s>
-          <s>Noticeably, nearly all CSPG4-and UGP2-targeting sgRNAs iBAR were significantly enriched after TcdB treatment (Additional file 1: <ref target="#fig_3" type="figure">Figure S4</ref> ), strikingly different from other genes identified at an MOI of 10 using conventional method, such as SPPL3, a likely false-positive result (Additional file 1: <ref target="#fig_3" type="figure">Figure S4</ref> ).</s>
-          <s>In comparison of the two biological replicates, CSPG4 and UGP2 were all ranked at the top in both biological replicates from CRISPR iBAR screens with all MOI conditions ( <ref target="#fig_2" type="figure">Fig. 3b, d</ref> , f ), but not from the conventional CRISPR screens where UGP2 was ranked lower than 60th in both replicates at an MOI of 3 ( <ref target="#fig_2" type="figure">Fig. 3c</ref> ) and many false-positive hits appeared in both replicates at an MOI of 10 ( <ref target="#fig_2" type="figure">Fig. 3e)</ref> .</s>
+          <s>At a MOI of 10, the number of false-positive hits was drastically increased in the conventional method, but not in CRISPR iBAR screening <ref target="#fig_0" type="figure">(Fig. 3e, f )</ref> .</s>
+          <s>Impressively, CSPG4 and UGP2 remained top ranked from CRISPR iBAR screening even at an MOI of 10, although the data quality slightly declined <ref target="#fig_0" type="figure">(Fig. 3f)</ref> .</s>
+          <s>Noticeably, nearly all CSPG4-and UGP2-targeting sgRNAs iBAR were significantly enriched after TcdB treatment (Additional file 1: <ref target="#fig_1" type="figure">Figure S4</ref> ), strikingly different from other genes identified at an MOI of 10 using conventional method, such as SPPL3, a likely false-positive result (Additional file 1: <ref target="#fig_1" type="figure">Figure S4</ref> ).</s>
+          <s>In comparison of the two biological replicates, CSPG4 and UGP2 were all ranked at the top in both biological replicates from CRISPR iBAR screens with all MOI conditions <ref target="#fig_0" type="figure">(Fig. 3b</ref> , d, f ), but not from the conventional CRISPR screens where UGP2 was ranked lower than 60th in both replicates at an MOI of 3 ( <ref target="#fig_0" type="figure">Fig. 3c</ref> ) and many false-positive hits appeared in both replicates at an MOI of 10 <ref target="#fig_0" type="figure">(Fig. 3e)</ref> .</s>
           <s>These results showed that iBAR method maintained the quality of data even at a high MOI as that at a low MOI for conventional CRISPR screening.</s>
-          <s>Additionally, iBAR approach enables highly repeatable results between biological replicates as multiple replications could be conducted within one experiment <ref target="#fig_2" type="figure">(Fig. 3)</ref> .</s>
+          <s>Additionally, iBAR approach enables highly repeatable results between biological replicates as multiple replications could be conducted within one experiment <ref target="#fig_0" type="figure">(Fig. 3)</ref> .</s>
         </p>
         <p>
-          <s>Identification of genes important for 6-TG-mediated cytotoxicity using the CRISPR iBAR and conventional</s>
+          <s>Identification of genes important for 6-TG-mediated cytotoxicity using the CRISPR iBAR and conventional CRISPR-pooled screens</s>
         </p>
-      </div>
-      <div>
-        <head>CRISPR-pooled screens</head>
         <p>
           <s>To further evaluate the power of iBAR method, we went on conducting a screening to identify genes that modulate cellular susceptibility to 6-TG <ref target="#b22" type="bibr">[22]</ref> , a cancer drug that could be processed to inhibit DNA synthesis.</s>
-          <s>We decided to construct the genome-scale sgRNA iBAR library <ref type="figure">Figure S5a</ref> ), and the reference cell libraries of both replicates reached 97% coverage of all originally designed sgRNAs (Additional file 1: <ref type="figure">Figure S5b</ref> ).</s>
+          <s>We at a MOI of 3 to generate a cell library with high coverage (2000-fold) for each sgRNA, in which each sgRNA iBAR was covered 500-fold.</s>
+          <s>The overall read distribution of both experimental replicates was shown (Additional file 1: <ref type="figure">Figure S5a</ref> ), and the reference cell libraries of both replicates reached 97% coverage of all originally designed sgRNAs (Additional file 1: <ref type="figure">Figure S5b</ref> ).</s>
           <s>Over 95% of the sgRNAs in the original libraries retained three to four iBARs, indicating the good quality of libraries in which most sgRNAs had sufficient barcode variants for screening and data analysis (Additional file 1: <ref type="figure">Figure S5c</ref> ).</s>
           <s>The fold change of all genes correlated well between the two biological replicates (Additional file 1: <ref type="figure">Figure S6</ref> ).</s>
           <s>For the same 6-TG screening of two sgRNA library replicates, we also employed MAGeCK and MAGeCK iBAR analyses.</s>
           <s>For MAGeCK iBAR , we consequently obtained adjusted variance and mean distributions for all the sgRNAs iBAR that heightened the variance of sgRNAs with enrichment inconsistent among different iBAR repeats (Additional file 1: <ref type="figure">Figure S7</ref> ).</s>
         </p>
         <p>
-          <s>From the positively selected sgRNAs with statistical significance, we identified the top-ranked genes (FDR &lt; 0.15) whose corresponding sgRNAs were consistently enriched among different iBARs <ref target="#fig_3" type="figure">(Fig. 4a</ref> , Additional file 3: <ref type="table">Table S5</ref> ), and we also found these top genes using the MAGeCK algorithm without taking barcodes into account <ref target="#fig_3" type="figure">(Fig. 4b</ref> , Additional file 3: <ref type="table">Table S6</ref> ).</s>
+          <s>From the positively selected sgRNAs with statistical significance, we identified the top-ranked genes (FDR &lt; 0.15) whose corresponding sgRNAs were consistently enriched among different iBARs <ref target="#fig_1" type="figure">(Fig. 4a</ref> , Additional file 3: <ref type="table">Table S5</ref> ), and we also found these top genes using the MAGeCK algorithm without taking barcodes into account <ref target="#fig_1" type="figure">(Fig. 4b</ref> , Additional file 3: <ref type="table">Table S6</ref> ).</s>
           <s>Consistent with a previous report <ref target="#b23" type="bibr">[23]</ref> , the sgRNAs targeting HPRT1 gene were top ranked by both methods.</s>
           <s>Four genes (MLH1, MSH2, MSH6, and PMS2) were previously reported to be involved in 6-TG-mediated cell death <ref target="#b5" type="bibr">[6]</ref> .</s>
-          <s>We examined and confirmed the cutting activities of all except one of the primary designed sgRNAs targeting these four genes (Additional file 1: <ref type="figure">Figure S8</ref> ), indicating that these genes were indeed irrelevant to 6-TG-mediated cell death in HeLa cells we used <ref target="#fig_3" type="figure">(Fig. 4c)</ref> .</s>
-          <s>When analyzing the two biological replicates separately, the top 20 genes of each replicate showed a high level of consistency with CRISPR iBAR screening (Spearman correlation coefficient for rankings = 0.74), whereas the two replicates shared much less commonality when using the conventional method (Spearman correlation coefficient for rankings = − 0.09) <ref target="#fig_3" type="figure">(Fig. 4d</ref> , Additional file 3: <ref type="table">Table S7</ref> ).</s>
+          <s>We examined and confirmed the cutting activities of all except one of the primary designed sgRNAs targeting these four genes (Additional file 1: <ref type="figure">Figure S8</ref> ), indicating that these genes were indeed irrelevant to 6-TG-mediated cell death in HeLa cells we used <ref target="#fig_1" type="figure">(Fig. 4c)</ref> .</s>
+          <s>When analyzing the two biological replicates separately, the top 20 genes of each replicate showed a high level of consistency with CRISPR iBAR screening (Spearman correlation coefficient for rankings = 0.74), whereas the two replicates shared much less commonality when using the conventional method (Spearman correlation coefficient for rankings = − 0.09) <ref target="#fig_1" type="figure">(Fig. 4d</ref> , Additional file 3: <ref type="table">Table S7</ref> ).</s>
         </p>
         <p>
           <s>To validate the screening results, we de novo designed and combined two sgRNAs to make a mini-pool to target each candidate gene, and each pool was introduced into HeLa cells through lentiviral infection (Additional file 3: <ref type="table">Table S8</ref> ).</s>
@@ -260,25 +258,25 @@
           <s>Top 10 genes from CRISPR iBAR as well as CRISPR screens were chosen for validation.</s>
           <s>Noticeably, two non-targeting control genes were identified and ranked in the top 10 candidate list from the conventional CRISPR screen (Additional file 3: <ref type="table">Table S6</ref> ).</s>
           <s>These evident false-positive results are predictable because of the high MOI we used to generate the cell library.</s>
-          <s>We successfully confirmed that the top 10 candidate genes from CRISPR i-BAR of both replicates were all true-positive results; in contrast, only five genes from the top 10 candidate list from the conventional method turned out to be true positives <ref target="#fig_3" type="figure">(Fig. 4e)</ref> .</s>
+          <s>We successfully confirmed that the top 10 candidate genes from CRISPR i-BAR of both replicates were all true-positive results; in contrast, only five genes from the top 10 candidate list from the conventional method turned out to be true positives <ref target="#fig_1" type="figure">(Fig. 4e</ref> ).</s>
           <s>Among them, four genes (HPRT1, ITGB1, SRGAP2, and AKTIP) were obtained using both methods, whereas six genes (ACTR3C, PPP1R17, ACSBG1, CALM2, TCF21, and KIFAP3) were only identified and ranked at the top from CRISPR iBAR .</s>
           <s>In summary, iBAR improved accuracy with lower false-positive and false-negative rates for high MOI screens compared with conventional method.</s>
         </p>
         <p>
           <s>We further assessed the performance of each sgRNA i-BAR targeting the top four candidate genes (HPRT1, ITGB1, SRGAP2, and AKTIP).</s>
           <s>All the different iBARs of the enriched sgRNAs appeared to have little effect on the enrichment levels of their affiliated sgRNAs, and the order of iBARs associated with any particular sgRNA appeared to be random (Additional file 1: <ref type="figure">Figure S9</ref> ), further supporting our prior notion that the iBARs did not affect the efficiency of their affiliated sgRNAs.</s>
-          <s>All four HPRT1-targeting sgRNAs iBAR were significantly enriched after 6-TG treatment in both replicates <ref target="#fig_3" type="figure">(Fig. 4f)</ref> .</s>
-          <s>Most sgRNAs iBAR of other CRISPR iBAR identified genes were enriched after 6-TG selection (Additional file 1: <ref target="#fig_0" type="figure">Figure S10</ref> ).</s>
-          <s>In contrast, only a very few of sgRNAs iBAR of some top-ranked genes from conventional CRISPR screening were enriched, including FGF13 <ref target="#fig_3" type="figure">(Fig. 4g)</ref> , GALR1, and two negative control genes (Additional file 1: <ref target="#fig_0" type="figure">Figure S11</ref> ), leading to false-positive hits in the MAGeCK but not MAGeCK iBAR analysis (Additional file 1: <ref target="#fig_0" type="figure">Figure S12</ref> ).</s>
+          <s>All four HPRT1-targeting sgRNAs iBAR were significantly enriched after 6-TG treatment in both replicates <ref target="#fig_1" type="figure">(Fig. 4f)</ref> .</s>
+          <s>Most sgRNAs iBAR of other CRISPR iBAR identified genes were enriched after 6-TG selection (Additional file 1: <ref type="figure">Figure S10</ref> ).</s>
+          <s>In contrast, only a very few of sgRNAs iBAR of some top-ranked genes from conventional CRISPR screening were enriched, including FGF13 <ref target="#fig_1" type="figure">(Fig. 4g)</ref> , GALR1, and two negative control genes (Additional file 1: <ref type="figure">Figure S11</ref> ), leading to false-positive hits in the MAGeCK but not MAGeCK iBAR analysis (Additional file 1: <ref type="figure">Figure S12</ref> ).</s>
         </p>
       </div>
       <div>
         <head>Discussion</head>
         <p>
           <s>The library coverage was significantly increased with a high MOI in the transduction with a fixed number of cells for library construction, so the starting cells for library construction could be decreased more than 10-fold (MOI = 3) and 35-fold (MOI = 10) to match and even top the results from conventional screening at an MOI of 0.3 (Additional file 3: <ref type="table">Table S10</ref> ).</s>
-          <s>Four barcodes for each sgRNA, as we designed, appeared to provide sufficient internal repeats to enable the high level of consistency between the two biological replicates using the iBAR method <ref target="#fig_2" type="figure">(Fig. 3, Fig. 4d</ref> , Additional file 3: <ref type="table">Table S7</ref> ).</s>
+          <s>Four barcodes for each sgRNA, as we designed, appeared to provide sufficient internal repeats to enable the high level of consistency between the two biological replicates using the iBAR method <ref target="#fig_0" type="figure">(Fig. 3, Fig. 4d</ref> , Additional file 3: <ref type="table">Table S7</ref> ).</s>
           <s>Therefore, in addition to the significant reduction in cells for library construction, the internal replicates offered by iBARs within the same experiment would lead to more uniform conditions and fairer comparisons versus separate biological replicates, consequently improving statistical scores.</s>
-          <s>The advantage of the iBAR method would become greater when large-scale CRISPR screens (n = 5).</s>
+          <s>The advantage of the iBAR method would become greater when large-scale CRISPR screens .</s>
           <s>P values were calculated using Student's t test.</s>
           <s>*P &lt; 0.05; **P &lt; 0.01; ***P &lt; 0.001; NS, not significant.</s>
           <s>The sgRNA sequences for validation are listed in Additional file 3: <ref type="table">Table.</ref>
@@ -302,13 +300,13 @@
           <s>Strategies without cuttings, such as CRISPRi/a <ref target="#b10" type="bibr">[10]</ref> or iSTOP systems <ref target="#b28" type="bibr">[28]</ref> , could be better choices to combine with the iBAR system for negative screening at a high MOI.</s>
         </p>
         <p>
-          <s>Although we had data to support that iBAR <ref target="#b5" type="bibr">6</ref> had little effect on the activities of sgRNAs, we would not recommend to use barcodes with consecutive T (&gt; 4) so as to avoid any minor effects.</s>
+          <s>Although we had data to support that iBAR 6 had little effect on the activities of sgRNAs, we would not recommend to use barcodes with consecutive T (&gt; 4) so as to avoid any minor effects.</s>
           <s>Ultimately, 4096 types of iBAR <ref target="#b5" type="bibr">6</ref> provided sufficient varieties to make CRISPR libraries.</s>
           <s>In addition, the length of the iBAR is not limited to 6 nt.</s>
           <s>We have tested different lengths of iBARs and found that their lengths could be up to 50 nt without affecting functions of their affiliated sgRNAs.</s>
         </p>
         <p>
-          <s>(Additional file 1: <ref target="#fig_0" type="figure">Figure S14</ref> ).</s>
+          <s>(Additional file 1: <ref target="#fig_1" type="figure">Figure S14</ref> ).</s>
           <s>In addition, it is not necessary to design different barcode sets for different sgRNAs.</s>
           <s>A fixed set of iBARs assigned to all sgRNAs should work as well as random assignment in library screening.</s>
           <s>Our iBAR strategy with a streamlined analytic tool MAGeCK iBAR would facilitate large-scale CRISPR screens for broad biomedical discoveries in various settings.</s>
@@ -359,17 +357,16 @@
             <ref target="#b31" type="bibr">31]</ref> after library-infected cells were cultured for 15 days <ref target="#b6" type="bibr">[7]</ref> .</s>
           <s id="dataset-2" type="Genetic Data:High-Throughput Nucleotide Sequencing:HiSeq">Then, sgRNA with the iBAR coding region in genomic DNA was amplified (TransGen, AP131-13) using Primer-F and Primer-R and then subjected to high-throughput sequencing analysis (Illumina HiSeq2500) using an NEBNext Ultra DNA Library Prep Kit for Illumina (NEB E7370L).</s>
         </p>
-      </div>
-      <div>
-        <head>BAR</head>
         <p>
-          <s>-integrated cells were cultured for an additional 15 days to maximize gene knockout.</s>
+          <s>Screening of the genome-scale CRISPR/Cas9 sgRNA iBAR library for genes important for TcdB cytotoxicity and for genes essential for cell viability A total of 1.6 × 10 8 cells (MOI = 0.3), 1.53 × 10 7 cells (MOI = 3), and 4.6 × 10 6 cells (MOI = 10) were plated on 150-mm Petri dishes respectively for sgRNA library construction for two replicates.</s>
+          <s>Cells were infected with the library lentivirus of different MOIs and treated with 1 μg/ml of puromycin for 72 h post infection.</s>
+          <s>sgRNA i-BAR -integrated cells were cultured for an additional 15 days to maximize gene knockout.</s>
           <s>Cells were re-seeded onto 150-mm Petri dishes, treated by TcdB (100 pg/ml) for 10 h, and followed by the removal of the loosely attached round cells through repeated pipetting <ref target="#b20" type="bibr">[20]</ref> .</s>
           <s>For each round of screening, the cells were cultured in fresh medium without TcdB to reach~50-60% confluence.</s>
           <s>All resistant cells in one replicate were pooled and subjected to another round of TcdB screening.</s>
           <s>For the subsequent three rounds of screening, the TcdB concentration was 125 pg/ml, 150 pg/ml, and 175 pg/ml, respectively.</s>
           <s>After four rounds of treatment, the resistant cells and untreated cells were collected for genomic DNA extraction, amplification of sgRNA, and NGS analysis.</s>
-          <s>Seven pairs of primers were used for PCR amplification (Additional file 3: <ref type="table">Table S9</ref> ), and PCR products were mixed for NGS.</s>
+          <s>Seven pairs of primers were used for PCR amplification (Additional file 3: <ref target="#tab_1" type="table">Table S9</ref> ), and PCR products were mixed for NGS.</s>
           <s>For negative screening at an MOI of 0.3, a total of 4.6 × 10 7 (two replicates) sgRNA iBAR -integrated cells were cultured for 28 days before NGS decoding.</s>
         </p>
         <p>
@@ -484,16 +481,18 @@
       <div>
         <head>Additional files</head>
         <p>
-          <s>Additional file 1: <ref target="#fig_0" type="figure">Figure S1</ref> .</s>
-          <s>CRISPR screening of a collection of sgRNAs iBAR-ANTXR1 containing all 4096 types of iBAR <ref target="#b5" type="bibr">6</ref> divided by the GC contents of iBARs.</s>
+          <s>Additional file 1: <ref type="figure">Figure S1</ref> .</s>
+          <s>CRISPR screening of a collection of sgRNAs iBAR-ANTXR1 containing all 4096 types of iBAR 6 divided by the GC contents of iBARs.</s>
           <s>
-            <ref target="#fig_1" type="figure">Figure S2</ref> .</s>
+            <ref type="figure">Figure S2</ref> .</s>
           <s>Evaluation of the effects of iBARs on sgRNA activity.</s>
           <s>
-            <ref target="#fig_2" type="figure">Figure S3</ref> .</s>
+            <ref target="#fig_0" type="figure">Figure S3</ref> .</s>
           <s>DNA sequences of the designed oligos.</s>
           <s>
-            <ref target="#fig_3" type="figure">Figure S4</ref>
+            <ref target="#fig_1" type="figure">Figure S4</ref> .</s>
+          <s>The sgRNA iBAR read counts for CSPG4 targeting (a), SPPL3 targeting (b), UGP2 targeting (c), KATNAL2 targeting (d), HPRT1 targeting (e), RNF212B targeting (f), SBNO2 targeting (g) and ERAS targeting (h) before (Ctrl) and after (Exp) TcdB screening at MOI of 10 calculated by MAGeCK in two replicates.</s>
+          <s>
             <ref type="figure">Figure S5</ref> .</s>
           <s>sgRNA distribution and coverage in different samples.</s>
           <s>
@@ -507,64 +506,58 @@
             <ref type="figure">Figure S9</ref> .</s>
           <s>Fold changes of each sgRNA iBAR targeting the indicated top candidate genes (HPRT1, ITGB1, SRGAP2 and AKTIP) in two experimental replicates.</s>
           <s>
-            <ref target="#fig_0" type="figure">Figure S10</ref> .</s>
+            <ref type="figure">Figure S10</ref> .</s>
           <s>The sgRNA iBAR read counts for targeting ITGB1 (a), SRGAP2 (b), AKTIP (c), ACTR3C (d), PPP1R17 (e), ACSBG1 (f), CALM2 (g), TCF21 (h) and KIFAP3 (i) in two replicates.</s>
           <s>
-            <ref target="#fig_0" type="figure">Figure S11</ref> .</s>
+            <ref type="figure">Figure S11</ref> .</s>
           <s>The sgRNA iBAR read counts for targeting GALR1 (a), DUPD1 (b), TECTA (c), OR51D1 (d), Neg89 (e) and Neg67 (f) in two replicates.</s>
           <s>
-            <ref target="#fig_0" type="figure">Figure S12</ref> .</s>
+            <ref type="figure">Figure S12</ref> .</s>
           <s>Normalized sgRNA read counts of HPRT1, FGF13, GALR1 and Neg67 via conventional MAGeCK analysis in two experimental replicates.</s>
           <s>
             <ref target="#fig_0" type="figure">Figure S13</ref> .</s>
           <s>Assessment of screen performance through MAGeCK and MAGeCK iBAR analyses by using gold standard essential genes as determined by ROC curves.</s>
           <s>
-            <ref target="#fig_0" type="figure">Figure S14</ref> .</s>
+            <ref target="#fig_1" type="figure">Figure S14</ref> .</s>
           <s>The effects of different lengths of iBARs on sgRNA activity.</s>
           <s>(PDF 4136 kb) Additional file 2: <ref type="table">Table S1</ref> .</s>
           <s>Results of sgRNA iBAR-ANTXR1 library screening for the cytotoxicity of PA/LFnDTA.</s>
+          <s>
+            <ref type="table">Table S2</ref> .</s>
+          <s>Sequences of the human genome-scale sgRNA iBAR library.</s>
+          <s>
+            <ref type="table">Table S3</ref> .</s>
+          <s>Results of the human genomescale sgRNA iBAR library screening at different MOI for the cytotoxicity of TcdB using MAGeCK iBAR analysis.</s>
+          <s>(XLSX 15253 kb) Additional file 3: <ref type="table">Table S4</ref> .</s>
+          <s>Results of the human genome-scale sgRNA i-BAR library screening at different MOI for the cytotoxicity of TcdB using conventional MAGeCK analysis.</s>
+          <s>
+            <ref type="table">Table S5</ref> .</s>
+          <s>Results of the human genome-scale sgRNA iBAR library screening for the cytotoxicity of 6-TG using MAGeCK iBAR analysis.</s>
+          <s>
+            <ref type="table">Table S6</ref> .</s>
+          <s>Results of the human genome-scale sgRNA iBAR library screening for the cytotoxicity of 6-TG using conventional MAGeCK analysis.</s>
+          <s>
+            <ref type="table">Table S7</ref> .</s>
+          <s>Top 20 gene list of two biological replicates using MAGeCK iBAR and MAGeCK analysis.</s>
+          <s>
+            <ref type="table">Table S8</ref> .</s>
+          <s>sgRNA design for the functional validation of candidate genes from 6-TG screening and sgRNA design for the test of iBAR effects on activity.</s>
         </p>
       </div>
       <figure xml:id="fig_0">
-        <head>Fig. 1</head>
-        <label>1</label>
-        <figDesc>Fig. 1 A design-based CRISPR screening via the gRNA iBAR method. a Schematic diagram of an sgRNA with an internal barcode (iBAR). A 6-nt barcode (iBAR 6 ) was embedded in the tetra loop of the sgRNA scaffold. b CRISPR screening of a collection of one particular sgRNA ANTXR1</figDesc>
-      </figure>
-      <figure xml:id="fig_1">
-        <head>Fig. 2</head>
-        <label>2</label>
-        <figDesc>Fig. 2 Schematic of CRISPR-pooled screening using sgRNA iBAR</figDesc>
-      </figure>
-      <figure xml:id="fig_2">
         <head>Fig. 3</head>
         <label>3</label>
         <figDesc>Fig. 3 Screenings for essential genes involved in TcdB toxicity at MOI of 0.3, 3, and 10 in HeLa cells. a, b Screening scores of identified genes (FDR &lt; 0.15) calculated by MAGeCK (a) and by MAGeCK iBAR (b) at MOI of 0.3. c, d Screening scores of identified genes (FDR &lt; 0.15) calculated by MAGeCK (c) and by MAGeCK iBAR (d) at MOI of 3. e, f Screening scores of identified genes (FDR &lt; 0.15) calculated by MAGeCK (e) and by MAGeCK iBAR (f) at MOI of 10. Negative control genes are labeled with black dots. Rankings of identified candidates in each biological replicate through MAGeCK and MAGeCK iBAR were presented</figDesc>
       </figure>
-      <figure xml:id="fig_3">
+      <figure xml:id="fig_1">
         <head>Fig. 4</head>
         <label>4</label>
         <figDesc>Fig. 4 Comparison of the CRISPR iBAR and conventional CRISPR-pooled screens for the identification of human genes important for 6-TG-mediated cytotoxicity in HeLa cells. a, b Screening scores of the top-ranked genes calculated by MAGeCK iBAR (a) and by MAGeCK (b). Identified candidates (FDR &lt; 0.15) were labeled, and only top 10 hits were labeled for MAGeCK iBAR screens. Negative control genes were labeled with black dots. c Validation of reported genes (MLH1, MSH2, MSH6, and PMS2) involved in 6-TG cytotoxicity. d Spearman correlation coefficient of the top 20 positively selected genes between two biological replicates using MAGeCK iBAR (left) or conventional MAGeCK analysis (right). e Validation of top candidate genes isolated by either MAGeCK iBAR or MAGeCK analysis. Mini-pooled sgRNAs targeting each gene were delivered to cells through lentiviral infection. Transduced cells were cultured for an additional 10 days before 6-TG treatment. Data are presented as the mean ± S.E.M. (n = 5). P values were calculated using Student's t test. *P &lt; 0.05; **P &lt; 0.01; ***P &lt; 0.001; NS, not significant. The sgRNA sequences for validation are listed in Additional file 3: Table. S8. f, g The sgRNA iBAR read counts for HPRT1 targeting (f) and FGF13 targeting (g) before (Ctrl) and after (Exp) 6-TG screening in two replicates</figDesc>
       </figure>
-      <figure xml:id="fig_4">
-        <head/>
-        <label/>
-        <figDesc>(MOI = 10) were plated on 150-mm Petri dishes respectively for sgRNA library con- struction for two replicates. Cells were infected with the library lentivirus of different MOIs and treated with 1 μg/ml of puromycin for 72 h post infection. sgRNA i-</figDesc>
-      </figure>
-      <figure xml:id="fig_5">
-        <head/>
-        <label/>
-        <figDesc>. The sgRNA iBAR read counts for CSPG4 targeting (a), SPPL3 targeting (b), UGP2 targeting (c), KATNAL2 targeting (d), HPRT1 targeting (e), RNF212B targeting (f), SBNO2 targeting (g) and ERAS targeting (h) before (Ctrl) and after (Exp) TcdB screening at MOI of 10 calculated by MAGeCK in two replicates.</figDesc>
-      </figure>
-      <figure type="table" validated="false" xml:id="tab_0">
-        <head/>
-        <label/>
-        <figDesc>Screening scores of identified genes (FDR &lt; 0.15) calculated by MAGeCK (a) and by MAGeCK iBAR (b) at MOI of 0.3. c, d Screening scores of identified genes (FDR &lt; 0.15) calculated by MAGeCK (c) and by MAGeCK iBAR (d) at MOI of 3. e, f Screening scores of identified genes (FDR &lt; 0.15) calculated by MAGeCK (e) and by MAGeCK iBAR (f) at MOI of 10. Negative control genes are labeled with black dots. Rankings of identified candidates in each biological replicate through MAGeCK and MAGeCK iBAR were presented at a MOI of 3 to generate a cell library with high coverage (2000-fold) for each sgRNA, in which each sgRNA iBAR was covered 500-fold. The overall read distribution of both experimental replicates was shown (Additional file 1:</figDesc>
-        <table/>
-      </figure>
       <figure type="table" validated="false" xml:id="tab_1">
-        <head>Table S2 .</head>
-        <label>S2</label>
-        <figDesc>Sequences of the human genome-scale sgRNA iBAR library. Table S3. Results of the human genome- scale sgRNA iBAR library screening at different MOI for the cytotoxicity of TcdB using MAGeCK iBAR analysis. (XLSX 15253 kb) Additional file 3: Table S4. Results of the human genome-scale sgRNA i- BAR library screening at different MOI for the cytotoxicity of TcdB using con- ventional MAGeCK analysis. Table S5. Results of the human genome-scale sgRNA iBAR library screening for the cytotoxicity of 6-TG using MAGeCK iBAR analysis. Table S6. Results of the human genome-scale sgRNA iBAR library screening for the cytotoxicity of 6-TG using conventional MAGeCK analysis. Table S7. Top 20 gene list of two biological replicates using MAGeCK iBAR and MAGeCK analysis. Table S8. sgRNA design for the functional validation of candidate genes from 6-TG screening and sgRNA design for the test of iBAR effects on activity. Table S9. Primers used for PCR amplification of the genomic DNAs and for library construction. Table S10. Comparison of the numbers of cells required for CRISPR library construction for TcdB screenings at different MOIs. (XLSX 12014 kb)</figDesc>
+        <head>Table S9 .</head>
+        <label>S9</label>
+        <figDesc>Primers used for PCR amplification of the genomic DNAs and for library construction. Table S10. Comparison of the numbers of cells required for CRISPR library construction for TcdB screenings at different MOIs. (XLSX 12014 kb)</figDesc>
         <table/>
       </figure>
       <note place="foot">Zhu et al. Genome Biology (2019) 20:20</note>
@@ -579,15 +572,19 @@
             <s>We thank the support of National Post-doctoral Innovative Talent Supporting Program.</s>
           </p>
         </div>
-      </div>
-      <div type="annex">
         <div>
           <head>Availability of data and materials</head>
           <p>
             <s>The accession number for the raw sequencing data reported in this paper is NCBI Sequence Read Archive (SRA): SRP164294 (PRJNA494953) <ref target="#b35" type="bibr">[35]</ref> .</s>
             <s>The MAGeCK-based analysis program named as MAGeCK iBAR written by python3 for iBAR based CRISPR screening is available at https://bitbucket.org/WeiLab/ mageck-ibar/.</s>
-            <s>
-              <ref target="#b36" type="bibr">[36]</ref> Authors' contributions WW conceived and supervised the project.</s>
+            <s>[</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <p>
+            <s>Authors' contributions WW conceived and supervised the project.</s>
             <s>WW, SZ, ZC, and PY designed the experiments.</s>
             <s>SZ, ZC, and YH performed the experiments with the help from FT and YB.</s>
             <s>YW designed the oligos used to construct the iBAR library.</s>
@@ -612,6 +609,15 @@
             <s>W.W. is a founder and scientific advisor for EdiGene.</s>
             <s>All other authors declare that they have no competing interests.</s>
           </p>
+        </div>
+        <div>
+          <head>Publisher's Note</head>
+          <p>
+            <s>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+        </div>
+        <div>
+          <head>Author details</head>
         </div>
       </div>
       <div type="references">
@@ -2493,8 +2499,8 @@
             </monogr>
           </biblStruct>
           <biblStruct xml:id="b35">
-            <monogr>
-              <title level="m" type="main">Guide RNAs with embedded barcodes boost CRISPR-pooled screens. Sequence Read Archive (SRA) 2019</title>
+            <analytic>
+              <title level="a" type="main">Guide RNAs with embedded barcodes boost CRISPR-pooled screens</title>
               <author>
                 <persName>
                   <forename type="first">S</forename>
@@ -2556,6 +2562,9 @@
                 </persName>
               </author>
               <ptr target="https://www.ncbi.nlm.nih.gov/sra/SRP164294"/>
+            </analytic>
+            <monogr>
+              <title level="m">Sequence Read Archive (SRA) 2019. Dataset</title>
               <imprint/>
             </monogr>
           </biblStruct>
