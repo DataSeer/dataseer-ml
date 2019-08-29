@@ -82,8 +82,8 @@ import com.fasterxml.jackson.core.io.JsonStringEncoder;
  *   the right document content.
  *
  * Example command line:
- * ./gradlew annotated_corpus_generator_csv -Ppdf=-Ppdf=/mnt/data/resources/plos/0/tei/ 
- * -Pcsv=resources/dataset/dataseer/csv/ -Pxml=resources/dataset/dataseer/corpus/
+ * ./gradlew annotated_corpus_generator_csv -Pfull=/mnt/data/resources/plos/0/tei/ 
+ * -Ppdf=/mnt/data/resources/plos/pdf/ -Pcsv=resources/dataset/dataseer/csv/ -Pxml=resources/dataset/dataseer/corpus/
  *
  * @author Patrice
  */
@@ -255,7 +255,7 @@ public class AnnotatedCorpusGeneratorCSV {
         }
     }
 
-    public void processPDF(String documentPath, String csvPath, String xmlPath) throws IOException {
+    public void process(String documentPath, String pdfPath, String csvPath, String xmlPath) throws IOException {
 
         Map<String, AnnotatedDocument> documents = new HashMap<String, AnnotatedDocument>();
         Map<String, DataseerAnnotation> annotations = new HashMap<String, DataseerAnnotation>();
@@ -386,10 +386,10 @@ public class AnnotatedCorpusGeneratorCSV {
                 }
 
                 if (noXMLPlos) {
-                    String pdfPath = documentPath + "/" + URLEncoder.encode(doi, "UTF-8")+".pdf";
+                    String pdfFilePath = pdfPath + "/" + URLEncoder.encode(doi, "UTF-8")+".pdf";
 
                     // do we have the PDF file around?
-                    File pdfFile = new File(pdfPath);
+                    File pdfFile = new File(pdfFilePath);
                     if (!pdfFile.exists()) {
                         // get PDF file from DOI
                         File localPdfFile = articleUtilities.getPDFDoc(doi, Source.DOI);
@@ -750,29 +750,36 @@ public class AnnotatedCorpusGeneratorCSV {
     public static void main(String[] args) {
        
         // we are expecting three arguments, absolute path to the original fulltext
-        // documents, absolute path to the  csv files and path where to put the generated 
+        // documents, absolute path to the csv files and path where to put the generated 
         // XML files 
 
-        if (args.length != 3) {
-            System.err.println("Usage: command [absolute path to the original fulltexts] [absolute path to the dataseer root data in csv] [output for the generated XML files]");
+        if (args.length != 4) {
+            System.err.println("Usage: command [absolute path to the original NLM fulltexts] [absolute path to PDF fulltexts] [absolute path to the dataseer root data in csv] [output for the generated XML files]");
             System.exit(-1);
         }
 
-        String documentPath = args[0];
-        File f = new File(documentPath);
+        String documentNLMPath = args[0];
+        File f = new File(documentNLMPath);
         if (!f.exists() || !f.isDirectory()) {
-            System.err.println("path to full text directory does not exist or is invalid: " + documentPath);
+            System.err.println("path to the NLM full text directory does not exist or is invalid: " + documentNLMPath);
             System.exit(-1);
         }
 
-        String csvPath = args[1];
+        String pdfPath = args[1];
+        f = new File(pdfPath);
+        if (!f.exists() || !f.isDirectory()) {
+            System.out.println("PDF directory path does not exist, so it will be created (downloaded PDF will be stored and reused there).");
+            new File(pdfPath).mkdirs();
+        }     
+
+        String csvPath = args[2];
         f = new File(csvPath);
         if (!f.exists() || !f.isDirectory()) {
-            System.err.println("path to dataseer data csv directory does not exist or is invalid: " + csvPath);
+            System.err.println("path to dataseer annotated data csv directory does not exist or is invalid: " + csvPath);
             System.exit(-1);
-        }
+        }   
 
-        String xmlPath = args[2];
+        String xmlPath = args[3];
         f = new File(xmlPath);
         if (!f.exists() || !f.isDirectory()) {
             System.out.println("XML output directory path does not exist, so it will be created");
@@ -781,8 +788,7 @@ public class AnnotatedCorpusGeneratorCSV {
 
         AnnotatedCorpusGeneratorCSV converter = new AnnotatedCorpusGeneratorCSV();
         try {
-            //converter.processXML(documentPath, csvPath, xmlPath);
-            converter.processPDF(documentPath, csvPath, xmlPath);
+            converter.process(documentNLMPath, pdfPath, csvPath, xmlPath);
         } catch (Exception e) {
             e.printStackTrace();
         }
