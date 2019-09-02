@@ -18,6 +18,9 @@ import org.grobid.core.utilities.*;
 import org.grobid.core.lexicon.DataseerLexicon;
 import org.grobid.core.main.GrobidHomeFinder;
 import org.grobid.core.main.LibraryLoader;
+import org.grobid.core.engines.tagging.GrobidCRFEngine;
+import org.grobid.core.engines.tagging.*;
+import org.grobid.core.jni.PythonEnvironmentConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.xml.sax.InputSource;
@@ -34,7 +37,11 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static org.apache.commons.lang3.StringUtils.*;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.SystemUtils;
+
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 
 /*import com.googlecode.clearnlp.engine.EngineGetter;
@@ -44,6 +51,15 @@ import com.googlecode.clearnlp.tokenization.AbstractTokenizer;*/
 
 import opennlp.tools.sentdetect.SentenceDetectorME; 
 import opennlp.tools.sentdetect.SentenceModel;
+
+import org.grobid.core.jni.DeLFTClassifierModel;
+
+import java.lang.reflect.Field;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Arrays;
+
+import static org.apache.commons.lang3.ArrayUtils.isEmpty;
 
 /**
  * Dataset identification.
@@ -56,12 +72,15 @@ public class DataseerClassifier {
     private static volatile DataseerClassifier instance;
 
     // components for sentence segmentation
-    private SentenceDetectorME detector =null;
+    private SentenceDetectorME detector = null;
     private static String openNLPModelFile = "resources/openNLP/en-sent.bin";
 
     private static Engine engine = null; 
 
     private static List<String> textualElements = Arrays.asList("p"); //, "abstract", "figDesc");
+
+    private DeLFTClassifierModel classifierBinary = null;
+    private DeLFTClassifierModel classifierFirstLevel = null;
 
     public static DataseerClassifier getInstance() {
         if (instance == null) {
@@ -82,7 +101,67 @@ public class DataseerClassifier {
     private DataseerClassifier() {
         dataseerLexicon = DataseerLexicon.getInstance();
         try {
-            LibraryLoader.load();
+            // force loading of DeLFT and Wapiti lib without conflict
+            GrobidProperties.getInstance();
+
+            // actual loading will be made at JEP initialization, so we just need to add the path in the 
+            // java.library.path (JEP will anyway try to load from java.library.path, so explicit file 
+            // loading here will not help)
+            try {
+                logger.info("Loading external native sequence labelling library");
+                logger.debug(LibraryLoader.getLibraryFolder());
+
+                File libraryFolder = new File(LibraryLoader.getLibraryFolder());
+                if (!libraryFolder.exists() || !libraryFolder.isDirectory()) {
+                    logger.error("Unable to find a native sequence labelling library: Folder "
+                        + libraryFolder + " does not exist");
+                    throw new RuntimeException(
+                        "Unable to find a native sequence labelling library: Folder "
+                            + libraryFolder + " does not exist");
+                }
+
+                File[] wapitiLibFiles = libraryFolder.listFiles(new FilenameFilter() {
+                    @Override
+                    public boolean accept(File dir, String name) {
+                        return name.startsWith(LibraryLoader.WAPITI_NATIVE_LIB_NAME);
+                    }
+                });
+
+                if (isEmpty(wapitiLibFiles)) {
+                    logger.info("No wapiti library in the Grobid home folder");
+                } else {
+                    logger.info("Loading Wapiti native library...");
+                    // if DeLFT will be used, we must not load libstdc++, it would create a conflict with tensorflow libstdc++ version
+                    // so we temporary rename the lib so that it is not loaded in this case
+                    // note that we know that, in this case, the local lib can be ignored because as DeFLT and tensorflow are installed
+                    // we are sure that a compatible libstdc++ lib is installed on the system and can be dynamically loaded
+
+                    String libstdcppPath = libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6";
+                    File libstdcppFile = new File(libstdcppPath);
+                    if (libstdcppFile.exists()) {
+                        File libstdcppFileNew = new File(libstdcppPath + ".new");
+                        libstdcppFile.renameTo(libstdcppFileNew);
+                    
+                    }
+                    try {
+                        System.load(wapitiLibFiles[0].getAbsolutePath());
+                    } finally {
+                        // restore libstdc++
+                        String libstdcppPathNew = libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6.new";
+                        File libstdcppFileNew = new File(libstdcppPathNew);
+                        if (libstdcppFileNew.exists()) {
+                            libstdcppFile = new File(libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6");
+                            libstdcppFileNew.renameTo(libstdcppFile);
+                        }
+                    }
+                }
+
+                logger.info("Loading JEP native library for DeLFT... " + libraryFolder.getAbsolutePath());
+                LibraryLoader.addLibraryPath(libraryFolder.getAbsolutePath());
+
+            } catch (Exception e) {
+                throw new GrobidException("Loading JEP native library for DeLFT failed", e);
+            }
 
             //Loading sentence detector model (hope they are thread safe!)
             InputStream inputStream = new FileInputStream(openNLPModelFile); 
@@ -90,8 +169,12 @@ public class DataseerClassifier {
             detector = new SentenceDetectorME(model);
 
             // grobid
-            GrobidProperties.getInstance();
             engine = GrobidFactory.getInstance().createEngine();
+
+            // Datatype classifier via DeLFT
+            classifierBinary = new DeLFTClassifierModel("dataseer-binary", "gru");
+            classifierFirstLevel = new DeLFTClassifierModel("dataseer-first", "gru");
+
         } catch (FileNotFoundException e) {
             throw new GrobidException("Cannot initialise tokeniser ", e);
         } catch (IOException e) {
@@ -100,13 +183,33 @@ public class DataseerClassifier {
     }
 
     /**
-     * Extract all Dataseer Objects from a simple piece of text
+     * Classify a simple piece of text
      * @return JSON string
      */
-    public String processText(String text) throws Exception {
-        StringBuffer sb = new StringBuffer();
-        sb.append("{ \"dataset-type\"}");
-        return sb.toString();
+    public String classify(String text) throws Exception {
+        if (StringUtils.isEmpty(text))
+            return null;
+        System.out.println("classify: " + text);
+        List<String> texts = new ArrayList<String>();
+        texts.add(text);
+        String the_json = classifierBinary.classify(texts);
+
+        if (the_json != null && the_json.length() == 1)
+            return the_json;
+        else
+            return null;
+    }
+
+    /**
+     * Classify an array of texts
+     * @return JSON string
+     */
+    public String classify(List<String> texts) throws Exception {
+        if (texts == null || texts.size() == 0)
+            return null;
+        System.out.println("classify: " + texts);
+        
+        return classifierBinary.classify(texts);
     }
 
     /**
@@ -165,6 +268,10 @@ public class DataseerClassifier {
         String tei = null;
         Element root = document.getDocumentElement();
         segment(document, root);
+
+        // augment sentences with dataseer classification information
+        enrich(document, root);
+
         tei = serialize(document, null);
         return tei;
     }
@@ -253,6 +360,19 @@ public class DataseerClassifier {
                 segment(doc, (Element) n);
             }
         }
+    }
+
+    private void enrich(org.w3c.dom.Document doc, Node node) {
+        NodeList sentenceList = doc.getElementsByTagName("s");
+        List<String> sentences = new ArrayList<>();
+        List<Element> sentenceElements = new ArrayList<>();
+        for (int i = 0; i < sentenceList.getLength(); i++) {
+            Element sentenceElement = (Element) sentenceList.item(i);
+            String sentenceText = sentenceElement.getTextContent();
+            sentenceElements.add(sentenceElement);
+            sentences.add(sentenceText);
+        }
+
     }
 
     public static String serialize(org.w3c.dom.Document doc, Node node) {
