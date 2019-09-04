@@ -35,8 +35,13 @@ public class DeLFTClassifierModel {
         this.modelName = model.replace("-", "_");
         this.architecture = architecture;
         try {
-            LOGGER.info("Loading DeLFT classification model for " + model + "in " + GrobidProperties.getInstance().getModelPath() + "...");
-            JEPThreadPoolClassifier.getInstance().run(new InitModel(this.modelName, GrobidProperties.getInstance().getModelPath(), this.architecture));
+            File modelDir = new File("resources/models/");
+            /*if (!modelDir.exists() || !modelDir.isDirectory()) {
+                LOGGER.error("Initialization of the model " + this.modelName + " failed, path to the model directory is not valid: " + modelDir.getAbsolutePath());
+            } else */{
+                LOGGER.info("Loading DeLFT classification model for " + this.modelName + " in " + modelDir.getAbsolutePath() + "...");
+                JEPThreadPoolClassifier.getInstance().run(new InitModel(this.modelName, modelDir, this.architecture));
+            }
         } catch(InterruptedException e) {
             LOGGER.error("DeLFT model " + this.modelName + " initialization failed", e);
         }

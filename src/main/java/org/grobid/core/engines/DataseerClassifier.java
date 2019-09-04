@@ -21,8 +21,11 @@ import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.engines.tagging.*;
 import org.grobid.core.jni.PythonEnvironmentConfig;
+import org.grobid.core.jni.DeLFTClassifierModel;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.xml.sax.InputSource;
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
@@ -52,7 +55,11 @@ import com.googlecode.clearnlp.tokenization.AbstractTokenizer;*/
 import opennlp.tools.sentdetect.SentenceDetectorME; 
 import opennlp.tools.sentdetect.SentenceModel;
 
-import org.grobid.core.jni.DeLFTClassifierModel;
+import com.fasterxml.jackson.core.*;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.node.*;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.core.io.*;
 
 import java.lang.reflect.Field;
 import java.nio.file.Files;
@@ -78,6 +85,9 @@ public class DataseerClassifier {
     private static Engine engine = null; 
 
     private static List<String> textualElements = Arrays.asList("p"); //, "abstract", "figDesc");
+
+    // map of classification models (binay, first-level, etc.)
+    private Map<String,DeLFTClassifierModel> models = null;
 
     private DeLFTClassifierModel classifierBinary = null;
     private DeLFTClassifierModel classifierFirstLevel = null;
@@ -194,8 +204,33 @@ public class DataseerClassifier {
         texts.add(text);
         String the_json = classifierBinary.classify(texts);
 
-        if (the_json != null && the_json.length() == 1)
+        if (the_json != null && the_json.length() > 0) {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode root = mapper.readTree(the_json);
+            JsonNode classificationsNode = root.findPath("classifications");
+            if ((classificationsNode != null) && (!classificationsNode.isMissingNode())) {
+                // we have an array of entity
+                Iterator<JsonNode> ite = classificationsNode.elements();
+                if (ite.hasNext()) {
+                    JsonNode classificationNode = ite.next();
+                    JsonNode datasetNode = classificationNode.findPath("dataset");
+                    JsonNode noDatasetNode = classificationNode.findPath("no_dataset");
+
+                    double probDataset = datasetNode.asDouble();
+                    double probNoDataset = noDatasetNode.asDouble();
+
+                    System.out.println(probDataset + " " + probNoDataset);
+
+                    if (probDataset > probNoDataset) {
+                        the_json = classifierFirstLevel.classify(texts);
+                    }
+                }
+            }
+        }
+
+        if (the_json != null) {                    
             return the_json;
+        }
         else
             return null;
     }
