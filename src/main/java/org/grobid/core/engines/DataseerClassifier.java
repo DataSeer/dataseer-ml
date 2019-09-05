@@ -199,11 +199,10 @@ public class DataseerClassifier {
     public String classify(String text) throws Exception {
         if (StringUtils.isEmpty(text))
             return null;
-        System.out.println("classify: " + text);
+        //System.out.println("classify: " + text);
         List<String> texts = new ArrayList<String>();
         texts.add(text);
         String the_json = classifierBinary.classify(texts);
-
         if (the_json != null && the_json.length() > 0) {
             ObjectMapper mapper = new ObjectMapper();
             JsonNode root = mapper.readTree(the_json);
@@ -228,8 +227,9 @@ public class DataseerClassifier {
             }
         }
 
-        if (the_json != null) {                    
-            return the_json;
+        if (the_json != null) {
+            // replace the model explitely used by a more general "dataseer"
+            return this.shadowModelName(the_json);
         }
         else
             return null;
@@ -242,9 +242,145 @@ public class DataseerClassifier {
     public String classify(List<String> texts) throws Exception {
         if (texts == null || texts.size() == 0)
             return null;
-        System.out.println("classify: " + texts);
+        System.out.println("classify: " + texts.size() + " sentence(s)");
+        ObjectMapper mapper = new ObjectMapper();
         
-        return classifierBinary.classify(texts);
+        String the_json = classifierBinary.classify(texts);
+        // first pass to select texts to be cascaded to next level
+        List<String> cascaded_texts = new ArrayList<String>();
+        JsonNode root = null;
+        if (the_json != null && the_json.length() > 0) {
+            root = mapper.readTree(the_json);
+            JsonNode classificationsNode = root.findPath("classifications");
+            if ((classificationsNode != null) && (!classificationsNode.isMissingNode())) {
+                Iterator<JsonNode> ite = classificationsNode.elements();
+                while (ite.hasNext()) {
+                    JsonNode classificationNode = ite.next();
+                    JsonNode datasetNode = classificationNode.findPath("dataset");
+                    JsonNode noDatasetNode = classificationNode.findPath("no_dataset");
+
+                    if ((datasetNode != null) && (!datasetNode.isMissingNode()) &&
+                        (noDatasetNode != null) && (!noDatasetNode.isMissingNode()) ) {
+                        double probDataset = datasetNode.asDouble();
+                        double probNoDataset = noDatasetNode.asDouble();
+
+                        //System.out.println(probDataset + " " + probNoDataset);
+                        if (probDataset > probNoDataset) {
+                            JsonNode textNode = classificationNode.findPath("text");
+                            cascaded_texts.add(textNode.asText());
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println("cascaded classify: " + cascaded_texts.size() + " sentences");
+        String cascaded_json = null;
+        JsonNode rootCascaded = null;
+        if (cascaded_texts.size() > 0) {
+            cascaded_json = classifierFirstLevel.classify(cascaded_texts);
+            if (cascaded_json != null && cascaded_json.length() > 0)
+                rootCascaded = mapper.readTree(cascaded_json);
+        }
+
+        if (rootCascaded == null) {
+            System.out.println("cascaded root node is null");
+            return this.shadowModelName(the_json);
+        }
+
+        StringBuilder builder = new StringBuilder();
+        builder.append("{\n\t\"model\": \"dataseer\",\n\t\"software\": \"DeLFT\",\n\t\"date\": \"" + 
+            this.getISO8601Date() + "\",\n\t\"classifications\": [");
+
+        boolean first = true;
+        // second pass to inject additional results
+        if (root != null && rootCascaded != null) {
+            JsonNode classificationsNode = root.findPath("classifications");
+            JsonNode classificationsCascadedNode = rootCascaded.findPath("classifications");
+            if ((classificationsNode != null) && (!classificationsNode.isMissingNode()) && 
+                (classificationsCascadedNode != null) && (!classificationsCascadedNode.isMissingNode())) {
+                Iterator<JsonNode> ite = classificationsNode.elements();
+                Iterator<JsonNode> iteCascaded = classificationsCascadedNode.elements();
+                while (ite.hasNext()) {
+                    JsonNode classificationNode = ite.next();
+                    JsonNode datasetNode = classificationNode.findPath("dataset");
+                    JsonNode noDatasetNode = classificationNode.findPath("no_dataset");
+
+                    if ((datasetNode != null) && (!datasetNode.isMissingNode()) &&
+                        (noDatasetNode != null) && (!noDatasetNode.isMissingNode()) ) {
+                        double probDataset = datasetNode.asDouble();
+                        double probNoDataset = noDatasetNode.asDouble();
+
+                        //System.out.println(probDataset + " " + probNoDataset);
+                        if (probDataset > probNoDataset) {
+                            JsonNode textNode = classificationNode.findPath("text");
+                            if (iteCascaded.hasNext()) {
+                                JsonNode classificationCascadedNode = iteCascaded.next();
+                                if (first)
+                                    first = false;
+                                else
+                                    builder.append(",");
+                                builder.append("\n\t\t");
+                                builder.append(this.prettyPrintJsonNode(classificationCascadedNode, mapper));
+                            }
+                        } else {
+                            if (first)
+                                first = false;
+                            else
+                                builder.append(",");
+                            builder.append("\n\t\t");
+                            builder.append(this.prettyPrintJsonNode(classificationNode, mapper));
+                        }
+                    }
+                }
+            }
+        }
+
+        builder.append("\n\t]\n}");
+
+        if (the_json != null) {
+            // replace the model explitely used by a more general "dataseer"
+            // final beautifier
+            String finalJson = builder.toString();
+            return prettyPrintJsonString(finalJson, mapper);
+        }
+        else
+            return null;
+    }
+
+    private String shadowModelName(String the_json) {
+        the_json = the_json.replace("\"model\": \"dataseer-binary\",", "\"model\": \"dataseer\",");
+        return the_json.replace("\"model\": \"dataseer-first\",", "\"model\": \"dataseer\",");
+    } 
+
+    public String prettyPrintJsonNode(JsonNode jsonNode, ObjectMapper mapper) {
+        if (jsonNode == null || jsonNode.isMissingNode())
+            return null;
+        try {
+            Object json = mapper.readValue(jsonNode.toString(), Object.class);
+            return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String prettyPrintJsonString(String json, ObjectMapper mapper) {
+        try {
+            Object root = mapper.readValue(json, Object.class);
+            return mapper.writerWithDefaultPrettyPrinter().writeValueAsString(root);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String getISO8601Date() {
+        Date date = new Date(System.currentTimeMillis());
+        SimpleDateFormat sdf;
+        sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+
+        sdf.setTimeZone(TimeZone.getTimeZone("UTC")); 
+        return sdf.format(date);
     }
 
     /**
@@ -408,6 +544,13 @@ public class DataseerClassifier {
             sentences.add(sentenceText);
         }
 
+        // classify the sentences
+        try {
+            String json = this.classify(sentences);
+            System.out.println(json);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static String serialize(org.w3c.dom.Document doc, Node node) {

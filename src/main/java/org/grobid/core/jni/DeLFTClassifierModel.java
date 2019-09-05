@@ -108,18 +108,18 @@ public class DeLFTClassifierModel {
             StringBuilder labelledData = new StringBuilder();
             String results = null;
             try {
-                System.out.println(this.data);
+                //System.out.println(this.data);
 
                 // load and classify, input here is an array of texts to classify
                 this.setJepStringValueWithFileFallback(jep, "input", this.data);
-                jep.eval("print('the input', input)");
+                //jep.eval("print('the input', input)");
                 jep.eval("jsondict = "+this.modelName+".predict(input, 'json', use_main_thread_only=True)");
-                jep.eval("print(json.dumps(jsondict, sort_keys=False, indent=4, ensure_ascii=False))");
-                Object objectResult = jep.getValue("json.dumps(jsondict, sort_keys=False, indent=4, ensure_ascii=False)");
+                //jep.eval("print(json.dumps(jsondict, sort_keys=False, indent=4, ensure_ascii=False))");
+                Object objectResult = jep.getValue("json.dumps(jsondict, sort_keys=True, indent=4, ensure_ascii=False)");
 
                 results = (String) objectResult;
 
-                System.out.println(results);
+                //System.out.println(results);
                 // cleaning
                 jep.eval("del jsondict");
                 jep.eval("del input");
