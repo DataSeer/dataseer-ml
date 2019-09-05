@@ -268,7 +268,11 @@ public class DataseerClassifier {
                         if (probDataset > probNoDataset) {
                             JsonNode textNode = classificationNode.findPath("text");
                             cascaded_texts.add(textNode.asText());
-                        }
+                        } 
+
+                        // rename "dataset" attribute to avoid confusion with "Dataset" type of the taxonomy
+                        ((ObjectNode)classificationNode).put("has_dataset", probDataset);
+                        ((ObjectNode)classificationNode).remove("dataset");
                     }
                 }
             }
@@ -302,7 +306,7 @@ public class DataseerClassifier {
                 Iterator<JsonNode> iteCascaded = classificationsCascadedNode.elements();
                 while (ite.hasNext()) {
                     JsonNode classificationNode = ite.next();
-                    JsonNode datasetNode = classificationNode.findPath("dataset");
+                    JsonNode datasetNode = classificationNode.findPath("has_dataset");
                     JsonNode noDatasetNode = classificationNode.findPath("no_dataset");
 
                     if ((datasetNode != null) && (!datasetNode.isMissingNode()) &&
@@ -315,6 +319,9 @@ public class DataseerClassifier {
                             JsonNode textNode = classificationNode.findPath("text");
                             if (iteCascaded.hasNext()) {
                                 JsonNode classificationCascadedNode = iteCascaded.next();
+                                // inject dataset/no_dataset probabilities as extra-information relevant for post--processing
+                                ((ObjectNode)classificationCascadedNode).put("has_dataset", probDataset);
+                                ((ObjectNode)classificationCascadedNode).put("no_dataset", probNoDataset);
                                 if (first)
                                     first = false;
                                 else
@@ -548,6 +555,26 @@ public class DataseerClassifier {
         try {
             String json = this.classify(sentences);
             System.out.println(json);
+            ObjectMapper mapper = new ObjectMapper();
+
+            // add attributes if we have a dataset in the sentence
+            JsonNode root = null;
+            if (json != null && json.length() > 0) {
+                root = mapper.readTree(json);
+                JsonNode classificationsNode = root.findPath("classifications");
+                if ((classificationsNode != null) && (!classificationsNode.isMissingNode())) {
+                    Iterator<JsonNode> ite = classificationsNode.elements();
+                    while (ite.hasNext()) {
+                        JsonNode classificationNode = ite.next();
+
+
+
+                    }
+                }
+            }
+
+            // add attribute in the head div for marking the section as a "dataseer" one 
+
         } catch(Exception e) {
             e.printStackTrace();
         }
