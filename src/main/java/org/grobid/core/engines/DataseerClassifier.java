@@ -33,6 +33,9 @@ import java.io.*;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.*;
 import javax.xml.transform.stream.*;
+import org.w3c.dom.traversal.DocumentTraversal;
+import org.w3c.dom.traversal.NodeFilter;
+import org.w3c.dom.traversal.TreeWalker;
 
 import java.io.*;
 import java.text.DateFormat;
@@ -277,7 +280,7 @@ public class DataseerClassifier {
                 }
             }
         }
-        System.out.println("cascaded classify: " + cascaded_texts.size() + " sentences");
+        //System.out.println("cascaded classify: " + cascaded_texts.size() + " sentences");
         String cascaded_json = null;
         JsonNode rootCascaded = null;
         if (cascaded_texts.size() > 0) {
@@ -540,6 +543,8 @@ public class DataseerClassifier {
         }
     }
 
+    private static String specialHeader = "materials and methods";
+
     private void enrich(org.w3c.dom.Document doc, Node node) {
         NodeList sentenceList = doc.getElementsByTagName("s");
         List<String> sentences = new ArrayList<>();
@@ -551,13 +556,115 @@ public class DataseerClassifier {
             sentences.add(sentenceText);
         }
 
+        // identify "material and methods" type section and keep track of those sentences
+        NodeList sectionList = doc.getElementsByTagName("div");
+        List<String> validHeaders = new ArrayList<String>();
+        List<String> invalidHeaders = new ArrayList<String>();
+        for (int i = 0; i < sectionList.getLength(); i++) {
+            Element sectionElement = (Element) sectionList.item(i);
+            // head element (unique)
+            Element headElement = this.getFirstDirectChild(sectionElement, "head");
+            if (headElement != null) {
+                String headText = headElement.getTextContent().toLowerCase();
+                if ( headText.indexOf("material") != -1 ||
+                     headText.indexOf("method") != -1 ||
+                     headText.indexOf("data") != -1) {
+                    validHeaders.add(headText);
+                } else {
+                    invalidHeaders.add(headText);
+                }
+            }
+        }
+
+        if (validHeaders.contains(specialHeader)) {
+            for(String head : validHeaders) {
+                if (!head.equals(specialHeader))
+                    invalidHeaders.add(head);
+            }
+            validHeaders = Arrays.asList(specialHeader);
+
+        }
+        System.out.println(validHeaders.toString());
+
+        // filter sentences relevant to the valid sections
+        List<Integer> sentenceValidIndex = new ArrayList<Integer>();
+        /*for (int i = 0; i < sentenceList.getLength(); i++) {
+            if (sentenceValidIndex.contains(new Integer(i)))
+                continue;
+            Element sentenceElement = (Element) sentenceList.item(i);
+            // check the section header of the sentence
+            String localHeader = this.getUpperHeaderSection(sentenceElement);
+            System.out.println("localHeader: " + localHeader);
+            if (!invalidHeaders.contains(localHeader.toLowerCase())) {
+                for(int j=0; j<20 && j+i<sentenceList.getLength(); j++)
+                    sentenceValidIndex.add(new Integer(i+j));
+            }
+        }
+        System.out.println(sentenceValidIndex.toString());*/
+
+        DocumentTraversal traversal = (DocumentTraversal) doc;
+        TreeWalker walker = traversal.createTreeWalker(doc.getDocumentElement(), 
+            NodeFilter.SHOW_ELEMENT,
+            null, 
+            true);
+        Node currentNode = walker.nextNode();
+        int record = 0;
+        boolean recording = false;
+        int indexSentence = 0;
+        boolean newDiv = false;
+        while (currentNode != null) {
+            //if (currentNode.getNodeType() == Node.ELEMENT_NODE) 
+            //    System.out.println(currentNode.getNodeName());
+
+            if (currentNode.getNodeType() == Node.ELEMENT_NODE &&
+                currentNode.getNodeName().equals("head")) {
+                System.out.println(currentNode.getTextContent());
+                if (validHeaders.contains(currentNode.getTextContent().toLowerCase())) {
+                    recording = true;
+                }
+                //System.out.println(currentNode.getNodeName() + " : " + currentNode.getChildNodes().item(0).getNodeValue());
+            }
+
+            if (currentNode.getNodeType() == Node.ELEMENT_NODE &&
+                currentNode.getNodeName().equals("div") && recording) {
+                newDiv = true;
+            }
+
+            if (currentNode.getNodeType() == Node.ELEMENT_NODE &&
+                currentNode.getNodeName().equals("s")) {
+                if (recording) {
+                    sentenceValidIndex.add(new Integer(indexSentence));
+                    record++;
+                } 
+                indexSentence++;
+
+                if (record == 20) 
+                    newDiv = false;
+
+                if (record > 20 && newDiv) {
+                    recording = false;
+                    record = 0;
+                    newDiv = false;
+                }
+                //System.out.println(currentNode.getNodeName() + " : " + node.getChildNodes().item(0).getNodeValue());
+            }
+
+            currentNode = walker.nextNode();
+        }
+
+        System.out.println(sentenceValidIndex.toString());
+
+
+
         // classify the sentences
         try {
             String json = this.classify(sentences);
-            System.out.println(json);
+            //System.out.println(json);
             ObjectMapper mapper = new ObjectMapper();
 
             // add attributes if we have a dataset in the sentence
+            int pos = 0;
+            int dataSetId = 0;
             JsonNode root = null;
             if (json != null && json.length() > 0) {
                 root = mapper.readTree(json);
@@ -566,18 +673,88 @@ public class DataseerClassifier {
                     Iterator<JsonNode> ite = classificationsNode.elements();
                     while (ite.hasNext()) {
                         JsonNode classificationNode = ite.next();
+                        JsonNode datasetNode = classificationNode.findPath("has_dataset");
+                        JsonNode noDatasetNode = classificationNode.findPath("no_dataset");
 
+                        if (!sentenceValidIndex.contains(new Integer(pos))) {
+                            pos++;
+                            continue;
+                        }
 
+                        if ((datasetNode != null) && (!datasetNode.isMissingNode()) &&
+                            (noDatasetNode != null) && (!noDatasetNode.isMissingNode()) ) {
+                            double probDataset = datasetNode.asDouble();
+                            double probNoDataset = noDatasetNode.asDouble();
 
+                            // we consider enrichment only in the case a dataset is more likely
+                            if (probDataset > probNoDataset && probDataset > 0.8) {
+                                // we get the best dataset type Prediction
+                                String bestDataType = this.getBestDataType(classificationNode);
+                                if (bestDataType != null) {
+                                    // annotation will look like this: <s id="dataset-1" type="Generic data">
+                                    // or if existing dataset: corresp=\"#dataset- + dataSetId\"
+                                    Element sentenceElement = (Element) sentenceList.item(pos);
+
+                                    sentenceElement.setAttribute("id","dataset-" + dataSetId);
+                                    sentenceElement.setAttribute("type", bestDataType);
+                                    dataSetId++;
+                                    //dataSetIds.add(dataSetId);
+
+                                    // we also need to add a dataseer subtype attribute to the parent <div>
+                                    currentNode = sentenceElement;
+                                    while(currentNode != null) {
+                                        currentNode = currentNode.getParentNode();
+                                        if (currentNode != null && 
+                                            currentNode instanceof Element &&
+                                            !(currentNode.getParentNode() instanceof Document) && 
+                                            ((Element)currentNode).getTagName().equals("div")) {
+                                            ((Element)currentNode).setAttribute("subtype", "dataseer");
+                                            currentNode = null;
+                                        }
+
+                                        if (currentNode != null && (currentNode.getParentNode() instanceof Document))
+                                            currentNode = null;
+                                    }
+                                }
+                            }
+                        }
+                        pos++;
                     }
                 }
             }
-
-            // add attribute in the head div for marking the section as a "dataseer" one 
-
         } catch(Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static Element getFirstDirectChild(Element parent, String name) {
+        for(Node child = parent.getFirstChild(); child != null; child = child.getNextSibling()) {
+            if (child instanceof Element && name.equals(child.getNodeName())) 
+                return (Element) child;
+        }
+        return null;
+    }
+
+    private static String getUpperHeaderSection(Element element) {
+        String header = null;
+        Node currentNode = element;
+        while(currentNode != null) {
+            currentNode = currentNode.getParentNode();
+            if (currentNode != null && 
+                currentNode instanceof Element &&
+                !(currentNode.getParentNode() instanceof Document) && 
+                ((Element)currentNode).getTagName().equals("div")) {
+                Element headElement = getFirstDirectChild((Element)currentNode, "head");
+                if (headElement != null) {
+                    header = headElement.getTextContent();   
+                    currentNode = null;
+                }
+            }
+
+            if (currentNode != null && (currentNode.getParentNode() instanceof Document))
+                currentNode = null;
+        }
+        return header;
     }
 
     public static String serialize(org.w3c.dom.Document doc, Node node) {
@@ -604,6 +781,27 @@ public class DataseerClassifier {
             ex.printStackTrace();
         }
         return xml;
+    }
+
+    private String getBestDataType(JsonNode classificationsNode) {
+        Iterator<Map.Entry<String,JsonNode>> ite = classificationsNode.fields();
+        String bestDataType = null;
+        double bestProb = 0.0;
+        while (ite.hasNext()) {
+            Map.Entry<String, JsonNode> entry = ite.next(); 
+            String className = entry.getKey();
+            if (className.equals("has_dataset") || className.equals("no_dataset"))
+                continue;
+
+            JsonNode valNode = entry.getValue();
+            double prob = valNode.asDouble();
+
+            if (prob > bestProb) {
+                bestProb = prob;
+                bestDataType = className;
+            }
+        }
+        return bestDataType;
     }
 
 
