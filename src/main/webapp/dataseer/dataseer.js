@@ -146,8 +146,8 @@ var grobid = (function ($) {
         conceptMap = new Object();
 
         var selected = $('#selectedService option:selected').attr('value');
+        var urlLocal = $('#gbdForm').attr('action');
         if (selected == 'processDataseerSentence') {
-            var urlLocal = $('#gbdForm').attr('action');
             {
                 $.ajax({
                     type: 'GET',
@@ -159,6 +159,25 @@ var grobid = (function ($) {
                     //dataType: "text"
                 });
             }
+        }
+        else if (selected == 'processDataseerTEI' || selected == 'processDataseerJATS' || selected == 'processDataseerPDF') {
+            var form = document.getElementById('gbdForm');
+            var formData = new FormData(form);
+            var xhr = new XMLHttpRequest();
+            var url = urlLocal
+            xhr.responseType = 'xml'; 
+            xhr.open('POST', url, true);
+
+            xhr.onreadystatechange = function (e) {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var response = e.target.response;
+                    //console.log(response);
+                    SubmitSuccesful(response, xhr.status);
+                } else if (xhr.status != 200) {
+                    AjaxError("Response " + xhr.status + ": ");
+                }
+            };
+            xhr.send(formData);
         }
         /*else if (selected == 'annotateDataseerPDF') {
             // we will have JSON annotations to be layered on the PDF
@@ -315,10 +334,16 @@ var grobid = (function ($) {
 
         if (selected == 'processDataseerSentence') {
             SubmitSuccesfulText(responseText, statusText);
-        } /*else if (selected == 'annotateDataseerPDF') {
+        } else if (selected == 'processDataseerPDF') {
+            SubmitSuccesfulXML(responseText, statusText);
+        } else if (selected == 'processDataseerTEI') {
+            SubmitSuccesfulXML(responseText, statusText);
+        } else if (selected == 'processDataseerJATS') {
+            SubmitSuccesfulXML(responseText, statusText);
+        } 
+        /*else if (selected == 'annotateDataseerPDF') {
             SubmitSuccesfulPDF(responseText, statusText);          
         }*/
-
     }
 
     function SubmitSuccesfulText(responseText, statusText) {
@@ -340,117 +365,6 @@ var grobid = (function ($) {
             <div class="tab-content"> \
             <div class="tab-pane active" id="navbar-fixed-annotation">\n';
 
-        /*display += '<pre style="background-color:#FFF;width:95%;" id="displayAnnotatedText">';
-
-        var string = $('#inputTextArea').val();
-        var newString = "";
-        var lastMaxIndex = string.length;
-
-        display += '<table id="sentence" style="width:100%;table-layout:fixed;" class="table">';
-        //var string = responseJson.text;
-
-        display += '<tr style="background-color:#FFF;">';
-        entities = responseJson.entities;
-        var lang = 'en';
-        if (responseJson.lang)   
-            lang = responseJson.lang;
-        if (entities) {
-            var pos = 0; // current position in the text
-
-            for (var currentEntityIndex = 0; currentEntityIndex < entities.length; currentEntityIndex++) {
-
-                var entity = entities[currentEntityIndex];
-                var identifier = entity.wikipediaExternalRef;
-                var wikidataId = entity.wikidataId;
-                
-                var localLang = lang
-                if (entity.lang)
-                    localLang = entity.lang;
-
-                if (identifier && (conceptMap[identifier] == null)) {
-                    fetchConcept(identifier, localLang, function (result) {
-                        conceptMap[result.wikipediaExternalRef] = result;
-                    });
-                }
-
-                var pieces = []
-
-                var softwareName = entity['software-name']
-                softwareName['subtype'] = 'software'
-                pieces.push(softwareName)
-                
-                var versionNumber = entity['version-number']
-                if (versionNumber) {
-                    versionNumber['subtype'] = 'version-number'
-                    pieces.push(versionNumber);
-                }
-                
-                var versionDate = entity['version-date']
-                if (versionDate) {
-                    versionDate['subtype'] = 'version-date'
-                    pieces.push(versionDate)
-                }
-
-                var softwareUrl = entity['url']
-                if (softwareUrl) {
-                    softwareUrl['subtype'] = 'url'
-                    pieces.push(softwareUrl)
-                }
-
-                var creator = entity['creator']
-                if (creator) {
-                    creator['subtype'] = 'creator'
-                    pieces.push(creator)
-                }
-
-                var references = entity['references']
-                if (references) {
-                    for(var reference in references) {
-                        reference['subtype'] = 'reference';
-                        if (!reference['rawForm'])
-                            reference['rawForm'] = reference['label']
-                        pieces.push(reference)    
-                    }
-                }
-
-                //var type = entity['type']
-                //var id = entity['id']
-
-                for (var pi in pieces) {
-                    piece = pieces[pi]
-
-                    var entityRawForm = piece.rawForm;
-                    var start = parseInt(piece.offsetStart, 10);
-                    var end = parseInt(piece.offsetEnd, 10);
-        
-                    if (start < pos) {
-                        // we have a problem in the initial sort of the entities
-                        // the server response is not compatible with the present client 
-                        console.log("Sorting of entities as present in the server's response not valid for this client.");
-                        // note: this should never happen?
-                    } else {
-                        newString += string.substring(pos, start)
-                            //+ '<span id="annot-' + currentEntityIndex + '" rel="popover" data-color="' + piece['subtype'] + '">'
-                            //+ '<span id="annot-' + currentEntityIndex + '-' + pi + '">'
-                            //+ '<span class="label ' + piece['subtype'] + '" style="cursor:hand;cursor:pointer;" >'
-                            + '<span id="annot-' + currentEntityIndex + '-' + pi + '" class="label ' + piece['subtype'] + '" style="cursor:hand;cursor:pointer;" >'
-                            + string.substring(start, end) + '</span>';
-                        pos = end;
-                    }
-                }
-            }
-            newString += string.substring(pos, string.length);
-        }
-
-        newString = "<p>" + newString.replace(/(\r\n|\n|\r)/gm, "</p><p>") + "</p>";
-        //string = string.replace("<p></p>", "");
-
-        display += '<td style="font-size:small;width:60%;border:1px solid #CCC;"><p>' + newString + '</p></td>';
-        display += '<td style="font-size:small;width:40%;padding:0 5px; border:0"><span id="detailed_annot-0" /></td>';
-        display += '</tr>';
-        display += '</table>\n';
-        display += '</pre>\n';
-        */
         display += '<div class="tab-pane " id="navbar-fixed-json">\n';
         display += "<pre class='prettyprint' id='jsonCode'>";
         display += "<pre class='prettyprint lang-json' id='xmlCode'>";
@@ -464,29 +378,39 @@ var grobid = (function ($) {
         $('#requestResult').html(display);
         window.prettyPrint && prettyPrint();
 
-        if (entities) {
-            for (var entityIndex = 0; entityIndex < entities.length; entityIndex++) {
-                var entity = entities[entityIndex];
-                var indexComp = 0;
-                if (entity['software-name'])
-                    indexComp++;
-                if (entity['version-number'])
-                    indexComp++;
-                if (entity['version-date'])
-                    indexComp++;
-                if (entity['url'])
-                    indexComp++;
-                if (entity['creator'])
-                    indexComp++;
-                for(var currentIndexComp = 0; currentIndexComp< indexComp; currentIndexComp++) {
-                    $('#annot-' + entityIndex + '-' + currentIndexComp).bind('mouseenter', viewEntity);
-                    $('#annot-' + entityIndex + '-' + currentIndexComp).bind('click', viewEntity);
-                }
-                //$('#annot-' + entityIndex).bind('click', viewEntity);
-            }
+        $('#requestResult').show();
+    }
+
+    function SubmitSuccesfulXML(responseText, statusText) {
+        responseXML = responseText;
+        if ((responseXML == null) || (responseXML.length == 0)) {
+            $('#infoResult')
+                .html("<font color='red'>Error encountered while receiving the server's answer: response is empty.</font>");
+            return;
+        } else {
+            $('#infoResult').html('');
         }
 
-        $('#detailed_annot-0').hide();
+        var display = '<div class=\"note-tabs\"> \
+            <ul id=\"resultTab\" class=\"nav nav-tabs\"> \
+                <li class="active"><a href=\"#navbar-fixed-xml\" data-toggle=\"tab\">Response</a></li> \
+            </ul> \
+            <div class="tab-content"> \
+            <div class="tab-pane active" id="navbar-fixed-annotation">\n';
+
+        
+        display += '<div class="tab-pane " id="navbar-fixed-xml">\n';
+        display += "<pre class='prettyprint' id='xmlCode'>";
+        display += "<pre class='prettyprint lang-xml' id='xmlCode'>";
+        var testStr = vkbeautify.xml(responseXML);
+
+        display += htmll(testStr);
+
+        display += "</pre>";
+        display += '</div></div></div>';
+
+        $('#requestResult').html(display);
+        window.prettyPrint && prettyPrint();
 
         $('#requestResult').show();
     }
@@ -498,7 +422,18 @@ var grobid = (function ($) {
             createInputTextArea();
             //$('#consolidateBlock').show();
             setBaseUrl('processDataseerSentence');
-        } /*else if (selected == 'annotateSoftwarePDF') {
+        } else if (selected == 'processDataseerPDF') {
+            createInputFile(selected);
+            setBaseUrl('processDataseerPDF');
+        } else if (selected == 'processDataseerTEI') {
+            createInputFile(selected);
+            setBaseUrl('processDataseerTEI');
+        } else if (selected == 'processDataseerJATS') {
+            createInputFile(selected);
+            setBaseUrl('processDataseerJATS');
+        }
+
+        /*else if (selected == 'annotateSoftwarePDF') {
             createInputFile(selected);
             //$('#consolidateBlock').hide();
             setBaseUrl('annotateSoftwarePDF');
