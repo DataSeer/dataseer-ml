@@ -202,40 +202,9 @@ public class DataseerClassifier {
     public String classify(String text) throws Exception {
         if (StringUtils.isEmpty(text))
             return null;
-        //System.out.println("classify: " + text);
         List<String> texts = new ArrayList<String>();
         texts.add(text);
-        String the_json = classifierBinary.classify(texts);
-        if (the_json != null && the_json.length() > 0) {
-            ObjectMapper mapper = new ObjectMapper();
-            JsonNode root = mapper.readTree(the_json);
-            JsonNode classificationsNode = root.findPath("classifications");
-            if ((classificationsNode != null) && (!classificationsNode.isMissingNode())) {
-                // we have an array of entity
-                Iterator<JsonNode> ite = classificationsNode.elements();
-                if (ite.hasNext()) {
-                    JsonNode classificationNode = ite.next();
-                    JsonNode datasetNode = classificationNode.findPath("dataset");
-                    JsonNode noDatasetNode = classificationNode.findPath("no_dataset");
-
-                    double probDataset = datasetNode.asDouble();
-                    double probNoDataset = noDatasetNode.asDouble();
-
-                    System.out.println(probDataset + " " + probNoDataset);
-
-                    if (probDataset > probNoDataset) {
-                        the_json = classifierFirstLevel.classify(texts);
-                    }
-                }
-            }
-        }
-
-        if (the_json != null) {
-            // replace the model explitely used by a more general "dataseer"
-            return this.shadowModelName(the_json);
-        }
-        else
-            return null;
+        return classify(texts);
     }
 
     /**
@@ -245,7 +214,7 @@ public class DataseerClassifier {
     public String classify(List<String> texts) throws Exception {
         if (texts == null || texts.size() == 0)
             return null;
-        System.out.println("classify: " + texts.size() + " sentence(s)");
+        logger.info("classify: " + texts.size() + " sentence(s)");
         ObjectMapper mapper = new ObjectMapper();
         
         String the_json = classifierBinary.classify(texts);
@@ -290,7 +259,6 @@ public class DataseerClassifier {
         }
 
         if (rootCascaded == null) {
-            System.out.println("cascaded root node is null");
             return this.shadowModelName(the_json);
         }
 
@@ -344,7 +312,6 @@ public class DataseerClassifier {
                 }
             }
         }
-
         builder.append("\n\t]\n}");
 
         if (the_json != null) {
@@ -456,6 +423,53 @@ public class DataseerClassifier {
         tei = serialize(document, null);
         return tei;
     }
+
+    /**
+     * Process a JATS document and enrich with Dataseer information as a TEI document.
+     * Transformation of the JATS/NLM document is realised thanks to Pub2TEI 
+     * (https://github.com/kermitt2/pub2tei) 
+     * 
+     * @return enriched TEI string
+     */
+    public String processJATS(String filePath) throws Exception {
+        File file = new File(filePath);
+        if (!file.exists())
+            return null;
+        String fileName = file.getName();
+        String tei = null;
+        String newFilePath = null;
+        try {
+            File tmpFile = GrobidProperties.getInstance().getTempPath();
+            newFilePath = ArticleUtilities.applyPub2TEI(filePath, 
+                tmpFile.getPath() + "/" + fileName.replace(".xml", ".tei.xml"), 
+                DataseerProperties.getPub2TEIPath());
+            System.out.println(newFilePath);
+
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            tei = FileUtils.readFileToString(new File(newFilePath), UTF_8);
+            //if (avoidDomParserBug)
+            //    tei = avoidDomParserAttributeBug(tei);
+
+            org.w3c.dom.Document document = builder.parse(new InputSource(new StringReader(tei)));
+            document.getDocumentElement().normalize();
+            tei = processTEIDocument(document);
+            //if (avoidDomParserBug)
+            //    tei = restoreDomParserAttributeBug(tei); 
+
+        } catch(ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch(IOException e) {
+            e.printStackTrace();
+        } finally {
+            /*if (newFilePath != null) {
+                File newFile = new File(newFilePath);
+                IOUtilities.removeTempFile(newFile);
+            }*/
+        }
+        return tei;
+    }
+
 
     private void segment(org.w3c.dom.Document doc, Node node) {
         final NodeList children = node.getChildNodes();
@@ -654,8 +668,6 @@ public class DataseerClassifier {
 
         System.out.println(sentenceValidIndex.toString());
 
-
-
         // classify the sentences
         try {
             String json = this.classify(sentences);
@@ -676,10 +688,10 @@ public class DataseerClassifier {
                         JsonNode datasetNode = classificationNode.findPath("has_dataset");
                         JsonNode noDatasetNode = classificationNode.findPath("no_dataset");
 
-                        if (!sentenceValidIndex.contains(new Integer(pos))) {
+                        /*if (!sentenceValidIndex.contains(new Integer(pos))) {
                             pos++;
                             continue;
-                        }
+                        }*/
 
                         if ((datasetNode != null) && (!datasetNode.isMissingNode()) &&
                             (noDatasetNode != null) && (!noDatasetNode.isMissingNode()) ) {
@@ -687,7 +699,7 @@ public class DataseerClassifier {
                             double probNoDataset = noDatasetNode.asDouble();
 
                             // we consider enrichment only in the case a dataset is more likely
-                            if (probDataset > probNoDataset && probDataset > 0.8) {
+                            if (probDataset > probNoDataset && probDataset > 0.9) {
                                 // we get the best dataset type Prediction
                                 String bestDataType = this.getBestDataType(classificationNode);
                                 if (bestDataType != null) {

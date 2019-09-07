@@ -24,6 +24,11 @@ public interface DataseerPaths {
     public static final String PATH_DATASEER_TEI = "processDataseerTEI";
 
     /**
+     * path extension for processing a JATS file.
+     */
+    public static final String PATH_DATASEER_JATS = "processDataseerJATS";
+
+    /**
      * path extension for processing a PDF file, which will include its conversion 
      * into TEI via GROBID.
      */

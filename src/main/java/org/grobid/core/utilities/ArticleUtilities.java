@@ -256,17 +256,28 @@ public class ArticleUtilities {
         // stay in the current VM)
         // java -jar Samples/saxon9he.jar -s:/mnt/data/resources/plos/0/ -xsl:Stylesheets/Publishers.xsl -o:/mnt/data/resources/plos/0/tei/ -dtd:off -a:off -expand:off -t
 
-        ProcessBuilder processBuilder = new ProcessBuilder(); 
-        String s = "-s:/mnt/data/resources/plos/0/";
-        String o = "-o:/mnt/data/resources/plos/0/tei/";
-        processBuilder.command("java", "-jar", "Samples/saxon9he.jar", s, o, "-dtd:off", "-a:off", "-expand:off", "-t");
-        processBuilder.directory(new File(pathToPub2TEI)); 
+        // remove first the DTD declaration from the input nlm/jats XML because all these shitty xml mechanisms break 
+        // the process at one point or another or keep looking for something over the internet 
         try {
+            String xmlContent = FileUtils.readFileToString(new File(inputFilePath), "UTF-8");
+            xmlContent = xmlContent.replaceAll("<!DOCTYPE((.|\n|\r)*?)\">", ""); 
+            FileUtils.writeStringToFile(new File(inputFilePath), xmlContent, "UTF-8");
+        } catch(IOException e) {
+            logger.error("Fail to preprocess the XML file to be transformed", e);
+        }
 
+        ProcessBuilder processBuilder = new ProcessBuilder(); 
+        String s = "-s:"+inputFilePath;
+        File dirToPub2TEI = new File(pathToPub2TEI);
+
+        String xsl = "-xsl:" + dirToPub2TEI.getAbsolutePath() + "/Stylesheets/Publishers.xsl";
+        String o = "-o:"+outputFilePath;
+        processBuilder.command("java", "-jar", dirToPub2TEI.getAbsolutePath() + "/Samples/saxon9he.jar", s, xsl, o, "-dtd:off", "-a:off", "-expand:off", "-t");
+        //processBuilder.directory(new File(pathToPub2TEI)); 
+        //System.out.println(processBuilder.command().toString());
+        try {
             Process process = processBuilder.start();
-
             StringBuilder output = new StringBuilder();
-
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(process.getInputStream()));
 
@@ -278,15 +289,11 @@ public class ArticleUtilities {
             int exitVal = process.waitFor();
             if (exitVal == 0) {
                 System.out.println("XML transformation done");
-                FileUtils.writeStringToFile(new File(outputFilePath), output.toString(), StandardCharsets.UTF_8);
-                System.out.println(output);
-                System.exit(0);
             } else {
                 // abnormal...
                 System.out.println("XML transformation failed");
                 outputFilePath = null;
             }
-
         } catch (IOException e) {
             e.printStackTrace();
             outputFilePath = null;
@@ -294,8 +301,45 @@ public class ArticleUtilities {
             e.printStackTrace();
             outputFilePath = null;
         }
-
         return outputFilePath;
+    }
+
+    /**
+     * Write an input stream in temp directory.
+     */
+    public static File writeInputFile(InputStream inputStream, String extension) {
+        logger.debug(">> set origin document for stateless service'...");
+
+        File originFile = null;
+        OutputStream out = null;
+        try {
+            originFile = IOUtilities.newTempFile("origin", extension);
+
+            out = new FileOutputStream(originFile);
+
+            byte buf[] = new byte[1024];
+            int len;
+            while ((len = inputStream.read(buf)) > 0) {
+                out.write(buf, 0, len);
+            }
+        } catch (IOException e) {
+            logger.error(
+                    "An internal error occurs, while writing to disk (file to write '"
+                            + originFile + "').", e);
+            originFile = null;
+        } finally {
+            try {
+                if (out != null) {
+                    out.close();
+                }
+                inputStream.close();
+            } catch (IOException e) {
+                logger.error("An internal error occurs, while writing to disk (file to write '"
+                        + originFile + "').", e);
+                originFile = null;
+            }
+        }
+        return originFile;
     }
 
 }

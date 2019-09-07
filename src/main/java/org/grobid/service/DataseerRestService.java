@@ -85,6 +85,14 @@ public class DataseerRestService implements DataseerPaths {
         return DataseerProcessFile.processTEI(inputStream);
     }
 
+    @Path(PATH_DATASEER_JATS)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.APPLICATION_XML)
+    @POST
+    public Response processJATS(@FormDataParam(INPUT) InputStream inputStream) {
+        return DataseerProcessFile.processJATS(inputStream);
+    }
+
     @Path(PATH_ANNOTATE_DATASEER_PDF)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")

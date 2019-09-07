@@ -32,4 +32,11 @@ public class DataseerProperties {
 	public static String getEngine() {
 		return DataseerProperties.get("grobid.dataseer.engine");
 	}
+
+	/**
+	 *  Path to install directory of Pub2TEI
+	 */
+	public static String getPub2TEIPath() {
+		return DataseerProperties.get("grobid.dataseer.pub2tei.path");
+	}
 }
