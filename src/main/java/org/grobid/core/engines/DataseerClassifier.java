@@ -443,7 +443,7 @@ public class DataseerClassifier {
             newFilePath = ArticleUtilities.applyPub2TEI(filePath, 
                 tmpFile.getPath() + "/" + fileName.replace(".xml", ".tei.xml"), 
                 DataseerProperties.getPub2TEIPath());
-            System.out.println(newFilePath);
+            //System.out.println(newFilePath);
 
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -462,10 +462,10 @@ public class DataseerClassifier {
         } catch(IOException e) {
             e.printStackTrace();
         } finally {
-            /*if (newFilePath != null) {
+            if (newFilePath != null) {
                 File newFile = new File(newFilePath);
                 IOUtilities.removeTempFile(newFile);
-            }*/
+            }
         }
         return tei;
     }
@@ -688,10 +688,10 @@ public class DataseerClassifier {
                         JsonNode datasetNode = classificationNode.findPath("has_dataset");
                         JsonNode noDatasetNode = classificationNode.findPath("no_dataset");
 
-                        /*if (!sentenceValidIndex.contains(new Integer(pos))) {
+                        if (!sentenceValidIndex.contains(new Integer(pos))) {
                             pos++;
                             continue;
-                        }*/
+                        }
 
                         if ((datasetNode != null) && (!datasetNode.isMissingNode()) &&
                             (noDatasetNode != null) && (!noDatasetNode.isMissingNode()) ) {
