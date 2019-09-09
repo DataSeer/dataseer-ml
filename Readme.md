@@ -1,3 +1,9 @@
+*dataseer-ml* is a GROBID module able to identify implicit mentions of datasets in a scientific article and to clasify the identified dataset in a hierarchy of dataset types, these data types being directly derived from MeSH.
+
+The goal of this process is to further drive the authors of the article to the best research data sharing practices, i.e. to ensure that the dataset is associated with data availability statement, permanent identifiers and in general requirements regarding Open Science and reproducibility. This further process is realized by the dataseer web application which includes a GUI to be used by the authors, suggesting data sharing policies based on the predicted data types for each identified dataset.  
+
+The module can process a variety of scientific article formats, including mainstream publisher's native XML submission formats: PDF, TEI, JATS/NLM, ScholarOne, BMJ, Elsevier staging format, OUP, PNAS, RSC, Sage, Wiley, etc.
+
 Work in progress !
 
 # Build
@@ -6,17 +12,35 @@ Install GROBID:
 
 > git clone https://github.com/kermitt2/grobid
 
-Install dataseer-ml and copy it as a sub-module of GROBID:
+Install then *dataseer-ml* and move it as a sub-module of GROBID:
 
 > git clone https://github.com/kermitt2/dataseer-ml
 
-> cp -rf dataseer-ml grobid/
+> mv dataseer-ml grobid/
 
-Build:
+Install DeLFT:
+
+> git clone https://github.com/kermitt2/delft
+
+Follow the installation described in the [DeLFT documentation](https://github.com/kermitt2/delft#install). If necessary, update the path to the DeLFT installation in the `grobid.properties` file located under `grobid-home/config/grobid.properties`.
+
+By default, the project can process scientific articles in PDF and TEI formats. To process JATS/NLM, scholarOne and a variety of other native publisher formats, Pub2TEI needs to be installed: 
+
+> git clone https://github.com/kermitt2/Pub2TEI
+
+If required, update the path to the Pub2TEI installation in the `dataseer-ml.properties` file located under `dataseer-ml/src/main/resources/`:
+
+```
+# path to Pub2TEI repository as available at https://github.com/kermitt2/Pub2TEI
+grobid.dataseer.pub2tei.path=../../Pub2TEI/
+```
+
+Build dataseer-ml:
 
 > cd grobid/dataseer-ml
 
 > ./gradlew clean install
+
 
 # Web service API
 
@@ -52,6 +76,15 @@ Example:
 
 > curl --form input=@./resources/samples/journal.pone.0198050.pdf localhost:8060/service/processDataseerPDF
 
+## Process native publisher XML document
+
+Upload a publisher native XML format document, convert it into structured TEI (via Pub2TEI), identify dataset introductory section, segment into sentences, identify sentence introducing a dataset and classify the dataset type. Return a TEI representation of the PDF, enriched with Dataseer information.
+
+Example:
+
+> curl --form input=@./resources/samples/journal.pone.0198050.xml localhost:8060/service/processDataseerJATS
+
+See [Pub2TEI](https://github.com/kermitt2/Pub2TEI) for the exact list of supported formats.
 
 # Training data assembling and generating classification models
 
