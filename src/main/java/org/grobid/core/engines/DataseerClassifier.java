@@ -602,20 +602,6 @@ public class DataseerClassifier {
 
         // filter sentences relevant to the valid sections
         List<Integer> sentenceValidIndex = new ArrayList<Integer>();
-        /*for (int i = 0; i < sentenceList.getLength(); i++) {
-            if (sentenceValidIndex.contains(new Integer(i)))
-                continue;
-            Element sentenceElement = (Element) sentenceList.item(i);
-            // check the section header of the sentence
-            String localHeader = this.getUpperHeaderSection(sentenceElement);
-            System.out.println("localHeader: " + localHeader);
-            if (!invalidHeaders.contains(localHeader.toLowerCase())) {
-                for(int j=0; j<20 && j+i<sentenceList.getLength(); j++)
-                    sentenceValidIndex.add(new Integer(i+j));
-            }
-        }
-        System.out.println(sentenceValidIndex.toString());*/
-
         DocumentTraversal traversal = (DocumentTraversal) doc;
         TreeWalker walker = traversal.createTreeWalker(doc.getDocumentElement(), 
             NodeFilter.SHOW_ELEMENT,
@@ -676,7 +662,7 @@ public class DataseerClassifier {
 
             // add attributes if we have a dataset in the sentence
             int pos = 0;
-            int dataSetId = 0;
+            int dataSetId = 1;
             JsonNode root = null;
             if (json != null && json.length() > 0) {
                 root = mapper.readTree(json);
