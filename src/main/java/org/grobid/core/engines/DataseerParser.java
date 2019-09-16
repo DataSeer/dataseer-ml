@@ -76,14 +76,14 @@ public class DataseerParser extends AbstractParser {
         instance = new DataseerParser();
     }
 
-    private DataseerLexicon dataseerLexicon = null;
+    //private DataseerLexicon dataseerLexicon = null;
     private EngineParsers parsers;
 
     private DataseerParser() {
         super(GrobidModels.DATASEER, CntManagerFactory.getCntManager(), 
-            GrobidCRFEngine.valueOf(DataseerProperties.get("grobid.dataseer.engine").toUpperCase()));
+            GrobidCRFEngine.valueOf("WAPITI"));
 
-        dataseerLexicon = DataseerLexicon.getInstance();
+        //dataseerLexicon = DataseerLexicon.getInstance();
         parsers = new EngineParsers();
     }
 
@@ -93,14 +93,14 @@ public class DataseerParser extends AbstractParser {
      *
      * @param segments the list of textual segments, segmented into LayoutTokens
      * @param sectionTypes list giving for each segment its section type as String (head, paragraph, list)
-     * @param hasDatasets list giving for each segment if the classifier has predicted a dataset (has_dataset) as boolean
+     * @param nbDatasets list giving for each segment if the number of datasets predicted by the classifier 
      * @param datasetTypes list giving for each segment the classifier prediction as data type as String, or null of has_dataset
      * 
      * @return list of Boolean, one for each inputed text segment, indicating if the segment
      * is relevant for data set section. 
      */
-    public List<Boolean> processing(List<List<LayoutToken>> segments, List<String> sectionTypes, List<Boolean> hasDatasets, List<String> datasetTypes) {
-        String content = getFeatureVectorsAsString(segments, sectionTypes, hasDatasets, datasetTypes);
+    public List<Boolean> processing(List<List<LayoutToken>> segments, List<String> sectionTypes, List<Integer> nbDatasets, List<String> datasetTypes) {
+        String content = getFeatureVectorsAsString(segments, sectionTypes, nbDatasets, datasetTypes);
         List<Boolean> result = new ArrayList<Boolean>();
         if (isNotEmpty(trim(content))) {
             String labelledResult = label(content);
@@ -111,13 +111,13 @@ public class DataseerParser extends AbstractParser {
         return result;
     }
 
-    public List<Boolean> processingText(List<String> segments, List<String> sectionTypes, List<Boolean> hasDatasets, List<String> datasetTypes) {
+    public List<Boolean> processingText(List<String> segments, List<String> sectionTypes, List<Integer> nbDatasets, List<String> datasetTypes) {
         List<List<LayoutToken>> layoutTokenSegments = new ArrayList<List<LayoutToken>>();
         for(String segment : segments) {
             List<LayoutToken> tokens = DataseerAnalyzer.getInstance().tokenizeWithLayoutToken(segment);
             layoutTokenSegments.add(tokens);
         }
-        return processing(layoutTokenSegments, sectionTypes, hasDatasets, datasetTypes);
+        return processing(layoutTokenSegments, sectionTypes, nbDatasets, datasetTypes);
     }
 
     /**
@@ -129,9 +129,9 @@ public class DataseerParser extends AbstractParser {
      * Possible dictionary flags are at line level (i.e. the line contains a name mention, a place mention, a year, etc.)
      * No layout features, because they have already been taken into account at the segmentation model level.
      */
-    private String getFeatureVectorsAsString(List<List<LayoutToken>> segments, 
+    public static String getFeatureVectorsAsString(List<List<LayoutToken>> segments, 
                                             List<String> sectionTypes,  
-                                            List<Boolean> hasDatasets, 
+                                            List<Integer> nbDatasets, 
                                             List<String> datasetTypes) {
         // vector for features
         FeaturesVectorDataseer features;
@@ -147,9 +147,11 @@ public class DataseerParser extends AbstractParser {
 
         int m = 0;
         for(List<LayoutToken> segment : segments) {
+            if (segment == null || segment.size() == 0)
+                continue;
             int n = 0;
             LayoutToken token = segment.get(n); 
-            while(DataseerAnalyzer.DELIMITERS.indexOf(token.getText()) == -1) {
+            while(DataseerAnalyzer.DELIMITERS.indexOf(token.getText()) == -1 && n < segment.size()) {
                 token = segment.get(n); 
                 n++;
             }
@@ -162,7 +164,7 @@ public class DataseerParser extends AbstractParser {
             features = new FeaturesVectorDataseer();
             features.string = tokenText;
 
-            while(DataseerAnalyzer.DELIMITERS.indexOf(token.getText()) == -1) {
+            while(DataseerAnalyzer.DELIMITERS.indexOf(token.getText()) == -1 && n < segment.size()) {
                 token = segment.get(n); 
                 n++;
             }
@@ -173,7 +175,7 @@ public class DataseerParser extends AbstractParser {
                 features.secondString = tokenText;
             }
 
-            while(DataseerAnalyzer.DELIMITERS.indexOf(token.getText()) == -1) {
+            while(DataseerAnalyzer.DELIMITERS.indexOf(token.getText()) == -1 && n < segment.size()) {
                 token = segment.get(n); 
                 n++;
             }
@@ -185,7 +187,16 @@ public class DataseerParser extends AbstractParser {
             }
 
             features.sectionType = sectionTypes.get(m);
-            features.has_dataset = hasDatasets.get(m);
+
+            Integer nbDataset = nbDatasets.get(m);
+            if (nbDataset == 0)
+                features.has_dataset = false;
+            else 
+                features.has_dataset = true;
+            if (nbDataset <= 4)
+                features.nbDataset = nbDataset;
+            else
+                features.nbDataset = 4;
             features.datasetType = datasetTypes.get(m);
             
             //features.punctuationProfile = TextUtilities.punctuationProfile(line);
@@ -197,13 +208,6 @@ public class DataseerParser extends AbstractParser {
             features.relativeDocumentPosition = FeatureFactory.getInstance()
                     .linearScaling(m, segments.size(), NBBINS_POSITION);
 //System.out.println(nn + " " + documentLength + " " + NBBINS_POSITION + " " + features.relativeDocumentPosition); 
-
-
-
-
-
-
-            
 
             if (previousFeatures != null) {
                 String vector = previousFeatures.printVector();

@@ -45,7 +45,7 @@ public class DataseerRestService implements DataseerPaths {
             LOGGER.info(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
 
             //LibraryLoader.load();
-            DataseerLexicon.getInstance();
+            //DataseerLexicon.getInstance();
         } catch (final Exception exp) {
             LOGGER.error("GROBID dataseer initialisation failed. ", exp);
         }

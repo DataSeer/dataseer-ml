@@ -3,6 +3,8 @@ package org.grobid.trainer;
 import org.grobid.core.analyzers.DataseerAnalyzer;
 import org.grobid.core.exceptions.GrobidException;
 import org.grobid.core.utilities.Pair;
+import org.grobid.core.engines.DataseerClassifier;
+import org.grobid.core.layout.LayoutToken;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -12,9 +14,14 @@ import java.util.List;
 
 /**
  * SAX handler for TEI-style annotations. 
- * Dataseer entities are inline annotations.
- * Dataseer sentence classification are sentence-level inline annotations.
- * The training data for the models are generated during the XML parsing.
+ * Dataseer relevant sections are marked at <div> level.
+ * Dataseer sentence classification are sentence-level inline annotations <s>.
+ * If any, Dataseer entities are inline annotations <rs>.
+ *
+ * Basically we consider <div> <head> <p> <s> tags in the training corpus. 
+ * <head> and <p> are the unit to be labeled. <s> within <p> are classified by the current 
+ * Dataseer sentence classifier and used as feature for the <p> level. 
+ * <head> content is not classifier. 
  *
  * @author Patrice
  */
@@ -26,9 +33,24 @@ public class DataseerAnnotationSaxHandler extends DefaultHandler {
 
     private String currentTag = null;
 
-    private List<Pair<String, String>> labeled = null; // store line by line the labeled data
+    private List<List<LayoutToken>> segments;
+    private List<String> sectionTypes;
+    private List<Integer> nbDatasets;
+    private List<String> datasetTypes;
+    private List<String> labels;
 
-    public DataseerAnnotationSaxHandler() {
+    private DataseerClassifier dataseerClassifier = null;
+    private List<String> currentSentences = null;
+
+    public DataseerAnnotationSaxHandler(DataseerClassifier classifier) {
+        segments = new ArrayList<List<LayoutToken>>();
+        sectionTypes = new ArrayList<String>();
+        nbDatasets = new ArrayList<Integer>();
+        datasetTypes = new ArrayList<String>();
+        labels = new ArrayList<String>();
+        ignore = true;
+        dataseerClassifier = classifier;
+        currentSentences = new ArrayList<String>();
     }
 
     public void characters(char[] buffer, int start, int length) {
@@ -44,26 +66,43 @@ public class DataseerAnnotationSaxHandler extends DefaultHandler {
         }
     }
 
-    public List<Pair<String, String>> getLabeledResult() {
-        return labeled;
+    public List<List<LayoutToken>> getSegments() {
+        return segments;
+    }
+
+    public List<String> getSectionTypes() {
+        return sectionTypes;
+    }
+
+    public List<Integer> getNbDatasets() {
+        return nbDatasets;
+    }
+
+    public List<String> getDatasetTypes() {
+        return datasetTypes;
+    }
+
+    public List<String> getLabels() {
+        return labels;
     }
 
     public void endElement(java.lang.String uri,
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
         try {
-            if ((!qName.equals("lb")) && (!qName.equals("pb"))) {
-                /*if (!qName.equals("num")) && (!qName.equals("measure"))
-                    currentTag = "<other>";*/
+            if ((qName.equals("head")) || (qName.equals("p"))) {
                 writeData(qName);
                 currentTag = null;
+                currentSentences = new ArrayList<String>();
+            } else if (qName.equals("body")) {
+                ignore = true;
+            } else if (qName.equals("div")) {
+                currentTag = "<other>";
+            } else if (qName.equals("s")) {
+                currentSentences.add(getText());
+                accumulator.setLength(0);
             }
-            if (qName.equals("rs")) {
-               	writeData(qName);
-			} else if (qName.equals("p") || qName.equals("paragraph")) {
-                // let's consider a new CRF input per paragraph too
-                labeled.add(new Pair("\n", null));
-            }
+
         } catch (Exception e) {
 //		    e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid.", e);
@@ -75,15 +114,32 @@ public class DataseerAnnotationSaxHandler extends DefaultHandler {
                              String qName,
                              Attributes atts) throws SAXException {
         try {
-            if (qName.equals("text")) {
+            if (qName.equals("body")) {
                 ignore = false;
-            } else if (qName.equals("lb")) {
-                accumulator.append(" +L+ ");
-            } else if (qName.equals("pb")) {
-                accumulator.append(" +PAGE+ ");
             } else if (qName.equals("space")) {
                 accumulator.append(" ");
-            } else {
+            } else if (qName.equals("div")) {
+                currentTag = "<other>";
+                int length = atts.getLength();
+                // <div subtype="dataseer">
+                // Process each attribute
+                for (int i = 0; i < length; i++) {
+                    // Get names and values for each attribute
+                    String name = atts.getQName(i);
+                    String value = atts.getValue(i);
+
+                    if ((name != null) && (value != null)) {
+                        if (name.equals("subtype")) {
+                            if (value.equals("dataseer")) {
+                                currentTag = "<dataseer>";
+                            } else {
+                                System.out.println("Warning: unknown entity attribute name, " + name);
+                            }
+                        }
+                    }
+                }
+            } 
+            /*else {
                 // we have to write first what has been accumulated yet with the upper-level tag
                 String text = getText();
                 if (text != null) {
@@ -93,37 +149,8 @@ public class DataseerAnnotationSaxHandler extends DefaultHandler {
                     }
                 }
                 accumulator.setLength(0);
-
-                // we output the remaining text
-                if (qName.equals("rs") && !ignore) {
-
-                    int length = atts.getLength();
-
-                    // Process each attribute
-                    for (int i = 0; i < length; i++) {
-                        // Get names and values for each attribute
-                        String name = atts.getQName(i);
-                        String value = atts.getValue(i);
-
-                        if ((name != null) && (value != null)) {
-                            if (name.equals("type")) {
-                                if (value.equals("dataset")) {
-                                    currentTag = "<dataset>";
-                                } else if (value.equals("url")) {
-                                    currentTag = "<url>";
-                                } else {
-                               	 	System.out.println("Warning: unknown entity attribute name, " + name);
-                            	}
-							}
-                        }
-                    }
-                } else if (qName.equals("TEI") || qName.equals("tei") || qName.equals("teiCorpus") ) {
-                    labeled = new ArrayList<>();
-                    accumulator = new StringBuffer();
-                    currentTag = null;
-                    ignore = true;
-                }
-            }
+            }*/
+            
         } catch (Exception e) {
 //		    e.printStackTrace();
             throw new GrobidException("An exception occured while running Grobid.", e);
@@ -133,43 +160,38 @@ public class DataseerAnnotationSaxHandler extends DefaultHandler {
     private void writeData(String qName) {
         if (currentTag == null)
             currentTag = "<other>";
-        if ((qName.equals("other")) ||
-                (qName.equals("rs")) ||
+        if ((qName.equals("head")) ||
                 (qName.equals("paragraph")) || (qName.equals("p")) ||
                 (qName.equals("div"))
                 ) {
+
             if (currentTag == null) {
                 return;
             }
 
             String text = getText();
+            if (text == null || text.trim().length() ==0 )
+                return;
+            
             // we segment the text
-            List<String> tokenizations = DataseerAnalyzer.getInstance().tokenize(text);
-            boolean begin = true;
-            for (String tok : tokenizations) {
-                tok = tok.trim();
-                if (tok.length() == 0)
-                    continue;
+            List<LayoutToken> tokenization = DataseerAnalyzer.getInstance().tokenizeWithLayoutToken(text);
+            segments.add(tokenization);
+            labels.add(currentTag);
+            sectionTypes.add(qName);
 
-                if (tok.equals("+L+")) {
-                    labeled.add(new Pair("@newline", null));
-                } else if (tok.equals("+PAGE+")) {
-                    // page break should be a distinct feature
-                    labeled.add(new Pair("@newpage", null));
-                } else {
-                    String content = tok;
-                    int i = 0;
-                    if (content.length() > 0) {
-                        if (begin && (!currentTag.equals("<other>")) ) {
-                            labeled.add(new Pair(content, "I-" + currentTag));
-                            begin = false;
-                        } else {
-                            labeled.add(new Pair(content, currentTag));
-                        }
+            // outcome of the data type classifier
+            if (qName.equals("paragraph") || (qName.equals("p"))) {
+                if (currentSentences != null && currentSentences.size() > 0) {
+                    try {
+                        String json = dataseerClassifier.classify(currentSentences);
+                        System.out.println(currentSentences.toString());
+                        System.out.println(json);
+                    } catch(Exception e) {
+                        e.printStackTrace();
                     }
                 }
-                begin = false;
             }
+
             accumulator.setLength(0);
         }
     }

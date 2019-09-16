@@ -7,7 +7,6 @@ import org.grobid.core.engines.Engine;
 import org.grobid.core.engines.config.GrobidAnalysisConfig;
 import org.grobid.core.factory.GrobidFactory;
 import org.grobid.core.layout.Page;
-import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.IOUtilities;
 import org.grobid.core.utilities.ArticleUtilities;
 import org.grobid.core.utilities.Pair;

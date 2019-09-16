@@ -252,3 +252,4 @@ task(annotated_corpus_generator_csv, dependsOn: 'classes', type: JavaExec, group
     args getArg('full', ''), getArg('pdf', ''), getArg('csv', ''), getArg('xml', 'resources/dataset/dataseer/corpus/')
     jvmArgs '-Xms2g', '-Xmx8g'
 }
+

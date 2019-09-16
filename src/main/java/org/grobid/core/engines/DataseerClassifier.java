@@ -109,10 +109,10 @@ public class DataseerClassifier {
         instance = new DataseerClassifier();
     }
 
-    private DataseerLexicon dataseerLexicon = null;
+    //private DataseerLexicon dataseerLexicon = null;
 
     private DataseerClassifier() {
-        dataseerLexicon = DataseerLexicon.getInstance();
+        //dataseerLexicon = DataseerLexicon.getInstance();
         try {
             // force loading of DeLFT and Wapiti lib without conflict
             GrobidProperties.getInstance();

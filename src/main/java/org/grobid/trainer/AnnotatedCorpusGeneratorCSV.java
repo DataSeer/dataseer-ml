@@ -24,7 +24,6 @@ import org.grobid.core.lang.Language;
 import org.grobid.core.layout.LayoutToken;
 import org.grobid.core.layout.LayoutTokenization;
 import org.grobid.core.lexicon.FastMatcher;
-import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.*;
 
 import org.slf4j.Logger;

@@ -20,7 +20,8 @@ public class FeaturesVectorDataseer {
     
     public String sectionType = null; // header or paragraph or list
     public boolean has_dataset; // if the segment has been predicted as having a dataset by the classifier
-    public String datasetType = null;
+    public int nbDataset = 0; // number of predicted datasets in the segement, discretised
+    public String datasetType = null; // most frequent dataset present in the segment
 
     //public String capitalisation = null; // one of INITCAP, ALLCAPS, NOCAPS
     public String digit;  // one of ALLDIGIT, CONTAINDIGIT, NODIGIT
@@ -65,17 +66,19 @@ public class FeaturesVectorDataseer {
         if (sectionType != null)
             res.append(sectionType);
         else
-            res.append("paragraph");
+            res.append(" paragraph");
 
         if (has_dataset)
             res.append(" 1");
         else
             res.append(" 0");
 
+        res.append(" " + nbDataset);
+
         if (datasetType != null)
             res.append(datasetType);
         else
-            res.append("no_dataset");
+            res.append(" no_dataset");
 
         // capitalisation (1)
         /*if (digit.equals("ALLDIGIT"))
