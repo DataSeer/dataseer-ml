@@ -9,8 +9,13 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
+import com.fasterxml.jackson.core.*;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.node.*;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.core.io.*;
 
 /**
  * SAX handler for TEI-style annotations. 
@@ -186,6 +191,43 @@ public class DataseerAnnotationSaxHandler extends DefaultHandler {
                         String json = dataseerClassifier.classify(currentSentences);
                         System.out.println(currentSentences.toString());
                         System.out.println(json);
+
+                        // get the number of found datasets and the data types
+                        int nb = 0;
+                        ObjectMapper mapper = new ObjectMapper();
+                        JsonNode root = null;
+                        if (json != null && json.length() > 0) {
+                            root = mapper.readTree(json);
+                            JsonNode classificationsNode = root.findPath("classifications");
+
+                            if ((classificationsNode != null) && (!classificationsNode.isMissingNode())) {
+                                Iterator<JsonNode> ite = classificationsNode.elements();
+                                while (ite.hasNext()) {
+                                    JsonNode classificationNode = ite.next();
+                                    JsonNode datasetNode = classificationNode.findPath("dataset");
+                                    JsonNode noDatasetNode = classificationNode.findPath("no_dataset");
+
+                                    if ((datasetNode != null) && (!datasetNode.isMissingNode()) &&
+                                        (noDatasetNode != null) && (!noDatasetNode.isMissingNode()) ) {
+                                        double probDataset = datasetNode.asDouble();
+                                        double probNoDataset = noDatasetNode.asDouble();
+
+                                        //System.out.println(probDataset + " " + probNoDataset);
+                                        if (probDataset > probNoDataset) {
+                                            nb++;
+                                        }
+
+                                        // rename "dataset" attribute to avoid confusion with "Dataset" type of the taxonomy
+                                        ((ObjectNode)classificationNode).put("has_dataset", probDataset);
+                                        ((ObjectNode)classificationNode).remove("dataset");
+                                    }
+                                }
+                            }
+                        }
+                        nbDatasets.add(new Integer(nb));
+
+                        // most frequent dataset type, if any
+                        datasetTypes.add("none");
                     } catch(Exception e) {
                         e.printStackTrace();
                     }
