@@ -46,6 +46,7 @@ public class DataseerAnnotationSaxHandler extends DefaultHandler {
 
     private DataseerClassifier dataseerClassifier = null;
     private List<String> currentSentences = null;
+    private StringBuilder currentSegment = null;
 
     public DataseerAnnotationSaxHandler(DataseerClassifier classifier) {
         segments = new ArrayList<List<LayoutToken>>();
@@ -56,6 +57,7 @@ public class DataseerAnnotationSaxHandler extends DefaultHandler {
         ignore = true;
         dataseerClassifier = classifier;
         currentSentences = new ArrayList<String>();
+        currentSegment = new StringBuilder();
     }
 
     public void characters(char[] buffer, int start, int length) {
@@ -95,10 +97,16 @@ public class DataseerAnnotationSaxHandler extends DefaultHandler {
                            java.lang.String localName,
                            java.lang.String qName) throws SAXException {
         try {
-            if ((qName.equals("head")) || (qName.equals("p"))) {
+            if (qName.equals("head") || qName.equals("s")) {
+                if (currentSegment == null)
+                    currentSegment = new StringBuilder();
+                currentSegment.append(getText());
+            }
+            if (qName.equals("head") || qName.equals("p") || qName.equals("paragraph")) {
                 writeData(qName);
                 currentTag = null;
                 currentSentences = new ArrayList<String>();
+                currentSegment = new StringBuilder();
             } else if (qName.equals("body")) {
                 ignore = true;
             } else if (qName.equals("div")) {
@@ -106,6 +114,7 @@ public class DataseerAnnotationSaxHandler extends DefaultHandler {
             } else if (qName.equals("s")) {
                 currentSentences.add(getText());
                 accumulator.setLength(0);
+//System.out.println(currentSentences.toString());
             }
 
         } catch (Exception e) {
@@ -166,34 +175,36 @@ public class DataseerAnnotationSaxHandler extends DefaultHandler {
         if (currentTag == null)
             currentTag = "<other>";
         if ((qName.equals("head")) ||
-                (qName.equals("paragraph")) || (qName.equals("p")) ||
-                (qName.equals("div"))
+                (qName.equals("paragraph")) || (qName.equals("p")) 
+                //|| (qName.equals("div"))
                 ) {
-
+//System.out.println(qName);
             if (currentTag == null) {
                 return;
             }
 
-            String text = getText();
-            if (text == null || text.trim().length() ==0 )
+            String text = currentSegment.toString();
+            currentSegment = new StringBuilder();
+            if (text == null || text.trim().length() == 0)
                 return;
-            
+
             // we segment the text
             List<LayoutToken> tokenization = DataseerAnalyzer.getInstance().tokenizeWithLayoutToken(text);
             segments.add(tokenization);
             labels.add(currentTag);
             sectionTypes.add(qName);
 
+            int nb = 0;
+            String datasetType = "none";
             // outcome of the data type classifier
             if (qName.equals("paragraph") || (qName.equals("p"))) {
                 if (currentSentences != null && currentSentences.size() > 0) {
                     try {
                         String json = dataseerClassifier.classify(currentSentences);
-                        System.out.println(currentSentences.toString());
-                        System.out.println(json);
+                        //System.out.println(currentSentences.toString());
+                        //System.out.println(json);
 
                         // get the number of found datasets and the data types
-                        int nb = 0;
                         ObjectMapper mapper = new ObjectMapper();
                         JsonNode root = null;
                         if (json != null && json.length() > 0) {
@@ -218,22 +229,23 @@ public class DataseerAnnotationSaxHandler extends DefaultHandler {
                                         }
 
                                         // rename "dataset" attribute to avoid confusion with "Dataset" type of the taxonomy
-                                        ((ObjectNode)classificationNode).put("has_dataset", probDataset);
-                                        ((ObjectNode)classificationNode).remove("dataset");
+                                        //((ObjectNode)classificationNode).put("has_dataset", probDataset);
+                                        //((ObjectNode)classificationNode).remove("dataset");
                                     }
                                 }
                             }
                         }
-                        nbDatasets.add(new Integer(nb));
 
                         // most frequent dataset type, if any
-                        datasetTypes.add("none");
+                        
                     } catch(Exception e) {
                         e.printStackTrace();
                     }
                 }
             }
 
+            nbDatasets.add(new Integer(nb));
+            datasetTypes.add(datasetType);
             accumulator.setLength(0);
         }
     }

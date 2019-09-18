@@ -39,22 +39,22 @@ public class FeaturesVectorDataseer {
         if (string.length() == 0) return null;
         StringBuffer res = new StringBuffer();
 
-        // token string (1)
+        // token string (0)
         res.append(string);
         
-        // second token string
+        // second token string (1)
         if (secondString != null)
             res.append(" " + secondString);
         else
             res.append(" " + string);
 
-        // third token string
-        if (thirdString != null)
+        // third token string (2)
+        if (thirdString != null) 
             res.append(" " + thirdString);
         else
             res.append(" " + string);
         
-        // lowercase string
+        // lowercase string (3)
         res.append(" " + string.toLowerCase());
 
         // prefix (4)
@@ -64,9 +64,9 @@ public class FeaturesVectorDataseer {
         res.append(" " + TextUtilities.prefix(string, 4));*/
 
         if (sectionType != null)
-            res.append(sectionType);
+            res.append(" " + sectionType);
         else
-            res.append(" paragraph");
+            res.append(" p");
 
         if (has_dataset)
             res.append(" 1");
@@ -76,7 +76,7 @@ public class FeaturesVectorDataseer {
         res.append(" " + nbDataset);
 
         if (datasetType != null)
-            res.append(datasetType);
+            res.append(" " + datasetType);
         else
             res.append(" no_dataset");
 

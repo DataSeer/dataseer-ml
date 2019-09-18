@@ -127,7 +127,7 @@ public class DataseerTrainer extends AbstractTrainer {
             for (int n=0; n<refFiles.length; n++) {
                 File tf = refFiles[n];
                 String name = tf.getName();
-                LOGGER.info("Processing: " + name);
+                System.out.println("Processing: " + name);
 
                 DataseerAnnotationSaxHandler handler = new DataseerAnnotationSaxHandler(classifier);            
 
@@ -163,7 +163,7 @@ public class DataseerTrainer extends AbstractTrainer {
                 for (int i=0; i<lines.length; i++) {
                     String line = lines[i];
                     writer.write(line);
-                    writer.write("\t");
+                    writer.write(" ");
                     writer.write(labels.get(i));
                     writer.write("\n");
                 }

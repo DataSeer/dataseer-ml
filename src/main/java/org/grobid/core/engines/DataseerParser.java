@@ -151,7 +151,7 @@ public class DataseerParser extends AbstractParser {
                 continue;
             int n = 0;
             LayoutToken token = segment.get(n); 
-            while(DataseerAnalyzer.DELIMITERS.indexOf(token.getText()) == -1 && n < segment.size()) {
+            while(DataseerAnalyzer.DELIMITERS.indexOf(token.getText()) != -1 && n < segment.size()) {
                 token = segment.get(n); 
                 n++;
             }
@@ -164,7 +164,10 @@ public class DataseerParser extends AbstractParser {
             features = new FeaturesVectorDataseer();
             features.string = tokenText;
 
-            while(DataseerAnalyzer.DELIMITERS.indexOf(token.getText()) == -1 && n < segment.size()) {
+            n++;
+            if (n < segment.size())
+                token = segment.get(n); 
+            while(DataseerAnalyzer.DELIMITERS.indexOf(token.getText()) != -1 && n < segment.size()) {
                 token = segment.get(n); 
                 n++;
             }
@@ -175,7 +178,10 @@ public class DataseerParser extends AbstractParser {
                 features.secondString = tokenText;
             }
 
-            while(DataseerAnalyzer.DELIMITERS.indexOf(token.getText()) == -1 && n < segment.size()) {
+            n++;
+            if (n < segment.size())
+                token = segment.get(n); 
+            while(DataseerAnalyzer.DELIMITERS.indexOf(token.getText()) != -1 && n < segment.size()) {
                 token = segment.get(n); 
                 n++;
             }
