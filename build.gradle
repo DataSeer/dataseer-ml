@@ -213,21 +213,21 @@ wrapper {
 
 // Custom Tasks
 
-// Run like this: ./gradlew dataseer -PgH=/path/grobid/home
-task(trainer, dependsOn: 'classes', type: JavaExec, group: 'training') {
+// Run like this: ./gradlew train_dataseer -PgH=/path/grobid/home
+task(train_dataseer, dependsOn: 'classes', type: JavaExec, group: 'training') {
     main = 'org.grobid.trainer.DataseerTrainerRunner'
     classpath = sourceSets.main.runtimeClasspath
-    args '0', 'dataseer', getArg('gH', '../grobid-home'), getArg('b', '0.00001 20 0'), getArg('t', '1')
+    args '0', 'dataseer', getArg('gH', '../grobid-home'), getArg('t', '0')
 //    jvmArgs '-Xms2g', '-Xmx8g'
 }
 
 // Run like this: ./gradlew train_dataseer -PgH=/path/grobid/home
-task(train_dataseer, dependsOn: 'classes', type: JavaExec, group: 'training') {
-    main = 'org.grobid.trainer.DataseerTrainer'
-    classpath = sourceSets.main.runtimeClasspath
+//task(train_dataseer, dependsOn: 'classes', type: JavaExec, group: 'training') {
+//    main = 'org.grobid.trainer.DataseerTrainer'
+//    classpath = sourceSets.main.runtimeClasspath
 //    args '0', 'dataseer', getArg('gH', '../grobid-home'), getArg('b', ''),
 //    jvmArgs '-Xms2g', '-Xmx8g'
-}
+//}
 
 // Run like this: ./gradlew eval_dataseer -PgH=/path/grobid/home
 task(eval_dataseer, dependsOn: 'classes', type: JavaExec, group: 'evaluation') {
@@ -241,7 +241,15 @@ task(eval_dataseer, dependsOn: 'classes', type: JavaExec, group: 'evaluation') {
 task(eval_dataseer_split, dependsOn: 'classes', type: JavaExec, group: 'evaluation') {
     main = 'org.grobid.trainer.DataseerTrainerRunner'
     classpath = sourceSets.main.runtimeClasspath
-    args '2', 'dataseer', getArg('gH', '../grobid-home'), getArg('s', 0.9), getArg('t', '1')
+    args '2', 'dataseer', getArg('gH', '../grobid-home'), getArg('s', 0.9), getArg('t', '0')
+    jvmArgs '-Xms2g', '-Xmx8g'
+}
+
+// Run like this: ./gradlew eval_dataseer_nfold -PgH=/path/grobid/home -Pt=10
+task(eval_dataseer_nfold, dependsOn: 'classes', type: JavaExec, group: 'evaluation') {
+    main = 'org.grobid.trainer.DataseerTrainerRunner'
+    classpath = sourceSets.main.runtimeClasspath
+    args '3', 'dataseer', getArg('gH', '../grobid-home'), getArg('n', 10), getArg('t', '0')
     jvmArgs '-Xms2g', '-Xmx8g'
 }
 
