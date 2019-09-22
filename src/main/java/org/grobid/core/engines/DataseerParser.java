@@ -105,7 +105,18 @@ public class DataseerParser extends AbstractParser {
         if (isNotEmpty(trim(content))) {
             String labelledResult = label(content);
             // set the boolean value for the segments
-
+            String[] lines = labelledResult.split("\n");
+            for(int i=0; i < lines.length; i++) {
+                String line = lines[i];
+                String values[] = line.split("\t");
+                if (values.length <= 1)
+                    values = line.split(" ");
+                String label = values[values.length-1];
+                if (label.endsWith("no_dataset")) 
+                    result.add(new Boolean(false));
+                else 
+                    result.add(new Boolean(true));
+            }
         }
 
         return result;

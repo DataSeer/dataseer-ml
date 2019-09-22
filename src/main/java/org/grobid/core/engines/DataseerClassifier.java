@@ -560,168 +560,176 @@ public class DataseerClassifier {
     private static String specialHeader = "materials and methods";
 
     private void enrich(org.w3c.dom.Document doc, Node node) {
-        NodeList sentenceList = doc.getElementsByTagName("s");
-        List<String> sentences = new ArrayList<>();
-        List<Element> sentenceElements = new ArrayList<>();
-        for (int i = 0; i < sentenceList.getLength(); i++) {
-            Element sentenceElement = (Element) sentenceList.item(i);
-            String sentenceText = sentenceElement.getTextContent();
-            sentenceElements.add(sentenceElement);
-            sentences.add(sentenceText);
-        }
+        ObjectMapper mapper = new ObjectMapper();
+        Map<String, JsonNode> mapSentenceJsonResult = new TreeMap<String, JsonNode>();
 
-        // identify "material and methods" type section and keep track of those sentences
+        // build the list of sections
+        List<Boolean> relevantSections = null;
+        List<String> segments = new ArrayList<String>();
+        List<String> sectionTypes = new ArrayList<String>();
+        List<Integer> nbDatasets =new ArrayList<Integer>();
+        List<String> datasetTypes = new ArrayList<String>();
         NodeList sectionList = doc.getElementsByTagName("div");
-        List<String> validHeaders = new ArrayList<String>();
-        List<String> invalidHeaders = new ArrayList<String>();
         for (int i = 0; i < sectionList.getLength(); i++) {
             Element sectionElement = (Element) sectionList.item(i);
-            // head element (unique)
+
+            // head element (unique, but not mandatory)
             Element headElement = this.getFirstDirectChild(sectionElement, "head");
             if (headElement != null) {
-                String headText = headElement.getTextContent().toLowerCase();
-                if ( headText.indexOf("material") != -1 ||
-                     headText.indexOf("method") != -1 ||
-                     headText.indexOf("data") != -1) {
-                    validHeaders.add(headText);
-                } else {
-                    invalidHeaders.add(headText);
-                }
-            }
-        }
-
-        if (validHeaders.contains(specialHeader)) {
-            for(String head : validHeaders) {
-                if (!head.equals(specialHeader))
-                    invalidHeaders.add(head);
-            }
-            validHeaders = Arrays.asList(specialHeader);
-
-        }
-        System.out.println(validHeaders.toString());
-
-        // filter sentences relevant to the valid sections
-        List<Integer> sentenceValidIndex = new ArrayList<Integer>();
-        DocumentTraversal traversal = (DocumentTraversal) doc;
-        TreeWalker walker = traversal.createTreeWalker(doc.getDocumentElement(), 
-            NodeFilter.SHOW_ELEMENT,
-            null, 
-            true);
-        Node currentNode = walker.nextNode();
-        int record = 0;
-        boolean recording = false;
-        int indexSentence = 0;
-        boolean newDiv = false;
-        while (currentNode != null) {
-            //if (currentNode.getNodeType() == Node.ELEMENT_NODE) 
-            //    System.out.println(currentNode.getNodeName());
-
-            if (currentNode.getNodeType() == Node.ELEMENT_NODE &&
-                currentNode.getNodeName().equals("head")) {
-                System.out.println(currentNode.getTextContent());
-                if (validHeaders.contains(currentNode.getTextContent().toLowerCase())) {
-                    recording = true;
-                }
-                //System.out.println(currentNode.getNodeName() + " : " + currentNode.getChildNodes().item(0).getNodeValue());
+                segments.add(headElement.getTextContent());
+                sectionTypes.add("head");
+                nbDatasets.add(0);
+                datasetTypes.add("no_dataset");
             }
 
-            if (currentNode.getNodeType() == Node.ELEMENT_NODE &&
-                currentNode.getNodeName().equals("div") && recording) {
-                newDiv = true;
-            }
+            // the <p> elements 
+            for(Node child = sectionElement.getFirstChild(); child != null; child = child.getNextSibling()) {
+                if (child instanceof Element && "p".equals(child.getNodeName())) {
+                    Element childElement = (Element)child;
+                    segments.add(childElement.getTextContent());
+                    sectionTypes.add("p");
 
-            if (currentNode.getNodeType() == Node.ELEMENT_NODE &&
-                currentNode.getNodeName().equals("s")) {
-                if (recording) {
-                    sentenceValidIndex.add(new Integer(indexSentence));
-                    record++;
-                } 
-                indexSentence++;
-
-                if (record == 20) 
-                    newDiv = false;
-
-                if (record > 20 && newDiv) {
-                    recording = false;
-                    record = 0;
-                    newDiv = false;
-                }
-                //System.out.println(currentNode.getNodeName() + " : " + node.getChildNodes().item(0).getNodeValue());
-            }
-
-            currentNode = walker.nextNode();
-        }
-
-        System.out.println(sentenceValidIndex.toString());
-
-        // classify the sentences
-        try {
-            String json = this.classify(sentences);
-            //System.out.println(json);
-            ObjectMapper mapper = new ObjectMapper();
-
-            // add attributes if we have a dataset in the sentence
-            int pos = 0;
-            int dataSetId = 1;
-            JsonNode root = null;
-            if (json != null && json.length() > 0) {
-                root = mapper.readTree(json);
-                JsonNode classificationsNode = root.findPath("classifications");
-                if ((classificationsNode != null) && (!classificationsNode.isMissingNode())) {
-                    Iterator<JsonNode> ite = classificationsNode.elements();
-                    while (ite.hasNext()) {
-                        JsonNode classificationNode = ite.next();
-                        JsonNode datasetNode = classificationNode.findPath("has_dataset");
-                        JsonNode noDatasetNode = classificationNode.findPath("no_dataset");
-
-                        if (!sentenceValidIndex.contains(new Integer(pos))) {
-                            pos++;
-                            continue;
+                    // get the sentences elements
+                    List<String> localSentences = new ArrayList<String>();
+                    for(Node subchild = childElement.getFirstChild(); subchild != null; subchild = subchild.getNextSibling()) {
+                        if (subchild instanceof Element && "s".equals(subchild.getNodeName())) {
+                            Element subchildElement = (Element)subchild;
+                            localSentences.add(subchildElement.getTextContent());
                         }
+                    }
+                    int nbLocalDatasets = 0;
+                    String mainDataset = null;
+                    try {
+                        String localJson = this.classify(localSentences);
 
-                        if ((datasetNode != null) && (!datasetNode.isMissingNode()) &&
-                            (noDatasetNode != null) && (!noDatasetNode.isMissingNode()) ) {
-                            double probDataset = datasetNode.asDouble();
-                            double probNoDataset = noDatasetNode.asDouble();
+                        List<Boolean> datasetSentences = new ArrayList<Boolean>();
+                        if (localJson != null && localJson.length() > 0) {
+                            JsonNode root = mapper.readTree(localJson);
+                            JsonNode classificationsNode = root.findPath("classifications");
+                            if ((classificationsNode != null) && (!classificationsNode.isMissingNode())) {
+                                Iterator<JsonNode> ite = classificationsNode.elements();
+                                while (ite.hasNext()) {
+                                    JsonNode classificationNode = ite.next();
+                                    JsonNode datasetNode = classificationNode.findPath("has_dataset");
+                                    JsonNode noDatasetNode = classificationNode.findPath("no_dataset");
+                                    JsonNode textNode = classificationNode.findPath("text");
 
-                            // we consider enrichment only in the case a dataset is more likely
-                            if (probDataset > probNoDataset && probDataset > 0.9) {
-                                // we get the best dataset type Prediction
-                                String bestDataType = this.getBestDataType(classificationNode);
-                                if (bestDataType != null) {
-                                    // annotation will look like this: <s id="dataset-1" type="Generic data">
-                                    // or if existing dataset: corresp=\"#dataset- + dataSetId\"
-                                    Element sentenceElement = (Element) sentenceList.item(pos);
+                                    Boolean localResult = new Boolean(false);
+                                    if ((datasetNode != null) && (!datasetNode.isMissingNode()) &&
+                                        (noDatasetNode != null) && (!noDatasetNode.isMissingNode()) ) {
+                                        double probDataset = datasetNode.asDouble();
+                                        double probNoDataset = noDatasetNode.asDouble();
 
-                                    sentenceElement.setAttribute("id","dataset-" + dataSetId);
-                                    sentenceElement.setAttribute("type", bestDataType);
-                                    dataSetId++;
-                                    //dataSetIds.add(dataSetId);
+                                        // we consider enrichment only in the case a dataset is more likely
+                                        if (probDataset > probNoDataset && probDataset > 0.9)
+                                            nbLocalDatasets++;
 
-                                    // we also need to add a dataseer subtype attribute to the parent <div>
-                                    currentNode = sentenceElement;
-                                    while(currentNode != null) {
-                                        currentNode = currentNode.getParentNode();
-                                        if (currentNode != null && 
-                                            currentNode instanceof Element &&
-                                            !(currentNode.getParentNode() instanceof Document) && 
-                                            ((Element)currentNode).getTagName().equals("div")) {
-                                            ((Element)currentNode).setAttribute("subtype", "dataseer");
-                                            currentNode = null;
-                                        }
-
-                                        if (currentNode != null && (currentNode.getParentNode() instanceof Document))
-                                            currentNode = null;
+                                        // save results
+                                        mapSentenceJsonResult.put(textNode.asText(), classificationNode);
                                     }
                                 }
                             }
                         }
-                        pos++;
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    nbDatasets.add(nbLocalDatasets);
+                    datasetTypes.add("no_dataset");
+                }
+            }
+
+            relevantSections = 
+                DataseerParser.getInstance().processingText(segments, sectionTypes, nbDatasets, datasetTypes);
+        }
+
+        sectionList = doc.getElementsByTagName("div");
+        int dataSetId = 1;
+        int relevantSectionIndex = 0;
+        for (int i = 0; i < sectionList.getLength(); i++) {
+            Element sectionElement = (Element) sectionList.item(i);
+            boolean relevantSection = false;
+
+            // head element (unique, but not mandatory)
+            Element headElement = this.getFirstDirectChild(sectionElement, "head");
+            if (headElement != null) {
+                relevantSection = relevantSections.get(relevantSectionIndex);
+                relevantSectionIndex++;
+            }
+
+            // the <p> elements 
+            for(Node child = sectionElement.getFirstChild(); child != null; child = child.getNextSibling()) {
+                if (child instanceof Element && "p".equals(child.getNodeName())) {
+                    boolean localRelevantSection = relevantSections.get(relevantSectionIndex);
+                    if (localRelevantSection)
+                        relevantSection = true;
+                    relevantSectionIndex++;
+                }
+
+            }
+
+            // do we consider this section?
+            if (!relevantSection)
+                continue;
+
+            // if we consider this section, we get back the classification of the sentences present in it and
+            // update the <div> level accordingly
+            for(Node child = sectionElement.getFirstChild(); child != null; child = child.getNextSibling()) {
+                if (child instanceof Element && "p".equals(child.getNodeName())) {
+                    Element childElement = (Element)child;
+                    // get the sentences elements
+                    for(Node subchild = childElement.getFirstChild(); subchild != null; subchild = subchild.getNextSibling()) {
+                        if (subchild instanceof Element && "s".equals(subchild.getNodeName())) {
+                            Element subchildElement = (Element)subchild;
+                            
+                            String localSentence = subchildElement.getTextContent();
+                            JsonNode classificationNode = mapSentenceJsonResult.get(localSentence);
+
+                            if (classificationNode != null && (!classificationNode.isMissingNode())) {
+                                JsonNode datasetNode = classificationNode.findPath("has_dataset");
+                                JsonNode noDatasetNode = classificationNode.findPath("no_dataset");
+
+                                if ((datasetNode != null) && (!datasetNode.isMissingNode()) &&
+                                    (noDatasetNode != null) && (!noDatasetNode.isMissingNode()) ) {
+                                    double probDataset = datasetNode.asDouble();
+                                    double probNoDataset = noDatasetNode.asDouble();
+
+                                    // we consider enrichment only in the case a dataset is more likely
+                                    if (probDataset > probNoDataset && probDataset > 0.9) {
+                                        // we get the best dataset type Prediction
+                                        String bestDataType = this.getBestDataType(classificationNode);
+                                        if (bestDataType != null) {
+                                            // annotation will look like this: <s id="dataset-1" type="Generic data">
+                                            // or if existing dataset: corresp=\"#dataset- + dataSetId\"
+                                            Element sentenceElement = subchildElement;
+
+                                            sentenceElement.setAttribute("id","dataset-" + dataSetId);
+                                            sentenceElement.setAttribute("type", bestDataType);
+                                            dataSetId++;
+
+                                            // we also need to add a dataseer subtype attribute to the parent <div>
+                                            Node currentNode = sentenceElement;
+                                            while(currentNode != null) {
+                                                currentNode = currentNode.getParentNode();
+                                                if (currentNode != null && 
+                                                    currentNode instanceof Element &&
+                                                    !(currentNode.getParentNode() instanceof Document) && 
+                                                    ((Element)currentNode).getTagName().equals("div")) {
+                                                    ((Element)currentNode).setAttribute("subtype", "dataseer");
+                                                    currentNode = null;
+                                                }
+
+                                                if (currentNode != null && (currentNode.getParentNode() instanceof Document))
+                                                    currentNode = null;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
-        } catch(Exception e) {
-            e.printStackTrace();
         }
     }
 

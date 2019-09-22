@@ -3,6 +3,7 @@ package org.grobid.trainer;
 import org.grobid.core.main.GrobidHomeFinder;
 import org.grobid.core.utilities.DataseerProperties;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.engines.DataseerClassifier;
 
 import java.util.Arrays;
 
@@ -75,6 +76,8 @@ public class DataseerTrainerRunner {
         }
         System.out.println("path2GbdHome=" + path2GbdHome);
         initProcess(path2GbdHome);
+
+        DataseerClassifier classifier = DataseerClassifier.getInstance();
 
         Double split = 0.0;
         boolean breakParams = false;
