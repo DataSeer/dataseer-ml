@@ -47,6 +47,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.SystemUtils;
+import org.apache.commons.lang3.tuple.Pair;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 
@@ -687,14 +688,15 @@ public class DataseerClassifier {
                             // we consider enrichment only in the case a dataset is more likely
                             if (probDataset > probNoDataset && probDataset > 0.9) {
                                 // we get the best dataset type Prediction
-                                String bestDataType = this.getBestDataType(classificationNode);
-                                if (bestDataType != null) {
+                                Pair<String, Double> bestDataTypeWithProb = this.getBestDataType(classificationNode);
+                                if (bestDataTypeWithProb != null) {
                                     // annotation will look like this: <s id="dataset-1" type="Generic data">
                                     // or if existing dataset: corresp=\"#dataset- + dataSetId\"
                                     Element sentenceElement = (Element) sentenceList.item(pos);
 
                                     sentenceElement.setAttribute("id","dataset-" + dataSetId);
-                                    sentenceElement.setAttribute("type", bestDataType);
+                                    sentenceElement.setAttribute("type", bestDataTypeWithProb.getLeft());
+                                    sentenceElement.setAttribute("cert", bestDataTypeWithProb.getRight().toString());
                                     dataSetId++;
                                     //dataSetIds.add(dataSetId);
 
@@ -781,7 +783,7 @@ public class DataseerClassifier {
         return xml;
     }
 
-    private String getBestDataType(JsonNode classificationsNode) {
+    private Pair<String, Double> getBestDataType(JsonNode classificationsNode) {
         Iterator<Map.Entry<String,JsonNode>> ite = classificationsNode.fields();
         String bestDataType = null;
         double bestProb = 0.0;
@@ -799,7 +801,7 @@ public class DataseerClassifier {
                 bestDataType = className;
             }
         }
-        return bestDataType;
+        return Pair.of(bestDataType, new Double(bestProb));
     }
 
 
