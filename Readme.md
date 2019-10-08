@@ -52,7 +52,7 @@ Build dataseer-ml:
 
 Javascript demo/console web app is then accessible at ```http://localhost:8060```. From the console and the `RESTfull services` tab, you can process chunk of text (select `Process text Sentence`), process a complete PDF document (select `Process PDF`), process a TEI document (select `Process TEI`) or process an XML publisher native document (such as JATS - select `Process JATS/NLM/...`) .
 
-![DataSeer-ml Demo](doc/images/screen1.png)
+![DataSeer-ml Demo](doc/images/screen01.png)
 
 ## Process a sentence
 
