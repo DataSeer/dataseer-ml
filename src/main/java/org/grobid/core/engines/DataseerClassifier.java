@@ -852,9 +852,12 @@ public class DataseerClassifier {
      */
     public String processPDF(String filePath) throws Exception {
         // convert PDF into structured TEI thanks to GROBID
-        GrobidAnalysisConfig config = 
-            new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().build();
+
         // TBD: review arguments, no need for images, annotations, outline
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .consolidateHeader(1)
+            .consolidateCitations(0)
+            .build();
         String tei = engine.fullTextToTEI(new File(filePath), config);
         return processTEIString(tei);
     }

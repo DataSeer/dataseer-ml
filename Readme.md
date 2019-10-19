@@ -143,4 +143,4 @@ Main author and contact: Patrice Lopez (<patrice.lopez@science-miner.com>)
 
 The development of dataseer-ml is supported by a [Sloan Foundation](https://sloan.org/) grant, see [here](https://coko.foundation/coko-receives-sloan-foundation-grant-to-build-dataseer-a-missing-piece-in-the-data-sharing-puzzle/)
 
-DataSeer-ml is distributed under [MIT license](https://opensource.org/licenses/MIT), copyright Aspiration. 
+DataSeer-ml is distributed under [MIT license](https://opensource.org/licenses/MIT), copyright Aspiration
