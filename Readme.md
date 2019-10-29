@@ -4,7 +4,31 @@ The goal of this process is to further drive the authors of the article to the b
 
 The module can process a variety of scientific article formats, including mainstream publisher's native XML submission formats: PDF, TEI, JATS/NLM, ScholarOne, BMJ, Elsevier staging format, OUP, PNAS, RSC, Sage, Wiley, etc.
 
+`.docx` format is also supported in a specific branch, but not yet merged. 
+
 Work in progress !
+
+# Approach
+
+## Dataset identification and classification
+
+The processing of an article follows 5 steps: 
+
+1. Given an article to be processed by DataSeer, the document is first parsed and structured automatically by [Grobid[(https://github.com/kermitt2/grobid). This includes metadata extraction and consolidation against CrossRef and PubMed, structuring the text body and bibliographical references. 
+
+2. The document body is then segmented into sentences thanks to OpenNLP with some customization to better support scientific texts (i.e. avoiding wrong sentence break in the middle of reference callout or in the middle of scientific notations). 
+
+3. Each sentence is going through a cascade of text classifiers, all based on a fine-tuned SciBERT deep learning architecture, to predict if the sentence introduce a dataset, and if yes, which dataset type and sub type is introduced. 
+
+4. The text body is then processed by a sequence labeling model which aims at recognizing the section relevant to dataset introductions and presentations. "Materials and Methods" for instance is a usual relevant section, but other sections might be relevant and the "Materials and Methods" sections can appeared with a variety of section headers. This sequence labelling process is realized by CRF using various features including the predictions produced in the previous steps 3.
+
+5. A final selection of the predicted datasets takes place for the sections identified as introducing potentially datasets, using the result of the sentence classification of step 3 for predicting additionally the type and subtype of the recognized datasets. 
+
+The result of the service is a TEI file representing the article, enriched with sentence boundaries and predicted data set information. 
+
+## Training
+
+The DataSeer dataset is a manual collection of all dataset introduction contexts for 2000 articles, classified into the taxonomy of data types developed at the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php).  
 
 # Build
 
@@ -108,6 +132,8 @@ Some reports will be generated to describe the alignment failures.
 
 ## Training the classification models
 
+The classifier models are relying on the [DeLFT](https://github.com/kermitt2/delft) deep learning library, which is integrated in Grobid. 
+
 After assembling the training data, the classification models can be trained with the following command:
 
 > 
@@ -139,7 +165,7 @@ All the documents present in the local training data repository (after importing
 
 ## Contact and License
 
-Main author and contact: Patrice Lopez (<patrice.lopez@science-miner.com>)
+Author and contact: Patrice Lopez (<patrice.lopez@science-miner.com>)
 
 The development of dataseer-ml is supported by a [Sloan Foundation](https://sloan.org/) grant, see [here](https://coko.foundation/coko-receives-sloan-foundation-grant-to-build-dataseer-a-missing-piece-in-the-data-sharing-puzzle/)
 
