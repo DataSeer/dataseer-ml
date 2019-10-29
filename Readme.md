@@ -14,7 +14,7 @@ Work in progress !
 
 The processing of an article follows 5 steps: 
 
-1. Given an article to be processed by DataSeer, the document is first parsed and structured automatically by [Grobid[(https://github.com/kermitt2/grobid). This includes metadata extraction and consolidation against CrossRef and PubMed, structuring the text body and bibliographical references. 
+1. Given an article to be processed by DataSeer, the document is first parsed and structured automatically by [Grobid](https://github.com/kermitt2/grobid). This includes metadata extraction and consolidation against CrossRef and PubMed, structuring the text body and bibliographical references. 
 
 2. The document body is then segmented into sentences thanks to OpenNLP with some customization to better support scientific texts (i.e. avoiding wrong sentence break in the middle of reference callout or in the middle of scientific notations). 
 
@@ -28,7 +28,7 @@ The result of the service is a TEI file representing the article, enriched with 
 
 ## Training
 
-The DataSeer dataset is a manual collection of all dataset introduction contexts for 2000 articles, classified into the taxonomy of data types developed at the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php).  
+The DataSeer dataset is a manual collection of all dataset introduction contexts for 2000 Open Access articles from PLOS, classified into the taxonomy of data types developed at the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php). It contains 21,041 manually classified/annotated sentences about datasets.  
 
 # Build
 
@@ -139,8 +139,7 @@ After assembling the training data, the classification models can be trained wit
 > 
 
 
-
-... 
+[To Be Completed]
 
 
 # Additional convenient scripts
