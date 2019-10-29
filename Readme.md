@@ -1,3 +1,7 @@
+# DataSeer-ML
+
+![Logo DataSeer](doc/images/DataSeer-logo-75.png "Logo")
+
 **dataseer-ml** is a GROBID module able to identify implicit mentions of datasets in a scientific article and to clasify the identified dataset in a hierarchy of dataset types, these data types being directly derived from MeSH.
 
 The goal of this process is to further drive the authors of the article to the best research data sharing practices, i.e. to ensure that the dataset is associated with data availability statement, permanent identifiers and in general requirements regarding Open Science and reproducibility. This further process is realized by the dataseer web application which includes a GUI to be used by the authors, suggesting data sharing policies based on the predicted data types for each identified dataset.  
@@ -18,7 +22,7 @@ The processing of an article follows 5 steps:
 
 2. The document body is then segmented into sentences thanks to OpenNLP with some customization to better support scientific texts (i.e. avoiding wrong sentence break in the middle of reference callout or in the middle of scientific notations). 
 
-3. Each sentence is going through a cascade of text classifiers, all based on a fine-tuned SciBERT deep learning architecture, to predict if the sentence introduce a dataset, and if yes, which dataset type and sub type is introduced. 
+3. Each sentence is going through a cascade of text classifiers, all based on a fine-tuned [SciBERT](https://github.com/allenai/scibert) deep learning architecture, to predict if the sentence introduce a dataset, and if yes, which dataset type and sub type is introduced. 
 
 4. The text body is then processed by a sequence labeling model which aims at recognizing the section relevant to dataset introductions and presentations. "Materials and Methods" for instance is a usual relevant section, but other sections might be relevant and the "Materials and Methods" sections can appeared with a variety of section headers. This sequence labelling process is realized by CRF using various features including the predictions produced in the previous steps 3.
 
@@ -28,7 +32,9 @@ The result of the service is a TEI file representing the article, enriched with 
 
 ## Training
 
-The DataSeer dataset is a manual collection of all dataset introduction contexts for 2000 Open Access articles from PLOS, classified into the taxonomy of data types developed at the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php). It contains 21,041 manually classified/annotated sentences about datasets.  
+The DataSeer dataset describes all the dataset contexts from 2000 Open Access articles from PLOS, classified into the taxonomy of data types developed at the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php). It contains 21,041 manually classified/annotated sentences about datasets. See our [Jupyter Notebook](https://github.com/kermitt2/dataseer-ml/blob/master/notebook/training-analysis-all.ipynb) for some analysis of the dataset.
+
+After alignment with the actual content of the full article bodies, this dataset is used both for training the recognition of sections introducing datasets (CRF) and the data type and subtype classifiers ([SciBERT](https://github.com/allenai/scibert)).
 
 # Build
 
