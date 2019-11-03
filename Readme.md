@@ -318,7 +318,7 @@ BiGRU
 Evaluation Chromatography subtypes
 Evaluation on 12 instances:
                    precision        recall       f-score       support
-High Pressure Liq. 0.5833        1.0000        0.7368             7
+High Pressure Liq. 0.5833           1.0000        0.7368             7
 
 
 Evaluation Dataset subtypes
