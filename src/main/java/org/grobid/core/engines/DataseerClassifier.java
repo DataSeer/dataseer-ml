@@ -371,7 +371,7 @@ public class DataseerClassifier {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();           
             org.w3c.dom.Document document = builder.parse(new InputSource(new StringReader(xmlString)));
-            document.getDocumentElement().normalize();
+            //document.getDocumentElement().normalize();
             tei = processTEIDocument(document);
         } catch(ParserConfigurationException e) {
             e.printStackTrace();
@@ -777,6 +777,9 @@ public class DataseerClassifier {
                 transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
             transformer.transform(domSource, result);
             xml = writer.toString();
+            // generated namespaces are a mess, hard to recover but
+            // at least we remove the empty namespaces popping up
+            xml = xml.replaceAll(" xmlns=\"\"", "");
         } catch(TransformerException ex) {
             ex.printStackTrace();
         }
@@ -844,8 +847,10 @@ public class DataseerClassifier {
      */
     public String processPDF(String filePath) throws Exception {
         // convert PDF into structured TEI thanks to GROBID
-        GrobidAnalysisConfig config = 
-            new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder().build();
+        GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
+            .consolidateHeader(1)
+            .consolidateCitations(0)
+            .build();
         // TBD: review arguments, no need for images, annotations, outline
         String tei = engine.fullTextToTEI(new File(filePath), config);
         return processTEIString(tei);
