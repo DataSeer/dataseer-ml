@@ -371,7 +371,7 @@ public class DataseerClassifier {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();           
             org.w3c.dom.Document document = builder.parse(new InputSource(new StringReader(xmlString)));
-            document.getDocumentElement().normalize();
+            //document.getDocumentElement().normalize();
             tei = processTEIDocument(document);
         } catch(ParserConfigurationException e) {
             e.printStackTrace();
@@ -417,10 +417,8 @@ public class DataseerClassifier {
         String tei = null;
         Element root = document.getDocumentElement();
         segment(document, root);
-
         // augment sentences with dataseer classification information
         enrich(document, root);
-
         tei = serialize(document, null);
         return tei;
     }
@@ -504,7 +502,6 @@ public class DataseerClassifier {
                         newSent = conc.toString() + sent;
                     }
                     String fullSent = "<s>" + newSent + "</s>";
-                    //System.out.println("try: " + fullSent);
                     boolean fail = false;
                     try {
                         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -639,7 +636,6 @@ public class DataseerClassifier {
                     datasetTypes.add("no_dataset");
                 }
             }
-
             relevantSections = 
                 DataseerParser.getInstance().processingText(segments, sectionTypes, nbDatasets, datasetTypes);
         }

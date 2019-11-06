@@ -291,13 +291,13 @@ public class AnnotatedCorpusGeneratorCSV {
 
         // training file for binary classification (dataset/no_dataset)
         Writer writerCSVBinary = new PrintWriter(new BufferedWriter(
-            new FileWriter("resources/dataset/dataseer/csv/all-binary.csv")));
+            new FileWriter(documentPath + "../csv/all-binary.csv")));
         CSVPrinter csvPrinterBinary = new CSVPrinter(writerCSVBinary, 
             CSVFormat.DEFAULT.withHeader("doi", "text", "datatype"));
 
         // training file with all the data types, first level
         Writer writerCSV1 = new PrintWriter(new BufferedWriter(
-            new FileWriter("resources/dataset/dataseer/csv/all-1.csv")));
+            new FileWriter(documentPath + "../csv/all-1.csv")));
         CSVPrinter csvPrinter1 = new CSVPrinter(writerCSV1, 
             CSVFormat.DEFAULT.withHeader("doi", "text", "datatype", "dataSubtype", "leafDatatype"));
 

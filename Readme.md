@@ -124,13 +124,13 @@ See [Pub2TEI](https://github.com/kermitt2/Pub2TEI) for the exact list of support
 
 ## Importing and assembling training data
 
-Training data is available in a tabular format with reference to Open Access articles. The following process will align these tabular data with the actual article content (JATS and/or PDF via GROBID) to create a full training corpus. 
+Training data is available in a tabular format with reference to Open Access articles. The following process will align these tabular data (introduced by parameter `-Pcsv`) with the actual article content (JATS/NLM and PDF via GROBID) to create a full training corpus. 
 
-> ./gradlew annotated_corpus_generator_csv -Ppdf=PATH/TO/THE/FULL/TEXTS -Pcsv=PATH/TO/THE/TABULAR/TRAINING/DATA -Pxml=PATH/WHERE/TO/WRITE/THE/ASSEMBLED/TRAINING/DATA
+> ./gradlew annotated_corpus_generator_csv -Ppdf=PATH/TO/THE/FULL/TEXTS/PDF -Pfull=PATH/TO/THE/FULL/TEXTS/NLM/ -Pcsv=PATH/TO/THE/TABULAR/TRAINING/DATA -Pxml=PATH/WHERE/TO/WRITE/THE/ASSEMBLED/TRAINING/DATA
 
 For instance:
 
-> ./gradlew annotated_corpus_generator_csv -Ppdf=/mnt/data/resources/plos/0/pdf/ -Pcsv=resources/dataset/dataseer/csv/ -Pxml=resources/dataset/dataseer/corpus/
+> ./gradlew annotated_corpus_generator_csv -Ppdf=/mnt/data/resources/plos/pdf/ -Pfull=/mnt/data/resoues/plos/nlm/ -Pcsv=resources/dataset/dataseer/csv/ -Pxml=resources/dataset/dataseer/corpus/
 
 Some reports will be generated to describe the alignment failures. 
 
