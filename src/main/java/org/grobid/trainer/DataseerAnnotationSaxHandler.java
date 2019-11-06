@@ -215,7 +215,7 @@ public class DataseerAnnotationSaxHandler extends DefaultHandler {
                                 Iterator<JsonNode> ite = classificationsNode.elements();
                                 while (ite.hasNext()) {
                                     JsonNode classificationNode = ite.next();
-                                    JsonNode datasetNode = classificationNode.findPath("dataset");
+                                    JsonNode datasetNode = classificationNode.findPath("has_dataset");
                                     JsonNode noDatasetNode = classificationNode.findPath("no_dataset");
 
                                     if ((datasetNode != null) && (!datasetNode.isMissingNode()) &&

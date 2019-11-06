@@ -748,9 +748,10 @@ public class AnnotatedCorpusGeneratorCSV {
      */
     public static void main(String[] args) {
        
-        // we are expecting three arguments, absolute path to the original fulltext
-        // documents, absolute path to the csv files and path where to put the generated 
-        // XML files 
+        // we are expecting four arguments, absolute path to the available fulltext NLM
+        // documents, absolute path to the original PDF documents, absolute path to the csv files 
+        // with the dataseer manual annotations and finally path where to put the generated 
+        // training XML files 
 
         if (args.length != 4) {
             System.err.println("Usage: command [absolute path to the original NLM fulltexts] [absolute path to PDF fulltexts] [absolute path to the dataseer root data in csv] [output for the generated XML files]");

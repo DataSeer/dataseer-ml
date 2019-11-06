@@ -125,6 +125,8 @@ public class DataseerTrainer extends AbstractTrainer {
             // get a factory for SAX parser
             SAXParserFactory spf = SAXParserFactory.newInstance();
             for (int n=0; n<refFiles.length; n++) {
+                //if (n > 10)
+                //    break;
                 File tf = refFiles[n];
                 String name = tf.getName();
                 System.out.println("Processing: " + name);
