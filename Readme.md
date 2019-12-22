@@ -472,7 +472,7 @@ All the documents present in the local training data repository (after importing
 > node loader.js
 
 
-## Convert data type information from csv to json
+## Convert data type information from the DataSeer Doku Wiki to JSON
 
 The following Python script converts the data type specification from the DataSeer Doku Wiki (http://wiki.dataseer.io) into a JSON representation used by the [DataSeer Web application](https://github.com/kermitt2/dataseer-web). In addition, it will use the training file(s) to inject counts for each datatype. These frequency information can are used by the [DataSeer Web application](https://github.com/kermitt2/dataseer-web) to provide a default ranking of datatypes in the drop down menus when a datatype is assigned manually.   
 
