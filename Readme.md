@@ -474,12 +474,16 @@ All the documents present in the local training data repository (after importing
 
 ## Convert data type information from csv to json
 
+The following Python script converts the data type specification from the DataSeer Doku Wiki (http://wiki.dataseer.io) into a JSON representation used by the [DataSeer Web application](https://github.com/kermitt2/dataseer-web). In addition, it will use the training file(s) to inject counts for each datatype. These frequency information can are used by the [DataSeer Web application](https://github.com/kermitt2/dataseer-web) to provide a default ranking of datatypes in the drop down menus when a datatype is assigned manually.   
+
 > cd scripts/
 
-> pip3 install pandas
+>  pip3 install pandas beautifulsoup4
 
 > python3 converter.py ../resources/DataTypes.csv ../resources/DataTypes.json
 
+Note that at the end of the DataSeer Doku Wiki conversion, the script will report data types in the training data inconsistent with the DataSeer 
+Doku Wiki. Those data types must be reviewed and updated to be consistent with Wiki, and the machine learning models must be retrained with the updated training data to produce the new data types. 
 
 ## Contact and License
 

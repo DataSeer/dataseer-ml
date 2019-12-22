@@ -1,10 +1,12 @@
 """
-    Convert the csv data type file into a json structure to be used by DataSeer tools. 
-    Add data type and subtype count information into the json structure based on the actual training data
+    - convert the data type specification from the DataSeer Doku Wiki (http://wiki.dataseer.io) into a json 
+    structure to be used by the DataSeer web application
+    - report data types in the training data inconsistent with the DataSeer Doku Wiki
+    - add data type and subtype count information into the json structure based on the actual training data
     
     Install: pip3 install -r requirements.txt
-    
-    Usage: python3 converter DataTypes.csv training-all.csv fullDataTypes.json
+
+    Usage: python3 converter.py ../resources/dataset/dataseer/csv/all-1.csv ../resources/fullDataTypes.csv 
 """
 
 import json
@@ -284,8 +286,8 @@ def wiki_capture(output_path, baseUrl="http://wiki.dataseer.io"):
             segments = segment.split('|')
             datatype_name = segments[0]
             datatype_page = segments[1]
-            print('datatype_name: ', datatype_name)
-            print('datatype_page: ', datatype_page)
+            #print('datatype_name: ', datatype_name)
+            #print('datatype_page: ', datatype_page)
 
             datatype_page = datatype_page.replace("*", "")
             pieces = datatype_page.split(":")
@@ -298,7 +300,7 @@ def wiki_capture(output_path, baseUrl="http://wiki.dataseer.io"):
                     dataSubSubType = pieces[2].strip()
 
             struct = build_struct_from_page(datatype_name, baseUrl)
-            print(struct)
+            #print(struct)
 
             if dataSubType is not None:
                 if dataSubSubType is not None:
@@ -356,18 +358,16 @@ def build_struct_from_page(datatype_page, baseUrl="http://wiki.dataseer.io"):
     soup = BeautifulSoup(webpage, "lxml")
     content = soup.find('textarea')
 
-    if content:
-        print(content.text)
-    else:
+    if not content:
         dataTypeUrl = baseUrl + "/doku.php?id=data_type:" + datatype_page + ":" + datatype_page + "&do=edit";
         fid = urllib.request.urlopen(dataTypeUrl)
         webpage = fid.read().decode('utf-8')
         soup = BeautifulSoup(webpage, "lxml")
         content = soup.find('textarea')
-        if content:
-            print(content.text)
-        else:
-            print("Warning: no content found for", datatype_page)
+    
+    if not content:
+        print("Warning: no content found for", datatype_page)
+         
     '''
     template is as follow (empty field are sometimes marked as XX): 
 
@@ -408,7 +408,7 @@ def build_struct_from_page(datatype_page, baseUrl="http://wiki.dataseer.io"):
     meshId = None
 
     if m_mesh:
-        print(m_mesh.group(1))
+        #print(m_mesh.group(1))
         meshId = m_mesh.group(1)
         if meshId.find("|") != -1:
             meshId = meshId.split("|")[1]
@@ -417,17 +417,17 @@ def build_struct_from_page(datatype_page, baseUrl="http://wiki.dataseer.io"):
         else:
             meshId = None
     if m_description:
-        print(m_description.group(1))
+        #print(m_description.group(1))
         description = m_description.group(1).strip()
         if description == 'XX' or description == 'n/a' or len(description) == 0:
             description = None
     if m_bestPractice:
-        print(m_bestPractice.group(1))
+        #print(m_bestPractice.group(1))
         bestPractice = m_bestPractice.group(1).strip()
         if bestPractice == 'XX' or bestPractice == 'n/a' or len(bestPractice) == 0:
             bestPractice = None
     if m_mostSuitableRepositories:
-        print(m_mostSuitableRepositories.group(1))
+        #print(m_mostSuitableRepositories.group(1))
         mostSuitableRepositories = m_mostSuitableRepositories.group(1).strip()
         if mostSuitableRepositories == 'XX' or mostSuitableRepositories == 'n/a' or len(mostSuitableRepositories) == 0:
             mostSuitableRepositories = None
@@ -437,17 +437,17 @@ def build_struct_from_page(datatype_page, baseUrl="http://wiki.dataseer.io"):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Converter for data type csv files into json")
 
-    parser.add_argument("input")
+    #parser.add_argument("input")
     parser.add_argument("training")
     parser.add_argument("output")
 
     args = parser.parse_args()
 
-    input_file = args.input    
+    #input_file = args.input    
     output_file = args.output
     training_file = args.training
 
-    if input_file is None or output_file is None:
+    if output_file is None:
         print("Invalid parameters, usage: python3 converter input.csv training.csv output.json")
     else: 
         #convert_with_pandas(input_file, output_file)
@@ -455,4 +455,4 @@ if __name__ == "__main__":
         build_prior_class_distribution(output_file, training_file, output_file)
 
     # example:
-    # python3 converter.py ../resources/DataTypes.csv ../resources/dataset/dataseer/csv/all-1.csv ../resources/fullDataTypes.csv 
+    # python3 converter.py ../resources/dataset/dataseer/csv/all-1.csv ../resources/fullDataTypes.csv 
