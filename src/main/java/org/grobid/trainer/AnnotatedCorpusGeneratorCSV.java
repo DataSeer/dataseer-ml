@@ -291,13 +291,13 @@ public class AnnotatedCorpusGeneratorCSV {
 
         // training file for binary classification (dataset/no_dataset)
         Writer writerCSVBinary = new PrintWriter(new BufferedWriter(
-            new FileWriter(documentPath + "../csv/all-binary.csv")));
+            new FileWriter(csvPath + "all-binary.csv")));
         CSVPrinter csvPrinterBinary = new CSVPrinter(writerCSVBinary, 
             CSVFormat.DEFAULT.withHeader("doi", "text", "datatype"));
 
         // training file with all the data types, first level
         Writer writerCSV1 = new PrintWriter(new BufferedWriter(
-            new FileWriter(documentPath + "../csv/all-1.csv")));
+            new FileWriter(csvPath + "all-1.csv")));
         CSVPrinter csvPrinter1 = new CSVPrinter(writerCSV1, 
             CSVFormat.DEFAULT.withHeader("doi", "text", "datatype", "dataSubtype", "leafDatatype"));
 
@@ -651,8 +651,8 @@ public class AnnotatedCorpusGeneratorCSV {
         }
 
         // this csv file gives information on the article set to which each article belongs to 
-        File dataseerArticles = new File(csvPath + File.separator + "All2000_for_Patrice_16th_June-xlsx.csv");
-
+        //File dataseerArticles = new File(csvPath + File.separator + "All2000_for_Patrice_16th_June-xlsx.csv");
+        File dataseerArticles = new File(csvPath + File.separator + "All2000_for_Patrice_December_2019.csv");
         try {
             CSVParser parser = CSVParser.parse(dataseerArticles, UTF_8, CSVFormat.RFC4180);
             // schema is:

@@ -130,7 +130,7 @@ Training data is available in a tabular format with reference to Open Access art
 
 For instance:
 
-> ./gradlew annotated_corpus_generator_csv -Ppdf=/mnt/data/resources/plos/pdf/ -Pfull=/mnt/data/resoues/plos/nlm/ -Pcsv=resources/dataset/dataseer/csv/ -Pxml=resources/dataset/dataseer/corpus/
+> ./gradlew annotated_corpus_generator_csv -Ppdf=/mnt/data/resources/plos/pdf/ -Pfull=/mnt/data/resources/plos/nlm/ -Pcsv=/home/lopez/grobid/dataseer-ml/resources/dataset/dataseer/csv/ -Pxml=/home/lopez/grobid/dataseer-ml/resources/dataset/dataseer/corpus/
 
 Some reports will be generated to describe the alignment failures. 
 
