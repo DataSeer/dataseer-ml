@@ -96,7 +96,7 @@ def convert_with_pandas(input_path, output_path):
         out.write(json.dumps(res, indent=4, sort_keys=True))
 
 
-def build_struct(description=None, bestPractice=None, mostSuitableRepositories=None, meshId=None, meshTree=None):
+def build_struct(description=None, bestPractice=None, mostSuitableRepositories=None, meshId=None, meshTree=None, wikiUrl=None):
     struct = {}
     if description is not None:
         struct['description'] = description
@@ -108,6 +108,8 @@ def build_struct(description=None, bestPractice=None, mostSuitableRepositories=N
         struct['mesh_id'] = meshId   
     if meshTree is not None:
         struct['mesh_tree'] = meshTree   
+    if wikiUrl is not None:
+        struct['url'] = wikiUrl
     return struct
 
 
@@ -180,15 +182,12 @@ def build_prior_class_distribution(jsonpath, trainpath, outputpath):
 
     # init count everywhere
     for key1 in distribution:
-        #print(key1)
         if type(distribution[key1]) is dict:
             distribution[key1]['count'] = 0
             for key2 in distribution[key1]:
-                #print(key1, key2)
                 if type(distribution[key1][key2]) is dict:
                     distribution[key1][key2]['count'] = 0
                     for key3 in distribution[key1][key2]:
-                        #print(key1, key2, key3)
                         if type(distribution[key1][key2][key3]) is dict:
                             distribution[key1][key2][key3]['count'] = 0
 
@@ -209,12 +208,10 @@ def build_prior_class_distribution(jsonpath, trainpath, outputpath):
                         if list_leaf_classes[pos_leafclass[0][0]] != "nan":
                             the_leafclass = list_leaf_classes[pos_leafclass[0][0]]
                             if the_leafclass in distribution[the_class][the_subclass]:
-                                #print(distribution[the_class][the_subclass][the_leafclass])
                                 if 'count' in distribution[the_class][the_subclass][the_leafclass]:
                                     distribution[the_class][the_subclass][the_leafclass]['count'] = distribution[the_class][the_subclass][the_leafclass]['count'] + 1
                             else:
                                 error_class = the_class+":"+the_subclass+":"+the_leafclass
-                                #print("Invalid leaf datatype name found in training data:", error_class)
                                 if error_class not in invalid_datatypes:
                                     invalid_datatypes.append(error_class )
                         else:
@@ -222,14 +219,12 @@ def build_prior_class_distribution(jsonpath, trainpath, outputpath):
                                 distribution[the_class][the_subclass]['count'] = distribution[the_class][the_subclass]['count'] + 1
                     else:
                         error_class = the_class+":"+the_subclass
-                        #print("Invalid data subtype name found in training data:", error_class)
                         if error_class not in invalid_datatypes:
                             invalid_datatypes.append(error_class)
                 else:
                     if 'count' in distribution[the_class]:
                         distribution[the_class]['count'] = distribution[the_class]['count'] + 1
             else :
-                #print("Invalid datatype name found in training data:", the_class)
                 if the_class not in invalid_datatypes:
                     invalid_datatypes.append(the_class)
 
@@ -432,7 +427,7 @@ def build_struct_from_page(datatype_page, baseUrl="http://wiki.dataseer.io"):
         if mostSuitableRepositories == 'XX' or mostSuitableRepositories == 'n/a' or len(mostSuitableRepositories) == 0:
             mostSuitableRepositories = None
 
-    return build_struct(description, bestPractice, mostSuitableRepositories, meshId, None)
+    return build_struct(description, bestPractice, mostSuitableRepositories, meshId, None, dataTypeUrl.replace("&do=edit",""))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Converter for data type csv files into json")
