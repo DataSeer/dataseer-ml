@@ -100,4 +100,18 @@ public class DataseerRestService implements DataseerPaths {
     public Response processPDFAnnotation(@FormDataParam(INPUT) InputStream inputStream) {
         return DataseerProcessFile.processPDFAnnotation(inputStream);
     }
+
+    @Path(PATH_DATATYPE_JSON)
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    @GET
+    public Response getJsonDataTypes() {
+        return DataseerDataTypeService.getInstance().getJsonDataTypes();
+    }
+
+    @Path(PATH_RESYNC_DATATYPE_JSON)
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    @GET
+    public Response getResyncJsonDataTypes() {
+        return DataseerDataTypeService.getInstance().getResyncJsonDataTypes();
+    }
 }

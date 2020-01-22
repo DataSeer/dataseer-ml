@@ -120,6 +120,19 @@ Example:
 
 See [Pub2TEI](https://github.com/kermitt2/Pub2TEI) for the exact list of supported formats.
 
+## Getting the json datatype resource file
+
+The DataSeer client can access the json file specifying the datatypes supported by the classifers, together with metadata for each data type (description, best data sharing policy, link to the corresponding DataSeer Wiki page, etc.) with the following endpoint:
+
+> curl -GET localhost:8060/service/jsonDataTypes
+
+## Getting the json datatype resource file after re-sync with the DataSeer Wiki
+
+This service triggers a web crawling of the DataSeer Wiki pages describing the supported data types. Metadata about each type are extracted (description, best data sharing policy, link to the corresponding DataSeer Wiki page, etc.) and a json datatype resource file is assembled and served to the client:
+
+> curl -GET localhost:8060/service/resyncJsonDataTypes
+
+
 # Training data assembling and generating classification models
 
 ## Importing and assembling training data

@@ -6,7 +6,10 @@
     
     Install: pip3 install -r requirements.txt
 
-    Usage: python3 converter.py ../resources/dataset/dataseer/csv/all-1.csv ../resources/fullDataTypes.csv 
+    Usage: > python3 converter.py ../resources/dataset/dataseer/csv/all-1.csv ../resources/fullDataTypes.csv 
+
+    or to have the resulting json in the stdout
+    > python3 converter.py ../resources/dataset/dataseer/csv/all-1.csv   
 """
 
 import json
@@ -166,19 +169,18 @@ def load_dataseer_corpus_csv(filepath):
         return np.asarray(texts_list), datatypes_final, datasubtypes_final, leafdatatypes_final, list_classes_datatypes.tolist(), list_classes_datasubtypes.tolist(), list_classes_leafdatatypes.tolist()
 
 
-def build_prior_class_distribution(jsonpath, trainpath, outputpath):
+def build_prior_class_distribution(distribution, trainpath, errorpath="error.txt"):
     """
     Inject count from the training data to the classification taxonomy of data types.
 
-        - jsonpath is the path to the datype json file without counts
+        - distribution is json object giving datatype descriptions without counts
         - trainpath is the path to the training data csv file
-        - outputpath is the path of the datatype json file with counts
 
     """
     _, y_classes, y_subclasses, y_leafclasses, list_classes, list_subclasses, list_leaf_classes = load_dataseer_corpus_csv(trainpath)
 
-    with open(jsonpath) as json_file:
-        distribution = json.load(json_file)
+    #with open(jsonpath) as json_file:
+    #    distribution = json.load(json_file)
 
     # init count everywhere
     for key1 in distribution:
@@ -228,14 +230,14 @@ def build_prior_class_distribution(jsonpath, trainpath, outputpath):
                 if the_class not in invalid_datatypes:
                     invalid_datatypes.append(the_class)
 
-    print('--------------------')
-    for datatype in invalid_datatypes:
-        print("Invalid data subtype name found in training data:", datatype)
+    with open(errorpath, 'w') as outfile:
+        for datatype in invalid_datatypes:
+            outfile.write("Invalid data subtype name found in training data:")
+            outfile.write(datatype)
+            outfile.write('\n')
 
-    # save the extended json
-    with open(outputpath, 'w') as outfile:
-        json.dump(distribution, outfile, sort_keys=False, indent=4)
-
+    # print result in stdout
+    print(json.dumps(distribution, sort_keys=False, indent=4))
 
 def normalize_classes(y, list_classes):
     '''
@@ -260,7 +262,7 @@ def vectorize(index, size):
     return result
 
 
-def wiki_capture(output_path, baseUrl="http://wiki.dataseer.io"):
+def wiki_capture(baseUrl="http://wiki.dataseer.io"):
     '''
     Create the initial json structure of datatypes from the wiki web site 
     '''
@@ -342,8 +344,10 @@ def wiki_capture(output_path, baseUrl="http://wiki.dataseer.io"):
 
     #struct = build_struct(description, bestPractice, mostSuitableRepositories, meshId, meshTree)
 
-    with open(output_path,'w') as out:
-        out.write(json.dumps(res, indent=4, sort_keys=True))
+    #with open(output_path,'w') as out:
+    #    out.write(json.dumps(res, indent=4, sort_keys=True))
+
+    return res
 
 
 def build_struct_from_page(datatype_page, baseUrl="http://wiki.dataseer.io"):
@@ -431,23 +435,12 @@ def build_struct_from_page(datatype_page, baseUrl="http://wiki.dataseer.io"):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Converter for data type csv files into json")
-
-    #parser.add_argument("input")
     parser.add_argument("training")
-    parser.add_argument("output")
-
     args = parser.parse_args()
-
-    #input_file = args.input    
-    output_file = args.output
     training_file = args.training
 
-    if output_file is None:
-        print("Invalid parameters, usage: python3 converter input.csv training.csv output.json")
-    else: 
-        #convert_with_pandas(input_file, output_file)
-        wiki_capture(output_file)
-        build_prior_class_distribution(output_file, training_file, output_file)
+    res = wiki_capture()
+    build_prior_class_distribution(res, training_file)
 
     # example:
     # python3 converter.py ../resources/dataset/dataseer/csv/all-1.csv ../resources/fullDataTypes.csv 
