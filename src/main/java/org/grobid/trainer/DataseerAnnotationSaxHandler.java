@@ -26,7 +26,7 @@ import com.fasterxml.jackson.core.io.*;
  * Basically we consider <div> <head> <p> <s> tags in the training corpus. 
  * <head> and <p> are the unit to be labeled. <s> within <p> are classified by the current 
  * Dataseer sentence classifier and used as feature for the <p> level. 
- * <head> content is not classifier. 
+ * <head> content is not classified. 
  *
  * @author Patrice
  */
