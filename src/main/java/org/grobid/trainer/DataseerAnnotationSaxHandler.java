@@ -104,7 +104,7 @@ public class DataseerAnnotationSaxHandler extends DefaultHandler {
             }
             if (qName.equals("head") || qName.equals("p") || qName.equals("paragraph")) {
                 writeData(qName);
-                currentTag = null;
+                //currentTag = null;
                 currentSentences = new ArrayList<String>();
                 currentSegment = new StringBuilder();
             } else if (qName.equals("body")) {
