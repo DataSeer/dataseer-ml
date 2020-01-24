@@ -24,6 +24,11 @@ public interface DataseerPaths {
     public static final String PATH_DATASEER_TEI = "processDataseerTEI";
 
     /**
+     * path extension for processing a JATS file.
+     */
+    public static final String PATH_DATASEER_JATS = "processDataseerJATS";
+
+    /**
      * path extension for processing a PDF file, which will include its conversion 
      * into TEI via GROBID.
      */
@@ -33,4 +38,15 @@ public interface DataseerPaths {
      * path extension for annotating a PDF file with the dataset-relevant sentences.
      */
     public static final String PATH_ANNOTATE_DATASEER_PDF = "annotateDataseerPDF";
+
+    /**
+     * path extension for getting the json datatype resource file 
+     */
+    public static final String PATH_DATATYPE_JSON = "jsonDataTypes";
+
+    /**
+     * path extension to re-sync the json datatype resource file with the DokuWiki
+     */
+    public static final String PATH_RESYNC_DATATYPE_JSON = "resyncJsonDataTypes";
+
 }

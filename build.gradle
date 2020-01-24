@@ -25,7 +25,7 @@ apply plugin: 'war'
 apply plugin: 'org.gretty'
 
 group = "org.grobid"
-version = '0.5.6-SNAPSHOT'
+version = '0.6.0-SNAPSHOT'
 
 description = """dataseer-ml"""
 
@@ -57,8 +57,8 @@ dependencies {
     compile fileTree(dir: new File(rootProject.rootDir, 'lib'), include: localLibs)
 
     //Grobid
-    compile group: 'org.grobid', name: 'grobid-core', version: '0.5.6-SNAPSHOT'
-    compile group: 'org.grobid', name: 'grobid-trainer', version: '0.5.6-SNAPSHOT'
+    compile group: 'org.grobid', name: 'grobid-core', version: '0.6.0-SNAPSHOT'
+    compile group: 'org.grobid', name: 'grobid-trainer', version: '0.6.0-SNAPSHOT'
 
     //Logging
     compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
@@ -71,7 +71,7 @@ dependencies {
     compile group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.6'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0.1'
     compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.1'
-    compile group: 'org.apache.commons', name: 'commons-csv', version: '1.5'
+    compile group: 'org.apache.commons', name: 'commons-csv', version: '1.6'
 
     compile group: 'com.google.guava', name: 'guava', version: '16.0.1'
 
@@ -213,23 +213,23 @@ wrapper {
 
 // Custom Tasks
 
-// Run like: ./gradlew dataseer -PgH=/path/grobid/home
-task(trainer, dependsOn: 'classes', type: JavaExec, group: 'training') {
+// Run like this: ./gradlew train_dataseer -PgH=/path/grobid/home
+task(train_dataseer, dependsOn: 'classes', type: JavaExec, group: 'training') {
     main = 'org.grobid.trainer.DataseerTrainerRunner'
     classpath = sourceSets.main.runtimeClasspath
-    args '0', 'dataseer', getArg('gH', '../grobid-home'), getArg('b', '0.00001 20 0'), getArg('t', '1')
+    args '0', 'dataseer', getArg('gH', '../grobid-home'), getArg('t', '0')
 //    jvmArgs '-Xms2g', '-Xmx8g'
 }
 
-// Run like: ./gradlew train_dataseer -PgH=/path/grobid/home
-task(train_dataseer, dependsOn: 'classes', type: JavaExec, group: 'training') {
-    main = 'org.grobid.trainer.DataseerTrainer'
-    classpath = sourceSets.main.runtimeClasspath
+// Run like this: ./gradlew train_dataseer -PgH=/path/grobid/home
+//task(train_dataseer, dependsOn: 'classes', type: JavaExec, group: 'training') {
+//    main = 'org.grobid.trainer.DataseerTrainer'
+//    classpath = sourceSets.main.runtimeClasspath
 //    args '0', 'dataseer', getArg('gH', '../grobid-home'), getArg('b', ''),
 //    jvmArgs '-Xms2g', '-Xmx8g'
-}
+//}
 
-// Run like: ./gradlew eval_dataseer -PgH=/path/grobid/home
+// Run like this: ./gradlew eval_dataseer -PgH=/path/grobid/home
 task(eval_dataseer, dependsOn: 'classes', type: JavaExec, group: 'evaluation') {
     main = 'org.grobid.trainer.DataseerTrainerRunner'
     classpath = sourceSets.main.runtimeClasspath
@@ -237,18 +237,27 @@ task(eval_dataseer, dependsOn: 'classes', type: JavaExec, group: 'evaluation') {
 //    jvmArgs '-Xms2g', '-Xmx8g'
 }
 
-// Run like: ./gradlew eval_dataseer_split -PgH=/path/grobid/home -Ps=0.8 -Pt=10
+// Run like this: ./gradlew eval_dataseer_split -PgH=/path/grobid/home -Ps=0.8 -Pt=10
 task(eval_dataseer_split, dependsOn: 'classes', type: JavaExec, group: 'evaluation') {
     main = 'org.grobid.trainer.DataseerTrainerRunner'
     classpath = sourceSets.main.runtimeClasspath
-    args '2', 'dataseer', getArg('gH', '../grobid-home'), getArg('s', 0.9), getArg('t', '1')
+    args '2', 'dataseer', getArg('gH', '../grobid-home'), getArg('s', 0.9), getArg('t', '0')
     jvmArgs '-Xms2g', '-Xmx8g'
 }
 
-// Run like: ./gradlew annotated_corpus_generator_csv -Ppdf=/path/input/pdf -Pcsv=path/csv -Poutput=/output/directory
+// Run like this: ./gradlew eval_dataseer_nfold -PgH=/path/grobid/home -Pt=10
+task(eval_dataseer_nfold, dependsOn: 'classes', type: JavaExec, group: 'evaluation') {
+    main = 'org.grobid.trainer.DataseerTrainerRunner'
+    classpath = sourceSets.main.runtimeClasspath
+    args '3', 'dataseer', getArg('gH', '../grobid-home'), getArg('n', 10), getArg('t', '0')
+    jvmArgs '-Xms2g', '-Xmx8g'
+}
+
+// Run like this: ./gradlew annotated_corpus_generator_csv -Pfull=/path/input/fulltext -Ppdf=/path/input/pdf -Pcsv=/path/csv -Pxml=/output/directory
 task(annotated_corpus_generator_csv, dependsOn: 'classes', type: JavaExec, group: 'import') {
     main = 'org.grobid.trainer.AnnotatedCorpusGeneratorCSV'
     classpath = sourceSets.main.runtimeClasspath
-    args getArg('pdf', ''), getArg('csv', ''), getArg('output', 'resources/dataset/dataseer/corpus/')
+    args getArg('full', ''), getArg('pdf', ''), getArg('csv', ''), getArg('xml', 'resources/dataset/dataseer/corpus/')
     jvmArgs '-Xms2g', '-Xmx8g'
 }
+

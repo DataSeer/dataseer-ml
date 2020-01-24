@@ -24,7 +24,11 @@ import org.slf4j.LoggerFactory;
 public class AnnotatedDocument {
     private static final Logger logger = LoggerFactory.getLogger(AnnotatedDocument.class);
 
-    private String documentID = null;
+    // identifier used in the datas
+    private String documentId = null;
+
+    // permanent identifier, e.g. https://doi.org/10.1371/journal.pone.0198270
+    private String doi = null;
 
     /* This is the "corpus" the document belongs to, so pmc_article or econ_article */
     // TODO move that to an enumerated type for safety
@@ -48,12 +52,20 @@ public class AnnotatedDocument {
 
     //@JsonIgnore
 
-    public String getDocumentID() {
-        return this.documentID;
+    public String getDocumentId() {
+        return this.documentId;
     }
 
-    public void setDocumentID(String documentID) {
-        this.documentID = documentID;
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
+    }
+
+    public String getDoi() {
+        return this.doi;
+    }
+
+    public void setDoi(String doi) {
+        this.doi = doi;
     }
 
     public String getArticleSet() {

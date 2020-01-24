@@ -26,6 +26,8 @@ import org.slf4j.LoggerFactory;
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.TextUtilities;
 
+import org.apache.commons.io.FileUtils;
+
 /**
  *  Some convenient methods for retrieving the original PDF files from the annotated set.
  */
@@ -80,10 +82,14 @@ public class ArticleUtilities {
                     try {
                         identifier = urlDecode(identifier);
                         urll = getUnpaywallOAUrl(identifier);
-                        if (urll == null) {
+                        if (urll == null || urll.equals("null")) {
+                            urll = getGluttonOAUrl(identifier);
+                        }
+                        if (urll == null || urll.equals("null")) {
                             totalDOIFail++;
                             logger.warn("No Open Access PDF found via Unpaywall for DOI: " + identifier);
                             System.out.println("No Open Access PDF found via Unpaywall for DOI: " + identifier);
+                            urll = null;
                         }
                     } catch(UnsupportedEncodingException e) {
                         logger.warn("Invalid DOI identifier encoding: " + identifier, e);
@@ -179,6 +185,44 @@ public class ArticleUtilities {
         return urlForPdf;
     }
 
+    private static String getGluttonOAUrl(String doi)  throws Exception {
+        String host = DataseerProperties.get("grobid.dataseer.glutton.host");
+        String port = DataseerProperties.get("grobid.dataseer.glutton.port");
+        String queryUrl = "http://" + host;
+        if (port != null)
+            queryUrl += ":" + port;
+        queryUrl += "/service/oa?doi="+doi;
+        HttpClient client = new DefaultHttpClient();
+        HttpGet request = new HttpGet(queryUrl);
+
+        HttpResponse response = client.execute(request);
+
+        System.out.println("\nSending 'GET' request to URL : " + queryUrl);
+        System.out.println("Response Code : " + 
+                       response.getStatusLine().getStatusCode());
+
+        BufferedReader rd = new BufferedReader(
+                       new InputStreamReader(response.getEntity().getContent()));
+
+        StringBuffer result = new StringBuffer();
+        String line = "";
+        while ((line = rd.readLine()) != null) {
+            result.append(line);
+        }
+        String json = result.toString();
+
+        // get the best oa url if it exists
+        ObjectMapper objectMapper = new ObjectMapper();
+        JsonNode jsonNode = objectMapper.readTree(json);
+        // json path is best_oa_location / url_for_pdf
+        JsonNode urlForPdfNode = jsonNode.path("oaLink");
+        String urlForPdf = null;
+        if (!urlForPdfNode.isMissingNode()) {
+            urlForPdf = urlForPdfNode.asText();
+        }
+        return urlForPdf;
+    }
+
     private static File uploadFile(String urll, String path, String name) throws Exception {
         try {
             File pathFile = new File(path);
@@ -200,6 +244,102 @@ public class ArticleUtilities {
         catch (Exception e) {
             throw new Exception("An exception occured while downloading " + urll, e);
         }
+    }
+
+    /**
+     * Apply a Pub2TEI transformation to an XML file to produce a TEI file.
+     * Input XML file must be a native XML publisher file supported by Pub2TEI.
+     * Output the path to the transformed outputed file or null if the transformation failed.
+     */
+    public static String applyPub2TEI(String inputFilePath, String outputFilePath, String pathToPub2TEI) {
+        // we use an external command line for simplification (though it would be more elegant to 
+        // stay in the current VM)
+        // java -jar Samples/saxon9he.jar -s:/mnt/data/resources/plos/0/ -xsl:Stylesheets/Publishers.xsl -o:/mnt/data/resources/plos/0/tei/ -dtd:off -a:off -expand:off -t
+
+        // remove first the DTD declaration from the input nlm/jats XML because all these shitty xml mechanisms break 
+        // the process at one point or another or keep looking for something over the internet 
+        try {
+            String xmlContent = FileUtils.readFileToString(new File(inputFilePath), "UTF-8");
+            xmlContent = xmlContent.replaceAll("<!DOCTYPE((.|\n|\r)*?)\">", ""); 
+            FileUtils.writeStringToFile(new File(inputFilePath), xmlContent, "UTF-8");
+        } catch(IOException e) {
+            logger.error("Fail to preprocess the XML file to be transformed", e);
+        }
+
+        ProcessBuilder processBuilder = new ProcessBuilder(); 
+        String s = "-s:"+inputFilePath;
+        File dirToPub2TEI = new File(pathToPub2TEI);
+
+        String xsl = "-xsl:" + dirToPub2TEI.getAbsolutePath() + "/Stylesheets/Publishers.xsl";
+        String o = "-o:"+outputFilePath;
+        processBuilder.command("java", "-jar", dirToPub2TEI.getAbsolutePath() + "/Samples/saxon9he.jar", s, xsl, o, "-dtd:off", "-a:off", "-expand:off", "-t");
+        //processBuilder.directory(new File(pathToPub2TEI)); 
+        //System.out.println(processBuilder.command().toString());
+        try {
+            Process process = processBuilder.start();
+            StringBuilder output = new StringBuilder();
+            BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(process.getInputStream()));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                output.append(line + "\n");
+            }
+
+            int exitVal = process.waitFor();
+            if (exitVal == 0) {
+                System.out.println("XML transformation done");
+            } else {
+                // abnormal...
+                System.out.println("XML transformation failed");
+                outputFilePath = null;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            outputFilePath = null;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            outputFilePath = null;
+        }
+        return outputFilePath;
+    }
+
+    /**
+     * Write an input stream in temp directory.
+     */
+    public static File writeInputFile(InputStream inputStream, String extension) {
+        logger.debug(">> set origin document for stateless service'...");
+
+        File originFile = null;
+        OutputStream out = null;
+        try {
+            originFile = IOUtilities.newTempFile("origin", extension);
+
+            out = new FileOutputStream(originFile);
+
+            byte buf[] = new byte[1024];
+            int len;
+            while ((len = inputStream.read(buf)) > 0) {
+                out.write(buf, 0, len);
+            }
+        } catch (IOException e) {
+            logger.error(
+                    "An internal error occurs, while writing to disk (file to write '"
+                            + originFile + "').", e);
+            originFile = null;
+        } finally {
+            try {
+                if (out != null) {
+                    out.close();
+                }
+                inputStream.close();
+            } catch (IOException e) {
+                logger.error("An internal error occurs, while writing to disk (file to write '"
+                        + originFile + "').", e);
+                originFile = null;
+            }
+        }
+        return originFile;
     }
 
 }

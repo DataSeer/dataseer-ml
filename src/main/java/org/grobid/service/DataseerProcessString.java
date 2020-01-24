@@ -37,7 +37,7 @@ public class DataseerProcessString {
             
             text = text.replaceAll("\\n", " ").replaceAll("\\t", " ");
             long start = System.currentTimeMillis();
-            String retValString = classifier.processText(text);
+            String retValString = classifier.classify(text);
             long end = System.currentTimeMillis();
 
             if (!isResultOK(retValString)) {

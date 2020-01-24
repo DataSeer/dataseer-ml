@@ -26,8 +26,11 @@ public class Annotation implements Comparable<Annotation> {
     @JsonIgnore
     protected OffsetPosition occurence = null;
 
-    private String text = null;
-    private String memo = null;
+    // identifier (number) of the document
+    private String documentId = null;
+
+    // identifier (number) of the dataset in the document
+    private String datasetId = null;
 
     /**
      *  Storing attribute value pairs, only one value per attribute.
@@ -47,23 +50,7 @@ public class Annotation implements Comparable<Annotation> {
     public void setOccurence(OffsetPosition occurence) {
         this.occurence = occurence;
     }
-
-    public String getText() {
-        return this.text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public String getMemo() {
-        return this.memo;
-    }
-
-    public void setMemo(String text) {
-        this.memo = memo;
-    }
-
+    
     public Map<String, String> getAttributes() {
         return attributes;
     }
@@ -85,6 +72,22 @@ public class Annotation implements Comparable<Annotation> {
             attributes = new TreeMap<String, String>();
         }
         attributes.put(attribute, value);
+    }
+
+    public String getDocumentId() {
+        return this.documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
+    }
+
+    public String getDatasetId() {
+        return this.datasetId;
+    }
+
+    public void setDatasetId(String datasetId) {
+        this.datasetId = datasetId;
     }
 
     @Override

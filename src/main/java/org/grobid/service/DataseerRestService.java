@@ -44,8 +44,8 @@ public class DataseerRestService implements DataseerPaths {
     
             LOGGER.info(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
 
-            LibraryLoader.load();
-            DataseerLexicon.getInstance();
+            //LibraryLoader.load();
+            //DataseerLexicon.getInstance();
         } catch (final Exception exp) {
             LOGGER.error("GROBID dataseer initialisation failed. ", exp);
         }
@@ -85,11 +85,33 @@ public class DataseerRestService implements DataseerPaths {
         return DataseerProcessFile.processTEI(inputStream);
     }
 
+    @Path(PATH_DATASEER_JATS)
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.APPLICATION_XML)
+    @POST
+    public Response processJATS(@FormDataParam(INPUT) InputStream inputStream) {
+        return DataseerProcessFile.processJATS(inputStream);
+    }
+
     @Path(PATH_ANNOTATE_DATASEER_PDF)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
     @POST
     public Response processPDFAnnotation(@FormDataParam(INPUT) InputStream inputStream) {
         return DataseerProcessFile.processPDFAnnotation(inputStream);
+    }
+
+    @Path(PATH_DATATYPE_JSON)
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    @GET
+    public Response getJsonDataTypes() {
+        return DataseerDataTypeService.getInstance().getJsonDataTypes();
+    }
+
+    @Path(PATH_RESYNC_DATATYPE_JSON)
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    @GET
+    public Response getResyncJsonDataTypes() {
+        return DataseerDataTypeService.getInstance().getResyncJsonDataTypes();
     }
 }

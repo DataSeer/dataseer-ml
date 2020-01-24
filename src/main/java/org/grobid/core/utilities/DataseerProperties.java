@@ -7,7 +7,7 @@ public class DataseerProperties {
 
 	public static String get(String key) {
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-		InputStream stream = classLoader.getResourceAsStream("grobid-dataseer.properties");
+		InputStream stream = classLoader.getResourceAsStream("dataseer-ml.properties");
 		
 		java.util.Properties properties = new java.util.Properties();
 		try {
@@ -31,5 +31,12 @@ public class DataseerProperties {
 	 */
 	public static String getEngine() {
 		return DataseerProperties.get("grobid.dataseer.engine");
+	}
+
+	/**
+	 *  Path to install directory of Pub2TEI
+	 */
+	public static String getPub2TEIPath() {
+		return DataseerProperties.get("grobid.dataseer.pub2tei.path");
 	}
 }
