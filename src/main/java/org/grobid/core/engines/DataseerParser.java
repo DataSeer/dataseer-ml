@@ -158,8 +158,10 @@ public class DataseerParser extends AbstractParser {
 
         int m = 0;
         for(List<LayoutToken> segment : segments) {
-            if (segment == null || segment.size() == 0)
+            if (segment == null || segment.size() == 0) {
+                m++;
                 continue;
+            }
             int n = 0;
             LayoutToken token = segment.get(n); 
             while(DataseerAnalyzer.DELIMITERS.indexOf(token.getText()) != -1 && n < segment.size()) {
@@ -170,6 +172,7 @@ public class DataseerParser extends AbstractParser {
             String tokenText = token.getText().trim();
             if ( (tokenText.length() == 0) ||
                 (TextUtilities.filterLine(tokenText))) {
+                m++;
                 continue;
             }
             features = new FeaturesVectorDataseer();
@@ -218,9 +221,8 @@ public class DataseerParser extends AbstractParser {
             
             //features.punctuationProfile = TextUtilities.punctuationProfile(line);
 
-            if (features.digit == null)
-                features.digit = "NODIGIT";
-
+            //if (features.digit == null)
+            //    features.digit = "NODIGIT";
 
             features.relativeDocumentPosition = FeatureFactory.getInstance()
                     .linearScaling(m, segments.size(), NBBINS_POSITION);
