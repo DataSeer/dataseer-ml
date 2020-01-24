@@ -38,10 +38,20 @@
         <servlet-name>dataseer-service</servlet-name>
         <url-pattern>/processDataseerPDF</url-pattern>
     </servlet-mapping>
-	 <servlet-mapping>
+	<servlet-mapping>
         <servlet-name>dataseer-service</servlet-name>
         <url-pattern>/annotateDataseerPDF</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>dataseer-service</servlet-name>
+        <url-pattern>/jsonDataTypes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>dataseer-service</servlet-name>
+        <url-pattern>/resyncJsonDataTypes</url-pattern>
+    </servlet-mapping>
+
+
     <servlet-mapping>
         <servlet-name>dataseer-service</servlet-name>
         <url-pattern>/service/*</url-pattern>
