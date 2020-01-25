@@ -578,6 +578,13 @@ public class DataseerClassifier {
         for (int i = 0; i < sectionList.getLength(); i++) {
             Element sectionElement = (Element) sectionList.item(i);
 
+            // check that the father is not <abstract>
+            Node fatherNode = sectionElement.getParentNode();
+            if (fatherNode != null) {
+                if ("abstract".equals(fatherNode.getNodeName()))
+                    continue;
+            }
+
             // head element (unique, but not mandatory)
             Element headElement = this.getFirstDirectChild(sectionElement, "head");
             if (headElement != null) {
@@ -587,7 +594,7 @@ public class DataseerClassifier {
                 datasetTypes.add("no_dataset");
             }
 
-            // the <p> elements 
+            // the <p> elements un der <div> only, and ignoring <abstract>
             for(Node child = sectionElement.getFirstChild(); child != null; child = child.getNextSibling()) {
                 if (child instanceof Element && "p".equals(child.getNodeName())) {
                     Element childElement = (Element)child;
@@ -653,6 +660,13 @@ public class DataseerClassifier {
         for (int i = 0; i < sectionList.getLength(); i++) {
             Element sectionElement = (Element) sectionList.item(i);
             boolean relevantSection = false;
+
+            // check that the father is not <abstract>
+            Node fatherNode = sectionElement.getParentNode();
+            if (fatherNode != null) {
+                if ("abstract".equals(fatherNode.getNodeName()))
+                    continue;
+            }
 
             // head element (unique, but not mandatory)
             Element headElement = this.getFirstDirectChild(sectionElement, "head");
