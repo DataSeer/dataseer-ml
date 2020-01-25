@@ -37,6 +37,8 @@ import org.w3c.dom.traversal.DocumentTraversal;
 import org.w3c.dom.traversal.NodeFilter;
 import org.w3c.dom.traversal.TreeWalker;
 
+import org.w3c.dom.ls.*;
+
 import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -369,6 +371,7 @@ public class DataseerClassifier {
         String tei = null;
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            factory.setNamespaceAware(true);
             DocumentBuilder builder = factory.newDocumentBuilder();           
             org.w3c.dom.Document document = builder.parse(new InputSource(new StringReader(xmlString)));
             //document.getDocumentElement().normalize();
@@ -390,13 +393,14 @@ public class DataseerClassifier {
         String tei = null;
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            factory.setNamespaceAware(true);
             DocumentBuilder builder = factory.newDocumentBuilder();
             tei = FileUtils.readFileToString(new File(filePath), UTF_8);
             if (avoidDomParserBug)
                 tei = avoidDomParserAttributeBug(tei);
 
             org.w3c.dom.Document document = builder.parse(new InputSource(new StringReader(tei)));
-            document.getDocumentElement().normalize();
+            //document.getDocumentElement().normalize();
             tei = processTEIDocument(document);
             if (avoidDomParserBug)
                 tei = restoreDomParserAttributeBug(tei); 
@@ -445,13 +449,14 @@ public class DataseerClassifier {
             //System.out.println(newFilePath);
 
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            factory.setNamespaceAware(true);
             DocumentBuilder builder = factory.newDocumentBuilder();
             tei = FileUtils.readFileToString(new File(newFilePath), UTF_8);
             //if (avoidDomParserBug)
             //    tei = avoidDomParserAttributeBug(tei);
 
             org.w3c.dom.Document document = builder.parse(new InputSource(new StringReader(tei)));
-            document.getDocumentElement().normalize();
+            //document.getDocumentElement().normalize();
             tei = processTEIDocument(document);
             //if (avoidDomParserBug)
             //    tei = restoreDomParserAttributeBug(tei); 
@@ -501,10 +506,11 @@ public class DataseerClassifier {
                         }
                         newSent = conc.toString() + sent;
                     }
-                    String fullSent = "<s>" + newSent + "</s>";
+                    String fullSent = "<s xmlns=\"http://www.tei-c.org/ns/1.0\">" + newSent + "</s>";
                     boolean fail = false;
                     try {
                         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+                        factory.setNamespaceAware(true);
                         org.w3c.dom.Document d = factory.newDocumentBuilder().parse(new InputSource(new StringReader(fullSent)));                
                     } catch(Exception e) {
                         fail = true;
@@ -531,8 +537,9 @@ public class DataseerClassifier {
 
                     try {
                         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+                        factory.setNamespaceAware(true);
                         org.w3c.dom.Document d = factory.newDocumentBuilder().parse(new InputSource(new StringReader(sent)));
-                        d.getDocumentElement().normalize();
+                        //d.getDocumentElement().normalize();
                         Node newNode = doc.importNode(d.getDocumentElement(), true);
                         newNodes.add(newNode);
                         //System.out.println(serialize(doc, newNode));
@@ -785,6 +792,12 @@ public class DataseerClassifier {
             ex.printStackTrace();
         }
         return xml;
+    }
+
+    public String serializeLs(org.w3c.dom.Document doc)    {
+        DOMImplementationLS domImplementation = (DOMImplementationLS) doc.getImplementation();
+        LSSerializer lsSerializer = domImplementation.createLSSerializer();
+        return lsSerializer.writeToString(doc);   
     }
 
     private Pair<String, Double> getBestDataType(JsonNode classificationsNode) {
