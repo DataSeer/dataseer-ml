@@ -1,0 +1,3618 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:38+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Crowdfunding scientific research: Descriptive insights and correlates of funding success</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author role="corresp">
+              <persName>
+                <forename type="first">Henry</forename>
+                <surname>Sauermannid</surname>
+              </persName>
+              <email>*henry.sauermann@esmt.org</email>
+              <affiliation key="aff0">
+                <orgName type="institution">ESMT Berlin</orgName>
+                <address>
+                  <settlement>Berlin, Germany</settlement>
+                </address>
+              </affiliation>
+              <affiliation key="aff1">
+                <orgName type="institution">National Bureau of Economic Research</orgName>
+                <address>
+                  <settlement>Cambridge</settlement>
+                  <region>Massachusetts</region>
+                  <country>United States of America</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Chiara</forename>
+                <surname>Franzoni</surname>
+              </persName>
+              <affiliation key="aff2">
+                <orgName type="department">School of Management</orgName>
+                <orgName type="institution">Politecnico di Milano</orgName>
+                <address>
+                  <settlement>Milan</settlement>
+                  <country key="IT">Italy</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Kourosh</forename>
+                <surname>Shafi</surname>
+              </persName>
+              <affiliation key="aff3">
+                <orgName type="institution">University of Florida</orgName>
+                <address>
+                  <settlement>Gainesville</settlement>
+                  <region>Florida</region>
+                  <country>United States of America</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Crowdfunding scientific research: Descriptive insights and correlates of funding success</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1371/journal.pone.0208384</idno>
+          <note>RESEARCH ARTICLE</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>Crowdfunding has gained traction as a mechanism to raise resources for entrepreneurial and artistic projects, yet there is little systematic evidence on the potential of crowdfunding for scientific research.</s>
+            <s>We first briefly review prior research on crowdfunding and give an overview of dedicated platforms for crowdfunding research.</s>
+            <s>We then analyze data from over 700 campaigns on the largest dedicated platform, Experiment.com.</s>
+            <s>Our descriptive analysis provides insights regarding the creators seeking funding, the projects they are seeking funding for, and the campaigns themselves.</s>
+            <s>We then examine how these characteristics relate to fundraising success.</s>
+            <s>The findings highlight important differences between crowdfunding and traditional funding mechanisms for research, including high use by students and other junior investigators but also relatively small project size.</s>
+            <s>Students and junior investigators are more likely to succeed than senior scientists, and women have higher success rates than men.</s>
+            <s>Conventional signals of quality-including scientists' prior publications-have little relationship with funding success, suggesting that the crowd may apply different decision criteria than traditional funding agencies.</s>
+            <s>Our results highlight significant opportunities for crowdfunding in the context of science while also pointing towards unique challenges.</s>
+            <s>We relate our findings to research on the economics of science and on crowdfunding, and we discuss connections with other emerging mechanisms to involve the public in scientific research.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Introduction</head>
+        <p>
+          <s>Crowdfunding-an open call for money from the general public-has become an important source of funding for entrepreneurial, artistic, and social projects <ref target="#b0" type="bibr">[1]</ref>
+            <ref target="#b1" type="bibr">[2]</ref>
+            <ref target="#b2" type="bibr">[3]</ref>
+            <ref target="#b3" type="bibr">[4]</ref> .</s>
+          <s>More recently, scientists and policy makers have suggested that crowdfunding could also be valuable to support scientific research <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref>
+            <ref target="#b6" type="bibr">[7]</ref> and some universities actively encourage their researchers to start crowdfunding campaigns <ref target="#b7" type="bibr">[8]</ref> .</s>
+          <s>The public discussion as well as related work on crowdsourcing and Citizen Science suggest several potential benefits <ref target="#b8" type="bibr">[9]</ref>
+            <ref target="#b9" type="bibr">[10]</ref>
+            <ref target="#b10" type="bibr">[11]</ref> .</s>
+          <s>One hope is that funding from the crowd can expand the total amount of resources available for science, or at least partly compensate for tighter budgets of traditional funding agencies <ref target="#b5" type="bibr">[6]</ref> .</s>
+          <s>In light of the increasing a1111111111 a1111111111 a1111111111 a1111111111 a1111111111 difficulties especially junior scientists face in getting funding through traditional channels <ref target="#b11" type="bibr">[12]</ref> , some observers highlight that the crowd may be more willing to fund researchers who do not yet have an established track record <ref target="#b6" type="bibr">[7]</ref> .</s>
+          <s>Finally, "broadcasting" proposals to a large number of potential funders may allow researchers to identify those supporters who share an interest in the same topics, even if these topics are not mainstream or priorities for traditional funding agencies <ref target="#b9" type="bibr">[10,</ref>
+            <ref target="#b12" type="bibr">13]</ref> .</s>
+        </p>
+        <p>
+          <s>Despite these hopes, however, the potential of crowdfunding for scientific research is not clear.</s>
+          <s>Many crowdfunding campaigns in other domains fail, suggesting that raising money from the crowd can be quite challenging <ref target="#b1" type="bibr">[2,</ref>
+            <ref target="#b14" type="bibr">14]</ref> .</s>
+          <s>Moreover, research projects have characteristics that would be expected to make it challenging to raise funding from the crowd.</s>
+          <s>Among others, scientific research is often risky, while members of the crowd may have a preference for projects that are likely to succeed <ref target="#b15" type="bibr">[15]</ref> .</s>
+          <s>Similarly, there is an asymmetry in the knowledge of highly trained scientists and potential "citizen" funders, such that the latter may find it difficult to assess the quality and merit of research proposals <ref target="#b15" type="bibr">[15,</ref>
+            <ref target="#b16" type="bibr">16]</ref> .</s>
+          <s>Research projects also cannot typically offer the tangible outputs that are often "pre-sold" on general-purpose platforms such as Kickstarter, and scientific research projects may generally be perceived to have less direct use value than other types of projects <ref target="#b15" type="bibr">[15,</ref>
+            <ref target="#b17" type="bibr">17]</ref> .</s>
+          <s>On the other hand, crowdfunding platforms that specialize in scientific research projects may attract backers with different kinds of motivations and decision criteria than general-purpose platforms.</s>
+          <s>Moreover, they may be able to offer tools that are tailored to the needs of scientists and their funders and may help increase the odds of fundraising success.</s>
+        </p>
+        <p>
+          <s>To assess the potential of crowdfunding for scientific research, we report initial evidence from Experiment.com, the currently largest dedicated platform for crowdfunding research.</s>
+          <s>We first provide descriptive information on the creators seeking funding, the projects they are seeking funding for, and features of the crowdfunding campaigns.</s>
+          <s>We then investigate how these various characteristics are related to campaign success.</s>
+          <s>We compare the results to prior research on the predictors of fundraising success in crowdfunding but also to research on traditional scientific funding mechanisms such as government grants.</s>
+          <s>Finally, we examine whether and how predictors of crowdfunding success differ from those that predict attention from a more professional audience-journalists covering scientific research.</s>
+        </p>
+        <p>
+          <s>Our analysis provides new evidence on the state of crowdfunding in scientific research and should be of interest to social scientists as well as to scientists who consider starting their own crowdfunding campaigns.</s>
+          <s>By providing empirical evidence from the specific context of science, this study also contributes to the broader literature on crowdfunding, which tends to focus on general-purpose platforms.</s>
+        </p>
+      </div>
+      <div>
+        <head>Prior research</head>
+        <p>
+          <s>Although prominent success stories such as the Pebble Watch or the Oculus Virtual Reality Headset have demonstrated the potential of crowdfunding, many campaigns fail to reach their funding targets <ref target="#b1" type="bibr">[2,</ref>
+            <ref target="#b14" type="bibr">14]</ref> .</s>
+          <s>As such, a growing literature in fields as diverse as economics, management, and the natural sciences has started to examine crowdfunding from a descriptive perspective, and to explore potential drivers of fundraising success <ref target="#b18" type="bibr">[18]</ref> .</s>
+          <s>Most of these contributions, however, have looked at crowdfunding for startups, technology development, or projects in the arts or cultural industries.</s>
+          <s>In contrast, there is little evidence on the potential of crowdfunding as a tool to raise resources for scientific research <ref target="#b17" type="bibr">[17,</ref>
+            <ref target="#b19" type="bibr">19]</ref> .</s>
+        </p>
+        <p>
+          <s>Even though a unified framework for studying crowdfunding has not emerged yet <ref target="#b20" type="bibr">[20]</ref> , most of the prior literature examines how crowdfunding success relates to factors in the following three broad domains.</s>
+        </p>
+        <p>
+          <s>First, studies have examined how fundraising success is related to certain characteristics of the individuals who are seeking to raise funding (i.e., the "creators" of a campaign).</s>
+          <s>In particular, several studies have explored gender differences in funding success, finding that female creators, or teams that have at least one female creator, are more likely to achieve success compared to male creators <ref target="#b21" type="bibr">[21]</ref>
+            <ref target="#b22" type="bibr">[22]</ref>
+            <ref target="#b23" type="bibr">[23]</ref> .</s>
+          <s>Other studies have considered creators' broader social networks, highlighting the role of the social interconnectedness of the creator in explaining funding outcomes <ref target="#b1" type="bibr">[2,</ref>
+            <ref target="#b23" type="bibr">[23]</ref>
+            <ref target="#b24" type="bibr">[24]</ref>
+            <ref target="#b25" type="bibr">[25]</ref> .</s>
+          <s>Related work has considered the geographic location of creators, suggesting that crowdfunding can provide better access to funding for creators in less central locations and lead to more distributed funding outcomes than traditional mechanisms <ref target="#b26" type="bibr">[26,</ref>
+            <ref target="#b27" type="bibr">27]</ref> .</s>
+        </p>
+        <p>
+          <s>Second, fundraising success is related to characteristics of the project, i.e., what funding is raised for.</s>
+          <s>The existing evidence suggests that projects with non-profit goals are more likely to be funded than projects with for-profit goals <ref target="#b28" type="bibr">[28,</ref>
+            <ref target="#b29" type="bibr">29]</ref> .</s>
+          <s>Moreover, there is robust evidence that projects with smaller budgets are more likely to achieve their targets <ref target="#b1" type="bibr">[2,</ref>
+            <ref target="#b23" type="bibr">23,</ref>
+            <ref target="#b24" type="bibr">24]</ref> .</s>
+          <s>Recent work on both rewards-based and equity crowdfunding suggests that more radical and innovative projects are less likely to be funded, perhaps reflecting that backers doubt the feasibility of radical proposals or that radical proposals appear less useful in addressing currently perceived needs <ref target="#b15" type="bibr">[15,</ref>
+            <ref target="#b30" type="bibr">30]</ref> .</s>
+        </p>
+        <p>
+          <s>Third, attention has been directed at the link between crowdfunding success and features of the campaign itself, e.g., what information is presented, how it is presented, and how creators interact with the crowd.</s>
+          <s>Research has found that the amount of information provided about a project is positively correlated to funding success <ref target="#b23" type="bibr">[23,</ref>
+            <ref target="#b25" type="bibr">25]</ref> , particularly when the information makes the project more understandable and relatable to the crowd <ref target="#b31" type="bibr">[31]</ref> .</s>
+          <s>Information given in a visual form, including videos, is particularly useful <ref target="#b1" type="bibr">[2,</ref>
+            <ref target="#b23" type="bibr">23,</ref>
+            <ref target="#b32" type="bibr">32]</ref> .</s>
+          <s>Project updates during the campaign can further increase the likelihood of success <ref target="#b33" type="bibr">[33]</ref> .</s>
+          <s>Endorsements by a third party, such as business angels or venture capitalists, correlate positively with fundraising success, perhaps because they serve as a signal of quality and reduce the information asymmetry between the creator and the crowd <ref target="#b34" type="bibr">[34,</ref>
+            <ref target="#b35" type="bibr">35]</ref> .</s>
+          <s>Finally, a study in the context of scientific research suggests that campaigns were more successful when scientists started nurturing an audience for their projects before the crowdfunding campaign, taking advantage of their social networks <ref target="#b19" type="bibr">[19]</ref> .</s>
+        </p>
+        <p>
+          <s>We build on this existing work to provide insights into crowdfunding campaigns in an understudied context-scientific research.</s>
+          <s>In considering specific factors within each of the three domains, we can thus also draw on prior research in the economics of science, including work on predictors of fundraising success in the traditional (grant-based) system.</s>
+          <s>With respect to creator characteristics, for example, we distinguish junior versus senior researcher status as well as academic versus industry affiliations <ref target="#b36" type="bibr">[36,</ref>
+            <ref target="#b37" type="bibr">37]</ref> .</s>
+          <s>Similarly, we classify projects based on their research objectives, develop a proxy for the degree to which creators describe a project as risky, and examine what kinds of research expenses creators plan to cover with the funding raised <ref target="#b38" type="bibr">[38]</ref>
+            <ref target="#b39" type="bibr">[39]</ref>
+            <ref target="#b40" type="bibr">[40]</ref> .</s>
+          <s>For campaign characteristics, we consider a range of factors such as "lab notes", as well as the listing of prior publications, which are often taken as signals of quality by traditional scientific funding agencies <ref target="#b36" type="bibr">[36]</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Crowdfunding platforms for scientific research projects</head>
+        <p>
+          <s>Our data come from the platform Experiment.com, which is dedicated to crowdfunding for scientific research.</s>
+          <s>This US-based platform was established in May 2012 under the name Microryza and was later renamed.</s>
+          <s>The platform allows investigators to create a profile and run a campaign to raise funding for a research project.</s>
+          <s>Experiment.com pre-screens campaigns to ensure minimum standards regarding clarity of the research question, transparency, and researcher expertise <ref type="bibr">[41]</ref> .</s>
+          <s>Upon launch, a campaign stays open for a limited amount of time, typically 30-45 days.</s>
+          <s>Campaigns are governed by an "all-or-nothing" rule, i.e., donors are charged and pledged funds transferred to the campaign creators only if the stated funding goal is reached.</s>
+          <s>In this sense, campaigns resemble the all-or-nothing nature of competitive grant proposals made to traditional funding agencies.</s>
+        </p>
+        <p>
+          <s>There are several other platforms for crowdfunding scientific research, following a similar model as Experiment.com.</s>
+          <s>
+            <ref target="#tab_0" type="table">Table 1</ref> provides examples of other relevant platforms, with basic information such as the founding date and the number of projects hosted.</s>
+          <s>The table shows that some of these platforms are independent, while others are run by universities or funding agencies primarily for their own purposes.</s>
+          <s>While some have been operating for several years, others have failed.</s>
+          <s>Experiment.com is, to the best of our knowledge, the largest dedicated platform for the crowdfunding of scientific research projects.</s>
+        </p>
+        <p>
+          <s>Crowdfunding platforms such as Experiment.com</s>
+          <s>should be distinguished from two other types of platforms available to researchers.</s>
+          <s>First, there are charity fundraising platforms such as Benefunder and Thecommongood.</s>
+          <s>Such platforms differ from Experiment.com in that funds are typically raised for an organization or general cause rather than specific research projects, fundraising is open ended with no time limit, and there is no explicit fundraising target and no "all-or-nothing" mechanism.</s>
+          <s>Thus, these platforms are similar to traditional charity institutions, except that they use the online channel for fundraising.</s>
+          <s>Second, there are generalpurpose "reward-based" platforms, such as Kickstarter or Indiegogo.</s>
+          <s>These platforms are project-based and follow an all-or-nothing model, but they are primarily for business or artistic projects and rarely host campaigns that focus on scientific research.</s>
+          <s>They usually require creators to give rewards to the backers and have other specific provisions that make the fundraising for scientific research projects difficult.</s>
+          <s>For example, Kickstarter explicitly excludes projects aimed at the treatment or prevention of illnesses <ref target="#b41" type="bibr">[42]</ref> and Indiegogo temporarily stopped accepting non-profit projects in February 2018 <ref target="#b42" type="bibr">[43]</ref> .</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Data and measures</head>
+        <p>
+          <s id="dataset-1" type="Tabular data">We obtained from Experiment.com leadership the links to all crowdfunding campaigns that were started since the platform launch in May 2012 and for which success or failure status was known in August 2015.</s>
+          <s>We scraped the webpage content of these campaigns to obtain measures for a wide range of project characteristics as well as funding outcomes.</s>
+          <s>We handcoded additional variables based on project descriptions on the campaign webpages and profile pages of campaign creators.</s>
+          <s>We received written permission from Experiment.com to collect these data.</s>
+          <s>We dropped from the analysis 16 campaigns whose webpages are incomplete.</s>
+          <s id="dataset-2" type="Tabular data">Our final sample includes 725 campaigns.</s>
+          <s>Of these campaigns, 68% were started by a single creator.</s>
+          <s>The remaining campaigns were posted by teams ranging from 2 to 7 creators, for a total of 1,148 creators in our sample.</s>
+        </p>
+        <p>
+          <s>In the following, we describe variables and measures.</s>
+          <s>
+            <ref target="#tab_1" type="table">Tables 2 and 3</ref> show summary statistics at the level of individual creators and of campaigns, respectively.</s>
+          <s>S1 Table shows selected correlations.</s>
+        </p>
+      </div>
+      <div>
+        <head>Creator characteristics</head>
+        <p>
+          <s>Affiliation.</s>
+          <s>Campaigns typically provide information on the background of the creators.</s>
+          <s>If the campaign did not provide this information, we searched the internet.</s>
+          <s>We hand-coded the organizational affiliations of the creators using the following categories: Educational institution (including universities, colleges, and high schools); company/firm (including startups as well as established firms); and other organization (including non-profits or government research institutes).</s>
+          <s>Some creators acted without organizational affiliation, sometimes explicitly stating that they were "independent"; these are coded as "no affiliation/independent".</s>
+          <s>Position.</s>
+          <s>We coded creators' position using the following categories: Student below PhD/ MD level; PhD/MD student; Postdoctoral researcher; Assistant Professor; Associate/Full Professor; Employee/Affiliate (if not one of the above categories); individual (no affiliation); and other.</s>
+          <s>If campaigns listed teams of individuals with clear organizational positions (e.g., a team of undergraduate students participating in an iGEM contest), we coded them accordingly.</s>
+          <s>The "other" category of positions includes cases where the creators are teams of unknown composition or organizations (e.g., a foundation).</s>
+          <s>Gender.</s>
+          <s>We coded creators' gender primarily based on first names using the API of genderize.io.</s>
+          <s>The algorithm returns the gender and a probability that a specific name-gender attribution (male or female) was correct; in case it cannot decide, the algorithm returns none.</s>
+          <s>In a second step, we double-checked the accuracy of the codes and completed missing data with additional help from the profile pictures of creators or googling their name.</s>
+          <s>Gender is set to "N.A./unknown" if the primary organizer is a team or an organization.</s>
+        </p>
+        <p>
+          <s>Region.</s>
+          <s>Many campaigns include a tag indicating the primary affiliation of the creators (e.g., name of a university or company).</s>
+          <s>If such an affiliation was not provided, we coded the location of the researchers based on the project description or researcher profiles.</s>
+          <s>Only 5% of campaigns have more than one location and we thus focus on the primary one.</s>
+          <s>Note that the coding reflects the location of the researchers, which may differ from the location where research is performed (e.g., a campaign by Duke University researchers to study the Brazilian rainforest would be coded as located at Duke).</s>
+          <s>We code the following broader regions Creator count.</s>
+          <s>This is the count of creators listed on the campaign webpage.</s>
+        </p>
+      </div>
+      <div>
+        <head>Project characteristics</head>
+        <p>
+          <s>Field.</s>
+          <s>Creators indicated up to 5 field classifications on the campaign website.</s>
+          <s>We coded a series of 20 dummy variables taking the value of one if a particular field was selected (see <ref target="#tab_2" type="table">Table 3</ref> ).</s>
+          <s>We collapsed very small fields (fields with less than 5% of cases) into the field "Other".</s>
+          <s>Project objective.</s>
+          <s>We coded the substantive project objective by manually classifying projects into the following categories: Projects whose main objective is conducting scientific research; projects that focus on development (e.g. the development of devices, tools, software, and methods); and projects with other objectives (e.g., the restoration of objects or the protection of animals and ecosystems).</s>
+          <s>We classified projects as research if they focused on identifying general mechanisms or empirical regularities.</s>
+          <s>In many cases, creators of research projects also stated their goal to publish results in a scientific journal.</s>
+          <s>This coding scheme is relatively simple and does not distinguish projects that might pursue multiple objectives <ref target="#b38" type="bibr">[38]</ref> .</s>
+          <s>However, most projects are very small with a clearly defined goal, and drawing more nuanced distinctions was not possible in a reliable way.</s>
+          <s>Funding target.</s>
+          <s>Campaign pages originally showed only the amount raised and the percentage of the target that has been raised.</s>
+          <s>We recover the target by dividing the amount raised by the percentage raised.</s>
+          <s>For campaigns that raised no money, we obtained targets from updated webpages.</s>
+          <s>For descriptive analyses, we report figures in U.S. Dollars.</s>
+          <s>Given the skewed distribution of funding targets, we log-transform this variable for use in regression analyses.</s>
+        </p>
+        <p>
+          <s>Budget.</s>
+        </p>
+        <p>
+          <s>Campaigns include a budget that shows the intended use of funds.</s>
+          <s>Experiment.</s>
+          <s>com does not provide pre-defined budget categories and we hand-coded expenses into the following categories: Salaries for organizers (individuals listed as creators on the campaign); salaries for non-organizers (e.g., students, research assistants); equipment, materials, supplies, software, and analysis services; travel (including conferences and field trips); other direct costs (e.g., compensation for patients, publications, open access fees); indirect costs (overhead); other (including budget without details).</s>
+          <s>We then compute for each project the share of costs in each category.</s>
+        </p>
+        <p>
+          <s>Risk score.</s>
+          <s>We analyze the text of the project description to measure the degree to which a project is described as risky by its creators.</s>
+          <s>To do so, we use an algorithm that calculates a score for each project based on the frequency of terms typically associated with risk.</s>
+          <s>More specifically, we employ the commonly used word list developed by Loughran and McDonald <ref target="#b43" type="bibr">[44]</ref>
+            <ref target="#b44" type="bibr">[45]</ref>
+            <ref target="#b45" type="bibr">[46]</ref> , which is based on the union of uncertain, weak modal, and negative words.</s>
+          <s>Examples of uncertain words include believe, pending, approximate, uncertain, and uncertainty.</s>
+          <s>Examples of negative words include failure, decline, and difficult.</s>
+          <s>Examples of weak modal words include could, might, nearly, maybe, and possibly.</s>
+          <s>We use two versions of the text-based risk score.</s>
+          <s>Our main version is the Term Frequency-Inverse Document Frequency (TF-IDF) score, which gives more weight to words that are relatively rare in the entire corpus of documents and should thus be more informative and helpful in distinguishing projects <ref target="#b46" type="bibr">[47]</ref> .</s>
+          <s>This score also includes normalization to account for the different length of project descriptions, addressing the concern that a given word is more likely to occur in a longer text <ref target="#b47" type="bibr">[48]</ref> .</s>
+          <s>For a robustness check, we also use the simple term frequency, i.e., the count of terms from the word list.</s>
+          <s>Given that project creators can choose how to pitch their project, the risk score should be interpreted as a measure of the degree to which they describe a project as risky, which may or may not correlate with the "objective" riskiness of the project.</s>
+        </p>
+      </div>
+      <div>
+        <head>Campaign characteristics</head>
+        <p>
+          <s>Endorsements 01.</s>
+          <s>Experiment.com offers creators the option to show endorsements by professional scientists or other individuals.</s>
+          <s>We coded a dummy variable equal to one if the campaign lists at least one endorsement.</s>
+        </p>
+        <p>
+          <s>Prior papers.</s>
+          <s>Some campaigns list prior peer reviewed publications of creators.</s>
+          <s>Such publications may allow researchers to signal their accomplishment and scientific credibility.</s>
+          <s>We coded a set of five categorical variables: No publications mentioned (omitted category); one specific publication listed; two specific publications listed; three or more specific publications listed.</s>
+          <s>The final dummy captures if creators do not list specific publications but explicitly mention their publication record (e.g., "I have published over 100 peer reviewed articles") or provide an explicit link to an external website that lists publications (e.g., "You can find my publication list here").</s>
+        </p>
+        <p>
+          <s>Video 01.</s>
+          <s>Dummy variable equal to one if the campaign includes a video that introduces the creators and/or the project.</s>
+        </p>
+        <p>
+          <s>Lab notes pre closing 01.</s>
+          <s>Experiment.com allows creators to provide background information and campaign updates in the form of "lab notes".</s>
+          <s>We created a dummy variable equal to one if creators posted at least one lab note prior to the closing of the campaign.</s>
+          <s>This variable may reflect that creators are willing to engage more actively with potential funders.</s>
+        </p>
+        <p>
+          <s>Rewards 01.</s>
+          <s>Campaigns may offer rewards to backers for making a pledge.</s>
+          <s>Examples of rewards include photographs of animals, lab visits, or T-shirts.</s>
+          <s>We coded a dummy variable equal to one if a campaign offered any rewards.</s>
+          <s>Although some campaigns make access to lab notes contingent on a donation, contingent lab note access is not counted as a reward in our coding.</s>
+        </p>
+        <p>
+          <s>Platform age.</s>
+          <s>To control for the age of the platform at the time that a particular campaign is run, we compute the time difference between the closing of the focal campaign and the closing of the first campaign on the platform (May 18, 2012), measured in weeks.</s>
+          <s>All regressions control for platform age and age squared.</s>
+        </p>
+        <p>
+          <s>Outcomes.</s>
+          <s>Funded 01.</s>
+          <s>Dummy variable equal to one if the campaign raised at least 100% of its target.</s>
+        </p>
+        <p>
+          <s>Amount raised.</s>
+          <s>Amount raised by the campaign, regardless of whether the target was reached.</s>
+          <s>Note that campaigns may raise more than their target.</s>
+          <s>For descriptive analyses, we report figures in U.S. Dollars.</s>
+          <s>Given the skewed distribution of this measure, we log-transform this variable for regression analyses.</s>
+        </p>
+        <p>
+          <s>Press coverage 01.</s>
+          <s>Some campaigns list press coverage of the campaign itself or of the creators' larger research programs.</s>
+          <s>Such coverage may include national media such as the New York Times and Discover Magazine, local newspapers, radio shows, or coverage by third party websites.</s>
+          <s>Given the relatively small numbers, we use a simple dummy variable equal to one if the campaign lists at least one press item.</s>
+          <s>We use this variable for two purposes.</s>
+          <s>First, we include this variable in regressions of financial funding outcomes because press coverage listed on the campaign website may serve as a quality signal for potential backers.</s>
+          <s>The buzz created by press coverage may also attract new backers to the campaign.</s>
+          <s>Second, science writers and reporters constitute a somewhat different audience than the regular crowd, and may be more likely to have scientific training or relevant experience <ref target="#b48" type="bibr">[49]</ref> .</s>
+          <s>As such, we also use this variable as dependent variable in exploratory analyses to proxy for success in attracting attention from a more professional audience.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+      </div>
+      <div>
+        <head>Selected descriptive insights</head>
+        <p>
+          <s>Creator characteristics.</s>
+          <s>We first examine key characteristics of the creators who started crowdfunding campaigns.</s>
+          <s>Panel A in <ref target="#fig_1" type="figure">Fig 1 shows</ref> the affiliation of the creators.</s>
+          <s>Over 80% are affiliated with educational institutions (e.g., universities and colleges), about 5% are affiliated with firms, and 8% with other organizations such as foundations, museums, non-profits, or research institutes.</s>
+          <s>Roughly 5% of creators are un-affiliated, sometimes explicitly calling themselves "independent researcher".</s>
+          <s>The preponderance of campaigns involves creators from just one type of affiliation.</s>
+          <s>In particular, of all the campaigns with at least one creator from an educational institution, only 2% also have a creator affiliated with a firm, and only 6% also have a creator affiliated with an "other" organization (e.g., nonprofit, research institute).</s>
+        </p>
+        <p>
+          <s>We further distinguish creators affiliated with educational institutions by their position <ref target="#fig_1" type="figure">(Fig 1, Panel B)</ref> .</s>
+          <s>We find that a large share of these creators are students, including over 30% undergraduate or master's students and 25% PhD or MD students.</s>
+          <s>Roughly 7% are postdocs, 12% are assistant professors, and 17% are associate or full professors.</s>
+        </p>
+        <p>
+          <s>With respect to gender, 57% of all campaign creators are male and 40% are female.</s>
+          <s>In the remaining cases, gender could not be determined or did not apply because an organization, not a person, was listed as the creator.</s>
+        </p>
+        <p>
+          <s>As noted earlier, 68% of campaigns were started by a single creator while 32% were started by teams.</s>
+          <s>
+            <ref target="#tab_1" type="table">Table 2</ref> shows creator characteristics separately for all creators (column 1), and for only one creator per campaign, taking the first-listed creator in case of teams (column 2).</s>
+          <s>For team-based projects, we further show creators' characteristics separately for the investigator listed first in the team (column 3), and for all other team members who were not listed first (column 4).</s>
+          <s>First and non-first listed individuals in teams are quite similar in terms of affiliation, reflecting the low rate of cross-affiliation collaborations.</s>
+          <s>However, first listed creators in teams are somewhat more senior (significantly less likely to be students below PhD/MD level and significantly more likely to be associate/full professors).</s>
+        </p>
+        <p>
+          <s>The vast majority of creators on the platform Experiment.com are located in the U.S. (89%) and 11% are located in other countries.</s>
+          <s>The US-based creators were distributed across all regions, including northeastern states (31%), southern states (15%), states bordering the Pacific (22%), and states in the west/midwest (17%).</s>
+          <s>We compared the geographic distribution of funded US-based campaigns to the distribution of awards by NIH and NSF over a comparable time period <ref type="bibr">(2012)</ref>
+            <ref type="bibr">(2013)</ref>
+            <ref type="bibr">(2014)</ref>
+            <ref type="bibr">(2015)</ref> .</s>
+          <s>S1 Fig shows that Experiment.com has a somewhat larger share Crowdfunding scientific research of successful projects in the Pacific region (32%) and a smaller share in the northeast (34%) compared to NSF/NIH, likely because Experiment.com was started on the West Coast.</s>
+          <s>Moreover, Experiment.com funding volume is heavily concentrated in the Pacific region (78%), which is partly due to an extremely successful outlier project located in California (see below).</s>
+          <s>While the specific patterns are unlikely to generalize, two observations may be more general.</s>
+          <s>First, at least in the first years of their operation, crowdfunding platforms may be more localized than traditional funding sources, serving primarily their home regions <ref target="#b26" type="bibr">[26]</ref> .</s>
+          <s>Second, while government grants tend to be of similar sizes <ref target="#b49" type="bibr">[50]</ref> , amounts raised in crowdfunding can vary quite dramatically.</s>
+          <s>As such, the regional distribution of amounts raised may differ quite substantially from the regional distribution of the number of successful campaigns.</s>
+        </p>
+        <p>
+          <s>Project characteristics.</s>
+          <s>After providing insights on campaign creators, we examine more closely what kinds of projects these creators propose.</s>
+          <s>First, the most frequently listed field classifications are (in descending order of frequency): Biology, Ecology, Medicine, Engineering, Education, Psychology, Social Sciences, and Chemistry <ref target="#tab_2" type="table">(Table 3)</ref> .</s>
+        </p>
+        <p>
+          <s>In terms of their substantive objectives, roughly 78% of projects aim at the scientific investigation of a topic (e.g. the impact of climate change on oak trees, the use of computer games to develop team skills in autistic children, the testing of a drug against kidney cancer), and 12% aim at the development of devices, tools, software, or methods.</s>
+          <s>The remaining 10% have other types of objectives, such as the restoration of objects (e.g.</s>
+          <s>dinosaur skeletons) or the protection of animals and ecosystems.</s>
+        </p>
+        <p>
+          <s>As a proxy for project size, we examine the amount of funding creators seek to raise.</s>
+          <s>Funding targets ranged from $100 to over $100,000.</s>
+          <s>One extreme project had a target of $1 million to find a cure for the rare Batten disease [51].</s>
+          <s>The average project target was $6,460, the median $3,500.</s>
+          <s>Thus, while some campaigns reach the scale of traditional funding requests, most seek to raise small amounts.</s>
+          <s>One possible explanation is that crowdfunding is used for pilot studies that are intended to lead to larger follow-on projects.</s>
+          <s>Although an explicit framing of the study as a pilot was not common, it occurred in several instances.</s>
+          <s>For example, one campaign stated, "It is almost impossible to achieve funding without substantial preliminary data.</s>
+          <s>This fundraiser will help fund this initial experiment and provide data for future grant proposals."</s>
+          <s>
+            <ref target="#b50" type="bibr">[52]</ref> Campaigns also include a budget, allowing us to explore for what kinds of expenses creators seek to raise funds.</s>
+          <s>The average campaign requested the majority of funds for materials, equipment and services (60%), followed by travel (16%) and salaries for personnel other than the creators (e.g. research assistants) (11%).</s>
+          <s>Compensation or salary for creators constituted only 3% of the average budget.</s>
+        </p>
+      </div>
+      <div>
+        <head>Predictors of fundraising success</head>
+        <p>
+          <s>Creators receive pledged funds only if the campaign achieves the pre-defined target at the closure date.</s>
+          <s>The success rate in our sample was 48%, higher than the success rate of projects on the general-purpose platform Kickstarter (36%) <ref target="#b41" type="bibr">[42]</ref> and considerably higher than the success rates at NSF (23% in competitive grants in 2014) and NIH (16% for new research applications in 2015) <ref target="#b51" type="bibr">[53,</ref>
+            <ref target="#b52" type="bibr">54]</ref> .</s>
+          <s>Conditional upon funding success, projects raised a total of $4.37 million, distributed in a range from $110 to an extreme of over $2.6 million for the Batten disease project, with an average of $12,652 and median of $3,105.</s>
+          <s>We now turn to the question how funding success is related to characteristics of the creators, the projects, and the campaigns.</s>
+          <s>Figs 2 and 3 illustrate differences in funding targets as well as fundraising success for two particularly relevant creator characteristics: gender and position.</s>
+          <s>
+            <ref target="#fig_2" type="figure">Fig 2 shows</ref> that men have larger funding targets than women (median of $3.948 vs. $3.015),</s>
+          <s>consistent with observed gender differences on Kickstarter <ref target="#b53" type="bibr">[55]</ref> .</s>
+          <s>However, men receive a significantly lower volume of pledges ($880 vs. $1.506), resulting in lower rates of success (43% versus 57%).</s>
+          <s>Conditional upon reaching the funding target, amounts raised by men and women are very similar ($3.096 versus $3.170).</s>
+          <s>
+            <ref target="#fig_3" type="figure">Fig 3 shows</ref> patterns by scientists' position: Students and postdocs tend to have lower targets but receive a higher volume of pledges than senior scientists, resulting in higher rates of success (e.g., 61% for students below PhD/MD versus 33% for associate/full professors).</s>
+          <s>Although intriguing, these patterns are difficult to interpret because they do not account for potentially confounding factors such as differences across fields or geographic regions.</s>
+          <s>As such, we now examine the predictors of fundraising success more systematically using regression analysis.</s>
+        </p>
+        <p>
+          <s>Regression analysis.</s>
+          <s>We examine predictors of fundraising success using regression models that control for factors such as scientific field, geographic region, or age of the platform <ref target="#tab_3" type="table">(Table 4</ref> ).</s>
+          <s>For the 32% of campaigns created by a team, our main analysis focuses on the characteristics of the first listed creator.</s>
+          <s>The rationale is that in the sciences, first listed authors are typically those who "own" the project and make the largest substantive contributions <ref target="#b54" type="bibr">[56]</ref> ; Experiment.com leadership confirmed in discussions that this is the case also on the platform.</s>
+          <s>Campaign descriptions typically provide more information about first authors than non-first authors, providing further support for the notion that these individuals are driving the project.</s>
+          <s>Robustness checks using team averages of individual characteristics (e.g., the share of female team members) rather than the characteristics of the primary creator show very similar results (reported in S2 <ref type="table">Table)</ref> .</s>
+        </p>
+        <p>
+          <s>We use two different variables to capture fundraising outcomes: The first is the dummy variable indicating whether a campaign achieved its target <ref target="#tab_3" type="table">(Table 4</ref> , Models 1-4).</s>
+          <s>These models are estimated using logistic regression, and we report odds ratios for ease of interpretation (odds ratios greater than one indicate a positive relationship, odds ratios smaller than one indicate a negative relationship).</s>
+          <s>The second dependent variable is the continuous measure of pledges received regardless of whether the funding target was achieved (Models 5-8).</s>
+          <s>These regressions are estimated using OLS.</s>
+          <s>All regressions use Huber-White "robust" standard errors to address potential heteroscedasticity.</s>
+        </p>
+        <p>
+          <s>For each of the two outcome variables, we estimate four models.</s>
+          <s>The first model includes just control variables.</s>
+          <s>The second also includes characteristics of the primary campaign creator.</s>
+          <s>The third additionally includes characteristics of the project.</s>
+          <s>The fourth model additionally includes characteristics of the campaign.</s>
+          <s>For both outcome variables, each of these steps meaningfully increases model fit, with the full models more than doubling the (Pseudo)R 2 of the baseline models.</s>
+          <s>The regressions allow us to examine how success rates are related to characteristics of creators, characteristics of the projects, and to how campaigns are implemented.</s>
+          <s>The stepwise approach also provides some insights into the degree to which differences in the baseline success rates of different types of creators (Models 2 and 6) may be explained by differences in project or campaign characteristics <ref target="#b55" type="bibr">[57]</ref> .</s>
+        </p>
+        <p>
+          <s>Funding success and creator characteristics.</s>
+          <s>Model 2 in <ref target="#tab_3" type="table">Table 4</ref> shows that that students and postdocs are more likely to reach their funding targets than associate and full professors.</s>
+          <s>These differences are significantly reduced (Chi 2 (3) = 14.49, p&lt;0.01)</s>
+          <s>but remain significant when we account for the fact that their targets tend to be lower, and thus easier to achieve (Model 3).</s>
+          <s>Students and postdocs also receive a greater volume of pledges <ref target="#tab_3" type="table">(Table 4</ref> , Model 6), especially when we account for differences in funding targets (Model 7).</s>
+          <s>These results are correlational and we can only speculate about the underlying mechanisms.</s>
+          <s>One possible interpretation is that the crowd favors junior scientists, e.g., because backers consider perceived need in addition to scientific merit, or derive utility from supporting the education and professional development of students and postdocs.</s>
+          <s>Alternative explanations are that junior scientists may have more creative project ideas <ref target="#b56" type="bibr">[58]</ref> , invest more effort in campaigns, or are better able to engage with non-expert audiences.</s>
+          <s>Finally, associate and full professors that resort to crowdfunding may propose projects that are "adversely selected", e.g., lower quality ideas that were rejected by traditional funding sources.</s>
+          <s>We find no systematic differences in funding success between creators affiliated with educational institutions versus any other type of organizations.</s>
+          <s>Since measures of positions are correlated with affiliation types, we also re-estimate regressions with measures of positions only; the substantive results are unchanged (S3 <ref type="table">Table,</ref>
+            <ref target="#fig_1" type="figure">Models 1-4)</ref> .</s>
+        </p>
+        <p>
+          <s>Consistent with prior research <ref target="#b53" type="bibr">[55]</ref> , we find significant gender differences in crowdfunding success: Women have higher odds of reaching their funding goal than men <ref target="#tab_3" type="table">(Table 4</ref> , Model 2) and also raise significantly more money (Model 6).</s>
+          <s>The gender dummy changes little when project and campaign characteristics are included (Models 3, 4, 7, and 8).</s>
+          <s>Women's significantly higher success rates in crowdfunding contrast with similar or slightly lower odds of success than men when competing for grants from government agencies such as NIH or NSF <ref target="#b57" type="bibr">[59,</ref>
+            <ref target="#b58" type="bibr">60]</ref> .</s>
+          <s>Future research is needed to explore potential drivers of the observed gender differences in crowdfunding success and better data on the gender of project backers would be particularly valuable <ref target="#b21" type="bibr">[21]</ref> .</s>
+        </p>
+        <p>
+          <s>Funding success and project characteristics.</s>
+          <s>We now turn more explicitly to the characteristics of the project for which funding is sought <ref target="#tab_3" type="table">(Table 4</ref> , Models 3 and 7).</s>
+          <s>We find no significant differences in funding success between projects pursuing research versus development objectives.</s>
+          <s>Projects with larger funding targets are less likely to get funded, consistent with prior evidence from general purpose crowdfunding <ref target="#b1" type="bibr">[2]</ref> .</s>
+          <s>At the same time, campaigns with higher targets receive a higher volume of pledges, highlighting the challenge of setting funding targets that are achievable but also result in meaningful resources when achieved.</s>
+          <s>Our text-based measure of the degree to which creators convey risks of a project has no relationship with funding success or the amount of money raised <ref target="#tab_3" type="table">(Table 4</ref> , Models 3 and 7).</s>
+          <s>Robustness checks using an alternative simpler risk measure (term frequency) give the same result (S3 <ref type="table">Table,</ref> .</s>
+          <s>Although our analysis cannot address the question whether the crowd funds more or less risky projects than traditional funding agencies <ref target="#b59" type="bibr">[61]</ref> , it suggests that backers on dedicated platforms for funding scientific research may pay little attention to how extensively creators discuss risks.</s>
+        </p>
+        <p>
+          <s>Funding success and campaign characteristics.</s>
+          <s>The data show several relationships between funding success and features of the campaign itself <ref target="#tab_3" type="table">(Table 4</ref> , Models 4 and 8).</s>
+          <s>First, a potential challenge in crowdfunding research is that backers-especially those without a background in science-may find it difficult to assess the scientific merit of projects or creators.</s>
+          <s>Campaigns can address this challenge by using various quality signals <ref target="#b0" type="bibr">[1]</ref> .</s>
+          <s>For example, Experiment.com offers campaign creators the option to include endorsements by professional scientists or other individuals.</s>
+          <s>We find that campaigns with endorsements (15% of all campaigns) have significantly higher odds of success and raise more funds than campaigns without endorsement.</s>
+          <s>Another potential quality signal is the listing of prior publications that are (co-) authored by the creators.</s>
+          <s>We find that listing specific publications has no significant relationship with the likelihood of getting funded (Model 4), although it is associated with somewhat higher amounts raised (Model 8).</s>
+          <s>Interestingly, just mentioning the presence of prior publications or linking to a publication list is associated with lower likelihood of funding.</s>
+          <s>Anecdotally, we noticed that when campaigns list specific publications, these tend to be clearly related to the project content and are sometimes integrated in the project narrative.</s>
+          <s>In contrast, mentioning the presence of publications ("I have published over 100 peer reviewed articles") or linking to publication lists is more common in sections on creator background and may be meant primarily to demonstrate scientific accomplishment.</s>
+          <s>Although the observed relationships may reflect the crowd's reaction to publications per se, they may also reflect otherwise unobserved heterogeneity in the nature of projects or project creators.</s>
+          <s>Either way, the lack of a positive relationship between prior publications and funding is interesting given the important role that prior publications play in traditional grant applications <ref target="#b36" type="bibr">[36]</ref> .</s>
+        </p>
+        <p>
+          <s>Second, Experiment.com allows creators to provide background information and campaign updates in the form of "lab notes".</s>
+          <s>Campaigns that posted lab notes prior to closure (68% of all campaigns) have significantly higher odds of success and receive a higher volume of pledges than projects without lab notes.</s>
+          <s>Campaigns featuring a video presentation (58%) are also more likely to succeed, consistent with other crowdfunding contexts <ref target="#b1" type="bibr">[2]</ref> .</s>
+          <s>These results reinforce the notion that effort in designing campaigns as well as reaching out and interacting with the crowd can be an important predictor of funding success <ref target="#b19" type="bibr">[19,</ref>
+            <ref target="#b60" type="bibr">62]</ref> .</s>
+        </p>
+        <p>
+          <s>Finally, prior studies argue that research projects find it difficult to offer the kinds of tangible rewards that are often central to crowdfunding campaigns on platforms such as Kickstarter <ref target="#b17" type="bibr">[17]</ref> .</s>
+          <s>Consistent with this concern, most projects in our sample do not offer any rewards.</s>
+          <s>However, 11% of projects offer-sometimes quite creative-rewards such as visits to the research lab, acknowledgement on future publications, photographs of animals observed, or the naming of a shark.</s>
+          <s>Projects offering a reward have a higher likelihood of achieving their target and also raise significantly more funds.</s>
+        </p>
+        <p>
+          <s>The prior analyses showed that one of the primary predictors of funding success is the funding target (e.g., <ref target="#tab_3" type="table">Table 4</ref> , Models 3 and 7).</s>
+          <s>To better understand how the funding target differs across different types of creators and how it is correlated with other characteristics of the project and the campaign, we estimate regressions with (Ln) funding target as dependent variable <ref target="#tab_5" type="table">(Table 5,</ref>
+            <ref target="#fig_1" type="figure">Models 1-4)</ref> .</s>
+          <s>These regressions show that the gender differences in funding targets observed in <ref target="#fig_2" type="figure">Fig 2</ref> are not significant when control variables are included.</s>
+          <s>However, they reinforce the patterns seen in <ref target="#fig_3" type="figure">Fig 3,</ref> i.e., significantly higher targets among senior scientists.</s>
+          <s>This may reflect that senior scientists work on "bigger" projects, but also that they are more ambitious (and potentially overconfident) with respect to the amount of funding sought.</s>
+        </p>
+      </div>
+      <div>
+        <head>Attention from the press</head>
+        <p>
+          <s>Our findings that students and postdocs tend to be more successful and that prior publications have little relationship with funding success suggest that the crowd may apply different criteria than traditional funders when deciding which projects to support.</s>
+          <s>Unfortunately, we cannot test this conjecture explicitly since we lack expert evaluations of the projects in our sample.</s>
+          <s>However, we can broaden our analysis by exploring the judgments of another audience, namely writers who cover project creators and their crowdfunding campaigns in the press.</s>
+          <s>The predictors of press coverage may differ from the predictors of fundraising success for several reasons.</s>
+          <s>First, science writers and reporters may be more likely than the general public to have advanced scientific training <ref target="#b48" type="bibr">[49]</ref> and subscribe more strongly to traditional criteria when evaluating the importance and promise of research.</s>
+          <s>Second, many of the backers in crowdfunding are friends and family <ref target="#b61" type="bibr">[63]</ref> and our interviews with Experiment.com leadership and creators suggests that the share of friends and family among backers averages more than 50%.</s>
+          <s>Science writers are less likely to be socially connected to creators and may thus apply different and more "objective" criteria than backers.</s>
+          <s>Finally, the decision to cover a campaign is different from the decision to fund it and, as such, writers may emphasize different criteria than potential backers.</s>
+          <s>Exploring how characteristics of creators, projects, or campaigns are associated with the likelihood of press coverage is interesting per se, but is also relevant because press coverage may in turn influence fundraising success.</s>
+        </p>
+        <p>
+          <s>Models 5-8 in <ref target="#tab_5" type="table">Table 5</ref> show results from logistic regressions using press coverage as the dependent variable.</s>
+          <s>We find several significant relationships, including intriguing differences between the factors that predict funding success versus attention from the press.</s>
+          <s>First, students are more likely to be funded than senior scientists, but they are less likely to receive press coverage.</s>
+          <s>Second, lab notes and rewards are associated with significantly higher funding success but they have no significant relationship with press attention.</s>
+          <s>Third, listing specific prior publications-demonstrating relevant prior work-has no relationship with funding success but does have a strong positive relationship with press coverage.</s>
+          <s>Once publications are included, students' lower odds of press coverage become insignificant, partly reflecting that students are less likely to list publications than senior scientists (see correlations in S1 <ref type="table">Table)</ref> .</s>
+          <s>These relationships do not necessarily mean that the press pays attention to seniority and listed publications per se; they may also reflect differences in underlying project characteristics such that those projects that are initiated by senior scientists and associated with a larger research program are judged by the press to be of broader interest or potential impact.</s>
+        </p>
+        <p>
+          <s>Although science writers' preferences are likely not representative of professional scientists or of decision makers at traditional funding agencies, our results provide tentative evidence that the crowd judges research projects differently from other kinds of evaluators.</s>
+          <s>Similar evidence has been found in recent work comparing crowd and expert evaluations in the context of the arts <ref target="#b62" type="bibr">[64]</ref> .</s>
+          <s>Further exploration of such differences may yield important insights for project creators as well as platform designers.</s>
+          <s>Scholars studying differences in the decision criteria used by the crowd and other audiences may benefit from complementing commonly used theories of information asymmetries <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b34" type="bibr">34]</ref> with models that highlight social factors such as gift exchange, social networks, or identity.</s>
+          <s>Before we conclude, we note that all regressions in this paper should be interpreted as correlational in nature.</s>
+          <s>Thus, significant coefficients on independent variables do not necessarily imply a causal effect of these variables on funding outcomes or on press attention.</s>
+          <s>Causal interpretation is difficult because independent variables may proxy for otherwise unobserved factors such as the nature of research, researchers' skills and ability, or unobserved outreach activities by creators.</s>
+          <s>The statistically and economically significant relationships observed in our data suggest fruitful avenues for future research examining why exactly certain characteristics of creators, projects, and campaigns are associated with higher fundraising success or a higher likelihood of press coverage.</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>Crowdfunding for scientific research is still in its early stages, but the considerable number of funded projects suggests that it can provide important financial benefits.</s>
+          <s>Moreover, crowdfunding seems to differ in important ways from traditional funding mechanisms such as grants from government agencies: Success rates are comparatively high, junior scientists tend to be more successful than senior scientists, and female investigators are more likely to be funded than male investigators.</s>
+          <s>Furthermore, we find no evidence that projects described as riskier have a lower likelihood of being funded and creators' prior publications appear to matter little for funding success.</s>
+          <s>Fundraising is also faster than in the traditional grant-based system.</s>
+          <s>At the same time, the amounts raised with crowdfunding tend to be much smaller and funds are used primarily for materials and travel rather than salaries or tuition.</s>
+        </p>
+        <p>
+          <s>Our results support the view that crowdfunding of scientific research broadens access to resources for groups that have been excluded or disadvantaged in traditional funding systems, similar to what has been shown in crowdfunding of business initiatives <ref target="#b27" type="bibr">[27]</ref> .</s>
+          <s>However, the amount of resources raised-at the level of individual projects but also the platform as a wholeis presently too small for crowdfunding to serve as a substitute for traditional funding mechanisms.</s>
+          <s>As such, crowdfunding for research may best be seen as a complement to such traditional sources.</s>
+          <s>In particular, crowdfunding appears to be particularly useful for students and postdocs who do not have the track record required by most traditional funding agencies, and it may be suitable for smaller projects and early-stage studies without preliminary evidence.</s>
+          <s>In these areas, even a relatively small grant can enable a project to proceed and may also make a long-term difference by allowing researchers to increase their chances of subsequent funding in the traditional system <ref target="#b27" type="bibr">[27]</ref> .</s>
+        </p>
+        <p>
+          <s>Despite these benefits, there are also potential concerns and need for public discussion.</s>
+          <s>First, the crowd may fund projects that are in legal (or political) grey zones, and there may be different views regarding the desirability and value of such research.</s>
+          <s>For example, some creators in our sample noted that traditional funding sources would not support projects on gun culture <ref target="#b63" type="bibr">[65]</ref> , on the impact of the legalization of marijuana, or on the development of molecules that can lead to mutations in humans.</s>
+          <s>Second, although Experiment.com requires that academic researchers proposing research involving human or vertebrate subjects obtain approval from Institutional Review Boards (IRB) or Institutional Animal Care and Use Committees (IACUC), it is not clear whether all creators-especially those outside academia-understand and follow guidelines for ethical and responsible research <ref target="#b5" type="bibr">[6]</ref> .</s>
+          <s>Another concern is that crowdfunding sidesteps traditional peer review and the crowd may support projects with low scientific merit <ref target="#b64" type="bibr">[66]</ref> .</s>
+          <s>Of course, backers may deliberately ignore some of the selection criteria used by traditional funding agencies (such as prior publications) and may also support campaigns for reasons other than scientific merit, e.g., to help a passionate student or enable a "fun" project.</s>
+          <s>Nevertheless, platforms should require that projects provide enough information to allow potential backers to make informed decisions.</s>
+          <s>Finally, studies on rewards-based crowdfunding suggest that many projects fail to deliver promised products or deliver with significant delay <ref target="#b1" type="bibr">[2]</ref> .</s>
+          <s>While such problems may simply reflect risky work or insufficient creator capabilities, they also raise concerns about dishonesty and fraud.</s>
+          <s>Although this issue needs further research using data on scientific outcomes of projects, our discussions with Experiment.</s>
+          <s>com leaders suggest that an interesting protection mechanism may be at work: As noted earlier, campaigns are unlikely to succeed without significant initial support from friends and family but creators with malicious intent would be unlikely to activate such support.</s>
+        </p>
+        <p>
+          <s>To raise meaningful amounts of funding, campaign creators need to reach beyond family and friends to engage broader audiences <ref target="#b60" type="bibr">[62,</ref>
+            <ref target="#b61" type="bibr">63]</ref> .</s>
+          <s>Yet, reaching a broad audience requires significant effort, e.g., to develop videos, write engaging lab notes, or respond to backers' comments and suggestions.</s>
+          <s>Some creators may come to realize that the relatively small amount of money that can be raised is not worth these costs in terms of time and effort <ref target="#b65" type="bibr">[67]</ref> .</s>
+          <s>Indeed, our finding that crowdfunding is used especially by junior scientists may reflect that these scientists have lower opportunity costs of time than senior researchers, while also having less access to traditional funding sources.</s>
+          <s>Junior scientists may also feel more comfortable using social media, an important component of many crowdfunding campaigns <ref target="#b19" type="bibr">[19,</ref>
+            <ref target="#b60" type="bibr">62]</ref> .</s>
+          <s>More generally, the rise of crowdfunding is likely to increase the value of skills in communicating research and interacting with "citizen" audiences <ref target="#b59" type="bibr">[61]</ref> .</s>
+          <s>Such skills may be particularly important for researchers who work on topics whose value is not immediately apparent to the general public.</s>
+        </p>
+        <p>
+          <s>In addition to dedicated programs such as the recently launched Lab for Open Innovation in Science <ref target="#b66" type="bibr">[68]</ref> , educators and PhD advisors should consider how they can help students develop communication skills as part of the regular research training.</s>
+          <s>Indeed, running campaigns on a platform such as Experiment.com may be a useful learning tool.</s>
+        </p>
+        <p>
+          <s>Although our analysis focused on financial resources, crowdfunding may also provide several non-financial benefits.</s>
+          <s>Creators can receive feedback on their research, achieve greater visibility, and see that others really care about their work <ref target="#b60" type="bibr">[62]</ref> .</s>
+          <s>Moreover, backers may continue to support projects in other ways, e.g., by offering access to infrastructure and research sites.</s>
+          <s>The public might benefit from crowdfunding by gaining direct insights into the research process (e.g., via lab notes), participating in the allocation of resources for research, and by feeling empowered to contribute to the progress of science <ref target="#b59" type="bibr">[61,</ref>
+            <ref target="#b60" type="bibr">62]</ref> .</s>
+          <s>Future research is needed to quantify these non-financial benefits and to develop tools that increase scientists' ability to achieve the financial as well as non-financial objectives of their crowdfunding campaigns.</s>
+        </p>
+        <p>
+          <s>This discussion of non-financial benefits of crowdfunding highlights potential ties to another recent development-namely "crowd science" or "citizen science" projects, where scientists ask the public not for financial resources but for inputs in the form of time and knowledge <ref target="#b8" type="bibr">[9,</ref>
+            <ref target="#b67" type="bibr">69]</ref> .</s>
+          <s>We suggest that future research could benefit from considering similarities (and differences) between these mechanisms for involving the public in different aspects of the scientific research process.</s>
+          <s>Some of the tools and best practices developed in the context of citizen science may prove useful also in crowdfunding efforts, while findings from crowdfunding research may help citizen science projects to understand the dynamics of project participation and to increase participant engagement <ref target="#b1" type="bibr">[2,</ref>
+            <ref target="#b8" type="bibr">9,</ref>
+            <ref target="#b68" type="bibr">70]</ref> .</s>
+          <s>Indeed, future research could explore whether individuals who are willing to support a project with money are also more likely to support projects with time or other contributions, how projects can successfully ask for both financial and non-financial contributions, and whether platforms can benefit from co-hosting crowdfunding and citizen science projects.</s>
+        </p>
+        <p>
+          <s>Even though our focus is on understanding crowdfunding as a mechanism to raise resources for scientific research, our findings also contribute to the broader crowdfunding literature.</s>
+          <s>First, some of our results corroborate prior findings in a new empirical context, suggesting broader generalizability of those prior findings.</s>
+          <s>Among others, we confirm that women are not at a disadvantage but tend to be more successful than men in raising crowdfunding <ref target="#b21" type="bibr">[21]</ref>
+            <ref target="#b22" type="bibr">[22]</ref>
+            <ref target="#b23" type="bibr">[23]</ref> .</s>
+          <s>Using a rich set of measures on projects and campaigns, we also find that this advantage holds even when we account for campaign targets or characteristics of the campaign.</s>
+          <s>Our finding that campaigns with endorsements are more successful than campaigns without endorsements is consistent with prior evidence from Kickstarter <ref target="#b34" type="bibr">[34]</ref> .</s>
+          <s>Finally, we confirm that active engagement with the crowd (e.g., in the form of lab notes) can increase fundraising success <ref target="#b33" type="bibr">[33,</ref>
+            <ref target="#b60" type="bibr">62]</ref> and that visual information such as videos is particularly beneficial <ref target="#b1" type="bibr">[2,</ref>
+            <ref target="#b23" type="bibr">23,</ref>
+            <ref target="#b32" type="bibr">32]</ref> .</s>
+        </p>
+        <p>
+          <s>Perhaps more importantly, we add to the crowdfunding literature by exploring aspects that have received less attention in prior work.</s>
+          <s>Unlike prior studies, for example, we can observe creators' substantive experience (proxied by position such as student versus professor) and show that experience has a negative relationship with funding success.</s>
+          <s>This relationship is surprising, at least in light of the common belief that more experienced scientists are better able to identify important research questions and are better able to execute a given project <ref target="#b36" type="bibr">[36,</ref>
+            <ref target="#b69" type="bibr">71]</ref> .</s>
+          <s>We noted some possible interpretations of this result in our earlier discussion.</s>
+          <s>Either way, future research should examine how creators' experience is related to funding success in other contexts, including settings where backers have a clear personal interest in substantive project outcomes (i.e., in rewards-based campaigns that pre-sell products).</s>
+        </p>
+        <p>
+          <s>Relatedly, we find that projects pursuing research versus development objectives are similarly likely to succeed.</s>
+          <s>This result seems at odds with recent work showing that funding success on Kickstarter is higher for incremental than for radical innovations <ref target="#b15" type="bibr">[15]</ref> .</s>
+          <s>Although the research vs. development and radical vs. incremental distinctions are conceptually different, an intriguing conjecture for the different findings is that Kickstarter and Experiment.com have different types of "dominant crowds": While typical backers on Kickstarter may be more concerned with the likelihood of success and the usefulness of project outcomes for their own needs, backers on Experiment.com may not expect to benefit personally from project results and may thus be willing to support also projects that are riskier or that promise general insights rather than tangible outcomes.</s>
+          <s>More generally, our findings highlight the need for future research that examines the predictors of funding success across a range of different platforms and that explores the role of contingency factors such as the type of crowdfunding (e.g., rewards-based vs. donations) as well as the goals and motives of the typical backers.</s>
+        </p>
+        <p>
+          <s>Our results suggest a number of additional questions for future research.</s>
+          <s>First, we observed that several characteristics of creators, projects, and campaigns are significant predictors of funding success, but we cannot establish the causal nature of these correlations.</s>
+          <s>Experimental studies could provide further insights into underlying mechanisms and help identify tools that creators can use to improve the performance of their campaigns.</s>
+          <s>Second, although the data allowed us to characterize creators and projects along a number of important dimensions, a better understanding is needed on which particular individuals select into using crowdfunding in the first place, and for which of their projects.</s>
+          <s>Such work should explicitly consider which alternative funding mechanisms are available to scientists and may thus also inform us about the degree to which crowdfunding complements versus substitutes for existing mechanisms.</s>
+          <s>Third, our data include no information about the backers, which is a challenge with crowdfunding research generally <ref target="#b20" type="bibr">[20]</ref> .</s>
+          <s>It would be interesting to know whether backers tend to come from particular parts of the general population (e.g., with respect to education, science background, or gender), and which creators are more successful in reaching beyond their friends and family.</s>
+          <s>Fourth, future research is needed on why backers support scientific research projects, how their motivations differ from those of traditional funding agencies, and how backer motivations shape their interactions with creators.</s>
+          <s>Fifth, future research is needed to measure the scientific output resulting from crowdfunded projects and to explore which projects are more likely to achieve their scientific objectives.</s>
+          <s>A related question is whether crowdfunded projects allow researchers to subsequently obtain larger grants from traditional sources, helping bridge funding gaps for junior scientists or early-stage research.</s>
+          <s>Sixth, crowdfunding opens a new channel of communication between scientists and the general public, similar to other emerging mechanisms such as citizen science.</s>
+          <s>Future research could investigate the implications of such stronger interactions with the crowd in terms of the choice of research topics or the quality and impact of scientific work <ref target="#b67" type="bibr">[69,</ref>
+            <ref target="#b68" type="bibr">70]</ref> .</s>
+          <s>Finally, crowdfunding of scientific research is a relatively new phenomenon and there will likely be changes with respect to many interesting aspects such as the creators seeking crowdfunding, platform types and infrastructure, awareness among the general public and the resulting supply of resources, and perhaps even the predictors of crowdfunding success.</s>
+          <s>Future work tracing such developments over time using longitudinal data can provide important insights into crowdfunding specifically, but perhaps also more generally on the evolution of new institutions to support scientific research.</s>
+        </p>
+        <p>
+          <s>Supporting information S1 <ref type="figure">Fig. Regions'</ref> share of total funding and total number of funded projects, by funding source.</s>
+          <s>(PDF) S1</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head/>
+        <label/>
+        <figDesc>: Non-US, US-Northeast (IL, IN, OH, PA, NJ, RI, CT, MA, NH, VT, ME, NY, MI, WI), US-South (FL, MS, AL, GA, SC, NC, TN, KY, WV, VA, DC, MD, DE), US-West/Midwest (TX, LA, AR, OK, NM, AZ, NV, UT, CO, KS, MO, IA, NE, WY, ID, MT, SD, MN, ND), and US-Pacific (CA, OR, WA, AK, HI). Although it would be desirable to analyze data at the level of individual states, many states have too few cases for reliable inference.</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig 1 .</head>
+        <label>1</label>
+        <figDesc>Characteristics of project creators. (A) Affiliation of all project creators (N = 1,131). (B) Position of creators who are affiliated with an educational institution (N = 912). Excludes cases with missing data. https://doi.org/10.1371/journal.pone.0208384.g001</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig 2 .</head>
+        <label>2</label>
+        <figDesc>Median targets, amounts raised, and amounts raised conditional upon funding success, by gender of first author (N = 691, in USD). https://doi.org/10.1371/journal.pone.0208384.g002</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Fig 3 .</head>
+        <label>3</label>
+        <figDesc>Median targets, amounts raised, and amounts raised conditional upon funding success, by position of first author (educational institutions only, other positions omitted) (N = 533, in USD). https://doi.org/10.1371/journal.pone.0208384.g003Crowdfunding scientific research</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head>Table 1 .</head>
+        <label>1</label>
+        <figDesc>Examples of dedicated platforms for crowdfunding scientific research.</figDesc>
+        <table>Name 
+URL 
+Opened 
+Status as of January 2018 
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_1">
+        <head>Table 2 .</head>
+        <label>2</label>
+        <figDesc>Summary statistics at the creator level.</figDesc>
+        <table>1 
+All creators 
+N = 1,148 
+
+2 
+First listed 
+N = 725 
+
+3 
+Team: first 
+N = 230 
+
+4 
+Team: not first 
+N = 423 
+
+3-4 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_2">
+        <head>Table 3 .</head>
+        <label>3</label>
+        <figDesc>(Continued)    </figDesc>
+        <table>Variable 
+Mean 
+SD 
+Min 
+Max 
+
+Campaign characteristics 
+Endorsement 01 
+0.15 
+0 
+1 
+
+Prior papers: None 
+0.74 
+0 
+1 
+
+Prior papers: 1 
+0.08 
+0 
+1 
+
+Prior papers: 2 
+0.04 
+0 
+1 
+
+Prior papers: 3+ 
+0.05 
+0 
+1 
+
+Prior papers: mentioned/link 
+0.08 
+0 
+1 
+
+Video 01 
+0.58 
+0 
+1 
+
+Lab notes pre closing 01 
+0.68 
+0 
+1 
+
+Rewards 01 
+0.11 
+0 
+1 
+
+Platform age 
+110 
+34 
+0 
+179 
+
+Outcomes 
+Funded 01 
+0.48 
+0 
+1 
+
+Amount raised 
+6,358 
+98,203 
+0 
+2,641,086 
+
+Press coverage 01 
+0.20 
+0 
+1 
+
+https://doi.org/10.1371/journal.pone.0208384.t003 
+
+Crowdfunding scientific research 
+
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_3">
+        <head>Table 4 .</head>
+        <label>4</label>
+        <figDesc>Funding outcomes.</figDesc>
+        <table>Funded 01 
+(Ln) amount raised 
+
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+
+logit 
+logit 
+logit 
+logit 
+OLS 
+OLS 
+OLS 
+OLS 
+
+Position: Below PhD/MD 
+4.034 �� 
+2.848 �� 
+3.094 �� 
+0.026 
+0.629 � 
+0.569 � 
+
+[1.282] 
+[0.956] 
+[1.176] 
+[0.287] 
+[0.279] 
+[0.264] 
+
+Position: PhD/MD 
+2.379 �� 
+1.826+ 
+1.523 
+0.170 
+0.598 � 
+0.379 
+
+[0.726] 
+[0.588] 
+[0.530] 
+[0.268] 
+[0.255] 
+[0.238] 
+
+Position: Postdoc 
+3.697 �� 
+3.281 �� 
+2.099+ 
+0.670 � 
+0.938 �� 
+0.413 
+
+[1.539] 
+[1.400] 
+[0.924] 
+[0.299] 
+[0.292] 
+[0.279] 
+
+Position: Assistant professor 
+1.158 
+0.982 
+0.818 
+-0.209 
+0.055 
+-0.153 
+
+[0.417] 
+[0.363] 
+[0.332] 
+[0.334] 
+[0.339] 
+[0.302] 
+
+Position: Associate/full professor 
+omitted 
+omitted 
+omitted 
+omitted 
+omitted 
+omitted 
+
+Position: Employee 
+1.226 
+0.878 
+0.845 
+-0.539 
+-0.037 
+-0.016 
+
+[0.540] 
+[0.408] 
+[0.413] 
+[0.398] 
+[0.406] 
+[0.371] 
+
+Position: Individual/no affiliation 
+2.498 � 
+1.902 
+1.741 
+-0.286 
+0.270 
+0.109 
+
+[1.073] 
+[0.820] 
+[0.920] 
+[0.395] 
+[0.429] 
+[0.406] 
+
+Position: Other position 
+2.283 
+2.404 
+3.055+ 
+0.207 
+0.250 
+0.211 
+
+[1.503] 
+[1.554] 
+[2.029] 
+[0.725] 
+[0.678] 
+[0.664] 
+
+Affiliation: Educational institution 
+omitted 
+omitted 
+omitted 
+omitted 
+omitted 
+omitted 
+
+Affiliation: Firm 
+1.102 
+1.574 
+1.833 
+0.998 � 
+0.615 
+0.553 
+
+[0.587] 
+[0.892] 
+[1.097] 
+[0.434] 
+[0.440] 
+[0.390] 
+
+Affiliation: Other organization 
+1.996 
+2.288+ 
+1.971 
+1.061 �� 
+0.829 � 
+0.556 
+
+[0.881] 
+[1.039] 
+[0.961] 
+[0.380] 
+[0.379] 
+[0.344] 
+
+Gender: Female 
+1.518 � 
+1.551 � 
+1.540 � 
+0.407 �� 
+0.394 �� 
+0.308 � 
+
+[0.277] 
+[0.290] 
+[0.310] 
+[0.152] 
+[0.145] 
+[0.131] 
+
+Gender: N/A or unknown 
+0.681 
+0.745 
+0.693 
+0.209 
+0.053 
+0.028 
+
+[0.335] 
+[0.366] 
+[0.349] 
+[0.430] 
+[0.386] 
+[0.342] 
+
+(Ln) target 
+0.650 �� 
+0.500 �� 
+0.640 �� 
+0.495 �� 
+
+[0.065] 
+[0.059] 
+[0.081] 
+[0.079] 
+
+Objective: Research 
+omitted 
+omitted 
+omitted 
+omitted 
+
+Objective: Development 
+0.761 
+0.857 
+-0.357 
+-0.244 
+
+[0.234] 
+[0.275] 
+[0.264] 
+[0.239] 
+
+Objective: Other 
+1.156 
+1.222 
+-0.147 
+-0.094 
+
+[0.386] 
+[0.434] 
+[0.285] 
+[0.272] 
+
+Risk score 
+0.988 
+0.994 
+-0.009 
+-0.002 
+
+[0.009] 
+[0.011] 
+[0.007] 
+[0.007] 
+
+Prior pubs: 1 listed 
+1.558 
+0.462+ 
+
+[0.591] 
+[0.240] 
+
+Prior pubs: 2 listed 
+1.059 
+0.498 � 
+
+[0.540] 
+[0.245] 
+
+Prior pubs: 3+ listed 
+0.860 
+-0.415 
+
+[0.339] 
+[0.315] 
+
+Prior pubs mentioned/linked 
+0.496 � 
+-0.086 
+
+[0.172] 
+[0.226] 
+
+Endorsements 01 
+2.699 �� 
+0.616 �� 
+
+[0.755] 
+[0.144] 
+
+Video 01 
+1.701 � 
+0.457 �� 
+
+[0.352] 
+[0.145] 
+
+(Continued ) 
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_4">
+        <head>Table 4 .</head>
+        <label>4</label>
+        <figDesc>(Continued)    Robust standard errors in brackets. Odds ratios reported for logits (values &lt;1 indicate a negative relationship). + = sig. at 10%, � = sig. at 5%, �� = sig. at 1%.</figDesc>
+        <table>Funded 01 
+(Ln) amount raised 
+
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+
+logit 
+logit 
+logit 
+logit 
+OLS 
+OLS 
+OLS 
+OLS 
+
+Lab notes pre closing 01 
+3.769 �� 
+1.381 �� 
+
+[0.828] 
+[0.162] 
+
+Reward 01 
+2.299 � 
+0.539 �� 
+
+[0.847] 
+[0.178] 
+
+Press coverage 01 
+1.609+ 
+0.016 
+
+[0.397] 
+[0.164] 
+
+Creator count 
+1.137+ 
+1.176 � 
+1.219 � 
+1.150 
+0.241 �� 
+0.218 �� 
+0.196 �� 
+0.131 � 
+
+[0.087] 
+[0.096] 
+[0.105] 
+[0.104] 
+[0.069] 
+[0.073] 
+[0.070] 
+[0.061] 
+
+Region fixed effects 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+
+Field fixed effects 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+
+Platform age 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+
+Constant 
+2.793 
+1.086 
+57.907 �� 
+220.852 �� 
+7.783 �� 
+7.582 �� 
+1.717+ 
+1.729 � 
+
+[2.212] 
+[0.866] 
+[73.802] 
+[330.834] 
+[0.600] 
+[0.635] 
+[0.908] 
+[0.838] 
+
+Observations 
+721 
+721 
+721 
+721 
+721 
+721 
+721 
+721 
+
+df 
+17 
+28 
+32 
+41 
+17 
+28 
+32 
+41 
+
+Pseudo R-squared 
+0.125 
+0.165 
+0.187 
+0.279 
+
+R-squared 
+0.143 
+0.174 
+0.255 
+0.397 
+
+https://doi.org/10.1371/journal.pone.0208384.t004 
+
+Crowdfunding scientific research 
+
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_5">
+        <head>Table 5 .</head>
+        <label>5</label>
+        <figDesc>Funding targets and press coverage.</figDesc>
+        <table>(Ln) target 
+Press coverage 01 
+
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+
+OLS 
+OLS 
+OLS 
+OLS 
+logit 
+logit 
+logit 
+logit 
+
+Position: Below PhD/MD 
+-0.894 �� 
+-0.878 �� 
+-0.780 �� 
+0.308 �� 
+0.472 � 
+0.572 
+
+[0.115] 
+[0.117] 
+[0.116] 
+[0.108] 
+[0.176] 
+[0.230] 
+
+Position: PhD/MD 
+-0.664 �� 
+-0.665 �� 
+-0.649 �� 
+0.548+ 
+0.692 
+0.694 
+
+[0.115] 
+[0.114] 
+[0.109] 
+[0.180] 
+[0.240] 
+[0.260] 
+
+Position: Postdoc 
+-0.414 � 
+-0.414 � 
+-0.525 �� 
+1.032 
+1.222 
+1.048 
+
+[0.161] 
+[0.162] 
+[0.161] 
+[0.442] 
+[0.520] 
+[0.480] 
+
+Position: Assistant professor 
+-0.389 �� 
+-0.379 �� 
+-0.399 �� 
+0.897 
+1.044 
+1.073 
+
+[0.132] 
+[0.132] 
+[0.132] 
+[0.319] 
+[0.389] 
+[0.434] 
+
+Position: Associate/full professor 
+omitted 
+omitted 
+omitted 
+omitted 
+omitted 
+omitted 
+
+Position: Employee 
+-0.791 �� 
+-0.786 �� 
+-0.713 �� 
+0.552 
+0.730 
+0.681 
+
+[0.185] 
+[0.185] 
+[0.178] 
+[0.277] 
+[0.361] 
+[0.349] 
+
+Position: Individual/no affiliation 
+-0.755 �� 
+-0.712 �� 
+-0.649 �� 
+0.357+ 
+0.534 
+0.648 
+
+[0.184] 
+[0.184] 
+[0.187] 
+[0.194] 
+[0.305] 
+[0.384] 
+
+Position: Other position 
+-0.006 
+-0.006 
+0.061 
+1.341 
+1.555 
+1.197 
+
+[0.369] 
+[0.363] 
+[0.364] 
+[1.233] 
+[1.523] 
+[1.307] 
+
+Affiliation: Educational institution 
+omitted 
+omitted 
+omitted 
+omitted 
+omitted 
+omitted 
+
+Affiliation: Firm 
+0.723 �� 
+0.743 �� 
+0.652 �� 
+0.743 
+0.633 
+0.730 
+
+[0.226] 
+[0.228] 
+[0.211] 
+[0.506] 
+[0.407] 
+[0.485] 
+
+Affiliation: Other organization 
+0.442 � 
+0.489 � 
+0.411 � 
+0.948 
+0.901 
+1.050 
+
+[0.203] 
+[0.208] 
+[0.202] 
+[0.497] 
+[0.480] 
+[0.570] 
+
+Gender: Female 
+0.005 
+-0.002 
+-0.002 
+1.271 
+1.277 
+1.339 
+
+[0.075] 
+[0.076] 
+[0.074] 
+[0.270] 
+[0.274] 
+[0.295] 
+
+Gender: N/A or unknown 
+0.259 
+0.271 
+0.255 
+0.501 
+0.386 
+0.492 
+
+[0.190] 
+[0.190] 
+[0.192] 
+[0.389] 
+[0.359] 
+[0.425] 
+
+(Ln) target 
+1.564 �� 
+1.400 �� 
+
+[0.186] 
+[0.167] 
+
+Objective: Research 
+omitted 
+omitted 
+omitted 
+omitted 
+
+Objective: Development 
+-0.099 
+-0.068 
+0.624 
+0.738 
+
+[0.124] 
+[0.125] 
+[0.234] 
+[0.290] 
+
+Objective: Other 
+-0.179 
+-0.138 
+0.580 
+0.619 
+
+[0.134] 
+[0.137] 
+[0.239] 
+[0.264] 
+
+Risk score 
+-0.003 
+-0.002 
+1.000 
+1.003 
+
+[0.004] 
+[0.004] 
+[0.012] 
+[0.012] 
+
+Prior pubs: 1 listed 
+0.111 
+3.786 �� 
+
+[0.127] 
+[1.282] 
+
+Prior pubs: 2 listed 
+0.029 
+3.745 �� 
+
+[0.189] 
+[1.669] 
+
+Prior pubs: 3+ listed 
+0.123 
+2.437 � 
+
+[0.148] 
+[1.073] 
+
+Prior pubs mentioned/linked 
+0.309 � 
+1.079 
+
+[0.130] 
+[0.406] 
+
+Endorsements 01 
+0.154 
+1.308 
+
+[0.104] 
+[0.368] 
+
+Video 01 
+0.297 �� 
+1.821 � 
+
+[0.071] 
+[0.451] 
+
+(Continued ) 
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_6">
+        <head>Table 5 .</head>
+        <label>5</label>
+        <figDesc>(Continued)    </figDesc>
+        <table>(Ln) target 
+Press coverage 01 
+
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+
+OLS 
+OLS 
+OLS 
+OLS 
+logit 
+logit 
+logit 
+logit 
+
+Lab notes pre closing 01 
+0.111 
+1.520+ 
+
+[0.075] 
+[0.382] 
+
+Reward 01 
+-0.002 
+1.178 
+
+[0.105] 
+[0.367] 
+
+Press coverage 01 
+0.212 � 
+
+[0.082] 
+
+Creator count 
+0.090 �� 
+0.051 
+0.056+ 
+0.044 
+1.117 
+1.046 
+1.047 
+1.027 
+
+[0.033] 
+[0.032] 
+[0.032] 
+[0.033] 
+[0.092] 
+[0.091] 
+[0.097] 
+[0.096] 
+
+Region fixed effects 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+
+Field fixed effects 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+
+Platform age 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+incl. 
+
+Constant 
+8.652 �� 
+9.224 �� 
+9.268 �� 
+8.939 �� 
+0.004 �� 
+0.011 �� 
+0.000 �� 
+0.000 �� 
+
+[0.320] 
+[0.322] 
+[0.324] 
+[0.339] 
+[0.005] 
+[0.012] 
+[0.000] 
+[0.000] 
+
+Observations 
+721 
+721 
+721 
+721 
+721 
+721 
+721 
+721 
+
+df 
+17 
+28 
+31 
+40 
+17 
+28 
+32 
+40 
+
+Pseudo R-squared 
+0.0591 
+0.0888 
+0.114 
+0.168 
+
+R-squared 
+0.089 
+0.188 
+0.191 
+0.245 
+
+Robust standard errors in brackets. Odds ratios reported for logits (values &lt;1 indicate a negative relationship). 
++ = sig. at 10%, 
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_7">
+        <head>Table .</head>
+        <label>.</label>
+        <figDesc>Selected correlations. (PDF) S2 Table. Regressions using team averages of creator characteristics. (PDF) S3 Table. Regressions excluding affiliation variables and using simple risk score. (PDF)</figDesc>
+        <table/>
+      </figure>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0208384 January 4, 2019</note>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0208384 January 4, 2019 8 / 26</note>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0208384 January 4, 2019 26 / 26</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgments</head>
+          <p>
+            <s>We thank Experiment.com co-founders Cindy Wu and Denny Luan for help with data collection, for extremely helpful insights on the platform and its projects, and for comments on prior versions of this paper.</s>
+            <s>We also thank Jacquelyn Gill, Agnes Horvat, Cornelia Lawson, Paula Stephan, and Silvio Vismara for insightful comments.</s>
+          </p>
+        </div>
+        <div>
+          <head>Author Contributions</head>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Some simple economics of crowdfunding</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Agrawal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Catalini</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Goldfarb</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">tors. Innovation Policy and the Economy</title>
+              <editor>Lerner J, Stern S, edi</editor>
+              <imprint>
+                <date type="published" when="2014"/>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope from="63" to="97" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">The dynamics of crowdfunding: An exploratory study</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Mollick</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Business Venturing</title>
+              <imprint>
+                <biblScope unit="volume">29</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="1" to="16" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">New financial alternatives in seeding entrepreneurship: Microfinance, crowdfunding, and peer-to-peer innovations</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Bruton</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Khavul</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Siegel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Wright</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1111/etap.12143</idno>
+              <ptr target="https://doi.org/10.1111/etap.12143"/>
+            </analytic>
+            <monogr>
+              <title level="j">Entrepreneurship Theory and Practice</title>
+              <imprint>
+                <biblScope unit="volume">39</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="9" to="26" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Financing by and for the Masses</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Fleming</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Sorenson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">California Management Review</title>
+              <imprint>
+                <biblScope unit="volume">58</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="5" to="19" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Scientists turn to crowds on the web to finance their projects</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">New York Times</title>
+              <imprint>
+                <date type="published" when="2011-07-11"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <monogr>
+              <title level="m" type="main">Crowdfunding propels scientific research</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Cha</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2015-01-18"/>
+                <pubPlace>Washington Post</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Crowdfunding for medical research picks up pace</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Siva</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1016/s0140-6736(14)61661-5</idno>
+              <ptr target="https://doi.org/10.1016/s0140-6736"/>
+            </analytic>
+            <monogr>
+              <title level="j">The Lancet</title>
+              <imprint>
+                <biblScope unit="volume">384</biblScope>
+                <biblScope unit="issue">9948</biblScope>
+                <biblScope from="61661" to="61666" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Georgia Tech launches its own crowdfunding site for scientific research</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Kessler</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Fastcompany</title>
+              <imprint>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <monogr>
+              <title level="m" type="main">Crowd science user contribution patterns and their implications</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Sauermann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Franzoni</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2015"/>
+                <biblScope unit="volume">112</biblScope>
+                <biblScope from="679" to="84" unit="page"/>
+              </imprint>
+            </monogr>
+            <note>Proceedings of the National Academy of Sciences</note>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Marginality and problem-solving effectiveness in broadcast search</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Jeppesen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Lakhani</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Organization Science</title>
+              <imprint>
+                <biblScope unit="volume">21</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="1016" to="1049" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">Reinventing</forename>
+                  <surname>Nielsen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Discovery</surname>
+                </persName>
+              </author>
+              <title level="m">The New Era of Networked Science</title>
+              <imprint>
+                <publisher>Princeton University Press</publisher>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Rescuing US biomedical research from its systemic flaws</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Alberts</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Kirschner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Tilghman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Varmus</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proceedings of the National Academy of Sciences</title>
+              <imprint>
+                <biblScope unit="volume">111</biblScope>
+                <biblScope unit="issue">16</biblScope>
+                <biblScope from="5773" to="5780" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Crowd Science: The organization of scientific research in open collaborative projects</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Franzoni</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Sauermann</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Research Policy</title>
+              <imprint>
+                <biblScope unit="volume">43</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="1" to="20" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <monogr>
+              <title/>
+              <author>
+                <persName>
+                  <surname>Crowdfunding</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1371/journal.pone.0208384</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0208384"/>
+              <imprint>
+                <date type="published" when="2019-01-04"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Cash from the crowd</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Colombo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Franzoni</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Rossi-Lamastra</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1126/science.aab3832</idno>
+              <idno type="PMID">26068827</idno>
+              <ptr target="https://doi.org/10.1126/science.aab3832"/>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">348</biblScope>
+                <biblScope from="1201" to="1203" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <monogr>
+              <title level="m" type="main">Crowdfunding Innovative Ideas: How Incremental and Radical Innovativeness Influence Funding Outcomes. Entrepreneurship Theory and Practice</title>
+              <author>
+                <persName>
+                  <forename type="first">Csr</forename>
+                  <surname>Chan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Parhankangas</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1111/etap.12268</idno>
+              <ptr target="https://doi.org/10.1111/etap.12268"/>
+              <imprint>
+                <date type="published" when="2017"/>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope from="237" to="63" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <monogr>
+              <title level="m" type="main">Science in society: re-evaluating the deficit model of public attitudes. Public understanding of science</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Sturgis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Allum</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2004"/>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope from="55" to="74" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Raising money for scientific research through crowdfunding</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Wheat</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Byrnes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Ranganathan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Trends in Ecology &amp; Evolution</title>
+              <imprint>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="71" to="73" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">The road to crowdfunding success: A review of extant literature</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Butticè</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Franzoni</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Rossi-Lamastra</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Rovelli</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Creating and Capturing Value Through Crowdsourcing</title>
+              <editor>Afuah A, Tucci CL, Viscusi G</editor>
+              <imprint>
+                <publisher>Oxford University Press</publisher>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">To crowdfund research, scientists must build an audience for their work</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Byrnes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Ranganathan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Walker</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Faulkes</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1371/journal.pone.0110329</idno>
+              <idno type="PMID">25494306</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0110329"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS ONE</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="issue">12</biblScope>
+                <biblScope unit="page">110329</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <monogr>
+              <title level="m" type="main">How Should Crowdfunding Research Evolve? A Survey of the Entrepreneurship Theory and Practice Editorial Board. Entrepreneurship Theory and Practice</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Mckenny</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Allison</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Ketchen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Short</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Ireland</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2017"/>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope from="291" to="304" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <monogr>
+              <title level="m" type="main">Activist choice homophily and the crowdfunding of female founders. Administrative Science Quarterly</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Greenberg</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Mollick</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2017"/>
+                <biblScope unit="volume">62</biblScope>
+                <biblScope from="341" to="74" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Exploring entrepreneurial legitimacy in reward-based crowdfunding</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Frydrych</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Bock</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Kinder</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Koeck</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Venture Capital</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="247" to="69" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Internal social capital and the attraction of early contributions in crowdfunding</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Colombo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Franzoni</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Rossi-Lamastra</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Entrepreneurship Theory and Practice</title>
+              <imprint>
+                <biblScope unit="volume">39</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="75" to="100" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">The role of multidimensional social capital in crowdfunding: A comparative study in China and US</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zheng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Wu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Information &amp; Management</title>
+              <imprint>
+                <biblScope unit="volume">51</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="488" to="96" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <monogr>
+              <title level="m" type="main">Serial crowdfunding, social capital, and project success. Entrepreneurship Theory and Practice</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Butticè</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Colombo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Wright</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2017"/>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope from="183" to="207" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Crowdfunding: Geography, social networks, and the timing of investment decisions</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Agrawal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Catalini</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Goldfarb</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Economics &amp; Management Strategy</title>
+              <imprint>
+                <biblScope unit="volume">24</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="253" to="74" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Expand innovation finance via crowdfunding</title>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Sorenson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Assenova</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G-C</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Boada</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Fleming</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1126/science.aaf6989</idno>
+              <idno type="PMID">28008025</idno>
+              <ptr target="https://doi.org/10.1126/science.aaf6989"/>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">354</biblScope>
+                <biblScope unit="issue">6319</biblScope>
+                <biblScope from="1526" to="1534" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <monogr>
+              <title level="m" type="main">The influence of internal social capital on serial creators' success in crowdfunding. Entrepreneurship Theory and Practice</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Skirnevskiy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Bendig</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Brettel</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2017"/>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope from="209" to="245" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Non-profit differentials in crowd-based financing: Evidence from 50,000 campaigns</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Pitschner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Pitschner-Finn</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Economics Letters</title>
+              <imprint>
+                <biblScope unit="volume">123</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="391" to="395" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Hanná k A. The role of novelty in securing investors for equity crowdfunding campaigns</title>
+              <author>
+                <persName>
+                  <forename type="first">E-A</forename>
+                  <surname>Horvát</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Wachs</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">HCOMP</title>
+              <imprint>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Linguistic style and crowdfunding success among social and commercial entrepreneurs</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Parhankangas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Renko</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Business Venturing</title>
+              <imprint>
+                <biblScope unit="volume">32</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="215" to="251" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Crowd monogamy</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Dushnitsky</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Marom</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">London Business School Review</title>
+              <imprint>
+                <biblScope unit="volume">24</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="24" to="30" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Which updates during an equity crowdfunding campaign increase crowd participation?</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Block</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Hornuf</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Moritz</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Small Business Economics</title>
+              <imprint>
+                <biblScope unit="volume">50</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="3" to="27" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <monogr>
+              <title level="m" type="main">Resolving information asymmetry: Signaling, endorsement, and crowdfunding success. Entrepreneurship Theory and Practice</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Courtney</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Dutta</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2017"/>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope from="265" to="90" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">Gender differences in the contribution patterns of equity-crowdfunding investors</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Mohammadi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Shafi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Small Business Economics</title>
+              <imprint>
+                <biblScope unit="volume">50</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="275" to="87" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <monogr>
+              <title level="m" type="main">How Economics Shapes Science</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Stephan</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2012"/>
+                <publisher>Harvard University Press</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">Conflicting logics? A multidimensional view of industrial and academic science</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Sauermann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Stephan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Organization Science</title>
+              <imprint>
+                <biblScope unit="volume">24</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="889" to="909" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <monogr>
+              <title level="m" type="main">Pasteur's Quadrant: Basic Science and Technological Innovation</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Stokes</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="1997"/>
+                <publisher>Brookings Institution Press</publisher>
+                <pubPlace>Washington, DC</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <monogr>
+              <title level="m" type="main">Bias against novelty in science: A cautionary tale for users of bibliometric indicators. NBER Working Paper #22180</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Veugelers</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Stephan</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Incentives and creativity: evidence from the academic life sciences</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Azoulay</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Graff Zivin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Manso</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1111/j.1756-2171.2011.00140.x</idno>
+              <ptr target="https://experiment.com/guide/"/>
+            </analytic>
+            <monogr>
+              <title level="j">Experiment.com. Experiment.com researcher</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="527" to="54" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+            <note>The RAND Journal of Economics.</note>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <monogr>
+              <title/>
+              <author>
+                <persName>
+                  <surname>Kickstarter</surname>
+                </persName>
+              </author>
+              <ptr target="https://www.kickstarter.com/rules/prohibited"/>
+              <imprint>
+                <date type="published" when="2018-02"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <monogr>
+              <title level="m" type="main">YouCaring acquires Generosity.com as Indiegogo pulls out of personal causes fundraising</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Lunden</surname>
+                </persName>
+              </author>
+              <ptr target="https://techcrunch.com/2018/01/25/youcaring-acquires-generosity-com-as-indiegogo-pulls-out-of-personal-causes-fundraising/"/>
+              <imprint>
+                <date type="published" when="2018-07-29"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">IPO first-day returns, offer price revisions, volatility, and form S-1 language</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Loughran</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Mcdonald</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Financial Economics</title>
+              <imprint>
+                <biblScope unit="volume">109</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="307" to="333" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b44">
+            <analytic>
+              <title level="a" type="main">Sentiment during recessions</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Garcia</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">The Journal of Finance</title>
+              <imprint>
+                <biblScope unit="volume">68</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="1267" to="300" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b45">
+            <analytic>
+              <title level="a" type="main">The role of the media in corporate governance: Do the media influence managers' capital allocation decisions</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Mcconnell</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Financial Economics</title>
+              <imprint>
+                <biblScope unit="volume">110</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="1" to="17" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b46">
+            <analytic>
+              <title level="a" type="main">Understanding inverse document frequency: on theoretical arguments for IDF</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Stephen</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1108/00220410410560582</idno>
+              <ptr target="https://doi.org/10.1108/00220410410560582"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Documentation</title>
+              <imprint>
+                <biblScope unit="volume">60</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="503" to="523" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b47">
+            <monogr>
+              <title level="m" type="main">Schü tze H. Foundations of statistical natural language processing</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Manning</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="1999"/>
+                <publisher>MIT Press</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b48">
+            <monogr>
+              <title level="m" type="main">Science writing and editing</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Austin</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2011-02"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b49">
+            <monogr>
+              <title level="m" type="main">Distribution of NIGMS R01 Award Sizes</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Miklos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Anderson</surname>
+                </persName>
+              </author>
+              <ptr target="https://loop.nigms.nih.gov/2016/05/distribution-of-nigms-r01-award-sizes/"/>
+              <imprint>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b50">
+            <monogr>
+              <title level="m" type="main">Using nanoparticles to activate immune cells to fight tumors</title>
+              <ptr target="https://experiment.com/projects/using-nanoparticles-to-activate-immune-cells-to-fight-tumors?s=discover"/>
+              <imprint/>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b51">
+            <analytic>
+              <title level="a" type="main">Report to the National Science Board on the National Science Foundation's Merit Review Process</title>
+            </analytic>
+            <monogr>
+              <title level="j">National Science Foundation</title>
+              <imprint>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b52">
+            <monogr>
+              <title level="m" type="main">Research Portfolio Online Reporting Tools</title>
+              <ptr target="https://report.nih.gov/success_rates/"/>
+              <imprint>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+            <note>National Institutes of Health</note>
+          </biblStruct>
+          <biblStruct xml:id="b53">
+            <monogr>
+              <title level="m" type="main">Gender dynamics in crowdfunding: Evidence on entrepreneurs, investors, deals, and taste-based discrimination. SSRN Working Paper</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Marom</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Robb</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Sade</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b54">
+            <analytic>
+              <title level="a" type="main">Authorship and contribution disclosures</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Sauermann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Haeussler</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1126/sciadv.1700404</idno>
+              <idno type="PMID">29152564</idno>
+              <ptr target="https://doi.org/10.1126/sciadv.1700404"/>
+            </analytic>
+            <monogr>
+              <title level="j">Science Advances</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope unit="issue">11</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b55">
+            <analytic>
+              <title level="a" type="main">The moderator-mediator variable distinction in social psychological research</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Baron</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Kenny</surname>
+                </persName>
+              </author>
+              <idno type="PMID">3806354</idno>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Personality and Social Psychology</title>
+              <imprint>
+                <biblScope unit="volume">51</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="1173" to="82" unit="page"/>
+                <date type="published" when="1986"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b56">
+            <analytic>
+              <title level="a" type="main">Age dynamics in scientific creativity</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Jones</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Weinberg</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proceedings of the National Academy of Sciences</title>
+              <imprint>
+                <biblScope unit="volume">108</biblScope>
+                <biblScope unit="issue">47</biblScope>
+                <biblScope from="18910" to="18914" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b57">
+            <analytic>
+              <title level="a" type="main">The gender gap in NIH grant applications</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Ley</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Hamilton</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1126/science.1165878</idno>
+              <idno type="PMID">19056961</idno>
+              <ptr target="https://doi.org/10.1126/science.1165878"/>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">322</biblScope>
+                <biblScope unit="issue">5907</biblScope>
+                <biblScope from="1472" to="1476" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b58">
+            <monogr>
+              <title level="m" type="main">Understanding current causes of women's underrepresentation in science. Proceedings of the National Academy of Sciences</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Ceci</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Williams</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2011"/>
+                <biblScope unit="volume">108</biblScope>
+                <biblScope from="3157" to="62" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b59">
+            <analytic>
+              <title level="a" type="main">Crowdfunding science: Sharing research with an extended audience</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Hui</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Gerber</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proceedings of the 18th ACM Conference on Computer Supported Cooperative Work</title>
+              <meeting>the 18th ACM Conference on Computer Supported Cooperative Work</meeting>
+              <imprint>
+                <publisher>ACM</publisher>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b60">
+            <analytic>
+              <title level="a" type="main">Crowdfunding the Azolla fern genome project: a grassroots approach</title>
+              <author>
+                <persName>
+                  <forename type="first">F-W</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Pryer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">GigaScience</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="16" to="25" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b61">
+            <monogr>
+              <title level="m" type="main">Crowdfunding creative ideas: The dynamics of project backers in Kickstarter. SSRN Working Paper</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Kuppuswamy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Bayus</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b62">
+            <analytic>
+              <title level="a" type="main">Wisdom or madness? Comparing crowds with expert evaluation in funding the arts</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Mollick</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Nanda</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1287/mnsc.2015.2207</idno>
+              <ptr target="https://doi.org/10.1287/mnsc.2015.2207"/>
+            </analytic>
+            <monogr>
+              <title level="j">Management Science</title>
+              <imprint>
+                <biblScope unit="volume">62</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="1533" to="53" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b63">
+            <analytic>
+              <title level="a" type="main">Firearms research: The gun fighter</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Wadman</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1038/496412a</idno>
+              <idno type="PMID">23619673</idno>
+              <ptr target="https://doi.org/10.1038/496412a"/>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">496</biblScope>
+                <biblScope unit="issue">7446</biblScope>
+                <biblScope from="412" to="417" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b64">
+            <monogr>
+              <title level="m" type="main">Crowdfunding propels scientific research. The Washington Post</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Cha</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b65">
+            <analytic>
+              <title level="a" type="main">Kickstart your research</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Marshall</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1073/pnas.1303517110</idno>
+              <idno type="PMID">23533268</idno>
+              <ptr target="https://doi.org/10.1073/pnas.1303517110"/>
+            </analytic>
+            <monogr>
+              <title level="j">PNAS</title>
+              <imprint>
+                <biblScope unit="volume">110</biblScope>
+                <biblScope unit="issue">13</biblScope>
+                <biblScope from="4857" to="4866" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b66">
+            <monogr>
+              <title level="m" type="main">Lab for Open Innovation in Science (LOIS)</title>
+              <author>
+                <persName>
+                  <forename type="first">Gesellschaft</forename>
+                  <surname>Ludwig Boltzmann</surname>
+                </persName>
+              </author>
+              <ptr target="http://www.openinnovationinscience.at/lois-en.html"/>
+              <imprint/>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b67">
+            <analytic>
+              <title level="a" type="main">Next steps for Citizen Science</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Bonney</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Shirk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Phillips</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Wiggins</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Ballard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Miller-Rushing</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1126/science.1251554</idno>
+              <ptr target="https://doi.org/10.1126/science.1251554PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">343</biblScope>
+                <biblScope unit="issue">6178</biblScope>
+                <biblScope from="1436" to="1443" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b68">
+            <monogr>
+              <title level="m" type="main">Citizen Science and sustainability transitions</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Vohland</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Sauermann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Antoniou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Balaz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Goebel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Karatzas</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+            <note type="report_type">Working Paper</note>
+          </biblStruct>
+          <biblStruct xml:id="b69">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Merton</surname>
+                </persName>
+              </author>
+              <title level="m">The Sociology of Science: Theoretical and Empirical Investigations</title>
+              <meeting>
+                <address>
+                  <addrLine>Chicago</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <publisher>University of Chicago Press</publisher>
+                <date type="published" when="1973"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

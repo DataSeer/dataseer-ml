@@ -1,0 +1,1667 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:44+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Local electronic structure of doping defects on Tl/Si(111)1x1 OPEN</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+        <date type="published">Published: xx xx xxxx</date>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Barbara</forename>
+                <surname>Pieczyrak</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Instytut Fizyki Doswiadczalnej</orgName>
+                <orgName type="institution">Universytet Wroclawski</orgName>
+                <address>
+                  <addrLine>pl. Maksa Borna 9, 50-204</addrLine>
+                  <settlement>Wroclaw</settlement>
+                  <country key="PL">Poland</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Leszek</forename>
+                <surname>Jurczyszyn</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Instytut Fizyki Doswiadczalnej</orgName>
+                <orgName type="institution">Universytet Wroclawski</orgName>
+                <address>
+                  <addrLine>pl. Maksa Borna 9, 50-204</addrLine>
+                  <settlement>Wroclaw</settlement>
+                  <country key="PL">Poland</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Pavel</forename>
+                <surname>Sobotík</surname>
+              </persName>
+              <affiliation key="aff1">
+                <orgName key="dep1" type="department">Faculty of Mathematics and Physics</orgName>
+                <orgName key="dep2" type="department">Department of Surface</orgName>
+                <orgName type="institution">Charles University</orgName>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Ivan</forename>
+                <surname>Ošt&amp;apos;ádal</surname>
+              </persName>
+              <affiliation key="aff1">
+                <orgName key="dep1" type="department">Faculty of Mathematics and Physics</orgName>
+                <orgName key="dep2" type="department">Department of Surface</orgName>
+                <orgName type="institution">Charles University</orgName>
+              </affiliation>
+            </author>
+            <author role="corresp">
+              <persName>
+                <forename type="first">Pavel</forename>
+                <surname>Kocán</surname>
+              </persName>
+              <email>kocan@mbox.troja.mff.cuni.cz</email>
+              <affiliation key="aff1">
+                <orgName key="dep1" type="department">Faculty of Mathematics and Physics</orgName>
+                <orgName key="dep2" type="department">Department of Surface</orgName>
+                <orgName type="institution">Charles University</orgName>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Local electronic structure of doping defects on Tl/Si(111)1x1 OPEN</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date type="published">Published: xx xx xxxx</date>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41598-018-37361-5</idno>
+          <note type="submission">Received: 22 June 2018 Accepted: 28 November 2018</note>
+          <note>1 SCientifiC REPORtS | (2019) 9:779 | and Plasma Science, V Holešovičkách 2, 180 00, Prague, Czech Republic. Correspondence and requests for materials should be addressed to P.K. (</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>The Tl/Si(111)1 × 1 surface is a representative of a 2D layer with Rashba-type spin-split electronic bands.</s>
+            <s>To utilize the spin polarization, doping of the system should be understood on atomic level.</s>
+            <s>We present a study of two types of atomic defects predicted to dope the considered electronic system -Si-induced vacancies and defects associated with the presence of extra Tl atoms.</s>
+            <s>Structural calculations based on density functional theory (DFT) confirm the stability of the proposed defect structure consisting of an extra Si atom and missing seven Tl atoms as proposed in an earlier experimental study.</s>
+            <s>The calculated spatial charge distributions indicate an enhancement of the charge around the extra Si atom, which correctly reproduces topographies of the corresponding scanning tunneling microscopy images while the calculated local densities of states of this system explain obtained scanning tunneling spectra.</s>
+            <s>The DFT structural calculations let us determine the atomic structure of the defect caused by the presence of an extra Tl atom.</s>
+            <s>The calculated spatial charge distributions show a ring-like feature around the extra Tl atom.</s>
+            <s>The obtained results indicate a charge transfer from the central extra Tl atom to its vicinity in the agreement with earlier photoemission measurements.</s>
+            <s>Published: xx xx xxxx OPEN www.nature.com/scientificreports/</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <p>
+          <s>Two-dimensional (2D) systems composed of densely packed monolayer of metal adatoms on Si(111) or Ge(111) surface show fascinating electronic properties.</s>
+          <s>For example, nearly massless electrons 1 and 2D superconductivity <ref target="#b1" type="bibr">2</ref> have been reported in the case of Pb monolayer on the Si(111) surface.</s>
+          <s>Other related systems involving heavy elements, such as Tl 3-10 and Bi 11,12 on the Si(111), or Au <ref target="#b12" type="bibr">13</ref> and Pb 14 on the Ge(111) show strongly spin-split surface-state bands, the splitting being caused by the Rashba effect <ref target="#b14" type="bibr">15,</ref>
+            <ref target="#b15" type="bibr">16</ref> .</s>
+        </p>
+        <p>
+          <s>Electronic structures of Bi/Si(111) and Tl/Si(111) have been modified by the formation of 2D alloys with other elements <ref target="#b16" type="bibr">17,</ref>
+            <ref target="#b17" type="bibr">18</ref> , or by sandwiching a Sn monolayer between Si(111) and the heavy element layer <ref target="#b18" type="bibr">19</ref> .</s>
+          <s>This resulted in metallic spin-split bands instead of the otherwise semiconducting bands formed by Bi or Tl on Si(111).</s>
+          <s>In the case of a (Tl, Pb) alloy on Si(111), superconductivity and Rashba splitting have both been combined <ref target="#b17" type="bibr">18</ref> .</s>
+        </p>
+        <p>
+          <s>In order to bring these exotic properties into working devices, tuning of the electronic structure, i.e. doping, needs to be possible.</s>
+          <s>Chemical doping of graphene-a prototype of a 2D electron system heading to practical applications 20 -is possible and is being extensively studied (see e.g.</s>
+          <s>ref. <ref target="#b20" type="bibr">21</ref> and references therein).</s>
+          <s>So far, similar studies for 2D metal monolayer systems are much more rare <ref target="#b21" type="bibr">22,</ref>
+            <ref target="#b22" type="bibr">23</ref> .</s>
+        </p>
+        <p>
+          <s>The monolayer Tl/Si(111)1×1 system has a pseudomorphic 1×1 structure with each Tl atom in a T 4 position above the as-bulk terminated Si(111) surface <ref target="#b23" type="bibr">[24]</ref>
+            <ref target="#b24" type="bibr">[25]</ref>
+            <ref target="#b25" type="bibr">[26]</ref> .</s>
+          <s>Electronically the layer exhibits a giant spin-orbit-induced spin splitting of states in the bulk band gap <ref target="#b2" type="bibr">[3]</ref>
+            <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref>
+            <ref target="#b6" type="bibr">[7]</ref>
+            <ref target="#b7" type="bibr">[8]</ref>
+            <ref target="#b8" type="bibr">[9]</ref>
+            <ref target="#b9" type="bibr">[10]</ref> .</s>
+          <s>The complex spin texture of the spin-polarized states has been studied in detail <ref target="#b4" type="bibr">5,</ref>
+            <ref target="#b7" type="bibr">[8]</ref>
+            <ref target="#b8" type="bibr">[9]</ref>
+            <ref target="#b9" type="bibr">[10]</ref> and the spin-split bands have been shown to be robust against exposure to H 2 (100 L) and O 2 (500 L) <ref target="#b9" type="bibr">10</ref> .</s>
+        </p>
+        <p>
+          <s>Upon further deposition of Tl, isolated defects were observed at low temperature and low extra Tl amounts <ref target="#b5" type="bibr">6</ref> , while the second layer with a 6 × 6 moiré pattern is formed at room and higher temperatures and at higher deposited amounts <ref target="#b26" type="bibr">27,</ref>
+            <ref target="#b27" type="bibr">28</ref> .</s>
+          <s>Notably, the double layer shows superconducting transition at 0.96 K <ref target="#b28" type="bibr">29</ref> .</s>
+          <s>A structural model of the double-layer has been proposed recently containing 1.2 monolayer (ML, 1 ML = 7.83 × 10 14 atoms cm −2 ) of Tl atoms in each layer <ref target="#b29" type="bibr">30</ref> .</s>
+        </p>
+        <p>
+          <s>Two previous works are important for this study.</s>
+          <s>First, we proposed a structural model of the ring-shaped defects observed in scanning tunneling microscopy (STM), consisting of a single extra Si atom inducing a Tl multivacancy <ref target="#b30" type="bibr">31</ref> .</s>
+          <s>Furthermore, we demonstrated the metallicity of the observed layers in contrast to predictions from density functional theory (DFT) calculations and discussed a possible doping effect of the defects.</s>
+          <s>The defects also play an important role in the interaction with other adsorbates on the surface <ref target="#b31" type="bibr">32</ref>
+            <ref target="#b9" type="bibr">10</ref> resulted rather in the formation of a local double-layer instead of randomly separated atomic defects as in ref. <ref target="#b5" type="bibr">6</ref> .</s>
+          <s>This could explain the discrepancy as a doping shift of states would be observed only in the latter case.</s>
+        </p>
+        <p>
+          <s>Here we present DFT calculations of Tl structures with doping defects-Tl adatoms and Si-induced vacancies-and discuss their influence on the electronic structure together with the related redistribution of states in the real space.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Results and discussion</head>
+        <p>
+          <s>Si-induced multivacancies.</s>
+          <s>
+            <ref target="#fig_0" type="figure">Figure 1a</ref> shows a representative STM image of the Tl/Si(111)1×1 surface with ring-shaped defects.</s>
+          <s>Previously we proposed a structural model, in which seven Tl atoms of the 1×1 structure are replaced by a single Si ad-atom in a T 4 position 31 (see <ref target="#fig_0" type="figure">Fig. 1b</ref> ).</s>
+          <s>These extra Si ad-atoms could easily originate from the Si-rich 7 × 7 reconstruction present on the surface prior to the formation of the Tl/Si(111)1×1 structure.</s>
+          <s>The model is also consistent with the tendency of Si ad-atoms to substitute Tl during the formation of the mosaic × 3 3 structure at elevated temperatures <ref target="#b33" type="bibr">34,</ref>
+            <ref target="#b34" type="bibr">35</ref> : the separation of neighboring Si and Tl ad-atoms in the × 3 3 is the same as in the proposed model of the ring-shaped defects.</s>
+          <s>The surface density of defects is very sensitive to the preparation parameters, primarily to the smaple heating temperature.</s>
+          <s>This is probably caused by a narrow temperature interval between formation of the 1×1 structure and Tl desorption <ref target="#b33" type="bibr">34</ref> .</s>
+          <s>We note that other less frequent types of defects coexisting with the ring-shaped ones can be observed occasionally <ref target="#b31" type="bibr">32</ref> .</s>
+        </p>
+        <p>
+          <s cert="0.9436251521110535" id="dataset-1" type="Spectrometry">In order to study the local electronic structure of the defects, we measured scanning tunneling spectroscopy (STS) curves above the center of the defect, above the edge of the defect, as well as above a Tl atom far from the defect <ref target="#fig_1" type="figure">(Fig. 2a)</ref> .</s>
+          <s>The most significant feature of the STS obtained above the center is enhanced density of empty states up to sample voltage 0.6 V.</s>
+          <s>The enhancement is balanced out by a lower density of occupied states above the defect center compared to the edge and the faraway position.</s>
+          <s>The positive charging of the central Si atom and consequent hole doping is consistent with the mechanism proposed previously 31 : Si dangling bonds of the pristine Tl/Si(111)1×1 structure are saturated by a charge transfer from Tl p orbitals.</s>
+          <s>The formation of a Tl multi-vacancy prevents some of the Si dangling bonds to be saturated via Tl atoms.</s>
+          <s>The charge from the extra Si atom is therefore transferred to participate in the saturation of these Si dangling bonds.</s>
+          <s>
+            <ref target="#fig_1" type="figure">Figure 2b</ref> shows detailed bias-dependent constant current STM images (top panels) and dI/dV maps (bottom panels) of a selected defect.</s>
+          <s>The somewhat lower quality of the images is caused by the simultaneous recording of the current (used as feedback in the topography images shown in the top panels) and the lock-in dI/dV signal (imaged with feedback switched off shown in the bottom panels).</s>
+          <s>The STM topography shows just a minor dependence on the sample voltage except a change of the relative contrast of the central and Tl-1×1 areas.</s>
+          <s>On the other hand, the dI/dV maps show a stronger dependence -the ring of the defect appears brighter from −0.15 V to 0.3 V, the central position appears brighter at 0.5 V, otherwise the defect is displayed as a depression.</s>
+        </p>
+        <p>
+          <s>To verify the proposed model of the defect we have calculated the spatial charge distributions of the electronic states contributing to the STM images obtained from the measurements (Figs 1a and 2b).</s>
+          <s>
+            <ref target="#fig_3" type="figure">Figure 3</ref> shows charge distributions of the filled <ref target="#fig_3" type="figure">(Fig. 3a</ref> ,b) and empty ( <ref target="#fig_3" type="figure">Fig. 3c</ref> -e) states near the Fermi level obtained from calculations including spin-orbit coupling.</s>
+        </p>
+        <p>
+          <s>Charge distributions of the modeled defect shown in <ref target="#fig_3" type="figure">Fig. 3</ref> reproduce the enhancement in the ring around the extra Si atom indicated by the STM images (see Figs 1a and 2b).</s>
+          <s>The ring decoration is strongest at −0.13 eV <ref target="#fig_3" type="figure">(Fig. 3b</ref> ,g) which corresponds to the dI/dV map obtained at −0.15 eV in <ref target="#fig_1" type="figure">Fig. 2b</ref> .</s>
+          <s>The local density of states (LDOS) associated with the ring is significant even at the Fermi level (see <ref target="#fig_4" type="figure">Fig. 4b</ref> ) and consequently this type of defect appears as a bright circle in STM images at a wide range of sample voltages.</s>
+          <s>The density of states inside the ring is maximal at 0.5 eV (see <ref target="#fig_3" type="figure">Fig. 3d</ref> ).</s>
+          <s>The charge distribution associated with the extra Si atom is visible under some conditions of STM tips 31 .</s>
+          <s>At 0.3 eV the increased charge density can be found in <ref target="#fig_3" type="figure">Fig. 3h</ref> , but it does not protrude out of the Tl layer.</s>
+          <s>The protrusion is not visible even in the the dI/dV map at 0.3 eV <ref target="#fig_1" type="figure">(Fig. 2b)</ref> .</s>
+          <s>However, the increased LDOS can be identified in the STS curve (red line in <ref target="#fig_1" type="figure">Fig. 2a</ref> ) as the enhancement between the Fermi level and 0.7 eV.</s>
+          <s>Such different sensitivity to the charge density located at the central atom is due to different tip setpoints: the tip is closer to the surface during the STS measurement as tip height is controlled by the feedback loop during STM image acquisition in contrast to the constant height during the dI/dV mapping.</s>
+        </p>
+        <p>
+          <s>The To compare the electronic structure of the defect with the results of STS measurements, we performed calculations of the LDOS associated with the different atoms of the defected area.</s>
+          <s>
+            <ref target="#fig_4" type="figure">Figure 4</ref> shows the LDOS projected onto the orbitals of the extra Si atom situated in the centre of the ring <ref target="#fig_4" type="figure">(Fig. 4a)</ref> , the selected Tl atom from the ring in <ref target="#fig_4" type="figure">Fig. 4</ref> (b) and the Tl atom located far from the defect <ref target="#fig_4" type="figure">(Fig. 4c)</ref> .</s>
+        </p>
+        <p>
+          <s>The calculated LDOS shown in <ref target="#fig_4" type="figure">Fig. 4</ref> can explain some features of the corresponding experimental data provided by STS measurements.</s>
+          <s>The STS spectra presented in <ref target="#fig_1" type="figure">Fig. 2a</ref> indicate the feature located around 0.4 eV above the Fermi level.</s>
+          <s>This feature is the most pronounced when the tip is located above the central extra Si atom.</s>
+          <s>The corresponding maximum in the LDOS projected onto the orbitals of the extra Si atom <ref target="#fig_4" type="figure">(Fig. 4a)</ref> is located 0.4-0.5 eV above the Fermi level.</s>
+          <s>The localization of electronic states associated with this LDOS feature is illustrated by the corresponding spatial charge distribution shown in <ref target="#fig_3" type="figure">Fig. 3d</ref> ,i.</s>
+          <s>The shape of the LDOS calculated for the Tl atoms from the ring around the extra Si atom <ref target="#fig_4" type="figure">(Fig. 4b)</ref> shows an enhancement of occupied states with a maximum located at −0.13 eV and a non-zero density at the Fermi level.</s>
+          <s>The corresponding spatial distribution is shown in <ref target="#fig_3" type="figure">Fig. 3b</ref> ,g.</s>
+        </p>
+        <p>
+          <s>We have noticed that the electronic properties of the defected area obtained from our theoretical study with spin-orbit coupling correctly reproduce the corresponding experimental STM data which gives strong support for the model of the defect with an extra Si atom proposed previously <ref type="bibr">31 .</ref>
+          </s>
+          <s>Extra Tl atoms.</s>
+          <s>In the next part of our study we consider the Tl/Si(111)1×1 surface modified by additional Tl adatoms.</s>
+          <s>Such a surface system has been studied experimentally by Sakamoto et al. <ref target="#b5" type="bibr">6</ref> .</s>
+          <s>Their ARPES results indicate that a very small amount of extra Tl adatoms (extra Tl coverage of 0.01 ML) shifts the originally unoccupied band of electronic states to the Fermi level.</s>
+          <s>With increasing coverage of extra Tl adatoms this band continuously moves towards lower energies.</s>
+        </p>
+        <p>
+          <s>We analyzed the geometrical and electronic properties of the Tl/Si(111)1×1 surface system containing extra Tl adatoms with structural ab-initio calculations.</s>
+          <s>We used a 7 × 7 surface unit cell with an extra Tl adatom (coresponding coverage 1.02 ML).</s>
+          <s>Relaxation has been performed for the three following positions of the extra Tl adatom: on-top (with respect to Tl adatoms from the preadsorbed adlayer), shallow hollow site and deep hollow site.</s>
+          <s>All three configurations after structure relaxation are shown in <ref target="#fig_5" type="figure">Fig. 5</ref> .</s>
+          <s>The total energy calculation results indicate that the deep hollow site configuration <ref target="#fig_5" type="figure">(Fig. 5c)</ref> represents the lowest energy configuration: the shallow hollow and on-top have higher energies by 0.21 eV and 0.28 eV, respectively.</s>
+          <s>Please note the tendency of the extra Tl atom to incorporate into the Tl monolayer <ref target="#fig_5" type="figure">(Fig. 5c)</ref> , which is in agreement with a proposed structural model of the double layer with both layers having a density of 1.2 ML 30 .</s>
+        </p>
+        <p>
+          <s>To compare the electronic properties of the system with STM data 6 , we have calculated the partial charge distributions.</s>
+          <s>The obtained results are presented in <ref target="#fig_6" type="figure">Fig. 6a,b</ref> and in the profiles in <ref target="#fig_6" type="figure">Fig. 6c</ref> -f-these distributions illustrate the localization of the electronic states in the vicinity of the Fermi level (E f ).</s>
+          <s>
+            <ref target="#fig_6" type="figure">Figure 6a</ref> presents the partial charge distribution for the occupied states in the energy range from E f − 0.1 eV to E f , while <ref target="#fig_6" type="figure">Fig. 6b</ref> represents the corresponding distribution obtained for the unoccupied states in the range from E f to E f + 0.1 eV.</s>
+          <s>We have obtained a qualitative agreement between the distribution calculated for the unoccupied states <ref target="#fig_6" type="figure">(Fig. 6b</ref> ) and the topography of the corresponding STM image 6 .</s>
+          <s>However, the interpretation of STM images of extra Tl atoms from ref. <ref target="#b5" type="bibr">6</ref> is complicated by the fact that the reported shape and size may be affected by a complex electron interference at the defects.</s>
+          <s>The apparent size of the extra Tl atoms 6 is ∼1.3 nm, which is larger than the partial charge distribution shown in <ref target="#fig_6" type="figure">Fig. 6a,b.</ref>
+          </s>
+          <s>In a similar way, atomic-scale defects e.g. in the graphene lattice appear in STM topographic images as larger objects with a regular shape <ref target="#b35" type="bibr">36</ref> .</s>
+          <s>Furthermore, we shall discuss in detail the calculated local densities of states related to the presence of the extra Tl atom with the structure presented in <ref target="#fig_5" type="figure">Fig. 5c</ref> .</s>
+          <s>
+            <ref type="figure">Figure 7</ref> shows the DOS distributions projected onto orbitals of selected topmost atoms of the considered system.</s>
+          <s>The labeling of the atoms used hereafter is shown in <ref target="#fig_5" type="figure">Fig. 5c</ref> .</s>
+          <s>The DOS distribution associated with the atom Tl 10 , which is located far from the extra Tl adatom (Tl 1 ), shows a sharp maximum located 0.8 eV above the Fermi level (black dotted curve in <ref type="figure">Fig. 7)</ref> .</s>
+          <s>This result corresponds well with the presence of the unoccupied spin-down band indicated by the SARIPES measurements 6 performed for the system without the extra Tl atom.</s>
+          <s>On the other hand, the small DOS feature related to the Tl 10 atom located just above the Fermi level can be linked with the spin-up band indicated by the corresponding SARIPES measurements <ref target="#b5" type="bibr">6</ref> .</s>
+          <s>In the case of the atom Tl 3 , which is situated in the nearest neighborhood of the extra Tl atom (Tl 1 ), the additional DOS maximum appears at the Fermi level (dotted-dashed green curve in <ref type="figure">Fig. 7)</ref> .</s>
+          <s>The presence of such partially filled states is associated with a charge transfer from the extra Tl atom to its vicinity.</s>
+          <s>In STM empty states images <ref target="#b5" type="bibr">6</ref> and also in spatial charge distributions, the extra-Tl-defect is represented by a ring-like feature with a hollow in its center.</s>
+          <s>The origin of the central hollow can be rationalized with the analysis of the DOS distributions associated with the extra Tl atom (atom Tl 1 -black solid curve in <ref type="figure">Fig. 7)</ref> .</s>
+          <s>This distribution shows a sharp maximum located just above the Fermi level, but the analysis presented in <ref target="#fig_8" type="figure">Fig. 8a</ref> indicates that this DOS feature is composed almost solely of p x − p y orbitals which are oriented parallel to the surface.</s>
+          <s>For comparison, <ref target="#fig_8" type="figure">Fig. 8b</ref> shows the corresponding dependences for Tl atom located far from the defect (atom Tl 10 in <ref target="#fig_5" type="figure">Fig. 5c</ref> ).</s>
+          <s>The dominance of the p x − p y states of the extra Tl atom near the Fermi level is responsible for imaging the atom as a hollow in STM-these states are visible not above the extra-Tl atom but around it, as it is shown in <ref target="#fig_8" type="figure">Fig. 8a</ref> shows that this argument can be also extended to the occupied states located just below the Fermi level.</s>
+          <s>The ring-like feature in the partial charge distribution <ref target="#fig_6" type="figure">(Fig. 6a,b</ref> ), which appears around the central extra Tl atom, represents the result of an interaction between p x − p y states of the extra Tl atom (atom Tl 1 in <ref target="#fig_5" type="figure">Fig. 5c</ref> ) and its three nearest neighbors -atoms Tl 2 , Tl 3 and Tl 4 .</s>
+          <s>
+            <ref target="#fig_8" type="figure">Figure 8c</ref> and d present the DOS distributions projected onto orbitals of the atoms Tl 2 and Tl 4 -the corresponding DOS distribution and its components related to the Tl 3 atom is the same as for the Tl 2 atom and therefore not shown in the figure.</s>
+          <s>The obtained results indicate the presence of distinct DOS features located just above the Fermi level and composed of p x − p y states associated with the Tl 2 , Tl 3 and Tl 4 atoms.</s>
+          <s>The interaction of these states with the p x − p y orbitals of the extra Tl atom leads to the formation of inter-orbital hybrid shown in <ref target="#fig_6" type="figure">Fig. 6g</ref> which presents the same spatial charge distributions as shown in <ref target="#fig_6" type="figure">Fig. 6h</ref> but a greater isovalue has been used this time-and therefore only the contributions associated with the Tl 2 , Tl 3 and Tl 4 (and also Tl 1 ) atoms are visible.</s>
+        </p>
+        <p>
+          <s>The contributions to the ring-like feature around the extra Tl atom come also from the three second nearest neighbors (with respect to the extra Tl atom)-atoms Tl 5 , Tl 6 and Tl 7 in <ref target="#fig_5" type="figure">Fig. 5c</ref> .</s>
+          <s>
+            <ref target="#fig_8" type="figure">Figure 8e</ref> presents the DOS distribution (together with its components) associated with the Tl 5 atom -the corresponding distributions related to the Tl 6 and Tl 7 atoms are exactly the same and are therefore are not shown in <ref target="#fig_8" type="figure">Fig. 8</ref> .</s>
+          <s>These distributions show a maximum located just above the Fermi level and composed solely of p x − p y states.</s>
+          <s>These DOS features are much smaller than the p x − p y DOS maxima located in the same energy range stemming from the first neighbors (i.e.</s>
+          <s>atoms Tl 2 , Tl 3 and Tl 4 ), but are considerably higher than analogous contributions for a Tl atom located far from the defect (atom Tl 10 in <ref target="#fig_5" type="figure">Fig. 5c)</ref> .</s>
+        </p>
+        <p>
+          <s>The contribution associated with the p x − p y states of Tl 5 , Tl 6 and Tl 7 atoms to the formation of the ring-like feature surrounding the extra Tl atom in spatial charge distributions is confirmed by the corresponding distribution presented in <ref target="#fig_6" type="figure">Fig. 6h</ref> .</s>
+          <s>In comparison with <ref target="#fig_6" type="figure">Fig. 6g</ref> , the isovalue applied in <ref target="#fig_6" type="figure">Fig. 6h</ref> is reduced, and therefore the features associated with the first neighbors (atoms Tl 2 , Tl 3 , Tl 4 ) and also second neighbors (atoms Tl 5 , Tl 6 , Tl 7 ) are visible.</s>
+          <s>It also follows from <ref target="#fig_6" type="figure">Fig. 6h</ref> that the p x − p y orbitals of the second neighbors interact with the p z states of the two nearest silicon atoms -this inter-orbital hybrid is also influenced by the contact with the p x − p y states associated with the extra Tl atom (atom Tl 1 ).</s>
+        </p>
+        <p>
+          <s>It is worth mentioning that the features associated with the p x − p y states of the Tl atoms located far from the defect are not visible in the calculated spatial charge distributions since the p x − p y contributions to the density of states of these Tl atoms are much smaller in the vicinity of the Fermi level than those of the TL atoms closest to the defect.</s>
+        </p>
+        <p>
+          <s>Our theoretical study clearly shows that extra Tl atoms modify the electronic properties of Tl/Si(111) by doping the Tl layer.</s>
+          <s>In our view, this result is in agreement with the experimental data 6 .</s>
+        </p>
+      </div>
+      <div>
+        <head>Conclusions</head>
+        <p>
+          <s>We presented a combined theoretical and experimental study of the Tl/Si(111) adsorption system with Si-induced vacancies and also defects implied by the presence of extra Tl adatoms.</s>
+          <s>We considered a Tl/Si(111) system defected by an extra Si atom and missing seven Tl atoms, structure of which is based on a model proposed in the earlier STM study <ref target="#b30" type="bibr">31</ref> .</s>
+          <s>To verify the stability of this model structure and to check its agreement with existing STM data, structural DFT calculations were performed.</s>
+          <s>The obtained results indicate that the assumed model represents a stable structure and the calculated electronic properties of the relaxed defected system can explain some important features of the experimental STM/STS data.</s>
+          <s>We found that the spatial charge distribution of these electronic states, which are active during the formation of STM images, reproduces the characteristic ring-shape feature visible around the extra Si atom in STM images.</s>
+          <s>We also showed that the LDOS distributions projected onto the orbitals of the extra Si atom located in the centre of the defect, a Tl atom from the ring around the extra Si atom and a Tl atom located far from the defect, reproduce the corresponding experimental data obtained from STS measurements.</s>
+        </p>
+        <p>
+          <s>The theoretical study of the Tl/Si(111) system defected by the presence of the extra Tl atom allowed us to determine its energetically optimal structure.</s>
+          <s>The presented calculated spatial charge distributions show that the STM images obtained earlier by Sakamoto et al. might be related to the ring-like contour associated with the three nearest Tl atoms with respect to the extra Tl atom and its three second nearest neighbors.</s>
+          <s>The calculated LDOS distributions indicate a charge transfer from the extra Tl atom to its nearest surrounding.</s>
+          <s>The charge transfer is important for doping of the Tl/Si(111)1×1 surface.</s>
+        </p>
+      </div>
+      <div>
+        <head>Methods</head>
+      </div>
+      <div>
+        <head>DFT.</head>
+        <p>
+          <s>The theoretical studies were performed with the use of periodic slab ab-initio calculations based on the Density Functional Theory (DFT) as implemented in the Vienna Ab-initio Simulation Package (VASP) <ref target="#b36" type="bibr">[37]</ref>
+            <ref target="#b37" type="bibr">[38]</ref>
+            <ref target="#b38" type="bibr">[39]</ref>
+            <ref target="#b39" type="bibr">[40]</ref> .</s>
+          <s>The electron-ion interaction was described by the projector-augmented wave (PAW) potential <ref target="#b40" type="bibr">41,</ref>
+            <ref target="#b41" type="bibr">42</ref> where the following angular momentum channels have been assumed: Si(s,p,d) and Tl(s,p,d).</s>
+          <s>To include the exchange-correlation contribution the generalized gradient approximation (GGA) in its PBE formulation was used <ref target="#b42" type="bibr">43</ref> .</s>
+          <s>These calculations had fully relativistic non-collinear character-the spin-orbit interaction was included.</s>
+          <s>All calculations were performed at 0K, and thus the obtained structural model and the atomic structure at finite temperature can be different.</s>
+        </p>
+        <p>
+          <s>The description of the substrate was performed with the use of an asymmetric slab consisting of six silicon layers constructed using the calculated bulk lattice constant 5.437 Å.</s>
+          <s>The dangling bonds at the bottom of the slab were saturated by hydrogen atoms.</s>
+          <s>The Tl ad-layer was modeled by positioning the Tl ad-atoms in the T 4 adsorption site of the Si(111)1×1 substrate.</s>
+          <s>During the relaxation the atomic positions inside the ad-layer and the four topmost silicon layers were allowed to relax until the forces were less than 0.01 eV/Å while the rest part of the slab was frozen in its bulk-like configuration.</s>
+          <s>All results presented in this paper were obtained for one k-point (Γ point), however, the influence of this factor was tested in separate check calculations.</s>
+          <s>The applied cutoff energy in all calculations presented in this study was 450 eV.</s>
+          <s>The calculated energy gap of the ideal Tl/Si(111)1×1 equals 0.1 eV.</s>
+          <s>To analyze the structural and electronic properties of the defects (the ring-shaped defect described previously in ref. <ref target="#b30" type="bibr">31</ref> and the extra Tl adatom defect) we considered 7 × 7 unit cells.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>STM.</head>
+        <p>
+          <s>The measurements were performed at room temperature in a noncommercial ultra-high-vacuum STM system.</s>
+          <s>The pressure in the system did not exceed 1×10 −8 Pa during experiments.</s>
+          <s>The Si(111) samples (Sb doped, with a resistivity of 0.005-0.01</s>
+          <s>Ω cm) were cleaned by flashing to 1200 C. Thallium (purity 99.999%) was evaporated onto the silicon surface at room temperature, with the amount controlled by a quartz thickness monitor.</s>
+          <s>The Tl/Si(111)1×1 surface was prepared by heating the sample, predeposited with Tl amount exceeding one ML, to 300 C for 2 min.</s>
+          <s cert="0.9573203921318054" id="dataset-1" type="Tabular data">The sample was resistively heated by passing dc current, and the sample temperature was determined from calibrated heating power.</s>
+          <s>STM tips were prepared by electrochemical etching from a polycrystalline tungsten wire and treated in situ by an electron bombardment <ref target="#b43" type="bibr">44</ref> .</s>
+          <s>The dI/dV curves were measured using a lock-in technique (∼10 s per spectrum), and the presented data were averaged over several equivalent spectra normalized by I/V.</s>
+          <s>Noise near the Fermi level was suppressed by a procedure from ref. <ref target="#b44" type="bibr">45</ref> .</s>
+          <s cert="0.5727344155311584" id="dataset-2" type="Tabular data">Lock-in dI/dV maps were acquired in constant height mode with STM feedback loop switched off.</s>
+        </p>
+      </div>
+      <div>
+        <head>Data Availability Statement</head>
+        <p>
+          <s>The datasets generated during and/or analysed during the current study are available from the corresponding author on reasonable request.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Figure 1 .</head>
+        <label>1</label>
+        <figDesc>(a) STM image of the Tl/Si(111)1×1 surface at sample voltage U S = +1 V showing ring-shaped defects. (b) Top and side views of the relaxed structure of the multi-vacancy defect on the Tl/Si(111)1×1 surface induced by the presence of an extra Si atom at the topmost atomic layer and missing Tl atoms. Only topmost Si bi-layer of the slab used in the calculations is shown. The Tl adatoms are marked by large violet spheres, the extra Si atom by a large gray sphere and the Si substrate atoms by small gray spheres.</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Figure 2 .</head>
+        <label>2</label>
+        <figDesc>(a) STS spectra obtained for different positions of the STM tip with respect to the defect atomic structure. (b) Constant current STM images (top) and constant-height dI/dV maps of the defect (bottom). Sample voltages are indicated. SCientifiC REPORtS | (2019) 9:779 | DOI:10.1038/s41598-018-37361-5</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head/>
+        <label/>
+        <figDesc>results obtained from the structural calculations indicate that the vertical positions of the Tl atoms forming the ring around the extra Si atom are slightly, around 0.04 Å, lowered with respect to the corresponding values obtained for Tl atoms located far from the defect. Their lateral positions are shifted toward the extra Si atom by 0.08-0.1 Å. The vertical position of the extra Si atom in the centre of the defected area is much lower, by around 1.17 Å, in comparison with Tl atoms of the pristine Tl/Si(111)1×1 structure.</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Figure 3 .</head>
+        <label>3</label>
+        <figDesc>Spatial charge distributions (a-e) of electronic states at indicated energies. (f-j) Calculated profiles along the black lines indicated in (a-e). Used isovalues are (a</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Figure 4 .</head>
+        <label>4</label>
+        <figDesc>LDOS projected onto the orbitals of extra Si atom located in the center of the defect (a), Tl atom from the ring around extra Si atom (b), and Tl atom located far from the defect -(c). Denotation of particular atoms is the same as in Fig. 1b. SCientifiC REPORtS | (2019) 9:779 | DOI:10.1038/s41598-018-37361-5</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
+        <head>Figure 5 .</head>
+        <label>5</label>
+        <figDesc>Side and top views of the relaxed atomic structures of the Tl/Si(111)1×1 surface modified by the presence of an extra Tl atom (coverage of 0.02 ML). Only the topmost Si bi-layer of the slab used in the calculations is shown. The Tl adatoms are marked by large violet spheres, the extra Tl atom by a large pink sphere and the Si substrate atoms by small gray spheres. (a-c) Represent the structures with extra Tl atom adsorbed in on-top position, shallow hollow site and deep hollow site, respectively. The relative energies with respect to the energetically most stable configurations (deep hollow site) and the orientation of the x-y plane are also given. SCientifiC REPORtS | (2019) 9:779 | DOI:10.1038/s41598-018-37361-5</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
+        <head>Figure 6 .</head>
+        <label>6</label>
+        <figDesc>Spatial charge distributions calculated for the adsorption system with an extra Tl atom in the deep hollow configuration. (a) Represents the occupied electronic states in the energy range between E f − 0.1 eV and E f , while (b) corresponds to the unoccupied states in the range between E f and E f + 0.1 eV. The isosurface values are 0.001 e/Å 3 and 0.0003 e/Å 3 , respectively. (c,d) Calculated profiles along the black lines labeled 1 in (a,b); (e,f) Calculated profiles along the black lines labeled 2 in (a,b). (g,h) are charge distributions for the electronic states in the energy range from E f up to 0.2 eV above E f with isosurface value 0.008 e/Å 3 and 0.0004 e/Å 3 . (i,j) corresponding calculated profiles along the black lines indicated in (g,h), (i) corresponds to line 1 and (j) to line 2.</figDesc>
+      </figure>
+      <figure xml:id="fig_7">
+        <head>Figure 7 . 5 Fig. 6 .</head>
+        <label>756</label>
+        <figDesc>DOS distributions projected onto the orbitals of selected topmost Tl atoms of the system shown in Fig. 5c. Denotation of the particular atoms is the same as in Fig. 5c. SCientifiC REPORtS | (2019) 9:779 | DOI:10.1038/s41598-018-37361-The DOS distribution presented in</figDesc>
+      </figure>
+      <figure xml:id="fig_8">
+        <head>Figure 8 .</head>
+        <label>8</label>
+        <figDesc>DOS distributions projected onto the orbitals of selected atoms: (a) extra Tl atom, (b) Tl atom located far from the defect, (c,d) nearest neighbors of extra Tl atom (Tl 3 is equivalent to Tl 2 ), (e) second neighbors of extra Tl atom (Tl 6 and Tl 7 are equivalent to Tl 5 ). Denotation of the atoms used for DOS calculation is the same as in Fig. 5c. SCientifiC REPORtS | (2019) 9:779 | DOI:10.1038/s41598-018-37361-5</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>,<ref target="#b32" type="bibr">33</ref> . In the second important work,Sakamoto et al.  reported that the unoccupied spin-split band of Tl/Si(111)1 × 1 can be shifted towards the Fermi level by the deposition of extra Tl atoms<ref target="#b5" type="bibr">6</ref> . The extra Tl atoms therefore represent n-type dopants to the layer. This rigid band-shifting model has been recently debated 10 as angle-resolved photoemission (ARPES) and inverse-photoemission experiments have shown that the states distant from the Fermi level did not shift upon extra Tl deposition. Instead, a new state at the Fermi level appeared. However, the experimental conditions used in ref.</figDesc>
+        <table>SCientifiC REPORtS | 
+(2019) 9:779 | DOI:10.1038/s41598-018-37361-5 
+
+</table>
+      </figure>
+      <note place="foot">© The Author(s) 2019</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Author Contributions</head>
+          <p>
+            <s>P.K. conceived the experiments, performed STM measurements and analyzed the measured data.</s>
+            <s>I.O.</s>
+            <s>and P.S. designed and constructed the experimental equipment.</s>
+            <s>B.P. and L.J. performed DFT calculations.</s>
+            <s>B.P. and P.K. wrote the paper.</s>
+            <s>All authors discussed the results and commented on the manuscript.</s>
+          </p>
+        </div>
+        <div>
+          <head>Additional Information</head>
+          <p>
+            <s>Competing Interests: The authors declare no competing interests.</s>
+          </p>
+          <p>
+            <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+          <p>
+            <s>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.</s>
+            <s>The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in a credit line to the material.</s>
+            <s>If material is not included in the article's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.</s>
+            <s>To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Nearly massless electrons in the silicon interface with a metal film</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Jung</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Kang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Yeom</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">104</biblScope>
+                <biblScope unit="page">246803</biblScope>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Superconductivity in one-atomic-layer metal films grown on Si(111)</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature Phys</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope from="104" to="108" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Abrupt rotation of the rashba spin to the direction perpendicular to the surface</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Sakamoto</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">102</biblScope>
+                <biblScope unit="page">96805</biblScope>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Relativistic effects and fully spin-polarized Fermi surface at the Tl/Si(111) surface</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Ibañez Azpiroz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Eiguren</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Bergara</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">84</biblScope>
+                <biblScope unit="page">125435</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Rotating spin and giant splitting: Unoccupied surface electronic structure of tl/si(111)</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Stolwijk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Schmidt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Donath</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Sakamoto</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Krüger</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">111</biblScope>
+                <biblScope unit="page">176402</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Valley spin polarization by using the extraordinary Rashba effect on silicon</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Sakamoto</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Commun</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope unit="page">2073</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Symmetry induced peculiar Rashba effect on thallium adsorbed Si(111) surfaces</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Sakamoto</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. of Electron Spectrosc. Relat. Phenom</title>
+              <imprint>
+                <biblScope unit="volume">201</biblScope>
+                <biblScope from="88" to="91" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Thin line of a rashba-type spin texture: Unoccupied surface resonance of tl/si(111) along ΓM</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Stolwijk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Sakamoto</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Schmidt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Krüger</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Donath</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">90</biblScope>
+                <biblScope unit="page">161109</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Spin texture with a twist in momentum space for Tl/Si(111)</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Stolwijk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Sakamoto</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Schmidt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Krüger</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Donath</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">91</biblScope>
+                <biblScope unit="page">245420</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Valley spin polarization of Tl/Si(111)</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Stolwijk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Schmidt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Sakamoto</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Krüger</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Donath</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Materials</title>
+              <imprint>
+                <biblScope unit="volume">1</biblScope>
+                <biblScope unit="page">64604</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Silicon surface with giant spin splitting</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Gierz</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">103</biblScope>
+                <biblScope unit="page">46803</biblScope>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Peculiar rashba splitting originating from the two-dimensional symmetry of the surface</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Sakamoto</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">103</biblScope>
+                <biblScope unit="page">156801</biblScope>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Three-dimensional spin rotations at the fermi surface of a strongly spin-orbit coupled surface system</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Höpfner</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">108</biblScope>
+                <biblScope unit="page">186801</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Large Rashba spin splitting of a metallic surface-state band on a semiconductor surface</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Yaji</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Commun</title>
+              <imprint>
+                <biblScope unit="volume">1</biblScope>
+                <biblScope unit="page">17</biblScope>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Properties of semiconductors with an extremum loop .1. cyclotron and combinational resonance in a magnetic field perpendicular to the plane of the loop</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Rashba</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Soviet Phys.-Solid State</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope from="1109" to="1122" unit="page"/>
+                <date type="published" when="1960"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Properties of a 2D electron gas with lifted spectral degeneracy</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Bychkov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Rashba</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Jetp. Lett</title>
+              <imprint>
+                <biblScope unit="volume">39</biblScope>
+                <biblScope unit="page">78</biblScope>
+                <date type="published" when="1984"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">A strategy to create spin-split metallic bands on silicon using a dense alloy layer</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Gruznev</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Scientific Reports</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope unit="page">4742</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Two-dimensional superconductor with a giant rashba effect: One-atom-layer Tl-Pb compound on si(111)</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Matetskiy</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">115</biblScope>
+                <biblScope unit="page">147003</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Electronic band structure of a Tl/Sn atomic sandwich on Si (111)</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Gruznev</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">91</biblScope>
+                <biblScope unit="page">35421</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Wafer-scale graphene integrated circuit</title>
+              <author>
+                <persName>
+                  <forename type="first">Y.-M</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">332</biblScope>
+                <biblScope from="1294" to="1297" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Electronic and chemical properties of donor, acceptor centers in graphene</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Telychko</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">ACS Nano</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope from="9180" to="9187" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Controlled electron doping into metallic atomic wires: Si (111) 4 × 1 -In</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Morikawa</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Hwang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Yeom</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">81</biblScope>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Realization of a hole-doped Mott insulator on a triangular silicon lattice</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Ming</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">119</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Structural and electronic properties of thallium overlayers on the Si(111)-7 × 7 surface</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">66</biblScope>
+                <biblScope unit="page">233312</biblScope>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">T4 site adsorption of Tl atoms in a Si(111)-(1 × 1)-Tl structure, determined by low-energy electron diffraction analysis</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Noda</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Mizuno</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Chung</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Tochihara</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Jpn. J. Appl. Phys</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope unit="page">319</biblScope>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Structural properties of a thallium-induced si(111)-1 × 1 surface</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">69</biblScope>
+                <biblScope unit="page">195311</biblScope>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Structures of a "new" group III element</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Vitali</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Leisenberger</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Ramsey</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Netzer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Thallium overlayers on Si</title>
+              <imprint>
+                <biblScope unit="volume">17</biblScope>
+                <biblScope unit="issue">111</biblScope>
+                <biblScope unit="page">1676</biblScope>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+            <note>J. Vac. Sci. Technol. A</note>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Rotational epitaxy of a "soft" metal overlayer on Si(111)</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Vitali</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Ramsey</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Netzer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Surf. Sci</title>
+              <imprint>
+                <biblScope unit="volume">452</biblScope>
+                <biblScope unit="page">281</biblScope>
+                <date type="published" when="2000"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <monogr>
+              <title level="m" type="main">Superconductivity in thallium double atomic layer and transition into an insulating phase intermediated by a quantum metal state. 2D Mater</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ichinokura</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2017"/>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope unit="page">25020</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Double-atomic layer of Tl on Si(111): Atomic arrangement and electronic properties</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Mihalyuk</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Surf. Sci</title>
+              <imprint>
+                <biblScope unit="volume">668</biblScope>
+                <biblScope from="17" to="22" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Metallic-like thallium overlayer on a Si(111) surface</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Kocán</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Sobotk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Ošt&amp;apos;ádal</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">84</biblScope>
+                <biblScope unit="page">233304</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Pair correlation function of a 2D molecular gas directly visualized by scanning tunneling microscopy</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Matvija</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Rozbořil</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Sobotk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Ošt&amp;apos;ádal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Kocán</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Phys. Chem. Lett</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope from="4268" to="4272" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Electric-field-controlled phase transition in a 2D molecular layer</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Matvija</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Scientific Reports</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="page">7357</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">An STM study of desorption-induced thallium structures on the Si(111) surface</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Kocán</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Sobotk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Matvija</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Setvn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Ošt&amp;apos;ádal</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Surf. Sci</title>
+              <imprint>
+                <biblScope unit="volume">606</biblScope>
+                <biblScope from="991" to="995" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Ošt'ádal, I. Desorption-induced structural changes of metal/Si(111) surfaces: Kinetic Monte Carlo simulations</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Kocán</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Sobotk</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. E</title>
+              <imprint>
+                <biblScope unit="volume">88</biblScope>
+                <biblScope unit="page">22403</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">Scattering and interference in epitaxial graphene</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Rutter</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">317</biblScope>
+                <biblScope from="219" to="222" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">Ab initio molecular dynamics for liquid metals</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Kresse</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Hafner</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">47</biblScope>
+                <biblScope from="558" to="561" unit="page"/>
+                <date type="published" when="1993"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">Ab initio molecular-dynamics simulation of the liquid-metal-amorphous-semiconductor transition in germanium</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Kresse</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Hafner</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">49</biblScope>
+                <biblScope from="14251" to="14269" unit="page"/>
+                <date type="published" when="1994"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">Efficiency of ab-initio total energy calculations for metals and semiconductors using a plane-wave basis set</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Kresse</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Furthmüller</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Comp. Mat. Sci</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope from="15" to="50" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">Efficient iterative schemes for ab initio total-energy calculations using a plane-wave basis set</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Kresse</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Furthmüller</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">54</biblScope>
+                <biblScope from="11169" to="11186" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Projector augmented-wave method</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Blöchl</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">50</biblScope>
+                <biblScope from="17953" to="17979" unit="page"/>
+                <date type="published" when="1994"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">From ultrasoft pseudopotentials to the projector augmented-wave method</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Kresse</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Joubert</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">59</biblScope>
+                <biblScope from="1758" to="1775" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title level="a" type="main">Generalized gradient approximation made simple</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Perdew</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Burke</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Ernzerhof</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">77</biblScope>
+                <biblScope from="3865" to="3868" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">Ultrasharp tungsten tips-characterization and nondestructive cleaning</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Setvín</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Ultramicroscopy</title>
+              <imprint>
+                <biblScope unit="volume">113</biblScope>
+                <biblScope from="152" to="157" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b44">
+            <analytic>
+              <title level="a" type="main">Structural and electronic properties of the Bi/GaP(110) interface</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Prietsch</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Samsavar</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Ludeke</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">43</biblScope>
+                <biblScope unit="page">11850</biblScope>
+                <date type="published" when="1991"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b45">
+            <analytic>
+              <title/>
+              <idno type="DOI">10.1038/s41598-018-37361-5</idno>
+            </analytic>
+            <monogr>
+              <title level="j">SCientifiC REPORtS |</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <date type="published" when="2019"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

@@ -1,0 +1,785 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:09+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main"/>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Emanuele</forename>
+                <surname>Rizzello</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Georgia</forename>
+                <surname>Ntani</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="laboratory">Medical Research Council Lifecourse Epidemiology Unit</orgName>
+                <orgName type="institution">University of Southampton</orgName>
+                <address>
+                  <postCode>SO16 6YD</postCode>
+                  <settlement>Southampton</settlement>
+                  <country key="GB">UK</country>
+                </address>
+              </affiliation>
+              <affiliation key="aff1">
+                <orgName type="laboratory">Arthritis Research UK/MRC Centre for Musculoskeletal Health and Work</orgName>
+                <orgName type="institution">University of Southampton</orgName>
+                <address>
+                  <settlement>Southampton</settlement>
+                  <country key="GB">UK</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">David</forename>
+                <surname>Coggon</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="laboratory">Medical Research Council Lifecourse Epidemiology Unit</orgName>
+                <orgName type="institution">University of Southampton</orgName>
+                <address>
+                  <postCode>SO16 6YD</postCode>
+                  <settlement>Southampton</settlement>
+                  <country key="GB">UK</country>
+                </address>
+              </affiliation>
+              <affiliation key="aff1">
+                <orgName type="laboratory">Arthritis Research UK/MRC Centre for Musculoskeletal Health and Work</orgName>
+                <orgName type="institution">University of Southampton</orgName>
+                <address>
+                  <settlement>Southampton</settlement>
+                  <country key="GB">UK</country>
+                </address>
+              </affiliation>
+            </author>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1186/s12891-019-2404-8</idno>
+          <note>R E S E A R C H A R T I C L E Open Access Correlations between pain in the back and neck/upper limb in the European Working Conditions Survey * Correspondence: Full list of author information is available at the end of the article</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <textClass>
+        <keywords>
+          <term>Low back pain</term>
+          <term>Upper limb pain</term>
+          <term>Prevalence</term>
+          <term>International variation</term>
+        </keywords>
+      </textClass>
+      <abstract>
+        <div>
+          <p>
+            <s>Background: Recent research has suggested that wide international variation in the prevalence of disabling regional pain among working populations is driven largely by factors predisposing to musculoskeletal pain in general and not specific to individual anatomical sites.</s>
+            <s>We sought to confirm this finding, using data from an independent source.</s>
+            <s>Methods: Using data from the fifth (2010) and sixth (2015) European Working Conditions Surveys, we explored correlations between the one-year prevalence of pain in the back and neck/upper limb among people of working age across 33 European countries, and between changes in pain prevalence at the two anatomical sites from 2010 to 2015.</s>
+            <s>Results: Each survey recruited ≥1000 participants per country, response rates ranging from 11 to 78%.</s>
+            <s>In 2010, the estimated one-year population prevalence of back pain ranged from 23% in Ireland to 66% in Portugal, and that of pain in the neck/upper limb from 25% in Ireland to 69% in Finland, the prevalence of pain at the two anatomical sites being correlated across the 33 countries (r = 0.42).</s>
+            <s>A similar pattern was apparent in 2015.</s>
+            <s>For back pain, the percentage change in prevalence from 2010 to 2015 varied from − 41.4% (Hungary) to + 29.6% (Ireland), with a mean across countries of − 3.0%.</s>
+            <s>For neck/upper limb pain, the variation was from − 41.0% (Hungary) to + 44.1% (Romania), with an average of − 0.1%.</s>
+            <s>There was a strong correlation across countries in the change in pain prevalence at the two anatomical sites (r = 0.85).</s>
+            <s>Conclusions: Our findings accord with the hypothesis that international variation in common pain complaints is importantly driven by factors that predispose to musculoskeletal pain in general.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div subtype="dataseer">
+        <head>Background</head>
+        <p>
+          <s>The Cultural and Psychosocial Influences on Disability (CUPID) study has demonstrated wide international variation in the prevalence of disabling regional pain among working populations <ref target="#b0" type="bibr">[1]</ref>
+            <ref target="#b1" type="bibr">[2]</ref>
+            <ref target="#b2" type="bibr">[3]</ref> .</s>
+          <s>This appeared to be driven largely by unidentified causes that predispose to musculoskeletal pain in general rather than being specific to only one or two anatomical sites <ref target="#b1" type="bibr">[2,</ref>
+            <ref target="#b2" type="bibr">3]</ref> .</s>
+          <s>Thus, across 45 occupational groups from 18 countries, the prevalence of disabling low back pain (LBP) correlated with the mean number of anatomical sites other than low back that had earlier been reported as painful <ref target="#b1" type="bibr">[2]</ref> .</s>
+          <s cert="0.9918599724769592" id="dataset-1" type="Tabular data">And after allowance for occupation and potentially confounding psychosocial risk factors, individual risk of disability and sickness absence from LBP was predicted by the number of other anatomical sites which the person had previously reported as painful <ref target="#b1" type="bibr">[2,</ref>
+            <ref target="#b3" type="bibr">4]</ref> .</s>
+          <s>Moreover, similar associations were apparent for pain in the wrist/hand <ref target="#b2" type="bibr">[3]</ref> .</s>
+        </p>
+        <p>
+          <s>If major international differences in disabling musculoskeletal pain are truly a consequence of factors promoting musculoskeletal pain in general, there could be important implications for preventive strategies.</s>
+          <s>It would suggest a need to look beyond conventional ergonomic approaches, which tend to focus on localised mechanical loading of structures such as the spine or wrist/hand.</s>
+          <s>Thus, it would be helpful to know whether correlations between the prevalence of pain in different bodily regions are apparent in other datasets covering multiple countries.</s>
+          <s>The European Working Conditions Survey (EWCS) <ref target="#b4" type="bibr">[5,</ref>
+            <ref target="#b5" type="bibr">6]</ref> offered an opportunity to examine this for pain in the low back and neck/upper limb, and also to explore whether there were correlations across countries in the extent to which the prevalence of pain at these anatomical sites changed over time.</s>
+        </p>
+        <p>
+          <s>We therefore analysed data from two successive rounds of the European Working Conditions Survey (EWCS) <ref target="#b4" type="bibr">[5,</ref>
+            <ref target="#b5" type="bibr">6]</ref> , aiming to assess: a) differences between countries in the prevalence of pain in the back and neck/ upper limb at each of two time points; b) differences between countries in changes over time in the prevalence of back and neck/upper limb pain; and c) the extent to which prevalence rates and changes in prevalence for the two anatomical regions correlated across countries.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Methods</head>
+        <p>
+          <s>The EWCS is a periodic survey conducted by the European Foundation for the Improvement of Living and Working Conditions <ref type="bibr">(Eurofound)</ref> to provide information about the occupational circumstances and health of employees and self-employed workers across Europe.</s>
+          <s>Detailed descriptions of its design and methods have been published elsewhere <ref target="#b4" type="bibr">[5,</ref>
+            <ref target="#b5" type="bibr">6]</ref> .</s>
+        </p>
+        <p>
+          <s id="dataset-1" type="Dataset:Existing dataset">We used data from the fifth and sixth surveys, which were conducted during January to August 2010, and February to December 2015.</s>
+          <s>In each survey, the target population was all residents of participating countries, who were aged 15 years or older (16 or older in Spain, the UK and Norway) and currently in employment.</s>
+          <s>Those eligible to take part were sampled with stratification by geographical region and level of urbanisation, either from population or address registers, or by a random route method with a screening procedure to select the eligible respondent within each household.</s>
+          <s id="dataset-2" type="Tabular data">Information was collected through face-to-face interviews, using a standardised questionnaire, which had been drafted originally in English and then translated into local languages (with checks for accuracy by independent back-translation).</s>
+          <s>The subject matter was wide-ranging, but included two questions on experience in the past year of pain in the back and neck/upper limb ("Over the last 12 months did you have any of the following health problems … C -backache … D -muscular pains in shoulders, neck and/or upper limbs (arms, elbows, wrists, hands etc.)?").</s>
+        </p>
+        <p>
+          <s>To render them more representative of the intended target population, prevalence estimates for each country had been corrected by Eurofound for differences in selection probabilities that were inherent in the sampling strategy, and also by post-stratification weighting for sex, age, region, occupation and sector of economic activity to allow for differences in willingness and ability to take part in the survey <ref target="#b6" type="bibr">[7,</ref>
+            <ref target="#b7" type="bibr">8]</ref> .</s>
+        </p>
+        <p>
+          <s>Statistical analysis was carried out with Stata v.12.1 software (Stata Corp LP 2012, Stata Statistical Software: Release 12.1, College Station TX, USA).</s>
+          <s>We focused on the 33 countries for which data were available from both surveys.</s>
+          <s>Spearman rank correlation coefficients (r) were used to summarise correlations across countries between the prevalence of pain in the back and in the neck/upper limb, and between changes over time in the prevalence of pain at the two sites.</s>
+          <s>The approximate statistical significance of correlation coefficients was determined based on reported total sample sizes by country, but without adjustment for the stratification that was applied in sampling and the use of post stratification weighting (on which we did not have sufficient data).</s>
+        </p>
+        <p>
+          <s>The data that we accessed from the EWCS surveys were retrospective anonymized summary statistics, and ethical approval was not therefore required.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+        <p>
+          <s>Each survey recruited at least 1000 individuals per country <ref target="#tab_0" type="table">(Table 1</ref> ).</s>
+          <s>In 2010, interviews were completed by 42,798 participants, with an overall response rate of 44% (ranging from 31% in Spain to 74% in Latvia).</s>
+          <s>In 2015, 41,811 participants answered the questionnaire, the response rate varying from 11% in Sweden to 78% in Albania, with an average across all countries of 43%.</s>
+        </p>
+        <p>
+          <s>In 2010, the one-year prevalence of back pain ranged from 23% in Ireland to 66% in Portugal, while that of pain in the neck/upper limb varied from 25% in Ireland to 69% in Finland <ref target="#tab_0" type="table">(Table 1)</ref> .</s>
+          <s>Moreover, the prevalence of pain at the two anatomical sites was correlated across the 33 countries (r = 0.42, p = 0.015).</s>
+          <s>A similar pattern was apparent in 2015.</s>
+          <s>The prevalence of back pain ranged from 27% (Hungary) to 60% (France), and that of pain in the neck/upper limb from 30% (Hungary) to 69% (Finland), with a correlation coefficient of 0.56 (p = 0.001).</s>
+          <s>
+            <ref target="#fig_0" type="figure">Figure 1</ref> plots the percentage change in the one-year prevalence of neck/upper limb pain from 2010 to 2015 against that for back pain.</s>
+          <s>For back pain, the percentage change varied from − 41.4% (Hungary) to + 29.6% (Ireland), with a mean across countries of − 3.0%.</s>
+          <s>For neck/upper limb pain, the variation was from − 41.0% (Hungary) to + 44.1% (Romania), with an average of − 0.1%.</s>
+          <s>Again, there was a strong correlation across countries (r = 0.85, p &lt; 0.001).</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>Our analysis shows moderate to strong correlations across 33 European countries between the prevalence of reported pain in the back and neck/upper limb, and between changes over time in the prevalence of pain in the two anatomical regions.</s>
+          <s>These findings are consistent with the hypothesis that international variation in common pain complaints is importantly driven by factors that predispose to musculoskeletal pain in general.</s>
+        </p>
+        <p>
+          <s>The investigation was based on more than 1000 participants per survey in each participating country, and the large differences in the prevalence of symptoms between countries (more than two-fold), and within countries over time (up to 40%), are unlikely to have occurred simply by chance.</s>
+          <s>For example, in a sample of 1000, the 95% confidence interval around a prevalence of 40% would be 37 to 43%.</s>
+        </p>
+        <p>
+          <s>The average response rate to the surveys was less than 50%, and that in Sweden in 2015 was as low as 11%.</s>
+          <s>Adjustments were made for differences in participation by sex, age, region, occupation and sector of economic activity.</s>
+          <s>Moreover, the questions about pain were only a small component of a wide-ranging questionnaire.</s>
+          <s>Nevertheless, it is possible that those who took part were unrepresentative in their experience of pain.</s>
+          <s>There was no systematic difference in the prevalence of pain by response rate (overall correlation coefficients across all countries and both surveys = − 0.02, p = 0.89 for back pain and − 0.30 p = 0.015 for neck/upper limb pain), but for both anatomical regions, within-country changes in prevalence from 2010 to 2015 correlated with changes in response rate between the two surveys (r = − 0.42, p = 0.014 for back pain and r = − 0.43, p = 0.013 for neck/upper limb pain).</s>
+          <s>Thus, while within-survey correlations in the prevalence of pain at the two anatomical sites are unlikely to have been influenced by differences in response rate, the correlation between changes over time in the prevalence of pain at the two sites may have been somewhat inflated.</s>
+          <s>Another possible source of bias might be differences in understanding of terms for pain when questionnaires were translated into local languages.</s>
+          <s>However, that could not account for the changes in prevalence that were observed within countries over time, or for the strong correlation in such changes between pain in two distinct anatomical regions.</s>
+        </p>
+        <p>
+          <s>It could be that pain in the neck/shoulder renders people more prone to pain also in the back, or vice versa.</s>
+          <s>For example, pain in one region might cause individuals to modify their postures or activities in a way that predisposes to pain elsewhere, or it might make them more aware of, and willing to report pain at other sites.</s>
+          <s>We do not know what proportion of participants in the EWCS surveys reported pain in both the back and neck/upper limb, but in the CUPID study, multisite pain was common <ref target="#b8" type="bibr">[9]</ref> .</s>
+        </p>
+        <p>
+          <s>Alternatively, the observed correlations could reflect the effects of shared causes for pain at multiple anatomical sites.</s>
+          <s>Our analysis does not indicate what those causes might be, but the relationship between pain at different sites in the CUPID study was present in people carrying out similar occupational activities, and after adjustment for established risk factors such as low mood, somatising tendency, fear-avoidance beliefs and psychosocial aspects of work <ref target="#b1" type="bibr">[2,</ref>
+            <ref target="#b2" type="bibr">3]</ref> .</s>
+          <s>The shared causes could be unrecognised biomechanical factors, or perhaps more likely, physiological or psychological determinants of pain perception.</s>
+        </p>
+        <p>
+          <s>Whatever the nature of the causes, our results suggest that their impact can change importantly over time periods as short as five years, and that it has been going up in some European countries (e.g.</s>
+          <s>Ireland, Romania and Luxembourg) while declining in others (e.g.</s>
+          <s>Portugal, Czech Republic and Italy).</s>
+          <s>If so, they may be amenable to preventive interventions, with potentially major benefits.</s>
+          <s>Research is now needed to identify and characterise those unidentified causes, focusing on factors that could predispose to musculoskeletal pain in general rather than being site-specific.</s>
+        </p>
+      </div>
+      <div>
+        <head>Conclusions</head>
+        <p>
+          <s>Our findings provide independent corroboration that major differences in the prevalence of musculoskeletal pain in different anatomical regions correlate across countries.</s>
+          <s>As such, they support the hypothesis that international variation in common pain complaints is importantly driven by factors that predispose to musculoskeletal pain in general.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig. 1</head>
+        <label>1</label>
+        <figDesc>Percentage change from 2010 to 2015 in one-year prevalence of back and neck/upper limb pain by country</figDesc>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_0">
+        <head>Table 1</head>
+        <label>1</label>
+        <figDesc>Response rates and prevalence of musculoskeletal pain by country and year of survey</figDesc>
+        <table>Country 
+2010 
+2015 
+
+Number 
+interviewed 
+
+Response 
+rate (%) 
+
+One-year prevalence of pain (%) 
+Number 
+interviewed 
+
+Response 
+rate 
+
+One-year prevalence of pain (%) 
+
+Back 
+Neck-upper limb 
+Back 
+Neck-upper limb 
+
+Albania (AL) 
+1000 
+58 
+39 
+43 
+1002 
+78 
+31 
+39 
+
+Austria (AT) 
+1003 
+32 
+46 
+43 
+1028 
+47 
+47 
+44 
+
+Belgium (BE) 
+4001 
+34 
+44 
+40 
+2587 
+36 
+46 
+45 
+
+Bulgaria (BG) 
+1014 
+66 
+34 
+33 
+1064 
+64 
+38 
+41 
+
+Croatia (CR) 
+1100 
+43 
+49 
+46 
+1012 
+50 
+50 
+51 
+
+Cyprus (CY) 
+1000 
+66 
+46 
+45 
+1003 
+69 
+45 
+49 
+
+Czech Republic (CZ) 
+1000 
+47 
+55 
+44 
+1002 
+63 
+40 
+31 
+
+Denmark (DK) 
+1069 
+58 
+40 
+50 
+1002 
+26 
+45 
+58 
+
+Estonia (EE) 
+1000 
+56 
+56 
+61 
+1015 
+59 
+48 
+57 
+
+Finland (FI) 
+1028 
+47 
+50 
+69 
+1001 
+33 
+48 
+69 
+
+France (FR) 
+3046 
+34 
+53 
+50 
+1527 
+37 
+60 
+57 
+
+FYROM a 
+1100 
+68 
+45 
+49 
+1011 
+75 
+43 
+42 
+
+Germany (DE) 
+2133 
+56 
+51 
+43 
+2093 
+51 
+42 
+35 
+
+Greece (GR) 
+1037 
+40 
+43 
+39 
+1007 
+64 
+38 
+39 
+
+Hungary (HU) 
+1006 
+47 
+47 
+50 
+1023 
+58 
+27 
+30 
+
+Ireland (IE) 
+1003 
+50 
+23 
+25 
+1057 
+54 
+30 
+30 
+
+Italy (IT) 
+1500 
+34 
+51 
+48 
+1402 
+61 
+41 
+35 
+
+Latvia (LV) 
+1001 
+74 
+58 
+53 
+1004 
+62 
+51 
+46 
+
+Lithuania (LT) 
+1004 
+54 
+52 
+39 
+1004 
+62 
+51 
+40 
+
+Luxembourg (LU) </table>
+      </figure>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>We thank Andrea Farioli for his helpful advice on sources of data.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <p>
+            <s>Authors' contributions ER carried out the abstraction of data and statistical analysis, and wrote the initial draft of the manuscript.</s>
+            <s>GN supervised the statistical analysis.</s>
+            <s>DC supervised the design and conduct of the study and revised the initial draft of the manuscript.</s>
+            <s>All authors contributed to revision and finalisation of the manuscript.</s>
+            <s>All authors read and approved the final manuscript.</s>
+          </p>
+        </div>
+        <div>
+          <head>Ethics approval and consent to participate</head>
+          <p>
+            <s>The data that we accessed from the EWCS surveys were retrospective anonymized summary statistics, and ethical approval was not therefore required.</s>
+          </p>
+        </div>
+        <div>
+          <head>Consent for publication</head>
+          <p>
+            <s>Not applicable.</s>
+          </p>
+        </div>
+        <div>
+          <head>Competing interests</head>
+          <p>
+            <s>The authors declare no competing interests.</s>
+          </p>
+        </div>
+        <div>
+          <head>Publisher's Note</head>
+          <p>
+            <s>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+          <p>
+            <s>Author details</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Disabling musculoskeletal pain in working populations: is it the job, the person or the culture?</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Coggon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Ntani</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Palmer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Pain</title>
+              <imprint>
+                <biblScope unit="volume">154</biblScope>
+                <biblScope from="856" to="63" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Drivers of international variation in prevalence of disabling low back pain: findings from the cultural and psychosocial influences on disability study</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Coggon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Palmer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Ntani</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Felli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Harari</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Quintana</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Eur J Pain</title>
+              <imprint>
+                <biblScope unit="volume">23</biblScope>
+                <biblScope from="35" to="45" unit="page"/>
+                <date type="published" when="2019"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <monogr>
+              <title level="m" type="main">Determinants of international variation in the prevalence of disabling wrist and hand pain</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Coggon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Ntani</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Walker-Bone</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Felli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Harari</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Barrero</surname>
+                </persName>
+              </author>
+              <imprint/>
+            </monogr>
+            <note>Submitted for publication</note>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <monogr>
+              <title level="m" type="main">Associations of sickness absence for pain in the low back, neck and shoulders with wider propensity to pain</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Coggon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Ntani</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Walker-Bone</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Felli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Harari</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Barrero</surname>
+                </persName>
+              </author>
+              <imprint/>
+            </monogr>
+            <note>Submitted for publication</note>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <monogr>
+              <author>
+                <persName>
+                  <surname>Eurofound</surname>
+                </persName>
+              </author>
+              <ptr target="https://www.eurofound.europa.eu/surveys/european-working-conditions-surveys/fifth-european-working-conditions-survey-2010.Accessed11"/>
+              <title level="m">Fifth European Working Conditions Survey -2010</title>
+              <imprint>
+                <date type="published" when="2018-01"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <monogr>
+              <title level="m" type="main">Sixth European Working Conditions Survey</title>
+              <author>
+                <persName>
+                  <surname>Eurofound</surname>
+                </persName>
+              </author>
+              <ptr target="https://www.eurofound.europa.eu/surveys/european-working-conditions-surveys/sixth-european-working-conditions-survey-2015.Accessed11"/>
+              <imprint>
+                <date type="published" when="2015-01"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <monogr>
+              <ptr target="https://www.eurofound.europa.eu/sites/default/files/ef_files/surveys/ewcs/2010/documents/weighting.pdf.Accessed11"/>
+              <title level="m">th European Working Conditions Survey</title>
+              <imprint>
+                <date type="published" when="2010-01"/>
+              </imprint>
+            </monogr>
+            <note type="report_type">Weighting report</note>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <monogr>
+              <ptr target="https://www.eurofound.europa.eu/sites/default/files/ef_survey/field_ef_documents/6th_ewcs_2015_-_weighting_report.pdf.Accessed11"/>
+              <title level="m">th European Working Conditions Survey: Weighting report</title>
+              <imprint>
+                <date type="published" when="2018-01"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Patterns of multi-site pain and associations with risk factors</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Coggon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Ntani</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Palmer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Felli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Harari</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Barrero</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Pain</title>
+              <imprint>
+                <biblScope unit="volume">154</biblScope>
+                <biblScope from="1769" to="77" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

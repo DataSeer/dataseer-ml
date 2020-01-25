@@ -1,0 +1,1810 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:41+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">DeepFocus: Detection of out-of-focus regions in whole slide digital images using deep learning</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author role="corresp">
+              <persName>
+                <forename type="first">Caglar</forename>
+                <surname>Senaras Id</surname>
+              </persName>
+              <email>caglarsenaras@gmail.com</email>
+              <affiliation key="aff0">
+                <orgName key="dep1" type="department">Center for Biomedical Informatics</orgName>
+                <orgName key="dep2" type="department">Wake Forest School of Medicine</orgName>
+                <address>
+                  <addrLine>Winston-Salem</addrLine>
+                  <region>NC</region>
+                  <country>United States of America</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">M</forename>
+                <surname>Khalid</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Khan</forename>
+                <surname>Niazi</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName key="dep1" type="department">Center for Biomedical Informatics</orgName>
+                <orgName key="dep2" type="department">Wake Forest School of Medicine</orgName>
+                <address>
+                  <addrLine>Winston-Salem</addrLine>
+                  <region>NC</region>
+                  <country>United States of America</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Gerard</forename>
+                <surname>Lozanski</surname>
+              </persName>
+              <affiliation key="aff1">
+                <orgName type="department">Department of Pathology</orgName>
+                <orgName type="institution">The Ohio State University Wexner Medical</orgName>
+                <address>
+                  <settlement>Columbus</settlement>
+                  <region>OH</region>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">‡</forename>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Metin</forename>
+                <forename type="middle">N</forename>
+                <surname>Gurcan</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName key="dep1" type="department">Center for Biomedical Informatics</orgName>
+                <orgName key="dep2" type="department">Wake Forest School of Medicine</orgName>
+                <address>
+                  <addrLine>Winston-Salem</addrLine>
+                  <region>NC</region>
+                  <country>United States of America</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">DeepFocus: Detection of out-of-focus regions in whole slide digital images using deep learning</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <note>RESEARCH ARTICLE United States of America ‡ These authors are joint senior authors on this work. *</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>The development of whole slide scanners has revolutionized the field of digital pathology.</s>
+            <s>Unfortunately, whole slide scanners often produce images with out-of-focus/blurry areas that limit the amount of tissue available for a pathologist to make accurate diagnosis/prognosis.</s>
+            <s>Moreover, these artifacts hamper the performance of computerized image analysis systems.</s>
+            <s>These areas are typically identified by visual inspection, which leads to a subjective evaluation causing high intra-and inter-observer variability.</s>
+            <s>Moreover, this process is both tedious, and time-consuming.</s>
+            <s>The aim of this study is to develop a deep learning based software called, DeepFocus, which can automatically detect and segment blurry areas in digital whole slide images to address these problems.</s>
+            <s>DeepFocus is built on TensorFlow, an open source library that exploits data flow graphs for efficient numerical computation.</s>
+            <s>DeepFocus was trained by using 16 different H&amp;E and IHC-stained slides that were systematically scanned on nine different focal planes, generating 216,000 samples with varying amounts of blurriness.</s>
+            <s>When trained and tested on two independent datasets, DeepFocus resulted in an average accuracy of 93.2% (± 9.6%), which is a 23.8% improvement over an existing method.</s>
+            <s>DeepFocus has the potential to be integrated with whole slide scanners to automatically re-scan problematic areas, hence improving the overall image quality for pathologists and image analysis algorithms.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Introduction</head>
+        <p>
+          <s>High-quality digital slides are becoming a ubiquitous and indispensable clinical workflow and research in pathology.</s>
+          <s>Along with spatial resolution and color depth, image sharpness is often used to gauge the quality of digital slides.</s>
+          <s>Most modern scanners come equipped with autofocus (AF) optics system to select focal planes to accurately capture three-dimensional tissue morphology as the best two-dimensional digital image.</s>
+          <s>AF optics systems determine a set of focus points at different focal planes to be perfectly aligned with tissue height that may slightly vary within a slide.</s>
+          <s>From these focal planes, scanners capture images to produce sharp tissue representation.</s>
+          <s>However, commercial scanners may still produce digital images with out-of-a1111111111 a1111111111 a1111111111 a1111111111 a1111111111 focus/blurry areas if their AF optics system erroneously selects focus points that lie in a different plane than the proper height of the tissue <ref target="#b0" type="bibr">[1]</ref> .</s>
+          <s>The distance of the focus points from the actual tissue plane is proportional to the amount of blurriness, i.e. the larger the distance, the more blurriness it will result.</s>
+          <s>When parts of an image are blurry, this affects the performance of both pathologists and automated image analysis algorithms.</s>
+          <s>If these areas can be identified, the slides can be rescanned with additional focus points in areas of blurring.</s>
+          <s>If the amount of blurring is minimal (acceptable levels are to be determined in advance), the resulting images can still be presented to pathologists or algorithms.</s>
+          <s>Currently, blurry regions are identified manually, a process that is subjective, tedious, error-prone, and time-consuming <ref target="#b1" type="bibr">[2]</ref> .</s>
+          <s>It also disrupts the workflow as it will be easy to miss blurry regions until the time of clinical review, which will delay the diagnosis of the case.</s>
+        </p>
+        <p>
+          <s>In recent years, a few systems have been developed to identify scanning artifacts automatically from digital slides <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b2" type="bibr">[3]</ref>
+            <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref> .</s>
+          <s>Walkowski and Szymas <ref target="#b2" type="bibr">[3]</ref> developed an algorithm to compare the quality of digital slides generated by different scanners.</s>
+          <s>They scanned the same glass slide with multiple scanners and noticed that each scan resulted in a constant amount of translation in the planer space, which made it difficult to fairly compare among digital slides.</s>
+          <s>The resulting digital slides were manually registered to compensate for the constant translation.</s>
+          <s>To reduce the computational complexity, the algorithm randomly selected relatively small areas that correspond to the same fragments among digital images of the same slide.</s>
+          <s>In these small areas, Gray Level Co-occurrence Matrix (GLCM) was computed, which aggregated the distribution of co-occurring values <ref target="#b6" type="bibr">[7]</ref> .</s>
+          <s>The authors also used the GLCM to compute contrast and entropy statistics, which were then used to compare the quality of images captured by different scanners.</s>
+          <s>Although the authors did not explicitly propose an algorithm to identify blurry regions, the algorithm can easily be adapted to identify such regions.</s>
+        </p>
+        <p>
+          <s>In another study, Zerbe et al. developed a distributed image analysis system to calculate the amount of sharpness of image patches, classifying each patch into one of the four sharpness categories: excellent, okay, review and defective <ref target="#b4" type="bibr">[5]</ref> .</s>
+          <s>The sharpness was computed by a modified Tenenbaum gradient (Tenengrad) operator <ref target="#b7" type="bibr">[8]</ref> .</s>
+          <s>In a similar study, Hashimoto et al. proposed a method that is capable of assessing both blur and noise by an evaluation index <ref target="#b3" type="bibr">[4]</ref> .</s>
+          <s>The index was calculated by linear regression analysis using the sharpness and noise information from the training dataset.</s>
+          <s>The training dataset was selected according to the intended purpose of the image quality evaluation, i.e. clinical usage or image analysis.</s>
+          <s>The method was tested with both objective and subjective image quality measurements on small regions sampled from a single hematoxylin and eosin (H&amp;E) digital slide.</s>
+          <s>Because both training and test patches were extracted from the same H&amp;E digital slide, it's hard to assess how generalizable this method is.</s>
+        </p>
+        <p>
+          <s>Lahrmann et al. presented an algorithm to overcome the difficulties of the liquid-based cytology scanning <ref target="#b5" type="bibr">[6]</ref> .</s>
+          <s>The algorithm first performs a systematic analysis of the height variations within cytological samples in the z-dimension.</s>
+          <s>Then, it performs a cell-based analysis to decide whether a focus point is valid, i.e. a cell, not an artifact, is detected.</s>
+          <s>After the sample is imaged with the focus points, the algorithm divides the image into 16 sub-regions and then detects cells in each sub-region by their color intensity values.</s>
+          <s>In the experiments, for each sub-region, 200 of the detected cells were classified as sharp or blurred by a Support Vector Machine classifier using five gradient based features.</s>
+          <s>The percentage of in-focus cells (0-100%) defines a score for each region, and a combination of these scores in a slide determines its sharpness.</s>
+          <s>If the image quality is below a threshold, the algorithm reselects other focus points and starts the sharpness calculation again.</s>
+        </p>
+        <p>
+          <s>Lopez et al. proposed another approach to detect blurred regions due to an incorrect (or suboptimal) focusing during acquisition <ref target="#b0" type="bibr">[1]</ref> .</s>
+          <s>To train their algorithm, they used 48,000 tiles of size 200x200 pixels at 20x magnification.</s>
+          <s>For each tile, the algorithm extracted a set of features: Haralick features from GLCM and the Tenengrad operator.</s>
+          <s>Using these features, a Decision Tree classifies each test tile as in-focus or blurred.</s>
+          <s>To reduce the number of false positives, the algorithm applied a gray-scale morphological closing followed by a gray-scale morphological opening with a 3x3 structuring element.</s>
+          <s>To validate the method, an expert randomly selected blurry and sharp tiles from digital slides of H&amp;E and immunohistochemically (IHC) stained glass slides and evaluated the classification performance on these 3,438 tiles.</s>
+          <s>A similar approach was proposed by Jimenez et al. which starts by extracting the tissue map using Otsu thresholding <ref target="#b1" type="bibr">[2]</ref> .</s>
+          <s>The algorithm divided the tissue into 64x64 pixel tiles.</s>
+          <s>For each tile, the Cumulative Probability of Blur Detection contrast, entropy, and Tenengrad statistics were calculated.</s>
+          <s>Each of these statistical measures was subjected to thresholding to decide if the tile under consideration is in focus or blurry.</s>
+          <s>Ties were resolved by the majority voting algorithm <ref target="#b8" type="bibr">[9]</ref> .</s>
+          <s>To reduce classification errors, the resulting map was smoothed by application of morphological closing followed by a morphological opening with a disc-shaped structuring element.</s>
+          <s>Although all these studies have shown promising results, they were not systematically validated to justify how they generalize to unseen data, or how well they perform for varying amounts of blurriness.</s>
+          <s>To illustrate the complexity of the blur detection problem, we randomly selected 80 tiles from four different slides (with different amount of blurring) and subjected them to a blind deconvolution process <ref target="#b9" type="bibr">[10]</ref> .</s>
+          <s>We initialized the blind deconvolution with a Gaussian function (zero mean and standard deviation two) and estimated the deblurring function via maximum likelihood.</s>
+          <s>
+            <ref target="#fig_0" type="figure">Fig 1 shows</ref> the mean and standard deviation of the resulting Gaussian deburring functions.</s>
+          <s>From this figure, it is evident that a family of deburring functions would be necessary to recover the correct amount of blurring from histology specimens.</s>
+          <s>Considering variation and the amount of non-linearity involved in the process, we have decided to develop a deep learning <ref target="#b10" type="bibr">[11]</ref> based approach, which is a better choice than the conventional image analysis methods that were considered for this task <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b2" type="bibr">[3]</ref>
+            <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref> .</s>
+          <s>The success of deep learning over conventional image analysis methods <ref target="#b11" type="bibr">[12,</ref>
+            <ref target="#b12" type="bibr">13]</ref> is mainly attributed to its ability to identify discernable features without human intervention.</s>
+          <s>Deep learning has recently been successfully applied in digital pathology to detect and segment nuclei and for diagnostic classification <ref target="#b13" type="bibr">[14]</ref>
+            <ref target="#b14" type="bibr">[15]</ref>
+            <ref target="#b15" type="bibr">[16]</ref>
+            <ref target="#b16" type="bibr">[17]</ref> .</s>
+          <s>However, to the best of our knowledge, deep learning has not been yet used to identify blurry regions from digital pathology images.</s>
+        </p>
+        <p>
+          <s>In this paper, we propose a novel convolutional neural network to atuomatically identify out of focus regions in histopathological images.</s>
+          <s>Our method is novel in terms of: 1) data curation, 2) generalization to different types of tissues, 3) being agnostic to H&amp;E and IHC staining, 4) and in terms of algorithimic eficiency.</s>
+        </p>
+      </div>
+      <div>
+        <head>Materials</head>
+      </div>
+      <div subtype="dataseer">
+        <head>Training and validation datasets</head>
+        <p>
+          <s>Our training dataset contained four digital slides with different stains (H&amp;E, Ki67, CD21, and CD10) from four different patients, i.e. there were 16 slides.</s>
+          <s cert="0.9004073143005371" id="dataset-1" type="Image:Microscopy">For each slide, we scanned a region of interest (ROI) of approximately 6 mm 2 area, with Aperio ScanScope (Leica Biosystems Inc., Buffalo Grove, IL) at a 40x magnification where the pixel size is 0.2461 μm x 0.2461 μm.</s>
+          <s>For each ROI, a trained operator manually selected 25 focus points and fine-tuned the autofocus values of the selected points to ensure that the focal planes align well with the tissue height.</s>
+          <s>Then, the operator perturbed the focus points with a fixed offset value, O, where O 2 {−2.5 μm, −2.0 μm, −1.5 μm, −0.5 μm, 0.5 μm, 1.5 μm, 2 μm, 2.5 μm} <ref target="#fig_1" type="figure">(Fig 2)</ref> .</s>
+          <s>This method enabled us to obtain the same ROI with different focal planes, some of which not aligning with the proper tissue height, resulting in different levels of blurring.</s>
+          <s>Finally, all of these ROI images were divided into 64x64 pixels size tiles and 2500 of these tiles were randomly selected, resulting in a total of 360,000 tiles.</s>
+          <s>In order to create ground truth, the tiles whose offset values between [-0.5 μm, 0.5 μm] are labeled as in-focus and the rest of the images were labeled as blurry.</s>
+          <s>The in-focus range (i.e.</s>
+          <s>[-0.5 μm, 0.5 μm]) was empirically determined as it was practically impossible for an expert observer to differentiate between these ROIs visually, and interand intra-reader variability could play a role.</s>
+          <s>Since the number of blurry tiles (240,000) was larger than the number of in-focus tiles (120,000), 108,000 sample tiles sampled from four different stains, were randomly selected from each class for training to prevent training set imbalance in categories.</s>
+          <s>Lastly, ten percent of the sample tiles (i.e.</s>
+          <s>21,600) were selected as the validation set.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Testing dataset</head>
+        <p>
+          <s id="dataset-2" type="Tabular data">For testing, we used two different datasets, the first of which was generated by the same scanner that produced our training data.</s>
+          <s cert="0.6389546990394592" id="dataset-2" type="Tabular data">We acquired six additional digital slides (3 H&amp;E, 2 Ki67, and 1 CD10 cases) to form the first test dataset.</s>
+          <s>
+            <ref target="#fig_1" type="figure">Fig 2 shows</ref> some of the example images cropped from these digital slides with different focus offset values.</s>
+          <s>The digital slides resulted in a total of 218,304 in-focus and 436,608 blurred tiles.</s>
+          <s>To compare our results with those in presented in Lopez et al.'s work <ref target="#b0" type="bibr">[1]</ref> , we down-sampled the images to 20x magnification and obtained 200x200 tiles (6,168 in-focus tiles and 12,336 blurred tiles).</s>
+          <s>Importantly, the tile size used in <ref target="#b0" type="bibr">[1]</ref> is 36 times coarser than that of our approach.</s>
+        </p>
+        <p>
+          <s cert="0.2991587221622467" id="dataset-3" type="Image">The second test dataset, which was acquired with a Hamamatsu NanoZoomer 2.0HT scanner (Hamamatsu, Japan), consists of two H&amp;E slides.</s>
+          <s>Because these images were acquired at another facility, the amount of blurring was completely random; therefore, we visually evaluated the performance of the proposed method on these slides for comparison.</s>
+        </p>
+      </div>
+      <div>
+        <head>The deep learning architecture</head>
+        <p>
+          <s>In this study, we designed a convolutional neural network based system called DeepFocus, to classify each image tile as either in-focus or blurry.</s>
+          <s>DeepFocus consists of five convolution layers, three max-pooling layers (after the third, fourth and fifth convolution layers) and fully connected layers <ref target="#fig_2" type="figure">(Fig 3)</ref> .</s>
+          <s>The last layer in DeepFocus is a softmax, which results in a probability of a tile belonging to either of the two classes.</s>
+          <s>We defined the objective function as categorical cross entropy between the label and the prediction.</s>
+        </p>
+      </div>
+      <div>
+        <head>Preprocessing</head>
+        <p>
+          <s>Data preprocessing plays a critical role in many deep learning algorithms <ref target="#b17" type="bibr">[18]</ref> .</s>
+          <s>Several studies have reported better results when data is scaled between zero and one <ref target="#b18" type="bibr">[19]</ref> .</s>
+          <s>For this reason, we linearly scaled the color intensities between 0 and 1.</s>
+          <s>We further applied zero-centering to transform the data in such a manner that all images in the dataset have the same average value of zero.</s>
+        </p>
+      </div>
+      <div>
+        <head>Data augmentation</head>
+        <p>
+          <s>With the exception of transfer learning, deep networks often require a huge number of training samples to achieve satisfactory classification accuracy.</s>
+          <s>Because of the limited number of images in our training dataset, we employed commonly used data augmentation approaches</s>
+        </p>
+      </div>
+      <div>
+        <head>Design details and parameter optimization</head>
+        <p>
+          <s>During the training, we used Stochastic gradient descent (SGD) <ref target="#b19" type="bibr">[20]</ref> and mini-batches consisting of 64 tiles.</s>
+          <s>The operation performed by a layer, x, can be represented as x = g(Wu+b) where W (weights) and b(bias) are the parameters to be learned, g is an activation function, and u is the input vector from the previous layer.</s>
+          <s>At each layer, we used Rectifier Linear Unit (ReLU), g = max(0,Wu + b), as the activation function as its simplistic nature coupled with SGD results in faster learning <ref target="#b20" type="bibr">[21]</ref> .</s>
+        </p>
+        <p>
+          <s>Like other optimization algorithms, SGD requires initial values for model parameters and each layer's input is affected by the parameters of the previous layers <ref target="#b21" type="bibr">[22]</ref> .</s>
+          <s>As a result, a small change in the previous layer's parameters is amplified as the network becomes deeper.</s>
+          <s>The inconsistency in the distribution of layers' inputs causes a problem, called internal covariate shift, since the layers need to adapt to the new distribution continuously.</s>
+          <s>To mitigate the effects of this problem, we used Batch Normalization (BN) <ref target="#b21" type="bibr">[22]</ref> .</s>
+          <s>For a given mini-batch, the input vector of a layer was represented by u.</s>
+          <s>We calculated the mean (u i ) and variance (s 2 i ) of each feature, i, at each layer.</s>
+          <s>Subsequently, we normalized u i as followŝ</s>
+        </p>
+        <formula xml:id="formula_0">u i ¼ u i À u i ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffiffi s 2 i þ � p ;<label>ð1Þ</label>
+        </formula>
+        <p>
+          <s>where � is a small constant (� = e -15 ).</s>
+          <s>To increase the representational power, we scaled and shifted the normalized value by using additional tunable parameters γ and β:</s>
+        </p>
+        <formula xml:id="formula_1">BN g;b ðu i Þ ¼ gû i þ b;<label>ð2Þ</label>
+        </formula>
+        <p>
+          <s>Although Ioffe used the BN before RELU in <ref target="#b21" type="bibr">[22]</ref> , there is growing evidence that BN results in quicker convergence if applied after ReLU <ref target="#b17" type="bibr">[18]</ref> ; therefore, we opted for BN after ReLU.</s>
+          <s>To reduce the risk of overfitting, we used Dropout regularization in the fully connected layers <ref target="#b22" type="bibr">[23]</ref> .</s>
+          <s>Training with BN is known to have a regularization effect, so we reduced the dropout strength to p = 0.2 <ref target="#b22" type="bibr">[23]</ref> .</s>
+          <s>We implemented DeepFocus using TensorFlow <ref target="#b23" type="bibr">[24]</ref> .</s>
+        </p>
+        <p>
+          <s>The training phase, ran on the Owens supercomputer at Ohio Supercomputer Center (OSC) (Tesla P100-PCIE-16GB), took about 180 seconds per epoch.</s>
+          <s>From the training, we realized that the underlying function is relatively smooth as SGD was able to achieve relatively high classification accuracy in a few iterations.</s>
+          <s>We stopped the training at the end of 20 th epoch since the validation accuracy stopped increasing.</s>
+          <s>The hyper-parameters of the architecture (kernel size, the number of layers and learning rates) were tuned using grid search and cross-validation on the validation <ref target="#b24" type="bibr">[25]</ref> .</s>
+          <s>
+            <ref target="#tab_2" type="table">Table 1</ref> shows the explored and selected values for our hyper-parameters.</s>
+          <s>DeepFocus: Detection of out-of-focus regions in whole slide digital images using deep learning</s>
+        </p>
+      </div>
+      <div>
+        <head>Evaluation methodology</head>
+        <p>
+          <s>To evaluate the proposed method, we considered a tile as in-focus if the probability of being in-focus is higher than 0.5, then we measured the accuracy:</s>
+        </p>
+        <formula xml:id="formula_2">Accuracy ¼ TP þ TN P þ N<label>ð3Þ</label>
+        </formula>
+        <p>
+          <s>where TP, TN, P, and N correspond to the numbers of correctly classified in-focus tiles, the number of correctly classified blurry tiles, the total number of in-focus tiles and total number blurry tiles, respectively.</s>
+          <s>Additionally, the Receiver Operating Characteristic (ROC) curve is plotted to observe TP and TN rates <ref target="#fig_4" type="figure">(Fig 4)</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Results and discussion</head>
+      </div>
+      <div>
+        <head>Comparison with a prior method for different offset values</head>
+        <p>
+          <s>We compared our proposed method, with state of the art algorithm, proposed by Lopez et.</s>
+          <s>al. <ref target="#b0" type="bibr">[1]</ref> Since the Lopez algorithm is designed to analyze 200x200 images captured at 20X magnification, we downsampled the test images to accommodate for these differences.</s>
+          <s>
+            <ref target="#tab_4" type="table">Table 2</ref> shows the average accuracy values of the two different approaches for different focus offset values.</s>
+          <s>The fourth column shows the difference in accuracy between the two approaches.</s>
+          <s>On average, DeepFocus is 23.8% more accurate than Lopez's approach <ref target="#b0" type="bibr">[1]</ref> and the variabilty (as measured by σ) is less.</s>
+          <s>In our previous studies, we did extensive analysis of optimization approaches and how they can help with achieve better accuracies <ref target="#b25" type="bibr">[26,</ref>
+            <ref target="#b26" type="bibr">27]</ref> .</s>
+          <s>Considering that our current performance is 93.2% and the state of the art performance is 69.4%, the current optimization seems to be satisfactory.</s>
+          <s>
+            <ref target="#tab_3" type="table">Table 3</ref> compares of the proposed approach (DeepFocus) and Lopez's approach <ref target="#b2" type="bibr">[3]</ref> for each slide on the test dataset.</s>
+          <s>This experiment revealed that DeepFocus performs better than the DeepFocus: Detection of out-of-focus regions in whole slide digital images using deep learning</s>
+        </p>
+      </div>
+      <div>
+        <head>Slide-based comparison</head>
+        <p>
+          <s>Lopez's approach <ref target="#b0" type="bibr">[1]</ref> for all offset values between -2.5 and 2.5.</s>
+          <s>We also observed that Lopez's approach struggled in identifying moderately blurry regions (i.e.</s>
+          <s>0.5 μm &lt; |O| &lt; 2 μm).</s>
+          <s>It is worth mentioning that the standard deviation of DeepFocus for the offset values in the range [−2 μm and −1.5μm] is higher than the other offset values.</s>
+          <s>Due to the finite thickness of the slides (5 μm), digital images represent nuclei in different focal planes.</s>
+          <s>Therefore, with negative offset values, the scanner focused on some of the nuclei and created a sharper image for these regions.</s>
+          <s>The Slide 1 and Slide 4 demonstrate typical examples for this type of problem <ref type="figure">(Fig 5)</ref> .</s>
+          <s>Interestingly, Lopez's approach failed to identify in-focus regions in Slide 1.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Evaluation on a different scanner</head>
+        <p>
+          <s cert="0.7962755560874939" id="dataset-4" type="Tabular data">We also evaluated the robustness of the DeepFocus on full digital slides in the second test dataset that was acquired with a different scanner.</s>
+          <s>The images were approximately of size 95,000 x 70,000 pixels.</s>
+          <s>To avoid analyzing the tiles outside the tissue area, we find the tissue map at 1x magnification of the entire slide by Otsu Thresholding <ref target="#b27" type="bibr">[28]</ref> .</s>
+          <s>Once the tissue is detected, we classified each non-overlapping tile (64x64 pixels) using DeepFocus to create a binary mask of DeepFocus: Detection of out-of-focus regions in whole slide digital images using deep learning the same size an input digital slide.</s>
+          <s>
+            <ref type="figure">Fig 6B,</ref> shows an example mask for one of the whole slide images <ref type="figure">(Fig 6A)</ref> where the green and red colors represent in-focus and blurry regions, respectively.</s>
+          <s>As proposed in <ref target="#b0" type="bibr">[1]</ref> , this mask can be used to generate new focus points for the scanner, resulting in a higher quality image.</s>
+          <s>
+            <ref type="figure">Fig 6C shows</ref> the output of the Lopez's approach for the same image.</s>
+          <s>
+            <ref type="figure">Fig 6D shows</ref> some of the in-focus and blurred regions identified by DeepFocus and how these areas are labeled by the Lopez's algorithm.</s>
+        </p>
+      </div>
+      <div>
+        <head>Functional comparision with existing methods</head>
+        <p>
+          <s>In this study, we designed a new convolutional neural network, called DeepFocus, to identify blurry regions.</s>
+          <s>Unlike prior studies, we systematically acquired data at different focal planes to vary the amount of blurring in a controlled manner, and performed rigorous validation on independent test sets.</s>
+          <s>While existing algorithms can take a long time to run, we managed to achieve reasonable execution times (around 10 minutes) for a full digital slide (16GB) at 40x magnification.</s>
+          <s>We also demonstrated that our method generalizes to multiple stain types (i.e. both H&amp;E and IHC).</s>
+          <s>Lastly, we compared the proposed method with a recently published study <ref target="#b0" type="bibr">[1]</ref> in terms of accuracy, robustness and computational complexity.</s>
+          <s>Unlike DeepFocus, DeepFocus: Detection of out-of-focus regions in whole slide digital images using deep learning the other apporoach was designed to work at 20x magnification and the analyzed unit area was 36 times larger than our's, resulting in a coarser output.</s>
+          <s>A functional comparison between DeepFocus and the previous methods is summarized in <ref type="table">Table 4</ref> .</s>
+        </p>
+        <p>
+          <s>The algorithm can be used in conjunction with scanners and image analysis algorithms to identify out-of-focus regions.</s>
+          <s>Likewise, a pathologist can use it to automatically exclude outof-focus regions from further analysis.</s>
+          <s>To make our proposed method responsive to the needs of different kinds of users (e.g.</s>
+          <s>engineers, image analysts, or pathologists), it needs to have a low computational overhead.</s>
+          <s>To improve computational efficiency to the proposed method, we opted for tile sizes of 64x64 pixels.</s>
+          <s>This tile size provides a good tradeoff between computational efficiency and granularity/accuracy of identifying out-of-focus regions.</s>
+          <s>If a higher level of accuracy is required, we can opt for either overlapping tiles or relatively small tiles but at the cost of higher computational overhead.</s>
+        </p>
+        <p>
+          <s>Like most of the deep learning approaches, DeepFocus involves matrix multiplication and convolution, which can be parallelized.</s>
+          <s>Since GPU has a massively parallel architecture compared to CPU, it is advantageous for this task.</s>
+          <s>DeepFocus benefits from the technological improvements in GPU which enables it to analyze a digital slide in a matter of a few minutes on a standard laptop computer.</s>
+          <s>Recent studies show that the GPU based deep learning approaches speed up by 50x in just three years and researchers are expecting another 10x boost in the next few years <ref target="#b29" type="bibr">[30]</ref> .</s>
+          <s>As a result, we expect DeepFocus to become much faster in the near future.</s>
+        </p>
+        <p>
+          <s>Although deep learning techniques are being successfully applied to other digital pathology problems, DeepFocus is the first implementation of such techniques to characterize problems of digital image generation in pathology.</s>
+          <s>This first application focused on the problem of accurately identifying blurry (out-of-focus) regions in whole slides images.</s>
+          <s>These problems are very common as Stathonikos, et al. document, 5% of the cases had problems with scanning artifacts, such as blurry images and incomplete slides in the Dutch digital pathology experience <ref target="#b30" type="bibr">[31]</ref> .</s>
+          <s>Digital imaging problems are not limited to blurring; tissue folding, over-or under-staining, air-bubbles, compression artifacts are some of the many other problems.</s>
+          <s>The DeepFocus framework needs to be extended to identify these problems before the images reach pathologists or image analysis algorithms.</s>
+          <s>In future, we are planning on expanding our dataset to include more disease categories, different types of stains as well as other types of scanners.</s>
+          <s>Additionally, we are planning to estimate the focal offset error which may be useful during the rescanning.</s>
+        </p>
+      </div>
+      <div>
+        <head>Code availability</head>
+        <p>
+          <s>The source code for running DeepFocus on a whole slide is available from https://github.com/</s>
+          <s>cialab/DeepFocus</s>
+        </p>
+      </div>
+      <div>
+        <head>Author Contributions</head>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig 1 .</head>
+        <label>1</label>
+        <figDesc>The mean and standard deviation of the resulting deburring functions for each tile. The tiles corresponding to infocus tiles are represented by blue dots. The blurred tiles obtained on −1.5 μm, 1.5 μm focal planes offsets are represented by red and greed dots, respectively.</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig 2 .</head>
+        <label>2</label>
+        <figDesc>Example images cropped from digital slides with different focus offset values. The first row is generated from one of the training slides. The other two rows are generated from testing slides. https://doi.org/10.1371/journal.pone.0205387.g002 DeepFocus: Detection of out-of-focus regions in whole slide digital images using deep learning PLOS ONE | https://doi.org/10.1371/journal.pone.0205387 October 25, 2018</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig 3 .</head>
+        <label>3</label>
+        <figDesc>Architecture of the DeepFocus. https://doi.org/10.1371/journal.pone.0205387.g003that increase the number of samples by randomly 1) flipping the image in the vertical and horizontal direction and 2) rotating the image by 90 0 .</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head/>
+        <label/>
+        <figDesc>The mean, A O , and standard deviation, σ(A O ), accuracy for a specific focus offset values were calculated where A O i represents the accuracy of the algorithm on image i, with the specific focus offset value, O.</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Fig 4 .</head>
+        <label>4</label>
+        <figDesc>The ROC curve for the proposed approach. https://doi.org/10.1371/journal.pone.0205387.g004</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
+        <head>Fig 5 . g005 Fig 6 .</head>
+        <label>5g0056</label>
+        <figDesc>An example case where some of the nuclei look sharper in different focal levels (Slide 4). Yellow arrows show some of the in focused nuclei in negative offset values. The positive arrow shows some of the focused nuclei in zero offset. https://doi.org/10.1371/journal.pone.0205387.The outputs of the DeepFocus (b) and Lopez's approach(c) on a H&amp;E slide (a) acquired with a different scanner where the green and red colors represent in-focus and blurry regions, respectively. https://doi.org/10.1371/journal.pone.0205387.g006</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
+        <head/>
+        <label/>
+        <figDesc>Conceptualization: Metin N. Gurcan.Data curation: Caglar Senaras.</figDesc>
+      </figure>
+      <figure xml:id="fig_7">
+        <head>Formal analysis :</head>
+        <label>analysis</label>
+        <figDesc>Caglar Senaras, Metin N. Gurcan.</figDesc>
+      </figure>
+      <figure xml:id="fig_8">
+        <head>Funding acquisition :</head>
+        <label>acquisition</label>
+        <figDesc>Metin N. Gurcan. Methodology: Caglar Senaras, M. Khalid Khan Niazi, Metin N. Gurcan. Project administration: Metin N. Gurcan. Resources: Metin N. Gurcan. Software: Caglar Senaras. Validation: Caglar Senaras, Metin N. Gurcan.</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>DeepFocus: Detection of out-of-focus regions in whole slide digital images using deep learning PLOS ONE | https://doi.org/10.1371/journal.pone.</figDesc>
+        <table>0205387 October 25, 2018 
+2 / 13 
+
+National Institutes of Health. The funders had no 
+role in study design, data collection and analysis, 
+decision to publish, or preparation of the 
+manuscript. 
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_1">
+        <head/>
+        <label/>
+        <figDesc>This study is IRB approved by the Ohio State University (Study Number: 2007C0069), Cancer Institutional Review Board, with Waiver of Consent Process, and Full of Waiver of HIPAA Research Authorization. Furthermore, all samples were fully anonymized by the rules set by the Ohio State University, Cancer Institutional Review Board.</figDesc>
+        <table/>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_2">
+        <head>Table 1 .</head>
+        <label>1</label>
+        <figDesc>Parameter values explored for each hyperparameter. The bold ones represent the selected parameter using grid search<ref target="#b24" type="bibr">[25]</ref>.</figDesc>
+        <table>Hyperparameter 
+Optimization Space 
+
+CNN-Layer 1 Kernel size 
+[3x3,5x5,7x7,9x9] 
+
+CNN-Layer 2 Kernel size 
+[3x3,5x5,7x7] 
+
+Learning rate 
+[0.01,0.06,0.12,0.22] 
+
+Batch size 
+[32,64,128] 
+
+https://doi.org/10.1371/journal.pone.0205387.t001 
+
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_3">
+        <head>Table 3 .</head>
+        <label>3</label>
+        <figDesc>The comparison of the proposed approach (DeepFocus) and Lopez's approach<ref target="#b2" type="bibr">[3]</ref> for each slide on the test dataset.</figDesc>
+        <table>Slide 1 
+(CD 10) 
+
+Slide 2 
+(H&amp;E) 
+
+Slide 3 
+(H&amp;E) 
+
+Slide 4 
+(Ki67) 
+
+Slide 5 
+(H&amp;E) 
+
+Slide 6 
+(Ki67) 
+
+O (μm) 
+Deep 
+Focus 
+
+Lopez et. Al. 
+Deep 
+Focus 
+
+Lopez et. Al. 
+Deep 
+Focus 
+
+Lopez et. Al. 
+Deep 
+Focus 
+
+Lopez et. Al. 
+Deep 
+Focus 
+
+Lopez et. Al. Deep 
+Focus 
+
+Lopez et. Al. 
+
+-2.5 
+99.8% 
+100.0% 
+100.0% 
+73.1% 
+100.0% 
+1.9% 
+95.8% 
+99.2% 
+100.0% 
+100.0% 
+99.7% 
+97.0% 
+
+-2 
+88.0% 
+100.0% 
+100.0% 
+10.8% 
+100.0% 
+0.3% 
+54.6% 
+76.1% 
+100.0% 
+68.6% 
+98.3% 
+84.9% 
+
+-1.5 
+36.5% 
+100.0% 
+99.5% 
+7.8% 
+96.5% 
+0.0% 
+17.2% 
+38.6% 
+99.7% 
+6.0% 
+68.7% 
+62.8% 
+
+-0.5 
+98.5% 
+0.0% 
+99.8% 
+99.7% 
+98.6% 
+100.0% 
+99.5% 
+85.6% 
+99.7% 
+87.3% 
+98.8% 
+96.1% 
+
+0 
+87.2% 
+0.0% 
+96.2% 
+99.2% 
+99.5% 
+100.0% 
+98.9% 
+86.9% 
+99.9% 
+92.1% 
+99.8% 
+96.1% 
+
+0.5 
+59.6% 
+0.0% 
+99.6% 
+100.0% 
+98.2% 
+100.0% 
+91.0% 
+82.2% 
+98.1% 
+99.7% 
+97.4% 
+91.8% 
+
+1.5 
+99.5% 
+100.0% 
+100.0% 
+5.6% 
+100.0% 
+0.0% 
+91.6% 
+98.6% 
+100.0% 
+21.9% 
+68.3% 
+46.4% 
+
+2 
+99.9% 
+100.0% 
+100.0% 
+64.7% 
+100.0% 
+6.9% 
+99.9% 
+100.0% 
+100.0% 
+96.5% 
+99.3% 
+79.3% 
+
+2.5 
+100.0% 
+100.0% 
+100.0% 
+100.0% 
+100.0% 
+86.1% 
+100.0% 
+100.0% 
+100.0% 
+100.0% 
+99.7% 
+97.0% 
+
+Slide Avg 85.4% 
+66.7% 
+99.5% 
+62.3% 
+99.2% 
+43.9% 
+83.2% 
+85.2% 
+99.7% 
+74.6% 
+92.2% 
+83.5% 
+
+Std. 
+22.6% 
+50.0% 
+1.2% 
+42.7% 
+1.2% 
+50.1% 
+28.6% 
+19.6% 
+0.6% 
+36.0% 
+13.5% 
+17.9% 
+
+https://doi.org/10.1371/journal.pone.0205387.t003 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_4">
+        <head>Table 2 .</head>
+        <label>2</label>
+        <figDesc>The comparison of the proposed approach (DeepFocus) and Lopez's approach<ref target="#b0" type="bibr">[1]</ref> in terms of accuracy on the first test dataset.</figDesc>
+        <table>A Ω (Eqn. 4) 
+</table>
+      </figure>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0205387October 25, 2018  </note>
+    </body>
+    <back>
+      <div type="annex">
+        <div>
+          <head>Computational performance</head>
+          <p>
+            <s>We evaluated the speed performance on three different configurations.</s>
+            <s>The first configuration is a workstation (XEON E3-1220 v5) without any GPU; the second is a laptop with Nvidia GTX 1050 GPU card, and the third configuration is Owens at Ohio Supercomputer Center ( <ref type="table">Table 5</ref> ).</s>
+            <s>The elapsed time includes reading the whole image, detecting the tissue using Otsu thresholding <ref target="#b27" type="bibr">[28]</ref> , and classifying 489,904 64x64 non-overlapping tiles belonging to the tissue with the pre-trained network.</s>
+            <s>The algorithm took 643 seconds to analyze the whole data (at 40X magnification) on the laptop by using the GPU.</s>
+            <s>In comparison, Lopez's CPU-based approach took 713 seconds to analyze at 20X magnification, and their spatial result was 36 times coarser than that of DeepFocus.</s>
+          </p>
+        </div>
+        <div>
+          <head>Conclusions</head>
+          <p>
+            <s>In this study, we proposed a novel deep learning framework, DeepFocus, to identify blurry regions in digital slides.</s>
+            <s>The novelty of the study lies in both the design of our DeepFocus framework as well as in its systematic evaluation.</s>
+            <s>For training and testing, we carefully determined a set of focus points at different focal planes that conform well to the tissue morphology.</s>
+            <s>These points were perturbed in a systematic manner to produce different amount of blurring in digital slides.</s>
+            <s>The robustness of DeepFocus to disease and stain variations was validated by 1) creating independent training and test datasets with digital images from patients with different diseases, 2) acquiring images from different scanners and laboratories.</s>
+            <s>Comparision of DeepFocus with an existing method <ref target="#b0" type="bibr">[1]</ref> , resulted in 23.8% higher accuracy on average with smaller variation.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">An automated blur detection method for histological whole slide imaging</title>
+              <author>
+                <persName>
+                  <forename type="first">Moles</forename>
+                  <surname>Lopez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>&amp;apos;andrea</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Barbot</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Bridoux</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Rorive</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Salmon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                </persName>
+              </author>
+              <idno type="DOI">10.1371/journal.pone.0082710</idno>
+              <idno type="PMID">24349343</idno>
+              <idno type="PMCID">PMC3862630</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0082710"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS One</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope unit="issue">12</biblScope>
+                <biblScope unit="page">82710</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+            <note>PubMed Central</note>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Image quality metrics applied to digital pathology</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Jiménez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Bueno</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Cristóbal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Déniz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Toomey</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Conway</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">International Society for Optics and Photonics</title>
+              <imprint>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Quality evaluation of virtual slides using methods based on comparing common image areas</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Walkowski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Szymas</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Diagnostic pathology</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">14</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Referenceless image quality evaluation for whole slide imaging</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Hashimoto</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Bautista</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Yamaguchi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Ohyama</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Yagi</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.4103/2153-3539.93891</idno>
+              <idno type="PMID">22530177</idno>
+              <ptr target="https://doi.org/10.4103/2153-3539.93891"/>
+            </analytic>
+            <monogr>
+              <title level="j">J Pathol Inform</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope unit="page">3327042</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+            <note>PubMed Central PMCID</note>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <monogr>
+              <title level="m" type="main">Schlü ns K. Distributed computing in image analysis using open source frameworks and application to image sharpness assessment of histological whole slide images. Diagnostic pathology</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Zerbe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Hufnagl</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2011"/>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="page">16</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Semantic focusing allows fully automated single-layer slide scanning of cervical cytology slides</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Lahrmann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Valous</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <surname>Eisenmann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Wentzensen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Grabe</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1371/journal.pone.0061441</idno>
+              <idno type="PMID">23585899</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0061441"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS One</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope unit="page">3621829</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+            <note>PubMed Central PMCID</note>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Textural features for image classification</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Haralick</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Shanmugam</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">IEEE Transactions on systems, man, and cybernetics</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="610" to="631" unit="page"/>
+                <date type="published" when="1973"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <monogr>
+              <title level="m" type="main">Accommodation in computer vision. DTIC Document</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Tenenbaum</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="1970"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">The elementary statistics of majority voting</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Penrose</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of the Royal Statistical Society</title>
+              <imprint>
+                <biblScope unit="volume">109</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="53" to="60" unit="page"/>
+                <date type="published" when="1946"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">An information-maximization approach to blind separation and blind deconvolution</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Bell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Sejnowski</surname>
+                </persName>
+              </author>
+              <idno type="PMID">7584893</idno>
+            </analytic>
+            <monogr>
+              <title level="j">Neural computation</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="1129" to="59" unit="page"/>
+                <date type="published" when="1995"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <monogr>
+              <title level="m" type="main">Learning deep architectures for AI. Foundations and trends in Machine Learning</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Bengio</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2009"/>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope from="1" to="127" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">FOXP3-stained image analysis for follicular lymphoma: Optimal adaptive thresholding with maximal nucleus coverage</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Senaras</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Pennell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Sahiner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Shana</forename>
+                  <forename type="middle">&amp;apos;</forename>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Louissaint</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proceedings of SPIE-the International Society</title>
+              <meeting>SPIE-the International Society</meeting>
+              <imprint>
+                <publisher>NIH Public Access</publisher>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Methods for nuclei detection, segmentation, and classification in digital histopathology: a review-current status and future potential</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Irshad</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Veillard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Roux</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Racoceanu</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1109/RBME.2013.2295804</idno>
+              <idno type="PMID">24802905</idno>
+              <ptr target="https://doi.org/10.1109/RBME.2013.2295804"/>
+            </analytic>
+            <monogr>
+              <title level="j">IEEE reviews in biomedical engineering</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope from="97" to="114" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Using deep learning to enhance cancer diagnosis and classification</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Fakoor</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Ladhak</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Nazi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Huber</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proceedings of the International Conference on Machine Learning</title>
+              <meeting>the International Conference on Machine Learning</meeting>
+              <imprint>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">A Deep Convolutional Neural Network for segmenting and classifying epithelial and stromal regions in histopathological images</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Luo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Gilmore</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Madabhushi</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1016/j.neucom.2016.01.034</idno>
+              <idno type="PMID">28154470</idno>
+              <ptr target="https://doi.org/10.1016/j.neucom.2016.01.034"/>
+            </analytic>
+            <monogr>
+              <title level="j">Neurocomputing</title>
+              <imprint>
+                <biblScope unit="volume">191</biblScope>
+                <biblScope from="214" to="237" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Deep learning as a tool for increased accuracy and efficiency of histopathological diagnosis</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Litjens</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Sanchez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Timofeeva</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Hermsen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Nagtegaal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Kovacs</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1038/srep26286</idno>
+              <idno type="PMID">27212078</idno>
+              <ptr target="https://doi.org/10.1038/srep26286"/>
+            </analytic>
+            <monogr>
+              <title level="j">Sci Rep</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="page">26286</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">A Computational Framework to Detect Normal and Tuberculosis Infected Lung from H&amp;E-stained Whole Slide Images</title>
+              <author>
+                <persName>
+                  <forename type="first">Mkk</forename>
+                  <surname>Niazi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Beamer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Gurcan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">International Society for Optics and Photonics</title>
+              <imprint>
+                <biblScope unit="volume">2017</biblScope>
+              </imprint>
+            </monogr>
+            <note>SPIE Medical Imaging</note>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <monogr>
+              <title level="m" type="main">All you need is a good init</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Mishkin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Matas</surname>
+                </persName>
+              </author>
+              <idno>arXiv:151106422. 2015</idno>
+              <imprint/>
+            </monogr>
+            <note type="report_type">arXiv preprint</note>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Deep learning</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Bengio</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Goodfellow</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Courville</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1038/nature14539</idno>
+              <idno type="PMID">26017442</idno>
+              <ptr target="https://doi.org/10.1038/nature14539"/>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">521</biblScope>
+                <biblScope from="436" to="480" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Sutskever</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Martens</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Dahl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Hinton</surname>
+                </persName>
+              </author>
+              <title level="m">On the importance of initialization and momentum in deep learning. International conference on machine learning</title>
+              <imprint>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Rectified linear units improve restricted boltzmann machines</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Nair</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Hinton</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proceedings of the 27th international conference on machine learning (ICML-10)</title>
+              <meeting>the 27th international conference on machine learning (ICML-10)</meeting>
+              <imprint>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <monogr>
+              <title level="m" type="main">Batch normalization: Accelerating deep network training by reducing internal covariate shift</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ioffe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Szegedy</surname>
+                </persName>
+              </author>
+              <idno>arXiv:150203167</idno>
+              <imprint>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+            <note type="report_type">arXiv preprint</note>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Dropout: a simple way to prevent neural networks from overfitting</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Srivastava</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Hinton</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Krizhevsky</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Sutskever</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Salakhutdinov</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Machine Learning Research</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="1929" to="58" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Abadi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Agarwal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Barham</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Brevdo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Citro</surname>
+                </persName>
+              </author>
+              <idno>arXiv:160304467</idno>
+              <title level="m">Large-scale machine learning on heterogeneous distributed systems</title>
+              <imprint>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+            <note type="report_type">arXiv preprint</note>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <monogr>
+              <title level="m" type="main">Practical recommendations for gradient-based training of deep architectures. Neural networks: Tricks of the trade</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Bengio</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2012"/>
+                <publisher>Springer</publisher>
+                <biblScope from="437" to="78" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Selection of an optimal neural network architecture for computer-aided detection of microcalcifications-Comparison of automated optimization techniques</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Gurcan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Sahiner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Chan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Hadjiiski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Petrick</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1118/1.1395036</idno>
+              <idno type="PMID">11585225</idno>
+              <ptr target="https://doi.org/10.1118/1.1395036"/>
+            </analytic>
+            <monogr>
+              <title level="j">Medical Physics</title>
+              <imprint>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope from="1937" to="1985" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Optimal neural network architecture selection: improvement in computerized detection of microcalcifications</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Gurcan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H-P</forename>
+                  <surname>Chan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Sahiner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Hadjiiski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Petrick</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Helvie</surname>
+                </persName>
+              </author>
+              <idno type="PMID">11942656</idno>
+            </analytic>
+            <monogr>
+              <title level="j">Academic Radiology</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="420" to="429" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">A threshold selection method from gray-level histograms</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Otsu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Automatica</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope from="23" to="30" unit="page"/>
+                <date type="published" when="1975"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <monogr>
+              <title/>
+              <author>
+                <persName>
+                  <surname>Ohio Supercomputer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Center</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="1987"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <monogr>
+              <title level="m" type="main">Accelerating AI with GPUs: A New Computing Model | NVIDIA Blog</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Huang</surname>
+                </persName>
+              </author>
+              <ptr target="https://blogs.nvidia.com/blog/2016/01/12/accelerating-ai-artificial-intelligence-gpus/"/>
+              <imprint>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Going fully digital: Perspective of a Dutch academic pathology lab</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Stathonikos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Veta</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Huisman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Van Diest</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of pathology informatics</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

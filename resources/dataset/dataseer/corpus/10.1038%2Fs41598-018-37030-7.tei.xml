@@ -1,0 +1,1296 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:04+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Nonlinear Imaging using Object- Dependent Illumination OPEN</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+        <date type="published">Published: xx xx xxxx</date>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Jen-Tang</forename>
+                <surname>Lu</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Department of Electrical Engineering</orgName>
+                <orgName type="institution">Princeton University</orgName>
+                <address>
+                  <postCode>08544</postCode>
+                  <settlement>Princeton</settlement>
+                  <region>NJ</region>
+                  <country key="US">USA</country>
+                </address>
+              </affiliation>
+              <affiliation key="aff1">
+                <orgName type="department">MGH &amp; BWH Center for Clinical Data Science</orgName>
+                <address>
+                  <postCode>02114</postCode>
+                  <settlement>Cambridge</settlement>
+                  <region>MA</region>
+                  <country key="US">USA</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Alexandre</forename>
+                <forename type="middle">S</forename>
+                <surname>Goy</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Department of Electrical Engineering</orgName>
+                <orgName type="institution">Princeton University</orgName>
+                <address>
+                  <postCode>08544</postCode>
+                  <settlement>Princeton</settlement>
+                  <region>NJ</region>
+                  <country key="US">USA</country>
+                </address>
+              </affiliation>
+              <affiliation key="aff2">
+                <orgName type="department">Department of Mechanical Engineering</orgName>
+                <orgName type="institution">Massachusetts Institute of Technology</orgName>
+                <address>
+                  <postCode>02139</postCode>
+                  <settlement>Cambridge</settlement>
+                  <region>MA</region>
+                  <country key="US">USA</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Jason</forename>
+                <forename type="middle">W</forename>
+                <surname>Fleischer</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Department of Electrical Engineering</orgName>
+                <orgName type="institution">Princeton University</orgName>
+                <address>
+                  <postCode>08544</postCode>
+                  <settlement>Princeton</settlement>
+                  <region>NJ</region>
+                  <country key="US">USA</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Nonlinear Imaging using Object- Dependent Illumination OPEN</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date type="published">Published: xx xx xxxx</date>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41598-018-37030-7</idno>
+          <note type="submission">Received: 8 January 2018 Accepted: 27 November 2018</note>
+          <note>1 SCiEntifiC REPORTs | (2019) 9:725 |. Correspondence and requests for materials should be addressed to J.W.F. (email: jasonf@princeton.edu)</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>Nonlinear imaging systems can surpass the limits of linear optics, but nearly all rely on physical media and atomic/molecular response to work.</s>
+            <s>These materials are constrained by their physical properties, such as frequency selectivity, environmental sensitivity, time behavior, and fixed nonlinear response.</s>
+            <s>Here, we show that electro-optic spatial light modulators (SLMs) can take the place of traditional nonlinear media, provided that there is a feedback between the shape of the object and the pattern on the modulator.</s>
+            <s>This feedback creates a designer illumination that generalizes the field of adaptive optics to include object-dependent patterns.</s>
+            <s>Unlike physical media, the SLM response can provide a wide range of mathematical functions, operate over broad bandwidths at high speeds, and work equally well at high power and single-photon levels.</s>
+            <s>We demonstrate the method experimentally for both coherent and incoherent light.</s>
+          </p>
+          <p>
+            <s>Feedback is a natural way to engineer nonlinearity, as it creates a functional relationship between input and output.</s>
+            <s>Commonly used in control systems, feedback can act to amplify 1 , filter 2 , and process signals 3 .</s>
+            <s>Historically, there have been two main applications, with two distinct approaches and methodologies: logical operations, with a focus on small degrees of freedom and stable processing, e.g. 4 and dynamical systems, with an emphasis on large degrees of freedom and instability, e.g.</s>
+            <s>pattern formation 5 .</s>
+            <s>Here, we combine and extend these approaches to improve information transfer in nonlinear imaging systems.</s>
+          </p>
+          <p>
+            <s>The experimental design is shown in <ref type="figure">Fig. 1a</ref> .</s>
+            <s>The method consists of two basic steps.</s>
+            <s>First, a standard image is obtained using uniform illumination.</s>
+            <s>Second, the measured pattern is fed into a spatial light modulator (SLM) and used to re-illuminate the object.</s>
+            <s>The resulting feedback loop between the (digital) image of the object and the (digital) pattern of illumination effectively creates a nonlinearity that can be controlled electro-optically.</s>
+            <s>Unlike nonlinearities that are determined -and limited -by physical media, such as crystals and polymers, SLMs are robust to the environment, respond well to wide ranges of intensity, bandwidth, and coherence, and can generate nearly any mathematical form.</s>
+            <s>This nonlinear tunability (on a pixel-by-pixel basis), both by itself and for optimization on different figures of merit (such as contrast, resolution, edge detection, etc.), distinguishes our approach from earlier attempts at feedback 6 .</s>
+          </p>
+          <p>
+            <s>Our feedback generalizes two well-known pathways in computational imaging: adaptive optics and structured illumination.</s>
+            <s>In the former, aberrations along an optical path are "pre-compensated" by first measuring and then correcting for the distortions, e.g. using deformable mirror arrays.</s>
+            <s>This has enabled a revolution in remote sensing and ground-based astronomy, e.g. for imaging through a varying atmosphere, and is used routinely in ophthalmology for optical examination of the retina.</s>
+            <s>It is also experiencing resurgence in imaging through turbid media, such as paint and fog 7,8 , in which scatterers randomize the information from object to image.</s>
+            <s>However, the adaptation is independent of the object, used instead for correcting the path along the rest of the optical system.</s>
+          </p>
+          <p>
+            <s>In structured illumination, a patterned light source adds information at the input of the system, allowing more information about the object to be extracted (deconvolved) at the output.</s>
+            <s>Examples include Zernike masks for phase observation 9 , periodic masks for improved resolution 10,11 and depth sectioning 12 , Bessel 13 and Airy 14 beams for extended depth of focus, and random masks, which enable single-pixel cameras 15 and coherence engineering <ref target="#b15" type="bibr">16,</ref>
+              <ref target="#b16" type="bibr">17</ref> .</s>
+            <s>As in adaptive optics, though, all these techniques use illumination patterns that are independent of the sample.</s>
+          </p>
+          <p>
+            <s>The primary reason for sample independence is that the object is typically unknown and a universal form of illumination is desired.</s>
+            <s>This results in a general, shift-invariant transfer function that is suitable for arbitrary Published: xx xx xxxx OPEN www.nature.com/scientificreports/</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <p>
+          <s>objects but is optimized for none of them.</s>
+          <s>The introduction of feature-based illumination, through feedback, will improve information transfer and all metrics of image quality.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+        <p>
+          <s>In our geometry, the feedback between source and detector closes the loop in computational imaging.</s>
+          <s>While the functional relationship between the SLM and the object is essentially arbitrary, we consider here the simplest case of an intensity-dependent phase modulation: φ SLM = γI α , where γ is the strength of the modulation and α is its order.</s>
+          <s>This makes the system a physical implementation of the conventional split-step method in beam propagation codes, with one step for diffraction and one step for nonlinear effect, and allows a straightforward comparison with more conventional nonlinearities, e.g. the Kerr response for which α = 1.</s>
+          <s>We emphasize, though, that much more complex responses are possible, including the ability to impose separate amplitude and phase modulations using a second SLM.</s>
+          <s>More details about the digital nonlinear response are given in the Supplementary Information.</s>
+        </p>
+        <p>
+          <s>Nonlinear phase reconstruction.</s>
+          <s>While the method can be applied to any type of image (provided there is a signal to bootstrap), phase reconstruction is particularly important.</s>
+          <s>Phase contains most of the information in the signal, is crucial for a variety of important applications, and responds particularly well to nonlinearity <ref target="#b17" type="bibr">18</ref> .</s>
+          <s>Consequently, we experimentally demonstrate the method by nonlinearly improving the imaging of a phase object <ref target="#fig_1" type="figure">(Fig. 1c)</ref> .</s>
+          <s>We use a modified version of the Gerchberg-Saxton (GS) method <ref target="#b18" type="bibr">19</ref> to retrieve the phase, taking advantage of the fact that phase matching from the nonlinear illumination-object feedback provides a strict constraint on the behavior of the algorithm 20 .</s>
+          <s>As the shape of the object is not known a priori, we first record a defocused intensity (I U = |A U | 2 ) that is obtained using uniform illumination <ref target="#fig_1" type="figure">(Fig. 1d)</ref> .</s>
+          <s>The amplitude distribution, |A U |, is then fed into a SLM as a phase modulation φ SLM ∝|A U |, enabling a second intensity measurement (I D = |A D | 2 ) with designer illumination <ref target="#fig_1" type="figure">(Fig. 1e)</ref> .</s>
+          <s>As in previous examples of nonlinear imaging 18,21 , we use a self-defocusing nonlinearity; this enables sufficient wave mixing to enhance imaging while suppressing the fast instabilities common to self-focusing systems.</s>
+        </p>
+        <p>
+          <s>From the two images I U and I D , the nonlinear phase retrieval algorithm proceeds in a manner similar to GS reconstruction.</s>
+          <s>First, a field with amplitude A U and initial uniform phase φ = 0 is numerically back-propagated from the (out-of-focus) camera plane to the sample plane (in focus).</s>
+          <s>The phase modulation φ SLM is then added to the phase of the field in order to simulate the action of the SLM, and the new field is forward-propagated to the camera plane.</s>
+          <s>This simulated amplitude is then replaced by the amplitude of the actual measurement (A D ), and the field is backward-propagated to the sample plane again.</s>
+          <s>After subtraction of the phase modulation φ SLM from the phase of the field at the sample plane, the new field is once again forward-propagated to the camera plane, followed by replacement of the numerical amplitude by the measured amplitude A U. The process is repeated until convergence.</s>
+          <s>A pseudocode for this algorithm is shown in <ref target="#fig_1" type="figure">Fig. 1b</ref> .</s>
+        </p>
+        <p>
+          <s>As a phase object, we used a sample consisting of a glass plate with the three characters "DIC" etched on it.</s>
+          <s>The in-focus image of the sample is shown in <ref target="#fig_1" type="figure">Fig. 1c</ref> .</s>
+          <s>As the object is thin and transparent, no intensity modulation appear on the image in focus apart from scattering from the character edges.</s>
+          <s>In <ref target="#fig_1" type="figure">Fig. 1d</ref> ,e, we show the measured diffraction intensity distributions in the detector plane (out-of-focus) with uniform and designer (feedback) illumination, respectively.</s>
+          <s>In general, more diffraction fringes are visible in the latter image, since the illumination has the shape of the object itself.</s>
+          <s>The second pass of illumination effectively doubles the diffraction pattern, giving at least a two-fold increase in phase sensitivity to the object.</s>
+          <s>Larger multiplication is of course possible 21 , especially with cascaded interactions <ref target="#b21" type="bibr">22</ref> , with potentially exponential improvement upon repeated iteration.</s>
+          <s>We compare our nonlinear algorithm with a variation of the GS algorithm for linear propagation, for the same defocused distance.</s>
+          <s>The conventional algorithm relies on one in-focus and one out-of-focus intensity measurement using uniform illumination.</s>
+          <s>Simulation results are shown in <ref target="#fig_2" type="figure">Fig. 2a</ref> ,b.</s>
+          <s>In real imaging cases, the target is unknown and the reconstructed phase error cannot be accessed; in the simulation test case, the ground truth is chosen a priori, and we can quantitatively measure the reconstructed phase error</s>
+        </p>
+        <formula xml:id="formula_0">  = ∑ | − | ∑ | | f r g r g r ER ( ) ( ) ( ) (1) r S r S</formula>
+        <p>
+          <s>where f(r), g(r), and S are the reconstructed image, the ground truth, and the image space, respectively.</s>
+          <s>As expected, the nonlinear reconstruction ( <ref target="#fig_2" type="figure">Fig. 2b)</ref> is about 2x better than the linear reconstruction ( <ref target="#fig_2" type="figure">Fig. 2a</ref> ) in term of the phase error (ER 0.8 vs. 1.5).</s>
+          <s>The experimental counterparts, shown in <ref target="#fig_2" type="figure">Fig. 2c</ref> ,d, confirm the result that the nonlinear algorithm provides much better reconstruction than the linear algorithm.</s>
+          <s>For quantitative comparison, we define contrast and resolution as:</s>
+        </p>
+        <formula xml:id="formula_1">= − Contrast I I (2) DIC B KG = ∇ ∈ − R I ( ) (3) x x DICE 1</formula>
+        <p>
+          <s>where I represents the mean value of the intensity, the subscript "DIC" denotes the region of the DIC characters, "BKG" denotes the rest of the image, and "DICE" denotes the edge domain of the DIC region.</s>
+          <s>(For a consistent measure of resolution based on a single image, we take the highest resolvable spatial frequency, given by the inverse of the normalized image gradient averaged over all the character edges.)</s>
+          <s>By these metrics, the nonlinear algorithm yields a 260% improvement in contrast (1.50 vs. 0.58) and a 15% improvement in resolution (14.8 vs 17.1 microns) over linear reconstruction.</s>
+          <s>Another advantage of the digital system, and the corresponding algorithm, is the ability to work for different degrees of spatial coherence.</s>
+          <s>We demonstrate this experimentally by making the illumination beam partially spatially coherent by passing it through a rotating diffuser <ref target="#b22" type="bibr">23</ref> .</s>
+          <s>The performance of linear and nonlinear modulation, in terms of contrast and resolution, are shown in <ref target="#fig_3" type="figure">Fig. 3j</ref> ,k, respectively.</s>
+          <s>In all cases, the figures of merit for linear propagation get worse monotonically as the degree of coherence is decreased (consistent with a progressive decrease in visibility of diffraction fringes <ref target="#b23" type="bibr">24</ref> ).</s>
+          <s>In the nonlinear case, both contrast and resolution are improved simultaneously beyond their linear limits.</s>
+          <s>[This win-win situation, normally an engineering trade-off in linear systems <ref target="#b24" type="bibr">25</ref> , is a general feature of nonlinear imaging systems <ref target="#b20" type="bibr">21</ref> .]</s>
+          <s>For designer illumination, the contrast actually improves with decreasing coherence, up to an optimal value, while the system resolution is relatively constant above and below this value.</s>
+          <s>The former is a stochastic resonance effect <ref target="#b25" type="bibr">26</ref> , peaking when the smallest significant feature of the object (the stroke width of the DIC characters, ~167 μm) matches the spatial correlation length of the illumination (characterized by the speckle spatial frequency 3.75 × 10 4 rad/m).</s>
+          <s>The latter results from improved visibility due to mean-field (DC) scattering 21 .</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>Theoretically, the improvements in image quality are unlimited <ref target="#b10" type="bibr">11,</ref>
+            <ref target="#b20" type="bibr">21</ref> .</s>
+          <s>In practice, there are many factors that hinder the performance.</s>
+          <s>These include the usual trade-off between pixel size and dynamic range in the camera and SLM 27 , pixel-mapping and tone-mapping mismatches between devices, amplitude corruption in the phase modulation, and genuine issues of noise.</s>
+          <s>There are also frame-rate limitations if multiple iterations are desired, and issues of convergence and computational complexity as a function of basis, method of phase retrieval 28 , type of nonlinearity, and desired spatial detail (e.g.</s>
+          <s>different class of response for individual SLM pixels).</s>
+          <s>The best approach to retrieving (estimating) the phase object is to maximize the information in the encoded illumination.</s>
+          <s>This is given by the most widespread sampling in phase space, which for the experimental setup here corresponds to the most diverse distribution of phase on the modulator <ref target="#fig_4" type="figure">(Fig. 4)</ref> .</s>
+          <s>Using variance as a measure, we find that σ µ</s>
+        </p>
+        <formula xml:id="formula_2">α α = − = − E X A B [( ) ] exp( ) SLM C 2 2 2</formula>
+        <p>
+          <s>, where X represents the pixel value on the SLM, μ = E[X] is the mean value of all the pixels, and α is the modulation power.</s>
+          <s>This stretched-exponential form suggests a nontrivial (i.e.</s>
+          <s>non-diffusive) optical flow as the object modes are mixed by the modulator 26,29-31 .</s>
+          <s>As shown in <ref target="#fig_3" type="figure">Fig. 3a</ref> i, the optimal system response ranges from a strict proportionality to amplitude φ γ = I ( ) SLM U for the coherent case to a more conventional Kerr nonlinearity φ γ = I ( ) SLM U for the incoherent case.</s>
+          <s>These optimum transfer functions can be understood by considering the extremes of nonlinear response.</s>
+          <s>For very weak response, there is little difference between linear and nonlinear output, and therefore little gain in information.</s>
+          <s>Stronger responses give more significant differences, evidenced by more pronounced intensity fringes as modes interfere, until high-intensity regions start dominating the image.</s>
+          <s>Above this point, the growth of hot spots leads to a modulation that is not indicative of the object as a whole (an effect exacerbated by noise, e.g. through modulation instability).</s>
+          <s>From an information perspective, the structured feedback acts as a nonlinear matched filter <ref target="#b31" type="bibr">32</ref> , with an amplitude-dependent response appropriate for the optical transfer function of coherent light and an intensity-dependent response appropriate for the modulation transfer function of incoherent light <ref target="#b32" type="bibr">33</ref> .</s>
+          <s>More details of this response are given in the Supplemental Information.</s>
+        </p>
+        <p>
+          <s>The quality of the reconstructed image using the nonlinear algorithm is comparable to what we obtained in a previous work using a nonlinear photorefractive crystal 18 .</s>
+          <s>In that system, the intensity pattern of the object induced an index change in the crystal, creating a self-reinforcing diffraction grating during light propagation.</s>
+          <s>Here, the object-dependent pattern on the spatial light modulator creates a similar grating (computer-generated hologram) in the plane of the SLM, which acts more like an iterative map.</s>
+          <s>In both cases, the nonlinear feedback means that the grating structure is automatically phase-matched with the object, guaranteeing an optimized diffraction pattern.</s>
+          <s>For the computational part, the interplay between intensity and phase gives an extra constraint on the algorithm, resulting in improved phase sensitivity, selectivity, and convergence.</s>
+          <s>While electro-optic devices have their limitations, they are far more versatile than the physical media traditionally used for nonlinear optics.</s>
+          <s>Of particular significance is the ability to create nonlinearities that are distinct from those of physical media by leveraging independent control of amplitude and phase modulation.</s>
+          <s>This freedom opens new applications for functional forms that have remained purely in the mathematical domain.</s>
+          <s>The ability to adjust parameters dynamically also holds much promise for improving the efficiency and performance of adaptive optics and compressed sensing/imaging.</s>
+          <s>Finally, digital methods have the potential to revolutionize imaging at extremely low light levels, such as fluorescence microscopy and quantum imaging, as SLMs are inherently non-destructive and can operate at the single photon level.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Methods</head>
+        <p>
+          <s>A 532 nm Coherent Verdi laser was used as a light source, and a phase-only spatial light modulator (SLM, Holoeye PLUTO, with a resolution of 1920 × 1080 pixels, 8-micron pixel size, and 8-bit depth) was placed in the illumination path before a phase object, modulating the illumination light as a function of the diffracted pattern of the sample.</s>
+          <s id="dataset-1" type="X-Ray Diffraction data">As a direct image does not reveal the object, we defocused the CCD camera (with a resolution of 1280 × 1024 pixels, 6.7-micron pixel size, and 16-bit depth) a distance Δz = 4.5 cm from the image plane and recorded the subsequent diffraction pattern.</s>
+          <s cert="0.7620213031768799" id="dataset-2" type="Tabular data">To produce partially incoherent light, the experimental setup was modified by inserting a rotating diffuser in the illumination path, and the degree of spatial incoherence was quantified by measuring the spatial frequency of the speckles, i.e. 2π over the correlation length of speckles at the detection plane.</s>
+        </p>
+        <p>
+          <s>To align the SLM and the CCD camera for feedback, it is essential to find the transformation matrix between the two devices.</s>
+          <s>A 100 × 100 square mask was created on the SLM and moved in x and y direction with an interval of 200 pixels; we then found 25 point-by-point correspondences between the SLM and the camera by measuring the centroids of the mask on the SLM and the corresponding pattern on the camera.</s>
+          <s>A 3 × 3 transformation matrix between the two devices was thus calculated.</s>
+        </p>
+        <p>
+          <s>From the uniform-and designer-illuminated images I U and I D , the nonlinear phase retrieval algorithm proceeds as follows: (1) An object field u rec with amplitude A U and initial uniform phase = 0 is numerically back-propagated from the (out-of-focus) camera plane to the (in-focus) sample plane.</s>
+          <s>(2) A phase modulation SLM is added to the phase of u rec to simulate the action of the SLM.</s>
+        </p>
+        <p>
+          <s>(3) The new field is forward-propagated to the camera plane, yielding a field u′ D with amplitude A′ D .</s>
+          <s>(4) The simulated amplitude A′ D is replaced by the amplitude of the actual measurement A D .</s>
+          <s>
+            <ref target="#b4" type="bibr">(5)</ref> The field is back-propagated again to the sample plane, yielding a new field u rec .</s>
+          <s>
+            <ref target="#b5" type="bibr">(6)</ref> The phase modulation SLM is subtracted from the phase of u rec .</s>
+          <s>
+            <ref target="#b6" type="bibr">(7)</ref> The field is forward-propagated, yielding an estimate of the un-modulated image amplitude A′ U .</s>
+          <s>
+            <ref target="#b7" type="bibr">(8)</ref> A new field is generated by replacing A′ U with the actual measurement A U .</s>
+          <s>At this point, the algorithm restarts from step 1.</s>
+        </p>
+        <p>
+          <s>This algorithm effectively interpolates between the infinitesimal displacement of transport-of-intensity algorithms <ref target="#b33" type="bibr">34</ref> and the infinite (far-field) displacement of the Gerchberg-Saxton algorithm <ref target="#b18" type="bibr">19</ref> .</s>
+          <s>That is, it works for any distance of defocus, subject to the limits of Fresnel diffraction (which can be modified by changing the propagator).</s>
+          <s>The method also works for arbitrary degrees of spatial coherence, as in this case the algorithm converges on an overall envelope phase <ref target="#b34" type="bibr">35</ref> .</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>SCiEntifiC</head>
+        <label/>
+        <figDesc>REPORTs | (2019) 9:725 | DOI:10.1038/s41598-018-37030-7</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Figure 1 .</head>
+        <label>1</label>
+        <figDesc>Principle of nonlinear digital imaging. (a) Experimental setup. A collimated laser beam is first sent onto a reflective SLM. The surface of the SLM is imaged onto the object via a 4-f lens relay. A CCD camera collects the light transmitted through the sample at a defocused distance ∆z = 4.5 cm. (b) Pseudo-code for the image retrieval algorithm (see Methods for details). (c-e) Experimental intensity measured at (c) the focal plane, (d) the defocused plane with uniform illumination, and (e) the defocused plane with nonlinear (designer) illumination. SCiEntifiC REPORTs | (2019) 9:725 | DOI:10.1038/s41598-018-37030-7</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Figure 2 .</head>
+        <label>2</label>
+        <figDesc>Comparison between linear and nonlinear reconstructions. (a,b) Simulation of phase reconstruction with (a) the linear algorithm and (b) the nonlinear algorithm. (c,d) Experimental phase reconstruction with (c) the linear algorithm and (d) the nonlinear algorithm using partially coherent light (corresponding to a speckle spatial frequency of 2.5 × 10 4 rad/m). SCiEntifiC REPORTs | (2019) 9:725 | DOI:10.1038/s41598-018-37030-7</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Figure 3 .</head>
+        <label>3</label>
+        <figDesc>Experimental results as a function of nonlinear strength and power. (a-i) Show the phase variance (a,d,g), contrast (b,e,h) and resolution (c,f,i) of the nonlinear reconstructions. (a-c) Show the nonlinear reconstructions for coherent illumination while (d-f) and (g-i) are reconstructions for partially coherent illumination with speckle spatial frequency 2.3 × 10 4 rad/m and 4.9 × 10 4 rad/m, respectively. (j,k) Comparison of linear (blue) and nonlinear (red) reconstructions for (j) contrast and (k) resolution. Full coherence is given by zero spatial frequency, and the nonlinearity is fixed at modulation power = 0.5 and modulation strength = 1.5π. The dashed line corresponds to the spatial frequency (3.75 × 10 4 rad/m), at which the illumination speckle size becomes comparable to the DIC character stroke width. When the spatial frequency exceeds this value, the image quality becomes worse as the statistics washes out the diffraction fringes. SCiEntifiC REPORTs | (2019) 9:725 | DOI:10.1038/s41598-018-37030-7</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Figure 4 .</head>
+        <label>4</label>
+        <figDesc>Diversity of phase modulation. (a-e) Modulation φ SLM = γI α for coherent light (strength γ = 2π). The largest phase/information diversity (for better sampling) occurs when α = 0.5. (f) Shows the relation between diversity/variance and modulation power. Lower and upper curves represent modulation strengths γ = 2π and 4π, while solid, dashed, and dotted lines denote coherent and partially coherent illumination with speckle spatial frequency 2.3 × 10 4 rad/m (Incoherent_1) and 4.9 × 10 4 rad/m (Incoherent_2). Blue: experiment; red: theoretical fits for stretched exponential A = 33 and 132 for the lower and upper curves, B = {4.9, 4.1, 3.7}, and C = {0.8, 0.7, 0.6} for the coherent and incoherent cases. SCiEntifiC REPORTs | (2019) 9:725 | DOI:10.1038/s41598-018-37030-7</figDesc>
+      </figure>
+      <note place="foot">© The Author(s) 2019</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>This work was funded by AFOSR Grants FA9550-14-1-0177 and FA9550-12-1-0054.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Author Contributions</head>
+          <p>
+            <s>J.L. and A.S.G. performed the experiments and simulations.</s>
+            <s>All authors analyzed the data and contributed to the preparation of the manuscript.</s>
+          </p>
+        </div>
+        <div>
+          <head>Additional Information</head>
+          <p>
+            <s>Supplementary information accompanies this paper at https://doi.org/10.1038/s41598-018-37030-7.</s>
+          </p>
+        </div>
+        <div>
+          <head>Competing Interests: The authors declare no competing interests.</head>
+          <p>
+            <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+          <p>
+            <s>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.</s>
+            <s>The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in a credit line to the material.</s>
+            <s>If material is not included in the article's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.</s>
+            <s>To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Stabilized feedback amplifiers</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Black</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bell Syst Tech J</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope from="1" to="18" unit="page"/>
+                <date type="published" when="1934"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">New results in linear filtering and prediction theory</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Kalman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Bucy</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Transactions of ASME, Series D, Journal of Basic Engineering</title>
+              <imprint>
+                <biblScope unit="volume">83</biblScope>
+                <biblScope from="95" to="108" unit="page"/>
+                <date type="published" when="1961"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <monogr>
+              <title level="m" type="main">Adaptive signal processing</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Widrow</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Stearns</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="1985"/>
+                <publisher>Prentice-Hall</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Development of an Optical Parallel Logic Device and a Half-Adder Circuit for Digital Optical-Processing</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Athale</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1117/12.7972421</idno>
+              <ptr target="https://doi.org/10.1117/12.7972421"/>
+            </analytic>
+            <monogr>
+              <title level="j">Opt Eng</title>
+              <imprint>
+                <biblScope unit="volume">18</biblScope>
+                <biblScope from="513" to="517" unit="page"/>
+                <date type="published" when="1979"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Hausler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Seckmeyer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Weiss</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Chaos and Cooperation in Nonlinear Pictorial Feedback-Systems .1. Experiments. Applied Optics</title>
+              <imprint>
+                <biblScope unit="volume">25</biblScope>
+                <biblScope from="4656" to="4663" unit="page"/>
+                <date type="published" when="1986"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Akins</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Athale</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Feedback in Analog and Digital Optical-Image Processing -a Review. Optical Engineering</title>
+              <imprint>
+                <biblScope unit="volume">19</biblScope>
+                <biblScope from="347" to="358" unit="page"/>
+                <date type="published" when="1980"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Focusing coherent light through opaque strongly scattering media</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Vellekoop</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Mosk</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Optics Letters</title>
+              <imprint>
+                <biblScope unit="volume">32</biblScope>
+                <biblScope from="2309" to="2311" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Non-invasive imaging through opaque scattering layers</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Bertolotti</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">491</biblScope>
+                <biblScope from="232" to="234" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Phase contrast, a new method for the microsopic observation of transparent objects</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Zernike</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Physica</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope from="686" to="698" unit="page"/>
+                <date type="published" when="1942"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Surpassing the lateral resolution limit by a factor of two using structured illumination microscopy</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">G L</forename>
+                  <surname>Gustafsson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Microscopy-Oxford</title>
+              <imprint>
+                <biblScope unit="volume">198</biblScope>
+                <biblScope from="82" to="87" unit="page"/>
+                <date type="published" when="2000"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Nonlinear structured-illumination microscopy: Wide-field fluorescence imaging with theoretically unlimited resolution</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">G L</forename>
+                  <surname>Gustafsson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proceedings of the National Academy of Sciences of the United States of America</title>
+              <meeting>the National Academy of Sciences of the United States of America</meeting>
+              <imprint>
+                <date type="published" when="2005"/>
+                <biblScope unit="volume">102</biblScope>
+                <biblScope from="13081" to="13086" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Optical sectioning microscopy with planar or structured illumination</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Mertz</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Methods</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope from="811" to="819" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Rapid three-dimensional isotropic imaging of living cells using Bessel beam plane illumination</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Planchon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Methods</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope from="417" to="468" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Extended Depth of Field through Wave-Front Coding</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Dowski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Cathey</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Applied Optics</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope from="1859" to="1866" unit="page"/>
+                <date type="published" when="1995"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Single-pixel imaging via compressive sampling</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Duarte</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">IEEE Signal Processing Magazine</title>
+              <imprint>
+                <biblScope unit="volume">25</biblScope>
+                <biblScope from="83" to="91" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Phase-space measurement and coherence synthesis of optical beams</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Waller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Situ</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Fleischer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature Photonics</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope from="474" to="479" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Variable coherence scattering microscopy</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Baleine</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Dogariu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Physical Review Letters</title>
+              <imprint>
+                <biblScope unit="volume">95</biblScope>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Phase retrieval using nonlinear diversity</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Lu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Barsi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Williams</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Kutz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Fleischer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Appl Optics</title>
+              <imprint>
+                <biblScope unit="volume">52</biblScope>
+                <biblScope from="92" to="96" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Practical Algorithm for Determination of Phase from Image and Diffraction Plane Pictures</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Gerchberg</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Saxton</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Optik</title>
+              <imprint>
+                <biblScope unit="volume">35</biblScope>
+                <biblScope unit="page">237</biblScope>
+                <date type="published" when="1972"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Enhanced phase retrieval using nonlinear dynamics</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Lu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Lu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Fleischer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Optics Express</title>
+              <imprint>
+                <biblScope unit="volume">24</biblScope>
+                <biblScope from="25091" to="25102" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Nonlinear Abbe theory</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Barsi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Fleischer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature Photonics</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope from="639" to="643" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Forward four-wave mixing with defocusing nonlinearity</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Jia</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Wan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Fleischer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Optics Letters</title>
+              <imprint>
+                <biblScope unit="volume">32</biblScope>
+                <biblScope from="1668" to="1670" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Coherence + Fluctuations in Light Beams</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Martienssen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Spiller</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">American Journal of Physics</title>
+              <imprint>
+                <biblScope unit="volume">32</biblScope>
+                <biblScope unit="page">919</biblScope>
+                <date type="published" when="1964"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <monogr>
+              <title level="m" type="main">Statistical optics</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Goodman</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="1985"/>
+                <publisher>Wiley</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <monogr>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Murphy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Davidson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Ebrary Inc</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Xiii</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2012"/>
+                <publisher>Wiley-Blackwell</publisher>
+                <biblScope unit="volume">538</biblScope>
+                <pubPlace>Hoboken, N.J.</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Nonlinear self-filtering of noisy images via dynamical stochastic resonance</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Dylov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Fleischer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature Photonics</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope from="323" to="327" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Optimizing holographic data storage using a fractional Fourier transform</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Pegard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Fleischer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Optics Letters</title>
+              <imprint>
+                <biblScope unit="volume">36</biblScope>
+                <biblScope from="2551" to="2553" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Phase Retrieval Algorithms -a Comparison</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Fienup</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Appl Optics</title>
+              <imprint>
+                <biblScope unit="volume">21</biblScope>
+                <biblScope from="2758" to="2769" unit="page"/>
+                <date type="published" when="1982"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Dispersive superfluid-like shock waves in nonlinear optics</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Wan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Jia</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Fleischer</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1038/Nphys486</idno>
+              <ptr target="https://doi.org/10.1038/Nphys486"/>
+            </analytic>
+            <monogr>
+              <title level="j">Nature Physics</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="46" to="51" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Stretched exponential distributions in nature and economy: "fat tails" with characteristic scales</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Laherrere</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Sornette</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">European Physical Journal B</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope from="525" to="539" unit="page"/>
+                <date type="published" when="1998"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Maximum entropy approach to stretched exponential probability distributions</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Anteneodo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Plastino</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Physics a-Mathematical and General</title>
+              <imprint>
+                <biblScope unit="volume">32</biblScope>
+                <biblScope from="1089" to="1097" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Nonlinear restoration of diffused images via seeded instability</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Dylov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Waller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Fleischer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">IEEE Journal of Quantum Electronics</title>
+              <imprint>
+                <biblScope unit="volume">18</biblScope>
+                <biblScope from="916" to="925" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <monogr>
+              <title level="m" type="main">Introduction to Fourier optics</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Goodman</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2005"/>
+                <publisher>Roberts &amp; Co. Publishers</publisher>
+              </imprint>
+            </monogr>
+            <note>3rd edn</note>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Deterministic Phase Retrieval -a Green-Function Solution</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Teague</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of the Optical Society of America</title>
+              <imprint>
+                <biblScope unit="volume">73</biblScope>
+                <biblScope from="1434" to="1441" unit="page"/>
+                <date type="published" when="1983"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Nonlinear focusing and defocusing of partially-coherent spatial beams</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Sun</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Dylov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Fleischer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Optics Letters</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope from="3003" to="3005" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title/>
+              <idno type="DOI">10.1038/s41598-018-37030-7</idno>
+            </analytic>
+            <monogr>
+              <title level="j">SCiEntifiC REPORTs |</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <date type="published" when="2019"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

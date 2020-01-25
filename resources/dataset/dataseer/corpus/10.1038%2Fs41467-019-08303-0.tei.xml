@@ -1,0 +1,2339 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:21+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Genomic diversity landscape of the honey bee gut microbiota</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author role="corresp">
+              <persName>
+                <forename type="first">Kirsten</forename>
+                <forename type="middle">M</forename>
+                <surname>Ellegaard</surname>
+              </persName>
+              <email>kirsten.ellegaard@unil.ch</email>
+              <affiliation key="aff0">
+                <orgName type="department">Department of Fundamental Microbiology</orgName>
+                <orgName type="institution">University of Lausanne</orgName>
+                <address>
+                  <postCode>1015</postCode>
+                  <settlement>Lausanne</settlement>
+                  <country key="CH">Switzerland</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Philipp</forename>
+                <surname>Engel</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Department of Fundamental Microbiology</orgName>
+                <orgName type="institution">University of Lausanne</orgName>
+                <address>
+                  <postCode>1015</postCode>
+                  <settlement>Lausanne</settlement>
+                  <country key="CH">Switzerland</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Genomic diversity landscape of the honey bee gut microbiota</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41467-019-08303-0</idno>
+          <note>ARTICLE OPEN Correspondence and requests for materials should be addressed to K.M.E. 1</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div subtype="dataseer">
+          <p>
+            <s>The structure and distribution of genomic diversity in natural microbial communities is largely unexplored.</s>
+            <s cert="0.7782742977142334" id="dataset-1" type="Tabular data">Here, we used shotgun metagenomics to assess the diversity of the honey bee gut microbiota, a community consisting of few bacterial phylotypes.</s>
+            <s>Our results show that most phylotypes are composed of sequence-discrete populations, which co-exist in individual bees and show age-specific abundance profiles.</s>
+            <s>In contrast, strains present within these sequence-discrete populations were found to segregate into individual bees.</s>
+            <s>Consequently, despite a conserved phylotype composition, each honey bee harbors a distinct community at the functional level.</s>
+            <s>While ecological differentiation seems to facilitate coexistence at higher taxonomic levels, our findings suggest that, at the level of strains, priority effects during community assembly result in individualized profiles, despite the social lifestyle of the host.</s>
+            <s>Our study underscores the need to move beyond phylotype-level characterizations to understand the function of this community, and illustrates its potential for strain-level analysis.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <p>
+          <s>M ost bacteria live in genetically diverse and highly complex communities under natural conditions, and their evolution and ecology is dictated by both external environmental factors and internal microbial interactions.</s>
+          <s>However, surprisingly little is known about how diversity is structured and spatially distributed in natural microbial communities.</s>
+          <s>Are bacteria organized into genetically and ecologically congruent units, akin to the species of the eukaryotic world?</s>
+          <s>And if so, how can we delineate these units?</s>
+          <s>Do closely related lineages co-exist spatially, and if so, how?</s>
+          <s>Addressing these questions is fundamental for understanding the evolution and function of natural bacterial communities <ref target="#b0" type="bibr">1</ref> .</s>
+        </p>
+        <p>
+          <s>16S rRNA amplicon sequencing is the most commonly used culture-independent method to analyze bacterial communities and has provided valuable insights into the distribution of bacteria across habitats 2 .</s>
+          <s>However, for studying bacterial evolution and function, the 16S rRNA gene lacks resolution.</s>
+          <s>First of all, the same divergence in the 16S rRNA sequence can correspond to vastly different levels of relatedness at the genomic level, even within the same bacterial species <ref target="#b2" type="bibr">3,</ref>
+            <ref target="#b3" type="bibr">4</ref> .</s>
+          <s>Secondly, adaptation of bacterial populations to specific environmental conditions is often linked to functions in the accessory gene pool, which cannot be inferred from amplicon sequencing data 1 .</s>
+          <s>Shotgun metagenomics is therefore becoming an increasingly popular method because it provides both strain-level taxonomic resolution and information about the functional repertoire of the sequenced community <ref target="#b4" type="bibr">5,</ref>
+            <ref target="#b5" type="bibr">6</ref> .</s>
+        </p>
+        <p>
+          <s>Despite the on-going debate on the existence and delineation of bacterial species, read recruitment of shotgun metagenomic data to reference genomes 7 has provided evidence that many bacterial populations are organized into discrete genetic clusters <ref target="#b7" type="bibr">8</ref> .</s>
+          <s>These so-called 'sequence-discrete populations' (SDPs) are defined by a genetic discontinuity in relatedness between a population of strains and the rest of the community 3,7-10 .</s>
+          <s>Evidence for the broad existence of SDPs in bacteria was recently obtained based on a pairwise average nucleotide identity (ANI) analysis on more than 90,000 sequenced genomes from the NCBI genome database <ref target="#b10" type="bibr">11</ref> .</s>
+          <s>However, in natural populations, SDP analyses have so far only been conducted in a small number of studies, and almost exclusively from aquatic habitats 3,7-10 , leaving the question somewhat open as to how general this pattern is.</s>
+          <s>Since SDP analysis requires representative reference genomes and high sequencing coverage at the taxon level, it is in practice often limited to a very small fraction of the members of a given community.</s>
+        </p>
+        <p>
+          <s>The successful analyses of shotgun metagenomic data, including de novo assembly, variant calling, and SDP analysis, depends largely on sequencing depth and community complexity <ref target="#b4" type="bibr">5</ref> .</s>
+          <s>Therefore, the honey bee gut microbiota has great potential as a model for studying natural bacterial populations due to the remarkably simple and conserved composition of the community <ref target="#b11" type="bibr">12,</ref>
+            <ref target="#b12" type="bibr">13</ref> .</s>
+          <s>Multiple studies employing 16S rRNA amplicon sequencing have confirmed that the honey bee gut microbiota is composed of only 8-10 phylotypes (i.e.</s>
+          <s>clusters of 16S rRNA sequences with ≥97% sequence identity), belonging to the Firmicutes, Actinobacteria and Proteobacteria phyla, which typically make up &gt;95% of all 16S rRNA sequences <ref target="#b13" type="bibr">[14]</ref>
+            <ref target="#b14" type="bibr">[15]</ref>
+            <ref target="#b15" type="bibr">[16]</ref> .</s>
+          <s>These phylotypes appear to be specific to the honey bee gut and dominate the community regardless of the geographic origin of the sampled bees, their age or the season <ref target="#b14" type="bibr">[15]</ref>
+            <ref target="#b15" type="bibr">[16]</ref>
+            <ref target="#b16" type="bibr">[17]</ref>
+            <ref target="#b17" type="bibr">[18]</ref> .</s>
+          <s>However, genome sequencing has revealed the presence of highly divergent strains and extensive gene content diversity within several phylotypes, indicating that the community is considerably more complex than 16S rRNA amplicon sequencing would suggest <ref target="#b18" type="bibr">[19]</ref>
+            <ref target="#b19" type="bibr">[20]</ref>
+            <ref target="#b20" type="bibr">[21]</ref> .</s>
+          <s>From a taxonomic perspective, the extensive intra-phylotype diversity has resulted in some phylotypes now harboring multiple named species, and others harboring highly divergent lineages with the same species name <ref target="#b21" type="bibr">22</ref> .</s>
+          <s>Naming of species within phylotypes has so far mostly been motivated by divergence in the non-ribosomal part of the genomes and the aforementioned differences in metabolic profiles <ref target="#b22" type="bibr">23</ref> , but also on ANI <ref target="#b23" type="bibr">24</ref> .</s>
+          <s>However, the natural population structure within phylotypes has not been systematically investigated, and it is unclear to what extent the named species represent discrete evolutionary lineages (SDPs).</s>
+          <s>Moreover, metabolic profiling has only been done on a small number of isolates <ref target="#b18" type="bibr">19,</ref>
+            <ref target="#b22" type="bibr">23,</ref>
+            <ref target="#b24" type="bibr">25</ref> , raising the question whether such metabolic features do in fact represent species core repertoire.</s>
+          <s>Regardless, there is increasing evidence that the intra-phylotype diversity is of functional relevance for the bee gut microbiota.</s>
+          <s>For example, divergent strains of the phylotype corresponding to Gilliamella exhibit different capacities to degrade pectin, a major plant glycan of pollen <ref target="#b20" type="bibr">21</ref> .</s>
+          <s>Similarly, it has been shown that strains of one of the two Lactobacillus phylotypes (originally named 'Firm5') differ in their ability to metabolize sugars commonly found in the honey bee diet <ref target="#b22" type="bibr">23</ref> .</s>
+          <s>How these strains distribute in the host population has remained elusive, but may influence the interaction of the bee gut microbiota with its host <ref target="#b25" type="bibr">26,</ref>
+            <ref target="#b26" type="bibr">27</ref> , with possible effects on the health status of this important pollinator species.</s>
+        </p>
+        <p>
+          <s>In the current study, we used shotgun metagenomic sequencing to comprehensively analyze the genomic diversity landscape of the honey bee gut microbiota, at three taxonomic levels: phylotype, SDP and strain <ref type="figure">(Fig. 1a)</ref> .</s>
+          <s>By generating metagenomic samples from individual honey bees, we analyzed the distribution of genomic diversity within and between colonies ( <ref type="figure">Supplementary Fig. 1</ref> ).</s>
+          <s>Our analysis revealed remarkably high levels of genomic diversity within colonies, of which only a fraction was carried by individual bees, resulting in marked functional differences, and highlighting the need to move beyond phylotype-level analysis in future studies.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Results</head>
+        <p>
+          <s>Extensive metagenomic read recruitment to a reference database.</s>
+          <s cert="0.5303407907485962" id="dataset-2" type="Tabular data">We shotgun sequenced the gut microbiota of 54 bees of three different age groups, sampled from two adjacent colonies, one of which was sampled over two consecutive years <ref type="figure">(Fig. 1b)</ref> .</s>
+          <s>To this end, we established a DNA extraction protocol that allowed for the enrichment of bacterial cells in samples originating from single homogenized bee guts (hindgut), and constructed a reference genome database containing genomic data for all major phylotypes of the honey bee gut microbiota <ref type="figure">(Fig. 1c</ref> , Supplementary Data 1).</s>
+          <s>The enrichment protocol efficiently reduced host-derived DNA in most samples, with an average of 13% of the reads mapping to the honey bee genome (Supplementary <ref type="figure">Fig. 2a)</ref> .</s>
+          <s>Moreover,~90% of the remaining reads mapped to the reference genome database in the majority of samples, regardless of honey bee age, indicating that the current database is representative of most of the community ( <ref type="figure">Supplementary Fig. 2b</ref> ).</s>
+          <s>One sample (DrY2_W5) did contain an abnormal amount of unmapped non-host reads (71%), and was therefore removed from all downstream analyses related to the core microbiota composition and distribution.</s>
+        </p>
+        <p>
+          <s>To identify bacterial lineages not represented in the current database, orthologs of 33 universally conserved gene families <ref target="#b27" type="bibr">28</ref> were extracted from de novo assemblies of non-host reads, and the subset of these sequences without a close hit to the current genomic database (&lt;95% nucleotide sequence identity) was further analyzed.</s>
+          <s>The median number of such orthologs per gene family ranged from 0-3 per sample, indicating that relatively few additional taxa were present with sufficient coverage for assembly in a given sample (Supplementary Data 2).</s>
+          <s>A blast search against the NCBI non-redundant database showed that the taxa not represented in the current database belong to three different classes of Proteobacteria (alpha, beta and gamma).</s>
+          <s>Hits to Bartonella, Commensalibacter and Snodgrassella were found in several samples, indicating that these bee gut microbiota phylotypes still lack some representation in the current database.</s>
+          <s>In addition, hits to phylotypes not considered as part of the honey bee gut microbiota occurred sporadically (e.g.</s>
+          <s>Sphingomonas sp, Acinetobacter sp., and Serratia sp.) (Supplementary Data 2).</s>
+        </p>
+        <p>
+          <s>Altogether, these analyses show that bacteria-enriched metagenomes can be obtained from individual honey bees, and that a large proportion of the diversity in these metagenomes is represented in our reference database, justifying its utilization for downstream analyses.</s>
+        </p>
+        <p>
+          <s>Core members are composed of sequence-discrete populations.</s>
+          <s>To begin our characterization of the genomic diversity landscape of the honey bee gut microbiota, we first investigated whether phylotypes of this community harbor SDPs and hence are organized into genetically congruent units.</s>
+          <s>To this end, candidate SDPs were identified in the reference database by clustering genomes based on phylogenetic relationships and pairwise average nucleotide identities (ANI) (see methods and <ref type="figure">Supplementary Fig. 3</ref> ).</s>
+          <s>With this approach, we identified candidate SDPs for four of the five core phylotypes and for Bartonella apis, whereas no candidate SDPs were found for the core phylotype Snodgrassella alvi <ref type="figure">(Fig. 2, Supplementary Figs. 4</ref> and 5, see methods).</s>
+          <s>Since SDPs inferred from sequenced isolates could potentially result from biases in database representation, we validated the candidate SDPs using the metagenomic data (see methods and <ref type="figure">Supplementary Fig. 3)</ref> .</s>
+          <s>Briefly, orthologs of core gene families were extracted from the de novo assemblies of the metagenomic samples and aligned to the core sequences from the database.</s>
+          <s>For true SDPs, the metagenomic core gene orthologs are expected to have a much higher similarity to one particular SDP relative to any other SDP (resulting in a 'gap-zone' as described in <ref target="#b7" type="bibr">8</ref> ).</s>
+          <s>Indeed, we found a clear separation in the distribution of sequence similarity between the highest and second-highest scoring SDP for four of the five phylotypes with candidate SDPs <ref type="figure">(Fig. 2)</ref> .</s>
+          <s>Only for B. apis, the distributions overlapped <ref type="figure">(Fig. 2f)</ref> .</s>
+          <s>In this case, the wider curve for the highest-scoring SDP also shows that the current database does not fully grasp the diversity present in the metagenomic samples, as corroborated by the presence of B. apislike bacteria in the unmapped reads (Supplementary Data 2).</s>
+          <s>Thus, it is possible that SDPs are present in B. apis, although with much less separation compared to the other phylotypes.</s>
+          <s>A considerable fraction of the bifidobacteria in the metagenomic samples also lacked a close relative in the database <ref type="figure">(Fig. 2c)</ref> .</s>
+          <s>However, the two SDPs (Bifido-1 and Bifido-2) were still discrete due to the large divergence between them.</s>
+        </p>
+        <p>
+          <s>Since all samples in the current study were derived from the same geographic location, we additionally re-analyzed a previously published metagenomic dataset, which consisted of pooled honey bee guts sampled from a colony in the Unites States 21 .</s>
+          <s>Strikingly, as for the Swiss samples, most of the genomic diversity in this sample was represented by our reference database, with only 9% of the reads unmapped.</s>
+          <s>Despite a general shift in abundance towards Proteobacteria in this sample, all SDPs identified in the current study were found to be present and discrete ( <ref type="figure">Supplementary Fig. 6b-d)</ref> .</s>
+          <s cert="0.9404241442680359" id="dataset-3" type="Genetic Data">As for the metagenomes from Switzerland, most orthologs of the 33 universally conserved gene families <ref target="#b27" type="bibr">28</ref> c Guts of individual bees were dissected and subjected to a customized protocol enriching for bacterial DNA, which was then shotgun sequenced using Illumina.</s>
+          <s>In parallel, a reference database of high-quality draft and complete genomes of bee gut bacterial isolates was established.</s>
+          <s>The downstream analysis of the metagenomic data was based on both mapping against the reference database and de novo assembly.</s>
+          <s>An overview flowchart of the entire analysis illustrating how genomic and metagenomic data was integrated is given in <ref type="figure">Supplementary Fig. 1</ref> hits to phylotypes of the honey bee gut microbiota in the nonredundant database of NCBI, most frequently to Snodgrassella and Bartonella, but some hits to Gilliamella were also observed (Supplementary Data 2).</s>
+          <s>In summary, a total of 11 SDPs were identified and validated within four of the five core phylotypes of the honey bee gut microbiota.</s>
+          <s>This means that most core phylotypes of the bee gut microbiota have further diversified into genetically congruent units that can be detected with shotgun metagenomics.</s>
+          <s>Compared to previously published species names, eight of the SDPs contain a single named species, two SDPs contain two species names, and one SDP has no associated species name yet <ref type="figure">(Fig. 2, Supplementary Data 1)</ref> .</s>
+          <s>While additional SDPs may be present at low abundance, our analysis shows that we have identified the most dominant SDPs, and, that these are present in bees in both Europe and the United States.</s>
+        </p>
+        <p>
+          <s>Replication and stability of the microbiota changes with age.</s>
+          <s>Having confirmed the existence of SDPs within phylotypes, we next investigated whether there are age-or colony-specific signatures in the distribution of phylotypes and SDPs among individual honey bees.</s>
+          <s>Both phylotype and SDP abundances were quantified based on the summed gene coverage of core gene family orthologs from the database (867-1,737 families per phylotype, see methods and <ref type="figure">Supplementary Fig. 7</ref> ).</s>
+          <s>For the seven phylotypes represented by complete genomes or genome scaffolds, a pattern consistent with replicating bacteria 29 was observed in the vast majority of samples ( <ref type="figure">Supplementary Fig. 8)</ref> , independently of the intra-sample phylotype abundance ( <ref type="figure">Supplementary Fig. 9</ref> ).</s>
+          <s>Therefore, quantifications were based on the coverage at the estimated terminus in samples with detectable replication.</s>
+        </p>
+        <p>
+          <s>First of all, we found that the bacterial community had a highly stable phylotype composition, also at the level of individual bees, <ref type="figure">Fig. 2</ref> Core genome phylogenies of bee gut microbiota phylotypes and SDP validation.</s>
+          <s>a-f The upper part of each panel shows the maximum-likelihood core genome phylogeny inferred for each of the five core phylotypes of the honey bee gut microbiota and the non-core phylotype B. apis, based on the genomes in the reference database.</s>
+          <s>Different shades of color represent candidate SDPs.</s>
+          <s>The lower part of each panel shows the validation of the existence of SDPs using the metagenomic data.</s>
+          <s>Orthologous sequences of core genes were extracted from de novo metagenome assemblies and aligned to the core genes of the reference genomes.</s>
+          <s>The two density distributions correspond to the maximum alignment percentage identity of all extracted orthologs to their highest and second-highest (grey color) scoring candidate SDP.</s>
+          <s>Note that only one distribution is shown for S. alvi, since no candidate SDPs were found in the database.</s>
+          <s>The total number of non-redundant orthologous sequences extracted per phylotype is indicated in the legend of the density distribution plots.</s>
+          <s>Phylogenetic analyses were based on nucleotide alignments, except in the case of Firm4.</s>
+          <s>Bars correspond to 0.05 substitutions per site.</s>
+          <s>Published species names are placed at the leaves of the trees (for full names, see Supplementary Data 1).</s>
+          <s>Names of confirmed SDPs are shown next to the internal node corresponding to their most recent common ancestor.</s>
+          <s>Results for the two non-core members Commensalibacter sp. and F. perrara are shown in <ref type="figure">Supplementary Fig. 6a</ref> .</s>
+          <s>Larger trees with annotations can be found in <ref target="#fig_1" type="figure">Supplementary Fig. 5</ref> consistent with previous 16S rRNA-based analyses <ref target="#b12" type="bibr">13,</ref>
+            <ref target="#b14" type="bibr">15</ref> .</s>
+          <s>The five core phylotypes were detected in more than 94% of the samples, with Firm5 being the most abundant member <ref type="figure">(Fig. 3a</ref> , Supplementary <ref type="figure">Fig. 10</ref> ).</s>
+          <s>In contrast to most previous 16S rRNA-based studies, the Bifido phylotype was found to be the second most abundant.</s>
+          <s>This difference is likely explained by the known 16S rRNA primer biases <ref target="#b29" type="bibr">30</ref> , indicating that the abundance of this member has so far been underestimated.</s>
+          <s>The non-core species Frischella perrara, B. apis and Commensalibacter sp. were more variably present, with detected frequencies ranging from 0.37 to 0.68 across samples, also largely consistent with previous studies <ref target="#b12" type="bibr">13,</ref>
+            <ref target="#b30" type="bibr">31</ref> .</s>
+          <s>All other species included in our reference database had &lt;1x genome coverage in any of the samples, and were therefore not analyzed further.</s>
+        </p>
+        <p>
+          <s>Overall, there was no strong association between honey bee age or colony and the relative abundance of core phylotypes in the current study (Supplementary <ref type="table">Table 1</ref> ).</s>
+          <s>Most of the parameter deviance in phylotype abundance was contributed by the non-core members Commensalibacter sp.</s>
+          <s>(ManyGLM, P = 0.007, 11.9%) and B. apis (ManyGLM, P = 0.002, 12.8%) (Supplementary <ref type="table">Table 1)</ref> , with Commensalibacter sp.</s>
+          <s>being more frequently encountered in old bees and B. apis being highly dominant in one set of old bees ( <ref type="figure">Supplementary Fig. 10</ref> ), suggesting that old bees may be more prone to colonization by non-core members.</s>
+          <s>Indeed, we observed an age-dependent increase in the fraction of unmapped non-host reads <ref type="figure">(Fig. 4a)</ref> , and universal core ortholog sequences without a close hit to the current genomic database were also more commonly found in old bees (2/18 young bees, 8/18 middle-aged bees, and 15/18 old bees) (Supplementary Data 2).</s>
+        </p>
+        <p>
+          <s>These results not only show that old bees are colonized more frequently by non-core members, but also suggest that they exhibit higher variability in microbiota composition.</s>
+          <s>To formally test this, we clustered the metagenomic orthologs of the 33 universal gene families at 95% nucleotide identity (analogous to 16S rRNA clustering), and recorded their occurrence across samples (see "Methods" section, <ref type="figure">Supplementary Fig. 11)</ref> .</s>
+          <s>Notably, the dispersion of beta-diversity was found to differ significantly between age groups, with the highest values found in old bees ( <ref type="figure">Fig. 4b</ref> ).</s>
+          <s>Since beta-diversity was calculated on presence-absence data, and the core members were present in essentially all bees, the increased beta-diversity must be due to the variable presence of non-core members (rather than a specific community not represented in the database).</s>
+          <s>Intriguingly, the average population replication (PTR) for all core phylotypes also decreased with age ( <ref type="figure">Fig. 4c, d)</ref> , possibly rendering the community more susceptible to invasion by non-core members.</s>
+          <s>Taken together, these results point in the direction of a decrease in gut microbiota stability with age.</s>
+        </p>
+        <p>
+          <s>At the level of SDPs, a high degree of co-occurrence was found within individual bees.</s>
+          <s>For example, the four SDPs of the Firm5 phylotype were found to co-occur in all bees <ref type="figure">(Fig. 3b)</ref> .</s>
+          <s>Likewise, the two SDPs of the Firm4 and the Bifido phylotype co-occurred in the majority of samples, although in both cases one of the SDP was dominant across samples ( <ref type="figure">Fig. 3c, d)</ref> .</s>
+          <s>In contrast, the distribution of SDPs of Gilliamella was more variable, with Gilli-2 and Gilli-3 only being present in a subset of samples <ref type="figure">(Fig. 3e)</ref> .</s>
+          <s>Interestingly, although Gilli-1 was generally dominant, it was completely replaced by the other SDPs in 3/53 samples.</s>
+          <s>Thus, while most bees harbored multiple SDPs, the pattern of cooccurrence differed among phylotypes, suggesting that there are differences in the underlying mechanisms of co-existence.</s>
+          <s>Moreover, despite an overall high degree of co-occurrence between SDPs within bees, subtle, yet significant, changes in relative abundances of SDPs with honey bee age were found for Firm4-2, Firm5-1 and Bifido-2 (ManyGLM, p &lt; 0.01, Supplementary <ref type="table">Table 2</ref> ).</s>
+        </p>
+        <p>
+          <s>In summary, we find that SDPs of most phylotypes co-occur in individual bees, suggesting that they occupy distinct ecological niches.</s>
+          <s>However, some of these SDPs display shifts in relative abundance according to age group and several lines of evidence suggest that the overall stability of the community decreases with age.</s>
+        </p>
+        <p>
+          <s>Strains within SDPs segregate into individual bees.</s>
+          <s>As indicated by many long branches at the tips of the core phylogenies ( <ref type="figure">Fig. 2</ref> ) <ref type="figure">Fig. 4)</ref> , strains of the same SDP can be highly divergent.</s>
+          <s>Consequently, bees colonized by the same SDP could in theory harbor very different strains of that SDP.</s>
+          <s>However, the genomes in the database were obtained from different geographic locations across Europe and the US, which may explain some of the observed intra-SDP divergence in the reference database.</s>
+          <s>Given that all the bees sampled in the current study originated from two adjacent colonies, we therefore asked: do bees from the same colony harbor similar strains?</s>
+          <s>Firstly, the fraction of recruited metagenomic reads per genome varied substantially across samples <ref target="#fig_1" type="figure">(Fig. 5a</ref> , Supplementary <ref type="figure">Fig. 12</ref> ), suggesting that individual bees do carry different strains.</s>
+          <s>For example, three profiles were visible for Gilli-1 <ref target="#fig_1" type="figure">(Fig. 5a</ref> ), which correlated with the core phylogeny, consistent with competitive exclusion among divergent strains within this SDP.</s>
+          <s>In contrast, the profiles did not correlate with either sampling time or colony, nor did the geographic origin of the sequenced genomes appear to matter.</s>
+          <s>In fact, for Bifido-1, the four genomes that were isolated from the same location as the metagenomic samples recruited fewer reads than the genomes isolated elsewhere <ref type="figure">(Supplementary Fig. 12b)</ref> .</s>
+        </p>
+        <formula xml:id="formula_0">Firm4-1 Firm4-2 Gilli-1 Gilli-2 Bifido-1 Bifido-2</formula>
+        <p>
+          <s>To obtain quantitative measures of intra-SDP diversity, we inferred SNVs (single-nucleotide variants) based on a reduced database containing a single reference genome per SDP ( <ref type="figure">Supplementary Fig. 13</ref> , Supplementary Data 1).</s>
+          <s>The total fraction of polymorphic sites in the core gene sequences ranged from 4 to 33%, demonstrating a remarkably high level of strain diversity overall, but also large differences between SDPs <ref target="#fig_1" type="figure">(Fig. 5b)</ref> .</s>
+          <s>The most diverse SDPs were Bifido-1, Firm5-4 and B. apis, which were also highly diverse in the genomic database <ref type="figure">(Fig. 2, Supplementary Fig. 4</ref> ).</s>
+          <s>Within bees, the fraction of polymorphic sites was considerably lower, ranging from 0-11%, suggesting that strains compete for colonization or exclude each other after establishment within hosts <ref target="#fig_1" type="figure">(Fig. 5b)</ref> .</s>
+          <s>Indeed, most of the SNVs occurred at both high (&gt;0.9)</s>
+          <s>and low (&lt;0.1)</s>
+          <s>intra-sample relative abundances, indicating that strains can be both dominant and Decreased stability and average population replication in old bees.</s>
+          <s>a Fraction of unmapped non-host reads (out of total reads not mapped to the honey bee genome).</s>
+          <s>b Distance to the estimated centroid per age-group (using pairwise Jaccard distances between samples, calculated on data from 33 universal core gene families extracted from all metagenomic samples).</s>
+          <s>c A representative plot showing the mapped coverage of core gene families relative to their location in a reference genome (all plots are provided in <ref type="figure">Supplementary Fig. 8</ref> ).</s>
+          <s>These plots were used to quantify the abundance of phylotypes/ SDPs in the metagenomic samples, but also to estimate the average population replication based on the ratio of the coverage at the origin and the terminus (peak-to-trough ratio, PTR).</s>
+          <s>The red line corresponds to the segmented linear regression line that was fitted to the data to determine the mean coverage at origin and terminus.</s>
+          <s>d Distribution of PTR values across the sampled bees for the five core phylotypes (based on samples with at least 10x terminus coverage).</s>
+          <s>For each boxplot, the center line displays the median, the boxes correspond to the 25th and 75th percentiles, and whiskers extend to the most extreme data points that are within the 1.5 interquartile range of the box.</s>
+          <s>For a, b, d, the results of the one-way analysis of variance (ANOVA) in response to age are shown above each plot.</s>
+          <s>For panel a, the data was log10-transformed prior to ANOVA, and the plot is shown on a logarithmic scale rare/absent across bees sampled from the same apiary (Supplementary <ref type="figure">Fig. 14)</ref> .</s>
+        </p>
+        <p>
+          <s>The large fraction of variable sites observed, and the comparatively lower levels found within individual honey bees, prompted us to investigate how many bees would be needed to reach the diversity levels found across the study.</s>
+          <s>By calculating cumulative curves of diversity, we found that approximately 20 bees were needed before the curves started to level off, regardless of the total diversity associated with a given SDP <ref target="#fig_1" type="figure">(Fig. 5c)</ref> .</s>
+          <s>Moreover, for each SDP, different sampling orders generated highly similar curves, suggesting that individual bees contain similar levels of strain diversity.</s>
+        </p>
+        <p>
+          <s>Bees in the current study were sampled to vary in collection time, colony and age <ref type="figure">(Fig. 1b)</ref> , and these factors could potentially contribute to the total diversity observed.</s>
+          <s>We therefore calculated the fraction of polymorphic sites corresponding to each of the nine samplings <ref type="figure">(Fig. 1b)</ref> , and compared these values to the fractions obtained from random subsets of bees ( <ref target="#fig_1" type="figure">Supplementary Fig. 15</ref> ).</s>
+          <s>While there was some variation in the fraction of variable sites for both the real and random samplings, there were no significant differences between them for any of the SDPs with sufficient representation for the analysis.</s>
+          <s>This result therefore suggests that the high strain-level diversity found across the current study cannot be attributed to variation in age, sampling time, or colony affiliation.</s>
+        </p>
+        <p>
+          <s>To obtain a visual representation of the distribution of SNVs across individuals, we calculated the Jaccard distances between all pairs of samples based on shared SNVs (see methods).</s>
+          <s>Jaccard distances generally varied from 0.2-0.8,</s>
+          <s>indicating that some bees do carry more similar strains than others.</s>
+          <s>Principal coordinates analysis revealed well-separated clusters for some SDPs (e.g.</s>
+          <s>
+            <ref type="figure">Supplementary Fig. 16i, l)</ref> .</s>
+          <s>However, these clusters did not correlate with either colony origin or sampling time, consistent with the read recruitment patterns <ref target="#fig_1" type="figure">(Fig. 5a, Supplementary Fig. 12</ref> ).</s>
+          <s>Taken together, these results demonstrate that the SDPs of the honey bee gut microbiota harbor very high levels of strain diversity, with competitive exclusion occurring at the level of individual bees, but not within colonies, resulting in individualized gut microbiota profiles.</s>
+          <s>Intriguingly, individual bees seem to carry a similar fraction of the total strain-level diversity, regardless of the total diversity associated with the SDP.</s>
+        </p>
+      </div>
+      <div>
+        <head>Functional variation of the microbiota across individual bees.</head>
+        <p>
+          <s>Having found that divergent strains coexist within colonies, but tend to segregate into individual bees, we hypothesized that individual bees would differ in the functional gene content of the microbiota, despite a stable composition at the phylotype level.</s>
+          <s>Indeed, previous studies have uncovered a remarkably high level of gene content variation between strains belonging to the same phylotype <ref target="#b18" type="bibr">[19]</ref>
+            <ref target="#b19" type="bibr">[20]</ref>
+            <ref target="#b20" type="bibr">[21]</ref> .</s>
+          <s>However, the distribution of this diversity among individual honey bees has never been addressed.</s>
+        </p>
+        <p>
+          <s>To this end, we analyzed the distribution of 16,049 orthologous gene families predicted from our genomic database across the 53 bees for which we had sufficient shotgun metagenomic data.</s>
+          <s>Since the detection of gene families is likely to be influenced by sequencing depth, we first normalized the abundance of all gene families relative to the abundance of the phylotype they were derived from.</s>
+          <s>Following coverage normalization, gene families occurring with a relative abundance of &lt;10% compared to the phylotype abundance in at least one sample were categorized as 'variably associated with the phylotype' (see methods and <ref type="figure">Supplementary Fig. 17</ref> ).</s>
+          <s>On the basis of this conservative threshold, a third of the gene families in the current database (5,059; 32%) displayed variable phylotype association <ref type="figure">(Fig. 6a, Supplementary Data 3)</ref> .</s>
+          <s>In the following, we will refer to these gene families as the 'variome'.</s>
+        </p>
+        <p>
+          <s>Given the existence of SDPs within phylotypes, gene families assigned to the variome might be expected to correspond largely to SDP-specific core gene content.</s>
+          <s>However, many of the variome gene families contain members from multiple SDPs within the database, and only a small fraction of the gene families were found to correlate in abundance with a single SDP across the metagenomic samples <ref type="figure">(Fig. 6a, Supplementary 3)</ref> , indicating that most of the variome does not represent SDP-specific core gene content.</s>
+          <s>Besides many hypothetical or poorly characterized gene families, functions related to carbohydrate and amino acid metabolism and transfer (COGs 'G' and 'E') were prevalent in the variome <ref type="figure">(Fig. 6b)</ref> .</s>
+          <s>In particular, we found transporters and hydrolases for the utilization of dietary glycans to dominate a large fraction of the variome, especially in the core phylotypes Bifido, Firm4, Firm5, and Gilliamella.</s>
+          <s>However, genes coding for cell surface structures or Type VI secretion systems were also abundantly present <ref type="figure">(Supplementary Data 3)</ref> .</s>
+        </p>
+        <p>
+          <s>To gain further insights into the putative origin of gene families assigned to the variome, we clustered the genes of all variome gene families within their genomes of origin (see methods and <ref type="figure">Supplementary Fig. 17</ref> ).</s>
+          <s>On the basis of this analysis, between 49 and 73% of the variome gene families were found to occur in genomic islands (&gt;10 kb and &gt;5 genes) within the database <ref type="figure">(Supplementary Data 4)</ref> .</s>
+          <s>While a large fraction of these islands appeared to be of phage origin, many others coded for metabolic functions and cell surface structures <ref type="figure">(Supplementary Data 4)</ref> .</s>
+          <s>Islands occurred at different frequencies across bees, no matter which broader functional category they belonged to <ref type="figure">(Fig. 6c)</ref> .</s>
+          <s>Interestingly, many of the intermediate or low frequency islands seem to be associated with specific strains rather than SDPs (Supplementary Data 3).</s>
+          <s>For example, the island 'JG29_28' (phylotype Firm4), which encodes genes for ethanolamine catabolism <ref type="figure">(Fig. 6d)</ref>
+            <ref target="#b31" type="bibr">32</ref> , occurred with a frequency of only 63% across samples, despite being associated with Firm4-1 (in the database), an SDP that is abundantly present in every bee ( <ref type="figure">Supplementary Data 3-4, Fig. 3c</ref> ).</s>
+          <s>Ethanolamine is a membrane-derived compound that is prevalent in the gastrointestinal tract due to the high turnover of bacteria and host cells <ref target="#b31" type="bibr">32</ref> .</s>
+          <s>In the mammalian gut, pathogenic bacteria have been shown to utilize ethanolamine <ref target="#b32" type="bibr">33</ref> .</s>
+          <s>While its role in insects is currently unknown, ethanolamine utilization may provide a growth advantage in the bee gut depending on dietary conditions, state of the microbiota and fitness of the host.</s>
+          <s>Many other islands with metabolic functions were linked to carbohydrate utilization.</s>
+          <s>For example, a large island identified in the Bifido-1 SDP encoded key functions for the degradation and uptake of cellulose and/or hemicellulose <ref target="#fig_1" type="figure">(Fig. 5e)</ref> , and was found to be present in only 90% of the sampled bees.</s>
+        </p>
+        <p>
+          <s>Metabolic flexibility encoded via the variome could potentially allow bees to adapt to changing environmental conditions or agespecific dietary requirements, while maintaining a stable composition at the phylotype level.</s>
+          <s>Although we found no evidence for higher similarity in strain diversity for bees sampled together ( <ref target="#fig_1" type="figure">Supplementary Fig. 15</ref> ), functional redundancy among strains could potentially generate similar functional profiles from different strain compositions.</s>
+          <s>To address this question, we quantified the fraction of the variome shared between all pairs of bees, with a gene family considered to be present in a sample when having a mean coverage of at least 10% of the phylotype coverage (see methods and <ref type="figure">Supplementary Fig. 17)</ref> .</s>
+          <s>The corresponding Jaccard distances mostly varied between 0.25 and 0.75 <ref type="figure">(Fig. 6f)</ref> , indicating that while no pair of bees shared the same subset of the variome, some bees did share a larger fraction than others.</s>
+          <s>Based on the Jaccard distances, significant changes related to age were found for the phylotypes Firm5 (F(2,46) = 2,21, p &lt; 0.001, R2 = 0.083), Bifido (F(2,46) = 2.27, p = 0.002) and Firm4 (F(2,46) = 3.23, p = 0.008, R2 = 0.117), but not for Gilliamella (F(2,45) = 1.66, p = 0.076) and S. alvi (F(2,38) = 1.17, p = 0.25), which was also consistent with the principal coordinates analysis <ref type="figure">(Fig. 6g, h, Supplementary Fig. 18</ref> ).</s>
+          <s>However, as for the age-related changes in SDP abundance, the amount of the variability explained was rather low, indicating that additional factors are likely involved in shaping the functional profile of the gut microbiota.</s>
+        </p>
+        <p>
+          <s>In summary, we found age-related changes in the distribution of the variome for three out of five core phylotypes, despite the variability in strain composition among bees of the same age, indicative of functional redundancy across strains.</s>
+          <s>However, pairs of bees rarely shared &gt;70% of the variome, suggesting that the segregation of strains across bees results in functionally distinct bacterial communities at the level of individual bees.</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>Analyzing the distribution of genomic diversity in microbial communities is challenging due to the high complexity of most communities and the difficulty of sampling these communities in a consistent and controlled manner <ref target="#b33" type="bibr">34</ref> .</s>
+          <s>Taking advantage of the low phylotype-level diversity of the honey bee gut microbiota, we employed shotgun metagenomics to analyze the genomic diversity of this community at great depth.</s>
+          <s>We systematically categorized the genomic diversity at three different levels (phylotype, SDP, and strain), profiting from a highly representative reference database, and investigated its distribution across genetically related individuals within and across colonies and different age groups.</s>
+        </p>
+        <p>
+          <s>First, we found that most phylotypes of the bee gut microbiota have split into SDPs, i.e. discrete evolutionary lineages that in most cases coexist in individual bees.</s>
+          <s>Second, each SDP harbors further genomic diversity at the level of strains, segregating into individual bees.</s>
+          <s>Third, while some age-related compositional characteristics were identified at the phylotype-and SDP-level, no correlations with age or colony appear to exist at the strain-level.</s>
+          <s>And fourth, consistent with the segregation of strains into individual bees, we also found that bees differ considerably in the functional composition of their microbiota.</s>
+        </p>
+        <p>
+          <s>The presence of SDPs within core members means that the number of genetically coherent units in the bee gut microbiota is larger than what has been estimated on the basis of 16S rRNA amplicon sequencing studies.</s>
+          <s>Moreover, several lines of evidence suggest that the identified SDPs do not represent a local population structure, but are widely distributed.</s>
+          <s>Notably, we reanalyzed the metagenomic data of a previous study from the U.S. and found that all SDPs were present and discrete.</s>
+          <s>Moreover, in the reference database, most SDPs are represented by multiple genomes that originated from different geographic locations, and we found no evidence for increased read recruitment to genomes from locally isolated strains.</s>
+        </p>
+        <p>
+          <s>Several previous metagenomic studies have provided evidence for the existence of SDPs in natural bacterial communities, and a more recent study suggested that the divergence within and between such populations may conform to universal thresholds <ref target="#b10" type="bibr">11</ref> .</s>
+          <s>Specifically, Jain et al. <ref target="#b10" type="bibr">11</ref> identified a 'discontinuity zone' of pairwise average nucleotide identity (ANI) in the 83-95% range between most publicly available genomes.</s>
+          <s>Interestingly, the divergence within SDPs of the bee gut microbiota was in several apis <ref type="figure">Fig. 6</ref> Functional gene content of the gut microbiota varies across bees.</s>
+          <s>a Number of gene families per phylotype assigned to the variome (gene families occurring with a relative abundance of less than 10% compared to the phylotype abundance in at least one sample).</s>
+          <s>The fraction of the variome correlating in abundance with a single SDP (or phylotype, in the absence of SDPs) is indicated in dark grey shade.</s>
+          <s>b COG category distribution of variome gene families.</s>
+          <s>Gene families having no COG category or belonging to category S (57% of all variome gene families) were excluded from the stacked bar plots.</s>
+          <s>c Frequency of occurrence of genomic islands across the sampled bees.</s>
+          <s>Within each island occurrence bin, the relative fraction of gene families corresponding to major COG classes is indicated.</s>
+          <s>d Genetic organization of the part of island 'JG29_28' (phylotype Firm4) that encodes genes for ethanolamine catabolism.</s>
+          <s>e Genetic organization of island 'Ga0133551_9 ' (phylotype Bifido), which encodes genes for cellulose and hemicellulose utilization.</s>
+          <s>Gene colors correspond to COG categories as shown in (b).</s>
+          <s>f Similarity between pairs of bees based on the shared variome, expressed as Jaccard distances with lower values indicating higher similarity.</s>
+          <s>g, h Principal coordinates analysis of jaccard distances calculated from the variome, for the phylotypes Bifido (g) and Firm5 (h).</s>
+          <s>Different shades of each color indicate colony origin and sampling year combination.</s>
+          <s>PCoA plots for other phylotypes are shown in <ref type="figure">Supplementary Fig. 18</ref> NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-019-08303-0</s>
+          <s>ARTICLE cases larger than the expected 95% ANI threshold within the genomic database (Gilli-1, Gilli-2, Firm5-4, Bifido-1).</s>
+          <s>In fact, in the most extreme case (Bifido-1), nearly all of the pairwise ANI values were within the expected discontinuity zone.</s>
+          <s>Moreover, when examining the density distribution of similarity between the core gene sequences extracted from the de novo metagenome assemblies and those in the current database <ref type="figure">(Fig. 2c)</ref> , a considerable fraction fell within the 90-95% zone, indicating that additional equally divergent strains of Bifido-1 are present in the community.</s>
+        </p>
+        <p>
+          <s>High levels of diversity within SDPs were confirmed from the metagenomic data.</s>
+          <s>Based on SNV profiling, the median fraction of polymorphic sites in the metagenomic data was 13% per SDP, with Bifido-1 being an extreme outlier (33% polymorphic sites).</s>
+          <s>For comparison, a similar analysis on metagenomic samples from the human gut reported only 3.1% polymorphic sites in the 101 most prevalent species, across the entire dataset (207 individuals) <ref target="#b34" type="bibr">35</ref> .</s>
+          <s>However, while the read coverage was normalized to 10× (as in the current study), the cumulative coverage per SDP in the current study was orders of magnitude higher than in <ref target="#b34" type="bibr">35</ref>
+            <ref target="#fig_1" type="figure">(Fig. 5b)</ref> , resulting in an overall deeper sampling of each SDP.</s>
+          <s>Indeed, ref. <ref target="#b34" type="bibr">35</ref> found that SNV discovery increased steeply until around 1000× (depending on the species), a coverage which is rarely obtained in metagenomic studies.</s>
+          <s>Therefore, in the absence of other studies with a comparable sequencing depth per SDP, it is currently not possible to say whether the high strain-level diversity observed might also be common in other natural communities such as the human gut microbiota.</s>
+          <s>For now, given the high levels of polymorphism, we can conclude that none of the sampled SDPs have undergone a recent selective sweep <ref target="#b9" type="bibr">10</ref> .</s>
+          <s>On the contrary, it appears that divergent strains of the same SDP can co-exist in the same geographic location, and even within the same colony.</s>
+        </p>
+        <p>
+          <s>These results raise several important questions: How does such high levels of diversity evolve, and how can it be maintained within the same host population?</s>
+          <s>Based on how the diversity distributes among colony members, it appears that the answer depends on the taxonomic level of diversity considered <ref type="figure">(Fig. 1a)</ref> .</s>
+        </p>
+        <p>
+          <s>At the SDP-level, niche differentiation seems plausible, considering their widespread co-occurrence within bees.</s>
+          <s>Some significant changes in response to age were observed, both in terms of relative abundance of SDPs and functional profiles, suggesting that niche differentiation may be partly age-dependent.</s>
+          <s>However, the amount of variation explained was modest, and a broader sampling (including more colonies from different geographic origins) is needed to confirm these patterns.</s>
+          <s>In fact, the most conspicuous agerelated change in the current study was a decrease in the average population replication (PTR) and the relative abundance of core members compared to non-core members, suggesting that the community may become unstable in old bees.</s>
+        </p>
+        <p>
+          <s>At the strain-level, both the SNV profiling and variome analysis indicated that strains segregate among individual bees.</s>
+          <s>This is remarkable when considering that honey bees live in large eusocial colonies with frequent social interactions that in theory should facilitate microbiota homogenization across individuals.</s>
+          <s>Based on cumulative fractions of SNVs across bees <ref type="figure">(Fig. 6c)</ref> , at least 20-30 individuals are needed before the total diversity is reached, confirming that the diversity within bees is substantially lower compared to the diversity across the colony.</s>
+          <s>Notably, this segregation appeared to be independent of both age and colony origin.</s>
+          <s>In fact, the strain profiles of bees of the same age and colony, sampled at the same time, were as different from each other as those of other bees <ref target="#fig_1" type="figure">(Supplementary Figs. 15, 16)</ref> .</s>
+          <s>These results therefore point in the direction of competitive exclusion among strains, rather than niche differentiation.</s>
+        </p>
+        <p>
+          <s>Previous studies have shown that newly emerged honey bees acquire their gut microbiota within hours, and that the gut is fully colonized approximately by day 6 post emergence <ref target="#b30" type="bibr">31,</ref>
+            <ref target="#b35" type="bibr">36</ref> .</s>
+          <s>However, as of yet, no longitudinal studies on the gut microbiota have been conducted, and it is therefore not known whether the strain-level composition changes over time within individual bees.</s>
+          <s>If the community composition is determined by the timing and order of the host-bacterial encounters in newly emerged bees, the individualized profiles could represent random early-life events ('priority effects') <ref target="#b36" type="bibr">37</ref> .</s>
+          <s>Moreover, if new strains are not readily incorporated in the community of fully colonized bees, initial differences in colonization could play an important role in facilitating the maintenance of strain-level diversity, and could hinder the occurrence of selective sweeps (which would otherwise reduce strain-level diversity).</s>
+          <s>These observations are consistent with neutral theories of biodiversity <ref target="#b37" type="bibr">38</ref> , which predict that communities of islands or other patchy ecosystems (here individual bees) can vary, if they are inoculated from different starting communities and if dispersal is small enough that initial differences cannot be compensated.</s>
+        </p>
+        <p>
+          <s>Currently, little is known about the distribution of strains in natural populations of other environments.</s>
+          <s>Host-specific strainlevel composition in gut bacterial communities have also been observed in the human gut microbiota <ref target="#b34" type="bibr">35</ref> , but the reason for the host-specificity remains unclear.</s>
+          <s>Considering the current results, it appears that a long lifespan, or large variation in diet or host genotypes is not needed for individualized gut communities.</s>
+          <s>In fact, these patterns need not even be host-related.</s>
+          <s>A recent study investigating the distribution of strain-level diversity in an enhanced phosphorus removal reactor also found that bacterial populations between granules are more different than expected from the overall reactor diversity <ref target="#b33" type="bibr">34</ref> .</s>
+        </p>
+        <p>
+          <s>The origin and functional relevance of individualized profiles in honey bees represents an exciting future avenue of research.</s>
+          <s>Notably, we found that a large fraction of the variome gene families occurred in genomic islands, suggesting that diversification by horizontal gene transfer among community members might be prevalent.</s>
+          <s>From a functional perspective, given that a large fraction of the variome was found to encode metabolic functions, most of which did not correlate in abundance with specific SDPs, it seems likely that strains of the same SDP carry distinct metabolic functions.</s>
+          <s>If so, the communities found within individual honey bees might also, by extension, encode distinct metabolic profiles.</s>
+        </p>
+        <p>
+          <s>In conclusion, aside from providing fundamental insights into the genomic structure of a host-associated microbial community, our study provides a framework for future studies to test the link between bee health, ecology and microbiota composition at unprecedented resolution.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Methods</head>
+        <p>
+          <s>Sample collection.</s>
+          <s cert="0.978196918964386" id="dataset-4" type="Tabular data">Age-controlled honey bees (Apis mellifera carnica) were sampled from the apiary of the Engel laboratory at the University of Lausanne towards the end of the summer season (starting in September) in two consecutive years (2015 and 2016).</s>
+          <s>To this end, a single frame was collected from each target colony, adult bees were brushed off the frame, and the frame was kept in the laboratory incubator at 34°C over-night.</s>
+          <s>The following morning, newly emerged bees were tagged with a marker pen on their thorax, and re-introduced to the colony together with the frame.</s>
+          <s>At defined time points, a total of 54 tagged bees were collected from the two target colonies as shown in <ref type="figure">Fig. 1b</ref> .</s>
+          <s>In year 1, six tagged bees were collected from the colony 'Les Droites' at day 10 (28/9-2015), day 24 <ref type="bibr">(12/ 10-2015)</ref> , and day 158 <ref type="bibr">(22/2-2016)</ref> .</s>
+          <s>In year 2, six tagged bees were collected from the colony 'Les Droites' and the neighboring colony 'Le Grammont' at day 10 (25/ 9-2016), day 22 (7/10-2016), and day 47-48 <ref type="bibr">(1-2/11-2016)</ref> .</s>
+          <s>Host genotype of the colony 'Les Droites' was the same in 2015 and 2016, as the queen was not replaced.</s>
+        </p>
+        <p>
+          <s>DNA extraction and sequencing.</s>
+          <s>After anesthetization by CO 2 , the guts were pulled out from each of the collected bees.</s>
+          <s>Midgut and malpighian tubules were removed, after which the hindgut (consisting of ileum and rectum) were collected in bead-beating tubes with 1 ml PBS (kept on ice for the duration of the dissection).</s>
+          <s>Gut tissue was homogenized with a bead-beater using glass-beads (0.75-1 mm) for 30 s at speed 6.0.</s>
+          <s>A series of centrifugation and filtration steps were then carried out to enrich for bacterial cells in the sample relative to host cells/tissue/pollen, all in PBS at room temperature.</s>
+          <s>First, the homogenate was centrifuged at 2500 r.p.m., 5 min, to remove debris, and the supernatant was collected into new eppendorf tubes.</s>
+          <s>The samples were then centrifuged at 9000 r.p.m., 15 min, to pellet bacterial cells.</s>
+          <s>The supernatant was removed, and the bacterial pellets were re-suspended in 800 µl PBS.</s>
+          <s>The suspension was again centrifuged at 2500 r.p.m., 5 min, to remove additional host-cells/debris.</s>
+          <s>Finally, the sample was passed through a 10 μm filter, to remove large particles (pollen, remaining debris), and centrifuged at 10,000 r.p.m. for 15 min to pellet bacterial cells.</s>
+        </p>
+        <p>
+          <s>DNA was extracted from the enriched bacterial pellet using a CTAB-based DNA extraction protocol.</s>
+          <s>For each sample, the bacterial pellet was re-suspended in 485 µl CTAB lysis buffer (100 mM Tris-HCl, pH 8, 1.4 M NaCl, 20 mM EDTA, 2% w/v CTAB) with 1.3 µl β-mercaptoethanol and 13.3 µl proteinase K (10 mg/ml).</s>
+          <s>The samples were transferred to bead-beating tubes with zirconia/silica beads (0.1 mm), and homogenized on a bead-beater for two times 90 s, at speed 6.0.</s>
+          <s>Samples were incubated at 56°C over-night.</s>
+          <s>5 µl RNase (10 mg/ml) was added to each sample, followed by incubation at 37°C for 1 h.</s>
+          <s>Finally, the DNA was extracted with PCI (phenol-chloroform-isoamyl, 25:24:1) and precipitated with 1/10 vol NaOAc (3 M, pH 5.2) and 2.5 vol 96% Ethanol, with 6 µl glycogen (20 mg/ml) added as a DNA carrier.</s>
+          <s>DNA pellets were re-suspended in 20 µl H 2 O.</s>
+        </p>
+        <p>
+          <s cert="0.9783037304878235" id="dataset-5" type="Genetic Data">All samples were sequenced at the Lausanne Genomic Technologies facility (GTF).</s>
+          <s>Sequencing libraries were prepared with the Nextera XT library kit (Illumina), according to manufacturers instructions.</s>
+          <s cert="0.9768443703651428" id="dataset-1" type="Genetic Data:High-Throughput Nucleotide Sequencing">A total of 2 × 100 nt pairedend sequencing was done on an Illumina HiSeq 2500 instrument, with 6 samples multiplexed per lane.</s>
+          <s>For 6 samples of year 1, an additional multiplexed lane was done to ensure similar coverage across samples.</s>
+          <s>The quality of the raw-data was evaluated with FastQC.</s>
+          <s>This analysis revealed the presence of the Nextera adapters for some samples, which were trimmed off with Trimmomatic 39 .</s>
+          <s>Only reads for which both members of the read-pair passed the trimming with a minimum length of 40 bp were kept for downstream analysis.</s>
+        </p>
+        <p>
+          <s>Construction of a genomic database.</s>
+          <s>For each member of the honey bee core gut microbiota, all available published genomes (as of 2017) were downloaded from genbank.</s>
+          <s>Moreover, genomes of Lactobacillus kunkeei, Lactobacillus apinorum and an unknown gammaproteobacterium, also isolated from the honey bee, but not considered to be members of the core gut microbiota, were added.</s>
+          <s>In addition to previously published genomes, strains from the Engel lab stock collection were selected for sequencing, based on screening of the 16S rRNA gene.</s>
+          <s>In total, five strains of Gilliamella sp., five strains of Bifidobacterium sp., one strain of S. alvi, one strain of F. perrara and one strain of Commensalibacter sp.</s>
+          <s>(phylotype group 'alpha2.1')</s>
+          <s>were sequenced <ref target="#b39" type="bibr">40</ref> .</s>
+          <s>On the basis of this collection of genomes, the database was streamlined to reduce redundancy due to highly related strains (maximum 98.5% pairwise ANI), prioritizing the most complete genome assemblies.</s>
+          <s>Finally, for some draft genome assemblies, manual curation of the contigs was done, including removal of small contigs and re-ordering of contigs.</s>
+          <s>To enable downstream functional analysis, all genes in the database were re-annotated with the eggnog-mapper 41 and pfam <ref target="#b41" type="bibr">42</ref> .</s>
+          <s>A list of all genomes in the final database and their accession numbers is provided in Supplementary Data 1.</s>
+        </p>
+        <p>
+          <s>Metagenome mapping, gene coverage and de novo assembly.</s>
+          <s>Paired-end reads were mapped to the honey bee gut microbiota database using 'bwa mem' with default settings <ref target="#b42" type="bibr">43</ref> , after which various post-mapping filters were explored.</s>
+          <s>Since L. kunkeei was found to be absent from all samples, mapping against the L. kunkeei genome served as a useful indication of unspecific mapping and filtering efficiency.</s>
+          <s>Filtering based on read alignment length was found to be superior compared to edit distance (which is a measure of the similarity between the read and reference in the aligned part of the read).</s>
+          <s>Therefore, all bam-files were filtered so that only reads with a minimum alignment length of 50 bp were considered mapped.</s>
+        </p>
+        <p>
+          <s>On the basis of the filtered BAM files, gene coverage data was generated for all genes in the database.</s>
+        </p>
+        <p>
+          <s>First, BED files (indicating gene locations within genomes) were generated from the genome annotations.</s>
+          <s>To reduce variation due to the use of different annotation pipelines, and noise related to mapping against short regions, genes shorter than 300 bp were removed.</s>
+          <s>Second, the number of mapped reads per gene was counted with samtools <ref target="#b43" type="bibr">44</ref> , based on which the gene coverage was calculated (average read coverage per bp).</s>
+        </p>
+        <p>
+          <s>To infer de novo metagenome assemblies, paired-end reads were first mapped against the honey bee genome (using bwa mem with default settings), to filter off hostderived reads.</s>
+          <s>Unmapped reads were extracted with samtools (flag -f 4) and assembled independently for each metagenome sample, using the SPAdes metagenome assembler (v.3.9.0) with default settings <ref target="#b44" type="bibr">45</ref> .</s>
+          <s>For each assembly, the resulting contig file was filtered to exclude contigs shorter than 500 bp, or with a k-mer coverage &lt;10.</s>
+          <s>Putative ORFs were predicted with Prodigal v.2.6.3 46 using the metagenome flag (-p meta).</s>
+          <s>ORFs shorter than 300 bp were excluded from downstream analysis.</s>
+        </p>
+        <p>
+          <s>Database coverage.</s>
+          <s>To investigate the extent of microbial diversity not represented in our current database, reads not mapping to the database (minimum alignment length 50 bp) were mapped against the honey bee genome, using bwa mem as previously, and each of the fractions were counted with samtools.</s>
+          <s>Furthermore, protein sequences corresponding to 33 universal orthologs were extracted from the ORFs predicted on each of the metagenomic assemblies, using FetchMGs03.pl</s>
+          <s>from the MOCAT package <ref target="#b27" type="bibr">28</ref> .</s>
+          <s>All extracted universal ortholog sequences were first blasted against the honey bee gut microbiota database, and the subset without a close hit to the genomic database was extracted (BLAST nucleotide alignment identity lower than 95%).</s>
+          <s>For the extracted subset, the total number of sequences and the median number per universal gene family was calculated for each sample, and blasted against the non-redundant database of NCBI.</s>
+          <s>The putative taxonomic affiliation of lineages not represented in the database was determined for each sample, based on the most frequent hits, using the BLAST taxonomy database.</s>
+        </p>
+        <p>
+          <s>Discovery and validation SDPs.</s>
+          <s>Orthologous gene families were predicted separately for the genomes of each phylotype in the database using Orthofinder 47 , and gene families corresponding to single-copy core genes were extracted.</s>
+          <s>For Commensalibacter sp., for which only a single genome sequence was available, two draft genomes with 96% sequence identity in the 16S rRNA gene compared to the honey bee-derived isolate (ATSX01000000, AGFR01000000) were included for the ortholog prediction only, in order to generate a set of putative core genes.</s>
+          <s>Core genome phylogenies were inferred individually for each phylotype represented by at least 3 strains.</s>
+          <s>For each core gene family, the sequences were aligned at the protein level with mafft 48 , back-translated to nucleotides and trimmed for columns represented by less than 50% of all sequences.</s>
+          <s>Core genome phylogenies were inferred on the concatenated trimmed alignments, using RAxML 49 with the GTRCAT model and 100 bootstrap replicates.</s>
+          <s>For the Firm4 phylotype, which is represented by two genomes in the current database, a phylogeny was inferred by including 4 unpublished genomes, without back-translation to nucleotides, using the PROTCATWAG model in RAxML.</s>
+          <s>Pairwise ANI values were calculated allagainst-all, using FastANI 11 .</s>
+          <s>After inspection of the phylogenies and ANI tables, candidate SDPs were identified as forming discrete clades with 100% bootstrap support, and having a minimum pairwise ANI of 89% within clusters.</s>
+          <s>To reduce noise in downstream analysis related to specific gene families with a high level of similarity across SDPs (due to i.e. conservation or recent homologous recombination), the core gene families of each phylotype harboring candidate SDPs were further filtered to exclude any families with more than 95% nucleotide alignment identity in any pairwise comparison across SDPs.</s>
+        </p>
+        <p>
+          <s>To validate the candidate SDPs, orthologs of all filtered core gene families were extracted from the de novo metagenome assemblies with blastn, using the core gene sequences in the database as queries.</s>
+          <s>Specifically, a metagenomic ORF was considered an ortholog for a core gene family in the database if the blast hit had an e value &lt; 1e-5, a minimum percentage id of 80%, and a query coverage &gt;0.5.</s>
+          <s>The clustering of metagenomic ORFs around the candidate SDPs was quantified based on percentage identity between the metagenomic ORFs and their orthologous core gene family sequences.</s>
+          <s>For each of the extracted ORFs, the sequence was added to the corresponding core gene alignment with mafft (method 'add fragment'), resulting in an alignment containing the core gene family sequences from the database with a single metagenomic ORF.</s>
+          <s>The percentage identity was calculated between the ORF and each gene in the alignment using the Bioperl SimpleAlign module.</s>
+          <s>Finally, the maximum percentage identity in the alignment to each of the two highest-scoring SDPs was recorded for each ORF.</s>
+          <s>For phylotypes without candidate SDPs, the same procedure was applied using the full set of core gene families, and reporting the maximum percentage identity in the database (see also flowchart in <ref type="figure">Supplementary Fig. 3)</ref> .</s>
+        </p>
+        <p>
+          <s>Quantification of community members.</s>
+          <s>For phylotypes without validated SDPs, the metagenomic read coverage of all the genes in each core family was summed.</s>
+          <s>For phylotypes containing validated SDPs, the same procedure was applied per SDP, using the filtered core gene families.</s>
+          <s>Next, a single genome was chosen as reference per phylotype/SDP, and the summed core gene family coverages were plotted according to their position in the reference genome.</s>
+          <s>Since a pattern consistent with replicating bacteria was observed in the majority of samples for all the phylotypes/SDPs harboring complete genomes or scaffolds (genes located close to the origin of replication had higher coverage than genes located close to the terminus), a segmented linear regression line was fitted to the data, and the raw abundance was taken as the coverage at the estimated terminus (the intersection between the regression lines).</s>
+          <s>Additionally, the peak-to-trough ratio (PTR) was calculated from the fit (maximum coverage at Ori, divided by coverage at Ter) <ref target="#b28" type="bibr">29</ref> .</s>
+          <s>For samples where the segmented lines did not show a proper fit (terminus location inferred far from estimated breakpoint, or coverage at Ori lower than Ter), the median coverage of all core gene families was used instead, and the PTR was set to 1. Finally, the raw abundance of a phylotype/SDP was set to zero if less than 80% of the core gene families used for quantification had a mean read coverage &gt;1 (see also flowchart in <ref type="figure">Supplementary Fig. 7)</ref> .</s>
+        </p>
+        <p>
+          <s>To address the question of whether old bees are more prone to colonization by variable non-core members than younger bees, the sequences of each of the 33 universal ortholog gene families extracted from the de novo metagenome assemblies were first clustered at 95% nucleotide identity with uclust 50 .</s>
+          <s>Second, for each cluster, the presence across samples was inferred based on the cluster members, and 'OTU'-tables with presence-absence data were constructed.</s>
+          <s>Finally, the jaccard-distances between all sample pairs were calculated, and the distance to the centroid for each age group was estimated (using 'vegdist' and 'betadisper' functions from the R package 'vegan').</s>
+        </p>
+        <p>
+          <s>To obtain an overall result for all of the 33 universal gene-families, the 'distance-to-centroid' data obtained for each gene-family was extracted and used together for statistical testing (see also flowchart in <ref type="figure">Supplementary Fig. 11</ref> ).</s>
+        </p>
+        <p>
+          <s>Strain-level analysis.</s>
+          <s>The recruitment of reads to each genome was analyzed based on the number of reads mapped to the core genes of each genome.</s>
+          <s>Starting with the total raw number of recruited reads per sample and genome (normalized for the total core gene length), the relative fraction of reads recruited per genome within each SDP was calculated and visualized using the R package 'heatmap.2'.</s>
+        </p>
+        <p>
+          <s>To quantify diversity within SDPs, reads were mapped against a reduced version of the database, containing one genome representative per SDP or, in the absence of validated SDPs, per phylotype (genomes listed in bold letters, in Supplementary Data 1) using 'bwa mem'.</s>
+          <s>To reduce errors in SNV calling caused by eventual indel alignment errors, an edit distance &lt; 5 was required for a read to be considered mapped, in addition to the minimum alignment length of 50 bp previously employed.</s>
+          <s>Candidate SNVs were first called on the filtered bam-files using the metaSNV pipeline with default settings <ref target="#b51" type="bibr">51</ref> .</s>
+          <s>To limit the influence of variably present genes, only SNVs located within genes corresponding to the core gene families were included in the analysis.</s>
+          <s>Given the exceptionally high coverage obtained in the current study, a second filtering of SNVs was done with the following cutoffs: (i) SNVs were only quantified in samples where the corresponding reference genome was present with at least 10x terminus coverage; (ii) for samples with sufficient coverage, SNVs found in genes with less than 10x mean coverage were treated as missing data; (iii) intra-sample relative SNV abundances &lt;10% were set to zero (corresponding to the detection limit with 10x coverage).</s>
+          <s>Following these steps, only SNVs remaining polymorphic were included in the analysis (not fixed across samples, and with a with an intra-sample relative abundance of at least 10% in at least one sample) (see also flowchart in <ref type="figure">Supplementary Fig. 13</ref> ).</s>
+        </p>
+        <p>
+          <s>After filtering, the fraction of variable sites within core genes was calculated for each SDP, both per sample and across the full dataset.</s>
+          <s>Furthermore, the cumulative increase in the fraction of variable sites relative to the number of bees sampled was calculated, using 10 random sampling orders per SDP.</s>
+          <s>To investigate whether differences in sampling might contribute to the observed levels of diversity, the fraction of variable sites was first calculated for each sampling (9×, see <ref type="figure">Fig. 1b</ref> ) for all taxa with sufficient coverage representation (at least 6 samplings with at least 5 bees having a terminus coverage &gt;10×).</s>
+          <s>Next, 27 random subsets of 6 bees were generated for the full dataset, and the fraction of variable sites in these subsets was likewise calculated.</s>
+        </p>
+        <p>
+          <s>To visualize the distribution of SNVs across samples, and identify eventual patterns related to honey bee age or colony, a distance matrix was generated based on shared polymorphic sites.</s>
+          <s>Specifically, a SNV was considered to be shared between two samples if it occurred with an intra-sample relative abundance of at least 10% in both samples.</s>
+          <s>The jaccard distance was calculated as the fraction of non-shared polymorphic sites divided by the number of sites scored in both samples.</s>
+          <s>The resulting matrix was visualized with a principal coordinates analysis.</s>
+        </p>
+        <p>
+          <s>Functional variation across metagenomic samples.</s>
+          <s>To investigate functional variation in the gut microbiota of individual bees, we analyzed the distribution of all orthologous gene families predicted from the genomes in the database for each phylotype.</s>
+          <s>To reduce noise related to low coverage, only samples with a phylotype terminus coverage of at least 10x were included in the analysis of gene content variability.</s>
+          <s>For functional inferences, all EggNOG and Pfam annotations were transferred from the gene annotations to the gene families.</s>
+        </p>
+        <p>
+          <s>The raw gene family coverage was calculated as the summed gene coverage for all genes within the family.</s>
+          <s>To normalize for variation in coverage between samples and phylotypes, the coverage of each gene family was linearly re-scaled according to a phylotype terminus coverage of 10× in each sample.</s>
+          <s>For example, a gene family with a coverage of 25× in a sample with a phylotype terminus coverage of 50x would result in a normalized gene family coverage of 5×.</s>
+          <s>Following coverage normalization, gene families with less than 1x coverage in at least one sample were considered to be variably associated with the phylotype (referred to as the 'variome') (see also flowchart in <ref type="figure">Supplementary Fig. 17</ref> ).</s>
+        </p>
+        <p>
+          <s>Since the variome was inferred at the phylotype level, variome gene families could potentially encode SDP core gene content, in which case their abundance is expected to correlate with the SDP abundance <ref target="#b52" type="bibr">52</ref> .</s>
+          <s>Therefore, to estimate the subset of the variome belonging to the SDP core gene content, pearson correlation coefficients were calculated between the raw abundances of the variome gene families (log10-transformed) and all SDPs (SDP terminus coverage, log10transformed).</s>
+          <s>Variome gene families with pearson correlation coefficients larger than 0.8 for a single SDP were considered to be correlated with the SDP <ref target="#b52" type="bibr">52</ref> .</s>
+        </p>
+        <p>
+          <s>To address the question of whether bees sampled from the same colony and/or time-point share a larger fraction of the variome than other bees within the study, a jaccard distance matrix was generated, where a gene family was considered to be present in a sample when having a normalized coverage of at least 1×.</s>
+        </p>
+        <p>
+          <s>To gain further information on the distribution of variome gene families within genomes, the genes assigned to the variome were clustered within their genome of origin.</s>
+          <s>Specifically, genes with an intergenic distance of less than 5 kb were joined in an 'island'.</s>
+          <s>'Big islands' were defined as having a minimum length of 10 kb, and containing at least 5 genes.</s>
+          <s>To avoid excessive redundancy due to identical islands being present in more than one genome in the database, islands for which all their associated gene families were also present in another island (complete overlap) were removed.</s>
+          <s cert="0.9444822669029236" id="dataset-2" type="Tabular data">Finally, the occurrence of islands across samples was recorded, where an island was considered to be present when at least 80% of the gene families contained in the island were present in the sample.</s>
+        </p>
+        <p>
+          <s>Statistics.</s>
+          <s>To analyze variation in community composition, the raw abundances (see 'Quantification of community members') for all SDPs and phylotypes were converted to relative within-sample abundances, and analyzed with a generalized linear model using the negative binomial distribution (visually confirmed to normalize for the quadratic mean-variance relationship) and Age/Colony as explanatory variables <ref target="#b53" type="bibr">53,</ref>
+            <ref target="#b54" type="bibr">54</ref> .</s>
+        </p>
+        <p>
+          <s>Changes in the fraction on unmapped non-host reads (log10-transformed), dispersion in beta-diversity and average population replication (PTR) in response to age were tested using one-way analysis of variance (ANOVA).</s>
+          <s>Differences in the mean fraction of variable sites (SNVs) in subsets of bees corresponding to samplings (9×, see <ref type="figure">Fig. 1b</ref> ) versus random subsets of 6 bees were tested with Welch's t test, applied on each comparison.</s>
+        </p>
+        <p>
+          <s>Changes in the distribution of the variome relative to age and colony affiliation were tested for each phylotype using the jaccard distance matrices (see 'Functional variation across metagenomic samples'), with PERMANOVA (function 'adonis', R package 'vegan').</s>
+        </p>
+        <p>
+          <s>Code availability.</s>
+          <s>Documentations of the workflow, including all scripts, databases and result files, are available on Zenodo [https://doi.org/10.5281/zenodo.1479668]</s>
+          <s>
+            <ref target="#b55" type="bibr">55</ref> .</s>
+          <s>All scripts were written in perl, bash or R. Statistics and plots were likewise done in R (using packages: ggplot2, gridExtra, reshape, gplots, RColorBrewer).</s>
+        </p>
+        <p>
+          <s>Reporting Summary.</s>
+          <s>Further information on experimental design is available in the Nature Research Reporting Summary linked to this article.</s>
+        </p>
+      </div>
+      <div>
+        <head>Data availability</head>
+        <p>
+          <s>The raw data has been deposited in the sequence read archive <ref type="figure">(</ref>
+          </s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head/>
+        <label/>
+        <figDesc>Fig. 4 Decreased stability and average population replication in old bees. a Fraction of unmapped non-host reads (out of total reads not mapped to the honey bee genome). b Distance to the estimated centroid per age-group (using pairwise Jaccard distances between samples, calculated on data from 33 universal core gene families extracted from all metagenomic samples). c A representative plot showing the mapped coverage of core gene families relative to their location in a reference genome (all plots are provided in Supplementary Fig. 8). These plots were used to quantify the abundance of phylotypes/ SDPs in the metagenomic samples, but also to estimate the average population replication based on the ratio of the coverage at the origin and the terminus (peak-to-trough ratio, PTR). The red line corresponds to the segmented linear regression line that was fitted to the data to determine the mean coverage at origin and terminus. d Distribution of PTR values across the sampled bees for the five core phylotypes (based on samples with at least 10x terminus coverage). For each boxplot, the center line displays the median, the boxes correspond to the 25th and 75th percentiles, and whiskers extend to the most extreme data points that are within the 1.5 interquartile range of the box. For a, b, d, the results of the one-way analysis of variance (ANOVA) in response to age are shown above each plot. For panel a, the data was log10-transformed prior to ANOVA, and the plot is shown on a logarithmic scale</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig. 5</head>
+        <label>5</label>
+        <figDesc>Strain-level diversity differs between SDPs, and strains segregate into different bees. a Proportion of metagenomic reads mapping to core genes in reference database genomes within each SDP of the phylotype Gilliamella. Each vertical bar in the heatmap corresponds to a single sample. The phylogenetic tree is the same as inFig. 2. Node labels indicate geographic origin of genomes (CH: Switzerland, USA: United States of America, NO: Norway). b The upper part of the panel shows the percentage of polymorphic sites per SDP/phylotype within samples (the center line displays the median, the boxes correspond to the 25th and 75th percentiles, and whiskers extend to the most extreme data-points that are within the 1.5 interquartile range of the box), and the total fraction across the study is indicated by red diamonds. The lower part of the panel shows the total mapped coverage for each SDP/ phylotype on the reduced database, across the study. c For the 10 SDPs/phylotypes with the highest representation across samples, the cumulative fraction of variable sites relative to the number of sampled bees is shown. Ten random sampling orders were done per SDP/phylotype, where the blue curve represents the smoothed conditional mean (loess, span = 0.2), and data for individual sampling orders are shown as grey | (2019) 10:446 | https://doi.org/10.1038/s41467-019-08303-0 | www.nature.com/naturecommunications</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head/>
+        <label/>
+        <figDesc>SRA) with the accession SRP150166. Source data underlying the results shown in the figures of this manuscript are available on Zenodo [https://doi.org/10.5281/zenodo.147966] 55 . Received: 6 June 2018 Accepted: 28 December 2018</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>without a close hit to the database still had best bees is shown with colored bars. b In total, 54 individual honey bees of different age and from two different colonies were sampled for shotgun metagenomics analysis. At each time point, six bees per colony were sampled. Colony 1 was sampled in two consecutive years. Bees sampled 10 days, 22/24 days, and 48/158 days after emergence are considered as 'young', 'middle-aged', and 'old', respectively. The 'old' bees correspond to winter bees as the sampling started in late September.</figDesc>
+        <table>Individual bees 
+
+Bacterial 
+DNA enrichment 
+
+Shotgun 
+metagenomics 
+
+Read mapping / de novo assembly 
+
+c 
+a 
+
+Year 1 
+Year 2 
+
+SDP &amp; strain 
+diversity 
+Year 2 
+
+D10 D22/24 D48 D158 
+
+= 6 bees 
+
+b 
+
+Phylotypes 
+
+SDPs 
+
+Strains 
+
+Bee 1 
+
+Bee 2 
+
+Bee 3 
+
+Bee 4 
+
+Bee 5 
+
+Gut 
+
+SNV 
+Gene 
+
+Reference 
+database 
+
+Cultured 
+isolates 
+
+SDP1 
+
+SDP2 
+
+Functional 
+diversity 
+
+Population 
+structure 
+
+Young Middle 
+Old 
+
+Fig. 1 Overview of the experimental design and approach. a Three levels of diversity were explored in the current study: (i) phylotypes, i.e., bacteria with 
+about 97% similarity in the 16S rRNA gene (as defined by 16S rRNA amplicon sequencing studies), (ii) SDPs (sequence-discrete populations), i.e. divergent 
+sub-lineages contained within phylotypes, (iii) strains, i.e. any genomic diversity occurring within SDPs. A hypothetical example of possible distributions of 
+strains across </table>
+      </figure>
+      <note place="foot">NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-019-08303-0</note>
+      <note place="foot">NATURE COMMUNICATIONS | (2019) 10:446 | https://doi.org/10.1038/s41467-019-08303-0 | www.nature.com/naturecommunications</note>
+      <note place="foot">© The Author(s) 2019</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>We would like to thank Diego Gonzalez, Fabienne Wichmann, German Bonilla-Rosso, and Laurent Keller for critical reading of the manuscript and discussions.</s>
+            <s>This work was funded by the HFSP Young Investigator grant RGY0077/2016, the ERC-StG 'MicroBe-eOme', the Swiss National Science Foundation grant 31003A_160345, the University of Lausanne, and the Fondation Herbette at the University of Lausanne.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Author contributions</head>
+          <p>
+            <s>K.M.E.: conceptualization, methodology, software, validation, formal analysis, investigation, methodology, resources, visualization, data curation, writing-original draft, writing-review &amp; editing, P.E.: conceptualization, methodology, resources, validation, visualization, writing-original draft, writing-review &amp; editing, project administration, supervision, funding acquisition.</s>
+          </p>
+        </div>
+        <div>
+          <head>Additional information</head>
+          <p>
+            <s>Supplementary Information accompanies this paper at https://doi.org/10.1038/s41467-019-08303-0.</s>
+          </p>
+          <p>
+            <s>Competing interests: The Authors declare no Competing Interests.</s>
+          </p>
+          <p>
+            <s>Reprints and permission information is available online at http://npg.nature.com/</s>
+            <s>reprintsandpermissions/ Journal peer review information: Nature Communications thanks the anonymous reviewers for their contribution to the peer review of this work.</s>
+            <s>Peer reviewer reports are available.</s>
+          </p>
+          <p>
+            <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+          <p>
+            <s>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.</s>
+            <s>The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in a credit line to the material.</s>
+            <s>If material is not included in the article's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.</s>
+            <s>To view a copy of this license, visit http://creativecommons.org/ licenses/by/4.0/.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Ordering microbial diversity into ecologically and genetically cohesive units</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Shapiro</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Polz</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Trends Microbiol</title>
+              <imprint>
+                <biblScope unit="volume">22</biblScope>
+                <biblScope from="235" to="247" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Worlds within worlds: evolution of the vertebrate gut microbiota</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Ley</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Lozupone</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Hamady</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Knight</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Gordon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Rev. Microbiol</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope from="776" to="788" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Contrasting patterns of genome-level diversity across distinct co-occurring bacterial populations</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Garcia</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Isme. J</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope from="742" to="755" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Towards a taxonomic coherence between average nucleotide identity and 16S rRNA gene sequence similarity for species demarcation of prokaryotes</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Oh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Park</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Chun</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int. J. Syst. Evol. Microbiol</title>
+              <imprint>
+                <biblScope unit="volume">64</biblScope>
+                <biblScope from="346" to="351" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Beyond 16S rRNA community profiling: Intraspecies diversity in the gut microbiota</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Ellegaard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Engel</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Front. Microbiol</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="page">1475</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Toward accurate and quantitative comparative metagenomics</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Nayfach</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Pollard</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell</title>
+              <imprint>
+                <biblScope unit="volume">166</biblScope>
+                <biblScope from="1103" to="1116" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">The Sorcerer II Global Ocean Sampling expedition: northwest Atlantic through eastern tropical Pacific</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Rusch</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS Biol</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="page">77</biblScope>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Bacterial species may exist, metagenomics reveal</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Caro-Quintero</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Konstantinidis</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Environ. Microbiol</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope from="347" to="355" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Genomic patterns of recombination, clonal divergence and environment in marine microbial populations</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Konstantinidis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Delong</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">ISME J</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope from="1052" to="1065" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Genome-wide selective sweeps and gene-specific sweeps in natural bacterial populations</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Bendall</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">ISME J</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope from="1589" to="1601" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">High throughput ANI analysis of 90K prokaryotic genomes reveals clear species boundaries</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Jain</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Rodriguez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Phillippy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Konstantinidis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Aluru</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Commun</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="page">5114</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">A simple and distinctive microbiota associated with honey bees and bumble bees</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Martinson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol. Ecol</title>
+              <imprint>
+                <biblScope unit="volume">20</biblScope>
+                <biblScope from="619" to="628" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Distinctive gut microbiota of honey bees assessed using deep sampling from individual worker bees</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Moran</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Hansen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Powell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Sabree</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS ONE</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="page">36393</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Gut microbial communities of social bees</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Kwong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Moran</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Rev. Microbiol</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope from="374" to="384" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Dynamic microbiome evolution in social bees</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Kwong</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Adv</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope unit="page">1600513</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">The bacterial communities associated with honey bee (Apis mellifera) foragers</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Corby-Harris</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Maes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Anderson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS ONE</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="page">95056</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">The impact of winter feed type on intestinal microbiota and parasites in honey bees</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>D&amp;apos;alvise</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Apidologie</title>
+              <imprint>
+                <biblScope unit="volume">49</biblScope>
+                <biblScope from="252" to="264" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Longitudinal effects of supplemental forage on the honey bee (Apis mellifera) microbiota and inter-and intra-colony variability</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Rothman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Carroll</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Meikle</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Anderson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Mcfrederick</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Microb. Ecol</title>
+              <imprint>
+                <biblScope unit="volume">76</biblScope>
+                <biblScope from="814" to="824" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Extensive intra-phylotype diversity in lactobacilli and bifidobacteria from the honeybee gut</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Ellegaard</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">BMC Genom</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope unit="page">284</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Hidden diversity in honey bee gut symbionts detected by single-cell genomics</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Engel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Stepanauskas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Moran</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS Genet</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope unit="page">1004596</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Functional diversity within the simple gut microbiota of the honey bee</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Engel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Martinson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Moran</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proc. Natl Acad. Sci. USA</title>
+              <imprint>
+                <biblScope unit="volume">109</biblScope>
+                <biblScope from="11002" to="11007" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Functional roles and metabolic niches in the honey bee gut microbiota</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Bonilla-Rosso</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Engel</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Curr. Opin. Microbiol</title>
+              <imprint>
+                <biblScope unit="volume">43</biblScope>
+                <biblScope from="69" to="76" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Lactobacillus apinorum sp. nov., Lactobacillus mellifer sp. nov., Lactobacillus mellis sp. nov., Lactobacillus melliventris sp. nov., Lactobacillus kimbladii sp. nov., Lactobacillus helsingborgensis sp. nov. and Lactobacillus kullabergensis sp. nov., isolated from the honey stomach of the honeybee Apis mellifera</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Olofsson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Alsterfjord</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Nilson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Butler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Vasquez</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int. J. Syst. Evol. Microbiol</title>
+              <imprint>
+                <biblScope unit="volume">64</biblScope>
+                <biblScope from="3109" to="3119" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Addressing the diversity of the honeybee gut symbiont Gilliamella: description of Gilliamella apis sp. nov., isolated from the gut of honeybees (Apis mellifera)</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Ludvigsen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Porcellato</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Amdam</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Rudi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int. J. Syst. Evol. Microbiol</title>
+              <imprint>
+                <biblScope unit="volume">68</biblScope>
+                <biblScope from="1762" to="1770" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Genomics and host specialization of honey bee and bumble bee gut symbionts</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Kwong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Engel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Koch</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Moran</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proc. Natl Acad. Sci. USA</title>
+              <imprint>
+                <biblScope unit="volume">111</biblScope>
+                <biblScope from="11509" to="11514" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Honeybee gut microbiota promotes host weight gain via bacterial metabolism and hormonal signaling</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zheng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Powell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Steele</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Dietrich</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Moran</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proc. Natl Acad. Sci. USA</title>
+              <imprint>
+                <biblScope unit="volume">114</biblScope>
+                <biblScope from="4775" to="4780" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Antibiotics reduce genetic diversity of core species in the honeybee gut microbiome</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Raymann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Bobay</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Moran</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol. Ecol</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope from="2057" to="2066" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Metagenomic species profiling using universal phylogenetic marker genes</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Sunagawa</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Methods</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope from="1196" to="1199" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Growth dynamics of gut microbiota in health and disease inferred from single metagenomic samples</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Korem</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">349</biblScope>
+                <biblScope from="1101" to="1106" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Evaluation of bifidobacterial community composition in the human gut by means of a targeted amplicon sequencing (ITS) protocol</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Milani</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">FEMS Microbiol. Ecol</title>
+              <imprint>
+                <biblScope unit="volume">90</biblScope>
+                <biblScope from="493" to="503" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <monogr>
+              <title level="m" type="main">The bacterium Frischella perrara causes scab formation in the gut of its honeybee host</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Engel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Bartlett</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Moran</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2015"/>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="page">193</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Ethanolamine utilization in bacteria</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Kaval</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Garsin</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1128/mBio.00066-18</idno>
+              <ptr target="https://doi.org/10.1128/mBio.00066-18"/>
+            </analytic>
+            <monogr>
+              <title level="j">MBio</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Comparative genomics of ethanolamine utilization</title>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Tsoy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Ravcheev</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Mushegian</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Bacteriol</title>
+              <imprint>
+                <biblScope unit="volume">191</biblScope>
+                <biblScope from="7157" to="7164" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Strain-level diversity drives alternative community types in millimetre-scale granular biofilms</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Leventhal</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Microbiol</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="1295" to="1303" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Genomic variation landscape of the human gut microbiome</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Schloissnig</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">493</biblScope>
+                <biblScope from="45" to="50" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">Routes of acquisition of the gut microbiota of the honey bee Apis mellifera</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Powell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Martinson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Urban-Mead</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Moran</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Appl. Environ. Microb</title>
+              <imprint>
+                <biblScope unit="volume">80</biblScope>
+                <biblScope from="7378" to="7387" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">Role of priority effects in the earlylife assembly of the gut microbiota</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Sprockett</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Fukami</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Relman</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Rev. Gastroenterol. Hepatol</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope from="197" to="205" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Hubbell</surname>
+                </persName>
+              </author>
+              <title level="m">The Unified Neutral Theory of Biodiversity and Biogeography</title>
+              <meeting>
+                <address>
+                  <addrLine>Princeton, New Jersey</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <publisher>Princeton University Press</publisher>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">Trimmomatic: a flexible trimmer for Illumina sequence data</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Bolger</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Lohse</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Usadel</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bioinformatics</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope from="2114" to="2120" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">New reference genome sequences for 17 bacterial strains of the honey bee gut microbiota</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Ellegaard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Engel</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Microbiol. Resour. Announc</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="page">834</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Fast genome-wide functional annotation through orthology assignment by eggNOG-Mapper</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Huerta-Cepas</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol. Biol. Evol</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope from="2115" to="2122" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">The Pfam protein families database</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Bateman</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nucleic Acids Res</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope from="276" to="280" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title level="a" type="main">Fast and accurate short read alignment with Burrows-Wheeler transform</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Durbin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bioinformatics</title>
+              <imprint>
+                <biblScope unit="volume">25</biblScope>
+                <biblScope from="1754" to="1760" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">The sequence alignment/map format and SAMtools</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bioinformatics</title>
+              <imprint>
+                <biblScope unit="volume">25</biblScope>
+                <biblScope from="2078" to="2079" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b44">
+            <analytic>
+              <title level="a" type="main">SPAdes: a new genome assembly algorithm and its applications to single-cell sequencing</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Bankevich</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Comput. Biol</title>
+              <imprint>
+                <biblScope unit="volume">19</biblScope>
+                <biblScope from="455" to="477" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b45">
+            <analytic>
+              <title level="a" type="main">Prodigal: prokaryotic gene recognition and translation initiation site identification</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Hyatt</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">BMC Bioinforma</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope unit="page">119</biblScope>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b46">
+            <monogr>
+              <title level="m" type="main">OrthoFinder: solving fundamental biases in whole genome comparisons dramatically improves orthogroup inference accuracy</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Emms</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Kelly</surname>
+                </persName>
+              </author>
+              <imprint/>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b47">
+            <analytic>
+              <title/>
+            </analytic>
+            <monogr>
+              <title level="j">Genome Biol</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope unit="page">157</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b48">
+            <analytic>
+              <title level="a" type="main">MAFFT: a novel method for rapid multiple sequence alignment based on fast Fourier transform</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Katoh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Misawa</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Kuma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Miyata</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nucleic Acids Res</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope from="3059" to="3066" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b49">
+            <analytic>
+              <title level="a" type="main">RAxML-VI-HPC: maximum likelihood-based phylogenetic analyses with thousands of taxa and mixed models</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Stamatakis</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bioinformatics</title>
+              <imprint>
+                <biblScope unit="volume">22</biblScope>
+                <biblScope from="2688" to="2690" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b50">
+            <analytic>
+              <title level="a" type="main">Search and clustering orders of magnitude faster than BLAST</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Edgar</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bioinformatics</title>
+              <imprint>
+                <biblScope unit="volume">26</biblScope>
+                <biblScope from="2460" to="2461" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b51">
+            <analytic>
+              <title level="a" type="main">metaSNV: A tool for metagenomic strain level analysis</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Costea</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS ONE</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope unit="page">182392</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b52">
+            <analytic>
+              <title level="a" type="main">Subspecies in the global human gut microbiome</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Costea</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol. Syst. Biol</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope unit="page">960</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b53">
+            <analytic>
+              <title level="a" type="main">Distance-based multivariate analyses confound location and dispersion effects</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Warton</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Wright</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Methods Ecol. Evol</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="89" to="101" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b54">
+            <analytic>
+              <title level="a" type="main">mvabund-an R package for model-based analysis of multivariate abundance data</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <surname>Naumann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Wright</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Warton</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Methods Ecol. Evol</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="471" to="474" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b55">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Ellegaard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Engel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Bioinformatic Pipeline</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.5281/zenodo.1479668</idno>
+              <ptr target="https://doi.org/10.5281/zenodo.1479668"/>
+              <title level="m">Genomic Diversity Landscape of the Honey Bee Gut Microbiota</title>
+              <imprint>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

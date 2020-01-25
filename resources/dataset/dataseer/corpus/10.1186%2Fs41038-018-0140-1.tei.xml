@@ -1,0 +1,2130 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:37+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Survival analysis and mortality predictors of hospitalized severe burn victims in a Malaysian burns intensive care unit</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Henry</forename>
+                <surname>Tan</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Chor</forename>
+                <surname>Lip</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Jih</forename>
+                <forename type="middle">Huei</forename>
+                <surname>Tan</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Mathew</forename>
+                <surname>Thomas</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Farrah-Hani</forename>
+                <surname>Imran</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Tuan</forename>
+                <surname>Nur&amp;apos; Azmah</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Tuan</forename>
+                <surname>Mat</surname>
+              </persName>
+            </author>
+            <title level="a" type="main">Survival analysis and mortality predictors of hospitalized severe burn victims in a Malaysian burns intensive care unit</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1186/s41038-018-0140-1</idno>
+          <note>R E S E A R C H A R T I C L E Open Access</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div subtype="dataseer">
+          <p>
+            <s>Background: Prognostic measures to determine burn mortality are essential in evaluating the severity of individual burn victims.</s>
+            <s>This is an important process of triaging patients with high risk of mortality that may be nursed in the acute care setting.</s>
+            <s>Malaysian burn research is lacking with only one publication identified which describes the epidemiology of burn victims.</s>
+            <s>Therefore, the objective of this study was to go one step further and identify the predictors of burn mortality from a Malaysian burns intensive care unit (BICU) which may be used to triage patients at higher risk of death.</s>
+            <s>Methods: This is a retrospective cohort study of all admissions to Hospital Sultan Ismail's BICU from January 2010 till October 2015.</s>
+            <s cert="0.9904333353042603" id="dataset-1" type="Tabular data">Admission criteria were in accordance with the American Burn Association guidelines, and risk factors of interest were recorded.</s>
+            <s>Data was analyzed using simple logistic regression to determine significant predictors of mortality.</s>
+            <s>Survival analysis with time to death event was performed using the Kaplan-Meier survival curve with log-rank test.</s>
+            <s>Results: Through the 6-year period, 393 patients were admitted with a male preponderance of 73.8%.</s>
+            <s>The mean age and length of stay were 35.6 (±15.72) years and 15.3 (±18.91)</s>
+            <s>days.</s>
+            <s>There were 48 mortalities with an overall mortality rate of 12.2%.</s>
+            <s>Significant risk factors identified on simple logistic regression were total body surface area (TBSA) &gt; 20% (p &lt; 0.001), inhalation injury (p &lt; 0.001) and presence of early systemic inflammatory response syndrome (SIRS) (p &lt; 0.001).</s>
+            <s>Survival analysis using Kaplan-Meier survival curve showed similar results with TBSA &gt; 20%, presence of SIRS, mechanical ventilation and inhalation injury which were associated with poorer survival (p &lt; 0.001).</s>
+            <s>Conclusion: The predictors of mortality identified in a Malaysian BICU were TBSA &gt; 20%, early SIRS, mechanical ventilation and inhalation injury which were associated with poorer survival outcome.</s>
+            <s>The immunological response differs from individual patients and influenced by the severity of burn injury.</s>
+            <s>Early SIRS on admission is an important predictor of death and may represent the severity of burn injury.</s>
+            <s>Patients who required mechanical ventilation were associated with mortality and it is likely related to the severity of pulmonary insults sustained by individual patients.</s>
+            <s>This data is important for outcome prognostication and mortality risk counselling in severely burned patients.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Background</head>
+        <p>
+          <s>Over the past decade, improvement and advancements of health care services have allowed more severely burned patients to survive <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b1" type="bibr">2]</ref> .</s>
+          <s>Current burn management coupled with specialized intensive care treatment led to the survival of young and healthy individuals sustaining major burn injury.</s>
+          <s>This would have been fatal in comparison with medical care over a century ago <ref target="#b1" type="bibr">[2,</ref>
+            <ref target="#b2" type="bibr">3]</ref> .</s>
+          <s>In developed countries, burn injuries account for more than 50,000 admissions with a mortality rate of 5-6% <ref target="#b3" type="bibr">[4,</ref>
+            <ref target="#b4" type="bibr">5]</ref> .</s>
+          <s>However, when complicated with inhalation injury, the death rate increases with a reported mortality rate of over 30% <ref target="#b4" type="bibr">[5]</ref> .</s>
+        </p>
+        <p>
+          <s>The purported increase in death rate is explained by the difference in characteristics of burn injuries which varies from developing and developed nations.</s>
+          <s>In developed nations, the ageing individuals are the fastest growing populations especially in Europe and America <ref target="#b5" type="bibr">[6]</ref> .</s>
+          <s>In addition, the mean age of burn patients admitted for burn injury in developed nations of Canada and Spain was higher than 44.7 and 53 years old respectively <ref target="#b6" type="bibr">[7,</ref>
+            <ref target="#b7" type="bibr">8]</ref> .</s>
+        </p>
+        <p>
+          <s>In comparison with a population from a developing nation of Ecuador, the injured were younger patients with a mean age of 33 years <ref target="#b8" type="bibr">[9]</ref> .</s>
+          <s>Clearly, the difference in the demography of burn population showed that younger active citizens were more prone to burn injuries in developing nations.</s>
+          <s>This is a growing concern for developing nations as the younger population represents the majority of the workforce that drives the local economy.</s>
+        </p>
+        <p>
+          <s>Local data and research in predictors of burn mortality and its predictors are insufficient.</s>
+          <s>In Malaysia, only one publication describing burn injury from Malaysia was identified from our literature search which was conducted in a Malaysian university hospital.</s>
+          <s>The retrospective study by <ref type="bibr">Chan et al.</ref> with 110 burn patients revealed that the major cause of death was due to inhalation injury and septicaemia from infected burn wounds <ref target="#b9" type="bibr">[10]</ref> .</s>
+          <s>The majority of the injured were males, and the aetiology of burn was mainly due to domestic-related injuries.</s>
+          <s>Research in this area from government-owned hospitals where the majority of burn patients would be admitted due to better accessibility and affordable cost schemes for local Malaysians is not available.</s>
+          <s>Therefore, this study is to investigate the risk factors of death with larger sample size and survival analysis to identify variables which may be utilized by local clinicians to determine the prognostic factors for burn death.</s>
+          <s>The other objective of this study is to identify factors that may be predictors of burn mortality that may be used to triage patients into high risk for mortality in a local government-owned hospital burns unit.</s>
+          <s>By identifying these predictors, we would try to understand and hence formulate treatment plans that may improve survivability in severe burn patients.</s>
+        </p>
+      </div>
+      <div>
+        <head>Methods</head>
+      </div>
+      <div subtype="dataseer">
+        <head>Patients</head>
+        <p>
+          <s>This is a retrospective cohort study of burn victims that were admitted to the Hospital Sultan Ismail's burns intensive care unit (BICU).</s>
+          <s cert="0.8737062215805054" id="dataset-2" type="Dataset">The data was retrieved from the hospital's burns registry from January 2010 to October 2015.</s>
+          <s>The hospital's BICU is the largest burns unit in Malaysia which is managed by a specialized burns trauma surgeon, a medical officer and 17 nurses trained in burn wound.</s>
+          <s>Ventilated patients were co-managed by the hospital's intensive care unit anaesthetist.</s>
+        </p>
+        <p>
+          <s cert="0.9909405708312988" id="dataset-1" type="Tabular data:Subject Data Table">We included all patients aged 13 or over that were admitted to the BICU from January 2010 till October 2015.</s>
+          <s>Admission criteria were in accordance with the American Burn Association guidelines of partial-thickness burn of more than 20% of total body surface area (TBSA), burns involving the face, hands, feet, genitalia, perineum or major joints, inhalation injury, full-thickness burns, electrical burns, and chemical burns, and patients that do not have the social support to care for their wounds <ref target="#b3" type="bibr">[4]</ref> .</s>
+          <s>Inhalation injury is defined as the presence of a positive history of being in an enclosed burn space and clinical features which may include singed eyebrow, soot in the nostril, laryngeal edema and facial burns that suggest possible inhalation injury.</s>
+          <s corresp="#dataset-1" type="Tabular data:Subject Data Table">TBSA estimation is performed using the Lund and Browder chart.</s>
+          <s>The indication for mechanical ventilation for patients with burn inhalation injury is a complex decision based on clinical and blood parameters coupled with the clinical experience of the attending primary health caregiver.</s>
+          <s>Positive clinical findings of rales, rhonchi, wheezing, tachypnea and suspicious visible supraglottic edema are the main supportive points for mechanical ventilation.</s>
+          <s>Subsequent evidence of hypoxia by the arterial blood gas results further lowers the threshold for mechanical ventilation.</s>
+          <s>All patients with inhalation injury received treatment in accordance with the inhalation injury treatment protocol.</s>
+          <s>The protocol includes humidified oxygen to maintain oxygen saturation above 90%, chest physiotherapy, two hourly turns and positioning, aerosolize N-acetylcysteine with a bronchodilator, alternate aerosol 5000 units of heparin together with normal saline, regular nasotracheal suction and sputum cultures.</s>
+        </p>
+        <p>
+          <s>The BICU is a subspecialty of general surgery which receives referrals from the emergency department, local district clinics, hospitals and inter-departmental referrals for burn injury.</s>
+          <s>The burn patients were managed and resuscitated initially according to the advanced trauma life support and American Burn Association guidelines.</s>
+          <s>All patients with over 20% partial-thickness to full-thickness burns were started on the Parkland formula for fluid resuscitation, and inhalational protocol was initiated for all patients that had suspected inhalation injuries.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Study design and variables</head>
+        <p>
+          <s>The variables chosen to predict mortality during the hospital stay included gender, age, place of injury, mechanism of injury, length of stay, partial-thickness and full-thickness TBSA burn, inhalation injury, mechanical ventilation, duration of ventilation and mechanism of burn.</s>
+          <s cert="0.5987401604652405" id="dataset-4" type="Tabular data">These variables were extracted from the burns database which is being maintained and kept by trained burns unit nurses under the direct supervision of the burns and trauma consultant surgeon.</s>
+          <s>A large burn in this study is defined as patients with involvement of greater than 20% TBSA partial-thickness and full-thickness burns.</s>
+          <s cert="0.9805700182914734" corresp="#dataset-1" id="dataset-5" type="Tabular data:Subject Data Table">All patients' variables were recorded, and any data discrepancies were discussed prior to the final decision to enter into the burn registry.</s>
+        </p>
+        <p>
+          <s>This research was registered in accordance with the protocol with the National Medical Research Register (NMRR-15-1474-27213). Prior to the start of data collection, permission was obtained from the Malaysian Research Ethics Committee (KKM/NIHSEC/P15-1273).</s>
+        </p>
+        <p>
+          <s>Definition of systemic inflammatory response syndrome (SIRS) was in accordance with the American College of Chest Physicians (ACCP) and the Society of Critical Care Medicine (SCCM) of two or more of the following symptoms: fever of more than 38°C or less than 36°C, heart rate of more than 90 beats per minute, respiratory rate of more than 20 breaths per minute or arterial carbon dioxide tension (PaCO 2 ) of less than 32 mmHg and abnormal white blood cell count (&gt; 12,000/μL or &lt; 4000/μL or &gt; 10% immature band forms).</s>
+          <s>In this current study, early SIRS were defined as patients fulfilling the SIRS criteria stated previously within the first 24 h of admission to the BICU.</s>
+          <s>The duration of first 24 h was chosen as it gave adequate time to the clinical staff to assess the patient clinical and biochemical blood parameters.</s>
+        </p>
+      </div>
+      <div>
+        <head>Statistical analysis</head>
+        <p>
+          <s>All continuous variables were expressed as mean, standard deviation (SD) or median with the corresponding first and third quartiles (Q1-Q3), and categorical variables are expressed as frequencies and percentages.</s>
+          <s>Simple logistic regression was performed to evaluate the risk factors for burn-related mortality.</s>
+          <s>Kaplan-Meier survival curve with the log-rank test was performed to compare the effects of the variables of interest on mortality as a time-to-death analysis.</s>
+          <s>A probability value of p &lt; 0.05 was considered statistically significant.</s>
+          <s>The analysis was performed using SPSS for Windows version 16.0 (SPSS Inc., Chicago, USA).</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+      </div>
+      <div subtype="dataseer">
+        <head>Patient demographic and comparison between survivors and non-survivors</head>
+        <p>
+          <s cert="0.9865908622741699" id="dataset-6" type="Tabular data">Prospective records for patients with the ICD-10-CM T30-T32 diagnosis from January 2010 till October 2015 were screened, of which 393 patients were included.</s>
+          <s>The study population had a male preponderance of 290 male patients to 103 female patients with a mean age of 35.6 (±15.72)</s>
+          <s>years.</s>
+          <s>Mean length of stay was 15.3 (±18.91)</s>
+          <s>days.</s>
+          <s>Of the 393 patients, there were 48 deaths with an overall mortality rate of 12.2%.</s>
+        </p>
+        <p>
+          <s>Malay ethnicities were the majority of burn patients with 183 (46.6%) patients, and the minority were Indians with 34 (8.7%) patients.</s>
+          <s>Household and industrial workplace burns were the two commonest mechanisms that led to burn injuries with 189 and 137 patients respectively.</s>
+          <s>Similarly, household and industrial burns were the two common causes of death with 21 and 16 deaths respectively.</s>
+          <s>A total of 216 patients had full-thickness burns with 179 survivors and 37 mortalities.</s>
+          <s>The mean duration of ventilation was 3.8 (±8.11) days.</s>
+          <s>The cut-off for 100% death was seen in patients with partial-thickness and full-thickness burns of over 85.4% TBSA.</s>
+        </p>
+        <p>
+          <s>Observed mortality rates were high in patients with TBSA &gt; 20% (85.4%), ventilated patients (97.9%), inhalation injury (77.1%) and early SIRS (79.2%) seen in <ref target="#tab_0" type="table">Table 1</ref> .</s>
+          <s>The major causes of death from burn injuries were due to infective causes (39.6%) and inhalation injury (33.3%) as shown in <ref target="#tab_1" type="table">Table 2</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Odds ratio and logistic regression</head>
+        <p>
+          <s>Risk factors of interest were analyzed using simple logistic regression.</s>
+          <s>Risk factors of TBSA &gt; 20%, degrees of burn, inhalation injury and early SIRS were all significant predictors of mortality <ref target="#tab_2" type="table">(Table 3)</ref> .</s>
+          <s>Patients with TBSA greater than 20% had 16 times greater risk of death with a p value of 0.037.</s>
+          <s>Inhalation injuries had the most significant impact of mortality with 32 times risk of death with p &lt; 0.001.</s>
+          <s>All identified predictors of death were universal in other studies apart from early SIRS which is a significant predictor of death in this study.</s>
+          <s>Early SIRS on admission was also associated with 13 times risk of death with p &lt; 0.001.</s>
+        </p>
+      </div>
+      <div>
+        <head>Survival analysis using risk factors of interest</head>
+        <p>
+          <s>Survival analysis with log-rank test was performed and found that TBSA &gt; 20% (p &lt; 0.001), early SIRS (p &lt; 0.001), ventilated patients (p &lt; 0.001) and inhalation injury (p &lt; 0.001) were associated with poorer survival outcome <ref type="figure">(Fig. 1)</ref> .</s>
+          <s>These variables showed an increased probability of death after 75 days of admission.</s>
+          <s>The results are invariably noticeable in patients with inhalation injury and ventilated patients where the survival probability reduces to less than 20% after 50 days of hospital stay.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Discussion</head>
+        <p>
+          <s>Older age, a larger burn TBSA and inhalation injury are well-known predictors of burn mortality <ref target="#b10" type="bibr">[11]</ref>
+            <ref target="#b11" type="bibr">[12]</ref>
+            <ref target="#b12" type="bibr">[13]</ref> .</s>
+          <s>The result of our study is similar, which shows that the presence of inhalation injury and large TBSA burn is predictive of burn mortality.</s>
+          <s>From our study, older age had a close to significant p value of 0.056 and odds ratio of 5 for burn mortality which showed a strong correlation with death.</s>
+          <s>The main reason for the close to significant p value was probably due to the small sample population of elderly patients in our burn registry.</s>
+          <s>Despite that, older age is a known mortality predictor of burn injury due to a decrease in immune function with physiological thinning of skin <ref target="#b13" type="bibr">[14]</ref> .</s>
+          <s>This contributes to more than a quarter of burn mortality in the entire burn population across all ages as reported by Santos et al. <ref target="#b5" type="bibr">[6]</ref> .</s>
+          <s>Furthermore, the incidence of co-morbidities of hypertension, diabetes and pulmonary diseases rises within the ageing population.</s>
+          <s>Co-morbidities such as chronic obstructive pulmonary disease are a contributing factor leading to death in older patients <ref target="#b5" type="bibr">[6]</ref> .</s>
+          <s>Due to physiological factors of a weakened immune system, elderly burn-injured patients are likely to succumb to death from infective complications during hospitalizations or during the resuscitative phase <ref target="#b14" type="bibr">[15,</ref>
+            <ref target="#b15" type="bibr">16]</ref> .</s>
+          <s>In addition, the moist and devitalized burn tissue provides a suitable medium for proliferation of bacteria <ref target="#b16" type="bibr">[17,</ref>
+            <ref target="#b17" type="bibr">18]</ref> .</s>
+          <s>Common bacterial isolate from blood cultures due to burned wound infection is Pseudomonas aeruginosa with a prevalence rate of 8.4% <ref target="#b6" type="bibr">[7]</ref> .</s>
+          <s>Ventilation period a (days) 10 The overall mortality rate in this current study is 12.2% which is considered acceptable from a burn centre from a developing nation.</s>
+          <s>When compared to another developing nations, burn centre of India reported that the mortality rate goes up to 60.8% <ref target="#b18" type="bibr">[19]</ref> .</s>
+          <s>In contrast to neighbouring Southeast Asia and developed country of Singapore, a lower mortality rate of 4.6% was reported in 2003 <ref target="#b19" type="bibr">[20]</ref> .</s>
+          <s>This data must be viewed with caution as the admission criteria might differ between centres which lead to a variation of the death rates.</s>
+          <s cert="0.993178129196167" id="dataset-7" type="Tabular data">Due to better facilities and more bed availability, patients least serious burn injuries were also admitted and included in the study from Singapore which may account for the low mortality rate.</s>
+          <s>Nevertheless, it gives us an estimation and comparison of our capability in terms of death rates in managing severe burn patients.</s>
+          <s>The burn admission criteria and referral criteria in our centre are identical.</s>
+          <s>However, due to a limitation in bed availability, not all burn cases which fit the criteria of burn admission were admitted.</s>
+          <s>This may lead to the large discrepancy in mortality rate as reported by Ganesemoni et al. of burn patients in India <ref target="#b18" type="bibr">[19]</ref> .</s>
+          <s>The sample population of this study had a majority of patients with severely critical burn, and due to bed limitation, burn injury patients that fit the admission criteria were treated at other non-burns centres <ref target="#b2" type="bibr">[3]</ref> .</s>
+          <s>Naturally, if only severe cases were included, mortality rate goes up and the rate drops when least severe cases were admitted and analyzed together.</s>
+        </p>
+        <p>
+          <s>Burn injuries in the paediatric population are the other end of the extreme age with poor outcomes even in burn centres of developed nations.</s>
+          <s>This is due to the formation of contractures and disfigurement which may lead to psychological effects in early adulthood <ref target="#b20" type="bibr">[21]</ref> .</s>
+          <s>It is interesting to note that if a paediatric burn occurred in a developing nation of Africa, the mortality rate is three times higher compared to children worldwide.</s>
+          <s>In the burn injury trends observed mainly in the 2-year-old with a 30-day mortality rate of 7% as reported by Chelidze et al., majority of injuries were unintentional with domestic scalding burns of 98% in a paediatric burn population in Africa <ref target="#b21" type="bibr">[22]</ref> .</s>
+          <s>Our study did not show genders and age as significant predictors as reported in multiple studies.</s>
+          <s>Reasons for deaths in the paediatric burn injuries include the physiologic thinning of the skin, poorer immune function and reduction in strength for post-treatment physiotherapy and rehabilitation <ref target="#b14" type="bibr">[15,</ref>
+            <ref target="#b19" type="bibr">20,</ref>
+            <ref target="#b22" type="bibr">23]</ref> .</s>
+          <s>Our sub-analysis age groups revealed that the majority of deaths occurred in 19-49 years of age which is the active working class Malaysian population.</s>
+          <s>The analysis of age subgroups had only 6% of patients in the geriatric age population of 65 years and above.</s>
+          <s>In contrast to the developed nations, the number of geriatric population rises steadily with improving medical health care access <ref target="#b23" type="bibr">[24]</ref> .</s>
+          <s>Gender was a predictor in another study which can be due to socio-cultural differences <ref target="#b12" type="bibr">[13]</ref> .</s>
+          <s>In India, burn injuries were more common in the female gender by acid or flame burn attacks <ref target="#b24" type="bibr">[25]</ref> .</s>
+          <s>The Multi-organ failure --9 (18.8)</s>
+        </p>
+        <formula xml:id="formula_0">ARDS - - 3 (6.3) Others - - 1 (2.1)</formula>
+        <p>
+          <s>ARDS acute respiratory disdress syndrome events leading to these injuries were related to suicide and homicide that tend to be more severe <ref target="#b25" type="bibr">[26]</ref> .</s>
+          <s>This shows a wide variation in burn injuries and death which is contributed due to the access to health care services, socio-economic differences and cultural with gender variation from other nations.</s>
+          <s>Burn injuries over 20% TBSA and inhalation injury are significant predictors in this current study which were similar to other reports <ref target="#b26" type="bibr">[27,</ref>
+            <ref target="#b27" type="bibr">28]</ref> .</s>
+          <s>SIRS on an early presentation from admission may be used as a predictor of mortality as it was a significant predictor for death and survival <ref type="figure">(Fig. 1)</ref> .</s>
+          <s>A study in an American burns unit revealed that SIRS was not sensitive enough to predict sepsis in burn patients <ref target="#b28" type="bibr">[29]</ref> .</s>
+          <s>This has led us to suggest that SIRS is more commonly due to the severity of burn injury itself and leads to the overwhelming immune response to injury rather than infection.</s>
+          <s>This can be explained by the previous report on the observation of rising interleukin (IL) in burn injury patients <ref target="#b29" type="bibr">[30,</ref>
+            <ref target="#b30" type="bibr">31]</ref> .</s>
+          <s>The level of IL-6 is positively correlated with the severity of burn <ref target="#b29" type="bibr">[30]</ref> .</s>
+          <s>Another study in Taiwan demonstrated specific increment of IL-6 and IL-10 levels within the non-survivors burned patients <ref target="#b30" type="bibr">[31]</ref> .</s>
+          <s>The levels of IL-6 have a role in predicting the severity of injury in burned patients from the previous studies <ref target="#b31" type="bibr">[32]</ref> .</s>
+          <s>However, to generalize its use in usual practice especially in countries with a limited resource is cost ineffective.</s>
+          <s>Therefore, we recommend the SIRS criteria as one of the important key predictors for burn patient mortality.</s>
+          <s>This allows more detailed triaging of burn patients for intensive care bed allocation.</s>
+          <s>By identifying burn patients at high risk of mortality, it is useful for the allocation of resources during a disaster which many will require multiple infusion pumps, ventilator and inotropic agents.</s>
+        </p>
+      </div>
+      <div>
+        <head>Limitations</head>
+        <p>
+          <s>We acknowledge that the data is from a single-centre burn unit experience, and our numbers may pale in comparison with other published studies as multicentre studies are required to garner a large number of patients.</s>
+          <s>Likewise, in comparison with similar single-centre prospective published study, the results were comparable <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b1" type="bibr">2]</ref> .</s>
+          <s>However, the authors believe that this is the current situation being reflected in other centres in Malaysia managing burn injuries.</s>
+          <s>This data is important as we found no published local Malaysian data on other variables of burn mortality predictors.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Strength</head>
+        <p>
+          <s cert="0.9308128952980042" id="dataset-8" type="Tabular data">The data collected includes all burn patients which reduces the sampling bias.</s>
+          <s>From our study, we identified early SIRS to be the third most important prognostic factor in mortality besides TBSA and inhalation injury.</s>
+          <s>In addition, this study gives an estimate of our regional burn outcome managed by a single burns surgeon.</s>
+        </p>
+      </div>
+      <div>
+        <head>Conclusion</head>
+        <p>
+          <s>From this study which was conducted in a Malaysian BICU, the predictors of mortality identified were TBSA &gt; 20%, early SIRS, mechanical ventilation and inhalation injury which were associated with poorer survival outcome.</s>
+          <s>Early SIRS and mechanical ventilation were significant predictors of mortality.</s>
+          <s>The immunological response differs from individual patients and influenced by the severity of the burn.</s>
+          <s>SIRS on admission is an important predictor of death and may represent the severity of the burn injury.</s>
+          <s>It is an inexpensive way of measuring the immunological response indirectly in comparison with costly laboratory and biochemical test specific for immunological markers of burn injuries.</s>
+          <s>Patients who required mechanical ventilation were associated with mortality.</s>
+          <s>This relates to the severity of associated lung injury sustained by individual patients due to the burn.</s>
+          <s>Early SIRS and ventilated patients were novel predictors of death identified in this study.</s>
+          <s>The use of these two predictors in addition to the universal well-known predictors of burn mortality (inhalation injury and TBSA burn) gives added variables for outcome prognostication and mortality risk counselling in severely burned patients.</s>
+          <s>Furthermore, this study is important in Malaysia to identify the mortality risk factors of burn which may be used for local clinicians to stratify risk and predict outcome comparison for burn injuries.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head/>
+        <label/>
+        <figDesc>LOS length of stay, % TBSA percentage total body surface area, SIRS systemic inflammatory response syndrome a Mean ± standard deviation (SD) or median with the corresponding first and third quartiles (</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head/>
+        <label/>
+        <figDesc>BICU: Burns intensive care unit; HSI: Hospital Sultan Ismail; IL-10: Interleukin-10; IL-6: Interleukin-6; SIRS: Systemic inflammatory response syndrome; TBSA: Total body surface area</figDesc>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_0">
+        <head>Table 1</head>
+        <label>1</label>
+        <figDesc>Patient demographics and comparison between survivors and non-survivors in a Malaysian burns intensive care unit</figDesc>
+        <table>Variable 
+All episodes, n (%) 
+Survivor, n (%) 
+Non-survivor, n (%) 
+
+(n = 393) 
+(n = 345) 
+(n = 48) 
+
+Age a (years) 
+35.6 (±15.7) 
+35.1 (±15.6) 
+39.7 (±15.9) 
+
+Age group (years) 
+
+≤ 18 
+34 (8.7) 
+32 (9.3) 
+2 (4.2) 
+
+19-49 
+287 (73.0) 
+254 (73.6) 
+33 (68.8) 
+
+50-64 
+48 (12.2) 
+40 (11.6) 
+8 (16.7) 
+
+65-74 
+15 (3.8) 
+11 (3.2) 
+4 (8.3) 
+
+≥ 75 
+9 (2.3) 
+8 (2.3) 
+1 (2.1) 
+
+Gender 
+
+Male 
+290 (73.8) 
+254 (73.6) 
+36 (75.0) 
+
+Female 
+103 (26.2) 
+91 (26.4) 
+12 (25.0) 
+
+Race 
+
+Malay 
+183 (46.6) 
+165 (47.8) 
+18 (37.5) 
+
+Chinese 
+85 (21.6) 
+73 (21.2) 
+12 (25.0) 
+
+Indian 
+34 (8.7) 
+27 (7.8) 
+7 (14.6) 
+
+Others 
+91 (23.2) 
+80 (23.2) 
+11 (22.9) 
+
+LOS a (days) 
+9 (3.0-20.0) 
+9 (3.0-20.0) 
+9 (6.0-20.3) 
+
+% TBSA a 
+18.8 (±19.5) 
+14.7 (±13.9) 
+48.7 (±26.9) 
+
+% TBSA group 
+
+0 -10% 
+160 (40.7) 
+156 (45.2) 
+4 (8.3) 
+
+10 -20% 
+104 (26.5) 
+101 (29.3) 
+3 (6.3) 
+
+20 -30% 
+51 (13.0) 
+46 (13.3) 
+5 (10.4) 
+
+30 -40% 
+22 (5.6) 
+17 (4.9) 
+5 (10.4) 
+
+≥ 40% 
+56 (14.2) 
+25 (7.2) 
+31 (64.6) 
+
+Degree of burn 
+
+Partial-thickness 
+342 (87.0) 
+306 (88.7) 
+36 (75.0) 
+
+Full-thickness 
+216 (55.0) 
+179 (51.9) 
+37 (77.1) 
+
+Inhalation injury 
+98 (24.9) 
+61 (17.7) 
+37 (77.1) 
+
+SIRS at presentation 
+169 (43.0) 
+131 (38.0) 
+38 (79.2) 
+
+Ventilation 
+93 (23.7) 
+46 (13.3) 
+47 (97.9) 
+
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_1">
+        <head>Table 2</head>
+        <label>2</label>
+        <figDesc>Burn injury mechanism, place of burn and cause of deaths in survivors and non-survivors in a Malaysian burns intensive care unit</figDesc>
+        <table>Variable 
+All episodes, n (%) 
+Survivor, n (%) 
+Non-survivor, n (%) 
+
+(n = 393) 
+(n = 345) 
+(n = 48) 
+
+Burn injury mechanism 
+
+Thermal 
+343 (87.3) 
+303 (87.8) 
+40 (83.3) 
+
+Chemical 
+31 (7.9) 
+25 (7.2) 
+6 (12.5) 
+
+Electrical 
+15 (38.5) 
+14 (4.1) 
+1 (2.1) 
+
+Others 
+4 (1.0) 
+3 (0.9) 
+1 (2.1) 
+
+Place of burn 
+
+Household 
+189 (48.1) 
+168 (48.7) 
+21 (43.8) 
+
+Industrial 
+137 (34.9) 
+121 (35.1) 
+16 (33.3) 
+
+Road traffic accident 
+29 (7.4) 
+25 (7.2) 
+4 (8.3) 
+
+Non-accidental 
+43 (10.9) 
+33 (9.6) 
+10 (20.8) 
+
+Others 
+87 (22.1) 
+82 (23.8) 
+5 (10.4) 
+
+Cause of death 
+
+Sepsis 
+-
+-
+19 (39.6) 
+
+Inhalation injury 
+-
+-
+16 (33.3) 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_2">
+        <head>Table 3</head>
+        <label>3</label>
+        <figDesc>Logistic regression for predictors associated with mortality in severe burns in a Malaysian burns intensive care unit CI confidence interval, % TBSA percentage of total body surface area, SIRS systemic inflammatory response syndrome, LOS length of stay</figDesc>
+        <table>Variable 
+Odds ratio 
+95% CI 
+p value 
+
+Lower Upper 
+
+Age group (years) 
+
+≤ 18 
+1.00 (reference) -
+-
+-
+
+19-49 
+2.08 
+0.08 
+0.48 
+0.331 
+
+50-64 
+3.20 
+0.64 
+16.13 
+0.159 
+
+65-74 
+5.82 
+0.93 
+36.28 
+0.059 
+
+≥ 75 
+2.00 
+0.16 
+24.92 
+0.590 
+
+Gender 
+
+Male 
+1.08 
+0.54 
+2.16 
+0.839 
+
+Female 
+1.00 (reference) -
+-
+-
+
+Place of burn 
+
+Household 
+0.82 
+0.45 
+1.51 
+0.521 
+
+Industrial 
+0.93 
+0.49 
+1.76 
+0.813 
+
+Road traffic accident 1.16 
+0.39 
+3.50 
+0.787 
+
+Non-accidental 
+2.49 
+1.14 
+5.45 
+0.023 
+
+Others 
+0.37 
+0.14 
+0.97 
+0.044 
+
+% TBSA 
+
+0 -10% 
+1.00 (reference) -
+-
+-
+
+10 -20% 
+1.16 
+0.25 
+5.29 
+0.849 
+
+20 -30% 
+4.24 
+1.09 
+16.44 
+0.037 
+
+30 -40% 
+11.47 
+2.81 
+46.84 
+0.001 
+
+≥ 40% 
+48.36 
+15.72 
+148.76 &lt; 0.001 
+
+Degree of burn 
+
+Partial-thickness 
+0.38 
+0.18 
+0.80 
+0.010 
+
+Full-thickness 
+3.12 
+1.54 
+6.32 
+0.002 
+
+Inhalation injury 
+15.66 
+7.56 
+32.42 
+&lt; 0.001 
+
+SIRS at presentation 
+6.21 
+2.99 
+12.88 
+&lt; 0.001 
+
+LOS (days) 
+
+0 -10 
+1.00 (reference) -
+-
+-
+
+10 -20 
+1.56 
+0.74 
+3.28 
+0.240 
+
+20 -30 
+1.12 
+0.40 
+3.16 
+0.826 
+
+30 -40 
+1.20 
+0.33 
+4.33 
+0.787 
+
+≥ 40 
+1.95 
+0.72 
+5.26 
+0.189 
+
+</table>
+      </figure>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>Full acknowledgements are given to the Burn Intensive Care Unit Staff nurses and registry manager for the dedication in data collection.</s>
+          </p>
+        </div>
+        <div>
+          <head>Funding</head>
+          <p>
+            <s>Not applicable.</s>
+          </p>
+        </div>
+        <div>
+          <head>Availability of data and materials</head>
+          <p>
+            <s>The datasets used and analyzed during the current study are available from the corresponding author on reasonable request.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <p>
+            <s>Authors' contributions HTCL was involved in the data collection and analysis, drafting and reporting of the work described in the article.</s>
+            <s>JHT, F-HI, MT and TN were involved in the data collection and drafting of this manuscript.</s>
+            <s>All authors read and approved the final manuscript.</s>
+          </p>
+        </div>
+        <div>
+          <head>Ethics approval and consent to participate</head>
+        </div>
+        <div>
+          <head>Competing interests</head>
+          <p>
+            <s>The authors declare that they have no competing interests.</s>
+          </p>
+          <p>
+            <s>Author details 1</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Epidemiological trends and risk factors in major burns patients in South Korea: a 10-year experience</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Seo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Kym</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Yim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Cho</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Burns</title>
+              <imprint>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope from="181" to="199" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Inhalation injury in burn patients: establishing the link between diagnosis and prognosis</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>You</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Kym</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Yoon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Yim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Cho</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Burns</title>
+              <imprint>
+                <biblScope unit="volume">40</biblScope>
+                <biblScope from="1470" to="1475" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Morbidity and survival probability in modern burn care</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Jeschke</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Pinto</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Kraft</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Nathens</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Finnerty</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Gamelli</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Crit Care Med</title>
+              <imprint>
+                <biblScope unit="volume">43</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="808" to="815" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <monogr>
+              <title level="m" type="main">Resources for Optimal Care of the Injured Patient</title>
+              <ptr target="https://www.facs.org/~/media/files/quality%20programs/trauma/vrc%20resources/resources%20for%20optimal%20care.ashx.Accessed18"/>
+              <imprint>
+                <date type="published" when="2014-06"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Mortality and causes of death in a burn centre</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Bloemsma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Dokter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Boxma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Immh</forename>
+                  <surname>Oen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Burns</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope from="1103" to="1110" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">The effect of comorbidities and complications of the mortality of burned patients</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Santos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Barros</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Gomes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Guedes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Maia</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Ann Burns Fire Disasters</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="103" to="109" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Predicting mortality in burn patients with bacteraemia</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Ceniceros</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Pértega</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Galeiras</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mourelo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>López</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Broullón</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Infection</title>
+              <imprint>
+                <biblScope unit="volume">44</biblScope>
+                <biblScope unit="issue">22</biblScope>
+                <biblScope from="215" to="237" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Pathophysiologic response to burns in the elderly</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Jeschke</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Patsouris</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Stanojcic</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Abdullahi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Rehou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Pinto</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">EBioMedicine</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope unit="issue">10</biblScope>
+                <biblScope from="1536" to="1584" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">A population-based study of the epidemiology of acute adult burns in Ecuador from</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Ortiz-Prado</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Armijos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Iturralde</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Burns</title>
+              <imprint>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="582" to="591" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">A review of burn patients admitted to the burns unit of Hospital Universiti Kebangsaan Malaysia</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Chan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Hairol</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Imtiaz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Zailani</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Kumar</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Soma</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Med J Malaysia</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="418" to="443" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Acute respiratory distress syndrome is as important as inhalation injury for the development of respiratory dysfunction in major burn</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ingrid</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Bak</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Folke</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Burns</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope from="441" to="51" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Characteristics of bloodstream infections in burn patients: an 11-year retrospective study</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Bhavik</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Jennifer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Anthony</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Jeffrey</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Michael</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Michael</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Burns</title>
+              <imprint>
+                <biblScope unit="volume">38</biblScope>
+                <biblScope from="685" to="90" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Management of burns of over 80% of total body surface area: a comparative study</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Guo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">X</forename>
+                  <surname>Sun</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Burns</title>
+              <imprint>
+                <biblScope unit="volume">35</biblScope>
+                <biblScope from="210" to="214" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Inflammatory response in the elderly</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Grimble</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Curr Opin Clin Nutr Metab Care</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="21" to="30" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Risk factors for the development of pneumonia in older adults with burn injury</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Pham</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Burn Care Res</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope from="105" to="115" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Comparison of mortality associated with sepsis in the burn, trauma, and general intensive care unit patient: a systematic review of the literature</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Mann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Baun</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Meininger</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Wade</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Shock</title>
+              <imprint>
+                <biblScope unit="volume">37</biblScope>
+                <biblScope from="4" to="16" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Characteristics of bloodstream infections in burn patients: an 11-year retrospective study</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Patel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Paratz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Mallet</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Lipman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Rudd</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Muller</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Burns</title>
+              <imprint>
+                <biblScope unit="volume">38</biblScope>
+                <biblScope from="685" to="90" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">The relationship between platelet count, sepsis, and survival in pediatric burn patients</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Housinger</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Brinkerhoff</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Warden</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Arch Surg</title>
+              <imprint>
+                <biblScope unit="volume">128</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="65" to="71" unit="page"/>
+                <date type="published" when="1993"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Epidemiology of hospitalized burn patients in a tertiary care hospital in South India</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ganesamoni</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Kate</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Sadasivan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Burns</title>
+              <imprint>
+                <biblScope unit="volume">36</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="422" to="431" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Epidemiology of burn injuries in Singapore from 1997 to</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Song</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Chua</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Burns</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="18" to="26" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+            <note>Suppl</note>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Psychiatric outcomes amongst adult survivors of childhood burns</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Goodhew</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Van Hooff</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Sparnon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Roberts</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Baur</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Saccone</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Burns</title>
+              <imprint>
+                <biblScope unit="volume">40</biblScope>
+                <biblScope from="1079" to="88" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Predictors of mortality among pediatric burn patients in East Africa</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Chelidze</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Lim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Peck</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Giiti</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Leahy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Rabbitts</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Burn Care Res</title>
+              <imprint>
+                <biblScope unit="volume">37</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="154" to="60" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Factors influencing the early prediction of outcome from burns</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Raff</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Germann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <surname>Barthold</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Acta Chir Plast</title>
+              <imprint>
+                <biblScope unit="volume">38</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="122" to="129" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Predicting mortality from burns: the need for age-group specific models</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Taylor</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Lawless</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Curri</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Sen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Greenhalgh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Palmieri</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Burns</title>
+              <imprint>
+                <biblScope unit="volume">40</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="1106" to="1121" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Epidemiology and outcome of chemical burn patients admitted in burn unit of JNMC Hospital</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Akhtar</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Ahmad</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Khurram</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Kanungo</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Family Med Prim Care</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="106" to="115" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+              <respStmt>
+                <orgName>Aligarh Muslim University</orgName>
+              </respStmt>
+            </monogr>
+            <note>: a 5-year experience</note>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Clinico-epidemiological profile of burn patients admitted in a tertiary care hospital in coastal South India</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Kumar</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Kanchan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Unnikrishnan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Rekha</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Mithra</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Venugopal</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Burn Care Res</title>
+              <imprint>
+                <biblScope unit="volume">33</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="660" to="667" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Effect of inhalation injury, burn size, and age on mortality: a study of 1447 consecutive burn patients</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Smith</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Cairns</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Ramadan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Dalston</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Fakhry</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Rutledge</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Trauma</title>
+              <imprint>
+                <biblScope unit="volume">37</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="655" to="664" unit="page"/>
+                <date type="published" when="1994"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">A three decade analysis of factors affecting burn mortality in the elderly</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Lionelli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Pickus</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Beckum</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Decoursey</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Korentager</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Burns</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope from="958" to="63" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Novel predictors of sepsis outperform the American Burn Association sepsis criteria in the burn intensive care unit patient</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Mann-Salinas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Baun</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Meininger</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Wade</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Burn Care Res</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="31" to="43" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Marked increase in plasma interleukin-6 in burn patients</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Ueyama</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Maruyama</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Osame</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Sawada</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Lab Clin Med</title>
+              <imprint>
+                <biblScope unit="volume">120</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="693" to="701" unit="page"/>
+                <date type="published" when="1992"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Changes in circulating levels of an antiinflammatory cytokine interleukin 10 in burned patients</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Yeh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Shen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Burns</title>
+              <imprint>
+                <biblScope unit="volume">26</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="454" to="463" unit="page"/>
+                <date type="published" when="2000"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Deficient transforming growth factor beta and interleukin-10 responses contribute to the septic death of burned patients</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Yeh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Shen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Fang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Burns</title>
+              <imprint>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope from="631" to="638" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

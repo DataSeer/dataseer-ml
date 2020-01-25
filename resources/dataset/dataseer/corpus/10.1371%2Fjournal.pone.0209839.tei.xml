@@ -1,0 +1,1779 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:26+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Enhancing simulations with intra-subject variability for improved psychophysical assessments</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+        <date type="published" when="2018-12-31">Published: December 31, 2018</date>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author role="corresp">
+              <persName>
+                <roleName>ID</roleName>
+                <forename type="first">Mike</forename>
+                <forename type="middle">D</forename>
+                <surname>Rinderknecht</surname>
+              </persName>
+              <email>*mike.rinderknecht@hest.ethz.ch</email>
+              <affiliation key="aff0">
+                <orgName key="dep1" type="department">Institute of Robotics and Intelligent Systems</orgName>
+                <orgName key="dep2" type="department">Department of Health Sciences and Technology</orgName>
+                <orgName type="laboratory">Rehabilitation Engineering Laboratory</orgName>
+                <orgName type="institution">ETH Zurich</orgName>
+                <address>
+                  <settlement>Zurich</settlement>
+                  <country key="CH">Switzerland</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <roleName>ID</roleName>
+                <forename type="first">Olivier</forename>
+                <surname>Lambercy</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName key="dep1" type="department">Institute of Robotics and Intelligent Systems</orgName>
+                <orgName key="dep2" type="department">Department of Health Sciences and Technology</orgName>
+                <orgName type="laboratory">Rehabilitation Engineering Laboratory</orgName>
+                <orgName type="institution">ETH Zurich</orgName>
+                <address>
+                  <settlement>Zurich</settlement>
+                  <country key="CH">Switzerland</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Roger</forename>
+                <surname>Gassert</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName key="dep1" type="department">Institute of Robotics and Intelligent Systems</orgName>
+                <orgName key="dep2" type="department">Department of Health Sciences and Technology</orgName>
+                <orgName type="laboratory">Rehabilitation Engineering Laboratory</orgName>
+                <orgName type="institution">ETH Zurich</orgName>
+                <address>
+                  <settlement>Zurich</settlement>
+                  <country key="CH">Switzerland</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">I</forename>
+                <forename type="middle">D</forename>
+              </persName>
+              <affiliation key="aff0">
+                <orgName key="dep1" type="department">Institute of Robotics and Intelligent Systems</orgName>
+                <orgName key="dep2" type="department">Department of Health Sciences and Technology</orgName>
+                <orgName type="laboratory">Rehabilitation Engineering Laboratory</orgName>
+                <orgName type="institution">ETH Zurich</orgName>
+                <address>
+                  <settlement>Zurich</settlement>
+                  <country key="CH">Switzerland</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Enhancing simulations with intra-subject variability for improved psychophysical assessments</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date type="published" when="2018-12-31">Published: December 31, 2018</date>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1371/journal.pone.0209839</idno>
+          <note type="submission">Received: March 26, 2018 Accepted: December 12, 2018</note>
+          <note>RESEARCH ARTICLE OPEN ACCESS Citation: Rinderknecht MD, Lambercy O, Gassert R (2018) Enhancing simulations with intra-subject variability for improved psychophysical assessments. PLoS ONE 13(12): e0209839. Editor: Andrew Anderson, The University of Melbourne, AUSTRALIA Copyright:</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>Psychometric properties of perceptual assessments, like reliability, depend on stochastic properties of psychophysical sampling procedures resulting in method variability, as well as inter-and intra-subject variability.</s>
+            <s>Method variability is commonly minimized by optimizing sampling procedures through computer simulations.</s>
+            <s>Inter-subject variability is inherent to the population of interest and cannot be influenced.</s>
+            <s>Intra-subject variability introduced by confounds (e.g., inattention or lack of motivation) cannot be simply quantified from experimental data, as these data also include method variability.</s>
+            <s>Therefore, this aspect is generally neglected when developing assessments.</s>
+            <s>Yet, comparing method variability and intrasubject variability could give insights on whether effort should be invested in optimizing the sampling procedure, or in addressing potential confounds instead.</s>
+            <s>We propose a new approach to estimate intra-subject variability of psychometric functions by combining computer simulations and behavioral data, and to account for it when simulating experiments.</s>
+            <s>The approach was illustrated in a real-world scenario of proprioceptive difference threshold assessments.</s>
+            <s>The behavioral study revealed a test-retest reliability of r = 0.212.</s>
+            <s>Computer simulations without considering intra-subject variability predicted a reliability of r = 0.768, whereas the new approach including an intra-subject variability model lead to a realistic estimate of reliability (r = 0.207).</s>
+            <s>Such a model also allows computing the theoretically maximally attainable reliability (r = 0.552) assuming an ideal sampling procedure.</s>
+            <s>Comparing the reliability estimates when exclusively accounting for method variability versus intra-subject variability reveals that intra-subject variability should be reduced by addressing confounds and that only optimizing the sampling procedure may be insufficient to achieve a high reliability.</s>
+            <s>This new approach allows computing the intra-subject variability with only two measurements per subject, and predicting the reliability for a larger number of subjects and retests based on simulations, without requiring additional experiments.</s>
+            <s>Such a tool of predictive value is especially valuable for target populations where time is scarce, e.g., for assessments in clinical settings.</s>
+          </p>
+          <p>
+            <s>PLOS ONE | https://doi.org/10.1371/journal.pone.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+    <revisionDesc>
+      <date type="submission" when="209839-12-31"/>
+    </revisionDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head n="1">Introduction</head>
+        <p>
+          <s>The development of assessments of human perception thresholds (e.g., visual, auditory, tactile, or proprioceptive stimuli) is a challenging field, as these require good psychometric and clinimetric properties such as high reliability, for both research and clinical applications.</s>
+          <s>The selection and optimization of psychophysical assessments is, in general, a lengthy, iterative, and cumbersome process where different psychophysical methods need to be tested and their parameters tuned <ref target="#b0" type="bibr">[1]</ref> .</s>
+          <s>Evaluating such procedures requires time and financial resources, as it involves repeated assessment of a large number of subjects.</s>
+          <s>This may present a serious hurdle for the development of reliable assessments, especially for sample populations where available time is scarce and recruitment is difficult or expensive (e.g., neurological patients).</s>
+        </p>
+        <p>
+          <s>When evaluating and optimizing psychophysical methods (e.g., for a high test-retest reliability), different factors play an essential role: method variability as well as inter-and intrasubject variability.</s>
+          <s>While inter-subject variability clearly has an effect on reliability <ref target="#b1" type="bibr">[2]</ref> , it is given by the population of interest and its true value cannot be influenced.</s>
+          <s>Previous works have suggested that a lack of correlation between different methods tested on the same subjects (i.e. a lack of agreement between results) may originate either from inherent method variability (i.e., based on the stochastic process, the statistical properties of the method, and number of trials) or from intra-subject variability <ref target="#b2" type="bibr">[3]</ref> .</s>
+          <s>As both method and intra-subject variability are confounded in the outcome measure of a perception assessment, it is difficult to discern one factor from the other and quantify them independently.</s>
+          <s>Generalizability theory is one approach to disentangle different sources of errors <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref> .</s>
+          <s>However, it requires complex experimental designs with a large number of conditions where each factor is controlled for.</s>
+          <s>Furthermore, unknown non-systematic and random error sources, such as the inaccuracy of the measurements and other uncontrolled factors (e.g., inattention or lack of motivation) remain confounded in the residual error.</s>
+        </p>
+        <p>
+          <s>The detection or discrimination capability of physical stimuli often resembles a sigmoidal psychometric function <ref target="#b6" type="bibr">[7,</ref>
+            <ref target="#b7" type="bibr">8]</ref> .</s>
+          <s>This psychometric function defines the subject's performance, or responses to physical stimuli in a psychophysical task.</s>
+          <s>Therefore, perception and psychophysical procedures (i.e., complete perception experiments) can be modeled.</s>
+          <s>As a matter of fact, the method variability as well as other performance metrics such as bias and efficiency can be quantified using computer simulations and have been widely investigated for various procedures <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b8" type="bibr">[9]</ref>
+            <ref target="#b9" type="bibr">[10]</ref>
+            <ref target="#b11" type="bibr">[11]</ref>
+            <ref target="#b12" type="bibr">[12]</ref>
+            <ref target="#b13" type="bibr">[13]</ref>
+            <ref target="#b14" type="bibr">[14]</ref>
+            <ref target="#b15" type="bibr">[15]</ref>
+            <ref target="#b16" type="bibr">[16]</ref>
+            <ref target="#b17" type="bibr">[17]</ref>
+            <ref target="#b18" type="bibr">[18]</ref>
+            <ref target="#b19" type="bibr">[19]</ref>
+            <ref target="#b20" type="bibr">[20]</ref> .</s>
+        </p>
+        <p>
+          <s>In contrast, intra-subject variability introduced by confounds (variables that influence both the dependent and independent variable causing a spurious association, e.g., inattention, lack of motivation in psychophysical experiments, or fatigue) is difficult to estimate and cannot be directly quantified based on experimental or simulated data only.</s>
+          <s>For example, a lack of motivation could decrease the performance of a patient with sensory deficits in a perceptual test aiming to quantifying sensory deficits.</s>
+          <s>Thus, it is not clear whether the origins of the decreased performance are the sensory deficits and/or lack of motivation.</s>
+          <s>Because of such confounding effects, intra-subject variability has received little attention so far, and is generally neglected in computer simulations of psychophysical sampling procedures.</s>
+          <s>As a consequence, simulations of psychophysical experiments are hardly realistic, and results are not representative.</s>
+        </p>
+        <p>
+          <s>The aim of this work is twofold: firstly, to present an approach to quantify intra-subject variability, and secondly, to apply and illustrate the approach by creating a general model of intrasubject variability-in this case of proprioceptive perception at the wrist assessed in a twoalternative forced-choice (2AFC) setting.</s>
+          <s>To estimate the intra-subject variability for different parameters of the psychometric function, a dataset with repeated measures from a behavioral study is required.</s>
+          <s>Based on this experimental data, the subject's psychometric functions are modeled to simulate the same population.</s>
+          <s>We propose to add individual, statistical noise distributions models on the different parameters (threshold and slope) of the psychometric functions to simulate intra-subject variability.</s>
+          <s>The level of intra-subject variability (i.e., noise) on the different parameters can be quantified by matching the test-retest reliability of the simulated experiment with the test-retest reliability of the behavioral data and by maximizing the similarity between the distributions of outcome measures.</s>
+          <s>Better knowledge about human perception and the ability to model intra-subject variability is important and would offer many possibilities, such as comparing, selecting, and tuning different psychophysical methods in simulated scenarios corresponding closely to the real application and population of interest.</s>
+          <s>Furthermore, model-based extrapolation to a larger number of trials or increased sample size, for example to explore their impact on reliability, could then be performed purely in simulation.</s>
+          <s>This could significantly speed up the development and testing of psychophysical assessment procedures.</s>
+        </p>
+      </div>
+      <div>
+        <head n="2">Materials and methods</head>
+      </div>
+      <div subtype="dataseer">
+        <head n="2.1">Behavioral data</head>
+        <p>
+          <s>2.1.1</s>
+          <s>Subjects.</s>
+          <s cert="0.9948117733001709" id="dataset-1" type="Tabular data:Subject Data Table">Thirty-three healthy young subjects (N subjects = 33) were recruited and participated in an experiment to assess wrist proprioception (age mean ± SD: 24.1 ± 3.4 years, 20 male and 13 female, 27 right handed, 5 left handed, and 1 ambidextrous).</s>
+          <s cert="0.9870051145553589" id="dataset-2" type="Tabular data">Handedness was assessed with the Edinburgh Handedness Inventory <ref target="#b21" type="bibr">[21]</ref> .</s>
+          <s>Exclusion criteria comprised sensory and motor deficits affecting normal wrist and hand function, as well as any history of neurological or wrist injury.</s>
+          <s>Prior to participating in the experiment, all subjects gave written informed consent.</s>
+          <s>The study was approved by the institutional ethics committee of the ETH Zurich (EK 2015-N-03).</s>
+        </p>
+        <p>
+          <s>2.1.2</s>
+          <s>Protocol of the proprioceptive assessment.</s>
+          <s>Each trial of the assessment aiming at estimating the difference threshold of the angular position at the right wrist joint consisted of the consecutive presentation of two different angles and the subsequent judgment by the subject which of the two presented movements was larger (two-interval 2AFC paradigm <ref target="#b7" type="bibr">[8]</ref> ).</s>
+          <s>The subjects did not receive feedback about correct performance.</s>
+        </p>
+        <p>
+          <s>The movements were applied to the passive wrist with a one degree-of-freedom robotic wrist interface <ref target="#fig_0" type="figure">(Fig 1)</ref> .</s>
+          <s>A detailed description of the robot can be found in <ref target="#b22" type="bibr">[22]</ref> .</s>
+          <s>In short, this device is capable of providing well-controlled and reproducible passive flexion-extension movements to the wrist and is driven by a direct-drive brushed DC motor (RE65, Maxon Motor, Sachseln, Switzerland).</s>
+          <s>The angular position is measured with a high-resolution encoder (R158, 1 million counts/rev, Gurley Precision Instruments, Troy, NY, USA), and movements are controlled in LabVIEW RealTime 13.0 (National Instruments, Austin, TX, USA) at 1 kHz.</s>
+          <s>Above the tested hand, a touchscreen showing the visual interface for the experiment is mounted horizontally.</s>
+          <s>To avoid any visual or auditory cues (e.g., noise emitted by the motor), the tested arm was occluded from vision and white noise was played over headphones during the whole experiment.</s>
+        </p>
+        <p>
+          <s>The movements always started from the resting position (hand aligned with forearm, 0˚) and went into flexion direction (maximum 40˚).</s>
+          <s>The two presented angles were always centered around a reference of 20˚.</s>
+          <s>The difference between the two angles (referred to as level) was defined by an adaptive sampling procedure named Parameter Estimation by Sequential Testing (PEST) <ref target="#b8" type="bibr">[9]</ref> .</s>
+          <s>PEST was used with a logarithmic adaptation for positive-only stimuli to avoid an undesired behavior of the algorithm due to zero crossings <ref target="#b2" type="bibr">[3]</ref> .</s>
+          <s>This adaptive algorithm takes the judgments (also referred to as responses) of past trials into account and changes the difference between the angles accordingly, using heuristic rules to approach the difference threshold as rapidly as possible.</s>
+          <s>The same proprioceptive assessment has been previously used and described in more detail in other studies with a different robotic device for the assessment of the metacarpophalangeal joint <ref target="#b2" type="bibr">[3,</ref>
+            <ref target="#b24" type="bibr">[23]</ref>
+            <ref type="bibr">[24]</ref>
+            <ref type="bibr">[25]</ref> .</s>
+          <s>The same movement timing characteristics and parameters for the PEST algorithm were used in the present experiment, except for the maximum number of trials (start level x 0 = 5.5˚, start step Δx 0 = ±2˚, target performance P t = 75%, Wald sequential likelihood ratio test parameter W = 1, minimum step Δx min = ±0.1˚,</s>
+          <s>maximum trials at same level trials max@x = 20, maximum trials in total trials max = 120).</s>
+          <s>Each flexion movement lasted 1 s and the wrist was kept at the wrist flexion angle for 1.5 s before moving back to the start position.</s>
+          <s>Each movement followed a natural minimum jerk trajectory <ref target="#b26" type="bibr">[26]</ref> .</s>
+        </p>
+        <p>
+          <s>Each subject performed the assessment in five sessions on different days (from 1 to 4 days between sessions, with a maximum of 7 days from the first to the last session).</s>
+        </p>
+      </div>
+      <div>
+        <head n="2.1.3">Estimation of the psychometric function.</head>
+        <p>
+          <s>Based on the data from the assessment sequence (i.e., difference between the two presented angles and corresponding response of the subject), the proportion of correct responses can be calculated for the different levels x to fit a sigmoidal psychometric function ψ(x) <ref target="#fig_1" type="figure">(Fig 2)</ref> using a Maximum Likelihood criterion implemented in the Palamedes MATLAB routines <ref target="#b27" type="bibr">[27]</ref> :</s>
+        </p>
+        <p>
+          <s>cðx; a; b; g; lÞ ¼ g þ ð1 À g À lÞ F Gauss ðx; m; s 2 Þ; ð1Þ</s>
+        </p>
+        <p>
+          <s>with F Gauss (x; μ, σ 2 ) a sigmoidal cumulative Gaussian function.</s>
+          <s>In the present work, the threshold parameter α corresponds to the mean μ of the underlying Gaussian function, and the slope parameter β is inversely proportional to the standard deviation σ: The guess rate parameter γ was fixed to 0.5, as the 2AFC paradigm with randomly ordered stimuli for the two intervals within a trial can be considered decision-bias-free, and the presentation of two identical stimuli should lead to performance at chance level <ref target="#b7" type="bibr">[8]</ref> .</s>
+          <s>The lapse rate parameter λ was allowed to vary 2 [0, 0.1].</s>
+          <s>Leaving the lapse rate free when fitting a psychometric function has been shown to reduce estimation bias introduced by isolated scattered lapses <ref target="#b28" type="bibr">[28]</ref> .</s>
+          <s>Note that this range was chosen identical to our previous work <ref type="bibr">[25]</ref> and is larger than the proposed range [0, 0.06] by <ref target="#b28" type="bibr">[28]</ref> .</s>
+          <s>This was motivated by the desire to account for a potentially higher probability of inattention in elderly or neurologically impaired subjects (for which such assessments are primarily designed), which was confirmed in <ref target="#b24" type="bibr">[23]</ref> .</s>
+          <s>The actual slope (first order derivative) of ψ(x) at the inflexion point α is</s>
+        </p>
+        <formula xml:id="formula_0">b ¼ 1 ffi ffi ffi ffi ffiffi 2p p 1 s :<label>ð2Þ</label>
+        </formula>
+        <formula xml:id="formula_1">b inflection ¼ ð1 À g À lÞ ffi ffi ffi ffi ffiffi 2p p 1 s :<label>ð3Þ</label>
+        </formula>
+        <p>
+          <s>This definition of the slope carries as units one over the units of the stimulus, in the present work [1/˚], and can be used to compare the slope values across studies using different types of sigmoidal functions F(x) <ref target="#b29" type="bibr">[29]</ref> .</s>
+          <s>To do arithmetic calculations on the slope (e.g., arithmetic mean), it is reasonable to normalize the slope with the following nonlinear function to a range</s>
+        </p>
+        <formula xml:id="formula_2">[0, 1] with arbitrary units [a.u.]: b inflection ½a:u:� ¼ arctan ðb inflection Þ p=2 :<label>ð4Þ</label>
+        </formula>
+        <p>
+          <s>If this nonlinear transformation is not performed, errors in slope estimation can diverge towards infinite for two almost identically steep psychometric functions, which would lead to a distortion when comparing to errors in shallow psychometric functions.</s>
+        </p>
+        <p>
+          <s>Using computer simulations, the estimation quality of psychophysical sampling procedures can be calculated by comparing the estimated values of the different parameters of a psychometric function with the true values (i.e., parameter values of the psychometric function to be estimated) <ref target="#b0" type="bibr">[1]</ref> .</s>
+          <s>Following this work, the estimation performance of PEST was evaluated with computer simulations using the same parameter values as used in the present behavioral study (x 0 = 5.5˚, Δx 0 = ±2˚, P t = 75%, W = 1, Δx min = ±0.1˚,</s>
+          <s>trials max@x = 20, trials max = 120).</s>
+          <s>The variable error of the estimate cannot be corrected for.</s>
+          <s>However, the average bias (i.e., also referred to as constant error of the estimate <ref target="#b0" type="bibr">[1]</ref> ) can be removed after fitting the psychometric function with the Maximum Likelihood criterion.</s>
+          <s>While PEST can be considered a bias-free sampling procedure for the threshold estimates, the slope estimation bias showed a strong dependence on the true slope and was approximatively corrected by using the following equation:</s>
+        </p>
+        <formula xml:id="formula_3">b inflection; b:c: ½a:u:� ¼ b inflection ½a:u:� 2:381 :<label>ð5Þ</label>
+        </formula>
+        <p>
+          <s>This power function (and the value of the exponent) are the result from a fit on simulated data from our previous work <ref target="#b0" type="bibr">[1]</ref> .</s>
+          <s>A further estimation bias in psychophysical experiments with human subjects can arise from longer inattention periods, as loss of attention may alter perception <ref target="#b30" type="bibr">[30]</ref>
+            <ref target="#b31" type="bibr">[31]</ref>
+            <ref target="#b32" type="bibr">[32]</ref> .</s>
+          <s>A method to detect and remove such inattention periods in PEST sequences has recently been proposed <ref type="bibr">[25]</ref> .</s>
+          <s>This method has shown to reduce estimation errors by up to around 75% and was applied post-hoc on the PEST sequences recorded in the behavioral study before fitting the psychometric function.</s>
+        </p>
+      </div>
+      <div>
+        <head n="2.2">Computer simulations 2.2.1 Population model and templates.</head>
+        <p>
+          <s>A model of the population distribution was created for each parameter of the psychometric function (i.e., α, β, γ, and λ) based on the averaged parameters (across the five repeated measurements for each individual subjects) of the psychometric functions obtained in the behavioral study: For the threshold α and lapse rate λ, the arithmetic mean was calculated for each subject (across the five measurements) to obtain an improved estimate of the subject's true psychometric function.</s>
+          <s>The same was done for the slope β, however, β was first converted to the slope at inflection β inflection (with the five corresponding lapse rates of the individual subject), normalized (β inflection [a.u.] ), and the bias was removed (β inflection, b.c.</s>
+          <s>[a.u.] ) before averaging across the five measurements.</s>
+          <s>Subsequently, the slope was converted back with the inverse transformations (with the averaged lapse of the individual subject).</s>
+          <s>Averaging was not necessary for the guess rate γ, as it was always fixed to 0.5.</s>
+          <s>Averaging over the repeated measurements was considered appropriate, as previous studies have shown with a mixed-effects model and a Bland-Altman analysis that there is no learning effect in this 2AFC proprioception assessment task <ref target="#b24" type="bibr">[23,</ref>
+            <ref type="bibr">24]</ref> .</s>
+        </p>
+        <p>
+          <s>From these empirical parameter distributions a set of simulated perception models (also referred to as templates ψ(x) T ) was randomly sampled.</s>
+          <s>To differentiate between psychometric functions and their parameters originating from the behavioral study and the simulated psychometric functions, the symbol T was added for variables referring to simulated templates (e.g., α T ).</s>
+          <s>The number of templates ψ T (x) was set to be identical to the number of assessed subjects in the behavioral study (N templates = 33).</s>
+        </p>
+      </div>
+      <div>
+        <head n="2.2.2">Noise model.</head>
+        <p>
+          <s>When designing a noise model (i.e., continuous distribution) for a certain parameter of a psychometric function template (i.e., α T or b T inflection ½a:u:� ), three things must be considered within this framework: (i) the continuous probability density function should be chosen based on an appropriate mathematical support dependent on the definition of the parameter, (ii) the mean μ noise of the distribution should match the true parameter value of the template (i.e., α T or b T inflection ½a:u:� ) for which the noise model is created, and (iii) the standard deviation of the noise model should be directly controllable by a noise level parameter (ν α and ν β , respectively).</s>
+        </p>
+        <p>
+          <s>The threshold including intra-subject variability was modeled with a log-normal distribution with a support [0, +1):</s>
+        </p>
+        <formula xml:id="formula_4">a T noise � Lognormalðm N ; s 2 N Þ:<label>ð6Þ</label>
+        </formula>
+        <p>
+          <s>To avoid bias when introducing noise, the mean μ noise was defined to be the threshold of the template:</s>
+        </p>
+        <formula xml:id="formula_5">m noise :¼ a T :<label>ð7Þ</label>
+        </formula>
+        <p>
+          <s>The standard deviation σ noise of the variability was controlled with the parameter ν α 2 [0, +1):</s>
+        </p>
+        <formula xml:id="formula_6">s noise :¼ n a ;<label>ð8Þ</label>
+        </formula>
+        <p>
+          <s>The two parameters of the log-normal distribution were calculated using μ noise and the desired σ noise :</s>
+        </p>
+        <formula xml:id="formula_7">m N ¼ log m noise ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffiffi 1 þ s 2 noise m 2 noise s 0 B B B B @ 1 C C C C A and<label>ð9Þ</label>
+        </formula>
+        <p>
+          <s>s N ¼ ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi</s>
+        </p>
+        <formula xml:id="formula_8">log 1 þ s 2 noise m 2 noise � � s :<label>ð10Þ</label>
+        </formula>
+        <p>
+          <s>The slope including intra-subject variability was modeled with a beta distribution with a support [0, 1]: b T inflection ½a:u:�; noise � Beða Be ; b Be Þ:</s>
+        </p>
+        <p>
+          <s>The mean μ noise of Beða Be ; b Be Þ was defined to correspond to the normalized slope at the inflection of the template:</s>
+        </p>
+        <formula xml:id="formula_10">m noise :¼ b T inflection ½a:u:� :<label>ð12Þ</label>
+        </formula>
+        <p>
+          <s>The standard deviation σ noise of the variability was controlled with the parameter ν β 2 (0, 1] serving as a scaling parameter:</s>
+        </p>
+        <formula xml:id="formula_11">s noise :¼ n bŝnoise ;<label>ð13Þ</label>
+        </formula>
+        <p>
+          <s>whereŝ noise is the maximum possible value for σ noise to avoid a U-shaped distribution.</s>
+          <s>This can be guaranteed with at least one of the parameters a Be or b Be � 1, leading to:</s>
+        </p>
+        <formula xml:id="formula_12">s noise ¼ max m noise</formula>
+        <p>
+          <s>ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffiffi 1 À m noise 1 þ m noise r ;</s>
+        </p>
+        <p>
+          <s>ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi ffi m noise ðm 2 noise À 2m noise þ 1Þ 2 À m noise</s>
+        </p>
+        <formula xml:id="formula_13">s ! :<label>ð14Þ</label>
+        </formula>
+        <p>
+          <s>With μ noise and σ noise , the two parameters of the beta distribution Beða Be ; b Be Þ could be Enhancing psychophysical simulations with intra-subject variability calculated:</s>
+        </p>
+        <formula xml:id="formula_14">a Be ¼ m noise ðÀ m 2 noise þ m noise À s 2 noise Þ s 2 noise and ð15Þ b Be ¼ a Be 1 À m noise m noise � � :<label>ð16Þ</label>
+        </formula>
+        <p>
+          <s>No noise was modeled on the lapse rate λ T and on the guess rate γ T = 0.5.</s>
+          <s>The psychometric functions to be used for the simulated PEST sequences were of the form c T noise ðx; a T noise ; b T noise ; g T ; l T Þ.</s>
+          <s>For the threshold, 16 equally distributed noise levels ν α 2 [0, 1.5], and for the slope, 14 noise levels ν β 2 [0, 1] with a twice as high grid density 2 [0.7, 1], were simulated.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head n="2.2.3">Procedure.</head>
+        <p>
+          <s>For each combination of ν α and ν β , the PEST sequence of the 2AFC task was simulated five times for the whole set of templates C T n a ;n b .</s>
+          <s>For each single simulated sequence, new random variables a T noise and b T inflection ½a:u:�; noise were drawn from the log-normal and beta distributions, respectively, simulating intra-subject variability across the five measurements.</s>
+          <s>The identical PEST parameters as in the behavioral study were used for the computer simulations.</s>
+          <s>Responses to a specific level x were simulated by comparing a randomly generated number 2 Uð0; 1Þ to c T noise ðxÞ of the respective template.</s>
+          <s>A smaller random number generated a correct response, and a larger random number a false response.</s>
+        </p>
+        <p>
+          <s>The simulation of the whole set C T n a ;n b was repeated N simulations = 1000 times for each combination of ν α and ν β with new randomly sampled parameters (i.e., α T , β T , γ T , λ T ) from the population distribution models.</s>
+        </p>
+        <p>
+          <s cert="0.6915123462677002" id="dataset-3" type="Tabular data">The psychometric functions from the simulated PEST sequences were estimated identically to the behavioral study, including the bias correction.</s>
+          <s>The only difference lay in the inattention correction algorithm <ref type="bibr">[25]</ref> , which was not applied on the simulated data.</s>
+          <s>It was assumed that significant biases from potential inattention periods in the behavioral study were already corrected for before creating the population model for the templates.</s>
+          <s>Thus, as no inattention periods were modeled in the simulations, there was no need to apply the algorithm.</s>
+          <s>The computer simulations and estimations of the psychometric function were performed entirely in MATLAB R2014a.</s>
+        </p>
+      </div>
+      <div>
+        <head n="2.3">Data analysis</head>
+        <p>
+          <s>Test-retest reliability of the estimated thresholds from the five measurements of the behavioral study was quantified by computing the ICC(2,1) intraclass correlation coefficient r (two-way layout with random effects for absolute agreement) <ref target="#b33" type="bibr">[33]</ref> and its 95% confidence interval (CI) <ref target="#b36" type="bibr">[34,</ref>
+            <ref target="#b37" type="bibr">35]</ref> .</s>
+        </p>
+        <p>
+          <s>Identically, for each set C T n a ;n b , distributions of N simulations values for the reliability of the estimated thresholds as well as its lower and upper CI bounds for each combination of ν α and ν β were generated.</s>
+          <s>From these N simulations reliability values, the arithmetic mean � r T n a ;n b was calculated.</s>
+          <s>In this two-dimensional noise space an iso-reliability contour where the reliability of the simulated experiment matched the reliability of the behavioral study (� r T n a ;n b ¼ r) was calculated (set of ν α and ν β pairs).</s>
+          <s>To obtain a smoother contour, the reliability surface was interpolated with a spline on a finer grid (by halving the grid intervals three times in each dimension).</s>
+        </p>
+        <p>
+          <s>To find which ν α and ν β pair of the iso-reliability contour corresponds the best to the intrasubject variability of the behavioral study, for each of the N simulations per pair, histograms of the parameters of the estimated psychometric functions from the computer simulation were compared to histograms of the parameters of the psychometric functions originating from the behavioral data.</s>
+          <s>This was done by calculating the cosine similarity between the two vectors of histogram bin counts (h and h T , for the behavioral and simulated data, respectively) for the parameters α, β inflection, b.c.</s>
+          <s>[a.u.] , and λ:</s>
+        </p>
+        <formula xml:id="formula_15">similarity T i ¼ cos ðy i Þ ¼ h i � h T i kh i k 2 kh T i k 2 8i 2 fa; b; lg;<label>ð17Þ</label>
+        </formula>
+        <p>
+          <s>where a similarity of 1 represents identical histograms.</s>
+          <s>Note that by using this similarity metric the histograms do not need to be additionally normalized.</s>
+          <s>The following bin sizes were used for α, β inflection, b.c.</s>
+          <s>[a.u.] , and λ: 0.25, 0.05, and 0.005.</s>
+          <s>To obtain an overall similarity, the three calculated similarities were multiplied with each other.</s>
+        </p>
+        <formula xml:id="formula_16">s T n a ;n b ¼ Y i2fa;b;lg similarity T i ;<label>ð18Þ</label>
+        </formula>
+        <p>
+          <s>From these N simulations overall similarity values, the arithmetic mean � s T n a ;n b was calculated.</s>
+          <s>The iso-reliability contour was projected onto the similarity surface in the two-dimensional noise space after a spline interpolation, identical to what was done for the reliability.</s>
+          <s>The interpolated ν α and ν β pair on the iso-reliability contour with the highest average overall similarity was chosen as the best model to estimate intra-subject variability (n a andn b ).</s>
+        </p>
+        <p>
+          <s>For a new set of psychometric functions C T n a ;n b with the optimal noise model, the simulation was repeated N simulations times, and the parameter distributions as well as � r T n a ;n b and � s T n a ;n b were calculated.</s>
+          <s>In addition, the maximum attainable reliabilityr T n a ;n b (corresponding to no method variability) was computed based directly on the templates with intra-subject noise, but without simulating the psychophysical experiment.</s>
+        </p>
+        <p>
+          <s>To illustrate the intra-subject variability on a psychometric function, a population average model was computed by averaging the individual subject models.</s>
+          <s>Using the intra-subject variability models with parametersn a andn b , 1000 templates were created.</s>
+          <s>The estimate distributions originating from pure method variability as well as from intra-subject variability were compared with each other by plotting the percentage of estimates within a tolerance interval depending on the interval size (percentage within bounds, PCTw/iB), and the normalized area under these curves (nAUC) according to the methods proposed by <ref target="#b0" type="bibr">[1]</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head n="3">Results</head>
+        <p>
+          <s>The test-retest reliability coefficient of the behavioral study and its confidence interval was r = 0.212 [0.077, 0.394].</s>
+          <s>The simulated reliability � r T n a ;n b for different ν α and ν β pairs as well as the matched iso-reliability contour at r are shown in <ref target="#fig_2" type="figure">Fig 3.</ref> In case of no intra-subject variability, the reliability would correspond to � r T n a ¼0;n b ¼0 ¼ 0:768 [0.662, 0.859] for the psychophysical paradigm and sampling procedure used in this work (i.e., maximum attainable reliability using these methods for the present population of interest).</s>
+        </p>
+        <p>
+          <s>The overall similarity � s T n a ;n b (combined for threshold, slope, and lapse rate) is visualized in <ref target="#fig_3" type="figure">Fig 4,</ref> together with the same projected iso-reliability contour.</s>
+          <s>The maximum overall similarity on the contour was found for the noise level pairn a ¼ 0:363 andn b ¼ 0:849 (� s T n a ;n b ¼ 0:764), corresponding to the best intra-subject variability model estimate.</s>
+          <s>The similarities of the distributions of the parameters of the psychometric functions are shown individually in <ref target="#fig_4" type="figure">Fig 5.</ref> The simulated reliability at this noise level pair was � r T n a ;n b ¼ 0:207 [0.076, 0.384].</s>
+          <s>The maximum attainable reliability without method variability (i.e., assuming a perfect assessment) for the identified intra-subject variability model would ber T n a ;n b ¼ 0:552 [0.403, 0.704].</s>
+          <s>For illustration purposes, the effect of intra-subject variability on the shape of the psychometric function is shown in <ref target="#fig_5" type="figure">Fig 6</ref> for the population average model ψ(x; α = 1.696, β = 1.708, γ = 0.500, λ = 0.036) and the noise level pairn a ,n b , together with the distributions of threshold and slope resulting from method and intra-subject variability.</s>
+          <s>For the threshold estimation, the nAUC was higher for the method variability compared to the intra-subject variability, whereas for the slope estimation, the opposite was the case.</s>
+          <s>The maximum difference in estimation performance in terms of PCTw/iB was 42.5% at a threshold tolerance of ±0.210˚, and 38.1% at a slope tolerance of ±0.299.</s>
+        </p>
+      </div>
+      <div>
+        <head n="4">Discussion</head>
+        <p>
+          <s>In this work we presented an approach to quantify intra-subject variability in psychophysical testing.</s>
+          <s>This was achieved by introducing and adjusting a statistical noise model in computer simulations to match the test-retest reliability and histograms of the parameters of the estimated psychometric functions of a behavioral dataset.</s>
+          <s>Using this approach we estimated the intra-subject variability of healthy subjects in a psychophysical assessment of proprioceptive perception at the wrist using a 2AFC paradigm, and compared the intra-subject variability with the inherent method variability of PEST.</s>
+          <s>Enhancing psychophysical simulations with intra-subject variability Enhancing psychophysical simulations with intra-subject variability The results showed that for a matched reliability, the similarity between the behavioral and simulated datasets was excellent for the optimal pair of intra-subject threshold and slope variability.</s>
+          <s>Furthermore, the identified intra-subject variability of the threshold was larger compared to the method variability, whereas the opposite was the case for the slope.</s>
+        </p>
+      </div>
+      <div>
+        <head n="4.1">Intra-subject and method variability</head>
+        <p>
+          <s>When trying to estimate the test-retest reliability based on the population model without intra-subject variability, the reliability coefficient would be largely overestimated.</s>
+          <s>In the present sample population this would result in a considerable error of 262.3%.</s>
+          <s>In contrast, when including intra-subject variability in the simulation, the reliability of the simulated experiment matched the reliability of the behavioral study with an absolute error of 0.005 (� r T n a ;n b ¼ 0:207 and r = 0.212, respectively), corresponding to a relative error of 2.4%.</s>
+          <s>In theory, this error should be zero, however, since the estimates were based on a stochastic generation of responses, the simulated test-retest reliability varied across simulation runs.</s>
+          <s>To improve the estimate of intra-subject variability, and therefore the match of reliability values, a high number of repetitions (N simulations ) were performed to obtain higher statistical power, and the grid of the simulated intra-subject variability levels in the two-dimensional reliability space was interpolated.</s>
+          <s>This error could be further minimized by increasing the number of repetitions and the density of the simulation grid.</s>
+          <s>Further indication for a good model estimation quality is provided by the fact that not only the simulated and behavioral reliability coefficient matched, but also matching errors for the CI were low (absolute [0.001, 0.010] and relative [1.3%, 2.5%] errors for the lower and upper bound).</s>
+          <s>Moreover, cosine similarity between behavioral and simulated outcome measures was very high for all three parameters α, β, and λ (&gt; 0.8), and thus demonstrates that the population's inter-and intra-subject variability models accurately represent the actual population.</s>
+        </p>
+        <p>
+          <s>The presented method allows to discern between and compare intra-subject variability and method variability.</s>
+          <s>When assuming invariant subjects (i.e., no intra-subject variability), the test-retest reliability for the threshold would be 39.2% higher compared to when the estimated intra-subject variability is included in the simulation, but a perfect method (i.e., no method variability) would be assumed.</s>
+          <s>This is also reflected by the nAUC for the threshold (a nonparametric metric to evaluate the variability of estimation errors), which is higher by 16.4% for the simulated case with method variability only.</s>
+          <s>Based on these findings, if the assessment was to be improved, one could suggest to address factors influencing the intra-subject variability, before optimizing the psychophysical sampling procedure, as even with a perfect method, the reliability would ceil atr T n a ;n b ¼ 0:552 due to intra-subject variability.</s>
+          <s>This can also be seen in <ref target="#fig_5" type="figure">Fig 6 (Middle, left)</ref> where the distribution of estimates is narrower for the method variability compared to the one for intra-subject variability.</s>
+          <s>It can also be observed that the method variability follows a unimodal distribution, resembling a log-normal probability density function, as it can be expected from the theoretical definition of the threshold parameter with positive semi-infinite support.</s>
+          <s>On the contrary, the slope estimates suffer from poor method performance and, according to the U-shaped estimate distribution (histogram with gray fill in <ref target="#fig_5" type="figure">Fig 6 (Middle, right)</ref> ), outcome measures are predominantly severely under-or overestimated.</s>
+          <s>This poor slope estimation performance given the settings of the sampling procedure and the short PCTw/iB) around the parameters of the population average model is plotted against the size of the interval (gray: method variability, black: intra-subject variability), together with the absolute difference of percentage (|Δ|, dashed black line).</s>
+          <s>For both method and intra-subject variability, the normalized area under the curve (nAUC) is calculated.</s>
+        </p>
+        <p>
+          <s>https://doi.org/10.1371/journal.pone.0209839.g006</s>
+        </p>
+        <p>
+          <s>Enhancing psychophysical simulations with intra-subject variability number of trials has also been observed in <ref target="#b0" type="bibr">[1]</ref> .</s>
+          <s>As a consequence, the nAUC for the simulated case with intra-subject variability only is 11% higher.</s>
+          <s>Thus, if the slope estimation should be improved, it would be important to optimize the current sampling procedure or choose another sampling procedure (e.g., the C method, designed to estimate both the threshold and the slope <ref target="#b38" type="bibr">[36]</ref> ).</s>
+        </p>
+      </div>
+      <div>
+        <head n="4.2">Advantages and limitations of this method</head>
+        <p>
+          <s>The advantage of this method is that the test-retest reliability is affected by all terms of variability (inter-and intra-subject, and method variability).</s>
+          <s>As a consequence, since the inter-subject variability can be approximated by taking the averaged psychometric functions for each subject and the method variability is given by the simulation, the intra-subject variability can be estimated.</s>
+          <s>Furthermore, the intra-subject variability can be calculated even if only two measurements were done per subject, whereas, for example, calculating the standard deviation of two measurements for each subject is very likely a poor estimate of the true intra-subject variability (besides being still confound with method variability).</s>
+          <s>However, it should be noted that, depending on the intra-subject and method variability, the quality of the model of the population (and inter-subject variability) can be compromised if only two measurements are available per subject.</s>
+          <s>Thus, in case of a poor population model, an overestimated inter-subject variability may be compensated by an underestimated intra-subject variability and vice versa when matching the reliability.</s>
+          <s>Ideally, the available behavioral data would encompass a large sample size (for a good representation of the population) and a large number of measurements (for a good estimate of each subject's psychophysical function).</s>
+          <s>An advantage of sampling templates from the computed distributions representing the population compared to using the averaged psychometric functions as templates, is that repeated randomly sampled templates should lead to more generalizable results than bootstrapping from a limited set of subjects.</s>
+          <s>More importantly, it offers the possibility to sample more templates from the distribution, for example to predict how the reliability and its confidence interval changes with increasing sample size.</s>
+          <s>This framework can be applied to any psychophysical assessment, where the performance of the subject can be modeled.</s>
+          <s>However, it should be noted that dedicated behavioral data and simulations are required for every individual application.</s>
+          <s>Within the same application, the estimated models can be used to extrapolate, e.g., to larger sample sizes.</s>
+          <s>Transferability of the intra-subject variability model from one population to another (e.g., from healthy subjects to neurologically impaired patients) might be limited and subject to further investigation.</s>
+          <s>Nevertheless, it can be assumed that using the intra-subject variability model for healthy subjects in a simulation of a patient population provides better reliability estimates than having no intra-subject variability model included.</s>
+          <s>Furthermore, if it can be assumed that the psychophysical sampling procedure (e.g., PEST) does not strongly influence confounds or affect the intra-subject variability, the same models could be used to create realistic simulations to compare different sampling procedures.</s>
+        </p>
+        <p>
+          <s>A limitation of the present simulations is that no intra-subject variability was modeled for the lapse rate.</s>
+          <s>It would be possible model the lapse rate including intra-subject variability with a beta distribution as for the slope, but with an adapted support.</s>
+          <s>However, for the sake of simplicity, this was omitted here.</s>
+          <s>As a matter of fact, as the histogram similarity is almost 1 for the lapse rate parameter, it shows that using a constant lapse rate (within the range [0, 0.1]) for each individual subject also leads to realistic simulations and that adding an additional intrasubject variability model for the lapse rate may not be necessary.</s>
+          <s>While <ref target="#fig_4" type="figure">Fig 5 suggests</ref> that there may be cases with lapse rates higher than 0.1, this would correspond to subjects not paying attention to every fifth trial, which is very high for healthy subjects.</s>
+          <s>More likely, this bimodal result (lapse rates around 0 and around 0.1) may arise from the fitting procedure and the short number of trials per PEST sequence.</s>
+          <s>To identify the origin of these results, further studies comparing different fitting procedures with longer sequences would be required.</s>
+          <s>When identifying the best model of intra-subject variability, the noise level pair ν α , ν β , where overall similarity is the highest, may not lie on the iso-reliability contour corresponding to the reliability r of the behavioral data.</s>
+          <s>One reason for this is that in the similarity histogram, interand intra-subject variability are confounded, and the similarity may vary depending on the selection of bin sizes.</s>
+          <s>In contrast, using the reliability as a metric should provide a more robust and accurate estimate of the variability model, as it distinguishes between inter-and intra-subject variability despite taking both into account.</s>
+          <s>Therefore, the overall similarity is used only as a second criterion to identify the optimal model.</s>
+          <s>One major limitation of this approach to estimate intra-subject variability is that it only provides one variability model for the whole sample and not individual models for each subject.</s>
+          <s>To create individual models, more repeated measurements would be necessary for each subject.</s>
+          <s>However, the present noise models are already a significant improvement over no variability model, and may be accurate enough for many applications.</s>
+        </p>
+      </div>
+      <div>
+        <head n="5">Conclusions</head>
+        <p>
+          <s>Computer simulations offer a valuable and powerful tool to simulate and optimize psychophysical experiments.</s>
+          <s>While they can be used to evaluate different procedures and their method variability, existing computer simulations are often not representative of real-world scenarios, as critical aspects such as the intra-subject variability are neglected.</s>
+          <s>As a matter of fact, intra-subject variability cannot be directly quantified from behavioral data.</s>
+          <s>This work introduces a new approach based on the combination of computer simulations and behavioral data to separate method variability from intra-subject variability and to estimate and model intra-subject variability in psychophysical experiments.</s>
+          <s>Given a realistic model of the population, different psychophysical procedures can be simulated and compared, and the procedures can be tuned to the specific application and target population.</s>
+          <s>Quantifying the method and intra-subject variability allows putting them into perspective when developing assessments.</s>
+          <s>Given the intra-subject variability, it allows simulating an experiment with an ideal psychophysical method (i.e., finding the theoretically maximally attainable performance of an assessment).</s>
+          <s>These two aspects can inform the decision whether effort should be spent on improving the psychophysical procedure (i.e., reducing method variability) or if potential confounds affecting intra-subject variability should be addressed.</s>
+          <s>The efficiency of attempts to reduce confounds (e.g., inattention <ref type="bibr">[25]</ref> ) could be quantified (using the presented method) based on a reduction of the intra-subject variability.</s>
+          <s>Furthermore, based on the more complete model also containing intra-subject variability, it is also possible to examine the impact of a larger number of trials on reliability, or the converging behavior of the reliability's confidence interval bounds with a larger number of subjects, as well as retests, without having to conduct additional experiments.</s>
+          <s>This presents a particular benefit for studies with populations where time for assessments is limited or expensive, as in the case of a clinical setting.</s>
+        </p>
+        <p>
+          <s>Supporting information S1 File.</s>
+          <s>Behavioral data.</s>
+          <s>This file contains three tables with the threshold, slope at inflection, and lapse rate obtained in the behavioral study.</s>
+          <s>The columns are subject ID and measurements 1 through 5. (XLSX)</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig 1 .</head>
+        <label>1</label>
+        <figDesc>Robotic setup for the wrist proprioception assessments in the behavioral study. The motor (gray) actuates the handle (blue) in wrist flexion-extension direction. A touchscreen (semitransparent dark gray) placed over the wrist occludes the tested wrist from vision. With the nonassessed hand, the subject reports the response by clicking on one of the two blue buttons indicated on the screen. https://doi.org/10.1371/journal.pone.0209839.g001 Enhancing psychophysical simulations with intra-subject variability PLOS ONE | https://doi.org/10.1371/journal.pone.0209839 December 31, 2018</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig 2 .</head>
+        <label>2</label>
+        <figDesc>Definition of psychometric function and its parameters. Psychometric function ψ(x; α, β, γ, λ) (bold black sigmoid) and cumulative Gaussian function F Gauss (x; μ, σ) (bold gray sigmoid) in the case of a two-alternative forced choice (2AFC) task. The thin gray curve is the underlying Gaussian probability density function. The inflection points are indicated as circles in the respective colors.https://doi.org/10.1371/journal.pone.0209839.g002 Enhancing psychophysical simulations with intra-subject variability PLOS ONE | https://doi.org/10.1371/journal.pone.0209839 December 31, 2018</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig 3 .</head>
+        <label>3</label>
+        <figDesc>Simulated reliability and iso-reliability contour of behavioral study. For each pair of intra-subject threshold noise ν α and slope noise ν β , the simulated reliability averaged across N simulations = 1000 simulations (� r T n a ;n b ) is represented as a heat map. The dashed white line indicates the iso-reliability contour corresponding to the reliability obtained from the behavioral study (r = 0.212).https://doi.org/10.1371/journal.pone.0209839.g003</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Fig 4 .</head>
+        <label>4</label>
+        <figDesc>Best intra-subject variability estimate based on overall similarity. For each pair of intra-subject threshold noise ν α and slope noise ν β , the overall similarity (combined for threshold, slope, and lapse rate) averaged across N simulations = 1000 simulations (� s T n a ;n b ) is represented as a heat map. The dashed white iso-reliability contour is identical toFig 3.The noise level pair on the contour with the highest overall similarity (� s T n a ;n b ¼ 0:764) is indicated with a black dot.https://doi.org/10.1371/journal.pone.0209839.g004</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Fig 5 .</head>
+        <label>5</label>
+        <figDesc>Histogram similarity for the optimal intra-subject variability. Histograms of the parameters of the psychometric functions of the behavioral data (gray fill, 33 × 5 data points) versus the simulated data (black outline, 33 × 5 simulated data points averaged over 1000 simulations) with optimal noise level at the pairn a ,n b .https://doi.org/10.1371/journal.pone.0209839.g005</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
+        <head>Fig 6 .</head>
+        <label>6</label>
+        <figDesc>Illustration of intra-subject variability. (Top)For each stimulus level x the distribution of proportion correct is plotted as a heat map based on 1000 templates created with the population average model (bold black sigmoid) and the intra-subject variability models usingn a andn b . (Middle) The dashed black distribution curves correspond to the parametric log-normal and beta intra-subject variability models. The histograms (black outline) as well as the dashed black lines for the means show the parameter distributions of the 1000 templates including intra-subject variability. The white triangles indicate the threshold and slope of the population average model (without noise). As a comparison, the inherent method variability (histogram with gray fill) for the same population average model without intra-subject variability is plotted. (Bottom) The percentage of estimates within a tolerance interval (percentage within bounds,</figDesc>
+      </figure>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0209839 December 31, 2018</note>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0209839 December 31, 2018 12 / 18</note>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0209839 December 31, 2018 18 / 18</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgments</head>
+          <p>
+            <s>The authors would like to thank J. Egloff and S. Huber for the acquisition of the behavioral data as well as W. L. Popp for fruitful discussions.</s>
+          </p>
+        </div>
+        <div>
+          <head>Author Contributions</head>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Performance Metrics for an Application-driven Selection and Optimization of Psychophysical Sampling Procedures</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Rinderknecht</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Lambercy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Gassert</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1371/journal.pone.0207217</idno>
+              <idno type="PMID">30485350</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0207217"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLOS ONE</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope unit="issue">11</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <monogr>
+              <title level="m" type="main">Health measurement scales: a practical guide to their development and use</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Streiner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Norman</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2008"/>
+                <publisher>Oxford university press</publisher>
+                <pubPlace>USA</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Adaptive Robotic Assessment of the MCP Joint Angle Difference Threshold</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Rinderknecht</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Popp</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Lambercy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Gassert</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Haptics: Neuroscience, Devices, Modeling, and Applications</title>
+              <editor>Auvray M, Duriez C</editor>
+              <meeting>
+                <address>
+                  <addrLine>Heidelberg; Berlin Heidelberg</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <publisher>Springer</publisher>
+                <date type="published" when="2014"/>
+                <biblScope from="3" to="10" unit="page"/>
+              </imprint>
+            </monogr>
+            <note>Experimental Validation of a Rapid</note>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Statistical Methods For Assessing Measurement Error (Reliability) in Variables Relevant to</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Atkinson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Nevill</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.2165/00007256-199826040-00002</idno>
+              <idno type="PMID">9820922</idno>
+              <ptr target="https://doi.org/10"/>
+            </analytic>
+            <monogr>
+              <title level="j">Sports Medicine. Sports Medicine</title>
+              <imprint>
+                <biblScope unit="volume">26</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="217" to="238" unit="page"/>
+                <date type="published" when="1998"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <monogr>
+              <title level="m" type="main">Educational Measurement: Issues and Practice</title>
+              <author>
+                <persName>
+                  <forename type="first">Rl</forename>
+                  <forename type="middle">Generalizability</forename>
+                  <surname>Brennan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Theory</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1111/j.1745-3992.1992.tb00260.x</idno>
+              <ptr target="https://doi.org/10.1111/j.1745-3992.1992.tb00260.x"/>
+              <imprint>
+                <date type="published" when="1992"/>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope from="27" to="34" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">The Application of Generalizability Theory to Reliability Assessment: An Illustration Using Isometric Force Measurements</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Roebroeck</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Harlaar</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Lankhorst</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1093/ptj/73.6.386</idno>
+              <idno type="PMID">8497513</idno>
+              <ptr target="https://doi.org/10.1093/ptj/73.6.386"/>
+            </analytic>
+            <monogr>
+              <title level="j">Physical Therapy</title>
+              <imprint>
+                <biblScope unit="volume">73</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="386" to="395" unit="page"/>
+                <date type="published" when="1993"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <monogr>
+              <title level="m" type="main">Psychophysics: The Fundamentals</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Gescheider</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="1997"/>
+                <publisher>Lawrence Erlbaum Associates</publisher>
+                <pubPlace>New Jersey</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <monogr>
+              <title level="m" type="main">Detection Theory: A User's Guide. New Jersey: Lawrence Erlbaum Associates</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Macmillan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Douglas</forename>
+                  <surname>Creelman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">PEST: Efficient estimates on probability functions</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Taylor</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Douglas</forename>
+                  <surname>Creelman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                </persName>
+              </author>
+              <idno type="DOI">10.1121/1.1910407</idno>
+              <ptr target="https://doi.org/10.1121/1.1910407"/>
+            </analytic>
+            <monogr>
+              <title level="j">The Journal of the Acoustical Society of America</title>
+              <imprint>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope unit="page">782</biblScope>
+                <date type="published" when="1967"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">On the efficiency of psychophysical measurement</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Taylor</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">The Journal of the Acoustical Society of America</title>
+              <imprint>
+                <biblScope unit="volume">49</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope unit="page">505</biblScope>
+                <date type="published" when="1971"/>
+              </imprint>
+            </monogr>
+            <note>Suppl 2:508. Enhancing psychophysical simulations with intra-subject variability</note>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <monogr>
+              <title/>
+              <author>
+                <persName>
+                  <surname>Plos One |</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1371/journal.pone.0209839</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0209839"/>
+              <imprint>
+                <date type="published" when="2018-12-31"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <monogr>
+              <title level="m" type="main">Estimates on probability functions: A more virulent PEST. Attention, Perception, &amp; Psychophysics</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Findlay</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.3758/BF03208300</idno>
+              <ptr target="https://doi.org/10.3758/BF03208300"/>
+              <imprint>
+                <date type="published" when="1978"/>
+                <biblScope unit="volume">23</biblScope>
+                <biblScope from="181" to="185" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <monogr>
+              <title level="m" type="main">Maximum likelihood estimation: The best PEST. Attention, Perception, &amp; Psychophysics</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Pentland</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.3758/BF03204398</idno>
+              <ptr target="https://doi.org/10.3758/BF03204398"/>
+              <imprint>
+                <date type="published" when="1980"/>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope from="377" to="379" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Hybrid adaptive procedure for estimation of psychometric functions</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Hall</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1121/1.385912</idno>
+              <idno type="PMID">7240589</idno>
+              <ptr target="https://doi.org/10.1121/1.385912"/>
+            </analytic>
+            <monogr>
+              <title level="j">The Journal of the Acoustical Society of America</title>
+              <imprint>
+                <biblScope unit="volume">69</biblScope>
+                <biblScope unit="page">1763</biblScope>
+                <date type="published" when="1981"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Maximum-likelihood psychometric procedures in two-alternative forced-choice: evaluation and recommendations</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Madigan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Williams</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.3758/BF03203075</idno>
+              <ptr target="https://doi.org/10.3758/BF03203075"/>
+            </analytic>
+            <monogr>
+              <title level="j">Perception &amp; Psychophysics</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="240" to="249" unit="page"/>
+                <date type="published" when="1987"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">The step method: A new adaptive psychophysical procedure</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Simpson</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.3758/BF03208065</idno>
+              <ptr target="https://doi.org/10.3758/BF03208065"/>
+            </analytic>
+            <monogr>
+              <title level="j">Perception &amp; Psychophysics</title>
+              <imprint>
+                <biblScope unit="volume">45</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="572" to="576" unit="page"/>
+                <date type="published" when="1989"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">The method of constant stimuli is inefficient</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Watson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Fitzhugh</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.3758/BF03208169</idno>
+              <ptr target="https://doi.org/10.3758/BF03208169"/>
+            </analytic>
+            <monogr>
+              <title level="j">Perception &amp; Psychophysics</title>
+              <imprint>
+                <biblScope unit="volume">47</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="87" to="91" unit="page"/>
+                <date type="published" when="1990"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Simple adaptive testing with the weighted up-down method</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Kaernbach</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.3758/BF03214307</idno>
+              <ptr target="https://doi.org/10.3758/BF03214307"/>
+            </analytic>
+            <monogr>
+              <title level="j">Perception &amp; Psychophysics</title>
+              <imprint>
+                <biblScope unit="volume">49</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="227" to="229" unit="page"/>
+                <date type="published" when="1991"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">A maximum-likelihood method for estimating thresholds in a yes-no task</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Green</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1121/1.406696</idno>
+              <idno type="PMID">8473622</idno>
+              <ptr target="https://doi.org/10.1121/1.406696"/>
+            </analytic>
+            <monogr>
+              <title level="j">The Journal of the Acoustical Society of America</title>
+              <imprint>
+                <biblScope unit="volume">93</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="2096" to="2105" unit="page"/>
+                <date type="published" when="1993"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Efficient and unbiased modifications of the QUEST threshold method: theory, simulations, experimental evaluation and practical implementation</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">E</forename>
+                  <surname>King-Smith</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Grigsby</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Vingrys</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Benes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Supowit</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1016/0042-6989(94)90039-6</idno>
+              <idno type="PMID">8160402</idno>
+              <ptr target="https://doi.org/10.1016/0042-6989(94"/>
+            </analytic>
+            <monogr>
+              <title level="j">Vision Research</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope from="90039" to="90045" unit="page"/>
+                <date type="published" when="1994"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <monogr>
+              <title level="m" type="main">Small-sample characterization of stochastic approximation staircases in forced-choice adaptive threshold estimation. Perception &amp; Psychophysics</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Faes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Nollo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Ravelli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Ricci</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Vescovi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Turatto</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Pavani</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Antolini</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.3758/BF03193747</idno>
+              <ptr target="https://doi.org/10.3758/BF03193747"/>
+              <imprint>
+                <date type="published" when="2007"/>
+                <biblScope unit="volume">69</biblScope>
+                <biblScope from="254" to="262" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">The assessment and analysis of handedness: the Edinburgh inventory</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Oldfield</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1016/0028-3932(71)90067-4</idno>
+              <idno type="PMID">5146491</idno>
+              <ptr target="https://doi.org/10.1016/0028-3932(71)90067-4"/>
+            </analytic>
+            <monogr>
+              <title level="j">Neuropsychologia</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="97" to="113" unit="page"/>
+                <date type="published" when="1971"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">ReFlex, a haptic wrist interface for motor learning and rehabilitation</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Chapuis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">B</forename>
+                  <surname>De Grave</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Lambercy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Gassert</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Haptics Symposium</title>
+              <meeting>
+                <address>
+                  <addrLine>Waltham, Massachusetts, USA</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <publisher>IEEE</publisher>
+                <date type="published" when="2010"/>
+                <biblScope from="417" to="424" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Reliability, validity, and clinical feasibility of a rapid and objective assessment of post-stroke deficits in hand proprioception</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Rinderknecht</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Lambercy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Raible</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Bü Sching</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Sehle</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Liepert</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Gassert</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1186/s12984-018-0387-6</idno>
+              <ptr target="https://doi.org/10.1186/s12984-018-0387-6PMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of NeuroEngineering and Rehabilitation</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">29880003</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Age-based model for metacarpophalangeal joint proprioception in elderly</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Rinderknecht</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Lambercy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Raible</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Liepert</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Gassert</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.2147/CIA.S129601</idno>
+              <idno type="PMID">28435235</idno>
+              <ptr target="https://doi.org/10.2147/CIA.S129601"/>
+            </analytic>
+            <monogr>
+              <title level="j">Clin Interv Aging</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope from="635" to="643" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Algorithm for improving psychophysical threshold estimates by detecting sustained inattention in experiments using PEST. Attention, Perception</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Rinderknecht</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Ranzani</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Popp</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Lambercy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Gassert</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.3758/s13414-018-1521-z</idno>
+              <ptr target="https://doi.org/10.3758/s13414-018-1521-z"/>
+            </analytic>
+            <monogr>
+              <title level="j">&amp; Psychophysics</title>
+              <imprint>
+                <biblScope unit="volume">80</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="1629" to="1645" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Adaptive control of mechanical impedance by coactivation of antagonist muscles</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Hogan</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1109/TAC.1984.1103644</idno>
+              <ptr target="https://doi.org/10.1109/TAC.1984.1103644"/>
+            </analytic>
+            <monogr>
+              <title level="j">Autom Control, IEEE Trans</title>
+              <imprint>
+                <biblScope unit="volume">29</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope from="681" to="90" unit="page"/>
+                <date type="published" when="1984"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <monogr>
+              <title level="m" type="main">Palamedes: Matlab routines for analyzing psychophysical data</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Prins</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Faa</forename>
+                  <surname>Kingdom</surname>
+                </persName>
+              </author>
+              <ptr target="http://www.palamedestoolbox.org"/>
+              <imprint>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">The psychometric function: I. Fitting, sampling, and goodness of fit</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Wichmann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Hill</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.3758/BF03194544</idno>
+              <ptr target="https://doi.org/10.3758/BF03194544"/>
+            </analytic>
+            <monogr>
+              <title level="j">Perception &amp; Psychophysics</title>
+              <imprint>
+                <biblScope unit="volume">63</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope from="1293" to="1313" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Converting between measures of slope of the psychometric function</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Strasburger</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.3758/BF03194547</idno>
+              <ptr target="https://doi.org/10.3758/BF03194547"/>
+            </analytic>
+            <monogr>
+              <title level="j">Perception &amp; Psychophysics</title>
+              <imprint>
+                <biblScope unit="volume">63</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope from="1348" to="1355" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">An interleaved tracking procedure to monitor unstable psychometric functions</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Leek</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Hanna</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Marshall</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1121/1.401930</idno>
+              <idno type="PMID">1939903</idno>
+              <ptr target="https://doi.org/10.1121/1.401930"/>
+            </analytic>
+            <monogr>
+              <title level="j">The Journal of the Acoustical Society of America</title>
+              <imprint>
+                <biblScope unit="volume">90</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="1385" to="1397" unit="page"/>
+                <date type="published" when="1991"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Inference for psychometric functions in the presence of nonstationary behavior</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Frü Nd</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Haenel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Wichmann</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1167/11.6.16</idno>
+              <idno type="PMID">21606382</idno>
+              <ptr target="https://doi.org/10.1167/11.6.16"/>
+            </analytic>
+            <monogr>
+              <title level="j">J Vis</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">When attention wanders: how uncontrolled fluctuations in attention affect performance</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Cohen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Jhr</forename>
+                  <surname>Maunsell</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1523/JNEUROSCI.3063-11.2011</idno>
+              <idno type="PMID">22049423</idno>
+              <ptr target="https://doi.org/10.1523/JNEUROSCI.3063-11"/>
+            </analytic>
+            <monogr>
+              <title level="j">J Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope unit="issue">44</biblScope>
+                <biblScope from="15802" to="15806" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Intraclass correlations: uses in assessing rater reliability</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Shrout</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Fleiss</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1037/0033-2909.86.2.420</idno>
+              <idno type="PMID">18839484</idno>
+              <ptr target="https://doi.org/10.1037/0033-2909.86.2.420"/>
+            </analytic>
+            <monogr>
+              <title level="j">Psychol Bull</title>
+              <imprint>
+                <biblScope unit="volume">86</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="420" to="428" unit="page"/>
+                <date type="published" when="1979"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <monogr>
+              <title level="m" type="main">Enhancing psychophysical simulations with intra-subject variability</title>
+              <imprint/>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <monogr>
+              <title/>
+              <author>
+                <persName>
+                  <surname>Plos One |</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1371/journal.pone.0209839</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0209839"/>
+              <imprint>
+                <date type="published" when="2018-12-31"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">How to assess the reliability of measurements in rehabilitation</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Lexell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Downham</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1097/01.phm.0000176452.17771.20</idno>
+              <idno type="PMID">16141752</idno>
+              <ptr target="https://doi.org/10.1097/01.phm.0000176452.17771.20"/>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Phys Med Rehabil</title>
+              <imprint>
+                <biblScope unit="volume">84</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope from="719" to="723" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">When to use agreement versus reliability measures</title>
+              <author>
+                <persName>
+                  <forename type="first">Hcw</forename>
+                  <surname>De Vet</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Terwee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Knol</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Bouter</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1016/j.jclinepi.2005.10.015</idno>
+              <idno type="PMID">16980142</idno>
+              <ptr target="https://doi.org/10.1016/j.jclinepi.2005.10.015"/>
+            </analytic>
+            <monogr>
+              <title level="j">J Clin Epidemiol</title>
+              <imprint>
+                <biblScope unit="volume">59</biblScope>
+                <biblScope unit="issue">10</biblScope>
+                <biblScope from="1033" to="1039" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <monogr>
+              <title level="m" type="main">Bayesian adaptive estimation of psychometric slope and threshold. Vision Research</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Kontsevich</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Tyler</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1016/S0042-6989(98)00285-5</idno>
+              <idno type="PMID">10492833</idno>
+              <ptr target="https://doi.org/10.1016/S0042-6989(98"/>
+              <imprint>
+                <date type="published" when="1999"/>
+                <biblScope unit="volume">39</biblScope>
+                <biblScope from="285" to="290" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

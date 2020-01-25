@@ -1,0 +1,1598 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T19:45+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">ASF1a inhibition induces p53-dependent growth arrest and senescence of cancer cells</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Yujiao</forename>
+                <surname>Wu</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Xidan</forename>
+                <surname>Li</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Jingya</forename>
+                <surname>Yu</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Magnus</forename>
+                <surname>Björkholm</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Dawei</forename>
+                <surname>Xu</surname>
+              </persName>
+            </author>
+            <title level="a" type="main">ASF1a inhibition induces p53-dependent growth arrest and senescence of cancer cells</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41419-019-1357-z</idno>
+          <note>Wu et al. Cell Death and Disease (2019) 10:76 Cell Death &amp; Disease A R T I C L E O p e n A c c e s s</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div subtype="dataseer">
+          <p>
+            <s>Anti-silencing function 1a (ASF1a) is a histone H3-H4 chaperone isoform involved in chromatin assembling and transcription regulation.</s>
+            <s>Recently, ASF1a has been shown to be up-regulated in certain human malignancies and required for the expression of telomerase reverse transcriptase (TERT), a factor essential for the immortal phenotype of cancer cells; however, its role in oncogenesis remains poorly defined.</s>
+            <s>In the present study, we determine whether ASF1a is required for the unlimited proliferation of cancer cells, a key cancer hallmark.</s>
+            <s cert="0.9496372938156128" id="dataset-1" type="Tabular data">Elevated ASF1a mRNA expression was observed in hepatocellular carcinoma (HCC) tumors.</s>
+            <s>The overexpression of ASF1a was similarly found in 20 cancer types contained in TCGA and GTEx datasets.</s>
+            <s>ASF1a knockdown led to growth arrest and senescence of wild-type (wt) p53-carrying HCC and prostate cancer cells.</s>
+            <s>Cellular senescence mediated by ASF1a inhibition resulted from the robust up-regulation of p53 and p21 cip1 expression, but without detectable changes in TERT expression.</s>
+            <s>p53 inhibition attenuated p21 cip1 induction caused by ASF1a depletion.</s>
+            <s>Mechanistically, ASF1a-knocked down cells displayed widespread DNA damage.</s>
+            <s>The TCGA dataset analysis revealed a negative correlation between ASF1a and p21 cip1 expression in multiple types of primary tumors, including HCC, prostate, gastric, and breast cancer.</s>
+            <s>Higher ASF1a and lower p21 cip1 expression predicted a poor outcome in patients with HCC.</s>
+            <s>Our results reveal that ASF1a overexpression is widespread in human malignancies and is required for the infinite proliferation of cancer cells, whereas its inhibition induces DNA damage and subsequent up-regulation of p53-p21 cip1 expression, thereby triggering cellular senescence.</s>
+            <s>Thus, ASF1a may serve as a potential target in cancer therapy.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Introduction</head>
+        <p>
+          <s>Anti-silencing function 1 (ASF1), the most conserved histone H3-H4 chaperone, plays an important role in DNA replication, gene expression, DNA repair, and nucleosome assembly 1,2 .</s>
+          <s>ASF1 is present as a single protein in yeast, while in the path of evolution, it duplicated to be two paralogs namely ASF1a and ASF1b 3 .</s>
+          <s>ASF1a and ASF1b preserved most of their ancestors' conserved characters while they also developed novel and distinct functions.</s>
+          <s>For example, ASF1a plays a crucial role in histone H3K56 acetylation and cellular reprogramming, whereas ASF1b is involved in proliferation regulation <ref target="#b0" type="bibr">1,</ref>
+            <ref target="#b3" type="bibr">4,</ref>
+            <ref target="#b4" type="bibr">5</ref> .</s>
+          <s>Recently, ASF1s have emerged as an oncogenic driver.</s>
+          <s>ASF1b was shown to stimulate the proliferation of breast cancer cells and correlate with poor clinical outcomes <ref target="#b5" type="bibr">6</ref> , whereas ASF1a promotes gastrointestinal cancer development and progression by activating β-catenin target genes 7 .</s>
+          <s>Interestingly, ASF1a was reported to be required for the constitutive expression of telomerase reverse transcriptase (TERT), the telomerase catalytic component essential for the immortal phenotype of cancer cells <ref target="#b7" type="bibr">8</ref> , which indicates that targeting ASF1a may reverse the unlimited proliferation of cancer cells via TERT inhibition.</s>
+        </p>
+        <p>
+          <s>Cellular senescence is a process in which cells exit the cell cycle and undergo distinctive phenotypic alterations, including morphology, chromatin, transcriptome, and secretome changes <ref target="#b8" type="bibr">[9]</ref>
+            <ref target="#b9" type="bibr">[10]</ref>
+            <ref target="#b10" type="bibr">[11]</ref>
+            <ref target="#b11" type="bibr">[12]</ref> .</s>
+          <s>By limiting the replicative life span of somatic cells, senescence serves as a potent barrier to malignant transformation <ref target="#b12" type="bibr">13</ref> .</s>
+          <s>Under certain settings, cellular senescence could be more significant than cell death for tumor suppression, because subtle perturbations in senescence regulatory network influence cancer susceptibility dramatically in mice whereas defects in apoptosis do not <ref target="#b12" type="bibr">13</ref> .</s>
+          <s>Thus, cellular senescence induction has been suggested as a novel anti-cancer strategy.</s>
+        </p>
+        <p>
+          <s>There are several causes of cellular senescence, including persistent telomeric/genomic damage, too strong mitogenic signals, epigenomic perturbations, and oncogene activation <ref target="#b9" type="bibr">10</ref> .</s>
+          <s>Telomeres protect the ends of linear chromosomes and shorten with cellular proliferation <ref target="#b9" type="bibr">10</ref> .</s>
+          <s>A too short telomere increases genomic instability 9,10 , triggers DNA damage response (DDR), and thereby induces p53-p21 cip1 and/or p16 ink4 -pRB pathway activation, ultimately leading to growth arrest and cellular senescence <ref target="#b8" type="bibr">9,</ref>
+            <ref target="#b9" type="bibr">10</ref> .</s>
+          <s>Oncogenes such as H-RAS can provoke senescence by super-stimulating the mitogen-activated protein kinase (MAPK) signaling <ref target="#b9" type="bibr">10</ref> .</s>
+          <s>Epigenetic changes like global chromatin relaxation have also been shown to promote senescence-associated heterochromatin formation by derepressing the CDKN2A gene transcription <ref target="#b13" type="bibr">14</ref> .</s>
+          <s>Under certain conditions, epigenetic perturbations can trigger DDR without physical DNA damages <ref target="#b9" type="bibr">10</ref> .</s>
+          <s>Notably, no matter what the initiator is, most signals eventually activate the p53/p21 cip1 and/or p16 ink4a /pRB pathways through which senescence is induced <ref target="#b8" type="bibr">9,</ref>
+            <ref target="#b14" type="bibr">15,</ref>
+            <ref target="#b15" type="bibr">16</ref> .</s>
+        </p>
+        <p>
+          <s>The renowned tumor suppressor p53 is considered as "the guardian of genome" by sensing and regulating the components of DDR, and promoting growth arrest and cellular senescence <ref target="#b16" type="bibr">17</ref> .</s>
+          <s>Once activated by upstream signals, p53 accumulates on the distal region of the p21 cip1 (CDKN1A) promoter, transcriptionally enhancing p21 cip1 expression.</s>
+          <s>The p21 cip1 protein inhibits several cyclin-CDK complexes and induces cell cycle arrest at the G1-S transition point, thereby serving as the final effector of growth arrest and cellular senescence.</s>
+          <s>In HCC, the p53-p21 cip1 signaling was reported as a crucial path inducing cellular senescence downstream many tumor suppressor genes <ref type="bibr">18-22 .</ref>
+          </s>
+          <s>In the present study, we explored the role of ASF1a in the immortal phenotype of cancer cells.</s>
+          <s>We found that knockdown of ASF1a elicited DNA damage, thereby leading to growth arrest and senescence of HepG2 and LNCap cancer cells by activating the p53-p21 cip1 axis.</s>
+          <s>The TCGA data revealed a negative correlation between ASF1a and p21 cip1 expression in HCC, prostate cancer (PCa), gastric cancer (GC), and breast cancer (BC).</s>
+          <s>Moreover, higher ASF1a expression and lower p21 cip1 expression predict a poor outcome in HCC patients, indicating the potential value of ASF1a in cancer as a prognostic biomarker and therapeutic target.</s>
+        </p>
+      </div>
+      <div>
+        <head>Materials and methods</head>
+      </div>
+      <div>
+        <head>Cell lines and cell culture</head>
+        <p>
+          <s>The wt p53-carrying HCC cell line HepG2, PCa line LNCaP, GC line AGS, BC line MCF-7, colon cancer line HCT116, HCT116-Cas9 and its variant HCT116 p53-/subline, and normal human umbilical-derived mesenchymal stem cells (UMSCs) were used in this study.</s>
+          <s>HepG2, LNCaP, and MCF-7 cells were cultured in RPMI-1640 medium (Thermo Fisher Scientific, Waltham, MA, USA) with 10% fetal bovine serum (Thermo Fisher Scientific), 100 U/ml penicillin, 100 μg/ml streptomycin, and 4 mM Lglutamine.</s>
+          <s>AGS cells were cultured in F12 medium (Thermo Fisher Scientific).</s>
+          <s>HCT116 cells and their variants were cultured in Dulbecco's modified Eagle's medium (Thermo Fisher Scientific).</s>
+          <s>UMSCs were cultured in F12 medium with bFGF (10 ng/ml).</s>
+          <s>In addition, two HCC cell lines, Huh.7 and Hep3B with mutant and null p53, respectively, were also included.</s>
+          <s>All cells were incubated at 37°C in a humidified 5% CO 2 atmosphere.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Clinical samples</head>
+        <p>
+          <s cert="0.9925852417945862" id="dataset-1" type="Tabular data:Subject Data Table">Fifty-one patients with newly diagnosed HCC were recruited from Shandong University Second Hospital and Qilu Hospital, China.</s>
+          <s cert="0.9967766404151917" id="dataset-3" type="Tabular data">Fifty-one tumor specimens from these patients were collected immediately after surgery and stored in a −80°C freezer or in TRIzol reagent (Life Technologies, Carlsbad, CA, USA) at −80°C.</s>
+          <s>Non-tumorous adjacent liver tissues were also available from 29 of these HCC patients.</s>
+          <s>The HCC diagnosis was confirmed by histological examination.</s>
+          <s>The study was approved by the Shandong University Second Hospital ethics committee.</s>
+        </p>
+      </div>
+      <div>
+        <head>siRNA and transfections</head>
+        <p>
+          <s>ASF1a, p53, and negative control siRNAs were purchased from Thermo Fisher Scientific.</s>
+          <s>We transfected cells with 20 nM siRNA in antibiotic-free Opti-MEM (Thermo Fisher Scientific) for 72 h using Lipofectamine 2000 (Thermo Fisher Scientific) according to the manufacturer's instruction.</s>
+          <s>"Control" in the text refers to negative siRNA control.</s>
+          <s>Sequences for these siRNAs are listed in <ref type="table">Table S1</ref> .</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>RNA extraction and quantitative real-time PCR</head>
+        <p>
+          <s>Total RNA was extracted from harvested cells or primary HCC tissues using TRIzol reagent (Life Technologies) according to the manufacturer's instruction, and High Capacity cDNA Reverse Transcription Kit (Thermo Fisher Scientific) was used for the reverse transcription of total RNA into cDNA.</s>
+          <s cert="0.9876621961593628" id="dataset-4" type="Real-Time Polymerase Chain Reaction">SYBR Green PCR Master Mix (Life technologies) was used for quantitative real-time PCR (qPCR) reactions.</s>
+          <s>The sequences of primers used in the qPCR assays are shown in <ref type="table">Table S1</ref> .</s>
+          <s cert="0.9873287677764893" id="dataset-2" type="Genetic Data:Real-Time Polymerase Chain Reaction">qPCR reactions were performed with QuantStudio 7 Flex Real-Time PCR system (Applied Biosystems, Walthan, MA, USA).</s>
+          <s>Relative levels of target mRNAs were expressed as arbitrary units based on their CT values with normalization by β-2M expression.</s>
+          <s>p21 cip1 promoter reporters and luciferase activity assay</s>
+        </p>
+        <p>
+          <s>The pWWP-Luc (p21/WAF1 promoter, plasmid #16451) plasmid was obtained from Addgene (Middlesex, UK).</s>
+          <s>The pGL3 Basic luciferase reporter vector was purchased from Promega (Madison, WI, USA).</s>
+          <s cert="0.9887797832489014" id="dataset-3" type="Tabular data:Assay">The Luciferase Assay System (Promega) was used to measure firefly and Renilla luminescence, and the Renilla signal was used for normalization.</s>
+          <s>The luciferase activity in negative control cells was set as 1.00 (reference) for the comparison between negative control and ASF1a-depleted cell groups.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Colony-formation assay</head>
+        <p>
+          <s>Seventy-two hours after ASF1a siRNA transfection, HepG2 and LNCaP cells were seeded in six-well plates (1000 cells/well).</s>
+          <s cert="0.965327799320221" id="dataset-4" type="Tabular data">After 12 days of incubation (at 37°C in a humidified 5% CO 2 atmosphere), the colonies were fixed and stained with methanol and Giemsa buffer, respectively, and the colony numbers were counted.</s>
+          <s>The number of colonies derived from the negative control cells was set as 100% (reference) for comparison between negative control and ASF1a-depleted cells.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Cell cycle analysis</head>
+        <p>
+          <s>Cells were fixed with 70% ethanol at + 4°C overnight and stained with a solution containing RNase A (0.5 μg) (Sigma-Aldrich; St. Louis, MO, USA) and propidium iodide (50 μg/ml) (Sigma-Aldrich).</s>
+          <s cert="0.9903709292411804" id="dataset-5" type="Flow cytometry">Cell cycle distribution was determined using flow cytometry.</s>
+          <s>Kaluza software (Beckman Coulter, Indianapolis, IN, USA) was used for data analysis.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>β-Galactosidase staining</head>
+        <p>
+          <s>HepG2 and LNCaP cells were transfected with siRNAs and cultured for 8-10 days.</s>
+          <s>Fresh medium was supplemented during this period.</s>
+          <s>Cells were then rinsed with phosphate-buffered saline (PBS), fixed with 4% formaldehyde in PBS, and then incubated with freshly prepared senescence-associated β-Gal staining solution (Cellular Senescence Assay KAA002; Merck, Darmstadt, Germany) at 37°C overnight.</s>
+          <s cert="0.9356767535209656" id="dataset-6" type="Tabular data">β-Galactosidase (β-gal)positive cells were counted.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Western blotting</head>
+        <p>
+          <s>RIPA lysis buffer (Cell signaling Technology (CST), Danvers, MA, USA) was used for protein extraction.</s>
+          <s>Samples were run on sodium dodecyl sulphate-polyacrylamide gel electrophoresis and transferred to the polyvinylidene difluoride membrane (Bio-Rad, Hercules, CA, USA).</s>
+          <s>The membrane was blocked with 5% non-fat milk for 2 h at room temperature and the primary antibodies were added.</s>
+          <s>Membranes were incubated with the primary antibody at 4°C overnight with gentle shaking.</s>
+          <s cert="0.6301351189613342" id="dataset-10" type="Tabular data">The secondary antibodies were added the next day, and Bio-rad ECL reagents (#1705062) were used to detect proteins on the blots.</s>
+          <s>ChemiDoc™ MP Imaging System (Bio-Rad) was used for blot imaging.</s>
+          <s>Quantification was done by using Image Lab™ Software (Bio-Rad).</s>
+          <s>Actin was used for normalization.</s>
+          <s>Target expression in negative control groups was set as 1 (reference) for comparison between control and ASF1adepleted cell groups.</s>
+        </p>
+      </div>
+      <div>
+        <head>Immunofluorescence staining</head>
+        <p>
+          <s>HepG2 and LNCaP cells were seeded on coverslips and transfected with ASF1a and control siRNAs, respectively.</s>
+          <s>After treatment and culture, the cells were fixed in 4% formaldehyde and washed with PBS.</s>
+          <s>After having blocked for 1 h in the blocking buffer (Dako, Santa Clara, CA, USA), the cells were incubated with the primary antibodies γH2AX and 53BP1 at 4°C overnight.</s>
+          <s>Triton-100 (Sigma-Aldrich) was used to increase the permeability of cellular and nuclear membranes.</s>
+          <s>Alexa Fluor TM 488 donkey anti-mouse IgG (H + L) and Alexa Fluor TM 555 donkey anti-rabbit IgG (H + L) were used as the secondary antibodies, and 4-6-diamidino-2-phenylindole dihydrochloride (Cat no.</s>
+          <s>H-1200; Vector Laboratories Inc., Burlingame, CA, USA) was used to detect the nuclei.</s>
+        </p>
+      </div>
+      <div>
+        <head>Antibodies</head>
+        <p>
+          <s>ASF1a (C6E10) rabbit mAb (Cat no.</s>
+          <s>2990S) and p21 cip1 (12D1) rabbit mAb (Cat no.</s>
+          <s>2947S) were purchased from CST. β-Actin (C4) HRP (sc-47778), p53 (DO-1) mouse mAb (sc-126), p-Histone H2A.X (Ser 139) mouse mAb (sc-517348), and HP1γ (F1) mouse mAb (sc-398562) were from Santa Cruz Biotechnology (Dallas, TX, USA).</s>
+          <s>53BP1 (A300-272A) was obtained from Bethyl Laboratories (Montgomery, TX, USA).</s>
+          <s>Anti-trimethyl-histone H3 (Lys9) rabbit polyclonal Ab (Cat no.</s>
+          <s>07-442) was from Merck.</s>
+          <s>TRF2 rabbit polyclonal Ab (NB110-57130) was from Novus Biologicals (Centennial, CO, USA).</s>
+          <s>Goat anti-rabbit (Cat no.</s>
+          <s>170-6515) and goat anti-mouse (Cat no.</s>
+          <s>170-6516) IgG (H + L)-HRP conjugate secondary antibodies were from Bio-Rad.</s>
+          <s>Donkey anti-mouse IgG (H + L) Alexa Fluor 488 (Cat no.</s>
+          <s>A-21202) and Alexa Fluor TM 555 donkey anti-rabbit IgG (H + L) secondary antibody (Cat no.</s>
+          <s>A-31572) were bought from Thermo Fisher Scientific.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Southern blot</head>
+        <p>
+          <s>HepG2 and LNcaP cells were transfected with negative control and ASF1a siRNAs and cultured for 72 h.</s>
+          <s>Cells were harvested and genomic DNA was extracted with QIAamp DNA Blood Mini Kit (Cat no 51104; Qiagen, Hilden, Germany).</s>
+          <s cert="0.97694993019104" id="dataset-7" type="Image:Electrophoresis">Southern blot was performed by using Telo TAGGG Telomere Length Assay (Merck; Cat no. 12 209 136 001) according to the manufacturer's instructions.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Statistical analysis</head>
+        <p>
+          <s cert="0.680834949016571" id="dataset-12" type="Tabular data">Experimental quantitative data were obtained in biological replicates and shown as means ± standard deviation if not otherwise indicated.</s>
+          <s>Student's t test was used for analyses of differences between experiment groups.</s>
+          <s>The Cancer Genome Atlas (TCGA) data of ASF1a and p21 cip1 expression were downloaded via cBioPortal (http://www.cbioportal.org)</s>
+          <s>(January, 2018).</s>
+          <s>Pearson correlation coefficient was used to assess the relationship between the two variables.</s>
+          <s>ASF1a and p21 cip1 survival analysis was done by GEPIA (http://gepia.cancer-pku.</s>
+          <s>cn), which retrieved TCGA data.</s>
+          <s>Disease-free and overall survival (DFS and OS) was illustrated by Kaplan-Meier plots, and the log-rank test was used to compare survival distributions (between groups).</s>
+          <s>All the tests were twotailed and computed using GraphPad Prism 6.0c (GraphPad Software Inc.).</s>
+          <s>P values&lt; 0.05 were considered as statistically significant.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+      </div>
+      <div subtype="dataseer">
+        <head>ASF1a is overexpressed in a variety of primary human tumors</head>
+        <p>
+          <s>We first determined ASF1a mRNA expression in 51 primary HCC tumors and 29 adjacent non-tumorous liver tissues.</s>
+          <s>ASF1a mRNA was overexpressed in most tumors (5.11 ± 4.26 vs 1.14 ± 0.50 for tumors vs non-tumorous tissues, respectively; P &lt; 0.0001) <ref target="#fig_0" type="figure">(Fig. 1a</ref> ).</s>
+          <s>ASF1a protein expression in collected tumor samples was also higher than that in the non-tumorous samples ( <ref target="#fig_0" type="figure">Supplementary Fig. S1A</ref> ).</s>
+          <s>We then analyzed the data from the TCGA (https://cancergenome.nih.gov) and GTEx (https:// gtexportal.org/home/)</s>
+          <s>databases, and the results were documented in <ref target="#fig_0" type="figure">Fig. 1b</ref> : ASF1a was overexpressed in HCC (liver hepatocellular carcinoma, LIHC), PCa, GC, and BC tumor tissues compared with their non-tumorous counterparts.</s>
+          <s>Data from Oncomine (https://www.oncomine.</s>
+          <s>org/resource/login.html)</s>
+          <s>also exhibited stronger ASF1a expression in HCC, PCa, GC, and BC, which was in accordance with the results obtained from TCGA and GTEx <ref target="#fig_0" type="figure">(Fig. S1B</ref> ).</s>
+        </p>
+        <p>
+          <s>ASF1a knockdown leads to growth arrest and cellular senescence in wt p53-carrying HCC and PCa cells</s>
+        </p>
+        <p>
+          <s>We chose the HCC cell line HepG2 and the PCa cell line LNCaP to explore ASF1a's function.</s>
+          <s>First, we introduced ASF1a siRNA into HepG2 and LNCaP cells to inhibit ASF1a expression.</s>
+          <s cert="0.9565971493721008" id="dataset-13" type="Image">ASF1a siRNA knockdown efficiency was verified by western blot <ref target="#fig_1" type="figure">(Fig. 2a)</ref> .</s>
+          <s cert="0.9785274863243103" id="dataset-14" type="Tabular data">We then assessed the proliferation rate of these ASF1a-depleted cells <ref target="#fig_1" type="figure">(Fig. 2b</ref> ).</s>
+          <s>The cell number was significantly lower in siASF1a-treated cells than in the control ones (100 ± 0.0, 71.8 ± 7.0, and 73.7 ± 7.8% for control, ASF1a si1 and ASF1a si2 in HepG2 cells, respectively and 100 ± 0.0, 52.6 ± 8.8, and 53.3 ± 13.8% for control, ASF1a si1 and ASF1a si2 in LNCaP cells, respectively).</s>
+          <s>The observed cell number decrease was not due to significant cell death, because the viability was &gt;97 and &gt;86% for all the HepG2 and LNCaP groups, respectively (Supplementary <ref target="#fig_1" type="figure">Fig. S2A</ref> ).</s>
+          <s>We further performed colony-formation assays <ref target="#fig_1" type="figure">(Fig. 2c</ref> ).</s>
+          <s>Both HepG2 and LNCaP cells treated with siASF1a formed much fewer colonies than did control cells (100 ± 0.0, 53.7 ± 20.8, and 54.8 ± 20.8% for control, ASF1a si1 and ASF1a si2 in HepG2 cells, respectively and 100 ± 0.0, 34.4 ± 8.8, and 32.3 ± 7.0% for control, ASF1a si1 and ASF1a si2 in LNCaP cells, respectively), indicating that ASF1a inhibition greatly impaired the clonogenic A B potential.</s>
+          <s cert="0.9941243529319763" id="dataset-15" type="Flow cytometry">Seventy-two hours after ASF1a siRNA transfection, HepG2 and LNCaP cells were harvested and cell cycle was analyzed using flow cytometry <ref target="#fig_1" type="figure">(Fig. 2d)</ref> Cellular senescence is induced via the p53-p21 cip1 pathway in ASF1a-depleted cells</s>
+        </p>
+        <p>
+          <s>Since senescent cells quit from cell cycle as a result of the activation of sustained and robust p16 ink4 -pRB and/ or p53-p21 cip1 pathways, we did a screen of four cellular senescence-associated genes to investigate the underlying mechanisms <ref target="#fig_3" type="figure">(Fig. 3a, b)</ref> .</s>
+          <s>The qPCR results showed that p21 cip1 mRNA level was significantly elevated upon ASF1a knockdown (siASF1a vs control, 3.25 ± 0.09 vs 1.00 ± 0.01, P = 0.0008 and 4.94 ± 1.70 vs 1.02 ± 0.04, P = 0.0002, for HepG2 and LNCaP cells, respectively), while there were no detectable changes in p16 ink4a , p27 kip1 , and TERT expression.</s>
+          <s>Cellular senescence markers PML and SERPINI1 were also up-regulated following ASF1a knockdown in LNCaP cells, which was an indicator of p53 activation ( <ref target="#fig_1" type="figure">Supplementary Fig. S2B</ref> ).</s>
+          <s>The histone variant macroH2A was positive in ASF1a knockdown LNCap cells ( <ref target="#fig_1" type="figure">Supplementary Fig. S2C</ref> ).</s>
+          <s>We further verified the effect of ASF1a depletion on p21 cip1 expression at both mRNA and protein levels in wild-type (wt) p53-carrying cell lines HepG2 and LNCaP, as well as in AGS and MCF-7 cells <ref target="#fig_3" type="figure">(Fig. 3c-e)</ref> , which was coupled with increased p53 expression <ref target="#fig_3" type="figure">(Fig. 3d, e)</ref> .</s>
+          <s>As p53 activates p21 cip1 transcriptionally by binding to its consensus motif (-2301 and -1394 from the transcription start site) on the p21 cip1 distal promoter, we wanted to determine whether this is the case in ASF1a-depleted cells.</s>
+          <s>The pWWP luciferase reporter vector, containing the 2.4 kb fragment upstream the transcription start site of the CDKN1A gene, was transfected into HepG2 and LNCaP cells 24 h post-ASF1a knockdown and these cells were then incubated for another 48 h.</s>
+          <s>The results showed an increased p21 cip1 promoter activity in siASF1a-treated cells (control vs ASF1a si1 and ASF1a si2: 1.00 ± 0.00 vs 1.57 ± 0.12 and 1.49 ± 0.08, and 1.00 ± 0.01 vs 1.32 ± 0.07 and 1.52 ± 0.07, for HepG2 and LNCaP cells, respectively) <ref target="#fig_3" type="figure">(Fig. 3f)</ref> .</s>
+          <s>To further evaluate p53 effect on p21 cip1 accumulation caused by ASF1a depletion, we knocked down p53 and ASF1a simultaneously.</s>
+          <s>As shown in <ref target="#fig_3" type="figure">Fig. 3g</ref> , p53 depletion attenuated ASF1a knockdown effect on p21 cip1 augmentation, which indicates the causal role of p53 in ASF1amediated p21 cip1 regulation.</s>
+          <s>We then performed β-gal staining in HepG2 and LNCaP cells transfected with ASF1a and p21 cip1 siRNAs (negative control vs ASF1a si1 vs sip21 cip1 vs ASF1a + sip21 cip1 ) for 10 days.</s>
+          <s>We found that the senescence phenotype observed in ASF1ainhibited cells was rescued by p21 cip1 knockdown.</s>
+          <s>p53 loss could also attenuate the ASF1a knockdown-induced cellular senescence phenotype <ref type="figure">(Fig. 4a)</ref> .</s>
+          <s>Quantification is shown in <ref type="figure">Fig. 4b-e</ref> .</s>
+          <s>These data unveil a potential ASF1a-p53-p21 cip1 regulatory axis in ASF1a inhibition-induced cellular senescence in HepG2 and LNCaP cells.</s>
+        </p>
+        <p>
+          <s>(see figure on previous page) <ref target="#fig_1" type="figure">Fig. 2</ref> ASF1a knockdown leads to growth arrest and cellular senescence in wild-type p53-carrying HCC and PCa cells.</s>
+          <s>a Western blot was performed for the validation of ASF1a siRNA efficiency in HepG2 and LNCaP cells.</s>
+          <s>ASF1a si1 and ASF1a si2, two different ASF1A siRNAs, were used in this study.</s>
+          <s>b The cell number of control (nc siRNA) and ASF1a knockdown (ASF1a si1/si2) groups in HepG2 and LNCaP cells 72 h after siRNA transfection.</s>
+          <s>Cells in negative control groups were set as 100% (reference).</s>
+          <s>The siASF1a-transfected groups showed a significant decrease in cell counts compared with control cells (data are presented as the mean ± SD of four independent experiments in HepG2 and three independent experiments in LNCaP, respectively; P values are shown in each panel).</s>
+          <s>c Colony-formation assay of HepG2 and LNCaP cells.</s>
+          <s>The clonogenic abilities of HepG2 and LNCaP cells were decreased upon ASF1a knockdown.</s>
+          <s>Quantification is shown at the bottom (data are presented as the mean ± SD of three independent experiments in HepG2 and four independent experiments in LNCaP, respectively; P values are shown in each panel).</s>
+          <s>Colonies in control groups were set as 100% (reference).</s>
+          <s>
+            <ref target="#fig_0" type="figure">F 1 a p 1 6 i n k 4 a p 2 1 c i p 1 p 2 7</ref> To further explore whether ASF1a inhibition-induced p21 cip1 accumulation was p53-dependent, we knocked down ASF1a in two HCC cell lines Huh.7 (p53 mutant) and Hep3B (p53 null), and then assessed p21 cip1 mRNA and protein expression.</s>
+          <s>Unexpectedly, qPCR and western blot results showed a significant decline in p21 cip1 expression <ref type="figure">(Fig. 5a, b</ref> ; control vs ASF1a si1, 1.00 ± 0.01 vs 0.31 ± 0.06 and 1.00 ± 0.01 vs 0.53 ± 0.08, for Huh.7 and Hep3B cells, respectively).</s>
+          <s>Consistent with p21 cip1 expression, ASF1a depletion led to a diminished p21 cip1 promoter activity in Huh7 cells, while there were no significant alterations in Hep3B cells ( <ref type="figure">Fig. 5c</ref> ; control vs ASF1a si1, 1.02 ± 0.02 vs 0.48 ± 0.07 and 1.01 ± 0.02 vs 1.06 ± 0.38, for Huh.7 and Hep3B cells, respectively).</s>
+        </p>
+        <p>
+          <s>To further evaluate the role of p53 in ASF1a inhibitionassociated p21 cip1 activation, we introduced CRISPR-Cas9-edited HCT116 cells, which originally express wt p53.</s>
+          <s>Both p21 cip1 and p53 were up-regulated in HCT116-Cas9 cells after ASF1a knockdown <ref type="figure">(Fig. 5d, left)</ref> .</s>
+          <s>p53 was knocked out in HCT116 p53-/-cells by using CRISPR-Cas9 system.</s>
+          <s>p21 cip1 accumulation could not be observed after ASF1a knockdown in these p53-/-cells <ref type="figure">(Fig. 5d, right)</ref> .</s>
+          <s>Additionally, in normal human UMSCs, already abbreviated p53 and p21 cip1 were up-regulated to a certain extent upon ASF1a knockdown, although not as robust as seen in wt p53-carrying cancer cell lines following ASF1a depletion <ref type="figure">(Fig. 5e, f)</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Silencing ASF1a triggers DNA damage response</head>
+        <p>
+          <s>Since p53 is induced by DDR, we sought to determine whether ASF1a knockdown causes DNA damage, thereby triggering DDR and p53 accumulation.</s>
+          <s>We performed immunofluorescence staining to examine the formation of γH2AX and 53BP1 foci, two typical biomarkers for DNA damage <ref target="#fig_1" type="figure">(Fig. 6a, γH2AX</ref> : green signals; 53BP1: red signals).</s>
+          <s>γH2AX and 53BP1 foci robustly increased in ASF1a-depleted cell lines (γH2AX: control vs ASF1a si1 and ASF1a si2, 3.8 ± 1.0 vs 64.4 ± 3.8% and 58.5 ± 2.1 and 3.2 ± 0.5% vs 59.5 ± 4.6 and 59.2 ± 1.5%, for HepG2 and LNCaP, respectively; 53BP1: control vs ASF1a si1 and ASF1a si2, 4.3 ± 0.2 vs 46.6 ± 2.6% and 45.2 ± 2.0 and 4.0 ± 0.2% vs 56.6 ± 2.9 and 56.3 ± 2.3%, for HepG2 and LNCaP, respectively).</s>
+          <s>γH2AX and 53BP1 expression was elevated after knocking down p53 and both p53 and ASF1a ( <ref target="#fig_3" type="figure">Supplementary Fig. S3A</ref> ).</s>
+          <s>We could not detect the senescence-associated heterochromatin foci (SAHF) by using the 4-6-diamidino-2-phenylindole dihydrochloride staining in HepG2 and LNCaP <ref type="figure">(Fig. 6a)</ref> ; however, H3K9me3 and HP1γ proteins were up-regulated after ASF1a knockdown <ref target="#fig_3" type="figure">(Supplementary Fig. S3B</ref> ).</s>
+          <s>Since telomeres are the targets of DDR associated with cellular senescence 23 , we thus determined whether ASF1a inhibition results in telomeric damage.</s>
+          <s>We performed immunofluorescence for telomere-associated protein TRF2 and DDR marker γH2AX in HepG2 and LNCaP cells transfected with negative control and ASF1a siRNAs.</s>
+          <s>The confocal captured images showed the colocalization of the two markers ( <ref type="figure">Supplementary Fig. S4A</ref> ; white arrows).</s>
+          <s>We also checked if telomere shortening happened in ASF1a inhibition-induced cellular senescence by performing Southern blot.</s>
+          <s>The result showed no significant change in telomere length in ASF1a knockdown groups in both HepG2 and LNCaP cells (Supplementary <ref type="figure">Fig. S5A</ref> ).</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>ASF1a and p21 cip1 expression is negatively correlated with each other and predicts patient outcomes in HCC</head>
+        <p>
+          <s>We finally wanted to determine the relationship between ASF1a and p21 cip1 expression and its potential clinical significance.</s>
+          <s>First, we examined p21 cip1 mRNA expression in our HCC patient samples, and p21 cip1 expression was down-regulated in tumor tissues compared with their normal counterparts ( <ref target="#fig_6" type="figure">Fig. 7a;</ref> 1.20 ± 1.38 vs 2.20 ± 1.51 for tumors vs non-tumorous tissues, P = 0.0035).</s>
+          <s>TCGA and GTEx data showed significantly decreased p21 cip1 transcripts in tumor tissues in prostate cancer (PRAD) and breast cancer (BRCA) <ref target="#fig_6" type="figure">(Fig. 7b)</ref> .</s>
+          <s>We analyzed the Oncomine data and found down-regulated p21 cip1 expression in HCC, PCa, GC, and BC tumors ( <ref target="#fig_0" type="figure">Supplementary Fig. S1C)</ref> .</s>
+          <s>A negative correlation between ASF1a and p21 cip1 expression could be drawn from our HCC patient samples available <ref target="#fig_6" type="figure">(Fig. 7c)</ref> .</s>
+          <s>A negative (see figure on previous page) <ref target="#fig_3" type="figure">Fig. 3</ref> Cellular senescence is induced via the p53/p21 cip1 pathway in ASF1a-depleted cells.</s>
+          <s>a The schematic expression showing that RB/ p16 ink4 and p53/p21 cip1 cascades are the two major pathways involved in cellular senescence.</s>
+          <s>b A screen of four cellular senescence-associated genes in HepG2 and LNCaP cells.</s>
+          <s>p16 ink4 , p21 cip1 , p27 kip1 , and TERT mRNA expression in control (nc) and ASF1a knockdown (ASF1a si1) groups is shown in the bar charts (data are presented as the mean ± SD; P values are shown in each panel).</s>
+          <s>c Loss of ASF1a increased p21 cip1 mRNA expression in HepG2, LNCaP, AGS, and MCF-7 cells (data are presented as the mean ± SD, at least three independent experiments for each cell line, respectively; P values are shown in each panel).</s>
+          <s>d Loss of ASF1a increased p21 cip1 and p53 protein expression in HepG2 and LNCaP cells.</s>
+          <s>Quantification is shown at the bottom.</s>
+          <s>e Loss of ASF1a increased p21 cip1 and p53 protein expression in AGS and MCF-7 cells.</s>
+          <s>Quantification is shown at the bottom.</s>
+          <s>f The schematic of p21 cip1 (CDKN1A) promoter and luciferase activity.</s>
+          <s>An increased luciferase activity was observed upon ASF1a knockdown in both HepG2 and LNCaP cells (data are presented as the mean ± SD of three independent experiments for HepG2 and LNCaP, respectively; P values are shown in each panel).</s>
+          <s>The landscape figure was drawn using the GPS 3.0 tool (http://gps.biocuckoo.org).</s>
+          <s cert="0.9575991630554199" id="dataset-16" type="Tabular data">g Knockdown of p53 compromises ASF1a depletioninduced p21 cip1 accumulation, as assessed using immunoblotting.</s>
+          <s>Quantification is shown at the bottom correlation between ASF1a and p21 cip1 expression was also observed in HCC (r = -0.1198,</s>
+          <s>P = 0.0206, n = 371), PCa (r = -0.2192,</s>
+          <s>P &lt; 0.0001, n = 497), GC (r = -0.2689,</s>
+          <s>P &lt; 0.0001, n = 415), and BC (r = -0.1280,</s>
+          <s>P &lt; 0.0001, n = 1093) derived from the TCGA dataset <ref target="#fig_6" type="figure">(Fig. 7d)</ref> .</s>
+          <s cert="0.688424289226532" id="dataset-17" type="Tabular data">The prognostic value of both ASF1a and p21 cip1 in HCC patients was determined by analyzing the TCGA dataset <ref target="#fig_6" type="figure">(Fig. 7e, f)</ref> .</s>
+          <s>Based on a cutoff value of 0.7, 109 patients had higher ASF1a-expressing tumors, while those with values lower than 0.7 were considered the low-expression cohort.</s>
+          <s>The Mantel-Cox test (log-rank) revealed that higher ASF1a expression was significantly associated with both shorter DFS and OS <ref target="#fig_6" type="figure">(Fig. 7e)</ref> .</s>
+          <s>A cutoff value of 0.2 was used in p21 cip1 -associated DFS and OS analysis.</s>
+          <s>The Mantel-Cox test (log-rank) shows that higher p21 cip1 expression predicted a longer DFS <ref target="#fig_6" type="figure">(Fig. 7f)</ref> .</s>
+          <s>Because the biological functions of ASF1a and p21 do not totally overlap with each other, they unlikely match perfectly in predicting patient survival.</s>
+          <s>Nevertheless, both predict DFS in HCC, which, from a clinical or therapeutic point of view, should be a more relevant prognostic variable than OS.</s>
+          <s>The hazard ratio is also presented in each panel, showing the association of ASF1a and p21 cip1 with survival in HCC.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Discussion</head>
+        <p>
+          <s>ASF1a is originally recognized as a histone chaperone that interacts with newly synthesized histone H3-H4 dimers and passes the dimers to the histone chaperone CAF-1 to assemble nucleosomes after DNA replication or repair <ref target="#b23" type="bibr">[24]</ref>
+            <ref target="#b24" type="bibr">[25]</ref>
+            <ref target="#b25" type="bibr">[26]</ref>
+            <ref target="#b26" type="bibr">[27]</ref> .</s>
+          <s>ASF1a also cooperates with acetyltransferase CBP/p300 to acetylate H3 at lys56 position, which is regarded as a marker for chromatin disassembly and active transcription <ref target="#b27" type="bibr">28</ref> .</s>
+          <s>Recently, ASF1a was reported to be required for the maintenance of cell pluripotency and reprogramming 4 .</s>
+          <s>These findings indicate that ASF1a has transcriptional activation and stemnesspromoting functions.</s>
+          <s>We have previously shown ASF1a as an oncogenic factor in gastrointestinal cancer.</s>
+          <s>ASF1a interacts with the transcription factor β-catenin and activates the downstream genes cyclin D1, myc, Lgr5, and ZEB1, promoting cancer development and progression <ref target="#b28" type="bibr">29</ref> .</s>
+          <s>In the present study, we observed that ASF1a was required for the sustained proliferation of cancer cells, whereas its inhibition led to cellular senescence by triggering DNA damage and thereby upregulating the p53/p21 cip1 pathway.</s>
+          <s>By analyzing the TCGA and GTEx data, we further show that ASF1a is overexpressed in 20 different types of cancers compared with their non-tumorous counterparts <ref target="#b29" type="bibr">30</ref> ( <ref type="figure">Supplementary Fig. S6A</ref> ).</s>
+          <s>Moreover, higher ASF1a expression is significantly associated with a poor patient outcome in HCC patients.</s>
+          <s>These findings collectively indicate that the aberrant up-regulation of ASF1a is widespread in human malignancies and contributes to the unlimited proliferation of cancer cells.</s>
+        </p>
+        <p>
+          <s>There have been a number of investigations regarding ASF1a's role in cellular senescence.</s>
+          <s>During cellular senescence, the region containing proliferationpromoting genes are condensed into the transcriptionally silent heterochromatin named SAHF <ref target="#b30" type="bibr">[31]</ref>
+            <ref target="#b31" type="bibr">[32]</ref>
+            <ref target="#b32" type="bibr">[33]</ref>
+            <ref target="#b33" type="bibr">[34]</ref> , the formation of which requires ASF1a and HIRA (histone cell cycle regulation defective homolog A) <ref target="#b30" type="bibr">31,</ref>
+            <ref target="#b34" type="bibr">35</ref> .</s>
+          <s>The involvement of ASF1a in SAHF formation seems to make the ASF1a regulatory network more complicated in senescent cells.</s>
+          <s>In our study, we did not observe SAHF formation in ASF1a-depleted cells.</s>
+          <s>There are several lines of evidence showing that SAHF formation and senescence are not always coupled.</s>
+          <s>First, SAHF formation is cell content-dependent <ref target="#b35" type="bibr">36</ref> .</s>
+          <s>For example, SAHF is observed in the senescent human embryonic fibroblast cell lines IMR90 and WI38 but not in the primary human foreskin fibroblast cell line BJ 32 .</s>
+          <s>Second, Raffaella and colleagues report that SAHF is preferentially formed in oncogenetriggered cellular senescence relying on the p16 ink4 pathway but not in replicative cellular senescence induced by DDR/p53/p21 cip1 signaling <ref target="#b36" type="bibr">37</ref> .</s>
+          <s>In addition, it has been well established that telomerase activation and induction of TERT expression are required for cancer cells to overcome the senescence barrier and to achieve an immortal phenotype 38 , while ASF1a inhibition was previously shown to contribute to diminished TERT expression in cancer cells.</s>
+          <s>In the present study, however, we observed no detectable changes in TERT expression in ASF1a-depleted HepG2 and LNCaP cells.</s>
+          <s>Moreover, telomere length did not shorten in these cells.</s>
+          <s>It is thus evident that cellular senescence resulting from ASF1a knockdown is unrelated to telomerase/TERT expression or telomere length.</s>
+        </p>
+        <p>
+          <s>ASF1a plays a role in DNA repair: ASF1a-mediated H3K56 acetylation (H3K56ac) is required for nucleosome reassembly after DNA damage to facilitate DNA repair <ref target="#b38" type="bibr">39</ref> .</s>
+          <s>ASF1 promotes checkpoint recovery after DNA damage repair <ref target="#b39" type="bibr">40</ref> .</s>
+          <s>ASF1a and ATM can also modulate UV-induced cell-cycle checkpoint recovery <ref target="#b40" type="bibr">41</ref> .</s>
+          <s>Notably, ASF1a directly participates in DNA double-strand break repair, which (see figure on previous page) <ref type="figure">Fig. 5</ref> ASF1a inhibition fails to induce p21 cip expression in p53 mutant or null HCC cells.</s>
+          <s>a Knockdown of ASF1a decreased p21 mRNA expression in the p53 mutant cell line Huh.7 and p53-null Hep3B cells (data are presented as the mean ± SD of three independent experiments for Huh.7 and Hep3B, respectively; P values are shown in each panel).</s>
+          <s>b Western blot showed unchanged or even diminished p21 cip1 expression after ASF1a knockdown in Huh.7 and Hep3B cells.</s>
+          <s>Quantification is shown at the bottom.</s>
+          <s>c Luciferase assay showed a reduced p21 cip1 promoter activity in ASF1a depletion groups in Huh.7 cells while no alteration in Hep3B cells (data are presented as the mean ± SD of three independent experiments for Huh.7 and Hep3B, respectively; P values are shown in each panel).</s>
+          <s>d Western blot showed accumulated and diminished p21 cip1 expression after ASF1a knockdown in control Cas9 HCT116 and CRISPR-Cas9-edited p53-/-HCT116 cells, respectively.</s>
+          <s>Quantification is shown at the bottom.</s>
+          <s>e Loss of ASF1a increased p21 cip1 mRNA expression in normal human umbilical-derived mesenchymal stem cells (UMSCs) (data are presented as the mean ± SD of three independent experiments; P values are shown in the panel).</s>
+          <s>f Western blot showed slightly increased p53 and p21 cip1 protein levels in ASF1a knockdown UMSCs.</s>
+          <s>Quantification is shown on the right panel.</s>
+          <s>HCC, hepatocellular carcinoma highlights a novel role of ASF1a independent of a classic histone chaperone function <ref target="#b25" type="bibr">26</ref> .</s>
+          <s>Lee and colleagues report that ASF1a is required for 53BP1 recruitment and that there are less 53BP1 foci in ASF1a-depleted U2OS cells compared with the control ones upon DNA damage <ref target="#b25" type="bibr">26</ref> .</s>
+          <s>However, we observed more 53BP1 foci after ASF1a knockdown.</s>
+          <s>Likewise, the ASF1a-related DNA repair mechanism might differ between different cell lines with different ASF1a expression or genetic backgrounds.</s>
+        </p>
+        <p>
+          <s>Our results suggest that DDR and p21 cip1 induction mediated by ASF1a inhibition is p53-dependent.</s>
+          <s>Intriguingly, the mutant p53-harboring Huh7 cells exhibited LNCap <ref type="figure">Fig. 6</ref> Silencing ASF1a triggers DNA damage response.</s>
+          <s>a Immunofluorescence staining of control (nc) and ASF1a knockdown (ASF1a si1/si2) groups of HepG2 and LNCaP cells.</s>
+          <s>Nuclei were stained with DAPI (blue signals).</s>
+          <s>γH2AX and 53BP1 were stained with specific antibodies (green and red signals, respectively; scale bar: 50 μm).</s>
+          <s>Quantification is shown at the bottom (data are presented as the mean ± SD value of three independent experiments for HepG2 and LNCaP, respectively).</s>
+          <s cert="0.9007013440132141" id="dataset-18" type="Tabular data">Senescence-associated heterochromatin foci (SAHF) were not detected by using DAPI staining.</s>
+          <s>DAPI, 4-6-diamidino-2-phenylindole dihydrochloride diminished p21 cip1 expression while p53-null HepG3 cells had no detectable changes in p21 cip1 expression upon ASF1a depletion.</s>
+          <s>It is currently unclear why ASF1a inhibition leads to opposite consequences in cells with different p53 backgrounds.</s>
+          <s>Likely, the gain of function of mutant p53 plays a dominant role in controlling p21 cip1 expression.</s>
+          <s>These findings may be both biologically and clinically important.</s>
+        </p>
+        <p>
+          <s>In summary, our findings indicate ASF1a as a crucial oncogenic factor aberrantly overexpressed in a variety of cancers.</s>
+          <s>Knockdown of ASF1a induces growth arrest and cellular senescence by activating a DDR/p53/p21 cip1 pathway in wt p53 HCC and PCa cell lines <ref type="figure">(Fig. 8)</ref> .</s>
+          <s>Both ASF1a and p21 cip1 may serve as prognostic factors in HCC.</s>
+          <s>The results support the concept that ASF1a is a potential novel target in cancer treatment.</s>
+          <s>(data are presented as the mean ± SD, P = 0.0035).</s>
+          <s>b Data from TCGA and GTEx databases revealed a lower p21 cip1 mRNA expression (transcripts per million in log scale) in tumor tissues compared with normal tissues in PRAD and BRCA (data are presented as the mean ± SD, P &lt; 0.05).</s>
+          <s>c A negative correlation between ASF1a and p21 cip1 mRNA expression in HCC patient samples (r = -0.3989,</s>
+          <s>P = 0.0037, n = 51).</s>
+          <s>d A negative correlation between ASF1a and p21 cip1 mRNA expression in HCC, PCa, GC, and BC, respectively.</s>
+          <s>Data were from the TCGA database.</s>
+          <s>e Higher ASF1a expression is a predictor of shorter disease-free survival (DFS) and overall survival (OS) in HCC patients.</s>
+          <s>A cutoff of 0.7 was used to categorize patients into low and high ASF1a expression groups (Mantal-Cox test was used in the survival analysis).</s>
+          <s>Hazard ratio (HR) was presented in each panel, respectively.</s>
+          <s>f Higher p21 cip1 expression is a predictor for longer disease-free survival.</s>
+          <s>A cutoff of 0.2 was used to split patients into low and high p21 cip1expression groups (Mantal-Cox test was used in the survival analysis).</s>
+          <s>HR was presented in each panel, respectively.</s>
+          <s>BC, breast cancer; GC, gastric cancer; HCC, hepatocellular carcinomaq; PCa, prostate cancer; qPCR, quantitative real-time PCR; TCGA, The Cancer Genome Atlas</s>
+        </p>
+      </div>
+      <div>
+        <head>Data availability</head>
+        <p>
+          <s>The analyzed datasets presented in the current study are available in TCGA (https://cancergenome.nih.gov),</s>
+          <s>GTEx (https://gtexportal.org/home/), and Oncomine (https://www.oncomine.org/resource/login.html) repositories.</s>
+          <s>
+            <ref type="figure">Fig. 8</ref> The schematic of the tentative mechanism underlying cancer cell senescence mediated by ASF1a inhibition</s>
+        </p>
+      </div>
+      <div>
+        <head>TSS</head>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig. 1</head>
+        <label>1</label>
+        <figDesc>ASF1a is overexpressed in a variety of primary human tumors. a Relative ASF1a mRNA levels were determined using qPCR in hepatocellular carcinoma (HCC) (T: tumor, n = 51) samples and adjacent non-tumorous liver tissues (N: non-tumorous, n = 29) (data are presented as the mean ± SD; P &lt; 0.0001). b ASF1a mRNA expression (transcripts per million in log scale) in liver hepatocellular carcinoma (LIHC) (T, n = 369; N, n = 160), prostate adenocarcinoma (PRAD) (T, n = 408; N, n = 152), stomach adenocarcinoma (STAD) (T, n = 408; N, n = 221), and breast invasive carcinoma (BRCA) (T, n = 1085; N, n = 291) (data are presented as the mean ± SD; P &lt; 0.05). qPCR, quantitative real-time PCR</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig. 2 (</head>
+        <label>2</label>
+        <figDesc>See legend on next page.)</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head/>
+        <label/>
+        <figDesc>d Cell cycles of HepG2 and LNCaP recorded by propidium iodide (PI) staining. Cell cycles in control groups are shown with red peaks and cell cycles in ASF1a knockdown groups are shown with blue peaks. Proportions of G0/G1, S, and G2/M phases are presented in pie charts (data presented are of three independent experiments in HepG2 and four independent experiments in LNCaP; P values are shown in each panel). e β-Gal staining of HepG2 and LNCaP cells. Senescent cells were stained with blue color (scale bar: 100 μm). f Quantification of β-gal staining-positive HepG2 and LNCaP cells (data are presented as the mean ± SD value of three independent experiments for HepG2 and LNCaP, respectively). HCC, hepatocellular carcinoma; PCa,</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Fig. 3 (</head>
+        <label>3</label>
+        <figDesc>See legend on next page.)</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Fig. 4 Fig. 5 (</head>
+        <label>45</label>
+        <figDesc>Cellular senescence occurring in ASF1a-inhibited cells is rescued by p21 cip1 or p53 loss. a β-Gal staining in HepG2 and LNCaP cells. Senescent cells are stained with blue color (scale bar: 100 μm). b-e Quantifications of figure (a) (data are presented as the mean ± SD of three independent experiments for HepG2 and LNCaP, respectively; P values are shown in each panel) See legend on next page.)</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
+        <head>Fig. 7</head>
+        <label>7</label>
+        <figDesc>ASF1a and p21 cip expression is negatively correlated with each other and serves as prognostic factors in HCC. a Relative p21 cip1 mRNA levels were assessed by qPCR in HCC (T: tumor, n = 51) patient samples and non-tumorous adjacent liver tissue (N: non-tumorous, n = 29)</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_1">
+        <head/>
+        <label/>
+        <figDesc>. Both HepG2 and LNCaP cells with ASF1a silencing accumulated at G0/G1 phase (siASF1a vs control, 50.7 ± 3.7 vs 43.3 ± 2.4%, P = 0.04 and 72.6 ± 3.8 vs 61.3 ± 1.2%, P = 0.001, for HepG2 and LNCaP, respectively) and decreased at G2/M phase (siASF1a vs control, 38.3 ± 1.9 vs 45.7 ± 2.3%, P = 0.001 and 18.8 ± 2.1 vs 26.0 ± 1.0%, P = 0.0009, for HepG2 and LNCaP, respectively). Cells became larger and flatter following ASF1a siRNA transfection in both HepG2 and LNCaP, which indicated a senescence-like morphology. We, thus, performed β-gal staining for senescence evaluation(Fig. 2e, f). As shown inFig. 2e, blue β-gal staining was readily seen in siASF1a-treated cells, while hardly detected in control cells, implying that knockdown of ASF1a led to senescence of HepG2 and LNCaP cells. Quantification is shown inFig. 2f(negative control vs ASF1a si1 vs ASF1a si2, 9.0 ± 0.8 vs 50.2 ± 1.9% vs 52.7 ± 2.0 and 2.2 ± 0.5% vs 47.9 ± 5.8 vs 53.6 ± 4.2%, for HepG2 and LNCaP cells, respectively; P values are shown in the appropriate panels).</figDesc>
+        <table/>
+      </figure>
+      <note place="foot">Official journal of the Cell Death Differentiation Association</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>We would like to thank Drs. Klas Strååt and Mingmei Shang (Karolinska Institutet) for the discussion and technical support, Prof. Galina Selivanova and Dr. Madhurendra Singh (Karolinska Institutet) for kindly offering HCT116-Cas9 and HCT116 p53-/-cells, and Prof. Chengyun Zheng (Shandong University Second Hospital) for providing normal UMSCs.</s>
+            <s>This study was supported by the grants from Swedish Cancer Society, Cancer Society in Stockholm, Swedish Research Council, Stockholm County Council, and Nanna Svartz and Karolinska Institutet Foundation.</s>
+            <s>Yujiao Wu was partially supported by a PhD scholarship from Chinese Scholarship Council.</s>
+          </p>
+        </div>
+        <div>
+          <head>Authors' contributions</head>
+          <p>
+            <s>Dawei Xu, Magnus Björkholm, and Yujiao Wu designed the research.</s>
+            <s>Dawei Xu, Magnus Björkholm, and Yujiao Wu wrote the manuscript.</s>
+            <s>Yujiao Wu and Jingya Yu performed the experiments.</s>
+            <s>Xidan Li and Yujiao Wu analyzed the data.</s>
+            <s>All authors read and approved the manuscript.</s>
+          </p>
+        </div>
+        <div>
+          <head>Ethics approval</head>
+          <p>
+            <s>The study was approved by the Ethics Review Committee of Shandong University Second Hospital and informed consent was obtained from the patients.</s>
+            <s>All experiments were performed in accordance with relevant guidelines and regulations.</s>
+          </p>
+        </div>
+        <div>
+          <head>Conflict of interest</head>
+          <p>
+            <s>The authors declare that they have no conflict of interest.</s>
+          </p>
+          <p>
+            <s>Publisher's note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+          <p>
+            <s>Supplementary Information accompanies this paper at (https://doi.org/</s>
+            <s>10.1038/s41419-019-1357-z).</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">CBP/p300-mediated acetylation of histone H3 on lysine 56</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Das</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Lucia</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Hansen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Tyler</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">459</biblScope>
+                <biblScope from="113" to="117" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">The histone chaperone Asf1 at the crossroads of chromatin and DNA checkpoint pathways</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Mousson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Ochsenbein</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Mann</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Chromosoma</title>
+              <imprint>
+                <biblScope unit="volume">116</biblScope>
+                <biblScope from="79" to="93" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Subfunctionalization via adaptive evolution influenced by genomic context: the case of histone chaperones ASF1a and ASF1b</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Abascal</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol. Biol. Evol</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope from="1853" to="1866" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Cell reprogramming. Histone chaperone ASF1A is required for maintenance of pluripotency and cellular reprogramming</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Gonzalez-Munoz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Arboleda-Estudillo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Otu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Cibelli</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">345</biblScope>
+                <biblScope from="822" to="825" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Histone chaperone ASF1B promotes human beta-cell proliferation via recruitment of histone H3.3</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Paul</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell Cycle</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope from="3191" to="3202" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Asf1b, the necessary Asf1 isoform for proliferation, is predictive of outcome in breast cancer</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Corpet</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">EMBO J</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope from="480" to="493" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Histone chaperone ASF1A predicts poor outcomes for patients with gastrointestinal cancer and drives cancer progression by stimulating transcription of beta-Catenin target genes</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Liang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">EBioMedicine</title>
+              <imprint>
+                <biblScope unit="volume">21</biblScope>
+                <biblScope from="104" to="116" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Rapid induction of alternative lengthening of telomeres by depletion of the histone chaperone ASF1</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">J</forename>
+                  <surname>O&amp;apos;sullivan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Struct. Mol. Biol</title>
+              <imprint>
+                <biblScope unit="volume">21</biblScope>
+                <biblScope from="167" to="174" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">The role of senescent cells in ageing</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Van Deursen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">509</biblScope>
+                <biblScope from="439" to="446" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Aging, cellular senescence, and cancer</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Campisi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Annu. Rev. Physiol</title>
+              <imprint>
+                <biblScope unit="volume">75</biblScope>
+                <biblScope from="685" to="705" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">The hallmarks of aging</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Lopez-Otin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Blasco</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Partridge</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Serrano</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Kroemer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell</title>
+              <imprint>
+                <biblScope unit="volume">153</biblScope>
+                <biblScope from="1194" to="1217" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Cellular senescence and the senescent secretory phenotype: therapeutic opportunities</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Tchkonia</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Van Deursen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Campisi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Kirkland</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Clin. Invest</title>
+              <imprint>
+                <biblScope unit="volume">123</biblScope>
+                <biblScope from="966" to="972" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Senescence in health and disease</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>He</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Sharpless</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell</title>
+              <imprint>
+                <biblScope unit="volume">169</biblScope>
+                <biblScope from="1000" to="1011" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Histone deacetylase inhibitors induce a senescence-like state in human cells by a p16-dependent mechanism that is independent of a mitotic clock</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Munro</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Barr</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Ireland</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Morrison</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Parkinson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Exp. Cell Res</title>
+              <imprint>
+                <biblScope unit="volume">295</biblScope>
+                <biblScope from="525" to="538" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">FoxM1 is up-regulated in gastric cancer and its inhibition leads to cellular senescence, partially dependent on p27 kip1</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Zeng</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Pathol</title>
+              <imprint>
+                <biblScope unit="volume">218</biblScope>
+                <biblScope from="419" to="427" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">The histone demethylase RBP2 Is overexpressed in gastric cancer and its inhibition triggers senescence of cancer cells</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Zeng</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Gastroenterology</title>
+              <imprint>
+                <biblScope unit="volume">138</biblScope>
+                <biblScope from="981" to="992" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Cancer progression and p53</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Carson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Lois</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Lancet</title>
+              <imprint>
+                <biblScope unit="volume">346</biblScope>
+                <biblScope from="1009" to="1011" unit="page"/>
+                <date type="published" when="1995"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">SWI/SNF regulates a transcriptional program that induces senescence to prevent liver cancer</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Tordella</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genes Dev</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope from="2187" to="2198" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Delta40p53alpha suppresses tumor cell proliferation and induces cellular senescence in hepatocellular carcinoma cells</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Ota</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Cell Sci</title>
+              <imprint>
+                <biblScope unit="volume">130</biblScope>
+                <biblScope from="614" to="625" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Ku80 functions as a tumor suppressor in hepatocellular carcinoma by inducing S-phase arrest through a p53-dependent pathway</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Wei</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Carcinogenesis</title>
+              <imprint>
+                <biblScope unit="volume">33</biblScope>
+                <biblScope from="538" to="547" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Paired box gene 5 is a novel tumor suppressor in hepatocellular carcinoma through interaction with p53 signaling pathway</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Hepatology</title>
+              <imprint>
+                <biblScope unit="volume">53</biblScope>
+                <biblScope from="843" to="853" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Transforming growth factor-beta induces senescence in hepatocellular carcinoma cells and inhibits tumor growth</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Senturk</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Hepatology</title>
+              <imprint>
+                <biblScope unit="volume">52</biblScope>
+                <biblScope from="966" to="974" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Telomeres are favoured targets of a persistent DNA damage response in ageing and stress-induced senescence</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Hewitt</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Commun</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope unit="page">708</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Human Asf1 and CAF-1 interact and synergize in a repaircoupled nucleosome assembly pathway</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Mello</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">EMBO Rep</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="329" to="334" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">The RCAF complex mediates chromatin assembly during DNA replication and repair</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Tyler</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">402</biblScope>
+                <biblScope from="555" to="560" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">ASF1a promotes non-homologous end joining repair by facilitating phosphorylation of MDC1 by ATM at doublestrand breaks</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Im</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Shibata</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Dutta</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol. Cell</title>
+              <imprint>
+                <biblScope unit="volume">68</biblScope>
+                <biblScope unit="page">65</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Yeast CAF-1 assembles histone (H3-H4)2 tetramers prior to DNA deposition</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Winkler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zhou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Dar</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Luger</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nucleic Acids Res</title>
+              <imprint>
+                <biblScope unit="volume">40</biblScope>
+                <biblScope from="10139" to="10149" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Acetylation in the globular core of histone H3 on lysine-56 promotes chromatin disassembly during transcriptional activation</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Williams</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Truong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Tyler</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proc. Natl. Acad. Sci. USA 105</title>
+              <meeting>Natl. Acad. Sci. USA 105</meeting>
+              <imprint>
+                <date type="published" when="2008"/>
+                <biblScope from="9000" to="9005" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <monogr>
+              <title level="m" type="main">ASF1A in gastric and colorectal cancer: on the hinge between genetics and epigenetics? EBioMedicine</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Henrique</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2017"/>
+                <biblScope unit="volume">21</biblScope>
+                <biblScope from="45" to="46" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">GEPIA: a web server for cancer and normal gene expression profiling and interactive analyses</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Tang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nucleic Acids Res</title>
+              <imprint>
+                <biblScope unit="volume">45</biblScope>
+                <biblScope from="98" to="102" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Formation of MacroH2A-containing senescence-associated heterochromatin foci and senescence driven by ASF1a and HIRA</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Dev. Cell</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope from="19" to="30" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Rb-mediated heterochromatin formation and silencing of E2F target genes during cellular senescence</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Narita</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell</title>
+              <imprint>
+                <biblScope unit="volume">113</biblScope>
+                <biblScope from="703" to="716" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Oncogenes and senescence: breaking down in the fast lane</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Hemann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Narita</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genes Dev</title>
+              <imprint>
+                <biblScope unit="volume">21</biblScope>
+                <biblScope from="1" to="5" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Downregulation of Wnt signaling is a trigger for formation of facultative heterochromatin and onset of cell senescence in primary human cells</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Ye</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol. Cell</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope from="183" to="196" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Definition of pRB-and p53-dependent and -independent steps in HIRA/ASF1a-mediated formation of senescence-associated heterochromatin foci</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Ye</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol. Cell. Biol</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope from="2452" to="2465" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">Senescence-associated heterochromatin foci are dispensable for cellular senescence, occur in a cell type-and insult-dependent manner and follow expression ofp16(ink4a)</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kosar</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell Cycle</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope from="457" to="468" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">Interplay between oncogene-induced DNA damage response and heterochromatin in senescence and cancer</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Di Micco</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Cell Biol</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope from="292" to="302" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">Telomerase reverse transcriptase promotes epithelialmesenchymal transition and stem cell-like traits in cancer cells</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Oncogene</title>
+              <imprint>
+                <biblScope unit="volume">32</biblScope>
+                <biblScope from="4203" to="4213" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">Crosstalk between chromatin state and DNA damage response in cellular senescence and cancer</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Sulli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Di Micco</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Di Fagagna</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Rev. Cancer</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope from="709" to="720" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">Asf1 facilitates dephosphorylation of Rad53 after DNA doublestrand break repair</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Tsabar</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genes Dev</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope from="1211" to="1224" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">ASF1A and ATM regulate H3K56-mediated cellcycle checkpoint recovery in response to UV irradiation</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Battu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Ray</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Wani</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nucleic Acids Res</title>
+              <imprint>
+                <biblScope unit="volume">39</biblScope>
+                <biblScope from="7931" to="7945" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

@@ -1,0 +1,1981 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:20+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Simulating the NaK Eutectic Alloy with Monte Carlo and Machine Learning OPEN</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+        <date type="published">Published: xx xx xxxx</date>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Douglas</forename>
+                <forename type="middle">M</forename>
+                <surname>Reitz</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName key="dep1" type="department">Center for Simulation and Modeling (formerly</orgName>
+                <orgName key="dep2" type="department">Computational Materials Science Center) and Department of Computational and Data Sciences</orgName>
+                <orgName type="institution">George Mason University</orgName>
+                <address>
+                  <postCode>22030</postCode>
+                  <settlement>Fairfax</settlement>
+                  <region>Virginia</region>
+                  <country key="US">USA</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Estela</forename>
+                <surname>Blaisten-Barojas</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName key="dep1" type="department">Center for Simulation and Modeling (formerly</orgName>
+                <orgName key="dep2" type="department">Computational Materials Science Center) and Department of Computational and Data Sciences</orgName>
+                <orgName type="institution">George Mason University</orgName>
+                <address>
+                  <postCode>22030</postCode>
+                  <settlement>Fairfax</settlement>
+                  <region>Virginia</region>
+                  <country key="US">USA</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Simulating the NaK Eutectic Alloy with Monte Carlo and Machine Learning OPEN</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date type="published">Published: xx xx xxxx</date>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41598-018-36574-y</idno>
+          <note type="submission">Received: 12 April 2018 Accepted: 22 November 2018</note>
+          <note>1 SCientifiC REPORTS | (2019) 9:704 |. Correspondence and requests for materials should be addressed to E.B.-B. (email: blaisten@gmu.edu)</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>Combining atomistic simulations and machine learning techniques can expedite significantly the materials discovery process.</s>
+            <s>We present an application of such methodological combination for the prediction of the melting transition and amorphous-solid behavior of the NaK alloy at the eutectic concentration.</s>
+            <s>We show that efficient prediction of these properties is possible via machine learning methods trained on the topological local structural properties.</s>
+            <s>The configurations resulting from Monte Carlo annealing of the NaK eutectic alloy are analyzed with topological attributes based on the Voronoi tessellation and using expectation-maximization clustering and Random Forest classification.</s>
+            <s>We show that the Voronoi topological fingerprints make an accurate and fast prediction of the alloy thermal behavior by cataloguing the atomic configurations into three distinct phases: liquid, amorphous solid, and crystalline solid.</s>
+            <s>Melting is found at 230 K by the sharp split of configurations classified as crystalline solid and as liquid.</s>
+            <s>With the proposed metrics, an arrest-motion temperature is identified at 130-140 K through a top down clustering of the atomic configurations catalogued as amorphous solid.</s>
+            <s>This statistical learning paradigm is not restricted to eutectic alloys or thermodynamics, extends the utility of topological attributes in a significant way, and harnesses the discovery of new material properties.</s>
+          </p>
+          <p>
+            <s>The characterization of metallic amorphous solids is more complex than the identification of crystalline matter 1 .</s>
+            <s>Currently, bulk amorphous metals have become useful engineering materials in several applications despite the fact that their microscopic properties at the medium and local range are not as well understood 2 .</s>
+            <s>For example, bulk amorphous alloys exhibit high strength, peculiar elastic properties, and other unusual engineering characteristics 3 .</s>
+            <s>Concurrently, several machine learning techniques have been introduced in the field of condensed matter for enhancing the understanding of phenomena in materials design 4-7 .</s>
+            <s>In this article we demonstrate that a topological inspection of the structure of the eutectic sodium-potassium (NaK) alloy using machine learning analyses predicts excellently the solidification fate of the liquid eutectic alloy leading to crystalline and amorphous solids.</s>
+            <s>Indeed, our findings are in full agreement with our Metropolis Monte Carlo (MMC) simulations using the second moment approximation (SMA) potential 8 described in upcoming sections.</s>
+          </p>
+          <p>
+            <s>When looking for compositions of binary metal alloys with high glass forming ability, the eutectic and slightly off-eutectic compositions is a good place to start 9,10 .</s>
+            <s>Eutectic NaK is a binary alloy formed by 22% Na and 78% K in atomic weight 11,12 .</s>
+            <s>This interesting alloy is liquid at room temperature, solidifies at temperatures below 260 K 12 , and is used as a coolant in nuclear reactors among other applications 13 .</s>
+            <s>Experimental measurements of the mass density have been performed for the NaK liquid phase from room to higher temperatures at the eutectic concentration 14 .</s>
+            <s>Numerical simulations of the NaK nanoalloy at various relative concentrations 15 showed that the magical nanostructure size with minimum excess energy corresponded to the eutectic composition.</s>
+            <s>However, there are no theoretical/computational studies of the extended condensed phases of eutectic NaK.</s>
+          </p>
+          <p>
+            <s>Our preliminary MMC simulations of the eutectic NaK alloy gave the thermal behavior of the enthalpy and the mass density along a computational procedure that annealed the system spanning high-to-low temperatures 16 .</s>
+            <s>Now we analayze the thermodynamic parameters (structure, enthalpy, system volume) exhaustively from the MMC atomistic simulations with the goal of neatly identifying the liquid, crystalline, and amorphous phases that develop along the annealing process.</s>
+            <s>An independent machine learning analysis using exclusively the atomic Cartesian coordinates obtained in the simulation runs is undertaken with the goal of verifying the identification of the three condensed phases predicted by the simulation.</s>
+            <s>Our machine learning strategy is based Published: xx xx xxxx OPEN www.nature.com/scientificreports/</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <p>
+          <s>SCientifiC REPORTS | (2019) <ref target="#b8" type="bibr">9</ref> :704 | DOI: <ref target="#b9" type="bibr">10</ref> .1038/s41598-018-36574-y on topological parameters determined by Voronoi-tessellating 17 the 3D space occupied by the atoms inside the computational box.</s>
+          <s>The Voronoi tessellation has been utilized for identifying topological characteristics of liquids <ref target="#b17" type="bibr">[18]</ref>
+            <ref target="#b18" type="bibr">[19]</ref>
+            <ref target="#b19" type="bibr">[20]</ref> , glasses <ref target="#b1" type="bibr">2,</ref>
+            <ref target="#b20" type="bibr">21,</ref>
+            <ref target="#b21" type="bibr">22</ref> , zeolites <ref target="#b22" type="bibr">23</ref> , clusters <ref target="#b23" type="bibr">24</ref> , among several others.</s>
+          <s>This article is organized as follows.</s>
+          <s>In the Model and methods section the model potential for the NaK alloy is provided along with a description of the Monte Carlo methodology used in the atomistic simulations.</s>
+          <s>The definition of the topological attributes used in the machine learning analyses is also included in this section.</s>
+          <s>The section entitled Energetics and structure of eutectic NaK describes the thermodynamic properties obtained along the thermal annealing process of the NaK alloy obtained with atomistic simulations and the structural analysis performed to characterize the three different phases detected.</s>
+          <s>The atomic positions in each configuration obtained in this section constitute the dataset that we used for further study.</s>
+          <s>Description of the topological attributes for the machine learning approaches of the dataset is given in the Data analyses of the topological attributes, along with the data-based analyses of principal component, unsupervised learning data clustering, and data classification approaches.</s>
+          <s>Our results highlight the ability of machine learning in analyzing intrinsic thermodynamic behavior, and at the same time providing valuable guidance for inspection of other metal alloys in condensed phases.</s>
+          <s>This work is concluded in Conclusion with a discussion of the results.</s>
+        </p>
+      </div>
+      <div>
+        <head>Model and Methods</head>
+        <p>
+          <s>Model potential.</s>
+          <s>The Second Moment Approximation (SMA) model potential is a many-body potential that approximates the local environment of every atom mimicking the distribution of electronic states in a d-band by a bonding term U el , supplemented with the U rep Born-Mayer term for the short-range repulsion <ref target="#b7" type="bibr">8</ref> .</s>
+          <s>The SMA is a classical version of the tight-binding approach.</s>
+          <s>As such, the SMA differs significantly from pair-additive classical models and has a characteristic very soft spheres repulsive wall.</s>
+          <s>The SMA analytical expression is a sum, where r ij are the interatomic distances and N is the total number of atoms.</s>
+          <s>The parameters for pure Na and K were developed in previous work <ref target="#b7" type="bibr">8</ref> .</s>
+          <s>Combination rules were employed for the Na-K pairs, with the geometric mean of the K and Na parameters for ζ 0 , ε 0 , p, q and a weighted arithmetic mean for = + r r r N N N N 0 0 0 NaK Na Na K K (N K , N Na being the number of K and Na atoms).</s>
+          <s>
+            <ref type="table">Table 1</ref> lists all SMA parameters used in this work.</s>
+        </p>
+        <formula xml:id="formula_0">U coh = U rep + U el , with ∑ ∑ ε = = = ≠ − − ( ) U e (1)</formula>
+        <p>
+          <s>Although this classical modeling of the atomic interactions is not unique, we believe that the parametrization of the SMA is very appropriate for describing soft metals as the NaK alloy.</s>
+        </p>
+        <p>
+          <s>Metropolis Monte Carlo atomistic simulations.</s>
+          <s>Currently, the science community employing atomistic simulations for researching condensed phases of materials in thermal equilibrium recur primarily to Molecular Dynamics (MD) and Metropolis Monte Carlo (MMC) <ref target="#b24" type="bibr">25</ref> , two extensively used methods.</s>
+          <s>Across time, atomistic simulations have become popular because of the research investments to produce software packages that automate the multitude of algorithms needed in these simulations.</s>
+          <s>The increase in popularity of MD over MMC has been driven by the ease to computer parallelize the algorithms for solving the MD underlying ordinary differential equations.</s>
+          <s>On the contrary, implementing Markov Chain Monte Carlo methods have faced the bottleneck of the intrinsically serial Markov chain process <ref target="#b25" type="bibr">26</ref> .</s>
+          <s>Over time, novel computational techniques have been developed commensurate with the advances of computer hardware resulting in several MMC packages <ref target="#b26" type="bibr">[27]</ref>
+            <ref target="#b27" type="bibr">[28]</ref>
+            <ref target="#b28" type="bibr">[29]</ref> .</s>
+        </p>
+        <p>
+          <s>In this work, we employ our in-house MMC implementation <ref target="#b26" type="bibr">27</ref> .</s>
+          <s>The MMC algorithm allows calculation of system properties averages at a temperature T by performing an importance sampling of the system states with energy E i and probability P i = exp(−E i /k B T)/Q.</s>
+          <s>Here, k B is the Boltzmann constant and Q is the partition function of the system.</s>
+          <s>Each sampled state is a configuration of the system given by the coordinates of all atoms composing the system.</s>
+          <s>The generated sequence of samples are linked through a Markov chain that requires ratios of probabilities between two consecutive samples for transitioning between them.</s>
+          <s>Thus, the algorithm eliminates the need of calculating the partition function Q.</s>
+          <s>The acceptance or rejection for transitioning from state i to state j is given by min(1, P j /P i ).</s>
+          <s>We used the isobaric-isothermal (NPT) version of the MMC <ref target="#b24" type="bibr">25</ref> .</s>
+        </p>
+        <p>
+          <s>MMC NPT simulations were run for a system of 2000 atoms with periodic boundary conditions and a cutoff radius of 2.381 nm at a constant pressure of 101.325 kPa.</s>
+          <s>At the alloy eutectic concentration, the computational box had 648 sodium atoms and 1352 potassium atoms.</s>
+          <s>The SMA model potential was used to compute the potential energy of the atomic configurations.</s>
+          <s>The initial configuration had the sodium atoms randomly distributed in the sites of a perfect bcc lattice at the pure potassium experimental density.</s>
+          <s>The remaining sites were populated ζ 0 (eV) ε 0 (eV) p q r 0 (nm) with potassium atoms.</s>
+          <s>A new system configuration is generated once each of the 2000 atoms was attempted a move of a fixed length step in random direction.</s>
+          <s>The magnitude of the atomic movements was dynamically adjusted throughout the simulation to maintain approximately a 50% rejection rate of attempted atomic moves.</s>
+          <s>The volume change of the computational box was attempted once every passage over the 2000 attempted atomic moves at constant volume.</s>
+          <s>Typically, in order to obtain the average values reported in the next section, 2 million passages through the full 2000 atoms were attempted after the system was sought to be in equilibrium.</s>
+          <s>For assessing cooling rates, we determine a rough estimate of the time equivalent to one MMC passage over all atoms (referred to as lattice-step).</s>
+          <s>A system of N = 2000 potassium atoms was first NPT-equilibrated at 337 K and 101.325 kPa.</s>
+          <s>Next, six NVT runs at the same temperature were run from different initial configurations to collect the atomic mean square displacement (MSD) as a function of lattice-steps.</s>
+          <s>From the MSD (t)</s>
+        </p>
+        <formula xml:id="formula_1">m i N 1 6 1 = ∑ ∑ = = t t N r r [ ( ) ( ) ] /(6 ) 6tD o m self i i 2 − =</formula>
+        <p>
+          <s>and the potassium empirical value 30 D self = 3.59 × 10 −9 m 2 /s, we very roughly estimate 33 × 10 6 lattice-steps ≈1 μs in the liquid phase.</s>
+          <s>This estimate will be used in the next section when referring to cooling rates.</s>
+        </p>
+      </div>
+      <div>
+        <head>Energetics and Structure of Eutectic NaK</head>
+        <p>
+          <s>The NaK alloy system was NPT equilibrated at 101.325 kPa and a high temperature of 700 K. Next, the system was annealed at constant pressure resulting in two branches of the the enthalpy and system volume below 230 K, as shown in <ref target="#fig_1" type="figure">Fig. 1</ref> .</s>
+          <s>These two extensive properties of soft materials display such behavior <ref target="#b30" type="bibr">[31]</ref>
+            <ref target="#b31" type="bibr">[32]</ref>
+            <ref target="#b32" type="bibr">[33]</ref> , which is predictable for a eutectic alloy.</s>
+          <s>The lower enthalpy/volume branch was associated to crystalline packing.</s>
+          <s>The higher enthalpy/ volume branch corresponds to liquid states that were supercooled below 230 K and became an amorphous solid below approximately 140 K <ref target="#b30" type="bibr">[31]</ref>
+            <ref target="#b31" type="bibr">[32]</ref>
+            <ref target="#b32" type="bibr">[33]</ref> .</s>
+        </p>
+        <p>
+          <s>Averages in <ref target="#fig_1" type="figure">Fig. 1</ref> were calculated over 2 million lattice-steps after the system was equilibrated at each temperature.</s>
+          <s>Using the estimate of 1 MMC lattice-step ≈0.03 ps, the following cooling/warming rates were applied along the annealing process.</s>
+          <s>A first cooling process gave rise to the liquid-amorphous branch of higher enthalpy and volume in <ref target="#fig_1" type="figure">Fig. 1</ref> by: (i) cooling from 700 to 150 K at a rate of 287 K/μs, (ii) re-cooling from 170 to 150 K at a slower rate of 100 K/μs enabled the system to reach a state of crystal character at 160 K (lowest temperature the system reached a crystal state from the upper branch), (iii) cooling from 150 to 50 K at 380 K/μs.</s>
+          <s>Secondly, starting from the state with crystal character at 160 K, an annealing process gave rise to the crystalline branch of lower enthalpy and volume in <ref target="#fig_1" type="figure">Fig. 1</ref> by: (i) warming-up from 160 to 229 K at 180 K/μs until at 230 K the system reverted to the liquid-amorphous branch (229 K was the highest temperature at which the system remained crystalline), (ii) slow cooling from 229 to 50 K at a rate of 73 K/μs.</s>
+        </p>
+        <p>
+          <s>In <ref target="#fig_1" type="figure">Fig. 1</ref> , the amorphous-liquid branch displays a smooth behavior resulting from cooling at various rates.</s>
+          <s>Meanwhile, the crystalline branch shows the two states at 160 K and 229 K between which the warming-up process was performed plus the states resulting from a slow cooling-down from 229 K to 50 K.</s>
+          <s>The insets of <ref target="#fig_1" type="figure">Fig. 1</ref> depict the warm-up states with green triangles and the cool-down states in black dots along the crystalline branch evidencing a hysteresis as observed in other alloys <ref target="#b33" type="bibr">34</ref> .</s>
+          <s>The annealing hysteresis is narrow in eutectic alloys because both metals melt simultaneously.</s>
+          <s>The temperature above which the system did not remain crystalline while warming-up was 230 K.</s>
+          <s>This temperature is lower than 260 K, the experimental melting temperature 12 .</s>
+          <s>On the other hand, the passage from liquid to supercooled liquid occurred gradually in the 240 K to 140 K range.</s>
+          <s>Around 130-140 K the upper branch had an inflection point consistent with an arrest in volume changes in configuration space and the system became a long-lived metastable amorphous solid <ref target="#b30" type="bibr">31,</ref>
+            <ref target="#b32" type="bibr">33</ref> .</s>
+          <s>Properties of the liquid were in good agreement with experimental values, indicating that the SMA potential gives a realistic representation of the liquid alloy.</s>
+          <s>The liquid heat capacity C p = 1019 J(kgK) −1 was calculated from a fit to the enthalpy slope between Additionally, the calculated equilibrium density of the liquid at 350 K was 0.89 g/cm 3 , comparing well with the experimental value 14 of 0.86 g/ cm <ref target="#b2" type="bibr">3</ref> .</s>
+          <s>No crystal structure measurements were found in the literature.</s>
+          <s>Analysis of the pair correlation function reveals clearly the different structural characteristics of the two types of solids, amorphous and crystalline, as illustrated in Figs 2 and 3, respectively.</s>
+          <s>The g K−K (r) and g Na−Na (r) were calculated with NVT MMC at 110 K and 1002.5 kg/m 3 for the crystalline solid and 992.57</s>
+          <s>kg/m 3 for the amorphous solid.</s>
+          <s>A clear difference between these two solids is seen in the g K−K (r) 2nd through 4rd peaks, where the peaks in the crystalline solid match well with the bcc lattice, while the amorphous solid displays the characteristic structural loss with a double bumped-second peak.</s>
+          <s>The crystal peaks are broadened because the potassium atoms occupy only 70% of the sample volume and the rest is occupied by sodium atoms.</s>
+          <s>The g Na−Na (r) shows differences between crystal and amorphous, although not as clear as for the K-K pairs.</s>
+          <s>In Figs 2 and 3, the system snapshots of the two solid systems at 110 K show visually the difference between them.</s>
+          <s>To help the visualization, the snapshots in these figures depict the computational box replicated three times in each Cartesian direction.</s>
+          <s>The crystalline structure in <ref target="#fig_2" type="figure">Fig. 2</ref> shows the periodic array of the atoms and the segregated Na cluster (grey) immersed in the potassium matrix (violet).</s>
+          <s>This Na cluster was shaped as a raft with 3-4 atomic layers of thickness, as desiring to form a lamellar structure with large surface area.</s>
+          <s>By contrast, the solid system depicted in <ref target="#fig_3" type="figure">Fig. 3</ref> was amorphous throughout the occupied volume, had several segregated smaller Na clusters, and a significantly larger number of isolated Na atoms.</s>
+          <s>Snapshots in Figs. 2, 3 were drawn with Ovito <ref target="#b34" type="bibr">35</ref> .</s>
+        </p>
+        <p>
+          <s>Further analysis of the two solids structure was done at 140 K with the Adaptive Common Neighbor Analysis (a-CNA) algorithm 36-38 that yielded a fingerprint of the local environment of each atom.</s>
+          <s>In the crystalline solid, 55% of atoms had a bcc entourage and about 7% were fcc or hcp.</s>
+          <s>The remaining atoms had no crystal symmetries in their local surroundings due to boundary atoms between the K matrix and the Na cluster.</s>
+          <s>In contrast, in the amorphous solid none of the atoms had a bcc crystal entourage, only 10 atoms had fcc-, and 2 had ico-surroundings.</s>
+          <s>Altogether, an insignificant number of atoms in the amorphous solid was characterized by a local surrounding with definite crystal signature.</s>
+        </p>
+        <p>
+          <s>In summary, the structural analyses provided additional support that two types of solids were obtained during the annealing process as previously differentiated by their thermodynamics.</s>
+          <s>There is no experimental evidence that the eutectic NaK solidifies only as a crystal.</s>
+          <s>Here, we have predicted that a metastable amorphous solid state is also reachable below 140 K along an annealing process.</s>
+          <s>The lower enthalpy branch ranging from 50-230 K pertained to a crystalline matrix of potassium atoms spanning the computational box and encasing an extended cluster of sodium atoms.</s>
+          <s>Meanwhile, the inflection point in the supercooled liquid-amorphous branch around 140 K suggested that below that temperature the system had transitioned to a solid, amorphous state.</s>
+          <s>The transition resembled a glass transition.</s>
+          <s>However, the amorphous solid did not display a homogeneous distribution of Na atoms in the K amorphous matrix as expected in a glass.</s>
+          <s>Instead, an amorphous matrix of K atoms encased several small clusters of Na atoms that were themselves also amorphous.</s>
+          <s>Therefore, we associated the inflection point with a temperature at which the supercooled liquid was viscous enough to transform definitely into a solid with amorphous structure but not necessarily a glass.</s>
+          <s>Such temperature depends on the cooling rate <ref target="#b30" type="bibr">[31]</ref>
+            <ref target="#b31" type="bibr">[32]</ref>
+            <ref target="#b32" type="bibr">[33]</ref> .</s>
+          <s>We refer to it as T a in following sections.</s>
+        </p>
+      </div>
+      <div>
+        <head>Data Analysis Based on a Machine Learning Protocol</head>
+        <p>
+          <s>The current advent of publicly available trajectory data from numerous atomistic simulations drives interest to the implementation of smart tools that could extract information beyond the calculation that generated them.</s>
+          <s>A goal of our data analyses was to find out if a machine learning protocol based exclusively on the knowledge of atomic coordinates collected along the MMC trajectories would provide a plausible physical description without knowing any of the thermodynamics findings described in the previous section.</s>
+          <s>Machine learning analyses require a choice of attributes, also known as descriptors or features.</s>
+          <s>We decided on the use of the Voronoi cells properties as sole attributes for the machine learning strategy described in this section because a Voronoi tessellation only requires knowledge of the coordinates of a set of points.</s>
+          <s>
+            <ref target="#fig_1" type="figure">Fig. 1</ref> insets were not included.</s>
+          <s>Not only all encountered Voronoi cells were identified, but also several properties derived from them were defined as attributes.</s>
+          <s>For example, attribute f5 was defined as the number of 5-edged cell faces.</s>
+          <s>Along our study, 48 different attributes were found in the structures gathered from the MMC simulation runs.</s>
+          <s>
+            <ref target="#tab_1" type="table">Table 2</ref> provides a list of them.</s>
+          <s>The Voronoi tessellation of the computational box containing 2000 atoms was performed for 18672 saved MMC configurations and the 48 topological attributes were calculated.</s>
+          <s>Configurations from the green points in <ref target="#fig_1" type="figure">Fig. 1</ref> inset were not included.</s>
+          <s>Each of the 48 attributes was found a certain number of times in a given configuration, which defined its frequency of occurrence.</s>
+          <s>These occurrence frequencies were entered in a data table of 18672 rows by 48 columns.</s>
+          <s>Therefore, the dataset spanned a 48-dimensional space.</s>
+        </p>
+      </div>
+      <div>
+        <head>Topological attributes based on Voronoi tessellation.</head>
+        <p>
+          <s>Attribute selection.</s>
+          <s>Reducing the number of attributes is a basic selection process in machine learning.</s>
+        </p>
+        <p>
+          <s>There are various methods for selecting the most significant attributes based on different types of ranking processes.</s>
+          <s>We used the Laplacian score <ref target="#b40" type="bibr">41</ref> for ranking the 48 topological attributes described in <ref target="#tab_1" type="table">Table 2</ref> .</s>
+          <s>This method acts as a filter for selecting attributes based on their ability of locality preservation.</s>
+          <s>The 26 top Laplacian-ranked attributes and their scores are listed in <ref target="#tab_2" type="table">Table 3</ref> .</s>
+          <s>Our machine learning study was based on these 26 attributes such that the data table was reduced to have 18672 rows by 26 columns.</s>
+          <s>The Appendix provides a figure depicting the ten top attributes and the data table is given in the Supplementary Information.</s>
+          <s>two-cluster split is visual in the PC1-PC3 plot of <ref target="#fig_6" type="figure">Fig. 4</ref> .</s>
+          <s>Although it is common practice to use this approach for clustering data, clearly such clustering analysis is unable of discerning between the amorphous solid data and the liquid data.</s>
+          <s>The PCA is also used for dimensionality reduction.</s>
+          <s>In our case, there is a clear possibility of reducing the data space dimensions from 26 to 3. Next section describes an unsupervised learning algorithm for clustering the data making use of the reduced dimensionality of the dataset.</s>
+        </p>
+      </div>
+      <div>
+        <head>Clustering of data.</head>
+        <p>
+          <s>There are several machine learning clustering algorithms for unsupervised learning.</s>
+          <s>We selected the expectation maximization (EM) <ref target="#b43" type="bibr">44,</ref>
+            <ref target="#b44" type="bibr">45</ref> , a two phase iterative method to find an estimate of the maximum likelihood of model parameters.</s>
+          <s>The EM algorithm attempts first to find an expected estimate of parameters for defining the log probability of the observed data, followed by a maximization of the log probability with respect to the parameters.</s>
+          <s>The EM is appropriate for our data set because of its ability to create clusters sustaining a disjoint partition of the data when the data can be modeled by a mixture of Gaussian functions.</s>
+          <s>The EM algorithm as implemented in Weka 46 was adopted.</s>
+          <s>The input attributes for the EM clustering were defined to be the projection of the original dataset onto the three predominant PCs, yielding a data table of 18672 rows by 3 columns.</s>
+          <s>These attributes were linearly uncorrelated.</s>
+          <s>The EM number of clusters to split the data was set to three, maximum number possible with three attributes.</s>
+          <s>The resulting clusters were named cluster-blue, cluster-red, and cluster-black.</s>
+        </p>
+        <p>
+          <s>For visualizing the clustered data we recurred to identify the temperature at which each of the 18672 configurations was produced and its corresponding enthalpy and system density.</s>
+          <s>Each configuration was given a color depending upon which of the three EM clusters it belonged to, blue for cluster-blue, red for cluster-red and black for cluster-black.</s>
+          <s>
+            <ref target="#fig_7" type="figure">Figure 5</ref> shows how the data clustered.</s>
+          <s>We remark that none of these thermodynamic values (temperature, enthalpy, density, volume) entered as attributes in the EM clustering or the PCA.</s>
+          <s>Clearly, we see that cluster-blue corresponds to crystalline structures from our MMC simulations, cluster-black corresponds to amorphous solid structures, and cluster-red contains the liquid and supercooled liquid.</s>
+          <s>Cluster-blue data are sharply separated from the rest, while there is a small region of temperature overlap between cluster-red and cluster-black in the 170-240 K temperature range.</s>
+          <s>Indeed, cluster-red (liquid) has no configurations below 160 K. Likewise cluster-black (amorphous solid) has no configurations above 240 K.</s>
+        </p>
+        <p>
+          <s>In summary, this unsupervised machine learning approach is very successful.</s>
+          <s>By only inspecting the topological characteristics of the simulated structures, the approach is able to assign the structures to the correct thermodynamics behavior obtained in the traditional simulations.</s>
+          <s>To verify how stable is the data split determined by the clustering method, in the next section we create a data classification model defining three classes as the three clusters obtained in this section.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Random Forests classification.</head>
+        <p>
+          <s>To detect the quality of the clustering data split, we recurred to defining three classes based on the EM clustering and create a model classifier with them.</s>
+          <s>We proceeded to sample a smaller dataset with 1934 points picked randomly from the 18672 data points.</s>
+          <s>A table was constructed with the 3 PC attributes of the 1934-points dataset.</s>
+          <s id="dataset-1" type="Dataset:Existing dataset">This reduced size dataset was used for training a classification model with three classes: liquid, crystal, amorphous, depending upon which EM cluster the samples belonged to.</s>
+          <s>The Random Forest classifier 47 , as implemented in Weka <ref target="#b45" type="bibr">46</ref> , was used to build our model classifier with 100 random trees, trained with 10-fold validation.</s>
+          <s>The evaluation on the training set had a mean absolute error of 0.002 with no confusion.</s>
+        </p>
+        <p>
+          <s>Once the 3-class classification model was created with the 1934-dataset, the remaining 16738 points were individually classified using the newly established data model.</s>
+          <s>As a result, the crystalline structures classified with 100% accuracy into the crystal class.</s>
+          <s>Meanwhile there was a minor confusion between the amorphous and the liquid classes, with the liquid class having 99.8% accuracy and the amorphous class a 98.9% accuracy.</s>
+          <s>In total only 55 structures were classified within a class different than the EM cluster to which they belonged.</s>
+          <s>This is shown in the confusion matrix given in <ref target="#tab_4" type="table">Table 4</ref> .</s>
+        </p>
+        <p>
+          <s>There are 55 samples out of the confusion matrix diagonal.</s>
+          <s>The 20 samples wrongly classified as liquid were distributed between 180 K and 240 K. Likewise the 35 structures wrongly classified as amorphous solid were spread from 170 K to 250 K. Summarizing, the Random Forest model built with 10% of the available MMC configurations was appropriate for classifying the remaining 90% of the configurations into the three classes that originated from the unsupervised clustering analysis: crystal, amorphous solid, and liquid.</s>
+          <s>Our results demonstrate explicitly the power of machine learning in estimating thermodynamic behavior and simultaneously providing valuable guidance to machine learning of metal alloys condensed phases.</s>
+        </p>
+        <p>
+          <s>As illustrated in <ref target="#fig_7" type="figure">Fig. 5</ref> , configurations belonging to the amorphous and liquid classes displayed thermodynamic a smooth temperature dependence in <ref target="#fig_1" type="figure">Fig. 1</ref> .</s>
+          <s>Therefore, a final top down analysis of these two types of configurations was performed with the EM algorithm to yield a first layer of a hierarchical clustering <ref target="#b47" type="bibr">48</ref> .</s>
+          <s>The amorphous class displayed a sharp split of samples into two sub-clusters.</s>
+          <s>By identifying each sample with its temperature during the simulation, <ref target="#fig_9" type="figure">Fig. 6a</ref> illustrates visually the results.</s>
+          <s>The crossing region between130-170 K was identified as the amorphous system transitioning to a volume-arrested amorphous solid.</s>
+          <s>The liquid class displayed a softer split of samples into two clusters, as shown in <ref target="#fig_9" type="figure">Fig. 6b</ref> .</s>
+          <s>The crossing region between 220-300 K was identified as temperatures where the system was pre-melting and melting.</s>
+          <s>Since the SMA potential of the pure metals predict melting temperature higher than experiment 8 , it is expected that the alloy melting region spreads beyond the experimental 260 K.</s>
+          <s>The system behavior in these transition regions was embedded in the attributes used, which we chose not to inspect before applying the latest clustering.</s>
+          <s>The Appendix includes the temperature behavior of ten top attributes.</s>
+        </p>
+        <p>
+          <s>As a validation of conclusions in <ref target="#fig_9" type="figure">Fig. 6</ref> , a moving interface NPT simulation 49 was implemented by creating an initial hybrid system with half of the computational box containing the crystalline solid configuration at 150 K and the other half with the liquid configuration at several temperatures between 200-250 K.</s>
+          <s>It was clearly seen that for all temperatures below 220 K the crystalline solid prevailed by solidifying the liquid half of the box.</s>
+          <s>Meanwhile for temperatures 220-250 K, the liquid configuration overcame.</s>
+          <s>As the temperature neared 220 K from above, a steep increase in MMC lattice steps were required.</s>
+        </p>
+        <p>
+          <s>In summary, this machine learning process has revealed the mechanism that the material underwent along annealing only based on the topological attributes generated from the available configurations of the system.</s>
+          <s>This is a remarkable success of domain-based data analytics that opens up the possibility for analyzing the ever increasing number of simulation configurations that are becoming available to the condensed matter community.</s>
+        </p>
+      </div>
+      <div>
+        <head>Conclusions</head>
+        <p>
+          <s>To conclude, we have shown that inspection of important thermodynamic properties of materials in the condensed phase is achievable by fusing the notions of topological attributes of the system and machine learning methods.</s>
+          <s>Using a dataset consisting of 18672 configurations obtained from NPT MMC simulations of the NaK eutectic alloy, we have presented a machine learning protocol that allows us to reveal a mapping between independently accessible attributes of a system and its various thermodynamic properties.</s>
+          <s>Firstly, we have shown that three phases of the eutectic NaK alloy can be identified, liquid, crystalline solid, and amorphous solid along the annealing procedure with NPT MMC simulations.</s>
+          <s>From the current simulations, 18672 configurations registering the Cartesian coordinates of 2000 atoms were saved for further analysis.</s>
+          <s>Secondly, based on the Voronoi tessellation, a set of 48 topological attributes were calculated for each configuration.</s>
+          <s>Thirdly, with machine learning techniques these topological attributes were reduced to 26 based on ranking, and further to 3 through principal component analysis.</s>
+          <s>The latter were used to cluster the configurations into three data clusters.</s>
+          <s>These data clusters reproduced almost perfectly the liquid, amorphous, and crystalline condensed phases determined with the simulations.</s>
+          <s>As a fourth step, a verification of the validity of the splitting into data clusters was carried out with the Random Forest classification.</s>
+          <s>Analysis of these classes and the connection to the temperatures at which the configurations were obtained allowed to validate the clustering process and provided a robust estimate of the temperature range at which the system melts, 220-310 K, and at which the system transitions into a amorphous-like solid at 130-170 K.</s>
+          <s>The methodology presented here is relevant for identifying (or screening) unknown materials with a targeted combination of topological properties in an efficient manner with high fidelity.</s>
+          <s>Our results highlight the ability of machine learning analyses for unraveling the embedded topological aspects of configuration space when inspecting condensed matter systems.</s>
+        </p>
+        <p>
+          <s>Appendix.</s>
+          <s>Ten of the top 48 topological attributes are depicted in <ref target="#fig_10" type="figure">Fig. 7(a,b)</ref> .</s>
+          <s>Average values per atom of the frequency of occurrence of each attribute at each simulation temperature are given for all attributes except V K and V Na .</s>
+          <s>For the latter two, a sum of all cell volumes of type K or Na is divided by the average volume of the full system.</s>
+          <s>Colored points depict configurations belonging to the three EM clusters: liquid (red), crystalline solid (blue), amorphous solid (grey).</s>
+          <s>Attributes in <ref target="#fig_10" type="figure">Fig. 7(a)</ref> displayed higher values for the crystalline structures below 200 K, while attributes in <ref target="#fig_10" type="figure">Fig. 7</ref> (b) favored the amorphous solid below 200 K.</s>
+          <s>Note that f5, f7, Z and Ze in <ref target="#fig_10" type="figure">Fig. 7(b)</ref> have their highest and almost constant value for temperatures below 140 K and decrease at higher temperatures.</s>
+          <s>This observation, plus the visible inflection point of the enthalpy and volume at that temperature, suggested that the supercooled liquid had transitioned to a solid amorphous state below approximately 140 K.</s>
+          <s>The V K and V Na illustrate the volume split assigned by the tessellation to the K and Na atoms, respectively.</s>
+          <s>Clearly shown is a Na volume contraction in the amorphous solid with respect to the crystalline solid, while the opposite effect is visible in the K volume.</s>
+        </p>
+      </div>
+      <div>
+        <head>Data Availability</head>
+        <p>
+          <s>The Supplementary Information provides the dataset used in this work, with attributes as columns and data points as rows.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_1">
+        <head>Figure 1 .</head>
+        <label>1</label>
+        <figDesc>Average enthalpy and volume of the NaK alloy as a function of temperature showing two branches. The top branch corresponds to liquid-amorphous, while the lower branch is crystalline. Insets show in green the warming-up process leading to the crystalline branch. SCientifiC REPORTS | (2019) 9:704 | DOI:10.1038/s41598-018-36574-y 290-310 K, agreeing well with the experimental value of 977 J(kgK) −1 at 298 K 14 .</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Figure 2 .</head>
+        <label>2</label>
+        <figDesc>Pair correlation functions of the crystalline solid at 110 K and ρ = 1002.5 kg/m 3 . A system snapshot showing the formation of crystal planes and a segregated Na cluster is also depicted, violet is K and grey is Na.</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Figure 3 .</head>
+        <label>3</label>
+        <figDesc>Pair correlation functions of the amorphous solid at 110 K and ρ = 992.57 kg/m 3 . A system snapshot showing the lack of atomic order and several Na atoms and clusters is also depicted, violet is K and grey is Na.SCientifiC REPORTS | (2019) 9:704 | DOI:10.1038/s41598-018-36574-y</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head/>
+        <label/>
+        <figDesc>A Voronoi tessellation is a segmentation of the available space into cells that fill such space densely<ref target="#b16" type="bibr">17</ref> . This tessellation generates groupings of planes into convex polyhedra(Voronoi cells)  such that all points on the cell are closer to the central site than to any other site. The resulting intersection of these planes is a Voronoi cell. We defined the machine learning attributes that described the atomic packing topology based on the Voronoi tessellation of the computational box volume, such that the position of each atom in the computational box was at the center of a Voronoi cell. Thus, a characteristic polyhedron enveloped each atom. Voronoi cells are characterized by the total number of faces CN (coordination number) and the number of 3-, 4-, 5-, and 6-edged faces comprising the cell. For example, CNn = 〈n 3 , n 4 , n 5 , n 6 〉 specifies a Voronoi cell with n faces, out of which there are n 3 3-edged faces, n 4 4-edged faces, etc. Certain Voronoi cells 2,22,39 have proven useful in identifying glasses because they give rise to Z and Ze atomic arrangements where the nearest-neighbor atoms to the central atom are connected with fivefold bonds. We have tracked the actual Voronoi cells instead of their associated polytetrahedral atomic arrangements and labeled them as cells of type Z or Ze according to their classification 2 . All other Voronoi cells were identified by their CN type. Voro++ 40 with periodic boundary conditions was used to generate the tessellation of the atomic configurations saved from the MMC simulation runs. Configurations corresponding to the green points in</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
+        <head/>
+        <label/>
+        <figDesc>combined number of faces of all Voronoi cellsV K , V NaThe average volume of potassium atom and sodium atom Voronoi cells</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
+        <head>Figure 4 .</head>
+        <label>4</label>
+        <figDesc>Correlation plots between the projections of the original dataset onto the 3 principal components. Posterior analysis identified the crystalline data ofFig. 1as being the blue cluster and the combined amorphous and liquid regions corresponding to the gray-colored cluster.SCientifiC REPORTS | (2019) 9:704 | DOI:10.1038/s41598-018-36574-y</figDesc>
+      </figure>
+      <figure xml:id="fig_7">
+        <head>Figure 5 .</head>
+        <label>5</label>
+        <figDesc>Enthalpy and mass density of the NaK eutectic alloy as a function of temperature colored by the EM cluster each point belongs to. Blue points pertain to structures in cluster-blue, which shows to contain all the crystalline structures. Black points correspond to structures in cluster-black, which are amorphous solid. Red points depict structures in cluster-red which are in the liquid/supercooled liquid region.SCientifiC REPORTS | (2019) 9:704 | DOI:10.1038/s41598-018-36574-y</figDesc>
+      </figure>
+      <figure xml:id="fig_9">
+        <head>Figure 6 .</head>
+        <label>6</label>
+        <figDesc>Number of samples in each of the two EM clusters obtained from the dataset belonging to (a) the amorphous class and (b) the liquid class. The temperature region 130-170 K in (a) was identified as estimate of the supercooled liquid transition to an amorphous solid where the volume has arrested its decrease. The temperature region 220-300 K in (b) was identified as an estimate for the melting transition. SCientifiC REPORTS | (2019) 9:704 | DOI:10.1038/s41598-018-36574-y</figDesc>
+      </figure>
+      <figure xml:id="fig_10">
+        <head>Figure 7 .</head>
+        <label>7</label>
+        <figDesc>Topological attributes as a function of temperature; points are averages per atom. Colors are consistent with the three EM clusters: red is liquid, black is supercooled liquid-amorphous solid, blue is crystalline solid. (a) Attributes have higher values for crystalline solid than amorphous solid below 200 K; (b) attributes have higher values for the amorphous solid than crystalline solid below 200 K. SCientifiC REPORTS | (2019) 9:704 | DOI:10.1038/s41598-018-36574-y</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>Table 1. The SMA Parameters for atomic pairs K-K 8 , Na-Na 8 , and Na-K<ref target="#b15" type="bibr">16</ref> .</figDesc>
+        <table>Na 
+0.29113 
+0.015955 
+10.13 
+1.30 
+0.3698949 
+
+K 
+0.26259 
+0.020545 
+10.58 
+1.34 
+0.4367299 
+
+NaK 
+0.27649 
+0.018105 
+10.35 
+1.32 
+0.4150866 
+
+SCientifiC REPORTS | 
+(2019) 9:704 | DOI:10.1038/s41598-018-36574-y 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_1">
+        <head>Table 2 .</head>
+        <label>2</label>
+        <figDesc>Type of the topological attributes used in this study.</figDesc>
+        <table/>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_2">
+        <head>Table 3 ,</head>
+        <label>3</label>
+        <figDesc>a principal component analysis (PCA)<ref target="#b41" type="bibr">42</ref> was performed. As a result, a set of 26 linearly uncorrelated attributes, called principal components (PC), were obtained. The principal components are linear combinations of the 26 original attributes that maximize their variance. This criterion is equivalent to minimizing the error function defined as the sum of squares in a regression analysis<ref target="#b42" type="bibr">43</ref> . The first three PCs, PC1, PC2, PC3, yielded variances of 97%, with contributions of 63%, 32%, and 2%, respectively. A projection of the original 18672 data set onto the planes of the leading PCs allows for a type of data clustering, as visually shown inFig. 4. An inspection of the data points in each of the two clusters based on what we know from the thermodynamics study, indicates that in the PC1-PC2 plane, the negative values correspond to crystalline structures (depicted blue) and the positive values correspond to the amorphous solid plus liquid data with no clear split between them. This same type of</figDesc>
+        <table>Rank 
+Attribute 
+Score 
+
+1 
+f5 
+0.99998 
+
+2 
+f6 
+0.99996 
+
+3 
+f4 
+0.99996 
+
+4 
+bcc 
+0.99962 
+
+5 
+f7 
+0.99940 
+
+6 
+f3 
+0.99938 
+
+7 
+faces 
+0.9986 
+
+8 
+CN14 
+0.9984 
+
+9 
+Z 
+0.9972 
+
+10 
+Ze 
+0.9947 
+
+11 
+Z12 
+0.9939 
+
+12 
+f8 
+0.9923 
+
+13 
+CN12 
+0.9915 
+
+14 
+Z13 
+0.9884 
+
+15 
+CN16 
+0.9876 
+
+16 
+V Na 
+0.9823 
+
+17 
+Ze15 
+0.9818 
+
+18 
+V K 
+0.9814 
+
+19 
+CN15 
+0.9813 
+
+20 
+Ze14 
+0.9793 
+
+21 
+CN13 
+0.9717 
+
+22 
+CN17 
+0.9707 
+
+23 
+Ze12 
+0.9421 
+
+24 
+Z14 
+0.9174 
+
+25 
+f9 
+0.9163 
+
+26 
+CN18 
+0.9128 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_3">
+        <head>Table 3 .</head>
+        <label>3</label>
+        <figDesc>The 26 highly ranked topological attributes based on their Laplacian score.</figDesc>
+        <table/>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_4">
+        <head>Table 4 .</head>
+        <label>4</label>
+        <figDesc>Confusion matrix for the Random Forest classification model.</figDesc>
+        <table/>
+      </figure>
+      <note place="foot">Principal component analysis. In order to eliminate correlations among the top 26 attributes listed in</note>
+      <note place="foot">© The Author(s) 2019</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>We acknowledge partial support from the National Science Foundation CHE-0626111 and the Thomas F. &amp; Kate Miller Jeffress Memorial Trust.</s>
+            <s>We are thankful to the Open Access Publishing Fund of George Mason University (GMU) for covering the cost of this publication.</s>
+            <s>Computations were done in the Argo cluster, Office of Research Computing, GMU.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Author Contributions</head>
+          <p>
+            <s>D.M.R. and E.B.-B.</s>
+            <s>contributed equally.</s>
+            <s>All authors reviewed the manuscript.</s>
+          </p>
+        </div>
+        <div>
+          <head>Additional Information</head>
+          <p>
+            <s>Supplementary information accompanies this paper at https://doi.org/10.1038/s41598-018-36574-y.</s>
+          </p>
+          <p>
+            <s>Competing Interests: The authors declare no competing interests.</s>
+          </p>
+          <p>
+            <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+          <p>
+            <s>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.</s>
+            <s>The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in a credit line to the material.</s>
+            <s>If material is not included in the article's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.</s>
+            <s>To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Glassy metals</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Rep. Prog. Phys</title>
+              <imprint>
+                <biblScope unit="volume">43</biblScope>
+                <biblScope from="353" to="432" unit="page"/>
+                <date type="published" when="1980"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Atomic-level structure and structure-property relationship in metallic glasses</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Cheng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Ma</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Prog. Mater. Sci</title>
+              <imprint>
+                <biblScope unit="volume">56</biblScope>
+                <biblScope from="379" to="473" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Bulk amorphous metal-An emerging engineering material</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Johnson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">JOM</title>
+              <imprint>
+                <biblScope unit="volume">54</biblScope>
+                <biblScope from="40" to="43" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Generalized Neural-Network representation of high-dimensional potential-energy surfaces</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Behler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Parrinello</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">98</biblScope>
+                <biblScope unit="page">146401</biblScope>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Discovering phase transitions with unsupervised learning</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">94</biblScope>
+                <biblScope unit="page">195105</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Learning thermodynamics with Boltzmann machines</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Torlai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Melko</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">94</biblScope>
+                <biblScope unit="page">165134</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Machine learning phases of matter</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Carrasquilla</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Melko</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Physics</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope from="431" to="434" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Structure and dynamics of alkali-metal clusters and fission of highly charged clusters</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Blaisten-Barojas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Papaconstantopoulos</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">57</biblScope>
+                <biblScope unit="page">15519</biblScope>
+                <date type="published" when="1998"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Binary eutectic clusters and glass formation in ideal glass-forming liquids</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Lu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Shen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Xing</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Sun</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">App. Phys. Lett</title>
+              <imprint>
+                <biblScope unit="volume">89</biblScope>
+                <biblScope unit="page">71910</biblScope>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Strategy for pinpointing the best glass-forming alloys</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Ma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Tan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Ma</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">App. Phys. Lett</title>
+              <imprint>
+                <biblScope unit="volume">86</biblScope>
+                <biblScope unit="page">191906</biblScope>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Pressure-temperature phase diagram of Na-K alloys and the effect of pressure on the resistance of the liquid phase</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Kean</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev</title>
+              <imprint>
+                <biblScope unit="volume">55</biblScope>
+                <biblScope from="750" to="754" unit="page"/>
+                <date type="published" when="1939"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <monogr>
+              <title level="m" type="main">Sodium-NaK Engineering Handbook</title>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Foust</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="1972"/>
+                <publisher>Gordon &amp; Breach, Science Publishers</publisher>
+                <biblScope unit="volume">1</biblScope>
+                <pubPlace>New York</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Assessment of alkali metal coolants for the ITER blanket. Fusion Engineering and Design</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Natesan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Reed</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Mattas</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proc. 3rd. Inter. Symp. Fusion Nuclear Tech</title>
+              <meeting>3rd. Inter. Symp. Fusion Nuclear Tech</meeting>
+              <imprint>
+                <date type="published" when="1995"/>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope from="457" to="466" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">The thermophysical and transport properties of eutectic NaK near room temperature</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>O&amp;apos;donnell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Papanikolaou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Reed</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">SciTech Connect</title>
+              <imprint>
+                <date type="published" when="1989"/>
+              </imprint>
+            </monogr>
+            <note type="report_type">Report</note>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Structure determination in 55-atom Li-Na and Na-K nanoalloys</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Aguado</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>López</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Chem. Phys</title>
+              <imprint>
+                <biblScope unit="volume">133</biblScope>
+                <biblScope unit="page">94302</biblScope>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Monte carlo study of the crystalline and amorphous NaK alloy</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Reitz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Blaisten-Barojas</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">International Conference on Computational Science</title>
+              <meeting>
+                <address>
+                  <addrLine>Zurich, Switzerland</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <date type="published" when="2017-06"/>
+                <biblScope unit="volume">108</biblScope>
+                <biblScope from="12" to="14" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Nouvelles applications des paramètres continus à la théorie des formes quadratiques</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Voronoi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Reine Angew. Math</title>
+              <imprint>
+                <biblScope unit="volume">133</biblScope>
+                <biblScope from="97" to="138" unit="page"/>
+                <date type="published" when="1908"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Geometry of the structure of monatomic liquids</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Bernal</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">439</biblScope>
+                <biblScope from="141" to="147" unit="page"/>
+                <date type="published" when="1959"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Liquid structure and self-diffusion</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Rahman</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Chem. Phys</title>
+              <imprint>
+                <biblScope unit="volume">45</biblScope>
+                <biblScope from="2585" to="2592" unit="page"/>
+                <date type="published" when="1966"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Random packings and the structure of simple liquids. I. The geometry of random close packing</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Finney</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proc. R. Soc. London, Ser. A</title>
+              <imprint>
+                <biblScope unit="volume">319</biblScope>
+                <biblScope from="479" to="493" unit="page"/>
+                <date type="published" when="1970"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Order, frustration, and defects in liquids and glasses</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Nelson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope from="5515" to="5535" unit="page"/>
+                <date type="published" when="1959"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Atomic packing and short-to-medium-range order in metallic glasses</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Sheng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Luo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Alamgir</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Bai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Ma</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">439</biblScope>
+                <biblScope from="419" to="425" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Identifying zeolite frameworks with a machine learning approach</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Lach-Hab</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Vaisman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Blaisten-Barojas</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Phys. Chem. C</title>
+              <imprint>
+                <biblScope unit="volume">113</biblScope>
+                <biblScope unit="page">21721</biblScope>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Identification of structure in condensed matter with the topological cluster classification</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Malins</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Williams</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Eggers</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Royall</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Chem. Phys</title>
+              <imprint>
+                <biblScope unit="volume">139</biblScope>
+                <biblScope unit="page">234506</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <monogr>
+              <title level="m" type="main">Understanding Molecular Simulation: from Algorithms to Applications</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Frenkel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Smit</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2001"/>
+                <publisher>Academic Press</publisher>
+              </imprint>
+            </monogr>
+            <note>2nd edition</note>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <monogr>
+              <title level="m" type="main">Markov Chain Monte Carlo in Practice</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Gilks</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Richardson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Spiegelhalter</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="1998"/>
+                <publisher>Chapman &amp; Hall, reprinted by CRC Press</publisher>
+                <pubPlace>Baton Rouge, New York</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">The Metropolis Monte Carlo method with CUDA enabled Graphic Processing Units</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Hall</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Blaisten-Barojas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Comp. Phys</title>
+              <imprint>
+                <biblScope unit="volume">258</biblScope>
+                <biblScope from="871" to="879" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Cassandra: An open source Monte Carlo package for molecular simulation</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Shah</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Comput. Chem</title>
+              <imprint>
+                <biblScope unit="volume">38</biblScope>
+                <biblScope from="1727" to="1739" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">DLMONTE: A general purpose program for parallel Monte Carlo simulation</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Purton</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Parker</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Molecular Simulation</title>
+              <imprint>
+                <biblScope unit="volume">39</biblScope>
+                <biblScope from="1240" to="52" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Diffusion studies in liquid potassium and rubidium</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Hsieh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Swalin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Acta Met</title>
+              <imprint>
+                <biblScope unit="volume">22</biblScope>
+                <biblScope from="219" to="226" unit="page"/>
+                <date type="published" when="1974"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">The nature of the glassy state and the behavior of liquids at low temperatures</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Kauzmann</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Chem. Rev</title>
+              <imprint>
+                <biblScope unit="volume">43</biblScope>
+                <biblScope from="219" to="256" unit="page"/>
+                <date type="published" when="1948"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Supercooled liquids and the glass transition</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Debenedetti</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Stilinger</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">410</biblScope>
+                <biblScope from="259" to="267" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Configurational entropy measurements in extremely supercooled liquids that break the glass ceiling</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Berthier</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PNAS</title>
+              <imprint>
+                <biblScope unit="volume">114</biblScope>
+                <biblScope from="11356" to="11361" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Phase diagram of an empirical potential: The case of Fe-Cu</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Lopasso</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Caro</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Turchi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">E</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. B</title>
+              <imprint>
+                <biblScope unit="volume">68</biblScope>
+                <biblScope unit="page">214205</biblScope>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Molecular dynamics of NaCl (B1 and B2) and MgO (B1) melting: Two-phase simulation</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Belonoshko</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Dubrovinsky</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">American Mineralogist</title>
+              <imprint>
+                <biblScope unit="volume">81</biblScope>
+                <biblScope from="303" to="316" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">Visualization and analysis of atomistic simulation data with Ovito the Open Visualization Tool</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Stukowski</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Modell. Simul. Mater. Sci. Eng</title>
+              <imprint>
+                <biblScope unit="volume">18</biblScope>
+                <biblScope unit="page">15012</biblScope>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">Molecular dynamics study of melting and freezing of small Lennard-Jones clusters</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Honeycutt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Andersen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Phys. Chem</title>
+              <imprint>
+                <biblScope unit="volume">91</biblScope>
+                <biblScope from="4950" to="4963" unit="page"/>
+                <date type="published" when="1987"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">Systematic analysis of local atomic structure combined with 3D computer graphics</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Faken</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Jónsson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Comput. Mater. Sci</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope from="279" to="286" unit="page"/>
+                <date type="published" when="1994"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">Structure identification methods for atomistic simulations of crystalline materials</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Stukowski</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Modell. Simul. Mater. Sci. Eng</title>
+              <imprint>
+                <biblScope unit="volume">20</biblScope>
+                <biblScope unit="page">45021</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">Atomic level structure in multicomponent bulk metallic glass</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">Q</forename>
+                  <surname>Cheng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Ma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Sheng</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Phys. Rev. Lett</title>
+              <imprint>
+                <biblScope unit="volume">102</biblScope>
+                <biblScope unit="page">245501</biblScope>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Voro++: A three-dimensional voronoi cell library in c++</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Rycroft</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Chaos</title>
+              <imprint>
+                <biblScope unit="volume">19</biblScope>
+                <biblScope unit="page">41111</biblScope>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">Laplacian score for feature selection</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>He</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Cai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Niyogi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Advances in Neural Information Processing Systems</title>
+              <meeting>
+                <address>
+                  <addrLine>Cambridge</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <publisher>MIT Press</publisher>
+                <date type="published" when="2004"/>
+                <biblScope unit="volume">17</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Duterman</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Principal Components Analysis</title>
+              <imprint>
+                <date type="published" when="1989"/>
+                <publisher>SAGE Publications</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">On a relation between principal components and regression analysis</title>
+              <author>
+                <persName>
+                  <forename type="first">J.-C</forename>
+                  <surname>Jong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Kotz</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am. Stat</title>
+              <imprint>
+                <biblScope unit="volume">53</biblScope>
+                <biblScope from="349" to="351" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b44">
+            <analytic>
+              <title level="a" type="main">Maximum likelihood from incomplete data via the EM algorithm</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Dempster</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Laird</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Rubin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. R. Stat. Soc. Series B Stat. Methodol</title>
+              <imprint>
+                <biblScope unit="volume">39</biblScope>
+                <biblScope from="1" to="38" unit="page"/>
+                <date type="published" when="1977"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b45">
+            <analytic>
+              <title level="a" type="main">On the convergence properties of the em algorithm</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Wu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Ann. Stat</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope from="95" to="103" unit="page"/>
+                <date type="published" when="1983"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b46">
+            <analytic>
+              <title level="a" type="main">The WEKA data mining software: An update</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Hall</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">SIGKDD Explor. Newsl</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope from="10" to="18" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b47">
+            <analytic>
+              <title level="a" type="main">Random forests</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Breiman</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Machine Learning</title>
+              <imprint>
+                <biblScope unit="volume">45</biblScope>
+                <biblScope from="5" to="32" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b48">
+            <analytic>
+              <title level="a" type="main">Novel approach for clustering zeolite crystal structures</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Lach-Hab</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Vaisman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Blaisten-Barojas</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Molecular Informatics</title>
+              <imprint>
+                <biblScope unit="volume">29</biblScope>
+                <biblScope from="297" to="301" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b49">
+            <monogr>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">Reports</forename>
+                  <surname>Scientific</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1038/s41598-018-36574-y</idno>
+              <imprint>
+                <date type="published" when="2019"/>
+                <biblScope unit="volume">9</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

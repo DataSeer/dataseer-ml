@@ -1,0 +1,2593 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:06+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">WIF1 enhanced dentinogenic differentiation in stem cells from apical papilla</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Haifeng</forename>
+                <surname>Wang</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Yu</forename>
+                <surname>Cao</surname>
+              </persName>
+            </author>
+            <title level="a" type="main">WIF1 enhanced dentinogenic differentiation in stem cells from apical papilla</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1186/s12903-018-0700-6</idno>
+          <note>R E S E A R C H A R T I C L E Open Access</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div subtype="dataseer">
+          <p>
+            <s>Background: Odontogenic mesenchymal stem cells (MSCs) isolated from tooth tissues are a reliable resource that can be utilized for dental tissue regeneration.</s>
+            <s>Exploration of the mechanisms underlying the regulation of their differentiation may be helpful for investigating potential clinical applications.</s>
+            <s>The stem cell niche plays an important role in maintaining cell functioning.</s>
+            <s>Previous studies found that Wnt inhibitory factor 1 (WIF1) is more highly expressed in apical papilla tissues than in stem cells from apical papilla (SCAPs) using microarray analysis.</s>
+            <s>However, the function of WIF1 in SCAPs remains unclear.</s>
+            <s>In the present study, we investigated the function of WIF1 during dentinogenic differentiation in SCAPs.</s>
+          </p>
+          <p>
+            <s>Methods: A retrovirus containing HA-WIF1 was used to overexpress WIF1 in SCAPs.</s>
+            <s>Using Western blot analysis, we verified the expression of HA-WIF1.</s>
+            <s cert="0.9784295558929443" id="dataset-1" type="Tabular data">Alkaline phosphatase (ALP) activity assays, Alizarin Red staining and quantitative calcium analysis were performed to investigate the in vitro potential for dentinogenic differentiation in SCAPs.</s>
+            <s cert="0.980144739151001" id="dataset-2" type="Real-Time Polymerase Chain Reaction">The expression of dentinogenesis-associated genes DSPP, DMP1, Runx2 and OSX were assayed using real-time RT-PCR.</s>
+            <s cert="0.9743809103965759" id="dataset-3" type="Tabular data">Transplantation experiments were used to measure dentinogenesis potential in vivo.</s>
+          </p>
+        </div>
+        <div>
+          <head>Results:</head>
+          <p>
+            <s>The real time RT-PCR results showed that WIF1 was more highly expressed in apical papilla tissues than in SCAPs, and its expression was increased during the process of dentinogenic differentiation.</s>
+            <s>Overexpression of WIF1 enhanced ALP activity and mineralization in vitro, as well as the expression of DSPP, DMP1 and OSX in SCAPs.</s>
+            <s>Moreover, in vivo transplantation experiments revealed that dentinogenesis in SCAPs was enhanced by WIF1 overexpression.</s>
+            <s>Conclusion: These results suggest that WIF1 may enhance dentinogenic differentiation potential in dental MSCs via its regulation of OSX and identified potential target genes that could be useful for improving dental tissue regeneration.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Background</head>
+        <p>
+          <s>Due to technological improvements in tissue engineering, stem cell therapy holds great promise for the advancement of regenerative medicine.</s>
+          <s>Mesenchymal stem cells (MSCs) are considered a good cell source for use in tissue regeneration <ref target="#b0" type="bibr">[1]</ref> .</s>
+          <s>From tooth tissues, it is possible to isolate several types of MSCs, including periodontal ligament (PDLSCs), dental pulp (DPSCs), and dental follicular stem cells (DFSCs), as well as stem cells from apical papilla (SCAPs) <ref target="#b0" type="bibr">[1]</ref>
+            <ref target="#b1" type="bibr">[2]</ref>
+            <ref target="#b2" type="bibr">[3]</ref> .</s>
+          <s>These MSCs are more intimately associated with dental tissues and can regenerate bone/dentin-like tissues and repair damaged dental tissues <ref target="#b0" type="bibr">[1]</ref>
+            <ref target="#b1" type="bibr">[2]</ref>
+            <ref target="#b2" type="bibr">[3]</ref>
+            <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref> .</s>
+          <s>However, their potential for use in clinical applications is restricted since the mechanisms underlying dentinogenic differentiation remain unclear.</s>
+        </p>
+        <p>
+          <s>The stem cell niche supports and maintains the functioning of MSCs.</s>
+          <s>This niche cannot be maintained when MSCs are isolated and cultured in vitro using current methods.</s>
+          <s>An impaired niche will not be beneficial for dental MSC-mediated tooth tissue regeneration <ref target="#b5" type="bibr">[6]</ref>
+            <ref target="#b6" type="bibr">[7]</ref>
+            <ref target="#b7" type="bibr">[8]</ref> .</s>
+          <s>Therefore, the identification of the key regulator of the niche that supports dental MSCs will aid in the enhancement of dental tissue regeneration.</s>
+          <s>A previous study examined gene expression profiles in apical papilla tissues, SCAPs and SCAP cell sheets and revealed several candidate key genes within the SCAP niche using microarray and bioinformatic analysis <ref target="#b8" type="bibr">[9]</ref> .</s>
+          <s>In their analysis, one canonical Wnt/β-catenin inhibitor, Wnt inhibitory factor 1 (WIF1), was found to be more highly expressed in apical papilla tissues than in SCAPs.</s>
+          <s>Wnt proteins are important regulators of differentiation in stem cells; the Wnt/ β-catenin pathway enhances osteogenesis of MSCs and osteoprogenitor cells by upregulating osteoblast-related genes <ref target="#b9" type="bibr">[10]</ref> .</s>
+          <s>However, another study found that the Wnt/ β-catenin pathway inhibited osteogenesis of PDLSCs <ref target="#b10" type="bibr">[11]</ref> .</s>
+          <s>This suggests that the Wnt/β-catenin pathway may play different roles in MSC regulation.</s>
+          <s>WIF1 belongs to a family of secreted modulators of Wnt proteins.</s>
+          <s>Other members of the Wnt modulator family, secreted frizzled-related proteins (sFRPs), play different roles in Wnt signaling depending on the cell subtype and model used <ref target="#b11" type="bibr">[12]</ref>
+            <ref target="#b12" type="bibr">[13]</ref>
+            <ref target="#b13" type="bibr">[14]</ref>
+            <ref target="#b14" type="bibr">[15]</ref>
+            <ref target="#b15" type="bibr">[16]</ref> .</s>
+          <s>In fact, WIF1 also has the effect of modulating Wnt signaling.</s>
+          <s>For example, a previous study found that WIF1 inhibits osteoblastic differentiation in mouse mesenchymal C3H10T1/2 cells <ref target="#b16" type="bibr">[17]</ref> .</s>
+          <s>Another study found that WIF1 is highly expressed at cartilage-mesenchyme interfaces in the skeleton during early development and that it blocks the classical Wnt signaling pathway and impairs Wnt3a-mediated inhibition of chondrogenesis in embryonic chick limb-bud cells <ref target="#b17" type="bibr">[18]</ref> .</s>
+          <s>However, the function of WIF1 during dentinogenic differentiation in dental MSCs remains unclear.</s>
+        </p>
+        <p>
+          <s>In the present study, we utilized SCAPs to investigate the functioning of WIF1 during dentinogenic differentiation.</s>
+          <s>We found that WIF1 could enhance the dentinogenic differentiation capacity in SCAPs.</s>
+          <s>These findings provide novel insights into the mechanisms underlying directed differentiation of dental tissue-derived MSCs and have valuable clinical applications.</s>
+        </p>
+      </div>
+      <div>
+        <head>Methods</head>
+        <p>
+          <s>Cell culture of SCAPs and human embryonic kidney (293 T) cells All our research involving human stem cells complies with the ISSCR "Guidelines for the Conduct of Human Embryonic Stem Cell Research."</s>
+          <s>Wisdom teeth were obtained from patients who provided written informed consent according to guidelines approved by the ethical committee (Ethical Committee Agreement, Beijing Stomatological Hospital, Ethics Review No. 2011-02).</s>
+          <s>We disinfected the teeth in 75% ethanol and then washed them with phosphate buffered saline (PBS).</s>
+          <s>The cell culture procedures used, as well as the phenotype, lineage markers and lineage differentiation potentials of SCAPs were identified and described in our previous study <ref target="#b18" type="bibr">[19]</ref> .</s>
+          <s>Briefly, apical papilla were gently separated from the apical root and then digested in a solution containing 3 mg/mL collagenase type I (Worthington Biochemical Corp., Lakewood, NJ, USA) and 4 mg/mL dispase (Roche Diagnostics Corp., Indianapolis, IN, USA) for 1 h at 37°C.</s>
+          <s>A single-cell suspension was produced by passing the solution through a 70 μm strainer (Falcon, BD Biosciences, San Jose, CA, USA).</s>
+          <s>The SCAPs were grown in DMEM alpha modified Eagle's medium (Invitrogen, Carlsbad, CA, USA) that was supplemented with 15% fetal bovine serum (FBS; Invitrogen), 2 mmol/L glutamine, 100 U/mL penicillin, and 100 μg/mL streptomycin (Invitrogen) at 37°C in a humidified incubator containing 5% CO2.</s>
+          <s>The culture medium was changed every 3 days.</s>
+        </p>
+        <p>
+          <s>Human embryonic kidney 293 T cells were maintained in complete DMEM medium containing 10% fetal bovine serum (FBS; Invitrogen), 100 U/mL penicillin, and 100 μg/mL streptomycin (Invitrogen).</s>
+        </p>
+      </div>
+      <div>
+        <head>Plasmid construction and viral infection</head>
+        <p>
+          <s>Full-length human WNT1 cDNA containing a hemagglutinin (HA) tag was produced using a standard gene synthesis method and subcloned into the pQCXIN retroviral vector (BD Clontech, Mountain View, CA, USA) between the Age I and EcoR1 restriction sites and verified by genetic sequencing.</s>
+          <s>The viral packaging was then performed in 293 T cells according to the manufacturer's protocol (BD Clontech).</s>
+          <s>Prior to viral infections, the SCAPs were subcultured overnight and then infected with retroviruses in the presence of polybrene (6 μg/ml; Sigma-Aldrich, St. Louis, MO, USA) for 12 h.</s>
+          <s>After 48 h, infected cells were selected using 600 mg/ML G418 (Sigma-Aldrich).</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Reverse transcriptase-polymerase chain reaction (RT-PCR) and real-time RT-PCR</head>
+        <p>
+          <s>Total RNA was isolated from SCAPs using Trizol reagent (Invitrogen).</s>
+          <s>cDNA was synthesized from a 2 μg aliquot of RNA containing oligo(dT), and reverse transcriptase(Invitrogen) according to the manufacturer's protocol.</s>
+          <s cert="0.9888032078742981" id="dataset-1" type="Genetic Data:Real-Time Polymerase Chain Reaction">Real-time PCRs were performed using the QuantiTect SYBR Green PCR kit (Qiangen, Hilden, Germany) and the Bio-Rad Real-time PCR Detection System.</s>
+          <s>The changes in gene expression were determined using the 2 -△△CT method.</s>
+          <s>The primers used to specific genes are shown in <ref target="#tab_0" type="table">Table 1</ref> .</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>In vitro cell differentiation assay</head>
+        <p>
+          <s cert="0.9825908541679382" id="dataset-5" type="Tabular data">Osteo/dentinogenesis differentiation assays were performed as previously reported <ref target="#b3" type="bibr">[4]</ref> .</s>
+          <s cert="0.9792361855506897" id="dataset-2" type="Genetic Data:Real-Time Polymerase Chain Reaction">The expression of the DSPP, DMP1, OSX and Runx2 genes was determined using real-time RT-PCR.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Alkaline phosphatase and alizarin red detection</head>
+        <p>
+          <s>Mineralization was induced in SCAPs using the STEM-PRO Osteogenesis Differentiation Kit (Invitrogen).</s>
+          <s cert="0.9885799288749695" id="dataset-3" type="Tabular data:Assay">ALP activity was assayed at 5 days using an ALP activity kit according to the manufacturer's protocol (Sigma-Aldrich).</s>
+          <s>For the mineralization assay, the cells were induced for 2 weeks, fixed in 70% ethanol and then stained with 2% Alizarin red (Sigma-Aldrich).</s>
+          <s cert="0.9668708443641663" id="dataset-4" type="Tabular data">To quantitatively measure calcium, the Alizarin Red-stained cells were then destained with 10% cetylpyridinium chloride in 10 mM sodium phosphate for 30 min at room temperature and measured at 562 nm in a multiplate reader; the amount of calcium was determined via comparison to a standard calcium curve obtained using calcium dilutions prepared in the same solution.</s>
+          <s>The final calcium level in each group was normalized to the total protein concentration measured in a duplicate plate.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Western blot analysis</head>
+        <p>
+          <s>The cells were lysed in RIPA buffer (10 mM Tris-HCL, 1 mM EDTA, 1% sodium dodecylsulfate (SDS), 1% NP-40, 1:100 proteinase inhibitor cocktail, 50 mM β-glycerophosphate, 50 mM sodium fluoride).</s>
+          <s>The samples were separated on a 10% SDS polyacrylamide gel and transferred to a polyvinylidene difluoride (PVDF) membrane using a semidry transfer apparatus (Bio-Rad, Hercules, CA,USA).</s>
+          <s>The membranes were blotted with 5% dehydrated milk for 2 h and then incubated with primary antibodies overnight.</s>
+          <s cert="0.816043496131897" id="dataset-9" type="Tabular data">The membranes then were incubated with horseradish peroxidase-conjugated anti-rabbit or anti-mouse IgG (Promega, Madison, WI, USA) and visualized using SuperSignal reagents (Pierce, Rockford, IL, USA).</s>
+          <s>The primary antibodies used were anti-HA (Clone No. C29F4, Cat No. 3724, Cell Signaling Technology, Beverly, MA, USA) and anti-glyceraldehyde 3-phosphate dehydrogenase (GAPDH; Clone No. GAPDH-71.1,</s>
+          <s>Cat No. G8795, Sigma-Aldrich), which is a housekeeping gene.</s>
+        </p>
+      </div>
+      <div>
+        <head>Transplantation in nude mice</head>
+        <p>
+          <s>These procedures were performed with the approval of the Ethics Committee and Animal Care and Use Committee of Beijing Stomatological Hospital at Capital Medical University (AEEI-2015-085).</s>
+          <s>The animals were purchased from the Institute of Animal Science at Vital River Co., Ltd. and were not treated with drugs or subject to any other procedures prior to transplantation.</s>
+          <s>Approximately 2.0 × 10 6 cells were mixed with 20 mg of HA/tricalcium phosphate ceramic particles (Engineering Research Center for Biomaterials, Sichuan University, Chengdu, China) and then transplanted subcutaneously beneath the dorsal skin of 10-week-old immunocompromised beige mice (nu/nu nude mice).</s>
+          <s>Eight weeks later, the tissues were harvested, fixed in 10% formalin, decalcified using 10% EDTA buffer (pH 8.0), and embedded in paraffin.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Immunohistochemical staining</head>
+        <p>
+          <s>Five μm sections were cut from tissue blocks, deparaffinized and hydrated.</s>
+          <s>The sections were then soaked in 3% H 2 O 2 for 10 min and washed 3 times in distilled water for 5 min each.</s>
+          <s>Epitope retrieval was conducted for 10 min in a microwave oven using 1.0 mmol/L EDTA buffer (pH 8.0), followed by a 1-h cool down period.</s>
+          <s>The sections were then washed 5 times with phosphate-buffered saline (PBS) for 5 min each time and incubated with 10% goat serum for 60 min to block nonspecific antibody binding.</s>
+          <s>After washing with PBS, the sections were incubated with a primary monoclonal antibody against DSPP (sc-33,586, Santa Cruz) overnight at 4°C.</s>
+          <s>After washing 3 times in PBS for 5 min each, the sections were incubated with horseradish peroxidase-conjugated anti-rabbit secondary antibody (Promega, Madison, WI, USA) for 30 min at room temperature.</s>
+          <s>The sections were washed 3 times in PBS for 5 min each and then subjected to coloration using a diaminobenzidine (DAB) kit (Cat No. 8059S, Cell Signaling Technology, Inc. Beverly, MA, USA).</s>
+          <s id="dataset-5" type="Image:Microscopy">Finally, the sections were counterstained with hematoxylin, dehydrated in a graded series of alcohol washes and mounted for light microscopy with neutral gum.</s>
+        </p>
+      </div>
+      <div>
+        <head>Statistical analyses</head>
+        <p>
+          <s>All data are presented as the mean ± standard deviation (SD).</s>
+          <s>All statistical calculations were performed using SPSS13.0</s>
+          <s>statistical software.</s>
+          <s>Student's t-test was performed to determine the statistical significance.</s>
+          <s>A P-value ≤0.05 was considered to denote statistical significance.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+      </div>
+      <div subtype="dataseer">
+        <head>WIF1 expression was increased during dentinogenic differentiation</head>
+        <p>
+          <s>We first examined the expression of WIF1 in SCAPs and apical papilla tissues.</s>
+          <s>The real-time RT-PCR results showed that WIF1 expression was much higher in apical papilla tissues than in SCAPs <ref target="#fig_0" type="figure">(Fig. 1a)</ref> .</s>
+          <s cert="0.9849207997322083" id="dataset-10" type="Tabular data">We then measured the expression of WIF1 in differentiated SCAPs upon the induction of mineralization.</s>
+          <s>We found that, when the osteo/dentinogenic differentiation process was induced in SCAPs, WIF1 expression was upregulated during dentinogenic differentiation in a time-dependent manner <ref target="#fig_0" type="figure">(Fig. 1b)</ref> .</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>WIF1 enhanced the dentinogenic differentiation potential of SCAPs in vitro</head>
+        <p>
+          <s>To understand the function of WIF1 during the differentiation of SCAPs, we inserted the WIF1 sequence along with an HA tag into a retroviral vector.</s>
+          <s>This construct resulted in the overexpression of ectopic HA-WIF1 when transduced into SCAPs via retroviral infection.</s>
+          <s cert="0.4178377687931061" id="dataset-11" type="Real-Time Polymerase Chain Reaction">After selection with 600 μg/mL G418 for 14 days, ectopic WIF1 expression was confirmed using real-time RT-PCR and Western blot analysis <ref target="#fig_1" type="figure">(Fig. 2a, b)</ref> .</s>
+          <s>Next, the transduced SCAPs were cultured in mineralization-inducing medium to investigate their dentinogenic differentiation potential.</s>
+          <s>At 5 days after induction, the results indicated that the overexpression of wild-type WIF1 promoted the activity of ALP, which is an early marker of dentinogenic differentiation in SCAPs <ref target="#fig_1" type="figure">(Fig. 2c)</ref> .</s>
+          <s>This was confirmed by the observation that mineralization was significantly enhanced in SCAPs that overexpressed WIF1 after 2 weeks of induction compared to cells infected with the empty vector, as determined using</s>
+        </p>
+        <p>
+          <s>Alizarin Red staining and quantitative calcium measurement <ref target="#fig_1" type="figure">(Fig. 2d, e)</ref> .</s>
+          <s>The dentinogenic marker genes, DSPP and DMP1, were subsequently measured.</s>
+          <s>The real-time RT-PCR results showed that DSPP was induced to a greater extent in SCAP-WIF1 cells than in SCAP-Vector cells after 2 weeks of induction <ref target="#fig_2" type="figure">(Fig. 3a)</ref> , and DMP1 was induced to a greater extent in SCAP-WIF1 cells than in SCAP-Vector cells at 1 and 2 weeks after induction <ref target="#fig_2" type="figure">(Fig. 3b)</ref> .</s>
+          <s>We also examined the expression of key transcription factors involved in dentinogenic differentiation in SCAPs, including runt-related transcription factor 2 (known as RUNX2) and OSX.</s>
+          <s>Our results showed that the mRNA levels of OSX were significantly higher in SCAP-WIF1 cells than in SCAP-Vector cells <ref target="#fig_2" type="figure">(Fig. 3c)</ref> , but that the expression of RUNX2 was not significantly altered <ref target="#fig_2" type="figure">(Fig. 3d)</ref> .</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>WIF1 enhanced in vivo dentinogenesis in SCAPs</head>
+        <p>
+          <s>We investigated whether the overexpression of WIF1 would affect SCAP dentinogenesis in vivo.</s>
+          <s>We transplanted control or WIF1 SCAPs subcutaneously into nude mice.</s>
+          <s>The transplanted tissues were harvested eight weeks after transplantation.</s>
+          <s>H&amp;E staining revealed that a greater amount of bone/dentin-like tissues were present in the mice transplanted with WIF1 SCAPs than showing that the expression of RUNX2 was not significantly altered by WIF1 overexpression.</s>
+          <s>GAPDH was used as an internal control.</s>
+          <s>Student's ttest was performed to determine the statistical significance.</s>
+          <s>All error bars represent the s.d.</s>
+          <s>(n = 3).</s>
+          <s>*P ≤ 0.05; **P ≤ 0.01 in mice transplanted with control SCAPs <ref target="#fig_3" type="figure">(Fig. 4a)</ref> .</s>
+          <s>Qualitative measurements also revealed a greater amount of bone/dentin-like tissues in mice transplanted with WIF1 SCAPs than in those transplanted with control SCAPs <ref target="#fig_3" type="figure">(Fig. 4b)</ref> .</s>
+          <s>These transplantation experiments demonstrated that WIF1 SCAPs generated a greater amount of bone/ dentin-like tissues than control SCAPs in vivo.</s>
+        </p>
+        <p>
+          <s cert="0.9774009585380554" id="dataset-12" type="Tabular data">Immunohistochemical staining was then used to measure the expression of DSPP.</s>
+          <s>The results revealed that more DSPP protein was present in tissues transplanted with SCAP-WIF1 cells than those transplanted with SCAP-Vector cells <ref target="#fig_3" type="figure">(Fig. 4c)</ref> .</s>
+          <s>Additionally, negative control staining was shown to occur in the absence of primary antibody <ref target="#fig_3" type="figure">(Fig. 4d)</ref> .</s>
+          <s>Overall together, these results showed that the overexpression of WIF1 significantly enhanced the formation of dentin-like tissues.</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>MSCs derived from dental tissues have proved to be promising source of cells with therapeutic potential, especially for use in dental tissue treatment.</s>
+          <s>However, little is known about the molecular mechanisms underlying the stability and differentiation potential of dental MSCs.</s>
+          <s>SCAPs are important for tooth development and regeneration.</s>
+          <s>A key factor that ensures successful dental tissue regeneration is the niche in which the dental cells and tissues are grown <ref target="#b19" type="bibr">[20]</ref> , which makes it important to identify the key genes that support the functioning of MSCs in the niche.</s>
+          <s>The commitment and differentiation of MSCs is reliant upon Wnt/β-catenin signaling <ref target="#b20" type="bibr">[21]</ref>
+            <ref target="#b21" type="bibr">[22]</ref>
+            <ref target="#b22" type="bibr">[23]</ref>
+            <ref target="#b23" type="bibr">[24]</ref> .</s>
+          <s>Therefore, we chose to investigate the Wnt/β-catenin modulator WIF1, which has been found to be more highly expressed in apical papilla tissues than in SCAPs using microarray analysis.</s>
+          <s>First, we confirmed that WIF1 expression was decreased in cultured SCAPs after isolation from apical papilla and then verified that it was increased during the dentinogenic differentiation process; this indicated that increased levels of WIF1 may play a role in dentinogenic differentiation.</s>
+        </p>
+        <p>
+          <s>Based on these observations, we investigated the function of WIF1 during the dentinogenic differentiation process in SCAPs.</s>
+          <s>The results showed that WIF1 promoted ALP activity and mineralization in vitro.</s>
+          <s>ALP is as an indicator of early differentiation during the osteo/dentinogenic process <ref target="#b24" type="bibr">[25]</ref> .</s>
+          <s>The presence of the mineralization phenotype is an indicator of the end stage of the osteo/dentinogenic differentiation process.</s>
+          <s>Moreover, transplantation experiments demonstrated that newly formed bone/dentin-like tissues were deposited by transplanted SCAPs-Vector and SCAPs-WIF1 cells and revealed that WIF1 promoted osteo/dentinogenesis in vivo.</s>
+          <s>These results indicated that WIF1 enhanced osteo/dentinogenic differentiation in SCAPs.</s>
+          <s>To clarify the role of WIF1 in dentinogenic differentiation, we also investigated dentinogenic differentiation indicators.</s>
+          <s>DSPP and DMP1 are classic odontogenic markers; DSPP is a key gene involved in the process of dentin formation, while DMP1 has been shown to regulate DSPP <ref target="#b25" type="bibr">[26]</ref>
+            <ref target="#b26" type="bibr">[27]</ref>
+            <ref target="#b27" type="bibr">[28]</ref> .</s>
+          <s>We found that the expression of DSPP and DMP1 were enhanced by WIF1 in SCAPs in vitro.</s>
+          <s>Additionally, a greater amount of DSPP protein was found in tissues, transplanted with SCAPs-WIF1 cells.</s>
+          <s>These results indicated that WIF1 was able to promote dentinogenic differentiation in SCAPs.</s>
+        </p>
+        <p>
+          <s>In addition, we found that expression of the transcription factor OSX was also enhanced by WIF1.</s>
+          <s>OSX is known to be an essential transcription factor that contains three C2H2-type zinc finger DNA binding domains.</s>
+          <s>Osx is expressed during the entire process of tooth development <ref target="#b28" type="bibr">[29]</ref>
+            <ref target="#b29" type="bibr">[30]</ref>
+            <ref target="#b30" type="bibr">[31]</ref> .</s>
+          <s>The amount of cementum has been found to be reduced due to Osx deletion in mice <ref target="#b31" type="bibr">[32]</ref> .</s>
+          <s>An in vitro study found that Osx increases Dspp transcription in odontoblast-like cells <ref target="#b32" type="bibr">[33]</ref> .</s>
+          <s>This evidence suggests that Osx plays a critical role in dentinogenic differentiation and formation.</s>
+          <s>We also found that the mRNA expression level of RUNX2, a transcription factor, was not significantly different in SCAP-WIF1 and SCAP-Vector cells.</s>
+          <s>An in vitro study by Han found that Wnt/β-catenin could enhance dentinogenic differentiation in DPSC cells by activating RUNX2 <ref target="#b33" type="bibr">[34]</ref> .</s>
+          <s>There are no reports suggesting that RUNX2 upregulation is not required for dentinogenic differentiation.</s>
+          <s>Overall, these findings suggested that WIF1 may enhance dentinogenic differentiation via enhancement of OSX expression in SCAPs.</s>
+        </p>
+      </div>
+      <div>
+        <head>Conclusion</head>
+        <p>
+          <s>Our results showed that WIF1 enhanced dentinogenic differentiation in SCAPs by activating the transcription factor OSX. Our work explored the mechanisms underlying the effects of WIF1 on directed differentiation in dental MSCs and provided potential target genes that could be useful in improving dental tissue regeneration using dental tissue-derived MSCs.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig. 1</head>
+        <label>1</label>
+        <figDesc>WIF1 expression was increased in apical papilla tissue and in SCAPs during the induction of mineralization. (a) Real-time RT-PCR resultsshowing that the expression of WIF1 was much higher in apical papilla tissues than in SCAPs. (b) Real-time RT-PCR results showing that the expression of WIF1 was increased during osteo/dentinogenic differentiation in SCAPs. GAPDH was used as an internal control. Student's t-test was performed to determine the statistical significance. All error bars represent the s.d. (n = 3). *P ≤ 0.05; **P ≤ 0.01</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig. 2</head>
+        <label>2</label>
+        <figDesc>Overexpression of WIF1 enhanced osteo/dentinogenic differentiation in SCAPs. (a, b) Real-time RT-PCR result (a) and Western blot result (b) showing that WIF1 was overexpressed in SCAPs due to retrovirus infection. GAPDH was used as an internal control. (c) ALP activity assays showing that ALP activity was enhanced in SCAPs that overexpressed WIF1 5 days after mineralization induction. (d, e) Alizarin Red staining (d) and calcium quantitative analysis (e) showing that overexpression of WIF1 enhanced mineralization in SCAPs 2 weeks after mineralization induction. Student's t-test was performed to determine the statistical significance. All error bars represent the s.d. (n = 3). *P ≤ 0.05; **P ≤ 0.01</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig. 3</head>
+        <label>3</label>
+        <figDesc>Overexpression of WIF1 increased the expressions of DPM1, DSPP and OSX in SCAPs. Real-time RT-PCR results showing that the expression of DSPP (a) DMP1 (b), and OSX (c) were increased in WIF1 overexpressing SCAPs compared to control SCAPs. (d) Real-time RT-PCR results</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Fig. 4</head>
+        <label>4</label>
+        <figDesc>Overexpression of WIF1 enhanced dentinogenesis in SCAPs. SCAPs were transplanted subcutaneously into immunocompromised mice and monitored for 8 weeks. (a) H&amp;E-stained micrographs showing bone/dentin-like tissue formation. (b) Qualitative measurement of bone/dentin-like tissues in tissue samples. (c) Immunohistochemical results demonstrating DSPP expression. (d) Immunohistochemical results showing negative control staining in the absence of primary antibody. All error bars represent the s.d. (n = 5). Bar: 100 μm. **P ≤ 0.05. B/D, bone/dentin-like tissues; HA, hydroxyapatite tricalcium carrier</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head/>
+        <label/>
+        <figDesc>Abbreviations ALP: Alkaline phosphatase; DFSCs: Stem cells from dental follicles; DMP1: Dentin matrix protein 1; DPSCs: Dental pulp stem cells; DSPP: Dentin sialophosphoprotein; HA: Hemagglutinin; MSCs: Mesenchymal stem cells; OSX: Osterix; PBS: Phosphate-buffered saline; PDLSCs: Periodontal ligament; RT-PCR: Reverse transcriptase-polymerase chain reaction; SCAPs: Stem cells from apical papilla; sFRPs: Secreted frizzled-related proteins; SPSS: Statistical Package for Social Science; WIF1: Wnt inhibitory factor 1 Received: 30 December 2017 Accepted: 19 December 2018</figDesc>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_0">
+        <head>Table 1</head>
+        <label>1</label>
+        <figDesc>Primers sequences used in the Real-time RT-PCR</figDesc>
+        <table>Gene Symbol 
+Primer Sequences (5′--3′) 
+
+GAPDH-F 
+CGAACCTCTCTGCTCCTCCTGTTCG 
+
+GAPDH-R 
+CATGGTGTCTGAGCGATGTGG 
+
+DSPP-F 
+TTCCGATGGGAGTCCTAGTG 
+
+DSPP-R 
+TCTTCTTTCCCATGGTCCTG 
+
+DMP1-F 
+GTCCCCTGAGGATGAGAACA 
+
+DMP1-R 
+CCTCGCTCTGACTCTCTGCT 
+
+OSX-F 
+GCCAGAAGCTGTGAAACCTC 
+
+OSX-R 
+AGGGAGATGGGGTACATTCC 
+
+WIF1-F 
+CAAAGCAAACTGCTCAACCA 
+
+WIF1-R 
+CTCCATTTCGACAGGGTTGT 
+
+</table>
+      </figure>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>We would like to acknowledge Pro.</s>
+            <s>Zhipeng Fan from the Capital Medical University School of Stomatology for his assistance in the study design.</s>
+          </p>
+        </div>
+        <div>
+          <head>Funding</head>
+          <p>
+            <s>This work was supported by grants from the National Natural Science Foundation of China (81670948; provided to YC) and the China Rehabilitation Research Center Foundation (2017ZX-03; provided to HW).</s>
+          </p>
+        </div>
+        <div>
+          <head>Availability of data and materials</head>
+          <p>
+            <s>The datasets used for the current study are available from the corresponding author by request.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <p>
+            <s>Authors' contributions HW collected and analyzed the data and wrote the first manuscript.</s>
+            <s>YC contributed to the study design, supervised the data collection, participated in manuscript preparation and critically reviewed the intellectual content of the paper.</s>
+            <s>Both authors read and approved the final manuscript.</s>
+          </p>
+          <p>
+            <s>Ethics approval and consent to participate This study was approved by the Ethics Committee of the Beijing Stomatological Hospital at the Capital Medical University (Ethics Review No. 2011-02); all patients provided written informed consent.</s>
+          </p>
+        </div>
+        <div>
+          <head>Consent for publication</head>
+          <p>
+            <s>Not applicable.</s>
+          </p>
+        </div>
+        <div>
+          <head>Competing interests</head>
+          <p>
+            <s>The authors report no conflicts of interest.</s>
+            <s>The authors alone are responsible for the content and writing of this paper.</s>
+            <s>All authors read and approved the final manuscript prior to publication.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Regenerative Applications Using Tooth Derived Stem Cells in Other Than Tooth Regeneration: A Literature Review</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Park</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Cha</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Park</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Stem Cells Int</title>
+              <imprint>
+                <biblScope unit="page">9305986</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Mesenchymal stem cells derived from dental tissues vs. those from other sources: their biology and role in regenerative medicine</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Huang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Gronthos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Shi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Dent Res</title>
+              <imprint>
+                <biblScope unit="volume">88</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope from="792" to="806" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Tooth-derived stem cells: Update and perspectives</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Saito</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Silvério</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">Z</forename>
+                  <surname>Casati</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Sallum</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Nociti</surname>
+                  <genName>Jr</genName>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">World J Stem Cells</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="399" to="407" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Functional tooth restoration by allogeneic mesenchymal stem cell-based bio-root regeneration in swine</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Wei</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Song</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Ding</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Fan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Shi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Stem Cells Dev</title>
+              <imprint>
+                <biblScope unit="volume">22</biblScope>
+                <biblScope unit="issue">12</biblScope>
+                <biblScope from="1752" to="62" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Periodontal ligament stem cells regulate B lymphocyte function via programmed cell death protein 1</title>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Ding</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Fan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Ding</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Tang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Stem Cells</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope from="1371" to="82" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Alk5-mediated transforming growth factor β signaling acts upstream of fibroblast growth factor 10 to regulate the proliferation and maintenance of dental epithelial stem cells</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zhao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Han</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Kaartinen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Chai</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mol Cell Biol</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope unit="issue">10</biblScope>
+                <biblScope from="2079" to="89" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">The expression of MMP-8 in human odontoblasts and dental pulp cells is down-regulated by TGF-beta1</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Palosaari</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Wahlgren</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Larmas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Rönkä</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Sorsa</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Salo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Tjäderhane</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Dent Res</title>
+              <imprint>
+                <biblScope unit="volume">79</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="77" to="84" unit="page"/>
+                <date type="published" when="2000"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Side population cells isolated from porcine dental pulp tissue with self-renewal and multipotency for dentinogenesis, chondrogenesis, adipogenesis, and neurogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Iohara</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Zheng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Ito</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Tomokiyo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Matsushita</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Nakashima</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Stem Cells</title>
+              <imprint>
+                <biblScope unit="volume">24</biblScope>
+                <biblScope unit="issue">11</biblScope>
+                <biblScope from="2493" to="503" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Analysis of gene expression profiles of apical papilla tissues, stem cells from apical papilla and cell sheet</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Diao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Dong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Du</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Fan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell Prolif</title>
+              <imprint>
+                <biblScope unit="volume">50</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Baicalin, a flavone, induces the differentiation of cultured osteoblasts: an action via the Wnt/beta-catenin signaling pathway</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Guo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Choi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Cheung</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Dong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Tsim</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Biol Chem</title>
+              <imprint>
+                <biblScope unit="volume">286</biblScope>
+                <biblScope unit="issue">32</biblScope>
+                <biblScope from="27882" to="93" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">TCF3, a novel positive regulator of osteogenesis, plays a crucial role in miR-17 modulating the diverse effect of canonical Wnt signaling in different microenvironments</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Guo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Hu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Luo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Shi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Cai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Ding</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Jin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell Death Dis</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope unit="page">539</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Characterization of the Wnt inhibitors secreted frizzled-related proteins (SFRPS) in human adipose tissue</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Ehrlund</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Mejhert</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Lorente-Cebrián</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Aström</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Dahlman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Laurencikiene</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Rydén</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Clin Endocrinol Metab</title>
+              <imprint>
+                <biblScope unit="volume">98</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="503" to="511" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Enhanced human mesenchymal stem cell survival under oxidative stress by overexpression of secreted frizzled-related protein 2 gene</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Pomduk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Kheolamai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <surname>-Pratya</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Wattanapanitch</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Klincumhom</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Issaragrisil</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Ann Hematol</title>
+              <imprint>
+                <biblScope unit="volume">94</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="319" to="346" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">sFRP2 suppression of bone morphogenic protein (BMP) and Wnt signaling mediates mesenchymal stem cell (MSC) self-renewal promoting engraftment and myocardial repair</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Alfaro</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Vincent</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Saraswati</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Thorne</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Hong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Young</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Biol Chem</title>
+              <imprint>
+                <biblScope unit="volume">285</biblScope>
+                <biblScope unit="issue">46</biblScope>
+                <biblScope from="35645" to="53" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Demethylation of SFRP2 by Histone Demethylase KDM2A Regulated the Osteo-/dentinogenic Differentiation of Stem Cells from Apical Papilla</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">X</forename>
+                  <surname>Yu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Diao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Cao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Dong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Fan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell Prolif</title>
+              <imprint>
+                <biblScope unit="volume">49</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="330" to="370" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">SFRP2 enhanced the adipogenic and neoronal differentiation potentials of stem cells from apical papilla</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Dong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Diao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Yu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Fan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell Biol Int</title>
+              <imprint>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="534" to="577" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Wnt inhibitory factor (WIF)-1 inhibits osteoblastic differentiation in mouse embryonic mesenchymal cells</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Cho</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Sun</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Jung</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Her</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Cho</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Choi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Shin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bone</title>
+              <imprint>
+                <biblScope unit="volume">44</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="1069" to="77" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Wif-1 is expressed at cartilagemesenchyme interfaces and impedes Wnt3a-mediated inhibition of chondrogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Surmann-Schmitt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Widmann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <surname>Dietz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Saeger</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Eitzinger</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Nakamura</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Rattel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Latham</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Hartmann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Von</forename>
+                  <surname>Der Mark</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Schett</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Von</forename>
+                  <surname>Der Mark</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Stock</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Cell Sci</title>
+              <imprint>
+                <biblScope unit="volume">122</biblScope>
+                <biblScope from="3627" to="3637" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Epiregulin can promote proliferation of stem cells from the dental apical papilla via MEK/Erk and JNK signalling pathways</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Cao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Xia</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Qi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Du</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Ma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Fan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell Prolif</title>
+              <imprint>
+                <biblScope unit="volume">46</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="447" to="56" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Growth factor delivery for oral and periodontal tissue engineering</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Kaigler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Cirelli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Giannobile</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Expert Opin Drug Deliv</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="647" to="62" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Wnt signaling behaves as a "master regulator" in the osteogenic and adipogenic commitment of human amniotic fluid mesenchymal stem cells</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>D&amp;apos;alimonte</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Lannutti</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Pipino</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Di</forename>
+                  <surname>Tomo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Pierdomenico</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Cianci</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Antonucci</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Marchisio</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Romano</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Stuppia</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Caciagli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Pandolfi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Ciccarelli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Stem Cell Rev</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="642" to="54" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Canonical WNT signaling promotes osteogenesis by directly stimulating Runx2 gene expression</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Gaur</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Lengner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Hovhannisyan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Bhat</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Bodine</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Komm</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Javed</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Van Wijnen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Stein</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Stein</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Lian</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Biol Chem</title>
+              <imprint>
+                <biblScope unit="volume">280</biblScope>
+                <biblScope unit="issue">39</biblScope>
+                <biblScope from="33132" to="33140" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Multi-lineage differentiation of mesenchymal stem cells -To Wnt, or not Wnt</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Visweswaran</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Pohl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Arfuso</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Newsholme</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Dilley</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Pervaiz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Dharmarajan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int J Biochem Cell Biol</title>
+              <imprint>
+                <biblScope unit="volume">68</biblScope>
+                <biblScope from="139" to="186" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">The canonical Wnt signaling pathway promotes chondrocyte differentiation in a Sox9-dependent manner</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Yano</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Kugimiya</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ohba</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Ikeda</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Chikuda</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Ogasawara</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Ogata</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Takato</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Nakamura</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Kawaguchi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Chung</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biochem Biophys Res Commun</title>
+              <imprint>
+                <biblScope unit="volume">333</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="1300" to="1308" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Networks and hubs for the transcriptional control of osteoblastogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Lian</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Stein</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Javed</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Van Wijnen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Stein</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Montecino</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">Q</forename>
+                  <surname>Hassan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Gaur</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Lengner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Young</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Rev Endocr Metab Disord</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="issue">1-2</biblScope>
+                <biblScope from="1" to="16" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Temporal changes in matrix protein synthesis and mRNA expression during mineralized tissue formation by adult rat bone marrow cells in culture</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Yao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Reynaldo</forename>
+                  <surname>Todescan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Sodek</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Bone Miner Res</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="231" to="271" unit="page"/>
+                <date type="published" when="1994"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Proteolytic processing of dentin sialophosphoprotein (DSPP) is essential to dentinogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Zhu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Gibson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Lu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">Q</forename>
+                  <surname>Feng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Qin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Biol Chem</title>
+              <imprint>
+                <biblScope unit="volume">287</biblScope>
+                <biblScope unit="issue">36</biblScope>
+                <biblScope from="30426" to="30461" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">The rescue of dentin matrix protein 1 (DMP1)-deficient tooth defects by the transgenic expression of dentin sialophosphoprotein (DSPP) indicates that DSPP is a downstream effector molecule of DMP1 in dentinogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Gibson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Zhu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Yuan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Ruest</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">Q</forename>
+                  <surname>Feng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Souza</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Qin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Lu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Biol Chem</title>
+              <imprint>
+                <biblScope unit="volume">288</biblScope>
+                <biblScope unit="issue">10</biblScope>
+                <biblScope from="7203" to="7217" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Essential role of Osterix for tooth root but not crown dentin formation</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Jiang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Qin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Ho</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">Q</forename>
+                  <surname>Feng</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Bone Miner Res</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="742" to="748" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Osterix regulates tooth root formation in a site-specific manner</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Bae</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>De Crombrugghe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Cho</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Dent Res</title>
+              <imprint>
+                <biblScope unit="volume">94</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="430" to="438" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Osterix Controls Cementoblast Differentiation through Downregulation of Wnt-signaling via Enhancing DKK1 Expression</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Cao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Liao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Hinton</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">Q</forename>
+                  <surname>Feng</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int J Biol Sci</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="335" to="379" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Genetic evidence for the vital function of Osterix in cementogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Cao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Zhou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Han</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Ren</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Gao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Xiao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>De Crombrugghe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Somerman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">Q</forename>
+                  <surname>Feng</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Bone Miner Res</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="1080" to="92" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Runx2, osx, and dspp in tooth development</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Gluhak-Heinrich</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Wu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Chuang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Yuan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Dong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Gay</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Macdougall</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Dent Res</title>
+              <imprint>
+                <biblScope unit="volume">88</biblScope>
+                <biblScope unit="issue">10</biblScope>
+                <biblScope from="904" to="913" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">A Pituitary Homeobox 2 (Pitx2): microRNA-200a-3p:β-catenin Pathway Converts Mesenchymal Cells to Amelogeninexpressing Dental Epithelial Cells</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Sharp</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Biol Chem</title>
+              <imprint>
+                <biblScope unit="volume">289</biblScope>
+                <biblScope unit="issue">39</biblScope>
+                <biblScope from="27327" to="27368" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

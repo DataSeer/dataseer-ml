@@ -1,0 +1,1831 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:23+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Leptin-deficient mice have altered three-dimensional growth plate histomorphometry</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Jun</forename>
+                <surname>Hung</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Layla</forename>
+                <surname>Al-Nakkash</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Tom</forename>
+                <forename type="middle">L</forename>
+                <surname>Broderick</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Monica</forename>
+                <surname>Castro</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Jeffrey</forename>
+                <forename type="middle">H</forename>
+                <surname>Plochocki</surname>
+              </persName>
+            </author>
+            <title level="a" type="main">Leptin-deficient mice have altered three-dimensional growth plate histomorphometry</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1186/s13098-019-0402-5</idno>
+          <note>Hung et al. Diabetol Metab Syndr (2019) 11:8 SHORT REPORT</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <textClass>
+        <keywords>
+          <term>Obesity</term>
+          <term>Leptin</term>
+          <term>Ob/ob mice</term>
+          <term>Bone</term>
+          <term>Cartilage</term>
+          <term>Chondrocytes</term>
+        </keywords>
+      </textClass>
+      <abstract>
+        <div subtype="dataseer">
+          <p>
+            <s>Background: Leptin is an adipokine that regulates energy homeostasis and is also needed for normal bone growth and maintenance.</s>
+            <s>Mutation in the lep gene, which characterizes the ob/ob mouse model, results in the development of obesity and type 2 diabetes mellitus, as well as reduced limb bone length and increased fracture risk.</s>
+            <s>However, the relationship between limb bone length and growth plate cartilage structure in obese diabetic adolescents is incompletely understood.</s>
+            <s>Here, we tested the hypothesis that leptin deficiency affects the microstructure of growth plate cartilage in juvenile ob/ob mice.</s>
+          </p>
+          <p>
+            <s>Methods: Tibial growth plate cartilage structure was compared between lean and obese, leptin-deficient (ob/ob) female mice aged 10 weeks.</s>
+            <s cert="0.982487142086029" id="dataset-1" type="Image">We used confocal laser scanning microscopy to assess 3D histological differences in Z stacks of growth plate cartilage at 0.2 µm intervals, 80-100 µm in depth.</s>
+            <s>Histomorphometric comparisons were made between juvenile lean and ob/ob mice.</s>
+          </p>
+        </div>
+        <div>
+          <head>Results:</head>
+          <p>
+            <s>We found obese mice have significantly reduced tibial length and growth plate height in comparison with lean mice (P &lt; 0.05).</s>
+            <s>Obese mice also have fewer chondrocyte columns in growth plate cartilage with reduced chondrocyte cell volumes relative to lean mice (P &lt; 0.05).</s>
+          </p>
+        </div>
+        <div>
+          <head>Conclusions:</head>
+          <p>
+            <s>These data help explicate the relationship between growth plate cartilage structure and bone health in obese diabetic juvenile mice.</s>
+            <s>Our findings suggest obesity and diabetes may adversely affect growth plate cartilage structure.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Introduction</head>
+        <p>
+          <s>Obesity and type 2 diabetes mellitus (T2DM) are on the rise worldwide in children and adolescents <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b1" type="bibr">2]</ref> .</s>
+          <s>T2DM now accounts for 45% of all new onset diabetes cases in juveniles, up from 3% just two decades ago <ref target="#b0" type="bibr">[1]</ref> .</s>
+          <s>This is a serious health concern as T2DM adversely affects growth and development, resulting in long-term, disabling complications <ref target="#b0" type="bibr">[1]</ref> .</s>
+          <s>Once such complication is impaired bone formation and mineralization, which is associated with decelerated bone growth, increased risk of bone fracture, and delayed fracture repair <ref target="#b2" type="bibr">[3]</ref> .</s>
+          <s>Impairment of bone formation is caused, at least in part, by leptin dysregulation <ref target="#b2" type="bibr">[3]</ref>
+            <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref> .</s>
+          <s>Leptin is an adipokine secreted primarily by adipocytes to regulate energy homeostasis, but it also plays a role in regulating bone metabolism <ref target="#b5" type="bibr">[6,</ref>
+            <ref target="#b6" type="bibr">7]</ref> .</s>
+          <s>Ob/ob mice, which are leptin deficient due to a lep gene mutation, are hyperphagic and exhibit metabolic signatures consistent with the T2DM phenotype <ref target="#b7" type="bibr">[8]</ref> .</s>
+          <s>Ob/ob mice also have significantly reduce bone mineral density and shorter limb bones than age-matched wild type mice <ref target="#b8" type="bibr">[9]</ref>
+            <ref target="#b9" type="bibr">[10]</ref>
+            <ref target="#b10" type="bibr">[11]</ref> .</s>
+        </p>
+        <p>
+          <s>Longitudinal growth of long bones occurs via endochondral ossification.</s>
+          <s>During this process, growth plate cartilage expands and is replaced with bone tissue.</s>
+          <s>Proliferation, differentiation, and metabolic activity of chondrocytes in the growth plate are inhibited in the <ref target="#b11" type="bibr">[12]</ref> .</s>
+          <s>Leptin-deficient mice have growth plates that are reduced in height, likely due to the downregulation of genes regulating ossification <ref target="#b9" type="bibr">[10,</ref>
+            <ref target="#b12" type="bibr">13]</ref> , although the specific effects of leptin-deficiency on three-dimensional growth plate structure remain unclear.</s>
+          <s>In this study, we used three dimensional histomorphometric analysis to compare long bone growth plate microstructure in lean and leptin-deficient ob/ob mice.</s>
+          <s>The goal was to elucidate the effects of leptin deficiency on growth plate morphology and to improve our understanding of the relationship between growth plate structure and long bone growth in ob/ob mice.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Materials and methods</head>
+        <p>
+          <s>Female obese ob/ob mice (n = 5) and lean +/+ mice (n = 5) of the strain C57Bl/6-Lep ob aged 4-5 weeks were purchased for the study (Jackson Laboratory; Bar Harbor, ME, USA).</s>
+          <s>Ob/ob mice in this age range demonstrate obesity and hyperglycemia, as well as reduced thickness of the growth plate <ref target="#b9" type="bibr">[10,</ref>
+            <ref target="#b10" type="bibr">11]</ref> .</s>
+          <s>All animals were housed in a facility with a 12 h light/dark cycle at a temperature of 22 °C.</s>
+          <s>Mice were given ad libitum access to standard rodent chow and drinking water, and were treated in accordance with the National Institutes of Health's Guide for the Care and Use of Laboratory Animals.</s>
+          <s>Use of animals was approved by the Institutional Animal Care and Use Committee at Midwestern University.</s>
+        </p>
+        <p>
+          <s>At 9-10 weeks of age, mice were sacrificed using compressed CO 2 followed immediately by bilateral pneumothorax and tibias harvested for analysis.</s>
+          <s>Tibias were chosen because we previously found reduced tibial length in ob/ob mice aged 6 weeks, suggesting reduced growth plate activity <ref target="#b10" type="bibr">[11]</ref> .</s>
+          <s cert="0.9456047415733337" id="dataset-1" type="Tabular data">Length of the tibia was measured using digital calipers.</s>
+          <s>Tibias were then bisected longitudinally in the sagittal plane and the medial half was prepared for imaging using confocal laser scanning microscopy <ref target="#b13" type="bibr">[14]</ref> .</s>
+          <s>Tibias were incubated in DAPI (dilution 1:800) and refractive index matching solution (RIMS) media for 48 h to reduce tissue opacity and facilitate optical imaging at greater tissue depths.</s>
+          <s>Z stacks of the proximal tibia growth plate were digitally captured at 0.2 µm intervals over a range of 80-100 µm using ACS APO 40×/1.15</s>
+          <s>oil (Leica SPE confocal microscope, Leica Microsystems, Buffalo Grove, IL).</s>
+          <s>Composite Z stacks in the green-blue (488 nm laser line) and yellow-green (543 nm laser line) emission spectra were formed to capture DAPI-stained nuclei and the autofluorescence of the cartilage and surrounding tissues <ref target="#fig_0" type="figure">(Fig. 1</ref> ).</s>
+          <s>Leica Application Suite Advanced Fluorescence software (LAS AF) algorithms were used to compose 3D images with an optical resolution in the z-axis of 0.2 µm (Leica Microsystems, v2.4.1).</s>
+          <s>Image stacks were further manipulated in ImageJ and Icy ImageJ v1.6 (NIH), Icy (http://www.bioim</s>
+          <s>agean lalys is.org), and 3D Visualization-Assisted Analysis software suite (Vaa3D, vaa3d.org),</s>
+          <s>which were used to obtain counts of chondrocytes and chondrocyte cell columns, and to calculate the volume and surface area of each chondrocyte.</s>
+          <s>Cell columns were identified from a proximal (superior) view and followed distally through the growth plate.</s>
+          <s>Measuring processes were automated using the object manager in Vaa3D and were manually checked for accuracy.</s>
+          <s cert="0.9834641814231873" corresp="#dataset-1" id="dataset-3" type="Tabular data">The mean height of the growth plate was also measured for each tibia.</s>
+          <s>Data collection was blinded and conducted by a single observer.</s>
+        </p>
+        <p>
+          <s>Statistical comparisons of histomorphometric data were made using SPSS Statistics 25 (IBM, USA).</s>
+          <s>Unpaired two-sampled t tests were performed with statistical significance set at P &lt; 0.05.</s>
+          <s>Kolmogorov-Smirnov and Levene's tests were used to ensure assumptions of</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+        <p>
+          <s>Descriptive statistics for body mass and tibial dimensions are shown in <ref type="table">Table 1</ref> .</s>
+          <s>Ob/ob mice aged 5 weeks had a significantly larger mean body mass than lean mice (1.8% difference, P &lt; 0.01).</s>
+          <s>The difference in mean body mass between groups was significantly increased at the end of the 4-week study (5.8% difference, P &lt; 0.01).</s>
+          <s>Tibias of ob/ob mice were significantly shorter than those of lean controls (P &lt; 0.05), with reduce mean growth plate height (P &lt; 0.05).</s>
+          <s>Chondrocytes in the proximal tibia growth plate were arranged into fewer cell columns in obese mice relative to lean mice <ref type="table">(Table 1</ref> , P &lt; 0.05).</s>
+          <s>Columns of proliferating and hypertrophying chondrocytes were linearly arranged in the growth plates of lean mice <ref target="#fig_0" type="figure">(Figs. 1a, 2a)</ref> .</s>
+          <s>In obese mice, cell columns were shorter and less organized, particularly the hypertrophying cells in the distal portion of the growth plate <ref target="#fig_0" type="figure">(Figs. 1b, 2b)</ref> .</s>
+          <s>Chondrocyte volume was significantly reduced in obese mice in comparison to lean controls (P &lt; 0.05), yet columns contain similar cell counts <ref target="#fig_1" type="figure">(Fig. 2</ref> , P &gt; 0.05).</s>
+          <s>Mean chondrocyte surface area was 24.1% greater in lean mice relative to their obese counterparts, although this difference was not statistically significant <ref type="figure">(Fig. 3, P &gt; 0.05)</ref> .</s>
+          <s>Videos displaying the growth plate Z stacks of lean and obese mice being rotated along the x, y, and z axes are shown in Additional files 1 and 2.</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>Ob/ob mice are leptin deficient and exhibit metabolic profiles similar to obese T2DM patients.</s>
+          <s>However, while ob/ob mice are unable to produce leptin, obese T2DM patients are often hyperleptinemic but demonstrate leptin resistance with similar metabolic consequences as leptin deficiency in ob/ob mice <ref target="#b14" type="bibr">[15]</ref>
+            <ref target="#b15" type="bibr">[16]</ref>
+            <ref target="#b16" type="bibr">[17]</ref>
+            <ref target="#b17" type="bibr">[18]</ref> .</s>
+          <s>One of these consequences is reduced long bone mass.</s>
+          <s>Like obese T2DM humans, ob/ob mice have a greater risk of bone fracture, along with significantly shorter long bones <ref target="#b8" type="bibr">[9,</ref>
+            <ref target="#b10" type="bibr">11,</ref>
+            <ref target="#b18" type="bibr">19,</ref>
+            <ref target="#b19" type="bibr">20]</ref> .</s>
+          <s>Here, we report on growth plate structure in the tibias of ob/ob mice to assess structural differences that may correlate with reduced bone length.</s>
+        </p>
+        <p>
+          <s>As expected, ob/ob mice had greater body mass than lean controls.</s>
+          <s>Consistent with prior reports <ref target="#b8" type="bibr">[9]</ref>
+            <ref target="#b9" type="bibr">[10]</ref>
+            <ref target="#b10" type="bibr">[11]</ref> , we also found ob/ob mice had shorter tibias than lean mice.</s>
+          <s>Tibial longitudinal growth requires cartilage proliferation at the epiphyseal growth plate.</s>
+          <s>Our analysis of growth plate cartilage three-dimensional structure showed obese mice have reduced growth plate height and fewer chondrocyte cell columns with cells that are reduced in volume.</s>
+          <s>Cellular 3D arrangement is also more disorganized in growth plates of obese mice.</s>
+          <s>These differences may be attributed to the inhibitory effects of leptin deficiency on chondrocyte metabolism <ref type="figure">(Fig. 4)</ref> .</s>
+          <s>Tibial growth plate chondrocytes of leptin-deficient mice exhibit disturbed 2D columnar structure with inhibited proliferation and extracellular matrix synthesis that are reversed when the cells are treated with leptin <ref target="#b20" type="bibr">[21]</ref> .</s>
+          <s>Similarly, patients with obese T2DM exhibit impaired chondrocyte proliferation and hypertrophy, as well as reduced collagen and proteoglycan expression <ref target="#b21" type="bibr">[22]</ref>
+            <ref target="#b22" type="bibr">[23]</ref>
+            <ref target="#b23" type="bibr">[24]</ref>
+            <ref target="#b24" type="bibr">[25]</ref> .</s>
+          <s>Stiffness of the collagen network via crosslinking with advanced glycation end products also affects cartilage structure <ref target="#b25" type="bibr">[26]</ref> .</s>
+          <s>Altered cartilage extracellular composition in the diabetic state has been reported to affect mechanical properties of the tissue, thereby increasing the risk of tissue damage and impaired function <ref target="#b26" type="bibr">[27]</ref>
+            <ref target="#b27" type="bibr">[28]</ref>
+            <ref target="#b28" type="bibr">[29]</ref> .</s>
+          <s>This may also explain why obese patients with T2DM are at greater risk for osteoarthritis <ref target="#b29" type="bibr">[30]</ref> .</s>
+          <s>Susceptibility of chondrocytes to injury may also be a contributing factor to growth plate structural differences that inhibit growth.</s>
+          <s>Thus, differences in tibial growth plate morphology of lean and ob/ob mice are similar to those observed in obese T2DM patients and may have origins that are multifactorial.</s>
+          <s>It should be noted that T2DM is known to affect the sexes differently.</s>
+          <s>For example, females with T2DM are more likely to develop myocardial dysfunction and die from heart failure than males <ref target="#b30" type="bibr">[31]</ref> .</s>
+          <s>Females also respond more slowly and less robustly to the administration of exogenous leptin and insulin <ref target="#b31" type="bibr">[32]</ref> .</s>
+          <s>While we previously found reduced growth plate cartilage thickness and area in male and female mice <ref target="#b9" type="bibr">[10,</ref>
+            <ref target="#b12" type="bibr">13]</ref> , it is unclear if threedimensional microstructure differences between the sexes exist.</s>
+          <s>Based on our previous findings, we hypothesize that growth plates of male ob/ob mice will exhibit similar differences in growth plate microstructure as lean controls, but further study is needed to evaluate this hypothesis.</s>
+          <s>Additionally, serum leptin declines more quickly in females than males as they age, independent of body mass index and age-related endocrine changes <ref target="#b32" type="bibr">[33]</ref> .</s>
+          <s>There may be sex-related differences in the long-term implications of leptin resistance in children and adolescents with T2DM.</s>
+          <s>Again, further study is needed to validate this prediction.</s>
+        </p>
+      </div>
+      <div>
+        <head>Table 1 Comparisons of body mass and tibial dimensions in lean (+/+) and obese (ob/ob) mice</head>
+      </div>
+      <div>
+        <head>Conclusions</head>
+        <p>
+          <s>Our data are in agreement with the mounting evidence that leptin deficiency has a significant impact on the length of long bones in ob/ob mice by affecting growth plate cartilage <ref target="#b8" type="bibr">[9]</ref>
+            <ref target="#b9" type="bibr">[10]</ref>
+            <ref target="#b10" type="bibr">[11]</ref>
+            <ref target="#b20" type="bibr">21]</ref> .</s>
+          <s>Our study supports the hypothesis that growth plate morphology in long bones is altered in obese, leptin-deficient mice.</s>
+          <s>Our findings indicate growth plate cartilage exhibits atypical morphology with reduced cell volume and numbers of proliferating cell columns.</s>
+          <s>Given the rise of obesity and T2DM in juveniles, further study is needed to elucidate the clinical implications of leptin dysregulation on long-term bone and joint health.</s>
+        </p>
+      </div>
+      <div>
+        <head>Additional files</head>
+        <p>
+          <s>Additional file 1. Video of composite Z stacks of the tibial growth plate of a lean mouse rotated about the x, y, and z-axes.</s>
+          <s>Z stacks were captured at 0.2 µm intervals over a range of 80-100 µm using ACS APO 40×/1.15</s>
+          <s>oil.</s>
+        </p>
+        <p>
+          <s>Additional file 2. Video of composite Z stacks of the tibial growth plate of an obese (ob/ob) mouse rotated about the x, y, and z-axes.</s>
+          <s>Z stacks were captured at 0.2 µm intervals over a range of 80-100 µm using ACS APO 40×/1.15</s>
+          <s>oil.</s>
+          <s>
+            <ref type="figure">Fig. 3</ref> Chondrocyte count, volume (µm 3 ) and surface area (µm 2 ) in the proximal tibia growth plate in lean and ob/ob mice.</s>
+          <s>*Cell volumes were significantly greater in lean mice in comparison to ob/ob mice (P &lt; 0.05) <ref type="figure">Fig. 4</ref> Schematic of the effects of leptin and leptin deficiency on growth plate cartilage of the tibia.</s>
+          <s>Adipocyte-derived leptin regulates chondrocyte proliferation and arrangement in the growth plate.</s>
+          <s>Lean mice demonstrate normal cartilage tissue microstructure while chondrocytes of leptin-deficient ob/ob mice have fewer columns of chondrocytes, with cells that are reduced in volume and have a more disorganized arrangement</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig. 1</head>
+        <label>1</label>
+        <figDesc>Brightfield microscopy images of growth plate cartilage in a lean and b obese mice. Chondrocytes in the growth plates of lean mice are linearly arrange while those of ob/ob mice are not. Toluidine blue stain. Scale bar is 100 µm equality of variances were not violated. Data are present as mean ± standard error.</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig. 2</head>
+        <label>2</label>
+        <figDesc>Confocal scans of growth plate cartilage in a lean and b obese mice. Chondrocytes in the growth plates of ob/ob mice do not form linear columns while chondrocytes in growth plate cartilage of lean mice do. DAPI nuclear stain (blue). Scale bar is 25 µm</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>*Correspondence: Jeffrey.plochocki@ucf.edu 5 Department of Medical Education, University of Central Florida College of Medicine, 6850 Lake Nona Blvd, Orlando, FL 32827, USA Full list of author information is available at the end of the article obese, T2DM condition</figDesc>
+        <table>Open Access 
+
+Diabetology &amp; 
+Metabolic Syndrome 
+
+</table>
+      </figure>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements and funding</head>
+          <p>
+            <s>The authors wish to acknowledge Midwestern University, Diabetes Action Research and Education Foundation, and Soy Health Research Program for funding the study.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Competing interests</head>
+          <p>
+            <s>The authors declare that they have no competing interests.</s>
+          </p>
+        </div>
+        <div>
+          <head>Data availability</head>
+          <p>
+            <s>The datasets used and/or analyzed during the current study are available from the corresponding author on reasonable request.</s>
+          </p>
+        </div>
+        <div>
+          <head>Ethics approval and consent to participate</head>
+          <p>
+            <s>The protocol for this study was approved by the Midwestern University Institution Animal Care and Use Committee.</s>
+          </p>
+        </div>
+        <div>
+          <head>Publisher's Note</head>
+          <p>
+            <s>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">The global spread of type 2 diabetes mellitus in children and adolescents</title>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Pinhas-Hamiel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Zeitler</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Pediatr</title>
+              <imprint>
+                <biblScope unit="volume">146</biblScope>
+                <biblScope from="693" to="700" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Diabetes complications in childhood and adolescent onset type 2 diabetes-a review</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Amutha</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Mohan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Diabetes Complications</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope from="951" to="958" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Diabetic osteopenia: pathophysiology and clinical aspects</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Seino</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Ishida</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Diabetes Metab Res Rev</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope from="21" to="35" unit="page"/>
+                <date type="published" when="1995"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Leptin may play a role in bone microstructural alterations in obese children</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Dimitri</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Jacques</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Paggiosi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>King</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Walsh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Taylor</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Frangi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Bishop</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Eastell</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Clin Endocrinol Metab</title>
+              <imprint>
+                <biblScope unit="volume">100</biblScope>
+                <biblScope from="594" to="602" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">The role of leptin in regulating bone metabolism</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Upadhyay</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Farr</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Mantzoros</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Metabolism</title>
+              <imprint>
+                <biblScope unit="volume">64</biblScope>
+                <biblScope from="105" to="118" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Leptin directly regulates bone cell function in vitro and reduces bone fragility in vivo</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Cornish</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Callon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <surname>Bava</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Naot</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Hill</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Grey</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Broom</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Myers</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Nicholson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Reid</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Endocrinol</title>
+              <imprint>
+                <biblScope unit="volume">175</biblScope>
+                <biblScope from="405" to="420" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Role of marrow adipocytes in regulation of energy metabolism and bone homeostasis</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Cornish</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Curr Osteoporos Rep</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope from="116" to="138" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Metabolite profiling in plasma and tissues of ob/ob and db/db mice identifies novel markers of obesity and type 2 diabetes</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Giesbertz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Padberg</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Rein</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Ecker</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Höfle</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Spanier</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Daniel</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Diabetologia</title>
+              <imprint>
+                <biblScope unit="volume">58</biblScope>
+                <biblScope from="2133" to="2176" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Leptin deficiency produces contrasting phenotypes in bones of the limb and spine</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Hamrick</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Pennington</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Newton</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Xie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Isales</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bone</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope from="376" to="83" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Effects of resveratrol treatment on bone and cartilage in obese diabetic mice</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Cooley</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Broderick</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Al-Nakkash</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Plochocki</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Diabetes Metab Disord</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope unit="page">10</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Genistein treatment improves fracture resistance in obese diabetic mice</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Odle</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Dennison</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Al-Nakkash</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Broderick</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Plochocki</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">BMC Endocr Disord</title>
+              <imprint>
+                <biblScope unit="volume">17</biblScope>
+                <biblScope unit="page">1</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Diabetes and its effect on bone and fracture healing</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Jiao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Xiao</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Graves</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">T</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Curr Osteoporos Rep</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope from="327" to="362" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Genistein treatment increases bone mass in obese, hyperglycemic mice</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Michelin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Al-Nakkash</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Broderick</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Plochocki</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Diabetes Metab Syndr Obes</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="page">63</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Modern laser scanning confocal microscopy</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Bayguinov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Oakley</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Shih</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Geanon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Joens</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Fitzpatrick</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Curr Protoc Cytom</title>
+              <imprint>
+                <biblScope unit="volume">20</biblScope>
+                <biblScope unit="page">39</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">The role of leptin in human obesity and disease: a review of current evidence</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Mantzoros</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Ann Intern Med</title>
+              <imprint>
+                <biblScope unit="volume">130</biblScope>
+                <biblScope from="671" to="80" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Molecular and metabolic mechanisms of insulin resistance and β-cell failure in type 2 diabetes</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Muoio</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Newgard</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Rev Mol Cell Biol</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope from="193" to="205" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Leptin resistance and diet-induced obesity: central and peripheral actions of leptin</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Sáinz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Barrenetxe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Moreno-Aliaga</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Martínez</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Metabolism</title>
+              <imprint>
+                <biblScope unit="volume">64</biblScope>
+                <biblScope from="35" to="46" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Serum leptin and leptin resistance correlations with NAFLD in patients with type 2 diabetes</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Cernea</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Roiban</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Both</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Huţanu</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1002/dmrr.3050</idno>
+              <ptr target="https://doi.org/10.1002/dmrr.3050"/>
+            </analytic>
+            <monogr>
+              <title level="j">Diabetes Metab Res Rev</title>
+              <imprint>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">High-resolution peripheral quantitative computed tomographic imaging of cortical and trabecular bone microarchitecture in patients with type 2 diabetes mellitus</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Burghardt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Issever</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Schwartz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Davis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <surname>Masharani</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Majumdar</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Clin Endocrinol Metab</title>
+              <imprint>
+                <biblScope unit="volume">95</biblScope>
+                <biblScope from="5045" to="55" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Type 2 diabetes and bone</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Leslie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Rubin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Schwartz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Kanis</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Bone Miner Res</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope from="2231" to="2238" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <monogr>
+              <title level="m" type="main">Leptin differentially regulates chondrogenesis in mouse vertebral and tibial growth plates. BMC Musculoskelet Disord</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Yu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Jiang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2017"/>
+                <biblScope unit="volume">18</biblScope>
+                <biblScope unit="page">235</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Abnormalities in the biosynthesis of cartilage and bone proteoglycans in experimental diabetes</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Weiss</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Gorn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Nimni</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Diabetes</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope from="670" to="677" unit="page"/>
+                <date type="published" when="1981"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Alterations of cartilage and collagen expression during fracture healing in experimental diabetes</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Gooch</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Hale</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Fujioka</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Balian</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Hurwitz</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Connect Tissue Res</title>
+              <imprint>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope from="81" to="91" unit="page"/>
+                <date type="published" when="2000"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">The effects of local insulin delivery on diabetic fracture healing</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Gandhi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Beam</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O&amp;apos;</forename>
+                  <surname>Connor</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Parsons</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">S</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bone</title>
+              <imprint>
+                <biblScope unit="volume">37</biblScope>
+                <biblScope from="482" to="90" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Diabetes causes the accelerated loss of cartilage during fracture repair which is reversed by insulin treatment</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Kayal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Alblowi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Mckenzie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Krothapalli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Silkman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Gerstenfeld</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Einhorn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Graves</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bone</title>
+              <imprint>
+                <biblScope unit="volume">44</biblScope>
+                <biblScope from="357" to="63" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Crosslinking by advanced glycation end products increases the stiffness of the collagen network in human articular cartilage: a possible mechanism through which age is a risk factor for osteoarthritis</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Verzijl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Degroot</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Zaken</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Braun-Benjamin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Maroudas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Bank</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Mizrahi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Schalkwijk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Thorpe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Baynes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Bijlsma</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Arthritis Rheum</title>
+              <imprint>
+                <biblScope unit="volume">46</biblScope>
+                <biblScope from="114" to="137" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Effects of diabetes mellitus on the biomechanical properties of human ankle cartilage</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Athanasiou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Fleischli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Bosma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Laughlin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Zhu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Agrawal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Lavery</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Clin Orthop Relat Res</title>
+              <imprint>
+                <biblScope unit="volume">368</biblScope>
+                <biblScope from="182" to="191" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Influence of diabetic metabolic state on fracture healing in spontaneously diabetic rats</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Follak</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Klöting</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Merk</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Diabetes Metab Res Rev</title>
+              <imprint>
+                <biblScope unit="volume">21</biblScope>
+                <biblScope from="288" to="96" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">The adverse effects of diabetes on osteoarthritis: update on clinical evidence and molecular mechanisms</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">B</forename>
+                  <surname>King</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Rosenthal</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Osteoarthritis Cartilage</title>
+              <imprint>
+                <biblScope unit="volume">23</biblScope>
+                <biblScope from="841" to="50" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Osteoarthritis and type 2 diabetes mellitus: what are the links?</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Courties</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Sellam</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Diabetes Res Clin Pract</title>
+              <imprint>
+                <biblScope unit="volume">122</biblScope>
+                <biblScope from="198" to="206" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">A propensity-matched study of the effect of diabetes on the natural history of heart failure: variations by sex and age</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Ahmed</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Aban</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Vaccarino</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Lloyd-Jones</forename>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Goff</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Zhao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Love</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Ritchie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Ovalle</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Gambassi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Dell&amp;apos;italia</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">J</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Heart</title>
+              <imprint>
+                <biblScope unit="volume">93</biblScope>
+                <biblScope from="1584" to="90" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Differential sensitivity to central leptin and insulin in male and female rats</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Clegg</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Riedy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Smith</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Benoit</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Woods</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Diabetes</title>
+              <imprint>
+                <biblScope unit="volume">52</biblScope>
+                <biblScope from="682" to="689" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Leptin and aging: correlation with endocrine changes in male and female healthy adult populations of different body weights</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Isidori</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Strollo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Morè</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Caprio</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Aversa</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Moretti</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Frajese</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Riondino</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Fabbri</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Clin Endocrinol Metab</title>
+              <imprint>
+                <biblScope unit="volume">85</biblScope>
+                <biblScope from="1954" to="62" unit="page"/>
+                <date type="published" when="2000"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

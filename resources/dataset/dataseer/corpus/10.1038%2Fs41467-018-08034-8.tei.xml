@@ -1,0 +1,1488 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:21+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Engineering of high-precision base editors for site-specific single nucleotide replacement</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Junjie</forename>
+                <surname>Tan</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Max-Planck-Institut für Molekulare Pflanzenphysiologie</orgName>
+                <address>
+                  <addrLine>Am Mühlenberg 1</addrLine>
+                  <postCode>14476</postCode>
+                  <settlement>Potsdam-Golm</settlement>
+                  <country key="DE">Germany</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Fei</forename>
+                <surname>Zhang</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Max-Planck-Institut für Molekulare Pflanzenphysiologie</orgName>
+                <address>
+                  <addrLine>Am Mühlenberg 1</addrLine>
+                  <postCode>14476</postCode>
+                  <settlement>Potsdam-Golm</settlement>
+                  <country key="DE">Germany</country>
+                </address>
+              </affiliation>
+              <affiliation key="aff1">
+                <orgName type="laboratory">Present address: National Key Laboratory of Crop Genetic Improvement</orgName>
+                <orgName type="institution">Huazhong Agricultural University</orgName>
+                <address>
+                  <postCode>430070</postCode>
+                  <settlement>Wuhan, Hubei</settlement>
+                  <country key="CN">China</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Daniel</forename>
+                <surname>Karcher</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Max-Planck-Institut für Molekulare Pflanzenphysiologie</orgName>
+                <address>
+                  <addrLine>Am Mühlenberg 1</addrLine>
+                  <postCode>14476</postCode>
+                  <settlement>Potsdam-Golm</settlement>
+                  <country key="DE">Germany</country>
+                </address>
+              </affiliation>
+            </author>
+            <author role="corresp">
+              <persName>
+                <forename type="first">Ralph</forename>
+                <surname>Bock</surname>
+              </persName>
+              <email>rbock@mpimp-golm.mpg.de</email>
+              <affiliation key="aff0">
+                <orgName type="department">Max-Planck-Institut für Molekulare Pflanzenphysiologie</orgName>
+                <address>
+                  <addrLine>Am Mühlenberg 1</addrLine>
+                  <postCode>14476</postCode>
+                  <settlement>Potsdam-Golm</settlement>
+                  <country key="DE">Germany</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Engineering of high-precision base editors for site-specific single nucleotide replacement</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41467-018-08034-8</idno>
+          <note>ARTICLE Corrected: Author correction OPEN Correspondence and requests for materials should be addressed to R.B. ( 1</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>RNA-guided nucleases of the CRISPR/Cas type can be repurposed as programmable nucleotide deaminases to mediate targeted nucleotide substitutions.</s>
+            <s>Such base editors have enormous potential in genome editing, gene therapy and precision breeding.</s>
+            <s>However, current editors suffer from limited specificity in that they edit different and/or multiple bases within a larger sequence window.</s>
+            <s>Using cytidine deaminase base editors that elicit C-to-T mutations, we show here that high editing precision can be achieved by engineering the connection between the deaminase domain and the Cas domain of the editor.</s>
+            <s>By systematically testing different linker sequences and removing non-essential sequences from the deaminase, we obtain high-precision base editors with narrow activity windows that can selectively edit a single cytidine at a specific position with high accuracy and efficiency.</s>
+            <s>These base editors will enable the use of genome editing in applications where single-nucleotide changes are required and off-target editing of adjacent nucleotides is not tolerable.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <p>
+          <s>C RISPR-Cas systems represent an adaptive immune system in bacteria that promotes antiviral defense <ref target="#b0" type="bibr">1,</ref>
+            <ref type="bibr">2</ref> .</s>
+          <s>Several such systems, especially the one based on the Cas9 enzyme from Streptococcus pyogenes (SpCas9), have been successfully repurposed for genome editing in a wide range of organisms <ref target="#b2" type="bibr">[3]</ref>
+            <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref>
+            <ref target="#b6" type="bibr">[7]</ref>
+            <ref target="#b7" type="bibr">[8]</ref> .</s>
+          <s>Cas9 is an endonuclease with two nuclease domains, each cleaving one strand of the target DNA <ref target="#b8" type="bibr">9,</ref>
+            <ref target="#b9" type="bibr">10</ref> .</s>
+          <s>Upon repair of the double-strand break, deletions (or insertions) can occur that inactivate the target gene <ref target="#b10" type="bibr">11</ref> .</s>
+          <s>Although this method provides a highly efficient tool in functional genomics and is also suitable to reach a limited number of breeding goals by knocking out genes for unwanted traits in crops <ref target="#b11" type="bibr">12,</ref>
+            <ref target="#b12" type="bibr">13</ref> , more precise DNA editing tools are needed for all applications requiring introduction of specific base changes into target genes, such as precision breeding and gene therapy.</s>
+          <s>Most hereditary diseases in humans involve singlepoint mutations, the correction of which will require extraordinary accuracy of site-specific editing, ideally without any offtarget effects <ref target="#b13" type="bibr">14,</ref>
+            <ref target="#b14" type="bibr">15</ref> .</s>
+          <s>Recently, base editors have been developed that convert Cas endonucleases into programmable nucleotide deaminases <ref target="#b15" type="bibr">[16]</ref>
+            <ref target="#b16" type="bibr">[17]</ref>
+            <ref target="#b17" type="bibr">[18]</ref> , thus facilitating the introduction of C-to-T mutations (by C-to-U deamination) or A-to-G mutations (by A-to-I deamination) without induction of a double-strand break <ref target="#b18" type="bibr">19,</ref>
+            <ref target="#b19" type="bibr">20</ref> .</s>
+          <s>Base editors comprise a nickase form of SpCas9 (nSpCas9, to stimulate cellular DNA mismatch repair) fused to a nucleobase deaminase enzyme as well as an inhibitor of base excision repair such as uracil glycosylase inhibitor (UGI).</s>
+        </p>
+        <p>
+          <s>The current severe limitation in the applicability of base editors lies in their low site selectivity.</s>
+          <s>For example, C-to-T base editors can potentially edit any C that resides in an approximately 4-5 nt (in some systems up to 9 nt) wide window within the protospacer <ref target="#b15" type="bibr">16,</ref>
+            <ref target="#b16" type="bibr">17,</ref>
+            <ref target="#b20" type="bibr">21</ref> .</s>
+          <s>However, some human disease-associated alleles such as the Alzheimer's disease-associated gene APOE4 and the β-thalassemia locus HBB have multiple Cs around the targeted C within the activity window, and the editing of additional Cs can potentially cause deleterious effects <ref target="#b15" type="bibr">16,</ref>
+            <ref target="#b21" type="bibr">22</ref> .</s>
+          <s>Therefore, efforts have been made to reduce the width of the editing window, and introduction of mutations that reduce the deaminase activity were shown to have some positive effects <ref target="#b22" type="bibr">[23]</ref>
+            <ref target="#b23" type="bibr">[24]</ref>
+            <ref target="#b24" type="bibr">[25]</ref> .</s>
+          <s>However, in addition to the undesirable reduction of the editing activity, the beneficial effect of these mutations on editing specificity was dependent on the sequence context <ref target="#b22" type="bibr">23,</ref>
+            <ref target="#b23" type="bibr">24</ref> .</s>
+        </p>
+        <p>
+          <s>Here, we have attempted to provide a more general solution to the specificity problem of base editors.</s>
+          <s>By engineering the linker sequences and eliminating non-essential sequences, we obtain high-precision base editors with narrow activity windows that are capable of selectively editing a single cytidine residue with high accuracy and efficiency.</s>
+          <s>Our improved base editors will likely facilitate applications in genome editing, gene therapy, and precision breeding.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+      </div>
+      <div>
+        <head>Rigid linkers improve precision of APOBEC1-based editors.</head>
+        <p>
+          <s>We hypothesized that the positioning on the target sequence of the Cas9 protein relative to the deaminase domain (i.e., their physical distance) and the rigidity of the connection between these two domains of the base editor determine the width of the editing window, and hence the precision of the base editor.</s>
+          <s>In previous studies, a <ref target="#b15" type="bibr">16</ref> amino acid (aa) flexible linker (XTEN) has been identified as the best compromise between editing efficiency and specificity <ref target="#b15" type="bibr">16</ref> .</s>
+          <s>Using L-canavanine selection in yeast <ref target="#b16" type="bibr">17</ref> , we first investigated the effects of length and rigidity of the linker between APOBEC1 and nCas9 (Cas9 nickase) on base editing precision and efficiency when targeting several sites in the Can1 gene ( <ref target="#fig_3" type="figure">Fig. 1; Supplementary Figure 1</ref> ) that contain Cs within the activity window of the base editor BE3 (ref.</s>
+          <s>
+            <ref target="#b15" type="bibr">16</ref> ).</s>
+          <s>L-Canavanine is a highly toxic analog of the proteinogenic amino acid arginine, and mutations inactivating the uptake protein Can1 confer resistance to canavanine.</s>
+          <s>We used an inducible base editor construct, determined the optimal induction time, and then tested 10 different rigid linker sequences (containing the amino acid proline that, due to its secondary amine, confers conformational rigidity) in comparison to the commonly used XTEN flexible linker ( <ref target="#fig_3" type="figure">Supplementary Figures 1 and 2)</ref> .</s>
+          <s>Consistent with previous reports <ref target="#b15" type="bibr">16</ref> , the base editor BE3 (containing the XTEN linker) allowed editing at all Cs within a window of nine nucleotides ( <ref target="#fig_3" type="figure">Fig. 1; Supplementary Figure 3</ref> ).</s>
+          <s>Omission of the linker sequence or use of a very short rigid linker (i.e., the 3 aa linker PAP) abolished editing nearly completely.</s>
+          <s>Interestingly, rigid linkers of 5-7 aa made editing substantially more precise, with the seven aa linker PAPAPAP largely restricting editing to positions −15 and −16 <ref target="#fig_3" type="figure">(Fig. 1)</ref> .</s>
+          <s>Longer linkers resulted in reduced editing accuracy, suggesting that a seven aa rigid linker is optimal.</s>
+        </p>
+        <p>
+          <s>It was reported that mutations in the APOBEC1 domain of BE3 can also narrow the base editing width.</s>
+          <s>We, therefore, compared the base editing outcome of BE3, YEE-BE3 (the optimal BE3 variant 23 ), and BE-PAPAPAP when targeting the Can1 sites.</s>
+          <s>We found that YEE-BE3, although mainly editing C −15 or C −16 , suffered from strongly reduced editing activity at these sites (Supplementary <ref target="#fig_5" type="figure">Figure 4)</ref> .</s>
+          <s>Although it will be important to confirm this deficit for additional sequence contexts, this finding is consistent with a recent study that also reported low editing efficiency of the YEE-BE3 base editor <ref target="#b23" type="bibr">24</ref> .</s>
+        </p>
+        <p>
+          <s>Previous work has mostly investigated the activity of base editors in favorable sequence contexts, with relatively few C targets within the protospacer sequence.</s>
+          <s>To develop a more rigorous (and Can1-independent) assay for base editor specificity, we also investigated the worst-case scenario, in which all nucleotides within the BE3 activity window are Cs (i.e., a nonacytidine motif from −13 to −21).</s>
+          <s>Analysis of editing products by deep sequencing revealed that base editors with 5-7 aa rigid linkers mainly edited at positions C -14 to C -16 .</s>
+          <s>These editors showed greatly improved site selectivity and a narrowed editing window, while retaining up to 90% of the editing efficiency of the original BE3 ( <ref type="figure">Supplementary Figure 5a, b)</ref> .</s>
+          <s>Importantly, when editing product distribution was analyzed, BE3-treated sequences mostly contained four simultaneously edited bases, whereas short rigid linker-containing base editors predominantly generate products with one to three edited bases (Supplementary <ref type="figure">Figure 5c)</ref> , thus providing further evidence for short rigid linkers leading to more precise editing.</s>
+        </p>
+        <p>
+          <s>Engineering of improved CDA1-based editors.</s>
+          <s>To test whether other base editors can also be improved by engineering the linker region connecting the nucleoside deaminase domain with the nCas9 domain, we next applied a similar strategy to CDA1, the AID homolog of sea lamprey 17 that has been reported to exhibit superior performance to APOBEC1 in certain sequence contexts <ref target="#b25" type="bibr">26</ref> .</s>
+          <s>When fused to nCas9 with flexible linkers up to 100 aa long <ref target="#b16" type="bibr">17</ref> , CDA1 conducts C-to-T conversion in a window of approximately −16 to −19.</s>
+          <s>To better understand what influences the width of the activity window, we generated four constructs for direct comparison of N-and C-terminal fusions of APOBEC1 and CDA1 to nCas9, initially using the XTEN linker <ref type="figure">(Fig. 2a)</ref> .</s>
+          <s>When the APOBEC1 domain was fused to the C-terminus of nCas9 (cBE3), the editing activity was very low <ref type="figure">(Fig. 2b, c)</ref> , consistent with previous observations <ref target="#b15" type="bibr">16</ref> .</s>
+          <s>By contrast, when CDA1 was fused to either the N-terminus or the C-terminus of nCas9, both fusions exhibited high editing efficiency.</s>
+          <s>However, there was a remarkable difference in the width of the editing window, in that the N-terminal CDA1 (nCDA1-BE3) triggered editing in a <ref target="#fig_8" type="figure">Figure 6</ref> ).</s>
+          <s>The C-terminal fusion showed a more specific editing activity, peaking from C −16 to C −19 , consistent with previous reports <ref target="#b16" type="bibr">17</ref> .</s>
+        </p>
+        <p>
+          <s>Comparative assessment of the specificity of previously generated base editors and our base editors on several genomic target sequences showed that, in many cases, some level of discrimination between adjacent Cs is possible, but the achievable precision depends on the sequence context and on the base editor used (Supplementary <ref type="figure">Figure 7)</ref> .</s>
+          <s>In general, the nCDA1-BE3 and cCDA1-BE3 editors display less dependence on the neighboring nucleotides and can edit target Cs efficiently even when located immediately after an A (e.g., Can1-7 in <ref type="figure">Supplementary Figure 7)</ref> , a context that is only very inefficiently edited by APOBEC1-based editors.</s>
+          <s>Moreover, CDA1-based editors enhance product purity (Supplementary <ref type="figure">Figure 8)</ref> , as reported previously <ref target="#b25" type="bibr">26</ref> .</s>
+        </p>
+        <p>
+          <s>In an attempt to further narrow the activity window of CDA1 editors, we removed the linker between CDA1 and Cas9, generating versions nCDA1-NL-BE3 and cCDA1-NL-BE3.</s>
+          <s>Surprisingly, both linkerless fusions showed an unaltered activity window with largely unchanged editing efficiency at each C within it (Supplementary <ref type="figure">Figure 9</ref> ).</s>
+          <s>This result suggests that the termini of CDA1 are inherently flexible and may act as linker-like sequences.</s>
+          <s>We, therefore, tested the impact of N-and C-terminal truncations (removing potential linker-like fragments) on base editing.</s>
+        </p>
+        <p>
+          <s>A nuclear export signal (NES) was reported to reside in the Cterminus of the CDA1 homolog AID (ref.</s>
+          <s>
+            <ref target="#b26" type="bibr">27</ref> ), and its location corresponds to residues 199 to 208 in CDA1 <ref type="figure">(Fig. 3a)</ref> .</s>
+          <s>Deletion of the NES from AID increased the deamination efficiency of the enzyme <ref target="#b27" type="bibr">[28]</ref>
+            <ref target="#b28" type="bibr">[29]</ref>
+            <ref target="#b29" type="bibr">[30]</ref> .</s>
+          <s>We generated a series of 22 base editors with Cterminally truncated CDA1 versions fused to nCas9 <ref type="figure">(Fig. 3b</ref> ) and tested them on two oligo(C) motifs ( <ref target="#fig_5" type="figure">Fig. 4</ref> ; <ref target="#fig_3" type="figure">Supplementary Figures 10 and 11</ref> ).</s>
+          <s>While removal of the NES had only small effects on editing efficiency and specificity (nCDA1Δ198-BE3), larger deletions made editing more precise and substantially narrowed the activity window of the base editors <ref target="#fig_5" type="figure">(Fig. 4)</ref> .</s>
+          <s>The enzyme tolerated truncations up to amino acid residue 158 without a significant loss in editing efficiency ( <ref target="#fig_5" type="figure">Fig. 4</ref> ; Supplementary <ref target="#fig_3" type="figure">Figures 10 and 11</ref> ).</s>
+          <s>The major gain in site selectivity was seen with the removal of at least 13-14 amino acids from the Cterminus of CDA1 (nCDA1Δ195-BE3, nCDA1Δ194-BE3; <ref target="#fig_5" type="figure">Fig. 4</ref>
+          </s>
+        </p>
+        <formula xml:id="formula_0">C-to-T mutation (%) nBE3 nCDA1-BE3 cCDA1-BE3 cBE3 0 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6</formula>
+        <formula xml:id="formula_1">nBE3 cBE3 nCDA1-BE3 cCDA1-BE3 a b c nSpCas9 APOBEC1 UGI NLS PgalL XTEN nSpCas9 CDA1 UGI NLS PgalL XTEN nSpCas9 CDA1 UGI NLS PgalL XTEN cBE3 nCDA1-BE3 cCDA1-BE3 nSpCas9 APOBEC1 UGI NLS PgalL XTEN nBE3 C -2 0 C -1 8 / C -1 9 C -1 7 C -1 5 / C -1 6 C -1 3 C -1 1 / C -1 2 -21 -20 -19 -18 -17 -13 -14 -15 -16 -6 -7</formula>
+        <p>
+          <s>Fig. 2 Comparison of N-and C-terminal deaminase fusions to nCas9.</s>
+          <s>a Structure of nBE3 (=BE3; ref. <ref target="#b15" type="bibr">16</ref> ), cBE3, nCDA1-BE3, and cCDA1-BE3 driven by the GalL inducible promoter.</s>
+          <s>In all constructs, the XTEN linker separates the nucleoside deaminase domain from the nCas9 domain.</s>
+          <s>nSpCas9: Streptococcus pyogenes Cas9 nickase.</s>
+          <s>b Base editors with the deaminase at the N-terminus show broadened base editing windows.</s>
+          <s>The sequence of the target (C) 9 motif is shown with the numbers representing the position of possible editing targets (red) relative to the PAM (blue).</s>
+          <s>% of C-to-T editing represents the percentage of total sequencing reads with the target C converted to T. c Base editing outcome of nBE3, cBE3, nCDA1-BE3, and cCDA1-BE3 targeting several sites containing target Cs at different positions (indicated on the x-axis) in the Can1 gene (cf.</s>
+          <s>
+            <ref target="#fig_3" type="figure">Supplementary Figure 1</ref> ; <ref type="table">Supplementary Table 4</ref> ).</s>
+          <s>Values and error bars represent the mean and standard deviation of three independent biological replicates.</s>
+          <s>Source data underlying panels b and c are provided as a Source Data file effects on editing precision, although some of them displayed slightly reduced overall editing efficiency ( <ref target="#fig_5" type="figure">Fig. 4</ref> ; <ref target="#fig_3" type="figure">Supplementary Figures 10 and 11</ref> ).</s>
+          <s>Unlike the full-length base editor, the bestperforming truncated variants showed a clear preference for one or two Cs within the oligo(C) stretch (e.g., nCDA1Δ194-BE3 for C −18 and, to a lesser extent, C −17 within the (C) 9 motif: <ref target="#fig_5" type="figure">Fig. 4a</ref> ; nCDA1Δ192-BE3 and nCDA1Δ190-BE3 for C −18 in the (C) 8 motif: <ref target="#fig_5" type="figure">Fig. 4b</ref> ).</s>
+          <s>By contrast, truncations at the N-terminus of CDA1 in cCDA1-BE3 had no significant effect on the width of the editing window (Supplementary <ref target="#fig_3" type="figure">Figure 12)</ref> .</s>
+          <s>Tests on oligo(C) motifs represent the most stringent assays for site selectivity of base editors.</s>
+          <s>However, such long C stretches would only rarely be targets of genome editing with base editors in vivo.</s>
+          <s>To assess whether base editors with C-terminally truncated CDA1 domains also show superior performance in more natural (heteropolymeric) genomic sequence contexts, we targeted four sites in the Can1 gene, each of which contains at least one additional C directly adjacent or close to position C −18 .</s>
+          <s>When the base editing outcome of nCDA1-BE3, cCDA1-BE3 and our base editors with truncated CDA1 domains were compared, our base editors displayed editing with much higher precision <ref type="figure">(Fig. 5</ref> ).</s>
+          <s>For all four tested sites, our base editors mainly edited position C −18 , with a 2-to 20-fold higher efficiency than other adjacent Cs <ref type="figure">(Fig. 5a)</ref> .</s>
+          <s>Importantly, the base editors also produced predominantly single-C-modified products at position C −18 (accounting for 50-94% of all edited products), whereas nCDA1-BE3 and cCDA1-BE3 produced mainly double or triple modified products <ref type="figure">(Fig. 5b, c)</ref> .</s>
+          <s>We also investigated the indel frequency and base editing purity at these sites when treated by narrowed-window base editors.</s>
+          <s>We found that the frequency of editing errors was very low, consistent with what has been reported for other base editors (Supplementary <ref target="#fig_3" type="figure">Figure 13)</ref> .</s>
+        </p>
+        <formula xml:id="formula_2">b nCDA1-NL-BE3 nCDA1Δ198-BE3 nCDA1Δ195-BE3 nCDA1Δ194-BE3 nCDA1Δ193-BE3 nCDA1Δ192-BE3 nCDA1Δ191-BE3 nCDA1Δ190-BE3 nCDA1Δ189-BE3 nCDA1Δ188-BE3 nCDA1Δ186-BE3 nCDA1Δ184-BE3 nCDA1Δ182-BE3 nCDA1Δ180-BE3 nCDA1Δ178-BE3 nCDA1Δ176-BE3 nCDA1Δ170-BE3 nCDA1Δ167-BE3 nCDA1Δ165-BE3 nCDA1Δ163-BE3 nCDA1Δ161-BE3 nCDA1Δ158-BE3</formula>
+        <formula xml:id="formula_3">nCDA1-BE3 nCDA1Δ195-BE3 nCDA1-BE3 nCDA1Δ194-BE3 nCDA1-BE3 nCDA1Δ190-BE3 nCDA1-BE3 nCDA1Δ188-BE3 nCDA1-BE3 nCDA1Δ182-BE3 70 (C) 8 motif TATACCCCCCCCTATATGGTAAAAAGG a b C-to-T editing (%) nCDA1Δ192-BE3 nCDA1-BE3 nCDA1Δ176-BE3 nCDA1-BE3 nCDA1Δ176-BE3 nCDA1-BE3 nCDA1-BE3 nCDA1Δ192-BE3 nCDA1Δ198-BE3 nCDA1-BE3 (C) 9 motif C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6 C-21 C-20 C-19 C-18 C-17 C-16 C-15 C-14 C-13 C-7 C-6</formula>
+        <p>
+          <s>Finally, we also determined the base editing outcome in individual colonies obtained by the canavanine selection method.</s>
+          <s>While nCDA1-BE3 and cCDA1-BE3 yielded only 1 and 6 colonies (out of total 24 randomly picked colonies), respectively, that carried the specifically C −18 edited Can1 gene biallelically (i.e., in a homozygous fashion), the base editors with truncated CDA1 domains yielded 18-24 colonies that were homozygous for the allele only edited at position C −18 .</s>
+          <s>Importantly, two of the base editors produced 100% precisely edited homozygous clones ( <ref target="#fig_8" type="figure">Fig. 6</ref> ; <ref type="table">Table 1</ref> ).</s>
+        </p>
+        <p>
+          <s>To exclude the possibility that the exposure time of the target sequence to the base editor affects editing accuracy, we extended the induction time to 40 or 60 h.</s>
+          <s>This did not appreciably affect editing precision, suggesting that the superior performance of our base editors is largely independent of the duration of the exposure of the genome to the base editor (Supplementary <ref type="table">Table 2</ref> ).</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>In this work, we have developed two alternative strategies to effectively reduce the width of the editing window and, in this way, greatly increase the precision of C-to-T base editors.</s>
+          <s>The use of stiff, proline-rich linkers of specific lengths can significantly narrow the editing window and thus improve the accuracy of editing <ref target="#fig_3" type="figure">(Fig. 1)</ref> .</s>
+          <s>We attribute this to a more narrowly defined distance between the nucleoside deaminase domain and the nCas9 domain of the fusion protein that is likely to result in more precise positioning of the deaminase domain on the target sequence.</s>
+        </p>
+        <p>
+          <s>At first glance, fusions of CDA1 to the N-terminus of nCas9 seemed to be a poor choice <ref type="figure">(Fig. 2)</ref> .</s>
+          <s>However, our finding that large parts of the C-terminus of CDA1 are dispensable for deaminase function offered the possibility to substantially shorten the distance between the deaminase domain and the nCas9 domain.</s>
+          <s>Interestingly, this approach resulted in a substantial gain in editing precision and product purity (Figs.</s>
+          <s>3-6; <ref target="#fig_3" type="figure">Supplementary Figures 10, 11 and 13</ref> ).</s>
+          <s>It is important to note that, in our study, we used the most stringent assays and the worst-case scenarios in that our target sequences of base editing contained multiple cytidines in close proximity or were even entirely comprised of cytidines ((C) 8 or (C) 9 motifs).</s>
+          <s>Although our base editors with C-terminally truncated CDA1 domains readily outperformed current base editors, they unsurprisingly, still showed some level of imprecision on these extreme substrates.</s>
+          <s>However, when tested on more normal sequence contexts, our best-performing editors displayed absolute precision in that they (i) produced only correctly edited clones despite the presence of another C directly adjacent to the target C and (ii) edited the target sequence with very high efficiency and accuracy in both alleles of the target gene ( <ref target="#fig_8" type="figure">Fig. 6</ref> ; <ref type="table">Table 1</ref> ).</s>
+        </p>
+        <p>
+          <s>The two types of optimized base editors developed here (BE3-PAPAPAP and base editors with CDA1 truncations) have narrowed activity windows that do not overlap.</s>
+          <s>BE3-PAPAPAP mainly edits within an activity window from −14 to −16, whereas base editors with CDA1 truncations mainly edit at position −18.</s>
+          <s>Consequently, the preference for either BE3-PAPAPAP or a base editor with a CDA1 truncation largely depends on the distance of the target cytidine from a useable PAM.</s>
+          <s>Importantly, the strategies described here do not require reduction of the deaminase activity <ref target="#b22" type="bibr">23,</ref>
+            <ref target="#b23" type="bibr">24</ref> .</s>
+          <s>Thus, our narrowwindow base editors combine superior editing precision with high editing efficiency and product purity.</s>
+          <s>To increase the genometargeting scope, engineered Cas9 variants with altered PAM recognition properties (e.g., VQR-Cas9, xCas9 and SpCas9-NG) and naturally occurring Cas9 orthologs (e.g., Staphylococcus aureus Cas9 and Cpf1) with different PAM specificities can be employed in combination with our base editors, although specific optimization may be needed to account for differences in threedimensional structure and/or the positions of N and C termini in phylogenetically more distinct Cas9 variants <ref target="#b30" type="bibr">[31]</ref>
+            <ref target="#b31" type="bibr">[32]</ref>
+            <ref target="#b32" type="bibr">[33]</ref>
+            <ref target="#b33" type="bibr">[34]</ref>
+            <ref target="#b34" type="bibr">[35]</ref> .</s>
+        </p>
+        <formula xml:id="formula_4">T -18 C -17 C -15 n C D A 1 -B E 3 n C D A 1 Δ 1 9 8 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 n C D A 1 Δ 1 9 0 -B E 3 n C D A 1 Δ 1 8 9 -B E 3 n C D A 1 Δ 1 8 8 -B E 3 n C D A 1 Δ 1 8 4 -B E 3 n C D A 1 Δ 1 8 0 -B E 3 n C D A 1 Δ 1 7 6 -B E 3 N o t tr e a te d n C D A 1 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 n C D A 1 Δ 1 9 8 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 n C D A 1 Δ 1 9 0 -B E 3 N o t tr e a te d n C D A 1 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 n C D A 1 Δ 1 9 8 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 N o t tr e a te d n C D A 1 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 n C D A 1 Δ 1 9 8 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 N o t tr e a te d n C D A 1 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 n C D A 1 Δ 1 9 0 -B E 3 n C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 n C D A 1 Δ 1 9 0 -B E 3 n C D A 1 Δ 1 8 9 -B E 3 n C D A 1 Δ 1 8 8 -B E 3 n C D A 1 Δ 1 8 4 -B E 3 n C D A 1 Δ 1 8 0 -B E 3 n C D A 1 Δ 1 7 6 -B E 3 n C D A 1 -B E 3 c C D A 1 -B E 3 n C D A 1 Δ 1 9 5 -B E 3 n C D A 1 Δ 1 9 4 -B E 3 n C D A 1 Δ 1 9 3 -B E 3 n C D A 1 Δ 1 9 2 -B E 3 n C D A 1 Δ 1 9 1 -B E 3 n C D A 1 Δ 1 9 0 -B E 3 n C D A 1 -B E 3 c C D A 1 -B E</formula>
+        <p>
+          <s>Highly precise base editors will be essential for future applications of genome editing in gene therapy, site-directed mutagenesis in vivo, and precision breeding.</s>
+          <s>A narrower editing window means fewer target nucleotides.</s>
+          <s>Especially for the correction of disease-causing mutations in gene therapy, the introduction of new mutations in the vicinity of the targeted nucleotide position is not tolerable <ref target="#b15" type="bibr">16,</ref>
+            <ref target="#b21" type="bibr">22</ref> .</s>
+          <s>We, therefore, expect that our high-precision base editors will find wide applications in many areas of basic and applied research.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Methods</head>
+        <p>
+          <s>Yeast strains and growth conditions.</s>
+          <s>Saccharomyces cerevisiae BY4743 (diploid, MAT a/α, his3Δ1/his3Δ1, leu2Δ0/leu2Δ0, LYS2/lys2Δ0, met15Δ0/MET15, ura3Δ0/ura3Δ) was used as host strain for genome editing.</s>
+          <s>Cells were grown nonselectively in YPAD medium (2% Bacto peptone, 1% Bacto yeast extract, 2% glucose, 0.003% adenine hemisulfate).</s>
+          <s>For culture in Petri dishes, the medium was solidified with 2% agar.</s>
+          <s>Selection of yeast transformants based on the URA3 and LEU2 markers was done on a synthetic complete (SC) medium (6.7 g/L of Difco Yeast Nitrogen Base, 20 g/L glucose) and a mixture of appropriate amino acids deficient in uracil and leucine (SC-U-L).</s>
+          <s>Yeast strains were cultivated at 28°C on a rotary shaker.</s>
+        </p>
+        <p>
+          <s>DNA methods.</s>
+          <s cert="0.9781684279441833" id="dataset-1" type="Real-Time Polymerase Chain Reaction">PCR was performed with Phusion High-Fidelity DNA Polymerase (ThermoFisher) according to the manufacturer's instructions.</s>
+          <s>All primers used in this study are listed in <ref type="table">Supplementary Table 3</ref> .</s>
+          <s>Cloning and amplification of plasmids were carried out in the E. coli strain DH5α.</s>
+          <s>Plasmids harboring the Streptococcus pyogenes cas9 gene (p415-GalL-Cas9-CYC1t) and a chimeric guide RNA construct (p426-SNR52p-gRNA.CAN1.Y-SUP4t) were provided by the laboratory of Dr. George Church and obtained from Addgene (Cambridge, MA, USA).</s>
+          <s>To generate APOBEC1 base editors, the APOBEC1 reading frame and the partial cas9 sequence were PCR-amplified using oligonucleotides with overlapping linker sequences (Supplementary <ref type="table">Table 3</ref> ).</s>
+          <s>The two fragments were cloned into the SpeI/SbfI-digested p415-GalL-Cas9-CYC1t with the help of the In-Fusion HD Cloning Kit (Clontech, CA, USA).</s>
+          <s>The D10A point mutation was introduced into cas9 with primers harboring the desired mutation by amplification of the entire plasmid template followed by DpnI digestion to remove the parental template.</s>
+          <s>The UGI gene was codon-optimized for yeast and synthesized (Eurofins Genomics, Ebersberg, Germany), followed by insertion into the AscI/MluI-digested vector p415-GalL-Cas9-CYC1t.</s>
+          <s>To generate CDA1 base editors, the reading frame encoding pmCDA1 was PCR-amplified to replace the APOBEC1 fragment within BE3, thus generating nCDA1-BE3.</s>
+          <s>To produce a fusion of CDA1 to the C-terminus of Cas9, plasmid pRS315e_pGal-nCas9 (D10A)-PmCDA1 (provided by the laboratory of Akihiko Kondo, Hyogo, Japan, and obtained from Addgene) was modified.</s>
+          <s>First, the amplified UGI sequence was introduced into the XbaI site, and the resulting vector was then digested with AscI and SphI.</s>
+          <s>Subsequently, two PCR fragments (overlapping by the XTEN linker sequence) were inserted to generate cCDA1-BE3.</s>
+          <s>Insertion of three PCR fragments (covering XTEN and APOBEC1) produced base editor cBE3 (Supplementary <ref type="table">Table 3</ref> ).</s>
+          <s>The CDA1 protein truncations were generated by PCR amplification <ref type="table">(Supplementary Table 3)</ref> , and cloned into SpeI/Sbf1-digested BE3 or AscI/SphI-digested cBE3 vectors to produce the ΔCDA1-Cas and Cas-ΔCDA1 vector series, respectively.</s>
+          <s>To produce YEE-BE3, the mutated APOBEC1 from plasmid pCMV-dCpf1-BE-YEE (provided by the laboratory of Jia Chen, Shanghai, China, and obtained from Addgene) was PCRamplified and cloned into SpeI/Sbf1-digested BE3.</s>
+          <s>To generate plasmids expressing sgRNAs that target-specific sites <ref type="table">(Supplementary Table 4</ref> ), the protospacer sequences were introduced by PCR amplification (as part of the primer sequence; see <ref type="table">Supplementary Table 3)</ref> , and the resulting PCR products were cloned into the ClaI/KpnI-digested vector p426-SNR52p-gRNA.CAN1.Y-SUP4t with the In-Fusion HD Cloning Kit (Clontech, CA, USA).</s>
+        </p>
+        <p>
+          <s>Yeast transformation and genomic DNA extraction.</s>
+          <s>Yeast cells were transformed with the LiAc/SS carrier DNA/PEG method using 0.5-1 μg plasmid DNA (ref.</s>
+          <s>
+            <ref target="#b35" type="bibr">36</ref> ).</s>
+          <s>Transgenic clones were selected on SC-U-L media and confirmed by PCR analyses (Supplementary <ref type="table">Table 3</ref> ).</s>
+          <s>Yeast genomic DNA was extracted according to a published protocol <ref target="#b36" type="bibr">37</ref> .</s>
+          <s cert="0.9456794261932373" id="dataset-1" type="Genetic Data:Sequence Analysis">PCR products were purified (PCR Purification kit; Macherey-Nagel) and then sequenced.</s>
+          <s>CAN1 mutagenesis.</s>
+          <s>Yeast colonies were picked, suspended in 3 mL SC medium with 2% glucose and without leucine and uracil, and grown to a stationary phase.</s>
+          <s>The cells were then pelleted, washed twice in sterile water, and then resuspended in SC induction medium with 2% galactose and 1% raffinose, but without leucine and uracil, to an OD 600 of 0.3.</s>
+          <s>The cells were incubated for 20 h prior to plating on YPAD rich or SC media plates without arginine but with 60 mg/mL L-canavanine (Sigma).</s>
+          <s cert="0.9671516418457031" id="dataset-2" type="Tabular data">After incubation for 3 days, the colony number on each plate was counted.</s>
+        </p>
+        <p>
+          <s>The C-to-T mutation frequency in CAN1 was determined as the ratio of the colony count on canavanine-containing plates to the colony count on YPAD-rich media plates.</s>
+          <s>Each experiment was performed at least three times on different days.</s>
+          <s id="dataset-3" type="Genetic Data:Sequence Analysis">To determine the mutation spectrum, colonies were randomly picked and suspended in sterile water, followed by PCR amplification of the relevant CAN1 fragment and DNA sequencing.</s>
+          <s>Control cultures (not treated with base editors) did not produce canavanine-resistant colonies.</s>
+        </p>
+        <p>
+          <s>Next-generation sequencing.</s>
+          <s>Yeast colonies harboring plasmids expressing base editors and sgRNAs were picked from SC-L-U plates, suspended in 3 mL SC-L-U medium with 2% glucose, and grown to a stationary phase.</s>
+          <s>The cultures were then washed twice to remove residual glucose, resuspended in 5 mL SC-L-U medium with 2% galactose and 1% raffinose to an OD 600 of 0.3, and incubated for 20 h at 28°C on a rotary shaker.</s>
+          <s>Genomic DNA was extracted from culture samples of 0.5 mL volume, and the regions targeted by base editing were amplified by PCR with primer pairs containing index tags for sample multiplexing (Supplementary <ref type="table">Table 3</ref> ).</s>
+          <s cert="0.955220103263855" id="dataset-4" type="Real-Time Polymerase Chain Reaction">PCR amplification was performed with the Phusion High-Fidelity DNA Polymerase (ThermoFisher) according to the manufacturer's protocol, followed by product purification with the NucleoSpin Gel and PCR Clean-up kit (Machery-Nagel).</s>
+          <s>The purified index-labeled PCR products were pooled at equal molar ratios.</s>
+          <s>PCR-free library construction and NGS sequencing, demultiplexing by assigning reads to samples, and data filtering (including removal of adaptor sequences, contaminations and low-quality reads from raw reads) were done commercially (BGI, Hong Kong).</s>
+          <s cert="0.9774990081787109" id="dataset-4" type="Genetic Data:High-Throughput Nucleotide Sequencing">Sequencing was performed on an Illumina MiSeq 4000 platform in a paired-end way to obtain 150 bp read length for each side and, on average, more than 100,000 reads per sample.</s>
+        </p>
+        <p>
+          <s>Data analysis.</s>
+          <s>The clean FASTQ files obtained after data filtering were further analyzed with python scripts (available at https://github.com/zfcarpe/</s>
+          <s>Cas9Sequencing).</s>
+          <s>Briefly, the "pattern_extract.py"</s>
+          <s>was first applied to scan all sequencing reads and extract the reads with the fixed length of the editing region (and exactly matching the two flanking sequences).</s>
+          <s>This procedure excluded indelcontaining and imperfectly matching reads, and allows summarizing each base calling in an alignment-like manner.</s>
+          <s>Subsequent application of the "result_stat.py"</s>
+          <s>script scanned each base within the editing region and calculated the frequency of each base converted to one of the other three bases by dividing the respective read number by the total number of sequencing reads to obtain the percentage of C-to-T editing and the percentage of edited reads with the C converted to any of the other bases.</s>
+          <s>In addition, the script calculates the frequencies of all edited products by scanning each aligned read for conversion of the potential target cytidines.</s>
+          <s>For the analysis of indel frequencies, the sequencing reads were scanned for two exactly matching 10-bp sequences that flank both sides of the region of interest (i.e., the sequence containing the editing sites).</s>
+          <s>Reads without exact matches were excluded from further analysis.</s>
+          <s>By calculating the length of the region, all sequencing reads exactly matching the length of the reference sequence were classified as not containing an indel, otherwise the read was classified as harboring an indel.</s>
+          <s>A shell script "Cas9Sequencing.sh"</s>
+          <s>combined the processes.</s>
+        </p>
+        <p>
+          <s>Reporting Summary.</s>
+          <s>Further information on experimental design is available in the Nature Research Reporting Summary linked to this article.</s>
+        </p>
+      </div>
+      <div>
+        <head>Data availability</head>
+        <p>
+          <s>The data supporting the findings of this study are available within the paper and its supplementary information files.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head/>
+        <label/>
+        <figDesc>| (2019) 10:439 | https://doi.org/10.1038/s41467-018-08034-8 | www.nature.com/naturecommunications much broader window when tested on either an oligo(C) substrate or target sites in the Can1 gene (Fig. 2b, c; Supplementary</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Fig. 1</head>
+        <label>1</label>
+        <figDesc>Rigid linkers narrow the width of the editing window of BE3. a Protospacers and PAM (blue) sequences of the genomic loci tested, with the target Cs shown in red. Subscript numbers indicate the positions of the cytidines relative to the PAM. C-to-T editing at any of the indicated Cs inactivates the Can1 transporter and thus causes resistance to canavanine<ref target="#b16" type="bibr">17</ref> . b Editing efficiency and specificity of the base editors tested as determined by canavanine selection. The x-axis represents the target Cs within the protospacers. The y-axis shows their C-to-T editing frequency (see Methods and SupplementaryFigure 1). Sequences of canavanine-resistant mutants aligned with the corresponding reference sequences are shown inSupplementary Figure 3. Values and error bars represent the mean and standard deviation of three independent biological replicates. Source data are provided as a Source Data file</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
+        <head>Fig. 4</head>
+        <label>4</label>
+        <figDesc>Effects of C-terminal truncations of the CDA1 domain on the width of the editing window of nCDA1-BE3 base editors. All base editor variants were tested on both (C) 8 (a) and (C) 9 (b) motifs (see Methods). Cs within each target region are shown in red, with the number below indicating their distance from the PAM (blue). The C-to-T conversion efficiencies are plotted for all Cs within the protospacer, and shown in comparison to the nCDA1-BE3 base editor with the full-length CDA1 (gray bars). Values and error bars represent the mean and standard deviation of three biological replicates. Source data are provided as a Source Data file. For a comparison with additional deletion constructs, see Supplementary Figures 10 and 11</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
+        <head/>
+        <label/>
+        <figDesc>C-terminally truncated CDA1 domains are compared. a Editing of genomic loci containing multiple cytidines directly adjacent or in close proximity to C −18 . Cytidines representing possible editing targets are shown in red with the subscript number representing their position relative to the PAM (blue). b, c Base editors with truncated CDA1 domains greatly improve editing product distribution and produce predominantly singly C −18 -modified products. % of edited reads represents the percentage of total sequencing reads containing the products shown. Values and error bars represent the mean and standard deviation of three biological replicates. Source data are provided as a Source Data file</figDesc>
+      </figure>
+      <figure xml:id="fig_7">
+        <head/>
+        <label/>
+        <figDesc>| (2019) 10:439 | https://doi.org/10.1038/s41467-018-08034-8 | www.nature.com/naturecommunications</figDesc>
+      </figure>
+      <figure xml:id="fig_8">
+        <head>Fig. 6</head>
+        <label>6</label>
+        <figDesc>Analysis of base editing patterns and efficiencies in single yeast colonies selected for canavanine resistance. A comparison of base editing frequencies for nCDA1-BE3, cCDA1-BE3, and selected base editors with truncated CDA1 domains is shown. Yeast cells were transformed with plasmids expressing the base editor and an sgRNA targeting the Can1-5 site. The target sequence is shown with the cytidines that can potentially undergo editing in red and the PAM in blue. If C-to-T conversion occurs at position −18 or −19 or both, the Can1 gene will be inactivated and the cell becomes resistant to canavanine. Values and error bars reflect the mean and standard deviation of three biological replicates. Source data are provided as a Source Data file. See also</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_1">
+        <head/>
+        <label/>
+        <figDesc>Fig. 3 Design of base editors with truncated CDA1 domains. a Amino acid sequence alignment of CDA1 and human AID. The catalytic domain HxE-PCxxC and the nuclear export signal (NES) are indicated by black horizontal lines. The alignment was created by CLUSTALW (ref. 38 ; https://www.genome.jp/ tools-bin/clustalw) and graphically formatted with the help of the ESPript 3.0 server 39 (http://espript.ibcp.fr/ESPript/ESPript/). Identical amino acid residues are shaded in red, similar residues in yellow. b Schematic representation of base editors with C-terminal CDA1 truncations (named after the last CDA1 residue included) ARTICLE NATURE COMMUNICATIONS | (2019) 10:439 | https://doi.org/10.1038/s41467-018-08034-8 | www.nature.com/naturecommunications</figDesc>
+        <table>nCDA1Δ154-BE3 
+
+58 
+
+117 
+
+176 
+
+208 
+
+NES 
+
+Catalytic domain 
+
+* * 
+* * 
+* 
+
+Catalytic domain 
+NES 
+
+AID 
+CDA1 
+
+AID 
+CDA1 
+
+AID 
+CDA1 
+
+AID 
+CDA1 
+
+NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-018-08034-8 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_3">
+        <head>Table 1 Table 1</head>
+        <label>11</label>
+        <figDesc>Base editors with CDA1 truncations exhibit many more homozygous C −19 T −18 colonies than nCDA1-BE3 and cCDA1-BE3 −19 T −18 /T −19 T −18 Heterozygous For each base editor, 24 canavanine-resistant colonies were randomly picked from the selection plate followed by sequencing of the Can1 locus. The major types of edited products are listed in the first column of the table, and the colony numbers representing each product type are given. For nCDA1-BE3, the genotype of the remaining colony is C −19 T −18 /T −19 C −18 ; for nCDA1Δ194-BE3, the remaining two colonies are C −19 T −18 /T −19 C −18 and T −19 T −18 /T −19 C −18 , respectively</figDesc>
+        <table>nCDA1 
+-BE3 
+
+cCDA1 
+-BE3 
+
+nCDA1Δ194 
+-BE3 
+
+nCDA1Δ193 
+-BE3 
+
+nCDA1Δ192-
+BE3 
+
+nCDA1Δ190-
+BE3 
+
+nCDA1Δ184-
+BE3 
+
+nCDA1Δ176-
+BE3 
+C −19 T −18 Homozygous 
+1/24 
+6/24 
+18/24 
+21/24 
+22/24 
+24/24 
+24/24 
+20/24 
+C 0/24 
+11/24 
+2/24 
+2/24 
+1/24 
+0/24 
+0/24 
+2/24 
+
+T −19 T −18 Homozygous 
+22/24 
+7/24 
+2/24 
+1/24 
+1/24 
+0/24 
+0/24 
+2/24 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_4">
+        <head/>
+        <label/>
+        <figDesc>High-throughput sequencing data have been deposited in the National Center for Biotechnology Information Sequence Read Archive database under accession code PRJNA503986 . A reporting summary for this article is available as a Supplementary Information file. The source data underlyingFigs. 1, 2b, c, 4a, b, 5 and 6, and Supplementary Figures 2, 4-9, 11-13 are provided as a Source Data file.Received: 11 November 2018 Accepted: 12 December 2018</figDesc>
+        <table/>
+      </figure>
+      <note place="foot">NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-018-08034-8</note>
+      <note place="foot">NATURE COMMUNICATIONS | (2019) 10:439 | https://doi.org/10.1038/s41467-018-08034-8 | www.nature.com/naturecommunications</note>
+      <note place="foot">© The Author(s) 2019</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>We thank Dr. Youjun Zhang (MPI-MP) for providing the yeast strain.</s>
+            <s>This research was supported by the Max Planck Society and a grant from the European Union (Horizon 2020, Newcotiana, 760331-2) to R.B.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Additional information</head>
+          <p>
+            <s>Supplementary Information accompanies this paper at https://doi.org/10.1038/s41467-018-08034-8.</s>
+          </p>
+        </div>
+        <div>
+          <head>Competing interests:</head>
+          <p>
+            <s>The authors declare no competing interests.</s>
+          </p>
+          <p>
+            <s>Reprints and permission information is available online at http://npg.nature.com/</s>
+            <s>reprintsandpermissions/ Journal peer review information: Nature Communications thanks the anonymous reviewers for their contributions to the peer review of this work.</s>
+            <s>[Peer reviewer reports are available.]</s>
+          </p>
+          <p>
+            <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+          <p>
+            <s>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.</s>
+            <s>The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in a credit line to the material.</s>
+            <s>If material is not included in the article's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.</s>
+            <s>To view a copy of this license, visit http://creativecommons.org/ licenses/by/4.0/.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Jinek</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">337</biblScope>
+                <biblScope from="816" to="821" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Unravelling the structural and mechanistic basis of CRISPR-Cas systems</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Van Der Oost</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Westra</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Jackson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Wiedenheft</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Rev. Microbiol</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope from="479" to="492" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">RNA-guided human genome engineering via Cas9</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Mali</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">339</biblScope>
+                <biblScope from="823" to="826" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">RNA-guided editing of bacterial genomes using CRISPR-Cas systems</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Jiang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Bikard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Cox</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Marraffini</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Biotechnol</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope from="233" to="239" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Targeted mutagenesis in the model plant Nicotiana benthamiana using Cas9 RNAguided endonuclease</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Nekrasov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Staskawicz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Weigel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">D G</forename>
+                  <surname>Jones</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Kamoun</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Biotechnol</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope from="691" to="693" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">The new frontier of genome engineering with CRISPR-Cas9</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Doudna</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Charpentier</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">346</biblScope>
+                <biblScope unit="page">1258096</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Biology and applications of CRISPR systems: harnessing nature's toolbox for genome engineering</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Wright</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Nunez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Doudna</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell</title>
+              <imprint>
+                <biblScope unit="volume">164</biblScope>
+                <biblScope from="29" to="44" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">CRISPR-based technologies for the manipulation of eukaryotic genomes</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Komor</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Badran</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell</title>
+              <imprint>
+                <biblScope unit="volume">168</biblScope>
+                <biblScope from="20" to="36" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Structures of Cas9 endonucleases reveal RNA-mediated conformational activation</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Jinek</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">343</biblScope>
+                <biblScope unit="page">1247997</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Crystal structure of Cas9 in complex with guide RNA and target DNA</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Nishimasu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell</title>
+              <imprint>
+                <biblScope unit="volume">156</biblScope>
+                <biblScope from="935" to="949" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Multiplex genome engineering using CRISPR/Cas systems</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Cong</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">339</biblScope>
+                <biblScope from="819" to="823" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Targeted genome modification of crop plants using a CRISPR-Cas system</title>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Shan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Biotechnol</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope from="686" to="688" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Characteristics of genome editing mutations in cereal crops</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Zhu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Trends Plant Sci</title>
+              <imprint>
+                <biblScope unit="volume">22</biblScope>
+                <biblScope from="38" to="52" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">CAS9 transcriptional activators for target specificity screening and paired nickases for cooperative genome engineering</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Mali</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Biotechnol</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope from="833" to="838" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">DNA targeting specificity of RNA-guided Cas9 nucleases</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Hsu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Biotechnol</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope from="827" to="832" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Programmable editing of a target base in genomic DNA without doublestranded DNA cleavage</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Komor</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Packer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Zuris</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">533</biblScope>
+                <biblScope from="420" to="424" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Targeted nucleotide editing using hybrid prokaryotic and vertebrate adaptive immune systems</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Nishida</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">353</biblScope>
+                <biblScope unit="page">1248</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Programmable base editing of A.T to G.C in genomic DNA without DNA cleavage</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Gaudelli</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">551</biblScope>
+                <biblScope from="464" to="471" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Improving the DNA specificity and applicability of base editing through protein engineering and protein delivery</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Rees</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Commun</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope unit="page">15790</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Precision genome engineering through adenine and cytosine base editing</title>
+              <author>
+                <persName>
+                  <forename type="first">J.-S</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Plants</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope from="148" to="151" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Precise base editing in rice, wheat and maize with a Cas9-cytidine deaminase fusion</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zong</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Biotechnol</title>
+              <imprint>
+                <biblScope unit="volume">35</biblScope>
+                <biblScope from="438" to="440" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Correction of ß-thalassemia mutant by base editor in human embryos</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Liang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Protein Cell</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope from="811" to="822" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Increasing the genome-targeting scope and precision of base editing with engineered Cas9-cytidine deaminase fusions</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Biotechnol</title>
+              <imprint>
+                <biblScope unit="volume">35</biblScope>
+                <biblScope from="371" to="376" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">An APOBEC3A-Cas9 base editor with minimized bystander and off-target activities</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Gehrke</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Biotechnol</title>
+              <imprint>
+                <biblScope unit="volume">36</biblScope>
+                <biblScope from="977" to="982" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Optimized base editors enable efficient editing in cells, organoids and mice</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Zafra</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Biotechnol</title>
+              <imprint>
+                <biblScope unit="volume">36</biblScope>
+                <biblScope from="888" to="893" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Improved base excision repair inhibition and bacteriophage Mu Gam protein yields C:G-to-T:A base editors with higher efficiency and product purity</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Komor</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Adv</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope unit="page">4774</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Active nuclear import and cytoplasmic retention of activation-induced deaminase</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Patenaude</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Struct. Mol. Biol</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope from="517" to="527" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Engineering and optimising deaminase fusions for genome editing</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Commun</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="page">1038</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Targeted AID-mediated mutagenesis (TAM) enables efficient genomic diversification in mammalian cells</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Ma</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Methods</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope from="1029" to="1035" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Directed evolution using dCas9-targeted somatic hypermutation in mammalian cells</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Hess</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Methods</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope from="1036" to="1042" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Engineered CRISPR-Cas9 nucleases with altered PAM specificities</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Kleinstiver</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">523</biblScope>
+                <biblScope from="481" to="485" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Evolved Cas9 variants with broad PAM compatibility and high DNA specificity</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Hu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">556</biblScope>
+                <biblScope from="57" to="63" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">In vivo genome editing using Staphylococcus aureus Cas9</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Ran</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">520</biblScope>
+                <biblScope from="186" to="191" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Base editing with a Cpf1-cytidine deaminase fusion</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Biotechnol</title>
+              <imprint>
+                <biblScope unit="volume">36</biblScope>
+                <biblScope from="324" to="327" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Engineered CRISPR-Cas9 nuclease with expanded targeting space</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Nishimasu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">361</biblScope>
+                <biblScope from="1259" to="1262" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">Quick and easy yeast transformation using the LiAc/SS carrier DNA/PEG method</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Gietz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Schiestl</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Protoc</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope from="35" to="37" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">Extraction of genomic DNA from yeasts for PCR-based applications</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Lõoke</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Kristjuhan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Kristjuhan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biotechniques</title>
+              <imprint>
+                <biblScope unit="volume">50</biblScope>
+                <biblScope from="325" to="328" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">Clustal W and Clustal X version 2.0</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Larkin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bioinformatics</title>
+              <imprint>
+                <biblScope unit="volume">23</biblScope>
+                <biblScope from="2947" to="2948" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">Deciphering key features in protein structures with the new ENDscript server</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Robert</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Gouet</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nucleic Acids Res</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope from="320" to="324" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

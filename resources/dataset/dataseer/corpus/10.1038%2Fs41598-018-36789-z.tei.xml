@@ -1,0 +1,1794 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:34+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">3D printing of sacrificial templates into hierarchical porous materials OPEN</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+        <date type="published">Published: xx xx xxxx</date>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Lauriane</forename>
+                <surname>Alison</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Stefano</forename>
+                <surname>Menasce</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Florian</forename>
+                <surname>Bouville</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Elena</forename>
+                <surname>Tervoort</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Iacopo</forename>
+                <surname>Mattich</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Alessandro</forename>
+                <surname>Ofner</surname>
+              </persName>
+            </author>
+            <author role="corresp">
+              <persName>
+                <forename type="first">André</forename>
+                <forename type="middle">R</forename>
+                <surname>Studart</surname>
+              </persName>
+              <email>andre.studart@mat.ethz.ch</email>
+            </author>
+            <title level="a" type="main">3D printing of sacrificial templates into hierarchical porous materials OPEN</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date type="published">Published: xx xx xxxx</date>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41598-018-36789-z</idno>
+          <note type="submission">Received: 13 August 2018 Accepted: 26 November 2018</note>
+          <note>1 Scientific RepoRts | (2019) 9:409 | Complex Materials, Department of Materials, ETH Zürich, Vladimir-Prelog-Weg 5, 8093, Zürich, Switzerland. Correspondence and requests for materials should be addressed to A.R.S. (</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>Hierarchical porous materials are widespread in nature and find an increasing number of applications as catalytic supports, biological scaffolds and lightweight structures.</s>
+            <s>Recent advances in additive manufacturing and 3D printing technologies have enabled the digital fabrication of porous materials in the form of lattices, cellular structures and foams across multiple length scales.</s>
+            <s>However, current approaches do not allow for the fast manufacturing of bulk porous materials featuring pore sizes that span broadly from macroscopic dimensions down to the nanoscale.</s>
+            <s>Here, ink formulations are designed and investigated to enable 3D printing of hierarchical materials displaying porosity at the nano-, micro-and macroscales.</s>
+            <s>Pores are generated upon removal of nanodroplets and microscale templates present in the initial ink.</s>
+            <s>Using particles to stabilize the droplet templates is key to obtain Pickering nanoemulsions that can be 3D printed through direct ink writing.</s>
+            <s>The combination of such self-assembled templates with the spatial control offered by the printing process allows for the digital manufacturing of hierarchical materials exhibiting thus far inaccessible multiscale porosity and complex geometries.</s>
+          </p>
+          <p>
+            <s>Highly porous materials combine low density with mechanical, thermal and electrical properties that can be deliberately tuned according to the aimed application and functionalities 1 .</s>
+            <s>Applications range broadly from lightweight structures 2 and thermal management 3 to catalysis 4,5 , filtration 6 and chemical sensing 5 .</s>
+            <s>Porous structures have also been exploited for optics 5 , energy storage 7 , tissue engineering and drug delivery 8 .</s>
+            <s>In many of these applications, hierarchical structures with pores of distinct sizes are desired to achieve a proper balance between conflicting properties.</s>
+            <s>Examples where such balance is achieved are found in hierarchical structures that combine high permeability with high accessible surface area or high mechanical properties with low weight.</s>
+            <s>Such hierarchical porous structures have been produced using a variety of synthetic approaches.</s>
+            <s>However, porous architectures obtained thus far do not reach the level of complexity observed in porous materials created by living organisms in Nature.</s>
+            <s>Exquisite porous architectures found in Nature include the skeleton of marine sponges 9,10 , the vasculature system of plants 10 , the trabecular structure of bone tissue 9,10 , and the internal structure of wood 9 and bamboo 2 .</s>
+            <s>To further improve the level of control over the architecture of synthetic porous materials, it is crucial to develop novel routes for the manufacturing of hierarchical porous structures 11 .</s>
+          </p>
+          <p>
+            <s>Porous materials have been synthetically produced using replica techniques, emulsion templating approaches, direct foaming, capillary suspensions, and additive manufacturing 12-15 .</s>
+            <s>Emulsion templating and direct foaming are particularly interesting because the oil droplets and air bubbles of emulsions and foams can be easily tuned to generate materials spanning a wide range of porosities and pore sizes.</s>
+            <s>However, the thermodynamically unstable nature of emulsions and foams make these pore templates susceptible to coarsening mechanisms that prevent accurate control over pore sizes.</s>
+            <s>To address this issue, particle-stabilized foams and emulsions with enhanced resistance against coarsening and coalescence have been used as templates for the fabrication of tunable porous materials 16 .</s>
+            <s>The stabilization of oil droplets via the adsorption of particles at the oil-water interface lead to so-called Pickering emulsions.</s>
+            <s>The use of these soft templates as inks in extrusion-based 3D printing 13,17 proved to be an effective means to generate hierarchical porous materials through additive manufacturing 18 .</s>
+            <s>In this approach, the nozzle path followed during 3D printing is used to define the pore sizes at larger length scales, whereas the porosity at finer length scales is determined by the size of templating droplets and bubbles.</s>
+            <s>This approach has been utilized to create a wide variety of hierarchical cellular materials <ref target="#b17" type="bibr">[18]</ref>
+              <ref target="#b18" type="bibr">[19]</ref>
+              <ref target="#b19" type="bibr">[20]</ref>
+              <ref target="#b20" type="bibr">[21]</ref> .</s>
+            <s>Typically, the porous architectures obtained exhibit pores ranging from millimetres down to a few micrometers in size.</s>
+          </p>
+          <p>
+            <s>Despite the promising prospects of utilizing emulsions and foams as inks for additive manufacturing, producing porous hierarchical structures with smaller pore sizes would increase further the potential of this technology Published: xx xx xxxx OPEN www.nature.com/scientificreports/</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <p>
+          <s>Scientific RepoRts | (2019) <ref target="#b8" type="bibr">9</ref> :409 | DOI: <ref target="#b9" type="bibr">10</ref> .1038/s41598-018-36789-z in applications requiring high surface area, optical transparency and high mechanical properties.</s>
+          <s>To fulfill this demand, emulsions with droplet sizes in the submicron range could be used as inks.</s>
+          <s>Although Pickering emulsions typically exhibit larger droplet sizes, a few examples have been reported of submicron particle-stabilized droplets.</s>
+          <s>This has been possible by synergistically combining particles and surfactants during emulsion stabilization <ref target="#b21" type="bibr">22,</ref>
+            <ref target="#b22" type="bibr">23</ref> .</s>
+          <s>In this approach, surfactants are used to quickly diffuse and adsorb at the oil-water interface.</s>
+          <s>This facilitates the break-up of droplets into submicron sizes during emulsification due to the reduced tension of the fluid interface.</s>
+          <s>Moreover, it prevents coalescence of the submicron droplets at short timescales.</s>
+          <s>Subsequent adsorption of particles at the interface ensures the stabilization of droplets against coarsening at longer timescales.</s>
+          <s>Emulsions produced through this route can be further processed by spray drying <ref target="#b23" type="bibr">24,</ref>
+            <ref type="bibr">25</ref> , but the obtained structures have been so far limited to materials in granular or colloidal form of relevance for pharmaceutical applications <ref target="#b25" type="bibr">26,</ref>
+            <ref target="#b26" type="bibr">27</ref> .</s>
+        </p>
+        <p>
+          <s>Here, we 3D print inks that consist of nanoemulsions and other microtemplates to produce complex-shaped hierarchical materials with controlled pores ranging from hundreds of nanometers to millimetres in size.</s>
+          <s>The pore size of the resulting porous materials can be easily tuned through the selection of the printing path and the size of the pore templating building blocks.</s>
+          <s>Submicron pores are generated from particle-stabilized nanoemulsions, whereas larger droplets or sacrificial polymer particles are used to create pores in a size range varying from 10 to 100 µm.</s>
+          <s>Finally, the macroscopic complex shape and the large-scale cellular architecture of the hierarchical porous material is determined by the 3D printing process.</s>
+          <s>To illustrate our approach, we first describe the processing route used to produce the nanoemulsions.</s>
+          <s>This is followed by a thorough investigation of the structure of the porous materials obtained when such soft nano-templates are combined with larger emulsion droplets or polymer particles.</s>
+          <s>Finally, we demonstrate how these pore templating building blocks can be used as ink constituents to 3D print porous materials with complex shape and internal porous structure of relevance for several applications but that is not easily accessible with other manufacturing technologies.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results and Discussion</head>
+        <p>
+          <s>Following concepts outlined in earlier works <ref target="#b21" type="bibr">22,</ref>
+            <ref target="#b22" type="bibr">23,</ref>
+            <ref target="#b27" type="bibr">28</ref> , stable nanodroplets are formed in a two-step emulsification process through the synergistic action of hydrophilic nanoparticles and an oil-soluble zwitterionic surfactant.</s>
+          <s>We illustrate this process using phosphatidylcholine (PC) and silica nanoparticles as zwitterionic surfactant and hydrophilic nanoparticles, respectively <ref target="#fig_0" type="figure">(Fig. 1a)</ref> .</s>
+          <s>The zwitterionic surfactant effectively stabilizes micron-sized droplets of corn oil suspended in water during a first emulsification step.</s>
+          <s>In a second emulsification step, the nanoparticles are introduced in the continuous aqueous phase of the primary-formed emulsions and the resulting Cryo-SEM images of the resulting particle-stabilized nanodroplets.</s>
+          <s>The inset shows a silica particle monolayer that detached from the droplet surface during sample preparation.</s>
+          <s>Scale bars in B: 200 nm.</s>
+          <s>(c) Evolution of the droplet size distribution over time for nanoemulsions stabilized by 7 wt O/W % particles and 1 wt oil % surfactant.</s>
+          <s>mixture is subjected to ultrasonication.</s>
+          <s>The high energy introduced through sonication lead to further break-up of the oil phase, decreasing the droplet size to the nanoscale.</s>
+          <s>During this process, excess PC molecules present in the oil phase are expected to adsorb rapidly at the oil-water interface, reducing its interfacial tension and facilitating droplet break-up.</s>
+          <s>This approach circumvents the slow diffusion rates and adsorption dynamics of particles at liquid interfaces 29 , thus enabling the stabilization of smaller droplet sizes.</s>
+          <s>Observations of the emulsion microstructure by cryo-scanning electron microscopy (cryo-SEM) show that the silica nanoparticles adsorb as a dense layer around the oil nanodroplets <ref target="#fig_0" type="figure">(Fig. 1b)</ref> .</s>
+          <s>Such dense layer exhibits a viscoelastic behavior that prevents coarsening and coalescence of the nanodroplets for long time periods, as evidenced by interfacial rheology measurements of the oil-water interface <ref target="#fig_0" type="figure">(Fig. S1a</ref> ).</s>
+          <s>Because the primary-formed droplets carry predominantly negative electric charges at the processing pH, electrostatic forces alone are not enough to explain the adsorption of negatively-charged nanoparticles to the droplet surface.</s>
+          <s>Instead, adsorption may result from non-electrostatic forces and other interactions possibly involving the positive charges of the zwitterionic surfactant present at the oil-water interface <ref target="#fig_0" type="figure">(Fig. S1b</ref> ).</s>
+          <s>By contrast, no viscoelastic film is formed when only particles or PC are used in the formulation, which results in larger and less stable droplets after emulsification <ref target="#fig_1" type="figure">(Fig. S2</ref> ).</s>
+          <s>As demonstrated in previous studies <ref target="#b29" type="bibr">[30]</ref>
+            <ref target="#b30" type="bibr">[31]</ref>
+            <ref target="#b31" type="bibr">[32]</ref> , the interfacial adsorption of particles is an effective mechanism to stabilize emulsions against coalescence and Ostwald ripening.</s>
+          <s>Indeed, dynamic light scattering experiments show that the interfacial viscoelastic film enables the stabilization of nano-sized droplets for time periods as long as 3 months <ref target="#fig_0" type="figure">(Fig. 1c)</ref> .</s>
+        </p>
+        <p>
+          <s>Nanodroplets formed through this processing route are stable enough to be concentrated by ultracentrifugation and thus form a dense jammed template that can be directly converted into a nanoporous structure upon drying or sintering <ref target="#fig_1" type="figure">(Fig. 2a)</ref> depending on the oil volatility.</s>
+          <s>The porosity of the structure is controlled by the concentration of oil droplets in the jammed nanoemulsion, which was estimated to be higher than 70 vol%.</s>
+          <s>To show that our processing route is applicable to a wide range of materials, we fabricated nanoporous structures using nanoparticles of distinct surface chemistries <ref target="#fig_1" type="figure">(Fig. 2b,c)</ref> .</s>
+          <s>In addition to bare silica, alumina-coated silica nanoparticles were used as model building blocks for this purpose.</s>
+          <s>By using coated particles, we demonstrate the versatility of the method while keeping the same particle size as the reference silica powder.</s>
+          <s>The versatility arises from the zwitterionic nature of the surfactant, which is able to electrostatically attract both positively and negatively-charged hydrophilic particles during the second emulsification process <ref target="#fig_0" type="figure">(Fig. S1a)</ref> .</s>
+        </p>
+        <p>
+          <s>Bare silica (Ludox TM50) and alumina-coated silica particles (Ludox CL-P) show indeed negative and positive net surface charges, respectively, at the processing pH of 5.5.</s>
+          <s>This was confirmed by zeta potential measurements of such nanoparticles in water as a function of pH <ref target="#fig_1" type="figure">(Fig. 2b</ref> ).</s>
+          <s>Using PC as zwitterionic surfactant, stable nanoemulsions were also successfully prepared using the alumina-coated silica nanoparticles.</s>
+          <s>Sintering of the centrifuged emulsions led to porous structures with either bare silica or alumina-coated silica nanoparticles as the main building blocks in the pore walls ( <ref target="#fig_1" type="figure">Fig. 2c</ref> ).</s>
+          <s>Alternatively to sintering, chemical strategies can also be utilized to consolidate the structure if temperature-sensitive constituents need to be preserved, as discussed later <ref target="#b19" type="bibr">20</ref> .</s>
+          <s>To confirm the flexibility of the method, porous structures were also successfully produced using smaller 7 nm silica particles and bare alumina particles as building blocks <ref target="#fig_2" type="figure">(Fig. S3</ref> ).</s>
+          <s>The size of the nanopores obtained after drying and sintering directly reflects the size of the precursor nanodroplet templates.</s>
+          <s>Taking the system with bare silica nanoparticles as an example, we observe that nanoemulsions with droplet size in the range of 150-1000 nm <ref target="#fig_1" type="figure">(Fig. S2</ref> ) lead to porous structures with pore sizes varying from 100 to 900 nm after drying and sintering.</s>
+          <s>Because the nanoparticles form a dense layer on the surface of the precursor droplets, closed nanopores are often obtained after drying and sintering.</s>
+          <s>However, open pores can also form if the emulsions are slightly destabilized during processing to generate droplet surfaces that are only partially covered by particles.</s>
+          <s>For the emulsions investigated in this work, we found that such slight destabilization is possible by replacing corn oil by decane as the dispersed phase <ref target="#fig_3" type="figure">(Fig. S4)</ref> .</s>
+          <s>The ability to tune the process to generate either open or close porosity after sintering enables tailoring of the porous structure according to the properties required by the aimed application.</s>
+        </p>
+        <p>
+          <s>In addition to nanoporous structures, the nanoemulsions can also be combined with micron-sized sacrificial templates to generate porous architectures featuring a second level of porosity.</s>
+          <s>Two exemplary types of sacrificial templates are used here to create micron-sized pores: oil droplets and polymer particles.</s>
+          <s>The choice of the second sacrificial template affects the possible consolidation step and the resulting porous structures.</s>
+          <s>If micron-sized oil droplets are used, the wet emulsion template can be conveniently consolidated by simple evaporation of the liquid phases followed by chemical cross-linking of the remaining constituents.</s>
+          <s>By contrast, polymer particle templates require a sintering step for consolidation if long dissolution of the solid polymer phase is to be avoided.</s>
+          <s>Besides such distinct processing pathways, oil droplets are more prone to deformation and distortion during the drying and consolidation steps.</s>
+          <s>This contrasts with the undeformable nature of polymer particle templates.</s>
+        </p>
+        <p>
+          <s>We illustrate the different possible pathways towards two-level hierarchical porosity by using polycaprolactone (PCL) particles or decane droplets as the micron-sized sacrificial templates <ref target="#fig_2" type="figure">(Fig. 3)</ref> .</s>
+          <s>When oil droplets are used as second soft template (Route 1), an additional emulsification step is employed to create large oil droplets from the previously prepared nanoemulsions <ref target="#fig_2" type="figure">(Fig. 3a)</ref> .</s>
+          <s>Confocal microscopy imaging confirmed the adsorption of the nanodroplets on the surface of the larger oil droplets <ref target="#fig_4" type="figure">(Fig. S5)</ref> , which is important to prevent the phase separation of the two droplet sizes during centrifugation.</s>
+          <s>The size of the larger droplets can be typically varied between 15 and 250 µm, depending on the intensity and duration of the emulsification process.</s>
+          <s>Simple drying of the liquids from the multiscale emulsion at 25 °C results in a porous structure featuring pore sizes at the nanometer and micrometer scales <ref target="#fig_2" type="figure">(Fig. 3b)</ref> .</s>
+          <s>This porous structure can be consolidated and strengthened at room temperature by crosslinking of chitosan molecules previously added to the emulsion continuous phase.</s>
+          <s>To illustrate this possibility, 5 wt% chitosan was incorporated prior ultracentrifugation into the aqueous phase of the nanoemulsion to enable cross-linking with 2.5 wt% glutaraldehyde <ref type="figure">(Fig. S6</ref> ).</s>
+          <s>This room-temperature consolidation process is particularly suitable for the preparation of polymer-based bio-scaffolds, since it prevents the thermal degradation of the organic matter during heat treatment.</s>
+          <s>Analysis of the pore size distribution of the porous structures obtained after drying shows the two expected families of pores <ref target="#fig_2" type="figure">(Fig. 3c,d)</ref> .</s>
+          <s>The size distribution of the smaller pores agrees well with the droplet size distribution of the original nanoemulsion template.</s>
+          <s>This suggests that the small dimensions of the nanodroplets prevent their distortion during the drying process.</s>
+          <s>In contrast to the size fidelity observed at small scales, the size distribution of larger pores was found to be broader as compared to the size distribution of the templating droplets.</s>
+          <s>Such an effect is probably a result of the shrinkage that takes place during drying and the associated capillary forces that develop within the structure during removal of the liquid phases.</s>
+          <s>Despite their small sizes, the nanopores generated on the walls of macropores <ref target="#fig_2" type="figure">(Fig. 3b)</ref> were sufficient to generate an open porosity level as high as 90% in the final sintered structure.</s>
+          <s>Open porosity with larger windows between macropores can be generated by reducing the stability of the templating emulsion using for example lower concentrations of particle stabilizers or surface modifiers <ref target="#b32" type="bibr">33</ref> .</s>
+        </p>
+        <p>
+          <s>The use of polymer particles as sacrificial templates to generate pores at the microscale is an effective alternative route to enhance the fidelity of the templating approach (Route 2, <ref target="#fig_3" type="figure">Fig. 4</ref> ).</s>
+          <s>This is demonstrated using 100 µm monodisperse PCL particles made by microfluidics to form µm-sized pores with narrow size distribution after sintering <ref target="#fig_3" type="figure">(Fig. 4a)</ref> .</s>
+          <s>In this example, the polymer microparticles were added directly to jammed nanoemulsions obtained via centrifugation.</s>
+          <s>Heat treatment of the material at 850 °C enables removal of the liquid phases and polymer particles, resulting in a two-level hierarchical porous structure with well-defined pore sizes.</s>
+          <s>SEM imaging of such structures confirm the strong correlation between the size distribution of pores and that of the original sacrificial template <ref target="#fig_3" type="figure">(Fig. 4b)</ref> .</s>
+          <s>The monodispersity of the particle templates is directly translated into pores, which display a polydispersity index below 0.03 <ref target="#fig_3" type="figure">(Fig. 4c,d)</ref> .</s>
+          <s>This contrasts with the high polydispersity of 0.68 measured for the pores obtained from the large droplet templates <ref target="#fig_2" type="figure">(Fig. 3d)</ref> .</s>
+          <s>Because microfluidic emulsification can lead to monodisperse particles over length scales between 5 µm and 500 µm 34 , the use of such particles as microtemplates in combination with the nanoemulsions described in this study is thus an attractive approach to deliberately design the pores of materials within a large size range.</s>
+          <s>3D printing of such dual templating soft materials eventually extends the pore size design space to the millimeter scale and provides a digital means to shape porous architectures into intricate three-dimensional geometries <ref target="#fig_4" type="figure">(Fig. 5)</ref> .</s>
+          <s>Using direct ink writing as the 3D printing technique, the spacing between the extruded filaments can be tailored to control the pore openings at the largest length scale.</s>
+          <s>We demonstrate this possibility by printing water-based inks consisting of jammed nanoemulsions loaded with monodisperse PCL microparticles.</s>
+          <s>Because jammed emulsions exhibit tunable viscoelastic behavior 20 , no further additives are needed to adjust the rheological properties of the ink to meet the flow response required for direct ink writing <ref target="#b34" type="bibr">35</ref> .</s>
+          <s>In case non-jammed emulsions with lower concentrations of droplets are used as inks, rheological modifiers, such as fumed silica, can be added to tune the flow response of the feedstock material <ref target="#b35" type="bibr">36</ref> .</s>
+          <s>This ink was eventually printed into a chiral 3D geometry that cannot be easily obtained by conventional manufacturing <ref target="#fig_4" type="figure">(Fig. 5a,c)</ref> .</s>
+          <s>Micro-computed tomography of the printed wet structure reveals more details of the intricate geometry <ref target="#fig_4" type="figure">(Fig. 5b)</ref> .</s>
+          <s>Besides chirality, the printed helicoidal geometry features an internal channel whose walls display the two-level hierarchical porosity arising from the droplet and microparticle templates after sintering at 850 °C <ref target="#fig_4" type="figure">(Fig. 5d)</ref> .</s>
+          <s>Archimedes measurements revealed that the walls of the final chiral structure show 85% and 6% of open and closed porosity, respectively.</s>
+          <s>Grid-like cellular geometries can also be created at the macroscale if the rheology of the ink is tuned with modifiers to prevent sagging of supported filaments <ref target="#b36" type="bibr">37,</ref>
+            <ref target="#b37" type="bibr">38</ref> .</s>
+        </p>
+        <p>
+          <s>The tortuous nature of the internal channels and the multiscale porous walls make the helicoidal printed geometry potentially interesting for catalytic applications <ref target="#b38" type="bibr">39,</ref>
+            <ref target="#b39" type="bibr">40</ref> , if the ink formulation is adjusted to obtain open porosity after drying and consolidation.</s>
+          <s>Although further studies would be needed to find the optimum hierarchical architecture for this application, the idea is that the internal channels would provide easy accessibility to the high-surface area pores within the walls combined with tunable level of turbulence to promote exchange of reactive species.</s>
+          <s>The fabrication of such structures with heat-resistant inorganic materials enables the utilization of such a catalytic support also at high temperatures.</s>
+          <s>Alternatively, one can envision the utilization of similar 3D printed helicoidal porous structures in thermal management applications.</s>
+          <s>In this case, the pore sizes at coarser length scales would provide high permeability to fluid flow whereas a nanoemulsion containing a non-volatile oil phase would be kept in the structure to allow for thermal storage and release through phase changes.</s>
+          <s>Besides these catalytic and thermal functionalities, such hierarchical porous structures can potentially show improved mechanical efficiency compared to materials featuring the same level of porosity but at one single length scale <ref target="#b17" type="bibr">18</ref> .</s>
+        </p>
+        <p>
+          <s>Although several 3D printing and additive manufacturing techniques have been developed to create structures at the nano-, micro-and macroscale, the ability to print porous materials with features spanning over all these multiple length scales in one single fast process is a unique aspect of the proposed technology <ref target="#fig_4" type="figure">(Fig. 5e)</ref> .</s>
+          <s>This is only possible by combining the spatial control offered by the printing technique with the self-assembly nature of the building blocks present in the ink.</s>
+          <s>Eventually, the combination of porosities and pore sizes achieved fall within ranges that have thus far not been accessible by previous processing routes for porous materials 12 .</s>
+        </p>
+      </div>
+      <div>
+        <head>Conclusion</head>
+        <p>
+          <s>Hierarchical porous materials can be fabricated by extrusion-based 3D printing of inks loaded with sacrificial pore templates at the nanometric and micrometric scales.</s>
+          <s>Pore templates may consist of combinations of Pickering nanoemulsions, droplet assemblies and micron-sized polymer particles.</s>
+          <s>The 3D printing process is simple and fast, since the nano-and microporosity are generated from the self-assembly of templating droplets and particles within the ink, as opposed to the slow sequential deposition of material required in other technologies.</s>
+          <s>Because they are susceptible to coalescence during ink preparation, the templating droplets need to be stabilized by particles that will later form the walls of the pores created upon drying and consolidation.</s>
+          <s>The zwitterionic nature of the surfactant used to promote this stabilization mechanism allows for the use of particles with a variety of distinct chemistries.</s>
+          <s>Moreover, the dried printed structure can be consolidated either chemically or via heat treatment, depending on the ink formulation.</s>
+          <s>Combined with the complex shaping capabilities of 3D printing, these features make the process highly tunable and open several new possibilities for the design and digital fabrication of hierarchical porous materials for a variety of applications.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Experimental Methods</head>
+        <p>
+          <s>Preparation of particle-stabilized nanoemulsions.</s>
+          <s>Phosphatidylcholine (PC, Lipoid P 100, Lipoid GmbH, Germany) was dissolved at 1 wt oil % in corn oil (Sigma-Aldrich, Germany) or in decane (&gt;99%, Acros Organics, Switzerland) at 60 °C.</s>
+          <s>The primary emulsion was prepared using 23.32 wt% of oil and 76.68 wt% of Milli-Q water (18.2 mΩ.cm).</s>
+          <s>Pre-emulsification was achieved with a rotor-stator mixer (Ultra-Turrax, disperser T25 digital, dispersing tool S 25 N -18 G, IKA, Germany) at 10000 rpm for 5 minutes.</s>
+          <s>Emulsification was performed by passing the oil-water mixture twenty times through a high-pressure homogenizer (HC-5000 equipped with a L30Z microchannel, Microfluidics, United States) at 115 bar.</s>
+          <s>With corn oil, the secondary emulsion contained 86 wt% of the primary emulsion and 14 wt% of an aqueous suspension of silica particles.</s>
+          <s>Two types of commercial silica suspensions were used: Ludox TM50 (50 wt% of 22 nm silica nanoparticles in water, Sigma-Aldrich, Germany) or Ludox CL-P (40 wt% of silica nanoparticles in water, 22 nm, Sigma-Aldrich, Germany).</s>
+          <s>The pH of the Ludox TM50 and Ludox CL-P suspensions was adjusted to pH 5.5 and 4, respectively, using a 1 M HCl solution (Titrisol, Merck, Switzerland).</s>
+          <s>The pH of the primary emulsion was fixed at pH 5.5.</s>
+          <s>The secondary emulsification step was performed by sonication for 5 minutes at a relative intensity of 75% (Sonics, United States).</s>
+          <s>When decane was used as the oil phase, the secondary emulsion was produced by mixing 70 wt% of the primary emulsion with 30 wt% of Ludox TM50 adjusted at pH 5.5.</s>
+          <s>wt oil % and wt O/W % denotes the weight percentage relative to the total weight of oil and emulsion, respectively.</s>
+        </p>
+        <p>
+          <s>Zeta potential measurements.</s>
+          <s cert="0.9317970275878906" id="dataset-1" type="Tabular data">The zeta potential of the silica particles was measured using the electroacoustic Colloidal Vibration Current technique in a DT300 equipment at 25 °C (Dispersion Technology, Germany).</s>
+        </p>
+        <p>
+          <s>Droplet size characterization.</s>
+          <s cert="0.901408851146698" id="dataset-2" type="Tabular data">The droplet size distribution was evaluated by static light scattering in water (Mastersizer 2000, Malvern Instrument, United Kingdom).</s>
+          <s>A refractive index of 1.47 and an absorption coefficient of 0.0001 were assumed for the oil droplets.</s>
+        </p>
+        <p>
+          <s>Cryo-scanning electron microscopy.</s>
+          <s>A freeze-fracture technique was used to prepare samples of nanodroplets for imaging in a cryo-SEM <ref target="#b40" type="bibr">41,</ref>
+            <ref target="#b41" type="bibr">42</ref> .</s>
+          <s>Samples were prepared as explained in our previous work <ref target="#b42" type="bibr">43</ref> .</s>
+        </p>
+        <p>
+          <s>Fabrication of nanoporous materials.</s>
+          <s>The nanoemulsions were centrifuged for 10 minutes at 25000 rpm (Beckman Avanti J-25 I, GMI, United States).</s>
+          <s>After removal of the supernatant, nanoporous materials are obtained by drying the emulsion at room temperature or sintering at 850 °C in a furnace (LE 6/11/P300, Nabertherm, Germany).</s>
+          <s>Fabrication of hierarchical porous materials.</s>
+          <s>Route 1: Oil-in-water (O/W) emulsions containing microdroplets coated with nanodroplets were obtained by mixing decane containing 1 wt oil % of PC with the nanoemulsion previously described in a 4:6 weight ratio.</s>
+          <s>In this case, the nanoemulsion was prepared with decane and 15 wt O/W % of silica.</s>
+          <s>Such mixture was sonicated for 5 minutes at a relative intensity of 75% (Sonics, United States).</s>
+          <s>A hierarchical porous material was obtained after centrifugation of the emulsion for 3 minutes at 2500 rpm (Centrifuge 5417 R, Eppendorf, Switzerland) and drying at room temperature.</s>
+          <s>Route 2: Polycaprolactone (PCL, M w ≈ 14000 g.mol −1 , Sigma Aldrich) beads were produced by microfluidic step emulsification as reported in the literature <ref target="#b43" type="bibr">44</ref> .</s>
+          <s>Briefly, 5 wt% of PCL was dissolved in dichloromethane (DCM, Acros Organics, Switzerland) and emulsified in water with 2 wt% poly(vinyl alcohol) (PVA, M w = 31000-50000 g.mol −1 ) as the surfactant.</s>
+          <s>The channel design of the microfluidic glass chip and the PCL concentration in DCM were adjusted to generate monodisperse beads with an average size of 100 µm.</s>
+          <s>The emulsions were immersed in pure water for a week until complete evaporation of DCM and the obtained beads were used afterward as PCL microtemplates.</s>
+          <s>For the preparation of the hierarchical materials, the PCL beads were centrifuged for 2 min at 2000 rpm (Hermle Z306, Hermle Labortechnik GmbH, Germany) before being added to a centrifuged nanoemulsion (10 min, 25000 rpm) at a concentration varying from 10 to 20 wt%.</s>
+          <s>The hierarchical porous material was obtained after sintering at 850 °C.</s>
+        </p>
+        <p>
+          <s>3D printing by Direct Ink Writing.</s>
+          <s>An helicoidal-shaped porous structure was printed using a pressure controlled direct-ink-writing system (3DDiscovery, RegenHu, Switzerland).</s>
+          <s>A nanoemulsion containing PCL particles was used as ink.</s>
+          <s>Such jammed emulsion showed the rheological properties required to produce distortion-free 3D structures <ref target="#b34" type="bibr">35,</ref>
+            <ref target="#b36" type="bibr">37,</ref>
+            <ref target="#b37" type="bibr">38</ref> .</s>
+          <s>The filament diameter was set to 0.58 mm.</s>
+          <s>After the printing process, samples were dried and sintered at 850 °C.</s>
+        </p>
+        <p>
+          <s>Characterization.</s>
+          <s cert="0.9789456725120544" id="dataset-3" type="Image">SEM images were taken with a LEO 1530 instrument (Zeiss GmbH, Germany).</s>
+          <s>Image analysis of the droplet and pore size was conducted using the software Fiji.</s>
+          <s cert="0.96258944272995" id="dataset-4" type="Image:Computerized Tomography scan">Micro-CT scans were obtained using a µCT 100 (10 µm voxel size, 45 kVp, 88 uA, 200 ms integration time, SCANCO Medical, Brüttisellen, Switzerland).</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Figure 1 .</head>
+        <label>1</label>
+        <figDesc>(a) Formation of nanoemulsions via a synergistic stabilization mechanism involving a zwitterionic surfactant phosphatidylcholine (PC) and silica nanoparticles. HPH stands for high-pressure homogenizer. (b)</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Figure 2 .</head>
+        <label>2</label>
+        <figDesc>(a) Schematics illustrating the preparation of nanoporous structures from particle-stabilized nanoemulsions. (b) Zeta potential measurements of bare silica and alumina-coated silica particles used for emulsion stabilization. (c) SEM images of the porous structures obtained after ultracentrifugation and sintering of nanodroplets stabilized using negatively (left) and positively charged (right) nanoparticles and prepared with corn oil (non-volatile). Scale bars: c, 400 nm. Scientific RepoRts | (2019) 9:409 | DOI:10.1038/s41598-018-36789-z</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Figure 3 .</head>
+        <label>3</label>
+        <figDesc>(a) Schematics of the processing route used to fabricate hierarchical porous materials from nanoemulsions and microdroplets (Route 1) (b) SEM images of the porous structure obtained after drying of the soft precursors. (c,d) Size distributions of the µm-templates and the nm-sized droplets (c) before and (d) after drying. Scientific RepoRts | (2019) 9:409 | DOI:10.1038/s41598-018-36789-z</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Figure 4 .</head>
+        <label>4</label>
+        <figDesc>(a) Schematics of the processing route used to fabricate hierarchical porous materials from nanoemulsions and PCL particles (Route 2). (b) SEM images of the resulting porous structure after sintering. (c,d) Size distributions of the µm-templates and the nm-sized droplets in (c) the wet state and (d) after sintering at 850 °C. Scientific RepoRts | (2019) 9:409 | DOI:10.1038/s41598-018-36789-z</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Figure 5 .</head>
+        <label>5</label>
+        <figDesc>(a,b) Complex helicoidal structure that was 3D printed using a concentrated nanoemulsion as ink loaded with PCL particles. Images in (a) shows the structure in the wet state right after printing, whereas images in (b) display reconstructed representations of the printed object from micro-CT scans.Scale bars: 1 cm. (c) Schematics of the different building blocks and levels of hierarchy present in the 3D printed structure. (d) Photographs and SEM images of the 3D printed structures after drying and sintering. The inset shows that the cell wall of the structure is formed by a single layer of nanoparticles. (e) The proposed additive manufacturing technology covers a range of pore sizes that has previously not been accessible by a single processing technique. Scale bars: (a) and (b), 0.5 cm; (d), 0.5 cm, 0.5 cm, 100 µm, 200 nm (left to right) and 100 nm (inset). Scientific RepoRts | (2019) 9:409 | DOI:10.1038/s41598-018-36789-z</figDesc>
+      </figure>
+      <note place="foot">© The Author(s) 2019</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>This research was funded by DSM Nutritional Products.</s>
+            <s>A.R.S and F.B. also acknowledge the financial support of the Swiss National Science Foundation (Consolidator Grant BSCGI0_157696).</s>
+            <s>This work also benefited from support from the Swiss National Science Foundation through the National Center of Competence in Research Bio-Inspired Materials.</s>
+            <s>The authors thank Dr. Alexandra Teleki for fruitful discussions, Dr. Michele Zanini for the cryo-SEM images, and Dimitri Kokkinis for his help with 3D printing.</s>
+            <s>We also thank Dr. Alberto Cingolani and Prof. Morbidelli for providing access to their high-pressure homogenizer, William Enns-Bray for the microCT scans and the ScopeM microscopy center at ETH for providing access to their microscopes.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Author Contributions</head>
+          <p>
+            <s>Experiments were designed by L.A., E.T., F.B., and A.R.S. and conducted by L.A. and S.M. A.O. developed the microfluidic device and I.M. prepared the PCL beads.</s>
+            <s>L.A. and F.B. drafted the manuscript and the figures.</s>
+            <s>All authors discussed the results and commented on the manuscript.</s>
+            <s>The manuscript was written by L.A., F.B. and A.R.S.</s>
+            <s>All authors have given approval to the final version of the manuscript.</s>
+          </p>
+        </div>
+        <div>
+          <head>Additional Information</head>
+          <p>
+            <s>Supplementary information accompanies this paper at https://doi.org/10.1038/s41598-018-36789-z.</s>
+          </p>
+        </div>
+        <div>
+          <head>Competing Interests:</head>
+          <p>
+            <s>The authors declare no competing interests.</s>
+          </p>
+          <p>
+            <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+          <p>
+            <s>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.</s>
+            <s>The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in a credit line to the material.</s>
+            <s>If material is not included in the article's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.</s>
+            <s>To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Ashby</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Cellular Ceramics</title>
+              <imprint>
+                <publisher>Wiley-VCH Verlag GmbH &amp; Co. KGaA</publisher>
+                <date type="published" when="2006"/>
+                <biblScope unit="volume">1</biblScope>
+                <biblScope from="1" to="17" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Bioinspired structural materials</title>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <forename type="middle">G K</forename>
+                  <surname>Wegst</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Bai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Saiz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Tomsia</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Ritchie</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1038/nmat4089</idno>
+              <ptr target="https://doi.org/10.1038/nmat4089"/>
+            </analytic>
+            <monogr>
+              <title level="j">Nature Materials</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope from="23" to="36" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Bioinspired Engineering of Thermal Materials</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Tao</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1002/adma.201401449</idno>
+              <ptr target="https://doi.org/10.1002/adma.201401449"/>
+            </analytic>
+            <monogr>
+              <title level="j">Advanced Materials</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope from="428" to="463" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Yokoi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Tatsumi</surname>
+                </persName>
+              </author>
+              <title level="m">Hierarchically Structured Porous Materials</title>
+              <editor>Bao-Lian Su, C. Sanchez, &amp; Xiao-Yu Yang</editor>
+              <imprint>
+                <publisher>Wiley-VCH Verlag GmbH &amp; Co. KGaA</publisher>
+                <date type="published" when="2011"/>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope from="481" to="515" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Hybrid Inorganic-Organic Mesoporous Silicates-Nanoscopic Reactors Coming of Age</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Stein</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Melde</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Schroden</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1002/1521-4095</idno>
+              <idno>19&lt;1403::AID-ADMA1403&gt;3.0.CO;2-X</idno>
+              <ptr target="https://doi.org/10.1002/1521-4095"/>
+            </analytic>
+            <monogr>
+              <title level="j">Advanced Materials</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope from="1403" to="1419" unit="page"/>
+                <date type="published" when="2000"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Nakanishi</surname>
+                </persName>
+              </author>
+              <title level="m">Hierarchically Structured Porous Materials</title>
+              <editor>Bao-Lian Su, C. Sanchez, &amp; Xiao-Yu Yang</editor>
+              <imprint>
+                <publisher>Wiley-VCH Verlag GmbH &amp; Co. KGaA</publisher>
+                <date type="published" when="2011"/>
+                <biblScope unit="volume">17</biblScope>
+                <biblScope from="517" to="529" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <author>
+                <persName>
+                  <forename type="first">B.-L</forename>
+                  <surname>Su</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Hierarchically Structured Porous Materials</title>
+              <editor>Bao-Lian Su, C. Sanchez, &amp; Xiao-Yu Yang</editor>
+              <imprint>
+                <publisher>Wiley-VCH Verlag GmbH &amp; Co. KGaA</publisher>
+                <date type="published" when="2011"/>
+                <biblScope unit="volume">19</biblScope>
+                <biblScope from="577" to="600" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Vallet-Regí</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Manzano</surname>
+                </persName>
+              </author>
+              <title level="m">Hierarchically Structured Porous Materials</title>
+              <editor>Bao-Lian Su, C. Sanchez, &amp; Xiao-Yu Yang</editor>
+              <imprint>
+                <publisher>Wiley-VCH Verlag GmbH &amp; Co. KGaA</publisher>
+                <date type="published" when="2011"/>
+                <biblScope unit="volume">20</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Nature's hierarchical materials</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Fratzl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Weinkamer</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1016/j.pmatsci.2007.06.001</idno>
+              <ptr target="https://doi.org/10.1016/j.pmatsci.2007.06.001"/>
+            </analytic>
+            <monogr>
+              <title level="j">Progress in Materials Science</title>
+              <imprint>
+                <biblScope unit="volume">52</biblScope>
+                <biblScope from="1263" to="1334" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Studart</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Erb</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Libanori</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Hybrid and Hierarchical Composite Materials</title>
+              <meeting>
+                <address>
+                  <addrLine>Kim, Charles Randow</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <publisher>Springer International Publishing</publisher>
+                <date type="published" when="2015"/>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope from="287" to="318" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Structuring adsorbents and catalysts by processing of porous powders</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Akhtar</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Andersson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ogunwumi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Hedin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Bergström</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1016/j.jeurceramsoc.2014.01.008</idno>
+              <ptr target="https://doi.org/10.1016/j.jeurceramsoc.2014.01.008"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of the European Ceramic Society</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope from="1643" to="1666" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Processing Routes to Macroporous Ceramics: A Review</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Studart</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Gonzenbach</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Tervoort</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Gauckler</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1111/j.1551-2916.2006.01044.x</idno>
+              <ptr target="https://doi.org/10.1111/j.1551-2916.2006.01044.x"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of the American Ceramic Society</title>
+              <imprint>
+                <biblScope unit="volume">89</biblScope>
+                <biblScope from="1771" to="1789" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Direct Ink Writing of Three-Dimensional Ceramic Structures</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Lewis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Smay</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Stuecker</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Cesarano</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1111/j.1551-2916.2006.01382.x</idno>
+              <ptr target="https://doi.org/10.1111/j.1551-2916.2006.01382.x"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of the American Ceramic Society</title>
+              <imprint>
+                <biblScope unit="volume">89</biblScope>
+                <biblScope from="3599" to="3609" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Conventional and novel processing methods for cellular ceramics</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Colombo</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences</title>
+              <imprint>
+                <biblScope unit="volume">364</biblScope>
+                <biblScope unit="page">109</biblScope>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Highly Porous Materials with Unique Mechanical Properties from Smart Capillary Suspensions</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Dittmann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Maurath</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Bitsch</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Willenbacher</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1002/adma.201504910</idno>
+              <ptr target="https://doi.org/10.1002/adma.201504910"/>
+            </analytic>
+            <monogr>
+              <title level="j">Adv. Mater</title>
+              <imprint>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope from="1689" to="1696" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Role of Pickering stabilization and bulk gelation for the preparation and properties of solid silica foams</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Lesov</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1016/j.jcis.2017.05.036</idno>
+              <ptr target="https://doi.org/10.1016/j.jcis.2017.05.036"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Colloid and Interface Science</title>
+              <imprint>
+                <biblScope unit="volume">504</biblScope>
+                <biblScope from="48" to="57" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Lewis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Smay</surname>
+                </persName>
+              </author>
+              <title level="m">Cellular Ceramics</title>
+              <imprint>
+                <publisher>Wiley-VCH Verlag GmbH &amp; Co. KGaA</publisher>
+                <date type="published" when="2006"/>
+                <biblScope from="87" to="100" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">3D Printing of Emulsions and Foams into Hierarchical Porous Ceramics</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Minas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Carnelli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Tervoort</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Studart</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1002/adma.201603390</idno>
+              <ptr target="https://doi.org/10.1002/adma.201603390"/>
+            </analytic>
+            <monogr>
+              <title level="j">Advanced Materials</title>
+              <imprint>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope from="9993" to="9999" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Architected cellular ceramics with tailored stiffness via direct foam writing</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Muth</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Dixon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Woish</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Gibson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Lewis</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1073/pnas.1616769114</idno>
+              <ptr target="https://doi.org/10.1073/pnas.1616769114"/>
+            </analytic>
+            <monogr>
+              <title level="j">Proceedings of the National Academy of Sciences</title>
+              <imprint>
+                <biblScope unit="volume">114</biblScope>
+                <biblScope from="1832" to="1837" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">3D printing of concentrated emulsions into multiphase biocompatible soft materials</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Sommer</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1039/C6SM02682F</idno>
+              <ptr target="https://doi.org/10.1039/C6SM02682F"/>
+            </analytic>
+            <monogr>
+              <title level="j">Soft Matter</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope from="1794" to="1803" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Fabrication of Hierarchical Macroporous Biocompatible Scaffolds by Combining Pickering High Internal Phase Emulsion Templates with Three-Dimensional Printing</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Hu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Binks</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1021/acsami.7b05012</idno>
+              <ptr target="https://doi.org/10.1021/acsami.7b05012"/>
+            </analytic>
+            <monogr>
+              <title level="j">ACS Applied Materials &amp; Interfaces</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope from="22950" to="22958" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Synergistic effect of silica nanoparticles and charged surfactants in the formation and stability of submicron oil-in-water emulsions</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Ghouchi Eskandar</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Simovic</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Prestidge</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1039/B710256A</idno>
+              <ptr target="https://doi.org/10.1039/B710256A"/>
+            </analytic>
+            <monogr>
+              <title level="j">Physical Chemistry Chemical Physics</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope from="6426" to="6434" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Inverse Pickering Emulsions with Droplet Sizes below 500 nm</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Sihler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Schrade</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Cao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <surname>Ziener</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1021/acs.langmuir.5b02735</idno>
+              <ptr target="https://doi.org/10.1021/acs.langmuir.5b02735"/>
+            </analytic>
+            <monogr>
+              <title level="j">Langmuir</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope from="10392" to="10401" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Dry Hybrid Lipid−Silica Microcapsules Engineered from Submicron Lipid Droplets and Nanoparticles as a Novel Delivery System for Poorly Soluble Drugs</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Simovic</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1021/mp900063t</idno>
+              <ptr target="https://doi.org/10.1021/mp900063t"/>
+            </analytic>
+            <monogr>
+              <title level="j">Molecular Pharmaceutics</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope from="861" to="872" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Controlling the Enzymatic Digestion of Lipids Using Hybrid Nanostructured Materials</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Tan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Colliat-Dangus</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Whitby</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Prestidge</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1021/am5038577</idno>
+              <ptr target="https://doi.org/10.1021/am5038577"/>
+            </analytic>
+            <monogr>
+              <title level="j">Applied Materials &amp; Interfaces</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope from="15363" to="15371" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+            <note>Scientific RepoRts |</note>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Synthesis Route for the Self-Assembly of Submicrometer-Sized Colloidosomes with Tailorable Nanopores</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Bollhorst</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1021/cm401610a</idno>
+              <ptr target="https://doi.org/10.1021/cm401610a"/>
+            </analytic>
+            <monogr>
+              <title level="j">Chemistry of Materials</title>
+              <imprint>
+                <biblScope unit="volume">25</biblScope>
+                <biblScope from="3464" to="3471" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Silica-lipid hybrid (SLH) microcapsules: A novel oral delivery system for poorly soluble drugs</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Tan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Simovic</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Davey</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Rades</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Prestidge</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1016/j.jconrel.2008.10.014</idno>
+              <ptr target="https://doi.org/10.1016/j.jconrel.2008.10.014"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Controlled Release</title>
+              <imprint>
+                <biblScope unit="volume">134</biblScope>
+                <biblScope from="62" to="70" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">O/W emulsions stabilised by both low molecular weight surfactants and colloidal particles: The effect of surfactant type and concentration</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Pichot</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Spyropoulos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Norton</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1016/j.jcis.2010.08.021</idno>
+              <ptr target="https://doi.org/10.1016/j.jcis.2010.08.021"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Colloid and Interface Science</title>
+              <imprint>
+                <biblScope unit="volume">352</biblScope>
+                <biblScope from="128" to="135" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Particles as surfactants -similarities and differences</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Binks</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1016/S1359-0294(02)00008-0</idno>
+              <idno>1016/ S1359-0294(02)00008-0</idno>
+              <ptr target="https://doi.org/10"/>
+            </analytic>
+            <monogr>
+              <title level="j">Curr. Opin. Colloid Interface Sci</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope from="21" to="41" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Aqueous Foams Stabilized Solely by Silica Nanoparticles</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Binks</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Horozov</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1002/anie.200462470</idno>
+              <ptr target="https://doi.org/10.1002/anie.200462470"/>
+            </analytic>
+            <monogr>
+              <title level="j">Angewandte Chemie International Edition</title>
+              <imprint>
+                <biblScope unit="volume">44</biblScope>
+                <biblScope from="3722" to="3725" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Ultrastable Particle-Stabilized Foams</title>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Gonzenbach</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Studart</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Tervoort</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Gauckler</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Angewandte Chemie International Edition</title>
+              <imprint>
+                <biblScope unit="volume">45</biblScope>
+                <biblScope from="3526" to="3530" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Arresting dissolution by interfacial rheology design</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Beltramo</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1073/pnas.1705181114</idno>
+              <ptr target="https://doi.org/10.1073/pnas.1705181114"/>
+            </analytic>
+            <monogr>
+              <title level="j">Proceedings of the National Academy of Sciences</title>
+              <imprint>
+                <biblScope unit="volume">114</biblScope>
+                <biblScope from="10373" to="10378" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Macroporous Ceramics from Particle-stabilized Emulsions</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Akartuna</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Studart</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Tervoort</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Gauckler</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1002/adma.200801888</idno>
+              <ptr target="https://doi.org/10.1002/adma.200801888"/>
+            </analytic>
+            <monogr>
+              <title level="j">Advanced Materials</title>
+              <imprint>
+                <biblScope unit="volume">20</biblScope>
+                <biblScope from="4714" to="4718" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Hierarchical Porous Materials Made by Drying Complex Suspensions</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Studart</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1021/la103995g</idno>
+              <ptr target="https://doi.org/10.1021/la103995g"/>
+            </analytic>
+            <monogr>
+              <title level="j">Langmuir</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope from="955" to="964" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Multimaterial magnetically assisted 3D printing of composite materials</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Dimitri</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Manuel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">S</forename>
+                  <surname>André</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature communications</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="page">8643</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">3D printing of robotic soft actuators with programmable bioinspired architectures</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Schaffner</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1038/s41467-018-03216-w</idno>
+              <ptr target="https://doi.org/10.1038/s41467-018-03216-w"/>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Commun</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">Directed colloidal assembly of 3D periodic structures</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Smay</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Gratson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Shepherd</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Cesarano</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Lewis</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Adv. Mater</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope unit="page">1279</biblScope>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">Colloidal inks for directed assembly of 3-D periodic structures</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Smay</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Cesarano</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Lewis</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Langmuir</title>
+              <imprint>
+                <biblScope unit="volume">18</biblScope>
+                <biblScope from="5429" to="5437" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">Nature-inspired optimization of hierarchical porous media for catalytic and separation processes</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Trogadas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Nigra</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M.-O</forename>
+                  <surname>Coppens</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1039/C5NJ03406J</idno>
+              <ptr target="https://doi.org/10.1039/C5NJ03406J"/>
+            </analytic>
+            <monogr>
+              <title level="j">New J. Chem</title>
+              <imprint>
+                <biblScope unit="volume">40</biblScope>
+                <biblScope from="4016" to="4026" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">Hierarchical porous materials: catalytic applications</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">M A</forename>
+                  <surname>Parlett</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Wilson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1039/C2CS35378D</idno>
+              <ptr target="https://doi.org/10.1039/C2CS35378D"/>
+            </analytic>
+            <monogr>
+              <title level="j">Chem. Soc. Rev</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope from="3876" to="3893" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Measuring single-nanoparticle wetting properties by freeze-fracture shadow-casting cryoscanning electron microscopy</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Isa</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Lucas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Wepf</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Reimhult</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. commun</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope from="1" to="9" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">Freeze-fracture Shadow-casting (FreSCa) Cryo-SEM as a Tool to Investigate the Wetting of Micro-and Nanoparticles at Liquid&amp;#8211;Liquid Interfaces</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Isa</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.2533/chimia.2013.231</idno>
+              <ptr target="https://doi.org/10.2533/chimia.2013.231"/>
+            </analytic>
+            <monogr>
+              <title level="j">CHIMIA International Journal for Chemistry</title>
+              <imprint>
+                <biblScope unit="volume">67</biblScope>
+                <biblScope from="231" to="235" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title level="a" type="main">Pickering and Network Stabilization of Biocompatible Emulsions Using Chitosan-Modified Silica Nanoparticles</title>
+              <author>
+                <persName>
+                  <forename type="first">Alison</forename>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                </persName>
+              </author>
+              <idno type="DOI">10.1021/acs.langmuir.6b03439</idno>
+              <ptr target="https://doi.org/10.1021/acs.langmuir.6b03439"/>
+            </analytic>
+            <monogr>
+              <title level="j">Langmuir</title>
+              <imprint>
+                <biblScope unit="volume">32</biblScope>
+                <biblScope from="13446" to="13457" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">High-Throughput Step Emulsification for the Production of Functional Materials Using a Glass Microfluidic Device</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Ofner</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1002/macp.201600472</idno>
+              <ptr target="https://doi.org/10.1002/macp.201600472"/>
+            </analytic>
+            <monogr>
+              <title level="j">Macromolecular Chemistry and Physics</title>
+              <imprint>
+                <biblScope unit="volume">218</biblScope>
+                <biblScope unit="page">1600472</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

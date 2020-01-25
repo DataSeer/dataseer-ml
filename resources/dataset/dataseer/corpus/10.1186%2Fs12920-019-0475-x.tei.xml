@@ -1,0 +1,3189 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T19:42+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Identification of sequence variants associated with severe microtia-astresia by targeted sequencing</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Pu</forename>
+                <surname>Wang</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Yibei</forename>
+                <surname>Wang</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Xinmiao</forename>
+                <surname>Fan</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Yaping</forename>
+                <surname>Liu</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Yue</forename>
+                <surname>Fan</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Tao</forename>
+                <surname>Liu</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Chongjian</forename>
+                <surname>Chen</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Shuyang</forename>
+                <surname>Zhang</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Xiaowei</forename>
+                <surname>Chen</surname>
+              </persName>
+            </author>
+            <title level="a" type="main">Identification of sequence variants associated with severe microtia-astresia by targeted sequencing</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1186/s12920-019-0475-x</idno>
+          <note>R E S E A R C H A R T I C L E Open Access</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>Background: Microtia-atresia is characterized by abnormalities of the auricle (microtia) and aplasia or hypoplasia of the external auditory canal, often associated with middle ear abnormalities.</s>
+            <s>To date, no causal genetic mutations or genes have been identified in microtia-atresia patients.</s>
+            <s>Methods: We designed a panel of 131 genes associated with external/middle or inner ear deformity.</s>
+            <s>Targeted genomic capturing combined with next-generation sequencing (NGS) was utilized to screen for mutations in 40 severe microtia-atresia patients.</s>
+            <s>Mutations detected by NGS were filtered and validated.</s>
+            <s>And then mutations were divided into three categories-rare or novel variants, low-frequency variants and common variants-based on their frequency in the public database.</s>
+            <s>The rare or novel mutations were prioritized by pathogenicity analysis.</s>
+            <s>For the low-frequency variants and common variants, we used association studies to explore risk factors of severe microtia-atresia.</s>
+            <s>Results: Sixty-five rare heterozygous mutations of 42 genes were identified in 27 (67.5%)</s>
+            <s>severe microtia-atresia patients.</s>
+            <s>Association studies to determine genes that were potentially pathogenic found that PLEC, USH2A, FREM2, DCHS1, GLI3, POMT1 and GBA genes were significantly associated with severe microtia-atresia.</s>
+            <s>Of these, DCHS1 was strongly suggested to cause severe microtia-atresia as it was identified by both low-frequency and common variants association studies.</s>
+            <s>A rare mutation (c.481C &gt; T, p.R161C) in DCHS1 identified in one individual may be deleterious and may cause severe microtia-atresia.</s>
+            <s>Conclusion: We identified several genes that were significantly associated with severe microtia-atresia.</s>
+            <s>The findings provide new insights into genetic background of external ear deformities.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Background</head>
+        <p>
+          <s>Severe microtia-atresia, one of the most frequent congenital craniofacial deformities, is characterized by abnormalities of the auricle (microtia) and aplasia or hypoplasia of the external auditory canal, often associated with middle ear abnormalities <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b1" type="bibr">2]</ref> .</s>
+          <s>The prevalence of microtia-atresia has been reported to vary from 0.83 to 4.34 per 10,000 <ref target="#b2" type="bibr">[3]</ref> .</s>
+          <s>It can occur unilaterally (79-93%) or bilaterally <ref target="#b1" type="bibr">[2]</ref>
+            <ref target="#b2" type="bibr">[3]</ref>
+            <ref target="#b3" type="bibr">[4]</ref> , with approximately 80% of unilateral microtia-atresia cases occurring on the right side <ref target="#b4" type="bibr">[5,</ref>
+            <ref target="#b5" type="bibr">6]</ref> .</s>
+          <s>Microtia-atresia occurs more frequently in males, with an estimated 20-40% increased risk compared with females <ref target="#b1" type="bibr">[2,</ref>
+            <ref target="#b4" type="bibr">5,</ref>
+            <ref target="#b6" type="bibr">7]</ref> .</s>
+          <s>Severe microtia-atresia affects not only the appearance of children, but also psychological status and hearing <ref target="#b7" type="bibr">[8]</ref> .</s>
+          <s>The identification of genetic risk factors or pathogenic genes for severe microtia-atresia is helpful to find its etiology and prevention strategies.</s>
+        </p>
+        <p>
+          <s>During embryonic development, complex tissue interactions are needed to form the external, middle, and inner ear.</s>
+          <s>The external ear consists of the auricle, the external auditory canal and the outer layer of the tympanic membrane, which derives from the space between the first and second branchial arch in the developing embryo <ref target="#b8" type="bibr">[9]</ref> .</s>
+          <s>The external ear begins its development during the fifth week, and the hillocks are first identifiable during the sixth week of embryogenesis.</s>
+          <s>There are six hillocks that surround the first pharyngeal cleft-the space between the first and second arches; each hillock contributes to a specific component of the pinna <ref target="#b9" type="bibr">[10]</ref> .</s>
+          <s>The auricular hillocks grow, fuse, and undergo morphogenesis to produce the external ear, a progress that lasts several months and takes place largely during fetal stages.</s>
+          <s>The auricles migrate from their initially low position on the embryonic neck to their normal anatomical position <ref target="#b10" type="bibr">[11]</ref> .</s>
+          <s>Any risk factor that affects external ear development will lead to microtia during embryonic development.</s>
+        </p>
+        <p>
+          <s>Pathogenic genes of most types of syndromic microtia have been determined, but the etiology of nonsyndromic microtia-atresia is very complicated.</s>
+          <s>Strong evidence supports the involvement of genetic and environmental factors, as well as their interaction, in the disease.</s>
+          <s>Epidemiological studies of microtia have indicated various environmental risk factors, such as viral infections, poisoning and anemia during pregnancy; diabetes; and high maternal age or maternal medication usage <ref target="#b1" type="bibr">[2,</ref>
+            <ref target="#b3" type="bibr">4]</ref> .</s>
+          <s>Familial clustering of microtia can generate an optimal research model for genetic exploration, especially for monogenic disease.</s>
+          <s>Estimates of the familial incidence of microtia range from 3 to 34%, and both autosomal-dominant and autosomal-recessive patterns of inheritance have been reported <ref target="#b11" type="bibr">[12]</ref>
+            <ref target="#b12" type="bibr">[13]</ref>
+            <ref target="#b13" type="bibr">[14]</ref> .</s>
+          <s>Animal model and human genetic studies have revealed several genomic regions or genes associated with syndromic and non-syndromic microtia, namely trisomy chromosomal 13 and 18, 6p24, 4p duplication, HOXA1/A2, SIX1/SIX4/SIX5, EYA1, TBX1, IRF6, CHUK, FGF3, PRX1/PRX2, and GSC <ref target="#b14" type="bibr">[15,</ref>
+            <ref target="#b15" type="bibr">16]</ref> .</s>
+          <s>However, genes responsible for nonsyndromic microtia have not been identified and validated in human.</s>
+          <s>Recent attempts to identify such genes include the sequencing of PRKRA, PACT, GSC, HOXA2 and SIX2 in microtia-atresia patients, which may be pathogenic genes underlying microtia-atresia, but no mutations have been identified <ref target="#b16" type="bibr">[17]</ref>
+            <ref target="#b17" type="bibr">[18]</ref>
+            <ref target="#b18" type="bibr">[19]</ref>
+            <ref target="#b19" type="bibr">[20]</ref> .</s>
+        </p>
+        <p>
+          <s>To increase our knowledge about genetics of severe microtia-atresia and to decipher its genetics basis, we designed a panel containing all the published genes known to be associatedwith external/middle or inner ear development and screened for mutations in 40 severe microtia-atresia cases.</s>
+          <s>The external ear deformities of all individuals were classified as grade III according to the classification by Hunter <ref target="#b20" type="bibr">[21]</ref> .</s>
+          <s>The identified genetic variants were divided into three categories-rare, low-frequency and common-and each was studied comprehensively to explore their associations with microtia-atresia.</s>
+        </p>
+      </div>
+      <div>
+        <head>Methods</head>
+      </div>
+      <div subtype="dataseer">
+        <head>Samples</head>
+        <p>
+          <s cert="0.9958239793777466" id="dataset-1" type="Tabular data:Subject Data Table">Forty patients (28 males, 12 females; mean age, 8.4 years; range, 6-26 years) who presented with severe microtia-atresia at Peking Union Medical College Hospital (PUMCH) were included.</s>
+          <s>All external ear deformities were classified as grade III (according to the classification by Hunter <ref target="#b20" type="bibr">[21]</ref> ) external ear deformity.</s>
+          <s>Patients with syndromic forms of microtia, such as Treacher Collins syndrome, Miller syndrome, Charge syndrome and Branchio-Oto-Renal (BOR) syndrome, were excluded from the study.</s>
+          <s>All patients were asked for a detailed family history, and none had a family history of microtia.</s>
+        </p>
+        <p>
+          <s>All participants or their legal guardians gave informed written consent for their blood to be taken and stored for future scientific analysis.</s>
+          <s>Ethical approval for this study was obtained from the institutional review board of PUMCH (JS-796).</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Gene selection and targeted-capture design</head>
+        <p>
+          <s>Genes were selected based on their involvement in human diseases associated with external ear deformity and their known mutation in animal models exhibiting external ear deformities.</s>
+          <s>We searched through MedGen, OMIM and ORPHA in NCBI (https:// www.ncbi.nlm.nih.gov/).</s>
+          <s>The following words were used for retrieval of genes associated with microtia: "microtia", "auricle congenital malformation", "auricle dysplasia", "anotia", "constricted ear", "cup ear", "lop ear", and "cryptotia".</s>
+          <s>We also searched through PubMed to find out the candidate genes for microtia which were reported recently.</s>
+          <s>Taking into account that some microtia patients have complicating inner ear malformations <ref target="#b21" type="bibr">[22]</ref>
+            <ref target="#b22" type="bibr">[23]</ref>
+            <ref target="#b23" type="bibr">[24]</ref>
+            <ref target="#b24" type="bibr">[25]</ref> , we proposed that the development of external/middle and inner ear may be regulated by certain genes in common.</s>
+          <s>Accordingly, we also selected several genes associated with inner ear deformities.</s>
+          <s>Ultimately, the panel contains 131 genes associated with ear development, including 104 genes associated with external/middle ear deformities and 27 genes associated with inner ear deformities (Additional file 1).</s>
+          <s>By using the SureDesign portal (https://erray.chem.agilent.com/suredesign,</s>
+          <s>Agilent, USA), we designed complementary RNA capture probes against all coding exons and 25 bp of flanking intronic sequence in order to cover splice junctions of these genes.</s>
+        </p>
+        <p>
+          <s>Library construction, target capture, and exome sequencing Genomic DNA was extracted from peripheral blood and randomly fragmented by sonication to an average size of 250 bp.</s>
+          <s>A pair of Illumina sequencing adaptors was then ligated to both ends of the resulting fragments after end repair and A-tailing.</s>
+          <s>DNA from different individuals was tagged by amplifying adaptor-ligated DNA products using index-tagged primers.</s>
+          <s>The amplified products were purified using QIAquick PCR Purification kits (QIAGEN) and then hybridized to the custom-designed capture array targeting 1,039,379 coding bases, as per the NimbleGen's Sequence Capture protocol for enrichment.</s>
+          <s id="dataset-2" type="Genetic Data:High-Throughput Nucleotide Sequencing">Each target-enriched library was loaded onto a HiSeq 2500 platform, and paired-end sequencing was performed with read lengths of 125 bp, providing~386x mean coverage depth across all samples.</s>
+          <s>Raw image files were processed using base-calling software (Illumina 1.7) with default parameters.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Read mapping, variants detection, filtering, and validation</head>
+        <p>
+          <s>Raw, quality-filtered sequencing reads generated by the Illumina pipeline were subjected to data pre-processing.</s>
+          <s>Sequencing adaptor and low-quality sequences were discarded prior to read mapping.</s>
+          <s>The high quality pair-ended reads of each sample were first aligned to the NCBI human reference genome (Hg19) using the Burrows-Wheeler Aligner with default parameters.</s>
+          <s>We then performed local realignment around indels and base quality score recalibration using Genome Analysis Toolkit (GATK), removing duplicate reads using Picard tools.</s>
+          <s>Single nucleotide polymorphisms (SNPs) and indels were called by the GATK package based on the improved BAM (.bam) files, as per the recommendations of the software.</s>
+          <s>For subsequent analysis, we used all high-quality variants that had passed GATK quality control metrics and exhibited a coverage depth ≥ 10x.</s>
+          <s>SNPs and indels were functionally annotated by ANNOVAR and categorized into missense, nonsense and splice-site mutations, and other genomic features.</s>
+        </p>
+        <p>
+          <s>To identify the most likely pathogenic mutations, we filtered out: 1) synonymous and non-coding variants (with the exception of splicing site mutations that might create an ectopic splicing site); 2) variants with an allele frequency of 0.005 or higher in the 1000 Genomes (1KG) Project, and 0.01 or higher in Exome Sequencing Project (ESP6500) and the Genome Aggregation Database (gnomAD); and 3) variants that were present in 1483 in-house controls, identified using whole-exome sequencing.</s>
+        </p>
+        <p>
+          <s cert="0.9000471830368042" id="dataset-2" type="Genetic Data">After filtration, the rare or novel mutations were verified by polymerase chain reaction (PCR) amplification and Sanger sequencing in corresponding patients.</s>
+          <s>Additionally, all mutations were cross-referenced to the Human Gene Mutation Database (HGMD) to determine whether some mutations had been reported to be pathogenic.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Association analysis</head>
+        <p>
+          <s>To identify other independent SNPs (common variants) that might increase microtia-atresia risk, a conditional analysis was performed on the detected variants using Plink.</s>
+          <s>Because of the limited power of rare variants in an association study, we only retained SNPs with minor allele frequencies ≥0.01 in the 1KG Project.</s>
+          <s>To obtain high-quality data for association testing, we pruned the discovery-stage data set in the control cohort using the following criteria: sample call rate, 99%; SNP call rate, 95%; and threshold for Hardy-Weinberg equilibrium, 0.001 (Fisher's exact test).</s>
+          <s cert="0.6157035827636719" id="dataset-3" type="Dataset">We extracted genotype data for Utah Residents (CEPH) with Northern and Western European Ancestry (CEU), Han Chinese in Beijing (CHB) and Southern Han Chinese (CHS) populations from the 1KG Project.</s>
+          <s>A principal component analysis (PCA) was performed on these samples together with our genotyped samples using smartPCA software.</s>
+          <s>Finally, the selected variants in all 40 severe microtia-atresia cases and 208 normal controls from the 1KG Project were genotyped.</s>
+          <s>Tests were performed in R v3.1.1.</s>
+          <s>The Bonferroni correction for multiple comparisons was applied, and the threshold for genome-wide significance was set at a P-value &lt; 4.95 × 10 − 5 (0.05/1010 variants).</s>
+        </p>
+        <p>
+          <s>To test whether low-frequency mutations (MAF &lt; 0.01 in the 1KG Project) might also be severe microtia-atresia risk factors, a gene-based test comparing the burden of low-frequency variants in cases and controls was performed using SKAT-O implemented in the SKAT package.</s>
+          <s>Only nonsynonymous variants were included in the analysis.</s>
+          <s>The control individuals included in this analysis were the same as those used for common variants association tests.</s>
+          <s>A Bonferroni correction was used to account for multiple testing (P &lt; 7.81 × 10 − 4 ).</s>
+        </p>
+      </div>
+      <div>
+        <head>Molecularanalysis of variants</head>
+        <p>
+          <s>All rare variants identified in candidate genes were analyzed functionally.</s>
+          <s>The possible impact of each mutation on the function of its respective protein was analyzed using Polyphen-2 and SIFT <ref target="#b25" type="bibr">[26]</ref> .</s>
+          <s>Structural variations in mutant candidate genes were analyzed using the HOPE server (http://www.cmbi.ru.nl/hope/) <ref target="#b26" type="bibr">[27]</ref> .</s>
+          <s>The online software program PSIPRED (v3.3) was used to predict secondary structural variations associated with potentially pathogenic mutations of candidate genes <ref target="#b27" type="bibr">[28]</ref> .</s>
+          <s>Finally, SWISS-MODEL was used to predict the tertiary structures of the proteins encoded by the DCHS1 and USH2A genes, and to search three-dimensional (3D) structures deposited in the Research Collaboratory for Structural Bioinformatics Protein Data Bank (RCSB PDB) (https://swissmodel.expasy.org/).</s>
+          <s>Wild-type and mutant proteins were analyzed using PyMOL software.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+      </div>
+      <div subtype="dataseer">
+        <head>Variant identification</head>
+        <p>
+          <s cert="0.9342275857925415" id="dataset-4" type="Genetic Data">A total of 1,039,379 bases were captured and sequenced in our study.</s>
+          <s>After alignment to the reference human genome (NCBI37/hg19), 99.28% of the clean reads could be mapped to the targeted regions.</s>
+          <s>The average depth for the targeted regions was 386-fold, and 91.84% of the targeted regions were covered by 20 or more reads, demonstrating the high quality of the sequencing.</s>
+        </p>
+      </div>
+      <div>
+        <head>Rare or novel variants</head>
+        <p>
+          <s>Using the rigorous filtering pipeline, we identified 65 rare heterozygous mutations of 42 genes in 27 (67.5%)</s>
+          <s>severe microtia-atresia patients (Additional file 2).</s>
+          <s>Of these 65 mutations, 58 were missense mutations, 4 were non-frameshift deletions or insertions, and 3 were nonsense mutations.</s>
+          <s>Of the 58 missense mutations, 23 were predicted to be deleterious to the corresponding protein by either SIFT or Polyphen-2, and 12 were predicted to be deleterious by both analysis tools.</s>
+          <s>Because of limitations in the ability of in silico analysis to assess the pathogenicity of any mutation, we did not exclude mutations predicted to be benign or neutral by either SIFT or Polyphen-2.</s>
+          <s>None of these mutations had been previously reported in microtia-atresia patients, and more than half (53.8%) of the variants were absent from population databases.</s>
+          <s>Twenty-seven subjects (67.5%) carried at least one of these variants, and 12 out of 27 subjects (30%) carried more than one variant.</s>
+          <s>Mutations in FAT4, FKTN, FRAS1, GLI3, KMT2D, LMBRD1, PLEC, POMT1, POMT2, TP63, and USH2A genes were relatively more frequent (≥2 mutations per gene) ( <ref target="#tab_0" type="table">Table 1)</ref> .</s>
+        </p>
+        <p>
+          <s>By searching through the HGMD database, we found 7 out of 65 rare mutations had been reported to be pathogenic in HGMD (Additional file 2).</s>
+          <s>Of these, two were heterozygous mutations reported to cause related diseases: p.G310S in TBX1 leads to DiGeorge syndrome; and p.S95dup in TWIST1 has questionable pathogenicity, which may contribute to craniosynostosis <ref target="#b28" type="bibr">[29]</ref>
+            <ref target="#b29" type="bibr">[30]</ref>
+            <ref target="#b30" type="bibr">[31]</ref> .</s>
+          <s>Both of these diseases present phenotypes that include external ear deformity.</s>
+          <s>Phenotypically, all of our patients had only external ear deformities without other deformities, differing from the phenotypes of DiGeorge syndrome and craniosynostosis.</s>
+          <s>The phenotypes associated with these two mutations, however, may be affected by differences in penetrance.</s>
+          <s>The remaining five mutations were homozygous or compound heterozygous mutations that can cause a related disease: GBA (c.1292A &gt; G, p.N431S), which may cause Parkinson's disease; USH2A (c.13157 T &gt; C, p.I4386T and c.12344G &gt; A, p.R4115H), which can cause Usher syndrome or retinitis pigmentosa; SLC26A4 (c.757A &gt; G, p.I253V), which can lead to Pendred syndrome and autosomal recessive deafness with enlarged vestibular aqueduct; and FKTN (c.556C &gt; T, p.H186Y), which may be the cause of Fukuyama-type congenital muscular dystrophy (FCMD).</s>
+          <s>The haploinsufficiency of these genes caused by these variants may also contribute to microtia-atresia, but this requires further study.</s>
+        </p>
+      </div>
+      <div>
+        <head>Association analysis identified several genes associated with microtia-atresia</head>
+        <p>
+          <s>We conducted an association analysis of 40 severe microtia-atresia cases and 208 healthy controls from China.</s>
+          <s>The cases and controls clustered together, and were well separated from European samples (Additional file 3: <ref target="#fig_0" type="figure">Figure S1</ref> ).</s>
+          <s>All Chinese samples were clustered into two subgroups, consistent with the notion of two different populations of Chinese (Northern and Southern).</s>
+        </p>
+        <p>
+          <s>For common variants, we used Plink to search for single variants that might increase microtia-atresia risk.</s>
+          <s>Using a Bonferroni-corrected significance level of 4.95 × 10 − 5 , two variants were identified that were significantly more common in our microtia-atresia patients: rs12288387 in DCHS1 (dachsous cadherin-related 1) and rs144123706 in GBA (glucosylceramidase beta) <ref target="#fig_0" type="figure">(Fig. 1</ref> , <ref target="#tab_1" type="table">Table 2</ref> , Additional file 4).</s>
+          <s>Both variants were located in the untranslated region and were not present in other databases.</s>
+        </p>
+        <p>
+          <s>For low-frequency variants, we used the SKAT-O method to explore whether the burden of these variants in any of the tested genes was higher in sporadic subjects compared with controls.</s>
+          <s>After correction for multiple testing (P = 7.81 × 10 − 4 ), PLEC (plectin), USH2A (usherin), FREM2 (Fras1-related extracellular matrix protein 2), DCHS1, GLI3 (GLI family zinc finger 3) and POMT1 (protein O-mannosyltransferase 1) were identified as significantly associated with severe microtia-atresia <ref target="#tab_2" type="table">(Table 3</ref> , Additional file 5).</s>
+        </p>
+      </div>
+      <div>
+        <head>Molecularanalysis of rare or novel variants identified in the candidate genes</head>
+        <p>
+          <s>Further exploration of the rare mutations identified in these candidate genes suggested that these mutations be potentially etiologic.</s>
+          <s>Nineteen rare mutations of seven candidate genes were identified in fourteen patients <ref target="#tab_3" type="table">(Table 4</ref> ).</s>
+          <s>Both low-frequency and common-variant association studies showed that the DCHS1 gene was significantly associated with severe microtia-atresia, suggesting a causative role for this gene.</s>
+          <s>A rare mutation (c.481C &gt; T, p.R161C) in DCHS1 was predicted to be "damaging" by Polyphen-2 but "tolerated" by SIFT.</s>
+          <s>The amino acid affected by the mutation was highly conserved among different species <ref target="#fig_1" type="figure">(Fig. 2a)</ref> .</s>
+          <s>HOPE server structural analysis of the protein protocadherin-16 suggested that the wild-type residue was positively charged, whereas the mutant residue was neutral.</s>
+          <s>Moreover, the wild-type residue was found to be more hydrophobic than the mutant residue.</s>
+          <s>This amino acid residue is located within a domain annotated in UniProt as cadherin 2. The mutation introduces an amino acid with different properties, which can disturb the cadherin 2 domain and abolish its function.</s>
+          <s>Cadherin domains form homo-dimers, which are important for cell-cell interactions.</s>
+          <s>A mutation in such a domain might affect these interactions.</s>
+          <s>The mutation identified in this study was predicted to modify the local secondary structure of the protein <ref target="#fig_1" type="figure">(Fig. 2b)</ref> .</s>
+          <s>The crystal structure of the protein showed that the wild-type residue forms a salt bridge with a glutamic acid residue at position 206, and that the mutation abolished this interaction <ref target="#fig_1" type="figure">(Fig. 2c)</ref> .</s>
+          <s>These data indicated that the mutation is deleterious and may cause severe microtia-atresia.</s>
+          <s>Patients in this study were positive for nine of the 19 rare variants found in USH2A.</s>
+          <s>Two of these mutations (c.1105G &gt; A, p.V369 M and c.T13157C, p.I4386T) were predicted to be "damaging" by both Polyphen-2 and SIFT, suggesting they were pathogenic of severe microtia-atresia.</s>
+          <s>The amino acid affected by the first mutation, p.V369 M, is highly conserved, whereas the second, p.I4386T, is relatively conserved among different species <ref target="#fig_2" type="figure">(Fig. 3a</ref> , Additional file 6: <ref target="#fig_1" type="figure">Figure S2A</ref> ).</s>
+          <s>The first mutation is located within a domain annotated in UniProt as laminin N-terminal.</s>
+          <s>Structural analysis of the protein usherin using the HOPE server suggested that the wild-type residue is buried within the core of the protein, whereas the mutant residue is larger and likely would not fit within the protein core, disturbing this domain and abolishing its function.</s>
+          <s>The mutation was also predicted to affect the local secondary structure of the protein <ref target="#fig_2" type="figure">(Fig. 3b)</ref> .</s>
+          <s>The crystal structure of the protein showed that the wild-type residue forms two salt bridges, one with glutamic acid at position 367 and the other with phenylalanine at position 489, with the mutation abolishing this interaction <ref target="#fig_2" type="figure">(Fig. 3c)</ref> .</s>
+          <s>The second mutation, p.I4386T, is located within a domain known as fibronectin type-III 29.</s>
+          <s>The wild-type residue is more hydrophobic than the mutant residue, with the Hope server showing that this mutation disturbs this domain and abolishes its function.</s>
+          <s>The online PSIPRED software program also predicted that the local secondary structure of the protein was modified by this mutation (Additional file 6: <ref target="#fig_1" type="figure">Figure S2B</ref> ).</s>
+        </p>
+        <p>
+          <s>PSIPRED also predicted the secondary structure of the proteins encoded by the remaining 16 mutations, as well as their respective wild-type proteins.</s>
+          <s>Three mutations (p.R2897C in FREM2, p.A286V in GLI3, p.G3896S in PLEC) were predicted to modify the local secondary structure of these proteins (Additional file 7: <ref target="#fig_2" type="figure">Figure S3</ref> ), although only one, p.R2897C in FREM2, was predicted to be "damaging" by both Polyphen-2 and SIFT.</s>
+          <s>This mutation has not been reported in any database.</s>
+          <s>Structural analysis of the protein encoded by FREM2 using the HOPE server suggested that the mutation introduces a more hydrophobic residue at this position.</s>
+          <s>This can result in a loss of hydrogen bonds and/or disturb correct protein folding, suggesting that this mutation may be a cause of severe microtia-atresia.</s>
+          <s>In contrast, Polyphen-2 and/or SIFT predicted that the other mutations were benign.</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>Due to the complicated causes of nonsyndromic microtia-atresia, the genetic and/or environmental factors may involve in the pathogenesis of microtia.</s>
+          <s>Microtia also has genetic heterogeneity and inadequate penetrance.</s>
+          <s>For instance, in the reported studies of microtia family, the patients in the same family have different clinical phenotypes <ref target="#b15" type="bibr">[16,</ref>
+            <ref target="#b31" type="bibr">[32]</ref>
+            <ref target="#b32" type="bibr">[33]</ref>
+            <ref target="#b33" type="bibr">[34]</ref> .</s>
+          <s>In addition, we also observed in a six-generation affected 22 subjects family with non-syndromic microtia (data not yet published), the inheritance pattern is autosomal dominant.</s>
+          <s>We found that some cases carried the pathogenic mutation, but the phenotype was normal.</s>
+          <s>Therefore, we didn't detect the rare or novel mutations in the parents of the related patients due to the genetic heterogeneity and inadequate penetrance.</s>
+          <s>We believe that association analysis is more suitable for the exploration of genetic NR not reported, DM: "disease causing" mutation factors in sporadic cases of microtia.</s>
+          <s>Here we designed a panel that included all the published genes known to be associated with external/middle ear deformity or inner ear deformity in microtia-atresia patients.</s>
+          <s>Ultimately, there were 65 rare mutations in 42 genes identified in 27 patients.</s>
+          <s>For the low-frequency and common variants, the association studies were utilized to explore candidate genes for microtia-atresia and identified several candidate genes which may cause severe microtia-atresia.</s>
+          <s>In our exploration of rare mutations that have been reported to be pathogenic in HGMD, we found seven mutations what have been reported of which two mutations, one in TBX1 (c.928G &gt; A, p.G310S) and one in TWIST1 (c.283_285dupAGC, p.S95dup), were likely responsible for the severe microtia-atresia.</s>
+          <s>The individuals carrying these two mutations presented with external ear malformations.</s>
+          <s>TBX1 is a T-box transcription factor that maps to the center of the DiGeorge syndrome (DGS) chromosomal region on 22q11.2.</s>
+          <s>A haploinsufficiency of the TBX1 gene is responsible for most of the physical malformations of DGS, including deformed ears, which are typically low set and deficient in the vertical diameter with abnormal folding of the pinna; patients with DGS also exhibit upward and downward slanting eyes, short philtrum, relatively small mouth, cardiac malformation, and micrognathia <ref target="#b29" type="bibr">[30,</ref>
+            <ref target="#b30" type="bibr">31]</ref> .</s>
+          <s>Nonsyndromic craniosynostosis-1 (CRS1) is caused by heterozygous mutations in TWIST1 gene on chromosome 7p21.</s>
+          <s>TWIST1 belongs to the basic helix-loop-helix (bHLH) class of transcriptional regulators that recognize a consensus DNA element called the E box <ref target="#b28" type="bibr">[29]</ref> .</s>
+          <s>CRS1 is also reported to present with external ear malformations.</s>
+          <s>
+            <ref target="#b34" type="bibr">Seto et al. (2007)</ref> performed a mutation analysis in 164 infants with nonsyndromic single-suture craniosynostosis and identified novel heterozygous missense mutations in the TWIST1 gene in two patients.</s>
+          <s>In addition to craniosynostosis, one of the patients also presented with prominent horizontal crura of the ears and the other had small, square-shaped ears, a feature shared by his otherwise unaffected father, who also carried the mutation <ref target="#b34" type="bibr">[35]</ref> .</s>
+          <s>These observations suggest that TBX1 and TWIST1 may be causative genes for severe microtia-atresia.</s>
+        </p>
+        <p>
+          <s>In addition to the rare mutations exploration, the low-frequency and common variants were also explored to identify the potential pathogenic genes utilizing the associated studies.</s>
+          <s>Genome-wide association studies (GWAS) to date have generally been driven by the hypothesis that a common variant leads to a common disease.</s>
+          <s>However, the contribution of rare and low-frequency variants to human traits has been largely unexplored <ref target="#b35" type="bibr">[36,</ref>
+            <ref target="#b36" type="bibr">37]</ref> .</s>
+          <s>Since rare variants are incompletely represented in GWAS, and custom genotyping arrays and imputation is poor with current reference panels, we only performed association studies of common and low-frequency genetic variants.</s>
+          <s>For low-frequency variant burden testing, these studies demonstrated a significant association with PLEC, USH2A, FREM2, DCHS1, GLI3 and POMT1.</s>
+          <s>For common variants, we identified associations of DCHS1 (lead SNP, rs12288387; P = 1.869 × 10 − 45 ) and GBA (lead SNP, rs144123706; P = 1.054 × 10 − 33 ) with severe microtia-atresia.</s>
+          <s>These findings provide evidence that a well-designed GWAS can identify new microtia-associated genes.</s>
+        </p>
+        <p>
+          <s>Association studies identified nineteen rare mutations in seven candidate genes.</s>
+          <s>Both low-frequency and common-variants association studies strongly suggested that DCHS1 was a cause of microtia-atresia.</s>
+          <s>More importantly, the protein protocadherin-16, encoded by DCHS1 involved in the Wnt (wingless/INT) signaling pathway, which, together with bone morphogenetic proteins (Bmps), fibroblast growth factors (Fgfs) and retinoic acid, is involved in external ear development <ref target="#b8" type="bibr">[9,</ref>
+            <ref target="#b37" type="bibr">38]</ref> .</s>
+          <s>Dysregulation of these signaling pathways, triggered by genetic or environmental factors, constitutes a potential source of malformation.</s>
+          <s>Members of the Wnt family have been implicated in the formation of NCCs and in external ear development.</s>
+          <s>The protein protocadherin-16 encoded by DCHS1 is a member of the cadherin superfamily whose spatial and temporal expression is critical to the formation of the neural crest <ref target="#b38" type="bibr">[39]</ref> .</s>
+          <s>Dchs1-Fat4 has been reported to regulate the behavior of polarized cells during skeletal morphogenesis <ref target="#b39" type="bibr">[40]</ref> .</s>
+          <s>Thus, our findings provide further evidence that DCHS1 is strongly associated with the pathogenesis of severe microtia-atresia.</s>
+          <s>The rare p.R161C mutation in DCHS1, identified in one individual, predicted to be deleterious by different methods was also strongly suggested to cause severe microtia-atresia.</s>
+        </p>
+        <p>
+          <s>Of the other eighteen rare mutations identified in seven candidate genes, three mutations in two genes, USH2A and FRME2, were predicted to be deleterious.</s>
+          <s>The protein usherin encoded by USH2A is found in the basement membrane, and may be important in the development and homeostasis of the inner ear and retina.</s>
+          <s>Mutations within this gene have been associated with Usher syndrome type IIa and retinitis pigmentosa <ref target="#b40" type="bibr">[41]</ref> .</s>
+          <s>The other protein encoded by FREM2 is also an integral membrane protein and localizes to the basement membrane.</s>
+          <s>The protein is important for the integrity of skin and renal epithelia.</s>
+          <s>Mutations in this gene are associated with Fraser syndrome, which is characterized by cryptophthalmos, syndactyly, and abnormalities of the respiratory and urogenital tracts <ref target="#b41" type="bibr">[42]</ref> .</s>
+          <s>However, none of these conditions has been associated with external ear deformity.</s>
+          <s>The relationship between these two genes and microtia-atresia requires further confirmation.</s>
+        </p>
+        <p>
+          <s>Previous studies have provided compelling evidence that HOXA2 mutations cause a potential discrete form of severe microtia-atresia.</s>
+          <s>Both heterozygous and homozygous alleles of HOXA2 have been identified in three family studies <ref target="#b17" type="bibr">[18,</ref>
+            <ref target="#b32" type="bibr">33,</ref>
+            <ref target="#b33" type="bibr">34]</ref> .</s>
+          <s>In affected individuals, ear morphogenesis is bilaterally small and characterized by hypoplastic pinnae with a thick, over-folded helix.</s>
+          <s>Additional phenotypes include external auditory canal hypoplastic, middle and inner ear malformations, and incomplete cleft palate.</s>
+          <s>The clinical features of individuals with a homozygous mutation of HOXA2 are much more severe than those with a heterozygous mutation.</s>
+          <s>Inactivation of Hox2 in a mouse model at early stages of development leads to the absence of the pinna, whereas its late inactivation results in a hypomorphic auricle <ref target="#b42" type="bibr">[43]</ref> .</s>
+          <s>However, both the current study and previous studies attempted to identify HOXA2 mutations in severe microtia-atresia patients by sequencing, but failed to find any potential causative mutations that might underlie a subgroup of well-defined microtia-atresia cases <ref target="#b17" type="bibr">[18]</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Conclusion</head>
+        <p>
+          <s>Our results significantly improved our understanding of the genetic pathogenesis of severe microtia-atresia with regards to the rare, low-frequency, and common variants of detected genes.</s>
+          <s>We identified several genes especially DCHS1 that strongly be associated with microtia-atresia through low-frequency or common variants association study.</s>
+          <s>A rare mutation (c.481C &gt; T, p.R161C) in DCHS1 identified in one individual may be deleterious and may cause microtia-atresia.</s>
+          <s>The findings provide new insights into genetic exploration of external ear deformities.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Availability of data and materials</head>
+        <p>
+          <s>The datasets used and/or analyzed during the current study are available from the corresponding author on reasonable request.</s>
+        </p>
+        <p>
+          <s>Authors' contributions CXW conceived and designed the study.</s>
+          <s>WP and WYB selected the genes and designed the panel.</s>
+          <s cert="0.9885861277580261" id="dataset-5" type="Tabular data">FXM ascertained the patients and collected the blood samples.</s>
+          <s>WP, LT and CCJ carried out the sequencing, analyzed and interpreted the data.</s>
+          <s>WP organized the data and wrote the paper.</s>
+          <s>FY and LYP reviewed and edited the manuscript and gave suggestions about this study.</s>
+          <s>ZSY gave the final approval of the manuscript.</s>
+          <s>All authors have read and approved the final manuscript.</s>
+        </p>
+        <p>
+          <s>Ethics approval and consent to participate All participants or their legal guardians gave informed written consent for their blood to be taken and stored for future scientific analysis.</s>
+          <s>Ethical approval for this study was obtained from the institutional review board of PUMCH (JS-796).</s>
+        </p>
+      </div>
+      <div>
+        <head>Consent for publication</head>
+        <p>
+          <s>This manuscript doesn't include images/videos or any information relating to an individual person or participant.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig. 1</head>
+        <label>1</label>
+        <figDesc>Manhattan plots of P-values calculated from the association of common variants. Data on 1010 single nucleotide polymorphisms (SNPs) that passed quality control criteria were collected from 40 patients with severe microtia-atresia and 208 controls. Genome-wide significance values (solid red line, P = 4.95 × 10 − 5 ) are indicated</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig. 2</head>
+        <label>2</label>
+        <figDesc>Conservation and functional analysis of the p.R161C mutation in DCHS1. a Conservation of the Arg161 residue of protocadherin-16. b Predicted secondary structures of the wild-type and mutant protein sequences flanking the mutations. The diagrams show the protein sequences with their secondary structures and their confidence values at the aligned positions. The secondary structure is annotated as follows: pink cylinder (alpha-helix); yellow arrow (beta-sheet); black line (coil); Conf, confidence; Pred, predictrf; H in Pred line (Helix); C in Pred line (coil); E in Pred line (sheet); AA, amino acid;, mutant amino acid. c Functional impact of the p.R161C mutation on the partial tertiary structure of protocadherin-16 protein predicted by molecular modeling (PDB template: 5szn.1.A; Identity 39.3%). The wild-type residue forms a salt bridge with the glutamic acid residue at position 206, with this binding damaged by substitution of the mutant residue</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig. 3</head>
+        <label>3</label>
+        <figDesc>Conservation and functional analysis of the p.V369 M mutation in USH2A. a Conservation of the Val369 residue of usherin protein. b Predicted secondary structures of the wild-type and mutant protein sequences flanking the mutations. The diagrams show the protein sequences with their secondary structures and their confidence values at the aligned positions. The secondary structure is annotated as follows: pink cylinder (alpha-helix); yellow arrow (beta-sheet); black line (coil); Conf, confidence; Pred, predict; H in Pred line (Helix); C in Pred line (coil); E in Pred line (sheet); AA, amino acid;, mutant amino acid. c Functional impact of the p.V369 M mutation on the partial tertiary structure of usherin protein by molecular modeling (PDB template: 4aqs.1.A; Identity 34.9%). The wild-type residue forms two salt bridges, with glutamic acid at position 367 and with phenylalanine at position 489, both of which were damaged by the mutant residues</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Funding</head>
+        <label/>
+        <figDesc>This work was supported by grants from the General Programs of National Natural Science Foundation of China (No. 81271053) and the National Key Research and Development Program of China (No. 2016YFC0901501).</figDesc>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_0">
+        <head>Table 1</head>
+        <label>1</label>
+        <figDesc>Mutations identified in the same gene in two or more cases</figDesc>
+        <table>Sample ID FAT4 
+FKTN 
+FRAS1 
+GLI3 
+KMT2D 
+LMBRD1 
+PLEC 
+POMT1 
+POMT2 
+TP63 
+USH2A 
+
+1454 
+p.P3109H 
+p.R479W p.A1758V 
+
+1467 
+p.G3855S 
+p.N336S 
+
+1549 
+p.G5A 
+p.I572V 
+
+1575 
+p.N1797D 
+
+1605 
+p.P2193L 
+
+1608 
+p.M1328 L 
+
+1611 
+p.A1124V 
+p.Q919P 
+p.P730S 
+
+1742 
+p.P3708L 
+
+1783 
+p.N568S 
+
+XH1531 
+p.L3920insQQQL 
+
+XH1535 
+p.L476F 
+
+XH1546 
+p.L476F 
+p.T2807I 
+
+XH1559 
+p.V1561G 
+
+XH1563 
+p.A1036V 
+
+XH1566 
+p.I62F 
+p.Q3624R 
+
+XH1572 
+p.A502V 
+
+XH1579 
+p.C3971R 
+p.I4386T, 
+p.N3653S, 
+p.V369 M 
+
+XH1582 
+p.S39G 
+p.W597X 
+
+XH1587 
+p.C513R 
+
+XH1594 
+p.A286V 
+p.R4115H 
+
+XH1745 
+p.H186Y 
+
+XH1784 
+p.Q428X 
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_1">
+        <head>Table 2</head>
+        <label>2</label>
+        <figDesc>Individual variant-association test results (significance level P = 4.95 × 10 −5 )Notes: *indicates the mutation affects the stop codon. It makes the stop codon change to an amino acid encoded codon</figDesc>
+        <table>SNP ID 
+Hg19 Location 
+Gene 
+Variant 
+rs number 
+P-value 
+
+Chr11 
+6,676,884 
+DCHS1 
+NM_003737:c.-14,040 T &gt; C 
+rs12288387 
+1.85 × 10 −48 
+
+Chr1 
+155,204,694 
+GBA 
+NM_001171811:c.*92G &gt; A 
+rs144123706 
+1.04 × 10 −36 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_2">
+        <head>Table 3 Results</head>
+        <label>3</label>
+        <figDesc/>
+        <table>of gene-based, low-frequency variant association 
+tests (significance level P = 7.81 × 10 −4 ) 
+
+Gene 
+Markers 
+P-value 
+
+PLEC 
+12 
+1.40 × 10 −10 
+
+USH2A 
+16 
+1.11 × 10 −08 
+
+FREM2 
+6 
+4.38 × 10 −05 
+
+DCHS1 
+6 
+0.000288 
+
+GLI3 
+5 
+0.000297 
+
+POMT1 
+2 
+0.000297 
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_3">
+        <head>Table 4</head>
+        <label>4</label>
+        <figDesc>Rare or novel mutations identified in candidate genes by association studies</figDesc>
+        <table>Sample ID Gene Symbol Consequence 
+
+GenBank 
+accession No. 
+
+Exon 
+
+Mutation 
+
+PopFreqMax in 1000GM, 
+
+ESP6500 or gnomAD 
+SIFT_score SIFT_Pred Polyphen2_ 
+
+HDIV_score 
+
+Polyphen2_ 
+HDIV_pred 
+
+Phylop in 
+vertebrate 
+
+HGMD 
+
+XH1790 
+
+DCHS1 
+nonsynonymous NM_003737 
+exon2 c. 481C &gt; T, p.R161C 
+
+0.00003335 
+
+0.069 
+
+T 
+
+1 
+
+D 
+
+−0.001 
+
+NR 
+
+XH1785 
+
+FREM2 
+nonsynonymous NM_207361 
+exon22 c. 8689C &gt; T, p.R2897C . 
+
+0 
+
+D 
+
+1 
+
+D 
+
+0.871 
+
+NR 
+
+1552 
+
+*GBA 
+nonsynonymous NM_001005741 Exon10 c. 1292A &gt; G, p.N431S 
+
+0.00001657 
+
+0.169 
+
+T 
+
+0.962 
+
+D 
+
+0.991 
+
+DM? 
+
+1454 
+
+PLEC 
+nonsynonymous NM_201378 
+exon31 c.5273C &gt; T, p.A1758V 
+
+0.0001578 
+
+0.535 
+
+T 
+
+1 
+
+D 
+
+0.897 
+
+NR 
+
+1467 
+
+PLEC 
+nonsynonymous NM_201378 
+exon32 c.11563G &gt; A, p.G3855S 0.00002367 
+
+0.652 
+
+T 
+
+0 
+
+B 
+
+−2.741 
+
+NR 
+
+USH2A 
+nonsynonymous NM_007123 
+exon6 c.1007A &gt; G, p.N336S 
+
+. 
+
+0.048 
+
+D 
+
+0.218 
+
+B 
+
+0.991 
+
+NR 
+
+XH1582 
+
+PLEC 
+nonsynonymous NM_000445 
+exon2 c. 115A &gt; G, p.S39G 
+
+0.001536 
+
+0.381 
+
+T 
+
+0.002 
+
+B 
+
+0.991 
+
+NR 
+
+XH1535 
+
+POMT1 
+nonsynonymous NM_001136114 exon16 c. 1428G &gt; C, p.L476F 
+
+0.0001156 
+
+0.556 
+
+T 
+
+0.001 
+
+B 
+
+−0.043 
+
+NR 
+
+XH1546 
+
+POMT1 
+nonsynonymous NM_001136114 exon16 c. 1428G &gt; C, p.L476F 
+
+0.0001156 
+
+0.556 
+
+T 
+
+0.001 
+
+B 
+
+−0.043 
+
+NR 
+
+USH2A 
+nonsynonymous NM_206933 
+exon42 c. 8420C &gt; T, p.T2807I 
+
+. 
+
+0.065 
+
+T 
+
+0.998 
+
+D 
+
+0.917 
+
+NR 
+
+XH1563 
+
+GLI3 
+
+nonframeshift 
+
+NM_000168 
+exon15 c. 3107C &gt; T, p.A1036V 0.00007006 
+
+0.016 
+
+D 
+
+0 
+
+B 
+
+0.897 
+
+NR 
+
+XH1594 
+
+GLI3 
+nonsynonymous NM_000168 
+exon7 c. 857C &gt; T, p.A286V 
+
+. 
+
+0.18 
+
+T 
+
+0.024 
+
+B 
+
+0.917 
+
+NR 
+
+*USH2A 
+nonsynonymous NM_206933 
+exon63 c.12344G &gt; A, p.R4115H 0.0005825 
+
+0.072 
+
+T 
+
+0.462 
+
+P 
+
+0.871 
+
+DM 
+
+1575 
+
+USH2A 
+nonsynonymous NM_206933 
+exon27 c. 5389A &gt; G, p.N1797D . 
+
+1 
+
+T 
+
+0 
+
+B 
+
+−0.068 
+
+NR 
+
+1742 
+
+USH2A 
+nonsynonymous NM_206933 
+exon57 c.11123C &gt; T, p.P3708L . 
+
+0.223 
+
+T 
+
+1 
+
+D 
+
+0.917 
+
+NR 
+
+XH1566 
+
+USH2A 
+nonsynonymous NM_206933 
+exon55 c.10871A &gt; G, p.Q3624R . 
+
+0.271 
+
+T 
+
+0.012 
+
+B 
+
+0.079 
+
+NR 
+
+XH1579 
+
+*USH2A 
+nonsynonymous NM_206933 
+exon63 c.13157 T &gt; C, p.I4386T . 
+
+0.006 
+
+D 
+
+0.978 
+
+D 
+
+1.062 
+
+DM 
+
+USH2A 
+nonsynonymous NM_206933 
+exon56 c.10958A &gt; G, p.N3653S . 
+
+0.409 
+
+T 
+
+0.489 
+
+P 
+
+0.991 
+
+NR 
+
+USH2A 
+nonsynonymous NM_007123 
+exon6 c. 1105G &gt; A, p.V369 M . 
+
+0.015 
+
+D 
+
+0.992 
+
+D 
+
+0.871 
+
+NR 
+
+Notes: *indicates the mutation has been reported in HGMD database 
+Abbreviations: SIFT: 
+D Deleterious, 
+T Tolerated; PolyPhen 2: D = Probably damaging, 
+
+B Benign, 
+P Possibly damaging; 
+
+</table>
+      </figure>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>The authors are very grateful to all participants and their families.</s>
+          </p>
+        </div>
+        <div>
+          <head>Wang et al. BMC Medical Genomics</head>
+          <p>
+            <s>(2019) 12:28</s>
+          </p>
+        </div>
+        <div>
+          <head>Competing interests</head>
+          <p>
+            <s>The authors report no conflicts of financial interests and have received no payment in preparation of this manuscript.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Additional files</head>
+          <p>
+            <s>Additional file 1: Summary of the 131 targeted genes.</s>
+            <s>The "Gene symbol", "Accession number", "Size of gene (bp)", "Size of gene exons (bp)", "Inheritance", "Human syndrome" were included in the table.</s>
+          </p>
+          <p>
+            <s>(DOCX 33 kb) Additional file 2: Rare or novel mutations identified in severe microtiaastresia patients.</s>
+            <s>Rare mutations were filtered with a minor allele frequency &lt; 0.5% in the 1000 Genomes (1KG) Project, and &lt; 1% in Exome Sequencing Project (ESP6500) and the Genome Aggregation Database</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Clinical analysis of 592 patients with microtia</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Okajima</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Takeichi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Umeda</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Baba</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Acta Otolaryngol Suppl</title>
+              <imprint>
+                <biblScope unit="volume">525</biblScope>
+                <biblScope from="18" to="24" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Microtia in Finland: comparison of characteristics in different populations</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Suutarla</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Rautio</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Ritvanen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ala-Mello</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Jero</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Klockars</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int J Pediatr Otorhinolaryngol</title>
+              <imprint>
+                <biblScope unit="volume">71</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope from="1211" to="1218" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">The genetics of auricular development and malformation: new findings in model systems driving future directions for microtia research</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Cox</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Camci</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Vora</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Luquetti</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Turner</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Eur J Med Genet</title>
+              <imprint>
+                <biblScope unit="volume">57</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope from="394" to="401" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Microtia: a clinical and genetic study at the National Institute of Pediatrics in Mexico City</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Llano-Rivas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Gonzalez-Del</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Del</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Reyes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Carnevale</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Arch Med Res</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="120" to="124" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Descriptive epidemiology of anotia and microtia</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Forrester</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Merz</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Congenit Anom (Kyoto)</title>
+              <imprint>
+                <biblScope unit="volume">45</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="119" to="143" unit="page"/>
+                <date type="published" when="1986"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Epidemiologic characteristics of anotia and microtia in California</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Shaw</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Carmichael</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Kaidarova</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Harris</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Birth Defects Res A Clin Mol Teratol</title>
+              <imprint>
+                <biblScope unit="volume">70</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope from="472" to="477" unit="page"/>
+                <date type="published" when="1989"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Epidemiologic features and clinical subgroups of anotia/microtia in Texas</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Canfield</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Langlois</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Nguyen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Scheuerle</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Birth Defects Res A Clin Mol Teratol</title>
+              <imprint>
+                <biblScope unit="volume">85</biblScope>
+                <biblScope unit="issue">11</biblScope>
+                <biblScope from="905" to="918" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Psychosocial outcomes among microtia patients of different ages and genders before ear reconstruction</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Chin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Wu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Xu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Aesthet Plast Surg</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="570" to="576" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Microtia: epidemiology and genetics</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Luquetti</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Heike</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Hing</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Cunningham</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Cox</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Med Genet A</title>
+              <imprint>
+                <biblScope unit="volume">158</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="124" to="163" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Formation of the outer and middle ear, molecular mechanisms</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mallo</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Curr Top Dev Biol</title>
+              <imprint>
+                <biblScope unit="volume">57</biblScope>
+                <biblScope from="85" to="113" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Development and integration of the ear</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Fuchs</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Tucker</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Curr Top Dev Biol</title>
+              <imprint>
+                <biblScope unit="volume">115</biblScope>
+                <biblScope from="213" to="245" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Autosomal dominant microtia and ocular coloboma: new syndrome or an extension of the oculo-auriculo-vertebral spectrum?</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Beck</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Hudgins</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Hoyme</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Med Genet A</title>
+              <imprint>
+                <biblScope unit="volume">134</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="359" to="62" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Autosomal-dominant microtia linked to five tandem copies of a copy-number-variable region at chromosome 4p16</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Balikova</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Martens</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Melotte</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Amyere</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Van Vooren</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Moreau</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Vetrie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Fiegler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Carter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Liehr</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Hum Genet</title>
+              <imprint>
+                <biblScope unit="volume">82</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="181" to="188" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Microtia and congenital aural atresia</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Genc</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Kahraman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Ozel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Arslan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Demir</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Selcuk</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Craniofac Surg</title>
+              <imprint>
+                <biblScope unit="volume">23</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="1733" to="1738" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Genetic advances in the understanding of Microtia</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Gendron</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Schwentker</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Van Aalst</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Pediatr Genet</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="189" to="97" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Genomewide linkage study suggests a susceptibility locus for isolated bilateral microtia on 4p15.32-4p16.2</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Hu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Jin</forename>
+                  <forename type="middle">Q</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Yu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <forename type="middle">B</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS One</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope unit="page">101152</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Mutational analysis of GSC, HOXA2 and PRKRA in 106 Chinese patients with microtia</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Hao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Jin</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zheng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Ma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int J Pediatr Otorhinolaryngol</title>
+              <imprint>
+                <biblScope unit="volume">93</biblScope>
+                <biblScope from="78" to="82" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Mutational analysis of HOXA2 and SIX2 in a Bronx population with isolated microtia</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Monks</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Jahangir</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Shanske</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Samanich</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Morrow</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Babcock</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int J Pediatr Otorhinolaryngol</title>
+              <imprint>
+                <biblScope unit="volume">74</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope from="878" to="82" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Mutational analysis of PACT gene in Chinese patients with microtia</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Pan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Jiang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Zhuang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Guo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Yu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Med Genet A</title>
+              <imprint>
+                <biblScope unit="volume">155</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="906" to="916" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Targeted mutation of the murine goosecoid gene results in craniofacial defects and neonatal death</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Yamada</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Mansouri</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Torres</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Stuart</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Blum</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Schultz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">De</forename>
+                  <surname>Robertis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Gruss</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">DEVELOPMENT</title>
+              <imprint>
+                <biblScope unit="volume">121</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope from="2917" to="2939" unit="page"/>
+                <date type="published" when="1995"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Elements of morphology: standard terminology for the ear</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Hunter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Frias</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Gillessen-Kaesbach</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Hughes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Jones</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Wilson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Med Genet A</title>
+              <imprint>
+                <biblScope unit="volume">149</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="40" to="60" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Combined microtia and aural atresia: issues in cochlear implantation</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Marrinan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Shapiro</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Kenna</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Cohen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Laryngoscope</title>
+              <imprint>
+                <biblScope unit="volume">115</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="39" to="43" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Congenital auricular malformations: description of anomalies and syndromes</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Bartel-Friedrich</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Facial Plast Surg</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="567" to="80" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <monogr>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Ordonez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Tekin</surname>
+                </persName>
+              </author>
+              <title level="m">Congenital deafness with labyrinthine aplasia, Microtia, and Microdontia</title>
+              <imprint>
+                <date type="published" when="1993"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Familial lateral semicircular canal malformation with external and middle ear abnormalities</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Matsunaga</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Hirota</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Med Genet A</title>
+              <imprint>
+                <biblScope unit="volume">116</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="360" to="367" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">A method and server for predicting damaging missense mutations</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Adzhubei</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Schmidt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Peshkin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Ramensky</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Gerasimova</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Bork</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Kondrashov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Sunyaev</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Methods</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="248" to="257" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Protein structure analysis of mutations causing inheritable diseases. An e-science approach with life scientist friendly interfaces</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Venselaar</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Te</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Kuipers</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Hekkelman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Vriend</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bmc Bioinformatics</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope unit="page">548</biblScope>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">The PSIPRED protein structure prediction server</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Mcguffin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Bryson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Jones</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bioinformatics</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="404" to="409" unit="page"/>
+                <date type="published" when="2000"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Clinical dividends from the molecular genetic diagnosis of craniosynostosis</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Wilkie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Bochukova</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Hansen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Taylor</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Rannan-Eliya</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Byren</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Wall</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Ramos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Venancio</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Hurst</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Med Genet A</title>
+              <imprint>
+                <biblScope unit="volume">143</biblScope>
+                <biblScope unit="issue">16</biblScope>
+                <biblScope from="1941" to="1950" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Role of TBX1 in human del22q11.2 syndrome</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Yagi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Furutani</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Hamada</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Sasaki</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Asakawa</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Minoshima</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Ichida</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Joo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kimura</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Imamura</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Lancet</title>
+              <imprint>
+                <biblScope unit="volume">362</biblScope>
+                <biblScope unit="issue">9393</biblScope>
+                <biblScope from="1366" to="73" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Tbx1 regulates the BMP-Smad1 pathway in a transcription independent manner</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Fulcoli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Huynh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Scambler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Baldini</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS One</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope unit="page">6049</biblScope>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">HOXA2 haploinsufficiency in dominant bilateral microtia and hearing loss</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Brown</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Viana</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Helwig</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Artunduaga</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Quintanilla-Dieck</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Jarrin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Osorno</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Mcdonough</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Depalma</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Eavey</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Hum Mutat</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope unit="issue">10</biblScope>
+                <biblScope from="1347" to="51" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">A mutation in HOXA2 is responsible for autosomal-recessive microtia in an Iranian family</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Alasti</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Sadeghi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Sanati</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Farhadi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Stollar</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Somers</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Van</forename>
+                  <surname>Camp</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Hum Genet</title>
+              <imprint>
+                <biblScope unit="volume">82</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="982" to="91" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Identification of a second HOXA2 nonsense mutation in a family with autosomal dominant non-syndromic microtia and distinctive ear morphology</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Piceci</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Morlino</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Castori</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Buffone</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">De</forename>
+                  <surname>Luca</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Grammatico</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Guida</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Clin Genet</title>
+              <imprint>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Isolated sagittal and coronal craniosynostosis associated with TWIST box mutations</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Seto</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Hing</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Chang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Hu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Kapp-Simon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Patel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Burton</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Kane</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Smyth</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Hopper</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Med Genet A</title>
+              <imprint>
+                <biblScope unit="volume">143</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope from="678" to="86" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">Common and rare variant association study for plasma lipids and coronary artery disease</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Tada</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Kawashiri</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Konno</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Yamagishi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Hayashi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Atheroscler Thromb</title>
+              <imprint>
+                <biblScope unit="volume">23</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="241" to="56" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">Searching for missing heritability: designing rare variant association studies</title>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Zuk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Schaffner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Samocha</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Do</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Hechter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Kathiresan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Daly</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Neale</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Sunyaev</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Lander</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proc Natl Acad Sci</title>
+              <imprint>
+                <biblScope unit="volume">111</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="455" to="64" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">Characterization of a Dchs1 mutant mouse reveals requirements for Dchs1-Fat4 signaling during mammalian development</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Mao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Mulvaney</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Zakaria</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Yu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Morgan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Allen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Basson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Francis-West</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Irvine</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Development</title>
+              <imprint>
+                <biblScope unit="volume">138</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="947" to="57" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">To adhere or not to adhere: the role of Cadherins in neural crest development</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Taneyhill</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell Adhes Migr</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="223" to="253" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">Dchs1-Fat4 regulation of polarized cell behaviours during skeletal morphogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Mao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Kuta</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Crespo-Enriquez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Whiting</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Martin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Mulvaney</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Irvine</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Francis-West</forename>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Commun</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="page">11469</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Usher syndrome (sensorineural deafness and retinitis pigmentosa): pathogenesis, molecular diagnosis and therapeutic approaches</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Bonnet</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>El-Amraoui</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Curr Opin Neurol</title>
+              <imprint>
+                <biblScope unit="volume">25</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="42" to="51" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">The role of Fras1/Frem proteins in the structure and function of basement membrane</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Pavlakis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Chiotaki</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Chalepakis</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int J Biochem Cell Biol</title>
+              <imprint>
+                <biblScope unit="volume">43</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="487" to="95" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title level="a" type="main">Mouse Hoxa2 mutations provide a model for microtia and auricle duplication</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Minoux</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Kratochwil</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ducret</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Amin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Kitazawa</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Kurihara</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Bobola</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Vilain</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Rijli</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Development</title>
+              <imprint>
+                <biblScope unit="volume">140</biblScope>
+                <biblScope unit="issue">21</biblScope>
+                <biblScope from="4386" to="97" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

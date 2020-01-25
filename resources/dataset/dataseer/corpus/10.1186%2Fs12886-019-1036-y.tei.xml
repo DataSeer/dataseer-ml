@@ -1,0 +1,1387 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:10+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Accuracy of swept-source optical coherence tomography based biometry for intraocular lens power calculation: a retrospective cross-sectional study</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Youngju</forename>
+                <surname>An</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Eun-Kyoung</forename>
+                <surname>Kang</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Hyojin</forename>
+                <surname>Kim</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Min-Ji</forename>
+                <surname>Kang</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Yong-Soo</forename>
+                <surname>Byun</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Choun-Ki</forename>
+                <surname>Joo</surname>
+              </persName>
+            </author>
+            <title level="a" type="main">Accuracy of swept-source optical coherence tomography based biometry for intraocular lens power calculation: a retrospective cross-sectional study</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1186/s12886-019-1036-y</idno>
+          <note>R E S E A R C H A R T I C L E Open Access</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div subtype="dataseer">
+          <p>
+            <s>Background: To evaluate the accuracy of biometric measurements by a swept-source optical coherence tomography (SS-OCT) based biometry for intraocular lens (IOL) power calculation.</s>
+          </p>
+          <p>
+            <s>Methods: This retrospective observational study enrolled 431 patients undergoing cataract surgery.</s>
+            <s>The charts were reviewed to investigate the failure rate of axial length (AL) measurement of the SS-OCT biometer, partial coherence interferometry (PCI), and A-scan ultrasonography (US) according to cataract type and severity.</s>
+            <s cert="0.6893556714057922" id="dataset-1" type="Tabular data">AL and keratometry in 164 eyes with the same IOL inserted were measured using the SS-OCT biometer, PCI, and A-scan US.</s>
+            <s>The SRK/T formula was used to calculate IOL power.</s>
+            <s>The mean absolute error (MAE) and percentage of eyes with a prediction error (PE) of ±0.50 D were compared.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Background</head>
+        <p>
+          <s>In the era of refractive cataract surgery, the achievement of a desired refractive outcome begins with intraocular lens (IOL) power calculation based on accurate biometry.</s>
+          <s>The refractive status after cataract surgery is affected by various factors such as measurement error of the axial length (AL), measurement error of the corneal power, and the estimation of the pseudophakic anterior chamber depth (ACD) <ref target="#b0" type="bibr">[1]</ref> .</s>
+          <s>Of these, AL measurement accounts for 54% of the sources causing error in the refractive outcome in cataract surgery <ref target="#b0" type="bibr">[1]</ref> .</s>
+          <s>At present, the advent of partial interferometry (PCI) has reduced the effect of AL measurement errors by 36%, but ultrasonography (US) AL measurements still accounts for more than 50% of the total error in cataract surgery refraction results <ref target="#b1" type="bibr">[2]</ref> .</s>
+        </p>
+        <p>
+          <s>For many years, US had been the only technique used to measure AL in clinical practice <ref target="#b1" type="bibr">[2]</ref> ; however, recently, the use of optical biometry has increased due to advantages pertaining to non-invasiveness and inter-operator reproducibility.</s>
+          <s>Introduced in 1999, IOLMaster (Carl Zeiss, Jena, Germany) is known to provide reliable measurements based on PCI with a 780-nm laser diode infrared light <ref target="#b2" type="bibr">[3]</ref> .</s>
+          <s>Introduced in 2009, the Lenstar LS 900 (Haag-Streit AG, Koeniz, Switzerland) is based on the principle of optical low-coherence reflectometry (OLCR) using 820-nm super-light emitting diodes.</s>
+          <s>Lenstar LS 900 provides measurements of AL, keratometry (K), anterior chamber depth, and white-to-white, as well as central corneal thickness, pupil size, and lens thickness <ref target="#b3" type="bibr">[4]</ref> .</s>
+          <s>Nevertheless, the major limitation of these optical biometries is that measurement is impossible in patients with severe lens opacity.</s>
+          <s>In previous studies, the AL measurement failure rates of PCI and OLCR in rural Chinese populations were reported as 37.84 and 35.47, respectively <ref target="#b4" type="bibr">[5]</ref> .</s>
+          <s>In particular, accurate measurement of AL in patients with posterior subcapsular cataract (PSC) remains a challenge <ref target="#b4" type="bibr">[5]</ref> .</s>
+        </p>
+        <p>
+          <s>The devices most recently introduced in clinical practice, e.g., Argos (Movu, Santa Clara, CA), IOLMaster 700 (Carl Zeiss Meditec, Jena, Germany), OA-2000 (Tomey, Nagoya, Japan), and others, are optical coherence tomography (OCT) systems based on swept source (SS) and are currently receiving attention because of their high-tissue penetration power.</s>
+          <s>Argos involves biometry combined with SS OCT, is noninvasive, and provides increased confidence by generating real-time 2D images of the whole eye (from cornea to retina) during alignment <ref target="#b5" type="bibr">[6]</ref> .</s>
+          <s>Compared to conventional optical biometry, Argos has approximately a 30-times higher-speed swept-source laser centered at 1060 nm and an improved signal to noise ratio, providing a high AL-measurement success rate and high image quality <ref target="#b5" type="bibr">[6]</ref> .</s>
+        </p>
+        <p>
+          <s>Most previous studies using SS-OCT have evaluated repeatability and reproducibility <ref target="#b5" type="bibr">[6]</ref>
+            <ref target="#b6" type="bibr">[7]</ref>
+            <ref target="#b7" type="bibr">[8]</ref> , and studies on IOL power calculations, which is the main reason why they were developed, have received relatively less attention.</s>
+          <s>In addition, few studies have evaluated the accuracy of IOL power calculations measured by the SS-OCT biometer in eyes with PSC.</s>
+          <s>The objectives of the present study was to evaluate the accuracy of the measurements for IOL power calculation obtained with the SS-OCT biometer compared with conventional devices based on PCI feasibility.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Patients and methods</head>
+        <p>
+          <s cert="0.9851140975952148" id="dataset-1" type="Tabular data">In this retrospective cross-sectional study, the medical records of all patients diagnosed with cataract between August 2016 and November 2016 at Seoul St. Mary's Hospital, Seoul, South Korea were reviewed.</s>
+          <s>The study was approved by the Institutional Review Board of the Catholic University (No. KC16RISI1020).</s>
+          <s cert="0.9386406540870667" id="dataset-2" type="Tabular data:Subject Data Table">Patients with preoperative measurements using the SS-OCT biometer (Argos), PCI (IOLMaster, version 5.40), A-scan US (Axis nano, Quantel Medical, Clermont-Ferrand, France), and manual keratometry (OM-4; TOPCON Corp, Tokyo, Japan) were included in this study.</s>
+          <s cert="0.991421639919281" id="dataset-4" type="Tabular data">One eye of each patient was included in the study.</s>
+          <s>If both eyes met the inclusion criteria, one eye was selected randomly.</s>
+          <s>Exclusion criteria included previous refractive surgery, keratoconus and any other corneal disease, impossible cooperation for testing due to retinal disease, or insufficient mental ability, and postoperative corrected distance visual acuity worse than 0.5 (Snellen 20/40).</s>
+          <s>The research methods adhered to the tenets of the Declaration of Helsinki.</s>
+        </p>
+        <p>
+          <s>Cataract type and severity were graded according to the Lens Opacities Classification System III (LOCS ΙΙΙ) <ref target="#b8" type="bibr">[9]</ref> .</s>
+          <s>All patients underwent a slit-lamp evaluation conducted by a single experienced ophthalmologist, with the pupil dilated (Tropicamide 0.5%phenylephrine 0.5% [Mydrin-P]).</s>
+          <s>The types of cataracts were classified into four categories according to their opaque location; nuclear opalescence (NO), nuclear color (NC), cortical (C), and posterior subcapsular cataract (PSC).</s>
+          <s>Also, the severity of cataracts was graded on a scale of 0.1 to 6.9 for NO and NC, and 0.1 to 5.9 for C and PSC, by comparison with a digital photograph of each lens with standard photographic transparencies.</s>
+          <s>Further details can be found in previous literature <ref target="#b9" type="bibr">[10]</ref> .</s>
+        </p>
+        <p>
+          <s cert="0.8163842558860779" id="dataset-3" type="Tabular data">All eyes were measured with the SS-OCT biometer, PCI, A-scan US, and manual keratometry on the same day without dilation.</s>
+          <s>Measurements were taken by four experienced examiners, one for each instrument.</s>
+          <s>All instruments were measured more than 3 times and the mean value was used.</s>
+          <s>The SS-OCT biometer, PCI, and manual keratometry were used to fix the patient's forehead and chinrests to each biometer, and the alignment was achieved with the patients fixed on a projected light at optical infinity.</s>
+          <s>The A-scan US was performed at the end of the procedure because it may affect other tests with corneal contact.</s>
+          <s>After the topical anesthetic (Alcaine 0.5%) was installed, the 11-MHz probe was contacted with the cornea to measure AL.</s>
+        </p>
+        <p>
+          <s>Phacoemulsification was performed by the same surgeon (C.-K.J.) through a 2.2-mm self-sealing temporal clear corneal incision under topical anesthesia (topical lidocaine 4% and proparacaine hydrochloride 0.5%).</s>
+          <s>Diverse IOL models were inserted in the bag depending on patient condition and need (e.g., Toric and multifocal IOLs).</s>
+          <s>Because constant optimization should be performed separately for each IOL model <ref target="#b10" type="bibr">[11]</ref> , only the IOL model used in the largest sample of patients was selected for subset analysis.</s>
+        </p>
+        <p>
+          <s>The charts were reviewed to calculate AL measurement failure rates for SS-OCT biometer, PCI, and Ascan US.</s>
+          <s cert="0.8619280457496643" id="dataset-6" type="Tabular data">Of the patients with the same IOL inserted, if PCI was measured (Group A), AL and K measured using SS-OCT biometer, PCI, and A-scan US were collected; if PCI was not measured (Group B), AL and K measured using the SS-OCT biometer and A-scan US were collected.</s>
+          <s>Because A-scan US does not have a function to measure K, manual keratometry values were used to calculate intraocular lens power.</s>
+        </p>
+        <p>
+          <s>IOL power calculation was performed based on the SRK/T formula.</s>
+          <s>The optimized lens constants used in the study were 118.02, 118.04, and 118.0 for SS-OCT biometrics, IOLMaster, and A-scan US, respectively.</s>
+          <s>A final evaluation was performed by collecting the results of the subjective spherical equivalent refractive outcome at 2 months postoperatively.</s>
+          <s>The mean prediction error (PE) was obtained by subtracting the predicted spherical equivalent refraction from the postoperative subjective spherical equivalent refraction.</s>
+          <s>Thus, a positive refractive PE reflected hyperopic refractive outcome.</s>
+          <s>The mean absolute error (MAE), the median absolute error, and the percentage of eyes with PE within ±0.50 D were calculated.</s>
+        </p>
+      </div>
+      <div>
+        <head>Statistical analysis</head>
+        <p>
+          <s>Statistical analysis was performed using SPSS version 18.0 software (IBM Corp., Armonk, NY).</s>
+          <s>All data were expressed as mean ± standard deviation.</s>
+          <s>Normality was verified using the Kolmogorov-Smirnov test.</s>
+          <s>Mann-Whitney U test was used to compare two independent groups, and Wilcoxon signed rank test was used for pairwise comparisons.</s>
+          <s>The Kruskal-Wallis method was used for nonparametric data among three groups.</s>
+          <s>All tests were 2-tailed, and a p value &lt; .05 was considered to be statistically significant.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Results</head>
+        <p>
+          <s cert="0.9911856055259705" id="dataset-7" type="Tabular data">Four hundred thirty-one eyes of 431 patients diagnosed with cataract during the recruitment period were included in the study.</s>
+          <s>The mean age was 66.70 ± 10.54 (SD) years (range 23 to 87 years), and 281 eyes (65.20%) belonged to women.</s>
+          <s>The IOL model used in the largest patient sample was Precizon Monofocal 560 (Ophtec, Inc., Boca Raton, FL).</s>
+          <s>Of the 431 consecutive patients, it was possible to evaluate at 2 months postoperatively the subjective spherical equivalent refractive outcome after the insertion of the Precizon Monofocal 560 in 164 eyes.</s>
+          <s cert="0.827785849571228" id="dataset-8" type="Tabular data">Of these, 128 eyes (Group A) were able to measure axial length using the A-scan US, the SS-OCT biometer, and PCI.</s>
+          <s cert="0.8053619265556335" id="dataset-9" type="Tabular data">Because 36 eyes (Group B) could not be measured using PCI, axial length was measured using A-scan US and SS-OCT biometer.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Measurement failure rate of axial length</head>
+        <p>
+          <s>A total of 431 eyes were used to calculate the AL measurement failure rate for each device.</s>
+          <s cert="0.8052863478660583" id="dataset-10" type="Tabular data">All of these eyes could be measured with A-scan US.</s>
+          <s cert="0.7386587858200073" id="dataset-11" type="Tabular data">Of the 426 eyes for which LOCS ΙΙΙ grading was possible, both SS-OCT biometry and PCI measured in 365 eyes, SS-OCT biometry measured but PCI not measured in 56 eyes, and both SS-OCT biometry and PCI were not measured in 5 eyes.</s>
+          <s>In another 5 eyes, LOCS ΙΙΙ grading was impossible due to mature cataract, in which cases measurement was not performed either with the SS-OCT biometer or with PCI.</s>
+          <s>Thus, the overall measurement failure rate was 0.00% (0 eyes) for Ascan US, 2.32% (10 eyes) for the SS-OCT biometer, and 15.31% (66 eyes) for PCI.</s>
+        </p>
+      </div>
+      <div>
+        <head>Lens opacity</head>
+        <p>
+          <s>The cataract type and severity were graded according to LOCS ΙΙΙ in 164 eyes.</s>
+          <s>The mean ± standard deviation (median) scores of NO, NC, C and PSC were 2.83 ± 0.64 (3.00), 2.80 ± 0.66 (3.00), 2.08 ± 1.41 (3.00) and 0.52 ± 1.03 (0.00) for Group A and 2.69 ± 1.09 (2.50), 2.64 ± 1.13 (2.00), 1.89 ± 0.90 (2.00) and 3.72 ± 1.06 (4.00) for Group B, respectively.</s>
+          <s>The scores of NO, NC, and C were not statistically different between the two groups, but PSC score was statistically significant (p &lt; .001;</s>
+          <s>
+            <ref target="#tab_0" type="table">Table 1</ref> ).</s>
+          <s>
+            <ref target="#tab_1" type="table">Table 2</ref> shows the comparison of biometric measurements between devices according to PCI feasibility.</s>
+          <s>In Group A, AL and K did not show any significant <ref target="#tab_2" type="table">Table 3</ref> shows the results of evaluating the accuracy of the refractive error prediction.</s>
+          <s>In Group A, the SS-OCT biometer and PCI showed statistically significantly lower MAE than A-scan US (p &lt; .05),</s>
+          <s>and there was no significant difference between the SS-OCT biometer and PCI.</s>
+          <s>In Group B, the SS-OCT biometer showed a statistically significantly lower MAE than A-scan US (p &lt; .001).</s>
+        </p>
+      </div>
+      <div>
+        <head>Biometry</head>
+      </div>
+      <div>
+        <head>Refractive error</head>
+        <p>
+          <s>The MAE of the SS-OCT biometer was not significantly different between Group A (0.36 ± 0.27) and Group B (0.36 ± 0.31) (p = 0.736; <ref type="figure">Fig. 1</ref> ), and the percentage of eyes with a PE of ±0.50 D or less was 71.09 and 72.22% in Group A and Group B, respectively.</s>
+          <s>On the other hand, the MAE of A-scan US was significantly different between Group A (0.47 ± 0.39) and Group B (0.64 ± 0.36) (p = 0.007; <ref type="figure">Fig. 1</ref> ), and the percentage of eyes with a PE of ±0.50 D or less was 60.16 and 47.22% in Group A and Group B, respectively.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Discussion</head>
+        <p>
+          <s>Accurate biometric measurements are critical for IOL power calculations.</s>
+          <s>Currently, optical biometry is considered to be the most accurate method among biometers, and the majority of optical biometries scan the eye using PCI or time-domain OCT technology <ref target="#b11" type="bibr">[12]</ref> .</s>
+          <s>However, the major limitation of these technologies is that light can only penetrate media up to a specific opacity <ref target="#b11" type="bibr">[12]</ref> .</s>
+          <s>In the present study, the SS-OCT biometer showed a high acquisition rate of 97.68%, and the percentage of eyes with a PE of ±0.50 D or less was 71.09 and 72.22% in Group A and Group B, respectively.</s>
+          <s>This is above the 55% value established as the benchmark standard by the National Health Service of the United Kingdom <ref target="#b12" type="bibr">[13]</ref> .</s>
+        </p>
+        <p>
+          <s>Various AL measurement failure rates have been reported so far due to methodological differences in clinical settings (e.g., patient's cataract type and severity, approach and version of the measurement device, and others).</s>
+          <s>The AL measurement failure rates of IOLMaster have been reported to be 10-20% in previous studies <ref target="#b13" type="bibr">[14]</ref>
+            <ref target="#b14" type="bibr">[15]</ref>
+            <ref target="#b15" type="bibr">[16]</ref>
+            <ref target="#b16" type="bibr">[17]</ref> , but these studies did not classify cases according to grade of cataract density and morphology.</s>
+          <s>A study which proposed cutoff values of cataract morphology and severity to measure AL has shown that IOLMaster v5.4 could not be used for measurements in cases of mature cataract and a LOCS ΙΙΙ P-scale value of 3.5 or higher <ref target="#b17" type="bibr">[18]</ref> .</s>
+          <s>The reason for such high AL measurement failure rate in PSC is that the location of opacity in the posterior pole is adjacent to the lens' nodal point and, accordingly, it affects more the passing of light rays compared to other types of morphology <ref target="#b4" type="bibr">[5]</ref> .</s>
+          <s>In clinical practice, PSC is known to cause visual disability regardless of the extent of opacity <ref target="#b18" type="bibr">[19]</ref> .</s>
+        </p>
+        <p>
+          <s>In this study, the AL measurement failure rate of Argos based on SS-OCT was 2.32%, which was similar to that reported in previous studies <ref target="#b5" type="bibr">[6]</ref> .</s>
+          <s cert="0.8380523920059204" id="dataset-12" type="Tabular data">In addition, Argos can be measured at an N-scale value of 6 and P-scale value of 5. SS-OCT is the most recently introduced OCT technology that uses a fast cycle and tunable wavelength laser source to sequentially scan the anterior segment or even the whole eye <ref target="#b11" type="bibr">[12]</ref> .</s>
+          <s>In particular, Argos uses a 1060-nm wavelength and 20-nm bandwidth swept light source technology to collect two-dimensional OCT data of the whole eye <ref target="#b5" type="bibr">[6]</ref> .</s>
+          <s>The use of two-dimensional OCT data improves the repeatability of the measurement as well as the success rate in AL measurement <ref target="#b5" type="bibr">[6]</ref> .</s>
+        </p>
+        <p>
+          <s cert="0.8810746073722839" id="dataset-13" type="Tabular data">In this study, AL was measured in the order of A-scan US, SS-OCT biometer, and PCI, but there was no statistical significance.</s>
+          <s>It is known that US is reflected from the internal limiting membrane, while light in laser interferometry is reflected from the retinal pigment epithelium <ref target="#b19" type="bibr">[20]</ref> , which may result in difference corresponding to the retinal thickness in the fovea (130 μm).</s>
+          <s>For PCI, the group <ref target="#b5" type="bibr">[6]</ref> .</s>
+          <s>Therefore, we expected that there would be a significant difference in AL measurement between devices, but the results showed no significant difference.</s>
+          <s>This result can be attributed to the fact that numerous individuals with normal axial length were included in this study.</s>
+        </p>
+        <p>
+          <s>Although there was no significant difference in the biometric measurements among three devices, the SS-OCT biometer and PCI showed a lower MAE and a higher PE of ±0.50 D or less than the A-scan US.</s>
+          <s>These results can be considered as a cause of the difference in the agreement of <ref target="#b20" type="bibr">[21]</ref> .</s>
+          <s>Also, Ueda et al. <ref target="#b20" type="bibr">[21]</ref> reported that the IOLMaster's measurements were affected by cataract density but that the US was more affected in terms of accuracy.</s>
+          <s>It is because in US the examiner estimates the location of the optical axis in the eye and performs a manual alignment, unlike optical biometry in which a more accurate alignment is guaranteed by using a visual axis while the patient stares at a light spot <ref target="#b20" type="bibr">[21]</ref> .</s>
+        </p>
+        <p>
+          <s>The main limitations of this study are as follows.</s>
+          <s>First, we did not investigate other formulas (e.g., Haigis, Olsen, and Barrett Universal) using the SS-OCT biometer, although they provide additional measurements such as ACD or lens thickness.</s>
+          <s>However, the comparison of formulas was not the purpose of this study.</s>
+          <s>Second, although the immersion-type US is known to have better reproducibility, we used the applanation type because of the characteristics of the retrospective study.</s>
+          <s>However, the A-scan US measurement was performed by an examiner with an experience of over 3 years, and AL measurements by applanation US obtained by experienced operators are reported to have less difference and lower variability in the difference compared to AL measurements obtained with IOLMaster <ref target="#b21" type="bibr">[22]</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Conclusions</head>
+        <p>
+          <s>PCI has been regarded as an excellent noncontact measurement method in the eyes of cataract patients.</s>
+          <s>Nevertheless, US biometry is still required for cases with PSC <ref target="#b22" type="bibr">[23]</ref> .</s>
+          <s>SS-OCT biometer and PCI There was no statistically significant difference in MAE between the SS-OCT biometer and PCI, but the measurement failure rate was lower for the SS-OCT biometer (2.32%) than for PCI (15.31%).</s>
+          <s>Moreover, the SS-OCT biometer maintained the accuracy of the measurements for IOL power calculation without statistically significant difference from Group A in Group B. Whereas, A-scan US showed higher error than Group A in Group B. Thus, Using biometry with advanced OCT is useful in clinical practice as it is more effective in obtaining biometric measurements in the eyes with PSC and predictable refraction results compared to conventional devices.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head/>
+        <label/>
+        <figDesc>Abbreviations ACD: Anterior chamber depth; AL: Axial length; C: Cortical; IOL: Intraocular lens; K: Keratometry; LoA: Limits of agreement; LOCS ΙΙΙ: Lens Opacities Classification System III; MAE: Mean absolute error; NC: Nuclear color; NO: Nuclear opalescence; OCT: Optical coherence tomography; OLCR: Optical low-coherence reflectometry; PCI: Partial coherence interferometry; PE: Prediction error; PSC: Posterior subcapsular cataract; SS: Swept source; US: Ultrasonography</figDesc>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_0">
+        <head>Table 1</head>
+        <label>1</label>
+        <figDesc>Comparison of lens opacity</figDesc>
+        <table>LOCS ΙΙΙ 
+Group A (n = 128) Group B (n = 36) p-value * 
+
+Nuclear opalescence 2.83 ± 0.64 (3.00) 
+2.69 ± 1.09 (2.50) 0.122 
+
+Nuclear color 
+2.80 ± 0.66 (3.00) 
+2.64 ± 1.13 (2.00) 0.103 
+
+Cortical 
+2.08 ± 1.41 (3.00) 
+1.89 ± 0.90 (2.00) 0.158 
+
+Posterior subcapsular 0.52 ± 1.03 (0.00) 
+3.72 ± 1.06 (4.00) p &lt; .001 
+
+Values are presented as mean ± standard deviation (median) 
+Group A; PCI feasible, Group B; PCI unfeasible 
+LOCS ΙΙΙ = Lens Opacities Classification System ΙΙΙ 
+
+* 
+
+p-value is for Mann-Whitney U test 
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_1">
+        <head>Table 2</head>
+        <label>2</label>
+        <figDesc>Comparison of corneal power and axial length</figDesc>
+        <table>SS-OCT biometer 
+PCI 
+A-scan US 
+p-value 
+
+Group A (n = 128) 
+
+Corneal power (D) 
+44.14 ± 1.47 
+44.16 ± 1.50 
+44.04 ± 1.50  ‡ 
+0.811 * 
+
+Axial length (mm) 
+24.56 ± 2.16 
+24.58 ± 2.22 
+24.49 ± 2.19 
+0.935 * 
+
+Group B (n = 36) 
+
+Corneal power (D) 
+44.01 ± 1.92 
+N/A 
+44.03 ± 1.88  ‡ 
+0.924  † 
+
+Axial length (mm) 
+25.18 ± 2.86 
+N/A 
+25.02 ± 2.82 
+P &lt; .001  † 
+
+Values are presented as mean ± standard deviation 
+Group A; PCI feasible, Group B; PCI unfeasible 
+D diopters, SS-OCT swept-source optical coherence tomography, PCI partial coherence interferometry, US ultrasonography 
+
+* 
+
+p-value is for Kruskal-Wallis test 
+
+ † 
+
+p-value is for Wilcoxon signed rank test 
+
+ † † 
+
+Measurement using manual keratometry 
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_2">
+        <head>Table 3</head>
+        <label>3</label>
+        <figDesc>Comparison of refractive outcomes of intraocular lens power calculation using the three devices in SRK/T formula p-value is for Wilcoxon signed rank testFig. 1The distribution of absolute prediction error using A-scan US, PCI, and SS-OCT biometer in SRK/T formulas. Group A; PCI feasible, Group B; PCI unfeasible (US = Ultrasonography, PCI = Partial coherence interferometry, SS-OCT = swept-source optical coherence tomography, NS = not significant) * p-value is for Mann-Whitney U test. AL measurements. In Group B with relatively high PSC score, the SS-OCT biometer and A-scan US AL measurements were significantly different and the inter-device agreement was low. The SS-OCT biometer showed comparable MAEs in Group A (0.36 ± 0.27) and Group B (0.36 ± 0.31), while the A-scan US showed a greater MAE in Group B (0.64 ± 0.36) than Group A (0.47 ± 0.39). These results suggest high accuracy of SS-OCT technology in PSC as well as normal density cataracts. In a lens with dense opacity, the average US velocity decreases and can cause an AL measurement error</figDesc>
+        <table>Group A (n = 128) 
+Group B (n = 36) 
+
+SS-OCT biometer 
+PCI 
+A-scan US 
+SS-OCT biometer 
+A-scan US 
+
+Optimized constant 
+118.02 
+118.04 
+117.90 
+118.02 
+117.90 
+
+PE (D) 
+0.00 ± 0.44 
+0.00 ± 0.46 
+−0.02 ± 0.61 
+0.00 ± 0.47 
+−0.01 ± 0.66 
+
+MAE (D) 
+0.36 ± 0.27  † 
+0.39 ± 0.30  † 
+0.47 ± 0.39 
+0.36 ± 0.31 
+0.64 ± 0.36 
+
+p-value 
+0.027 * 
+p &lt; .001  ‡ 
+
+MedAE (D) 
+0.31 
+0.32 
+0.40 
+0.32 
+0.60 
+
+Eye within (%) 
+
+≤ ±0.25 D 
+41.44 
+42.97 
+36.72 
+47.22 
+22.22 
+
+≤ ±0.50 D 
+71.09 
+67.19 
+60.16 
+72.22 
+47.22 
+
+≤ ±1.00 D 
+95.31 
+95.31 
+90.63 
+94.44 
+83.33 
+
+Values are presented as mean ± standard deviation 
+Group A; PCI feasible, Group B; PCI unfeasible 
+D diopters, PE prediction error, MAE mean absolute error, MedAE median absolute error, SS-OCT swept-source optical coherence tomography, PCI partial 
+coherence interferometry, US ultrasonography 
+
+* 
+
+p-value is for Kruskal-Wallis test 
+
+ † 
+
+Same letters indicate no statistical significance based on Bonferroni's method 
+
+ † † 
+
+</table>
+      </figure>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>None.</s>
+          </p>
+        </div>
+        <div>
+          <head>Availability of data and materials</head>
+          <p>
+            <s>The datasets obtained and/or analyzed during the current study are available from the corresponding author on reasonable request.</s>
+          </p>
+        </div>
+        <div>
+          <head>Authors' contributions</head>
+        </div>
+        <div>
+          <head>Ethics approval and consent to participate</head>
+          <p>
+            <s>This study was approved by the Ethics Committee of the Seoul St. Mary's Hospital (Korea) and the requirement for individual consent was waived (IRB Registry Number KC16RISI1020).</s>
+          </p>
+        </div>
+        <div>
+          <head>Consent for publication</head>
+          <p>
+            <s>Not applicable.</s>
+          </p>
+        </div>
+        <div>
+          <head>Competing interests</head>
+          <p>
+            <s>The authors declare that they have no competing interests.</s>
+          </p>
+        </div>
+        <div>
+          <head>Publisher's Note</head>
+          <p>
+            <s>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Sources of error in intraocular lens power calculation</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Olsen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Cataract Refract Surg</title>
+              <imprint>
+                <biblScope unit="volume">18</biblScope>
+                <biblScope from="125" to="134" unit="page"/>
+                <date type="published" when="1992"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Calculation of intraocular lens power: a review</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Olsen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Acta Ophthalmol Scand</title>
+              <imprint>
+                <biblScope unit="volume">85</biblScope>
+                <biblScope from="472" to="85" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Reproducibility of optical biometry using partial coherence interferometry: intraobserver and interobserver reliability</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Vogel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Dick</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Krummenauer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Cataract Refract Surg</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope from="1961" to="1969" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">The effect of cycloplegia on the lenstar and the IOLMaster biometry</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Huang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Mcalinden</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Su</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Pesudovs</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Feng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Hua</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Optom Vis Sci</title>
+              <imprint>
+                <biblScope unit="volume">89</biblScope>
+                <biblScope from="1691" to="1697" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Axial length measurement failure rates with the IOLMaster and Lenstar LS 900 in eyes with cataract</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Mcalinden</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Pesudovs</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Bao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Yu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS One</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope unit="page">128929</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Biometry measurements using a new large-coherence-length swept-source optical coherence tomographer</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Shammas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ortiz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Shammas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Chong</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Cataract Refract Surg</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope from="50" to="61" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Repeatability and interobserver reproducibility of a new optical biometer based on sweptsource optical coherence tomography and comparison with IOLMaster</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Huang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Savini</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Hoffer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Lu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Hu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Br J Ophthalmol</title>
+              <imprint>
+                <biblScope unit="volume">101</biblScope>
+                <biblScope from="493" to="501" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Comparison of a new optical biometer using swept-source optical coherence tomography and a biometer using optical low-coherence reflectometry</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Hoffer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Hoffmann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Savini</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Cataract Refract Surg</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope from="1165" to="72" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">The Lens opacities classification system III. The longitudinal study of cataract study group</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Chylack</surname>
+                  <genName>Jr</genName>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Wolfe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Singer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Leske</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Bullimore</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Bailey</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Arch Ophthalmol</title>
+              <imprint>
+                <biblScope unit="volume">111</biblScope>
+                <biblScope from="831" to="837" unit="page"/>
+                <date type="published" when="1993"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Axial length measurement failure rates with biometers using swept-source optical coherence tomography compared to partial-coherence interferometry and optical low-coherence interferometry</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Mcalinden</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Gao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Zhao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Yu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Ophthalmol</title>
+              <imprint>
+                <biblScope unit="volume">173</biblScope>
+                <biblScope from="64" to="73" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Accuracy of optical biometry combined with Placido disc corneal topography for intraocular lens power calculation</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Savini</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Hoffer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Barboni</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Balducci</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Schiano-Lomoriello</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Ducoli</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS One</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope unit="page">172634</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Clinical comparison of a new swept-source optical coherence tomography-based optical biometer and a time-domain optical coherence tomography-based optical biometer</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Srivannaboon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Chirapapaisan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Chonpimai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Loket</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Cataract Refract Surg</title>
+              <imprint>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope from="2224" to="2256" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Benchmark standards for refractive outcomes after NHS cataract surgery</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Gale</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Saldana</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Johnston</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Zuberbuhler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mckibbin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Eye (Lond)</title>
+              <imprint>
+                <biblScope unit="volume">23</biblScope>
+                <biblScope from="149" to="52" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Biometry of cataractous eyes using partial coherence interferometry: clinical feasibility study of a commercial prototype I</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Kiss</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Findl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Menapace</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Wirtitsch</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Drexler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Hitzenberger</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Cataract Refract Surg</title>
+              <imprint>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope from="224" to="233" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Accuracy and reproducibility of biometry using partial coherence interferometry</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Connors</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Boseman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Olson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Cataract Refract Surg</title>
+              <imprint>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope from="235" to="243" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Accuracy of intraocular lens power calculations using the Zeiss IOL master. A prospective study</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Verhulst</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Vrijghem</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bull Soc Belge Ophtalmol</title>
+              <imprint>
+                <biblScope unit="volume">281</biblScope>
+                <biblScope from="61" to="66" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Comparison of immersion ultrasound biometry and partial coherence interferometry for intraocular lens calculation according to Haigis</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Haigis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Lege</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Miller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Schneider</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Graefes Arch Clin Exp Ophthalmol</title>
+              <imprint>
+                <biblScope unit="volume">238</biblScope>
+                <biblScope from="765" to="73" unit="page"/>
+                <date type="published" when="2000"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">The impact of cataract severity on measurement acquisition with the IOLMaster</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Freeman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Pesudovs</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Acta Ophthalmol Scand</title>
+              <imprint>
+                <biblScope unit="volume">83</biblScope>
+                <biblScope from="439" to="481" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">The morphology of cataract and visual performance</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Brown</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Eye (Lond)</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope from="63" to="70" unit="page"/>
+                <date type="published" when="1993"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Ultrasound-a research tool in the study of accommodation</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Storey</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Rabie</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Ophthalmic Physiol Opt</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="315" to="335" unit="page"/>
+                <date type="published" when="1983"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Impact of nuclear cataract density on postoperative refractive outcome: IOL master versus ultrasound</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Ueda</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Taketani</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Ota</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Hara</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Ophthalmologica</title>
+              <imprint>
+                <biblScope unit="volume">221</biblScope>
+                <biblScope from="384" to="391" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Influence of operator experience on the performance of ultrasound biometry compared to optical biometry before cataract surgery</title>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Findl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Kriechbaum</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Sacu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Kiss</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Polak</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Nepp</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Cataract Refract Surg</title>
+              <imprint>
+                <biblScope unit="volume">29</biblScope>
+                <biblScope from="1950" to="1955" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Performance of three biometry devices in patients with different grades of age-related cataract</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Mylonas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Sacu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Buehl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Ritter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Georgopoulos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <surname>Schmidt-Erfurth</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Acta Ophthalmol</title>
+              <imprint>
+                <biblScope unit="volume">89</biblScope>
+                <biblScope from="237" to="278" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

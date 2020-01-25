@@ -1,0 +1,868 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:33+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main"/>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <affiliation key="aff0">
+                <orgName type="department">Intensive Care Unit</orgName>
+                <orgName type="institution">University Hospitals Bristol NHS Foundation Trust Bristol Royal Infirmary</orgName>
+                <address>
+                  <postCode>BS2 8HW</postCode>
+                  <settlement>Bristol</settlement>
+                  <country key="GB">England</country>
+                </address>
+              </affiliation>
+            </author>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1186/s12873-018-0214-1</idno>
+          <note>R E S E A R C H A R T I C L E Open Access</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract/>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div subtype="dataseer">
+        <head>Background</head>
+        <p>
+          <s>Survival rates following out of hospital cardiac arrest (OHCA) are disappointingly low: analysis of 70 studies documented survival to hospital discharge in just 7.6% (95% confidence interval (CI) 6.7-8.4)</s>
+          <s>
+            <ref target="#b0" type="bibr">[1]</ref> .</s>
+          <s>Death on the intensive care unit (ICU) is usually caused by withdrawal of life-sustaining treatment (WLST) because of perceived severe neurological injury <ref target="#b1" type="bibr">[2]</ref> Although the delivery of oxygen to tissues is essential for human life, there is evidence that high oxygen concentrations after return of spontaneous circulation (ROSC) can be harmful.</s>
+          <s>This is probably due to the many reactive oxygen species that are created during reperfusion <ref target="#b2" type="bibr">[3]</ref> .</s>
+          <s>Administration of high concentrations of oxygen has been shown to be harmful in stroke, myocardial infarction and in neonatal resuscitation <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref> Animal data indicate that avoidance of hyperoxia, particularly during the first hour after ROSC, reduces brain injury <ref target="#b6" type="bibr">[7]</ref> .</s>
+        </p>
+        <p>
+          <s>Large human registry studies have demonstrated that normoxia in the first 24 h following a cardiac arrest is associated with improved outcome compared with either hyperoxia or hypoxia, <ref target="#b7" type="bibr">[8]</ref> whilst animal data suggest that most benefit from the prevention of hyperoxia is gained during the first hour following ROSC <ref target="#b8" type="bibr">[9]</ref> .</s>
+          <s>One small clinical study that compared administration of 30% oxygen with 100% oxygen after OHCA showed lower neuron specific enolase (NSEa marker of neurological injury) values in one subgroup of patients who were allocated to 30% oxygen and not cooled <ref target="#b9" type="bibr">[10]</ref> .</s>
+        </p>
+        <p>
+          <s>In most emergency medical services (EMS) systems, the first hour following ROSC will be prehospital.</s>
+          <s>We therefore designed a trial to examine the feasibility of administering titrated oxygen versus 100% oxygen for the first hour following ROSC to see if paramedics are able to safely titrate oxygen and measure corresponding oxygen saturations.</s>
+        </p>
+        <p>
+          <s cert="0.9145513772964478" id="dataset-1" type="Tabular data">Our aims were to assess the feasibility of completing a cluster-randomised clinical trial to determine if titrated oxygen therapy (target blood oxygen saturation by pulse oximetry (SpO 2 ) 94-98%) for 1 h after ROSC improves outcome compared with the use of 100% oxygen during this hour.</s>
+        </p>
+      </div>
+      <div>
+        <head>Methods</head>
+      </div>
+      <div>
+        <head>Design</head>
+        <p>
+          <s>Prospective controlled trial, cluster randomised by paramedic, comparing titrated oxygen with 100% oxygen for the first hour after ROSC following OHCA.</s>
+          <s>Ethics committee approval was obtained from the National Research Ethics Service Committee; South Central -Oxford C (14/SC/1269).</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Setting and population</head>
+        <p>
+          <s>North Sector of the South Western Ambulance Service, in the cities of Bristol and Bath, a predominantly urban area in the United Kingdom (UK) with a population of 1 million.</s>
+          <s>The ambulance service is delivered primarily by paramedics supported by a few voluntary doctors, but there is no 24 h cover by doctors.</s>
+          <s>Paramedics were approached via ambulance service bulletins and personal letter and invited to participate.</s>
+          <s>There were no additional requirements for the paramedics.</s>
+          <s cert="0.9969351291656494" id="dataset-1" type="Tabular data:Subject Data Table">Patients were enrolled if they were 18 years or older and had an OHCA that was not caused by trauma (trauma included drowning and hanging).</s>
+        </p>
+      </div>
+      <div>
+        <head>Randomisation</head>
+        <p>
+          <s>The unit of randomisation was the paramedic, and not the patient.</s>
+          <s>Individual paramedics were allocated randomly to one of two groups in a 1:1 ratio.</s>
+          <s>This cluster randomisation by paramedic was also used in a recently completed study of airway interventions in out of hospital cardiac arrest <ref target="#b10" type="bibr">[11]</ref> .</s>
+        </p>
+        <p>
+          <s>Randomisation was performed using a method with secure allocation concealment that cannot be changed once allocated.</s>
+          <s>The allocation was stratified by prior experience (more or less than 4 years full-time equivalent experience as an operational "front line" paramedic), to ensure that the experience of attending staff was equally distributed between the two trial groups.</s>
+          <s>The sequence of random allocations was generated by computer and concealed until a paramedic had been recruited.</s>
+          <s>This randomization process was carried out independently by the Bristol Clinical Trials and Evaluation Unit.</s>
+        </p>
+      </div>
+      <div>
+        <head>Treatment protocol</head>
+        <p>
+          <s>Paramedics who agreed to take part attended a training session, and were then given the opportunity to consent to take part in the trial.</s>
+          <s>The training was delivered by an experienced research paramedic and a doctor with experience of prehospital care and expertise in ventilation.</s>
+          <s>The primary focus of the training was to explain the treatment algorithm and how to adhere to it.</s>
+          <s>It also included research ethics, good clinical practice and completion of case record forms.</s>
+        </p>
+        <p>
+          <s>The treatment algorithm for the titrated oxygen arm is shown in <ref target="#fig_0" type="figure">Fig. 1</ref> .</s>
+          <s>Paramedics were advised to consider titration of oxygen every 2 min.</s>
+          <s>If there was no reliable saturation trace, or oxygen saturations fell below 94% study paramedics increased oxygen delivery in a stepwise approach as detailed in <ref target="#fig_0" type="figure">Fig. 1</ref> .</s>
+        </p>
+        <p>
+          <s>Paramedics in the 100% oxygen arm used 100% oxygen throughout the first hour following ROSC.</s>
+          <s>All other elements of routine care were provided as usual.</s>
+        </p>
+        <p>
+          <s>Patients received the allocated treatment for one hour following ROSC.</s>
+          <s>If the patient was admitted to the emergency department during the first hour the allocated treatment was continued by emergency department staff.</s>
+          <s>After one hour, usual care was provided, including oxygen delivery at the discretion of the treating clinician.</s>
+        </p>
+      </div>
+      <div>
+        <head>Outcomes</head>
+        <p>
+          <s>The primary outcomes for this feasibility study were:</s>
+        </p>
+        <p>
+          <s>1. Proportion of eligible paramedics attending training and consenting to take part.</s>
+          <s>2. Proportion of eligible patients enrolled in the study.</s>
+          <s>3. Proportion of enrolled patients in whom the intervention was initiated (defined as obtaining a reliable SpO 2 reading immediately after sustained ROSC).</s>
+          <s>4. Proportion of enrolled patients in whom the assigned oxygen therapy was continued for the duration of transport in an ambulance or up to 60 min.</s>
+          <s>5. Proportion of enrolled patients handed over to emergency department care in whom the assigned oxygen therapy was continued from arrival at hospital, up to 60 min.</s>
+          <s>6. Completeness of required data collection.</s>
+        </p>
+        <p>
+          <s>The secondary outcomes (collected by postal contact and questionnaire) were:</s>
+        </p>
+        <p>
+          <s>1. Proportion of surviving participants providing quality of life data at discharge and 90 days.</s>
+        </p>
+      </div>
+      <div>
+        <head>Survival to discharge and 90 days</head>
+        <p>
+          <s>Analysis Trial data are reported on an intention-to-treat basis.</s>
+          <s>Binary outcomes are reported as number and percentage, and continuous outcomes are reported as mean and standard deviations or median and interquartile ranges as appropriate.</s>
+          <s>Formal comparisons between the groups were not made as this feasibility study was not powered for comparative analysis.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+      </div>
+      <div>
+        <head>Paramedic recruitment</head>
+        <p>
+          <s>One hundred and fifty-seven paramedics were approached over a three-month period and 46 (29%) provided consent and underwent, randomisation and training.</s>
+          <s>Three paramedics (7%) withdrew during data collection because of changes in their employment circumstances.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Number of OHCA during the study period</head>
+        <p>
+          <s cert="0.9925617575645447" id="dataset-3" type="Tabular data">Study paramedics enrolled patients over 6 months.</s>
+          <s>During this time 1633 OHCAs were identified from ambulance service data, with 624 (38%) undergoing an active resuscitation attempt <ref target="#fig_1" type="figure">(Fig. 2)</ref> .</s>
+          <s>A study paramedic was in attendance at 73 (12%) of these active resuscitations.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Study patients</head>
+        <p>
+          <s cert="0.9937822222709656" id="dataset-4" type="Tabular data">Thirty-five patients were enrolled and included in the final analysis.</s>
+          <s>Enrolment was evenly divided across the study arms and the arrest characteristics were similar ( <ref target="#tab_0" type="table">Table 1</ref> ).</s>
+          <s>The methods of airway management used during the resuscitation and the airway management in place at identified time points in the patient's care are described in <ref target="#tab_2" type="table">Table 2</ref> .</s>
+          <s>Of the 35 <ref target="#tab_3" type="table">(Table 3)</ref> .</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Intervention success</head>
+        <p>
+          <s>Baseline characteristics were similar in both arms ( Where the intervention was initiated it was continued for the full 60 min during the pre-hospital phase of care in 16/27 (59%) of cases.</s>
+          <s>In 10 cases where it was not, the intervention was discontinued in the pre-hospital phase for 6 patients (three not conveyed, two unable to measure SpO 2 , one for other reasons) and continued in the ED for four patients.</s>
+        </p>
+        <p>
+          <s cert="0.9923185110092163" id="dataset-5" type="Tabular data">Arterial blood gas samples were taken on six patients in the titrated oxygen group with a mean PaO 2 of 13.5 kPa(StD 9.2) and eight in the 100% oxygen group with a mean PaO 2 of 15.4 kPa.</s>
+          <s>
+            <ref target="#fig_0" type="figure">(StD 14.7)</ref> .</s>
+          <s cert="0.9478599429130554" id="dataset-6" type="Tabular data">Case report form data were collected for 33/35 (94%) of patients and contained &gt; 90% complete data.</s>
+        </p>
+        <p>
+          <s>Blood oxygen saturation values by pulse oximetry and oxygen flow rates are shown in <ref target="#tab_4" type="table">Tables 4 and 5</ref> .</s>
+          <s>Three patients in the 100% group and four in the titrated oxygen group had SpO 2 values documented below 90% at any point.</s>
+        </p>
+        <p>
+          <s cert="0.9833801984786987" id="dataset-7" type="Tabular data">Oxygen flow rates were documented in 21/35 patients (60%).</s>
+          <s>In the titrated oxygen group nine patients had reliable documentation with four patients having successful titration of oxygen below 15 l min − 1 .</s>
+          <s>For one patient the inspired oxygen concentration was reduced to 21% (air) on arrival in the emergency department.</s>
+        </p>
+      </div>
+      <div>
+        <head>Clinical outcomes</head>
+        <p>
+          <s>Clinical outcomes are in <ref target="#tab_3" type="table">Table 3</ref> , but we made no comparison between groups because of the feaibility design and small sample size.</s>
+          <s>Chance differences in the patients enrolled will have affected the clinical outcome data significantly.</s>
+        </p>
+      </div>
+      <div>
+        <head>Patient follow up at 90 days</head>
+        <p>
+          <s>Patients were contacted by post to complete quality of life (QoL) questionnaires where they survived to 90 days and consented to be contacted.</s>
+          <s>Five patients survived to 90 days and also consented to complete QoL questionnaires.</s>
+          <s>Three patients returned completed questionnaires to the study team.</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+      </div>
+      <div subtype="dataseer">
+        <head>Summary of principal findings</head>
+        <p>
+          <s>We have shown that amongst UK paramedics it is potentially feasible to perform a trial of titrated oxygen in the first hour following ROSC after OHCA.</s>
+          <s>Recruitment of paramedics can be difficult in the UK setting.</s>
+          <s>Accurate recording of SpO 2 values is challenging or impossible in some patients, and measures must be taken to avoid hypoxia in these individuals.</s>
+        </p>
+        <p>
+          <s>Paramedics are willing and able to follow an algorithm for oxygen titration.</s>
+        </p>
+        <p>
+          <s>In the intervention arm, paramedics were able to titrate the inspired oxygen concentration in 72% of eligible patients.</s>
+          <s>These findings improve on a previous study to examine pre-hospital oxygen titration, which analysed data from 17 patients in New Zealand and concluded that safe delivery of titrated oxygen therapy in the pre-hospital period was not feasible <ref target="#b11" type="bibr">[12]</ref> Similar trials include a small pre-hospital feasibility study of 28 cardiac arrest patients who were allocated randomly to one of two groups immediately after ROSC <ref target="#b9" type="bibr">[10]</ref> .</s>
+        </p>
+        <p>
+          <s>Group A received 30% oxygen and group B received 100% oxygen.</s>
+          <s>The study concluded that patients who received 30% oxygen had acceptable oxygen saturations (although the inspired oxygen concentration had to be increased in 5 of the 14 patients in the 30% group to maintain an SpO 2 ≥ 95%).</s>
+          <s>The study demonstrated feasibility, however a larger trial did not follow.</s>
+        </p>
+        <p>
+          <s cert="0.3889199495315552" id="dataset-8" type="Tabular data">A second randomised trial conducted in Australia documented widely scattered blood oxygen saturation values that were downloaded from pulse oximeter monitors; consequently, the study was discontinued early <ref target="#b11" type="bibr">[12]</ref> .</s>
+          <s>Following the completion of our trial a further feasibility study has been published, <ref target="#b12" type="bibr">[13]</ref> showing that a titrated oxygen strategy is possible.</s>
+          <s>Arterial blood oxygen desaturations were more common in the titrated group, however the findings were used to support the case for a large randomised controlled trial.</s>
+          <s>Our findings also suggest that oxygen saturation can be difficult to measure in the prehospital environment, and that arterial blood oxygen desaturations occur, though patient characteristics, paramedic training, organisation of emergency medical systems and distances travelled all differ between the UK and Australia.</s>
+        </p>
+      </div>
+      <div>
+        <head>Limitations of the trial</head>
+        <p>
+          <s>We relied on paramedic reporting of pulse oximeter oxygen saturation readings and successful oxygen titration, rather than objective measures, since at the time of the trial automated recording of oxygen saturations was not available in our EMS.</s>
+          <s>Also, we did not provide a standardised definition of 'reliable' pulse oximetry readings, and so there is likely to have been some variability in interpretation.</s>
+        </p>
+        <p>
+          <s>We used a cluster-randomised design by paramedic, which meant that the individuals delivering the intervention and reporting some of the outcomes were not blinded.</s>
+          <s>Paramedics were not selected, but volunteered, and this may reduce the generalizability of our findings when applied to all paramedics.</s>
+          <s>Poor recruitment of volunteer paramedics remains an issue for future trials.</s>
+          <s>However, we required only a few individuals and so did not maximise our recruitment strategy; the same ambulance service recently recruited many more paramedics for a considerably larger randomised controlled trial <ref target="#b10" type="bibr">[11]</ref> .</s>
+          <s>In our opinion, individual patient randomisation and paramedic blinding are not practical within UK EMS systems during time critical interventions such as cardiac arrest, and cluster randomisation is the only feasible approach.</s>
+        </p>
+      </div>
+      <div>
+        <head>Future trials</head>
+        <p>
+          <s>We have collected relevant data, however the required sample size for any future study will depend on the chosen primary outcome.</s>
+          <s>The relatively few eligible patients, along with incomplete initiation of the intervention and some missing data elements, makes a highly clinically relevant outcome such as mortality very challenging to achieve.</s>
+          <s>A more realistic approach might be to evaluate serum NSE values as a measure of neurological injury <ref target="#b9" type="bibr">[10]</ref> .</s>
+          <s>Accurate SpO 2 measurement and automatic recording is also crucial to further trials in this area.</s>
+          <s>The inability to blind paramedics to the intervention is also a limitation.</s>
+          <s>Future studies would benefit from a more objective and reliable method of measuring tissue and brain oxygenation, although this can be difficult in a prehospital environment <ref target="#b13" type="bibr">[14]</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Conclusion</head>
+        <p>
+          <s>We have shown that it may be feasible to complete a randomised trial of titrated versus unrestricted oxygen in the first hour after ROSC following OHCA in the UK.</s>
+          <s>However, the relatively few eligible patients and incomplete initiation of the allocated intervention are challenges to future research.</s>
+          <s>More feasibility work is required to explore the best way of addressing this important research question.</s>
+          <s>Publisher's Note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+        </p>
+        <p>
+          <s>Author details</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig. 1</head>
+        <label>1</label>
+        <figDesc>Titrated Oxygen Protocol patients, 32 (91%) were transported to hospital, 13 (37%) survived to discharge and 13 (37%) survived to 90 days</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig. 2</head>
+        <label>2</label>
+        <figDesc>Trial flow (Consort) diagram</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head/>
+        <label/>
+        <figDesc>Abbreviations ED: Emergency Department; EMS: Emergency Medical Services; NSE: Neuron specific enolase; OHCA: Out of hospital cardiac arrest; ROSC : Return of spontaneous circulation; UK: United Kingdom</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head>Table 1 )</head>
+        <label>1</label>
+        <figDesc/>
+        <table>with the exception of EMS witnessed. The 
+intervention was initiated in 27 of 35 (77%) of en-
+rolled patients; 82% in the control arm and 72% in 
+the intervention arm. A reliable SpO 2 reading was 
+reported in: 22 (69%) of patients immediately after 
+sustained ROSC; 19 (66%) of patients on loading 
+into the ambulance; 21 (70%) of patients en route to 
+hospital; 20 (69%) of patients on arrival at the 
+
+receiving hospital (percentages calculated only on 
+those patients transported, and for whom data were 
+available). 
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_1">
+        <head>Table 1</head>
+        <label>1</label>
+        <figDesc>Patient and cardiac arrest characteristics by trial arm (paramedic reported)</figDesc>
+        <table>Arm A 100% oxygen (n = 17) 
+Arm B titrated oxygen (n = 18) 
+Total (n = 35) 
+
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_2">
+        <head>Table 2</head>
+        <label>2</label>
+        <figDesc>Methods of airway management used during patient care</figDesc>
+        <table>Method of airway management used -Arm A -100% oxygen (n = 17) 
+
+Tracheal tube 
+Supraglottic airway device 
+Oropharyngeal airway 
+Other 
+Missing 
+
+On loading into the ambulance 
+n (%) 
+
+6 (35) 
+4 (24) 
+2 (12) 
+2 (12) 
+1 (6) 
+
+En route to ED n (%) 
+0 
+0 
+0 
+1 (6) 
+14 (82) 
+
+On arrival at ED n (%) 
+8 (47 
+1 (6) 
+1 (6) 
+2 (12) 
+3 (18) 
+
+Not Conveyed 
+2 patients 
+
+Method of airway management used -Arm B -Titrated oxygen (n = 18) 
+
+On loading into the ambulance 
+n (%) 
+
+3 (17) 
+3 (17) 
+3 (17) 
+6 (33) 
+2 (11) 
+
+En Route to ED n (%) 
+0 
+0 
+1 (6) 
+1 (6) 
+15 (83) 
+
+On arrival at ED n (%) 
+5 (28) 
+1 (6) 
+1 (6) 
+6 (33) 
+4 (22) 
+
+Not Conveyed 
+1 patient 
+
+ED Emergency Department 
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_3">
+        <head>Table 3</head>
+        <label>3</label>
+        <figDesc>Patient outcomes and follow up</figDesc>
+        <table>Arm A 
+100% oxygen 
+(n = 17) 
+
+Arm B 
+titrated oxygen 
+(N = 18) 
+
+Total 
+(n = 35) 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_4">
+        <head>Table 4</head>
+        <label>4</label>
+        <figDesc>Oxygen saturations recorded during patient care Oxygen saturations recorded-Arm A -100% oxygen (n = 17) ED Emergency Department, SpO 2 Oxygen saturation</figDesc>
+        <table>SpO 2 ≤ 
+94% 
+
+SpO 2 &gt; 
+94% 
+
+Missing 
+Data 
+
+Unable to 
+Measure 
+
+On loading into 
+ambulance 
+n (%) 
+
+3 (18) 
+6 (35) 
+2 (12) 
+4 (24) 
+
+En Route to ED n (%) 3 (18) 
+7 (41) 
+1 (6) 
+4 (24) 
+
+On arrival at ED n (%) 2 (12) 
+7 (41) 
+2 (12) 
+4 (24) 
+
+Not Conveyed 
+2 Patients 
+
+Oxygen saturations recorded -Arm B titrated oxygen (n = 18) 
+
+On loading into 
+ambulance 
+n (%) 
+
+4 (22) 
+8 (44) 
+1 (6) 
+4 (22) 
+
+En Route to ED n (%) 5 (28) 
+8 (44) 
+1 (6) 
+3 (17) 
+
+On arrival to ED n 
+(%) 
+
+5 (28) 
+8 (44) 
+1 (6) 
+3 (17) 
+
+Not Conveyed 
+1 Patient 
+
+</table>
+      </figure>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>We acknowledge the support of the Bristol Clinical Trials and Evaluation Unit (CTEU).</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Availability of data and materials</head>
+          <p>
+            <s>The datasets used and/or analysed during the current study are available from the corresponding author on reasonable request.</s>
+            <s>Ethics approval and consent to participate Ethics committee approval was obtained from the National Research Ethics Service Committee; South Central -Oxford C (ref: 14/SC/1269).</s>
+            <s>Written informed consent obtained from particpants.</s>
+          </p>
+        </div>
+        <div>
+          <head>Authors' contributions</head>
+        </div>
+        <div>
+          <head>Consent for publication</head>
+          <p>
+            <s>Not applicable.</s>
+          </p>
+        </div>
+        <div>
+          <head>Competing interests</head>
+          <p>
+            <s>The authors declare they have no competing interests.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Predictors of survival from out-of-hospital cardiac arrest: a systematic review and meta-analysis</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Sasson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Mam</forename>
+                  <surname>Rogers</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Dahl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Kellermann</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Circ Cardiovasc Qual Outcomes</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="63" to="81" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Intensive care unit mortality after cardiac arrest: the relative contribution of shock and brain injury in a large cohort</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Lemiale</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Intensive Care Med</title>
+              <imprint>
+                <biblScope unit="volume">39</biblScope>
+                <biblScope from="1972" to="80" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Targeting and regulation of reactive oxygen species generation by Nox family NADPH oxidases</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Leto</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Morand</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Hurt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Ueyama</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Antioxid Redox Signal</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope from="2607" to="2626" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Resuscitation of newborn infants with 100% oxygen or air: a systematic review and meta-analysis</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Davis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Tan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Cpf</forename>
+                  <surname>O&amp;apos;donnell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Schulze</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Lancet</title>
+              <imprint>
+                <biblScope unit="volume">364</biblScope>
+                <biblScope from="1329" to="1362" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Association between hyperoxia and mortality after stroke: a multicenter cohort study</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Rincon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Crit Care Med</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope from="387" to="96" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Air versus oxygen in ST-segment-elevation myocardial infarction</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Stub</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Circulation</title>
+              <imprint>
+                <biblScope unit="volume">131</biblScope>
+                <biblScope from="2143" to="50" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">The effect of hyperoxia following cardiac arrest -a systematic review and meta-analysis of animal trials</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Pilcher</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Resuscitation</title>
+              <imprint>
+                <biblScope unit="volume">83</biblScope>
+                <biblScope from="417" to="439" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Association between arterial hyperoxia following resuscitation from cardiac arrest and in-hospital mortality</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Kilgannon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">JAMA</title>
+              <imprint>
+                <biblScope unit="volume">303</biblScope>
+                <biblScope from="2165" to="71" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Reducing the duration of 100% oxygen ventilation in the early reperfusion period after cardiopulmonary resuscitation decreases striatal brain damage</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Brücken</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Resuscitation</title>
+              <imprint>
+                <biblScope unit="volume">81</biblScope>
+                <biblScope from="1698" to="703" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Comparison of 30 and the 100% inspired oxygen concentrations during early post-resuscitation period: a randomised controlled pilot study</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kuisma</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Resuscitation</title>
+              <imprint>
+                <biblScope unit="volume">69</biblScope>
+                <biblScope from="199" to="206" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Effect of a strategy of a Supraglottic airway device vs tracheal intubation during out-of-hospital cardiac arrest on functional outcome: the AIRWAYS-2 randomized clinical trial</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Benger</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">JAMA</title>
+              <imprint>
+                <biblScope unit="volume">320</biblScope>
+                <biblScope from="779" to="91" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">HyperOxic therapy OR NormOxic therapy after out-ofhospital cardiac arrest (HOT OR NOT): a randomised controlled feasibility trial</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Young</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Resuscitation</title>
+              <imprint>
+                <biblScope unit="volume">85</biblScope>
+                <biblScope from="1686" to="91" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <monogr>
+              <title level="m" type="main">Oxygen titration after resuscitation from out-of-hospital cardiac arrest_ a multi-Centre, randomised controlled pilot study (the EXACT pilot trial). Resuscitation</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Bray</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2018"/>
+                <biblScope unit="volume">128</biblScope>
+                <biblScope from="211" to="216" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">A feasibility study of cerebral oximetry monitoring during the post-resuscitation period in comatose patients following cardiac arrest</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Ahn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Inigo-Santiago</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Parnia</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Resuscitation</title>
+              <imprint>
+                <biblScope unit="volume">85</biblScope>
+                <biblScope from="522" to="528" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

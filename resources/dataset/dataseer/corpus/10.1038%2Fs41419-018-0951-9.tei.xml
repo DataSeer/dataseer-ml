@@ -1,0 +1,1810 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:24+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">IFT80 is required for stem cell proliferation, differentiation, and odontoblast polarization during tooth development</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+        <date type="published" when="2019">2019</date>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Xue</forename>
+                <surname>Yuan</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Xu</forename>
+                <surname>Cao</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Shuying</forename>
+                <surname>Yang</surname>
+              </persName>
+            </author>
+            <title level="a" type="main">IFT80 is required for stem cell proliferation, differentiation, and odontoblast polarization during tooth development</title>
+          </analytic>
+          <monogr>
+            <title level="j" type="main">Cell Death and Disease</title>
+            <imprint>
+              <biblScope unit="volume">10</biblScope>
+              <biblScope unit="page">63</biblScope>
+              <date type="published" when="2019">2019</date>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41419-018-0951-9</idno>
+          <note>Cell Death &amp; Disease A R T I C L E O p e n A c c e s s</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>Primary cilia and intraflagellar transport (IFT) proteins control a wide variety of processes during tissue development and homeostasis.</s>
+            <s>However, their role in regulation of stem cell properties during tooth development remains elusive.</s>
+            <s>Here, we revealed that dental pulp stem cells (DPSCs) express IFT80, which is required for maintaining DPSC properties.</s>
+            <s>Mice with deletion of IFT80 in odontoblast lineage show impaired molar root development and delayed incisor eruption through reduced DPSC proliferation and differentiation, and disrupted odontoblast polarization.</s>
+            <s>Impaired odontoblast differentiation resulted from disrupted hedgehog (Hh) signaling pathways.</s>
+            <s>Decreased DPSC proliferation is associated with impaired fibroblast growth factor 2 (FGF2) signaling caused by loss of IFT80, leading to the disruption of FGF2-FGFR1-PI3K-AKT signaling in IFT80-deficient DPSCs.</s>
+            <s>The results provide the first evidence that IFT80 controls tooth development through influencing cell proliferation, differentiation, and polarization, and Hh and FGF/ AKT signaling pathways, demonstrating that IFT proteins are likely to be the new therapeutic targets for tooth and other tissue repair and regeneration.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Introduction</head>
+        <p>
+          <s>Tooth development, like many other organs' formation, requires multi-lineage cells controlled by different signaling pathways.</s>
+          <s>During tooth formation, a subpopulation of mesenchymal cells differentiates into odontoblasts, which are the columnar polarized cells located at the outer edges of dental pulp, expressing dentin matrix protein 1 (DMP1) and dentin sialophosphoprotein (DSPP), and producing dentin.</s>
+          <s>Ameloblasts are derived from dental epithelium and secrete enamel matrix, which is the hardest and highly mineralized tissue.</s>
+          <s>Dental pulp is the soft tissue inside the tooth, and their function is to support dentin formation and regeneration <ref target="#b0" type="bibr">1,</ref>
+            <ref target="#b1" type="bibr">2</ref> .</s>
+        </p>
+        <p>
+          <s>Primary cilia are highly conserved microtubule-based solitary organelles that are present on almost all vertebrate cells.</s>
+          <s>Formation and function of primary cilia require intraflagellar transport (IFT) proteins and other ciliary proteins <ref target="#b2" type="bibr">3,</ref>
+            <ref target="#b3" type="bibr">4</ref> .</s>
+          <s>Mutation of those proteins usually causes cilia defects, leading to a wide range of diseases called ciliopathies.</s>
+          <s>These disorders target multiple tissues, of which bone and tooth are most common tissues <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref>
+            <ref target="#b6" type="bibr">[7]</ref> .</s>
+          <s>The arising evidence demonstrates that primary cilia play important roles in tooth development <ref target="#b7" type="bibr">8,</ref>
+            <ref target="#b8" type="bibr">9</ref> .</s>
+          <s>For example, Wnt1-Cre; Kif3a fl/fl mice (deletion of ciliary motor-Kif3a in dental mesenchyme) show impaired incisor and molar development <ref target="#b8" type="bibr">9,</ref>
+            <ref target="#b9" type="bibr">10</ref> .</s>
+          <s>Abnormal molar development was also found in Evc −/−11 and IFT88 orpk mice 7 .</s>
+          <s>Hypomorphic alleles of IFT88 (Tg737 orpk ) showed increased Hh signaling and formation of supernumerary molars in the diastema of both the lower and upper jaws <ref target="#b11" type="bibr">12,</ref>
+            <ref target="#b12" type="bibr">13</ref> .</s>
+          <s>Previously, we reported that IFT80, one of the IFT complex B proteins, promotes osteogenesis <ref target="#b13" type="bibr">14</ref> and deletion of IFT80 in osteoblast precursor cells leads to decreased bone mass with impaired osteoblast differentiation through regulating Hh signaling pathway <ref target="#b14" type="bibr">15</ref> .</s>
+          <s>However, their role in regulation of stem cell properties and odontogenesis during tooth development remains elusive.</s>
+        </p>
+        <p>
+          <s>Fibroblast growth factors (FGFs) are growth factors that are important for bone and tooth development and regeneration <ref target="#b15" type="bibr">16</ref> .</s>
+          <s>There are 22 FGF proteins that interact with four highly conserved transmembrane tyrosine kinase receptors (FGFR1-4).</s>
+          <s>Among FGFs, FGF2 is highly expressed in odontoblast lineage cells <ref target="#b16" type="bibr">17</ref> .</s>
+          <s>Several studies supported that FGF2 promotes the pulp cell proliferation, self-renewal, migration, and early differentiation <ref target="#b17" type="bibr">[18]</ref>
+            <ref target="#b18" type="bibr">[19]</ref>
+            <ref target="#b19" type="bibr">[20]</ref>
+            <ref target="#b20" type="bibr">[21]</ref>
+            <ref target="#b21" type="bibr">[22]</ref> .</s>
+          <s>However, the relationship between FGF signaling and primary cilia/IFT proteins has not been established.</s>
+        </p>
+        <p>
+          <s>In this study, we generated IFT80 conditional knockout mouse by breeding IFT80-floxed mice with Osterix (OSX)-Cre transgenic mice and examined their phenotypic and molecular changes in tooth development.</s>
+          <s>In addition, we determined the mechanism by which IFT80 regulates dental stem cell proliferation, differentiation, and polarization during tooth development.</s>
+          <s>We found for the first time that IFT80 governs tooth development through influencing DPSC proliferation, differentiation, and odontoblast polarization by regulating Hh and FGF/AKT signaling pathways, demonstrating that IFT proteins are likely new therapeutic targets for tooth and other tissue repair and regeneration.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+      </div>
+      <div>
+        <head>Conditional deletion of IFT80 impaired incisor development</head>
+        <p>
+          <s>OSX is a transcription factor during osteoblast differentiation from stem cells and OSX+ cells are essential for bone development <ref target="#b22" type="bibr">23</ref> .</s>
+          <s>Recent studies demonstrate that OSX is also expressed in pulp cells during differentiation of odontoblasts <ref target="#b23" type="bibr">24,</ref>
+            <ref target="#b24" type="bibr">25</ref> .</s>
+          <s>Therefore, we generated OSX;IFT80 f/f mice to study the function of IFT80 in tooth development.</s>
+          <s>We observed that incisors were completely absent in 15day-old OSX;IFT80 f/f mice, and severely underdeveloped and malocclusioned in 1-month-old and 3-month-old OSX;IFT80 f/f mice <ref target="#fig_0" type="figure">(Fig. 1a)</ref> .</s>
+          <s>The average incisor eruption age was around postnatal day 7 in OSX;IFT80 +/+ mice, whereas it was delayed to postnatal day 14 for lower incisors and postnatal day 21 for upper incisors in OSX; IFT80 f/f mice.</s>
+          <s>Mandibular incisors were isolated from their sockets for morphological analysis.</s>
+          <s>OSX;IFT80 f/f incisors were obviously shorter but more curved at all examined time points <ref target="#fig_0" type="figure">(Fig. 1b)</ref> .</s>
+          <s>The mean length of lower .</s>
+          <s>c Side view of micro-CT to show the malocclusion (yellow arrows) and impaired craniofacial mineralization in 1M OSX;IFT80 f/f mice (red arrows).</s>
+          <s>Scale bars represent 5 mm.</s>
+          <s>Data are expressed as mean ± SEM; *p &lt; 0.001 incisors in OSX;IFT80 f/f mice was only 0.61-fold of that in OSX;IFT80 +/+ mice at 1 month old <ref target="#fig_0" type="figure">(Fig. 1b)</ref> .</s>
+          <s>Examination of skulls by micro computed tomography showed the malocclusion and defects in both mandibular and maxillary incisors in OSX;IFT80 f/f mice <ref target="#fig_0" type="figure">(Fig. 1c)</ref> .</s>
+          <s>These data suggest that IFT80 is critical for incisor development.</s>
+          <s>Notably, OSX;IFT80 f/f mice also showed markedly decreased bone mass in craniofacial bones as well as alveolar bones <ref target="#fig_0" type="figure">(Fig. 1c)</ref> .</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Conditional deletion of IFT80 impaired pulp cell proliferation in the cervical loop</head>
+        <p>
+          <s>Histological analysis revealed that the cervical loops and odontoblast layers were smaller in OSX;IFT80 f/f mice compared with those in OSX;IFT80 +/+ mice <ref target="#fig_1" type="figure">(Fig. 2a</ref> , A1-A4 and 2b, B1-B4), suggesting that the proliferation might be compromised in this area.</s>
+          <s cert="0.9248515367507935" id="dataset-1" type="Tabular data">Therefore, we performed Ki67 staining to detect cell proliferation.</s>
+          <s>As we expected, the results showed that proliferating cells were significantly reduced in the cervical loop and the dental pulp in OSX;IFT80 f/f mice compared to OSX;IFT80 +/+ control mice <ref target="#fig_1" type="figure">(Fig. 2c)</ref> .</s>
+          <s>Together, these data implied that IFT80 is required for the odontoblast lineage cell proliferation and incisor growth.</s>
+        </p>
+        <p>
+          <s>Conditional deletion of IFT80 caused shorter molar root, less mineralized dentin, and disrupted odontoblast differentiation We next examined molar development and found that molars were normally erupted in both OSX;IFT80 f/f and OSX;IFT80 +/+ mice.</s>
+          <s>The crowns of molars were well formed but the roots were shorter in OSX;IFT80 f/f mice compared with those in OSX;IFT80 +/+ mice ( <ref target="#fig_2" type="figure">Fig. 3a</ref> and <ref target="#fig_0" type="figure">Fig. S1A</ref> and S1B).</s>
+          <s>Quantitative analysis of the root and crown length of first molars in mandible showed that the roots from OSX;IFT80 f/f mice were significantly shorter than those from OSX;IFT80 +/+ mice <ref target="#fig_2" type="figure">(Fig. 3b)</ref> , whereas crown length was similar in both groups.</s>
+          <s>Thus, the crown-to-root ratio was significantly increased in OSX; IFT80 f/f mice <ref target="#fig_2" type="figure">(Fig. 3b)</ref> .</s>
+        </p>
+        <p>
+          <s>To further uncover the role of IFT80 in dentin formation and mineralization, we performed backscattered electron analysis.</s>
+          <s>OSX;IFT80 +/+ mice had well-organized OSX;IFT80 f/f mice show shorter molar root, less mineralized dentin, and disrupted odontoblast differentiation.</s>
+          <s>a Micro-tomographic view of the molar root.</s>
+          <s>Scale bars represent 1 mm.</s>
+          <s>b Measured root length and calculated crown/root ratio (n = 3).</s>
+          <s>c Backscattered electron analysis of dentin tubules and mineralization.</s>
+          <s>Red arrows indicate defect of dentinal tubules.</s>
+          <s>Lower panels are enlarged images of the boxed areas in upper panels.</s>
+          <s>d Hematoxylin and eosin staining of the molar root.</s>
+          <s>D dentin, OD odontoblasts, P pulp, N nucleus.</s>
+          <s>In OSX;IFT80 +/+ mice, the odontoblasts were highly polarized and attached to each other by their terminal webs (cyan arrow).</s>
+          <s>Lower panels are enlarged images of upper panels.</s>
+          <s>Scale bars represent 60 μm (upper) or 30 μm (lower).</s>
+          <s>e Dentin matrix protein 1 (DMP1) and dentin sialophosphoprotein (DSPP) expression in the dental pulp.</s>
+          <s>The expression of DMP1 and DSPP was normalized to GAPDH expression (n = 3).</s>
+          <s>Data are expressed as mean ± SEM; *p &lt; 0.0001 and patterned dentinal tubules.</s>
+          <s>In contrast, the dentinal tubules in OSX;IFT80 f/f mice were disorganized with less mineralization <ref target="#fig_2" type="figure">(Fig. 3c)</ref> .</s>
+          <s>Odontoblasts are responsible for the production of calcified dentin matrix; therefore, these data suggested that IFT80 is involved in odontoblast differentiation and function.</s>
+          <s>We further observed odontoblast morphology in the early stage of root formation.</s>
+          <s>At postnatal day 14, odontoblasts were elongated and highly polarized in the proximal portion of the root in OSX; IFT80 +/+ mice <ref target="#fig_2" type="figure">(Fig. 3d)</ref> , and the nuclei were polarized in the pulp side of the odontoblasts.</s>
+          <s>These cells were attached to each other with their terminal webs <ref target="#fig_2" type="figure">(Fig. 3d</ref> , cyan arrows).</s>
+          <s>However, in OSX;IFT80 f/f mice, odontoblasts were disorganized along the proximal portion of the root.</s>
+          <s>Some of the odontoblasts displayed a reversed cell orientation with the nuclei close to the dentin side of the odontoblasts <ref target="#fig_2" type="figure">(Fig. 3d</ref> ).</s>
+          <s>In addition to the morphology changes, we also found that the expression of odontoblast marker genes (DMP1 and DSPP) in dental pulp was strikingly reduced in OSX;IFT80 f/f mice by quantitative PCR (qPCR) <ref target="#fig_2" type="figure">(Fig. 3e)</ref> , confirming that IFT80 deletion impaired odontoblast differentiation.</s>
+        </p>
+      </div>
+      <div>
+        <head>Deletion of IFT80 disrupted cilia formation in odontoblasts and dental pulp cells</head>
+        <p>
+          <s>To gain insight into the mechanism that IFT80 deficiency caused defective dental pulp cell differentiation and tooth development, we first examined cilia formation <ref type="figure">(Fig. 4a)</ref> .</s>
+          <s>In molar section, cilia were found on almost every ameloblast and the cilia length was similar between OSX;IFT80 +/+ mice and OSX;IFT80 f/f mice ( <ref type="figure">Fig. 4a</ref> , b, c) However, in OSX;IFT80 f/f odontoblasts, cilia formation was severely disrupted.</s>
+          <s>The ciliated cell population reduced to 20% in OSX;IFT80 f/f mice compared with 80% in OSX;IFT80 +/+ mice <ref type="figure">(Fig. 4b)</ref> .</s>
+          <s>Moreover, the cilia length of ciliated odontoblasts was significantly shorter in OSX; IFT80 f/f mice than that in OSX;IFT80 +/+ mice <ref type="figure">(Fig. 4c)</ref> .</s>
+          <s>Additionally, the ciliated cell population but not cilia length were also reduced in dental pulp cells in OSX; IFT80 f/f mice <ref type="figure">(Fig. 4b, c)</ref> .</s>
+        </p>
+      </div>
+      <div>
+        <head>Deletion of IFT80 disrupted cilia formation and Hh signaling in DPSCs</head>
+        <p>
+          <s>To further examine the role of IFT80 in dental pulp cell proliferation and differentiation in vitro, we isolated primary DPSCs from the dental pulp of mouse incisor.</s>
+          <s>DPSCs isolated from IFT80 f/f mice were infected with adenovirus-expressing Cre recombinase to delete IFT80 (named as IFT80 d/d ).</s>
+          <s>Adenovirus expressing green fluorescent protein (GFP)-infected IFT80 f/f DPSCs were used as control (still marked as IFT80 f/f ).</s>
+          <s>Western blot and qPCR confirmed that Cre adenovirus transduction significantly reduced IFT80 expression in DPSCs <ref target="#fig_3" type="figure">(Figs. 5a, b)</ref> .</s>
+        </p>
+        <p>
+          <s>We compared cilia formation between IFT80 f/f and IFT80 d/d DPSCs by immunostaining.</s>
+          <s>Consistent to the results from in vivo tooth slide staining <ref target="#fig_3" type="figure">(Fig. 5a, b)</ref> , the results showed that the ciliated population in IFT80 d/d DPSCs was reduced to &lt;30% and the average cilia length was decreased to 1.56 μm compared with 80% and 3.72 μm in IFT80 f/f DPSCs, respectively <ref target="#fig_3" type="figure">(Fig. 5c, d)</ref> .</s>
+          <s>These results demonstrated that IFT80 is required for cilia formation in both dental pulp cells and odontoblasts.</s>
+          <s>Primary cilia are essential for Hh signaling transduction, and our previous study has demonstrated that IFT80 is required for Hh signaling transduction in osteoblast differentiation <ref target="#b14" type="bibr">15</ref> ; therefore, we tested Hh signaling activation in IFT80 f/f and IFT80 d/d DPSCs.</s>
+          <s>As expected, sonic Hh (Shh) activated Gli promoter activity as well as Gli1 and Ptch1 expression in IFT80 f/f DPSCs <ref target="#fig_3" type="figure">(Fig. 5e, f)</ref> , indicating Hh pathway activation.</s>
+          <s>However, these responses were impaired in IFT80 d/d DPSCs <ref target="#fig_3" type="figure">(Fig. 5e, f)</ref> , confirming disrupted Hh signaling transduction in IFT80 d/d DPSCs.</s>
+        </p>
+        <p>
+          <s>Deletion of IFT80 impaired DPSC proliferation through defect of FGF signaling rather than Hh signaling Since our in vivo results suggested that OSX;IFT80 f/f mice has less proliferating cells in dental pulp <ref target="#fig_1" type="figure">(Fig. 2c)</ref> , we then compared the proliferation rate between IFT80 f/f and IFT80 d/d DPSCs by MTS assay and Ki67 staining.</s>
+          <s>The results showed that IFT80 deletion inhibits DPSC proliferation <ref target="#fig_4" type="figure">(Fig. 6a, b)</ref> .</s>
+          <s>To further test if disrupted Hh signaling in IFT80 d/d DPSCs contributes to the DPSC proliferative defect, Hh agonist purmorphomine was used to stimulate DPCSs in both IFT80 f/f and IFT80 d/d groups.</s>
+        </p>
+        <p>
+          <s>The results showed that activation of Hh signaling by purmorphomine did not affect DPSC proliferation in both groups <ref target="#fig_4" type="figure">(Fig. 6c, d)</ref> , suggesting that the pathway(s) other than Hh signaling existed to regulate DPSC proliferation and were affected by loss of IFT80.</s>
+        </p>
+        <p>
+          <s>FGF signaling regulates the proliferation of many types of cells including dental pulp cells <ref target="#b17" type="bibr">18,</ref>
+            <ref target="#b25" type="bibr">26</ref> .</s>
+          <s>We found that FGF2 dramatically promotes proliferation of IFT80 f/f DPSCs, but failed to increase the proliferation of IFT80 d/d DPSCs <ref target="#fig_4" type="figure">(Fig. 6e, f)</ref> , indicating that deletion of IFT80 impaired FGF2 signaling transduction, which caused defective DPSC proliferation.</s>
+        </p>
+      </div>
+      <div>
+        <head>Deletion of IFT80 inhibited DPSC proliferation via downregulation of FGF-PI3K-AKT signaling</head>
+        <p>
+          <s>Phosphorylated FGFR activates phosphatidylinositol 3-kinase (PI3K) and AKT pathway, which converts FGF signaling to the proliferative effect.</s>
+          <s>Consistently, we found that, in response to FGF2 stimulation, AKT phosphorylation increased in IFT80 f/f DPSCs, which was inhibited by PD173074 (FGFR inhibitor) or API-2 (AKT inhibitor) treatment <ref target="#fig_5" type="figure">(Fig. 7a, b)</ref> .</s>
+          <s>In IFT80 d/d DPSCs, AKT expression was comparable to IFT80 f/f ; however, AKT phosphorylation level induced by FGF2 in IFT80 d/d DPSCs was much lower than that of IFT80 f/f DPSCs <ref target="#fig_5" type="figure">(Fig. 7a, b)</ref> , confirming that FGF2-FGFR signaling was blocked in IFT80 d/d DPSCs.</s>
+          <s>We further found that PD173074, LY294002 (PI3K inhibitor), API-2, or rapamycin (mammalian target of rapamycin (mTOR) inhibitor) inhibited the proliferation of FGF2-induced IFT80 f/f DPSC but not IFT80 d/d DPSCs <ref target="#fig_5" type="figure">(Fig. 7c)</ref> .</s>
+          <s>These data implied that IFT80 is essential for DPSC proliferation via regulating FGF2-FGFR1-PI3K-AKT-mTOR signaling pathway.</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>Although primary cilia have been observed in DPSCs and odontoblasts more than a decade ago 27 , the function of primary cilia and IFT proteins in DPSCs has not been well addressed.</s>
+          <s>Our study reveals for the first time that IFT80 is required for tooth development by regulating DPSC proliferation, differentiation, and odontoblast polarization.</s>
+          <s>Deletion of IFT80 in DPSCs impairs FGF2-FGFR-PI3K-AKT signaling that inhibits DPSC proliferation.</s>
+          <s>Moreover, IFT80 deletion impairs cilia formation and Hh signaling transduction, which eventually inhibits DPSC differentiation and tooth development.</s>
+        </p>
+        <p>
+          <s>Primary cilium projects from the cell surface of most mammalian cells and coordinates of various signaling pathways during development and homeostasis.</s>
+          <s>Although the exact roles of primary cilia in tooth development remain elusive, the emerging evidence indicates that primary cilia in both dental epithelium and mesenchyme are pivotal for early odontogenesis and later tooth development <ref target="#b27" type="bibr">28,</ref>
+            <ref target="#b28" type="bibr">29</ref> .</s>
+          <s>A most recent study showed that IFT140, one of the IFT protein that formed IFT complex A, is highly expressed in odontoblasts and knockout of IFT40 leads to delayed and defective dentin formation due to poor odontogenic differentiation, abnormal primary cilia, and decreased Hh signaling <ref target="#b29" type="bibr">30</ref> .</s>
+          <s>In this study, we used an IFT80 conditional knockout mouse model, which is one of the components of IFT complex B, and found the similar dental phenotypes-reduced odontoblast proliferation and shorter root formation.</s>
+          <s>Deletion of IFT140 or IFT80 all causes defects in cilia formation, suggesting that primary cilia, instead of individual IFT protein, play an essential role in the odontoblast proliferation and <ref type="figure">Fig. 4</ref> Deletion of IFT80 disrupts cilia formation and Hh signaling transduction.</s>
+          <s>a Immunofluorescence analysis of primary cilia in molar section (red arrow).</s>
+          <s>Primary cilia were stained with acetylated α-tubulin (green) antibody.</s>
+          <s>DAPI is used as a counterstain.</s>
+          <s>Scale bars represent 50 μm.</s>
+          <s>b Calculated cilia percentage (n = 3 with at least 100 cells analyzed) is shown in a. c Calculated cilia length (n = 20 cells).</s>
+          <s>Data are expressed as mean ± SEM; ns, not statistically significant; ***p &lt; 0.0001 differentiation.</s>
+          <s>However, inconsistently, hypomorphic alleles of IFT88 (Tg737 orpk ) showed increased Hh signaling and formation of supernumerary molars in the diastema of both the lower and upper jaws, indicating that IFT protein likely also regulates cilia-independent pathway during tooth development.</s>
+        </p>
+        <p>
+          <s>Hisamoto et al. <ref target="#b30" type="bibr">31</ref> studied the pattern of cilia in tooth germ and oral cavity and found that the cilia in odontoblasts first appears near the root apex and then extends along the odontoblast layer <ref target="#b30" type="bibr">31</ref> .</s>
+          <s>This might explain why we observed severe root formation defects in IFT80 knockout mice.</s>
+          <s>Their study also indicated the stage-specific and region-specific cilia formation and cilia length regulation.</s>
+          <s>A reasonable assumption is that the cell differentiation status determines the cilia length, which closely related to their sensory function <ref target="#b28" type="bibr">29,</ref>
+            <ref target="#b30" type="bibr">31</ref> .</s>
+          <s>In IFT80 knockout mice, we also observed the cilia length change in both pulp cells and odontoblasts <ref type="figure">(Fig. 4)</ref> .</s>
+          <s>Whether cilia length is directly associated with differentiation status needs further study.</s>
+          <s>Our data here suggest that in addition to odontoblast differentiation and pulp cell proliferation <ref target="#fig_1" type="figure">(Fig. 2)</ref> , odontoblast polarization <ref target="#fig_2" type="figure">(Fig. 3)</ref> requires functional cilia.</s>
+        </p>
+        <p>
+          <s>Primary cilium serves as a signaling hub and a variety of receptors and signaling proteins locate in cilia <ref target="#b2" type="bibr">3,</ref>
+            <ref target="#b31" type="bibr">32</ref> .</s>
+          <s>For example, the key components of Hh signaling including Patched1 (Ptch1), Smoothened, and Gli transcription factors are present in primary cilia <ref target="#b32" type="bibr">33,</ref>
+            <ref target="#b33" type="bibr">34</ref> .</s>
+          <s>It is well known that Hh signaling transduction requires IFT proteins and other ciliary protein <ref target="#b34" type="bibr">35</ref> .</s>
+          <s>In our previous study, we reported that IFT80 is essential for Hh signaling in osteoblasts, chondrocytes, and bone marrow derived mesenchymal stem cells <ref target="#b13" type="bibr">14,</ref>
+            <ref target="#b14" type="bibr">15,</ref>
+            <ref target="#b35" type="bibr">36,</ref>
+            <ref target="#b36" type="bibr">37</ref> .</s>
+          <s>Consistently, in this study, we found that IFT80 deletion in DPSCs disrupts cilia formation and Hh signaling transduction <ref target="#fig_3" type="figure">(Figs. 4 and 5)</ref> .</s>
+          <s>In addition to Hh signaling, emerging studies have suggested that IFT proteins and primary cilia mediate platelet-derived growth factor signaling 38 , Notch 39 , insulin-like growth factor <ref target="#b39" type="bibr">40,</ref>
+            <ref target="#b40" type="bibr">41</ref> , and epidermal growth factor 32 signaling pathways.</s>
+          <s>Besides these critical pathways, cilia formation is also regulated by other signaling pathways like FGF signaling.</s>
+          <s>Mutation of FGFR1, a receptor of FGF signaling, in zebrafish shortens cilia <ref target="#b41" type="bibr">42</ref> .</s>
+          <s>Whether IFT proteins regulate FGF signaling was unknown.</s>
+          <s>In our study, we found that loss of IFT80 in DPSCs dramatically blocked FGF2induced DPSC proliferation <ref target="#fig_4" type="figure">(Fig. 6)</ref> , indicating that IFT80-mediated primary cilia formation is important for FGF2 transduction.</s>
+          <s>It is still not clear how primary cilia loss effects FGF2 signaling.</s>
+          <s>One possible explanation is that the receptor for FGF2 is normally located in primary cilia and loss of cilia leads to the dysregulation of FGFR.</s>
+          <s>Another possible explanation is that primary cilia indirectly effect FGF2 signaling by targeting the downstream signaling, such as PI3K-AKT.</s>
+        </p>
+        <p>
+          <s>FGF2 signaling has been recognized as an important signaling that regulate both cell proliferation and cell differentiation; however, its functions are complicated and stage-dependent <ref target="#b17" type="bibr">18,</ref>
+            <ref target="#b21" type="bibr">22,</ref>
+            <ref target="#b42" type="bibr">43</ref> .</s>
+          <s>Our work showed that IFT protein/primary cilia regulates the FGF2 signaling, which indicated a new regulatory mechanism of FGF2 signaling during odontogenesis and tooth development.</s>
+          <s>Further study regarding how IFT and cilia regulate stem cell selfrenewal and differentiation is going on.</s>
+          <s>Collectively, this study demonstrated for the first time that IFT80 is a critical regulator of DPSC proliferation and tooth development.</s>
+          <s>IFT80 maintains cilia formation and stimulates DPSC proliferation.</s>
+          <s>Thus, we revealed a novel role and mechanism of IFT80 in the regulation of DPSC and tooth development, and provided new insights for bone and tooth regenerative therapeutic design and therapy.</s>
+        </p>
+      </div>
+      <div>
+        <head>Materials and methods</head>
+      </div>
+      <div>
+        <head>Mice</head>
+        <p>
+          <s>All experiments performed on mice were approved by the University at Buffalo Institutional Animal Care and Use Committee.</s>
+          <s>The generation of IFT80 f/f mice model (two LoxP sites flanking exon 6 of IFT80) was previously described <ref target="#b14" type="bibr">15</ref> .</s>
+          <s>OSX-Cre transgenic mice (also known as OSX1-GFP::Cre (Jackson #006361)) were crossed with IFT80 f/f mice to generate OSX-Cre;IFT80 f/+ mice, which were crossed with IFT80 f/f mice to obtain OSX-Cre;IFT80 f/f mice (named as OSX;IFT80 f/f ).</s>
+          <s>OSX-Cre mice were used as experimental controls (named as OSX;IFT80 +/+ ).</s>
+        </p>
+      </div>
+      <div>
+        <head>Reagents</head>
+        <p>
+          <s>Recombinant mouse Shh N-terminus (1 μg/mL, R&amp;D Systems, Minneapolis, MN, USA) or purmorphomine (2 μM, Tocris Bioscience, 4551) was used to activate Hh signaling.</s>
+          <s>FGF2 (10 ng/mL, R&amp;D Systems, Minneapolis, MN, USA) was used to activate FGF signaling.</s>
+          <s>PD173074 (1 μM, Tocris, 3044) was used to inhibit FGFR.</s>
+          <s>LY294002 (15 μM, Sigma, L9908), API-2 (1 μM, Tocris, 2151), rapamycin (0.5 μM, Selleckchem, S1039) were employed to inhibit PI3K, AKT, and mTOR, respectively.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Backscattered and resin-casted scanning electron microscopy</head>
+        <p>
+          <s>Extracted and cleaned molars were fixed and cut longitudinally.</s>
+          <s>Acid etching was performed with 37% phosphoric acid for 5 s and followed by washing with 5.25% sodium hypochlorite for 5 min on the dentin surface as described before <ref target="#b43" type="bibr">44</ref> .</s>
+          <s>The specimens were dehydrated in a graded ethanol series (30%, 50%, 70%, 85%, and 100% for 15 min) and washed with hexamethyldisilizane.</s>
+          <s>The samples were air dried overnight and then coated with carbon.</s>
+          <s id="dataset-1" type="Image:Microscopy">A Hitachi SU70 scanning electron microscope (Hitachi Instruments, Schaumburg, IL, USA) was used to perform the analyses.</s>
+        </p>
+      </div>
+      <div>
+        <head>Histology</head>
+        <p>
+          <s>Mouse mandibles were excised, fixed with 10% naturalbuffered formalin (VWR International, West Chester, PA, USA), and decalcified in 10% EDTA (ethylenediaminetetraacetic acid, Thermo Fisher Scientific) for 2 weeks at 4°C.</s>
+          <s>Paraffin-embedded samples were sectioned and stained with hematoxylin and eosin.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>DPSC isolation, culture, and differentiation</head>
+        <p>
+          <s>The incisors were isolated from the mandibles that were dissected from 6-week-old IFT80 f/f mice.</s>
+          <s cert="0.9861407279968262" id="dataset-2" type="Tabular data">Whole dental pulp was gently collected from the interior of the incisor and exposed to enzymatic digestion with collagenase type I (3 mg/mL) and dispase (4 mg/mL) for 1 h at 37°C with shaking.</s>
+          <s>The digested tissues were homogenized by repetitive pipetting and the released cells were centrifuged at 200 × g for 10 min.</s>
+          <s>The cells were cultured in α-modified Eagle's medium (α-MEM, Life Technologies) containing 10% fetal bovine serum (FBS, Life Technologies), 2 mM L-glutamine (Life Technologies), 100 U/mL penicillin, and 100 μg/mL streptomycin (Life Technologies).</s>
+          <s>DPSCs could adhere to the plastic dish for 24 h and then the medium was changed to remove floating debris.</s>
+          <s>Culture medium was replaced every 3 days until the cells reach 80% confluence.</s>
+          <s>Then, the cells were detached by 0.25% Trypsin-EDTA (Life Technologies) and subcultivated at a ratio of 1:2 <ref target="#b44" type="bibr">45,</ref>
+            <ref target="#b45" type="bibr">46</ref> .</s>
+        </p>
+        <p>
+          <s>DPSCs from IFT80 f/f mice were infected with adenovirus that overexpress either Cre (Ad-CMV-Cre, #1405, Vector Biolabs) or GFP (Ad-GFP, #1060, Vector Biolabs).</s>
+          <s>Ad-CMV-Cre infection causes IFT80 deletion in IFT80 f/f DPSCs, which were then marked as IFT80 d/d .</s>
+          <s>Ad-GFP were used as an infection control and Ad-GFP-treated IFT80 f/f DPSCs were still marked as IFT80 f/f .</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Western blot</head>
+        <p>
+          <s>Cells were harvested and homogenized with radioimmunoprecipitation assay buffer.</s>
+          <s>Proteins were denatured in sodium dodecyl sulfate (SDS) buffer and separated with SDS-polyacrylamide gel electrophoresis inhibitor), API-2 (API, 1 μM), or rapamycin (RAP, 0.5 μM, mTOR inhibitor).</s>
+          <s>The starting cell density is 100 cells per mm 2 (n = 3, triplicates per group).</s>
+          <s>Data are expressed as mean ± SEM; ns, not statistically significant; ***p &lt; 0.0001 gels.</s>
+          <s>Proteins were transferred to polyvinylidene difluoride membranes and then blocked with 5% skimmed milk (OXOID).</s>
+          <s>Membranes were incubated with primary antibody overnight at 4°C, and then incubated with horseradish peroxidase (HRP)-conjugated goat anti-rabbit immunoglobulin G (IgG) antibody (1:10,000, Novex, Carlsbad, CA, USA) at room temperature for 1 h.</s>
+          <s cert="0.7337706089019775" id="dataset-2" type="Tabular data">Visualization was performed with WesternBright ECL HRP (Bio-Rad).</s>
+          <s>β-Actin (1:500, Santa Cruz) was used as the internal control.</s>
+        </p>
+        <p>
+          <s>The same procedure was used to determine the IFT80 (1:400, PAB15842, Abnova), AKT (1:300, sc-8312, Santa Cruz), and p-AKT (1:300, sc-7985-r, Santa Cruz).</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Quantitative PCR</head>
+        <p>
+          <s>Total RNA was extracted from cultured DPSCs with Trizol reagent (Invitrogen, Carlsbad, CA, USA) and then synthesized to complementary DNA (cDNA) with total RNA by RNA to cDNA EcoDry Premix Kit (Clontech, Palo Alto, CA, USA).</s>
+          <s cert="0.9887436628341675" id="dataset-3" type="Genetic Data:Real-Time Polymerase Chain Reaction">qPCR was performed with ABI PRISM 7500 Real-Time PCR Machine (Invitrogen, Carlsbad, CA, USA) and SYBR Green PCR Master Mix (Invitrogen).</s>
+          <s>Sequence and product length for each primer pair were listed in Supplementary Table S1.</s>
+          <s>Gene expression was normalized to the housekeeping gene GAPDH and calculated according to the 2 −ddCT method 47 .</s>
+          <s>All reactions were run in triplicate.</s>
+        </p>
+      </div>
+      <div>
+        <head>Immunocytochemistry and immunofluorescence</head>
+        <p>
+          <s>Deparaffinized sections or fixed cells were permeabilized, blocked, and incubated with primary anti-Ki67 antibody (1:50 for slides, 1:200 for cells, ab16667) overnight at 4°C.</s>
+          <s>The slides were washed and stained with Alexa Fluor 568-conjugated anti-rabbit IgG (1:1000, Invitrogen) antibody or for 1 h at room temperature.</s>
+          <s>DAPI (6-diamidino-2-phenylindole, Sigma) was used as a counterstain for nuclei .</s>
+        </p>
+        <p>
+          <s>The same staining procedure was used for acetylated αtubulin (1:500, T6793, Sigma).</s>
+          <s>For primary cilia staining of DPSCs, the cells were serum starved for 48 h to induce ciliogenesis.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>MTS assay</head>
+        <p>
+          <s cert="0.9832696914672852" id="dataset-4" type="Tabular data:Assay">The MTS assay was performed using the CellTiter 96 ® AQueous One Solution Cell Proliferation Assay Kit (Promega).</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Reporter assay</head>
+        <p>
+          <s cert="0.9847938418388367" id="dataset-6" type="Tabular data">To test Gli promoter activity, reporter assay was performed with Gli-responsive luciferase reporter construct (8×Gli-Luc) (gift from Dr. Fernandez-Zapico 48 ).</s>
+          <s>DPSCs (1×10 6 ) were transfected with 3 μg 8×Gli-Luc and 0.6 µg pRL-TK Renilla luciferase (Promega, internal control) with Fugene HD transfection reagent.</s>
+          <s>Cells were induced with OS medium for 3 days and then stimulated with 1 μg/mL of recombinant mouse Shh N-terminus (R&amp;D Systems, Minneapolis, MN, USA) for 8 h.</s>
+          <s cert="0.9912711381912231" id="dataset-5" type="Tabular data:Assay">Cells were harvested and colored by the Dual-luciferase Assay Kit (Promega, Madison, WI, USA) and the relative luciferase activity was measured with the Veritas microplate luminometer (Turner Biosystem, Sunnyvale, CA, USA).</s>
+          <s>The experiment was conducted in triplicate.</s>
+        </p>
+      </div>
+      <div>
+        <head>Statistical analysis</head>
+        <p>
+          <s>All data are presented as mean ± SEM (n = 3 or more as indicated in <ref type="figure">figure legends)</ref> .</s>
+          <s>Comparisons between two groups were performed by Student's t test and comparisons among grouped samples were analyzed by two-way analysis of variance followed by Tukey's multiple comparison.</s>
+          <s>P &lt; 0.05 was considered to be statistically significant.</s>
+          <s>The program GraphPad Prism (GraphPad Software Inc., San Diego, CA, USA) was used for these analyses.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig. 1</head>
+        <label>1</label>
+        <figDesc>OSX;IFT80 f/f mice show impaired incisor eruption and development. a Photographic analysis of incisor development. Blue arrows indicate missing incisors. Yellow arrows indicate abnormal incisors. b Average length of lower incisors (n = 6, *p &lt; 0.001 versus OSX;IFT80 +/+ at different time points)</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig. 2</head>
+        <label>2</label>
+        <figDesc>Pulp cell proliferation in the cervical loop is impaired in OSX;IFT80 f/f mice. a, b Hematoxylin and eosin staining of the proximal incisor region of (a) OSX;IFT80 +/+ and (b) OSX;IFT80 f/f mice. A1-A4 and B1-B4 High magnification photos to show the cell layers in cervical loop as shown in a and b (blue boxes). Scale bars represent 0.5 mm (black) or 50 μm (yellow). c Ki67 (red) staining of cervical loop section of OSX;IFT80 +/+ and OSX; IFT80 f/f mice. DAPI staining is used as a counterstain. Scale bars represent 200 μm</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig. 3</head>
+        <label>3</label>
+        <figDesc>Fig. 3 OSX;IFT80 f/f mice show shorter molar root, less mineralized dentin, and disrupted odontoblast differentiation. a Micro-tomographic view of the molar root. Scale bars represent 1 mm. b Measured root length and calculated crown/root ratio (n = 3). c Backscattered electron analysis of dentin tubules and mineralization. Red arrows indicate defect of dentinal tubules. Lower panels are enlarged images of the boxed areas in upper panels. d Hematoxylin and eosin staining of the molar root. D dentin, OD odontoblasts, P pulp, N nucleus. In OSX;IFT80 +/+ mice, the odontoblasts were highly polarized and attached to each other by their terminal webs (cyan arrow). Lower panels are enlarged images of upper panels. Scale bars represent 60 μm (upper) or 30 μm (lower). e Dentin matrix protein 1 (DMP1) and dentin sialophosphoprotein (DSPP) expression in the dental pulp. The expression of DMP1 and DSPP was normalized to GAPDH expression (n = 3). Data are expressed as mean ± SEM; *p &lt; 0.0001</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Fig. 5</head>
+        <label>5</label>
+        <figDesc>Deletion of IFT80 disrupted cilia formation as well as Hh signaling in DPSCs. a Western blot analysis of IFT80 expression in IFT80 f/f and IFT80 d/d DPSCs. IFT80 protein level is normalized to GAPDH (n = 3). b qPCR analysis of IFT80 expression in IFT80 f/f and IFT80 d/d DPSCs. IFT80 expression is normalized to GAPDH (n = 3, triplicates per group). c Immunofluorescence analysis of primary cilia in IFT80 f/f and IFT80 d/d DPSCs. Primary cilia were stained with acetylated α-tubulin (green) antibody. Stress fibers were stained with Alexa Fluor 568 Phalloidin (red). DAPI staining is used as counterstaining. Scale bars represent 50 μm. d Calculated cilia length (n = 20 cells) and cilia percentage (n = 3 with at least 200 cells analyzed). e Reporter assay showing 8×Gli-responsive luciferase (p8×Gli-Luc) activity in IFT80 f/f and IFT80 d/d DPSCs with or without sonic Hh (Shh. 1 μg/mL) stimulation (n = 3, triplicates per group). f qPCR results showing Ptch1 and Gli1 expression in IFT80 f/f and IFT80 d/d DPSCs with or without Shh stimulation (n = 3, triplicates per group). Data are expressed as mean ± SEM; ns, not statistically significant; ***p &lt; 0.0001; **p &lt; 0.001</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Fig. 6</head>
+        <label>6</label>
+        <figDesc>Deletion of IFT80 impaired DPSC proliferation through defect of FGF signaling rather than Hh signaling. a Proliferation (MTS) assay of IFT80 f/f and IFT80 d/d DPSCs. The starting cell density is 100 cells per mm 2 (n = 3, triplicates per group). b Ki67 (green) staining of IFT80 f/f and IFT80 d/d DPSCs at the density of 500 cells per mm 2 . DAPI staining is used as counterstaining. Scale bars represent 50 μm. c Proliferation (MTS) assay of IFT80 f/f and IFT80 d/d DPSCs treated with or without purmorphomine (Pur, 2 μM). The starting cell density is 100 cells per mm 2 (n = 3, triplicates per group). d Ki67-positive cell of IFT80 f/f and IFT80 d/d DPSCs treated with or without purmorphomine (Pur, 2 μM) (n = 3 with at least 200 cells analyzed). e Ki67 (green) staining of IFT80 f/f and IFT80 d/d DPSCs treated with FGF2 (10 ng/mL) at the density of 500 cells per mm 2 . DAPI staining is used as counterstaining. Scale bars represent 50 μm. f Proliferation (MTS) assay of IFT80 f/f and IFT80 d/d DPSCs treated with FGF2 (10 ng/ mL). The starting cell density is 100 cells per mm 2 (n = 3, triplicates per group). Data are expressed as mean ± SEM; ns, not statistically significant; *p &lt; 0.05; ***p &lt; 0.0001</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
+        <head>Fig. 7</head>
+        <label>7</label>
+        <figDesc>Deletion of IFT80 inhibited DPSC proliferation via down-regulation of FGF2-FGFR1-PI3K-AKT signaling. a Western blot analysis of AKT phosphorylation with FGF2 (10 ng/mL) stimulation in IFT80 f/f and IFT80 d/d DPSCs. AKT phosphorylation level is normalized to AKT (n = 3). PD PD173074 (1 μM); API API-2 (1 μM, AKT inhibitor). b Quantification of protein expression from a. AKT phosphorylation level was normalized AKT (n = 3). c Proliferation (MTS) assay of IFT80 f/f and IFT80 d/d DPSCs treated with FGF2 together with PD173074 (PD, 1 μM), LY294002 (LY, 15 μM, PI3K</figDesc>
+      </figure>
+      <note place="foot">Official journal of the Cell Death Differentiation Association</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>We thank Dr. Aimee B. Stablewski and Gene Targeting and Transgenic Shared Resource at Roswell Park Cancer Institute (supported by the National Cancer Institute (NCI) grant P30CA016056) for technical assistance with the ES cell injections for generating IFT80-floxed mice.</s>
+            <s>We also thank Dr. Songtao Shi for the critical reading and suggestion in the manuscript.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Cellular and molecular mechanisms of tooth root development</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Parada</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Chai</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Development</title>
+              <imprint>
+                <biblScope unit="volume">144</biblScope>
+                <biblScope from="374" to="384" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Dental mesenchymal stem cells</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Sharpe</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Development</title>
+              <imprint>
+                <biblScope unit="volume">143</biblScope>
+                <biblScope from="2273" to="2280" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">The primary cilium: a signalling centre during vertebrate development</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Goetz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Anderson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Rev. Genet</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope from="331" to="344" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">The primary cilium at a glance</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Satir</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Pedersen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Christensen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Cell. Sci</title>
+              <imprint>
+                <biblScope unit="volume">123</biblScope>
+                <biblScope from="499" to="503" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+            <note>Part 4</note>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Ciliary disorder of the skeleton</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Huber</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Cormier-Daire</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am. J. Med. Genet. C</title>
+              <imprint>
+                <biblScope unit="volume">160</biblScope>
+                <biblScope from="165" to="174" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Cilia involvement in patterning and maintenance of the skeleton</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Haycraft</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Serra</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Curr. Top. Dev. Biol</title>
+              <imprint>
+                <biblScope unit="volume">85</biblScope>
+                <biblScope from="303" to="332" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Evc regulates a symmetrical response to Shh signaling in molar development</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Nakatomi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Dent. Res</title>
+              <imprint>
+                <biblScope unit="volume">92</biblScope>
+                <biblScope from="222" to="228" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Primary cilia of odontoblasts: possible role in molar morphogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Thivichon-Prince</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Dent. Res</title>
+              <imprint>
+                <biblScope unit="volume">88</biblScope>
+                <biblScope from="910" to="915" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Primary cilia integrate hedgehog and Wnt signaling during tooth development</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Cheng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Jing</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Helms</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Dent. Res</title>
+              <imprint>
+                <biblScope unit="volume">93</biblScope>
+                <biblScope from="475" to="482" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Kinesin-2 controls development and patterning of the vertebrate skeleton by Hedgehog-and Gli3-dependent mechanisms</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Kolpakova-Hart</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Jinnin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Hou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Fukai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Olsen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Dev. Biol</title>
+              <imprint>
+                <biblScope unit="volume">309</biblScope>
+                <biblScope from="273" to="284" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Evc is a positive mediator of Ihh-regulated bone growth that localises at the base of chondrocyte cilia</title>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Ruiz-Perez</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Development</title>
+              <imprint>
+                <biblScope unit="volume">134</biblScope>
+                <biblScope from="2903" to="2912" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Primary cilia regulate Shh activity in the control of molar tooth number</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Ohazama</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Development</title>
+              <imprint>
+                <biblScope unit="volume">136</biblScope>
+                <biblScope from="897" to="903" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Loss of the Tg737 protein results in skeletal patterning defects</title>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Dev. Dyn</title>
+              <imprint>
+                <biblScope unit="volume">227</biblScope>
+                <biblScope from="78" to="90" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">The intraflagellar transport protein IFT80 is required for cilia formation and osteogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bone</title>
+              <imprint>
+                <biblScope unit="volume">51</biblScope>
+                <biblScope from="407" to="417" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Ciliary IFT80 balances canonical versus non-canonical hedgehog signalling for osteoblast differentiation</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Yuan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Commun</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="page">11024</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">FGF signaling in craniofacial biological control and pathological craniofacial development</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Hatch</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Crit. Rev. Eukaryot. Gene Expr</title>
+              <imprint>
+                <biblScope unit="volume">20</biblScope>
+                <biblScope from="295" to="311" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Basic fibroblast growth factor (FGF-2) in mouse tooth morphogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Russo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Maharajan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Maharajan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Growth Factors</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope from="125" to="133" unit="page"/>
+                <date type="published" when="1998"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Enhanced dentinogenesis of pulp progenitors by early exposure to FGF2</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Sagomonyants</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Kalajzic</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Maye</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mina</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Dent. Res</title>
+              <imprint>
+                <biblScope unit="volume">94</biblScope>
+                <biblScope from="1582" to="1590" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Effects of growth factors on dental stem/progenitor cells</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Dent. Clin. N. Am</title>
+              <imprint>
+                <biblScope unit="volume">56</biblScope>
+                <biblScope from="563" to="575" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Treatment of FGF-2 on stem cells from inflamed dental pulp tissue from human deciduous teeth</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Oral Dis</title>
+              <imprint>
+                <biblScope unit="volume">20</biblScope>
+                <biblScope from="191" to="204" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Basic fibroblast growth factor inhibits mineralization but induces neuronal differentiation by human dental pulp stem cells through a FGFR and PLCγ signaling pathway</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Osathanon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Nowwarote</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Pavasant</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Cell. Biochem</title>
+              <imprint>
+                <biblScope unit="volume">112</biblScope>
+                <biblScope from="1807" to="1816" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">FGF signaling prevents the terminal differentiation of odontoblasts</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Sagomonyants</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Kalajzic</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Maye</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mina</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Dent. Res</title>
+              <imprint>
+                <biblScope unit="volume">96</biblScope>
+                <biblScope from="663" to="670" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Osterix marks distinct waves of primitive and definitive stromal progenitors during bone marrow development</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Mizoguchi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Dev. Cell</title>
+              <imprint>
+                <biblScope unit="volume">29</biblScope>
+                <biblScope from="340" to="349" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Bone morphogenetic protein-2 gene controls tooth root development in coordination with formation of the periodontium</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Rakian</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int. J. Oral Sci</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope from="75" to="84" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Inactivation of Tgfbr2 in Osterix-Cre expressing dental mesenchyme disrupts molar root formation</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Cox</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Coricor</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Macdougall</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Serra</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Dev. Biol</title>
+              <imprint>
+                <biblScope unit="volume">382</biblScope>
+                <biblScope from="27" to="37" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Role of FGF/FGFR signaling in skeletal development and homeostasis: learning from mouse models</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Su</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Jin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bone Res</title>
+              <imprint>
+                <biblScope unit="volume">2</biblScope>
+                <biblScope unit="page">14003</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Odontoblast primary cilia: facts and hypotheses</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Magloire</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Couble</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Romeas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Bleicher</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell Biol. Int</title>
+              <imprint>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope from="93" to="99" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Primary cilia and intraflagellar transport proteins in bone and cartilage</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Yuan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Dent. Res</title>
+              <imprint>
+                <biblScope unit="volume">95</biblScope>
+                <biblScope from="1341" to="1349" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Role of primary cilia in odontogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Hampl</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Dent. Res</title>
+              <imprint>
+                <biblScope unit="volume">96</biblScope>
+                <biblScope from="965" to="974" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Essential role of IFT140 in promoting dentinogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Dent. Res</title>
+              <imprint>
+                <biblScope unit="volume">97</biblScope>
+                <biblScope from="423" to="431" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Developmental changes in primary cilia in the mouse tooth germ and oral cavity</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Hisamoto</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biomed. Res</title>
+              <imprint>
+                <biblScope unit="volume">37</biblScope>
+                <biblScope from="207" to="214" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Primary cilia and coordination of receptor tyrosine kinase (RTK) signalling</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Christensen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Clement</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Satir</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Pedersen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Pathol</title>
+              <imprint>
+                <biblScope unit="volume">226</biblScope>
+                <biblScope from="172" to="184" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Hedgehog signalling in the mouse requires intraflagellar transport proteins</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Huangfu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">426</biblScope>
+                <biblScope from="83" to="87" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">The hedgehog signal transduction network</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Robbins</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Fei</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Riobo</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sci. Signal</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="page">6</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Cilia/Ift protein and motor -related bone diseases and mouse models</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Yuan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Front. Biosci</title>
+              <imprint>
+                <biblScope unit="volume">20</biblScope>
+                <biblScope from="515" to="555" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">Deletion of IFT80 impairs epiphyseal and articular cartilage formation due to disruption of chondrocyte differentiation</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Yuan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS ONE</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope unit="page">130618</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">IFT80 is essential for chondrocyte differentiation by regulating Hedgehog and Wnt signaling pathways</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Yuan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Exp. Cell Res</title>
+              <imprint>
+                <biblScope unit="volume">319</biblScope>
+                <biblScope from="623" to="632" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">Canonical and noncanonical intraflagellar transport regulates craniofacial skeletal development</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Noda</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kitami</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Kitami</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kaku</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Komatsu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proc. Natl. Acad. Sci. USA</title>
+              <imprint>
+                <biblScope unit="volume">113</biblScope>
+                <biblScope from="2589" to="2597" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <monogr>
+              <title level="m" type="main">Primary cilia maintain corneal epithelial homeostasis by regulation of the Notch signaling pathway</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Grisanti</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Revenkova</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Gordon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Iomini</surname>
+                </persName>
+              </author>
+              <idno>Development. dev-132704</idno>
+              <imprint>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">IGF-1 activates a cilium-localized noncanonical Gbetagamma signaling pathway that regulates cell-cycle progression</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Yeh</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Dev. Cell</title>
+              <imprint>
+                <biblScope unit="volume">26</biblScope>
+                <biblScope from="358" to="368" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Adipogenic differentiation of hMSCs is mediated by recruitment of IGF-1r onto the primary cilium associated with cilia elongation</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Dalbay</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Thorpe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Connelly</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Chapple</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Knight</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Stem Cells</title>
+              <imprint>
+                <biblScope unit="volume">33</biblScope>
+                <biblScope from="1952" to="1961" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">FGF signalling during embryo development regulates cilia length in diverse epithelia</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Neugebauer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Amack</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Peterson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Bisgrove</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Yost</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">458</biblScope>
+                <biblScope from="651" to="654" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title level="a" type="main">Stage-specific effects of fibroblast growth factor 2 on the differentiation of dental pulp cells</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Sagomonyants</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mina</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cells Tissues Organs</title>
+              <imprint>
+                <biblScope unit="volume">199</biblScope>
+                <biblScope from="311" to="328" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">Proteolytic processing of dentin sialophosphoprotein (DSPP) is essential to dentinogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Zhu</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Biol. Chem</title>
+              <imprint>
+                <biblScope unit="volume">287</biblScope>
+                <biblScope from="30426" to="30435" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b44">
+            <analytic>
+              <title level="a" type="main">Isolation and characterization of dental pulp stem cells from murine incisors</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Akmal</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Biol. Sci</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope from="571" to="574" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b45">
+            <analytic>
+              <title level="a" type="main">Neurogenic potential of dental pulp stem cells isolated from murine incisors</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Ellis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">C</forename>
+                  <surname>O&amp;apos;carroll</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Lewis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Rychkov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Koblar</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Stem Cell Res. Ther</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="page">30</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b46">
+            <analytic>
+              <title level="a" type="main">Analysis of relative gene expression data using real-time quantitative PCR and the 2(−Delta Delta C(T)) Method</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Livak</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Schmittgen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Methods</title>
+              <imprint>
+                <biblScope unit="volume">25</biblScope>
+                <biblScope from="402" to="408" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b47">
+            <analytic>
+              <title level="a" type="main">GLI3-dependent repression of DR4 mediates hedgehog antagonism of TRAIL-induced apoptosis</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Kurita</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Oncogene</title>
+              <imprint>
+                <biblScope unit="volume">29</biblScope>
+                <biblScope from="4848" to="4858" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

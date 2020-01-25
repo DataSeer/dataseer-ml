@@ -1,0 +1,2644 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:12+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Online interest regarding violent attacks, gun control, and gun purchase: A causal analysis</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author role="corresp">
+              <persName>
+                <forename type="first">Laura</forename>
+                <forename type="middle">H</forename>
+                <surname>Gunnid</surname>
+              </persName>
+              <email>*laura.gunn@uncc.edu</email>
+              <affiliation key="aff0">
+                <orgName key="dep1" type="department">Department of Public Health Sciences</orgName>
+                <orgName key="dep2" type="department">Health Informatics and Analytics Program</orgName>
+                <orgName type="institution">University of North Carolina at Charlotte</orgName>
+                <address>
+                  <settlement>Charlotte</settlement>
+                  <region>NC</region>
+                  <country>United States of America</country>
+                </address>
+              </affiliation>
+              <affiliation key="aff1">
+                <orgName key="dep1" type="department">School of Public Health</orgName>
+                <orgName key="dep2" type="department">Faculty of Medicine</orgName>
+                <orgName type="institution">Imperial College London</orgName>
+                <address>
+                  <settlement>London</settlement>
+                  <country key="GB">United Kingdom</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Enrique</forename>
+                <surname>Ter Horst</surname>
+              </persName>
+              <affiliation key="aff2">
+                <orgName type="institution">Universidad de los Andes (Uniandes)</orgName>
+                <address>
+                  <addrLine>Facultad de administracion</addrLine>
+                  <settlement>Bogota</settlement>
+                  <country key="CO">Colombia</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Talar</forename>
+                <forename type="middle">W</forename>
+                <surname>Markossian</surname>
+              </persName>
+              <affiliation key="aff3">
+                <orgName type="department">Department of Public Health Sciences</orgName>
+                <orgName key="instit1" type="institution">Stritch School of Medicine</orgName>
+                <orgName key="instit2" type="institution">Loyola University Chicago</orgName>
+                <address>
+                  <settlement>Chicago</settlement>
+                  <region>Illinois</region>
+                  <country>United States of America</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">German</forename>
+                <surname>Molina</surname>
+              </persName>
+              <affiliation key="aff4">
+                <orgName type="department">Quantitative Research</orgName>
+                <orgName type="institution">Idalion Capital Group</orgName>
+                <address>
+                  <settlement>London</settlement>
+                  <country key="GB">United Kingdom</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Online interest regarding violent attacks, gun control, and gun purchase: A causal analysis</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1371/journal.pone.0207924</idno>
+          <note>RESEARCH ARTICLE</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <head>Background</head>
+          <p>
+            <s>Increased interest about gun ownership and gun control are oftentimes driven by informational shocks in a common factor, namely violent attacks, and the perceived need for higher levels of safety.</s>
+            <s>A causal depiction of the societal interest around violent attacks, gun control and gun purchase, both synchronous and over time, should be a stepping stone for designing future strategies regarding the safety concerns of the U.S. population.</s>
+          </p>
+        </div>
+        <div>
+          <head>Objective</head>
+          <p>
+            <s>Examine the causal relationships between unexpected increases in population interest about violent attacks, gun control, and gun purchase.</s>
+          </p>
+        </div>
+        <div>
+          <head>Methods</head>
+          <p>
+            <s>Relationships among online searches for information about violent attacks, gun control, and gun purchase occurring between 2004 and 2017 in the U.S. are explained through a novel structural vector autoregressive time series model to account for simultaneous causal relationships.</s>
+          </p>
+        </div>
+        <div>
+          <head>Results</head>
+          <p>
+            <s>More than 20% of the stationary variability in each of gun control and gun purchase interest can be explained by the remaining factors.</s>
+            <s>Gun control interest appears to be caused, in part, by violent attacks informational shocks, yet violent attacks, although impactful, have a lesser effect than gun control debate on long-term gun ownership interests.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Introduction</head>
+        <p>
+          <s>Gun control literature has attempted to quantify effects of gun regulation on crime rates, both within the United States <ref target="#b0" type="bibr">[1]</ref>
+            <ref target="#b1" type="bibr">[2]</ref>
+            <ref target="#b2" type="bibr">[3]</ref> and around the world <ref target="#b3" type="bibr">[4,</ref>
+            <ref target="#b4" type="bibr">5]</ref> .</s>
+          <s>While this literature can inform gun control policies, it is also important to quantify information diffusion, interests, and emotions <ref target="#b5" type="bibr">[6]</ref> to inform those policies <ref target="#b6" type="bibr">[7]</ref> .</s>
+          <s>Associated types of gun-related violence, which is more prevalent in the United States than in high-income countries <ref target="#b7" type="bibr">[8]</ref> , have also been thoroughly explored <ref target="#b8" type="bibr">[9]</ref> .</s>
+          <s>Scientific debate around benefits of gun control is as controversial as societal debate <ref target="#b9" type="bibr">[10]</ref> , with studies that support less stringent regulations <ref target="#b10" type="bibr">[11]</ref> being immediately met with fierce peer-based rejections <ref target="#b11" type="bibr">[12,</ref>
+            <ref target="#b12" type="bibr">13]</ref> .</s>
+        </p>
+        <p>
+          <s>Internet searches provide a readily-accessible form of information about public opinion and interest, which could impact public health issues <ref target="#b13" type="bibr">[14,</ref>
+            <ref target="#b14" type="bibr">15]</ref> and inform health policies <ref target="#b15" type="bibr">[16,</ref>
+            <ref target="#b16" type="bibr">17]</ref> .</s>
+          <s>This study aims to provide insights about relationships governing information diffusion and interests around topics of violent attacks, gun control, and gun ownership in the United States <ref target="#b0" type="bibr">[1]</ref> .</s>
+          <s>A shock is an unexpected alteration of a factor/variable of interest above its regular/steady levels, such as an increase in online searches about violent attacks that occurs concurrent with the actual violent attacks.</s>
+          <s>The focus of this work is to assess the impact of shocks in interest about violent attacks on the information-seeking patterns about gun control and purchase.</s>
+          <s>This will help identify impulse-response functions of the U.S. population to informational shocks regarding violent attacks, and also to assess the by-product impact of gun control debate on gun purchase interest.</s>
+        </p>
+        <p>
+          <s>Mass shootings' impact on gun control and gun ownership debates oversize their relative importance, leading to more policy responses than other types of violence <ref target="#b17" type="bibr">[18]</ref> .</s>
+          <s>Interestingly, these policy responses have been more likely to reduce gun control in Republican-led legislatures and provided no impact in Democrat-led legislatures <ref target="#b17" type="bibr">[18]</ref> .</s>
+          <s>From a societal perspective, the literature on gun control has been prolific, across research perspectives, to report the potential benefits of enhanced gun control regulation <ref target="#b18" type="bibr">[19]</ref>
+            <ref target="#b19" type="bibr">[20]</ref>
+            <ref target="#b21" type="bibr">[21]</ref>
+            <ref target="#b22" type="bibr">[22]</ref>
+            <ref target="#b23" type="bibr">[23]</ref> , though with noted exceptions about its potential widespread benefits <ref target="#b24" type="bibr">[24]</ref> .</s>
+          <s>From an individual perspective, blame around mass shootings is oftentimes defined by the individual's preconception around the gun control debate and actual firearm possession <ref target="#b25" type="bibr">[25]</ref> .</s>
+          <s>Media and social media, as key tunneling methods for the debate, have oftentimes led to polarization and entrenched ideological beliefs <ref target="#b26" type="bibr">[26,</ref>
+            <ref target="#b27" type="bibr">27]</ref> , rather than promoting a natural societal reaction to explore viable common grounds <ref target="#b28" type="bibr">[28,</ref>
+            <ref target="#b29" type="bibr">29]</ref> .</s>
+        </p>
+        <p>
+          <s>Anxiety driven by mass shootings oftentimes focuses the blame on guns across the ideological spectrum, offering an opportunity for policy change <ref target="#b29" type="bibr">[29]</ref> .</s>
+          <s>In contrast, gun ownership interest spikes after mass shootings <ref target="#b30" type="bibr">[30]</ref> .</s>
+          <s>This dual reaction points to the possibility that, while reactive societal interest around gun control may occur as a consequence of mass shootings, the synchronous impact of both events (mass shootings and gun control debate) leads to increased interests in gun ownership.</s>
+          <s>While gun control debate has been theorized to be potentially and practically ineffective <ref target="#b31" type="bibr">[31]</ref> , statistically disentangling whether it is the mass shooting event or the oftentimes-concurrent gun control debate that drives this increased interest in gun ownership is a necessary step to understanding how societal advancements can occur.</s>
+          <s>The main contribution of this manuscript is the extraction of the cross-factor causal impact among the factors of interest (informational interest about mass shootings, gun control, and gun ownership).</s>
+          <s>This approach differs from previous research in that it is not descriptive in nature to demonstrate the potential (in)effectiveness of gun control debates or policies over time in the U.S., but inferential in showing that it is actually the current form of the gun control debate that may be causing increased gun ownership interest.</s>
+        </p>
+        <p>
+          <s>Google Trends is used to inform a time series model about societal information-seeking behaviors around gun-related violence from the perspectives of policy changes <ref target="#b32" type="bibr">[32]</ref> and selfdefense, in which gun control and gun purchase serve as proxies to behaviors and preferences for these two factors <ref target="#b33" type="bibr">[33]</ref>
+            <ref target="#b34" type="bibr">[34]</ref>
+            <ref target="#b35" type="bibr">[35]</ref> .</s>
+          <s>This approach, which is commonly used in econometrics, but relatively novel to public health analytics, explores potential causal relationships, in which shocks in internet searches about recent episodes of violence could induce shocks in gun control interest, and then shocks in the previous two factors could induce shocks in gun purchase interest.</s>
+        </p>
+      </div>
+      <div>
+        <head>Methods</head>
+        <p>
+          <s>This study aims to describe the relationship between three unobservable variables within the U.S. population: (1) Interest about impactful violent attacks (VA); (2) Interest in gun control (GC); and (3) Interest toward gun purchase (GP).</s>
+          <s>Since these factors are not directly observable without explicit disclosure (they are at most measurable through self-declaration, but impossible to extract retrospectively over long periods of time), internet searches about these topics were used as observable proxies for the historical interest levels at the population level.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Data</head>
+        <p>
+          <s>It is assumed that Google searches provide a good representation of internet searches in the United States, since Google is the favored internet search engine <ref target="#b36" type="bibr">[36,</ref>
+            <ref target="#b37" type="bibr">37]</ref> , to the point that to search the internet has oftentimes been replaced by a newly-created verb, to google, added to the Oxford English Dictionary <ref type="bibr">[38]</ref> .</s>
+          <s>Google Trends, a tool provided freely by Google, offers a window into live data about global interests by individuals, and their evolution over time.</s>
+          <s>Google Trends, as a way to access internet search data, has become a widespread tool for health research <ref target="#b14" type="bibr">[15,</ref>
+            <ref target="#b38" type="bibr">[39]</ref>
+            <ref target="#b39" type="bibr">[40]</ref>
+            <ref target="#b40" type="bibr">[41]</ref>
+            <ref target="#b41" type="bibr">[42]</ref>
+            <ref target="#b42" type="bibr">[43]</ref>
+            <ref target="#b43" type="bibr">[44]</ref> .</s>
+          <s>Google Trends was used to explore internet searches as proxies to the variables of interest <ref target="#b44" type="bibr">[45]</ref> .</s>
+          <s id="dataset-1" type="Tabular data">Data collected from Google Trends consisted of multiple sets of 168 monthly observations over the period from January of 2004 to December of 2017, corresponding to Google-driven searches originating from U.S. IP addresses, for search terms provided in the next section.</s>
+        </p>
+      </div>
+      <div>
+        <head>Study variables</head>
+        <p>
+          <s>In order to identify key search terms, an online search of news stories was conducted about the deadliest mass shootings in modern U.S. history <ref target="#b45" type="bibr">[46]</ref> from the most popular <ref target="#b46" type="bibr">[47]</ref> liberal and conservative media <ref target="#b47" type="bibr">[48]</ref> , extracting some of the common language used to define the first two groups below.</s>
+          <s>The sets of search terms that follow are not intended to be all-inclusive, but to provide a basis to demonstrate the methodology, as well as provide initial insights over the nature of relationships between the different variables over time.</s>
+          <s>Word order in Google Trends is irrelevant, so both Gun Purchase and Purchase Gun are included within Gun Purchase.</s>
+          <s>However, prepositions and articles are relevant, so search terms were defined as the minimum possible intersection of words in a common search (for example, Buy Gun includes searches such as How to Buy a Gun and Where to Buy a Gun).</s>
+          <s>Plural versus singular forms of a word are also relevant, so both Shooting and Shootings were included, since they may reflect not only the nature of the violent attacks (single location versus potential multiple locations), but also intertemporal concerns (single shooting versus a perceived shooting spree).</s>
+          <s>Note that violent attacks do not refer solely to those that occur with guns, but is a wider concept, while gun control and gun purchase explicitly seek to explore the online information-seeking reactions around those gun-related topics.</s>
+          <s>We do not assume any particular motivation behind a search, nor political or ideological preferences around it.</s>
+        </p>
+        <p>
+          <s>All data is normalized in Google Trends with a common upper bound, and the combination variables (VA, GC, and GP) were normalized based on the key search term with the largest observed monthly searches within each set.</s>
+          <s>This, in turn, has the advantage of scaling model parameters more homogeneously across experiments, as reflected in the top right panel of <ref target="#fig_2" type="figure">Fig 1,</ref> which shows the distribution of each combination variable (on the log scale).</s>
+          <s>Google Trends additionally eliminates searches by the same individuals (i.e., originating from the same IP addresses) over short periods of time, though this unit of time is not explicitly defined by Google, nor whether it is constant or common for all searches.</s>
+        </p>
+        <p>
+          <s>The</s>
+        </p>
+      </div>
+      <div>
+        <head>Statistical model</head>
+        <p>
+          <s>The three variables of interest (i.e., online interests about violent attacks, gun control, and gun purchase) can have differing relationships amongst themselves.</s>
+          <s>For example, certain violent attack information-seeking patterns may trigger gun control information-seeking patterns at the population level (i.e., a violent attack triggers gun control interest in part of the population).</s>
+          <s>However, the reverse link would be less likely.</s>
+          <s>This type of causal relationship can be naturally modelled through structural vector autoregressive (SVAR) time series models.</s>
+          <s>The SVAR approach is commonly used in the econometric literature <ref target="#b48" type="bibr">[49]</ref> , and the resulting reduced form model allows for causal interpretability of the parameters of interest, rather than assessment of co-relationships.</s>
+        </p>
+        <p>
+          <s>The structural part refers to the natural constraints built within a standard vector autoregressive approach, which allow for causal analysis <ref target="#b49" type="bibr">[50]</ref> .</s>
+          <s>The SVAR approach allows for all three variables to be endogenous and related to each other both contemporaneously and in a lagged fashion.</s>
+          <s>The model allows for autoregressive impacts, to capture temporal diffusion since the variables are correlated over time, in addition to contemporaneous relationships between the endogenous variables.</s>
+        </p>
+        <p>
+          <s>Model assumptions.</s>
+          <s>All relationships were modelled at the population level only, which allows for individuals' reactions to be notably different amongst themselves, and unknown to the researchers.</s>
+          <s>Also, all relationships contained both a factor-specific level (α) and timedependent trend component (μt), to reflect the baseline levels and long-term dynamics of interest in a topic, as well as demographic changes and higher internet penetration in society over time.</s>
+        </p>
+        <p>
+          <s>• Internet searches about violent attacks are not predictable: Violent attacks (and web-based searches about them) occur at random.</s>
+          <s>They do not depend on debate regarding gun control (as long as that debate does not translate to substantial policy changes).</s>
+          <s>They also do not Online interest regarding violent attacks, gun control, and gun purchase: A causal analysis depend on short term patterns in gun purchase (i.e., even if cumulative gun ownership was directly related to violent attack levels, it is assumed that monthly gun purchases are not).</s>
+        </p>
+        <p>
+          <s>• Gun control interest is influenced by violent attacks information-seeking: Shocks in violent attacks trigger reactions within the public.</s>
+          <s>Some of those reactions relate to interest in more gun control, which is assumed to be linearly related to interest in violent attack information-seeking levels through a parameter β 21 .</s>
+          <s>Gun control does not depend on contemporaneous gun purchase interest, but instead on cumulative gun ownership and existing gun ownership policies.</s>
+        </p>
+        <p>
+          <s>• Gun purchase interest is driven by information about violent attacks and gun control-related information: Interest in gun purchase, which is currently allowed legally in the U.S. through the second amendment, can occur for recreational purposes, crime-related reasons, and safety concerns <ref target="#b50" type="bibr">[51]</ref> .</s>
+          <s>It is assumed that the variability in gun purchase interest can also be explained by both violent attacks (as a fear-driven reaction) and increased interest/debate about gun control (preemptive purchases ahead of potential policy changes).</s>
+          <s>These relationships are reflected linearly in the model through parameters β 31 and β 32 , respectively.</s>
+        </p>
+        <p>
+          <s>• Variables follow an SVAR(1) model: No relevant seasonal components are assumed in the data.</s>
+          <s>A Markovian structure is assumed, so that immediately previous values contain all necessary prior information about autoregressive trends.</s>
+          <s>This assumption can be easily relaxed-for example by introducing seasonal components in gun purchases.</s>
+          <s>Although a single autoregressive lag is an initial assumption in the model, Akaike Information Criterion (AIC = -10.32)</s>
+          <s>tests <ref target="#b51" type="bibr">[52]</ref> for best model fit validated this choice of a single lag.</s>
+          <s>The series are all stationary according to the Augmented Dickie Fuller test (ADF: p�0.01).</s>
+        </p>
+        <p>
+          <s>Model equations.</s>
+          <s>The SVAR system of equations of interest has the following N = 3-dimensional autoregressive form:</s>
+        </p>
+        <formula xml:id="formula_0">A 0 x t ¼ a þ mt þ A 1 x tÀ 1 þ e t</formula>
+        <p>
+          <s>where x t is a 3x1 vector that includes the endogenous variables, now indexed at time t: VA t , GC t , and GP t .</s>
+          <s>Define α and μ as 3x1 vectors of structural long-term level parameters, representing steady-level interest in the variables as well as long-term trend dynamics.</s>
+          <s>{A 0 , A 1 } are 3x3 matrices of regression coefficients, and e t is a vector of structural innovations (i.e., random noise), which are assumed to be temporally uncorrelated.</s>
+        </p>
+        <p>
+          <s>The matrix A 0 reflects the Wold causal ordering <ref target="#b52" type="bibr">[53]</ref> and has the following reduced form:</s>
+        </p>
+        <formula xml:id="formula_1">A 0 ¼ 1 0 0 À b 21 1 0 À b 31 À b 32 1 2 6 4 3 7 5</formula>
+        <p>
+          <s>which is implied by the following system of contemporaneous relationships, reflecting the model assumptions:</s>
+        </p>
+        <formula xml:id="formula_2">VA t ¼ a 1 þ m 1 t þ ε VA t GC t ¼ a 2 þ m 2 t þ b 21 VA t þ ε GC t GP t ¼ a 3 þ m 3 t þ b 31 VA t þ b 32 GC t þ ε GP t</formula>
+        <p>
+          <s>The bottom right quadrant in <ref target="#fig_2" type="figure">Fig 1 represents</ref> the SVAR relationships between the aforementioned variables in graphical form, where t-1 represents the previous observation period, and t represents the current observation period.</s>
+          <s>The analysis was performed in R, using the vars package <ref target="#b53" type="bibr">[54]</ref> .</s>
+          <s>
+            <ref target="#tab_0" type="table">Table 1</ref> includes estimates for the b components of A 0 , which represent the contemporaneous causal linear relationships between the variables of interest (VA, GC, and GP).</s>
+          <s>Positive relationships between VA and GC (b 21 = 0.47) and between GC and GP (b 32 = 0.36) were observed.</s>
+          <s>The contemporaneous relationship between VA and GP was, surprisingly, significantly smaller (b 31 = 0.07).</s>
+          <s>
+            <ref target="#tab_0" type="table">Table 1</ref> also shows the variance decomposition for the SVAR relationship among the different factors for different lag times.</s>
+          <s>After 12 months, for example, 20% of the long term, stationary variability in GC interest was explained through shocks in VA (17%) and GP (4%) interests.</s>
+          <s>Similarly, after a year, 26% of the long term variability in GP interest was explained by shocks in VA (4%) and GC (22%) interests.</s>
+          <s>These results indicate that, although there was a minor association between VA and GP, the majority of the impact on GP interest came from GC.</s>
+          <s>While violent attack variations were important to explain variations of contemporaneous gun control interest, the variations of gun control interest were more relevant than violent attack variations when explaining changes in interest in gun purchase.</s>
+          <s>Gun purchase interests, therefore, appear to be better explained by shocks in gun control interests.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+      </div>
+      <div>
+        <head>Causal relationships and variance decomposition</head>
+        <p>
+          <s>Finally, <ref target="#tab_0" type="table">Table 1</ref> presents estimates for the autoregressive components, which indicate not too dissimilar autoregressive behaviors among the variables, which is further reflected in the impulse-response functions in Online interest regarding violent attacks, gun control, and gun purchase: A causal analysis</s>
+        </p>
+      </div>
+      <div>
+        <head>Impulse-response functions</head>
+        <p>
+          <s>The impact of shocks in each variable on all variables is best explored through their impulseresponse functions <ref target="#b54" type="bibr">[55]</ref> .</s>
+          <s>Impulse-response functions represent the effect over time of independent shocks of one of the variables on all the variables in the system, keeping all other variables unchanged.</s>
+          <s>
+            <ref target="#fig_4" type="figure">Fig 2 shows</ref> a lattice graph with the impact of increases of one standard deviation in each variable (impulse) on each of the variables (response) over the following 12 months.</s>
+          <s>Each figure contains the 95% bootstrap confidence interval for the impulse response function.</s>
+          <s>Shocks in VA translated to statistically significant increased interest in GC, which lasted up to ten months before disappearing, but a statistically non-significant impact on GP over time.</s>
+          <s>However, shocks in GC significantly impacted GP over the following ten to twelve months.</s>
+          <s>Shocks in GP had small and non-significant effects on GC.</s>
+          <s>The decay of shocks of a variable on itself was faster for VA and GC than that for GP, indicating that informational shocks about violent attacks died quickly, while those about gun purchase interest persisted for longer.</s>
+          <s>Online interest regarding violent attacks, gun control, and gun purchase: A causal analysis</s>
+        </p>
+        <p>
+          <s>The results indicate that the main transmission of the shocks, other than from a variable to itself over time, occur from VA to GC and from GC to GP, with both relationships being significant at the 95% level, but not from VA to GP.</s>
+          <s>Therefore, violent attacks informational shocks do not appear to be the main driver of gun purchase online interests, but instead shocks in gun control online interests are a more important driver.</s>
+          <s>At the population level, when it comes to enhancing interests in gun purchases, it appears that the perceived risk of losing the right to have a weapon is a more powerful driver than the perceived risk of lack of safety associated with shocks driven by violent attacks.</s>
+          <s>
+            <ref type="table">Table 2</ref> contains results of running the model individually for each combination of key search terms comprising the composite variables used in the analysis (375 parameters corresponding to 5x5x5 = 125 submodels).</s>
+          <s>In most cases, the relationships were strong, outlining that, although there are multiple ways in which the population can conduct searches about these topics, the underlying relationships behind these searches were widespread at the population level, and not overly-sensitive to the selection of key search terms.</s>
+        </p>
+      </div>
+      <div>
+        <head>Search term decomposition</head>
+        <p>
+          <s>The relationship between violent attacks and gun control (left block in <ref type="table">Table 2</ref> ) was strong regardless of the choice of gun purchase search terms (all 125 relationships explored were positive).</s>
+          <s>For example, a model which only included VA2, GC1, and GP2 (i.e., Shootings, Gun <ref type="table">Table 2</ref> .</s>
+          <s>Estimates for the β coefficients, which represent the contemporaneous causal relationships between the study variables, for different search term combinations.</s>
+          <s>The C variables represent the variables included in the model but not part of the corresponding pairwise relationship.</s>
+          <s>Cell values represent the β coefficients for contemporaneous pairwise (causal) relationships between the variables in bold from the corresponding columns (causes) and rows (effects).</s>
+          <s>Online interest regarding violent attacks, gun control, and gun purchase: A causal analysis</s>
+        </p>
+        <formula xml:id="formula_3">C VA1 VA2 VA3 VA4 VA5 C VA1 VA2 VA3 VA4 VA5 C GC1 GC2 GC3 GC4 GC5 GP1 GC1 0.</formula>
+        <p>
+          <s>Control, and Buy Gun as the search terms), indicated a relationship between VA2 and GC1 of b21 = 0.65.</s>
+          <s>Similarly, the relationship between gun control and gun purchase (right block in <ref type="table">Table 2</ref> ) was consistently positive, with b32 = 0.42 in this example, and only 1 negative result out of 125 relationships explored).</s>
+          <s>The relationship between violent attacks and gun purchase appeared weaker across the board, with most parameters around zero (b31 = 0 in this example).</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>This is the first study, to our knowledge, that uses internet searches as a proxy for interest in, and measurement of, intertemporal causal relationships between interest in violent attacks, gun control, and gun purchase at a population level.</s>
+          <s>Results from the impulse-response functions show that a surge in interest about violent attacks induced subsequent surges in interest about gun control and gun purchase, but with a higher longer-term impact on gun control interest and much more subdued and non-significant impact on gun purchase interest.</s>
+          <s>However, results show that heightened gun control interest appears to cause significant and lasting increases in gun purchase interest.</s>
+          <s>Public interest in violent attacks can spark interest in selfprotection in different forms, although evidence found in surveys about viewpoint changes related to specific events is limited <ref target="#b55" type="bibr">[56]</ref> .</s>
+          <s>Among possible reactions, two antagonistic options are the search for individual protection (gun purchase) and societal protection (gun control).</s>
+          <s>Additionally, gun control debate can spark fears in those who understand it not only as a threatened second amendment right, but also as a necessary means for self-protection.</s>
+          <s>The time series SVAR model accounts for these contemporaneous causal relationships; and, population-based variations in interest were explored through Google searches around key search terms that reflect these societal actions and fears.</s>
+          <s>Results show that there are strong relationships between shocks in information interest about violent attacks and reactive interest about gun control, but also that shocks in interest regarding gun control tend to have the opposite intended effect on gun purchase interest, enhancing it rather than taming it.</s>
+        </p>
+        <p>
+          <s>Since internet searches imply a perceived lack of sufficient knowledge about the topic, yet interest in it, it is important to note that the impact on gun purchase interest by gun control interest may be higher than observed.</s>
+          <s>Individuals who do not need to conduct a search about gun purchase, either because they already own firearms or already know how to purchase them, would be less likely to be included amongst our data.</s>
+          <s>Since individuals were not sampled at random in this analysis, it would be reasonable to consider those who own a gun, or possibly those who have knowledge of how to purchase one, as a subpopulation of those more likely to be against gun control (or at least some degree of it).</s>
+        </p>
+        <p>
+          <s>Finally, the impulse-response functions facilitate understanding the causal relationships and temporal length of the impact of shocks in each of the variables.</s>
+          <s>While interest regarding violent attacks seems to decay quicker as information is absorbed, gun control and gun purchase interest appear to have high persistence to its own shocks.</s>
+          <s>At the population level, once information is sought about gun control or gun purchase, the interest appears to be highly persistent.</s>
+        </p>
+      </div>
+      <div>
+        <head>Strengths and limitations</head>
+        <p>
+          <s>Open discussion about gun control and gun ownership faces significant sampling and funding issues.</s>
+          <s>For example, funding from CDC or NIH is highly restricted around this topic, and, as a consequence, its research has become a self-funded effort rather than one aligned with its relative relevance comparatively to other health issues with similar mortality rates <ref target="#b56" type="bibr">[57]</ref>
+            <ref target="#b57" type="bibr">[58]</ref>
+            <ref target="#b58" type="bibr">[59]</ref> .</s>
+          <s>Additionally, there are no databases on firearm ownerships in the U.S. (impossible under federal law <ref target="#b59" type="bibr">[60]</ref> ), making direct research accounting for ownership unfeasible without selfdeclaration.</s>
+        </p>
+        <p>
+          <s>Direct cross-sectional surveying about self-declared gun purchase intentions has shown little impact of some violent attacks on gun purchase, but with no assessment of biases <ref target="#b55" type="bibr">[56]</ref> .</s>
+          <s>A more global and dynamic survey, performed on a monthly basis and on the scale of the data used from Google Trends, would be logistically impossible as a retrospective analysis.</s>
+        </p>
+        <p>
+          <s>A prospective study would be theoretically feasible, though it would need a staged (steppedwedge) approach to ensure that the sample continuously mimics the population of interest in the same way Google Trends searches do (a multi-year survey from a fixed sample would be biasing the results by age).</s>
+          <s>However, it would suffer with strong limitations, as it would be financially prohibitive <ref target="#b56" type="bibr">[57,</ref>
+            <ref target="#b57" type="bibr">58]</ref> , potentially biased during key times when shocks in information occur, and it would take an unreasonable length of time to capture the same amount of information.</s>
+          <s>Instead, this study utilized the perceived privacy of internet searches, which may not be available through direct contact/survey of individuals.</s>
+          <s>This is an observational study.</s>
+          <s>Individuals contained within the population of interest are not randomized and share a common trait (i.e., subpopulation of Google-based informationseekers).</s>
+          <s>However, the level of penetration of the internet in the population <ref target="#b60" type="bibr">[61]</ref> , and of Google as a search engine <ref target="#b36" type="bibr">[36]</ref> , can help alleviate potential sampling biases and is widely used to explore population health issues <ref target="#b14" type="bibr">[15,</ref>
+            <ref target="#b38" type="bibr">[39]</ref>
+            <ref target="#b39" type="bibr">[40]</ref>
+            <ref target="#b40" type="bibr">[41]</ref>
+            <ref target="#b41" type="bibr">[42]</ref>
+            <ref target="#b42" type="bibr">[43]</ref>
+            <ref target="#b43" type="bibr">[44]</ref> .</s>
+        </p>
+        <p>
+          <s>Some individuals may already possess knowledge about gun purchasing options, not needing to conduct a web-based search.</s>
+          <s>This study considered three variables, one of which is most likely relevant to the period under consideration (i.e., enhanced interest about violent attacks), while the remaining two variables (i.e., gun control and gun purchase), would more likely allow for cumulative knowledge, particularly gun purchase.</s>
+          <s>This may result in underestimation of gun purchase interests, since gun ownership interests would be comprised of new interests and prior interests with information already acquired.</s>
+        </p>
+        <p>
+          <s>This study does not explore the effect of cumulative gun purchase interest or gun control interest on violent attacks.</s>
+          <s>The variables in this work relate to active searches of information.</s>
+          <s>If an individual accesses a story on a news webpage that shows information about any of the constructs without having gone through a Google search, this is not defined in the study as an active search and will not appear in the data.</s>
+        </p>
+        <p>
+          <s>Finally, this approach represents societal reactions, rather than individual behaviors.</s>
+          <s>Therefore, results are applicable at the population level, and are not appropriate to describe the relationship between these factors at the individual level.</s>
+        </p>
+      </div>
+      <div>
+        <head>Public health implications</head>
+        <p>
+          <s>Although gun control debate may be a necessary means for social buy-in, and to achieve higher penetration of interest about increased regulation of firearms, its implementation may also need to be rethought.</s>
+          <s>Shocks of information related to heightened debate around the gun control topic, oftentimes driven by stakeholders in the topic, such as politicians or media, may be triggering fears within a portion of the population who may be undecided or borderline about gun ownership (i.e., those who do not already own a gun and may be more likely to search the internet about gun purchase).</s>
+          <s>Gun control supporters may find themselves in a situation in which policy changes will not happen without societal debate, but societal debate may be increasing gun ownership interest.</s>
+          <s>Gun control debate resulting in no policy changes may be increasing interest, as results suggest, and potentially also desire, for gun ownership.</s>
+          <s>In fact, results indicate that long-term gun purchase interest are affected more significantly by shocks in gun control societal interest than shocks in interest in violent attacks, which have a contemporaneous effect, but a lesser long-term impact than gun control informational shocks.</s>
+          <s>This paper offers a window into understanding links between key events around violent attacks and the population's reactions to them, as well as the by-product debate around gun control and its effects on the population.</s>
+          <s>While it is impossible to map interests to behaviors at the scale of this analysis, this study provides first insights into causal effects around key drivers to U.S. gun purchase interests.</s>
+        </p>
+        <p>
+          <s>Common ground solutions are needed in Public Health topics as polarized as gun control and ownership regulation <ref target="#b28" type="bibr">[28]</ref> .</s>
+          <s>However, finding that common ground requires not only exposition of perspectives around optimal solutions from each side of the ideological spectrum, but offering perceived solutions to anxieties and fears held by those who disagree.</s>
+        </p>
+        <p>
+          <s>Media and social media have become a reflection of a polarized society <ref target="#b27" type="bibr">[27]</ref> , and dialogue around common grounds has been replaced with clustering of policies around entrenched ideological beliefs, with media promoting a larger separation of political views, rather than promoting the search for a common ground <ref target="#b26" type="bibr">[26]</ref> .</s>
+          <s>The current form in which gun control debate is occurring appears to have been fruitless both in terms of policy changes <ref target="#b17" type="bibr">[18]</ref> and in terms of societal changes <ref target="#b30" type="bibr">[30]</ref> .</s>
+          <s>In a country where demand for gun control could be very high due to its gun violence statistics <ref target="#b23" type="bibr">[23]</ref> and its societal reaction after each mass murder <ref target="#b29" type="bibr">[29]</ref> , it is of most relevance to question the current form in which that debate is being promoted, and whether it has been effective or counterproductive.</s>
+          <s>Gun control promoters believe that challenging the gun policy status quo is needed for safety and Public Health advancement <ref target="#b23" type="bibr">[23]</ref> .</s>
+          <s>Challenging the form in which gun control debate is being introduced may also be needed.</s>
+        </p>
+        <p>
+          <s>This manuscript constitutes a contribution to the assessment of the impact of current gun control debate.</s>
+          <s>Gun control informational interest is found in this paper to be a key factor driving informational interest around gun ownership, surpassing the interest generated by the often-concurrent mass shootings.</s>
+          <s>Gun control academic research about its societal benefits has been as overwhelming as its ineffectiveness to change the status quo.</s>
+          <s>Anxiety about losing the right-to-own appears to be a strong driver of increased gun ownership interests, and those individuals may perceive the current form of gun control debate as a zero-sum game, where any change will bring a worsened outcome.</s>
+          <s>Future gun control research should focus on providing solutions to individuals' anxieties and fears, so that societal change can take place.</s>
+          <s>Policy proposals and an effective gun control debate could be founded on providing viable solutions to the underlying causes driving reactive gun purchase interests, rather than further marketing entrenched perspectives <ref target="#b26" type="bibr">[26]</ref> .</s>
+          <s>Framing a safe, truly inclusive debate away from arguments that may induce additional anxieties and fears, in order to find common grounds and adaptive solutions, will require both sides of the spectrum to move away from their maximalist viewpoints.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>•</head>
+        <label/>
+        <figDesc>VA: Google searches related to interest in violent attacks, comprised of any of the following key search terms: VA1 = {Shooting}, VA2 = {Shootings}, VA3 = {Gun Violence}, VA4 = {Massacre}, VA5 = {Terrorist Attack}; • GC: Google searches related to interest in gun control and regulation, comprised of any of the following key search terms: GC1 = {Gun Control}, GC2 = {Gun Laws}, GC3 = {Gun Rights}, GC4 = {Gun Safety}, GC5 = {Gun Regulations}; and • GP: Google searches related to interest in gun purchase/ownership, comprised of any of the following key search terms: GP1 = {Gun Purchase}, GC2 = {Buy Gun}, GC3 = {Buy Weapon}, GC4 = {Concealed Weapon}, GC5 = {Concealed Carry}.</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head/>
+        <label/>
+        <figDesc>largest values in the data coincided with key events across all variables, outlining the endogenous nature of the relationships. The largest values of VA occurred in December of 2012 (Sandy Hook school shooting), June of 2016 (Orlando night club shooting) and October of 2017 (Las Vegas concert shooting). The largest values for GC occurred the months of and following the Sandy Hook shooting, as well as April of 2013 (Boston Marathon attacks). The largest values for GP also occurred the months of and following the Sandy Hook shooting and in December of 2015 (San Bernardino shooting). Time series plots for each of the combination variables, transformed to logarithmic scale, are presented in the left panel of Fig 1.</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig 1 .</head>
+        <label>1</label>
+        <figDesc>Time series representation (left), corresponding density representation (top right), and directed acyclic graphical representation of the relationships between study variables (bottom right), where t-1 represents the previous observation period for the variable and t represents the current observation period. Arrows represent the directionality of the causal relationships. Vertical lines mark the dates of several violent attacks (from left to right: Sandy Hook Elementary School, Boston Marathon, San Bernardino regional center, Orlando night club, and Las Vegas concert), which coincide with the peaks of these series.https://doi.org/10.1371/journal.pone.0207924.g001</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head/>
+        <label/>
+        <figDesc>Fig 2.</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Fig 2 .</head>
+        <label>2</label>
+        <figDesc>12-month impulse-response functions (solid line), with corresponding 95% confidence intervals (dotted lines), representing the impact of one standard deviation moves in the impulse variable on the corresponding response variable.https://doi.org/10.1371/journal.pone.0207924.g002</figDesc>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_0">
+        <head>Table 1 .</head>
+        <label>1</label>
+        <figDesc>Parameter estimates (and corresponding standard errors) and forecast error variance decomposition for the SVAR model (decomposition over 1, 2, 3, 6 and 12 months of shocks in the impulse variable [rows] over the response variables [columns]).</figDesc>
+        <table>Parameter estimates 
+(standard errors) 
+
+Variance decomposition 
+
+Level 
+Trend 
+β (contemporaneous) 
+A 1 (lagged) 
+Period 
+Forecast Error Variance 
+Decomposition 
+
+α 
+μ � 10 3 
+VA 
+GC 
+GP 
+VA 
+GC 
+GP 
+VA 
+GC 
+GP 
+
+VA 
+2.48 
+(0.60) 
+
+3.11 
+(0.83) 
+
+1.00 
+(0.00) 
+
+0.00 
+(0.00) 
+
+0.00 
+(0.00) 
+
+0.34 
+(0.10) 
+
+0.39 
+(0.16) 
+
+-0.34 
+(0.17) 
+
+1 
+1.00 
+0.00 
+0.00 
+
+2 
+0.86 
+0.05 
+0.08 
+
+3 
+0.82 
+0.07 
+0.11 
+
+6 
+0.80 
+0.09 
+0.11 
+
+12 
+0.80 
+0.09 
+0.11 
+
+GC 
+1.37 
+(0.39) 
+
+0.14 
+(0.55) 
+
+0.47 
+(0.24) 
+
+1.00 
+(0.00) 
+
+0.00 
+(0.00) 
+
+-0.01 
+(0.06) 
+
+0.56 
+(0.11) 
+
+0.15 
+(0.11) 
+
+1 
+0.18 
+0.82 
+0.00 
+
+2 
+0.18 
+0.81 
+0.01 
+
+3 
+0.18 
+0.80 
+0.02 
+
+6 
+0.17 
+0.79 
+0.04 
+
+12 
+0.17 
+0.79 
+0.04 
+
+GP 
+2.02 
+(0.30) 
+
+2.37 
+(0.42) 
+
+0.07 
+(0.35) 
+
+0.36 
+(0.53) 
+
+1.00 
+(0.00) 
+
+-0.13 
+(0.05) 
+
+0.22 
+(0.08) 
+
+0.48 
+(0.08) 
+
+1 
+0.05 
+0.11 
+0.84 
+
+2 
+0.04 
+0.18 
+0.78 
+
+3 
+0.04 
+0.22 
+0.74 
+
+6 
+0.04 
+0.22 
+0.74 
+
+12 
+0.04 
+0.22 
+0.74 
+
+https://doi.org/10.1371/journal.pone.0207924.t001 
+
+</table>
+      </figure>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0207924 November 28, 2018</note>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0207924 November 28, 2018 8 / 15</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgments</head>
+          <p>
+            <s>We thank the editor and three unknown referees for their suggestions to improve this manuscript.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div/>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <monogr>
+              <title level="m" type="main">The impact of gun control and gun ownership levels on violence rates. The Journal of Quantitative Criminology</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Kleck</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Patterson</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="1993"/>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope from="249" to="286" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">The effectiveness of gun control laws: multivariate statistical analysis</title>
+              <author>
+                <persName>
+                  <forename type="first">I-W</forename>
+                  <surname>Kwon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Scott</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Safranski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Bae</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">The American Journal of Economics and Sociology</title>
+              <imprint>
+                <biblScope unit="volume">56</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="41" to="50" unit="page"/>
+                <date type="published" when="1997"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">The relationship between gun ownership and firearm homicide rates in the United States</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Siegel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Ross</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>King</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Iii</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.2105/AJPH.2013.301409</idno>
+              <idno type="PMID">24028252</idno>
+              <ptr target="https://doi.org/10.2105/AJPH.2013.301409"/>
+            </analytic>
+            <monogr>
+              <title level="j">American Journal of Public Health</title>
+              <imprint>
+                <biblScope unit="volume">103</biblScope>
+                <biblScope unit="issue">11</biblScope>
+                <biblScope from="2098" to="2105" unit="page"/>
+                <date type="published" when="1981"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">What do we know about the association between firearm legislation and firearm-related injuries?</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Santaella-Tenorio</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Cerda</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Villaveces</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Galea</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1093/epirev/mxv012</idno>
+              <idno type="PMID">26905895</idno>
+              <ptr target="https://doi.org/10.1093/epirev/mxv012"/>
+            </analytic>
+            <monogr>
+              <title level="j">Epidemiologic Reviews</title>
+              <imprint>
+                <biblScope unit="volume">38</biblScope>
+                <biblScope from="140" to="157" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Association between gun law reforms and intentional firearm deaths in Australia</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Chapman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Alpers</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Jones</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1001/jama.2016.8752</idno>
+              <idno type="PMID">27332876</idno>
+              <ptr target="https://doi.org/10.1001/jama.2016.8752"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of the American Medical Association</title>
+              <imprint>
+                <biblScope unit="volume">316</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="291" to="299" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Quantifying the effect of sentiment on information diffusion in social media</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Ferrara</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Peer J</title>
+              <imprint>
+                <biblScope unit="page">26</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">The American public and the gun control debate</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Blendon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Young</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Hemenway</surname>
+                </persName>
+              </author>
+              <idno type="PMID">8637158</idno>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of the American Medical Association</title>
+              <imprint>
+                <biblScope unit="volume">275</biblScope>
+                <biblScope unit="issue">22</biblScope>
+                <biblScope from="1719" to="1722" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Violent death rates: The US compared with other high-income OECD countries</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Grinshteyn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Hemenway</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1016/j.amjmed.2015.10.025</idno>
+              <idno type="PMID">26551975</idno>
+              <ptr target="https://doi.org/10.1016/j.amjmed.2015.10.025"/>
+            </analytic>
+            <monogr>
+              <title level="j">The American Journal of Medicine</title>
+              <imprint>
+                <biblScope unit="volume">129</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="266" to="273" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Mental illness, mass shootings, and the politics of American firearms</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Metzl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Macleish</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.2105/AJPH.2014.302242</idno>
+              <idno type="PMID">25496006</idno>
+              <ptr target="https://doi.org/10.2105/AJPH.2014.302242"/>
+            </analytic>
+            <monogr>
+              <title level="j">American Journal of Public Health</title>
+              <imprint>
+                <biblScope unit="volume">105</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="240" to="249" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Putting the gun control debate in social perspective</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Chemerinsky</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Fordham Law Review</title>
+              <imprint>
+                <biblScope unit="volume">73</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="477" to="485" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Crime, deterrence, and right-to-carry concealed handguns</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Lott</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Mustard</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">The Journal of Legal Studies</title>
+              <imprint>
+                <biblScope unit="volume">26</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="1" to="68" unit="page"/>
+                <date type="published" when="1997"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Flawed gun policy research could endanger public safety</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Webster</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Vernick</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Ludwig</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Lester</surname>
+                </persName>
+              </author>
+              <idno type="PMID">9224169</idno>
+            </analytic>
+            <monogr>
+              <title level="j">American Journal of Public Health</title>
+              <imprint>
+                <biblScope unit="volume">87</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="918" to="921" unit="page"/>
+                <date type="published" when="1997"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Measurement and other errors in county-level UCR data: A reply to Lott and Whitley</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Maltz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Targonski</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Quantitative Criminology</title>
+              <imprint>
+                <biblScope unit="volume">19</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="199" to="206" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Measuring the impact of health policies using internet search patterns: the case of abortion</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Reis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Brownstein</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">BMC Public Health</title>
+              <imprint>
+                <biblScope unit="volume">514</biblScope>
+                <biblScope unit="issue">10</biblScope>
+                <biblScope from="1" to="5" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Digital disease detection-harnessing the web for public health surveillance</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Brownstein</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Freifield</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Madoff</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1056/NEJMp0900702</idno>
+              <idno type="PMID">19423867</idno>
+              <ptr target="https://doi.org/10.1056/NEJMp0900702"/>
+            </analytic>
+            <monogr>
+              <title level="j">The New England Journal of Medicine</title>
+              <imprint>
+                <biblScope unit="volume">360</biblScope>
+                <biblScope unit="issue">21</biblScope>
+                <biblScope from="2153" to="2155" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Drug surveillance without trial costs: discovery of adverse drug reactions through large-scale analysis of web search queries</title>
+              <author>
+                <persName>
+                  <forename type="first">Yom-Tov E</forename>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Gabrilovich</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Postmarket</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.2196/jmir.2614</idno>
+              <idno type="PMID">23778053</idno>
+              <ptr target="https://doi.org/10.2196/jmir.2614"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Medical Internet Research</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope unit="page">124</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Evaluating the process of online health information searching: a qualitative approach to exploring consumer preferences</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Fiksdal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Kumbamu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Jadhav</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Cocos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Nelsen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Pathak</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Mccormick</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.2196/jmir.3341</idno>
+              <idno type="PMID">25348028</idno>
+              <ptr target="https://doi.org/10.2196/jmir.3341"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Medical Internet Research</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope unit="issue">10</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">The impact of Mass Shootings on Gun Policy</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Luca</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Malhotra</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Poliquin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Harvard Business School Working Paper Series</title>
+              <imprint>
+                <biblScope from="16" to="126" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">The myth of millions of annual self-defense gun uses: A case study of overestimates of rare events</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Hemenway</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Chance</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="6" to="10" unit="page"/>
+                <date type="published" when="1997"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">More guns, more crime</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Duggan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Political Economy</title>
+              <imprint>
+                <biblScope unit="volume">109</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="1086" to="1114" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <monogr>
+              <title level="m" type="main">Online interest regarding violent attacks, gun control, and gun purchase: A causal analysis PLOS ONE |</title>
+              <idno type="DOI">10.1371/journal.pone.0207924</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0207924"/>
+              <imprint>
+                <date type="published" when="2018-11-28"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Would banning firearms reduce murder and suicide? A review of international and domestic evidence</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Kates</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Mauser</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Harvard Journal of Law &amp; Public Policy</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="649" to="694" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Curbing gun violence: lessons from public health successes</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Mozaffarian</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Hemenway</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Ludwig</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1001/jama.2013.38</idno>
+              <idno type="PMID">23295618</idno>
+              <ptr target="https://doi.org/10.1001/jama.2013.38"/>
+            </analytic>
+            <monogr>
+              <title level="j">JAMA</title>
+              <imprint>
+                <biblScope unit="volume">309</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="551" to="552" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Death by gun violence-A Public Health crisis</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Bauchner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Rivara</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Bonow</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Bressler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Disis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Heckers</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Josephson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Kibbe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Picirillo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Redberg</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Rhee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Kobinson</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1001/jama.2017.16446</idno>
+              <idno type="PMID">29052721</idno>
+              <ptr target="https://doi.org/10.1001/jama.2017.16446"/>
+            </analytic>
+            <monogr>
+              <title level="j">JAMA</title>
+              <imprint>
+                <biblScope unit="volume">318</biblScope>
+                <biblScope unit="issue">18</biblScope>
+                <biblScope from="1763" to="1764" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <monogr>
+              <title level="m" type="main">Can Gun Control Work?</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Jacobs</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2002"/>
+                <publisher>Oxford University Press</publisher>
+                <pubPlace>New York</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Gun ownership and self-serving attributions for mass shooting tragedies</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Joslyn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Haider-Markel</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Social Science Quarterly</title>
+              <imprint>
+                <biblScope unit="volume">98</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="429" to="442" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Media and Political Polarization</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Prior</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Annual Review of Political Science</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope from="101" to="127" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Digital media, political polarization and challenges to democracy. Information</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Beaufort</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Communication &amp; Society</title>
+              <imprint>
+                <biblScope unit="volume">21</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope from="915" to="920" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">After the mass shooting in Las Vegas-Finding common ground on gun control</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Campion</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Morrissey</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Malina</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Sacks</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Drazen</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1056/NEJMe1713203</idno>
+              <idno type="PMID">28976811</idno>
+              <ptr target="https://doi.org/10.1056/NEJMe1713203"/>
+            </analytic>
+            <monogr>
+              <title level="j">New England Journal of Medicine</title>
+              <imprint>
+                <biblScope unit="volume">377</biblScope>
+                <biblScope unit="issue">17</biblScope>
+                <biblScope from="1679" to="1680" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">The direct and moderating effects of mass shooting anxiety on political and policy attitudes</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Joslyn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Haider-Markel</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1177/2053168018794060</idno>
+              <ptr target="https://doi.org/10.1177/2053168018794060"/>
+            </analytic>
+            <monogr>
+              <title level="j">Research &amp; Politics</title>
+              <imprint>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Responding to violence with guns: Mass shootings and gun acquisition</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Wallace</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">The Social Science Journal</title>
+              <imprint>
+                <biblScope unit="volume">52</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="156" to="167" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Mass shootings backfire: The boomberang effects of death concerns on policy attitudes</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Jang</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1080/15213269.2017.1421471</idno>
+              <ptr target="https://doi.org/10.1080/15213269.2017.1421471"/>
+            </analytic>
+            <monogr>
+              <title level="j">Media Psychology</title>
+              <imprint>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Searching for truth: internet search patterns as a method of investigating online responses to a Russian illicit drug policy debate</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Zheluk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Gillespie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Quinn</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.2196/jmir.2270</idno>
+              <idno type="PMID">23238600</idno>
+              <ptr target="https://doi.org/10.2196/jmir.2270"/>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Medical Internet Research</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope unit="page">165</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Predicting the present with Google Trends</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Choi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Varian</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Economic Record</title>
+              <imprint>
+                <biblScope unit="volume">88</biblScope>
+                <biblScope unit="issue">s1</biblScope>
+                <biblScope from="2" to="9" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Predicting consumer behavior with web search</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Goel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Hofman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Lahaie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Pennock</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Watts</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1073/pnas.1005962107</idno>
+              <idno type="PMID">20876140</idno>
+              <ptr target="https://doi.org/10.1073/pnas.1005962107"/>
+            </analytic>
+            <monogr>
+              <title level="j">Proceedings of the National Academy of Sciences of the United States of America</title>
+              <imprint>
+                <biblScope unit="volume">107</biblScope>
+                <biblScope unit="issue">41</biblScope>
+                <biblScope from="17486" to="17490" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">The search engine manipulation effect (SEME) and its possible impact on the outcomes of elections</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Epstein</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Robertson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proceedings of the National Academy of Sciences of the United States of America</title>
+              <imprint>
+                <biblScope unit="volume">112</biblScope>
+                <biblScope unit="issue">33</biblScope>
+                <biblScope from="4512" to="4521" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <monogr>
+              <title level="m" type="main">Latest search market share numbers: Google search up across all devices</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Southern</surname>
+                </persName>
+              </author>
+              <ptr target="https://www.searchenginejournal.com/august-2016-search-market-share/172078"/>
+              <imprint>
+                <biblScope from="2017" to="2027" unit="page"/>
+              </imprint>
+            </monogr>
+            <note>WebCite Cache ID 6xNcK9tpP</note>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <monogr>
+              <title level="m" type="main">Commission fines Google €2.42 billion for abusing dominance as search engine by giving illegal advantage to own comparison shopping service</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Cardoso</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Ren</surname>
+                </persName>
+              </author>
+              <ptr target="http://europa.eu/rapid/press-release_IP-17-1784_en.htm"/>
+              <imprint>
+                <biblScope from="2017" to="2027" unit="page"/>
+              </imprint>
+            </monogr>
+            <note>WebCite Cache ID 6xNcTkPpu</note>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">Search and you shall find: geographic characteristics associated with Google searchers during the affordable care act's first enrollment period</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Gollust</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Qin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Wilcock</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Baum</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Barry</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Niederdeppe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Fowler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Karaca-Mandic</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Medical Care Research and Review</title>
+              <imprint>
+                <biblScope unit="volume">1177</biblScope>
+                <biblScope unit="issue">10</biblScope>
+                <biblScope from="1" to="13" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">The use of Google Trends in health care research: A systematic review</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Nuti</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Wayda</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Ranasinghe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Dreyer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Murugiah</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS One</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope unit="page">109583</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Assessing Google Flu Trends performance in the United States during the 2009 influenza virus A (H1N1) pandemic</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Cook</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Conrad</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Fowlkes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mohebbi</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1371/journal.pone.0023610</idno>
+              <idno type="PMID">21886802</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0023610"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS One</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="issue">8</biblScope>
+                <biblScope unit="page">23610</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">Editorial Commentary: Perspectives on the future of internet search engines and bio-surveillance systems</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Santillana</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1093/cid/ciw660</idno>
+              <idno type="PMID">27678086</idno>
+              <ptr target="https://doi.org/10.1093/cid/ciw660"/>
+            </analytic>
+            <monogr>
+              <title level="j">Clinical Infectious Diseases</title>
+              <imprint>
+                <biblScope unit="volume">64</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="42" to="43" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title level="a" type="main">Advances in using internet searches to track dengue</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Kou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Lu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Brownstein</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Brooke</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Santillana</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1371/journal.pcbi.1005607</idno>
+              <idno type="PMID">28727821</idno>
+              <ptr target="https://doi.org/10.1371/journal.pcbi.1005607"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS Computational Biology</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope unit="issue">7</biblScope>
+                <biblScope unit="page">1005607</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">Detecting influenza epidemics using search engine query data</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Ginsberg</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Mohebbi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Patel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Brammer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Smolinski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Brilliant</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1038/nature07634</idno>
+              <idno type="PMID">19020500</idno>
+              <ptr target="https://doi.org/10.1038/nature07634"/>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">457</biblScope>
+                <biblScope from="1012" to="1014" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b44">
+            <analytic>
+              <title level="a" type="main">Analysis of the capacity of Google Trends to measure interest in conservation topics and the role of online news</title>
+              <author>
+                <persName>
+                  <forename type="first">Ltp</forename>
+                  <surname>Nghiem</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Papworth</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Lim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Carrasco</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1371/journal.pone.0152802</idno>
+              <idno type="PMID">27028399</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0152802"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS One</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope unit="page">152802</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b45">
+            <monogr>
+              <title level="m" type="main">The 10 deadliest mass shootings in modern U.S. history</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Segarra</surname>
+                </persName>
+              </author>
+              <idno>2018-01-03</idno>
+              <ptr target="http://time.com/4967879/deadliest-mass-shootings-las-vegas/Accessed"/>
+              <imprint/>
+            </monogr>
+            <note>WebCite Cache ID 6xNcam3xs</note>
+          </biblStruct>
+          <biblStruct xml:id="b46">
+            <monogr>
+              <title level="m" type="main">The top 25</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Olmstead</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Mitchell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Rosenstiel</surname>
+                </persName>
+              </author>
+              <idno>2018-01-03</idno>
+              <ptr target="http://www.journalism.org/2011/05/09/top-25/Accessed"/>
+              <imprint/>
+            </monogr>
+            <note>WebCite Cache ID 6xNcdvZpy</note>
+          </biblStruct>
+          <biblStruct xml:id="b47">
+            <monogr>
+              <title level="m" type="main">Ranking the media from liberal to conservative, based on their audiences</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Blake</surname>
+                </persName>
+              </author>
+              <ptr target="https://www.washingtonpost.com/news/the-fix/wp/2014/10/21/lets-rank-the-media-from-liberal-to-conservative-based-on-their-audiences/?utm_term=.5b8eeb9d3a08Accessed"/>
+              <imprint>
+                <biblScope from="2018" to="2019" unit="page"/>
+              </imprint>
+            </monogr>
+            <note>WebCite Cache ID 6xNckD9dR</note>
+          </biblStruct>
+          <biblStruct xml:id="b48">
+            <analytic>
+              <title level="a" type="main">A micro-based model for world oil market</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Espinasa</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Horst</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Reyes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Manzano</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Molina</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Rigobon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Energy Economics</title>
+              <imprint>
+                <biblScope unit="volume">66</biblScope>
+                <biblScope from="431" to="449" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b49">
+            <monogr>
+              <title level="m" type="main">Structural vector autoregressions: theory of identification and algorithms for inference. The Review of Economic Studies</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Rubio-Ramirez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Waggoner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Zha</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2010"/>
+                <biblScope unit="volume">77</biblScope>
+                <biblScope from="665" to="696" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b50">
+            <monogr>
+              <title level="m" type="main">The sociology of U.S. gun culture. Sociology Compass</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Yamane</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1111/soc4.12450</idno>
+              <ptr target="https://doi.org/10.1111/soc4.12450"/>
+              <imprint>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b51">
+            <analytic>
+              <title level="a" type="main">A new look at the statistical model identification</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Akaike</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">IEEE Transactions on Automatic Control</title>
+              <imprint>
+                <biblScope unit="volume">19</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="716" to="723" unit="page"/>
+                <date type="published" when="1974"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b52">
+            <analytic>
+              <title level="a" type="main">Searching for the causal structure of a vector autoregression</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Demiralp</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Hoover</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Oxford Bulletin of Economics and Statistics</title>
+              <imprint>
+                <biblScope unit="volume">65</biblScope>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+            <note>Supplement</note>
+          </biblStruct>
+          <biblStruct xml:id="b53">
+            <analytic>
+              <title level="a" type="main">implementation within R package vars</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Pfaff</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Var</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Models</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Statistical Software</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="1" to="32" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b54">
+            <analytic>
+              <title level="a" type="main">Estimating shocks and impulse response functions</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Wickens</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Motto</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Applied Econometrics</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="371" to="387" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b55">
+            <analytic>
+              <title level="a" type="main">The impact of the Orlando mass shooting on fear of victimization and gun-purchasing intentions: not what one might expect</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Stroebe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Leander</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Kruglanski</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1371/journal.pone.0182408</idno>
+              <idno type="PMID">28800365</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0182408"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS One</title>
+              <imprint>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b56">
+            <analytic>
+              <title level="a" type="main">Funding and publication of research on gun violence and other leading causes of death</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Stark</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Shah</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1001/jama.2016.16215</idno>
+              <idno type="PMID">28030692</idno>
+              <ptr target="https://doi.org/10.1001/jama.2016.16215"/>
+            </analytic>
+            <monogr>
+              <title level="j">JAMA</title>
+              <imprint>
+                <biblScope unit="volume">317</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="84" to="85" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b57">
+            <analytic>
+              <title level="a" type="main">Silencing the science on gun research</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Kellerman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Rivara</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1001/jama.2012.208207</idno>
+              <idno type="PMID">23262635</idno>
+              <ptr target="https://doi.org/10.1001/jama.2012.208207"/>
+            </analytic>
+            <monogr>
+              <title level="j">JAMA</title>
+              <imprint>
+                <biblScope unit="volume">309</biblScope>
+                <biblScope unit="issue">6</biblScope>
+                <biblScope from="549" to="50" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b58">
+            <monogr>
+              <title level="m" type="main">Institute survey report: The state of free speech and tolerance in America</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Ekins</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Cato</surname>
+                </persName>
+              </author>
+              <ptr target="https://www.cato.org/survey-reports/state-free-speech-tolerance-americaAccessed"/>
+              <imprint>
+                <biblScope from="2017" to="2029" unit="page"/>
+              </imprint>
+            </monogr>
+            <note>WebCite Cache ID 6xNcutJ5O</note>
+          </biblStruct>
+          <biblStruct xml:id="b59">
+            <analytic>
+              <title level="a" type="main">The relationship between firearm ownership and violent crime</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Moore</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Bergner</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Justice Policy Journal</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="1" to="20" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b60">
+            <monogr>
+              <title level="m" type="main">American's internet access</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Perrin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Duggan</surname>
+                </persName>
+              </author>
+              <idno>2017-10-11. WebCite Cache ID 6xNd8UJx2</idno>
+              <ptr target="http://www.pewinternet.org/2015/06/26/americans-internet-access-2000-2015"/>
+              <imprint>
+                <date type="published" when="2000"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

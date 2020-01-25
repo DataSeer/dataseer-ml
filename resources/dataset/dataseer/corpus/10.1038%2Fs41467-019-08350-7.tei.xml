@@ -1,0 +1,1911 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:20+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Medial geniculate body and primary auditory cortex differentially contribute to striatal sound representations</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Liang</forename>
+                <surname>Chen</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Department of Neurobiology &amp; Behavior</orgName>
+                <orgName type="institution">Stony Brook University</orgName>
+                <address>
+                  <postCode>11794</postCode>
+                  <settlement>Stony Brook</settlement>
+                  <region>NY</region>
+                  <country key="US">USA</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Xinxing</forename>
+                <surname>Wang</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Department of Neurobiology &amp; Behavior</orgName>
+                <orgName type="institution">Stony Brook University</orgName>
+                <address>
+                  <postCode>11794</postCode>
+                  <settlement>Stony Brook</settlement>
+                  <region>NY</region>
+                  <country key="US">USA</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Shaoyu</forename>
+                <surname>Ge</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Department of Neurobiology &amp; Behavior</orgName>
+                <orgName type="institution">Stony Brook University</orgName>
+                <address>
+                  <postCode>11794</postCode>
+                  <settlement>Stony Brook</settlement>
+                  <region>NY</region>
+                  <country key="US">USA</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Qiaojie</forename>
+                <surname>Xiong</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Department of Neurobiology &amp; Behavior</orgName>
+                <orgName type="institution">Stony Brook University</orgName>
+                <address>
+                  <postCode>11794</postCode>
+                  <settlement>Stony Brook</settlement>
+                  <region>NY</region>
+                  <country key="US">USA</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Medial geniculate body and primary auditory cortex differentially contribute to striatal sound representations</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41467-019-08350-7</idno>
+          <note>ARTICLE OPEN. Correspondence and requests for materials should be addressed to Q.X. (email: qiaojie.xiong@stonybrook.edu) 1</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>The dorsal striatum has emerged as a key region in sensory-guided, reward-driven decision making.</s>
+            <s>A posterior sub-region of the dorsal striatum, the auditory striatum, receives convergent projections from both auditory thalamus and auditory cortex.</s>
+            <s>How these pathways contribute to auditory striatal activity and function remains largely unknown.</s>
+            <s>Here we show that chemogenetic inhibition of the projections from either the medial geniculate body (MGB) or primary auditory cortex (ACx) to auditory striatum in mice impairs performance in an auditory frequency discrimination task.</s>
+            <s>While recording striatal sound responses, we find that transiently silencing the MGB projection reduced sound responses across a wide-range of frequencies in striatal medium spiny neurons.</s>
+            <s>In contrast, transiently silencing the primary ACx projection diminish sound responses preferentially at the best frequencies in striatal medium spiny neurons.</s>
+            <s>Together, our findings reveal that the MGB projection mainly functions as a gain controller, whereas the primary ACx projection provides tuning information for striatal sound representations.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <p>
+          <s>T he neostriatum, the main input structure of the basal ganglia, has been widely implicated in habitual and social behaviors 1-3 , decision-making <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref> , and reinforcement learning <ref target="#b6" type="bibr">7</ref> .</s>
+          <s>Striatal neurons can respond to visual, auditory, or somatosensory stimulation <ref target="#b7" type="bibr">8</ref> , consistent with anatomically demonstrated sensory inputs.</s>
+          <s>The dorsal striatum receives topographically organized projections from nearly the entire neocortex <ref target="#b8" type="bibr">9</ref> , and from most thalamic nuclei <ref target="#b9" type="bibr">10,</ref>
+            <ref target="#b10" type="bibr">11</ref> .</s>
+          <s>The axon terminals of cortical and thalamic projections converge with comparable densities onto individual striatal neurons, forming functional glutamatergic synapses (i.e., thalamostriatal and corticostriatal synapses) <ref target="#b11" type="bibr">[12]</ref>
+            <ref target="#b12" type="bibr">[13]</ref>
+            <ref target="#b13" type="bibr">[14]</ref> .</s>
+          <s>How these two projections coordinate to regulate striatal activities and striatal-dependent behaviors remain largely unknown.</s>
+        </p>
+        <p>
+          <s>Previous studies suggest that thalamostriatal projections may be important for alertness and behavioral switching <ref target="#b14" type="bibr">15</ref> .</s>
+          <s>However, the mechanisms underlying this function remain unclear.</s>
+          <s>Moreover, the majority of previous studies have focused on the motor subdivision of the dorsal striatum <ref target="#b15" type="bibr">[16]</ref>
+            <ref target="#b16" type="bibr">[17]</ref>
+            <ref target="#b17" type="bibr">[18]</ref>
+            <ref target="#b18" type="bibr">[19]</ref> .</s>
+          <s>The sensory subdivision, especially the auditory striatal region which receives projections from the medial geniculate body (MGB, the main auditory thalamus) and the auditory cortex (ACx), remains largely elusive.</s>
+        </p>
+        <p>
+          <s>Two recent studies have found that projections from ACx to the auditory striatum drives decision-making in rodents, and that selective plasticity of these synapses may underlie the establishment of this behavioral association <ref target="#b19" type="bibr">20,</ref>
+            <ref target="#b20" type="bibr">21</ref> .</s>
+          <s>To understand how the MGB projection to the auditory striatum contribute to auditory decision-making, we used chemogenetic tools to assess the effects of the MGB projection inhibition on performance of an auditory frequency-discrimination task.</s>
+          <s>Upon demonstrating the behavioral relevance of this connection, we used in vivo tetrode recordings to characterize striatal sound responses to the stimuli used in the behavioral task, and then optogenetically dissected the MGB and primary ACx contributions to the striatal sound representation.</s>
+          <s>Our results indicate that the projections from the MGB and primary ACx differentially modulate striatal auditory information and that these effects are essential for making an auditory frequency-discrimination decision.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Results</head>
+        <p>
+          <s>Suppression of the MGB projection impairs task performance.</s>
+          <s>The auditory striatum receives convergent projections from the MGB and primary ACx ( <ref target="#fig_0" type="figure">Fig. 1a</ref> and <ref target="#fig_0" type="figure">Supplementary Fig. 1</ref> ).</s>
+          <s>The corticostriatal projection has recently been shown to drive auditory decisions in an auditory frequency-discrimination "cloud-oftones" task <ref target="#b19" type="bibr">20</ref> .</s>
+          <s>In this study, we examined whether and how the MGB and primary ACx projections modulate auditory decisionmaking in "cloud-of-tones" task.</s>
+        </p>
+        <p>
+          <s>To assess the effects of the projections on the "cloud-of-tones" task, we used a chemogenetic method to selectively and reversibly inhibit the MGB and primary ACx projections individually.</s>
+          <s>We first expressed hM4Di-mCherry, an inhibitory DREADD (Designer Receptors Exclusively Activated by Designer Drug 22 ), in MGB neurons via adeno-associated virus (AAV) infection <ref target="#fig_0" type="figure">(Fig. 1b, left)</ref> .</s>
+          <s>Five weeks after viral infection, we observed strong mCherry signals of the MGB projection in the auditory striatum <ref target="#fig_0" type="figure">(Fig. 1b, right panel)</ref> .</s>
+          <s>We then tested the inhibition effect of this projection mediated by the hM4Di receptor.</s>
+          <s>In a validation experiment, we co-injected AAV expressing Channelrhodopsin 2 (ChR2) with AAV expressing hM4Di into the MGB, and delivered blue light pulses to activate ChR2-positive axon terminals on acutely prepared striatal slices.</s>
+          <s>We applied the synthesized activator, clozapine-N-oxide (CNO), into the bath solution after establishing whole-cell patch recordings on striatal neurons.</s>
+          <s>We found that the addition of CNO (10 µM) substantially suppressed the light-evoked postsynaptic responses as shown in <ref target="#fig_1" type="figure">Supplementary Fig. 2A</ref> .</s>
+          <s>To test any potential side effects due to nonspecific binding of CNO to other endogenous receptors <ref target="#b22" type="bibr">23</ref> , we conducted the same experiment on control slices prepared from mice expressing only mCherry, but not hM4Di.</s>
+          <s>We observed no detectable effects on synaptic transmission at the CNO concentration used here (10 µM) (Supplementary <ref target="#fig_1" type="figure">Fig. 2B</ref> ).</s>
+          <s>The ex vivo efficacy of hM4Di-mediated inhibition of the MGB projection to the auditory striatum suggested that a similar strategy may work in vivo.</s>
+        </p>
+        <p>
+          <s cert="0.9905129075050354" id="dataset-1" type="Tabular data">We then assessed whether inhibition of the MGB projection affects auditory decision-making in the "cloud-of-tones" task.</s>
+          <s>We bilaterally expressed hM4Di-mCherry or mCherry alone (as control) in MGB neurons in mice via AAV infection.</s>
+          <s>Two weeks after the viral infection, we trained these mice to perform the "cloud-of-tones" task.</s>
+          <s>In brief, a freely moving mouse was placed in a sound-proof chamber (as previously described <ref target="#b20" type="bibr">21 )</ref> .</s>
+          <s>Each trial is self-initiated by the mouse poking its nose in the center port to trigger a sound stimulus, and the mouse learns to associate the frequency of pure tones (high versus low) with actions (going to the left versus the right port) for a water reward through trial-and-error <ref target="#fig_0" type="figure">(Fig. 1c)</ref> .</s>
+          <s>We then bilaterally implanted cannulas into the auditory striatum for local CNO or saline infusion ( <ref target="#fig_0" type="figure">Fig. 1b and Supplementary Fig. 3</ref> ).</s>
+          <s>We continued to train the mice on task after they recovered from the implantation surgery (around 2 weeks), and initiated chemogenetic manipulation to inhibit the MGB projection while the mice performed the task.</s>
+          <s>We then compared individuals' performances during saline infusion sessions (the sessions immediately before the CNO sessions) to their performance during CNO infusion sessions in both hM4Di-mCherry and control (mCherry only) groups.</s>
+          <s>In hM4Di-mCherry mice, we observed that the CNO infusion substantially decreased choice accuracy in task performance as compared to saline infusion sessions <ref target="#fig_0" type="figure">(Fig. 1d, e)</ref> .</s>
+          <s>In contrast, we found no observable effect upon CNO application in control (mCherry only) mice <ref target="#fig_0" type="figure">(Fig. 1d, e)</ref> .</s>
+        </p>
+        <p>
+          <s>To further clarify how inhibiting MGB striatal projections negatively influenced task performance, we performed the following analyses: we first quantified trials in which the sound stimuli were triggered but the mice did not choose either of the side ports.</s>
+          <s>We did not observe differences in the numbers of these nonreport trials across control or CNO sessions <ref target="#fig_0" type="figure">(Fig. 1f</ref> ).</s>
+          <s cert="0.9775851368904114" id="dataset-2" type="Tabular data">Next, we counted the number of completed trials per session and observed no differences among control or CNO sessions <ref target="#fig_0" type="figure">(Fig. 1g)</ref> .</s>
+          <s>Furthermore, there were no change in reaction times (response latency) across difficulties <ref target="#fig_0" type="figure">(Fig. 1h)</ref> .</s>
+          <s>These analyses confirmed that the CNO application did not affect the motivational state or motor capabilities of our experimental mice.</s>
+        </p>
+        <p>
+          <s>We applied the same strategy to examine the behavioral impacts of the corticostriatal pathway from the primary ACx to the auditory striatum.</s>
+          <s>Our analysis showed that inhibition of this cortical projection also significantly decreased choice accuracy in task performance, but had no effects on reaction time ( <ref target="#fig_3" type="figure">Supplementary Fig. 4)</ref> .</s>
+        </p>
+        <p>
+          <s>Together, our results revealed that hM4Di-mediated inhibition of the MGB or the primary ACx projection reduced choice accuracy across different difficulties, indicating that both thalamic and cortical projections to the auditory striatum are involved in decision-making in the "cloud-of-tones" task.</s>
+        </p>
+        <p>
+          <s>Characterization of striatal responses to the tone stimuli.</s>
+          <s>The findings that both MGB and primary ACx projections to the auditory striatum are critical for auditory decision-making led us to ask what type of auditory information these two projections carry.</s>
+          <s>To answer this question, we first characterized the striatal responses to sound stimuli.</s>
+          <s>In the "cloud-of-tones" task, animals choose side ports based on judgements about the frequencies of the pure tones in the stimuli.</s>
+          <s>We therefore used pure tones for this test.</s>
+          <s>We presented 100 ms pure tones at different frequencies to the freely moving animals inside a sound-proof chamber.</s>
+          <s>We implanted tetrodes into the left auditory striatum to record tone-evoked responses from striatal neurons.</s>
+          <s>There are three typical types of neurons in the dorsal striatum: medium spiny neurons (MSNs) make up about 95% of the neuronal population, and the remainder includes cholinergic interneurons (ChI) and fast-spiking interneurons (FS) <ref target="#b23" type="bibr">24</ref> .</s>
+          <s>These three types can be readily distinguished by their spike waveforms from tetrode recordings <ref target="#fig_1" type="figure">(Fig. 2a</ref> , detail in Methods) as previously described <ref target="#b16" type="bibr">17,</ref>
+            <ref target="#b24" type="bibr">25</ref> .</s>
+          <s>In our tetrode recordings, 80.1% (944/1178) of neurons were identified as MSNs, 12.9 % (152/1178) were identified as FSs, and 7% (82/1178) were identified as ChIs.</s>
+          <s>This closely resembled the proportions of recordings reported in previous studies <ref target="#b25" type="bibr">26,</ref>
+            <ref target="#b26" type="bibr">27</ref> .</s>
+          <s>We further analyzed the tone-evoked responses in each type of striatal neuron, and found 206 of <ref target="#fig_1" type="figure">(Fig. 2b</ref> , detail in Methods).</s>
+          <s>The majority of cells in all three cell types manifested transient onset responses, followed by sustained and suppression responses <ref target="#fig_1" type="figure">(Fig. 2c</ref> ).</s>
+          <s>MSNs and FS had a wide range of response latencies from 10 to 100 ms, while ChI had latencies around 30 ms <ref target="#fig_1" type="figure">(Fig. 2d)</ref> .</s>
+        </p>
+        <p>
+          <s>Striatal neurons responded to tone stimuli over a wide range of frequencies <ref target="#fig_1" type="figure">(Fig. 2b)</ref> .</s>
+          <s>Among the tone-responsive neurons, 160/ 206 neurons were tuned (see Methods for criteria).</s>
+          <s>We only included tuned neurons in later tuning analysis.</s>
+          <s>Note that in our recordings, most striatal neurons did not respond to tonal stimuli lower than 50 dB, and there was also a large portion of neurons that did not respond to 60 dB.</s>
+          <s>We thus used either 60 or 70 dB (the lower responsive intensity, see Methods for details) stimuli to calculate the best frequency for each striatal neuron (the frequency at which the neuron has its highest peak firing rate) <ref target="#fig_1" type="figure">(Fig. 2e)</ref> .</s>
+          <s>We found that neurons with onset and sustained responses displayed best frequencies to the pure tones over the full range of tested stimuli <ref target="#fig_1" type="figure">(Fig. 2f)</ref> , while most of the units with suppression responses were more broadly tuned ( <ref type="figure">Supplementary Fig. 9B</ref> left panel).</s>
+          <s>Together, our profiling revealed that all three major types of striatal neurons responded to tonal stimuli, and showed frequency preferences.</s>
+        </p>
+        <p>
+          <s>We next asked from where the auditory striatum receives the sound information.</s>
+          <s>As shown in the <ref target="#fig_0" type="figure">Fig. 1a</ref> , the auditory striatum receives projections from both the primary ACx and MGB.</s>
+          <s>Since the primary ACx also receives ascending projections from the MGB 28-30 , we asked whether the MGB neurons that project to the ACx and striatum are from the same or segregated populations ( <ref target="#fig_4" type="figure">Supplementary Fig. 5A</ref> ).</s>
+          <s>To determine the projection patterns of MGB neurons, we retrogradely labeled the MGB neurons that project to the primary ACx and the auditory striatum with a retrograde reagent (cholera toxin B, CTB).</s>
+          <s>Specifically, as shown in <ref target="#fig_4" type="figure">Supplementary Fig. 5B</ref> , we injected CTB conjugated with a red or green fluorophore into the primary ACx and the auditory striatum, respectively.</s>
+          <s cert="0.5994267463684082" id="dataset-3" type="Image">Seven days after the injection, we collected brain tissue and analyzed the images.</s>
+          <s>We found that the dorsal MGB (MGd) preferentially projected to the auditory striatum, while those neurons projecting to the primary ACx are mainly in the ventral MGB (MGv) (Supplementary <ref target="#fig_4" type="figure">Fig. 5B-D)</ref> .</s>
+          <s>These anatomical tracing studies showed that the auditory striatum receive MGB and the primary ACx projections with different origins in the MGB.</s>
+          <s>Interestingly, several previous studies have reported that neurons in the MGd are broadly tuned to tonal stimuli, while MGv neurons are sharply tuned <ref target="#b29" type="bibr">[30]</ref>
+            <ref target="#b30" type="bibr">[31]</ref>
+            <ref target="#b31" type="bibr">[32]</ref>
+            <ref target="#b32" type="bibr">[33]</ref> .</s>
+          <s>Moreover, the tonotopic organization is preserved in the MGv 34 , the primary ACx <ref target="#b29" type="bibr">30,</ref>
+            <ref target="#b34" type="bibr">35,</ref>
+            <ref target="#b35" type="bibr">36</ref> , and the primary ACx projections to the striatum <ref target="#b20" type="bibr">21</ref> .</s>
+          <s>These studies, together with our anatomical tracing, suggest that the two types of projections may likely relay distinct acoustic information to the auditory striatum in regulating striatal-dependent auditory decisions.</s>
+        </p>
+        <p>
+          <s>Silencing MGB projection suppressed striatal sound responses.</s>
+        </p>
+        <p>
+          <s cert="0.9649250507354736" id="dataset-4" type="Tabular data">To test this hypothesis, we selectively and transiently silenced the MGB projection and recorded the striatal sound responses.</s>
+          <s>We expressed the neural silencer archaerhodopsin (ArchT) <ref target="#b36" type="bibr">37</ref> in MGB neurons via AAV injection.</s>
+          <s>We then implanted a microdrive with integrated optic fibers and tetrodes into the auditory striatum for sound response recording and thalamic projection silencing <ref target="#fig_2" type="figure">(Fig. 3a)</ref> .</s>
+          <s>Similar to the experimental design in <ref target="#fig_1" type="figure">Fig. 2</ref> , we presented pure tones to the mice, and recorded the sound responses of striatal neurons.</s>
+          <s>In half of the randomly selected trials, we delivered light pulses through the optic fiber that began 100 ms prior to the onset of tones and ended 100 ms after the offset of tones, to activate ArchT during tone presentation (validation in <ref type="figure">Supplementary Fig. 6</ref> , details in Methods).</s>
+        </p>
+        <p>
+          <s>After sorting the recordings based on cell type, we focused on analyzing the responses of MSNs in this study, as they are the most common neuron type, and the only projection neurons in the dorsal striatum <ref target="#b23" type="bibr">24</ref> .</s>
+          <s>We compared striatal single-unit responses to sound stimuli between trials with and without light stimulation (i.e., with and without inhibition of thalamic projections).</s>
+          <s>Our "cloud-of-tones" task is a frequency-discrimination task, thus we focused our analysis on two features of the sound responses: amplitude and frequency tuning.</s>
+          <s>We found that silencing the MGB projection substantially decreased the overall amplitude of tone-evoked responses of MSNs ( <ref target="#fig_2" type="figure">Fig. 3b</ref> and <ref type="figure">Supplementary Fig. 8A</ref> ).</s>
+          <s>Silencing thalamic projections, however, did not alter .</s>
+          <s>c Tuning plots of the example shown in (b).</s>
+          <s>d Average tuning plots at the tone alone (black) and tone + light (red) conditions.</s>
+          <s>Frequencies are aligned to the best frequency of each single unit and scaled in octave away from the best frequency.</s>
+          <s>The best frequencies are determined separately from control and light-on trials for each single unit.</s>
+          <s>Firing rates at different frequencies of each single unit are normalized to the firing rate at the best frequency from control trials.</s>
+          <s>e Normalized individual and averaged firing rates at best frequencies at the tone alone (black) and tone + light (red) conditions.</s>
+          <s>f The tuning widths (the frequency range at half peak firing rate) at the tone alone (black) and tone + light (red) conditions.</s>
+          <s>g The best frequencies at the tone alone (black) and tone + light (red) conditions.</s>
+          <s>h The fitted tuning curves with a Gaussian function (R(f) = A × exp(−0.5 × (θ -f 0 ) 2 /σ 2 ) + B, where B represents the baseline response, A represents the amplitude of the strongest evoked response, f 0 represents the preferred frequency, and σ is the tuning width).</s>
+          <s>Left panel: the fitted curves from the same example neurons shown in (b and c). the best frequency of individual striatal single units, or the tuning width ( <ref target="#fig_2" type="figure">Fig. 3c-g)</ref> .</s>
+          <s>We further analyzed the tone-evoked responses by fitting the tuning curves with a Gaussian function, and found that the fitted tuning curves in control condition could be transformed to those in light-on condition by subtracting a small offset (0.01 ± 0.02) and dividing a scale factor (1.8 ± 0.2) as shown in <ref target="#fig_2" type="figure">Fig. 3h</ref> .</s>
+          <s>These findings suggested that MGB projection to the auditory striatum provided a gain controlling function to the tone-evoked responses.</s>
+        </p>
+        <p>
+          <s>Silencing the ACx projection reduced striatal sound tuning.</s>
+          <s>To determine the sound information that is relayed by the primary ACx projections to the auditory striatum, we performed the same tests shown in <ref target="#fig_2" type="figure">Fig. 3</ref> , but with silencing of the corticostriatal pathway instead.</s>
+          <s>In brief, we expressed ArchT in primary ACx neurons via AAV injection, and implanted a microdrive with integrated optic fibers and tetrodes into the auditory striatum for recording and cortical projection silencing <ref target="#fig_3" type="figure">(Fig. 4a)</ref> .</s>
+          <s>We performed similar analyses as described above for the MGB pathway studies.</s>
+          <s>We found that silencing the primary auditory cortical projection also substantially decreased the overall amplitude of tone-evoked responses of MSNs <ref target="#fig_3" type="figure">(Fig. 4b)</ref> .</s>
+          <s>Interestingly, unlike silencing of the MGB projection-which led to a decrease to broad frequencies in responsiveness <ref target="#fig_2" type="figure">(Fig. 3d)</ref> -silencing of the primary auditory cortical projection preferentially decreased the responses of individual striatal units to their best frequencies <ref target="#fig_3" type="figure">(Fig. 4c</ref> -e and <ref type="figure">Supplementary Fig. 8B</ref> ), but not the shoulder frequencies <ref target="#fig_3" type="figure">(Fig. 4f)</ref> .</s>
+          <s>Together, these results suggest that the primary ACx projection provides tone-tuned information to the auditory striatum.</s>
+        </p>
+        <p>
+          <s>Both pathways comprise the major acoustic sources.</s>
+          <s>The finding that MGB and primary ACx projections carry differential sound information motivated us to extend our analysis to test whether it would be sufficient to block sound response by silencing both projections.</s>
+          <s>As shown in <ref target="#fig_0" type="figure">Supplementary Figure 1</ref> , the MGB and the primary ACx are the two primary auditory areas projecting to the auditory striatum.</s>
+          <s>To test this possibility, we expressed the neuronal silencer ArchT in both MGB and the primary ACx, followed by implanting tetrode bundles with an optic fiber into the auditory striatum to record tone-evoked responses.</s>
+          <s>We performed similar tests as described in <ref type="figure">Figs.</ref> 3 and 4. We found that optical silencing of both MGB and primary ACx terminals largely abolished the striatal sound responses <ref target="#fig_4" type="figure">(Fig. 5a-d)</ref> .</s>
+          <s>This indicates that the MGB and the primary ACx are the two major sources of acoustic information to the auditory striatum.</s>
+          <s>Together with those results from the selective inhibition of either MGB <ref target="#fig_2" type="figure">(Fig. 3)</ref> or the primary ACx <ref target="#fig_3" type="figure">(Fig. 4)</ref> projections, we propose that the primary ACx projection relay tuning information of the tonal stimuli to striatum, while the MGB projection functions as a gain controller across a broad array of frequencies <ref target="#fig_4" type="figure">(Fig. 5e</ref> ).</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>In this study, using an established auditory frequencydiscrimination task, we found that chemogenetic inhibition of the MGB or the primary ACx projection to the auditory striatum impaired task performance.</s>
+          <s>In an effort to examine the underlying mechanism, we found that optogenetic silencing of the MGB projection alone reduced the amplitudes of tone-evoked responses in MSNs across different frequencies.</s>
+          <s>In contrast, .</s>
+          <s>c Tuning plots of the example shown in (b).</s>
+          <s>d Average tuning plots at the tone alone (black) and tone + light (red) conditions.</s>
+          <s>Average tuning plots at the tone alone (black) and tone + light (red) conditions.</s>
+          <s>Frequencies are aligned to the best frequency of each single unit and scaled in octave away from the best frequency.</s>
+          <s>The best frequencies are determined separately from control and light-on trials for each single unit.</s>
+          <s>Firing rates at different frequencies of each single unit are normalized to the firing rate at the best frequency from control trials.</s>
+          <s>(e) Normalized individual and averaged firing rates at best frequencies at the tone alone (black) and tone + light (red) conditions.</s>
+          <s>(f) Normalized individual and averaged firing rates at frequencies ± ½ octave away from the best frequency at the tone alone (black) and tone + light (red) conditions.</s>
+          <s>For d-f, n = 22 neurons from five mice, data are presented as mean values, error bars are s.e.m., * p &lt; 0.01, t test in (d) and paired t test in (e and f) silencing the primary ACx projection preferentially reduced toneevoked responses of the MSNs' at their best frequencies.</s>
+          <s>In sum, our results reveal that the MGB and the primary ACx projections to the auditory striatum relay differential sound information, that is necessary for decision-making in the "cloud-of-tones" task.</s>
+          <s>In sensory perception, it has been proposed that there are two parallel pathways: the driver (first order) and the modulator (higher order) <ref target="#b37" type="bibr">38,</ref>
+            <ref target="#b38" type="bibr">39</ref> .</s>
+          <s>For auditory processing, the driver pathway is thought to extend from the peripheral receptors, to the central nucleus of inferior colliculus, to the ventral MGB and then to the primary ACx.</s>
+          <s>The modulator pathway refers to inputs that the dorsal and medial MGB receives from both the inferior colliculus and the primary ACx, and the MGB's projections to the secondary ACx and limbic related areas <ref target="#b39" type="bibr">40</ref> .</s>
+          <s>The driver pathway carries primary, high-fidelity information, and defines the essential activity patterns; while the modulator pathway controls the transmission gain of information without contributing significantly to the general pattern <ref target="#b40" type="bibr">41</ref> .</s>
+          <s>In the present study, we investigated two parallel auditory inputs to the auditory striatum, one from the primary ACx that receives projections from the ventral MGB (in the driver pathway), and one from the dorsal MGB (in the modulator pathway).</s>
+          <s>We found that inhibition of these two auditory inputs impaired auditory decision-making in a tone-discrimination "cloud-of-tones" task ( <ref target="#fig_0" type="figure">Fig. 1</ref> and Supplementary <ref target="#fig_3" type="figure">Fig. 4)</ref> .</s>
+          <s>Furthermore, silencing the MGB projection to the auditory striatum dampened tone-evoked responses across broad tonal frequencies in auditory striatum, whereas silencing the ACx projection preferentially diminished the tuning <ref target="#fig_2" type="figure">(Figs. 3 and 4)</ref> .</s>
+          <s>Our behavioral and physiological discoveries thus support the "driver/modulator" model, and these findings further extend the understanding of these pathways in auditory processing.</s>
+        </p>
+        <p>
+          <s>We should point out that the auditory striatum also receives direct projections from other auditory thalamic nuclei, such as peripeduncular nucleus (ref.</s>
+          <s>
+            <ref target="#b29" type="bibr">30</ref> , also shown in <ref target="#fig_4" type="figure">Supplementary Fig. 5B</ref> ), and secondary ACx <ref target="#fig_0" type="figure">(Supplementary Fig. 1B)</ref> .</s>
+          <s>These projections could be part of the modulatory pathways.</s>
+          <s>The functions of these projections, and how they fit in the "driver/ modulator" model require further investigation.</s>
+        </p>
+        <p>
+          <s>Both the primary ACx neurons and their projections to the auditory striatum are tonotopically organized <ref target="#b20" type="bibr">21,</ref>
+            <ref target="#b29" type="bibr">30,</ref>
+            <ref target="#b35" type="bibr">36</ref> .</s>
+          <s>If inhibiting only part of the primary ACx leads to the preferential suppression of the peak response, we would expect that the striatal neurons shown suppression effects shared the same best frequencies.</s>
+          <s>However, within one animal we identified tuning effects from MSNs with very different best frequencies, suggesting that the preferential suppression of peak response is likely not due to insufficient cortical infection coverage.</s>
+        </p>
+        <p>
+          <s>We found that MGB and primary ACx projections relayed different sound information to the auditory striatum.</s>
+          <s>However, it remains unclear where the sound information from these two projections is integrated: does this occur through striatal network activity or within individual striatal MSNs?</s>
+          <s>In our current study, we focused on analyzing the MSN neurons.</s>
+          <s>It remains to be tested if and how FS and ChI are involved in the local circuit to modulate MSN responses to thalamic and cortical inputs?</s>
+          <s>In vivo or in vitro whole-cell recordings of auditory striatal neurons will be needed to understand the cellular and subcellular mechanisms underlying the striatal integration of thalamic and cortical inputs.</s>
+          <s>Furthermore, among the tetrode recording identified neurons, 7.4% (70/944) MSNs, 77.6% (118/152) FSs, and 22% (18/82) ChIs showed tone responses.</s>
+          <s>There was a smaller percentage of MSNs responding to tonal stimulation.</s>
+          <s>This may be due to unique circuitry or cellular mechanisms, which is also an interesting question to explore in future study.</s>
+        </p>
+        <p>
+          <s>In the current study, our analyses focused on the MSNs with onset and sustained responses ( <ref type="figure">Supplementary. Fig. 8</ref> ).</s>
+          <s>Due to the limited samples (Supplementary.</s>
+          <s>
+            <ref type="figure">Fig. 9</ref> ), it remains unclear how MGB and ACx projections modulate the offset and suppression responses of MSNs.</s>
+          <s>These types of MSNs may or may not receive direct projections from the MGB and the primary ACx.</s>
+          <s>How they respond to tones and how they are involved in striatal local circuits need further examinations.</s>
+        </p>
+        <p>
+          <s>MGB and primary ACx inputs differentially modulate striatal sound responses, which are important for decision-making in the "cloud-of-tones" task.</s>
+          <s>In this study, we focused on determining how these two projections carry sound information to the auditory striatum.</s>
+          <s>It remains unclear how striatal sound responses are linked to motor planning and initiation for behavioral choices in this task.</s>
+          <s>Together with a previous study 21 , we proposed a simplified model here <ref target="#fig_0" type="figure">(Supplementary Fig. 10</ref> ).</s>
+          <s>In well-trained animals that learned to associate low-frequency tones with rightward choice (for example), the synaptic strength from low-frequency tuning neurons in the left striatum is selectively potentiated (based on previous work 21 ); and the difference between left and right striatal activity is the driving force for the behavioral choice ( <ref target="#fig_0" type="figure">Supplementary Fig. 10A</ref> ).</s>
+          <s>In control condition, the driving force is A <ref target="#fig_0" type="figure">(Supplementary Fig. 10A</ref> ); when the MGB inputs are inhibited, the striatal activity on both sides of the striatum decreases by dividing the same factor, B (B &gt; 1), therefore the driving force will be A/B <ref target="#fig_0" type="figure">(Supplementary Fig. 10B</ref> ).</s>
+          <s>The decrease of the driving force will increase the ambiguity in making the behavioral choice, thus flatten the psychometric curve of task performance.</s>
+        </p>
+        <p>
+          <s>Together, our current work serves as a first set of explorations that both thalamic and cortical projections play roles in regulating auditory decision-making.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Methods</head>
+        <p>
+          <s>Animals.</s>
+          <s>Animal procedures were approved by the Stony Brook University Animal Care and Use Committee and carried out in accordance with National Institutes of Health standards.</s>
+          <s>Male C57BL/6J mice (Charles River) were housed with free access to food, but water restricted after the start of behavioral training.</s>
+          <s>In training days, water was available during task performance (2.5 µl for each correct trial); in nontraining days water bottles were provided to the mice for at least 1 h per day.</s>
+          <s>Viral injections.</s>
+          <s>Four-week-old mice were anaesthetized with 100 mg kg −1 / 10 mg kg −1 ketamine/xylazine mixture and placed in a stereotaxic apparatus.</s>
+          <s>Viral injections were performed using previously described procedures 21 at the following stereotaxic coordinates: Auditory striatum, 1.7 mm caudal from bregma, 3.15 mm lateral from midline, and 2.0-2.5 mm depth from cortical surface; ACx, 2.3-2.8</s>
+          <s>mm caudal from bregma, 4.15 mm lateral from midline, 0.5 mm from pia; MGB, 3.2 mm caudal from bregma, 2.0 mm lateral from midline, and 2.8 mm depth from cortical surface.</s>
+          <s>A small craniotomy was made according to the coordinates, and a home-made glass micropipette (tip diameter 10-15 µm) was inserted from the surface of the brain.</s>
+          <s>Virus were delivered through the glass pipettes that were connected to a Picospritzer II microinjection system (Parker Hannifin Corporation).</s>
+          <s>For anterograde tracing of axons from ACx and MGB neurons, AAV2/9-CAG-dTomato (University of North Carolina Vector Core, Chapel Hill, NC) was injected into left ACx of mice, and AAV2/9-CAG-EGFP (University of North Carolina Vector Core, Chapel Hill, NC) was injected into left MGB of the same mice.</s>
+          <s>For retrograde labeling of MGB neurons projecting to ACx or auditory striatum, CTB-594 or CTB-488 (0.3 µl, ThermoFisher Scientific, Waltham, MA) was injected into the left ACx and auditory striatum, respectively.</s>
+          <s>Fourteen days (for AAV) or 7 days (for CTB) after injection, mice were perfused, and brain slices were collected for imaging.</s>
+          <s cert="0.9950777292251587" id="dataset-1" type="Image:Microscopy">Images were acquired with a laserscanning confocal microscope (FV1000, Olympus) and analyzed using FV10-Viewer (Olympus).</s>
+          <s>In our analysis we defined the borders between MGd, MGv, MGm, and SG based on mouse brain atlas registration and area proportion estimation.</s>
+        </p>
+        <p>
+          <s>In our analysis we only included animals that are post hoc confirmed for adequate ArchT (or hM4Di) expression in either the primary ACx or MGB.</s>
+        </p>
+        <p>
+          <s>Validation of inhibition capability mediated by chemo-and optogenetic tools.</s>
+          <s>We injected AAV expressing hM4Di or ArchT into MGB, and the transgenepositive axon terminals can be found in the auditory striatum.</s>
+          <s>In the hM4Di validation experiment, we co-injected AAV expressing Channelrhodopsin 2 (ChR2) into the MGB of mice, and delivered blue light pulses to activate ChR2positive axon terminals on acutely prepared striatal slices.</s>
+          <s>In the ArchT validation experiment, we electrically stimulate the local axonal terminals (a bipolar electrode was placed at the border of internal capsule, and the stimulations were generated by a Stimulus Isolator (A365, World precision Instruments)), that activate both MGB and other axon terminals projecting to the auditory striatum.</s>
+        </p>
+        <p>
+          <s cert="0.9477822184562683" id="dataset-2" type="Tabular data">In the presence of Bicuculline to exclude local GABAergic activities, we recorded the evoked excitatory postsynaptic currents (EPSCs) from striatal neurons on acutely prepared brain slices.</s>
+          <s>The stimulations were adjusted to produce stable EPSCs (&lt;100 pA) in amplitude prior to the initiation of experimental recording.</s>
+        </p>
+        <p>
+          <s>In the experiment of hM4Di, we observed a substantial reduction of evoked EPSC amplitude in the presence of CNO (10 µM in bath solution) from brain slices expressing hM4Di, but no change from brain slices without hM4Di expression ( <ref target="#fig_1" type="figure">Supplementary Fig. 2</ref> ).</s>
+          <s>This suggests that this hM4Di-mediated inhibition of MGB neurons is sufficient to dampen the activity of the MGB projection.</s>
+        </p>
+        <p>
+          <s>In the experiment of ArchT, we activated ArchT via orange light pulses through the objective.</s>
+          <s cert="0.9313098788261414" id="dataset-7" type="Tabular data">We recorded the evoked EPSC from striatal neurons in the conditions with or without light pulses.</s>
+          <s>Light pulses were started at 100 ms before electrical stimulation and lasted for 200 ms, as suggested by previous report <ref target="#b41" type="bibr">42</ref> .</s>
+          <s>We found that light pulses significantly suppressed evoked EPSC ( <ref type="figure">Supplementary Fig. 6A)</ref> .</s>
+          <s>We should point out that there was a small remaining response likely due to stimulation of nonthalamic terminals and/or of terminals from non-infected thalamic neurons.</s>
+          <s>Light pulses alone did not induce any significant changes on recorded striatal neurons ( <ref type="figure">Supplementary Fig. 6B</ref> ).</s>
+        </p>
+        <p>
+          <s>Behavioral training.</s>
+          <s>The mice were placed on a water deprivation schedule and trained to perform an auditory 2AFC task in a single-walled sound-attenuating training chamber as described previously <ref target="#b19" type="bibr">20</ref> .</s>
+          <s>In brief, freely moving mice were trained to initiate a trial by poking into the center port of a three-port operant chamber, which triggered the presentation of a stimulus.</s>
+          <s>Subjects then selected the left or right goal port.</s>
+          <s>The cloud-of-tones stimulus consisted of a stream of 30-ms overlapping pure tones presented at 100 Hz.</s>
+          <s>The stream of tones continued until the mouse withdrew from the center port.</s>
+          <s>Eighteen possible tone frequencies were logarithmically spaced from 5 to 40 kHz.</s>
+          <s>For each trial either the low stimulus (5-10 kHz) or high stimulus was selected as the target stimulus, and the mice were trained to report low or high by choosing the correct side of port for water reward.</s>
+          <s>Correct responses were rewarded with water (2.5 µl for each correct trial), and error trials were punished with a 4 s timeout.</s>
+          <s>Sound intensity was calibrated at 65 dB.</s>
+          <s>Behavioral system is control by Bpod system (Sanworks).</s>
+        </p>
+        <p>
+          <s>Stimulus strength r determined the difference in the rate of high-and lowoctave tone in the stimulus.</s>
+          <s>Tones were drawn from the target octave with a probability of 1 + 2r/100/3.</s>
+          <s>To quantify mice's performance in the task, we used a logistic regression model described before <ref target="#b19" type="bibr">20</ref> .</s>
+          <s>log(p/(1p)) = β 0 + r*β 1 , where p is the fraction of choices towards the port associated with high frequencies.</s>
+        </p>
+        <p>
+          <s>Parameters β 0 and β 1 measure the bias and slope of the psychometric curve.</s>
+          <s>Reaction time was calculated as the time between the onset of tone and the time of withdraw from the center port.</s>
+        </p>
+        <p>
+          <s>Chemogenetic manipulation and cannula implantation.</s>
+          <s>For chemogenetic manipulation of the thalamostriatal projections, well-trained mice were bilaterally injected with the AAV2/8-hSyn-hM4Di-mCherry (Addgene, #50475) into the MGB.</s>
+          <s>The surgical procedure was the same as described above in viral injection section.</s>
+          <s>Stainless steel guide cannulae <ref type="bibr">(26 G, 4</ref> .0</s>
+          <s>mm, Plastics One) were implanted bilaterally 2.0 mm down from the surface and were fixed to the skull with adhesive luting cement (C&amp;B Metabond) and acrylic dental cement (Lang Dental Manufacturing, IL).</s>
+          <s>A dummy cannula was inserted into each guide cannula to seal off the opening.</s>
+          <s>Mice were allowed to recover from surgery for a minimum of 1 week, during which they were handled and habituated to the infusion procedure on a daily basis.</s>
+          <s>After recovery, mice were back to routine daily behavioral training.</s>
+          <s>Once their task performances were recovered stably (usually 4-6 weeks after the surgery), mice were infused with clozapine-n-oxide (CNO, Enzo Life Sciences, 20 µM 0.3 µl) or saline (0.3 µl) 30 min before the tested behavioral sessions.</s>
+          <s>We validated the spread of CNO from cannula infusion by co-infusing a fluorescent dye (DIO, 2.5 mg/ml, 300 nl, Thermo Fisher Scientific) in a group of control mice, and identifying the DIO signals from brain slices <ref target="#fig_2" type="figure">(Supplementary Fig. 3)</ref> .</s>
+        </p>
+        <p>
+          <s>Tetrode recording.</s>
+          <s>Custom tetrode and optic fiber arrays were assembled in house.</s>
+          <s>Each array carried 8 tetrodes and 1 optic fiber (62.5 μm diameter with a 50-μm core; Polymicro Technologies).</s>
+          <s>Each tetrode consisted of 4 polyimidecoated nichrome wires twisted together and gold-plated to an impedance of 0.3-0.5 MΩ at 1 kHz (wire diameter 12.7 μm; Sandvik in Palm Coast, FL).</s>
+          <s>The fiber tips were sharpened at the points using a diamond wheel to improve tissue penetration and increase the light illuminating area.</s>
+          <s>The resulted optrodes were mounted on vertically movable microdrive.</s>
+          <s>The optrode tips were coated with DiI to assist the identification of fiber tracks in brain tissues.</s>
+          <s>To implant the optrode array, mice were anaesthetized with 1-1.5% isofluorane and placed in a stereotaxic apparatus (Kopf).</s>
+          <s>A craniotomy was made over the target area.</s>
+          <s>The dura was removed and the implant was placed over the target area and fixed in place with dental acrylic.</s>
+          <s>The tetrode was then lowered down to the auditory striatum with close recording monitoring (75 µm maximum per day).</s>
+        </p>
+        <p>
+          <s>For recording of striatal tonal responses, the mice were placed in a single-walled sound-attenuating training chamber and pure tone were played at 0.5 Hz.</s>
+          <s>Tone frequencies spanned from 2 to 50 kHz and played in a random order with intensities of 50, 60, or 70 dB SPL.</s>
+          <s cert="0.9099620580673218" id="dataset-8" type="Tabular data">Electrical signals in auditory striatum were recorded using Neuralynx Cheetah 32-channel hybrid system and cheetah data acquisition software.</s>
+          <s>Signals were filtered 600-6000 Hz.</s>
+          <s>Single units were isolated offline using Spike3D and MClust.</s>
+          <s>Because in our recordings most of the striatal neurons did not respond to tonal stimuli lower than 50 dB, we used either 60 or 70 dB (the lower responsive intensity) for tonal response analysis.</s>
+        </p>
+        <p>
+          <s>All the isolated single units having waveforms with a half-valley-width less than 100 µs are classified as FS, those having waveforms with half-valley-width more than 150 µs are classified as ChI, and all other single units with a half-valley-width between 100 and 150 µs were classified as putative MSNs.</s>
+        </p>
+        <p>
+          <s>To classify the sound response for each isolated single unit, we first used a 3 ms sliding window to obtain peristimulus time histogram (PSTH) starting from 100 ms before the tone onset to 200 ms after the tone ending.</s>
+          <s>We next calculated the mean and standard deviation of the baseline firing rate using the PSTH values from 50 to 0 ms before the tone onset.</s>
+          <s>Then, we determined the response time window as the period that the PSTH is more than three times standard deviation away from the mean of baseline.</s>
+          <s>If there is no time point crosses this threshold, the unit is considered not responding to tones.</s>
+          <s>(1) For response windows started after the tone onset and ended before 50 ms after the tone onset, we grouped them as onset response; (2) for response windows started after the tone onset and ended after 50 ms after the tone onset, we grouped them as sustained response; (3) for response windows started within 20 ms after the tone ending, we grouped them as offset response; (4) for all the response with PSTH more than two times standard deviation smaller than the mean of baseline, we grouped them as suppression response.</s>
+        </p>
+        <p>
+          <s>We averaged the increased firing rates for each frequency, and plotted the increased firing rates against corresponding frequencies.</s>
+          <s>We then fitted these tuning curves with a Gaussian function: <ref target="#b42" type="bibr">43</ref>
+          </s>
+        </p>
+        <formula xml:id="formula_0">R(f) = A × exp(−0.5 × (θ -f 0 ) 2 /σ 2 ) + B,</formula>
+        <p>
+          <s>where B represents the baseline response, A represents the amplitude of the strongest evoked response, f 0 represents the preferred frequency, and σ is the tuning width.</s>
+          <s>We included cells that were well fit by a Gaussian, using a criterion of R 2 &gt; 0.4.</s>
+        </p>
+        <p>
+          <s>To quantify the differences of firing rates at best frequencies between control and light-on conditions, the best frequencies of individual units are separately determined by the control trials and light-on trials.</s>
+          <s>The average tuning curves are calculated by centering individual tuning curves to their own best frequencies.</s>
+        </p>
+        <p>
+          <s>Optogenetic manipulation.</s>
+          <s>For optogenetic manipulation of the thalamostriatal or corticostriatal projections, well-trained mice were bilaterally injected with the AAV9-CAG-ArchT-GFP (UNC vector core) into the MGB or the primary ACx.</s>
+          <s>Laser light was adjusted to produce the desired output at the end of the patch cord.</s>
+          <s>For ArchT, 530 nm laser light was generated from a diode-pumped solid-state laser (Shanghai Dream Lasers, Shanghai, China) and couple to the optic fiber through an FC/PC patch cord using a FiberPort Collimator (Thor Labs), yielding an average power of 5 mW at the optic fiber tip outside the tissue.</s>
+          <s>Light pulses were started at 100 ms before sound onset and lasted for 300 ms, as suggested by previous report <ref target="#b41" type="bibr">42</ref> and validated on striatal slice (detail in above Validation section).</s>
+          <s>Manipulation trials were randomly interleaved with control trials.</s>
+        </p>
+        <p>
+          <s>To facilitate the penetration of optic fibers through brain tissue, we grinded the fiber tips that also scraped off the polyimide coated around the fiber tip (50-100 µm).</s>
+          <s>Thus, the fiber tip surface is larger than that of untreated fiber.</s>
+          <s>As suggested by previous study <ref target="#b43" type="bibr">44</ref> , we predicted light output in vivo using Monte Carlo modeling approach.</s>
+          <s>According to our 5 mW output from 62.5 μm 0.22 NA fibers, we estimate the irradiance value as 35 mW/mm 2 .</s>
+        </p>
+        <p>
+          <s>Data analysis.</s>
+          <s>All data were analyzed in MATLAB.</s>
+        </p>
+        <p>
+          <s>Behavior performance analysis only included completed trials.</s>
+          <s>The accuracy (percent correct) at each difficulty (evidence strength) was plotted in a psychometric plot <ref target="#fig_0" type="figure">(Fig. 1c)</ref> .</s>
+          <s>We calculated the evidence strength as following: (# high tones − # low tones)/ (# high tones + # low tones); −1 and 1 are the easiest, providing full evidence, and 0 is the hardest, providing no evidence for making a decision.</s>
+          <s>Average performance in saline sessions (the sessions immediately before the CNO sessions) were compared with the CNO sessions from each mouse to analyze CNO effects.</s>
+          <s>Population data across selected mice were used for statistical analysis.</s>
+          <s>CNO effects by investigators were blinded to treatment.</s>
+          <s>Experiments were repeated at least three times to ensure reproducibility, and at least three animals from each group were included in the analysis.</s>
+          <s>The included animals were selected based on their completion of the experiments, the quality of recordings, and the correct locations of viral infection validated post hoc.</s>
+        </p>
+        <p>
+          <s>Studies used male mice aged 4-6 weeks at the time of viral injection and 8-14 weeks during performance of behavior tasks, tetrode recording and whole-cell recording.</s>
+          <s>For analysis across animals, the comparison groups were always littermates or same purchase batch via random selection.</s>
+        </p>
+        <p>
+          <s>Only tone-responsive neurons were included in this study.</s>
+          <s cert="0.9904496073722839" id="dataset-3" type="Tabular data">Tone responses were determined by the averaged firing rates within the response windows after onset of tones.</s>
+          <s>The response windows were defined for individual neurons: a 3 ms sliding window was used to calculate the averaged firing rates after the onset of tones (up to 200 ms), the period in which the firing rates are significantly (&gt;3 standard deviation) higher than the baseline (average firing rate at 0-50 ms before the onset of tones) was used as the response window.</s>
+          <s cert="0.9664551019668579" id="dataset-4" type="Tabular data">Response windows were determined in control conditions (tones only, without light pulses).</s>
+          <s>The onset of tones was aligned at 0 ms, and the first time point of the response window was defined as the response latency.</s>
+          <s>Response firing rates were calculated by subtracting the baseline firing rates from the firing rates in the response windows for each neuron.</s>
+          <s>The frequency of the tones that evoked the highest response firing rate was defined as the best frequency for each neuron.</s>
+          <s>The response firing rates were plotted against corresponding tone frequencies for each neuron, and the resulted tuning curve was smoothened with the Savitzky-Golay method with span five.</s>
+          <s>The range of frequencies at half value of the peak firing rate from the smoothened tuning curve was defined as the tuning width.</s>
+        </p>
+        <p>
+          <s>Code availability.</s>
+          <s>The codes used in the current study are available from the corresponding author on reasonable request.</s>
+        </p>
+      </div>
+      <div>
+        <head>Data availability</head>
+        <p>
+          <s>The datasets generated during and/or analyzed during the current study are available from the corresponding author on reasonable request.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig. 1</head>
+        <label>1</label>
+        <figDesc>Inhibition of the MGB projection to the auditory striatum impaired animals' performance in "cloud-of-tones" task. a Left panel, illustration of the projections from the MGB and primary ACx to the auditory striatum. Right panel, Example images of thalamic projections (green) and cortical projection (red) to the auditory striatum. AAV expressing GFP was injected into MGB, and AAV-expressing dTomato was injected into auditory cortex. Images are taken at the auditory striatum. Scale bar, 500 µm. b CNO/DREADD-mediated inhibition of thalamostriatal projection. Left panel, schematic diagram of viral injection and CNO infusion setup. Right upper panel, example image of labeled thalamostriatal fibers.</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig. 2</head>
+        <label>2</label>
+        <figDesc>Striatal neurons respond to tonal stimuli. a Example of isolated striatal single units for different cell types based on half-valley width of waveforms. Scale bars: 0.5 ms and 50 µV. b Example of striatal sound responses in raster plots. Individual pure tones ranged from 2 to 50 kHz are presented at 0-0.1 s time window (shaded area). c Portion of each type of tonal response for individual striatal cell types. d Distribution of response latency for individual striatal cell types. Latency was calculated as the time point when firing rate is significantly higher than the baseline (average firing rate of 0-50 ms before the onset of tones). e Examples of three tuning plots. Averaged tone-evoked firing rates are plotted against the corresponding tone frequencies. Solid lines: mean values; shaded areas: standard errors. f Accumulative curves of best frequencies for individual striatal cell types. For c-f: MSN, n = 70; FS, n = 118; ChI, n = 18; from 14 mice</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig. 3</head>
+        <label>3</label>
+        <figDesc>Silencing the MGB projection to the auditory striatum reduced striatal MSN tonal responses across frequencies. a Illustration of recording setup for silencing MGB projection. b One example of recorded MSN single unit. Upper panels, raster plots of a MSN firings during tone presentation (gray shaded area) and tone + light presentation (red + gray shaded area). Tone: 0-0.1 s time window; Light: −0.1 to 0.2 s time window. Lower panel, peristimulus time histogram (PSTH) of the firing rates in response to tone alone (black) and tone + light (red)</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Fig. 4</head>
+        <label>4</label>
+        <figDesc>Silencing the primary ACx projection to the auditory striatum reduced striatal MSN tonal responses to their best frequencies. a Illustration of recording setup for silencing primary ACx projection. b One example of recorded MSN single unit. Upper panels, raster plots of a MSN firings during tone presentation (gray shaded area) and tone + light presentation (red + gray shaded area). Tone: 0-0.1 s time window; Light: −0.1-0.2 s time window. Lower panel, PSTH of the firing rates in response to tone alone (black) and tone + light (red)</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Fig. 5</head>
+        <label>5</label>
+        <figDesc>MGB and primary ACx projections are the two major sources for striatal tonal response. a Illustration of recording setup for silencing both MGB and primary ACx projections. b One example of recorded MSN single unit. Upper panels, raster plots of a MSN firings during tone presentation (gray shaded area) and tone + light presentation (red + gray shaded area). Tone: 0-0.1 s time window; Light: −0.1 to 0.2 s time window. Lower panel, PSTH of the firing rates in response to tone alone (black) and tone + light (red). c Tuning plots of the example shown in (b). d Average tuning plots at the tone alone (black) and tone + light (red) conditions. Frequencies are aligned to the best frequency of each single unit and scaled in octave away from the best frequency. The best frequencies are determined separately from control and light-on trials for each single unit. Firing rates at different frequencies of each single unit are normalized to the firing rate at the best frequency from control trials. e Normalized individual and averaged firing rates at best frequencies at the tone alone (black) and tone + light (red) conditions. For d, e, n = 9 neurons from two mice, data are presented as mean values, error bars are s.e.m., * p &lt; 0.01, t test. f Proposed model of MGB and primary ACx contributions to striatal tonal | (2019) 10:418 | https://doi.org/10.1038/s41467-019-08350-7 | www.nature.com/naturecommunications</figDesc>
+      </figure>
+      <note place="foot">NATURE COMMUNICATIONS | https://doi.org/10.1038/s41467-019-08350-7</note>
+      <note place="foot">NATURE COMMUNICATIONS | (2019) 10:418 | https://doi.org/10.1038/s41467-019-08350-7 | www.nature.com/naturecommunications</note>
+      <note place="foot">© The Author(s) 2019</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgments</head>
+          <p>
+            <s>We thank Drs. Craig Evinger, Alfredo Fontanini, Yanhua Huang, Santiago Jaramillo, Mary Kritzer, Hysell Oviedo, Joshua Plotkin, Lorna Role, Yang Yang, Anthony Zador, and lab members in Ge's &amp; Xiong's laboratories for their critical comments on this manuscript.</s>
+            <s>We thank Dr. Joshua Sanders for the helps on setting up hardware and software that were used in this study.</s>
+            <s>This work is supported by departmental internal funding and NIH R21DC016746 to Q.X.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Author contributions</head>
+          <p>
+            <s>L.C., X.W., S.G. and Q.X.</s>
+            <s>designed the experiments.</s>
+            <s>L.C. and X.W. performed the experiments.</s>
+            <s>L.C., X.W., and Q.X.</s>
+            <s>analyzed the data and wrote the manuscript.</s>
+          </p>
+        </div>
+        <div>
+          <head>Additional information</head>
+          <p>
+            <s>Supplementary Information accompanies this paper at https://doi.org/10.1038/s41467-019-08350-7.</s>
+          </p>
+          <p>
+            <s>Competing interests: The authors declare no competing interests.</s>
+          </p>
+          <p>
+            <s>Reprints and permission information is available online at http://npg.nature.com/</s>
+            <s>reprintsandpermissions/ Journal peer review information: Nature Communications thanks the anonymous reviewers for their contribution to the peer review of this work.</s>
+            <s>Peer reviewer reports are available.</s>
+          </p>
+          <p>
+            <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+          <p>
+            <s>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.</s>
+            <s>The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in a credit line to the material.</s>
+            <s>If material is not included in the article's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.</s>
+            <s>To view a copy of this license, visit http://creativecommons.org/ licenses/by/4.0/.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Responses of tonically active neurons in the primate's striatum undergo systematic changes during behavioral sensorimotor conditioning</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Aosaki</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope from="3969" to="3984" unit="page"/>
+                <date type="published" when="1994"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">The striatum: where skills and habits meet</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Graybiel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Grafton</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cold Spring Harb. Perspect. Biol</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="page">21691</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Dynamic corticostriatal activity biases social bonding in monogamous female prairie voles</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Amadei</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">546</biblScope>
+                <biblScope from="297" to="301" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Neuronal responses in the frontal cortico-basal ganglia system during delayed matchingto-sample task: ensemble recording in freely moving rats</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">Y</forename>
+                  <surname>Chang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Luo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Shi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Woodward</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Exp. Brain Res</title>
+              <imprint>
+                <biblScope unit="volume">142</biblScope>
+                <biblScope from="67" to="80" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Caudate encodes multiple computations for perceptual decisions</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Ding</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Gold</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">30</biblScope>
+                <biblScope from="15747" to="15759" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Between the primate and 'reptilian' brain: rodent models demonstrate the role of corticostriatal circuits in decision making</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Tai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Zador</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Wilbrecht</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Neuroscience</title>
+              <imprint>
+                <biblScope unit="volume">296</biblScope>
+                <biblScope from="66" to="74" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">A cellular mechanism of reward-related learning</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Reynolds</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Hyland</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Wickens</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">413</biblScope>
+                <biblScope from="67" to="70" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Caudate unit activity in freely moving cats: effects of phasic auditory and visual stimuli</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Strecker</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Steinfels</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Abercrombie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Jacobs</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Brain Res</title>
+              <imprint>
+                <biblScope unit="volume">329</biblScope>
+                <biblScope from="350" to="353" unit="page"/>
+                <date type="published" when="1985"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Parallel organization of functionally segregated circuits linking basal ganglia and cortex</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Alexander</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Delong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Strick</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Annu. Rev. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope from="357" to="381" unit="page"/>
+                <date type="published" when="1986"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">The thalamostriatal projection in the cat</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Beckstead</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Comp. Neurol</title>
+              <imprint>
+                <biblScope unit="volume">223</biblScope>
+                <biblScope from="313" to="346" unit="page"/>
+                <date type="published" when="1984"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <monogr>
+              <title level="m" type="main">A comprehensive excitatory input map of the striatum reveals novel functional organization</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Hunnicutt</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.7554/eLife.19103</idno>
+              <ptr target="https://doi.org/10.7554/eLife.19103"/>
+              <imprint>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">The thalamostriatal system: a highly specific network of the basal ganglia circuitry</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Smith</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Raju</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Pare</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Sidibe</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Trends Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope from="520" to="527" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Differences in excitatory transmission between thalamic and cortical afferents to single spiny efferent neurons of rat dorsal striatum</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Smeal</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Keefe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Wilcox</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Eur. J. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope from="2041" to="2052" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Convergence of cortical and thalamic input to direct and indirect pathway medium spiny neurons in the striatum</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Huerta-Ocampo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Mena-Segovia</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Bolam</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Brain Struct. Funct</title>
+              <imprint>
+                <biblScope unit="volume">219</biblScope>
+                <biblScope from="1787" to="1800" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">The thalamostriatal system in normal and diseased states</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Smith</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Front. Syst. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope unit="page">5</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Sensory processing in the dorsolateral striatum: the contribution of thalamostriatal pathways</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Alloway</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Smith</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Mowery</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">D R</forename>
+                  <surname>Watson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Front. Syst. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope unit="page">53</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Basal ganglia subcircuits distinctively encode the parsing and concatenation of action sequences</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Jin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Tecuapetla</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Costa</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">17</biblScope>
+                <biblScope from="423" to="430" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Optogenetic stimulation of lateral orbitofronto-striatal pathway suppresses compulsive behaviors</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Burguiere</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Monteiro</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Feng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Graybiel</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">340</biblScope>
+                <biblScope from="1243" to="1246" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">The role of the dorsal striatum in reward and decision-making</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Balleine</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Delgado</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Hikosaka</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope from="8161" to="8165" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Corticostriatal neurons in auditory cortex drive decisions during auditory discrimination</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Znamenskiy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Zador</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">497</biblScope>
+                <biblScope from="482" to="485" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Selective corticostriatal plasticity during acquisition of an auditory discrimination task</title>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Xiong</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Znamenskiy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Zador</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">521</biblScope>
+                <biblScope from="348" to="351" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">DREADDs for neuroscientists</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Roth</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Neuron</title>
+              <imprint>
+                <biblScope unit="volume">89</biblScope>
+                <biblScope from="683" to="694" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Chemogenetics revealed: DREADD occupancy and activation via converted clozapine</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Gomez</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">357</biblScope>
+                <biblScope from="503" to="507" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">The frequency and distribution of mediumsized neurons with indented nuclei in the primate and rodent neostriatum</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Graveland</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Difiglia</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Brain Res</title>
+              <imprint>
+                <biblScope unit="volume">327</biblScope>
+                <biblScope from="307" to="311" unit="page"/>
+                <date type="published" when="1985"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Haloperidol-induced changes in neuronal activity in the striatum of the freely moving rat</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Yael</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Front. Syst. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope unit="page">110</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Uncoordinated firing rate changes of striatal fast-spiking interneurons during behavioral task performance</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Berke</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope from="10075" to="10080" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Selective activation of striatal fast-spiking interneurons during choice execution</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Gage</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Stoetzner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Wiltschko</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Berke</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Neuron</title>
+              <imprint>
+                <biblScope unit="volume">67</biblScope>
+                <biblScope from="466" to="479" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Origins of medial geniculate body projections to physiologically defined zones of rat primary auditory cortex</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Winer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Sally</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Larue</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Kelly</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Hear. Res</title>
+              <imprint>
+                <biblScope unit="volume">130</biblScope>
+                <biblScope from="42" to="61" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Evidence for nonreciprocal organization of the mouse auditory thalamocortical-corticothalamic projection systems</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Llano</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Sherman</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Comp. Neurol</title>
+              <imprint>
+                <biblScope unit="volume">507</biblScope>
+                <biblScope from="1209" to="1227" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <monogr>
+              <title level="m" type="main">Thalamic input to auditory cortex is locally heterogeneous but globally tonotopic</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Vasquez-Lopez</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.7554/eLife.25141</idno>
+              <ptr target="https://doi.org/10.7554/eLife.25141"/>
+              <imprint>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Ascending projections to the medial geniculate body of the cat: evidence for multiple, parallel auditory pathways through thalamus</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Calford</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Aitkin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="2365" to="2380" unit="page"/>
+                <date type="published" when="1983"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">The parcellation of the medial geniculate body of the cat defined by the auditory response properties of single units</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Calford</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="2350" to="2364" unit="page"/>
+                <date type="published" when="1983"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Physiological differences between histologically defined subdivisions in the mouse auditory thalamus</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Anderson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Linden</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Hear. Res</title>
+              <imprint>
+                <biblScope unit="volume">274</biblScope>
+                <biblScope from="48" to="60" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">Linking topography to tonotopy in the mouse auditory thalamocortical circuit</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Hackett</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Barkat</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">M</forename>
+                  <surname>O&amp;apos;brien</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Hensch</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Polley</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">31</biblScope>
+                <biblScope from="2983" to="2995" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Auditory thalamocortical transformation: structure and function</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Winer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Miller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Schreiner</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Trends Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope from="255" to="263" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">The auditory cortex of the house mouse: left-right differences, tonotopic organization and quantitative analysis of frequency representation</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Stiebler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Neulist</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Fichtel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Ehret</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Comp. Physiol. A</title>
+              <imprint>
+                <biblScope unit="volume">181</biblScope>
+                <biblScope from="559" to="571" unit="page"/>
+                <date type="published" when="1997"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">A high-light sensitivity optical neural silencer: development and application to optogenetic control of non-human primate cortex</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Han</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Front. Syst. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="page">18</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">Thalamus plays a central role in ongoing cortical functioning</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Sherman</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">19</biblScope>
+                <biblScope from="533" to="541" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">Thalamic circuit diversity: modulation of the driver/modulator framework</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Bickford</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Front. Neural Circuits</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="page">86</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">Drivers and modulators in the central auditory pathways</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Sherman</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Front. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope unit="page">79</biblScope>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">On the actions that one nerve cell can have on another: distinguishing "drivers" from "modulators</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Sherman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Guillery</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proc. Natl Acad. Sci. USA</title>
+              <imprint>
+                <biblScope unit="volume">95</biblScope>
+                <biblScope from="7121" to="7126" unit="page"/>
+                <date type="published" when="1998"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">Biophysical constraints of optogenetic inhibition at presynaptic terminals</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mahn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Prigge</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ron</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Levy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <surname>Yizhar</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">19</biblScope>
+                <biblScope from="554" to="556" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title level="a" type="main">Parvalbumin-expressing inhibitory interneurons in auditory cortex are well-tuned for frequency</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Moore</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Wehr</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J. Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">33</biblScope>
+                <biblScope unit="page">13713</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">Modeling the spatiotemporal dynamics of light and heat propagation for in vivo optogenetics</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Stujenske</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Spellman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Gordon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell Rep</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope from="525" to="534" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

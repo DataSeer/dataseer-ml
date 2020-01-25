@@ -1,0 +1,3382 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:23+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Multiple QTL underlie milk phenotypes at the CSF2RB locus</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Thomas</forename>
+                <forename type="middle">J</forename>
+                <surname>Lopdell</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Kathryn</forename>
+                <surname>Tiplady</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Christine</forename>
+                <surname>Couldrey</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Thomas</forename>
+                <forename type="middle">J J</forename>
+                <surname>Johnson</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Michael</forename>
+                <surname>Keehan</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Stephen</forename>
+                <forename type="middle">R</forename>
+                <surname>Davis</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Bevin</forename>
+                <forename type="middle">L</forename>
+                <surname>Harris</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Richard</forename>
+                <forename type="middle">J</forename>
+                <surname>Spelman</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Russell</forename>
+                <forename type="middle">G</forename>
+                <surname>Snell</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Mathew</forename>
+                <forename type="middle">D</forename>
+                <surname>Littlejohn</surname>
+              </persName>
+            </author>
+            <title level="a" type="main">Multiple QTL underlie milk phenotypes at the CSF2RB locus</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1186/s12711-019-0446-x</idno>
+          <note>Lopdell et al. Genet Sel Evol (2019) 51:3 RESEARCH ARTICLE</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>Background: Over many years, artificial selection has substantially improved milk production by cows.</s>
+            <s>However, the genes that underlie milk production quantitative trait loci (QTL) remain relatively poorly characterised.</s>
+            <s>Here, we investigate a previously reported QTL located at the CSF2RB locus on chromosome 5, for several milk production phenotypes, to better understand its underlying genetic and molecular causes.</s>
+          </p>
+          <p>
+            <s>Results: Using a population of 29,350 taurine dairy cows, we conducted association analyses for milk yield and composition traits, and identified highly significant QTL for milk yield, milk fat concentration, and milk protein concentration.</s>
+            <s>Strikingly, protein concentration and milk yield appear to show co-located yet genetically distinct QTL.</s>
+            <s>To attempt to understand the molecular mechanisms that might be mediating these effects, gene expression data were used to investigate eQTL for 11 genes in the broader interval.</s>
+            <s>This analysis highlighted genetic impacts on CSF2RB and NCF4 expression that share similar association signatures to those observed for lactation QTL, strongly implicating one or both of these genes as responsible for these effects.</s>
+            <s>Using the same gene expression dataset representing 357 lactating cows, we also identified 38 novel RNA editing sites in the 3′ UTR of CSF2RB transcripts.</s>
+            <s>The extent to which two of these sites were edited also appears to be genetically co-regulated with lactation QTL, highlighting a further layer of regulatory complexity that involves the CSF2RB gene.</s>
+          </p>
+        </div>
+        <div>
+          <head>Conclusions:</head>
+          <p>
+            <s>This locus presents a diversity of molecular and lactation QTL, likely representing multiple overlapping effects that, at a minimum, highlight the CSF2RB gene as having a causal role in these processes.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Background</head>
+        <p>
+          <s>In much of the Western world, milk is primarily produced for human consumption by taurine cattle (Bos taurus) dairy breeds.</s>
+          <s>Within these breeds, many generations of selection have improved milk production capacity and efficiency.</s>
+          <s>However, in spite of numerous recent genomewide association studies (GWAS) e.g., <ref target="#b0" type="bibr">[1]</ref>
+            <ref target="#b1" type="bibr">[2]</ref>
+            <ref target="#b2" type="bibr">[3]</ref>
+            <ref target="#b3" type="bibr">[4]</ref> , major QTL remain for which no causative gene has been definitively assigned.</s>
+        </p>
+        <p>
+          <s>Several genes with substantial impacts on milk yield are known, including DGAT1 <ref target="#b4" type="bibr">[5]</ref> , ABCG2 <ref target="#b5" type="bibr">[6]</ref> , GHR <ref target="#b6" type="bibr">[7]</ref> , SLC37A1 <ref target="#b7" type="bibr">[8]</ref> , and MGST1 <ref target="#b8" type="bibr">[9]</ref> .</s>
+          <s>Recently, as part of work presented elsewhere <ref target="#b9" type="bibr">[10]</ref> , we performed a genome-wide association analysis for milk volume in 4982 mixed breed cattle using a BayesB model <ref target="#b10" type="bibr">[11,</ref>
+            <ref target="#b11" type="bibr">12]</ref> and a panel of 3695 variants selected as tag-SNPs representing expression QTL (eQTL) from lactating mammary tissue.</s>
+          <s>Of the top three loci explaining the greatest proportion of genetic variance in this model, genes representing the top and second to top effects have been well described for their role in milk production (DGAT1 and MGST1 respectively <ref target="#b4" type="bibr">[5,</ref>
+            <ref target="#b8" type="bibr">9]</ref> ), whereas no causative gene appears to have been definitively assigned for the third signal on chromosome 5 between 75 and 76 Mbp.</s>
+        </p>
+        <p>
+          <s>This locus broadly overlaps QTL that were reported previously for milk yield <ref target="#b2" type="bibr">[3,</ref>
+            <ref target="#b12" type="bibr">13]</ref> , milk protein yield <ref target="#b2" type="bibr">[3,</ref>
+            <ref target="#b12" type="bibr">13]</ref> , milk protein concentration <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b1" type="bibr">2,</ref>
+            <ref target="#b13" type="bibr">14]</ref> , and milk fat concentration <ref target="#b1" type="bibr">[2,</ref>
+            <ref target="#b8" type="bibr">9]</ref> .</s>
+          <s>Although no gene has been definitively implicated, Pausch et al. <ref target="#b1" type="bibr">[2]</ref> noted significant markers that were located adjacent to the CSF2RB, NCF4, and TST genes, and proposed the latter as the most likely <ref type="bibr">Lopdell et al. Genet Sel Evol (2019)</ref>
+            <ref type="bibr">51:3</ref> candidate based on its proximity to the top associated variant.</s>
+          <s>Other studies have proposed CSF2RB due to its high level of expression in the mammary gland <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b13" type="bibr">14]</ref> , or involvement in the JAK-STAT signalling pathway <ref target="#b2" type="bibr">[3,</ref>
+            <ref target="#b12" type="bibr">13]</ref> .</s>
+          <s>Other nearby genes that have been suggested to cause these effects also include MYH9 <ref target="#b2" type="bibr">[3]</ref> and NCF4 <ref target="#b12" type="bibr">[13]</ref> .</s>
+        </p>
+        <p>
+          <s>Given these observations, and the magnitude and diversity of effects at this locus, the aim of this study was to investigate this region on chromosome 5 in detail.</s>
+          <s>By combining information on milk yield and composition with gene expression data from a large bovine mammary RNA sequence dataset, we highlight multiple lactation, gene expression, and RNA-editing QTL that segregate at this locus, and present CSF2RB as the most likely causative gene responsible for these effects.</s>
+        </p>
+      </div>
+      <div>
+        <head>Methods</head>
+      </div>
+      <div subtype="dataseer">
+        <head>Genotyping and phenotyping</head>
+        <p>
+          <s>All cows that had been genotyped using the Geneseek Genomic Profiler (GGP) LDv3 or LDv4 chips, and for which herd test phenotypes were available, were targeted in the current study (N = 29,350).</s>
+          <s>These animals were selected because, based on preliminary sequence-based association analyses not reported here, these panels had been enriched with 365 polymorphisms identified as tagvariants of the chromosome 5 lactation QTL (spanning a region from 74.8 to 76.2 Mbp; [see Additional file 1]).</s>
+          <s>These variants included 30 SNPs from the Illumina BovineSNP50 chip (50 k), which were added to assist with imputation by increasing the overlap between the GGP and 50 k panels.</s>
+          <s>Tag-variants were targeted as custom content using a scheme that attempted to genotype sites in both orientations (two primers per site), resulting in 341 custom markers on the LDv3 chip, and 342 on the LDv4 chip for this locus.</s>
+          <s>The breed composition of the animals used for these analyses comprised 8930 HF, 3599 J, and 15,652 HF × J cows, for which breed proportion was based on pedigree records, and purebreds were defined as animals that had a breed proportion higher than 13/16.</s>
+          <s id="dataset-1" type="Tabular data">We also included 1169 cows with minor proportions of Ayrshire ancestry.</s>
+        </p>
+        <p>
+          <s cert="0.9939442276954651" id="dataset-2" type="Tabular data">Phenotypes were calculated from animal herd-test records for the three yield traits plus fat and protein concentration in milk.</s>
+          <s>These phenotypes were generated using herd-test data from the first lactation, adjusted by using an ASReml-R [15] model with birth year, age at calving, breed, and heterosis as linear covariates, stage of lactation as a fixed effect, season/herd as an absorbed fixed effect, and animal as a random effect.</s>
+          <s cert="0.9180710315704346" id="dataset-3" type="Tabular data">Herd test records were sampled using Fourier-transform infrared spectroscopy on a combination of Milkoscan FT6000 (FOSS, Hillerød, Denmark) and Bentley FTS (Bentley, Chaska, USA) instruments.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Imputation and association analyses</head>
+        <p>
+          <s>Genotypes for 29,350 animals were imputed to wholegenome sequence (WGS) resolution in the window of interest using Beagle 4 <ref target="#b15" type="bibr">[16]</ref> as described previously <ref target="#b8" type="bibr">[9,</ref>
+            <ref target="#b16" type="bibr">17]</ref> .</s>
+          <s cert="0.955403745174408" id="dataset-3" type="Genetic Data">Briefly, a reference population of 565 animals, comprising Holstein-Friesians, Jerseys, and crossbred cattle, was sequenced using the Illumina HiSeq 2000 instrument to yield 100-bp reads.</s>
+          <s>Read mapping to the UMD 3.1 bovine reference genome was conducted using the BWA MEM 0.7.8 software <ref target="#b17" type="bibr">[18]</ref> , followed by variant calling using GATK HaplotypeCaller 3.2 <ref target="#b18" type="bibr">[19]</ref> .</s>
+          <s>Variants were phased using Beagle 4 <ref target="#b15" type="bibr">[16]</ref> , and those with poor phasing metrics (allelic R 2 &lt; 0.95) were excluded, yielding 12,867 variants.</s>
+          <s>Quality control filtering to remove variants with a MAF lower than 0.01% (N = 673) or Hardy-Weinberg equilibrium p-values below 1 × 10 −30 (N = 461) resulted in a final set of 11,733 variants.</s>
+          <s>As described above, the imputation window was enriched for custom, physically genotyped variants on the GGP-LDv3/4 chips, markedly increasing the scaffold density at this location.</s>
+        </p>
+        <p>
+          <s>Imputed genotypes for 639,822 autosomal SNPs on the Illumina BovineHD SNPchip were used to calculate a genomic relationship matrix (GRM) for the 29,350 animals of interest, using GCTA (version 1.91.3beta)</s>
+          <s>
+            <ref target="#b19" type="bibr">[20,</ref>
+            <ref target="#b20" type="bibr">21]</ref> .</s>
+          <s>The imputation step also used the Beagle 4 software, leveraging a BovineHD-genotyped reference population of 3389 animals.</s>
+          <s>Heritabilities for all phenotypes were calculated using this GRM with the REML option in GCTA.</s>
+          <s>A leave-one-chromosome-out (LOCO) GRM was also created excluding chromosome 5, and used in combination with the imputed variant set and phenotypes to perform a mixed linear model analysis (MLMA-LOCO) <ref target="#b21" type="bibr">[22]</ref> using GCTA.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>RNAseq, gene expression and eQTL</head>
+        <p>
+          <s>RNAseq data from lactating mammary gland biopsies representing 357 mixed-breed cows were generated as described previously <ref target="#b22" type="bibr">[23]</ref> .</s>
+          <s cert="0.9849628806114197" id="dataset-4" type="Genetic Data:High-Throughput Nucleotide Sequencing">Briefly, samples were sequenced using Illumina HiSeq 2000 instruments, yielding 100-bp paired-end reads.</s>
+          <s>These were mapped to the UMD 3.1 reference genome using TopHat2 (version 2.0.11)</s>
+          <s>
+            <ref target="#b23" type="bibr">[24]</ref> .</s>
+          <s>The Stringtie software (version 1.2.4) <ref target="#b24" type="bibr">[25]</ref> was used to quantify gene expression values for genes mapping to the window chr5:75-76 Mbp, yielding fragments per kilobase of transcript per million mapped reads (FPKM) and transcripts per million (TPM) <ref target="#b25" type="bibr">[26]</ref> metrics.</s>
+          <s>These calculations used gene models defined by the Ensembl gene build (release 81).</s>
+          <s>Gene expression levels were also processed using the variance-stabilising transformation (VST) function implemented in the Bioconductor package DESeq (version 1.28.0)</s>
+          <s>
+            <ref target="#b26" type="bibr">[27]</ref> to produce expression data suitable for analysis using linear models.</s>
+          <s>The 357 biopsied cows comprised, using the same breed definitions as above, 224 HF, 3 J, and 126 HF × J cows, with the remaining four cows having minor proportions of Ayrshire ancestry.</s>
+        </p>
+        <p>
+          <s>WGS-resolution genotypes were imputed using the same WGS sequence reference described above in conjunction with a mixture of genotype panels (see Methods in <ref target="#b22" type="bibr">[23]</ref> ) for the 357 cows, yielding 12,825 variants in the 74.6-76.2</s>
+          <s>Mbp window.</s>
+          <s>Removal of variants with more than 5% missing genotypes (N = 36) or a MAF lower than 0.5% (N = 1643) resulted in a final set containing 11,146 variants.</s>
+          <s>VST-transformed gene expressions were analysed for genes with FPKM &gt; 0.1, using the GCTA MLMA-LOCO method described above.</s>
+          <s>The GRM was calculated using physically genotyped variants from the BovineHD SNP chip for 337 cows, and imputed BovineHD genotypes for the remaining 20 cows based on an Illumina SNP50 platform scaffold.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>RNA-editing site discovery and edQTL</head>
+        <p>
+          <s cert="0.969132661819458" id="dataset-5" type="Genetic Data">RNA editing in the 3′-UTR of the CSF2RB gene was investigated in the discovery set of nine animals from <ref target="#b27" type="bibr">[28]</ref> , these animals having been previously sequenced using both RNAseq and WGS methodologies.</s>
+          <s>Editing sites were identified using custom scripts <ref target="#b27" type="bibr">[28]</ref> and by manual inspection of WGS and RNAseq BAM files for each animal.</s>
+          <s>Sites were considered to represent RNA edits where: (1) an A-to-G variant was present in the RNAseq reads, but was absent from the WGS reads, and (2) had at least five reads containing 'G' at the position in every animal.</s>
+          <s>This yielded 38 candidate edited sites.</s>
+          <s>Following the recommendations of Ramaswami et al. <ref target="#b28" type="bibr">[29]</ref> for non-Alu sites, the 38 candidate sites were examined for the presence of 5′ mismatches, simple repeats, homopolymer runs ≥ 5 bp, or splice junctions within 4 bp; however, none of the candidates were impacted by these filters, and all 38 were retained for further analyses.</s>
+        </p>
+        <p>
+          <s>Having determined the positions of variant sites, the rate of editing at each site was quantified in the larger 'quantification set' of 353 cows <ref target="#b27" type="bibr">[28]</ref> with RNA editing phenotypes for each site generated by transforming editing proportions using the logit function.</s>
+          <s>RNA editing QTL discovery was performed using these phenotypes by performing MLMA-LOCO, incorporating the same GRM and imputed WGS genotypes used for eQTL discovery (N = 353 animals).</s>
+        </p>
+        <p>
+          <s>RNA secondary structure around the edited sites was predicted using dot-plots as described by <ref target="#b27" type="bibr">[28]</ref> .</s>
+          <s>The sequence that contained all 38 edited sites and an additional 800 bp upstream and downstream was extracted and then plotted against its complement, with dots placed where at least 11 of 15 nucleotides surrounding a point were complementary.</s>
+          <s>Diagonal lines in the resulting plot indicate regions of extended complementarity, which therefore have the potential to form doublestranded secondary structures.</s>
+        </p>
+      </div>
+      <div>
+        <head>Copy number variant genotyping and imputation</head>
+        <p>
+          <s>Manual examination of the WGS BAM files suggested the presence of a copy-number variant (CNV) located downstream of CSF2RB, mapping to chr5:75,781,300-75,782,800.</s>
+          <s>Copy numbers were estimated from WGS reads for each of the 560 cattle using the software package CNVnator (version 0.3) <ref target="#b29" type="bibr">[30]</ref> , based on sequence read depth.</s>
+          <s>Thresholds for genotype calling of the CNV were set based on the histogram of the trimodal distribution of the copy number (CN) estimates, with a homozygous deletion being called when CN &lt; 0.95, heterozygous 0.95 ≤ CN &lt; 1.95, and homozygous wild type when CN ≥ 1.95.</s>
+          <s>CNV genotypes were imputed into a larger population (N = 29,350), for use in association analyses, using Beagle version 4.1 <ref target="#b30" type="bibr">[31]</ref> , and the reference population of 560 cattle described above.</s>
+          <s>Combining the reference genotype calls with the imputed population yielded a set of 31,950 animals for use in MLMA-LOCO analyses, as described above.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+      </div>
+      <div>
+        <head>Sequence-based association analysis at the chr5 interval</head>
+        <p>
+          <s>Fine mapping of milk yield and protein concentration QTL at the chr5:75-76 Mbp locus was performed using imputed sequence genotypes (see Methods) representing 29,350 cows.</s>
+          <s>Sequence data were imputed using Beagle4 <ref target="#b15" type="bibr">[16]</ref> (74.8-76.2</s>
+          <s>Mbp; 11,733 markers), and phenotypes were produced from herd-test records (N = 29,350 cows) from the animals' first lactations to derive values for milk yield (MY), protein yield (PY), fat yield (FY), protein concentration (PC), and fat concentration (FC; see Methods).</s>
+          <s>Mixed linear model association (MLMA) analyses were conducted using GCTA (version 1.91.3beta)</s>
+          <s>
+            <ref target="#b20" type="bibr">[21]</ref> .</s>
+          <s>The top associated variant for each of the five phenotypes is in <ref target="#tab_0" type="table">Table 1</ref> .</s>
+          <s>All QTL were significant at the genome-wide threshold 5 × 10 −8 .</s>
+          <s>The most significant QTL was identified for PC, followed by FC and MY, and the least significant QTL was detected for FY.</s>
+          <s>QTL for PC and MY are illustrated in <ref target="#fig_0" type="figure">Fig. 1</ref> .</s>
+        </p>
+        <p>
+          <s>AI-REML analysis was performed, using a GRM calculated over all the autosomes, to estimate genomic heritabilities (h 2 ; <ref type="table">Table 2</ref> ).</s>
+          <s>To investigate these QTL further, the linkage disequilibrium (LD) statistics (R 2 ) between each pair of top variants were calculated <ref type="figure">(Fig. 2)</ref> .</s>
+          <s>Strong LD was observed between the top variants for MY, FC, and PC (MY vs FC tag variants R 2 = 0.887; MY vs PC tag variants R 2 = 0.991).</s>
+        </p>
+      </div>
+      <div>
+        <head>Functional prediction of variant effects suggests regulatory QTL mechanisms</head>
+        <p>
+          <s>To assess potential functional effects of the statistically implicated QTL variants, all polymorphisms in strong LD (R 2 &gt;0.9)</s>
+          <s>with the top-ranked QTL variants for each trait were extracted (N = 365 variants), and analysed using the Ensembl Variant Effect Predictor (VEP) <ref target="#b31" type="bibr">[32]</ref> .</s>
+          <s>Most of these variants (N = 247) were predicted to map outside of genes, whereas 113 were predicted to be intronic, with 58 in transcript ENSBTAT00000009911.4 (NCF4) and 55 in ENSBTAT00000011947.5 (CSF2RB).</s>
+          <s>The remaining five variants were predicted to be synonymous mutations, with two in ENSBTAP00000009911.4 (NCF4) at positions p.Gln145 = and p.Tyr243 = , and three in ENS-BTAP00000011947.5 (CSF2RB) at positions p.Asn58 = , p.Tyr405 = , and p.Glu424 = .</s>
+          <s>Importantly, none of the highly associated variants were predicted to change the protein sequences of genes, suggesting a regulatory effect as the likely mechanism(s) of the QTL.</s>
+        </p>
+      </div>
+      <div>
+        <head>Expression QTL analysis highlights three genes differentially expressed by genotype</head>
+        <p>
+          <s>To look for cis-eQTL effects that might explain the lactation QTL, gene expression levels were calculated for genes in the chr5:75-76 Mbp window, using RNAseq data representing lactating mammary tissue biopsies from 357 cows <ref target="#fig_0" type="figure">(Fig. 1c)</ref> .</s>
+          <s>Expression levels in FPKM and TPM were calculated using Stringtie (version 1.2.4) <ref target="#b24" type="bibr">[25]</ref> and are in <ref type="table">Table 3</ref> for transcripts for which FPKM was higher than 0.1.</s>
+          <s>The gene with the highest expression level was CSF2RB, which is consistent with previous observations in murine mammary RNAseq data <ref target="#b32" type="bibr">[33]</ref> .</s>
+          <s>Moderate expression was also observed for the candidate gene MYH9.</s>
+          <s>However, the expression level of NCF4 was very low, at FPKM = 0.406.</s>
+          <s>The highest correlation between pairs of gene expression levels was observed for TST and MPST (r = 0.545 ±0.077), which is concordant with the published observation of a shared bidirectional promoter for these two genes <ref target="#b33" type="bibr">[34]</ref> .</s>
+          <s>Association mapping was conducted for the 11 expressed genes in <ref type="table">Table 3</ref> .</s>
+          <s>To this end, gene expression data were first scaled using the variance-stabilising transformation (VST) implemented in DESeq (version 1.28.0)</s>
+          <s>
+            <ref target="#b26" type="bibr">[27]</ref> .</s>
+          <s>A GRM was then calculated for the 357 cows representing the RNAseq dataset, and the MLMA-LOCO method was performed as described for the analysis of lactation traits.</s>
+          <s>This yielded genome-wide significant eQTL for three genes: CSF2RB (1.33 × 10 −26 ), NCF4 (4.30 × 10 −16 ), and TXN2 (5.85 × 10 −12 ) (see <ref type="table">Table 3</ref> and <ref target="#fig_1" type="figure">Fig. 3</ref> ).</s>
+          <s>All three genes were located within the peaks of their respective eQTL, demonstrating regulation in cis.</s>
+        </p>
+        <p>
+          <s>In cases in which genetic regulation of gene expression (i.e., an eQTL) underlies a complex trait QTL, we expect that both QTL share similar association signals, with the most (and least) associated variants similar between phenotypes.</s>
+          <s>To test whether any of the 11 expressed genes shared similarities with the milk QTL, Pearson correlations between the log 10 p-values for each of the milk QTL and eQTL were calculated.</s>
+          <s>
+            <ref target="#tab_2" type="table">Table 4</ref> shows the QTL:eQTL correlations for all five phenotypes with three significant</s>
+        </p>
+      </div>
+      <div>
+        <head>Table 2 Genomic heritability estimates for milk yield and composition phenotypes</head>
+        <p>
+          <s>Phenotypes are milk fat daily yield (kg) and concentration (%), protein daily yield and concentration, and milk daily volume (L)</s>
+        </p>
+      </div>
+      <div>
+        <head>FY (kg/day) FC (%) PY (kg/day) PC (%) MY (L/day)</head>
+        <p>
+          <s>0.184 ±0.008 0.622 ±0.007 0.183 ±0.008 0.614 ±0.007 0.263 ±0.008</s>
+        </p>
+      </div>
+      <div>
+        <head>Fig. 2</head>
+        <p>
+          <s>Linkage disequilibrium (LD) observed between the top associated markers for each phenotype (R 2 ).</s>
+          <s>Markers are identified using dbSNP reference SNP ID numbers.</s>
+          <s>Phenotypes are as in <ref type="table">Table 2</ref> eQTL, plus the TST gene, which did not yield a genomewide significant eQTL, although it has been proposed as a candidate underlying this locus.</s>
+          <s>The eQTL for CSF2RB has R 2 &gt;0.5 (r &gt;0.707)</s>
+          <s>with three of the five milk phenotypes, while correlations for the neighbouring gene NCF4 are just below this level.</s>
+          <s>Neither of the TXN2 or TST genes exhibited high correlations with any milk QTL.</s>
+          <s>The eQTL for CSF2RB was also highly correlated with the NCF4 eQTL (r = 0.863 ±0.005).</s>
+          <s>A similar picture is obtained when examining the LD between the top tag markers for each QTL, with high LD observed <ref type="figure">(Fig. 4</ref> ) among the tags for MY, FC, and PC with the tags for the CSF2RB and NCF4 eQTL.</s>
+        </p>
+      </div>
+      <div>
+        <head>Evidence of multiple, differentially segregating QTL for milk yield and protein concentration</head>
+        <p>
+          <s>Examining <ref target="#fig_0" type="figure">Fig. 1a</ref> (repeated in <ref target="#fig_2" type="figure">Fig. 5a</ref> ) suggested that protein concentration might be influenced by two colocated but mechanistically independent QTL, since a number of markers that are not in strong LD with the top marker nevertheless exhibit very small p-values (&lt;1 × 10 −60 ).</s>
+          <s>To investigate this possibility, the top associated marker (rs208375076) was fitted as a fixed effect and the MLMA-LOCO analysis repeated using the residual, PC phenotype <ref target="#fig_2" type="figure">(Fig. 5b)</ref> .</s>
+          <s>The new top marker (rs210293314) remained highly significant (P = 1.30 × 10 −24 after adjustment, 9.31 × 10 −41 before adjustment), suggesting that it is tagging a different QTL.</s>
+        </p>
+        <p>
+          <s>Adjusting the original protein concentration phenotype for rs210293314 and repeating the MLMA-LOCO analysis yielded the result shown in <ref target="#fig_2" type="figure">Fig. 5c</ref> .</s>
+          <s>Here, the most significant marker was rs208086849, a variant that is largely statistically equivalent to the top rs208375076 marker from the original, unadjusted analysis (R 2 = 0.999).</s>
+          <s>These observations suggest the presence of two QTL for milk protein percentage.</s>
+          <s>This analysis was repeated with the MY phenotype <ref target="#fig_2" type="figure">(Fig. 5d)</ref> .</s>
+          <s>This phenotype showed little evidence of a second co-locating QTL, where fitting the top associated marker (rs208473130) dropped the signal below the genome-wide significance threshold (P = 1.36 × 10 −6 for marker rs378861677; <ref target="#fig_2" type="figure">Fig. 5e</ref> ).</s>
+          <s>However, adjusting the MY phenotype by fitting rs378861677 and repeating the MLMA-LOCO analysis resulted in an increase in significance for the top marker rs208473130, from 6.64 × 10 −25 to 8.63 × 10 −29 <ref target="#fig_2" type="figure">(Fig. 5f</ref> ), which suggests that there may indeed be an additional weak QTL, or the variant otherwise addresses some other confounding signal.</s>
+          <s>The variants rs208086849 (from the PC analysis in the previous paragraph) and rs208473130 show very strong LD (R 2 = 0.991), which suggests that both markers are in fact tagging the same QTL across PC and MY.</s>
+          <s>In contrast, variants rs210293314 (PC analysis above) and rs378861677 show moderate to weak LD (R 2 = 0.332), which suggests that the two signals tagged by these variants are genetically distinct.</s>
+        </p>
+        <p>
+          <s>Most of the QTL were represented by common tagvariants, with minor allele frequencies (MAF) higher than 0.4 across the whole population ( <ref target="#tab_3" type="table">Table 5</ref> ).</s>
+          <s>The two seemingly distinct PC QTL also segregated in both breeds, as do the PY and FC QTL.</s>
+          <s>One of the two MY QTL, tagged by rs378861677, was uncommon in the Jersey population (MAF = 0.01), and the FY QTL tagged by rs466308089 had a MAF of only 0.002 in Jersey cows.</s>
+          <s>The minor allele of the latter QTL was also the rarest signal in the population overall, with a MAF of 0.031.</s>
+        </p>
+        <p>
+          <s>Since at least two differentially segregating QTL were detected at the locus, they may be underpinned by different genes and/or molecular mechanisms.</s>
+          <s>To</s>
+        </p>
+      </div>
+      <div>
+        <head>Table 3 Median gene expression levels and top variants identified in eQTL analyses</head>
+        <p>
+          <s>Genes with FPKM values less than 0.1 are not shown.</s>
+          <s>Gene symbols are from VGNC and Ensembl.</s>
+          <s>Beta is the effect size of the minor allele on gene expression, measured in VST-transformed units.</s>
+          <s>Three genes have eQTL which exceed the genome-wide significance threshold 5 ×10 −8 <ref target="#b60" type="bibr">[60]</ref>
+            <ref type="table">(Table 3)</ref> .</s>
+          <s>From top to bottom, the three genes are a CSF2RB, b NCF4, and c TXN2.</s>
+          <s>Colours represent correlations for each marker with the top variant for that eQTL (see <ref target="#fig_0" type="figure">Fig. 1</ref> assess whether the significant, co-locating CSF2RB and NCF4 eQTL were themselves comprised of multiple, overlapping signals (i.e.</s>
+          <s>multiple cis-eQTL driven by different regulatory elements), the top associated variants were fitted as fixed effects to the gene expression phenotypes, and the analyses were rerun as above.</s>
+          <s>This yielded new top markers with p-values of 8.87 × 10 −5 and 1.75 × 10 −4 respectively, suggesting that the expression of these two genes, if influenced by multiple regulatory factors, had weak effects, or were too heavily confounded by LD to differentiate clearly.</s>
+          <s>To investigate how the eQTL might contribute to the multiple, co-locating PC QTL in comparative terms, the SNP-adjusted PC association results were used to calculate eQTL correlations, using the methodology described in the previous section.</s>
+          <s>Notably, these analyses resulted in improved correlations with eQTL.</s>
+          <s>The correlation between the CSF2RB cis-eQTL and the unadjusted PC phenotype was 0.754 ± 0.009 <ref type="figure">(Figs. 4, 6a)</ref> .</s>
+          <s>However, using the phenotype adjusted for rs210293314 yielded a correlation of 0.807 ±0.007 <ref type="figure">(Fig. 6b)</ref> .</s>
+          <s>The same pattern was observed for the NCF4 gene, for which correlations improved from 0.689 ± 0.011 to 0.843 ± 0.006 <ref type="figure">(Fig. 6c, d)</ref> .</s>
+          <s>Applying the same approach to MY (unadjusted, and adjusted by rs37886167) similar results were obtained, albeit with only marginal increases: correlations with the CSF2RB eQTL increased from 0.849 ±0.006 to 0.872 ±0.005, and correlations with the NCF4 eQTL increased from 0.681 ±0.011 to 0.713 ±0.010.</s>
+        </p>
+      </div>
+      <div>
+        <head>for legend). Grey bands indicate the location of the gene for which the eQTL is displayed</head>
+        <p>
+          <s>To investigate the possibility that secondary, co-locating PC and/or MY QTL might be caused by proteincoding variants, all variants in strong LD (R 2 &gt;0.9)</s>
+          <s>with rs210293314 (secondary PC tag-SNP) or rs378861677 (secondary MY tag-SNP) were analysed using VEP as described previously.</s>
+          <s>Of the 260 variants captured by this analysis, two missense SNPs were identified in conjunction with rs378861677, both mapping to exon 2 of MPST: rs211170554 (p.Asp129Asn) with a SIFT score of 0.88 (predicted tolerated), and rs209917448 (p.Arg47Cys) with a SIFT score of 0.01 (predicted deleterious).</s>
+          <s>In the absence of additional eQTL that might account for the secondary PC and MY signals, these results suggest a potential protein-coding-based mechanism for the MY effect, at least.</s>
+        </p>
+      </div>
+      <div>
+        <head>CSF2RB encodes a promiscuously RNA-edited transcript</head>
+        <p>
+          <s>Previous work <ref target="#b27" type="bibr">[28]</ref> had identified four RNA editing sites that mapped to the introns of CSF2RB.</s>
+          <s>Here, while manually examining RNAseq and WGS sequence reads mapping to the gene, a surprising number of additional RNA edits were observed (see Methods).</s>
+          <s>This included 38 novel A-to-G variant sites present in the RNAseq data, yet absent from the whole-genome sequence representing the nine cows for which both data sources were available.</s>
+          <s>These sites were present in four clusters within the 3′ UTR <ref target="#fig_3" type="figure">(Fig. 7)</ref> , which had been missed from our previously published genome-wide analysis <ref target="#b27" type="bibr">[28]</ref> because it was based only on reference annotations that failed to capture <ref type="figure">Fig. 4</ref> Linkage disequilibrium between the top tag variants for milk trait QTL and co-located gene expression QTL.</s>
+          <s>Three genes with significant (P &lt; 5×10 −8 ) eQTL are included, along with the TST <ref target="#b1" type="bibr">[2]</ref> that have previously been proposed as a candidate causative gene at this locus the full length 3′ UTR sequence, which was evident when empirically derived gene structures from the mammary RNAseq data were used.</s>
+          <s>Because the ADAR enzymes responsible for adenosine-to-inosine editing (A-to-G in sequence reads) target double-stranded RNA <ref target="#b34" type="bibr">[35,</ref>
+            <ref target="#b35" type="bibr">36]</ref> , we predicted the potential for the sequences around the edited sites to form double-stranded RNA.</s>
+          <s>The dot-plot in <ref target="#fig_3" type="figure">Fig. 7</ref> shows that, of the 38 edited sites (red dashed lines), 37 (97.4%)</s>
+          <s>sit within regions of extended complementarity (diagonal black lines), thus having the potential to form double stranded secondary structures.</s>
+        </p>
+        <p>
+          <s>As recently reported, we have observed that a proportion of RNA-edited bases are genetically modulated for some sites <ref target="#b27" type="bibr">[28]</ref> .</s>
+          <s>To investigate potential genetic regulation of RNA-editing on CSF2RB transcripts, phenotypes for the proportion of reads edited were generated (see Methods), to detect RNA editing QTL (edQTL <ref target="#b27" type="bibr">[28,</ref>
+            <ref target="#b36" type="bibr">37]</ref> ).</s>
+          <s>Using the MLMA-LOCO method as applied for the eQTL analysis described above, genome-wide significant edQTL (P &lt; 5 × 10 −8 ) were identified for 18 of the 38 sites.</s>
+          <s>Because RNA editing may impact gene expression by <ref type="figure">Fig. 6</ref> Correlations between eQTL and the co-located protein concentration QTL for the genes CSF2RB (left) and NCF4 (right).</s>
+          <s>Panels on the top row are plotted against the original protein concentration QTL <ref target="#fig_2" type="figure">(Fig. 5a)</ref> , while panels on the bottom row are plotted against the phenotype after fitting rs210293314 <ref target="#fig_2" type="figure">(Fig. 5c)</ref> different mechanisms <ref target="#b37" type="bibr">[38]</ref>
+            <ref target="#b38" type="bibr">[39]</ref>
+            <ref target="#b39" type="bibr">[40]</ref> , we investigated whether any edQTL were correlated with the eQTL for CSF2RB.</s>
+          <s>One site, mapping to chr5:75,750,220, had a correlation of 0.849 ±0.005 between the − log 10 p-values of the edQTL and the eQTL.</s>
+          <s>This edQTL was also strongly correlated with the NCF4 eQTL (0.929 ±0.003).</s>
+        </p>
+        <p>
+          <s>As an extension to the hypothesis that edQTL might underlie changes in gene expression (i.e.</s>
+          <s>eQTL), we reasoned that one or more of the milk phenotype QTL might also be impacted, as evidenced by the correlation values.</s>
+          <s>Investigation of this hypothesis showed correlations r higher than 0.707 between edQTL and FC, PC, and PY <ref target="#tab_4" type="table">(Table 6</ref> ).</s>
+          <s>In addition, we found very <ref target="#fig_2" type="figure">Fig. 5e</ref> , correlations in <ref target="#fig_3" type="figure">Fig. 7)</ref> .</s>
+          <s>A strong correlation (0.822) was also detected between the edQTL for chr5:75,748,760 and the PC QTL after adjusting for marker rs208375076 (PC QTL illustrated in <ref target="#fig_2" type="figure">Fig. 5b)</ref> .</s>
+          <s>As with the analyses of candidate proteincoding variants, these results suggest other alternative (and likely overlapping) mechanisms that may account for the multiple QTL segregating at the chromosome 5 locus.</s>
+        </p>
+      </div>
+      <div>
+        <head>Hypervariability at the CSF2RB locus presents an abundance of candidate causative variants</head>
+        <p>
+          <s>Manual examination of the WGS alignments at the locus also revealed read depth anomalies at approximately chr5:75,781,300-75,782,800.</s>
+          <s>This analysis revealed a suspected 1.5 kbp deletion variant, located between the CSF2RB and TEX33 genes (downstream of the 3′ UTR of both genes given a 'tail to tail' orientation).</s>
+          <s>To attempt to derive genotypes for this variant, the copy number at this site was estimated for 560 whole-genome sequenced cattle using CNVnator 0.3 <ref target="#b29" type="bibr">[30]</ref> .</s>
+          <s>The resulting estimates of copy number formed a trimodal distribution <ref type="figure">(Fig. 8a)</ref> , which suggested a biallelic variant that could be assumed to be inherited in a Mendelian fashion <ref target="#b40" type="bibr">[41]</ref> .</s>
+          <s>Although one pseudogene maps to the region (LOC788541 60S ribosomal protein L7), the deleted segment appeared otherwise devoid of noteworthy genomic features.</s>
+        </p>
+        <p>
+          <s>To investigate the candidacy of the deletion as a potential causative variant for one or more of the QTL in the region, genotypes were called from CNVnator copy number predictions (see Methods), and the LD (R 2 ) between the deletion and top QTL variants was investigated.</s>
+          <s>Strong LD (0.887) was observed with the top markers for MY (rs208473130) and PC (rs208375076), as well as with rs208086849, the top variant for PC after adjusting for the secondary QTL <ref type="figure">(Fig. 8b)</ref> .</s>
+          <s>A slightly lower LD score was observed for FC (R 2 = 0.807).</s>
+          <s>The deletion allele was more frequent than the reference allele in the NZ dairy population (deletion = 0.547).</s>
+        </p>
+        <p>
+          <s>The strong LD between the ~ 1.5 kbp deletion and key QTL tag variants qualified the variant as a potential candidate for these QTL; therefore, we imputed the variant into the association analysis population to test for association directly.</s>
+          <s>Using the same MLMA-LOCO analysis method that was applied for other variants, significant associations (P &lt; 5 × 10 −8 ) were observed for PC (P = 7.30 × 10 −71 ), FC (P = 1.08 × 10 −30 ), and MY (P = 1.18 × 10 −18 ).</s>
+          <s>Although highly significant, when ranking all variants by p value, the deletion variant never ranked higher than the 400th most significant marker; however, given the very large number of associated variants in this region generally (&gt; 800 in the top 20 orders of magnitude for PC), and the fact that some of the readdepth-based genotype calls may be erroneous, the deletion remains a plausible candidate variant for future consideration of these QTL.</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+      </div>
+      <div>
+        <head>Milk phenotype QTL</head>
+        <p>
+          <s>We report QTL mapping of a chromosome 5 locus for several milk yield and composition traits, with a diversity of gene expression and RNA editing QTL that could underpin these effects.</s>
+          <s>We note, in particular, that some phenotypes exhibit multiple QTL that probably have distinct genetic causes.</s>
+          <s>The FC and PC QTL are both <ref type="figure">Fig. 8</ref> a Histogram of copy number genotype calls of 560 animals from CNVnator.</s>
+          <s>Copy numbers follow a trimodal distribution, suggesting that the variant is bialleleic.</s>
+          <s>Genotype classes are coloured in gold (homozygous deletion), grey (heterozygous) and blue (homozygous wild-type).</s>
+          <s>b Deletion variant genotypes plotted against the genotypes of the rs208086849 variant.</s>
+          <s>The two variants are in strong LD (R 2 = 0.887).</s>
+          <s>Points are jittered to increase visibility in high LD with the MY QTL, which suggests that these effects may be mediated by changes in the total volume of milk produced without concomitant changes in fat or protein production.</s>
+          <s>The fat and protein yield QTL are not in LD with either each other or with milk yield.</s>
+          <s>However, these two QTL are less significant than the others by many orders of magnitude (see <ref target="#tab_0" type="table">Table 1</ref> ), which suggests that the lack of LD may be due to insufficient power in the dataset to identify reproducible tag variants.</s>
+          <s>However, it should be noted that the MAF for the FY QTL is much lower than those for the MY and PY QTL, which suggests that this signal may indeed be discrete from the other two yield signals.</s>
+          <s>The frequencies of the various tag variants across the breeds is also of note, which suggests that the QTL are both shared, and unique to individual breeds.</s>
+        </p>
+      </div>
+      <div>
+        <head>Candidate causative genes</head>
+        <p>
+          <s>Several candidate causative genes have been previously proposed to underlie lactation effects at this locus, and based on the work presented here, we propose that one or both of the CSF2RB and NCF4 genes are the likely candidates, with a predicted deleterious variant in the MPST gene also providing a potential candidate for milk yield QTL with a secondary effect.</s>
+        </p>
+        <p>
+          <s>The CSF2RB gene (ENSBTAG00000009064) encodes the common beta chain of the receptors for GM-CSF, interleukin-3, and interleukin-5, cytokines that are involved in regulating the proliferation and differentiation of hematopoietic cells <ref target="#b41" type="bibr">[42]</ref> .</s>
+          <s>The granulocyte-macrophage colony-stimulating factor (GM-CSF) is produced in the mammary gland by alveolar macrophages <ref target="#b42" type="bibr">[43]</ref> where it enhances the bactericidal activity of milk neutrophils <ref target="#b43" type="bibr">[44]</ref> .</s>
+          <s>These receptors form a link in the JAK-STAT signalling pathway, operating via JAK2 and STAT5 <ref target="#b44" type="bibr">[45]</ref> .</s>
+          <s>The STAT5 proteins, especially STAT5A, are important for enabling mammopoiesis and lactogenesis <ref target="#b45" type="bibr">[46,</ref>
+            <ref target="#b46" type="bibr">47]</ref> and directly bind the gamma-interferon-activating sequence (GAS) found in the promoters of milk proteins such as beta-casein, <ref target="#b47" type="bibr">[48]</ref> , beta-lactoglobulin <ref target="#b49" type="bibr">[49]</ref> , and whey acidic protein in mice <ref target="#b49" type="bibr">[49]</ref> .</s>
+          <s>The importance of this pathway is further evidenced by associations with milk production traits observed at the STAT5 locus <ref target="#b22" type="bibr">[23,</ref>
+            <ref target="#b50" type="bibr">50,</ref>
+            <ref target="#b51" type="bibr">51]</ref> .</s>
+          <s>Although the relevant ligands and subunits with which CSF2RB forms complexes are unknown in the current context, mutations that impact downstream interactions with STAT5 proteins could be assumed to impact milk production/composition phenotypes.</s>
+        </p>
+        <p>
+          <s>The NCF4 gene (ENSBTAG00000007531) encodes neutrophil cytosolic factor 4, which forms the p40-phox subunit of the NADPH oxidase enzyme complex <ref target="#b52" type="bibr">[52]</ref> .</s>
+          <s>This enzyme produces superoxide ( O − 2 ), a reactive oxygen species produced in phagocytic cells during the respiratory burst <ref target="#b53" type="bibr">[53]</ref> , which is intended to kill invading fungi and bacteria <ref target="#b54" type="bibr">[54]</ref> .</s>
+          <s>NCF4 has been shown to be upregulated in mastitic mammary glands <ref target="#b55" type="bibr">[55]</ref> , and two SNPs mapping to the NCF4 gene have been associated with elevated somatic cell scores (SCS) <ref target="#b55" type="bibr">[55,</ref>
+            <ref target="#b56" type="bibr">56]</ref> , a trait that is used as a surrogate phenotype for mastitis in dairy animals.</s>
+          <s>Since cows suffering from mastitis produce smaller volumes of milk than healthy cows <ref target="#b57" type="bibr">[57]</ref> , this provides a possible mechanism by which NCF4 could influence milk production.</s>
+          <s>A more appealing mechanism is one that involves CSF2RB or NCF4 but outside of a pathogen response context, given that the locus is better known for its impacts on milk production and composition in the absence of overt mammary infection.</s>
+        </p>
+        <p>
+          <s>Both the CSF2RB and NCF4 eQTL were correlated with the MY QTL, with the former showing stronger correlations (r = 0.849 compared to 0.682).</s>
+          <s>Lower correlations were observed between the two eQTL and the PC QTL (r = 0.754 and 0.691), however, removing one of the two apparent signals at this locus by fitting rs210293314 to the PC phenotype increased correlations for both candidate genes.</s>
+          <s>Since no other genes showed similar patterns of co-association, we consider that one or both of these genes are the best candidates at this locus.</s>
+          <s>The CSF2RB gene was expressed very strongly in mammary samples (TPM = 80.1), and by comparison, at a much higher level than NCF4 (TPM = 0.51).</s>
+          <s>This observation suggests a critical role for CSF2RB-mediated signalling in lactation, and given the plausible biological linkages of CSF2RB to these processes (via JAK-STAT signalling), we favour CSF2RB as the more likely of these two candidates.</s>
+        </p>
+        <p>
+          <s>The TST gene (ENSBTAG00000030650) was recently proposed by Pausch et al. <ref target="#b1" type="bibr">[2]</ref> as a candidate for milk fat and protein percentage QTL at ~75-76 Mbp on chromosome 5. TST encodes thiosulfate sulfurtransferase, also known as rhodanese, a mitochondrial enzyme that catalyses the conversion of cyanide plus thiosulfate into thiocyanate plus sulfite <ref target="#b58" type="bibr">[58]</ref> .</s>
+          <s>It has been shown that the rhodanese enzyme (in misfolded form) can bind with 5S-rRNA, enabling its import into the mitochondria <ref target="#b59" type="bibr">[59]</ref> .</s>
+          <s>There appears to be limited literature implicating TST in mammary development and milk production, and given that the gene maps downstream of association peaks in our dataset, and has no prominent eQTL by which to mediate these effects, a role for this gene seems unlikely for QTL in the NZ population.</s>
+          <s>This does not preclude the involvement of the gene in other populations, however, we consider that the most parsimonious hypothesis is that these QTL are shared across populations, at least partially underpinned by regulatory variants modulating the expression of the CSF2RB gene.</s>
+        </p>
+      </div>
+      <div>
+        <head>RNA editing and edQTL</head>
+        <p>
+          <s>Previously, we <ref target="#b9" type="bibr">[10]</ref> reported four RNA editing sites mapping to the CSF2RB gene, one of which (chr5:75,739,106) showed a significant edQTL (smallest P = 6.68 × 10 −13 ).</s>
+          <s>This site exhibited only modest correlations with the CSF2RB eQTL, or with the milk yield or composition QTL <ref target="#b9" type="bibr">[10]</ref> .</s>
+        </p>
+        <p>
+          <s>In the current paper, we report the discovery of 38 additional RNA-editing sites mapping to the 3′-UTR of CSF2RB.</s>
+          <s>These sites were not identified in the previous work since they map approximately 3 kbp downstream of the gene structure based on the Ensembl reference annotation.</s>
+          <s>Two of the novel sites, chr5:75,749,101 and chr5:75,750,335, exhibited edQTL with correlations exceeding 0.9 with the milk yield QTL after adjusting for marker rs208473130.</s>
+          <s>The correlation between the CSF2RB eQTL and the same milk QTL was − 0.173, which suggests that, if the lactation effects indeed derive from an RNA-editing-based mechanism, this mechanism is not wholly reflected by the gene expression data used to quantify the eQTL effects.</s>
+        </p>
+      </div>
+      <div>
+        <head>Conclusions</head>
+        <p>
+          <s>We have examined a previously implicated chromosome 5 locus for milk yield and composition traits, and identified highly significant QTL for milk yield, protein concentration, and fat concentration.</s>
+          <s>Using a large mammary RNA sequence resource, we have conducted eQTL mapping of the locus and show that expression of CSF2RB, a highly expressed gene involved in signalling pathways that are important to mammary development and lactation, appears to be responsible for these effects.</s>
+          <s>RNA editing sites were also discovered in the 3′-UTR of CSF2RB, and edQTL for two of these are correlated with one of two co-located but differentially segregating milk yield QTL, which was also in strong LD with a predicted deleterious missense variant in the MPST gene.</s>
+          <s>These results highlight the pleiotropic nature of the CSF2RB gene, and showcase the mechanistic complexity of a locus that will require further statistical and functional dissection to catalogue the full multiplicity of effects.</s>
+        </p>
+      </div>
+      <div>
+        <head>Additional file</head>
+        <p>
+          <s>Additional file 1. Polymorphisms targeted as custom content for the GGP LDv3 and LDv4 chips.</s>
+          <s>These were identified as tag variants of chromosome 5 lactation QTL in the window 74.8-76.2</s>
+          <s>Mbp.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig. 1</head>
+        <label>1</label>
+        <figDesc>The genetic context of milk trait QTL. Panels a and b: QTL for the herd-test-derived phenotypes protein concentration (a) and milk yield (b). Colours represent LD (R 2 ) with the most significant marker on a continuous scale, with colours provided in the legend for every 0.2 R 2 . Panel c shows the locations of genes mapping into this window (bottom) and the numbers of RNAseq reads mapping at positions across the window (top)</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig. 3</head>
+        <label>3</label>
+        <figDesc>QTL plots showing eQTL for the three genes that exhibit genome-wide significant cis-eQTL</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig. 5</head>
+        <label>5</label>
+        <figDesc>The effect of fitting the top variant on protein concentration (a-c) and milk yield (d-f) QTL. The top panels a and d show the QTL with no marker adjustments fitted; the centre panels b and e show the QTL after fitting the top variant from the panel above; and the bottom panels c and f show the QTL after fitting the top variant from the centre panel above. The phenotypes were adjusted by fitting the following markers: b rs208375076, c rs210293314, d rs208473130, e rs378861677</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Fig. 7</head>
+        <label>7</label>
+        <figDesc>Left: dotplot of the sequence from the CSF2RB 3′-UTR against its complement. Positions are relative to chr5:75,747,904. Black dots indicate that seven of the 11 surrounding nucleotides are complementary. Vertical dashed red lines indicate the locations of predicted RNA-editing sites. Sections of the region 2275-2452 are complementary to the regions 837-915, 1178-1350, 1591-1719, and 1757-1832, suggesting that the UTR is able to fold into multiple configurations. Right: the section of predicted double stranded sequence between 1184 and 1217 on the left strand (running upward), and 2411-2444 on the right strand (running downward). Edited sites are coloured based on the strength of the edQTL at that site, from blue (not significant) to red (max P = 5.22 × 10 −26 ). Sites are labelled with the correlation between the edQTL and the milk volume (MY) QTL after adjusting for marker rs208473130</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head>Table 1</head>
+        <label>1</label>
+        <figDesc>Top variants for milk yield and composition trait QTLPhenotypes are daily yields for fat (FY), protein (PY), and milk (MY); and composition (percentage) phenotypes for fat (FC) and protein (PC). Locations on chromosome 5 are shown for the UMD 3.1 reference genome. The gene column indicates the nearest gene annotated in the UCSC genome browser for the bosTau8 assembly</figDesc>
+        <table>Phenotype 
+Top variant 
+Location 
+Gene 
+Beta 
+SE 
+P 
+
+FY (kg/day) 
+rs466308089 
+75,957,201 
+IL2RB 
+− 0.015 
+0.003 
+2.40 × 10 −8 
+
+PY (kg/day) 
+rs108985709 
+76,157,976 
+ELFN2 
+0.004 
+0.001 
+1.05 × 10 −8 
+
+MY (L/day) 
+rs208473130 
+75,685,770 
+NCF4 
+0.216 
+0.021 
+6.64 × 10 −25 
+
+FC (%) 
+rs379739117 
+75,786,436 
+RPL7 
+− 0.055 
+0.004 
+3.27 × 10 −41 
+
+PC (%) 
+rs208375076 
+75,651,326 
+NCF4 
+− 0.035 
+0.002 
+7.28 × 10 −83 
+
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_2">
+        <head>Table 4</head>
+        <label>4</label>
+        <figDesc>Correlations between the − log 10 p-values for milk trait QTL and co-located eQTL</figDesc>
+        <table>Pearson correlations are shown, with 95% confidence intervals. Three genes with significant (P &lt; 5×10 −8 ) eQTL are shown, along with the TST gene [2] that has 
+previously been proposed as a candidate causative at this locus 
+
+Phenotype 
+CSF2RB 
+NCF4 
+TST 
+TXN2 
+
+FY (kg/day) 
+0.376 ± 0.017 
+0.164 ± 0.019 
+0.293 ± 0.018 
+0.024 ± 0.020 
+
+PY (kg/day) 
+0.562 ± 0.014 
+0.404 ± 0.017 
+0.425 ± 0.016 
+0.032 ± 0.020 
+
+MY (L/day) 
+0.849 ± 0.006 
+0.682 ± 0.011 
+0.306 ± 0.018 
+− 0.039 ± 0.020 
+
+FC (%) 
+0.756 ± 0.009 
+0.648 ± 0.012 
+0.104 ± 0.020 
+− 0.128 ± 0.020 
+
+PC (%) 
+0.754 ± 0.009 
+0.689 ± 0.011 
+0.059 ± 0.020 
+− 0.118 ± 0.020 
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_3">
+        <head>Table 5</head>
+        <label>5</label>
+        <figDesc>Minor allele frequencies for each top QTL variantAllele frequencies are shown across the entire study population of cows and by breed (HF Holstein-Friesian; J Jersey) Asterisks (*) indicate breeds where the minor allele differs from that for the population as a whole. The markers listed in the top section of the table tag the primary QTL for each phenotype, while those listed in the bottom section tag secondary QTL</figDesc>
+        <table>Phenotype 
+Variant 
+MAF All 
+HF (N = 8930) 
+J (N = 3599) 
+Cross 
+(N = 15,652) 
+
+FY (kg/day) 
+rs466308089 
+0.031 
+0.042 
+0.002 
+0.032 
+
+PY (kg/day) 
+rs108985709 
+0.409 
+0.483 
+0.298 
+0.391 
+
+MY (L/day) 
+rs208473130 
+0.444 
+0.489 
+0.390 
+0.435 
+
+FC (%) 
+rs379739117 
+0.473 
+*0.476 
+0.391 
+0.464 
+
+PC (%) 
+rs208375076 
+0.446 
+0.492 
+0.391 
+0.437 
+
+MY (%) 
+rs378861677 
+0.116 
+0.182 
+0.010 
+0.101 
+
+PC (%) 
+rs210293314 
+0.276 
+0.333 
+0.184 
+0.264 
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_4">
+        <head>Table 6</head>
+        <label>6</label>
+        <figDesc>Correlations between the − log 10 p-values for milk trait QTL and co-located edQTLPearson correlations (with 95% confidence intervals) between the − log 10 p-values for milk trait QTL and edQTL for sites mapping to the 3′-UTR of CSF2RB.</figDesc>
+        <table>Only sites and phenotypes where the correlation exceeded 0.707 (R 2 &gt;0.5) are 
+shown 
+
+Phenotype 
+Edit site 
+Correlation 
+
+FC (%) 
+chr5:75,750,310 
+0.751 ±0.009 
+
+PC (%) 
+chr5:75,750,220 
+0.753 ±0.009 
+
+PC (%) 
+chr5:75,750,310 
+0.771 ±0.008 
+
+PY (kg/day) 
+chr5:75,748,794 
+0.799 ±0.007 
+
+PY (kg/day) 
+chr5:75,749,140 
+0.787 ±0.008 
+
+PY (kg/day) 
+chr5:75,750,204 
+0.718 ±0.010 
+</table>
+      </figure>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>The authors would like to acknowledge S. Morgan and staff at DairyNZ Ltd. (Hamilton, New Zealand), and Phil McKinnon, Ali Cullum and staff at AgResearch (Hamilton, New Zealand) for facilitating mammary tissue sampling of lactating animals.</s>
+            <s>We also wish to acknowledge New Zealand Genomics Limited (NZGL) and the University of Auckland Centre for Genomics, Proteomics, and Metabolomics for RNA preparation and sequencing, as well as both the Australian Genome Research Facility (AGRF) and Illumina FastTrack for both RNA and genomic DNA sequencing.</s>
+            <s>This work was supported by the Ministry for Primary Industries (Wellington, New Zealand), who co-funded the work through the Primary Growth Partnership.</s>
+            <s>External funders had no role in the design of the experiment, the collection, analysis or interpretation of the data, or writing the manuscript.</s>
+          </p>
+        </div>
+        <div>
+          <head>Publisher's Note</head>
+          <p>
+            <s>Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Authors' contributions</head>
+          <p>
+            <s>TJL performed most of the bioinformatic and statistical analyses with help from KT, CC, TJJJ, and MK; TJL, SRD, RGS, and MDL conceived of the study and experiments; SRD, BLH, RGS, RJS, and MDL were involved in supervision of the project; TJL and MDL wrote the manuscript.</s>
+            <s>All authors have read and approved the final manuscript.</s>
+            <s>
+              <ref target="#b0" type="bibr">1</ref> Research and Development, Livestock Improvement Corporation, Ruakura Road, Hamilton, New Zealand.</s>
+            <s>
+              <ref target="#b1" type="bibr">2</ref> School of Biological Sciences, University of Auckland, Symonds Street, Auckland, New Zealand.</s>
+          </p>
+        </div>
+        <div>
+          <head>Author details</head>
+        </div>
+        <div>
+          <head>Competing interests</head>
+          <p>
+            <s>TJL, KT, CC, TJJJ, MK, SRD, BLH, RJS, and MDL are employees of Livestock Improvement Corporation, a commercial provider of bovine germplasm.</s>
+            <s>The remaining authors declare that they have no competing interests.</s>
+          </p>
+        </div>
+        <div>
+          <head>Availability of data and materials</head>
+          <p>
+            <s>Sequence data representing the chromosome 5 locus of interest are available for download and have been added to the sequence read archive (SRA = SRP159443).</s>
+            <s>Whole genome and mammary transcriptome sequences representing the nine animals used for RNA-edit discovery have also been uploaded to SRA (SRP136662).</s>
+            <s>The GRM, phenotype data, and imputed sequence-based genotype data representing the animals used for lactation trait association analyses (N = 29,350), and RNAseq eQTL/edQTL analyses (N = 357), are also available for download and can be accessed through the Dryad database portal (https ://doi.org/10.5061/dryad</s>
+            <s>.1h6h3</s>
+            <s>54).</s>
+          </p>
+        </div>
+        <div>
+          <head>Consent for publication</head>
+          <p>
+            <s>Not applicable.</s>
+          </p>
+        </div>
+        <div>
+          <head>Ethics approval</head>
+          <p>
+            <s>All animal experiments were conducted in strict accordance with the rules and guidelines outlined in the New Zealand Animal Welfare Act 1999.</s>
+            <s>Most data were generated as part of routine commercial activities outside the scope of that requiring formal committee assessment and ethical approval (as defined by the above guidelines).</s>
+            <s>These animals were located in commercial dairy herds around New Zealand, with approval given to sample tissues for genetic analyses.</s>
+            <s>For the mammary tissue RNA sequencing biopsy experiment, samples were obtained in accordance with protocols approved by the Ruakura Animal Ethics Committee, Hamilton, New Zealand (approval AEC 12845).</s>
+            <s>These cows were situated on a research farm and permission was sought and obtained to biopsy mammary tissue from the owner of these animals (AgResearch, NZ).</s>
+            <s>No animals were sacrificed for this study.</s>
+          </p>
+        </div>
+        <div>
+          <head>Funding</head>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Targeted imputation of sequence variants and gene expression profiling identifies twelve candidate genes associated with lactation volume, composition and calving interval in dairy cattle</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Raven</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Cocks</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Kemper</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Chamberlain</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Vander</forename>
+                  <surname>Jagt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Goddard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Mamm Genome</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope from="81" to="97" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Meta-analysis of sequence-based association studies across three cattle breeds reveals 25 QTL for fat and protein percentages in milk at nucleotide resolution</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Pausch</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Emmerling</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Gredler-Grandl</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Fries</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Daetwyler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Goddard</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">BMC Genomics</title>
+              <imprint>
+                <biblScope unit="volume">18</biblScope>
+                <biblScope unit="page">853</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Application of a Bayesian non-linear model hybrid scheme to sequence data for genomic prediction and QTL mapping</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Ypp</forename>
+                  <surname>Chen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Macleod</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Pryce</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Goddard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Hayes</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">BMC Genomics</title>
+              <imprint>
+                <biblScope unit="volume">18</biblScope>
+                <biblScope unit="page">618</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Multibreed genomic prediction using multitrait genomic residual maximum likelihood and multitask Bayesian variable selection</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Calus</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Goddard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Wientjes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Bowman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Hayes</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Dairy Sci</title>
+              <imprint>
+                <biblScope unit="volume">101</biblScope>
+                <biblScope from="4279" to="94" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Positional candidate cloning of a QTL in dairy cattle: identification of a missense mutation in the bovine DGAT1 gene with major effect on milk yield and composition</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Grisart</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Coppieters</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Farnir</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Karim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Ford</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Berzi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genome Res</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope from="222" to="253" unit="page"/>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Identification of a missense mutation in the bovine ABCG2 gene with a major effect on the QTL on chromosome 6 affecting milk yield and composition in Holstein cattle</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Cohen-Zinder</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Seroussi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Larkin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Loor</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Everts-Van Der Wind</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genome Res</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope from="936" to="980" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Molecular dissection of a quantitative trait locus: a phenylalanine-totyrosine substitution in the transmembrane domain of the bovine growth hormone receptor is associated with a major effect on milk yield and composition</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Blott</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Moisio</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Schmidt-Küntzel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Cornet</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Berzi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genetics</title>
+              <imprint>
+                <biblScope unit="volume">163</biblScope>
+                <biblScope from="253" to="66" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Leveraging genetically simple traits to identify small-effect variants for complex phenotypes</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Kemper</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Littlejohn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Lopdell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Hayes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Bennett</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Williams</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">BMC Genomics</title>
+              <imprint>
+                <biblScope unit="volume">17</biblScope>
+                <biblScope unit="page">858</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Sequence-based association analysis reveals an MGST1 eQTL with pleiotropic effects on bovine milk composition</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Littlejohn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Tiplady</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Fink</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Lehnert</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Lopdell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Johnson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sci Rep</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="page">25376</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Using RNAseq data to improve genomic selection in dairy cattle</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Lopdell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Tiplady</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Littlejohn</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Proceedings of the World Congress on genetics applied to livestock production</title>
+              <meeting>the World Congress on genetics applied to livestock production<address>
+                  <addrLine>Auckland</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <date type="published" when="2018-02"/>
+                <biblScope unit="page">49</biblScope>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Prediction of total genetic value using genome-wide dense marker maps</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Meuwissen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Hayes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Goddard</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genetics</title>
+              <imprint>
+                <biblScope unit="volume">157</biblScope>
+                <biblScope from="1819" to="1848" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Extension of the Bayesian alphabet for genomic selection</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Habier</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Fernando</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Kizilkaya</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Garrick</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">BMC Bioinformatics</title>
+              <imprint>
+                <biblScope unit="volume">12</biblScope>
+                <biblScope unit="page">186</biblScope>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Improved precision of QTL mapping using a nonlinear Bayesian method in a multi-breed population leads to greater accuracy of across-breed genomic predictions</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Kemper</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Reich</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Bowman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Vander</forename>
+                  <surname>Jagt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Chamberlain</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Mason</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">A</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genet Sel Evol</title>
+              <imprint>
+                <biblScope unit="volume">47</biblScope>
+                <biblScope unit="page">29</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">How old are quantitative trait loci and how widely do they segregate?</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Kemper</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Hayes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Daetwyler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Goddard</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Anim Breed Genet</title>
+              <imprint>
+                <biblScope unit="volume">132</biblScope>
+                <biblScope from="121" to="155" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <monogr>
+              <title level="m" type="main">ASReml-R reference manual: mixed models for S language</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Butler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Cullis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Gilmour</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Gogel</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2009"/>
+                <pubPlace>Brisbane: Queensland Government</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">A unified approach to genotype imputation and haplotype-phase inference for large data sets of trios and unrelated individuals</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Browning</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Browning</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Hum Genet</title>
+              <imprint>
+                <biblScope unit="volume">84</biblScope>
+                <biblScope from="210" to="233" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Functionally reciprocal mutations of the prolactin signalling pathway define hairy and slick cattle</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Littlejohn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Henty</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Tiplady</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Johnson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Harland</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Lopdell</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Commun</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope unit="page">5861</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Fast and accurate short read alignment with Burrows-Wheeler transform</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Durbin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bioinformatics</title>
+              <imprint>
+                <biblScope unit="volume">25</biblScope>
+                <biblScope from="1754" to="60" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">A framework for variation discovery and genotyping using next-generation DNA sequencing data</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Depristo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Banks</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Poplin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Garimella</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Maguire</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Hartl</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">43</biblScope>
+                <biblScope from="491" to="499" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Common SNPs explain a large proportion of the heritability for human height</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Benyamin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Mcevoy</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Gordon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Henders</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Nyholt</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope from="565" to="574" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">GCTA: a tool for genome-wide complex trait analysis</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Goddard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Visscher</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Hum Genet</title>
+              <imprint>
+                <biblScope unit="volume">88</biblScope>
+                <biblScope from="76" to="82" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Advantages and pitfalls in the application of mixed-model association methods</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Zaitlen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Goddard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Visscher</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Price</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">46</biblScope>
+                <biblScope from="100" to="106" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">DNA and RNA-sequence based GWAS highlights membrane-transport genes as key modulators of milk lactose content</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Lopdell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Tiplady</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Struchalin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Johnson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Keehan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Sherlock</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">BMC Genomics</title>
+              <imprint>
+                <biblScope unit="volume">18</biblScope>
+                <biblScope unit="page">968</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">TopHat2: accurate alignment of transcriptomes in the presence of insertions, deletions and gene fusions</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Pertea</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Trapnell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Pimentel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Kelley</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Salzberg</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genome Biol</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope unit="page">36</biblScope>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">StringTie enables improved reconstruction of a transcriptome from RNAseq reads</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Pertea</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Pertea</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Antonescu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Chang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Mendell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Salzberg</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Biotechnol</title>
+              <imprint>
+                <biblScope unit="volume">33</biblScope>
+                <biblScope from="290" to="295" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Measurement of mRNA abundance using RNA-seq data: RPKM measure is inconsistent among samples</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Wagner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Kin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Lynch</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Theory Biosci</title>
+              <imprint>
+                <biblScope unit="volume">131</biblScope>
+                <biblScope from="281" to="286" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Differential expression analysis for sequence count data</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Anders</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Huber</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genome Biol</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope unit="page">106</biblScope>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <monogr>
+              <title level="m" type="main">Widespread cis-regulation of RNA-editing in a large mammal. bioRxiv</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Lopdell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Couldrey</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Tiplady</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Davis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Snell</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Harris</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1101/304220</idno>
+              <ptr target="https://doi.org/10.1101/304220"/>
+              <imprint>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Accurate identification of human Alu and non-Alu RNA editing sites</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Ramaswami</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Lin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Piskol</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Tan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Davis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Methods</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope from="579" to="81" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">CNVnator: an approach to discover, genotype, and characterize typical and atypical CNVs from family and population genome sequencing</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Abyzov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Urban</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Snyder</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Gerstein</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genome Res</title>
+              <imprint>
+                <biblScope unit="volume">21</biblScope>
+                <biblScope from="974" to="84" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Genotype imputation with millions of reference samples</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Browning</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Browning</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Hum Genet</title>
+              <imprint>
+                <biblScope unit="volume">98</biblScope>
+                <biblScope from="116" to="142" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">The Ensembl variant effect predictor</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Mclaren</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Gil</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Hunt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Riat</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Ritchie</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Thormann</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genome Biol</title>
+              <imprint>
+                <biblScope unit="volume">17</biblScope>
+                <biblScope unit="page">122</biblScope>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">A comparative encyclopedia of DNA elements in the mouse genome</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Yue</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Cheng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Breschi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Vierstra</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Wu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Ryba</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">515</biblScope>
+                <biblScope from="355" to="64" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">An abundance of bidirectional promoters in the human genome</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Trinklein</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Aldred</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Hartman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Schroeder</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Otillar</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Myers</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genome Res</title>
+              <imprint>
+                <biblScope unit="volume">14</biblScope>
+                <biblScope from="62" to="68" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">The importance of internal loops within RNA substrates of ADAR1</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Lehmann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Bass</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Mol Biol</title>
+              <imprint>
+                <biblScope unit="volume">291</biblScope>
+                <biblScope from="1" to="13" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">Double-stranded RNA adenosine deaminases ADAR1 and ADAR2 have overlapping specificities</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Lehmann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Bass</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biochemistry</title>
+              <imprint>
+                <biblScope unit="volume">39</biblScope>
+                <biblScope from="12875" to="84" unit="page"/>
+                <date type="published" when="2000"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title level="a" type="main">Genetic mapping uncovers cis-regulatory landscape of RNA editing</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Ramaswami</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Deng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Carbone</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Mackay</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Li</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Commun</title>
+              <imprint>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope unit="page">8194</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <analytic>
+              <title level="a" type="main">ADAR1 regulates ARH-GAP26 gene expression through RNA editing by disrupting miR-30b-3p and miR-573 binding</title>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Hui</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Guo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Hu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>He</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">RNA</title>
+              <imprint>
+                <biblScope unit="volume">19</biblScope>
+                <biblScope from="1525" to="1561" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">Structure-mediated modulation of mRNA abundance by A-to-I editing</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Brümmer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Chan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Xiao</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Commun</title>
+              <imprint>
+                <biblScope unit="volume">8</biblScope>
+                <biblScope unit="page">1255</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">Regulating gene expression through RNA nuclear retention</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Prasanth</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Prasanth</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Xuan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Hearn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Freier</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Bennett</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell</title>
+              <imprint>
+                <biblScope unit="volume">123</biblScope>
+                <biblScope from="249" to="63" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Detection and assessment of copy number variation using PacBio long-read and Illumina sequencing in New Zealand dairy cattle</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Couldrey</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Keehan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Johnson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Tiplady</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Winkelman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Littlejohn</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Dairy Sci</title>
+              <imprint>
+                <biblScope unit="volume">100</biblScope>
+                <biblScope from="5472" to="5480" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">Receptors for granulocytemacrophage colony-stimulating factor, interleukin-3, and interleukin-5</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Miyajima</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Mui</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Ogorochi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Sakamaki</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Blood</title>
+              <imprint>
+                <biblScope unit="volume">82</biblScope>
+                <biblScope from="1960" to="74" unit="page"/>
+                <date type="published" when="1993"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title level="a" type="main">Demonstration by reverse transcription-polymerase chain reaction of multiple cytokine mRNA expression in bovine alveolar macrophages and peripheral blood mononuclear cells</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Ito</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kodama</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Res Vet Sci</title>
+              <imprint>
+                <biblScope unit="volume">60</biblScope>
+                <biblScope from="94" to="100" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">The cytokines of bovine mammary gland: prospects for diagnosis and therapy</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Alluwaimi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Res Vet Sci</title>
+              <imprint>
+                <biblScope unit="volume">77</biblScope>
+                <biblScope from="211" to="233" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b44">
+            <analytic>
+              <title level="a" type="main">Cytokines and Cytokine Receptors</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Mak</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Saunders</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">The immune response: basic and clinical principles</title>
+              <editor>Mak TW, Saunders ME</editor>
+              <meeting>
+                <address>
+                  <addrLine>Cambridge</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <publisher>Academic Press</publisher>
+                <date type="published" when="2006"/>
+                <biblScope from="463" to="516" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b45">
+            <analytic>
+              <title level="a" type="main">Wynshaw-Boris A, Hennighausen L. Stat5a is mandatory for adult mammary gland development and lactogenesis</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Robinson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">U</forename>
+                  <surname>Wagner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Garrett</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genes Dev</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope from="179" to="86" unit="page"/>
+                <date type="published" when="1997"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b46">
+            <analytic>
+              <title level="a" type="main">Prolactin, growth hormone, and epidermal growth factor activate Stat5 in different compartments of mammary tissue and exert different and overlapping developmental effects</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Gallego</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Binart</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Robinson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Okagaki</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Coschigano</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Perry</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Dev Biol</title>
+              <imprint>
+                <biblScope unit="volume">229</biblScope>
+                <biblScope from="163" to="75" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b47">
+            <monogr>
+              <title level="m" type="main">Beta-casein gene promoter activity is regulated by the hormone-mediated relief of transcriptional • fast, convenient online submission • thorough peer review by experienced researchers in your field • rapid publication on acceptance • support for research data, including large and complex data types • gold Open Access which fosters wider collaboration and increased citations maximum visibility for your research</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Schmitt-Ney</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Doppler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Ball</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Groner</surname>
+                </persName>
+              </author>
+              <imprint/>
+            </monogr>
+            <note>over 100M website views per year</note>
+          </biblStruct>
+          <biblStruct xml:id="b48">
+            <analytic>
+              <title level="a" type="main">Ready to submit your research ? Choose BMC and benefit from: repression and a mammary-gland-specific nuclear factor</title>
+            </analytic>
+            <monogr>
+              <title level="j">Mol Cell Biol</title>
+              <imprint>
+                <biblScope unit="volume">11</biblScope>
+                <biblScope from="3745" to="55" unit="page"/>
+                <date type="published" when="1991"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b49">
+            <analytic>
+              <title level="a" type="main">Cloning and expression of Stat5 and an additional homologue (Stat5b) involved in prolactin signal transduction in mouse mammary tissue</title>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Robinson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Gouilleux</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Groner</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Hennighausen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proc Nat Acad Sci USA</title>
+              <imprint>
+                <biblScope unit="volume">92</biblScope>
+                <biblScope from="8831" to="8836" unit="page"/>
+                <date type="published" when="1995"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b50">
+            <analytic>
+              <title level="a" type="main">Association of STAT5A gene variants with milk production traits in Agerolese cattle</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Selvaggi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Albarella</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Dario</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Peretti</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Ciotola</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biochem Genet</title>
+              <imprint>
+                <biblScope unit="volume">55</biblScope>
+                <biblScope from="158" to="67" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b51">
+            <analytic>
+              <title level="a" type="main">Single nucleotide polymorphisms in the signal transducer and regulator of transcription (STAT) genes are associated with milk production, milk composition, and fertility traits in Holstein Friesian cattle</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Ratcliffe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mullen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mcclure</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Mcclure</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Kearney</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Anim Sci</title>
+              <imprint>
+                <biblScope unit="volume">95</biblScope>
+                <biblScope unit="page">94</biblScope>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b52">
+            <analytic>
+              <title level="a" type="main">Interactions between the components of the human NADPH oxidase: a review about the intrigues in the phox family</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Leusen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Verhoeven</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Roos</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Front Biosci</title>
+              <imprint>
+                <biblScope unit="volume">1</biblScope>
+                <biblScope from="72" to="90" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b53">
+            <analytic>
+              <title level="a" type="main">Regulation and termination of NADPH oxidase activity</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Decoursey</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Ligeti</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell Mol Life Sci</title>
+              <imprint>
+                <biblScope unit="volume">62</biblScope>
+                <biblScope from="2173" to="93" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b54">
+            <analytic>
+              <title level="a" type="main">Chronic granulomatous disease</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Heyworth</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Cross</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Curnutte</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Curr Opin Immunol</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope from="578" to="84" unit="page"/>
+                <date type="published" when="2003"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b55">
+            <analytic>
+              <title level="a" type="main">Role of an SNP in alternative splicing of bovine NCF4 and mastitis susceptibility</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Ju</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Sun</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Q</forename>
+                  <surname>Jiang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS One</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope unit="page">143705</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b56">
+            <analytic>
+              <title level="a" type="main">The effect of the SNP g.18475 A &gt; G in the 3′ UTR of NCF4 on mastitis susceptibility in dairy cattle</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Ju</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Sun</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Cell Stress Chaperones</title>
+              <imprint>
+                <biblScope unit="volume">23</biblScope>
+                <biblScope from="385" to="91" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b57">
+            <analytic>
+              <title level="a" type="main">Modeling the impact of mastitis on milk production by dairy cows</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Lescourret</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Coulon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Dairy Sci</title>
+              <imprint>
+                <biblScope unit="volume">77</biblScope>
+                <biblScope from="2289" to="301" unit="page"/>
+                <date type="published" when="1994"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b58">
+            <analytic>
+              <title level="a" type="main">Enzymatic detoxification of cyanide: clues from Pseudomonas aeruginosa Rhodanese</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Cipollone</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Ascenzi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Tomao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Imperi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Visca</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Mol Microbiol Biotechnol</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope from="199" to="211" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b59">
+            <analytic>
+              <title level="a" type="main">Mitochondrial enzyme rhodanese is essential for 5 S ribosomal RNA import into human mitochondria</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Smirnov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Comte</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Mager-Heckel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Addis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Krasheninnikov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Martin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Biol Chem</title>
+              <imprint>
+                <biblScope unit="volume">285</biblScope>
+                <biblScope from="30792" to="803" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b60">
+            <analytic>
+              <title level="a" type="main">Genome-Wide Significance Project. What should the genome-wide significance threshold be? Empirical replication of borderline genetic associations</title>
+              <author>
+                <persName>
+                  <forename type="first">O</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Panagiotou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Ioannidis</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Int J Epidemiol</title>
+              <imprint>
+                <biblScope unit="volume">41</biblScope>
+                <biblScope from="273" to="86" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

@@ -1,0 +1,1478 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:06+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Sulfur isotopes ratio of atmospheric carbonyl sulfide constrains its sources</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Alon</forename>
+                <surname>Angert</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Ward</forename>
+                <surname>Said-Ahmad</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Chen</forename>
+                <surname>Davidson</surname>
+              </persName>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Alon</forename>
+                <surname>Amrani</surname>
+              </persName>
+            </author>
+            <title level="a" type="main">Sulfur isotopes ratio of atmospheric carbonyl sulfide constrains its sources</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1038/s41598-018-37131-3</idno>
+          <note>1 SCIEnTIfIC RepoRtS | (2019) 9:741 |</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div subtype="dataseer">
+          <p>
+            <s>Carbonyl sulfide (COS) is the major long-lived sulfur bearing gas in the atmosphere, and is used to estimate the rates of regional and global (both past and current) photosynthesis.</s>
+            <s>Sulfur isotope measurements ( 34 S/ 32 S ratio, δ 34 S) of COS may offer a way for improved determinations of atmospheric COS sources.</s>
+            <s>However, measuring the COS δ 34 S at the atmospheric concentrations of ~0.5 ppb is challenging.</s>
+            <s cert="0.8069046139717102" id="dataset-1" type="Spectrometry">Here we present high-accuracy δ 34 S measurements of atmospheric COS done by gas chromatograph (GC) connected to a multicollector inductively coupled plasma mass spectrometer (MC-ICPMS), after pre-concentrating from 2-liters of air.</s>
+            <s>We showed that the precision of COS δ 34 S measurement for gas standards is ≤0.2‰, and that N 2 and CO 2 in the gas standard mixture had no effect on the measured δ 34 S. Natural air samples were collected in Israel and in the Canary Islands.</s>
+            <s>The COS δ 34 S values in both locations were found to be 13.2 ± 0.6‰, and are believed to represent the background tropospheric value.</s>
+            <s>This δ 34 S value is markedly different from the previously reported value of 4.9‰.</s>
+            <s cert="0.9455651044845581" id="dataset-2" type="Tabular data">We estimate the expected isotopic signature of COS sources and sinks, and use the δ 34 S value of atmospheric COS we measured to estimate that ~48% of it originates from the ocean.</s>
+          </p>
+          <p>
+            <s>Published: xx xx xxxx OPEN www.nature.com/scientificreports/</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <p>
+          <s>The atmosphere contains about 0.5 ppb carbonyl sulfide (COS), with a lifetime of few years 1 .</s>
+          <s>Because it is relatively long-lived, the COS is hypothesized to be a large source of background stratospheric aerosols which have important control on Earth albedo and stratospheric chemistry, including the ozone layer 2,3 .</s>
+          <s>In addition, since COS follows a similar pathway to CO 2 through stomata during photosynthesis, it can be used to estimate the photosynthesis rates, mainly on a global scale for both the present and for the last century <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref>
+            <ref target="#b6" type="bibr">[7]</ref> , but also on regional scale <ref target="#b7" type="bibr">8</ref> .</s>
+          <s>The main natural source of COS to the atmosphere is the ocean, both as direct COS emission, and indirect as carbon disulfide (CS 2 ) and dimetheylsulfide (DMS) emissions that rapidly oxidized to COS <ref target="#b8" type="bibr">9</ref> .</s>
+          <s>Anthropogenic sources of COS are dominated by indirect sources (CS 2 ) and include rayon production, aluminum production, coal combustion, biomass burning, oil refineries and fuel combustion <ref target="#b9" type="bibr">10,</ref>
+            <ref target="#b10" type="bibr">11</ref> .</s>
+        </p>
+        <p>
+          <s>The relatively small decadal trends in COS atmospheric concentrations indicate that on a global scale, the sources and sinks are approximately balanced.</s>
+          <s>A recent review of the atmosphere COS budget <ref target="#b11" type="bibr">12</ref> highlights the major knowledge gaps.</s>
+          <s>Previous studies also demonstrated the large uncertainty in the global COS budget, with 3-fold uncertainty in plant uptake <ref target="#b3" type="bibr">4</ref> and up to 8-fold uncertainty in the ocean source 13 and 3-fold uncertainty in the anthropogenic COS sources <ref target="#b4" type="bibr">5</ref> .</s>
+          <s>The uncertainties in ocean COS emissions are related in part to the physicochemical and biogeochemical models that are used for these estimations, and the scarcity of direct measurements <ref target="#b12" type="bibr">13,</ref>
+            <ref target="#b13" type="bibr">14</ref> .</s>
+        </p>
+        <p>
+          <s>Sulfur isotope measurements ( 34 S/ 32 S ratio, δ 34 S) of COS are suggested here as a novel approach for the determinations of atmospheric COS sources.</s>
+          <s>The isotopic approach assumes that COS sources (mainly oceanic and anthropogenic, but also biomass burning and soil) have distinct δ 34 S values.</s>
+          <s>Therefore, the contribution of each COS source to the atmosphere can be calculated using the appropriate isotope mass balance equations, and knowledge on the fractionation during uptake by the sinks (mainly plants, but also atmospheric oxidation and soils).</s>
+          <s>The isotopic mass balance, assuming steady state since the long-term trends are small 7 , can be presented by the following equation: The left side of the equation represents the sources and their isotopic composition: O is the flux from the ocean (combined direct and indirect fluxes), δ 34 S COS-ocean is the average weighted ocean source isotopic composition, A is the anthropogenic flux, and δ 34 S COS-anthropogenic is its average isotopic composition.</s>
+          <s>The right side represents the sinks, where P, S, and X are the sinks by plant, soil, and atmospheric oxidation, respectively.</s>
+          <s>The possible fractionations during uptake are represented by ε with the corresponding subscript.</s>
+          <s>Estimating the relative contributions of the sources to atmospheric COS will provide an important constraint to the COS budget and photosynthesis models, and thus reduce their uncertainties.</s>
+        </p>
+        <formula xml:id="formula_0">×δ + ×δ = × δ + ε + × δ + ε + × δ + ε - - - - - O S A S P ( S ) S ( S ) X ( S )<label>(1)</label>
+        </formula>
+        <p>
+          <s>Measurements of sulfur isotopes in atmospheric COS are challenging because of its low concentrations: ~0.5 ppb.</s>
+          <s>A recent method of COS δ 34 S analysis on fragments ions using a pre-concentration air system coupled with isotope ratio mass spectrometer (IRMS) requires 10's nmol which translates to hundreds of liters of air per analysis <ref target="#b14" type="bibr">15</ref> .</s>
+          <s>With this method these researchers were able to provide a single δ 34 S value of COS of a compressed air sample from one location in Japan (Kawasaki).</s>
+          <s>However, the need for hundreds of liters of air per analysis still limits the applicability of this method.</s>
+        </p>
+        <p>
+          <s>A more tractable analytical approach for the analysis of trace atmospheric sulfur compounds is the coupling of a gas chromatograph (GC) with a multicollector inductively coupled plasma mass spectrometer (MC-ICPMS) <ref target="#b15" type="bibr">16</ref> .</s>
+          <s>This method enables the measurements of δ 34 S values in individual volatile and gas compounds and requires a sample size of the pmol level or about 10 4 -fold lower than that of a regular IRMS <ref target="#b15" type="bibr">[16]</ref>
+            <ref target="#b16" type="bibr">[17]</ref>
+            <ref target="#b17" type="bibr">[18]</ref> .</s>
+          <s>The current sensitivity of the GC/MC-ICPMS required only 1-2 L of air for reliable δ 34 S analysis of atmospheric COS.</s>
+          <s>Here we use the GC/MC-ICPMS for accurate and precise δ 34 S determination of COS in low volumes of atmospheric air in two locations.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Results</head>
+        <p>
+          <s>Precision and accuracy of COS δ 34 S analysis at low concentrations.</s>
+          <s>The method we used was a combination and modification of two existing methods.</s>
+          <s>One is the Tenax resin pre-concentration of COS from air <ref target="#b14" type="bibr">15,</ref>
+            <ref target="#b18" type="bibr">19</ref> and the second is the δ 34 S analysis of gases using GC/MC-ICPMS <ref target="#b17" type="bibr">18</ref> .</s>
+          <s>To ensure that our method preserves the original δ 34 S value of the measured COS, we have measured the following COS standards using two introduction methods, direct injection and pre-concentration.</s>
+          <s>These gas mixtures were calibrated against Mix 1 that contained several sulfur compounds including COS at concentration of ~21 ppm.</s>
+          <s>The COS main standard (4.7% in He, hereafter "Mix 2") was diluted and mixed with other gases to make additional 2 mixtures: a 5.2 ppm of COS in He (99.995% pure) hereafter "Mix 3", and 1.7 ppb COS, diluted in ~500 ppm CO 2 and N 2 as balance, hereafter "Mix 4".</s>
+          <s>The N 2 was added to the mixture to verify successful capture of COS on Tenax when diluted by the main component of the atmosphere.</s>
+          <s>CO 2 was added since it condenses in the Tenax trap temperature (−90 °C), and thus can potentially interfere.</s>
+          <s>Note that both N 2 and O 2 do not spontaneously react with COS, nor will it react with the Tenax at this temperature.</s>
+          <s>Other gases are not expected to interfere in COS trapping on Tenax because they are in trace amounts in the atmosphere, and even if captured by the Tenax, they will be separated by the GC column.</s>
+        </p>
+        <p>
+          <s>Standards mixtures 2-4 have the same original COS gas which was isotopically calibrated against our laboratory standards.</s>
+          <s cert="0.9853389263153076" id="dataset-3" type="Tabular data">The first standard (Mix 2) was measured directly, without the pre-concentration system.</s>
+          <s cert="0.9845917224884033" id="dataset-4" type="Tabular data">The second standard (Mix 3) was measured both directly and by the pre-concentration system.</s>
+          <s cert="0.9879000186920166" id="dataset-5" type="Tabular data">And Mix 4 was measured only by the pre-concentration system <ref target="#fig_1" type="figure">(Fig. 1</ref> , <ref type="table">Table 1</ref> ).</s>
+          <s>Hence, measuring these standards tests for possible fractionation during pre-concentration, and for possible interference by N 2 and CO 2 during capture on the Tenax resin.</s>
+          <s>
+            <ref type="table">Table 1</ref> summarize the results of these tests.</s>
+          <s>The results show that there is no fractionation involved with the pre-concentration step, even when N 2 and CO 2 are present.</s>
+          <s>In addition, for the Mix 3 standard that was measured both by pre-concentration and by direct injection to the GC, we found that the yield of the pre-concentration system is better than 97%.</s>
+          <s>
+            <ref type="table">Table 2</ref> (all the δ 34 S values in this work are reported against VCDT).</s>
+          <s>The average δ 34 S value for these measurements set was 13.4 ± 0.5‰ (std, 1σ), which demonstrates the stability and precision of the system over time.</s>
+          <s>The higher errors compared to the standard measurements are most probably introduced by COS blanks left in the sampling cylinders after the cleaning procedure.</s>
+          <s>It is possible that an improved cleaning procedure (e.g.</s>
+          <s>repeating all the steps twice) will lower this blank.</s>
+          <s>The RSD (Relative Standard Deviation) of the peak area is 10.4%, which represents the variability in the MC-ICPMS sensitivity, which was not corrected against a COS concertation standard in this first campaign.</s>
+          <s>We have performed two more sampling campaigns using a different method of sampling (electropolished canisters, see Methods) during February and March 2018 to check for a possible difference in COS δ 34 S values that arise from geographic location.</s>
+          <s>
+            <ref type="table">Table 2</ref> details the location, COS concentration and isotopic composition of each sampling campaign.</s>
+          <s>There was no apparent difference in δ 34 S values between samples taken in Sulfinert treated stainless steel cylinders, and those taken with electropolished stainless steel canisters, indicating that both are acceptable options for COS sampling.</s>
+          <s>The measurements of air sampled resulted in an average (±1σ std) concentration of 0.52 ± 0.01 ppb for the two sites.</s>
+          <s>This concertation agrees well with the known concertation of COS in the atmosphere, and thus indicate good preservation of the samples during the few weeks from sampling to analysis.</s>
+          <s>The average δ 34 S value (±1σ std) for the February-March campaign was found to be 12.8 ± 0.5‰ (n = 3) for Jerusalem, and 13.1 ± 0.7‰ (n = 3) for the Canary Islands.</s>
+          <s>The overall average for all months and both location is 13.2 ± 0.6‰ (with no significant temporal or spatial variation).</s>
+        </p>
+      </div>
+      <div>
+        <head>Analysis of natural air samples. Air was sampled in</head>
+      </div>
+      <div subtype="dataseer">
+        <head>Discussion</head>
+        <p>
+          <s>Our COS standards analysis showed that the method we used is highly useful and applicable for measurements of COS δ 34 S values at atmospheric concentrations.</s>
+          <s>There were no apparent effects of the pre-concentration step on the precision and accuracy, and no interfering effects from other gases in the gas matrix used (either He or N 2 and CO 2 ).</s>
+          <s>These results provide confidence that the measurements of natural air samples represent reliably the atmospheric COS δ 34 S values.</s>
+          <s>The natural air samples showed an average δ 34 S value of 13.2 ± 0.6‰, with no detectable variation in isotopic composition between the Canary Islands and Israel, despite a very different trajectory of the air before arriving to the sampling locations.</s>
+          <s>A back-trajectory analysis by NOAA's HYSPLIT <ref target="#b19" type="bibr">20</ref> shows that the history of the air sampled in the Canary Islands was mostly of a path along the north Atlantic, which only slightly brushed against the western edge of Europe (mostly Portugal), before continuing over the Atlantic to the sampling point.</s>
+          <s>In contrast, the air sampled in Israel had a much more continental path <ref target="#fig_2" type="figure">(Fig. 2)</ref> .</s>
+          <s>The similar values for Israel and the Canary Islands are probably the result of the long life time of COS in the atmosphere, which is a few years 1 .</s>
+          <s>Hence, this similarity seems to indicate that the δ 34 S value we measured represents the clean atmosphere.</s>
+          <s>The only previously published measurement of atmospheric COS 15 reported a measurement of a single sample with δ 34 S value of 4.9 ± 0.3‰.</s>
+          <s>This value is much lighter from an estimated 21 value of 11‰, and from the value we measured (13.2 ± 0.6‰) in two independent locations.</s>
+          <s cert="0.9845467209815979" id="dataset-6" type="Tabular data">This mismatch may stem from the fact that Hattori et al. <ref target="#b14" type="bibr">15</ref> single δ 34 S value was measured from compressed air that was collected at the manufacturer's factory in Kawasaki, Japan, and might not represent the clean atmosphere COS signal.</s>
+          <s>It might also result from the markedly different methods used in the two studies.</s>
+          <s>More specifically, the need to pre-concentrate hundreds of liters of air in Hattori et al. <ref target="#b14" type="bibr">15</ref> as well as the analysis on fragments ions may introduce additional sources of error.</s>
+          <s>However, although it seems unlikely, we cannot rule out at this stage the possibility that the δ 34 S value of COS is not homogenous globally and so there are real and significant difference between the δ 34 S values between Japan and Israel/Canary Islands.</s>
+          <s>Further δ 34 S analyses of COS from around the world are needed to confirm that.</s>
+        </p>
+        <p>
+          <s>Assuming that the atmosphere is well mixed (homogenous) in regards to COS, and using our clean air atmospheric COS δ 34 S value (i.e.</s>
+          <s>13.2 ± 0.6‰) to represent it, there are several important implications that can be drawn in relation to the contribution of COS to background aerosols and to the relative sources of COS to the atmosphere.</s>
+        </p>
+        <p>
+          <s>COS is suggested to be an important source of sulfur to the stratosphere background aerosols 1,2 .</s>
+          <s cert="0.9231321215629578" id="dataset-7" type="Tabular data">Based on the range of expected fractionation for COS oxidation at the tropopause and the stratosphere (ε x = −8‰ to −2.3‰ 22 ), and the atmospheric δ 34 S value we measured, the COS oxidation products (which end up as stratospheric aerosols) are expected to have an isotopic value of 4.9-10.6‰</s>
+          <s>(δ 34 S products = δ 34 S COS + ε x ).</s>
+          <s>Given the measured δ 34 S of stratospheric background aerosols 23 of 2.6‰, our COS isotopic measurements are consistent with COS being an important, but not the single, source for these aerosols.</s>
+        </p>
+        <p>
+          <s>It is also possible to constrain the relative contribution of the ocean and anthropogenic COS sources, by a simple 1-box isotopic balance model as illustrated in <ref target="#fig_3" type="figure">Fig. 3</ref> .</s>
+          <s>For this model we use the following initial assumptions regarding the isotopic signatures of COS sources and sinks.</s>
+        </p>
+        <p>
+          <s>Ocean source: We assume here that the isotopic composition of COS emitted from the ocean is ~19‰, with negligible fractionation during degassing, similar to the values recently found for another oceanic trace sulfur compound -DMS <ref target="#b23" type="bibr">24</ref> .</s>
+          <s>This assumption is feasible since both COS and DMS are degradation products of organic sulfur.</s>
+          <s>Organic sulfur of marine microorganisms is produced by microbial assimilatory sulfate reduction process from seawater sulfate (+21.1‰) with a small (&lt;3‰) fractionation <ref target="#b24" type="bibr">25</ref> , similar to that found for DMSP/DMS <ref target="#b23" type="bibr">24,</ref>
+            <ref target="#b25" type="bibr">26,</ref>
+            <ref target="#b26" type="bibr">27</ref> .</s>
+          <s>Moreover, part of the oceanic flux of the COS is the result of oxidation of DMS to COS 14 , and if no fractionation is involved in the oxidation then the DMS and COS are expected to have similar δ 34 S value.</s>
+          <s>Anthropogenic source: The δ 34 S values of sulfate and sulfur dioxide related to fossil fuel combustion and vehicle exhausts are reported to be in the range of +4‰ to +8‰, while refineries in Washington, USA and Michigan, USA were found to have a δ 34 S value of −1.6% and +2‰ to +4‰ respectively 28 .</s>
+          <s>Sulfate aerosols above heavily industrialized areas in northern America and Europe were found <ref target="#b29" type="bibr">[29]</ref>
+            <ref target="#b30" type="bibr">[30]</ref>
+            <ref target="#b31" type="bibr">[31]</ref> to have δ 34 S values between 3‰ to 9‰.</s>
+          <s>According to the values above, it is estimated 28 that anthropogenic sulfate have average δ 34 S value of 3 ± 2‰ 28 .</s>
+          <s>If COS is released to the atmosphere from its anthropogenic sources with no fractionation or a very small one, then we can assume similar COS δ 34 S values as reflected in sulfate aerosols of industrial sulfate (~3‰).</s>
+        </p>
+        <p>
+          <s>Plant uptake: Previous studies <ref target="#b32" type="bibr">32,</ref>
+            <ref target="#b33" type="bibr">33</ref> have shown that most of the COS that diffuses into plant leaves is hydrolyzed immediately, and that the back-diffusion is negligible.</s>
+          <s>In such case, the overall fractionation of plant uptake is that of the fractionation in diffusion, and possible fractionation during enzyme-mediated fractionation will have no effect.</s>
+          <s>We calculate that the expected fractionation in binary diffusion of COS in N 2 , according to the theory of binary diffusion of gases 34 , is ~−5‰.</s>
+        </p>
+        <p>
+          <s>Atmospheric oxidation, and soil uptake: The overall fractionation in all atmospheric oxidation processes is estimated to be relatively small, −8‰ in the tropopause and lower in the stratosphere <ref target="#b21" type="bibr">22</ref> .</s>
+          <s>It is also estimated that less than 10% of the COS transported to the stratosphere is consumed there, while the rest returns to the troposphere 1 .</s>
+          <s>The fractionation in uptake by few soil bacteria genera was found to be in the range of −2‰ to −4‰, and genus dependent <ref target="#b35" type="bibr">35</ref> .</s>
+        </p>
+        <p>
+          <s>Since the rates of soil uptake and atmospheric oxidation are small relative to plant uptake, and since the fractionations in these processes are not well constrained, we will simplify Equation 1 by pooling together all the sinks with one overall fractionation (ε T ) that will be assumed to be −5‰.</s>
+          <s>Assuming mass balance we get: where O/A is the ratio between the ocean and anthropogenic sources.</s>
+          <s>Using our own measured δ 34 S value for Jerusalem and the Canary Islands of 13.2‰, it is estimated <ref target="#fig_3" type="figure">(Fig. 3</ref> ) that about half of the atmospheric COS (48%) comes from the ocean, while the rest is contributed by anthropogenic emissions.</s>
+          <s>This initial estimate (based on our measurements) is indeed in broad agreement with previous estimates <ref target="#b3" type="bibr">4,</ref>
+            <ref target="#b4" type="bibr">5,</ref>
+            <ref target="#b13" type="bibr">14</ref> .</s>
+          <s>In contrast, using the only previously published measurement of atmospheric COS δ 34 S of 4.9 ± 0.3‰ <ref target="#b14" type="bibr">15</ref> gives an O/A ratio of 16% (i.e.</s>
+          <s>84% of the COS source is anthropogenic), which is far from all current estimates.</s>
+        </p>
+        <formula xml:id="formula_1">= − δ − δ − ε δ − δ − ε - - - - O/A ( S S )/( S S ) ,<label>(2)</label>
+        </formula>
+        <p>
+          <s>The discussion above and the simple model calculations we made show that the isotopic approach for COS sources attribution is feasible and promising.</s>
+          <s>However, it is possible that deviations for the simplifying assumptions above are non-negligible.</s>
+          <s>To improve this approach, there is a need for direct measurements of the sources and sinks isotopic signatures, and a full scale atmospheric sampling plan to reveal variations in both space (e.g.</s>
+          <s>down-wind of major rayon production areas) and time (e.g. increase in δ 34 S resulting from summer photosynthetic drawdown).</s>
+          <s>Results from such measurements could be then analyzed by a transport model, that will allow to separate the contributions of the different sources.</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Methods</head>
+        <p>
+          <s>Air sampling and trapping.</s>
+          <s>Two slightly different methods were used.</s>
+          <s>In the initial method (samples from</s>
+        </p>
+        <p>
+          <s>August and October 2017) we used evacuated 2.25 L Sulfinert treated stainless steel cylinder (High Pressure Sample Cylinder, Restek) for air sampling.</s>
+          <s>The cylinders were equipped with two Swagelok valves, one on each side.</s>
+          <s>In order to clean the cylinders, we heated them to 60 °C with a constant He (99.995%) flow of 100 ml min −1 for several hours.</s>
+          <s id="dataset-1" type="Tabular data">Before air sampling the He in the canisters was analyzed to make sure that the background of absorbed COS in the canister is not larger than 2 pmol.</s>
+          <s>For δ 34 S analysis of air in the canisters, we used a constant He flow of 100 ml min −1 for 30 minutes through the cylinder and into the pre-concentration system, described below in this section.</s>
+          <s>In this preliminary method we did not accurately estimate the percent of the air sample that was extracted from the cylinder and therefore we did not present concentrations for this analysis.</s>
+          <s>In the Updated Method (February and March 2018), instead of the 2.25 L sample cylinder, we used much lighter electropolished stainless steel 3 L canisters (To-can, Restek), which allow easier shipping.</s>
+          <s>Previous work 7 have shown that COS is stable over weeks during storage in such stainless-steel electropolished canisters, even if water-vapor is present.</s>
+          <s>Hence, water vapor was not removed during sampling.</s>
+          <s>We also added a pressure gauge (0.25% precision, Ashcroft) for accurate measurement of air sample extraction.</s>
+          <s>In order to clean these canisters, they were vacuumed to a pressure of ~2 Kpa and then filled with N 2 (99.99%, pre-checked to be COS free) up to 92 Kpa, before adding 2 ml of purified water.</s>
+          <s>The canisters were then pumped down to ~30 Kpa and heated to 120 °C for 1 hour.</s>
+          <s>Then they ware vacuumed and filled with N 2 repeatedly 10 times.</s>
+          <s cert="0.9716245532035828" id="dataset-2" type="Tabular data">Before air sampling, the N 2 in the canisters was measured to make sure that the background of absorbed COS in the canister is not larger than 2 pmol (~5% of typical atmospheric COS sample).</s>
+          <s>The error that these blanks can introduce is less than 0.6‰, based on the blanks isotopic composition.</s>
+          <s>After air sampling, the canisters were pressurized with N 2 (99.99) to 350 Kpa, and this pressure was utilized to extract 67% (~2 L) of the air sample into the pre-concertation system <ref target="#fig_4" type="figure">(Fig. 4A)</ref> .</s>
+          <s>This system, which is similar but simpler than that used by <ref type="bibr">Hattori 15</ref> , collects the COS from the gas stream by a 1.59 mm (ID) × 3.18 mm (OD) Teflon tube trap filled with 50 mg Tenax (TA, 60-80 mesh; Sigma-Alorich (MO, USA)) cooled by ethanol at −90 °C.</s>
+          <s>A flow controller keeps the flow below 300 ml min −1 .</s>
+          <s>Before the Tenax trap, a cold trap cooled by ethanol at −40 °C is used to remove water vapor.</s>
+          <s>The Tenax trap is connected through a six-way valve to a GC.</s>
+          <s>After 65 min (with decreasing flow rates), the pressure in the cylinder dropped down to ~115 Kpa.</s>
+          <s>The Tenax trap is then warmed by hot (boiling) water to ~100 °C, and the six-way valve is used to inject the sample to the GC.</s>
+          <s>In contrast to Hattori et al. <ref target="#b14" type="bibr">15</ref> no pre-concentration in liquid N 2 trap before the GC was needed.</s>
+        </p>
+      </div>
+      <div>
+        <head>Instrumentation.</head>
+        <p>
+          <s>The system employed for the S-isotope analysis of COS consisted of a gas chromatograph (GC, Trace 2000 series, Thermo, Germany) coupled with a Neptune Plus ™ MC-ICPMS (Thermo Scientific, Bremen, Germany) as described in <ref target="#fig_4" type="figure">Fig. 4</ref> .</s>
+          <s>The GC was equipped with a split/splitless injector for direct injection of volatile samples and a heated (70 °C) six-way valve gas inlet system (Valco Instrument Co, TX, USA) for the introduction of gaseous compounds with a computer-controlled actuator.</s>
+          <s>The GC column (60 m * 0.320 mm, GS-GASPRO, Agilent Technologies) is able to separate cleanly between SO 2 or CS 2 and COS.</s>
+          <s>A transfer line, heated to 200 °C, connected the GC to the plasma source <ref target="#b17" type="bibr">18</ref> .</s>
+          <s>The S species were then atomized and ionized in the plasma source and yielded 32 S + and 34 S + ions that were transferred to the mass spectrometer unit of the GC/MC-ICPMS system for isotope ratio analysis.</s>
+          <s>The Neptune MC-ICPMS system is a double-focusing magnetic-sector instrument equipped with eight moveable Faraday detectors and one fixed detector for simultaneous detection of different masses.</s>
+          <s>The Faraday detectors were positioned to simultaneously collect 32 S + and 34 S + .</s>
+          <s>
+            <ref type="table">Table 1</ref> presents the operational conditions of the GC-MC-ICPMS system.</s>
+          <s>Data processing procedure was as described in detail elsewhere <ref type="bibr">16,18 .</ref>
+          </s>
+          <s>Reagents and standards.</s>
+          <s>DMS (&gt;99%), Thiophene (99+%) and carbon disulfide (CS 2 , anhydrous ≥99%)</s>
+        </p>
+        <p>
+          <s>were purchased from Sigma-Aldrich (MO, USA).</s>
+          <s>Sulfur hexafluoride (SF6, 500 ppm in helium) was purchased from Praxair (PA, USA).</s>
+          <s>A standard for S compounds in He, ~21ppm (20.8 ppm COS, 20.5 ppm CS 2 , 20.9 ppm DMS, 20.9 ppm Ethyl thiol, 20.7 ppm H 2 S, 20.8 ppm Methyl thiol) was purchased from Air Liquide America (PA, USA) ("Mix 1").</s>
+          <s>A COS gas mixture (4.7%) in helium as balance gas ("Mix 2") was purchased from Air Liquide America.</s>
+          <s>The sulfur isotope reference materials NBS-127 (BaSO4; δ 34 S = 21.1‰),</s>
+          <s>IAEA-S-1 (Ag 2 S; −0.3‰), and IAEA-SO-6 (BaSO 4 ; −34.1‰) were purchased from the National Institute of Standards and Technology (NIST, USA) and were used for calibration of all the in-house standards.</s>
+          <s>The δ 34 S values of Mix 1 were calibrated against in-house liquid standards DMS (−3.0 ± 0.1‰), CS 2 (17.2 ± 0.1‰) and Thiophene (9.6 ± 0.2‰) ("Mix 5") that were pre-calibrated against international standards (using elemental analyzer isotope ratio <ref target="#b15" type="bibr">16,</ref>
+            <ref target="#b17" type="bibr">18</ref> .</s>
+          <s>These standards, diluted in toluene to form ~81 pmol μL −1 , were injected directly in to the GC injector (1 µl, split 5, ~16 pmol on column) as detailed in Said-Ahmad et al. <ref target="#b17" type="bibr">18</ref> .</s>
+          <s>Then, in each day of analysis (COS standards of air) both Mix 1 and Mix 5 were injected to calibrate the internal standard SF <ref target="#b5" type="bibr">6</ref> .</s>
+          <s>All the δ 34 S values in this work are reported against VCDT.</s>
+        </p>
+      </div>
+      <div>
+        <head>Data Availability</head>
+        <p>
+          <s>All data generated or analysed during this study are included in this published article.</s>
+        </p>
+      </div>
+      <figure xml:id="fig_0">
+        <head/>
+        <label/>
+        <figDesc>Jerusalem, Israel (31°46′12″N/35°11′51″E) in August and October 2017 and March 2018, and in the Canary Island of Fuerteventura (28°43′30″N/13°50′33″W) in February 2018. To check the stability and precision of air measurements of COS in air samples using Sulfinert 2.25 L cylinders (see Methods section), we have measured 9 air samples next to the institute of Earth Sciences in the Hebrew University, Jerusalem, during August and October 2017. The results are presented in</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Figure 1 .</head>
+        <label>1</label>
+        <figDesc>Chromatogram produced by the GC/MC-ICPMS system for the injection of (a). 5.2 ppm COS standard by direct injection (b). 5.2 ppm COS standard by pre-concentration system (c). 1.7 ppb COS standard by pre-concentration system (d). Air sample by the pre-concentration system. The SF 6 peaks are used as internal standards in each chromatogram and are calibrated every 3-4 samples by known standards as detailed in the Methods section.</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Figure 2 .</head>
+        <label>2</label>
+        <figDesc>Back trajectories for 10 days (produced by NOAA HYSPLIT MODEL 20 ) of the air before arriving to the air sampling locations during Feburary and March 2018: (A) Israel, (B) Canary Islands. SCIEnTIfIC RepoRtS | (2019) 9:741 | DOI:10.1038/s41598-018-37131-3</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Figure 3 .</head>
+        <label>3</label>
+        <figDesc>A scheme illustrating the isotopic mass balance for atmospheric COS, assuming values for anthropogenic emissions (δ 34 S COS-anthro ), for ocean emissions (δ 34 S COS-ocean ), and for fractionation during (plant dominated) uptake (ε T ). Using the COS δ 34 S value we measured in the atmosphere (appears in a GC/ MC-ICPMS chromatogram) it is estimated by Equation 2 that ~48% of COS emissions originate in the ocean. (Images drawn by Ayelet Angert). SCIEnTIfIC RepoRtS | (2019) 9:741 | DOI:10.1038/s41598-018-37131-3</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head>Figure 4 .</head>
+        <label>4</label>
+        <figDesc>Schematic layout of the analytical system: (A) COS pre-concentration system, (B) gas chromatograph (GC), (C) SF 6 standard injection system, (D) The Neptune plus multi-collector inductively coupled plasma mass spectrometry (MC-ICPMS) system. SCIEnTIfIC RepoRtS | (2019) 9:741 | DOI:10.1038/s41598-018-37131-3</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_2">
+        <head/>
+        <label/>
+        <figDesc>Table 1. Results of GC/MC-ICPMS analysis of COS standards.</figDesc>
+        <table>Standard 
+Balance 
+Conc. 
+
+Method 
+
+Amount 
+measured 
+
+Amount RSD 
+error 
+δ 34 S 
+Error 
+Repetitions 
+
+mix # 
+gas 
+(mol/mol) 
+pmol 
+% 
+‰ 
+std 
+n 
+
+2 
+He 
+4.70% 
+direct injection 1 
+265 
+1.7 
+−6.2 
+0.1 
+5 
+
+3 
+He 
+5.2 ppm 
+direct injection 
+20 
+2.8 
+−6.0 
+0.2 
+17 
+
+3 
+He 
+5.2 ppm 
+pre-conc. 
+20 
+2.0 
+−6.1 
+0.0 
+3 
+
+4 
+N 2 +CO 2 
+1.7 ppb 
+pre-conc. 
+65 
+3.0 
+−6.0 
+0.1 
+4 
+
+SCIEnTIfIC RepoRtS | 
+(2019) 9:741 | DOI:10.1038/s41598-018-37131-3 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_3">
+        <head/>
+        <label/>
+        <figDesc>Table 2. Results of GC/MC-ICPMS analysis of COS in air samples from Israel and the Canary Island. Israel 1 -samples were taken by Sulfinert cylinders in Israel at the Institute of Earth Science, The Hebrew University of Jerusalem (31°46′12″N/35°11′52″E). Israel 2 -samples were taken by electropolished canisters in Israel at the Institute of Earth Science, The Hebrew University of Jerusalem (31°46′12″N/35°11′52″E). Canary Islands -samples were taken by electropolished canisters in the Canary Islands at Punta de Tivas, Fuerteventura island (28°43′30″N/13°50′33″W).</figDesc>
+        <table>Air sample 
+
+Amount 
+pmol 
+
+Conc. 
+ppt 
+
+Conc. 
+error 
+
+δ 34 S ‰ 
+
+δ 34 S error 
+Repetitions 
+
+RSD% 
+Std ‰ 
+n 
+
+Israel 1 
+28 
+-
+10.4 
+13.4 
+0.5 
+9 
+
+Israel 2 
+38 
+502 
+6.6 
+12.8 
+0.5 
+3 
+
+Canary Islands 
+45 
+533 
+7.5 
+13.1 
+0.7 
+3 
+
+</table>
+      </figure>
+      <note place="foot">© The Author(s) 2019</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>The authors thank the NOAA Air Resources Laboratory (ARL) for the provision of the HYSPLIT transport and dispersion model used in this publication.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <head>Author Contributions</head>
+          <p>
+            <s>A. Angert and A. Amrani designed the research and wrote the main manuscript text.</s>
+            <s>W.S.A. prepared <ref type="figure">Figure 1</ref> , C.D. and W.S.A. prepared <ref type="figure">Figure 4</ref> , and W.S.A., C.D. A. Amrani and A. Angert did the experimental work.</s>
+          </p>
+        </div>
+        <div>
+          <head>Additional Information</head>
+          <p>
+            <s>Competing Interests: The authors declare no competing interests.</s>
+          </p>
+          <p>
+            <s>Publisher's note: Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</s>
+          </p>
+          <p>
+            <s>Open Access This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.</s>
+            <s>The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in a credit line to the material.</s>
+            <s>If material is not included in the article's Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.</s>
+            <s>To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">A reanalysis of carbonyl sulfide as a source of stratospheric background sulfur aerosol</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Chin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Davis</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Geophysical Research: Atmospheres</title>
+              <imprint>
+                <biblScope unit="volume">100</biblScope>
+                <biblScope from="8993" to="9005" unit="page"/>
+                <date type="published" when="1995"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">The possible importance of CSO for the sulfate layer of the stratosphere</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Crutzen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Geophysical Research Letters</title>
+              <imprint>
+                <biblScope unit="volume">3</biblScope>
+                <biblScope from="73" to="76" unit="page"/>
+                <date type="published" when="1976"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Heterogeneous reactions in sulfuric acid aerosols: A framework for model calculations</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Hanson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Ravishankara</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Solomon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Geophysical Research: Atmospheres</title>
+              <imprint>
+                <biblScope unit="volume">99</biblScope>
+                <biblScope from="3615" to="3629" unit="page"/>
+                <date type="published" when="1994"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">A coupled model of the global cycles of carbonyl sulfide and CO 2 : A possible new window on the carbon cycle</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Berry</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Geophysical Research</title>
+              <imprint>
+                <biblScope unit="volume">118</biblScope>
+                <biblScope from="842" to="852" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+            <note>Biogeosciences</note>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Large historical growth in global terrestrial gross primary production</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Campbell</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">544</biblScope>
+                <biblScope from="84" to="87" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Photosynthetic control of atmospheric carbonyl sulfide during the growing season</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Campbell</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">322</biblScope>
+                <biblScope from="1085" to="1088" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">On the global distribution, seasonality, and budget of atmospheric carbonyl sulfide (COS) and some similarities to CO 2</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Montzka</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Geophysical Research: Atmospheres</title>
+              <imprint>
+                <biblScope unit="volume">112</biblScope>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Peak growing season gross uptake of carbon in North America is largest in the Midwest USA</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Hilton</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature Clim. Change</title>
+              <imprint>
+                <biblScope unit="volume">7</biblScope>
+                <biblScope from="450" to="454" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Impact of dimethylsulfide photochemistry on methyl sulfur cycling in the equatorial Pacific Ocean</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Kieber</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Jiao</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Kiene</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Bates</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Geophysical Research: Oceans</title>
+              <imprint>
+                <biblScope unit="volume">101</biblScope>
+                <biblScope from="3715" to="3722" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Atmospheric carbonyl sulfide sources from anthropogenic activity: Implications for carbon cycle constraints</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Campbell</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Geophysical research letters</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope from="3004" to="3010" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Gridded anthropogenic emissions inventory and atmospheric transport of carbonyl sulfide in the US</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Zumkehr</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Hilton</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Whelan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Smith</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Campbell</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Geophysical Research: Atmospheres</title>
+              <imprint>
+                <biblScope unit="volume">122</biblScope>
+                <biblScope from="2169" to="2178" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Reviews and syntheses: Carbonyl sulfide as a multi-scale tracer for carbon and water cycles</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Whelan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biogeosciences</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope from="3625" to="3657" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">A new model for the global biogeochemical cycle of carbonyl sulfide-Part 1: Assessment of direct marine emissions with an oceanic general circulation and biogeochemistry model</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Launois</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Belviso</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Bopp</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Fichot</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Peylin</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Atmospheric Chemistry and Physics</title>
+              <imprint>
+                <biblScope unit="volume">15</biblScope>
+                <biblScope from="2295" to="2312" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Global budget of atmospheric carbonyl sulfide: Temporal and spatial variations of the dominant sources and sinks</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Kettle</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <surname>Kuhn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Von Hobe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Kesselmeier</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">O</forename>
+                  <surname>Andreae</surname>
+                </persName>
+              </author>
+              <idno>25-21-ACH25-16</idno>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Geophysical Research: Atmospheres</title>
+              <imprint>
+                <biblScope unit="volume">107</biblScope>
+                <date type="published" when="2002"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Determination of the sulfur ssotope ratio in carbonyl sulfide using gas chromatography/isotope ratio mass spectrometry on fragment ions 32S+, 33S+, and 34S+</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Hattori</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Analytical Chemistry</title>
+              <imprint>
+                <biblScope unit="volume">87</biblScope>
+                <biblScope from="477" to="484" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Compound-specific δ34S analysis of volatile organics by coupled GC/multicollector-ICPMS</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Amrani</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Sessions</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Adkins</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Analytical Chemistry</title>
+              <imprint>
+                <biblScope unit="volume">81</biblScope>
+                <biblScope from="9027" to="9034" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">A sensitive method for the sulfur isotope analysis of dimethyl sulfide and dimethylsulfoniopropionate in seawater</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Said-Ahmad</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Amrani</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Rapid Communications in Mass Spectrometry</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope from="2789" to="2796" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Compound-specific sulfur isotope analysis of petroleum gases</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Said-Ahmad</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Analytical chemistry</title>
+              <imprint>
+                <biblScope unit="volume">89</biblScope>
+                <biblScope from="3199" to="3207" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Simultaneous measurement of volatile sulfur compounds using ascorbic acid for oxidant removal and gas chromatography-flame photometric detection</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Inomata</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Matsunaga</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Murai</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Osada</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Iwasaka</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Chromatography A</title>
+              <imprint>
+                <biblScope unit="volume">864</biblScope>
+                <biblScope from="111" to="119" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">NOAA's HYSPLIT atmospheric transport and dispersion modeling system</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Stein</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Bulletin of the American Meteorological Society</title>
+              <imprint>
+                <biblScope unit="volume">96</biblScope>
+                <biblScope from="2059" to="2077" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <monogr>
+              <title level="m" type="main">Sulphur isotope variations in the atmosphere in Stable Isotopes: Natural and anthropogenic sulphur in the environment SCOPE</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Newman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Krouse</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Grinenko</surname>
+                </persName>
+              </author>
+              <editor>H.R. Krouse &amp; V.A. Grinenko</editor>
+              <imprint>
+                <date type="published" when="1991"/>
+                <publisher>John Wiley &amp; Sons</publisher>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">OCS photolytic isotope effects from first principles: sulfur and carbon isotopes, temperature dependence and implications for the stratosphere</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Schmidt</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Atmospheric Chemistry and Physics</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope from="1511" to="1520" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Isotopic studies of the sulfur component of the stratospheric aerosol layer</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Castleman</surname>
+                  <genName>Jr</genName>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Munkelwitz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Manowitz</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Tellus</title>
+              <imprint>
+                <biblScope unit="volume">26</biblScope>
+                <biblScope from="222" to="234" unit="page"/>
+                <date type="published" when="1974"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Sulfur isotope homogeneity of oceanic DMSP and DMS</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Amrani</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Said-Ahmad</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Shaked</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Kiene</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proceedings of the National Academy of Sciences</title>
+              <imprint>
+                <biblScope unit="volume">110</biblScope>
+                <biblScope from="18413" to="18418" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Microbiological fractionation of sulphur isotopes</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Kaplan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Rittenberg</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Microbiology</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope from="195" to="212" unit="page"/>
+                <date type="published" when="1964"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Dimethylated sulfur compounds in symbiotic protists: A potentially significant source for marine DMS (P)</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Gutierrez-Rodriguez</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Limnology and Oceanography</title>
+              <imprint>
+                <biblScope unit="volume">62</biblScope>
+                <biblScope from="1139" to="1154" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Sulfur isotope variability of oceanic DMSP generation and its contributions to marine biogenic sulfur emissions</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Oduro</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Van Alstyne</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Farquhar</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Proceedings of the National Academy of Sciences</title>
+              <imprint>
+                <biblScope unit="volume">109</biblScope>
+                <biblScope from="9012" to="9016" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title/>
+              <idno type="DOI">10.1038/s41598-018-37131-3</idno>
+            </analytic>
+            <monogr>
+              <title level="j">SCIEnTIfIC RepoRtS |</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <date type="published" when="2019"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Aerosol sulphate and its oxidation on the Pacific NW coast: S and O isotopes in PM2</title>
+              <author>
+                <persName>
+                  <forename type="first">A.-L</forename>
+                  <surname>Norman</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Atmospheric Environment</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope from="2676" to="2689" unit="page"/>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">Isotopes and atmospheric sulphur</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Mcardle</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Liss</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Atmospheric Environment</title>
+              <imprint>
+                <biblScope unit="volume">29</biblScope>
+                <biblScope from="2553" to="2556" unit="page"/>
+                <date type="published" when="1995"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">Sources of aerosol sulphate at Alert: Apportionment using stable isotopes</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Norman</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Geophysical Research</title>
+              <imprint>
+                <biblScope unit="volume">104</biblScope>
+                <biblScope from="619" to="630" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">Areal distribution of sulphur and oxygen isotopes in sulphate of rain over eastern North America</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Wadleigh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Schwarcz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Kramer</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Journal of Geophysical Research: Atmospheres</title>
+              <imprint>
+                <biblScope unit="volume">106</biblScope>
+                <biblScope from="20883" to="20895" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Observations of the uptake of carbonyl sulfide (COS) by trees under elevated atmospheric carbon dioxide concentrations</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Sandoval-Soto</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kesselmeier</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Schmitt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Wild</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Kesselmeier</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biogeosciences</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope from="2935" to="2945" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <analytic>
+              <title level="a" type="main">High precision measurements of atmospheric concentrations and plant exchange rates of carbonyl sulfide using mid-IR quantum cascade laser</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Stimler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Nelson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Yakir</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Global change biology</title>
+              <imprint>
+                <biblScope unit="volume">16</biblScope>
+                <biblScope from="2496" to="2503" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">The diffusion of atoms and molecules in</title>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Mason</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Marrero</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Advances in Atomic and Molecular Physics</title>
+              <imprint>
+                <publisher>Elsevier</publisher>
+                <date type="published" when="1970"/>
+                <biblScope unit="volume">6</biblScope>
+                <biblScope from="155" to="232" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">Sulfur isotopic fractionation of carbonyl sulfide during degradation by soil bacteria</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Kamezaki</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Environmental Science &amp; Technology</title>
+              <imprint>
+                <biblScope unit="volume">50</biblScope>
+                <biblScope from="3537" to="3544" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>

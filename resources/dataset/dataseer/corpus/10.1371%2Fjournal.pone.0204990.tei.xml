@@ -1,0 +1,3165 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T20:40+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Blaunet: An R-based graphical user interface package to analyze Blau space</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Michael</forename>
+                <surname>Genkin</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">School of Social Sciences</orgName>
+                <orgName type="institution">Singapore Management University</orgName>
+                <address>
+                  <settlement>Singapore, Singapore</settlement>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Cheng</forename>
+                <surname>Wangid</surname>
+              </persName>
+              <affiliation key="aff1">
+                <orgName type="department">Department of Sociology</orgName>
+                <orgName key="instit1" type="institution">University of Notre Dame</orgName>
+                <orgName key="instit2" type="institution">Notre Dame</orgName>
+                <orgName key="instit3" type="institution">United States of America</orgName>
+                <address>
+                  <region>IN</region>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">George</forename>
+                <surname>Berry</surname>
+              </persName>
+              <affiliation key="aff2">
+                <orgName type="department">Department of Sociology</orgName>
+                <orgName type="institution">Cornell University</orgName>
+                <address>
+                  <settlement>Ithaca</settlement>
+                  <region>NY</region>
+                </address>
+              </affiliation>
+              <affiliation key="aff3">
+                <orgName type="institution">United States of America</orgName>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Matthew</forename>
+                <forename type="middle">E</forename>
+                <surname>Brashears</surname>
+              </persName>
+              <affiliation key="aff4">
+                <orgName type="department">Department of Sociology</orgName>
+                <orgName type="institution">University of South Carolina</orgName>
+                <address>
+                  <settlement>Columbia</settlement>
+                  <region>SC</region>
+                  <country>United States of America</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Blaunet: An R-based graphical user interface package to analyze Blau space</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <note>RESEARCH ARTICLE</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <abstract>
+        <div>
+          <p>
+            <s>McPherson's Blau space and affiliation ecology model is a powerful tool for analyzing the ecological competition among social entities, such as organizations, along a combination of sociodemographic characteristics of their members.</s>
+            <s>In this paper we introduce the R-based Graphical User Interface (GUI) package Blaunet, an integrated set of tools to calculate, visualize, and analyze the statuses of individuals and social entities in Blau space, parameterized by multiple sociodemographic traits as dimensions.</s>
+            <s>The package is able to calculate the Blau statuses at the nodal, dyadic, and meso levels based on three types of information: sociodemographic characteristics, group affiliations (e.g., membership in groups/organizations), and network ties.</s>
+            <s>To facilitate this, Blaunet has the following five main capabilities, it can: 1) identify a list of possible salient dimensions; 2) calculate, plot, and analyze niches for social entities by measuring the social distance along the salient dimensions between individuals affiliated with them; 3) generate Blau bubbles for individuals, thereby allowing the study of interpersonal influence of similar others even with limited or no network information; 4) capture niche dynamics cross-sectionally by calculating the intensity of exploitation from the carrying capacity and the membership rate; and 5) analyze the niche movement longitudinally by estimating the predicted niche movement equations.</s>
+            <s>We illustrate these capabilities of Blaunet with example datasets.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div>
+        <head>Introduction</head>
+        <p>
+          <s>Blaunet is based on two fundamental concepts in sociology: Blau space and affiliation ecology.</s>
+          <s>Blau space rests on the idea that human beings can be represented in a k-dimensional space, where continuous sociodemographic characteristics such as age, income, and years of education serve as the dimensions.</s>
+          <s>The dimensions that structure Blau space are socially salient (i.e., they influence association probabilities) and are referred to as Blau parameters <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b1" type="bibr">2]</ref> in honor of the eminent sociologist Peter Blau.</s>
+          <s>Each person's attributes on the Blau parameters define his or her location in the Blau space, which in turn results in the individual's affiliation to social entities such as organizations, cultural tastes, and political preferences, while those entities are more or less competing with one another in this space.</s>
+          <s>a1111111111 a1111111111 a1111111111 a1111111111 a1111111111</s>
+        </p>
+        <p>
+          <s>The R-based package Blaunet, accessible via the Graphical User Interface (GUI), is built for Blau space and affiliation ecology models.</s>
+          <s>In particular, Blaunet contains an integrated set of tools for accomplishing five important and interrelated tasks: salient dimension identification, niche plotting, Blau bubble (proximity) analysis, niche analysis, and niche dynamics analysis.</s>
+          <s>Many of these tools provide an easy way to calculate and visualize some of the widely used techniques necessary for analyzing Blau space.</s>
+          <s>The identification of salient dimensions is an especially useful tool as it offers a principled way of selecting the dimensions that constitute Blau space and that underpin this kind of analysis.</s>
+          <s>This paper focuses on an overview and description of the functionality of the Blaunet package.</s>
+          <s>The remaining paper proceeds in four sections.</s>
+          <s>Below we elaborate the theoretical framework underlying Blaunet in greater depth.</s>
+          <s>The "Materials and Methods" section describes the installation instructions and the example datasets included in the Blaunet package.</s>
+          <s>The "Results" section illustrates some of Blaunet's major capabilities.</s>
+          <s>And the "Discussion" section concludes with a discussion of some of Blaunet's present limitations as well as some areas for future development.</s>
+          <s>We believe this package will be useful to scholars from a variety of backgrounds as Blau space ideas have diffused from sociology into a diverse array of disciplines, including demography <ref target="#b2" type="bibr">[3]</ref> , criminology <ref target="#b3" type="bibr">[4,</ref>
+            <ref target="#b4" type="bibr">5]</ref> , geography <ref target="#b5" type="bibr">[6]</ref> , psychology <ref target="#b6" type="bibr">[7]</ref> , political science <ref target="#b7" type="bibr">[8,</ref>
+            <ref target="#b8" type="bibr">9]</ref> , business schools <ref target="#b9" type="bibr">[10]</ref> , and regional science <ref target="#b10" type="bibr">[11]</ref> .</s>
+          <s>Similarly, the Blaunet package should be useful to computer scientists, engineers, and applied scientists who study networks or incorporate sociological insights such as Blau space into their work <ref target="#b11" type="bibr">[12]</ref>
+            <ref target="#b12" type="bibr">[13]</ref>
+            <ref target="#b13" type="bibr">[14]</ref>
+            <ref target="#b14" type="bibr">[15]</ref>
+            <ref target="#b15" type="bibr">[16]</ref> .</s>
+          <s>In particular, those interested in the study of organizations and culture, social capital, and affiliation researchers, as well as those who wish to incorporate social space into their models or infer network effects from limited or absent network information may find Blau space approaches and the Blaunet package of value.</s>
+        </p>
+      </div>
+      <div>
+        <head>Theoretical framework</head>
+        <p>
+          <s>The Blaunet package is based on the Blau space and affiliation ecology model, which uses the homophily principle to construct ecological models of a variety of social entities.</s>
+        </p>
+        <p>
+          <s>Homophily, or the tendency for individuals to associate with those like themselves, has long been considered a key element of social structure <ref target="#b16" type="bibr">[17,</ref>
+            <ref target="#b17" type="bibr">18]</ref> .</s>
+          <s>Two types of homophily are categorized in the foundational work of Lazarsfeld and Merton-status homophily which may be premised on either ascribed (fixed) characteristics of the person (e.g., ethnoracial status, gender, birth date, etc.) or acquired (changeable) social markers (e.g., religion, education, occupation, etc.), and value homophily related to similarities in attitudes, values, practices, and beliefs <ref target="#b16" type="bibr">[17]</ref> .</s>
+          <s>More recent work has shifted focus to distinguish between structural homophily (i.e., tendency to be sorted into contexts containing similar others) and choice homophily (i.e., tendency to select similar others from among those available) <ref target="#b17" type="bibr">[18]</ref> .</s>
+          <s>Either way, however, there is broad agreement that homophily is a critical driver of association.</s>
+        </p>
+        <p>
+          <s>Blau's macrostructural theory <ref target="#b18" type="bibr">[19]</ref>
+            <ref target="#b19" type="bibr">[20]</ref>
+            <ref target="#b20" type="bibr">[21]</ref> extended the theory of homophily by arguing that macro-level social structure is fundamentally comprised of micro-level social positions which are parameterized by a family of sociodemographic factors that segregate homogenous people into the same areas in latent social space.</s>
+          <s>Likewise, those who are non-identical, but similar, are relatively proximate in this space, with increasing dissimilarity producing decreasing proximity.</s>
+          <s>Whether two individuals interact with each other depends on how they are distributed in this latent social space.</s>
+          <s>Those positioned in the same areas of the latent social space are more likely to occupy the same foci (e.g., workplace, neighborhood, etc.) <ref target="#b21" type="bibr">[22]</ref> and thus are more likely to come into contact with one another <ref target="#b18" type="bibr">[19]</ref>
+            <ref target="#b19" type="bibr">[20]</ref>
+            <ref target="#b20" type="bibr">[21]</ref> .</s>
+        </p>
+        <p>
+          <s>Miller McPherson named the above-mentioned latent social space "Blau space" in honor of "Peter Blau's fundamental contribution to our understanding of system-level consequences of the organization of the sociodemographic variables" <ref target="#b1" type="bibr">[2]</ref> .</s>
+          <s>Blau space is therefore a k-dimensional hyperspace coordinate system, created by considering the set of k sociodemographic variables as dimensions or axes <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b1" type="bibr">2,</ref>
+            <ref target="#b22" type="bibr">23]</ref> .</s>
+        </p>
+        <p>
+          <s>In Blau space, individuals occupy positions determined by their particular combinations of sociodemographic traits.</s>
+          <s>Note that not all possible locations are occupied by actual individuals and there can be vast empty areas in which particular configurations of sociodemographic characteristics are not found together (e.g., there are relatively few ten year olds who have a college degree.)</s>
+          <s>Based on the homophily principle, individuals are more likely to form social networks with others close to each other in Blau space.</s>
+          <s>Because most recruitment to groups/ organizations occur through the social relations of their existing members <ref target="#b23" type="bibr">[24]</ref> , and individual networks are constrained by homophily <ref target="#b17" type="bibr">[18]</ref> , organizations tend to recruit from localized areas of Blau space.</s>
+          <s>These areas are termed "niches" and it is through them that social entities, such as organizations, are localized to particular areas of Blau space.</s>
+          <s>Thus the Blau space and affiliation ecology model provides a theoretical skeleton around which individuals (e.g., members), social networks (e.g., social relationships among individuals), and the social entities (e.g., groups/organizations) are linked in a common multi-level framework.</s>
+        </p>
+        <p>
+          <s>McPherson <ref target="#b0" type="bibr">[1]</ref> argues that organizations are social entities competing for their members' time and energy.</s>
+          <s>Because the total amount of human time and energy available in an area of Blau space is limited, the pressures of variation, selection, and retention apply to social entities competing in this space.</s>
+          <s>Blau space therefore comprises an ecological model of social entities.</s>
+          <s>Perhaps not surprisingly, the approach draws heavily on ideas from biological ecology, and can thus be applied in many similar ways.</s>
+          <s>For example, if two organizations have overlapping niches, they are drawing from the same pool of potential members, and will compete with each other not unlike how two bacterial colonies compete for nutrients.</s>
+          <s>If there are too many organizations situated in a certain area of Blau space (e.g., where the supply of potential members is substantially below the demands of the recruiting organizations), organizational niches will shift towards the relatively low competition areas.</s>
+          <s>In such areas, the supply of potential members exceeds the demands of the recruiting organizations, thereby providing an opportunity for organizations to recruit members while avoiding competitive pressure.</s>
+          <s>McPherson and Ranger-Moore <ref target="#b22" type="bibr">[23]</ref> used this specific idea to predict niche movements of 16 types of voluntary organizations over 9 years, finding an impressive concordance between prediction and observation.</s>
+          <s>This perspective, formally restated in mathematical terms by Péli &amp; Bruggeman <ref target="#b24" type="bibr">[25]</ref> and evaluated further by McPherson, Popielarz, and Drobnic <ref target="#b25" type="bibr">[26]</ref> and Hannan, Pólos, and Carroll <ref target="#b26" type="bibr">[27]</ref> , has received significant support and is a productive way to explain change in the mean of the niche, the change in the dispersion of the niche, as well as the change in the density of exploitation of the niche.</s>
+          <s>In this way the Blau space and affiliation ecology model has been shown to accurately predict aspects of various types of groups and organizations <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b22" type="bibr">23,</ref>
+            <ref target="#b27" type="bibr">[28]</ref>
+            <ref target="#b28" type="bibr">[29]</ref>
+            <ref target="#b29" type="bibr">[30]</ref>
+            <ref target="#b30" type="bibr">[31]</ref>
+            <ref target="#b31" type="bibr">[32]</ref> .</s>
+          <s>Moreover, it has been broadened to include cultural constructs such as preferences, identities, cultural artifacts, meanings, and institutional logics <ref target="#b32" type="bibr">[33]</ref>
+            <ref target="#b33" type="bibr">[34]</ref>
+            <ref target="#b34" type="bibr">[35]</ref>
+            <ref target="#b35" type="bibr">[36]</ref>
+            <ref target="#b36" type="bibr">[37]</ref> and applied to the functional roles of cities <ref target="#b37" type="bibr">[38]</ref> .</s>
+          <s>Lastly the Blau space and affiliation ecology model has also been applied to the development of individual behavior <ref target="#b38" type="bibr">[39]</ref>
+            <ref target="#b39" type="bibr">[40]</ref>
+            <ref target="#b40" type="bibr">[41]</ref> , the formation and evolution of social networks <ref target="#b41" type="bibr">[42,</ref>
+            <ref target="#b42" type="bibr">43]</ref> and communities <ref target="#b12" type="bibr">[13]</ref> , the adoption and diffusion of innovations <ref target="#b14" type="bibr">[15]</ref> , and even civil war <ref target="#b8" type="bibr">[9]</ref> .</s>
+        </p>
+        <p>
+          <s>The Blau space and affiliation ecology model is advantageous in that it is applicable to almost any social survey variable.</s>
+          <s>It provides a metric for understanding the relationships among a wide variety of social entities, and is a dynamic model which combines entities into populations, communities, and (both organizational and cultural) systems.</s>
+          <s>It is also a powerful tool for understanding how conventional relational networks and group affiliation dynamics interact with one another <ref target="#b43" type="bibr">[44]</ref> , even when network data are either limited or unavailable.</s>
+        </p>
+      </div>
+      <div>
+        <head>Materials and methods</head>
+      </div>
+      <div>
+        <head>Blaunet installation</head>
+        <p>
+          <s>Blaunet is an open-source R-based package available at https://cran.r-project.org/web/</s>
+          <s>packages/Blaunet/index.html.</s>
+          <s>Users are recommended to have the most recent version of R installed.</s>
+          <s>Blaunet can be installed and used on Windows, Linux, and OS X machines.</s>
+          <s>Once installed it behaves very similarly regardless of platform, but the installation steps vary.</s>
+        </p>
+        <p>
+          <s>For The installation procedures are more involved for OS X users.</s>
+          <s>More details are provided in the S1 File Manual for the Blaunet Graphic User Interface Package.</s>
+        </p>
+      </div>
+      <div>
+        <head>Loading Blaunet</head>
+        <p>
+          <s>Blaunet can be loaded in R via</s>
+        </p>
+      </div>
+      <div>
+        <head>R&gt; library(Blaunet) R&gt; blaunetgui()</head>
+        <p>
+          <s>A first-time installation of Blaunet will install a number of dependent packages (see section below).</s>
+          <s>Blaunet will be launched in a new window as a menu-based graphical user interface, in the manner of <ref target="#fig_1" type="figure">Fig 1.</ref>
+          </s>
+          <s>As shown in <ref target="#fig_1" type="figure">Fig 1,</ref> the main interface of Blaunet includes five elementsthe menu bar, the toolbar, the text frame showing current working directory, the "Set Working Directory" bar, and the general information of Blaunet, from top to bottom.</s>
+        </p>
+      </div>
+      <div>
+        <head>Dependent packages</head>
+        <p>
+          <s>It may take some time for Blaunet to be loaded for the first time no matter what type of operating system one's computer is running, because several dependent packages are down-loaded and installed automatically, including:</s>
+        </p>
+        <p>
+          <s>(1-4) gWidgets, gWidgetsRGtk2, RGtk2, and cairoDevice packages, which function to build the graphic interface of Blaunet;</s>
+        </p>
+        <p>
+          <s>(5-7) plot3D, plot3Drgl, and rgl packages, which function to make 3D plots; <ref target="#b7" type="bibr">(8)</ref>
+            <ref target="#b8" type="bibr">(9)</ref>
+            <ref target="#b9" type="bibr">(10)</ref>
+            <ref target="#b10" type="bibr">(11)</ref> network, sna, ergm, and statnet.common</s>
+          <s>packages, which function to do network operations and analysis; and <ref target="#b11" type="bibr">(12)</ref>
+            <ref target="#b12" type="bibr">(13)</ref> haven and foreign packages, which function to import and export data file between R and other statistical software, such as SAS, SPSS, Stata, and Microsoft Excel.</s>
+        </p>
+        <p>
+          <s>Upon executing blaunetgui() for the first time, Microsoft Windows users will be prompted to install GTK++ if they do not have it installed already</s>
+        </p>
+      </div>
+      <div subtype="dataseer">
+        <head>Example datasets in Blaunet</head>
+        <p>
+          <s>Blaunet handles three types of information-sociodemographic information that can be used as Blau parameters, group affiliation information that can be used to build the niche for each social entity in the Blau space, and network information that indicates the relationships among the individuals-separately or jointly.</s>
+        </p>
+        <p>
+          <s>Blaunet users can utilize either the first two items under the "Data" menu or the first two icons on the toolbar to load the attribute and network files.</s>
+          <s>Caution: one should be careful to not load the network data as attribute data or the attribute data as network data.</s>
+          <s>It does not matter which one is loaded first.</s>
+          <s>Before opening a new dataset, the user should clear the memory so that the data of the next project will not be corrupted by the data of the previous project.</s>
+          <s>This can be done by clicking the "Clear Memory" item from the "Data" menu or the third icon from the toolbar.</s>
+        </p>
+        <p>
+          <s>The Blaunet package provides four example datasets, two of which contain all three types of information (e.g., BSANet.rda, and schlattr.rda</s>
+          <s>&amp; schlnet.rda)</s>
+          <s>while the other two contain the sociodemographic and group affiliation information, but no network information (TwoCities.</s>
+          <s>rda and gss74_87.rda).</s>
+          <s>BSANet.rda is an artificial dataset containing no information of any real person, and the other 3 example datasets (schlattr.rda</s>
+          <s>&amp; schlnet.rda,</s>
+          <s>TwoCities.rda,</s>
+          <s>and gss74_87.rda)</s>
+          <s>are fully anonymized and de-identified.</s>
+          <s>As shown in <ref target="#fig_0" type="figure">Fig 2,</ref> all the example datasets are available under the "data" folder, a subdirectory of the Blaunet install location.</s>
+        </p>
+        <p>
+          <s>BSANet.rda.</s>
+          <s>This is a small dataset containing 10 individuals in two non-overlapping locations (New York and San Francisco), created solely to illustrate the functions of the Blaunet package.</s>
+          <s>It contains sociodemographic information such as the individuals' age, education, and income; group affiliation information of memberships in a liberal or conservative organization (or both); and network information among the 10 individuals available in both adjacency matrix and edge list formats.</s>
+          <s>Note that the network information is stored along with the attribute information in the same file.</s>
+          <s>This type of file should still be opened/loaded using the attribute file icon.</s>
+        </p>
+        <p>
+          <s>schlattr.rda</s>
+          <s>&amp; schlnet.rda.</s>
+          <s id="dataset-1" type="Dataset:Existing dataset">A set of 100 respondents is randomly drawn from the Wave I public use data of the National Longitudinal Study of Adolescent to Adult Health (Add Health), available from the Interuniversity Consortium for Political and Social Research (ICPSR) web-site (http://www.icpsr.umich.edu/icpsrweb/DSDR/studies/21600).</s>
+          <s>The schlattr.</s>
+          <s>rda file includes sociodemographic information for 20 individual characteristics; and the group affiliation information for memberships in 5 kinds of organizations.</s>
+          <s>The schlnet.rda file contains artificial network information that is simulated from an exponential family random graph (ERG) model <ref target="#b44" type="bibr">[45,</ref>
+            <ref target="#b45" type="bibr">46]</ref> .</s>
+          <s>Note that unlike BSANet.rda</s>
+          <s>this dataset stores attribute information in one file (schlattr.rda)</s>
+          <s>and network information in another (schlnet.rda).</s>
+          <s>Thus the former should be loaded/opened using the attribute file icon while the later using the network file icon.</s>
+        </p>
+        <p>
+          <s>TwoCities.rda.</s>
+          <s>This dataset is excerpted, with permission, from the Social Capital Benchmark Survey, which was collected by Professor Robert D. Putnam of the Saguaro Seminar: Civic Engagement in America, a project of the John F. Kennedy School of Government at Harvard University and numerous community foundations nationwide, and made available through the Roper Center for Public Opinion Research.</s>
+          <s>The dataset contains 1,008 individuals from two cities in the United States: Bismarck, North Dakota, and Grand Rapids, Michigan.</s>
+          <s>The sociodemographic information includes 4 individual characteristics-age, income, education level, and work time; and the group affiliation information includes membership in 18 voluntary organizations.</s>
+          <s>There are also six other assorted variables.</s>
+        </p>
+        <p>
+          <s>gss74_87.rda.</s>
+          <s>This dataset is excerpted from the General Social Survey, 1972-2012, available from both the Interuniversity Consortium for Political and Social Research (ICPSR) website (http://www.icpsr.umich.edu/icpsrweb/NACJD/studies/34802)</s>
+          <s>and the NORC website (http:// gss.norc.org/get-the-data/).</s>
+          <s>The sociodemographic information includes the education level and occupational prestige scores of <ref type="bibr">13,865 respondents surveyed in 1974, 1975, 1977, 1978, 1980, 1983, 1984, 1986, and 1987</ref> ; and the group affiliation information includes membership in 16 types of organizations.</s>
+        </p>
+      </div>
+      <div>
+        <head>Results</head>
+        <p>
+          <s>In this section, we discuss the major capabilities of Blaunet for analyzing Blau space and use the example datasets to illustrate them.</s>
+          <s>We begin by discussing a tool we developed for constructing Blau space.</s>
+          <s>Researchers often have numerous sociodemographic variables at their disposal.</s>
+          <s>However, not all of these are appropriate in constructing the Blau parameters.</s>
+          <s>It is therefore desirable to have a principled method to identify those variables that can serve as salient dimensions for constructing a Blau space.</s>
+          <s>This is the first capability of Blaunet and we discuss it in the "Salient dimension identification" subsection.</s>
+        </p>
+        <p>
+          <s>Before conducting the analysis, it is useful to visualize how the data "fits together", how the individuals are distributed vis-à-vis the niches in Blau space, as well as how the network ties are distributed.</s>
+          <s>Such visualization is also useful after the analysis since it sometimes clarifies certain patterns in the data.</s>
+          <s>The challenge is in representing the three types of information.</s>
+          <s>This is the second capability of Blaunet and we discuss it in the "Niche plot" subsection.</s>
+        </p>
+        <p>
+          <s>The main capability of Blaunet is the analysis of Blau space into Blau statuses.</s>
+          <s>Based on the diverse types of information (i.e., sociodemographic, affiliation, and network) that can be processed, Blaunet can perform the analysis at three levels-nodal level, dyadic level, and meso level.</s>
+          <s>As shown in <ref target="#tab_1" type="table">Table 1</ref> , when a dataset contains only the sociodemographic information, Blaunet can only estimate statuses at the nodal level.</s>
+          <s>At this level, Blaunet can generate a matrix indicating the list of individuals who are close to each focal individual in the Blau space using Blau bubble (proximity) analysis (see more details in the "Blau bubble (proximity) analysis" subsection).</s>
+        </p>
+        <p>
+          <s>When sociodemographic information and group affiliation information are both available (e.g., similar to the example datasets TwoCities.rda</s>
+          <s>and gss74_87.rda),</s>
+          <s>Blau statuses at all three levels can be calculated.</s>
+          <s>At the nodal level, Blaunet can indicate the Blau status of each individual in relation to the niches (e.g., outsider, insider, exclusive, manifolder, and member/nicher mixing status in each social entity).</s>
+          <s>At the dyadic level, Blaunet can calculate the Blau status for each pair of individuals in relation to their niches (e.g., co-nicher, co-outsider, and Euclidean and Mahalanobis distance).</s>
+          <s>And at the meso level, Blaunet can perform niche-by-niche analysis, focal niche analysis, and a bivariate correlation analysis for each social entity (see more details in the "Niche analysis" subsections).</s>
+        </p>
+        <p>
+          <s>When all three types of information are available (e.g., similar to the example datasets BSA-Net.rda and schlattr.rda</s>
+          <s>&amp; schlnet.rda),</s>
+          <s>Blaunet can estimate some additional statuses for each level of analysis.</s>
+          <s>At the nodal level, Blaunet can calculate the Blau status of each individual through existing edge(s) (e.g., spanner and number of niches spanned to).</s>
+          <s>At the dyadic level, it can calculate Blau statuses of each edge (e.g., straddler and spanner).</s>
+          <s>And at the meso level, Blaunet can add some network measures into the bivariate correlation analysis (see more details in the "Niche analysis" subsections).</s>
+        </p>
+        <p>
+          <s>One of the major goals of Blau space analysis has been to attempt to analyze niche movement over time <ref target="#b22" type="bibr">[23]</ref> .</s>
+          <s>The object of this analysis is to predict how each niche will move in a Blau space due to the competition among various social entities.</s>
+          <s>Such niche dynamics analysis requires both sociodemographic and group affiliation information, but not necessarily network information.</s>
+          <s>The question of niche dynamics is best addressed with longitudinal data but can also be approached with cross-sectional data.</s>
+          <s>This is another capability of Blaunet and we discuss and give examples using both kinds of data in the "Niche dynamics analysis" subsection.</s>
+        </p>
+      </div>
+      <div>
+        <head>Salient dimension identification</head>
+        <p>
+          <s>One of the limitations of Blau space analysis has been that there is no established way of identifying the dimensions that constitute it.</s>
+          <s>All sociodemographic characteristics are potential Blau space dimensions, including both continuous characteristics such as age, years of education, income, and occupational prestige, as well as categorical measures such as gender, race, marital status, religion, and birthplace.</s>
+          <s>However, which variables a researcher should choose as dimensions is currently determined purely by theoretical or substantive knowledge of the phenomena under study (e.g., theory of organizations, or substantive knowledge about a given area) with no principled method for quantitatively evaluating the choices.</s>
+          <s>Researchers typically cite previous work or appeal to theoretically plausible variables that are known to influence association.</s>
+          <s>This lack of a principled way of selecting dimensions can introduce bias into the analysis.</s>
+          <s>It is possible to inadvertently omit an important dimension or to include a dimension that is not important in a given context.</s>
+          <s>A way forward is to try to make the identification of salient dimensions more rigorous.</s>
+          <s>This is one of the goals of Blaunet and is one of its most innovative features.</s>
+          <s>From a list of theoretically plausible variables, Blaunet uses exponential random graph models <ref target="#b44" type="bibr">[45]</ref> to identify variables that influence association probabilities and hence would be good candidates as dimensions to structure the Blau space.</s>
+          <s>However, the analyst is advised to bear in mind that these tools are a supplement to researcher judgment rather than a replacement of it.</s>
+          <s>Some theoretical guidance should still be used in selecting the appropriate dimensions.</s>
+        </p>
+        <p>
+          <s>The salient dimension identification function is the first item under the "Analysis" menu.</s>
+          <s>As shown in <ref target="#fig_2" type="figure">Fig 3,</ref> the example dataset schlattr.rda</s>
+          <s>&amp; schlnet.rda is loaded and all 20 sociodemographic variables are screened to identify the salient dimensions for 3 groups-study group, artistic group, and sports team.</s>
+          <s>An automated iterative procedure is implemented in Blaunet for selecting a set of dimensions that is appropriate for constructing a Blau space for the population under study.</s>
+        </p>
+        <p>
+          <s>Theoretically, salient dimension identification is based on two standards.</s>
+          <s>First, at the individual level, the selected set of salient dimensions should help explain the membership of an individual in the m social entities.</s>
+          <s>This function is accomplished by running a series of m logistic regression models:</s>
+        </p>
+        <formula xml:id="formula_0">P Y o2ð1;mÞ ¼ 1 ¼ 1 1 þ e À ðaþ P bx ik Þ :<label>ð1Þ</label>
+        </formula>
+        <p>
+          <s>In Eq (1), P(Y o2(1,m) = 1 is the probability that an individual is a member of the oth social entity, given a linear combination x of k sociodemographic traits.</s>
+          <s>It is not surprising that a few dimensions might be salient for some entities but not for the others.</s>
+          <s>We combine the sociodemographic traits that predict (e.g., at the significance level of 0.05 by default) the membership of at least one social entity into a preliminary list.</s>
+          <s>Second, at the dyadic level, the homophily on salient dimensions is expected to explain the co-membership of a pair of individuals in m social entities.</s>
+          <s>This function is accomplished by estimating a series of m exponential family random graph (ERG) models <ref target="#b46" type="bibr">[47]</ref> :</s>
+        </p>
+        <formula xml:id="formula_1">P Y o2ð1;mÞ ¼ y o2ð1;mÞ ¼ 1 k e y hcav y ij Iðx i ¼x j Þþy hcov y ij jx i À x j jþy net net ij y ij :<label>ð2Þ</label>
+        </formula>
+        <p>
+          <s>In Eq <ref type="formula">(2)</ref> , Y o2 <ref type="bibr">(1,m)</ref> is the symmetric co-membership matrix for the oth social entity with the state y o2 <ref type="bibr">(1,m)</ref> .</s>
+          <s>The x i and x j are the vectors of statistics on each sociodemographic trait for a pair of individuals i and j.</s>
+          <s>As shown in <ref target="#fig_3" type="figure">Fig 4,</ref> categorical variables are differentiated from continuous variables.</s>
+          <s>For categorical variables, this homophily effect is estimated as θ hcav .</s>
+          <s>This is implemented by using the nodematch term in the ergm package <ref target="#b45" type="bibr">[46]</ref> of statnet <ref target="#b47" type="bibr">[48,</ref>
+            <ref target="#b48" type="bibr">49]</ref> .</s>
+          <s>For continuous variables, this homophily effect is estimated as θ hcov .</s>
+          <s>This is implemented by using the absdiff term in the ergm package <ref target="#b45" type="bibr">[46]</ref> of statnet <ref target="#b47" type="bibr">[48,</ref>
+            <ref target="#b48" type="bibr">49]</ref> .</s>
+        </p>
+        <p>
+          <s>When a network dataset is available and loaded into memory, the homophily effect of social ties on the co-membership state will be estimated as θ net .</s>
+          <s>The denominator κ is the normalizing factor that ensures that Eq (2) is a legitimate probability distribution.</s>
+          <s>All the sociodemographic characteristics in the primary list through m logistic regression models based on Eq (1) enter the m ERG models based on Eq (2), and those found to be insignificant (e.g., p &gt; = 0.05 by default) in all m ERG models are cut.</s>
+          <s>As shown in <ref target="#fig_5" type="figure">Fig 5,</ref> there are 7 remaining sociodemographic characteristics that make up the finalized list of salient dimensions identified by Blaunet.</s>
+          <s>Researcher-selected dimensions that also appear on this list can be viewed as being independently supported, though this Blaunet routine is a heuristic and should be supplemented by sociological theory and content-level expertise.</s>
+        </p>
+        <p>
+          <s>Note that, as of now, only continuous sociodemographic variables can be used as dimensions for constructing Blau space.</s>
+          <s>While prior Blau space analysis has used categorical variables as dimensions <ref target="#b0" type="bibr">[1]</ref> , this required including them as proportions of an organization that falls into a particular category (e.g., proportion female).</s>
+          <s>While this method works for organizations to a degree, it is ineffective for individuals, who occupy discrete values.</s>
+          <s>The standard practice in Blaunet is to input categorical variables during the modelling stage of the analysis.</s>
+          <s>Test score (PPVT, the horizontal axis) and Body Mass Index (BMI, the vertical axis) are used as the two salient dimensions for the study group and gang group.</s>
+        </p>
+      </div>
+      <div>
+        <head>Niche plot</head>
+        <p>
+          <s>The niche for each group is centered on the mean value of each dimension and extends 1.5 standard deviations (following the default breadth set by McPherson <ref target="#b0" type="bibr">[1]</ref> , but configurable in Blaunet) above and below the mean, as shown in <ref target="#fig_7" type="figure">Fig 7.</ref> The area inside each group's box in <ref target="#fig_8" type="figure">Fig 8 is</ref> its niche in the two-dimensional space, and the intersection of the boxes is the region in which the two groups are competing for the same type of members.</s>
+          <s>The members of the study group (blue box) tend to have higher PPVT scores (82 to 127) than those of the gang group (61 to 90).</s>
+          <s>On the other hand, the gang members (pink box) tend to have lower BMI (18 to 25) than the study group members (22 to 28).</s>
+          <s>Individuals are colored as red circles based on their values on the two dimensions.</s>
+          <s>Individuals located in one or more niches are defined as insiders, compared to outsiders who fall outside of any niche.</s>
+          <s>Insiders can be further categorized into two groups based on the number of niche(s) they are in-exclusives, who are located only in one niche and manifolders, who are located in more than one niche (inside the intersecting region(s) of Blau space).</s>
+          <s>When network data is available and loaded into memory, Blaunet will automatically detect it and provide an option for users to display the network edges in the niche plot.</s>
+        </p>
+        <p>
+          <s>Blaunet allows for a maximum of three salient dimensions to be displayed in the Blau space.</s>
+          <s>As shown in <ref target="#fig_9" type="figure">Fig 9,</ref> the example dataset schlattr.csv</s>
+          <s>&amp; schlnet.csv is loaded and Physical Maturity (the left axis), PPVT (the right axis), and BMI (the vertical axis) are used as the three salient dimensions for the study group, artistic group, and sport team.</s>
+          <s>The cuboids colored in blue, pink, and yellow are the niches of study group, artistic group, and sport team in the threedimensional space, respectively.</s>
+          <s>The individuals are represented as red spheres and the option to display the network edges is selected.</s>
+          <s>The three-dimensional plot is rotatable to detect details about how social entities are distributed along the three salient dimensions in the Blau space.</s>
+        </p>
+      </div>
+      <div>
+        <head>Blau bubble (proximity) analysis</head>
+        <p>
+          <s>Thus far, we considered the use of Blaunet to calculate metrics that involve organizational membership.</s>
+          <s>By contrast, Blau bubbles are not based on organizational competition and their niches, nor do they require the analyst to take organizational membership information into account.</s>
+          <s>Instead they are based on one's proximity to other actors in Blau space.</s>
+        </p>
+        <p>
+          <s>Proximity in terms of network ties has been long recognized as a conduit for social influence <ref target="#b49" type="bibr">[50]</ref> .</s>
+          <s>A person (ego) is likely to influence and be influenced by their friends, co-workers, and lovers on a variety of attitudes and behaviors; and there is now a large literature that attempts to disentangle influence effects from selection effects in social networks <ref target="#b50" type="bibr">[51]</ref>
+            <ref target="#b51" type="bibr">[52]</ref>
+            <ref target="#b52" type="bibr">[53]</ref>
+            <ref target="#b53" type="bibr">[54]</ref> .</s>
+          <s>Recent work has attempted to look for social influence beyond traditional network contacts and to incorporate other actors who are part of the ego's social context <ref target="#b54" type="bibr">[55]</ref>
+            <ref target="#b55" type="bibr">[56]</ref>
+            <ref target="#b56" type="bibr">[57]</ref> .</s>
+          <s>One way this is done is to include sociodemographically similar individuals with whom the ego shares a physical environment (e.g.</s>
+          <s>school, workplace, neighborhood) but who would not necessarily be considered "friends" by the ego.</s>
+          <s>Such individuals have been termed familiar others <ref target="#b40" type="bibr">[41]</ref> and are captured using Blau bubble analysis.</s>
+          <s>Familiar others have been shown to exert influence on a range of ego's behaviors <ref target="#b40" type="bibr">[41,</ref>
+            <ref target="#b57" type="bibr">58]</ref> .</s>
+          <s>Though the influence occurs through different mechanisms than in network ties, such as social comparison, behavioral modeling, and observational learning <ref target="#b57" type="bibr">[58]</ref> .</s>
+          <s>Suh, Shi, and Brashears <ref target="#b40" type="bibr">[41]</ref> applied Blau bubble analysis to the Add Health data to identify possible familiar others, and found that they constitute a salient source of social influence for an individual's smoking behavior, which is quite distinct from the influence through network relations.</s>
+          <s>Behler et al. <ref target="#b57" type="bibr">[58]</ref> found that the unhealthy weight-related behaviors of familiar others strongly predicted the ego's own weight behavior and that this relationship is stronger than that between the ego and their direct network ties.</s>
+          <s>Blau bubble analysis thus provides a probabilistic approach to network analysis and social influence when conventional network information is unavailable.</s>
+          <s>It can also be used to capture weaker forms of contact, such as casual contacts, that are typically missed on more conventional network inventories.</s>
+        </p>
+        <p>
+          <s>Blau bubble (proximity) analysis relies only on sociodemographic information <ref target="#b40" type="bibr">[41]</ref> .</s>
+          <s>Each individual is positioned with unique coordinates along the salient sociodemographic dimensions in the Blau space (e.g., the red circles in a two-dimensional space as shown in <ref target="#fig_8" type="figure">Fig 8 or</ref> the red spheres in a three-dimensional space as shown in <ref target="#fig_9" type="figure">Fig 9)</ref> .</s>
+          <s>The more similar two individuals are on the set of salient sociodemographic parameters that define the Blau space, the more proximate they are in the hyperspace coordinate system, and the more likely they are to associate with and be influenced by one another.</s>
+          <s>Just like the niche of a social entity marks its boundary for recruiting potential members, we identify a Blau bubble for each individual as being comprised of his or her similar others situated within a specific distance from the location of focal individual in the Blau space.</s>
+        </p>
+        <p>
+          <s>Blau bubbles are calculated in the following way.</s>
+          <s>In Blaunet, the Euclidean distance of each focal individual i from all other individuals along k sociodemographic dimension within the Blau space is defined as</s>
+        </p>
+        <formula xml:id="formula_2">Dis ij ¼ ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi P k p¼1 ðx 0 pi À x 0 pj Þ 2 k s ;<label>ð3Þ</label>
+        </formula>
+        <p>
+          <s>where x 0 indicates the value on a given dimension and k is the number of dimensions in Blau space.</s>
+          <s>For categorical dimensions, a pair of individuals that belong to the same category (e.g., both are African-Americans or married) are assigned a value of zero (i.e., x 0 pi À x 0 pj ¼ 0), and otherwise are assigned a value of one (i.e., x 0 pi À x 0 pj ¼ 1).</s>
+          <s>Continuous variables are standardized to the unit interval as</s>
+        </p>
+        <formula xml:id="formula_3">x 0 pi ¼ x pi À minðx pi Þ maxðx pi Þ À minðx pi Þ ;<label>ð4Þ</label>
+        </formula>
+        <p>
+          <s>where x is the observed value on a given dimension.</s>
+          <s>The conversion enables the score x 0 in Eq (3) to take any value between zero and one.</s>
+          <s>Consequently, all dimensions range from zero to one.</s>
+          <s>Thus, for n individuals in the Blau space, the distance from the focal individual to any other individual along the k dimensions is calculated n-1 times and a distance matrix of dimensions n by n is generated.</s>
+          <s>Let us begin with the example dataset BSANet.rda,</s>
+          <s>which includes attribute, affiliation, and network data.</s>
+          <s>The attribute data includes individual names as node ids, three salient dimensions (i.e., age, income, education), and two group affiliation indicators (i.e., conservative and liberal) for 10 persons in two ecologies (i.e., New York and San Francisco).</s>
+          <s>The attribute data in <ref target="#tab_2" type="table">Table 2</ref> can be displayed by clicking the first item under the "Browse" menu.</s>
+        </p>
+        <p>
+          <s>The network part of BSANet.rda</s>
+          <s>gives the network relational information among the 10 individuals.</s>
+          <s>In the adjacency matrix shown in <ref type="table">Table 3</ref> , a value of 1 indicates that there is a directed edge from the individual in the row (ego) to another individual in the column (alter) while 0 indicates otherwise.</s>
+          <s>In this case there is no edge between any individual in New York City and that in San Francisco.</s>
+          <s>The adjacency matrix in <ref type="table">Table 3</ref> can be displayed by clicking the second item under the "Browse" menu.</s>
+          <s>The adjacency matrix can be plotted as a network graph by clicking the first item under the "Graph" menu.</s>
+          <s>As shown in <ref target="#fig_1" type="figure">Fig 10,</ref> Blaunet users can choose whether vertex names/labels will appear in the graph, how to define the vertex color, sides (e.g., starts from a minimum of 3-sided or a triangle), and size, as well as what type of layout will be applied.</s>
+        </p>
+        <p>
+          <s>Red circles in <ref target="#fig_1" type="figure">Fig 11 are</ref> used to indicate individuals in New York City (the first five egos listed in the adjacency matrix) while cyan circles are used to indicate those in San Francisco (the last five).</s>
+        </p>
+        <p>
+          <s>The Blau bubble analysis menu is accessed by clicking the last item under the "Analysis" menu.</s>
+          <s>As shown in <ref target="#fig_0" type="figure">Fig 12, all 3 dimensions (age, income, educ)</ref> in BSANet.rda</s>
+          <s>are utilized to perform the Blau bubble (proximity) analysis, while the city variable is selected to identify the ecology.</s>
+        </p>
+        <p>
+          <s>Blaunet users can select a cutoff between 0 and 1 as the radius to set the boundary for one's possible similar others.</s>
+          <s>More specifically, those falling within the radius of the focal individual will be included within his or her Blau bubble.</s>
+          <s>When the radius is set to 0, only those whose sociodemographic characteristics completely match with the focal individual will be classified as possible similar others.</s>
+          <s>At the other extreme, when the radius is set as 1, all individuals in <ref type="table">Table 3</ref> .</s>
+          <s>Network data in the BSANet.rda. the Blau space will be captured.</s>
+          <s>By default, Blaunet assigns a radius of 0.333 for building the Blau bubbles, as shown in <ref target="#fig_1" type="figure">Fig 13.</ref> Blaunet presents at least three types of results for Blau bubble (proximity) analysis.</s>
+          <s>When network information is loaded in Blaunet, an additional "Blau Bubble list" becomes available, as shown in <ref target="#fig_1" type="figure">Fig 14.</ref>
+          </s>
+          <s>The first result is the "Blau Distance Matrix" as shown in <ref target="#tab_3" type="table">Table 4</ref> , with a score of 0 on Dis ij indicates perfect similarity between individuals i and j, and a score of 1 indicates perfect dissimilarity.</s>
+        </p>
+      </div>
+      <div>
+        <head>Ego</head>
+        <p>
+          <s>When the default radius of 0.333 is applied, as shown in <ref target="#tab_3" type="table">Table 4</ref> , the distance between John and Emma is 0.52, and thus Emma is outside of John's Blau bubble; the distance between John and Bruce is 0.27, and thus Bruce is inside of John's Blau bubble.</s>
+          <s>The "Blau Bubble Matrix" is shown in <ref target="#tab_4" type="table">Table 5</ref> .</s>
+        </p>
+        <p>
+          <s>Blaunet also provides a "Nodal Bubble list", which gives the summary of the individuals in one's Blau bubble ("co_bubble") as well as who they are ("co_bubble_list").</s>
+          <s>When network information is available and loaded in memory as in this case, the summary table also includes Blaunet package four additional columns.</s>
+          <s>The first two additional columns ("degree" and "alter_list") indicate how many alters each individual connects to as well as who they are.</s>
+          <s>The second two additional columns ("coincidence" and "coincidence_list") provide the number of overlaps between the Blau bubble list and the alter list as well as who they are.</s>
+          <s>As shown in <ref target="#tab_5" type="table">Table 6</ref> , Amir has Emma and Mark in his Blau bubble and Mark in his alter list, and thus Mark is the only one appearing in both lists.</s>
+        </p>
+      </div>
+      <div>
+        <head>Niche analysis</head>
+        <p>
+          <s>In Blaunet, five elements are required to generate an object of the "Blau" class for niche analysis, including:</s>
+        </p>
+        <p>
+          <s>1. node id-a unique identifier for each individual.</s>
+          <s>When sociodemographic and network information are both available, this is the key that links these two types of information;</s>
+        </p>
+        <p>
+          <s>2. salient dimensions-selected sociodemographic attributes which comprise the Blau parameters for the model; 4. deviation range-indicators for standard deviation around the mean in each salient dimension to include in the niche (default is 1.5);</s>
+        </p>
+        <p>
+          <s>5. complete case option-a Boolean setting indicating whether individuals with at least one missing value should be dropped before proceeding with niche analysis (default is "false").</s>
+        </p>
+        <p>
+          <s>There are also three optional elements, including:</s>
+        </p>
+        <p>
+          <s>6. ecology-identifies when individuals are partitioned into sub-samples (e.g., geospatial locations as in the example datasets BSANet.rda and TwoCities.rda</s>
+          <s>or time points as in the example dataset gss74_87.rda).</s>
+          <s>This is important because social entities such as organizations compete for members in the same ecology.</s>
+          <s>For example, a club in one city cannot compete for members who live in a different city.</s>
+        </p>
+        <p>
+          <s>7. weights-uses a weight variable for each individual when individuals are sampled from a population and the standard deviation of the Blau parameters needs to be adjusted (default is 1 -everyone has the same weight);</s>
+        </p>
+      </div>
+      <div>
+        <head n="8.">network-when interpersonal network relational information is available and loaded in memory.</head>
+        <p>
+          <s>The niche analysis function is the third item under the "Analysis" menu.</s>
+          <s>Let us consider an example using the dataset BSANet.rda,</s>
+          <s>illustrated in <ref target="#fig_1" type="figure">Fig 15.</ref>
+          </s>
+          <s>The variable person is selected as the node id, the variable city as the ecology id, all 3 sociodemographic measures (age, income, educ) are selected as the salient dimensions, memberships in a liberal or conservative organization (grp_conservative, grp_liberal) are selected as group affiliation indicators, and since network relational information is available, the "Network included" box is checked.</s>
+        </p>
+        <p>
+          <s>After setting the deviation range for each salient dimension, niche analysis provides at least 6 types of results, as shown in <ref target="#fig_1" type="figure">Fig 16.</ref>
+          </s>
+          <s>When network information is loaded in Blaunet, an additional "Dyadic Result" is also available.</s>
+          <s>In "Niche Breadth Summary", following McPherson <ref target="#b0" type="bibr">[1]</ref> , Blaunet calculates niche breadth as the mean ± 1.5 standard deviation (by default) for each specific sociodemographic dimension as shown in <ref target="#fig_8" type="figure">Fig 8 and Fig 9.</ref> As shown in <ref target="#tab_6" type="table">Table 7</ref> , members of the New York conservative group (John and Mary) have a mean income of 3.50 and a standard deviation of 2.12.</s>
+          <s>Thus the niche breadth for the conservative group in New York City ranges from 0.32 to 6.68 on the dimension "income".</s>
+          <s>Note that when a salient dimension can only take positive values (e.g., all three dimensions in this case), if the result of the "mean minus 1.5 times the standard deviation" calculation is negative then we force the low bound to be 0 (e.g., this is the case with the low bounds of income for the niche of the New York liberal group as well as the niche of the San Francisco conservative group.</s>
+          <s>It is also the case for the parameter education level for the niche of the San Francisco conservative group).</s>
+        </p>
+        <p>
+          <s>At the nodal level, Blaunet users can browse the "Nodal Result" for each individual across all niches in the Blau space.</s>
+          <s>In <ref type="table">Table 8</ref> , the 3rd column "TotalOrgs" shows the total number of social entities that each individual is in, with the lower bound equaling to 0 and the upper bound equaling the maximum number of social entities populating the ecology.</s>
+          <s>The 4th column "Niches" provides details about how many niches each individual is in, or how many social entities are competing for that individual (irrespective of actual membership).</s>
+          <s>A value of 0 indicates that an individual is an outsider, that of 1 indicates that the individual is an exclusive (suggesting an organizational monopoly), and a value of 2 or more indicates that the individual is a manifolder (i.e., belongs to multiple niches and is a potential recruit for several social entities).</s>
+          <s>The 5th column "NicheList" provides a list indicating which niche(s) each individual belongs to.</s>
+          <s>The 6th to 8th columns indicate whether each individual is an outsider, insider &amp; exclusive, and insider &amp; manifolder (0 = no and 1 = yes).</s>
+          <s>In <ref target="#tab_7" type="table">Table 9</ref> , the 13th and 14th columns show a mixing member/nicher status for each social entity (i.e., neither member nor nicher, non-member but in niche, member not in niche, or member &amp; nicher).</s>
+          <s>The last two columns "Spanner" and "NumSpannedTo" only show up when the network information is available and loaded in memory.</s>
+          <s>An individual is a spanner if he or she is outside the niche of a particular social entity but another individual he or she has tied to is an insider, and thus he or she can span to the niche of that social entity through this tie.</s>
+          <s>Therefore, the column "Spanner" indicates whether each individual is a spanner to other social entities through his or her existing ties (0 = no and 1 = yes) and the column "NumSpan-nedTo" indicates how many social entities the individual has spanned to through ties to other individuals.</s>
+          <s>For example, as shown in the 11th and 12th columns, Emma is an outsider of the conservative group niche but an insider of the liberal group niche, and Mary is an insider of the conservative group niche but an outsider of the liberal group niche.</s>
+          <s>Note that there is a mutual tie between Emma and Mary.</s>
+          <s>Thus, Emma has spanned to the niche of the conservative group through her tie to Mary, and Mary has spanned to the niche of the liberal group through her tie to Emma.</s>
+        </p>
+        <p>
+          <s>The analytical outputs at the dyadic level, i.e. "Dyadic Result", are shown in <ref target="#tab_1" type="table">Table 10</ref> .</s>
+          <s>The column "CoNicher" indicates whether a pair of individuals are insiders of the same niche (e.g., Emma and John are both insiders of the liberal group niche; 0 = no and 1 = yes).</s>
+          <s>The column "CoOutsider" indicates that a pair of individuals are outsiders of any niche (and none is found in this case; 0 = no and 1 = yes).</s>
+          <s>The column "Straddler" indicates that one node is an insider of at least one niche while the other is an outsider of any niche (e.g., Mark is an insider of the liberal group niche and Amir is an outsider of any niche; 0 = no and 1 = yes).</s>
+          <s>The last two columns give the Euclidean distance and the Mahalanobis distance (i.e., Euclidean distance standardized by the unit of measurement) between a pair of individuals.</s>
+          <s>When the network information is available and is loaded in memory, the column "Spanner" will show up and indicate how many different niche(s) an edge enables the two enclosed nodes to span (0 = no and 1 = yes).</s>
+          <s>For example, for the mutual edges between Emma and Mary, Emma is an exclusive of the liberal group niche and Mary is an exclusive of the conservative group niche, and thus both of them have spanned to each other's niche.</s>
+        </p>
+        <p>
+          <s>At the meso level, Blaunet outputs the "Niche by Niche Summary" for each ecology as shown in <ref target="#tab_1" type="table">Table 11</ref> .</s>
+          <s>For the first matrix in columns 3 and 4, the diagonal elements contain the number of individuals exclusive to the niche of each social entity and the off-diagonal elements correspond to the number of individuals overlapped by the other niches for each ecology.</s>
+          <s>For example, for the New York City ecology, the conservative group has one exclusive in its niche (i.e., Mary), and the liberal group has two exclusives in its niche (i.e., Emma and Mark), and these two groups have one individual overlapped by both niches (i.e., John).</s>
+          <s>The second matrix in columns 5 and 6, which is referred to as the matrix of competition coefficients in McPherson <ref target="#b0" type="bibr">[1]</ref> , is generated from the first niche-by-niche matrix by dividing its elements in each (row) social entity by the number of nichers in the corresponding (row) social entity (which will be shown as the column "NicheMem" in <ref target="#tab_1" type="table">Table 12</ref> ).</s>
+          <s>Note that the matrix of competition coefficients might not be symmetric.</s>
+          <s>The last two columns give the mean and standard deviation of the competition coefficients, calculated from the second matrix, for each ecology.</s>
+        </p>
+        <p>
+          <s>A second output at the meso level-the "Focal Niche Summary" for each social entity-is given in <ref target="#tab_1" type="table">Table 12</ref> .</s>
+          <s>The column "OrgMem" lists how many actual members are in each social entity that construct its niche.</s>
+          <s>The column "NicheMem" lists how many individuals are in each niche.</s>
+          <s>The column "PredictedNichemem" lists the predicted number of individuals in the niche base, which is a product of the niche-by-niche matrix of competition coefficients in <ref target="#tab_1" type="table">Table 11</ref> and the column "OrgMem" in <ref target="#tab_1" type="table">Table 12</ref> .</s>
+          <s>The column "NichExc" lists how many individuals are exclusive to that niche and only to that niche.</s>
+          <s>The column "NicheOvr" lists the number of individuals who overlap with other niches.</s>
+          <s>The column "MemExc" lists how many individuals are actually members of the social entity but are not in its niche.</s>
+          <s>The column "ExclusivePercent" lists the percentages of exclusives over all nichers.</s>
+          <s>For example, the San Francisco conservative group has five actual members (i.e., Bryan, Wendy, Aude, Mona, and Bruce), three nichers (i.e., Bryan, Aude, and Mona), one exclusive (i.e., Bryan) with an exclusive percentage of 33.33%.</s>
+          <s>It also has two niche insiders who are also located in the overlapping area with the niche of the San Francisco liberal group (i.e., Aude and Mona), and two actual members who are located outside of its niche (i.e., Wendy and Bruce).</s>
+        </p>
+        <p>
+          <s>A third output at the meso level-the bivariate "Correlation Matrix"-gives the correlation coefficients among the number of organizations and niches the node occupies and his or her values on the selected salient dimensions.</s>
+          <s>As shown in <ref target="#tab_1" type="table">Table 13</ref> , the correlation coefficient between the total number of organizations and niches is 0.73.</s>
+          <s>Those between age and income, between age and educational level, and between income and education level are -0.03,</s>
+          <s>0.07, and -0.21, respectively.</s>
+          <s>Since the three dimensions are not highly correlated with one another, each dimension provides non-redundant information and allows social differentiation along the other two dimensions.</s>
+          <s>This suggests that the individuals' locations on one dimension are not related to their locations on the other dimensions <ref target="#b0" type="bibr">[1,</ref>
+            <ref target="#b22" type="bibr">23]</ref> .</s>
+          <s>Since, in this case, the network information is also available and loaded in memory, some network measures (e.g., out-degree, in-degree, and eigenvector centrality measures) are added to the correlation matrix.</s>
+          <s>In this case, they are perfectly correlated.</s>
+        </p>
+      </div>
+      <div>
+        <head>Niche dynamics analysis</head>
+        <p>
+          <s>Cross-sectional analysis.</s>
+          <s>Niche dynamics analysis is the fourth item under the "Analysis" menu.</s>
+          <s>McPherson and Ranger-Moore <ref target="#b22" type="bibr">[23]</ref> advanced a set of three measures-carrying capacity, membership rate, and intensity of exploitation.</s>
+          <s>These can be calculated and plotted in Blaunet for cross-sectional exploration of how the niche of each social entity will move along the salient dimensions in Blau space.</s>
+          <s>Like three-dimensional niche plot, Blaunet also allows its users to rotate the carrying capacity plot, the membership rate plot, and the intensity of exploitation plot.</s>
+          <s>This rotation feature allows one to detect more details by selecting optimal values for horizontal or vertical angles.</s>
+        </p>
+        <p>
+          <s>As shown in <ref type="figure">Fig</ref> Blaunet allows its users to re-categorize the salient dimensions from continuous variables to categorical ones.</s>
+          <s>In gss74_87.rda</s>
+          <s>both occupational prestige and education level have been recoded into 10 categories, so we only need to drag the handle to a maximum value of 10 for each salient dimension, as shown in <ref target="#fig_1" type="figure">Fig 19.</ref>
+          </s>
+          <s>The carrying capacity indicates the distribution of potential members-or niche insiders-for selected social entities.</s>
+          <s>As shown in <ref target="#fig_0" type="figure">Fig 20,</ref> both education level and occupational prestige are categorized into 10 equal intervals, resulting in 100 quadrants in the two-dimensional space.</s>
+          <s>The proportions of niche insiders over the 100 quadrants are averaged across 3 selected social entities-labor unions, literary or art groups, and professional groups-and plotted along the vertical axis in the three-dimensional plot.</s>
+          <s>The red color surrounds the peak where carrying capacity reaches its maximum value, while the blue color covers the flat areas where there are almost no potential members.</s>
+          <s>Centered on the mean education level and mean occupational prestige of their actual members, all three types of organizations are located at areas where the carrying capacity is not very high.</s>
+          <s>The only difference between the carrying capacity and the membership rate is that the latter refers to the distribution of actual members instead of potential members, over the 100 quadrants.</s>
+          <s>As shown in <ref target="#fig_0" type="figure">Fig 21,</ref> all three groups are located at areas where the membership rate is not so high either.</s>
+        </p>
+        <p>
+          <s>The intensity of exploitation plot shows the competitive dynamic that drives the gradient of high and low opportunities for social entities in Blau space.</s>
+          <s>To estimate this measure, the arithmetic difference between the carrying capacity and the membership rate is calculated.</s>
+          <s>Next, the surface constructed by the 100 quadrants is smoothed using a polynomial regression model.</s>
+          <s>The polynomial regression equation in this case is Y = 0.02468601-0.01529415</s>
+          <s>Ã PRESTIGE + 0.002871434 Ã PRESTIGE 2 -0.0001603333</s>
+          <s>Ã PRESTIGE 3 -0.001731003</s>
+          <s>Ã EDUC-0.00</s>
+          <s>04662787 Ã EDUC 2 + 0.00006042156 Ã EDUC 3 + 0.0002174276 Ã PRESTIGE Ã EDUC.</s>
+          <s>These procedures are implemented in Blaunet automatically.</s>
+          <s>As shown in <ref target="#fig_0" type="figure">Fig 22,</ref> social entities are expected to move away from the red peak areas where potential members are overexploited and towards the blue valley areas where potential members are underexploited <ref target="#b22" type="bibr">[23]</ref> .</s>
+          <s>In the Blaunet package example data, we can see that professional groups are located at an area with great opportunities to gain more members with lower levels of both occupational prestige and education, suggesting a niche movement in this direction.</s>
+          <s>Literary or art groups would be expected to keep their niche position over the same level of occupational prestige but may move their niche position toward the area of Blau space with lower levels of education.</s>
+          <s>Labor unions are expected to move their niches to areas with a relatively higher level of occupational prestige but a lower level of education.</s>
+          <s>Longitudinal analysis.</s>
+          <s>McPherson and Ranger-Moore <ref target="#b22" type="bibr">[23]</ref> have also used the predicted niche movement equations to model the niche dynamics longitudinally.</s>
+          <s>When the example dataset gss74_87.rda is loaded in Blaunet, we have sociodemographic and group affiliation information collected along 2 dimensions-occupational prestige and education-for 16 types of organizations over 9 time points.</s>
+          <s>We let Blaunet know that we plan to perform longitudinal analysis by selecting "all" in <ref target="#fig_1" type="figure">Fig 18,</ref> instead of a single year 1978.</s>
+          <s>The dependent variable is the niche movement, indicated by the observed change in the means along each dimension for each type of organization across 8 = 9-1 time periods.</s>
+          <s>Carrying capacity, membership rate, and intensity of exploitation introduced earlier in this subsection are now calculated for the first 8 time points.</s>
+          <s>For each type of organization at each time point, 10 points are evenly selected on the right side between the mean (which is not included in the 10 points) and the upper bound of niche breadth (i.e., mean + 1.5 standard deviation by default).</s>
+          <s>Then, another 10 points are evenly selected on the left side between the low bound of the niche breadth (i.e., mean-1.5 standard deviation by default) and the mean (which is not included in the 10 points) and along each dimension.</s>
+          <s>Since the mean itself is not included, for occupational prestige the quadrants for the <ref target="#b9" type="bibr">10</ref> the values of exploitation in each dimension are cumulated on each side by inserting the quadrants of the 10 points into the polynomial regression equation automatically generated by Blaunet.</s>
+          <s>If the right cumulant is greater than the left cumulant, the organization should move its niche to the under-exploited area in the left direction.</s>
+          <s>If the right cumulant is equal to the left cumulant, the organization is in an equilibrium status and no niche movement is anticipated.</s>
+          <s>And if the right cumulant is less than the left cumulant, the organization should move its niche to the under-exploited area to the right.</s>
+          <s>In this way the explanatory variables are defined as Net opportunity t;j;k ¼ Left cumulant t;j;k À Right cumulant t;j;k ð5Þ</s>
+        </p>
+        <p>
+          <s>where t varies over the first 8 time points, j varies over the 16 organizational types, and k varies over the 2 dimensions-occupational prestige and education.</s>
+          <s>Finally, 128 = (9-1) Ã 16 records with two explanatory variables and two dependent variables for each record are generated to estimate the predicted niche movement equations as Nich movement t;j;OCC ¼ 0:03067 þ 0:98923 Ã Net opportunity t;j;OCC</s>
+        </p>
+        <p>
+          <s>Nich movement t;j;EDUC ¼ 0:09113 þ 2:50393 Ã Net opportunity t;j;EDUC ð7Þ</s>
+        </p>
+        <p>
+          <s>The coefficient of net opportunity for occupational prestige in Eq <ref type="formula">(6)</ref> is not significant at the 0.05 level, but that for education in Eq <ref type="formula">(7)</ref> is significant at the 0.05 level.</s>
+          <s>The R-squared values for Eq <ref target="#b5" type="bibr">(6)</ref> and Eq (7) are 0.001823 and 0.06988, respectively, which suggests that occupational prestige might not be a salient dimension to build Blau space, in this case.</s>
+          <s>(Note that our predicted niche movement equations are not identical to those in McPherson and Ranger-Moore <ref target="#b22" type="bibr">[23]</ref> .</s>
+          <s>This may be because they were using a raw GSS dataset with 23,356 correspondents, the sample size of which is about 1.68 times as large as that of gss74_87.rda</s>
+          <s>available from the ICPSR website or the NORC website.)</s>
+        </p>
+      </div>
+      <div>
+        <head>Other features of Blaunet</head>
+        <p>
+          <s>Blaunet also has other features, including setting the working directory, browsing attribute and network data, plotting network graphs with attributes, generating various network statistics, saving high-resolution 2D and 3D plots, exporting Blau space data for future analysis, and more.</s>
+          <s>Additional details are provided in the S1 File Manual for the Blaunet Graphic User Interface Package.</s>
+        </p>
+      </div>
+      <div>
+        <head>Discussion</head>
+        <p>
+          <s>There are many features of Blaunet that are not possible to document here, but we hope that this paper, together with the S1 file supplemental manual, serves as a useful introduction to the capabilities of the package as well as the theoretical framework behind it.</s>
+          <s>Of course, questions will inevitably arise that are not answered here or in the package documentation.</s>
+          <s>For this reason, users can join the Blaunet Users Facebook Group at https://www.facebook.com/groups/</s>
+          <s>425015561030239/ to communicate with the authors.</s>
+          <s>Although Blaunet provides powerful features for its users, it is far from finished and future developments are envisaged.</s>
+          <s>Specifically, we intend to tackle several topics in our future work.</s>
+        </p>
+        <p>
+          <s>First, one of the major limitations with existing Blau space techniques is the handling of categorical variables (e.g., gender, race, marital status, etc.), which in the current version can be included in Blau bubble (proximity) analysis but not in niche analysis.</s>
+          <s>We are working on a method enabling both continuous and categorical variables to be used in niche analysis.</s>
+        </p>
+        <p>
+          <s>Second, it is reasonable to suppose that salient dimensions may work differently in building the Blau space for different social entities, as well as on constructing the Blau bubble for each individual.</s>
+          <s>For example, sport teams might have some minimal criteria for personal athletic ability, while the study group may not be concerned with this dimension.</s>
+          <s>In the next version, we hope to more explicitly incorporate weights that adjust the niche and Blau bubble for the relative importance of different dimensions, permitting more accurate models.</s>
+        </p>
+        <p>
+          <s>Third, the underlying dynamic of this approach has been the competition for members between social entities.</s>
+          <s>But a more realistic representation may include other relational dynamics besides competition, such as cooperation or symbiosis.</s>
+          <s>For example, the Civil Rights Movement in the United States witnessed cooperation between various religious, political, and civic organizations and the building on each other's membership in civil right movements.</s>
+          <s>We are thus considering in incorporating multiple relationship dynamics among social entities in the next version.</s>
+        </p>
+      </div>
+      <div>
+        <head>Supporting information</head>
+      </div>
+      <figure xml:id="fig_0">
+        <head>Fig 2 .</head>
+        <label>2</label>
+        <figDesc>Interface for loading data. https://doi.org/10.1371/journal.pone.0204990.g002</figDesc>
+      </figure>
+      <figure xml:id="fig_1">
+        <head>Fig 1 .</head>
+        <label>1</label>
+        <figDesc>Main interface of Blaunet. https://doi.org/10.1371/journal.pone.0204990.g001</figDesc>
+      </figure>
+      <figure xml:id="fig_2">
+        <head>Fig 3 .</head>
+        <label>3</label>
+        <figDesc>Graphic interface for salient dimension suggestion. https://doi.org/10.1371/journal.pone.0204990.g003</figDesc>
+      </figure>
+      <figure xml:id="fig_3">
+        <head>Fig 4 .</head>
+        <label>4</label>
+        <figDesc>Identifying categorical variables among the set of dimensions. https://doi.org/10.1371/journal.pone.0204990.g004</figDesc>
+      </figure>
+      <figure xml:id="fig_4">
+        <head/>
+        <label/>
+        <figDesc>Blaunet provides the niche plotting feature introduced by McPherson [1]. Niches of social entities can be represented in the Blau space as boxes (in 2-dimensions) or cuboids (in 3-dimensions) overlaying the points that indicate the individuals who belong to them. The niche plot function is the second item under the "Analysis" menu. As shown in Fig 6, the example dataset schlattr.csv &amp; schlnet.csv is loaded and the Peabody Picture Vocabulary</figDesc>
+      </figure>
+      <figure xml:id="fig_5">
+        <head>Fig 5 .</head>
+        <label>5</label>
+        <figDesc>Results for identified salient dimensions. https://doi.org/10.1371/journal.pone.0204990.g005</figDesc>
+      </figure>
+      <figure xml:id="fig_6">
+        <head>Fig 6 .</head>
+        <label>6</label>
+        <figDesc>Graphic interface for niche plot. https://doi.org/10.1371/journal.pone.0204990.g006</figDesc>
+      </figure>
+      <figure xml:id="fig_7">
+        <head>Fig 7 .</head>
+        <label>7</label>
+        <figDesc>Setting deviation range for niche plot. https://doi.org/10.1371/journal.pone.0204990.g007</figDesc>
+      </figure>
+      <figure xml:id="fig_8">
+        <head>Fig 8 .</head>
+        <label>8</label>
+        <figDesc>Niches of study group and gang group along two dimensions.https://doi.org/10.1371/journal.pone.0204990.g008</figDesc>
+      </figure>
+      <figure xml:id="fig_9">
+        <head>Fig 9 .</head>
+        <label>9</label>
+        <figDesc>Niches of study group, artistic group, and sport team along three dimensions.https://doi.org/10.1371/journal.pone.0204990.g009</figDesc>
+      </figure>
+      <figure xml:id="fig_10">
+        <head/>
+        <label/>
+        <figDesc>doi.org/10.1371/journal.pone.0204990.t003 Fig 10. Options for plotting network graph. https://doi.org/10.1371/journal.pone.0204990.g010</figDesc>
+      </figure>
+      <figure xml:id="fig_11">
+        <head>Fig 11 .</head>
+        <label>11</label>
+        <figDesc>The network graph of BSANet.rda. https://doi.org/10.1371/journal.pone.0204990.g011</figDesc>
+      </figure>
+      <figure xml:id="fig_12">
+        <head>Fig 12 .</head>
+        <label>12</label>
+        <figDesc>Interface for Blau bubble analysis. https://doi.org/10.1371/journal.pone.0204990.g012 Fig 13. Options for Blau bubble analysis. https://doi.org/10.1371/journal.pone.0204990.g013 3. group affiliation indicators-the membership of individuals in social entities such as groups or organizations;</figDesc>
+      </figure>
+      <figure xml:id="fig_13">
+        <head>Fig 14 .</head>
+        <label>14</label>
+        <figDesc>Results from Blau bubble analysis.https://doi.org/10.1371/journal.pone.0204990.g014</figDesc>
+      </figure>
+      <figure xml:id="fig_14">
+        <head/>
+        <label/>
+        <figDesc>doi.org/10.1371/journal.pone.0204990.t005</figDesc>
+      </figure>
+      <figure xml:id="fig_15">
+        <head>Fig 15 .</head>
+        <label>15</label>
+        <figDesc>Interface for niche analysis. https://doi.org/10.1371/journal.pone.0204990.g015 Fig 16. Niche analysis results. https://doi.org/10.1371/journal.pone.0204990.g016</figDesc>
+      </figure>
+      <figure xml:id="fig_16">
+        <head/>
+        <label/>
+        <figDesc>17 the example dataset gss74_87.rda is loaded in memory. The variable ID is selected as the node id, survey year (YEAR) as the ecology id, occupational prestige (PRES-TIGE) and education level (EDUC) as the salient dimensions, and memberships in labor unions (MEMUNION), literary or art groups (MEMLIT), and professional groups (MEM-PROF) as the group affiliation indicators.After setting the deviation rage for each salient dimension, the survey year 1978 is chosen to illustrate the feature of cross-sectional niche dynamics analysis, as shown inFig 18.</figDesc>
+      </figure>
+      <figure xml:id="fig_17">
+        <head>Fig 18 .</head>
+        <label>18</label>
+        <figDesc>Interface for selection ecology. https://doi.org/10.1371/journal.pone.0204990.g018 Fig 19. Interface for re-categorizing the 2 selected dimensions. https://doi.org/10.1371/journal.pone.0204990.g019</figDesc>
+      </figure>
+      <figure xml:id="fig_18">
+        <head/>
+        <label/>
+        <figDesc>points on each side are [Mean OCC ± (0.15, 0.30, 0.45, 0.60, 0.75, 0.90, 1.05, 1.20, 1.35, 1.50) Ã SD OCC , Mean EDUC ]. For education the quadrants for the 10 points on each side are [Mean OCC , Mean EDUC ± (0.15, 0.30, 0.45, 0.60, 0.75, 0.90, 1.05, 1.20, 1.35, 1.50) Ã SD EDUC ]. Note that the deviance range (1.5 by default) is configurable in Blaunet. Next, Fig 20. Carrying capacity in three-dimensional Blau space. https://doi.org/10.1371/journal.pone.0204990.g020</figDesc>
+      </figure>
+      <figure xml:id="fig_19">
+        <head>Fig 21 .</head>
+        <label>21</label>
+        <figDesc>Membership rate in three-dimensional Blau space. https://doi.org/10.1371/journal.pone.0204990.g021</figDesc>
+      </figure>
+      <figure xml:id="fig_20">
+        <head>Fig 22 .</head>
+        <label>22</label>
+        <figDesc>Intensity of exploitation in three-dimensional Blau space. https://doi.org/10.1371/journal.pone.0204990.g022</figDesc>
+      </figure>
+      <figure xml:id="fig_21">
+        <head>S1</head>
+        <label/>
+        <figDesc>File. Manual for the Blaunet Graphic User Interface Package. (PDF) Validation: Michael Genkin, Cheng Wang, Matthew E. Brashears. Visualization: Michael Genkin, Cheng Wang. Writing -original draft: Michael Genkin, Cheng Wang. Writing -review &amp; editing: Michael Genkin, Cheng Wang, Matthew E. Brashears.</figDesc>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_0">
+        <head/>
+        <label/>
+        <figDesc>Microsoft Windows users, Blaunet can be installed directly in R via</figDesc>
+        <table>R&gt; install.packages('Blaunet', repos = "http://cran.r-project.org", 
+dependencies = TRUE) 
+
+Linux users should have X11 installed and GTK+ environment built in terminal via 
+
+$ sudo apt-get install libglpk-dev 
+$ sudo apt-get install libgtk2.0-dev 
+$ sudo apt-get build-dep r-cran-rgl 
+
+Then install Blaunet in R via 
+
+R&gt; install.packages('Blaunet', repos = "http://cran.r-project.org", 
+dependencies = TRUE) 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_1">
+        <head>Table 1 .</head>
+        <label>1</label>
+        <figDesc>Blau statuses based on analytical levels and types of information.</figDesc>
+        <table>ANALYTICAL LEVELS 
+
+Nodal Level 
+Dyadic Level 
+Meso Level 
+
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_2">
+        <head>Table 2 .</head>
+        <label>2</label>
+        <figDesc>Attribute data in the BSANet.rda.</figDesc>
+        <table>person 
+city 
+age 
+income 
+educ 
+grp_conservative 
+grp_liberal 
+
+1 John 
+New York 
+24 
+5 
+7 
+1 
+1 
+
+2 Emma 
+New York 
+38 
+1 
+3 
+0 
+1 
+
+3 Mary 
+New York 
+58 
+2 
+7 
+1 
+0 
+
+4 Amir 
+New York 
+47 
+4 
+2 
+0 
+0 
+
+5 Mark 
+New York 
+33 
+4 
+4 
+0 
+0 
+
+6 Bryan 
+San Francisco 
+23 
+0 
+7 
+1 
+0 
+
+7 Wendy 
+San Francisco 
+28 
+6 
+0 
+1 
+1 
+
+8 Aude 
+San Francisco 
+22 
+1 
+4 
+1 
+1 
+
+9 Mona 
+San Francisco 
+29 
+7 
+5 
+1 
+1 
+
+10 Bruce 
+San Francisco 
+41 
+5 
+7 
+1 
+1 
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_3">
+        <head>Table 4 .</head>
+        <label>4</label>
+        <figDesc>Distance matrix among individuals from BSANet.rda.</figDesc>
+        <table>ego 
+John 
+Emma 
+Mary 
+Amir 
+Mark 
+Bryan 
+Wendy 
+Aude 
+Mona 
+Bruce 
+
+John 
+0.0000 
+0.5178 
+0.5988 
+0.5594 
+0.2981 
+0.4127 
+0.5867 
+0.4136 
+0.2467 
+0.2726 
+
+Emma 
+0.5178 
+0.0000 
+0.4675 
+0.2981 
+0.2729 
+0.4166 
+0.5070 
+0.2695 
+0.5412 
+0.4690 
+
+Mary 
+0.5988 
+0.4675 
+0.0000 
+0.4779 
+0.4992 
+0.5850 
+0.8208 
+0.6335 
+0.6431 
+0.3682 
+
+Amir 
+0.5594 
+0.2981 
+0.4779 
+0.0000 
+0.2786 
+0.6535 
+0.3838 
+0.4992 
+0.4536 
+0.4314 
+
+Mark 
+0.2981 
+0.2729 
+0.4992 
+0.2786 
+0.0000 
+0.4425 
+0.3775 
+0.3039 
+0.2686 
+0.2907 
+
+Bryan 
+0.4127 
+0.4166 
+0.5850 
+0.6535 
+0.4425 
+0.0000 
+0.7646 
+0.2613 
+0.6081 
+0.5034 
+
+Wendy 
+0.5867 
+0.5070 
+0.8208 
+0.3838 
+0.3775 
+0.7646 
+0.0000 
+0.5368 
+0.4209 
+0.6194 
+
+Aude 
+0.4136 
+0.2695 
+0.6335 
+0.4992 
+0.3039 
+0.2613 
+0.5368 
+0.0000 
+0.5141 
+0.5128 
+
+Mona 
+0.2467 
+0.5412 
+0.6431 
+0.4536 
+0.2686 
+0.6081 
+0.4209 
+0.5141 
+0.0000 
+0.3024 
+
+Bruce 
+0.2726 
+0.4690 
+0.3682 
+0.4314 
+0.2907 
+0.5034 
+0.6194 
+0.5128 
+0.3024 
+0.0000 
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_4">
+        <head>Table 5 .</head>
+        <label>5</label>
+        <figDesc>Blau bubble matrix among individuals from BSANet.rda.</figDesc>
+        <table>ego 
+John 
+Emma 
+Mary 
+Amir 
+Mark 
+Bryan 
+Wendy 
+Aude 
+Mona 
+Bruce 
+
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_5">
+        <head>Table 6 .</head>
+        <label>6</label>
+        <figDesc>Blau bubble summary for individuals from BSANet.rda.</figDesc>
+        <table>person 
+co_bubble 
+co_bubble_list 
+degree 
+alter_list 
+coincidence 
+coincidence_list 
+
+John 
+3 Mark Mona Bruce 
+2 Emma Mary 
+0 
+
+Emma 
+3 Amir Mark Aude 
+2 John Mary 
+0 
+
+Mary 
+0 
+2 John Emma 
+0 
+
+Amir 
+2 Emma Mark 
+1 Mark 
+1 Mark 
+
+Mark 
+6 John Emma Amir Aude Mona Bruce 
+1 Amir 
+1 Amir 
+
+Bryan 
+1 Aude 
+2 Wendy Aude 
+1 Aude 
+
+Wendy 
+0 
+2 Bryan Aude 
+0 
+
+Aude 
+3 Emma Mark Bryan 
+2 Bryan Wendy 
+1 Bryan 
+
+Mona 
+3 John Mark Bruce 
+1 Bruce 
+1 Bruce 
+
+Bruce 
+3 John Mark Mona 
+1 Mona 
+1 Mona 
+
+https://doi.org/10.1371/journal.pone.0204990.t006 
+</table>
+      </figure>
+      <figure type="table" validated="true" xml:id="tab_6">
+        <head>Table 7 .</head>
+        <label>7</label>
+        <figDesc>Niche breadth summary for the "Blau" object generated from BSANet.rda.</figDesc>
+        <table>GROUPS 
+age 
+income 
+educ 
+ecologyNames 
+
+grp_conservative 
+4.94-77.06 
+0.32-6.68 
+7.00-7.00 
+New York 
+
+grp_liberal 
+16.15-45.85 
+0.00-7.24 
+0.76-9.24 
+New York 
+
+grp_conservative1 
+17.25-39.95 
+0.00-8.47 
+0.28-8.92 
+San Francisco 
+
+grp_liberal1 
+18.06-41.94 
+0.81-8.69 
+0.00-8.42 
+San Francisco 
+
+https://doi.org/10.1371/journal.pone.0204990.t007 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_7">
+        <head>Table 9 .</head>
+        <label>9</label>
+        <figDesc>The second part of nodal output for the "Blau" object generated from BSANet.rda-New York city.Table 10. Dyadic output for the "Blau" object generated from BSANet.rda.</figDesc>
+        <table>11 
+12 
+13 
+14 
+15 
+16 
+
+grp_conservative_niche 
+grp_liberal_niche 
+grp_conservative_mem.niche 
+grp_liberal_mem.niche 
+Spanner 
+NumSpannedTo 
+
+1 
+1 
+Member &amp; nicher 
+Member &amp; nicher 
+0 
+0 
+
+0 
+1 
+Neither member nor nicher 
+Member &amp; nicher 
+1 
+1 
+
+1 
+0 
+Member &amp; nicher 
+Neither member nor nicher 
+1 
+1 
+
+0 
+0 
+Neither member nor nicher 
+Neither member nor nicher 
+1 
+1 
+
+0 
+1 
+Neither member nor nicher 
+Non-member but in niche 
+0 
+0 
+
+https://doi.org/10.1371/journal.pone.0204990.t009 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_8">
+        <head>Table 11 .</head>
+        <label>11</label>
+        <figDesc>Niche by niche summary for the "Blau" object generated from BSANet.rda.https://doi.org/10.1371/journal.pone.0204990.t011Table 12. Focal niche summary for the "Blau" object generated from BSANet.rda.</figDesc>
+        <table>Ecology 
+Org.Niche 
+grp_conservative 
+grp_liberal 
+grp_conservative_CC 
+grp_liberal_CC 
+AVG_CC 
+STD_CC 
+
+New York 
+grp_conservative 
+1 
+1 
+0.5 
+0.5 
+0.5 
+0.14 
+
+New York 
+grp_liberal 
+1 
+2 
+0.33 
+0.67 
+0.5 
+0.14 
+
+San Francisco 
+grp_conservative 
+1 
+2 
+0.33 
+0.67 
+0.5 
+0.14 
+
+San Francisco 
+grp_liberal 
+2 
+2 
+0.5 
+0.5 
+0.5 
+0.14 
+
+</table>
+      </figure>
+      <figure type="table" validated="false" xml:id="tab_9">
+        <head>Table 13 .</head>
+        <label>13</label>
+        <figDesc>Correlation matrix for the "Blau" object generated from BSANet.rda. https://doi.org/10.1371/journal.pone.0204990.t013 Fig 17. Interface for niche dynamics. https://doi.org/10.1371/journal.pone.0204990.g017</figDesc>
+        <table>Names 
+TotalOrgs 
+Niches 
+age 
+income 
+educ 
+outdegree 
+indegree 
+eigenvector 
+
+TotalOrgs 
+1 
+0.725542 
+-0.44798 
+0.313366 
+0.175665 
+0.313625 
+0.313625 
+0.313625 
+
+Niches 
+0.725542 
+1 
+-0.60862 
+0.148331 
+0.342997 
+0.272166 
+0.272166 
+0.272166 
+
+Age 
+-0.44798 
+-0.60862 
+1 
+-0.03402 
+0.066329 
+-0.23501 
+-0.23501 
+-0.23501 
+
+Income 
+0.313366 
+0.148331 
+-0.03402 
+1 
+-0.20987 
+-0.545 
+-0.545 
+-0.545 
+
+Educ 
+0.175665 
+0.342997 
+0.066329 
+-0.20987 
+1 
+0.035007 
+0.035007 
+0.035007 
+
+outdegree 
+0.313625 
+0.272166 
+-0.23501 
+-0.545 
+0.035007 
+1 
+1 
+1 
+
+Indegree 
+0.313625 
+0.272166 
+-0.23501 
+-0.545 
+0.035007 
+1 
+1 
+1 
+
+eigenvector 
+0.313625 
+0.272166 
+-0.23501 
+-0.545 
+0.035007 
+1 
+1 
+1 
+
+</table>
+      </figure>
+      <note place="foot">PLOS ONE | https://doi.org/10.1371/journal.pone.0204990 October 1, 2018</note>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgments</head>
+          <p>
+            <s>We thank two advanced students Tay Hong Yi and Alamae Gan who help test the Blaunet package on Microsoft Windows and OS X platforms and make sure that all results shown in the tables and figures are easily reproduced by following the step-by-step directions in this paper.</s>
+          </p>
+        </div>
+        <div>
+          <head>Author Contributions</head>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Ecology of affiliation</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mcpherson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am Sociol Rev</title>
+              <imprint>
+                <biblScope unit="volume">48</biblScope>
+                <biblScope from="519" to="532" unit="page"/>
+                <date type="published" when="1983"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">A Blau space primer: prolegomenon to an ecology of affiliation</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mcpherson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Ind Corp Change</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope from="263" to="280" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Partner market opportunities and relationship stability</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Rapp</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Klein</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Fronk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Stauder</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Comp Popul Stud</title>
+              <imprint>
+                <biblScope unit="volume">4</biblScope>
+                <biblScope from="229" to="250" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Intergroup and intragroup violence: is violent crime an expression of group conflict or social disorganization?</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Hipp</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Tita</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Boggess</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Criminology</title>
+              <imprint>
+                <biblScope unit="volume">47</biblScope>
+                <biblScope from="521" to="564" unit="page"/>
+                <date type="published" when="2009"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <monogr>
+              <title level="m" type="main">Challenging Criminological Theory: The Legacy of Ruth Rosner Kornhauser</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Cullen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Wilcox</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2017"/>
+                <pubPlace>New York: Routledge</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Making the political landscape visible: mapping and analyzing voting patterns in an ideological space</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Leuthold</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Hermann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Fabrikant</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Environ Plann B</title>
+              <imprint>
+                <biblScope unit="volume">34</biblScope>
+                <biblScope from="785" to="807" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Modeling multi-level mechanisms of environmental attitudes and behaviours: the example of carsharing in Berlin</title>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Schröder</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Wolf</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Environ Psychol</title>
+              <imprint>
+                <biblScope unit="volume">52</biblScope>
+                <biblScope from="136" to="148" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Between indifference and coercion: third-party intervention techniques in ongoing disputes</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Corbetta</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Confl Manag Peace Sci</title>
+              <imprint>
+                <biblScope unit="volume">32</biblScope>
+                <biblScope from="3" to="27" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">A social ecology of civil conflict: shifting allegiances in the conflict in Sierra Leone</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Davis</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1016/j.ssresearch.2017.06.002</idno>
+              <idno type="PMID">28888279</idno>
+              <ptr target="https://doi.org/10.1016/j.ssresearch.2017.06.002"/>
+            </analytic>
+            <monogr>
+              <title level="j">Soc Sci Res</title>
+              <imprint>
+                <biblScope unit="volume">67</biblScope>
+                <biblScope from="115" to="128" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">You can't leave your work behind: employment experience and founding collaborations</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Longest</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Bus Venturing</title>
+              <imprint>
+                <biblScope unit="volume">29</biblScope>
+                <biblScope from="785" to="806" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">Trend networks: multidimensional proximity and the formation of aesthetic choices in the creative economy</title>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Godart</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Reg Stud</title>
+              <imprint>
+                <biblScope unit="volume">49</biblScope>
+                <biblScope from="973" to="984" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">Dimensionality of social networks using motifs and eigenvalues</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Bonato</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Gleich</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Kim</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Mitsche</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Prałat</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Tian</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1371/journal.pone.0106052</idno>
+              <idno type="PMID">25188391</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0106052"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS ONE</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Check-ins in 'Blau space': applying Blau's macrosociological theory to foursquare check-ins from New York city</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Joseph</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Carley</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Hong</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">ACM Trans Intell Syst Technol</title>
+              <imprint>
+                <biblScope unit="volume">5</biblScope>
+                <biblScope from="1" to="22" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Micro-level adaptation, macro-level selection, and the dynamics of market partitioning</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>García-Díaz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Van Witteloostuijn</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Péli</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1371/journal.pone.0144574</idno>
+              <idno type="PMID">26656107</idno>
+              <ptr target="https://doi.org/10.1371/journal.pone.0144574"/>
+            </analytic>
+            <monogr>
+              <title level="j">PLoS ONE</title>
+              <imprint>
+                <biblScope unit="volume">10</biblScope>
+                <biblScope unit="page">144574</biblScope>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Changing minds about electric cars: an empirically grounded agent-based modeling approach</title>
+              <author>
+                <persName>
+                  <forename type="first">I</forename>
+                  <surname>Wolf</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Schröder</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Neumanna</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>De Haan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Technol Forecast Soc Change</title>
+              <imprint>
+                <biblScope unit="volume">94</biblScope>
+                <biblScope from="269" to="285" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">U</forename>
+                  <surname>Brandes</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Network positions. Method Innov</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope from="1" to="19" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <analytic>
+              <title level="a" type="main">Friendship as a social process: a substantive and methodological analysis</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Lazarsfeld</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Merton</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Modern Society</title>
+              <editor>Berger M, Abel T, Page CH</editor>
+              <meeting>
+                <address>
+                  <addrLine>New York</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <publisher>D. Van Nostrand Co</publisher>
+                <date type="published" when="1954"/>
+                <biblScope from="18" to="66" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Birds of a feather: homophily in social networks</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mcpherson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Smith-Lovin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Cook</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Annu Rev Sociol</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope from="415" to="444" unit="page"/>
+                <date type="published" when="2001"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">Presidential address: parameters of social structure</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Blau</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am Sociol Rev</title>
+              <imprint>
+                <biblScope unit="volume">39</biblScope>
+                <biblScope from="615" to="635" unit="page"/>
+                <date type="published" when="1974"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <monogr>
+              <title level="m" type="main">Inequality and Heterogeneity: A Primitive Theory of Social Structure</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Blau</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="1977"/>
+                <publisher>Free Press</publisher>
+                <pubPlace>New York</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">A macrosociological theory of social structure</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Blau</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">AJS</title>
+              <imprint>
+                <biblScope unit="volume">83</biblScope>
+                <biblScope from="26" to="54" unit="page"/>
+                <date type="published" when="1977"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">The focused organization of social ties</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Feld</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">AJS</title>
+              <imprint>
+                <biblScope unit="volume">86</biblScope>
+                <biblScope from="1015" to="1035" unit="page"/>
+                <date type="published" when="1981"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Evolution on a dancing landscape: organizations and networks in dynamic Blau space</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mcpherson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Ranger-Moore</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Soc Forces</title>
+              <imprint>
+                <biblScope unit="volume">70</biblScope>
+                <biblScope from="19" to="42" unit="page"/>
+                <date type="published" when="1991"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">Specifying the relationship between social ties and activism</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Mcadam</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Paulsen</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">AJS</title>
+              <imprint>
+                <biblScope unit="volume">99</biblScope>
+                <biblScope from="640" to="667" unit="page"/>
+                <date type="published" when="1993"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Networks embedded in n-dimensional space: the impact of dimensionality change</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Péli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Bruggeman</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Soc Netw</title>
+              <imprint>
+                <biblScope unit="volume">28</biblScope>
+                <biblScope from="449" to="453" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Social networks and organizational dynamics</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mcpherson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Popielarz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Drobnic</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am Sociol Rev</title>
+              <imprint>
+                <biblScope unit="volume">57</biblScope>
+                <biblScope from="153" to="170" unit="page"/>
+                <date type="published" when="1992"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <monogr>
+              <title level="m" type="main">Logics of Organization Theory: Audiences, Codes, and Ecologies</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Hannan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Pólos</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Carroll</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2007"/>
+                <publisher>Princeton University Press</publisher>
+                <pubPlace>Princeton, NJ</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">On the edge or in between: niche position, niche overlap, and the duration of voluntary association memberships</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Popielarz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Mcpherson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">AJS</title>
+              <imprint>
+                <biblScope unit="volume">101</biblScope>
+                <biblScope from="698" to="720" unit="page"/>
+                <date type="published" when="1995"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b28">
+            <analytic>
+              <title level="a" type="main">Testing a dynamic model of social composition: diversity and change in voluntary groups</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mcpherson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Rotolo</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am Sociol Rev</title>
+              <imprint>
+                <biblScope unit="volume">61</biblScope>
+                <biblScope from="179" to="202" unit="page"/>
+                <date type="published" when="1996"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b29">
+            <analytic>
+              <title level="a" type="main">The complexity of institutional niches: credentials and organizational differentiation in a field of U.S. higher education</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Rawlings</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Bourgeois</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Poetics</title>
+              <imprint>
+                <biblScope unit="volume">32</biblScope>
+                <biblScope from="411" to="437" unit="page"/>
+                <date type="published" when="2004"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b30">
+            <analytic>
+              <title level="a" type="main">The niches as a theoretical tool</title>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Popielarz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Neal</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Annu Rev Sociol</title>
+              <imprint>
+                <biblScope unit="volume">33</biblScope>
+                <biblScope from="65" to="84" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b31">
+            <analytic>
+              <title level="a" type="main">A member saved is a member earned? The recruitmentretention tradeoff and organizational strategies for membership growth</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Shi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Dokshin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Genkin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Brashears</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am Sociol Rev</title>
+              <imprint>
+                <biblScope unit="volume">82</biblScope>
+                <biblScope from="407" to="434" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b32">
+            <analytic>
+              <title level="a" type="main">Birds of a feather sing together</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Mark</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Soc Forces</title>
+              <imprint>
+                <biblScope unit="volume">77</biblScope>
+                <biblScope from="453" to="485" unit="page"/>
+                <date type="published" when="1998"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b33">
+            <monogr>
+              <title level="m" type="main">Dancing to Darwin's beat: cultural niche dynamics in sociodemographic space</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Bonikowski</surname>
+                </persName>
+              </author>
+              <ptr target="http://citation.allacademic.com//meta/p_mla_apa_research_citation/0/2/1/9/4/pages21944/p21944-1.php"/>
+              <imprint>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b34">
+            <analytic>
+              <title level="a" type="main">Ecologies of organizations: diversity and identity</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Hannan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">J Econ Perspect</title>
+              <imprint>
+                <biblScope unit="volume">19</biblScope>
+                <biblScope from="51" to="70" unit="page"/>
+                <date type="published" when="2005"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b35">
+            <analytic>
+              <title level="a" type="main">The duality of niche and form: the differentiation of institutional space</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Mohr</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <surname>Guerra-Pearson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Categories in Markets: Origins and Evolution</title>
+              <editor>Hsu G, Negro G, Koçak Ö</editor>
+              <meeting>
+                <address>
+                  <addrLine>New York City; Bingley, United Kingdom</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <publisher>Emerald Group Publishing Limited</publisher>
+                <date type="published" when="2010"/>
+                <biblScope from="321" to="368" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b36">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Crossley</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Bottero</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Social Spaces of Music: Introduction. Cult Sociol</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope from="3" to="19" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b37">
+            <monogr>
+              <title level="m" type="main">Building a Blauürban space</title>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Neal</surname>
+                </persName>
+              </author>
+              <ptr target="http://www.gutenberg.us/articles/eng/Blau_space"/>
+              <imprint>
+                <date type="published" when="2006"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b38">
+            <analytic>
+              <title level="a" type="main">Gangs, clubs, and alcohol: the effect of organizational membership on adolescent drinking behavior</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Suh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Brashears</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Genkin</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1016/j.ssresearch.2015.12.004</idno>
+              <idno type="PMID">27194666</idno>
+              <ptr target="https://doi.org/10.1016/j.ssresearch.2015.12.004"/>
+            </analytic>
+            <monogr>
+              <title level="j">Soc Sci Res</title>
+              <imprint>
+                <biblScope unit="volume">58</biblScope>
+                <biblScope from="279" to="291" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b39">
+            <analytic>
+              <title level="a" type="main">In the organization's shadow: how individual behavior is shaped by organizational leakage</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Brashears</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Genkin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Suh</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Sociol</title>
+              <imprint>
+                <biblScope unit="volume">123</biblScope>
+                <biblScope from="787" to="849" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b40">
+            <analytic>
+              <title level="a" type="main">Negligible connections? The role of familiar others in the diffusion of smoking among adolescents</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Suh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Shi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Brashears</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Soc Forces</title>
+              <imprint>
+                <biblScope unit="volume">96</biblScope>
+                <biblScope from="423" to="448" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b41">
+            <analytic>
+              <title level="a" type="main">Not in our backyard: solidarity, social networks, and the ecology of environmental mobilization</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Kitts</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sociol Inq</title>
+              <imprint>
+                <biblScope unit="volume">69</biblScope>
+                <biblScope from="551" to="574" unit="page"/>
+                <date type="published" when="1999"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b42">
+            <analytic>
+              <title level="a" type="main">The social origins of networks and diffusion</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Centola</surname>
+                </persName>
+              </author>
+              <idno type="PMID">26421341</idno>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Sociol</title>
+              <imprint>
+                <biblScope unit="volume">120</biblScope>
+                <biblScope from="1295" to="1338" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b43">
+            <analytic>
+              <title level="a" type="main">Competition and the dynamics of group affiliation</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Geard</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Bullock</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Adv Complex Syst</title>
+              <imprint>
+                <biblScope unit="volume">13</biblScope>
+                <biblScope from="501" to="517" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b44">
+            <analytic>
+              <title level="a" type="main">An introduction to exponential random graph models for social networks</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Robins</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Pattison</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Kalish</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Lusher</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Soc Netw</title>
+              <imprint>
+                <biblScope unit="volume">29</biblScope>
+                <biblScope from="173" to="191" unit="page"/>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b45">
+            <analytic>
+              <title level="a" type="main">ergm: a package to fit, simulate and diagnose exponential-family models for networks</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Hunter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Handcock</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Butts</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Goodreau</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Morris</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.18637/jss.v024.i03</idno>
+              <ptr target="https://doi.org/10.18637/jss.v024.i03"/>
+            </analytic>
+            <monogr>
+              <title level="j">J Stat Softw</title>
+              <imprint>
+                <biblScope unit="volume">24</biblScope>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b46">
+            <analytic>
+              <title level="a" type="main">Social selection, dyadic covariates, and geospatial effects</title>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Robins</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Daraganova</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="m">Exponential Random Graph Models for Social Networks: Theory, Methods, and Applications</title>
+              <editor>Lusher D, Koskinen J, Robins G</editor>
+              <meeting>
+                <address>
+                  <addrLine>New York</addrLine>
+                </address>
+              </meeting>
+              <imprint>
+                <publisher>Cambridge University Press</publisher>
+                <date type="published" when="2013"/>
+                <biblScope from="91" to="101" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b47">
+            <analytic>
+              <title/>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Goodreau</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Handcock</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Hunter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Butts</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Morris</forename>
+                  <forename type="middle">M</forename>
+                </persName>
+              </author>
+              <idno type="DOI">10.18637/jss.v024.i09</idno>
+              <ptr target="https://doi.org/10.18637/jss.v024.i09"/>
+            </analytic>
+            <monogr>
+              <title level="j">J Stat Softw</title>
+              <imprint>
+                <biblScope unit="volume">24</biblScope>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b48">
+            <analytic>
+              <title level="a" type="main">statnet: software tools for the representation, visualization, analysis and simulation of network data</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Handcock</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Hunter</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Butts</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Goodreau</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Morris</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.18637/jss.v024.i01</idno>
+              <ptr target="https://doi.org/10.18637/jss.v024.i01"/>
+            </analytic>
+            <monogr>
+              <title level="j">J Stat Softw</title>
+              <imprint>
+                <biblScope unit="volume">24</biblScope>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b49">
+            <monogr>
+              <title level="m" type="main">A Structural Theory of Social Influence</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Friedkin</surname>
+                </persName>
+              </author>
+              <imprint>
+                <date type="published" when="2006"/>
+                <publisher>Cambridge University Press</publisher>
+                <pubPlace>New York</pubPlace>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b50">
+            <analytic>
+              <title level="a" type="main">Disentangling social selection and social influence effects on adolescent smoking, the importance of reciprocity in friendship</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Mercken</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Candel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Willems</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>De Vries</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1111/j.1360-0443.2007.01905.x</idno>
+              <ptr target="https://doi.org/10.1111/j.1360-0443.2007.01905.xPMID"/>
+            </analytic>
+            <monogr>
+              <title level="j">Addiction</title>
+              <imprint>
+                <biblScope unit="volume">102</biblScope>
+                <biblScope unit="page">17610538</biblScope>
+                <date type="published" when="2007"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b51">
+            <analytic>
+              <title level="a" type="main">Distinguishing influence-based contagion from homophily-driven diffusion in dynamic networks</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Aral</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Muchnik</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Sundararajan</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">PNAS USA</title>
+              <imprint>
+                <biblScope unit="volume">106</biblScope>
+                <biblScope from="21544" to="21549" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b52">
+            <analytic>
+              <title level="a" type="main">Dynamic networks and behavior: separating selection from influence</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Steglich</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Tab</forename>
+                  <surname>Snijders</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Pearson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Sociol Methodol</title>
+              <imprint>
+                <biblScope unit="volume">40</biblScope>
+                <biblScope from="329" to="393" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b53">
+            <analytic>
+              <title level="a" type="main">Social selection and peer influence in an online social network</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Lewis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Gonzalez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Kaufman</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1073/pnas.1109739109</idno>
+              <idno type="PMID">22184242</idno>
+              <ptr target="https://doi.org/10.1073/pnas.1109739109"/>
+            </analytic>
+            <monogr>
+              <title level="j">PNAS USA</title>
+              <imprint>
+                <biblScope unit="volume">109</biblScope>
+                <biblScope from="68" to="72" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b54">
+            <analytic>
+              <title level="a" type="main">Gender, body size, and social relations in American high schools</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Crosnoe</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Frank</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Mueller</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Soc Forces</title>
+              <imprint>
+                <biblScope unit="volume">86</biblScope>
+                <biblScope from="1189" to="1216" unit="page"/>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b55">
+            <analytic>
+              <title level="a" type="main">The social dynamics of mathematics coursetaking in high school</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Frank</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Muller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Schiller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Riegle-Crumb</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Mueller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Crosnoe</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Am J Sociol</title>
+              <imprint>
+                <biblScope unit="volume">113</biblScope>
+                <biblScope from="1" to="43" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b56">
+            <analytic>
+              <title level="a" type="main">Understanding metropolitan patterns of daily encounters</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Sun</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">W</forename>
+                  <surname>Axhausen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D-H</forename>
+                  <surname>Lee</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">X</forename>
+                  <surname>Huang</surname>
+                </persName>
+              </author>
+              <idno type="DOI">10.1073/pnas.1306440110</idno>
+              <idno type="PMID">23918373</idno>
+              <ptr target="https://doi.org/10.1073/pnas.1306440110"/>
+            </analytic>
+            <monogr>
+              <title level="j">PNAS</title>
+              <imprint>
+                <biblScope unit="volume">110</biblScope>
+                <biblScope from="13774" to="13779" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b57">
+            <analytic>
+              <title level="a" type="main">Familiar faces, familiar spaces: social similarity and co-presence in nonrelational behavioral convergence</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Behler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Suh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Brashears</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Shi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Netw Sci. Forthcoming</title>
+              <imprint/>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>
