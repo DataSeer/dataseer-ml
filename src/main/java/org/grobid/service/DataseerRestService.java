@@ -112,6 +112,6 @@ public class DataseerRestService implements DataseerPaths {
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
     @GET
     public Response getResyncJsonDataTypes() {
-        return DataseerDataTypeService.getInstance().getResyncJsonDataTypes();
+        return DataseerDataTypeService.getInstance().getResyncThreadedJsonDataTypes();
     }
 }

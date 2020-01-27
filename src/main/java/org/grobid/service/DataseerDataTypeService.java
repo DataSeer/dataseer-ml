@@ -60,18 +60,15 @@ public class DataseerDataTypeService {
         }
     }
 
-
     public Response getJsonDataTypes() {
         if (jsonDataTypeResource == null)
-            return getResyncJsonDataTypes();
+            return getResyncThreadedJsonDataTypes();
         // if the json resource file is not available, we need to sync it 
         return Response.status(Status.OK).entity(jsonDataTypeResource).type(MediaType.APPLICATION_JSON).build();
     }
 
     public Response getResyncJsonDataTypes() {
         // external call to the python script crawling the wiki in a separate thread
-
-        ExecutorService pool = Executors.newSingleThreadExecutor();
 
         ProcessBuilder processBuilder = new ProcessBuilder();
         processBuilder.command("python3", "script/converter.py", "resources/dataset/dataseer/csv/all-1.csv");
@@ -92,14 +89,13 @@ public class DataseerDataTypeService {
             int exitCode = process.waitFor();
             long end = System.currentTimeMillis();
             LOGGER.info("Exit code : " + exitCode);
-            LOGGER.info("Sync with online DataSeer wiki made in " + ((end - start)/1000) + " seconds");
+            LOGGER.info("Sync with online DataSeer wiki made in " + ((end - start)*1000) + " seconds");
 
-            jsonDataTypeResource = builder.toString();
+            if (builder.length()>0)
+                jsonDataTypeResource = builder.toString();
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            pool.shutdown();
-        }
+        } 
 
         return Response.status(Status.OK).entity(jsonDataTypeResource).type(MediaType.APPLICATION_JSON).build();
     }
@@ -110,19 +106,33 @@ public class DataseerDataTypeService {
         ExecutorService pool = Executors.newSingleThreadExecutor();
 
         ProcessBuilder processBuilder = new ProcessBuilder();
-        processBuilder.command("python3", "/script/converter.py", "resources/dataset/dataseer/csv/all-1.csv");
+        processBuilder.command("python3", "script/converter.py", "resources/dataset/dataseer/csv/all-1.csv");
+        LOGGER.info("calling script:" + processBuilder.command());
         try {
+            long start = System.currentTimeMillis();
             Process process = processBuilder.start();
 
-            System.out.println("process ping...");
             ProcessReadTask task = new ProcessReadTask(process.getInputStream());
             Future<List<String>> future = pool.submit(task);
-
-            List<String> result = future.get(120, TimeUnit.SECONDS);
-            for (String s : result) {
-                System.out.println(s);
+            pool.shutdown();
+            
+            StringBuilder builder = new StringBuilder();
+            //ExecutorCompletionService service = new ExecutorCompletionService(pool);
+            while (!pool.isTerminated()) {
+                Thread.sleep(1000);
+            }
+            
+            List<String> result = future.get();
+            for(String line : result) {
+                builder.append(line);
+                builder.append(System.getProperty("line.separator"));
             }
 
+            long end = System.currentTimeMillis();
+            LOGGER.info("Sync with online DataSeer wiki made in " + ((end - start)*1000) + " seconds");
+
+            if (builder.length()>0)
+                jsonDataTypeResource = builder.toString();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
