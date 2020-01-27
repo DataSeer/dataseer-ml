@@ -12,11 +12,11 @@ import javax.ws.rs.core.Response.Status;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
 import java.io.*;
 import java.lang.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
-
 
 /**
  * 
@@ -32,6 +32,8 @@ public class DataseerDataTypeService {
     // we keep the datatype json in memory and instance-based for the application 
     // for faster serving the resource
     private String jsonDataTypeResource = null;
+
+    private String defaultPath = null;
 
     public static DataseerDataTypeService getInstance() {
         if (instance == null) {
@@ -53,16 +55,18 @@ public class DataseerDataTypeService {
             jsonDataTypeResource = null;
         else {
             try {  
-                jsonDataTypeResource = FileUtils.readFileToString(jsonFile, StandardCharsets.UTF_8);
+                this.jsonDataTypeResource = FileUtils.readFileToString(jsonFile, StandardCharsets.UTF_8);
             } catch(Exception e) {
                 LOGGER.warn("Data type json file cannot be read", e);
             }
         }
+        // get default current path
+        this.defaultPath = Paths.get(".").toAbsolutePath().normalize().toString();
     }
 
     public Response getJsonDataTypes() {
         if (jsonDataTypeResource == null)
-            return getResyncThreadedJsonDataTypes();
+            return getResyncJsonDataTypes();
         // if the json resource file is not available, we need to sync it 
         return Response.status(Status.OK).entity(jsonDataTypeResource).type(MediaType.APPLICATION_JSON).build();
     }
@@ -72,6 +76,8 @@ public class DataseerDataTypeService {
 
         ProcessBuilder processBuilder = new ProcessBuilder();
         processBuilder.command("python3", "script/converter.py", "resources/dataset/dataseer/csv/all-1.csv");
+        // ensure we are using the right path to the script
+        processBuilder.directory(new File(this.defaultPath));
         LOGGER.info("calling script:" + processBuilder.command());
         try {
             long start = System.currentTimeMillis();
@@ -89,7 +95,7 @@ public class DataseerDataTypeService {
             int exitCode = process.waitFor();
             long end = System.currentTimeMillis();
             LOGGER.info("Exit code : " + exitCode);
-            LOGGER.info("Sync with online DataSeer wiki made in " + ((end - start)*1000) + " seconds");
+            LOGGER.info("Sync with online DataSeer wiki made in " + ((end - start)/1000) + " seconds");
 
             if (builder.length()>0)
                 jsonDataTypeResource = builder.toString();
@@ -107,15 +113,17 @@ public class DataseerDataTypeService {
 
         ProcessBuilder processBuilder = new ProcessBuilder();
         processBuilder.command("python3", "script/converter.py", "resources/dataset/dataseer/csv/all-1.csv");
+        // ensure we are using the right path to the script
+        processBuilder.directory(new File(this.defaultPath));
         LOGGER.info("calling script:" + processBuilder.command());
         try {
-            long start = System.currentTimeMillis();
+            long theStart = System.currentTimeMillis();
             Process process = processBuilder.start();
 
             ProcessReadTask task = new ProcessReadTask(process.getInputStream());
             Future<List<String>> future = pool.submit(task);
             pool.shutdown();
-            
+
             StringBuilder builder = new StringBuilder();
             //ExecutorCompletionService service = new ExecutorCompletionService(pool);
             while (!pool.isTerminated()) {
@@ -128,8 +136,8 @@ public class DataseerDataTypeService {
                 builder.append(System.getProperty("line.separator"));
             }
 
-            long end = System.currentTimeMillis();
-            LOGGER.info("Sync with online DataSeer wiki made in " + ((end - start)*1000) + " seconds");
+            long theEnd = System.currentTimeMillis();
+            LOGGER.info("Sync with online DataSeer wiki made in " + ((theEnd - theStart)/1000) + " milliseconds");
 
             if (builder.length()>0)
                 jsonDataTypeResource = builder.toString();
