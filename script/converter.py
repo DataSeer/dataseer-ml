@@ -56,7 +56,8 @@ def convert_with_pandas(input_path, output_path):
         if meshTree == 'XX' or meshTree == 'n/a':
             meshTree = None    
 
-        struct = build_struct(description, bestPractice, mostSuitableRepositories, meshId, meshTree)
+        struct = build_struct(description, bestPractice, mostSuitableRepositories, meshId, meshTree, dataType)
+        dataType = dataType.lower()
         if dataSubType is not None:
             if dataSubSubType is not None:
                 if dataType in res:
@@ -99,7 +100,7 @@ def convert_with_pandas(input_path, output_path):
         out.write(json.dumps(res, indent=4, sort_keys=True))
 
 
-def build_struct(description=None, bestPractice=None, mostSuitableRepositories=None, meshId=None, meshTree=None, wikiUrl=None):
+def build_struct(description=None, bestPractice=None, mostSuitableRepositories=None, meshId=None, meshTree=None, wikiUrl=None, label=None):
     struct = {}
     if description is not None:
         struct['description'] = description
@@ -113,6 +114,8 @@ def build_struct(description=None, bestPractice=None, mostSuitableRepositories=N
         struct['mesh_tree'] = meshTree   
     if wikiUrl is not None:
         struct['url'] = wikiUrl
+    if label is not None:
+        struct['label'] = label
     return struct
 
 
@@ -289,14 +292,23 @@ def wiki_capture(baseUrl="http://wiki.dataseer.io"):
             datatype_page = datatype_page.replace("*", "")
             pieces = datatype_page.split(":")
             dataType = pieces[0].strip()
+            targetType = dataType
             dataSubType = None
             dataSubSubType = None
             if len(pieces)>1:
                 dataSubType = pieces[1].strip()
+                targetType = dataSubType
                 if len(pieces)>2:
                     dataSubSubType = pieces[2].strip()
+                    targetType = dataSubSubType
 
-            struct = build_struct_from_page(datatype_name, baseUrl)
+            struct = build_struct_from_page(targetType, datatype_name, baseUrl)
+            dataType = dataType.lower()
+            if dataSubType is not None:
+                dataSubType = dataSubType.lower()
+            if dataSubSubType is not None:
+                dataSubSubType = dataSubSubType.lower()
+
             #print(struct)
 
             if dataSubType is not None:
@@ -342,7 +354,7 @@ def wiki_capture(baseUrl="http://wiki.dataseer.io"):
     # for each data type, get the data type page and exploit the template to get the field information
     #dataTypeUrl = baseUrl + "/doku.php?id=data_type:" + dataType +  "&do=edit";
 
-    #struct = build_struct(description, bestPractice, mostSuitableRepositories, meshId, meshTree)
+    #struct = build_struct(description, bestPractice, mostSuitableRepositories, meshId, meshTree, dataType)
 
     #with open(output_path,'w') as out:
     #    out.write(json.dumps(res, indent=4, sort_keys=True))
@@ -350,7 +362,7 @@ def wiki_capture(baseUrl="http://wiki.dataseer.io"):
     return res
 
 
-def build_struct_from_page(datatype_page, baseUrl="http://wiki.dataseer.io"):
+def build_struct_from_page(datatype, datatype_page, baseUrl="http://wiki.dataseer.io"):
     dataTypeUrl = baseUrl + "/doku.php?id=data_type:" + datatype_page +  "&do=edit";
     fid = urllib.request.urlopen(dataTypeUrl)
     webpage = fid.read().decode('utf-8')
@@ -431,7 +443,7 @@ def build_struct_from_page(datatype_page, baseUrl="http://wiki.dataseer.io"):
         if mostSuitableRepositories == 'XX' or mostSuitableRepositories == 'n/a' or len(mostSuitableRepositories) == 0:
             mostSuitableRepositories = None
 
-    return build_struct(description, bestPractice, mostSuitableRepositories, meshId, None, dataTypeUrl.replace("&do=edit",""))
+    return build_struct(description, bestPractice, mostSuitableRepositories, meshId, None, dataTypeUrl.replace("&do=edit",""), datatype)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Converter for data type csv files into json")
