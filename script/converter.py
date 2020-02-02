@@ -119,7 +119,7 @@ def build_struct(description=None, bestPractice=None, mostSuitableRepositories=N
     return struct
 
 
-def load_dataseer_corpus_csv(filepath):
+def load_dataseer_corpus_csv(filepath, lowerCaseClasses=False):
     """
     Load texts from the Dataseer dataset type corpus in csv format:
 
@@ -144,6 +144,8 @@ def load_dataseer_corpus_csv(filepath):
 
     datatypes = df.iloc[:,2]
     datatypes_list = datatypes.values.tolist()
+    if lowerCaseClasses:
+        datatypes_list = [item.lower() if isinstance(item, str) else item for item in datatypes_list]
     datatypes_list = np.asarray(datatypes_list)
     list_classes_datatypes = np.unique(datatypes_list)
     datatypes_final = normalize_classes(datatypes_list, list_classes_datatypes)
@@ -153,6 +155,8 @@ def load_dataseer_corpus_csv(filepath):
     if df.shape[1] > 3:
         datasubtypes = df.iloc[:,3]
         datasubtypes_list = datasubtypes.values.tolist()
+        if lowerCaseClasses:
+            datasubtypes_list = [item.lower() if isinstance(item, str) else item for item in datasubtypes_list]
         datasubtypes_list = np.asarray(datasubtypes_list)
         list_classes_datasubtypes = np.unique(datasubtypes_list)
         datasubtypes_final = normalize_classes(datasubtypes_list, list_classes_datasubtypes)
@@ -160,6 +164,8 @@ def load_dataseer_corpus_csv(filepath):
     if df.shape[1] > 4:
         leafdatatypes = df.iloc[:,4]
         leafdatatypes_list = leafdatatypes.values.tolist()
+        if lowerCaseClasses:
+            leafdatatypes_list = [item.lower() if isinstance(item, str) else item for item in leafdatatypes_list]
         leafdatatypes_list = np.asarray(leafdatatypes_list)
         list_classes_leafdatatypes = np.unique(leafdatatypes_list)
         leafdatatypes_final = normalize_classes(leafdatatypes_list, list_classes_leafdatatypes)
@@ -180,7 +186,8 @@ def build_prior_class_distribution(distribution, trainpath, errorpath="error.txt
         - trainpath is the path to the training data csv file
 
     """
-    _, y_classes, y_subclasses, y_leafclasses, list_classes, list_subclasses, list_leaf_classes = load_dataseer_corpus_csv(trainpath)
+    _, y_classes, y_subclasses, y_leafclasses, list_classes, list_subclasses, list_leaf_classes = load_dataseer_corpus_csv(trainpath, True)
+    # lowercasing data type names to limit matching discrepancies
 
     #with open(jsonpath) as json_file:
     #    distribution = json.load(json_file)
