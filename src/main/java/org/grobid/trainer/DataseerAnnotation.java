@@ -56,6 +56,7 @@ public class DataseerAnnotation extends Annotation {
     private String memo = null;
     private String section = null;
     private String subsection = null;
+    private boolean existing = false;
 
     public String getIdentifier() {
         return this.identifier;
@@ -197,6 +198,14 @@ public class DataseerAnnotation extends Annotation {
         this.context = context;
     }
 
+    public boolean getExisting() {
+        return this.existing;
+    }
+
+    public void setExisting(boolean existing) {
+        this.existing = existing;
+    } 
+
     public String getPage() {
         return this.page;
     }
@@ -215,7 +224,7 @@ public class DataseerAnnotation extends Annotation {
         builder.append("context: " + context + "\n");
         builder.append("page: " + page + "\n");
         builder.append("text: " + text + "\n");
-
+        builder.append("existing: " + existing + "\n");
         builder.append("meshDataType: " + meshDataType + "\n");
         builder.append("rawDataType: " + rawDataType + "\n");    
         builder.append("dataType: " + dataType + "\n");

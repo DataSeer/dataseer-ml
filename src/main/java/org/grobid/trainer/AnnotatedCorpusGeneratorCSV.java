@@ -652,14 +652,16 @@ public class AnnotatedCorpusGeneratorCSV {
 
         // this csv file gives information on the article set to which each article belongs to 
         //File dataseerArticles = new File(csvPath + File.separator + "All2000_for_Patrice_16th_June-xlsx.csv");
-        File dataseerArticles = new File(csvPath + File.separator + "All2000_for_Patrice_December_2019.csv");
+        //File dataseerArticles = new File(csvPath + File.separator + "All2000_for_Patrice_December_2019.csv");
+        File dataseerArticles = new File(csvPath + File.separator + "All2000_Existing-vs-New_updated_data_types_Feb5_2020.csv");
         try {
             CSVParser parser = CSVParser.parse(dataseerArticles, UTF_8, CSVFormat.RFC4180);
             // schema is:
-            // Journal,Article #,Manuscript ID or DOI,dataset number,Full MeSH data type,Section,Subsection title,Page number,Column number,
-            // Data paragraph,Data Keyword,Data action word,Specialist equipment,Notes
+            // Journal,Article #,Manuscript ID or DOI,dataset number,Existing/New,Full MeSH data type,Section,Subsection title,Page number,
+            // Column number,Data paragraph,Data Keyword,Data action word,Specialist equipment,Notes
+
             // e.g.
-            // PLOS ONE,1.0,https://doi.org/10.1371/journal.pone.0198270,1.0,Dataset:Existing dataset,Materials and methods,
+            // PLOS ONE,1.0,https://doi.org/10.1371/journal.pone.0198270,1.0,Dataset Re-use,Tabular Data,Materials and methods,
             // Architecture,6.0,1.0,"For this phase, each dataset was downloaded from curated sources and was annotated with
             // ontology terms URIs by reusing the ontology fields when provided by the original source.",Dataset,was downloaded,,
 
@@ -701,20 +703,25 @@ public class AnnotatedCorpusGeneratorCSV {
                     } else if (i == 3) {
                         annotation.setDatasetId(value.replace(".0", ""));
                     } else if (i == 4) {
-                        annotation.setRawDataType(value);
+                        if (value.equals("New"))
+                            annotation.setExisting(false);
+                        else
+                            annotation.setExisting(true);
                     } else if (i == 5) {
-                        annotation.setSection(value);
+                        annotation.setRawDataType(value);
                     } else if (i == 6) {
-                        annotation.setSubsection(value);
+                        annotation.setSection(value);
                     } else if (i == 7) {
+                        annotation.setSubsection(value);
+                    } else if (i == 8) {
                         annotation.setPage(value.replace(".0", ""));
-                    } else if (i == 9) {
-                        annotation.setContext(value);
                     } else if (i == 10) {
-                        annotation.setDataKeyword(value);
+                        annotation.setContext(value);
                     } else if (i == 11) {
-                        annotation.setDataAction(value);
+                        annotation.setDataKeyword(value);
                     } else if (i == 12) {
+                        annotation.setDataAction(value);
+                    } else if (i == 13) {
                         annotation.setAcquisitionEquipment(value);
                     }
                 }
