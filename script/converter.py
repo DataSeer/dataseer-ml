@@ -161,6 +161,7 @@ def load_dataseer_corpus_csv(filepath, lowerCaseClasses=False):
         list_classes_datasubtypes = np.unique(datasubtypes_list)
         datasubtypes_final = normalize_classes(datasubtypes_list, list_classes_datasubtypes)
 
+    '''
     if df.shape[1] > 4:
         leafdatatypes = df.iloc[:,4]
         leafdatatypes_list = leafdatatypes.values.tolist()
@@ -169,13 +170,15 @@ def load_dataseer_corpus_csv(filepath, lowerCaseClasses=False):
         leafdatatypes_list = np.asarray(leafdatatypes_list)
         list_classes_leafdatatypes = np.unique(leafdatatypes_list)
         leafdatatypes_final = normalize_classes(leafdatatypes_list, list_classes_leafdatatypes)
+    '''
 
     if df.shape[1] == 3:
         return np.asarray(texts_list), datatypes_final, None, None, list_classes_datatypes.tolist(), None, None
-    elif df.shape[1] == 4:
-        return np.asarray(texts_list), datatypes_final, datasubtypes_final, None, list_classes_datatypes.tolist(), list_classes_datasubtypes.tolist(), None
+    #elif df.shape[1] == 4 or len(leafdatatypes_list) == 0:
     else:
-        return np.asarray(texts_list), datatypes_final, datasubtypes_final, leafdatatypes_final, list_classes_datatypes.tolist(), list_classes_datasubtypes.tolist(), list_classes_leafdatatypes.tolist()
+        return np.asarray(texts_list), datatypes_final, datasubtypes_final, None, list_classes_datatypes.tolist(), list_classes_datasubtypes.tolist(), None
+    #else:
+    #    return np.asarray(texts_list), datatypes_final, datasubtypes_final, leafdatatypes_final, list_classes_datatypes.tolist(), list_classes_datasubtypes.tolist(), list_classes_leafdatatypes.tolist()
 
 
 def build_prior_class_distribution(distribution, trainpath, errorpath="error.txt"):
@@ -209,15 +212,17 @@ def build_prior_class_distribution(distribution, trainpath, errorpath="error.txt
     for i in range(0, len(y_classes)):
         pos_class = np.where(y_classes[i] == 1)
         pos_subclass = np.where(y_subclasses[i] == 1)
-        pos_leafclass = np.where(y_leafclasses[i] == 1)
+        if y_leafclasses is not None:
+            pos_leafclass = np.where(y_leafclasses[i] == 1)
         #print(list_classes[pos_class[0][0]], '-', list_subclasses[pos_subclass[0][0]], '-', list_leaf_classes[pos_leafclass[0][0]])
+        #print(list_classes[pos_class[0][0]], '-', list_subclasses[pos_subclass[0][0]])
         if list_classes[pos_class[0][0]] != "no_dataset":
             the_class = list_classes[pos_class[0][0]]
             if the_class in distribution:
                 if list_subclasses[pos_subclass[0][0]] != "nan":
                     the_subclass = list_subclasses[pos_subclass[0][0]]
                     if the_subclass in distribution[the_class]:
-                        if list_leaf_classes[pos_leafclass[0][0]] != "nan":
+                        if list_leaf_classes is not None and pos_leafclass is not None and list_leaf_classes[pos_leafclass[0][0]] != "nan":
                             the_leafclass = list_leaf_classes[pos_leafclass[0][0]]
                             if the_leafclass in distribution[the_class][the_subclass]:
                                 if 'count' in distribution[the_class][the_subclass][the_leafclass]:
@@ -299,6 +304,10 @@ def wiki_capture(baseUrl="http://wiki.dataseer.io"):
             datatype_page = datatype_page.replace("*", "")
             pieces = datatype_page.split(":")
             dataType = pieces[0].strip()
+
+            if dataType == 'MeSH':
+                continue
+
             targetType = dataType
             dataSubType = None
             dataSubSubType = None
@@ -414,6 +423,8 @@ def build_struct_from_page(datatype, datatype_page, baseUrl="http://wiki.datasee
     for match in pattern_description.finditer(content.text):
         print(match)
     '''
+
+    #print(datatype, datatype_page, dataTypeUrl)
 
     m_mesh = re.search(r'\*\*MeSH ID\:\*\* (.*)\r?\n', content.text)
     m_description = re.search(r'\*\*Description\:\*\*\\?\\? ?\r?\n(.*)\r?\n', content.text)
