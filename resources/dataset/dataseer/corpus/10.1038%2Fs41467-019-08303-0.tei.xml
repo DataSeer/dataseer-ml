@@ -66,10 +66,10 @@
     </fileDesc>
     <profileDesc>
       <abstract>
-        <div subtype="dataseer">
+        <div>
           <p>
             <s>The structure and distribution of genomic diversity in natural microbial communities is largely unexplored.</s>
-            <s cert="0.7782742977142334" id="dataset-1" type="Tabular data">Here, we used shotgun metagenomics to assess the diversity of the honey bee gut microbiota, a community consisting of few bacterial phylotypes.</s>
+            <s>Here, we used shotgun metagenomics to assess the diversity of the honey bee gut microbiota, a community consisting of few bacterial phylotypes.</s>
             <s>Our results show that most phylotypes are composed of sequence-discrete populations, which co-exist in individual bees and show age-specific abundance profiles.</s>
             <s>In contrast, strains present within these sequence-discrete populations were found to segregate into individual bees.</s>
             <s>Consequently, despite a conserved phylotype composition, each honey bee harbors a distinct community at the functional level.</s>
@@ -144,7 +144,7 @@
         <head>Results</head>
         <p>
           <s>Extensive metagenomic read recruitment to a reference database.</s>
-          <s cert="0.5303407907485962" id="dataset-2" type="Tabular data">We shotgun sequenced the gut microbiota of 54 bees of three different age groups, sampled from two adjacent colonies, one of which was sampled over two consecutive years <ref type="figure">(Fig. 1b)</ref> .</s>
+          <s cert="0.5303407907485962" id="dataset-1" type="Tabular data">We shotgun sequenced the gut microbiota of 54 bees of three different age groups, sampled from two adjacent colonies, one of which was sampled over two consecutive years <ref type="figure">(Fig. 1b)</ref> .</s>
           <s>To this end, we established a DNA extraction protocol that allowed for the enrichment of bacterial cells in samples originating from single homogenized bee guts (hindgut), and constructed a reference genome database containing genomic data for all major phylotypes of the honey bee gut microbiota <ref type="figure">(Fig. 1c</ref> , Supplementary Data 1).</s>
           <s>The enrichment protocol efficiently reduced host-derived DNA in most samples, with an average of 13% of the reads mapping to the honey bee genome (Supplementary <ref type="figure">Fig. 2a)</ref> .</s>
           <s>Moreover,~90% of the remaining reads mapped to the reference genome database in the majority of samples, regardless of honey bee age, indicating that the current database is representative of most of the community ( <ref type="figure">Supplementary Fig. 2b</ref> ).</s>
@@ -180,7 +180,7 @@
           <s>Since all samples in the current study were derived from the same geographic location, we additionally re-analyzed a previously published metagenomic dataset, which consisted of pooled honey bee guts sampled from a colony in the Unites States 21 .</s>
           <s>Strikingly, as for the Swiss samples, most of the genomic diversity in this sample was represented by our reference database, with only 9% of the reads unmapped.</s>
           <s>Despite a general shift in abundance towards Proteobacteria in this sample, all SDPs identified in the current study were found to be present and discrete ( <ref type="figure">Supplementary Fig. 6b-d)</ref> .</s>
-          <s cert="0.9404241442680359" id="dataset-3" type="Genetic Data">As for the metagenomes from Switzerland, most orthologs of the 33 universally conserved gene families <ref target="#b27" type="bibr">28</ref> c Guts of individual bees were dissected and subjected to a customized protocol enriching for bacterial DNA, which was then shotgun sequenced using Illumina.</s>
+          <s cert="0.9404241442680359" id="dataset-2" type="Genetic Data">As for the metagenomes from Switzerland, most orthologs of the 33 universally conserved gene families <ref target="#b27" type="bibr">28</ref> c Guts of individual bees were dissected and subjected to a customized protocol enriching for bacterial DNA, which was then shotgun sequenced using Illumina.</s>
           <s>In parallel, a reference database of high-quality draft and complete genomes of bee gut bacterial isolates was established.</s>
           <s>The downstream analysis of the metagenomic data was based on both mapping against the reference database and de novo assembly.</s>
           <s>An overview flowchart of the entire analysis illustrating how genomic and metagenomic data was integrated is given in <ref type="figure">Supplementary Fig. 1</ref> hits to phylotypes of the honey bee gut microbiota in the nonredundant database of NCBI, most frequently to Snodgrassella and Bartonella, but some hits to Gilliamella were also observed (Supplementary Data 2).</s>
@@ -448,7 +448,7 @@
         <head>Methods</head>
         <p>
           <s>Sample collection.</s>
-          <s cert="0.978196918964386" id="dataset-4" type="Tabular data">Age-controlled honey bees (Apis mellifera carnica) were sampled from the apiary of the Engel laboratory at the University of Lausanne towards the end of the summer season (starting in September) in two consecutive years (2015 and 2016).</s>
+          <s cert="0.978196918964386" id="dataset-3" type="Tabular data">Age-controlled honey bees (Apis mellifera carnica) were sampled from the apiary of the Engel laboratory at the University of Lausanne towards the end of the summer season (starting in September) in two consecutive years (2015 and 2016).</s>
           <s>To this end, a single frame was collected from each target colony, adult bees were brushed off the frame, and the frame was kept in the laboratory incubator at 34°C over-night.</s>
           <s>The following morning, newly emerged bees were tagged with a marker pen on their thorax, and re-introduced to the colony together with the frame.</s>
           <s>At defined time points, a total of 54 tagged bees were collected from the two target colonies as shown in <ref type="figure">Fig. 1b</ref> .</s>
@@ -478,7 +478,7 @@
           <s>DNA pellets were re-suspended in 20 µl H 2 O.</s>
         </p>
         <p>
-          <s cert="0.9783037304878235" id="dataset-5" type="Genetic Data">All samples were sequenced at the Lausanne Genomic Technologies facility (GTF).</s>
+          <s cert="0.9783037304878235" id="dataset-4" type="Genetic Data">All samples were sequenced at the Lausanne Genomic Technologies facility (GTF).</s>
           <s>Sequencing libraries were prepared with the Nextera XT library kit (Illumina), according to manufacturers instructions.</s>
           <s cert="0.9768443703651428" id="dataset-1" type="Genetic Data:High-Throughput Nucleotide Sequencing">A total of 2 × 100 nt pairedend sequencing was done on an Illumina HiSeq 2500 instrument, with 6 samples multiplexed per lane.</s>
           <s>For 6 samples of year 1, an additional multiplexed lane was done to ensure similar coverage across samples.</s>
@@ -618,7 +618,7 @@
           <s>Specifically, genes with an intergenic distance of less than 5 kb were joined in an 'island'.</s>
           <s>'Big islands' were defined as having a minimum length of 10 kb, and containing at least 5 genes.</s>
           <s>To avoid excessive redundancy due to identical islands being present in more than one genome in the database, islands for which all their associated gene families were also present in another island (complete overlap) were removed.</s>
-          <s cert="0.9444822669029236" id="dataset-2" type="Tabular data">Finally, the occurrence of islands across samples was recorded, where an island was considered to be present when at least 80% of the gene families contained in the island were present in the sample.</s>
+          <s cert="0.9444822669029236" id="dataset-2" type="Tabular Data">Finally, the occurrence of islands across samples was recorded, where an island was considered to be present when at least 80% of the gene families contained in the island were present in the sample.</s>
         </p>
         <p>
           <s>Statistics.</s>

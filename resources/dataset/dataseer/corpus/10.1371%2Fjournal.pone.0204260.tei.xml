@@ -149,11 +149,11 @@
             <s>To demonstrate a method to calculate phase amplitude coupling (PAC) quickly and robustly for realtime applications.</s>
           </p>
         </div>
-        <div subtype="dataseer">
+        <div>
           <head>Methods</head>
           <p>
             <s>We designed and implemented a multirate PAC algorithm with efficient filter bank processing and efficient computation of PAC for many frequency-pair combinations.</s>
-            <s cert="0.5923944115638733" id="dataset-1" type="Tabular data">We tested the developed algorithm for computing PAC on simulated data and on intraoperative neural recording data obtained during deep brain stimulation (DBS) electrode implantation surgery.</s>
+            <s>We tested the developed algorithm for computing PAC on simulated data and on intraoperative neural recording data obtained during deep brain stimulation (DBS) electrode implantation surgery.</s>
           </p>
         </div>
         <div>
@@ -476,7 +476,7 @@
         </p>
         <p>
           <s>Recorded signals.</s>
-          <s cert="0.7982890605926514" corresp="#dataset-1" id="dataset-2" type="Electrophysiology">The MER signals were recorded using the AlphaOmega Microguide Pro (Alpha Omega, Inc, Nazareth, Israel) from microelectrodes inserted into the putative STN during the neurosurgical procedure to implant DBS electrodes.</s>
+          <s cert="0.7982890605926514" corresp="#dataset-1" id="dataset-1" type="Electrophysiology">The MER signals were recorded using the AlphaOmega Microguide Pro (Alpha Omega, Inc, Nazareth, Israel) from microelectrodes inserted into the putative STN during the neurosurgical procedure to implant DBS electrodes.</s>
           <s>The signals were amplified 10,000-fold and digitized at 24 kHz with 12-bit resolution.</s>
           <s>In this study we use a single 3channel trajectory from one hemisphere from one patient.</s>
           <s>Use of anonymized intraoperative patient data for this study has been approved by the Ottawa Health Science Network Research Ethics Board.</s>
@@ -521,7 +521,7 @@
           <s>The relationship between input PAC and calculated PAC at a constant signal-to-noise ratio (SNR) of 3.0 is plotted for all three methods in <ref target="#fig_5" type="figure">Fig 4C.</ref> Calculated PAC values were similar across methods, except pacpy yielded greater PAC at middle ranges of specified PAC.</s>
           <s>
             <ref target="#fig_5" type="figure">Fig 4D shows</ref> Realtime applications of PAC calculation.</s>
-          <s cert="0.932003378868103" id="dataset-3" type="Tabular data">We calculated PAC magnitude of a signal recorded during an STN-DBS surgery <ref target="#fig_6" type="figure">(Fig 5)</ref> .</s>
+          <s cert="0.932003378868103" id="dataset-2" type="Tabular data">We calculated PAC magnitude of a signal recorded during an STN-DBS surgery <ref target="#fig_6" type="figure">(Fig 5)</ref> .</s>
           <s>In the comodulogram calculated from the entire 16-second duration of the signal <ref target="#fig_6" type="figure">(Fig 5B)</ref> , PAC magnitude peaks with the phase-giving frequencies of 6-50 Hz and amplitude-envelope frequencies of 60-500 Hz.</s>
           <s>PAC magnitude for this frequency pair calculated from shorter signal segments varies significantly across time ( <ref target="#fig_6" type="figure">Fig 5C)</ref> .</s>
           <s>Selected comodulograms from short segments <ref target="#fig_6" type="figure">(Fig 5D)</ref> demonstrate that PAC magnitude</s>
@@ -550,7 +550,7 @@
           <s>However, for pacpy, at low levels of specified input PAC, calculated PAC magnitude increased as noise increased, suggesting that noise might be contributing to spurious PAC detection.</s>
         </p>
         <p>
-          <s cert="0.8929376602172852" id="dataset-4" type="Tabular data">We tested MSPACMan for its ability to calculate PAC from neurophysiological data recorded from MERs in the STN of patients undergoing DBS surgery.</s>
+          <s cert="0.8929376602172852" id="dataset-3" type="Tabular data">We tested MSPACMan for its ability to calculate PAC from neurophysiological data recorded from MERs in the STN of patients undergoing DBS surgery.</s>
           <s>While PAC was evident when analyzing a long signal segment (16 s), when examined more precisely it was only present in one 4-second segment within the longer segment <ref target="#fig_6" type="figure">(Fig 5)</ref> .</s>
           <s>MSPACMan can measure PAC from 4-second window segments and it can use small time steps between updates of the output PAC value because it is fast <ref target="#fig_6" type="figure">(Fig 5B)</ref> .</s>
           <s>We further demonstrated that MSPACMan is sensitive enough to identify the lack of PAC in the initial 4-second window segment, to its emergence in subsequent segments, and its return to baseline shortly thereafter <ref target="#fig_6" type="figure">(Fig 5C and 5D</ref> ).</s>

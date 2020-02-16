@@ -410,13 +410,13 @@
     </fileDesc>
     <profileDesc>
       <abstract>
-        <div subtype="dataseer">
+        <div>
           <p>
             <s>U.S. smoking prevalence is declining at a slower rate in rural than urban settings and contributing to regional health disparities.</s>
             <s>Cigarette smoking among women of reproductive age is particularly concerning due to the potential for serious maternal and infant adverse health effects should a smoker become pregnant.</s>
             <s>The aim of the present study was to examine whether this rural-urban disparity impacts women of reproductive age (ages 15-44) including pregnant women.</s>
             <s>Data came from the ten most recent years of the U.S. National Survey on Drug Use and Health (2007)(2008)(2009)(2010)(2011)(2012)(2013)(2014)(2015)(2016).</s>
-            <s cert="0.9805775880813599" id="dataset-1" type="Tabular data">We estimated prevalence of current smoking and nicotine dependence among women categorized by rural-urban residence, pregnancy status, and trends using chi-square testing and multivariable modeling while adjusting for common risk factors for smoking.</s>
+            <s>We estimated prevalence of current smoking and nicotine dependence among women categorized by rural-urban residence, pregnancy status, and trends using chi-square testing and multivariable modeling while adjusting for common risk factors for smoking.</s>
             <s>Despite overall decreasing trends in smoking prevalence, prevalence was higher among rural than urban women of reproductive age overall (χ 2 (1) = 579.33,</s>
             <s>p &lt; .0001)</s>
             <s>and among non-pregnant (χ 2 (1) = 578.0,</s>
@@ -493,7 +493,7 @@
       <div subtype="dataseer">
         <head>Data source</head>
         <p>
-          <s cert="0.8589973449707031" id="dataset-1" type="Dataset:Existing dataset">Data were obtained from the National Survey on Drug Use and Health (NSDUH), an annual, multi-year U.S. nationally representative cross-sectional survey.</s>
+          <s cert="0.8589973449707031" id="dataset-1" type="Tabular Data">Data were obtained from the National Survey on Drug Use and Health (NSDUH), an annual, multi-year U.S. nationally representative cross-sectional survey.</s>
           <s>Detailed descriptions of survey procedures have been provided previously for each of the survey years <ref target="#b23" type="bibr">[24]</ref> .</s>
           <s>We used the ten most recent years <ref type="bibr">(2007)</ref>
             <ref type="bibr">(2008)</ref>
@@ -506,7 +506,7 @@
             <ref type="bibr">(2015)</ref>
             <ref type="bibr">(2016)</ref> at the time the study was conducted.</s>
           <s>Data were analyzed based on consecutive two-year periods (e.g., <ref type="bibr">2007 and 2008; 2009 and 2010)</ref> due to the relatively smaller number of rural pregnant women.</s>
-          <s cert="0.9485461115837097" corresp="#dataset-1" id="dataset-3" type="Dataset:Existing dataset">Participant weights were included with the survey data to obtain results representative of the U.S. population by correcting for selection probabilities, non-response, and post-stratification.</s>
+          <s cert="0.9485461115837097" corresp="#dataset-1" id="dataset-2" type="Tabular Data">Participant weights were included with the survey data to obtain results representative of the U.S. population by correcting for selection probabilities, non-response, and post-stratification.</s>
           <s>Hereafter, references to "adjusted" or "unadjusted" models refer to covariate adjustment, rather than to weight adjustments for representativeness.</s>
         </p>
       </div>
@@ -518,7 +518,7 @@
           <s>Time to first cigarette after waking is a robust predictor of success in quitting smoking <ref target="#b25" type="bibr">[26]</ref>
             <ref target="#b26" type="bibr">[27]</ref> .</s>
           <s>Those who reported smoking within 30 min were classified as nicotine dependent.</s>
-          <s cert="0.9896517395973206" id="dataset-4" type="Tabular data">The key predictor variables included pregnancy status and geographic setting (urban non-pregnant women of reproductive age, urban pregnant women, rural non-pregnant women of reproductive age, and rural pregnant women), and the interactions between pregnancy status and geographic setting.</s>
+          <s cert="0.9896517395973206" id="dataset-3" type="Tabular data">The key predictor variables included pregnancy status and geographic setting (urban non-pregnant women of reproductive age, urban pregnant women, rural non-pregnant women of reproductive age, and rural pregnant women), and the interactions between pregnancy status and geographic setting.</s>
           <s>Geographic setting was a county level classification from the Office of Management and Budget called the Rural Urban Continuum Codes (based on the 2000 Census data and 2013 statistical area classifications).</s>
           <s>As in previous studies <ref target="#b4" type="bibr">[5]</ref>
             <ref target="#b5" type="bibr">[6]</ref>
@@ -535,7 +535,7 @@
         <head>Statistical analyses</head>
         <p>
           <s>Ten years of NSDUH data were combined (2007-2016) (n = 561,231) and the person-level sample weight was divided by 10.</s>
-          <s cert="0.9272526502609253" id="dataset-5" type="Tabular data">Across all analyses, strata, cluster, and weight were included.</s>
+          <s cert="0.9272526502609253" id="dataset-4" type="Tabular data">Across all analyses, strata, cluster, and weight were included.</s>
           <s>We calculated frequencies using PROC SURVEYFREQ in SAS 9.4 (SAS Institute, Cary, NC), relying on Rao-Scott chi-square tests to compare current smoking status and time to first cigarette after waking by geographic setting, sex, pregnancy status, age, and time.</s>
           <s>The sample was then limited to females of reproductive age only (n = 199,486), and multiple logistic regression procedures were used to model current smoking status and time to first cigarette after waking (PROC SURVEYLOGISTIC in SAS 9.4).</s>
           <s>Purposeful selection of covariates <ref target="#b28" type="bibr">[29]</ref> was used to build models, starting with a univariable analysis of all prospective covariates.</s>

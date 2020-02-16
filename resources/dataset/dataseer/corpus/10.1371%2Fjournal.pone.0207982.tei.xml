@@ -135,10 +135,10 @@
             <s>To build a deep learning model to diagnose glaucoma using fundus photography.</s>
           </p>
         </div>
-        <div subtype="dataseer">
+        <div>
           <head>Design</head>
           <p>
-            <s cert="0.6254080533981323" id="dataset-1" type="Tabular data">Cross sectional case study Subjects, Participants and Controls: A total of 1,542 photos (786 normal controls, 467 advanced glaucoma and 289 early glaucoma patients) were obtained by fundus photography.</s>
+            <s>Cross sectional case study Subjects, Participants and Controls: A total of 1,542 photos (786 normal controls, 467 advanced glaucoma and 289 early glaucoma patients) were obtained by fundus photography.</s>
           </p>
         </div>
         <div>
@@ -207,8 +207,8 @@
         <head>Data preparation</head>
         <p>
           <s cert="0.746660053730011" id="dataset-1" type="Image:Photography">Fundus photographs of normal and glaucoma patients were collected from Kim's Eye Hospital.</s>
-          <s cert="0.8913145065307617" corresp="#dataset-1" id="dataset-3" type="Image:Photography">Fundus photography was performed using a non-mydriatic auto fundus camera (AFC-330, Nidek, Japan).</s>
-          <s cert="0.7538757920265198" corresp="#dataset-1" id="dataset-4" type="Image:Photography">A total of 1,542 photos were obtained, including 786 photos from normal patients and 756 photos from 467 advanced and 289 early glaucoma patients.</s>
+          <s cert="0.8913145065307617" corresp="#dataset-1" id="dataset-2" type="Image:Photography">Fundus photography was performed using a non-mydriatic auto fundus camera (AFC-330, Nidek, Japan).</s>
+          <s cert="0.7538757920265198" corresp="#dataset-1" id="dataset-3" type="Image:Photography">A total of 1,542 photos were obtained, including 786 photos from normal patients and 756 photos from 467 advanced and 289 early glaucoma patients.</s>
           <s>These photos had different sizes, and thus were scaled to have fixed width size of 800 pixels.</s>
           <s>In order to produce a fixed size input necessary for machine learning models, the photos were cropped at the region of optic nerve with size of 240X240pixels.</s>
           <s>The normal patients exhibited normal findings on red-free RNFL photography (Vx-10; Kowa Optimed, Inc., Tokyo, Japan), OCT (Cirrus HD-OCT, Carl Zeiss Meditec Inc., Dublin, CA), and visual field test (Humphrey 740 visual field analyzer, Carl Zeiss Meditec Inc., Dublin, CA).</s>
@@ -254,7 +254,7 @@
             <ref target="#fig_0" type="figure">Fig 2 shows</ref> the original architecture of the Inception v3 model.</s>
         </p>
         <p>
-          <s id="dataset-2" type="Tabular data">We also constructed our own Convolutional Neural Network, using Google's Tensorflow as backend.</s>
+          <s id="dataset-2" type="Tabular Data">We also constructed our own Convolutional Neural Network, using Google's Tensorflow as backend.</s>
           <s>Two convolutional layers, with patch sizes of 2020 and 4040, were used with a stride of 1 and depths of 16 and 32.</s>
           <s>Max pooling was applied, with a patch size of 22 and a stride of 2. Two hidden layers, with 32 and 64 hidden units, were used as fully connected layers.</s>
           <s>A dropout rate of 0.5 was used in convolutional and fully connected layers to overcome overfitting; ReLu (Rectifier Linear unit) was used as an activation function.</s>
@@ -284,7 +284,7 @@
           <s>This resulted in training accuracy of 99.7% and test accuracy of 98.6%.</s>
           <s>We also checked whether logistic classification model can discriminate early glaucoma from normal control without advanced glaucoma images.</s>
           <s>Among 756 glaucoma images, 289 images were early glaucoma.</s>
-          <s cert="0.8511672019958496" id="dataset-5" type="Image">289 normal images were selected from 786 normal images to avoid imbalanced data problem.</s>
+          <s cert="0.8511672019958496" id="dataset-4" type="Image">289 normal images were selected from 786 normal images to avoid imbalanced data problem.</s>
           <s>About 30% of the 289 early glaucoma images and 289 normal control images were randomly split into the test dataset.</s>
           <s>This resulted in training accuracy of 83.7% and test accuracy of 73.0% <ref target="#tab_2" type="table">(Table 2</ref> ).</s>
           <s>This suggests the needs of complex algorithm such as deep learning technique to discriminate both advanced glaucoma and early glaucoma from normal control.</s>

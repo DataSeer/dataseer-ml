@@ -83,12 +83,12 @@
     </fileDesc>
     <profileDesc>
       <abstract>
-        <div subtype="dataseer">
+        <div>
           <p>
             <s>Biofuels policies induce land use changes (LUC), including cropland expansion and crop switching, and this in turn alters water and soil management practices.</s>
             <s>Policies differ in the extent and type of land use changes they induce and therefore in their impact on water resources.</s>
             <s>We quantify and compare the spatially varying water impacts of biofuel crops stemming from LUC induced by two different biofuels policies by coupling a biophysical model with an economic model to simulate the economically viable mix of crops, land uses, and crop management choices under alternative policy scenarios.</s>
-            <s cert="0.9577969908714294" id="dataset-1" type="Tabular data">We assess the outputs of an economic model with a high-resolution crop-water model for major agricultural crops and potential cellulosic feedstocks in the US to analyze the impacts of three alternative policy scenarios on water balances: a counterfactual 'no-biofuels policy' (BAU) scenario, a volumetric mandate (Mandate) scenario, and a clean fuel-intensity standard (CFS) scenario incentivizing fuels based on their carbon intensities.</s>
+            <s>We assess the outputs of an economic model with a high-resolution crop-water model for major agricultural crops and potential cellulosic feedstocks in the US to analyze the impacts of three alternative policy scenarios on water balances: a counterfactual 'no-biofuels policy' (BAU) scenario, a volumetric mandate (Mandate) scenario, and a clean fuel-intensity standard (CFS) scenario incentivizing fuels based on their carbon intensities.</s>
             <s>While both biofuel policies incentivize more biofuels than in the counterfactual, they differ in the mix of corn ethanol and advanced biofuels from miscanthus and switchgrass (more corn ethanol in Mandate and more cellulosic biofuels in CFS).</s>
             <s>The two policies differ in their impact on irrigated acreage, irrigation demand, groundwater use and runoff.</s>
             <s>Net irrigation requirements increase 0.7% in Mandate and decrease 3.8% in CFS, but in both scenarios increases are concentrated in regions of Kansas and Nebraska that rely upon the Ogallala aquifer for irrigation water.</s>
@@ -221,7 +221,7 @@
           <s>The model includes several types of land, namely regular cropland, idle land, cropland pasture, pasture land, and forestland pasture, for each CRD.</s>
           <s>Land under conventional crops is assumed to change in response to crop prices, using estimated crop-specific price elasticities of acreage and price elasticity of total acreage.</s>
           <s>Idle land and cropland pasture are assumed to be available for conversion to conventional crop or energy crop production.</s>
-          <s cert="0.9723115563392639" id="dataset-2" type="Tabular data">Other land, including pasture land and forestland pasture are fixed at 2007 levels while land enrolled in the Conservation Reserve Program, is fixed at levels authorized by the Farm Bill of 2008 <ref target="#b55" type="bibr">[56]</ref> .</s>
+          <s cert="0.9723115563392639" id="dataset-1" type="Tabular data">Other land, including pasture land and forestland pasture are fixed at 2007 levels while land enrolled in the Conservation Reserve Program, is fixed at levels authorized by the Farm Bill of 2008 <ref target="#b55" type="bibr">[56]</ref> .</s>
           <s>Annual yields of row crops are assumed to increase over time following historical trends, based on econometric analysis <ref target="#b54" type="bibr">[55]</ref> .</s>
           <s>Energy crops can be planted either on 'prime' cropland or on 'cropland pasture' (land that is in and out of cropland and pasture/grazing and not under continuous crop production) and are assumed in all cases to be cultivated under rainfed conditions without irrigation.</s>
           <s>These energy crops are perennial grasses that cannot survive in the dry conditions to the west of the 100 th meridian <ref target="#b56" type="bibr">[57]</ref> .</s>
@@ -288,7 +288,7 @@
           <s>Further details on downscaling methods, data sources and spatial interpolation algorithms used to derive raster surfaces of daily weather inputs, soil texture, and crop management, the derivation of reference evapotranspiration, and base year calibration and validation are available in S2 File and in Teter <ref target="#b49" type="bibr">[50]</ref> .</s>
         </p>
         <p>
-          <s id="dataset-1" type="Dataset:Existing dataset">Model calibration and validation were done based on available site-specific observed data and other reported values in the literature.</s>
+          <s id="dataset-1" type="Tabular Data">Model calibration and validation were done based on available site-specific observed data and other reported values in the literature.</s>
           <s>Crop-specific state-level irrigation volumes were calibrated to roughly match survey reported irrigation intensities per hectare (acre).</s>
           <s>The results of this calibration are report in <ref target="#fig_5" type="figure">Fig 2 and</ref> the same geographic location (as an illustration, see Figs F-H and M in S2 File).</s>
           <s>Using the MODIS 16 as a benchmark, common model performance metrics for accuracy (absolute relative error), bias (mean relative error), and reliability (the Nas-Sutcliffe model efficiency coefficient), were performed for all major crop types.</s>
@@ -378,7 +378,7 @@
       <div subtype="dataseer">
         <head>Water footprint of biofuels aggregated to the national level</head>
         <p>
-          <s cert="0.9658724665641785" id="dataset-3" type="Tabular data">Spatially explicit blue and green WFs (measured in L water/MJ biofuel) for biofuel feedstocks are derived under the assumption of a uniform distribution of corn and soybean for biofuel production (i.e.</s>
+          <s cert="0.9658724665641785" id="dataset-2" type="Tabular data">Spatially explicit blue and green WFs (measured in L water/MJ biofuel) for biofuel feedstocks are derived under the assumption of a uniform distribution of corn and soybean for biofuel production (i.e.</s>
           <s>no specific region contributes greater proportion of feedstock to biofuel production).</s>
           <s>Feedstock and pathway-specific conversion efficiencies are taken from literature <ref target="#b10" type="bibr">[11]</ref> .</s>
           <s>The aggregated WFs for biofuel feedstocks are shown in <ref target="#fig_9" type="figure">Fig 4 for</ref>
@@ -501,7 +501,7 @@
           <s>Literature estimates of evapotranspiration versus modeled evapotranspiration rates.</s>
           <s>Seasonal and annual evapotranspiration ranges reported in literature sources and model by CropWatR.</s>
           <s>A range of methods are available for determining evapotranspiration at the field, landscape, and watershed scales, either via direct measurement (e.g.</s>
-          <s cert="0.9672484397888184" id="dataset-4" type="Tabular data">soil moisture measurement via lysimeters), modeling (e.g. via process-based s imulation models, or energy balances using weather data collected via satellite, local instruments, and/or remote sensing).</s>
+          <s cert="0.9672484397888184" id="dataset-3" type="Tabular data">soil moisture measurement via lysimeters), modeling (e.g. via process-based s imulation models, or energy balances using weather data collected via satellite, local instruments, and/or remote sensing).</s>
           <s>For a summary of common methods, see Connor et al.,2011.</s>
           <s>
             <ref type="table">Table E</ref> .</s>

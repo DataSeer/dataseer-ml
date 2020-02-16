@@ -329,7 +329,7 @@
           <s>To detect the quality of the clustering data split, we recurred to defining three classes based on the EM clustering and create a model classifier with them.</s>
           <s>We proceeded to sample a smaller dataset with 1934 points picked randomly from the 18672 data points.</s>
           <s>A table was constructed with the 3 PC attributes of the 1934-points dataset.</s>
-          <s id="dataset-1" type="Dataset:Existing dataset">This reduced size dataset was used for training a classification model with three classes: liquid, crystal, amorphous, depending upon which EM cluster the samples belonged to.</s>
+          <s id="dataset-1" type="Tabular Data">This reduced size dataset was used for training a classification model with three classes: liquid, crystal, amorphous, depending upon which EM cluster the samples belonged to.</s>
           <s>The Random Forest classifier 47 , as implemented in Weka <ref target="#b45" type="bibr">46</ref> , was used to build our model classifier with 100 random trees, trained with 10-fold validation.</s>
           <s>The evaluation on the training set had a mean absolute error of 0.002 with no confusion.</s>
         </p>

@@ -68,7 +68,7 @@
     </fileDesc>
     <profileDesc>
       <abstract>
-        <div subtype="dataseer">
+        <div>
           <p>
             <s>Background: The viral component of microbial communities plays a vital role in driving bacterial diversity, facilitating nutrient turnover and shaping community composition.</s>
             <s>Despite their importance, the vast majority of viral sequences are poorly annotated and share little or no homology to reference databases.</s>
@@ -78,7 +78,7 @@
           </p>
           <p>
             <s>Design: This study presents the most comprehensive virome assembly comparison to date, featuring 16 metagenomic assembly approaches which have featured in human virome studies.</s>
-            <s cert="0.7572885751724243" id="dataset-1" type="Tabular data">Assemblers were assessed using four independent virome datasets, namely, simulated reads, two mock communities, viromes spiked with a known phage and human gut viromes.</s>
+            <s>Assemblers were assessed using four independent virome datasets, namely, simulated reads, two mock communities, viromes spiked with a known phage and human gut viromes.</s>
             <s>Results: Assembly performance varied significantly across all test datasets, with SPAdes (meta) performing consistently well.</s>
             <s>Performance of MIRA and VICUNA varied, highlighting the importance of using a range of datasets when comparing assembly programs.</s>
             <s>It was also found that while some assemblers addressed the challenges of virome data better than others, all assemblers had limitations.</s>
@@ -149,7 +149,7 @@
       <div subtype="dataseer">
         <head>Simulated virome dataset</head>
         <p>
-          <s cert="0.8304590582847595" id="dataset-2" type="Genetic Data">Normalised genome abundance of 572 members of a published simulated community, <ref target="#fig_2" type="figure">(Fig. 1a)</ref> [20] the proportion of genome recovered and the degree of fragmentation were assessed by aligning the resulting contigs from each assembler to the reference genomes <ref target="#fig_2" type="figure">(Fig. 1b)</ref> .</s>
+          <s cert="0.8304590582847595" id="dataset-1" type="Genetic Data">Normalised genome abundance of 572 members of a published simulated community, <ref target="#fig_2" type="figure">(Fig. 1a)</ref> [20] the proportion of genome recovered and the degree of fragmentation were assessed by aligning the resulting contigs from each assembler to the reference genomes <ref target="#fig_2" type="figure">(Fig. 1b)</ref> .</s>
           <s>MetaVelvet was not included in this analysis as it failed to reach completion after 7 days.</s>
           <s>Approximately half of the genomes in the community featured an average recovered genome fraction less than 75% and exhibited higher degrees of fragmentation (&gt; 10 contigs per genome on average) across all assemblers.</s>
           <s>For 87 of the 572 genomes, there was an average recovered genome fraction of less than 20% across all assemblers (the low recovered genome fraction of VICUNA was excluded as an outlier).</s>
@@ -442,7 +442,7 @@
       <div subtype="dataseer">
         <head>Read pre-processing</head>
         <p>
-          <s cert="0.788059651851654" id="dataset-3" type="Tabular data">Raw read quality was assessed with FastQC v0.11.5, and sequencing adapters were removed with cutadapt v1.9.1 <ref target="#b31" type="bibr">[32]</ref> for the mock, spiked and healthy gut virome data sets.</s>
+          <s cert="0.788059651851654" id="dataset-2" type="Tabular data">Raw read quality was assessed with FastQC v0.11.5, and sequencing adapters were removed with cutadapt v1.9.1 <ref target="#b31" type="bibr">[32]</ref> for the mock, spiked and healthy gut virome data sets.</s>
           <s>Trimming and filtering were carried out with Trimmomatic v0.36 <ref target="#b5" type="bibr">[6]</ref> using parameters specific to each dataset.</s>
           <s>A sliding window size of 4 with a minimum Phred score of 30 and a minimum length of 60 bp was used with reads from both mock communities.</s>
           <s>The leading 15 bp and trailing 60 bp were removed from "healthy human gut phageome" reads, and a sliding window of 4 bp with a minimum Phred score of 20 was applied.</s>
@@ -469,7 +469,7 @@
           <s>For data which was not normally distributed, log transformation was carried out.</s>
         </p>
         <p>
-          <s id="dataset-1" type="Tabular data">Reads from the "healthy human gut phageome" were analysed to compare the overall assembler efficiency and the impact of sequencing depth.</s>
+          <s id="dataset-1" type="Tabular Data">Reads from the "healthy human gut phageome" were analysed to compare the overall assembler efficiency and the impact of sequencing depth.</s>
           <s>Reads were randomly subset in pairs (both the forward and reverse read of a pair were retained) to different depths using an in-house python script.</s>
           <s>Samples were subset in increments of 300,000 reads to their respective maximum depth (2.7, 3.5, 3 and 3.3 million reads).</s>
           <s>GNU time was utilised to measure the maximum RAM and length of time for each assembly to reach completion.</s>

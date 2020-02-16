@@ -301,6 +301,12 @@ public class AnnotatedCorpusGeneratorCSV {
         CSVPrinter csvPrinter1 = new CSVPrinter(writerCSV1, 
             CSVFormat.DEFAULT.withHeader("doi", "text", "datatype", "dataSubtype", "leafDatatype"));
 
+        // training file for new versus reuse of datasets
+        Writer writerCSVReuse = new PrintWriter(new BufferedWriter(
+            new FileWriter(csvPath + "all-reuse.csv")));
+        CSVPrinter csvPrinterReuse = new CSVPrinter(writerCSVReuse, 
+            CSVFormat.DEFAULT.withHeader("doi", "text", "reuse"));
+
         Writer failedPDFWriter = new PrintWriter(new BufferedWriter(
             new FileWriter(documentPath + "/failed-pdf.txt")));
 
@@ -330,6 +336,9 @@ public class AnnotatedCorpusGeneratorCSV {
 
                     csvPrinterBinary.printRecord(doi, annotation.getContext(), "dataset");
                     csvPrinterBinary.flush();
+
+                    csvPrinterReuse.printRecord(doi, annotation.getContext(), annotation.getExisting());
+                    csvPrinterReuse.flush();
 
                     previousContext = annotation.getContext();
                 }
@@ -610,6 +619,10 @@ public class AnnotatedCorpusGeneratorCSV {
         csvPrinter1.close();
         // not sure the following is needed, but to be sure...
         writerCSV1.close();
+
+        csvPrinterReuse.close();
+        // not sure the following is needed, but to be sure...
+        writerCSVReuse.close();
 
         failedPDFWriter.close();
 

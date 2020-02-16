@@ -167,10 +167,10 @@
             <s>The purpose of this study was to evaluate the short-term effect of PM 2.5 on the mortality risk of non-accidental and circulatory diseases, and to explore the potential effect modification by sex, education and death location.</s>
           </p>
         </div>
-        <div subtype="dataseer">
+        <div>
           <head>Methods</head>
           <p>
-            <s cert="0.806024968624115" id="dataset-1" type="Tabular data">We collected daily mortality counts of Changchun (China) residents, daily meteorology and air pollution data, from January 1, 2014, to January 1, 2017.</s>
+            <s>We collected daily mortality counts of Changchun (China) residents, daily meteorology and air pollution data, from January 1, 2014, to January 1, 2017.</s>
             <s>We focused on the elderly (�65 years old) population who died from non-accidental causes and circulatory diseases, and stratified them by sex, education, and death location.</s>
             <s>A generalized additive Poisson regression model (GAM) was used to analyse the impact of air pollutants on mortality.</s>
             <s>We fit single pollutant models to examine PM 2.5 effects with different lag structures of single-day (distributed lag:lag0-lag3) and multi-day (moving average lag: lag01-lag03).</s>
@@ -250,17 +250,17 @@
       <div subtype="dataseer">
         <head n="2.1.1.">Mortality data.</head>
         <p>
-          <s cert="0.8667352795600891" id="dataset-1" type="Dataset:Existing dataset">Daily mortality data for residents in Changchun from January 1, 2014, to January 1, 2017, was obtained from the Jilin Provincial Center for Disease Control and Prevention.</s>
+          <s cert="0.8667352795600891" id="dataset-1" type="Tabular Data">Daily mortality data for residents in Changchun from January 1, 2014, to January 1, 2017, was obtained from the Jilin Provincial Center for Disease Control and Prevention.</s>
           <s>The anonymous records included age, sex, date of death, and the underlying cause of death.</s>
           <s>The underlying causes of death are classified by the International Classification of Diseases (ICD-10), in which non-accidental mortality are A00-R99 and circulatory system diseases are I00~I99.</s>
-          <s cert="0.9853230714797974" id="dataset-2" type="Tabular data:Subject Data Table">To determine the daily death toll, we selected all the elderly (�65 years old) who 'died of non-accidental causes and those who died of circulatory diseases and stratified them by sex, education and death location.</s>
+          <s cert="0.9853230714797974" id="dataset-2" type="Tabular Data:Subject Data Table">To determine the daily death toll, we selected all the elderly (�65 years old) who 'died of non-accidental causes and those who died of circulatory diseases and stratified them by sex, education and death location.</s>
         </p>
         <p>
           <s>2.1.2.</s>
           <s>Air pollution and meteorology data.</s>
-          <s cert="0.7015138268470764" id="dataset-3" type="Tabular data">Daily air pollution data were obtained from ten national environmental monitoring stations in Changchun, including PM 2.5 , particulate matter with an aerodynamic diameter of equal or less than 10 μm (PM 10 ), sulphur dioxide (SO 2 ), nitrogen dioxide (NO 2 ) and ozone (O 3 ) (average concentration over 8 hours).</s>
+          <s cert="0.7015138268470764" id="dataset-3" type="Tabular Data">Daily air pollution data were obtained from ten national environmental monitoring stations in Changchun, including PM 2.5 , particulate matter with an aerodynamic diameter of equal or less than 10 μm (PM 10 ), sulphur dioxide (SO 2 ), nitrogen dioxide (NO 2 ) and ozone (O 3 ) (average concentration over 8 hours).</s>
           <s>Each indicator has at least 27 daily averages per month (at least 25 daily averages in February), and at least 324 daily averages per year.</s>
-          <s cert="0.8183727264404297" corresp="#dataset-3" id="dataset-5" type="Tabular data">Daily meteorology data were obtained from the Changchun meteorological bureau, including average relative humidity and mean temperature.</s>
+          <s cert="0.8183727264404297" corresp="#dataset-3" id="dataset-4" type="Tabular Data">Daily meteorology data were obtained from the Changchun meteorological bureau, including average relative humidity and mean temperature.</s>
           <s>The annual data loss rate is less than 5%, and each index has at least 347 daily mean values per year.</s>
           <s>Audits of the validity, accuracy, normalization of the data, and of data quality can be used for analysis.</s>
         </p>
@@ -288,7 +288,7 @@
           <s>In multi-day lag models, lag03 for example corresponds to a 4-day moving average pollutant concentration of the current and previous 3 days.</s>
           <s>To test the sensitivity of the model, a multi-pollutant model was established when the PM 2.5 effect was strongest.</s>
           <s>Considering that there may be collinearity among air pollutants, other pollutants (PM 10 , SO 2 , NO 2 , O 3 ) are entered in the multi-pollutant model step-by-step.</s>
-          <s cert="0.9874875545501709" id="dataset-6" type="Tabular data">The excess risk (ER) was used to evaluate the increased death risk of non-accidental and circulatory diseases with each increase of 10μg/m 3 of air pollutants (ER = (RR-1)×100%; RR, relative risk).</s>
+          <s cert="0.9874875545501709" id="dataset-5" type="Tabular data">The excess risk (ER) was used to evaluate the increased death risk of non-accidental and circulatory diseases with each increase of 10μg/m 3 of air pollutants (ER = (RR-1)×100%; RR, relative risk).</s>
           <s>We also stratified the association of daily mortality with PM 2.5 by sex, education, and death location (died in hospital versus outside of hospital).</s>
         </p>
         <p>
@@ -302,7 +302,7 @@
       <div subtype="dataseer">
         <head n="3.1.">Descriptive statistics</head>
         <p>
-          <s cert="0.9780555367469788" id="dataset-7" type="Tabular data">From January 2014 to January 2017, a total of 46,780 non-accidental deaths were reported among the elderly (�65 years old) in Changchun, of which 26,498 died of circulatory diseases.</s>
+          <s cert="0.9780555367469788" id="dataset-6" type="Tabular data">From January 2014 to January 2017, a total of 46,780 non-accidental deaths were reported among the elderly (�65 years old) in Changchun, of which 26,498 died of circulatory diseases.</s>
           <s>The mean daily deaths from non-accidental and circulatory diseases were 32.0 and 18.1, respectively.</s>
           <s>The daily average temperature was 7.0˚C, and the daily average relative humidity was 60.1%.</s>
           <s>The daily mean concentration of PM 2.5 was 55.9 μg/m 3 , with a Standard deviation (SD) of 49.5 μg/m 3 .</s>

@@ -1,0 +1,2096 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /home/lopez/grobid/dataseer-ml/../grobid-home/schemas/xsd/Grobid.xsd">
+  <teiHeader xml:lang="en">
+    <encodingDesc>
+      <appInfo>
+        <application ident="GROBID" version="0.5.6-SNAPSHOT" when="2019-11-05T19:43+0000">
+          <ref target="https://github.com/kermitt2/grobid">GROBID - A machine learning software for extracting information from scholarly documents</ref>
+        </application>
+      </appInfo>
+    </encodingDesc>
+    <fileDesc>
+      <titleStmt>
+        <title level="a" type="main">Genetic risk variants for brain disorders are enriched in cortical H3K27ac domains</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher/>
+        <availability status="unknown">
+          <licence/>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <biblStruct>
+          <analytic>
+            <author>
+              <persName>
+                <forename type="first">Eilis</forename>
+                <surname>Hannon</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Royal Devon &amp; Exeter Hospital</orgName>
+                <orgName key="instit1" type="institution">University of Exeter Medical School</orgName>
+                <orgName key="instit2" type="institution">RILD Building</orgName>
+                <orgName key="instit3" type="institution">University of Exeter</orgName>
+                <address>
+                  <addrLine>Barrack Rd</addrLine>
+                  <postCode>EX2 5DW</postCode>
+                  <settlement>Exeter</settlement>
+                  <country key="GB">UK</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Sarah</forename>
+                <forename type="middle">J</forename>
+                <surname>Marzi</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Royal Devon &amp; Exeter Hospital</orgName>
+                <orgName key="instit1" type="institution">University of Exeter Medical School</orgName>
+                <orgName key="instit2" type="institution">RILD Building</orgName>
+                <orgName key="instit3" type="institution">University of Exeter</orgName>
+                <address>
+                  <addrLine>Barrack Rd</addrLine>
+                  <postCode>EX2 5DW</postCode>
+                  <settlement>Exeter</settlement>
+                  <country key="GB">UK</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Leonard</forename>
+                <forename type="middle">S</forename>
+                <surname>Schalkwyk</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Royal Devon &amp; Exeter Hospital</orgName>
+                <orgName key="instit1" type="institution">University of Exeter Medical School</orgName>
+                <orgName key="instit2" type="institution">RILD Building</orgName>
+                <orgName key="instit3" type="institution">University of Exeter</orgName>
+                <address>
+                  <addrLine>Barrack Rd</addrLine>
+                  <postCode>EX2 5DW</postCode>
+                  <settlement>Exeter</settlement>
+                  <country key="GB">UK</country>
+                </address>
+              </affiliation>
+            </author>
+            <author>
+              <persName>
+                <forename type="first">Jonathan</forename>
+                <surname>Mill</surname>
+              </persName>
+              <affiliation key="aff0">
+                <orgName type="department">Royal Devon &amp; Exeter Hospital</orgName>
+                <orgName key="instit1" type="institution">University of Exeter Medical School</orgName>
+                <orgName key="instit2" type="institution">RILD Building</orgName>
+                <orgName key="instit3" type="institution">University of Exeter</orgName>
+                <address>
+                  <addrLine>Barrack Rd</addrLine>
+                  <postCode>EX2 5DW</postCode>
+                  <settlement>Exeter</settlement>
+                  <country key="GB">UK</country>
+                </address>
+              </affiliation>
+            </author>
+            <title level="a" type="main">Genetic risk variants for brain disorders are enriched in cortical H3K27ac domains</title>
+          </analytic>
+          <monogr>
+            <imprint>
+              <date/>
+            </imprint>
+          </monogr>
+          <idno type="DOI">10.1186/s13041-019-0429-4</idno>
+          <note>S H O R T R E P O R T Open Access</note>
+        </biblStruct>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <textClass>
+        <keywords>
+          <term>H3K27ac</term>
+          <term>Active enhancer</term>
+          <term>Promoter</term>
+          <term>GWAS</term>
+          <term>Brain disorder</term>
+          <term>LD score regression</term>
+          <term>Psychiatric illness</term>
+          <term>Neurodegenerative disease</term>
+          <term>Epigenetics Main text</term>
+        </keywords>
+      </textClass>
+      <abstract>
+        <div>
+          <p>
+            <s>Most variants associated with complex phenotypes in genome-wide association studies (GWAS) do not directly index coding changes affecting protein structure.</s>
+            <s>Instead they are hypothesized to influence gene regulation, with common variants associated with disease being enriched in regulatory domains including enhancers and regions of open chromatin.</s>
+            <s>There is interest, therefore, in using epigenomic annotation data to identify the specific regulatory mechanisms involved and prioritize risk variants.</s>
+            <s>We quantified lysine H3K27 acetylation (H3K27ac) -a robust mark of active enhancers and promoters that is strongly correlated with gene expression and transcription factor bindingacross the genome in entorhinal cortex samples using chromatin immunoprecipitation followed by highly parallel sequencing (ChIP-seq).</s>
+            <s>H3K27ac peaks were called using high quality reads combined across all samples and formed the basis of partitioned heritability analysis using LD score regression along with publiclyavailable GWAS results for seven psychiatric and neurodegenerative traits.</s>
+            <s>Heritability for all seven brain traits was significantly enriched in these H3K27ac peaks (enrichment ranging from 1.09-2.13)</s>
+            <s>compared to regions of the genome containing other active regulatory and functional elements across multiple cell types and tissues.</s>
+            <s>The strongest enrichments were for amyotrophic lateral sclerosis (ALS) (enrichment = 2.19; 95% CI = 2.12-2.27),</s>
+            <s>autism (enrichment = 2.11; 95% CI = 2.05-2.16)</s>
+            <s>and major depressive disorder (enrichment = 2.04; 95% CI = 1.92-2.16).</s>
+            <s>Much lower enrichments were observed for 14 non-brain disorders, although we identified enrichment in cortical H3K27ac domains for body mass index (enrichment = 1.16; 95% CI = 1.13-1.19),</s>
+            <s>ever smoked (enrichment = 2.07; 95% CI = 2.04-2.10),</s>
+            <s>HDL (enrichment = 1.53; 95% CI = 1.45-1.62)</s>
+            <s>and trigylcerides (enrichment = 1.33; 95% CI = 1.24-1.42).</s>
+            <s>These results indicate that risk alleles for brain disorders are preferentially located in regions of regulatory/enhancer function in the cortex, further supporting the hypothesis that genetic variants for these phenotypes influence gene regulation in the brain.</s>
+          </p>
+        </div>
+      </abstract>
+    </profileDesc>
+  </teiHeader>
+  <text xml:lang="en">
+    <body>
+      <div subtype="dataseer">
+        <p>
+          <s>There has been major progress in identifying genetic risk variants for complex brain traits including neurodegenerative diseases (for example Alzheimer's disease and amyotrophic lateral sclerosis <ref target="#b0" type="bibr">[1]</ref>
+            <ref target="#b1" type="bibr">[2]</ref>
+            <ref target="#b2" type="bibr">[3]</ref> ) and neuropsychiatric illnesses (for example schizophrenia and major depressive disorder <ref target="#b3" type="bibr">[4]</ref>
+            <ref target="#b4" type="bibr">[5]</ref>
+            <ref target="#b5" type="bibr">[6]</ref>
+            <ref target="#b6" type="bibr">[7]</ref> ).</s>
+          <s>A key challenge is to understand the biological effects of these genetic risk factors, especially because the actual gene(s) involved in mediating phenotypic variation are not necessarily the closest to the most significant genetic variant in genome-wide association studies (GWAS).</s>
+          <s>The majority of GWAS variants do not directly index or tag coding changes affecting protein structure.</s>
+          <s>Instead, common variants associated with disease are preferentially located in regulatory domains such as active enhancers and regions of open chromatin <ref target="#b7" type="bibr">[8,</ref>
+            <ref target="#b8" type="bibr">9]</ref> , and therefore are hypothesized to act by influencing gene regulation <ref target="#b9" type="bibr">[10]</ref> .</s>
+          <s>There is, therefore, much interest in using epigenomic data to improve our understanding of how genetic variants associated with complex disease mediate differences in gene activity and regulation.</s>
+          <s>Given the tissue-specific nature of gene regulation, it is critical these relationships are explored in relevant tissues; existing epigenomic annotation data has been largely generated in easily accessible tissues and cells, or commercially available cell lines.</s>
+          <s>In particular, datasets based on the human brain are lacking, limiting the downstream interpretation of GWAS findings for brain traits.</s>
+          <s>Recently, we quantified genome-wide patterns of lysine H3K27 acetylation (H3K27ac) -a robust mark of active enhancers and promoters that is strongly correlated with gene expression and transcription factor bindingusing ChIP-seq in an extensive collection of entorhinal cortex samples (n = 47) <ref target="#b10" type="bibr">[11]</ref> .</s>
+          <s>In this study, we used these data to perform enrichment analyses of GWAS variants for a range of brain traits (attention-deficit hyperactivity disorder (ADHD), Alzheimer's disease, autism, amyotrophic lateral sclerosis (ALS), major depressive disorder, bipolar disorder and schizophrenia) using linkage disequilibrium (LD) score regression <ref target="#b11" type="bibr">[12]</ref> to test the hypothesis that the majority of these variants act by influencing gene regulation in the brain.</s>
+        </p>
+        <p>
+          <s>Detailed methods on the experimental procedures and informatics pipeline used to derive the set of cortical H3K27ac peaks have been previously described <ref target="#b10" type="bibr">[11]</ref> .</s>
+          <s>Briefly, post-mortem entorhinal cortex samples from 47 donors were provided by the MRC London Neurodegenerative Disease Brain Bank (https://www.kcl.ac.uk/ioppn/ depts/bcn/index.aspx).</s>
+          <s>The entorhinal cortex, which is located in the medial temporal lobe, has an important role in memory formation and has been implicated in a range of neuropsychiatric and neurological phenotypes <ref target="#b12" type="bibr">[13]</ref> .</s>
+          <s>We annotated genome-wide patterns of H3K27ac in the entorhinal cortex using chromatin immunoprecipitation (ChIP) followed by highly parallel sequencing (ChIP-seq).</s>
+          <s>After stringent quality control of the raw H3K27ac ChIP-seq data, we obtained a mean of 30,032,623 (SD = 10,638,091) sequencing reads per sample, representing the most extensive analysis of H3K27ac in the human entorhinal cortex yet undertaken.</s>
+          <s>H3K27ac peaks were called from the combined set of high quality mapped reads across all samples using MACS2 <ref target="#b13" type="bibr">[14]</ref> , and filtered to exclude those located on sex chromosomes, in unmapped contigs and mitochondrial DNA.</s>
+          <s id="dataset-1" type="Tabular Data">In total, we generated a final dataset of 178,454 autosomal entorhinal cortex H3K27ac peaks which were used in the analyses presented here.</s>
+        </p>
+        <p>
+          <s>To test for enrichment of GWAS variants in H3K27ac peaks from adult cortex, we performed partitioned heritability analysis using the LD score regression software (https://github.com/bulik/ldsc)</s>
+          <s>
+            <ref target="#b11" type="bibr">[12,</ref>
+            <ref target="#b14" type="bibr">15]</ref> .</s>
+          <s>Briefly, this method assumes that the test statistic for a given genetic variant also captures the effect of all other variants in LD with it; the number of additional variants tagged by the particular variant under consideration is measured by its 'LD score'.</s>
+          <s>Genuine polygenic effects are present, therefore, if the test statistics positively correlate with the LD scores.</s>
+          <s>The method can be applied either across the genome to derive an estimate of total heritability or to subsets of genetic variants annotated to genomic features, so called partitioned heritability.</s>
+          <s>Enrichment is determined if there is a stronger, positive correlation between the test statistics and LD scores for variants within a category relative to other categories.</s>
+          <s>LD scores were generated based on custom annotations derived from our H3K27ac peaks and 1000 genomes reference data (downloaded alongside the software from https://data.broadinstitute.org/alkesgroup/LDSCORE/). The baseline model proposed by Finucane et al. <ref target="#b14" type="bibr">[15]</ref> based on the union of non-specific functional annotation categories including coding, UTR, promoters, introns, histone marks (H3K4me1, H3K4me3, H3K9ac5, H3K27ac), DNase I hypersensitivity site (DHS) regions, chromHMM/Segway predictions of underlying chromatin states derived from ENCODE annotations, regions that are conserved in mammals, super-enhancers and active enhancers -was taken as the background for enrichment testing.</s>
+          <s>Genetic variants were annotated to two non-overlapping categories defined as follows: 1) entorhinal cortex H3K27ac peaks and 2) any other functional annotation category included in the baseline model.</s>
+          <s cert="0.6418874859809875" id="dataset-1" type="Dataset">Heritability statistics for each annotation category were then calculated using publicly available GWAS results for seven psychiatric and neurodegenerative traits (ADHD <ref target="#b15" type="bibr">[16]</ref> , Alzheimer's disease <ref target="#b0" type="bibr">[1]</ref> , autism <ref target="#b16" type="bibr">[17]</ref> , amyotrophic lateral sclerosis (ALS) <ref target="#b1" type="bibr">[2]</ref> , major depressive disorder <ref target="#b6" type="bibr">[7]</ref> , bipolar disorder <ref target="#b4" type="bibr">[5]</ref> and schizophrenia <ref target="#b3" type="bibr">[4,</ref>
+            <ref target="#b5" type="bibr">6,</ref>
+            <ref target="#b17" type="bibr">18]</ref> ) and 14 non-brain phenotypes (birth length <ref target="#b18" type="bibr">[19]</ref> , body mass index (BMI) <ref target="#b19" type="bibr">[20,</ref>
+            <ref target="#b20" type="bibr">21]</ref> , height <ref target="#b20" type="bibr">[21,</ref>
+            <ref target="#b21" type="bibr">22]</ref> , cigarettes per day <ref target="#b22" type="bibr">[23]</ref> , ever smoked <ref target="#b22" type="bibr">[23]</ref> , coronary artery disease <ref target="#b23" type="bibr">[24]</ref> , Crohn's disease <ref target="#b24" type="bibr">[25]</ref> , inflammatory bowel disease <ref target="#b24" type="bibr">[25]</ref> , ulcerative colitis <ref target="#b24" type="bibr">[25]</ref> , high density lipoprotein (HDL) <ref target="#b25" type="bibr">[26]</ref> , low density lipoprotein (LDL) <ref target="#b25" type="bibr">[26]</ref> , total cholesterol <ref target="#b25" type="bibr">[26]</ref> , triglycerides <ref target="#b25" type="bibr">[26]</ref> and type 2 diabetes <ref target="#b26" type="bibr">[27]</ref> ) (See Additional file 1: <ref target="#tab_0" type="table">Table S1</ref> ).</s>
+          <s>Enrichment statistics for each GWAS trait were calculated as the proportion of heritability attributed to that category divided by the proportion of SNPs annotated to that category, with 95% confidence intervals used to identify significant enrichment statistics.</s>
+          <s>These represent the enrichment relative to the set of more broadly defined functional elements derived from cross-tissue datasets included in the baseline model.</s>
+        </p>
+        <p>
+          <s cert="0.4407605528831482" id="dataset-2" type="Genetic Data">We first estimated the total heritability of each trait using variants annotated to any functional genomic annotation category to confirm that the included GWAS had sufficient power to quantify heritability with enough precision to permit downstream enrichment analyses.</s>
+          <s>Across the seven brain traits, the total heritability estimates ranged from 0.0535 for ALS (95% confidence interval (0.0321, 0.0749)) to 0.237 for schizophrenia (95% confidence interval (0.214, 0.260)) <ref type="figure">(Fig. 1a)</ref> .</s>
+          <s>Next, we estimated the partitioned heritability attributable to variants located within entorhinal cortex H3K27ac peaks.</s>
+          <s>This ranged from 0.0302 for Alzheimer's disease (95% confidence interval (0.013, 0.0478)) to 0.146 for schizophrenia (95% confidence interval (0.121, 0.170)); all seven brain traits had significantly non-zero estimates of heritability within H3K27ac peaks <ref target="#tab_0" type="table">(Table 1)</ref> .</s>
+          <s>Finally, we compared partitioned heritability estimates between entorhinal cortex H3K27ac peaks and more broadly defined functionally active regions of the genome identified across multiple cell types.</s>
+          <s>For all seven brain traits, heritability was enriched within the entorhinal cortex H3K27ac peaks <ref type="figure">(Fig. 1b)</ref> .</s>
+          <s>The strongest enrichment was for ALS (enrichment = 2.20; 95% confidence interval (2.12, 2.27)), followed by autism (enrichment = 2.11; 95% confidence interval (2.05, 2.16)) and major depressive disorder (enrichment = 2.04; 95% confidence interval (1.92, 2.16)); the lowest enrichment was for Alzheimer's disease (enrichment = 1.10; 95% confidence interval (1.05, 1.15).</s>
+          <s>Enrichments for all seven brain traits remained significant when correcting for the number of independent tests performed (Additional file 2: <ref type="table">Table S2</ref> ).</s>
+          <s>We next compared these results to those for the 14 non-brain phenotypes; although most were found to have non-zero heritability estimates for variants located within entorhinal cortex H3K27ac peaks, these were generally not enriched relative to functional elements defined across multiple tissue types.</s>
+          <s>The exceptions were for body mass index (BMI) (enrichment = 1.16; 95% confidence interval (1.13, 1.19)), ever smoked (enrichment = 2.07; 95% confidence interval 2.04, 2.10), high density lipoprotein (HDL) (enrichment = 1.53; 95% confidence interval (1.45, 1.62)) and triglycerides (enrichment = 1.33; 95% confidence interval = <ref type="figure">(1.24, 1.42)</ref> ).</s>
+          <s>These results are interesting given that both BMI and smoking are known to have a neurobiological component, and it is plausible that genetic variation associated with these traits may have mechanistic effects in the cortex.</s>
+        </p>
+        <p>
+          <s>In summary, we report an enrichment of heritability within active regions of regulatory and enhancer function in the adult entorhinal cortex for seven brain disorders.</s>
+          <s>This augments an existing body of evidence that genetic variants identified in GWAS are involved in gene regulation <ref target="#b9" type="bibr">[10]</ref> .</s>
+          <s>Furthermore, it uses regulatory domains defined in the relevant tissue and demonstrates that these regions are more informative than functional elements defined across a panel of tissues and cell types, highlighting the importance of generating cell-type and tissue-specific epigenomic annotation datasets.</s>
+          <s>Although our data represents the largest entorhinal cortex H3K27ac dataset generated to date, we were restricted to performing a global enrichment analysis.</s>
+          <s>Future analyses in larger numbers of samples should aim to undertake a genetic analysis of each peak and align these results with GWAS results in order to identify the A B <ref type="figure">Fig. 1</ref> Enrichment of heritability within entorhinal cortex H3H27ac peaks.</s>
+          <s>a Bar plot of total heritability estimates calculated across genetic variants located within any functional element.</s>
+          <s>b Bar plot of cortical H3K27ac enrichment statistics.</s>
+          <s>Enrichment was calculated as the proportion of heritability divided by the proportion of variants within autosomal H3K27ac peaks in the entorhinal cortex, relative to values for the set of more broadly defined functional elements derived from cross-tissue datasets.</s>
+          <s>Error bars represent 95% confidence intervals; dashed horizontal lines indicate null values Heritability and enrichment statistics from partitioned heritability analysis performed using the LD score regression software for A) brain traits and B) non-brain traits.</s>
+          <s>EC = entorhinal cortex specific peaks, and ultimately genes, associated with genetic variants identified in genetic studies of brain traits.</s>
+        </p>
+        <p>
+          <s>There are a number of limitations to our study.</s>
+          <s>First, although one of the strengths of our study is the use of cortical H3K27ac data, our ChIP-seq analyses were performed on bulk tissue and future studies should aim to generate epigenomic annotation data for specific neural cell-types <ref target="#b27" type="bibr">[28]</ref> .</s>
+          <s>Second, we have only considered one specific epigenetic mark, H3K27ac; future studies exploring a more comprehensive set of marks may yield insights into the exact mechanism by which genetic variants influence gene regulation.</s>
+          <s>Third, the H3K27ac data were generated in elderly adult post-mortem brain, which may be less relevant for neurodevelopmental brain phenotypes such as autism, ADHD and schizophrenia.</s>
+          <s>In conclusion, our results support the hypothesis that genetic variants associated with brain disorders exert their effect through gene regulation in the brain.</s>
+          <s>Future studies should aim to identify the specific regulatory elements affected by genetic variants associated with brain disorders and the genes that are transcriptionally altered by these differences.</s>
+        </p>
+      </div>
+      <div>
+        <head>Additional files</head>
+        <p>
+          <s>Additional file 1: <ref target="#tab_0" type="table">Table S1</ref> .</s>
+          <s>Details of the GWAS datasets used in this study.</s>
+          <s>(PDF 46 kb) Additional file 2: <ref type="table">Table S2</ref> .</s>
+          <s>Enrichments for all seven brain traits remained significant when correcting for the number of independent tests performed.</s>
+          <s>(PDF 30 kb)</s>
+        </p>
+        <p>
+          <s>Abbreviations ADHD: Attention deficit hyperactivity disorder; ALS: Amyotrophic lateral sclerosis; BMI: Body mass index; ChIP: Chromatin immunoprecipitation; DHS : DNase I hypersensitivity site; GWAS: Genome-wide association study; H3K27ac: lysine H3K27 acetylation; HDL: High density lipoprotein; LD: Linkage disequilibrium; LDL: Low density lipoprotein</s>
+        </p>
+      </div>
+      <figure type="table" validated="true" xml:id="tab_0">
+        <head>Table 1</head>
+        <label>1</label>
+        <figDesc>Enrichment of heritability within entorhinal cortex H3K27ac peaks</figDesc>
+        <table>Trait (date GWAS published) 
+
+Total observed heritability 
+
+Partitioned heritability for EC H3K27ac peaks 
+
+Enrichment 
+
+Estimate SE 
+95% CI Lower 95% CI Upper Estimate SE 
+
+95% CI Lower 95% CI Upper Estimate SE 
+
+95% CI Lower 95% CI Upper 
+
+A 
+ADHD (2017) 
+
+0.073 
+0.010 0.054 
+
+0.092 
+
+0.039 
+0.009 0.021 
+
+0.057 
+
+1.534 
+0.026 1.483 
+
+1.585 
+
+ALS (2016) 
+
+0.054 
+0.011 0.032 
+
+0.075 
+
+0.041 
+0.013 0.015 
+
+0.067 
+
+2.199 
+0.038 2.125 
+
+2.274 
+
+Alzheimer's disease (2013) 
+
+0.079 
+0.011 0.058 
+
+0.099 
+
+0.030 
+0.009 0.013 
+
+0.048 
+
+1.097 
+0.026 1.047 
+
+1.148 
+
+Autism (2017) 
+
+0.072 
+0.012 0.049 
+
+0.095 
+
+0.053 
+0.010 0.034 
+
+0.072 
+
+2.108 
+0.027 2.055 
+
+2.162 
+
+Bipolar disorder (2012) 
+
+0.071 
+0.007 0.057 
+
+0.085 
+
+0.046 
+0.008 0.031 
+
+0.060 
+
+1.836 
+0.022 1.793 
+
+1.879 
+
+MDD (2012) 
+
+0.067 
+0.020 0.028 
+
+0.107 
+
+0.048 
+0.021 0.006 
+
+0.090 
+
+2.036 
+0.061 1.916 
+
+2.155 
+
+Schizophrenia (2012) 
+
+0.120 
+0.011 0.098 
+
+0.142 
+
+0.064 
+0.012 0.041 
+
+0.088 
+
+1.533 
+0.034 1.466 
+
+1.600 
+
+Schizophrenia (2014) 
+
+0.222 
+0.014 0.196 
+
+0.249 
+
+0.146 
+0.013 0.121 
+
+0.170 
+
+1.879 
+0.036 1.809 
+
+1.950 
+
+Schizophrenia (2018) 
+
+0.237 
+0.012 0.214 
+
+0.260 
+
+0.145 
+0.012 0.122 
+
+0.168 
+
+1.758 
+0.034 1.692 
+
+1.824 
+
+B 
+Birth length (2015) 
+
+0.151 
+0.018 0.116 
+
+0.186 
+
+0.050 
+0.017 0.016 
+
+0.084 
+
+0.947 
+0.050 0.850 
+
+1.044 
+
+BMI (2015) 
+
+0.072 
+0.004 0.064 
+
+0.079 
+
+0.034 
+0.004 0.027 
+
+0.042 
+
+1.378 
+0.011 1.356 
+
+1.401 
+
+BMI (2018) 
+
+0.124 
+0.006 0.112 
+
+0.136 
+
+0.050 
+0.005 0.040 
+
+0.060 
+
+1.162 
+0.015 1.132 
+
+1.192 
+
+Cigarettes per day (2010) 
+
+0.033 
+0.011 0.012 
+
+0.054 
+
+0.010 
+
+0.009 
+
+−0.008 
+
+0.028 
+
+0.876 
+0.026 0.825 
+
+0.928 
+
+Coronary artery disease (2014) 
+
+0.064 
+0.006 0.052 
+
+0.075 
+
+0.019 
+0.006 0.008 
+
+0.030 
+
+0.855 
+0.016 0.823 
+
+0.887 
+
+Crohn's disease (2015) 
+
+0.475 
+0.039 0.399 
+
+0.551 
+
+0.129 
+0.038 0.055 
+
+0.202 
+
+0.776 
+0.108 0.564 
+
+0.987 
+
+Ever smoked (2010) 
+
+0.029 
+0.005 0.020 
+
+0.038 
+
+0.021 
+0.006 0.010 
+
+0.032 
+
+2.067 
+0.016 2.035 
+
+2.099 
+
+HDL (2013) 
+
+0.180 
+0.018 0.146 
+
+0.214 
+
+0.096 
+0.015 0.066 
+
+0.126 
+
+1.533 
+0.044 1.447 
+
+1.619 
+
+Height (2014) 
+
+0.299 
+0.013 0.273 
+
+0.325 
+
+0.079 
+0.010 0.058 
+
+0.099 
+
+0.754 
+0.030 0.696 
+
+0.813 
+
+Height (2018) 
+
+0.452 
+0.020 0.412 
+
+0.492 
+
+0.110 
+0.017 0.077 
+
+0.144 
+
+0.701 
+0.049 0.604 
+
+0.797 
+
+Inflammatory bowel disease (2015) 0.322 
+
+0.027 0.269 
+
+0.374 
+
+0.063 
+0.021 0.023 
+
+0.103 
+
+0.564 
+0.059 0.449 
+
+0.679 
+
+LDL (2013) 
+
+0.167 
+0.020 0.128 
+
+0.206 
+
+0.057 
+0.016 0.026 
+
+0.087 
+
+0.971 
+0.044 0.884 
+
+1.058 
+
+Total cholestrol (2013) 
+
+0.197 
+0.021 0.155 
+
+0.239 
+
+0.072 
+0.018 0.036 
+
+0.108 
+
+1.053 
+0.053 0.950 
+
+1.157 
+
+Triglycerides (2013) 
+
+0.163 
+0.019 0.126 
+
+0.200 
+
+0.076 
+0.015 0.045 
+
+0.106 
+
+1.329 
+0.044 1.242 
+
+1.416 
+
+Type 2 diabetes (2012) 
+
+0.066 
+0.008 0.051 
+
+0.081 
+
+0.009 
+
+0.007 
+
+−0.006 
+
+0.023 
+
+0.372 
+0.021 0.330 
+
+0.413 
+
+Ulcerative colitis (2015) 
+
+0.267 
+0.029 0.209 
+
+0.324 
+
+0.038 
+
+0.020 
+
+−0.001 
+
+0.076 
+
+0.406 
+0.056 0.296 
+
+0.516 
+
+</table>
+      </figure>
+    </body>
+    <back>
+      <div type="acknowledgement">
+        <div>
+          <head>Acknowledgements</head>
+          <p>
+            <s>Not applicable.</s>
+          </p>
+        </div>
+        <div>
+          <head>Availability of data and materials</head>
+          <p>
+            <s>H3K27ac ChIP-seq data has been deposited in GEO under accession number GSE102538.</s>
+          </p>
+        </div>
+      </div>
+      <div type="annex">
+        <div>
+          <p>
+            <s>Authors' contributions EH and JM conceived the study.</s>
+            <s>EH undertook primary analyses.</s>
+            <s>SJM, JM and LS generated the H3K27ac ChIP-seq dataset.</s>
+            <s>EH and JM drafted the manuscript.</s>
+            <s>JM obtained funding.</s>
+            <s>All co-authors read and approved the final submission Ethics approval and consent to participate Subjects were approached in life for written consent for brain banking, and all tissue donations were collected and stored following legal and ethical guidelines (NHS reference number 08/MRE09/38; the HTA license number for the LBBND brain bank is 12,293).</s>
+          </p>
+        </div>
+        <div>
+          <head>Consent for publication</head>
+          <p>
+            <s>Not applicable.</s>
+          </p>
+        </div>
+        <div>
+          <head>Competing interests</head>
+          <p>
+            <s>The authors declare that they have no competing interests.</s>
+          </p>
+        </div>
+      </div>
+      <div type="references">
+        <listBibl>
+          <biblStruct xml:id="b0">
+            <analytic>
+              <title level="a" type="main">Meta-analysis of 74,046 individuals identifies 11 new susceptibility loci for Alzheimer's disease</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Lambert</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Ibrahim-Verbaas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Harold</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Naj</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Sims</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Bellenguez</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">45</biblScope>
+                <biblScope unit="issue">12</biblScope>
+                <biblScope from="1452" to="1460" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b1">
+            <analytic>
+              <title level="a" type="main">Genome-wide association analyses identify new risk variants and the genetic architecture of amyotrophic lateral sclerosis</title>
+              <author>
+                <persName>
+                  <forename type="first">W</forename>
+                  <surname>Van Rheenen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Shatunov</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Dekker</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Mclaughlin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Diekstra</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">L</forename>
+                  <surname>Pulit</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">48</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope from="1043" to="1051" unit="page"/>
+                <date type="published" when="2016"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b2">
+            <analytic>
+              <title level="a" type="main">Largescale meta-analysis of genome-wide association data identifies six new risk loci for Parkinson's disease</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Nalls</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Pankratz</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Lill</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Do</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">G</forename>
+                  <surname>Hernandez</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Saad</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">46</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope from="989" to="93" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b3">
+            <analytic>
+              <title level="a" type="main">Biological insights from 108 schizophrenia-associated genetic loci</title>
+              <author>
+                <persName>
+                  <forename type="first">Pgc</forename>
+                  <surname>Schizophrenia Working Group Of The</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ripke</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Neale</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Corvin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Walters</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Farh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">511</biblScope>
+                <biblScope unit="issue">7510</biblScope>
+                <biblScope unit="page">421</biblScope>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b4">
+            <analytic>
+              <title level="a" type="main">Large-scale genome-wide association analysis of bipolar disorder identifies a new susceptibility locus near ODZ4</title>
+            </analytic>
+            <monogr>
+              <title level="m">Psychiatric GWAS Consortium Bipolar Disorder Working Group</title>
+              <imprint>
+                <date type="published" when="2011"/>
+                <biblScope unit="volume">43</biblScope>
+                <biblScope from="977" to="83" unit="page"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b5">
+            <analytic>
+              <title level="a" type="main">Common schizophrenia alleles are enriched in mutation-intolerant genes and in regions under strong background selection</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Pardiñas</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Holmans</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Pocklington</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Escott-Price</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ripke</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Carrera</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">50</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="381" to="390" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b6">
+            <analytic>
+              <title level="a" type="main">Genome-wide association analyses identify 44 risk variants and refine the genetic architecture of major depression</title>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Wray</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ripke</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mattheisen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Trzaskowski</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Byrne</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Abdellaoui</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">50</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="668" to="81" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b7">
+            <analytic>
+              <title level="a" type="main">Linking disease associations with regulatory information in the human genome</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Schaub</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Boyle</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Kundaje</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Batzoglou</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Snyder</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genome Res</title>
+              <imprint>
+                <biblScope unit="volume">22</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope from="1748" to="59" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b8">
+            <analytic>
+              <title level="a" type="main">Mapping and analysis of chromatin state dynamics in nine human cell types</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Ernst</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Kheradpour</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Mikkelsen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Shoresh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Ward</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">B</forename>
+                  <surname>Epstein</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">473</biblScope>
+                <biblScope unit="issue">7345</biblScope>
+                <biblScope from="43" to="52" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b9">
+            <analytic>
+              <title level="a" type="main">Systematic localization of common disease-associated variation in regulatory DNA</title>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">T</forename>
+                  <surname>Maurano</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Humbert</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Rynes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Thurman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Haugen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Wang</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Science</title>
+              <imprint>
+                <biblScope unit="volume">337</biblScope>
+                <biblScope unit="issue">6099</biblScope>
+                <biblScope from="1190" to="1195" unit="page"/>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b10">
+            <analytic>
+              <title level="a" type="main">A histone acetylome-wide association study of Alzheimer's disease identifies disease-associated H3K27ac differences in the entorhinal cortex</title>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Marzi</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Ribarska</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Adam</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Hannon</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Eilis</forename>
+                  <surname>Poschmann</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Jeremie</forename>
+                  <surname>Moore</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Karen</forename>
+                  <surname>Troakes</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Claire</forename>
+                  <surname>Al-Sarraj</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Safa</forename>
+                  <surname>Newman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Stuart</forename>
+                  <surname>Beck</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Stephan</forename>
+                  <surname>Lunnon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Neurosci</title>
+              <imprint>
+                <biblScope unit="volume">21</biblScope>
+                <biblScope unit="issue">11</biblScope>
+                <biblScope from="1618" to="1645" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b11">
+            <analytic>
+              <title level="a" type="main">LD score regression distinguishes confounding from polygenicity in genomewide association studies</title>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Bulik-Sullivan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Loh</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Finucane</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ripke</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">N</forename>
+                  <surname>Patterson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">47</biblScope>
+                <biblScope unit="issue">3</biblScope>
+                <biblScope from="291" to="296" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b12">
+            <analytic>
+              <title level="a" type="main">Entorhinal cortex and consolidated memory</title>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Takehara-Nishiuchi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Neurosci Res</title>
+              <imprint>
+                <biblScope unit="volume">84</biblScope>
+                <biblScope from="27" to="33" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b13">
+            <analytic>
+              <title level="a" type="main">Model-based analysis of ChIP-Seq (MACS)</title>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Zhang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">A</forename>
+                  <surname>Meyer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Eeckhoute</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <forename type="middle">S</forename>
+                  <surname>Johnson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Bernstein</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Genome Biol</title>
+              <imprint>
+                <biblScope unit="volume">9</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope unit="page">137</biblScope>
+                <date type="published" when="2008"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b14">
+            <analytic>
+              <title level="a" type="main">Partitioning heritability by functional annotation using genome-wide association summary statistics</title>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Finucane</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Bulik-Sullivan</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Gusev</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <surname>Trynka</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Y</forename>
+                  <surname>Reshef</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Loh</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">47</biblScope>
+                <biblScope unit="issue">11</biblScope>
+                <biblScope from="1228" to="1263" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b15">
+            <analytic>
+              <title level="a" type="main">Discovery Of The First Genome-Wide Significant Risk Loci For ADHD. bioRxiv</title>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Demontis</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">K</forename>
+                  <surname>Walters</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Martin</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Mattheisen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">D</forename>
+                  <surname>Als</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Agerbo</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">51</biblScope>
+                <biblScope unit="issue">1</biblScope>
+                <biblScope from="63" to="75" unit="page"/>
+                <date type="published" when="2019"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b16">
+            <monogr>
+              <title level="m" type="main">Common risk variants identified in autism spectrum disorder</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Grove</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ripke</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Damm</forename>
+                  <surname>Als</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Mattheisen</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Walters</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Won</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                </persName>
+              </author>
+              <ptr target="https://www.biorxiv.org/content/early/2017/11/27/224774"/>
+              <imprint/>
+            </monogr>
+            <note type="report_type">Preprint at</note>
+          </biblStruct>
+          <biblStruct xml:id="b17">
+            <analytic>
+              <title level="a" type="main">Genome-wide association study identifies five new schizophrenia loci</title>
+              <author>
+                <persName>
+                  <forename type="first">Pgc</forename>
+                  <surname>Schizophrenia Working Group Of The</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Ripke</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Sanders</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <surname>Kendler</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">D</forename>
+                  <surname>Levinson</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">P</forename>
+                  <surname>Sklar</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">43</biblScope>
+                <biblScope unit="issue">10</biblScope>
+                <biblScope from="969" to="77" unit="page"/>
+                <date type="published" when="2011"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b18">
+            <analytic>
+              <title level="a" type="main">A novel common variant in DCST2 is associated with length in early life and height in adulthood</title>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Van Der Valk</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Kreiner-Møller</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Kooijman</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Guxens</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <surname>Stergiakouli</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Sääf</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Hum Mol Genet</title>
+              <imprint>
+                <biblScope unit="volume">24</biblScope>
+                <biblScope unit="issue">4</biblScope>
+                <biblScope from="1155" to="68" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b19">
+            <analytic>
+              <title level="a" type="main">Genetic studies of body mass index yield new insights for obesity biology</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Locke</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <surname>Kahali</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">I</forename>
+                  <surname>Berndt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Justice</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Pers</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">F</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Day</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nature</title>
+              <imprint>
+                <biblScope unit="volume">518</biblScope>
+                <biblScope unit="issue">7538</biblScope>
+                <biblScope from="197" to="206" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b20">
+            <analytic>
+              <title level="a" type="main">Meta-analysis of genome-wide association studies for height and body mass index in~700,000 individuals of European ancestry</title>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <surname>Yengo</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Sidorenko</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">K</forename>
+                  <forename type="middle">E</forename>
+                  <surname>Kemper</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">Z</forename>
+                  <surname>Zheng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Wood</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <forename type="middle">N</forename>
+                  <surname>Weedon</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Hum Mol Genet</title>
+              <imprint>
+                <biblScope unit="volume">27</biblScope>
+                <biblScope unit="issue">20</biblScope>
+                <biblScope from="3641" to="3650" unit="page"/>
+                <date type="published" when="2018"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b21">
+            <analytic>
+              <title level="a" type="main">Defining the role of common variation in the genomic and biological architecture of adult human height</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Wood</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Esko</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Yang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Vedantam</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Pers</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Gustafsson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">46</biblScope>
+                <biblScope unit="issue">11</biblScope>
+                <biblScope from="1173" to="86" unit="page"/>
+                <date type="published" when="2014"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b22">
+            <analytic>
+              <title level="a" type="main">Genome-wide meta-analyses identify multiple loci associated with smoking behavior</title>
+              <author>
+                <persName>
+                  <forename type="first">Genetics</forename>
+                  <surname>Tobacco</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <surname>Consortium</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">42</biblScope>
+                <biblScope unit="issue">5</biblScope>
+                <biblScope from="441" to="448" unit="page"/>
+                <date type="published" when="2010"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b23">
+            <analytic>
+              <title level="a" type="main">A comprehensive 1,000 genomes-based genome-wide association meta-analysis of coronary artery disease</title>
+              <author>
+                <persName>
+                  <forename type="first">Cardiogramplusc4d</forename>
+                  <surname>Consortium</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">M</forename>
+                  <surname>Nikpay</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Goel</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <forename type="middle">H</forename>
+                  <surname>Won</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">L</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Hall</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <surname>Willenborg</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">47</biblScope>
+                <biblScope unit="issue">10</biblScope>
+                <biblScope from="1121" to="1151" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b24">
+            <analytic>
+              <title level="a" type="main">Association analyses identify 38 susceptibility loci for inflammatory bowel disease and highlight shared genetic risk across populations</title>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <forename type="middle">Z</forename>
+                  <surname>Liu</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Van Sommeren</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">H</forename>
+                  <surname>Huang</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <forename type="middle">C</forename>
+                  <surname>Ng</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">R</forename>
+                  <surname>Alberts</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <surname>Takahashi</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">47</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope from="979" to="86" unit="page"/>
+                <date type="published" when="2015"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b25">
+            <analytic>
+              <title level="a" type="main">Discovery and refinement of loci associated with lipid levels</title>
+              <author>
+                <persName>
+                  <forename type="first">C</forename>
+                  <forename type="middle">J</forename>
+                  <surname>Willer</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">E</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Schmidt</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Sengupta</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">G</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Peloso</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">S</forename>
+                  <surname>Gustafsson</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Global Lipids Genetics Consortium</title>
+              <imprint>
+                <biblScope unit="volume">45</biblScope>
+                <biblScope unit="issue">11</biblScope>
+                <biblScope from="1274" to="83" unit="page"/>
+                <date type="published" when="2013"/>
+              </imprint>
+            </monogr>
+            <note>Nat Genet.</note>
+          </biblStruct>
+          <biblStruct xml:id="b26">
+            <analytic>
+              <title level="a" type="main">Large-scale association analysis provides insights into the genetic architecture and pathophysiology of type 2 diabetes</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">P</forename>
+                  <surname>Morris</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">B</forename>
+                  <forename type="middle">F</forename>
+                  <surname>Voight</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <forename type="middle">M</forename>
+                  <surname>Teslovich</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">T</forename>
+                  <surname>Ferreira</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">V</forename>
+                  <surname>Segre</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">V</forename>
+                  <surname>Steinthorsdottir</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Nat Genet</title>
+              <imprint>
+                <biblScope unit="volume">44</biblScope>
+                <biblScope unit="issue">9</biblScope>
+                <biblScope unit="page">981</biblScope>
+                <date type="published" when="2012"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+          <biblStruct xml:id="b27">
+            <analytic>
+              <title level="a" type="main">Profiling regulatory variation in the brain: methods for exploring the neuronal epigenome</title>
+              <author>
+                <persName>
+                  <forename type="first">A</forename>
+                  <forename type="middle">R</forename>
+                  <surname>Jeffries</surname>
+                </persName>
+              </author>
+              <author>
+                <persName>
+                  <forename type="first">J</forename>
+                  <surname>Mill</surname>
+                </persName>
+              </author>
+            </analytic>
+            <monogr>
+              <title level="j">Biol Psychiatry</title>
+              <imprint>
+                <biblScope unit="volume">81</biblScope>
+                <biblScope unit="issue">2</biblScope>
+                <biblScope from="90" to="91" unit="page"/>
+                <date type="published" when="2017"/>
+              </imprint>
+            </monogr>
+          </biblStruct>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>
