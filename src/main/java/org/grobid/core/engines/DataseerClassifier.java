@@ -562,8 +562,6 @@ public class DataseerClassifier {
         }
     }
 
-    private static String specialHeader = "materials and methods";
-
     private void enrich(org.w3c.dom.Document doc, Node node) {
         ObjectMapper mapper = new ObjectMapper();
         Map<String, JsonNode> mapSentenceJsonResult = new TreeMap<String, JsonNode>();
