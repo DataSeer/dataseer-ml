@@ -1,19 +1,19 @@
 {
-    "model_name": "dataseer",
-    "model_type": "gru",
+    "fold_number": 1,
+    "batch_size": 256,
     "embeddings_name": "word2vec",
-    "use_ELMo": false,
-    "use_BERT": false,
-    "char_embedding_size": 25,
-    "word_embedding_size": 300,
-    "dropout": 0.5,
-    "recurrent_dropout": 0.25,
     "maxlen": 300,
+    "recurrent_dropout": 0.25,
+    "dropout": 0.5,
+    "char_embedding_size": 25,
+    "use_ELMo": false,
     "use_char_feature": false,
+    "use_BERT": false,
+    "model_type": "gru",
     "list_classes": [
         "dataset",
         "no_dataset"
     ],
-    "fold_number": 1,
-    "batch_size": 256
+    "word_embedding_size": 300,
+    "model_name": "dataseer-binary"
 }

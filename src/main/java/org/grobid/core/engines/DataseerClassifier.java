@@ -611,6 +611,7 @@ public class DataseerClassifier {
                     String mainDataset = null;
                     try {
                         String localJson = this.classify(localSentences);
+                        //System.out.println(localJson);
 
                         List<Boolean> datasetSentences = new ArrayList<Boolean>();
                         if (localJson != null && localJson.length() > 0) {
