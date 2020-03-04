@@ -227,6 +227,8 @@ def build_prior_class_distribution(distribution, trainpath, errorpath="error.txt
                             if the_leafclass in distribution[the_class][the_subclass]:
                                 if 'count' in distribution[the_class][the_subclass][the_leafclass]:
                                     distribution[the_class][the_subclass][the_leafclass]['count'] = distribution[the_class][the_subclass][the_leafclass]['count'] + 1
+                                    distribution[the_class][the_subclass]['count'] = distribution[the_class][the_subclass]['count'] + 1
+                                    distribution[the_class]['count'] = distribution[the_class]['count'] + 1
                             else:
                                 error_class = the_class+":"+the_subclass+":"+the_leafclass
                                 if error_class not in invalid_datatypes:
@@ -234,6 +236,7 @@ def build_prior_class_distribution(distribution, trainpath, errorpath="error.txt
                         else:
                             if 'count' in distribution[the_class][the_subclass]:
                                 distribution[the_class][the_subclass]['count'] = distribution[the_class][the_subclass]['count'] + 1
+                                distribution[the_class]['count'] = distribution[the_class]['count'] + 1
                     else:
                         error_class = the_class+":"+the_subclass
                         if error_class not in invalid_datatypes:
