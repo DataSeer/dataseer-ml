@@ -90,7 +90,8 @@ public class DataseerClassifier {
 
     private static Engine engine = null; 
 
-    private static List<String> textualElements = Arrays.asList("p"); //, "abstract", "figDesc");
+    private static List<String> textualElements = Arrays.asList("p", "figDesc");
+    //private static List<String> textualElements = Arrays.asList("p");
 
     // map of classification models (binay, first-level, etc.)
     private Map<String,DeLFTClassifierModel> models = null;
@@ -553,8 +554,19 @@ public class DataseerClassifier {
                     n.removeChild(n.getFirstChild());
 
                 // and add new ones
-                for(Node theNode : newNodes) 
-                    n.appendChild(theNode);
+
+                // if we have a figDesc, we need to inject div/p nodes for dataseer-ml support
+                if (n.getNodeName().equals("figDesc")) {
+                    Element theDiv = doc.createElementNS("http://www.tei-c.org/ns/1.0", "div");
+                    Element theP = doc.createElementNS("http://www.tei-c.org/ns/1.0", "p");
+                    for(Node theNode : newNodes) 
+                        theP.appendChild(theNode);
+                    theDiv.appendChild(theP);
+                    n.appendChild(theDiv);
+                } else {
+                    for(Node theNode : newNodes) 
+                        n.appendChild(theNode);
+                }
 
             } else if (n.getNodeType() == Node.ELEMENT_NODE) {
                 segment(doc, (Element) n);
