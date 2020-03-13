@@ -588,10 +588,10 @@ public class DataseerClassifier {
         for (int i = 0; i < sectionList.getLength(); i++) {
             Element sectionElement = (Element) sectionList.item(i);
 
-            // check that the father is not <abstract>
+            // check that the father is not <abstract> and not <figDesc>
             Node fatherNode = sectionElement.getParentNode();
             if (fatherNode != null) {
-                if ("abstract".equals(fatherNode.getNodeName()))
+                if ("abstract".equals(fatherNode.getNodeName()) || "figDesc".equals(fatherNode.getNodeName()))
                     continue;
             }
 
