@@ -675,7 +675,7 @@ public class DataseerClassifier {
             // check that the father is not <abstract>
             Node fatherNode = sectionElement.getParentNode();
             if (fatherNode != null) {
-                if ("abstract".equals(fatherNode.getNodeName()))
+                if ("abstract".equals(fatherNode.getNodeName()) || "figDesc".equals(fatherNode.getNodeName()))
                     continue;
             }
 
