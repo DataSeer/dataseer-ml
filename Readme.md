@@ -215,7 +215,18 @@ SciBERT
     no_dataset        0.8975        0.8743        0.8857           851
 ```
 
-* first level-taxonomy classification: given a sentence we evaluate if it introduces a high-level data type or no dataset. The first level dataset taxonomy contains a total of 29 data types which corresponds to MeSH classes, see the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php). In the following evaluation report, we keep zero prediction class for information. No prediction happens when there are too few examples in the training data for this data type, which is the case for around 2/3 of the data types. 
+Balancing more realistically positive and negative in the training and evaluation set (approx. 30% positive, 70% negative):
+
+```
+SciBERT 
+-------
+Evaluation on 3574 instances:
+                   precision        recall       f-score       support
+       dataset        0.8844        0.9428        0.9127          1136
+    no_dataset        0.9725        0.9426        0.9573          2438
+```
+
+* first level-taxonomy classification: given a sentence we evaluate if it introduces a high-level data type or no dataset. The first level dataset taxonomy contains a total of 29 data types which corresponds to MeSH classes, see the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php). In the following evaluation report, we keep zero prediction class for information. No prediction happens when there are too few examples in the training data for this data type, which is the case for around 2/3 of the data types. Best results are obtained with SciBERT, see the lower part.
 
 ```
 BiGRU
@@ -289,40 +300,35 @@ X-Ray fluoresc        0.0000        0.0000        0.0000             0
 SciBERT
 -------
                    precision        recall       f-score       support
-   Angiography        0.0000        0.0000        0.0000             1
-   Calorimetry        0.0000        0.0000        0.0000             1
-Chromatography        0.6471        1.0000        0.7857            11
+   Calorimetry        0.0000        0.0000        0.0000             2
+Chromatography        0.6000        1.0000        0.7500             6
 Coulombimetry         0.0000        0.0000        0.0000             0
-       Dataset        0.4576        0.6000        0.5192            45
   Densitometry        0.0000        0.0000        0.0000             0
-Digital Drople        0.0000        0.0000        0.0000             0
-Electrocardiog        0.0000        0.0000        0.0000             3
-Electroencepha        0.0000        0.0000        0.0000             2
-Electromyograp        0.0000        0.0000        0.0000             3
-Electrooculogr        0.0000        0.0000        0.0000             1
+Electrocardiog        0.5000        0.5000        0.5000             4
+Electroencepha        0.0000        0.0000        0.0000             1
+Electromyograp        0.0000        0.0000        0.0000             1
+Electrooculogr        0.0000        0.0000        0.0000             0
 Electrophysiol        0.0000        0.0000        0.0000             0
-Electroretinog        0.0000        0.0000        0.0000             0
-Emission flame        0.0000        0.0000        0.0000             1
-Flow cytometry        0.8696        0.9524        0.9091            21
-  Genetic Data        0.5000        0.7317        0.5941            41
-         Image        0.7826        0.9474        0.8571           152
-Mass Spectrome        1.0000        0.2500        0.4000             4
-  Protein Data        0.0000        0.0000        0.0000             1
-Real-Time Poly        0.7750        0.9394        0.8493            33
-    Sound data        0.0000        0.0000        0.0000             1
-  Spectrometry        0.6567        0.9167        0.7652            48
+Electroretinog        0.0000        0.0000        0.0000             1
+Emission Flame        0.0000        0.0000        0.0000             0
+Flow Cytometry        0.9375        0.9375        0.9375            16
+  Genetic Data        0.6535        0.8354        0.7333            79
+         Image        0.7433        0.8968        0.8129           155
+Mass Spectrome        0.9048        0.9048        0.9048            21
+  Protein Data        0.0000        0.0000        0.0000             3
+    Sound Data        0.0000        0.0000        0.0000             2
+  Spectrometry        0.7021        0.8919        0.7857            37
 Spectrum Analy        0.0000        0.0000        0.0000             0
-Spirometry dat        0.0000        0.0000        0.0000             0
-  Tabular data        0.8087        0.8924        0.8485           753
-Video Recordin        0.0000        0.0000        0.0000             2
-Voltammetry da        0.0000        0.0000        0.0000             1
-X-Ray Diffract        0.0000        0.0000        0.0000             7
-X-Ray fluoresc        0.0000        0.0000        0.0000             0
-no_dataset            0.9588        0.7855        0.8636           830
+Systematic Rev        0.0000        0.0000        0.0000             2
+  Tabular Data        0.8524        0.8620        0.8571           797
+Video Recordin        0.0000        0.0000        0.0000             5
+Voltammetry Da        0.0000        0.0000        0.0000             0
+X-Ray Diffract        0.0000        0.0000        0.0000             4
+    no_dataset        0.9685        0.9463        0.9573          2438
 ```
 
 
-* second level taxonomy: for the first leval data types that can be predicted by the first level classifier, we build a serie of additional classifier to predict a second level data type, assuming a cascaded approach. See the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php) for more details about the data types.
+* second level taxonomy: for the first leval data types that can be predicted by the first level classifier, we build a serie of additional classifier to predict a second level data type, assuming a cascaded approach. See the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php) for more details about the data types. Best results are obtained with SciBERT too, see lower part.
 
 ```
 BiGRU
@@ -332,13 +338,6 @@ Evaluation Chromatography subtypes
 Evaluation on 12 instances:
                    precision        recall       f-score       support
 High Pressure Liq. 0.5833           1.0000        0.7368             7
-
-
-Evaluation Dataset subtypes
-Evaluation on 34 instances:
-                   precision        recall       f-score       support
-Existing datas        0.9032        0.9655        0.9333            29
-Systematic Rev        0.6667        0.4000        0.5000             5
 
 
 Evaluation Genetic Data subtypes
@@ -372,9 +371,8 @@ Evaluation on 762 instances:
            nan        0.8148        0.8894        0.8505           470
          Assay        0.7288        0.6719        0.6992            64
    Fluorometry        0.9000        0.6000        0.7200            15
-Sampling Studi        0.3889        0.1944        0.2593            36
-Research Subje        0.7687        0.6975        0.7314           162
-   Immunoassay        0.8667        0.8667        0.8667            15
+  Sample Table        0.3889        0.1944        0.2593            36
+Subject Data T        0.7687        0.6975        0.7314           162
 
 
 bert-base-en
@@ -382,7 +380,7 @@ bert-base-en
 
 Evaluation Chromatography subtypes
                    precision        recall       f-score       support
-Chromatography        0.5455        1.0000        0.7059             6
+High Pressure Liq. 0.5455        1.0000        0.7059             6
 
 
 Evaluation Dataset subtypes
@@ -420,9 +418,8 @@ Evaluation Tabular data subtypes
            nan        0.8065        0.8789        0.8412           479
          Assay        0.6711        0.6711        0.6711            76
    Fluorometry        0.6129        0.8636        0.7170            22
-Sampling Studi        0.5333        0.2222        0.3137            36
-Research Subje        0.7628        0.7212        0.7414           165
-   Immunoassay        0.7500        0.1429        0.2400            21
+  Sample Table        0.5333        0.2222        0.3137            36
+Subject Data T        0.7628        0.7212        0.7414           165
 
 
 SciBERT
@@ -430,48 +427,40 @@ SciBERT
 
 Evaluation Chromatography subtypes
                    precision        recall       f-score       support
-High Pressure Liq. 0.5455           1.0000        0.7059             6
-
-
-Evaluation Dataset subtypes
-                   precision        recall       f-score       support
-Existing datas        0.9070        1.0000        0.9512            39
+High Pressure         0.6364        1.0000        0.7778             7
 
 
 Evaluation Genetic Data subtypes
                    precision        recall       f-score       support
-High-Throughpu        0.3462        1.0000        0.5143             9
-Sequence Analy        0.5833        0.4375        0.5000            16
+Real-Time Poly        0.8333        1.0000        0.9091            30
+High-Throughpu        0.9286        0.8667        0.8966            15
+Sequence Analy        0.8235        0.7778        0.8000            18
 
 
 Evaluation Image subtypes
                    precision        recall       f-score       support
-Computerized T        0.8750        0.7778        0.8235             9
-Electrophoresi        1.0000        1.0000        1.0000            30
-    Microscopy        0.9385        0.9839        0.9606            62
-Magnetic Reson        0.7857        0.9167        0.8462            12
-Ultrasonograph        0.5000        1.0000        0.6667             1
-           nan        0.7500        0.7059        0.7273            17
+X-Ray Computed        0.8182        0.6923        0.7500            13
+Electrophoresi        0.9286        1.0000        0.9630            26
+    Microscopy        0.9200        0.9718        0.9452            71
 
 
 Evaluation Mass Spectrometry subtypes
                    precision        recall       f-score       support
-Gas Chromatogr     0.5000        1.0000        0.6667             3
+Liquid Chromat        0.5455        1.0000        0.7059             6
 
 
 Evaluation Spectrometry subtypes
                    precision        recall       f-score       support
-Spectrophotome        0.6667        1.0000        0.8000            22
+Spectrophotome        0.5385        1.0000        0.7000            21
 
 
 Evaluation Tabular data subtypes
                    precision        recall       f-score       support
-           nan        0.8416        0.8539        0.8477           479
-         Assay        0.7183        0.6711        0.6939            76
-   Fluorometry        0.8636        0.8636        0.8636            22
-Sampling Studi        0.4483        0.3611        0.4000            36
-Research Subje        0.7401        0.7939        0.7661           165
-   Immunoassay        0.7368        0.6667        0.7000            21
+           nan        0.8963        0.7840        0.8364           551
+         Assay        0.6477        0.7808        0.7081            73
+   Fluorometry        0.8125        0.8667        0.8387            15
+  Sample Table        0.4211        0.4444        0.4324            36
+Subject Data T        0.6054        0.8766        0.7162           154
 ```
 
 # Additional convenient scripts
