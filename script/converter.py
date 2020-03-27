@@ -382,14 +382,14 @@ def wiki_capture(baseUrl="http://wiki.dataseer.io"):
 
 
 def build_struct_from_page(datatype, datatype_page, baseUrl="http://wiki.dataseer.io"):
-    dataTypeUrl = baseUrl + "/doku.php?id=data_type:" + datatype_page +  "&do=edit";
+    dataTypeUrl = baseUrl + "/doku.php?id=data_type:" + urllib.parse.quote(datatype_page) +  "&do=edit";
     fid = urllib.request.urlopen(dataTypeUrl)
     webpage = fid.read().decode('utf-8')
     soup = BeautifulSoup(webpage, "lxml")
     content = soup.find('textarea')
 
     if not content:
-        dataTypeUrl = baseUrl + "/doku.php?id=data_type:" + datatype_page + ":" + datatype_page + "&do=edit";
+        dataTypeUrl = baseUrl + "/doku.php?id=data_type:" + urllib.parse.quote(datatype_page) + ":" + urllib.parse.quote(datatype_page) + "&do=edit";
         fid = urllib.request.urlopen(dataTypeUrl)
         webpage = fid.read().decode('utf-8')
         soup = BeautifulSoup(webpage, "lxml")
