@@ -305,7 +305,7 @@ public class AnnotatedCorpusGeneratorCSV {
         Writer writerCSVReuse = new PrintWriter(new BufferedWriter(
             new FileWriter(csvPath + "all-reuse.csv")));
         CSVPrinter csvPrinterReuse = new CSVPrinter(writerCSVReuse, 
-            CSVFormat.DEFAULT.withHeader("doi", "text", "reuse"));
+            CSVFormat.DEFAULT.withHeader("doi", "text", "datatype"));
 
         Writer failedPDFWriter = new PrintWriter(new BufferedWriter(
             new FileWriter(documentPath + "/failed-pdf.txt")));
@@ -337,7 +337,10 @@ public class AnnotatedCorpusGeneratorCSV {
                     csvPrinterBinary.printRecord(doi, annotation.getContext(), "dataset");
                     csvPrinterBinary.flush();
 
-                    csvPrinterReuse.printRecord(doi, annotation.getContext(), annotation.getExisting());
+                    if (annotation.getExisting())
+                        csvPrinterReuse.printRecord(doi, annotation.getContext(), "reuse");
+                    else 
+                        csvPrinterReuse.printRecord(doi, annotation.getContext(), "no_reuse");
                     csvPrinterReuse.flush();
 
                     previousContext = annotation.getContext();
