@@ -420,7 +420,7 @@ public class AnnotatedCorpusGeneratorCSV {
                     if (pdfFile.exists()) {
                         // produce TEI with GROBID
                         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
-                                                .consolidateHeader(0)
+                                                .consolidateHeader(1)
                                                 .consolidateCitations(0)
                                                 .build();
                         Engine engine = GrobidFactory.getInstance().getEngine();
