@@ -50,7 +50,7 @@ public class DataseerDataTypeService {
     }
 
     private DataseerDataTypeService() {
-        File jsonFile = new File("resources/fullDataTypes.csv");
+        File jsonFile = new File("resources/DataTypes.json");
         if (!jsonFile.exists())
             jsonDataTypeResource = null;
         else {
