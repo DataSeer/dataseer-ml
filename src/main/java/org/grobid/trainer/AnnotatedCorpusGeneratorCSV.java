@@ -168,7 +168,7 @@ public class AnnotatedCorpusGeneratorCSV {
 
             try {
                 // segment into sentence
-                String segmentedTEI = dataseer.processTEI(plosPath, true);
+                String segmentedTEI = dataseer.processTEI(plosPath, true, true);
                 //segmentedTEI = avoidDomParserAttributeBug(segmentedTEI);
 
                 Builder parser = new Builder();
@@ -439,7 +439,7 @@ public class AnnotatedCorpusGeneratorCSV {
 
             try {
                 // segment into sentence
-                String segmentedTEI = dataseer.processTEI(teiPath, false);
+                String segmentedTEI = dataseer.processTEI(teiPath, true, false);
                 FileUtils.writeStringToFile(new File(teiPath.replace(".tei.xml", "-segmented.tei.xml")), segmentedTEI, UTF_8);
 
                 Builder parser = new Builder();

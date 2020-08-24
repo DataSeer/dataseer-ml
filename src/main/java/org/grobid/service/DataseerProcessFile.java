@@ -55,7 +55,7 @@ public class DataseerProcessFile {
             } 
 
             // starts conversion process
-            retVal = classifier.processTEI(originFile.getAbsolutePath(), false);
+            retVal = classifier.processTEI(originFile.getAbsolutePath(), true, false);
 
             if (!isResultOK(retVal)) {
                 response = Response.status(Response.Status.NO_CONTENT).build();

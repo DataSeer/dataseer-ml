@@ -368,7 +368,7 @@ public class DataseerClassifier {
      * Enrich a TEI document with Dataseer information
      * @return enriched TEI string
      */
-    public String processTEIString(String xmlString) throws Exception {
+    public String processTEIString(String xmlString, boolean segmentSentences) throws Exception {
         String tei = null;
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -376,7 +376,7 @@ public class DataseerClassifier {
             DocumentBuilder builder = factory.newDocumentBuilder();           
             org.w3c.dom.Document document = builder.parse(new InputSource(new StringReader(xmlString)));
             //document.getDocumentElement().normalize();
-            tei = processTEIDocument(document);
+            tei = processTEIDocument(document, segmentSentences);
         } catch(ParserConfigurationException e) {
             e.printStackTrace();
         } catch(IOException e) {
@@ -390,7 +390,7 @@ public class DataseerClassifier {
      * Enrich a TEI document with Dataseer information
      * @return enriched TEI string
      */
-    public String processTEI(String filePath, boolean avoidDomParserBug) throws Exception {
+    public String processTEI(String filePath, boolean segmentSentences, boolean avoidDomParserBug) throws Exception {
         String tei = null;
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -402,7 +402,7 @@ public class DataseerClassifier {
 
             org.w3c.dom.Document document = builder.parse(new InputSource(new StringReader(tei)));
             //document.getDocumentElement().normalize();
-            tei = processTEIDocument(document);
+            tei = processTEIDocument(document, segmentSentences);
             if (avoidDomParserBug)
                 tei = restoreDomParserAttributeBug(tei); 
 
@@ -418,10 +418,11 @@ public class DataseerClassifier {
      * Enrich a TEI document with Dataseer information
      * @return enriched TEI string
      */
-    public String processTEIDocument(org.w3c.dom.Document document) throws Exception {
+    public String processTEIDocument(org.w3c.dom.Document document, boolean segmentSentences) throws Exception {
         String tei = null;
         Element root = document.getDocumentElement();
-        segment(document, root);
+        if (segmentSentences)
+            segment(document, root);
         // augment sentences with dataseer classification information
         enrich(document, root);
         tei = serialize(document, null);
@@ -458,7 +459,7 @@ public class DataseerClassifier {
 
             org.w3c.dom.Document document = builder.parse(new InputSource(new StringReader(tei)));
             //document.getDocumentElement().normalize();
-            tei = processTEIDocument(document);
+            tei = processTEIDocument(document, true);
             //if (avoidDomParserBug)
             //    tei = restoreDomParserAttributeBug(tei); 
 
@@ -598,17 +599,24 @@ public class DataseerClassifier {
             // head element (unique, but not mandatory)
             Element headElement = this.getFirstDirectChild(sectionElement, "head");
             if (headElement != null) {
-                segments.add(headElement.getTextContent());
+                String localTextContent = headElement.getTextContent();
+                if (localTextContent == null || localTextContent.length() == 0) 
+                    continue;
+
+                segments.add(localTextContent);
                 sectionTypes.add("head");
                 nbDatasets.add(0);
                 datasetTypes.add("no_dataset");
             }
 
-            // the <p> elements un der <div> only, and ignoring <abstract>
+            // the <p> elements under <div> only, and ignoring <abstract>
             for(Node child = sectionElement.getFirstChild(); child != null; child = child.getNextSibling()) {
                 if (child instanceof Element && "p".equals(child.getNodeName())) {
                     Element childElement = (Element)child;
-                    segments.add(childElement.getTextContent());
+                    String localTextContent = childElement.getTextContent();
+                    if (localTextContent == null || localTextContent.length() == 0) 
+                        continue;
+                    segments.add(localTextContent);
                     sectionTypes.add("p");
 
                     // get the sentences elements
@@ -661,10 +669,10 @@ public class DataseerClassifier {
                     datasetTypes.add("no_dataset");
                 }
             }
+
             relevantSections = 
                 DataseerParser.getInstance().processingText(segments, sectionTypes, nbDatasets, datasetTypes);
         }
-
         sectionList = doc.getElementsByTagName("div");
         int dataSetId = 1;
         int relevantSectionIndex = 0;
@@ -682,6 +690,9 @@ public class DataseerClassifier {
             // head element (unique, but not mandatory)
             Element headElement = this.getFirstDirectChild(sectionElement, "head");
             if (headElement != null) {
+                String localTextContent = headElement.getTextContent();
+                if (localTextContent == null || localTextContent.length() == 0) 
+                    continue;
                 relevantSection = relevantSections.get(relevantSectionIndex);
                 relevantSectionIndex++;
             }
@@ -689,12 +700,15 @@ public class DataseerClassifier {
             // the <p> elements 
             for(Node child = sectionElement.getFirstChild(); child != null; child = child.getNextSibling()) {
                 if (child instanceof Element && "p".equals(child.getNodeName())) {
+                    Element childElement = (Element)child;
+                    String localTextContent = childElement.getTextContent();
+                    if (localTextContent == null || localTextContent.length() == 0) 
+                        continue;
                     boolean localRelevantSection = relevantSections.get(relevantSectionIndex);
                     if (localRelevantSection)
                         relevantSection = true;
                     relevantSectionIndex++;
                 }
-
             }
 
             // do we consider this section?
@@ -887,13 +901,18 @@ public class DataseerClassifier {
     public String processPDF(String filePath) throws Exception {
         // convert PDF into structured TEI thanks to GROBID
 
+        List<String> coordinates = new ArrayList<>();
+        coordinates.add("s");
+
         // TBD: review arguments, no need for images, annotations, outline
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
             .consolidateHeader(1)
             .consolidateCitations(0)
+            .withSentenceSegmentation(true)
+            .generateTeiCoordinates(coordinates)
             .build();
         String tei = engine.fullTextToTEI(new File(filePath), config);
-        return processTEIString(tei);
+        return processTEIString(tei, false);
     }
 
 }
