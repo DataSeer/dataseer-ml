@@ -166,7 +166,7 @@ For producing an evaluation (including n-fold cross evaluation), see the DeLFT d
 
 ## Training the dataset-relevant section identifier model
 
-This model is a sequence labeling model working at sentence-level (e.g. sequence of sentences and one label per sentence). 
+This model is a sequence labeling model working at segment-level (e.g. sequence of segments and one label per segment). 
 
 Train with all available training data (default grobid-home path is `grobid/grobid-home` so usually no need to indicate this parameter):
 

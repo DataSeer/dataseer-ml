@@ -34,6 +34,8 @@ public class FeaturesVectorDataseer {
     public int segmentLength = 0; // discretized 
     public int characterDensity = 0; // discretized 
 
+    public boolean materialsAndMethodPattern = false; // true if match a generic "materials and method" header
+
     public String printVector() {
         if (string == null) return null;
         if (string.length() == 0) return null;
@@ -118,6 +120,12 @@ public class FeaturesVectorDataseer {
 
         // current segment length on a predefined scale and relative to the longest segment
         res.append(" " + segmentLength);
+
+        // materials and methods pattern
+        if (materialsAndMethodPattern)
+            res.append(" 1");
+        else
+            res.append(" 0");
 
         res.append("\n");
 

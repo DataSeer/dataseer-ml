@@ -106,6 +106,7 @@ public class DataseerParser extends AbstractParser {
             String labelledResult = label(content);
             // set the boolean value for the segments
             String[] lines = labelledResult.split("\n");
+            int indexMatMetSection = -1;
             for(int i=0; i < lines.length; i++) {
                 String line = lines[i];
                 String values[] = line.split("\t");
@@ -116,6 +117,49 @@ public class DataseerParser extends AbstractParser {
                     result.add(new Boolean(false));
                 else 
                     result.add(new Boolean(true));
+
+                if (indexMatMetSection == -1 && values[values.length-2].equals("1")) {
+                    indexMatMetSection = i;
+                }
+            }
+    
+            if (indexMatMetSection == -1) {
+                // we relax the constrain for matching "method" section (match of "method" in the start of header titles)
+                for(int i=0; i < lines.length; i++) {
+                    String line = lines[i];
+                    if (line.toLowerCase().indexOf("method") != -1) {
+                        indexMatMetSection = i;
+                        break;
+                    }
+                }
+            }
+
+            // re-ajust results to avoid duplicated dataset
+            // check if we have an explicit "materials and methods"-type section 
+            if (indexMatMetSection != -1) {
+                // if yes, check the number of datasets in the explicit "materials and methods"-type section
+                for(int i=indexMatMetSection; i < lines.length; i++) {
+                    String line = lines[i];
+                    String values[] = line.split("\t");
+                    if (values.length <= 1)
+                        values = line.split(" ");
+
+                    String nbDatasetString = values[values.length-6];
+                    int nbDataset = 0;
+                    try {
+                        nbDataset = Integer.parseInt(nbDatasetString);
+                    } catch(Exception e) {
+                        logger.warn("Expected integer value for nb dataset: " + nbDatasetString);
+                    }
+
+                    // if the nb of datasets is large enough, we neutralize the dataset outside this section
+                    if (nbDataset > 2) {
+                        for(int j=0; j<result.size(); j++) {
+                            if (j<indexMatMetSection || j>indexMatMetSection+10)
+                                result.set(j, new Boolean(false));
+                        }
+                    }
+                }
             }
         }
 
@@ -223,6 +267,9 @@ public class DataseerParser extends AbstractParser {
 
             //if (features.digit == null)
             //    features.digit = "NODIGIT";
+
+            if (DataseerUtilities.detectMaterialsAndMethod(segment))
+                features.materialsAndMethodPattern = true;
 
             features.relativeDocumentPosition = FeatureFactory.getInstance()
                     .linearScaling(m, segments.size(), NBBINS_POSITION);
