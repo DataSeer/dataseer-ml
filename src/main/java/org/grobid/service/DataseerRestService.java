@@ -53,6 +53,13 @@ public class DataseerRestService implements DataseerPaths {
         LOGGER.info("Init of Servlet DataseerRestService finished.");
     }
 
+    @GET
+    @Path(PATH_IS_ALIVE)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response isAlive() {
+        return DataseerRestProcessGeneric.isAlive();
+    }
+
     @Path(PATH_DATASEER_SENTENCE)
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
     @POST

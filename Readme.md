@@ -18,9 +18,9 @@ The processing of an article follows 5 steps:
 
 1. Given an article to be processed by DataSeer:
 
-  1.1  if the format is PDF or docx, the document is first parsed and structured automatically by [Grobid](https://github.com/kermitt2/grobid). This includes metadata extraction and consolidation against CrossRef and PubMed, structuring the text body and bibliographical references. 
+  1.1.  if the format is PDF or docx, the document is first parsed and structured automatically by [Grobid](https://github.com/kermitt2/grobid). This includes metadata extraction and consolidation against CrossRef and PubMed, structuring the text body and bibliographical references. 
 
-  1.2 if the format is an publisher XML format (see [Pub2TEI](https://github.com/kermitt2/Pub2TEI) for the list of supported XML formats, e.g. TEI, JATS/NLM, ScholarOne, BMJ, Elsevier staging format, OUP, PNAS, RSC, Sage, Wiley, etc.), [Pub2TEI](https://github.com/kermitt2/Pub2TEI) converts the XML to the same customised structured TEI representation as GROBID. 
+  1.2. if the format is an publisher XML format (see [Pub2TEI](https://github.com/kermitt2/Pub2TEI) for the list of supported XML formats, e.g. TEI, JATS/NLM, ScholarOne, BMJ, Elsevier staging format, OUP, PNAS, RSC, Sage, Wiley, etc.), [Pub2TEI](https://github.com/kermitt2/Pub2TEI) converts the XML to the same customised structured TEI representation as GROBID. 
 
 2. The document body is then segmented into sentences thanks to the Pragmatic Segmenter or OpenNLP, with some customization to better support scientific texts (i.e. avoiding wrong sentence break in the middle of reference callout or in the middle of scientific notations, and taking into account section and paragraph breaks as identified in the structure recognition step in GROBID). 
 

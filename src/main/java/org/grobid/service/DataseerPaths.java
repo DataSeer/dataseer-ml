@@ -13,6 +13,11 @@ public interface DataseerPaths {
     public static final String PATH_DATASEER = "/";
     
     /**
+     * path extension for is alive request.
+     */
+    public static final String PATH_IS_ALIVE = "isalive";
+    
+    /**
      * path extension for processing a textual sentence input.
      */
     public static final String PATH_DATASEER_SENTENCE = "processDataseerSentence";
