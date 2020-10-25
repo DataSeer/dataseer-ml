@@ -53,11 +53,6 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 
-/*import com.googlecode.clearnlp.engine.EngineGetter;
-import com.googlecode.clearnlp.reader.AbstractReader;
-import com.googlecode.clearnlp.segmentation.AbstractSegmenter;
-import com.googlecode.clearnlp.tokenization.AbstractTokenizer;*/
-
 import opennlp.tools.sentdetect.SentenceDetectorME; 
 import opennlp.tools.sentdetect.SentenceModel;
 
@@ -329,6 +324,8 @@ public class DataseerClassifier {
     }
 
     private String shadowModelName(String the_json) {
+        if (the_json == null || the_json.trim().length() == 0)
+            return the_json;
         the_json = the_json.replace("\"model\": \"dataseer-binary\",", "\"model\": \"dataseer\",");
         return the_json.replace("\"model\": \"dataseer-first\",", "\"model\": \"dataseer\",");
     } 
