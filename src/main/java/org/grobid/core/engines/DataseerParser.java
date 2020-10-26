@@ -124,11 +124,46 @@ public class DataseerParser extends AbstractParser {
             }
     
             if (indexMatMetSection == -1) {
-                // we relax the constrain for matching "method" section (match of "method" in the start of header titles)
+                // we relax the constrain for matching any "method" section (match of "method" in the start of header titles)
                 for(int i=0; i < lines.length; i++) {
-                    String line = lines[i];
-                    if (line.toLowerCase().indexOf("method") != -1) {
+                    String line = lines[i].toLowerCase();
+                    if (line.indexOf("method") != -1 || 
+                        (line.indexOf("data") != -1 &&  
+                        (line.indexOf("description") != -1 || 
+                         line.indexOf("experiment") != -1))) {
                         indexMatMetSection = i;
+                        break;
+                    }
+                }
+            }
+
+            if (indexMatMetSection != -1) {
+                // we force these relevant selected sections to be considered for dataset selection
+                // (ideally these sections should be catched by the sequence labeling model, but 
+                // due to the current lack of training data, it's not the case)
+                int nb_new_section = 0;
+                for(int j=indexMatMetSection; j < lines.length; j++) {
+                    // set the section to true
+                    String line = lines[j].toLowerCase();
+                    result.set(j, new Boolean(true));
+                    if (j == indexMatMetSection)
+                        continue;
+
+                    // check if we have a new section based on the existing features
+                    String values[] = line.split("\t");
+                    if (values.length <= 1)
+                        values = line.split(" ");
+                    if (values.length > 4 && values[4].equals("head"))
+                        nb_new_section++;
+
+                    if (nb_new_section > 2)
+                        break;
+
+                    if (j>indexMatMetSection+10) 
+                        break;
+
+                    if (line.indexOf("acknowledgement") != -1 || line.indexOf("funding") != -1)  {
+                        result.set(j, new Boolean(false));
                         break;
                     }
                 }

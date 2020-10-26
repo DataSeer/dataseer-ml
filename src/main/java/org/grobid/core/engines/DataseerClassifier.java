@@ -666,10 +666,10 @@ public class DataseerClassifier {
                     datasetTypes.add("no_dataset");
                 }
             }
-
-            relevantSections = 
-                DataseerParser.getInstance().processingText(segments, sectionTypes, nbDatasets, datasetTypes);
         }
+
+        relevantSections = DataseerParser.getInstance().processingText(segments, sectionTypes, nbDatasets, datasetTypes);
+
         sectionList = doc.getElementsByTagName("div");
         int dataSetId = 1;
         int relevantSectionIndex = 0;
