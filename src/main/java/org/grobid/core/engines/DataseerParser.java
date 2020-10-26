@@ -162,7 +162,7 @@ public class DataseerParser extends AbstractParser {
                     if (j>indexMatMetSection+10) 
                         break;
 
-                    if (line.indexOf("acknowledgement") != -1 || line.indexOf("funding") != -1)  {
+                    if (line.indexOf("acknowledgement") != -1 || line.indexOf("funding") != -1 || line.indexOf("conclusion") != -1)  {
                         result.set(j, new Boolean(false));
                         break;
                     }
