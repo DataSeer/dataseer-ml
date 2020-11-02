@@ -81,7 +81,7 @@ public class DataseerClassifier {
 
     // components for sentence segmentation
     private SentenceDetectorME detector = null;
-    private static String openNLPModelFile = "resources/openNLP/en-sent.bin";
+    //private static String openNLPModelFile = "resources/openNLP/en-sent.bin";
 
     private static Engine engine = null; 
 
@@ -176,9 +176,9 @@ public class DataseerClassifier {
             }
 
             //Loading sentence detector model (hope they are thread safe!)
-            InputStream inputStream = new FileInputStream(openNLPModelFile); 
+            /*InputStream inputStream = new FileInputStream(openNLPModelFile); 
             SentenceModel model = new SentenceModel(inputStream);
-            detector = new SentenceDetectorME(model);
+            detector = new SentenceDetectorME(model);*/
 
             // grobid
             engine = GrobidFactory.getInstance().createEngine();
@@ -187,10 +187,8 @@ public class DataseerClassifier {
             classifierBinary = new DeLFTClassifierModel("dataseer-binary", "gru");
             classifierFirstLevel = new DeLFTClassifierModel("dataseer-first", "gru");
 
-        } catch (FileNotFoundException e) {
-            throw new GrobidException("Cannot initialise tokeniser ", e);
-        } catch (IOException e) {
-            throw new GrobidException("Cannot initialise tokeniser ", e);
+        } catch (Exception e) {
+            throw new GrobidException("Cannot initialise DataSeer classifier ", e);
         }
     }
 
@@ -365,7 +363,7 @@ public class DataseerClassifier {
      * Enrich a TEI document with Dataseer information
      * @return enriched TEI string
      */
-    public String processTEIString(String xmlString, boolean segmentSentences) throws Exception {
+    public String processTEIString(String xmlString) throws Exception {
         String tei = null;
         try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -373,7 +371,7 @@ public class DataseerClassifier {
             DocumentBuilder builder = factory.newDocumentBuilder();           
             org.w3c.dom.Document document = builder.parse(new InputSource(new StringReader(xmlString)));
             //document.getDocumentElement().normalize();
-            tei = processTEIDocument(document, segmentSentences);
+            tei = processTEIDocument(document, false);
         } catch(ParserConfigurationException e) {
             e.printStackTrace();
         } catch(IOException e) {
@@ -473,7 +471,6 @@ public class DataseerClassifier {
         return tei;
     }
 
-
     private void segment(org.w3c.dom.Document doc, Node node) {
         final NodeList children = node.getChildNodes();
         for (int i = 0; i < children.getLength(); i++) {
@@ -489,13 +486,15 @@ public class DataseerClassifier {
                     textBuffer.append(" ");
                 }
                 String text = textBuffer.toString();
-                String theSentences[] = detector.sentDetect(text);
+                //String theSentences[] = detector.sentDetect(text);
+                List<OffsetPosition> theSentenceBoundaries = SentenceUtilities.getInstance().runSentenceDetection(text);
 
                 // we're making a first pass to ensure that there is no element broken by the segmentation
                 List<String> sentences = new ArrayList<String>();
                 List<String> toConcatenate = new ArrayList<String>();
-                for(String sent : theSentences) {
+                for(OffsetPosition sentPos : theSentenceBoundaries) {
                     //System.out.println("new chunk: " + sent);
+                    String sent = text.substring(sentPos.start, sentPos.end);
                     String newSent = sent;
                     if (toConcatenate.size() != 0) {
                         StringBuffer conc = new StringBuffer();
@@ -909,7 +908,7 @@ public class DataseerClassifier {
             .generateTeiCoordinates(coordinates)
             .build();
         String tei = engine.fullTextToTEI(new File(filePath), config);
-        return processTEIString(tei, false);
+        return processTEIString(tei);
     }
 
 }

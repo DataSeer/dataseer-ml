@@ -422,6 +422,7 @@ public class AnnotatedCorpusGeneratorCSV {
                         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
                                                 .consolidateHeader(1)
                                                 .consolidateCitations(0)
+                                                .withSentenceSegmentation(true)
                                                 .build();
                         Engine engine = GrobidFactory.getInstance().getEngine();
                         String tei = null;
@@ -438,8 +439,8 @@ public class AnnotatedCorpusGeneratorCSV {
             }
 
             try {
-                // segment into sentence
-                String segmentedTEI = dataseer.processTEI(teiPath, true, false);
+                // via PDF no need to segment into sentence
+                String segmentedTEI = dataseer.processTEI(teiPath, false, false);
                 FileUtils.writeStringToFile(new File(teiPath.replace(".tei.xml", "-segmented.tei.xml")), segmentedTEI, UTF_8);
 
                 Builder parser = new Builder();
