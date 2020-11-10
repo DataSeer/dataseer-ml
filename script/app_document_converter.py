@@ -19,6 +19,7 @@ import json
 import csv
 import gzip
 import argparse
+from lxml import etree
 
 # valid curators for the set of documents annotated by modelcular connections and reviewed by Tim 
 # this might need to be adapted in the future
@@ -32,7 +33,16 @@ binary_fieldnames = ['doi', 'text', 'datatype']
 reuse_fieldnames = ['doi', 'text', 'reuse']
 multilevel_fieldnames = ['doi', 'text', 'datatype', 'dataSubtype', 'leafDatatype']
 
+# counter to balance positive and negative examples to be used by the binary classifier
+nb_positive_examples = 0
+nb_negative_examples = 0
+
+MAX_NEGATIVE_EXAMPLES_FROM_SAME_DOCUMENT = 6
+
 def process_json(json_entry, binary_csv_file, reuse_csv_file, multilevel_csv_file, dataset_section_tei_path):
+    global nb_positive_examples
+    global nb_negative_examples
+
     document = json.loads(json_entry)
     document_id = document["_id"]
 
@@ -87,6 +97,7 @@ def process_json(json_entry, binary_csv_file, reuse_csv_file, multilevel_csv_fil
             # binary classifier data (datatype/no_datatype)
             # doi,text,datatype
             binary_csv_file.writerow({'doi': doi, 'text': text, 'datatype': datatype_class})
+            nb_positive_examples += 1
 
             # the reuse information is currently not available
 
@@ -113,7 +124,7 @@ def process_json(json_entry, binary_csv_file, reuse_csv_file, multilevel_csv_fil
             # binary classifier data (datatype/no_datatype)
             # doi,text,datatype
             binary_csv_file.writerow({'doi': doi, 'text': text, 'datatype': datatype_class})
-
+            nb_negative_examples += 1
 
     # save the TEI XML document in the dedicated subdirectory
     document_tei = document["source"]
@@ -121,6 +132,32 @@ def process_json(json_entry, binary_csv_file, reuse_csv_file, multilevel_csv_fil
     with open(destination_tei, "w") as tei_file:
         tei_file.write(document_tei)
 
+    # in addition we can add random sentences to increase the ratio of no_dataset in the binary classifier
+    # we can select these negative examples from the actual dataset sections, although reliable negative
+    # classifications are also important for selecting the datset section itself
+
+    try:
+        root = etree.fromstring(document_tei.encode('utf-8'))
+    except:
+        print("the parsing of the XML document failed... moving to the next entry...")
+        return
+
+    # get random sentence without dataset information and of length at least of 150 characters
+    ns = {"tei": "http://www.tei-c.org/ns/1.0"}
+    sentences = root.xpath('//tei:s[not(@type)]//text()', namespaces=ns)
+
+    if nb_negative_examples < nb_positive_examples:
+        local_addition = 0
+        i = 0
+        while local_addition < MAX_NEGATIVE_EXAMPLES_FROM_SAME_DOCUMENT and i < len(sentences):
+            local_text = sentences[i]
+            if len(local_text) > 150:
+                # binary classifier data (datatype/no_datatype)
+                # doi,text,datatype
+                binary_csv_file.writerow({'doi': doi, 'text': local_text, 'datatype': 'no_dataset'})
+                nb_negative_examples += 1
+                local_addition += 1
+            i += 1
 
 def _get_value(json_element):
     # get the first value of a json object, not knowing the key 
@@ -188,3 +225,5 @@ if __name__ == "__main__":
     binary_csv_file.close()
     reuse_csv_file.close()
     multilevel_csv_file.close()
+
+    print("for the binary classifier: nb_positive_examples", nb_positive_examples, "/ nb_negative_examples", nb_negative_examples)
