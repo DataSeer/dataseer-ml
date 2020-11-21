@@ -37,11 +37,14 @@ multilevel_fieldnames = ['doi', 'text', 'datatype', 'dataSubtype', 'leafDatatype
 nb_positive_examples = 0
 nb_negative_examples = 0
 
-MAX_NEGATIVE_EXAMPLES_FROM_SAME_DOCUMENT = 6
+all_datatypes = []
+
+MAX_NEGATIVE_EXAMPLES_FROM_SAME_DOCUMENT = 12
 
 def process_json(json_entry, binary_csv_file, reuse_csv_file, multilevel_csv_file, dataset_section_tei_path):
     global nb_positive_examples
     global nb_negative_examples
+    global all_datatypes
 
     document = json.loads(json_entry)
     document_id = document["_id"]
@@ -106,13 +109,17 @@ def process_json(json_entry, binary_csv_file, reuse_csv_file, multilevel_csv_fil
             #reuse_csv_file.writerow({'doi': doi, 'text': text, 'reuse': reuse_class})
 
             datatype_class = dataset['dataType']
+
+            if datatype_class not in all_datatypes:
+               all_datatypes.append(datatype_class)
+
             datasub_type_class = dataset['subType']
             leaf_datatype_class = ''
 
             # multilevel classifier data (datatype, data subtype and leaf datatype)
             multilevel_csv_file.writerow({'doi': doi, 'text': text, 'datatype': datatype_class, 'dataSubtype': datasub_type_class, 'leafDatatype': leaf_datatype_class})
 
-    # deleted dataset sentence can be used as negative examples
+    # deleted dataset sentence can be used as negative examples    
     if "deleted" in datasets_list:
         deleted_datasets = datasets_list["deleted"]
         for dataset in deleted_datasets:
@@ -125,6 +132,7 @@ def process_json(json_entry, binary_csv_file, reuse_csv_file, multilevel_csv_fil
             # doi,text,datatype
             binary_csv_file.writerow({'doi': doi, 'text': text, 'datatype': datatype_class})
             nb_negative_examples += 1
+    
 
     # save the TEI XML document in the dedicated subdirectory
     document_tei = document["source"]
