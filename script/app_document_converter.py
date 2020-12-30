@@ -4,13 +4,20 @@ ready to be added to the standard dataseer classifier training data.
 
 Usage:
 
-> python3 app_document_converter.py documents.json
+> python3 app_document_converter.py --document documents.json --output ~/tmp/
 
 documents.json is obtained directly from the mongodb application database via mongoexport:
 
 > mongoexport --collection=documents --db=app --out=documents.json
 
-The script works with gzipped json too.
+The script works with gzipped json too (e.g. documents.json.gz in the example above).
+
+Training data in csv are produced in 3 files:
+- binary.csv for binary classifier (dataset/no_dataset) with negative sampling
+- reuse.csv for binary classifier (reuse/no_reuse) if reuse information is available
+- multilevel.csv give the data type and data subtype for data sentences
+
+These training data file can then be used directly with DeLFT to train DL models with various architecture. 
 '''
 
 import os
@@ -39,6 +46,7 @@ nb_negative_examples = 0
 
 all_datatypes = []
 
+# modify this parameter to modify the rate of negative sampling 
 MAX_NEGATIVE_EXAMPLES_FROM_SAME_DOCUMENT = 12
 
 def process_json(json_entry, binary_csv_file, reuse_csv_file, multilevel_csv_file, dataset_section_tei_path):
@@ -87,6 +95,19 @@ def process_json(json_entry, binary_csv_file, reuse_csv_file, multilevel_csv_fil
     if doi is None:
         doi = document_id
 
+    # save the TEI XML document in the dedicated subdirectory
+    document_tei = document["source"]
+    destination_tei = os.path.join(dataset_section_tei_path, document_id+".tei.xml")
+    with open(destination_tei, "w") as tei_file:
+        tei_file.write(document_tei)
+
+    # prepare the parsed XML document
+    try:
+        root = etree.fromstring(document_tei.encode('utf-8'))
+    except:
+        print("the parsing of the XML document failed... moving to the next entry...")
+        return
+
     datasets_list = document["datasets"]
 
     if "extracted" in datasets_list:
@@ -116,10 +137,24 @@ def process_json(json_entry, binary_csv_file, reuse_csv_file, multilevel_csv_fil
             datasub_type_class = dataset['subType']
             leaf_datatype_class = ''
 
+            # following https://github.com/DataSeer/dataseer-web/issues/133 we check in the TEI document if there's a subtype for this annotation
+            local_id = dataset['id']
+            xpath_exp = "//tei:s[@id='"+local_id+"']"
+            sentences = root.xpath(xpath_exp, namespaces={'tei': 'http://www.tei-c.org/ns/1.0'})
+            if len(sentences) == 1:
+                the_sentence = sentences[0]
+                local_datatype = the_sentence.get("type")
+                if local_datatype is not None:
+                    pieces = local_datatype.split(":")
+                    if len(pieces) == 2:
+                        datasub_type_class = pieces[1]
+            #else:
+            #    print("Warning: sentence and possible subtype not found for", local_id, "in", document_id)
+            
             # multilevel classifier data (datatype, data subtype and leaf datatype)
             multilevel_csv_file.writerow({'doi': doi, 'text': text, 'datatype': datatype_class, 'dataSubtype': datasub_type_class, 'leafDatatype': leaf_datatype_class})
 
-    # deleted dataset sentence can be used as negative examples    
+    # deleted dataset sentence can be used as interesting negative examples (interesting because corresponding to errors of the current model)
     if "deleted" in datasets_list:
         deleted_datasets = datasets_list["deleted"]
         for dataset in deleted_datasets:
@@ -132,23 +167,10 @@ def process_json(json_entry, binary_csv_file, reuse_csv_file, multilevel_csv_fil
             # doi,text,datatype
             binary_csv_file.writerow({'doi': doi, 'text': text, 'datatype': datatype_class})
             nb_negative_examples += 1
-    
-
-    # save the TEI XML document in the dedicated subdirectory
-    document_tei = document["source"]
-    destination_tei = os.path.join(dataset_section_tei_path, document_id+".tei.xml")
-    with open(destination_tei, "w") as tei_file:
-        tei_file.write(document_tei)
 
     # in addition we can add random sentences to increase the ratio of no_dataset in the binary classifier
     # we can select these negative examples from the actual dataset sections, although reliable negative
     # classifications are also important for selecting the datset section itself
-
-    try:
-        root = etree.fromstring(document_tei.encode('utf-8'))
-    except:
-        print("the parsing of the XML document failed... moving to the next entry...")
-        return
 
     # get random sentence without dataset information and of length at least of 150 characters
     ns = {"tei": "http://www.tei-c.org/ns/1.0"}
