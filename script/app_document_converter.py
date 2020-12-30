@@ -17,6 +17,8 @@ Training data in csv are produced in 3 files:
 - reuse.csv for binary classifier (reuse/no_reuse) if reuse information is available
 - multilevel.csv give the data type and data subtype for data sentences
 
+All the annotated TEI XML files will be saved in the subdirectory corpus/ under the path given with --output
+
 These training data file can then be used directly with DeLFT to train DL models with various architecture. 
 '''
 
