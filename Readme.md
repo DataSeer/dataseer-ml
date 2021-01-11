@@ -135,6 +135,38 @@ This service triggers a web crawling of the DataSeer Wiki pages describing the s
 
 > curl -GET localhost:8060/service/resyncJsonDataTypes
 
+# Docker Image
+
+A docker image for the `dataseer-ml` service can be built with the project Dockerfile. This docker file uses the GROBID with DeLFT image as base image, which thus needs to be available as pre-requirement. The complete process is as follow: 
+
+- pull or build the full GROBID image able to run both CRF and Deep Learning models, see instructions [here](https://grobid.readthedocs.io/en/latest/Grobid-docker/#crf-and-deep-learning-image/) and [here](https://grobid.readthedocs.io/en/latest/Grobid-docker/#building-an-image)
+
+- copy the `Dockerfile.dataseer` at the root of the GROBID installation:
+
+```bash
+~/grobid/dataseer-ml$ cp ./Dockerfile.dataseer ..
+```
+
+- from the GROBID root installation (`grobid/`), launch the docker build:
+
+```bash
+> docker build -t dataseer/dataseer:0.6.2-SNAPSHOT --build-arg GROBID_VERSION=0.6.2-SNAPSHOT --file Dockerfile.dataseer .
+```
+
+- you can now run the `dataseer-ml` service via Docker:
+
+```bash
+> docker run --rm --gpus all --init dataseer/dataseer:0.6.2-SNAPSHOT
+```
+
+The build image includes the support of GPU when available on the host machine via the parameter `--gpus all` (with automatic recognition of the CUDA version), with fall back to CPU if GPU are not available. The support of GPU is only available on Linux host machine.
+
+The `dataseer-ml` service is available at the default host/port `localhost:8060`, but it is possible to map the port at launch time of the container as follow:
+
+```bash
+> docker run --rm --gpus all --init -p 8060:8080 dataseer/dataseer:0.6.2-SNAPSHOT
+```
+
 # Training data assembling and generating classification models
 
 ## Importing and assembling training data
