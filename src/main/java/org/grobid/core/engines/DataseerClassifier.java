@@ -93,6 +93,7 @@ public class DataseerClassifier {
 
     private DeLFTClassifierModel classifierBinary = null;
     private DeLFTClassifierModel classifierFirstLevel = null;
+    private DeLFTClassifierModel classifierReuse = null;
 
     public static DataseerClassifier getInstance() {
         if (instance == null) {
@@ -186,6 +187,7 @@ public class DataseerClassifier {
             // Datatype classifier via DeLFT
             classifierBinary = new DeLFTClassifierModel("dataseer-binary", "gru");
             classifierFirstLevel = new DeLFTClassifierModel("dataseer-first", "gru");
+            classifierReuse = new DeLFTClassifierModel("dataseer-reuse", "gru");
 
         } catch (Exception e) {
             throw new GrobidException("Cannot initialise DataSeer classifier ", e);
@@ -259,19 +261,31 @@ public class DataseerClassifier {
             return this.shadowModelName(the_json);
         }
 
+        // application of the reuse model on the positive texts
+        String cascaded_reuse_json = null;
+        JsonNode rootReuseCascaded = null;
+        if (cascaded_texts.size() > 0) {
+            cascaded_reuse_json = classifierReuse.classify(cascaded_texts);
+            if (cascaded_reuse_json != null && cascaded_reuse_json.length() > 0)
+                rootReuseCascaded = mapper.readTree(cascaded_reuse_json);
+        }
+
         StringBuilder builder = new StringBuilder();
         builder.append("{\n\t\"model\": \"dataseer\",\n\t\"software\": \"DeLFT\",\n\t\"date\": \"" + 
             this.getISO8601Date() + "\",\n\t\"classifications\": [");
 
         boolean first = true;
         // second pass to inject additional results
-        if (root != null && rootCascaded != null) {
+        if (root != null && rootCascaded != null && rootReuseCascaded != null) {
             JsonNode classificationsNode = root.findPath("classifications");
             JsonNode classificationsCascadedNode = rootCascaded.findPath("classifications");
+            JsonNode classificationsReuseCascadedNode = rootReuseCascaded.findPath("classifications");
             if ((classificationsNode != null) && (!classificationsNode.isMissingNode()) && 
-                (classificationsCascadedNode != null) && (!classificationsCascadedNode.isMissingNode())) {
+                (classificationsCascadedNode != null) && (!classificationsCascadedNode.isMissingNode()) &&
+                (classificationsReuseCascadedNode != null) && (!classificationsReuseCascadedNode.isMissingNode())) {
                 Iterator<JsonNode> ite = classificationsNode.elements();
                 Iterator<JsonNode> iteCascaded = classificationsCascadedNode.elements();
+                Iterator<JsonNode> iteReuseCascaded = classificationsReuseCascadedNode.elements();
                 while (ite.hasNext()) {
                     JsonNode classificationNode = ite.next();
                     JsonNode datasetNode = classificationNode.findPath("has_dataset");
@@ -290,6 +304,25 @@ public class DataseerClassifier {
                                 // inject dataset/no_dataset probabilities as extra-information relevant for post--processing
                                 ((ObjectNode)classificationCascadedNode).put("has_dataset", probDataset);
                                 ((ObjectNode)classificationCascadedNode).put("no_dataset", probNoDataset);
+
+                                if (iteReuseCascaded.hasNext()) {
+                                    JsonNode classificationReuseCascadedNode = iteReuseCascaded.next();
+                                    JsonNode reuseNode = classificationReuseCascadedNode.findPath("reuse");
+                                    JsonNode noReuseNode = classificationReuseCascadedNode.findPath("no_reuse");
+
+                                    if ((reuseNode != null) && (!reuseNode.isMissingNode()) &&
+                                        (noReuseNode != null) && (!noReuseNode.isMissingNode()) ) {
+                                        double probReuse = reuseNode.asDouble();
+                                        double probNoReuse = noReuseNode.asDouble();
+
+                                        if (probReuse > probNoReuse) {
+                                            ((ObjectNode)classificationCascadedNode).put("reuse", true);
+                                        } else {
+                                            ((ObjectNode)classificationCascadedNode).put("reuse", false);
+                                        }
+                                    }
+                                }
+
                                 if (first)
                                     first = false;
                                 else
@@ -737,6 +770,7 @@ public class DataseerClassifier {
                                     if (probDataset > probNoDataset && probDataset > 0.9) {
                                         // we get the best dataset type Prediction
                                         Pair<String, Double> bestDataTypeWithProb = this.getBestDataType(classificationNode);
+                                        boolean isReuse = this.getReuseInfo(classificationNode);
                                         if (bestDataTypeWithProb != null) {
                                             // annotation will look like this: <s id="dataset-1" type="Generic data">
                                             // or if existing dataset: corresp=\"#dataset- + dataSetId\"
@@ -745,6 +779,12 @@ public class DataseerClassifier {
                                             sentenceElement.setAttribute("id","dataset-" + dataSetId);
                                             sentenceElement.setAttribute("type", bestDataTypeWithProb.getLeft());
                                             sentenceElement.setAttribute("cert", bestDataTypeWithProb.getRight().toString());
+                                            if (isReuse) {
+                                                sentenceElement.setAttribute("reuse", "true");
+                                            } else {
+                                                sentenceElement.setAttribute("reuse", "false");
+                                            }
+
                                             dataSetId++;
 
                                             // we also need to add a dataseer subtype attribute to the parent <div>
@@ -842,7 +882,7 @@ public class DataseerClassifier {
         while (ite.hasNext()) {
             Map.Entry<String, JsonNode> entry = ite.next(); 
             String className = entry.getKey();
-            if (className.equals("has_dataset") || className.equals("no_dataset"))
+            if (className.equals("has_dataset") || className.equals("no_dataset") || className.equals("reuse"))
                 continue;
 
             JsonNode valNode = entry.getValue();
@@ -854,6 +894,21 @@ public class DataseerClassifier {
             }
         }
         return Pair.of(bestDataType, new Double(bestProb));
+    }
+
+    private boolean getReuseInfo(JsonNode classificationsNode) {
+        boolean isReused = false;
+        Iterator<Map.Entry<String,JsonNode>> ite = classificationsNode.fields();
+        while (ite.hasNext()) {
+            Map.Entry<String, JsonNode> entry = ite.next(); 
+            String className = entry.getKey();
+            if (className.equals("reuse")) {
+                JsonNode valNode = entry.getValue();
+                isReused = valNode.asBoolean();
+                break;
+            }
+        }
+        return isReused;
     }
 
 
