@@ -169,9 +169,9 @@ The `dataseer-ml` service is available at the default host/port `localhost:8060`
 
 # Training data assembling and generating classification models
 
-## Importing and assembling training data
+## Importing and assembling training data created from scratch
 
-Training data is available in a tabular format with reference to Open Access articles. The following process will align these tabular data (introduced by parameter `-Pcsv`) with the actual article content (JATS/NLM and PDF via GROBID) to create a full training corpus. 
+Form this source, training data is available in a tabular format with reference to Open Access articles. The following process will align these tabular data (introduced by parameter `-Pcsv`) with the actual article content (JATS/NLM and PDF via GROBID) to create a full training corpus. 
 
 > ./gradlew annotated_corpus_generator_csv -Ppdf=PATH/TO/THE/FULL/TEXTS/PDF -Pfull=PATH/TO/THE/FULL/TEXTS/NLM/ -Pcsv=PATH/TO/THE/TABULAR/TRAINING/DATA -Pxml=PATH/WHERE/TO/WRITE/THE/ASSEMBLED/TRAINING/DATA
 
@@ -211,6 +211,30 @@ Evaluation with a random split of the annotated data with a ratio of 0.9 (90% tr
 10-fold cross-evaluation:
 
 > ./gradlew eval_dataseer_nfold -PgH=/path/grobid/home -Pt=10
+
+## Training data from the DataSeer web application
+
+The dataset annotations performed with the DataSeer web application are stored directly in a TEI format, so we have at the same time manually corrected dataset annotations and the exact context of mention of the dataset in the structured document. We can therefore add this data to thetraining data and retrain the models - the DataSeer web application being actually also a PDF-annotation tool for new creating training data.  
+
+To generate training data from the application, first extract the JSON documents from the MongoDB database:
+
+> mongoexport --collection=documents --db=app --out=documents.json
+
+By default the script will then output the data valided by a curator (who is providing an expert validation on the manual annotations). If relevant, you can modify the script to apply other criteria of selection. Then use the script as follow: 
+
+```
+> python3 app_document_converter.py --document documents.json --output ~/tmp/ 
+```
+
+The command will produce 3 files in the cvs training data format: 
+
+- `binary.csv` for binary classifier (i.e. `dataset`/`no_dataset`) with negative sampling (the negative sampling rate can be adjusted with the variable `MAX_NEGATIVE_EXAMPLES_FROM_SAME_DOCUMENT`)
+
+- `reuse.csv` for binary classifier (reuse/no_reuse) if reuse information is available
+
+- `multilevel.csv` give the data type and data subtype for data sentences
+
+These files can directly be used to extend the existing trainng data and to retrain the different models, enabling in practice a continuous re-trainng of the models based on the end-users of the application. 
 
 ## Benchmarking
 
