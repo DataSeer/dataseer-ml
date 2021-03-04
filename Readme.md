@@ -10,10 +10,6 @@ The module can process a variety of scientific article formats, including mainst
 
 `.docx` format is also supported in a GROBID specific branch, but not yet merged. 
 
-![Fluorometry](doc/images/fluorometry.png)
-
-The _Fluorometry_ dataset class word cloud.
-
 # Approach
 
 ## Dataset identification and classification
@@ -35,6 +31,9 @@ The processing of an article follows 5 steps:
 5. A final selection of the predicted datasets takes place for the sections identified as introducing potentially datasets, using the result of the sentence classification of step 3 for predicting additionally the type and subtype of the recognized datasets. 
 
 The result of the service is a TEI file representing the article, enriched with sentence boundaries and predicted data set information. 
+
+![Fluorometry](doc/images/fluorometry.png)
+The _Fluorometry_ dataset class word cloud.
 
 ## Training
 
