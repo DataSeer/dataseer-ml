@@ -2,7 +2,7 @@
 
 ![Logo DataSeer](doc/images/DataSeer-logo-75.png "Logo")
 
-**dataseer-ml** is a GROBID module able to identify implicit mentions of datasets in a scientific article and to clasify the identified dataset in a hierarchy of dataset types, these data types being directly derived from MeSH. It is a back-end service used by the [DataSeer-Web application](https://github.com/dataseer/dataseer-web). 
+**dataseer-ml** is a GROBID module able to identify implicit mentions of datasets in a scientific article and to classify the identified datasets in a hierarchy of dataset types, these data types being directly derived from MeSH. It is a back-end service used by the [DataSeer-Web application](https://github.com/dataseer/dataseer-web). Most of the datasets discussed in scientific articles are actually not named, but these data are part of the disclosed scientific work and should be shared properly to meet the [FAIR](https://en.wikipedia.org/wiki/FAIR_data) requirements. 
 
 The goal of this process is to further drive the authors of the article to the best research data sharing practices, i.e. to ensure that the dataset is associated with data availability statement, permanent identifiers and in general requirements regarding Open Science and reproducibility. This further process is realized by the dataseer web application which includes a GUI to be used by the authors, suggesting data sharing policies based on the predicted data types for each identified dataset.  
 
@@ -34,9 +34,15 @@ The result of the service is a TEI file representing the article, enriched with 
 
 ## Training
 
-The DataSeer dataset describes all the dataset contexts from 2000 Open Access articles from PLOS, classified into the taxonomy of data types developed at the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php). It contains 13,777 manually classified/annotated sentences about datasets (in average 6.89 dataset contexts per article). See our [Jupyter Notebook](https://github.com/dataseer/dataseer-ml/blob/master/notebook/training-analysis-all.ipynb) for some analysis of the dataset.
+The DataSeer dataset covers:
 
-After alignment with the actual content of the full article bodies (via [Grobid](https://github.com/kermitt2/grobid)), this dataset is used both for training the recognition of sections introducing datasets (so called "zoning" task implemented with CRF using the Wapiti library) and the data type and subtype classifiers ([SciBERT](https://github.com/allenai/scibert)).
+- all the dataset contexts from 2000 Open Access articles from PLOS, classified into the taxonomy of data types developed at the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php). It contains 13,777 manually classified/annotated sentences about datasets (in average 6.89 dataset contexts per article). 
+
+- all the dataset contexts from 1000 very recent Open Access articles from PMC, with similar classification into the taxonomy. It contains 11,826 additional manually classified/annotated sentences about datasets.
+
+After alignment with the actual content of the full article bodies (via [Grobid](https://github.com/kermitt2/grobid)) for the first set, the data is used  for training the recognition of sections introducing datasets (so called "zoning" task implemented with CRF using the Wapiti library), a binary classifier (sentence mentioning a dataset or not) and the data type and subtype classifiers ([SciBERT](https://github.com/allenai/scibert)). 
+
+An additional "data reuse" model can also be trained to predict if an identified dataset is newly introduced or reused in the context of the article, using around 400 positive "reuse" examples (on the life science domain, our annotated data indicates only 3.6% of reused datasets amongs all dataset mentioned). 
 
 # Build
 
@@ -218,7 +224,9 @@ The dataset annotations performed with the DataSeer web application are stored d
 
 To generate training data from the application, first extract the JSON documents from the MongoDB database:
 
+```
 > mongoexport --collection=documents --db=app --out=documents.json
+```
 
 By default the script will then output the data valided by a curator (who is providing an expert validation on the manual annotations). If relevant, you can modify the script to apply other criteria of selection. Then use the script as follow: 
 
@@ -252,9 +260,13 @@ The evaluated classification models are:
 
 SciBERT provides almost always the best classification accuracy. 
 
+Reported scores are obtained with 10-fold cross-validation.
+
 Tasks and evaluations: 
 
 * binary classifier task: predict if the sentence introduces or not a dataset. We trained with 21,042 examples (approx. 55% positive, 45% negative). 
+
+Initial model comparison:
 
 ```
 BiGRU
@@ -287,7 +299,19 @@ Evaluation on 3574 instances:
     no_dataset        0.9725        0.9426        0.9573          2438
 ```
 
-* first level-taxonomy classification: given a sentence we evaluate if it introduces a high-level data type or no dataset. The first level dataset taxonomy contains a total of 29 data types which corresponds to MeSH classes, see the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php). In the following evaluation report, we keep zero prediction class for information. No prediction happens when there are too few examples in the training data for this data type, which is the case for around 2/3 of the data types. Best results are obtained with SciBERT, see the lower part.
+Latest results (10-2020) after extending the training data to around 59,400 examples (approx. 30% positive, 70% negative):
+
+```
+SciBERT 
+-------
+Evaluation on 5993 instances:
+                   precision        recall       f-score       support
+       dataset        0.9166        0.9664        0.9408          2320
+    no_dataset        0.9780        0.9445        0.9609          3673
+```
+
+
+* first level-taxonomy classification: given a sentence we evaluate if it introduces a high-level data type or no dataset. The first level dataset taxonomy contains a total of 29 data types which corresponds to MeSH classes, see the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php). In the following evaluation report, we keep zero prediction class for information. No prediction happens when there are too few examples in the training data for this data type, which is the case for around 2/3 of the data types. Best results are obtained with SciBERT, see the lower part. The model comparison is based on training data from the first set of 2000 articles:
 
 ```
 BiGRU
@@ -388,6 +412,40 @@ X-Ray Diffract        0.0000        0.0000        0.0000             4
     no_dataset        0.9685        0.9463        0.9573          2438
 ```
 
+Extending the training data to 3000 articles (10-2020): 
+
+```
+SciBERT
+-------
+
+Total 47669 instances
+
+                   precision        recall       f-score       support
+   calorimetry        0.0000        0.0000        0.0000             1
+chromatography        0.7532        0.8056        0.7785            72
+coulombimetry         0.0000        0.0000        0.0000             0
+  densitometry        0.0000        0.0000        0.0000             0
+electrocardiog        0.0000        0.0000        0.0000             5
+electroencepha        0.8000        0.8000        0.8000             5
+electromyograp        0.0000        0.0000        0.0000             0
+electrooculogr        0.0000        0.0000        0.0000             0
+electrophysiol        0.0000        0.0000        0.0000             1
+electroretinog        0.0000        0.0000        0.0000             1
+emission flame        0.0000        0.0000        0.0000             0
+flow cytometry        0.8971        0.8841        0.8905            69
+  genetic data        0.8259        0.9022        0.8623           184
+         image        0.8041        0.9105        0.8540           257
+mass spectrome        0.6667        0.6562        0.6614            64
+  protein data        0.0000        0.0000        0.0000             0
+    sound data        1.0000        0.2500        0.4000             4
+  spectrometry        0.7544        0.8866        0.8152            97
+spectrum analy        0.0000        0.0000        0.0000             0
+systematic rev        0.0000        0.0000        0.0000             1
+  tabular data        0.8772        0.9087        0.8927          1588
+video recordin        0.0000        0.0000        0.0000             3
+voltammetry da        0.0000        0.0000        0.0000             1
+x-ray diffract        0.0000        0.0000        0.0000             8
+```
 
 * second level taxonomy: for the first leval data types that can be predicted by the first level classifier, we build a serie of additional classifier to predict a second level data type, assuming a cascaded approach. See the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php) for more details about the data types. Best results are obtained with SciBERT too, see lower part.
 
@@ -523,6 +581,17 @@ Evaluation Tabular data subtypes
   Sample Table        0.4211        0.4444        0.4324            36
 Subject Data T        0.6054        0.8766        0.7162           154
 ```
+
+
+* "Data reuse" model: this model tries to predict if the mention dataset is newly introduced by the research study or the reuse of an existing dataset:
+
+```
+Evaluation on 1122 instances:
+                   precision        recall       f-score       support
+      no_reuse        0.9907        0.9871        0.9889          1083
+         reuse        0.6744        0.7436        0.7073            39
+```
+
 
 # Additional convenient scripts
 
