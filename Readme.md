@@ -10,7 +10,7 @@ The module can process a variety of scientific article formats, including mainst
 
 `.docx` format is also supported in a GROBID specific branch, but not yet merged. 
 
-![Fluorometry](doc/images/fluorometry.jpeg)
+![Fluorometry](doc/images/fluorometry.png)
 
 The _Fluorometry_ dataset class word cloud.
 
