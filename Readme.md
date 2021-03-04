@@ -33,7 +33,8 @@ The processing of an article follows 5 steps:
 The result of the service is a TEI file representing the article, enriched with sentence boundaries and predicted data set information. 
 
 ![Fluorometry](doc/images/fluorometry.png)
-The _Fluorometry_ dataset class word cloud.
+
+Above, the _Fluorometry_ dataset class word cloud.
 
 ## Training
 
