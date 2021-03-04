@@ -214,7 +214,7 @@ Evaluation with a random split of the annotated data with a ratio of 0.9 (90% tr
 
 ## Training data from the DataSeer web application
 
-The dataset annotations performed with the DataSeer web application are stored directly in a TEI format, so we have at the same time manually corrected dataset annotations and the exact context of mention of the dataset in the structured document. We can therefore add this data to thetraining data and retrain the models - the DataSeer web application being actually also a PDF-annotation tool for new creating training data.  
+The dataset annotations performed with the DataSeer web application are stored directly in a TEI format, so we have at the same time manually corrected dataset annotations and the exact context of mention of the dataset in the structured document. We can therefore add this data to the existing training data and retrain the models - the DataSeer web application being actually also a PDF-annotation tool for new creating training data.  
 
 To generate training data from the application, first extract the JSON documents from the MongoDB database:
 
@@ -234,7 +234,9 @@ The command will produce 3 files in the cvs training data format:
 
 - `multilevel.csv` give the data type and data subtype for data sentences
 
-These files can directly be used to extend the existing trainng data and to retrain the different models, enabling in practice a continuous re-trainng of the models based on the end-users of the application. 
+In addition, the corresponding TEI files will be exported and written in a subdirector `corpus/` under the directory specified by the `--output` parameter. These TEI files can then be used as such to retrain the dataset-relevant section identifier model (see previous section, these new TEI files needs to be copied under `dataseer-ml/resources/dataset/dataseer/corpus/`). 
+
+This process enables in practice a continuous re-training of the 4 different ML models based on the decisions/corrections of the end-users of the application. 
 
 ## Benchmarking
 
