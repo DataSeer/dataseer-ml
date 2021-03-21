@@ -24,8 +24,8 @@ apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'org.gretty'
 
-group = "org.grobid"
-version = '0.6.2-SNAPSHOT'
+group = "org.grobid.datatseer"
+version = '0.7.0-SNAPSHOT'
 
 description = """dataseer-ml"""
 
@@ -57,8 +57,8 @@ dependencies {
     compile fileTree(dir: new File(rootProject.rootDir, 'lib'), include: localLibs)
 
     //Grobid
-    compile group: 'org.grobid', name: 'grobid-core', version: '0.6.2-SNAPSHOT'
-    compile group: 'org.grobid', name: 'grobid-trainer', version: '0.6.2-SNAPSHOT'
+    compile group: 'org.grobid', name: 'grobid-core', version: '0.7.0-SNAPSHOT'
+    compile group: 'org.grobid', name: 'grobid-trainer', version: '0.7.0-SNAPSHOT'
 
     //Logging
     compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'

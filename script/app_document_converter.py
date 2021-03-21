@@ -32,11 +32,15 @@ from lxml import etree
 
 # valid curators for the set of documents annotated by modelcular connections and reviewed by Tim 
 # this might need to be adapted in the future
+
+# the following should preferably be moved to the config file, so that email of the curators are not on github
 phase1_annotator_identifiers = ['Curator1@molecularconnections.com', 
     'Curator2@molecularconnections.com', 
     'Curator3@molecularconnections.com',
     'Curator4@molecularconnections.com',
     'tim@dataseer.io']
+
+#phase1_annotator_identifiers = ['samanthablankers@live.ca']
 
 binary_fieldnames = ['doi', 'text', 'datatype']
 reuse_fieldnames = ['doi', 'text', 'reuse']
