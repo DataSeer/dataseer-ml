@@ -224,18 +224,14 @@ Evaluation with a random split of the annotated data with a ratio of 0.9 (90% tr
 
 ## Training data from the DataSeer web application
 
-The dataset annotations performed with the DataSeer web application are stored directly in a TEI format, so we have at the same time manually corrected dataset annotations and the exact context of mention of the dataset in the structured document. We can therefore add this data to the existing training data and retrain the models - the DataSeer web application being actually also a PDF-annotation tool for new creating training data.  
+The dataset annotations performed with the DataSeer web application are stored directly in a TEI format. We have thus in the TEI document at the same time manually corrected dataset annotations and the exact contexts of mention of the dataset in the structured document. We can therefore add this data to the existing training data and retrain the models - the DataSeer web application being actually also a PDF-annotation tool for new creating training data.  
 
-To generate training data from the application, first extract the JSON documents from the MongoDB database:
+To generate training data from the application, first indicate the connection information to access the DataSeer web API (file `config.json`). A token corresponding to the `curator` level user right is necessary (it can be generated from the DataSeer web application, in the account panel). Then indicate in the config file the usage names corresponding to annotators/curators that you wish to consider to retrieve annotated valid documents. The latest versions of the datasets of the documents modified by the list of indicated annotators/curators will be used as extracted training data.
 
-```
-> mongoexport --collection=documents --db=app --out=documents.json
-```
-
-By default the script will then output the data valided by a curator (who is providing an expert validation on the manual annotations). If relevant, you can modify the script to apply other criteria of selection. Then use the script as follow: 
+By default the script outputs the data "valided" by the indicated annotators or curators (who is providing an expert validation on the manual annotations). If relevant, you can modify the script to apply other criteria of selection. Then use the script as follow: 
 
 ```
-> python3 app_document_converter.py --document documents.json --output ~/tmp/ 
+> python3 app_document_converter.py --config my_config.json --output ~/tmp/ 
 ```
 
 The command will produce 3 files in the cvs training data format: 
@@ -246,7 +242,9 @@ The command will produce 3 files in the cvs training data format:
 
 - `multilevel.csv` give the data type and data subtype for data sentences
 
-In addition, the corresponding TEI files will be exported and written in a subdirector `corpus/` under the directory specified by the `--output` parameter. These TEI files can then be used as such to retrain the dataset-relevant section identifier model (see previous section, these new TEI files needs to be copied under `dataseer-ml/resources/dataset/dataseer/corpus/`). 
+In addition, a CVS file containing all the previous fields and some complementary ones called `extract_summary.csv` will also generated, not for the purposes of training, but for human review (it includes additional information not used for training the machine learning models, such as dataset names, dataset permanent identifier, etc.). 
+
+Finally, the corresponding TEI files will be exported and written in a subdirector `corpus/` under the directory specified by the `--output` parameter. These TEI files can then be used as such to retrain the dataset-relevant section identifier model (see previous section, these new TEI files needs to be copied under `dataseer-ml/resources/dataset/dataseer/corpus/`). 
 
 This process enables in practice a continuous re-training of the 4 different ML models based on the decisions/corrections of the end-users of the application. 
 
