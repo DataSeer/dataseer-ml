@@ -147,9 +147,7 @@ This service triggers a web crawling of the DataSeer Wiki pages describing the s
 
 # Docker Image
 
-A docker image for the `dataseer-ml` service can be built with the project Dockerfile. This docker file uses the GROBID with DeLFT image as base image, which thus needs to be available as pre-requirement. The complete process is as follow: 
-
-- pull or build the full GROBID image able to run both CRF and Deep Learning models, see instructions [here](https://grobid.readthedocs.io/en/latest/Grobid-docker/#crf-and-deep-learning-image/) and [here](https://grobid.readthedocs.io/en/latest/Grobid-docker/#building-an-image)
+A docker image for the `dataseer-ml` service can be built with the project Dockerfile. The complete process is as follow: 
 
 - copy the `Dockerfile.dataseer` at the root of the GROBID installation:
 
@@ -163,18 +161,20 @@ A docker image for the `dataseer-ml` service can be built with the project Docke
 > docker build -t dataseer/dataseer:0.7.0-SNAPSHOT --build-arg GROBID_VERSION=0.7.0-SNAPSHOT --file Dockerfile.dataseer .
 ```
 
+The Docker image build take several minutes, installing GROBID, dataseer-ml, a complete Python Deep Learning environment based on DeLFT and pre-trained embeddings downloaded from the internet and pre-compiled. The resulting image is very large, more than 10GB, in particular due to the contained embeddings and models. 
+
 - you can now run the `dataseer-ml` service via Docker:
 
 ```bash
-> docker run --rm --gpus all --init dataseer/dataseer:0.7.0-SNAPSHOT
+>  docker run --rm --gpus all -it -p 8060:8060 --init dataseer/dataseer:0.7.0-SNAPSHOT
 ```
 
-The build image includes the support of GPU when available on the host machine via the parameter `--gpus all` (with automatic recognition of the CUDA version), with fall back to CPU if GPU are not available. The support of GPU is only available on Linux host machine.
+The build image includes the automatic support of GPU when available on the host machine via the parameter `--gpus all` (with automatic recognition of the CUDA version), with fall back to CPU if GPU are not available. The support of GPU is only available on Linux host machine.
 
 The `dataseer-ml` service is available at the default host/port `localhost:8060`, but it is possible to map the port at launch time of the container as follow:
 
 ```bash
-> docker run --rm --gpus all --init -p 8060:8080 dataseer/dataseer:0.7.0-SNAPSHOT
+> docker run --rm --gpus all -it -p 8060:8060 --init dataseer/dataseer:0.7.0-SNAPSHOT
 ```
 
 # Training data assembling and generating classification models
