@@ -160,13 +160,13 @@ A docker image for the `dataseer-ml` service can be built with the project Docke
 - from the GROBID root installation (`grobid/`), launch the docker build:
 
 ```bash
-> docker build -t dataseer/dataseer:0.6.2-SNAPSHOT --build-arg GROBID_VERSION=0.6.2-SNAPSHOT --file Dockerfile.dataseer .
+> docker build -t dataseer/dataseer:0.7.0-SNAPSHOT --build-arg GROBID_VERSION=0.7.0-SNAPSHOT --file Dockerfile.dataseer .
 ```
 
 - you can now run the `dataseer-ml` service via Docker:
 
 ```bash
-> docker run --rm --gpus all --init dataseer/dataseer:0.6.2-SNAPSHOT
+> docker run --rm --gpus all --init dataseer/dataseer:0.7.0-SNAPSHOT
 ```
 
 The build image includes the support of GPU when available on the host machine via the parameter `--gpus all` (with automatic recognition of the CUDA version), with fall back to CPU if GPU are not available. The support of GPU is only available on Linux host machine.
@@ -174,7 +174,7 @@ The build image includes the support of GPU when available on the host machine v
 The `dataseer-ml` service is available at the default host/port `localhost:8060`, but it is possible to map the port at launch time of the container as follow:
 
 ```bash
-> docker run --rm --gpus all --init -p 8060:8080 dataseer/dataseer:0.6.2-SNAPSHOT
+> docker run --rm --gpus all --init -p 8060:8080 dataseer/dataseer:0.7.0-SNAPSHOT
 ```
 
 # Training data assembling and generating classification models
