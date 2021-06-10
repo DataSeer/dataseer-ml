@@ -237,7 +237,7 @@ public class DataseerTrainer extends AbstractTrainer {
 
         final File dataPath = trainDataPath;
         createCRFPPData(getCorpusPath(), dataPath, evalDataPath, split);
-        GenericTrainer trainer = TrainerFactory.getTrainer();
+        GenericTrainer trainer = TrainerFactory.getTrainer(model);
 
         if (epsilon != 0.0)
             trainer.setEpsilon(epsilon);
@@ -249,7 +249,7 @@ public class DataseerTrainer extends AbstractTrainer {
         final File tempModelPath = new File(GrobidProperties.getModelPath(model).getAbsolutePath() + NEW_MODEL_EXT);
         final File oldModelPath = GrobidProperties.getModelPath(model);
 
-        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getNBThreads(), model);
+        trainer.train(getTemplatePath(), dataPath, tempModelPath, GrobidProperties.getWapitiNbThreads(), model);
 
         // if we are here, that means that training succeeded
         renameModels(oldModelPath, tempModelPath);

@@ -88,7 +88,14 @@ public class DataseerTrainerRunner {
 
         for (int i = 0; i < args.length; i++) {
             if (i == 4) {
-                GrobidProperties.getInstance().setNBThreads(args[i]);
+                int nbTreadsInt = 0;
+                try {
+                    nbTreadsInt = Integer.parseInt(args[i]);
+                } catch (Exception e) {
+                    System.err.println("Warning: the thread number parameter is not a valid integer, " + args[i] + " - using 0 as default thread number");
+                    e.printStackTrace();
+                }
+                GrobidProperties.getInstance().setWapitiNbThreads(nbTreadsInt);
             } else if (i == 3) {
                 String splitRatio = args[i];
                 try {

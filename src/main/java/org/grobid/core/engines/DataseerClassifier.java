@@ -67,6 +67,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 
+import org.grobid.core.utilities.GrobidConfig.ModelParameters;
+
 import static org.apache.commons.lang3.ArrayUtils.isEmpty;
 
 /**
@@ -122,6 +124,12 @@ public class DataseerClassifier {
             // loading here will not help)
             try {
                 logger.info("Loading external native sequence labelling library");
+
+                ModelParameters modelConfig = new ModelParameters();
+                modelConfig.name = "dataseer";
+                modelConfig.engine = "wapiti";
+                GrobidProperties.getInstance().addModel(modelConfig);
+
                 logger.debug(LibraryLoader.getLibraryFolder());
 
                 File libraryFolder = new File(LibraryLoader.getLibraryFolder());
@@ -614,6 +622,27 @@ public class DataseerClassifier {
         List<String> sectionTypes = new ArrayList<String>();
         List<Integer> nbDatasets =new ArrayList<Integer>();
         List<String> datasetTypes = new ArrayList<String>();
+
+        // map dataset id to its data type and data subtype
+        Map<String, Pair<String,String>> datasetMap = new TreeMap<>();
+
+        // map a dataInstance id to its dataset id
+        Map<String, String> dataInstanceMap = new TreeMap<>();
+
+        // map a dataInstance id to its obtained confidence score in context
+        Map<String, Double> dataInstanceScoreMap = new TreeMap<>();
+
+        // map a dataInstance id to its reuse information in context
+        Map<String, Boolean> dataInstanceReuseMap = new TreeMap<>();
+
+        // as a preprocess, we put an identifier to every sentences (if they don't have already one)
+        NodeList sentenceList = doc.getElementsByTagName("s");
+        for (int i = 0; i < sentenceList.getLength(); i++) {
+            Element sentenceElement = (Element) sentenceList.item(i);
+            if (!sentenceElement.hasAttribute("xml:id"))
+                sentenceElement.setAttribute("xml:id", "sentence-"+i);
+        }
+
         NodeList sectionList = doc.getElementsByTagName("div");
         for (int i = 0; i < sectionList.getLength(); i++) {
             Element sectionElement = (Element) sectionList.item(i);
@@ -776,15 +805,22 @@ public class DataseerClassifier {
                                             // or if existing dataset: corresp=\"#dataset- + dataSetId\"
                                             Element sentenceElement = subchildElement;
 
-                                            sentenceElement.setAttribute("id","dataset-" + dataSetId);
+                                            /*sentenceElement.setAttribute("id","dataset-" + dataSetId);
                                             sentenceElement.setAttribute("type", bestDataTypeWithProb.getLeft());
                                             sentenceElement.setAttribute("cert", bestDataTypeWithProb.getRight().toString());
                                             if (isReuse) {
                                                 sentenceElement.setAttribute("reuse", "true");
                                             } else {
                                                 sentenceElement.setAttribute("reuse", "false");
-                                            }
+                                            }*/
 
+                                            sentenceElement.setAttribute("corresp","#dataInstance-"+dataSetId);
+
+                                            // update dataset information  maps
+                                            datasetMap.put("dataset-"+dataSetId, Pair.of(bestDataTypeWithProb.getLeft(), null));
+                                            dataInstanceMap.put("dataInstance-"+dataSetId, "dataset-"+dataSetId);
+                                            dataInstanceScoreMap.put("dataInstance-"+dataSetId, bestDataTypeWithProb.getRight());
+                                            dataInstanceReuseMap.put("dataInstance-"+dataSetId, new Boolean(isReuse));
                                             dataSetId++;
 
                                             // we also need to add a dataseer subtype attribute to the parent <div>
@@ -810,6 +846,79 @@ public class DataseerClassifier {
                     }
                 }
             }
+        }
+
+        // get <encodingDesc> path - normally it is always there - or create it 
+        NodeList encodingDescList = doc.getElementsByTagName("encodingDesc");
+        Element encodingDescElement = null;
+        if (encodingDescList.getLength() == 0) {
+            NodeList teiHeaderList = doc.getElementsByTagName("teiHeader");
+            Node teiHeaderNode = null;
+            if (teiHeaderList.getLength() == 0) {
+                // this should never be the case !
+                // just to be sure, we inject a dummy header node to complete the process
+                teiHeaderNode = doc.createElementNS("http://www.tei-c.org/ns/1.0", "teiHeader");
+                doc.getDocumentElement().appendChild(teiHeaderNode);
+            } else {
+                teiHeaderNode = teiHeaderList.item(0);
+            }
+
+            encodingDescElement = doc.createElementNS("http://www.tei-c.org/ns/1.0", "encodingDesc");
+            teiHeaderNode.appendChild(encodingDescElement);
+        } else {
+            encodingDescElement = (Element) encodingDescList.item(0);
+        }
+
+        // inject the dataset list under <encodingDesc>
+        if (!datasetMap.isEmpty()) {
+            Element listElement = doc.createElementNS("http://www.tei-c.org/ns/1.0", "list");
+            listElement.setAttribute("type", "dataset");
+
+            for (Map.Entry<String, Pair<String,String>> entry : datasetMap.entrySet()) {
+                Element datasetNode = doc.createElementNS("http://www.tei-c.org/ns/1.0", "dataset");
+                datasetNode.setAttribute("xml:id", entry.getKey());
+
+                Pair<String,String> theDataTypes = entry.getValue();
+
+                if (theDataTypes.getLeft() != null) {
+                    datasetNode.setAttribute("type", theDataTypes.getLeft());
+                }
+
+                if (theDataTypes.getRight() != null) {
+                    datasetNode.setAttribute("subtype", theDataTypes.getRight());
+                }
+
+                listElement.appendChild(datasetNode);
+            }
+
+            encodingDescElement.appendChild(listElement);
+        }
+
+        if (!dataInstanceMap.isEmpty()) {
+            // inject the dataInstance list under <encodingDesc>
+            Element listElement2 = doc.createElementNS("http://www.tei-c.org/ns/1.0", "list");
+            listElement2.setAttribute("type", "dataInstance");
+
+            for (Map.Entry<String, String> entry : dataInstanceMap.entrySet()) {
+                Element dataInstanceNode = doc.createElementNS("http://www.tei-c.org/ns/1.0", "dataInstance");
+                
+                dataInstanceNode.setAttribute("xml:id", entry.getKey());
+                dataInstanceNode.setAttribute("corresp", "#"+entry.getValue());
+
+                Boolean reuse = dataInstanceReuseMap.get(entry.getKey());
+                if (reuse != null) {
+                    dataInstanceNode.setAttribute("reuse", reuse.toString());
+                }
+
+                Double cert = dataInstanceScoreMap.get(entry.getKey());
+                if (cert != null) {
+                    dataInstanceNode.setAttribute("cert", cert.toString());
+                }
+
+                listElement2.appendChild(dataInstanceNode);
+            }
+
+            encodingDescElement.appendChild(listElement2);
         }
     }
 
