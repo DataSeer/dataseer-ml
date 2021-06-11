@@ -17,7 +17,7 @@ import org.grobid.core.main.GrobidHomeFinder;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.OffsetPosition;
 import org.grobid.core.utilities.Pair;
-import org.grobid.core.utilities.DataseerProperties;
+import org.grobid.core.utilities.DataseerConfiguration;
 import org.grobid.trainer.evaluation.EvaluationUtilities;
 
 import javax.xml.parsers.SAXParser;
@@ -27,6 +27,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+
 /**
  * Training of the dataseer section labeling model
  *
@@ -35,11 +38,16 @@ import java.util.List;
 public class DataseerTrainer extends AbstractTrainer {
 
     //private DataseerLexicon dataseerLexicon = null;
-    private DataseerClassifier classifier = null;
+    private DataseerClassifier classifier;
+    private DataseerConfiguration dataseerConfiguration;
 
     public DataseerTrainer() {
         this(0.00001, 20, 0);
         classifier = DataseerClassifier.getInstance();
+    }
+
+    public void setDataseerConfiguration(DataseerConfiguration config) {
+        this.dataseerConfiguration = config;
     }
 
     public DataseerTrainer(double epsilon, int window, int nbMaxIterations) {
@@ -258,11 +266,11 @@ public class DataseerTrainer extends AbstractTrainer {
     }
 
     protected final File getCorpusPath() {
-        return new File(DataseerProperties.get("grobid.dataseer.corpusPath"));
+        return new File(dataseerConfiguration.getCorpusPath());
     }
 
     protected final File getTemplatePath() {
-        return new File(DataseerProperties.get("grobid.dataseer.templatePath"));
+        return new File(dataseerConfiguration.getTemplatePath());
     }
 
     /**
@@ -271,8 +279,16 @@ public class DataseerTrainer extends AbstractTrainer {
      * @param args Command line arguments.
      */
     public static void main(String[] args) {
+        DataseerConfiguration dataseerConfiguration = null;
         try {
-            String pGrobidHome = DataseerProperties.get("grobid.home");
+            ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+            dataseerConfiguration = mapper.readValue(new File("resources/config/dataseer-ml.yaml"), DataseerConfiguration.class);
+        } catch(Exception e) {
+            System.err.println("The config file does not appear valid, see resources/config/dataseer-ml.yaml");
+        }
+
+        try {
+            String pGrobidHome = dataseerConfiguration.getGrobidHome();
 
             GrobidHomeFinder grobidHomeFinder = new GrobidHomeFinder(Arrays.asList(pGrobidHome));
             GrobidProperties.getInstance(grobidHomeFinder);
@@ -286,6 +302,7 @@ public class DataseerTrainer extends AbstractTrainer {
         DataseerClassifier classifier = DataseerClassifier.getInstance();
 
         Trainer trainer = new DataseerTrainer();
+        ((DataseerTrainer) trainer).setDataseerConfiguration(dataseerConfiguration);
         AbstractTrainer.runTraining(trainer);
         System.out.println(AbstractTrainer.runEvaluation(trainer));
         System.exit(0);

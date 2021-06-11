@@ -4,7 +4,7 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.grobid.core.lexicon.DataseerLexicon;
 import org.grobid.core.main.GrobidHomeFinder;
 import org.grobid.core.main.LibraryLoader;
-import org.grobid.core.utilities.DataseerProperties;
+import org.grobid.core.utilities.DataseerConfiguration;
 import org.grobid.core.utilities.GrobidProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,11 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.InputStream;
+import java.io.File;
 import java.util.Arrays;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 /**
  * RESTful service for GROBID dataseer extension.
@@ -37,15 +41,24 @@ public class DataseerRestService implements DataseerPaths {
         LOGGER.info("Init Servlet DataseerRestService.");
         LOGGER.info("Init lexicon and KB resources.");
         try {
-            String pGrobidHome = DataseerProperties.get("grobid.home");
+            DataseerConfiguration dataseerConfiguration = null;
+            try {
+                ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+                dataseerConfiguration = mapper.readValue(new File("resources/config/dataseer-ml.yaml"), DataseerConfiguration.class);
+            } catch(Exception e) {
+                LOGGER.error("The config file does not appear valid, see resources/config/dataseer-ml.yaml", e);
+            }
+
+            GrobidProperties.getInstance().addModel(dataseerConfiguration.getModel());
+
+            String pGrobidHome = dataseerConfiguration.getGrobidHome();
 
             GrobidHomeFinder grobidHomeFinder = new GrobidHomeFinder(Arrays.asList(pGrobidHome));
             GrobidProperties.getInstance(grobidHomeFinder);
     
-            LOGGER.info(">>>>>>>> GROBID_HOME="+GrobidProperties.get_GROBID_HOME_PATH());
+            LOGGER.info(">>>>>>>> GROBID_HOME="+GrobidProperties.getGrobidHome());
 
-            //LibraryLoader.load();
-            //DataseerLexicon.getInstance();
+            LOGGER.debug(LibraryLoader.getLibraryFolder());
         } catch (final Exception exp) {
             LOGGER.error("GROBID dataseer initialisation failed. ", exp);
         }

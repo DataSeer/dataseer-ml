@@ -368,7 +368,7 @@ public class AnnotatedCorpusGeneratorCSV {
                     File f = new File(plosPath);
                     if (f.exists()) {
                         // transform the XML NLM file into TEI with Pub2TEI command line
-                        String pub2teiPath = DataseerProperties.get("grobid.dataseer.pub2tei.path");
+                        String pub2teiPath = dataseer.getDataseerConfiguration().getPub2TEIPath();
                         System.out.println(pub2teiPath);
                         File pub2teiDir = new File(pub2teiPath);
 

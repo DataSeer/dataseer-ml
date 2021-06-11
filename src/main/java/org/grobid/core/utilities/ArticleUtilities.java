@@ -25,6 +25,7 @@ import org.slf4j.LoggerFactory;
 
 import org.grobid.core.utilities.KeyGen;
 import org.grobid.core.utilities.TextUtilities;
+import org.grobid.core.engines.DataseerClassifier;
 
 import org.apache.commons.io.FileUtils;
 
@@ -34,6 +35,8 @@ import org.apache.commons.io.FileUtils;
 public class ArticleUtilities {
 
     private static final Logger logger = LoggerFactory.getLogger(ArticleUtilities.class);
+
+    private DataseerConfiguration dataseerConfiguration;
 
     private static String halURL = "https://hal.archives-ouvertes.fr";
     private static String pmcURL = "http://www.ncbi.nlm.nih.gov/pmc/articles";
@@ -106,8 +109,9 @@ public class ArticleUtilities {
                 return null;
             }
 
+            DataseerConfiguration dataseerConfiguration = DataseerClassifier.getInstance().getDataseerConfiguration();
             File file = uploadFile(urll, 
-                DataseerProperties.getTmpPath(), 
+                dataseerConfiguration.getTmpPath(), 
                 KeyGen.getKey()+".pdf");
             return file;
         }
@@ -186,8 +190,9 @@ public class ArticleUtilities {
     }
 
     private static String getGluttonOAUrl(String doi)  throws Exception {
-        String host = DataseerProperties.get("grobid.dataseer.glutton.host");
-        String port = DataseerProperties.get("grobid.dataseer.glutton.port");
+        DataseerConfiguration dataseerConfiguration = DataseerClassifier.getInstance().getDataseerConfiguration();
+        String host = dataseerConfiguration.getGluttonHost();
+        String port = dataseerConfiguration.getGluttonPort();
         String queryUrl = "http://" + host;
         if (port != null)
             queryUrl += ":" + port;

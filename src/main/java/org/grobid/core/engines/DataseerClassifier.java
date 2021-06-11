@@ -22,6 +22,7 @@ import org.grobid.core.engines.tagging.GrobidCRFEngine;
 import org.grobid.core.engines.tagging.*;
 import org.grobid.core.jni.PythonEnvironmentConfig;
 import org.grobid.core.jni.DeLFTClassifierModel;
+import org.grobid.core.utilities.GrobidConfig.ModelParameters;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,7 +68,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 
-import org.grobid.core.utilities.GrobidConfig.ModelParameters;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 import static org.apache.commons.lang3.ArrayUtils.isEmpty;
 
@@ -97,6 +99,8 @@ public class DataseerClassifier {
     private DeLFTClassifierModel classifierFirstLevel = null;
     private DeLFTClassifierModel classifierReuse = null;
 
+    private DataseerConfiguration dataseerConfiguration = null;
+
     public static DataseerClassifier getInstance() {
         if (instance == null) {
             getNewInstance();
@@ -116,90 +120,93 @@ public class DataseerClassifier {
     private DataseerClassifier() {
         //dataseerLexicon = DataseerLexicon.getInstance();
         try {
-            // force loading of DeLFT and Wapiti lib without conflict
-            GrobidProperties.getInstance();
-
-            // actual loading will be made at JEP initialization, so we just need to add the path in the 
-            // java.library.path (JEP will anyway try to load from java.library.path, so explicit file 
-            // loading here will not help)
+            this.dataseerConfiguration = null;
             try {
-                logger.info("Loading external native sequence labelling library");
-
-                ModelParameters modelConfig = new ModelParameters();
-                modelConfig.name = "dataseer";
-                modelConfig.engine = "wapiti";
-                GrobidProperties.getInstance().addModel(modelConfig);
-
-                logger.debug(LibraryLoader.getLibraryFolder());
-
-                File libraryFolder = new File(LibraryLoader.getLibraryFolder());
-                if (!libraryFolder.exists() || !libraryFolder.isDirectory()) {
-                    logger.error("Unable to find a native sequence labelling library: Folder "
-                        + libraryFolder + " does not exist");
-                    throw new RuntimeException(
-                        "Unable to find a native sequence labelling library: Folder "
-                            + libraryFolder + " does not exist");
-                }
-
-                File[] wapitiLibFiles = libraryFolder.listFiles(new FilenameFilter() {
-                    @Override
-                    public boolean accept(File dir, String name) {
-                        return name.startsWith(LibraryLoader.WAPITI_NATIVE_LIB_NAME);
-                    }
-                });
-
-                if (isEmpty(wapitiLibFiles)) {
-                    logger.info("No wapiti library in the Grobid home folder");
-                } else {
-                    logger.info("Loading Wapiti native library...");
-                    // if DeLFT will be used, we must not load libstdc++, it would create a conflict with tensorflow libstdc++ version
-                    // so we temporary rename the lib so that it is not loaded in this case
-                    // note that we know that, in this case, the local lib can be ignored because as DeFLT and tensorflow are installed
-                    // we are sure that a compatible libstdc++ lib is installed on the system and can be dynamically loaded
-
-                    String libstdcppPath = libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6";
-                    File libstdcppFile = new File(libstdcppPath);
-                    if (libstdcppFile.exists()) {
-                        File libstdcppFileNew = new File(libstdcppPath + ".new");
-                        libstdcppFile.renameTo(libstdcppFileNew);
-                    
-                    }
-                    try {
-                        System.load(wapitiLibFiles[0].getAbsolutePath());
-                    } finally {
-                        // restore libstdc++
-                        String libstdcppPathNew = libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6.new";
-                        File libstdcppFileNew = new File(libstdcppPathNew);
-                        if (libstdcppFileNew.exists()) {
-                            libstdcppFile = new File(libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6");
-                            libstdcppFileNew.renameTo(libstdcppFile);
-                        }
-                    }
-                }
-
-                logger.info("Loading JEP native library for DeLFT... " + libraryFolder.getAbsolutePath());
-                LibraryLoader.addLibraryPath(libraryFolder.getAbsolutePath());
-
-            } catch (Exception e) {
-                throw new GrobidException("Loading JEP native library for DeLFT failed", e);
+                ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+                dataseerConfiguration = mapper.readValue(new File("resources/config/dataseer-ml.yaml"), DataseerConfiguration.class);
+            } catch(Exception e) {
+                logger.error("The config file does not appear valid, see resources/config/dataseer-ml.yaml", e);
             }
 
-            //Loading sentence detector model (hope they are thread safe!)
-            /*InputStream inputStream = new FileInputStream(openNLPModelFile); 
-            SentenceModel model = new SentenceModel(inputStream);
-            detector = new SentenceDetectorME(model);*/
+            String pGrobidHome = this.dataseerConfiguration.getGrobidHome();
+
+            GrobidHomeFinder grobidHomeFinder = new GrobidHomeFinder(Arrays.asList(pGrobidHome));
+            GrobidProperties.getInstance(grobidHomeFinder);
+            
+            GrobidProperties.getInstance().addModel(this.dataseerConfiguration.getModel());
+
+            logger.info(">>>>>>>> GROBID_HOME="+GrobidProperties.getGrobidHome());
+            logger.debug(LibraryLoader.getLibraryFolder());
+
+            File libraryFolder = new File(LibraryLoader.getLibraryFolder());
+            if (!libraryFolder.exists() || !libraryFolder.isDirectory()) {
+                logger.error("Unable to find a native sequence labelling library: Folder "
+                    + libraryFolder + " does not exist");
+                throw new RuntimeException(
+                    "Unable to find a native sequence labelling library: Folder "
+                        + libraryFolder + " does not exist");
+            }
+
+            File[] wapitiLibFiles = libraryFolder.listFiles(new FilenameFilter() {
+                @Override
+                public boolean accept(File dir, String name) {
+                    return name.startsWith(LibraryLoader.WAPITI_NATIVE_LIB_NAME);
+                }
+            });
+
+            if (isEmpty(wapitiLibFiles)) {
+                logger.info("No wapiti library in the Grobid home folder");
+            } else {
+                logger.info("Loading Wapiti native library...");
+                // if DeLFT will be used, we must not load libstdc++, it would create a conflict with tensorflow libstdc++ version
+                // so we temporary rename the lib so that it is not loaded in this case
+                // note that we know that, in this case, the local lib can be ignored because as DeFLT and tensorflow are installed
+                // we are sure that a compatible libstdc++ lib is installed on the system and can be dynamically loaded
+
+                String libstdcppPath = libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6";
+                File libstdcppFile = new File(libstdcppPath);
+                if (libstdcppFile.exists()) {
+                    File libstdcppFileNew = new File(libstdcppPath + ".new");
+                    libstdcppFile.renameTo(libstdcppFileNew);
+                
+                }
+                try {
+                    System.load(wapitiLibFiles[0].getAbsolutePath());
+                } finally {
+                    // restore libstdc++
+                    String libstdcppPathNew = libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6.new";
+                    File libstdcppFileNew = new File(libstdcppPathNew);
+                    if (libstdcppFileNew.exists()) {
+                        libstdcppFile = new File(libraryFolder.getAbsolutePath() + File.separator + "libstdc++.so.6");
+                        libstdcppFileNew.renameTo(libstdcppFile);
+                    }
+                }
+            }
+
+            logger.info("Loading JEP native library for DeLFT... " + libraryFolder.getAbsolutePath());
+            LibraryLoader.addLibraryPath(libraryFolder.getAbsolutePath());
 
             // grobid
             engine = GrobidFactory.getInstance().createEngine();
 
             // Datatype classifier via DeLFT
-            classifierBinary = new DeLFTClassifierModel("dataseer-binary", "gru");
-            classifierFirstLevel = new DeLFTClassifierModel("dataseer-first", "gru");
-            classifierReuse = new DeLFTClassifierModel("dataseer-reuse", "gru");
+            for(ModelParameters parameter : dataseerConfiguration.getModelClassifiers()) {
+                if (parameter.name.equals("dataseer-binary")) {
+                    this.classifierBinary = new DeLFTClassifierModel("dataseer-binary", parameter.delft.architecture);
+                } else if (parameter.name.equals("dataseer-first")) {
+                    this.classifierFirstLevel = new DeLFTClassifierModel("dataseer-first", parameter.delft.architecture);
+                } else if (parameter.name.equals("dataseer-reuse")) {
+                    this.classifierReuse = new DeLFTClassifierModel("dataseer-reuse", parameter.delft.architecture);
+                }
+            }
 
         } catch (Exception e) {
             throw new GrobidException("Cannot initialise DataSeer classifier ", e);
         }
+    }
+
+    public DataseerConfiguration getDataseerConfiguration() {
+        return this.dataseerConfiguration;
     }
 
     /**
@@ -483,7 +490,7 @@ public class DataseerClassifier {
             File tmpFile = GrobidProperties.getInstance().getTempPath();
             newFilePath = ArticleUtilities.applyPub2TEI(filePath, 
                 tmpFile.getPath() + "/" + fileName.replace(".xml", ".tei.xml"), 
-                DataseerProperties.getPub2TEIPath());
+                this.dataseerConfiguration.getPub2TEIPath());
             //System.out.println(newFilePath);
 
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

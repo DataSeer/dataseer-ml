@@ -64,17 +64,17 @@ Install DeLFT:
 
 > git clone https://github.com/kermitt2/delft
 
-Follow the installation described in the [DeLFT documentation](https://github.com/kermitt2/delft#install). If necessary, update the path to the DeLFT installation in the `grobid.properties` file located under `grobid-home/config/grobid.properties`.
+Follow the installation described in the [DeLFT documentation](https://github.com/kermitt2/delft#install). If necessary, update the path to the DeLFT installation in the `grobid.yaml` file located under `grobid-home/config/grobid.properties`.
 
 By default, the project can process scientific articles in PDF and TEI formats. To process JATS/NLM, scholarOne and a variety of other native publisher formats, Pub2TEI needs to be installed: 
 
 > git clone https://github.com/kermitt2/Pub2TEI
 
-If required, update the path to the Pub2TEI installation in the `dataseer-ml.properties` file located under `dataseer-ml/src/main/resources/`:
+If required, update the path to the Pub2TEI installation in the `dataseer-ml.yaml` file located under `resources/config/`:
 
-```
+```yml
 # path to Pub2TEI repository as available at https://github.com/kermitt2/Pub2TEI
-grobid.dataseer.pub2tei.path=../../Pub2TEI/
+pub2teiPath: "../../Pub2TEI/"
 ```
 
 Build dataseer-ml:

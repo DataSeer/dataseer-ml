@@ -1,0 +1,52 @@
+
+corpusPath: "./resources/dataset/dataseer/corpus"
+templatePath: "./resources/dataset/dataseer/crfpp-templates/dataseer.template"
+grobidHome: "../grobid-home"
+tmpPath: "tmp/"
+
+# path to Pub2TEI repository as available at https://github.com/kermitt2/Pub2TEI
+pub2teiPath: "../../Pub2TEI/"
+
+gluttonHost: "https://cloud.science-miner.com/glutton"
+gluttonPort: 
+
+# sequence labeling model (identify data-related sections)
+model:
+  name: "dataseer"
+  engine: "wapiti"
+  #engine: "delft"
+  wapiti:
+    # wapiti training parameters, they will be used at training time only
+    epsilon: 0.00001
+    window: 20
+    nbMaxIterations: 2000
+  delft:
+    # deep learning parameters
+    architecture: "BidLSTM_CRF"
+    #architecture: "scibert"
+    useELMo: false
+    embeddings_name: "word2vec"
+
+# classifier model, dataset binary, data type (first level hierarchy) and reuse binary
+modelClassifiers:
+  - name: "dataseer-binary"
+    engine: "delft"
+    delft:
+      # deep learning parameters
+      architecture: "gru"
+      #architecture: "scibert"
+      embeddings_name: "word2vec"
+
+  - name: "dataseer-first"
+    engine: "delft"
+    delft:
+      # deep learning parameters
+      architecture: "gru"
+      embeddings_name: "word2vec"
+
+  - name: "dataseer-reuse"
+    engine: "delft"
+    delft:
+      # deep learning parameters
+      architecture: "gru"
+      embeddings_name: "word2vec"
