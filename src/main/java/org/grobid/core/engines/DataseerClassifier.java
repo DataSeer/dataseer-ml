@@ -1071,7 +1071,7 @@ public class DataseerClassifier {
 
         List<String> coordinates = new ArrayList<>();
         coordinates.add("s");
-
+        coordinates.add("head");
         // TBD: review arguments, no need for images, annotations, outline
         GrobidAnalysisConfig config = new GrobidAnalysisConfig.GrobidAnalysisConfigBuilder()
             .consolidateHeader(1)
