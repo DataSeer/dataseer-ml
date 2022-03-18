@@ -11,24 +11,35 @@ gluttonHost: "https://cloud.science-miner.com/glutton"
 gluttonPort: 
 
 # sequence labeling model (identify data-related sections)
-model:
-  name: "dataseer"
-  engine: "wapiti"
-  #engine: "delft"
-  wapiti:
-    # wapiti training parameters, they will be used at training time only
-    epsilon: 0.00001
-    window: 20
-    nbMaxIterations: 2000
-  delft:
-    # deep learning parameters
-    architecture: "BidLSTM_CRF"
-    #architecture: "scibert"
-    useELMo: false
-    embeddings_name: "word2vec"
+models:
 
-# classifier model, dataset binary, data type (first level hierarchy) and reuse binary
-modelClassifiers:
+  # model for zones
+  - name: "dataseer"
+    engine: "wapiti"
+    #engine: "delft"
+    wapiti:
+      # wapiti training parameters, they will be used at training time only
+      epsilon: 0.00001
+      window: 20
+      nbMaxIterations: 2000
+
+  # model for dataset mention recognition
+  - name: "dataseer-mention"
+    engine: "wapiti"
+    #engine: "delft"
+    wapiti:
+      # wapiti training parameters, they will be used at training time only
+      epsilon: 0.00001
+      window: 20
+      nbMaxIterations: 2000
+    delft:
+      # deep learning parameters
+      architecture: "BidLSTM_CRF"
+      #architecture: "scibert"
+      useELMo: false
+      embeddings_name: "glove-840B"
+
+  # classifier model, dataset binary (datset or not dataset in the current sentence)
   - name: "dataseer-binary"
     engine: "delft"
     delft:
@@ -37,6 +48,7 @@ modelClassifiers:
       #architecture: "scibert"
       embeddings_name: "word2vec"
 
+  # identification of the data type (first level hierarchy) 
   - name: "dataseer-first"
     engine: "delft"
     delft:
@@ -44,6 +56,7 @@ modelClassifiers:
       architecture: "gru"
       embeddings_name: "word2vec"
 
+  # mention context classification (reuse binary for the moment)
   - name: "dataseer-reuse"
     engine: "delft"
     delft:

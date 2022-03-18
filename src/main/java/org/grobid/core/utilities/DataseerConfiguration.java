@@ -13,11 +13,8 @@ public class DataseerConfiguration {
     public String gluttonHost;
     public String gluttonPort;
 
-    // sequence labeling model
-    public ModelParameters model;
-
-    // classifier models
-    public List<ModelParameters> modelClassifiers;
+    //models (sequence labeling and text classifiers)
+    public List<ModelParameters> models;
 
     public String getCorpusPath() {
         return this.corpusPath;
@@ -59,20 +56,26 @@ public class DataseerConfiguration {
         this.grobidHome = grobidHome;
     }
 
+    public List<ModelParameters> getModels() {
+        return models;
+    }
+
     public ModelParameters getModel() {
-        return model;
+        // by default return the software mention sequence labeling model
+        return getModel("dataseer");
     }
 
-    public void getModel(ModelParameters model) {
-        this.model = model;
+    public ModelParameters getModel(String modelName) {
+        for(ModelParameters parameters : models) {
+            if (parameters.name.equals(modelName)) {
+                return parameters;
+            }
+        }
+        return null;
     }
 
-    public List<ModelParameters> getModelClassifiers() {
-        return this.modelClassifiers;
-    }
-
-    public void getModelClassifiers(List<ModelParameters> models) {
-        this.modelClassifiers = models;
+    public void setModels(List<ModelParameters> models) {
+        this.models = models;
     }
 
     public String getGluttonHost() {
