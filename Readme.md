@@ -77,9 +77,11 @@ If required, update the path to the Pub2TEI installation in the `dataseer-ml.yam
 pub2teiPath: "../../Pub2TEI/"
 ```
 
-Build dataseer-ml:
+Finally, copy the models under `grobid-home` and build dataseer-ml:
 
 > cd grobid/dataseer-ml
+
+> ./gradlew copyModels
 
 > ./gradlew clean install
 
