@@ -45,8 +45,9 @@ models:
     delft:
       # deep learning parameters
       architecture: "gru"
-      #architecture: "scibert"
+      #architecture: "bert"
       embeddings_name: "word2vec"
+      #transformer: "allenai/scibert_scivocab_cased"
 
   # identification of the data type (first level hierarchy) 
   - name: "dataseer-first"
@@ -54,7 +55,9 @@ models:
     delft:
       # deep learning parameters
       architecture: "gru"
+      #architecture: "bert"
       embeddings_name: "word2vec"
+      #transformer: "allenai/scibert_scivocab_cased"
 
   # mention context classification (reuse binary for the moment)
   - name: "dataseer-reuse"
@@ -62,4 +65,6 @@ models:
     delft:
       # deep learning parameters
       architecture: "gru"
+      #architecture: "bert"
       embeddings_name: "word2vec"
+      #transformer: "allenai/scibert_scivocab_cased"

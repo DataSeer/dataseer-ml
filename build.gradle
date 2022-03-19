@@ -161,7 +161,7 @@ dependencies {
     implementation 'org.apache.opennlp:opennlp-tools:1.9.1'
 
     //Tests
-    testImplementation group: 'junit', name: 'junit', version: '4.11'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
     testImplementation group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
 }
 
@@ -185,10 +185,6 @@ configurations.all {
     //    exclude group: 'org.slf4j', module: "slf4j-jdk14"  
     if (project.gradle.startParameter.taskNames.contains('run'))
         exclude group: 'org.slf4j', module: "slf4j-jdk14"
-}
-
-test {
-    exclude '**/**IntegrationTest**'
 }
 
 // Gretty configuration
@@ -263,6 +259,11 @@ task copyModels(type: Copy) {
     from "${rootDir}/resources/models/"
     include "**"
     into "${rootDir}/../grobid-home/models/"
+}
+
+test {
+    testLogging.showStandardStreams = true
+    exclude '**/**IntegrationTest**'
 }
 
 //tasks.withType(JavaCompile) {
