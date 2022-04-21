@@ -1,4 +1,4 @@
-package org.grobid.service;
+package org.grobid.service.controller;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.io.FileUtils;

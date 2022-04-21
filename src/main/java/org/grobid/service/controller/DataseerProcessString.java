@@ -1,4 +1,7 @@
-package org.grobid.service;
+package org.grobid.service.controller;
+
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
 
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.engines.DataseerClassifier;
@@ -16,9 +19,14 @@ import java.util.NoSuchElementException;
  * @author Patrice
  * 
  */
+@Singleton
 public class DataseerProcessString {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DataseerProcessString.class);
+
+    @Inject
+    public DataseerProcessString() {
+    }
 
     /**
      * Determine if a provided sentence introduces a dataset and classify the type of the dataset.
