@@ -216,6 +216,14 @@ jar {
     enabled true
 }
 
+tasks.withType(Tar){
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.withType(Zip){
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
 artifacts {
     archives jar
     archives shadowJar
