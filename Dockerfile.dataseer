@@ -2,7 +2,6 @@
 # build builder image
 # -------------------
 
-#FROM openjdk:8u212-jdk as builder
 FROM openjdk:8u275-jdk as builder
 
 USER root
@@ -118,7 +117,7 @@ RUN rm /opt/grobid/grobid-home/lib/lin-64/jep/libjep.so
 
 COPY --from=builder /opt/grobid-source/grobid-home/scripts/preload_embeddings.py .
 COPY --from=builder /opt/grobid-source/grobid-home/config/resources-registry.json .
-#RUN python3 preload_embeddings.py --embedding word2vec --registry ./resources-registry.json
+RUN python3 preload_embeddings.py --embedding word2vec --registry ./resources-registry.json
 RUN ln -s /opt/grobid /opt/delft
 
 COPY --from=builder /opt/grobid-source/dataseer-ml /opt/grobid/dataseer-ml
@@ -131,11 +130,14 @@ RUN mkdir /opt/grobid/delft/delft
 COPY --from=builder /opt/grobid-source/grobid-home/config/resources-registry.json /opt/grobid/delft/delft/resources-registry.json
 
 WORKDIR /opt/grobid/dataseer-ml
-RUN ls -al
+#RUN ls -al
 
 # trigger gradle wrapper install
 RUN ./gradlew --version
 
-CMD ["./gradlew", "appRun"]
+RUN ./gradlew copyModels && rm -rf resources/models 
+RUN ./gradlew clean build install
+
+CMD ["./gradlew", "run"]
 
 ARG GROBID_VERSION
