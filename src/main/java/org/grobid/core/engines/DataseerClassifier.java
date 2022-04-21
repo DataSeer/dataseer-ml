@@ -123,12 +123,12 @@ public class DataseerClassifier {
             this.dataseerConfiguration = null;
             try {
                 ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-                dataseerConfiguration = mapper.readValue(new File("resources/config/dataseer-ml.yaml"), DataseerConfiguration.class);
+                dataseerConfiguration = mapper.readValue(new File("resources/config/dataseer-ml.yml"), DataseerConfiguration.class);
             } catch(Exception e) {
-                logger.error("The config file does not appear valid, see resources/config/dataseer-ml.yaml", e);
+                logger.error("The config file does not appear valid, see resources/config/dataseer-ml.yml", e);
             }
 
-            String pGrobidHome = this.dataseerConfiguration.getGrobidHome();
+            /*String pGrobidHome = this.dataseerConfiguration.getGrobidHome();
 
             GrobidHomeFinder grobidHomeFinder = new GrobidHomeFinder(Arrays.asList(pGrobidHome));
             GrobidProperties.getInstance(grobidHomeFinder);
@@ -185,12 +185,13 @@ public class DataseerClassifier {
 
             logger.info("Loading JEP native library for DeLFT... " + libraryFolder.getAbsolutePath());
             LibraryLoader.addLibraryPath(libraryFolder.getAbsolutePath());
+            */
 
             // grobid
             engine = GrobidFactory.getInstance().createEngine();
 
             // Datatype classifier via DeLFT
-            for(ModelParameters parameter : dataseerConfiguration.getModelClassifiers()) {
+            for(ModelParameters parameter : dataseerConfiguration.getModels()) {
                 if (parameter.name.equals("dataseer-binary")) {
                     this.classifierBinary = new DeLFTClassifierModel("dataseer-binary", parameter.delft.architecture);
                 } else if (parameter.name.equals("dataseer-first")) {

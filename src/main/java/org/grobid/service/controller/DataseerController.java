@@ -1,4 +1,4 @@
-package org.grobid.service;
+package org.grobid.service.controller;
 
 import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.grobid.core.lexicon.DataseerLexicon;
@@ -6,9 +6,11 @@ import org.grobid.core.main.GrobidHomeFinder;
 import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.DataseerConfiguration;
 import org.grobid.core.utilities.GrobidProperties;
+import org.grobid.core.utilities.GrobidConfig.ModelParameters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -20,6 +22,8 @@ import java.util.Arrays;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
+import org.grobid.service.configuration.DataseerServiceConfiguration;
+
 /**
  * RESTful service for GROBID dataseer extension.
  *
@@ -27,9 +31,9 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
  */
 @Singleton
 @Path(DataseerPaths.PATH_DATASEER)
-public class DataseerRestService implements DataseerPaths {
+public class DataseerController implements DataseerPaths {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(DataseerRestService.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(DataseerController.class);
 
     private static final String TEXT = "text";
     private static final String XML = "xml";
@@ -37,8 +41,23 @@ public class DataseerRestService implements DataseerPaths {
     private static final String PDF = "pdf";
     private static final String INPUT = "input";
 
-    public DataseerRestService() {
-        LOGGER.info("Init Servlet DataseerRestService.");
+    private DataseerConfiguration configuration;
+
+    @Inject
+    public DataseerController(DataseerServiceConfiguration serviceConfiguration) {
+        /*try {
+            ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+            this.configuration = mapper.readValue(new File("resources/config/config.yml"), DataseerConfiguration.class);
+        } catch(Exception e) {
+            LOGGER.error("The config file does not appear valid, see resources/config/config.yml", e);
+            this.configuration = null;
+        }*/
+        this.configuration = serviceConfiguration.getDataseerConfiguration();
+    }
+
+
+    /*public DataseerController() {
+        LOGGER.info("Init Servlet DataseerController.");
         LOGGER.info("Init lexicon and KB resources.");
         try {
             DataseerConfiguration dataseerConfiguration = null;
@@ -49,8 +68,6 @@ public class DataseerRestService implements DataseerPaths {
                 LOGGER.error("The config file does not appear valid, see resources/config/dataseer-ml.yaml", e);
             }
 
-            GrobidProperties.getInstance().addModel(dataseerConfiguration.getModel());
-
             String pGrobidHome = dataseerConfiguration.getGrobidHome();
 
             GrobidHomeFinder grobidHomeFinder = new GrobidHomeFinder(Arrays.asList(pGrobidHome));
@@ -58,13 +75,17 @@ public class DataseerRestService implements DataseerPaths {
     
             LOGGER.info(">>>>>>>> GROBID_HOME="+GrobidProperties.getGrobidHome());
 
+            if (dataseerConfiguration != null && dataseerConfiguration.getModels() != null) {
+                for (ModelParameters model : dataseerConfiguration.getModels())
+                        GrobidProperties.getInstance().addModel(model);
+            }
             LOGGER.debug(LibraryLoader.getLibraryFolder());
         } catch (final Exception exp) {
             LOGGER.error("GROBID dataseer initialisation failed. ", exp);
         }
 
         LOGGER.info("Init of Servlet DataseerRestService finished.");
-    }
+    }*/
 
     @GET
     @Path(PATH_IS_ALIVE)

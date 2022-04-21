@@ -282,9 +282,9 @@ public class DataseerTrainer extends AbstractTrainer {
         DataseerConfiguration dataseerConfiguration = null;
         try {
             ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-            dataseerConfiguration = mapper.readValue(new File("resources/config/dataseer-ml.yaml"), DataseerConfiguration.class);
+            dataseerConfiguration = mapper.readValue(new File("resources/config/dataseer-ml.yml"), DataseerConfiguration.class);
         } catch(Exception e) {
-            System.err.println("The config file does not appear valid, see resources/config/dataseer-ml.yaml");
+            System.err.println("The config file does not appear valid, see resources/config/dataseer-ml.yml");
         }
 
         try {

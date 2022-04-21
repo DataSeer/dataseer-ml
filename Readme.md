@@ -48,27 +48,69 @@ After alignment with the actual content of the full article bodies (via [Grobid]
 
 An additional "data reuse" model can also be trained to predict if an identified dataset is newly introduced or reused in the context of the article, using around 400 positive "reuse" examples (on the life science domain, our annotated data indicates only 3.6% of reused datasets amongs all dataset mentioned). 
 
+
+# Docker Image
+
+A docker image for the `dataseer-ml` service can be built with the project Dockerfile. This is the simplest and preferred way to run the *dataseer-ml* service. The GPUs on your system will be automatically recognized an used, with fallback to CPU if no GPU available. 
+
+The complete process is as follow: 
+
+- copy the `Dockerfile.dataseer` at the root of the GROBID installation:
+
+```console
+~/grobid/dataseer-ml$ cp ./Dockerfile.dataseer ..
+```
+
+- from the GROBID root installation (`grobid/`), launch the docker build:
+
+```console
+docker build -t dataseer/dataseer:0.7.2-SNAPSHOT --build-arg GROBID_VERSION=0.7.2-SNAPSHOT --file Dockerfile.dataseer .
+```
+
+The Docker image build take several minutes, installing GROBID, dataseer-ml, a complete Python Deep Learning environment based on DeLFT and pre-trained embeddings downloaded from the internet and pre-compiled. The resulting image is very large, more than 10GB, in particular due to the contained embeddings and models. 
+
+- you can now run the `dataseer-ml` service via Docker:
+
+```console
+docker run --rm --gpus all -it -p 8060:8060 --init dataseer/dataseer:0.7.2-SNAPSHOT
+```
+
+The build image includes the automatic support of GPU when available on the host machine via the parameter `--gpus all` (with automatic recognition of the CUDA version), with fall back to CPU if GPU are not available. The support of GPU is only available on Linux host machine.
+
+The `dataseer-ml` service is available at the default host/port `localhost:8060`, but it is possible to map the port at launch time of the container as follow:
+
+```console
+docker run --rm --gpus all -it -p 8060:8060 --init dataseer/dataseer:0.7.2-SNAPSHOT
+```
+
 # Build
 
-Install GROBID:
+For building locally dataseer-ml, first install GROBID:
 
-> git clone https://github.com/kermitt2/grobid
+```console
+git clone https://github.com/kermitt2/grobid
+```
 
 Install then *dataseer-ml* and move it as a sub-module of GROBID:
 
-> git clone https://github.com/dataseer/dataseer-ml
-
-> mv dataseer-ml grobid/
+```console
+git clone https://github.com/dataseer/dataseer-ml
+mv dataseer-ml grobid/
+```
 
 Install DeLFT:
 
-> git clone https://github.com/kermitt2/delft
+```console
+git clone https://github.com/kermitt2/delft
+```
 
 Follow the installation described in the [DeLFT documentation](https://github.com/kermitt2/delft#install). If necessary, update the path to the DeLFT installation in the `grobid.yaml` file located under `grobid-home/config/grobid.properties`.
 
 By default, the project can process scientific articles in PDF and TEI formats. To process JATS/NLM, scholarOne and a variety of other native publisher formats, Pub2TEI needs to be installed: 
 
-> git clone https://github.com/kermitt2/Pub2TEI
+```console
+git clone https://github.com/kermitt2/Pub2TEI
+```
 
 If required, update the path to the Pub2TEI installation in the `dataseer-ml.yaml` file located under `resources/config/`:
 
@@ -77,18 +119,21 @@ If required, update the path to the Pub2TEI installation in the `dataseer-ml.yam
 pub2teiPath: "../../Pub2TEI/"
 ```
 
-Build dataseer-ml:
+Finally, copy the models under `grobid-home` and build *dataseer-ml*:
 
-> cd grobid/dataseer-ml
-
-> ./gradlew clean install
-
+```console
+cd grobid/dataseer-ml
+./gradlew copyModels
+./gradlew clean install
+```
 
 # Web service API
 
 ## Start the service
 
-> ./gradlew appRun
+```console
+./gradlew appRun
+```
 
 ## Service console
 
@@ -103,7 +148,9 @@ Upload a PDF document, extract its content and convert it into structured TEI (v
 
 Example:
 
-> curl --form input=@./resources/samples/journal.pone.0198050.pdf localhost:8060/service/processDataseerPDF
+```console
+curl --form input=@./resources/samples/journal.pone.0198050.pdf localhost:8060/service/processDataseerPDF
+```
 
 ## Process a TEI document
 
@@ -111,7 +158,9 @@ Upload a TEI document, identify dataset introductory section, segment into sente
 
 Example:
 
-> curl --form input=@./resources/samples/journal.pone.0198050.tei.xml localhost:8060/service/processDataseerTEI
+```console
+curl --form input=@./resources/samples/journal.pone.0198050.tei.xml localhost:8060/service/processDataseerTEI
+```
 
 ## Process native publisher XML document
 
@@ -119,7 +168,9 @@ Upload a publisher native XML format document, convert it into structured TEI (v
 
 Example:
 
-> curl --form input=@./resources/samples/journal.pone.0198050.xml localhost:8060/service/processDataseerJATS
+```console
+curl --form input=@./resources/samples/journal.pone.0198050.xml localhost:8060/service/processDataseerJATS
+```
 
 See [Pub2TEI](https://github.com/kermitt2/Pub2TEI) for the exact list of supported formats.
 
@@ -129,52 +180,27 @@ Identify if the sentence introduces a dataset, if yes classify the dataset type.
 
 Example: 
 
-> curl -X POST -d "text=This is a sentence." http://localhost:8060/service/processDataseerSentence
 
-> curl -GET --data-urlencode "text=This is a another sentence." http://localhost:8080/service/processDataseerSentence
+```console
+curl -X POST -d "text=This is a sentence." http://localhost:8060/service/processDataseerSentence
+curl -GET --data-urlencode "text=This is a another sentence." http://localhost:8080/service/processDataseerSentence
+```
 
 ## Getting the json datatype resource file
 
 The DataSeer client can access the json file specifying the datatypes supported by the classifers, together with metadata for each data type (description, best data sharing policy, link to the corresponding DataSeer Wiki page, etc.) with the following endpoint:
 
-> curl -GET localhost:8060/service/jsonDataTypes
+
+```console
+curl -GET localhost:8060/service/jsonDataTypes
+```
 
 ## Getting the json datatype resource file after re-sync with the DataSeer Wiki
 
 This service triggers a web crawling of the DataSeer Wiki pages describing the supported data types. Metadata about each type are extracted (description, best data sharing policy, link to the corresponding DataSeer Wiki page, etc.) and a json datatype resource file is assembled and served to the client:
 
-> curl -GET localhost:8060/service/resyncJsonDataTypes
-
-# Docker Image
-
-A docker image for the `dataseer-ml` service can be built with the project Dockerfile. The complete process is as follow: 
-
-- copy the `Dockerfile.dataseer` at the root of the GROBID installation:
-
-```bash
-~/grobid/dataseer-ml$ cp ./Dockerfile.dataseer ..
-```
-
-- from the GROBID root installation (`grobid/`), launch the docker build:
-
-```bash
-> docker build -t dataseer/dataseer:0.7.1-SNAPSHOT --build-arg GROBID_VERSION=0.7.1-SNAPSHOT --file Dockerfile.dataseer .
-```
-
-The Docker image build take several minutes, installing GROBID, dataseer-ml, a complete Python Deep Learning environment based on DeLFT and pre-trained embeddings downloaded from the internet and pre-compiled. The resulting image is very large, more than 10GB, in particular due to the contained embeddings and models. 
-
-- you can now run the `dataseer-ml` service via Docker:
-
-```bash
->  docker run --rm --gpus all -it -p 8060:8060 --init dataseer/dataseer:0.7.1-SNAPSHOT
-```
-
-The build image includes the automatic support of GPU when available on the host machine via the parameter `--gpus all` (with automatic recognition of the CUDA version), with fall back to CPU if GPU are not available. The support of GPU is only available on Linux host machine.
-
-The `dataseer-ml` service is available at the default host/port `localhost:8060`, but it is possible to map the port at launch time of the container as follow:
-
-```bash
-> docker run --rm --gpus all -it -p 8060:8060 --init dataseer/dataseer:0.7.1-SNAPSHOT
+```console
+curl -GET localhost:8060/service/resyncJsonDataTypes
 ```
 
 # Training data assembling and generating classification models
@@ -195,10 +221,12 @@ Some reports will be generated to describe the alignment failures.
 
 The classifier models are relying on the [DeLFT](https://github.com/kermitt2/delft) deep learning library, which is integrated in Grobid. 
 
-After assembling the training data, the classification models can be trained with the following command under the DeFLT project:
+After assembling the training data, the classification models can be trained with the following command under the DeFLT project (curren version 0.3.1 of DeLFT):
 
-> cd delft
-> python3 dataseerClassifier.py train --architecture=scibert
+```console
+cd delft
+python3 delft/applications/dataseerClassifier.py train --architecture bert --transformer allenai/scibert_scivocab_cased
+```
 
 Possible architectures are documented in the DeLFT project. 
 
@@ -254,9 +282,9 @@ Here are some benchmarkings on the dataset recognition and data type classificat
 
 The evaluated classification models are: 
 
-* `BiGRU` is a robust deep learning text classifier using two bidirectional GRU as visible [here](https://github.com/kermitt2/delft/blob/master/delft/textClassification/models.py#L471), 
+* `BiGRU` is a robust deep learning text classifier using two bidirectional GRU, 
 
-* `bert-base-en` is a fine-tuned BERT base model as made available by Google Research (BERT-Base, Cased, 12-layer, 768-hidden, 12-heads, 110M parameters), see [here](https://storage.googleapis.com/bert_models/2018_10_18/cased_L-12_H-768_A-12.zip), and 
+* `bert-base-cased` is a fine-tuned BERT base model as made available by Google Research (BERT-Base, Cased, 12-layer, 768-hidden, 12-heads, 110M parameters), see [here](https://storage.googleapis.com/bert_models/2018_10_18/cased_L-12_H-768_A-12.zip), and 
 
 * SciBERT (cased) is a BERT architecture trained on scientific literature by AI2, see [here](https://s3-us-west-2.amazonaws.com/ai2-s2-research/scibert/tensorflow_models/scibert_scivocab_cased.tar.gz). 
 
@@ -622,6 +650,6 @@ Doku Wiki. Those data types must be reviewed and updated to be consistent with W
 
 Author and contact: Patrice Lopez (<patrice.lopez@science-miner.com>)
 
-The development of dataseer-ml is supported by a [Sloan Foundation](https://sloan.org/) grant, see [here](https://coko.foundation/coko-receives-sloan-foundation-grant-to-build-dataseer-a-missing-piece-in-the-data-sharing-puzzle/)
+The development of *dataseer-ml* was supported by a [Sloan Foundation](https://sloan.org/) grant, see [here](https://coko.foundation/coko-receives-sloan-foundation-grant-to-build-dataseer-a-missing-piece-in-the-data-sharing-puzzle/)
 
-dataseer-ml is distributed under [Apache2 license](https://www.apache.org/licenses/LICENSE-2.0).
+*dataseer-ml* is distributed under [Apache2 license](https://www.apache.org/licenses/LICENSE-2.0).

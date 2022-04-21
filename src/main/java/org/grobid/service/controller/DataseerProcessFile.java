@@ -1,4 +1,7 @@
-package org.grobid.service;
+package org.grobid.service.controller;
+
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
 
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.document.Document;
@@ -27,12 +30,17 @@ import java.util.NoSuchElementException;
  *
  * @author Patrice
  */
+@Singleton
 public class DataseerProcessFile {
 
     /**
      * The class Logger.
      */
     private static final Logger LOGGER = LoggerFactory.getLogger(DataseerProcessFile.class);
+
+    @Inject
+    public DataseerProcessFile() {
+    }
 
     /**
      * Uploads a TEI document, identify dataset introductory section, segment and classify sentences.
