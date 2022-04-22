@@ -51,7 +51,30 @@ An additional "data reuse" model can also be trained to predict if an identified
 
 # Docker Image
 
-A docker image for the `dataseer-ml` service can be built with the project Dockerfile. This is the simplest and preferred way to run the *dataseer-ml* service. The GPUs on your system will be automatically recognized an used, with fallback to CPU if no GPU available. 
+A docker image for the `dataseer-ml` service can be used/built with the project Dockerfile. This is the simplest and preferred way to run the *dataseer-ml* service. The GPUs on your system will be automatically recognized an used, with fallback to CPU if no GPU available. 
+
+
+## Use the Docker image available on Docker Hub
+
+*dataseer-ml* service is available as a Docker image on [docker HUB](https://hub.docker.com/r/grobid/dataseer-ml), pull the image (here the lastest available version, change the version number as needed) as follow: 
+
+```bash
+docker pull grobid/dataseer:0.7.2-SNAPSHOT
+```
+
+After pulling or building the Docker image, you can now run the *dataseer-ml* service as a container as follow:
+
+```bash
+docker run --rm --gpus all -it -p 8060:8060 --init grobid/dataseer:0.7.2-SNAPSHOT
+```
+
+Javascript demo/console web app is then accessible at ```http://localhost:8060```. You can change the port mapping for the service at launch - for instance port `:8080` as follow: 
+
+```bash
+docker run --rm --gpus all -it -p 8080:8060 --init grobid/dataseer:0.7.2-SNAPSHOT
+```
+
+## Build and use the image yourself
 
 The complete process is as follow: 
 
@@ -67,7 +90,7 @@ The complete process is as follow:
 docker build -t grobid/dataseer:0.7.2-SNAPSHOT --build-arg GROBID_VERSION=0.7.2-SNAPSHOT --file Dockerfile.dataseer .
 ```
 
-The Docker image build take several minutes, installing GROBID, dataseer-ml, a complete Python Deep Learning environment based on DeLFT and pre-trained embeddings downloaded from the internet and pre-compiled. The resulting image is very large, more than 10GB, in particular due to the contained embeddings and models. 
+The Docker image build take several minutes, installing GROBID, dataseer-ml, a complete Python Deep Learning environment based on DeLFT and pre-trained embeddings downloaded from the internet and pre-compiled. The resulting image is very large, more than 16GB, in particular due to the contained embeddings, models and kilometers of Python libraries. 
 
 - you can now run the `dataseer-ml` service via Docker:
 
@@ -77,10 +100,10 @@ docker run --rm --gpus all -it -p 8060:8060 --init grobid/dataseer:0.7.2-SNAPSHO
 
 The build image includes the automatic support of GPU when available on the host machine via the parameter `--gpus all` (with automatic recognition of the CUDA version), with fall back to CPU if GPU are not available. The support of GPU is only available on Linux host machine.
 
-The `dataseer-ml` service is available at the default host/port `localhost:8060`, but it is possible to map the port at launch time of the container as follow:
+The `dataseer-ml` service is available at the default host/port `localhost:8060`, but it is possible to map the port at launch time of the container, e.g. for port `:8080`:
 
 ```console
-docker run --rm --gpus all -it -p 8060:8060 --init grobid/dataseer:0.7.2-SNAPSHOT
+docker run --rm --gpus all -it -p 8080:8060 --init grobid/dataseer:0.7.2-SNAPSHOT
 ```
 
 # Build
