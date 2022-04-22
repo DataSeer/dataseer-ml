@@ -64,7 +64,7 @@ The complete process is as follow:
 - from the GROBID root installation (`grobid/`), launch the docker build:
 
 ```console
-docker build -t dataseer/dataseer:0.7.2-SNAPSHOT --build-arg GROBID_VERSION=0.7.2-SNAPSHOT --file Dockerfile.dataseer .
+docker build -t grobid/dataseer:0.7.2-SNAPSHOT --build-arg GROBID_VERSION=0.7.2-SNAPSHOT --file Dockerfile.dataseer .
 ```
 
 The Docker image build take several minutes, installing GROBID, dataseer-ml, a complete Python Deep Learning environment based on DeLFT and pre-trained embeddings downloaded from the internet and pre-compiled. The resulting image is very large, more than 10GB, in particular due to the contained embeddings and models. 
@@ -72,7 +72,7 @@ The Docker image build take several minutes, installing GROBID, dataseer-ml, a c
 - you can now run the `dataseer-ml` service via Docker:
 
 ```console
-docker run --rm --gpus all -it -p 8060:8060 --init dataseer/dataseer:0.7.2-SNAPSHOT
+docker run --rm --gpus all -it -p 8060:8060 --init grobid/dataseer:0.7.2-SNAPSHOT
 ```
 
 The build image includes the automatic support of GPU when available on the host machine via the parameter `--gpus all` (with automatic recognition of the CUDA version), with fall back to CPU if GPU are not available. The support of GPU is only available on Linux host machine.
@@ -80,7 +80,7 @@ The build image includes the automatic support of GPU when available on the host
 The `dataseer-ml` service is available at the default host/port `localhost:8060`, but it is possible to map the port at launch time of the container as follow:
 
 ```console
-docker run --rm --gpus all -it -p 8060:8060 --init dataseer/dataseer:0.7.2-SNAPSHOT
+docker run --rm --gpus all -it -p 8060:8060 --init grobid/dataseer:0.7.2-SNAPSHOT
 ```
 
 # Build
@@ -290,11 +290,13 @@ The evaluated classification models are:
 
 SciBERT provides almost always the best classification accuracy. 
 
-Reported scores are obtained with 10-fold cross-validation.
+Reported scores are obtained with **10-fold cross-validation**.
 
 Tasks and evaluations: 
 
-* binary classifier task: predict if the sentence introduces or not a dataset. We trained with 21,042 examples (approx. 55% positive, 45% negative). 
+* binary classifier task: predict if the sentence introduces or not a dataset. 
+
+Trained initially with 21,042 examples (approx. 55% positive, 45% negative). 
 
 Initial model comparison:
 
@@ -329,7 +331,7 @@ Evaluation on 3574 instances:
     no_dataset        0.9725        0.9426        0.9573          2438
 ```
 
-Latest results (10-2020) after extending the training data to around 59,400 examples (approx. 30% positive, 70% negative):
+Results (10-2020) after extending the training data to around 59,400 examples (approx. 30% positive, 70% negative):
 
 ```
 SciBERT 
@@ -340,6 +342,14 @@ Evaluation on 5993 instances:
     no_dataset        0.9780        0.9445        0.9609          3673
 ```
 
+Latest results (04-2022) using DeLFT 0.3.1 updated architecture based on TensorFlow 2.7, around 59,400 examples (approx. 30% positive, 70% negative):
+
+```
+Evaluation on 5993 instances:
+                   precision        recall       f-score       support
+       dataset        0.9339        0.9560        0.9448          2320
+    no_dataset        0.9718        0.9573        0.9645          3673
+```
 
 * first level-taxonomy classification: given a sentence we evaluate if it introduces a high-level data type or no dataset. The first level dataset taxonomy contains a total of 29 data types which corresponds to MeSH classes, see the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php). In the following evaluation report, we keep zero prediction class for information. No prediction happens when there are too few examples in the training data for this data type, which is the case for around 2/3 of the data types. Best results are obtained with SciBERT, see the lower part. The model comparison is based on training data from the first set of 2000 articles:
 
@@ -615,12 +625,17 @@ Subject Data T        0.6054        0.8766        0.7162           154
 
 * "Data reuse" model: this model tries to predict if the mention dataset is newly introduced by the research study or the reuse of an existing dataset:
 
+Results 10-2020 (DeLFT 0.2.7, Tensorflow 1.15):
+
 ```
 Evaluation on 1122 instances:
                    precision        recall       f-score       support
       no_reuse        0.9907        0.9871        0.9889          1083
          reuse        0.6744        0.7436        0.7073            39
 ```
+
+Latest results 04-2022 using DeLFT 0.3.1 updated architecture based on TensorFlow 2.7:
+
 
 
 # Additional convenient scripts
