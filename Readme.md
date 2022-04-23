@@ -1,5 +1,9 @@
 # DataSeer-ML
 
+[![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![Docker Hub](https://img.shields.io/docker/pulls/grobid/dataseer.svg)](https://hub.docker.com/r/grobid/dataseer/ "Docker Pulls")
+[![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/kermitt2/dataseer-ml/)](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/kermitt2/dataseer-ml)
+
 ![Logo DataSeer](doc/images/DataSeer-logo-75.png "Logo")
 
 **dataseer-ml** is a GROBID module able to identify implicit mentions of datasets in a scientific article and to classify the identified datasets in a hierarchy of dataset types, these data types being directly derived from MeSH. It is a back-end service used by the [DataSeer-Web application](https://github.com/dataseer/dataseer-web). Most of the datasets discussed in scientific articles are actually not named, but these data are part of the disclosed scientific work and should be shared properly to meet the [FAIR](https://en.wikipedia.org/wiki/FAIR_data) requirements. 
