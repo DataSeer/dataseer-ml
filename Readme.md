@@ -6,7 +6,7 @@
 
 ![Logo DataSeer](doc/images/DataSeer-logo-75.png "Logo")
 
-**dataseer-ml** is a GROBID module able to identify implicit mentions of datasets in a scientific article and to classify the identified datasets in a hierarchy of dataset types, these data types being directly derived from MeSH. It is a back-end service used by the [DataSeer-Web application](https://github.com/dataseer/dataseer-web). Most of the datasets discussed in scientific articles are actually not named, but these data are part of the disclosed scientific work and should be shared properly to meet the [FAIR](https://en.wikipedia.org/wiki/FAIR_data) requirements. 
+**dataseer-ml** is a GROBID module aiming at identifying implicit mentions of datasets in a scientific article. These identified datasets are further classified in a hierarchy of dataset types, these data types being directly derived from MeSH. It is a back-end service used by the [DataSeer-Web application](https://github.com/dataseer/dataseer-web). Most of the datasets discussed in scientific articles are actually not named, but these data are part of the disclosed scientific work and should be shared properly to meet the [FAIR](https://en.wikipedia.org/wiki/FAIR_data) requirements. 
 
 The goal of this process is to further drive the authors of the article to the best research data sharing practices, i.e. to ensure that the dataset is associated with data availability statement, permanent identifiers and in general requirements regarding Open Science and reproducibility. This further process is realized by the dataseer web application which includes a GUI to be used by the authors, suggesting data sharing policies based on the predicted data types for each identified dataset.  
 
@@ -30,7 +30,7 @@ The processing of an article follows 5 steps:
 
 3. Each sentence is going through a cascade of text classifiers, typically all based on a fine-tuned [SciBERT](https://github.com/allenai/scibert) deep learning architecture integrated in Java via [DeLFT](https://github.com/kermitt2/delft) and [JEP](https://github.com/ninia/jep), to predict if the sentence introduce a dataset, and if yes, which dataset type and sub type is introduced. 
 
-4. The text body is then processed by a sequence labeling model which aims at recognizing the section relevant to dataset introductions and presentations. "Materials and Methods" for instance is a usual relevant section, but other sections might be relevant and the "Materials and Methods" sections can appeared with a variety of section headers and subsections not relevant. This sequence labelling process is realized currently by a CRF using various features including the predictions produced in the previous steps 3.
+4. The text body is then processed by a sequence labeling model which aims at recognizing the section relevant to dataset introductions and presentations (zoning of "data" sections). "Materials and Methods" for instance is a usual relevant section, but other sections might be relevant and the "Materials and Methods" sections can appeared with a variety of section headers and subsections not relevant. This sequence labelling process is realized currently by a CRF using various features including the predictions produced in the previous steps 3.
 
 5. A final selection of the predicted datasets takes place for the sections identified as introducing potentially datasets, using the result of the sentence classification of step 3 for predicting additionally the type and subtype of the recognized datasets. 
 
@@ -48,15 +48,18 @@ The DataSeer dataset covers:
 
 - all the dataset contexts from 1000 very recent Open Access articles from PMC, with similar classification into the taxonomy. It contains 11,826 additional manually classified/annotated sentences about datasets.
 
-After alignment with the actual content of the full article bodies (via [Grobid](https://github.com/kermitt2/grobid)) for the first set, the data is used  for training the recognition of sections introducing datasets (so called "zoning" task implemented with CRF using the Wapiti library), a binary classifier (sentence mentioning a dataset or not) and the data type and subtype classifiers ([SciBERT](https://github.com/allenai/scibert)). 
+After alignment with the actual content of the full article bodies (via [Grobid](https://github.com/kermitt2/grobid)) for the first set, the data is used for training the recognition of sections introducing datasets (so called "zoning" task implemented with CRF using the Wapiti library), a binary classifier (sentence mentioning a dataset or not) and the data type and subtype classifiers ([SciBERT](https://github.com/allenai/scibert)). 
+
+The total amount of annotated sentences presenting dataset is 25,603. The rest of the sentences of the 3,000 annotated articles can be used as negative examples via sampling techniques.  
 
 An additional "data reuse" model can also be trained to predict if an identified dataset is newly introduced or reused in the context of the article, using around 400 positive "reuse" examples (on the life science domain, our annotated data indicates only 3.6% of reused datasets amongs all dataset mentioned). 
 
 
 # Docker Image
 
-A docker image for the `dataseer-ml` service can be used/built with the project Dockerfile. This is the simplest and preferred way to run the *dataseer-ml* service. The GPUs on your system will be automatically recognized an used, with fallback to CPU if no GPU available. 
+A docker image for the `dataseer-ml` service can be used/built with the project Dockerfile. This is the simplest and preferred way to run the *dataseer-ml* service. The GPUs on your system will be automatically recognized an used, with fallback to CPU if no GPU available. Note that the system works okay with CPU only (10-30 seconds per article), but the runtime is obviously considerably better with GPU. 
 
+For offline processing (e.g. non interactive usage scenario), it is recommended to exploit parallelization as much as possible, because the service takes advantage of multi-threading with CPU-only or GPU. Concurrent processing of PDF, XML or text input should be adjusted to the server capabilities. 
 
 ## Use the Docker image available on Docker Hub
 
