@@ -56,7 +56,7 @@ A docker image for the `dataseer-ml` service can be used/built with the project 
 
 ## Use the Docker image available on Docker Hub
 
-*dataseer-ml* service is available as a Docker image on [docker HUB](https://hub.docker.com/r/grobid/dataseer-ml), pull the image (here the lastest available version, change the version number as needed) as follow: 
+*dataseer-ml* service is available as a Docker image on [docker HUB](https://hub.docker.com/r/grobid/dataseer), pull the image (here the lastest available version, change the version number as needed) as follow: 
 
 ```bash
 docker pull grobid/dataseer:0.7.2-SNAPSHOT
