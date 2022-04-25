@@ -161,12 +161,21 @@ configurations.all {
     resolutionStrategy {
         force 'xml-apis:xml-apis:1.4.01'
     }
-    exclude group: 'org.slf4j', module: "slf4j-log4j12"    
+    exclude group: 'org.slf4j', module: "slf4j-log4j12"
+    //exclude group: 'org.slf4j', module: "slf4j-jdk14"
+    //exclude group: 'log4j', module: "log4j"
+  
     //if (project.gradle.startParameter.taskNames.contains('run') ||
     //   project.gradle.startParameter.taskNames.contains('post_process_corpus'))
     //    exclude group: 'org.slf4j', module: "slf4j-jdk14"  
     if (project.gradle.startParameter.taskNames.contains('run'))
         exclude group: 'org.slf4j', module: "slf4j-jdk14"
+
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        if (details.requested.name == 'log4j') {
+            details.useTarget 'log4j:log4j:1.2.+'
+        }
+    }
 }
 
 // return the default value if the property has not been specified in command line
