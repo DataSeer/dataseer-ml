@@ -21,7 +21,7 @@ COPY settings.gradle ./
 # source
 COPY grobid-home/ ./grobid-home/
 COPY grobid-core/ ./grobid-core/
-COPY grobid-service/ ./grobid-service/
+#COPY grobid-service/ ./grobid-service/
 COPY grobid-trainer/ ./grobid-trainer/
 COPY dataseer-ml/ ./dataseer-ml/
 
@@ -40,8 +40,8 @@ WORKDIR ./dataseer-ml/
 RUN ./gradlew clean install --no-daemon  --info --stacktrace
 
 WORKDIR /opt/grobid
-RUN unzip -o /opt/grobid-source/grobid-service/build/distributions/grobid-service-*.zip && \
-    mv grobid-service* grobid-service
+#RUN unzip -o /opt/grobid-source/grobid-service/build/distributions/grobid-service-*.zip && \
+#    mv grobid-service* grobid-service
 RUN unzip -o /opt/grobid-source/grobid-home/build/distributions/grobid-home-*.zip && \
     chmod -R 755 /opt/grobid/grobid-home/pdfalto
 RUN rm -rf grobid-source
@@ -120,7 +120,7 @@ COPY --from=builder /opt/grobid-source/grobid-home/scripts/preload_embeddings.py
 RUN ln -s /opt/grobid /opt/delft
 
 COPY --from=builder /opt/grobid-source/dataseer-ml /opt/grobid/dataseer-ml
-COPY --from=builder /root/.m2/repository/org /opt/grobid/dataseer-ml/lib/org
+#COPY --from=builder /root/.m2/repository/org /opt/grobid/dataseer-ml/lib/org
 
 WORKDIR /opt/grobid/dataseer-ml
 
@@ -133,6 +133,7 @@ WORKDIR /opt/grobid/dataseer-ml
 # trigger gradle wrapper install
 RUN ./gradlew --version
 RUN ./gradlew copyModels && rm -rf resources/models 
+#RUN rm -rf /opt/grobid/dataseer-ml/lib/org
 
 # this will build and load embeddings on the image forever :)
 RUN ./gradlew clean build
