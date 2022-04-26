@@ -68,9 +68,9 @@ repositories {
     mavenCentral()
     maven { url "https://jitpack.io" }
     maven { url "https://grobid.s3.eu-west-1.amazonaws.com/repo/" }
-    maven {
+    /*maven {
         url new File(rootProject.rootDir, "lib")
-    }
+    }*/
 }
 
 ext {
@@ -83,11 +83,11 @@ ext {
 dependencies {
 
     // packaging local libs inside output jar
-    implementation fileTree(dir: new File(rootProject.rootDir, 'lib'), include: localLibs)
+    //implementation fileTree(dir: new File(rootProject.rootDir, 'lib'), include: localLibs)
 
     //Grobid
-    implementation group: 'org.grobid', name: 'grobid-core', version: '0.7.2-SNAPSHOT'
-    implementation group: 'org.grobid', name: 'grobid-trainer', version: '0.7.2-SNAPSHOT'
+    implementation group: 'org.grobid', name: 'grobid-core', version: '0.7.1'
+    implementation group: 'org.grobid', name: 'grobid-trainer', version: '0.7.1'
 
     implementation group: 'net.arnx', name: 'jsonic', version: '1.3.10'
 
@@ -162,20 +162,15 @@ configurations.all {
         force 'xml-apis:xml-apis:1.4.01'
     }
     exclude group: 'org.slf4j', module: "slf4j-log4j12"
-    //exclude group: 'org.slf4j', module: "slf4j-jdk14"
     //exclude group: 'log4j', module: "log4j"
-  
+    exclude group: 'org.slf4j', module: "slf4j-jdk14"
+
     //if (project.gradle.startParameter.taskNames.contains('run') ||
     //   project.gradle.startParameter.taskNames.contains('post_process_corpus'))
-    //    exclude group: 'org.slf4j', module: "slf4j-jdk14"  
+    //    exclude group: 'org.slf4j', module: "slf4j-jdk14"
+
     if (project.gradle.startParameter.taskNames.contains('run'))
         exclude group: 'org.slf4j', module: "slf4j-jdk14"
-
-    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-        if (details.requested.name == 'log4j') {
-            details.useTarget 'log4j:log4j:1.2.+'
-        }
-    }
 }
 
 // return the default value if the property has not been specified in command line
