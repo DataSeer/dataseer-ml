@@ -54,8 +54,8 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import static org.grobid.core.document.xml.XmlBuilderUtils.teiElement;
 
-import opennlp.tools.sentdetect.SentenceDetectorME; 
-import opennlp.tools.sentdetect.SentenceModel;
+//import opennlp.tools.sentdetect.SentenceDetectorME; 
+//import opennlp.tools.sentdetect.SentenceModel;
 
 import com.fasterxml.jackson.core.*;
 import com.fasterxml.jackson.databind.*;
@@ -84,7 +84,7 @@ public class DataseerClassifier {
     private static volatile DataseerClassifier instance;
 
     // components for sentence segmentation
-    private SentenceDetectorME detector = null;
+    //private SentenceDetectorME detector = null;
     //private static String openNLPModelFile = "resources/openNLP/en-sent.bin";
 
     private static Engine engine = null; 
