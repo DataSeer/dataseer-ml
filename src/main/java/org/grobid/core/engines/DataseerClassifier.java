@@ -123,7 +123,7 @@ public class DataseerClassifier {
             this.dataseerConfiguration = null;
             try {
                 ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-                dataseerConfiguration = mapper.readValue(new File("resources/config/dataseer-ml.yml"), DataseerConfiguration.class);
+                dataseerConfiguration = mapper.readValue(new File("resources/config/dataseer-ml.yml").getAbsoluteFile(), DataseerConfiguration.class);
             } catch(Exception e) {
                 logger.error("The config file does not appear valid, see resources/config/dataseer-ml.yml", e);
             }
@@ -233,6 +233,7 @@ public class DataseerClassifier {
         ObjectMapper mapper = new ObjectMapper();
         
         String the_json = classifierBinary.classify(texts);
+
         // first pass to select texts to be cascaded to next level
         List<String> cascaded_texts = new ArrayList<String>();
         JsonNode root = null;
@@ -267,6 +268,7 @@ public class DataseerClassifier {
         //System.out.println("cascaded classify: " + cascaded_texts.size() + " sentences");
         String cascaded_json = null;
         JsonNode rootCascaded = null;
+
         if (cascaded_texts.size() > 0) {
             cascaded_json = classifierFirstLevel.classify(cascaded_texts);
             if (cascaded_json != null && cascaded_json.length() > 0)
@@ -324,7 +326,7 @@ public class DataseerClassifier {
                                 if (iteReuseCascaded.hasNext()) {
                                     JsonNode classificationReuseCascadedNode = iteReuseCascaded.next();
                                     JsonNode reuseNode = classificationReuseCascadedNode.findPath("reuse");
-                                    JsonNode noReuseNode = classificationReuseCascadedNode.findPath("no_reuse");
+                                    JsonNode noReuseNode = classificationReuseCascadedNode.findPath("not_reuse");
 
                                     if ((reuseNode != null) && (!reuseNode.isMissingNode()) &&
                                         (noReuseNode != null) && (!noReuseNode.isMissingNode()) ) {
