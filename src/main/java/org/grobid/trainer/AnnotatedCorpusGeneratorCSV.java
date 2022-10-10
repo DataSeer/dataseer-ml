@@ -310,6 +310,9 @@ public class AnnotatedCorpusGeneratorCSV {
         Writer failedPDFWriter = new PrintWriter(new BufferedWriter(
             new FileWriter(documentPath + "/failed-pdf.txt")));
 
+        Writer unmatchedSentencesWriter = new PrintWriter(new BufferedWriter(
+            new FileWriter(documentPath + "/unmatched-sentences.txt")));
+
         // go thought all annotated documents 
         m = 0;
         for (Map.Entry<String, AnnotatedDocument> entry : documents.entrySet()) {
@@ -329,18 +332,26 @@ public class AnnotatedCorpusGeneratorCSV {
             for(DataseerAnnotation annotation : doc.getAnnotations()) {
                 if (previousContext == null || 
                     (previousContext != null && !previousContext.equals(annotation.getContext()))) {
+
+                    String localContext = annotation.getContext();
+                    localContext = localContext.replace("[pagebreak]", " ");
+                    localContext = localContext.replace("[page break]", " ");
+                    localContext = localContext.replace("[columnbreak]", " ");
+                    localContext = localContext.replace("[column break]", " ");
+                    localContext = localContext.replace("\n", " ");
+                    localContext = localContext.replaceAll("( )+", " ");
                     
-                    csvPrinter1.printRecord(doi, annotation.getContext(), annotation.getDataType(), 
+                    csvPrinter1.printRecord(doi, localContext, annotation.getDataType(), 
                         annotation.getDataSubType(), annotation.getDataLeafType());
                     csvPrinter1.flush();
 
-                    csvPrinterBinary.printRecord(doi, annotation.getContext(), "dataset");
+                    csvPrinterBinary.printRecord(doi, localContext, "dataset");
                     csvPrinterBinary.flush();
 
                     if (annotation.getExisting())
-                        csvPrinterReuse.printRecord(doi, annotation.getContext(), "reuse");
+                        csvPrinterReuse.printRecord(doi, localContext, "reuse");
                     else 
-                        csvPrinterReuse.printRecord(doi, annotation.getContext(), "no_reuse");
+                        csvPrinterReuse.printRecord(doi, localContext, "no_reuse");
                     csvPrinterReuse.flush();
 
                     previousContext = annotation.getContext();
@@ -439,12 +450,17 @@ public class AnnotatedCorpusGeneratorCSV {
             }
 
             try {
+                int localUnmatchedAnnotations = 0;
+                List<String> docMatchedSentences = new ArrayList<>();
+
                 // via PDF no need to segment into sentence
-                String segmentedTEI = dataseer.processTEI(teiPath, false, false);
-                FileUtils.writeStringToFile(new File(teiPath.replace(".tei.xml", "-segmented.tei.xml")), segmentedTEI, UTF_8);
+                //String segmentedTEI = dataseer.processTEI(teiPath, false, false);
+                //FileUtils.writeStringToFile(new File(teiPath.replace(".tei.xml", "-segmented.tei.xml")), segmentedTEI, UTF_8);
 
                 Builder parser = new Builder();
-                InputStream inputStream = new ByteArrayInputStream(segmentedTEI.getBytes(UTF_8));
+                //InputStream inputStream = new ByteArrayInputStream(segmentedTEI.getBytes(UTF_8));
+                InputStream inputStream = new FileInputStream(teiPath);
+
                 nu.xom.Document document = parser.build(inputStream);
 
                 // the list of annotations which have been matched. We keep track of their indices
@@ -457,16 +473,25 @@ public class AnnotatedCorpusGeneratorCSV {
                 List<String> dataSetIds = new ArrayList<String>();
                 for (int i = 0; i < nodeList.size(); i++) {
                     nu.xom.Element node = nodeList.get(i);
+
                     StringBuffer textValue = new StringBuffer();
                     for (int j = 0; j < node.getChildCount(); j++) {
                         Node subnode = node.getChild(j);
                         if (subnode instanceof Text) {
                             textValue.append(subnode.getValue());
+                        } else if (subnode.getChildCount() > 0 ) {
+                            for (int q = 0; q < subnode.getChildCount(); q++) {
+                                Node subsubnode = subnode.getChild(q);
+                                if (subsubnode instanceof Text) {
+                                    textValue.append(subsubnode.getValue());
+                                }
+                            }
                         }
                     }
                     String localSentence = textValue.toString();
                     //System.out.println(localSentence);
-                    String localSentenceSimplified = localSentence.replace(" ", "").toLowerCase();
+                    String localSentenceSimplified = localSentence.trim().replace("\n", " ").toLowerCase();
+                    localSentenceSimplified = localSentenceSimplified.replace(" ", "");
                     localSentenceSimplified = simplifiedField(localSentenceSimplified);
 
                     // match sentence and inject attributes to sentence tags
@@ -474,78 +499,137 @@ public class AnnotatedCorpusGeneratorCSV {
                     int k = 0;
                     
                     for(DataseerAnnotation annotation : doc.getAnnotations()) {
-                        if (annotation.getRawDataType() == null)
+                        if (annotation.getRawDataType() == null) {
+                            k++;
                             continue;
+                        }
+
+                        String sentence = annotation.getContext().trim();
+                        if (sentence.toLowerCase().equals("n/a")) {
+                            k++;
+                            continue;
+                        }
 
                         if (!solvedAnnotations.contains(k)) {
-                            String sentence = annotation.getContext();
-                            String sentenceSimplified = sentence.replace(" ", "").toLowerCase();
+                            sentence = sentence.replace("[pagebreak]", "");
+                            sentence = sentence.replace("[page break]", "");
+                            sentence = sentence.replace("[columnbreak]", "");
+                            sentence = sentence.replace("[column break]", "");
+
+                            String sentenceSimplified = sentence.trim().replace("\n", "").toLowerCase();
+                            sentenceSimplified = sentenceSimplified.replace(" ", "");
                             sentenceSimplified = simplifiedField(sentenceSimplified);
 
+                            if (sentenceSimplified.length() < localSentenceSimplified.length()/2) {
+                                k++;
+                                continue;
+                            }
+
                             //System.out.println(sentence);
-                            if (localSentenceSimplified.equals(sentenceSimplified)) {
+                            if (localSentenceSimplified.equals(sentenceSimplified) || 
+                                localSentenceSimplified.indexOf(sentenceSimplified) != -1 ||
+                                sentenceSimplified.indexOf(localSentenceSimplified) != -1 || 
+                                localSentenceSimplified.indexOf(sentenceSimplified) != -1 ||
+                                sentenceSimplified.indexOf(localSentenceSimplified) != -1 || 
+                                docMatchedSentences.contains(sentenceSimplified)) {
+
                                 totalMatchedAnnotations++;
-                                System.out.println("matched sentence! " + sentence);
+                                //System.out.println("matched sentence! " + sentence);
                                 solvedAnnotations.add(new Integer(k));
-                                // add annotation attributes to the DOM sentence
-                                // e.g. id="dataset-2" type="Spectrometry"
-                                // add @corresp in case the @id is already generated
-                                String dataSetId = annotation.getDatasetId();
-                                Attribute id = null;
-                                if (dataSetIds.contains(dataSetId)) {
-                                    id = new Attribute("corresp", "#dataset-" + dataSetId);
-                                } else {
-                                    id = new Attribute("id", "dataset-" + dataSetId);
-                                    dataSetIds.add(dataSetId);
-                                }
-                                node.addAttribute(id);
 
-                                Attribute type = new Attribute("type", annotation.getRawDataType());
-                                node.addAttribute(type);
-
-                                // we also need to add a dataseer subtype attribute to the parent <div>
-                                nu.xom.ParentNode currentNode = node;
-                                while(currentNode != null) {
-                                    currentNode = ((nu.xom.Element)currentNode).getParent();
-                                    if (currentNode != null && 
-                                        !(currentNode.getParent() instanceof nu.xom.Document) && 
-                                        ((nu.xom.Element)currentNode).getLocalName().equals("div")) {
-                                        Attribute subtype = new Attribute("subtype", "dataseer");
-                                        ((nu.xom.Element)currentNode).addAttribute(subtype);
-                                        currentNode = null;
+                                if (!docMatchedSentences.contains(sentenceSimplified)) {
+                                    docMatchedSentences.add(sentenceSimplified);
+                                
+                                    // add annotation attributes to the DOM sentence
+                                    // e.g. id="dataset-2" type="Spectrometry"
+                                    // add @corresp in case the @id is already generated
+                                    String dataSetId = annotation.getDatasetId();
+                                    Attribute id = null;
+                                    if (dataSetIds.contains(dataSetId)) {
+                                        id = new Attribute("corresp", "#dataset-" + dataSetId);
+                                    } else {
+                                        id = new Attribute("id", "dataset-" + dataSetId);
+                                        dataSetIds.add(dataSetId);
                                     }
+                                    node.addAttribute(id);
 
-                                    if (currentNode != null && (currentNode.getParent() instanceof nu.xom.Document))
-                                        currentNode = null;
+                                    Attribute type = new Attribute("type", annotation.getRawDataType());
+                                    node.addAttribute(type);
+
+                                    // we also need to add a dataseer subtype attribute to the parent <div>
+                                    nu.xom.ParentNode currentNode = node;
+                                    while(currentNode != null) {
+                                        currentNode = ((nu.xom.Element)currentNode).getParent();
+                                        if (currentNode != null && 
+                                            !(currentNode.getParent() instanceof nu.xom.Document) && 
+                                            ((nu.xom.Element)currentNode).getLocalName().equals("div")) {
+                                            Attribute subtype = new Attribute("subtype", "dataseer");
+                                            ((nu.xom.Element)currentNode).addAttribute(subtype);
+                                            currentNode = null;
+                                        }
+
+                                        if (currentNode != null && (currentNode.getParent() instanceof nu.xom.Document))
+                                            currentNode = null;
+                                    }
                                 }
 
-                                break;
+                                //break;
                             }
                         }
                         k++; 
                     }
                 }
                 
+                int l = 0;
+                for(DataseerAnnotation annotation : doc.getAnnotations()) {
+                    if (annotation.getRawDataType() == null) {
+                        l++;
+                        continue;
+                    }
+
+                    String sentence = annotation.getContext().trim();
+                    if (sentence.equals("n/a")) {
+                        l++;
+                        continue;
+                    }
+
+                    if (!solvedAnnotations.contains(l)) {
+                        unmatchedSentencesWriter.write(doc.getDoi() + "\t" + annotation.getContext().replace("\n", " ").replaceAll("( )+", " ") + "\n");
+                        localUnmatchedAnnotations++;
+                        totalUnmatchedAnnotations++;
+                    }
+
+                    l++;
+                }
+
                 String teiOutPutPath = xmlPath + "/" + URLEncoder.encode(doi, "UTF-8")+".tei.xml";;
-                if (solvedAnnotations.size() == doc.getAnnotations().size()) {
-                    System.out.println("all annotations: " + doc.getAnnotations().size() + " matched");
+                //if (solvedAnnotations.size() == doc.getAnnotations().size()) {
+
+                System.out.println("\n" + doc.getDoi());
+                if (localUnmatchedAnnotations == 0) {
+                    System.out.println("all annotations " + doc.getAnnotations().size() + " matched for the document");
                     allMatchedDoc++;
                     allMatchedDocannotations += solvedAnnotations.size();
                     // we write this document to the result folder
                     Writer writerTEI = new PrintWriter(new BufferedWriter(new FileWriter(teiOutPutPath)));
                     writerTEI.write(XMLUtilities.toPrettyString(document.toXML(), 4));
                     writerTEI.close();
+                } else {
+                    System.out.println((doc.getAnnotations().size() - localUnmatchedAnnotations) + " matched annotations for the document");
+                    System.out.println(localUnmatchedAnnotations + " unmatched annotations for the document");
                 }
 
-                if (solvedAnnotations.size() < doc.getAnnotations().size()) {
+                /*if (solvedAnnotations.size() < doc.getAnnotations().size()) {
                     System.out.println((doc.getAnnotations().size() - solvedAnnotations.size()) + " unmatched annotations");
-                    totalUnmatchedAnnotations += doc.getAnnotations().size() - solvedAnnotations.size();
-                }
+                    //totalUnmatchedAnnotations += doc.getAnnotations().size() - solvedAnnotations.size();
+                }*/
 
                 // we want to inject additional "negative" sentences in the training data for the ML models,
                 // in priority sentences from the same section as the ones introducing datasets
                 // consider only documents with all annotation matched (to avoid any false negatives)
-                if (solvedAnnotations.size() == doc.getAnnotations().size()) {
+                
+                //if (solvedAnnotations.size() == doc.getAnnotations().size()) {
+                if (localUnmatchedAnnotations == 0) {
                     /*String teicontent = FileUtils.readFileToString(new File(teiOutPutPath), "UTF-8");
                     parser = new Builder();
                     inputStream = new ByteArrayInputStream(teicontent.getBytes(UTF_8));
@@ -559,7 +643,7 @@ public class AnnotatedCorpusGeneratorCSV {
                     // the following is returning 0 node, even document.query("//div") returns 0 node, even adding namespaces, wth with xom?
                     //Nodes nodesList = document.query("//div[@subtype='dataseer']");
 
-                    System.out.println("nb div: " + divs.size());
+                    //System.out.println("nb div: " + divs.size());
                     
                     // check if we have a sentence in this section introducing a dataset
                     for (int i = 0; i < divs.size(); i++) {
@@ -572,14 +656,14 @@ public class AnnotatedCorpusGeneratorCSV {
                             //Nodes nodeTest = div.query("//s[@type and string-length(@type)>0]");
                             //Elements paragraphs = div.getChildElements("p");
                             Elements paragraphs = div.getChildElements();
-                            System.out.println("nb paragraphs: " + paragraphs.size());
+                            //System.out.println("nb paragraphs: " + paragraphs.size());
                             for (int j = 0; j < paragraphs.size(); j++) {
                                 Element paragraph = paragraphs.get(j); 
-                                System.out.println(paragraph.getQualifiedName());
+                                //System.out.println(paragraph.getQualifiedName());
                                 if (!paragraph.getQualifiedName().equals("p"))
                                     continue;
                                 Elements sentences = paragraph.getChildElements();
-                                System.out.println("nb sentences: " + sentences.size());
+                                //System.out.println("nb sentences: " + sentences.size());
                                 for (int k = 0; k < sentences.size(); k++) {
                                     Element sentence = sentences.get(k); 
                                     if (!sentence.getQualifiedName().equals("s"))
@@ -601,9 +685,11 @@ public class AnnotatedCorpusGeneratorCSV {
                         }
                     }
 
+                    /*
                     System.out.println("nb labeled div: " + nbLabeledDiv);
                     System.out.println("nb labeled sentences: " + nbLabeledSentences);
                     System.out.println("nb non-labeled sentences: " + nbNonLabeledSentences);
+                    */
                 }
 
             } catch (ParsingException e) {
@@ -629,10 +715,15 @@ public class AnnotatedCorpusGeneratorCSV {
         writerCSVReuse.close();
 
         failedPDFWriter.close();
+        unmatchedSentencesWriter.close();
 
-        System.out.println("Total matched annotations: " + totalMatchedAnnotations);
-        System.out.println(totalUnmatchedAnnotations + " total unmatched annotations, out of " + totalAnnotations);
-        System.out.println("Total documents fully matched: " + allMatchedDoc + "(" + allMatchedDocannotations + " annotations)");
+        System.out.println("\n--------------------------------");
+        System.out.println("\nTotal matched annotations: " + totalMatchedAnnotations + ", out of " + totalAnnotations);
+        System.out.println("total unmatched annotations: " + totalUnmatchedAnnotations + ", out of " + totalAnnotations);
+        System.out.println("Total documents fully matched: " + allMatchedDoc + " (covering " + allMatchedDocannotations + 
+            " annotations) out of " +documents.size() + " documents");
+
+        System.exit(0);
     }
 
     public static List<nu.xom.Element> getElementsByTagName(nu.xom.Element element, String tagName) {

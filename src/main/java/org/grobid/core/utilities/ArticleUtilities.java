@@ -150,6 +150,9 @@ public class ArticleUtilities {
     }
 
     private static String getUnpaywallOAUrl(String doi) throws Exception {
+        doi = doi.trim();
+        doi = doi.replace(" ", "");
+        
         String queryUrl = "https://api.unpaywall.org/v2/" + doi + "?email=patrice.lopez@science-miner.com";
         HttpClient client = new DefaultHttpClient();
         HttpGet request = new HttpGet(queryUrl);
