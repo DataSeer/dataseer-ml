@@ -57,6 +57,10 @@ CMD nvidia-smi
 # setting locale is likely useless but to be sure
 ENV LANG C.UTF-8
 
+# c.f. https://github.com/NVIDIA/nvidia-docker/issues/1632
+RUN rm /etc/apt/sources.list.d/cuda.list
+RUN rm /etc/apt/sources.list.d/nvidia-ml.list
+
 # install JRE 8, python and other dependencies
 RUN apt-get update && \
     apt-get -y --no-install-recommends install apt-utils build-essential gcc libxml2 unzip curl \
