@@ -372,13 +372,26 @@ Evaluation on 5993 instances:
     no_dataset        0.9780        0.9445        0.9609          3673
 ```
 
-Latest results (04-2022) using DeLFT 0.3.1 updated architecture based on TensorFlow 2.7, around 59,400 examples (approx. 30% positive, 70% negative):
+Results (04-2022) using DeLFT 0.3.1 updated architecture based on TensorFlow 2.7, around 59,400 examples (approx. 30% positive, 70% negative):
 
 ```
+SciBERT 
+-------
 Evaluation on 5993 instances:
                    precision        recall       f-score       support
        dataset        0.9339        0.9560        0.9448          2320
     no_dataset        0.9718        0.9573        0.9645          3673
+```
+
+Results (08-2023) using DeLFT 0.3.3, around 112,200 examples (approx. 30% positive, 70% negative):
+
+```
+SciBERT 
+-------
+Evaluation on 11307 instances:
+                   precision        recall       f-score       support
+       dataset        0.9173        0.9428        0.9299          3881
+    no_dataset        0.9697        0.9556        0.9626          7426
 ```
 
 * first level-taxonomy classification: given a sentence we evaluate if it introduces a high-level data type or no dataset. The first level dataset taxonomy contains a total of 29 data types which corresponds to MeSH classes, see the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php). In the following evaluation report, we keep zero prediction class for information. No prediction happens when there are too few examples in the training data for this data type, which is the case for around 2/3 of the data types. Best results are obtained with SciBERT, see the lower part. The model comparison is based on training data from the first set of 2000 articles:
@@ -516,6 +529,49 @@ video recordin        0.0000        0.0000        0.0000             3
 voltammetry da        0.0000        0.0000        0.0000             1
 x-ray diffract        0.0000        0.0000        0.0000             8
 ```
+
+Results 08-2023, 
+
+```
+SciBERT
+-------
+
+Total 63,912 instances
+
+Evaluation on 6113 instances:
+                   precision        recall       f-score       support
+   calorimetry        0.6667        0.6667        0.6667             3
+chromatography        0.8731        0.9141        0.8931           128
+ code software        0.6629        0.8227        0.7342           141
+coulombimetry         0.0000        0.0000        0.0000             0
+dataset re-use        0.0000        0.0000        0.0000             2
+  densitometry        0.0000        0.0000        0.0000             1
+electrocardiog        0.7500        1.0000        0.8571             3
+electroencepha        0.5000        1.0000        0.6667             2
+electromyograp        0.5000        1.0000        0.6667             1
+electrooculogr        0.0000        0.0000        0.0000             0
+electrophysiol        0.0000        0.0000        0.0000             2
+electroretinog        0.0000        0.0000        0.0000             0
+emission flame        0.0000        0.0000        0.0000             0
+flow cytometry        0.8471        0.7273        0.7826            99
+  genetic data        0.8529        0.8315        0.8421           279
+         image        0.7988        0.8133        0.8060           332
+ lab materials        0.7949        0.8757        0.8333           177
+mass spectrome        0.6863        0.7071        0.6965            99
+    no_dataset        0.9519        0.9241        0.9378          2357
+         other        0.0000        0.0000        0.0000             0
+  protein data        0.5882        0.8333        0.6897            12
+      protocol        0.5294        0.3000        0.3830            30
+    sound data        0.8000        0.6667        0.7273             6
+  spectrometry        0.8462        0.8209        0.8333           134
+spectrum analy        0.0000        0.0000        0.0000             2
+systematic rev        0.0000        0.0000        0.0000             5
+  tabular data        0.8911        0.9063        0.8986          2274
+video recordin        0.5714        0.4444        0.5000             9
+voltammetry da        0.0000        0.0000        0.0000             1
+x-ray diffract        0.7368        1.0000        0.8485            14
+```
+
 
 * second level taxonomy: for the first leval data types that can be predicted by the first level classifier, we build a serie of additional classifier to predict a second level data type, assuming a cascaded approach. See the Dataseer [ResearchDataWiki](http://wiki.dataseer.io/doku.php) for more details about the data types. Best results are obtained with SciBERT too, see lower part.
 
@@ -655,7 +711,7 @@ Subject Data T        0.6054        0.8766        0.7162           154
 
 * "Data reuse" model: this model tries to predict if the mention dataset is newly introduced by the research study or the reuse of an existing dataset:
 
-Results 10-2020 (DeLFT 0.2.7, Tensorflow 1.15):
+Results 04-2022 using DeLFT 0.3.1 updated architecture based on TensorFlow 2.7, 11,500 annotated sentences:
 
 ```
 Evaluation on 1122 instances:
@@ -664,8 +720,14 @@ Evaluation on 1122 instances:
          reuse        0.6744        0.7436        0.7073            39
 ```
 
-Latest results 04-2022 using DeLFT 0.3.1 updated architecture based on TensorFlow 2.7:
+Results 08-2023 using DeLFT 0.3.3, 27,100 annotated sentences:
 
+```
+Evaluation on 2713 instances:
+                   precision        recall       f-score       support
+      no_reuse        0.9307        0.9473        0.9389          2183
+         reuse        0.7658        0.7094        0.7365           530
+```
 
 
 # Additional convenient scripts
