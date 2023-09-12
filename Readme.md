@@ -66,19 +66,19 @@ For offline processing (e.g. non interactive usage scenario), it is recommended 
 *dataseer-ml* service is available as a Docker image on [docker HUB](https://hub.docker.com/r/grobid/dataseer), pull the image (here the lastest available version, change the version number as needed) as follow: 
 
 ```bash
-docker pull grobid/dataseer:0.7.2-SNAPSHOT
+docker pull grobid/dataseer:0.7.3
 ```
 
 After pulling or building the Docker image, you can now run the *dataseer-ml* service as a container as follow:
 
 ```bash
-docker run --rm --gpus all -it -p 8060:8060 --init grobid/dataseer:0.7.2-SNAPSHOT
+docker run --rm --gpus all -it -p 8060:8060 --init grobid/dataseer:0.7.3
 ```
 
 Javascript demo/console web app is then accessible at ```http://localhost:8060```. You can change the port mapping for the service at launch - for instance port `:8080` as follow: 
 
 ```bash
-docker run --rm --gpus all -it -p 8080:8060 --init grobid/dataseer:0.7.2-SNAPSHOT
+docker run --rm --gpus all -it -p 8080:8060 --init grobid/dataseer:0.7.3
 ```
 
 ## Build and use the image yourself
@@ -94,7 +94,7 @@ The complete process is as follow:
 - from the GROBID root installation (`grobid/`), launch the docker build:
 
 ```console
-docker build -t grobid/dataseer:0.7.2-SNAPSHOT --build-arg GROBID_VERSION=0.7.2-SNAPSHOT --file Dockerfile.dataseer .
+docker build -t grobid/dataseer:0.7.3 --build-arg GROBID_VERSION=0.7.2-SNAPSHOT --file Dockerfile.dataseer .
 ```
 
 The Docker image build take several minutes, installing GROBID, dataseer-ml, a complete Python Deep Learning environment based on DeLFT and pre-trained embeddings downloaded from the internet and pre-compiled. The resulting image is very large, more than 16GB, in particular due to the contained embeddings, models and kilometers of Python libraries. 
@@ -102,7 +102,7 @@ The Docker image build take several minutes, installing GROBID, dataseer-ml, a c
 - you can now run the `dataseer-ml` service via Docker:
 
 ```console
-docker run --rm --gpus all -it -p 8060:8060 --init grobid/dataseer:0.7.2-SNAPSHOT
+docker run --rm --gpus all -it -p 8060:8060 --init grobid/dataseer:0.7.3
 ```
 
 The build image includes the automatic support of GPU when available on the host machine via the parameter `--gpus all` (with automatic recognition of the CUDA version), with fall back to CPU if GPU are not available. The support of GPU is only available on Linux host machine.
@@ -110,7 +110,7 @@ The build image includes the automatic support of GPU when available on the host
 The `dataseer-ml` service is available at the default host/port `localhost:8060`, but it is possible to map the port at launch time of the container, e.g. for port `:8080`:
 
 ```console
-docker run --rm --gpus all -it -p 8080:8060 --init grobid/dataseer:0.7.2-SNAPSHOT
+docker run --rm --gpus all -it -p 8080:8060 --init grobid/dataseer:0.7.3
 ```
 
 # Build
@@ -213,13 +213,12 @@ Example:
 
 ```console
 curl -X POST -d "text=This is a sentence." http://localhost:8060/service/processDataseerSentence
-curl -GET --data-urlencode "text=This is a another sentence." http://localhost:8080/service/processDataseerSentence
+curl -GET --data-urlencode "text=This is a another sentence." http://localhost:8060/service/processDataseerSentence
 ```
 
 ## Getting the json datatype resource file
 
 The DataSeer client can access the json file specifying the datatypes supported by the classifers, together with metadata for each data type (description, best data sharing policy, link to the corresponding DataSeer Wiki page, etc.) with the following endpoint:
-
 
 ```console
 curl -GET localhost:8060/service/jsonDataTypes
