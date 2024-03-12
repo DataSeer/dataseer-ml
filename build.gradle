@@ -250,7 +250,7 @@ test {
 //}
 
 wrapper {
-    gradleVersion "7.1.1"
+    gradleVersion "7.3"
 }
 
 // Custom Tasks
@@ -311,9 +311,28 @@ application {
 
     run {
         args = ['server', 'resources/config/server.yml']
-
         if (JavaVersion.current().compareTo(JavaVersion.VERSION_1_8) > 0) {
             jvmArgs "--add-opens", "java.base/java.lang=ALL-UNNAMED"
         }
+
+        def envPrefix = ""
+        if (System.env.CONDA_PREFIX) {
+            envPrefix = "${System.env.CONDA_PREFIX}"
+        } else if (System.env.VIRTUAL_ENV) {
+            envPrefix = "${System.env.VIRTUAL_ENV}"
+        }
+        def javaLibraryPath = "${System.getProperty('java.library.path')}:"
+
+        if (envPrefix) {
+            def envLibs = "${envPrefix}/lib"
+            def pythonDirectory = file(envLibs).listFiles({ it.toString().contains("/lib/python") } as FileFilter)?.first()
+            def pythonVersion = (pythonDirectory =~ /python([0-9]\.[0-9]+)/)[0][1]
+
+            javaLibraryPath = "${System.getProperty('java.library.path')}:" +
+                    "${envLibs}:" +
+                    "${envLibs}/python${pythonVersion}/site-packages/jep"
+        }
+        println("Running with the java.library.path: ${javaLibraryPath}")
+        systemProperty "java.library.path", javaLibraryPath
     }
 }
