@@ -162,7 +162,7 @@ cd grobid/dataseer-ml
 ## Start the service
 
 ```console
-./gradlew appRun
+./gradlew run
 ```
 
 ## Service console
