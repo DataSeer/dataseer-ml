@@ -1,12 +1,8 @@
 package org.grobid.service.controller;
 
 import org.glassfish.jersey.media.multipart.FormDataParam;
-import org.grobid.core.lexicon.DataseerLexicon;
-import org.grobid.core.main.GrobidHomeFinder;
-import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.DataseerConfiguration;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.GrobidConfig.ModelParameters;
+import org.grobid.service.configuration.DataseerServiceConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,13 +12,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.InputStream;
-import java.io.File;
-import java.util.Arrays;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-
-import org.grobid.service.configuration.DataseerServiceConfiguration;
+import java.util.List;
 
 /**
  * RESTful service for GROBID dataseer extension.
@@ -109,7 +99,15 @@ public class DataseerController implements DataseerPaths {
         LOGGER.info(text);
         return DataseerProcessString.processSentence(text);
     }
-    
+
+    @Path(PATH_DATASEER_SENTENCES)
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    @GET
+    public Response processText_get(@QueryParam(TEXT) List<String> texts) {
+        LOGGER.info("Received multiple sentences: " + texts.size());
+        return DataseerProcessString.processSentences(texts);
+    }
+
     @Path(PATH_DATASEER_PDF)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_XML)
@@ -122,8 +120,10 @@ public class DataseerController implements DataseerPaths {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_XML)
     @POST
-    public Response processTEI(@FormDataParam(INPUT) InputStream inputStream) {
-        return DataseerProcessFile.processTEI(inputStream);
+    public Response processTEI(
+            @FormDataParam(INPUT) InputStream inputStream,
+            @FormDataParam("segmentSentences") String segmentSentences) {
+        return DataseerProcessFile.processTEI(inputStream, segmentSentences);
     }
 
     @Path(PATH_DATASEER_JATS)
