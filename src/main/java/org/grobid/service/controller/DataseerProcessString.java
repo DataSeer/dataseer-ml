@@ -2,7 +2,6 @@ package org.grobid.service.controller;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-
 import org.apache.commons.lang3.StringUtils;
 import org.grobid.core.engines.DataseerClassifier;
 import org.slf4j.Logger;
@@ -13,6 +12,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 /**
  * 
@@ -64,16 +64,42 @@ public class DataseerProcessString {
         return response;
     }
 
-    /**
-     * @return
-     */
+    public static Response processSentences(List<String> texts) {
+        LOGGER.debug(methodLogIn());
+        Response response = null;
+        StringBuilder retVal = new StringBuilder();
+        DataseerClassifier classifier = DataseerClassifier.getInstance();
+        try {
+            LOGGER.debug(">> set raw sentence text for stateless service'...");
+
+            List<String> textsNormalized = texts.stream()
+                    .map(text -> text.replaceAll("\\n", " ").replaceAll("\\t", " "))
+                    .collect(Collectors.toList());
+
+            long start = System.currentTimeMillis();
+            String retValString = classifier.classify(texts);
+            long end = System.currentTimeMillis();
+
+            if (!isResultOK(retValString)) {
+                response = Response.status(Status.NO_CONTENT).build();
+            } else {
+                response = Response.status(Status.OK).entity(retValString).type(MediaType.TEXT_PLAIN).build();
+            }
+        } catch (NoSuchElementException nseExp) {
+            LOGGER.error("Could not get an instance of DataseerClassifier. Sending service unavailable.");
+            response = Response.status(Status.SERVICE_UNAVAILABLE).build();
+        } catch (Exception e) {
+            LOGGER.error("An unexpected exception occurs. ", e);
+            response = Response.status(Status.INTERNAL_SERVER_ERROR).build();
+        }
+        LOGGER.debug(methodLogOut());
+        return response;
+    }
+
     public static String methodLogIn() {
         return ">> " + DataseerProcessString.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
     }
 
-    /**
-     * @return
-     */
     public static String methodLogOut() {
         return "<< " + DataseerProcessString.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
     }
