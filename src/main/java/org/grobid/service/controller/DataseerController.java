@@ -104,13 +104,11 @@ public class DataseerController implements DataseerPaths {
 
     @Path(PATH_DATASEER_SENTENCES)
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
     @POST
-    public Response processTexts_post(@FormDataParam(TEXTS) String text) {
-        LOGGER.info("Received multiple sentences");
-        String textPreprocessed = text.replace("\r\n", "\n");
-
-        List<String> list = Arrays.asList(textPreprocessed.split("\n"));
-        return DataseerProcessString.processSentences(list);
+    public Response processTexts_post(@FormDataParam(TEXTS) List<String> texts) {
+        LOGGER.info("Received multiple sentences: " + texts.size());
+        return DataseerProcessString.processSentences(texts);
     }
 
     @Path(PATH_DATASEER_PDF)
