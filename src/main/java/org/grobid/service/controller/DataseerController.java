@@ -12,6 +12,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -26,6 +27,7 @@ public class DataseerController implements DataseerPaths {
     private static final Logger LOGGER = LoggerFactory.getLogger(DataseerController.class);
 
     private static final String TEXT = "text";
+    private static final String TEXTS = "texts";
     private static final String XML = "xml";
     private static final String TEI = "tei";
     private static final String PDF = "pdf";
@@ -86,26 +88,29 @@ public class DataseerController implements DataseerPaths {
 
     @Path(PATH_DATASEER_SENTENCE)
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    @POST
-    public Response processText_post(@FormParam(TEXT) String text) {
-        LOGGER.info(text);
-        return DataseerProcessString.processSentence(text);
-    }
-
-    @Path(PATH_DATASEER_SENTENCE)
-    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
     @GET
     public Response processText_get(@QueryParam(TEXT) String text) {
         LOGGER.info(text);
         return DataseerProcessString.processSentence(text);
     }
 
+    @Path(PATH_DATASEER_SENTENCE)
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    @POST
+    public Response processText_post(@FormParam(TEXT) String text) {
+        LOGGER.info(text);
+        return DataseerProcessString.processSentence(text);
+    }
+
     @Path(PATH_DATASEER_SENTENCES)
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    @GET
-    public Response processText_get(@QueryParam(TEXT) List<String> texts) {
-        LOGGER.info("Received multiple sentences: " + texts.size());
-        return DataseerProcessString.processSentences(texts);
+    @POST
+    public Response processTexts_post(@FormDataParam(TEXTS) String text) {
+        LOGGER.info("Received multiple sentences");
+        String textPreprocessed = text.replace("\r\n", "\n");
+
+        List<String> list = Arrays.asList(textPreprocessed.split("\n"));
+        return DataseerProcessString.processSentences(list);
     }
 
     @Path(PATH_DATASEER_PDF)
