@@ -713,7 +713,7 @@ public class DataseerClassifier {
                                     JsonNode noDatasetNode = classificationNode.findPath("no_dataset");
                                     JsonNode textNode = classificationNode.findPath("text");
 
-                                    Boolean localResult = new Boolean(false);
+                                    Boolean localResult = Boolean.FALSE;
                                     if ((datasetNode != null) && (!datasetNode.isMissingNode()) &&
                                         (noDatasetNode != null) && (!noDatasetNode.isMissingNode()) ) {
                                         double probDataset = datasetNode.asDouble();
@@ -830,7 +830,7 @@ public class DataseerClassifier {
                                             datasetMap.put("dataset-"+dataSetId, Pair.of(bestDataTypeWithProb.getLeft(), null));
                                             dataInstanceMap.put("dataInstance-"+dataSetId, "dataset-"+dataSetId);
                                             dataInstanceScoreMap.put("dataInstance-"+dataSetId, bestDataTypeWithProb.getRight());
-                                            dataInstanceReuseMap.put("dataInstance-"+dataSetId, new Boolean(isReuse));
+                                            dataInstanceReuseMap.put("dataInstance-"+dataSetId, isReuse);
                                             dataSetId++;
 
                                             // we also need to add a dataseer subtype attribute to the parent <div>
@@ -1012,7 +1012,7 @@ public class DataseerClassifier {
                 bestDataType = className;
             }
         }
-        return Pair.of(bestDataType, new Double(bestProb));
+        return Pair.of(bestDataType, bestProb);
     }
 
     private boolean getReuseInfo(JsonNode classificationsNode) {

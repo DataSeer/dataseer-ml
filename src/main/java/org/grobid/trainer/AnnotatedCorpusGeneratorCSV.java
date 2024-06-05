@@ -202,7 +202,7 @@ public class AnnotatedCorpusGeneratorCSV {
                             if (localSentence.equals(sentence)) {
                                 totalMatchedAnnotations++;
                                 System.out.println("matched sentence!");
-                                solvedAnnotations.add(new Integer(k));
+                                solvedAnnotations.add(k);
                                 // add annotation attributes to the DOM sentence
 
                                 break;
@@ -505,7 +505,7 @@ public class AnnotatedCorpusGeneratorCSV {
                         }
 
                         String sentence = annotation.getContext().trim();
-                        if (sentence.toLowerCase().equals("n/a")) {
+                        if (sentence.equalsIgnoreCase("n/a")) {
                             k++;
                             continue;
                         }
@@ -535,7 +535,7 @@ public class AnnotatedCorpusGeneratorCSV {
 
                                 totalMatchedAnnotations++;
                                 //System.out.println("matched sentence! " + sentence);
-                                solvedAnnotations.add(new Integer(k));
+                                solvedAnnotations.add(k);
 
                                 if (!docMatchedSentences.contains(sentenceSimplified)) {
                                     docMatchedSentences.add(sentenceSimplified);

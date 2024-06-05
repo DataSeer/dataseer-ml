@@ -244,7 +244,7 @@ public class DataseerAnnotationSaxHandler extends DefaultHandler {
                 }
             }
 
-            nbDatasets.add(new Integer(nb));
+            nbDatasets.add(nb);
             datasetTypes.add(datasetType);
             accumulator.setLength(0);
         }
