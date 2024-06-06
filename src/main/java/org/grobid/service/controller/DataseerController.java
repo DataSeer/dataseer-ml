@@ -106,8 +106,8 @@ public class DataseerController implements DataseerPaths {
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @POST
-    public Response processTexts_post(@FormDataParam(TEXTS) List<String> texts) {
-        LOGGER.info("Received multiple sentences: " + texts.size());
+    public Response processTexts_post(@FormDataParam(TEXTS) String texts) {
+        LOGGER.info("Received multiple sentences as JSON list");
         return DataseerProcessString.processSentences(texts);
     }
 
