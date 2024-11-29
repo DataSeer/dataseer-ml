@@ -22,6 +22,8 @@ public interface DataseerPaths {
      */
     public static final String PATH_DATASEER_SENTENCE = "processDataseerSentence";
 
+    public static final String PATH_DATASEER_SENTENCES = "processDataseerSentences";
+
     /**
      * path extension for processing a TEI file 
      * (for instance produced by GROBID or Pub2TEI).

@@ -2,149 +2,82 @@
 # build builder image
 # -------------------
 
-FROM openjdk:8u275-jdk as builder
-
-USER root
+# FROM openjdk:8u275-jdk as builder
+FROM openjdk:17-jdk-slim as builder
 
 RUN apt-get update && \
-    apt-get -y --no-install-recommends install unzip
-
-WORKDIR /opt/grobid-source
-
-# gradle
-COPY gradle/ ./gradle/
-COPY gradlew ./
-COPY gradle.properties ./
-COPY build.gradle ./
-COPY settings.gradle ./
-
-# source
-COPY grobid-home/ ./grobid-home/
-COPY grobid-core/ ./grobid-core/
-#COPY grobid-service/ ./grobid-service/
-COPY grobid-trainer/ ./grobid-trainer/
-COPY dataseer-ml/ ./dataseer-ml/
-
-# cleaning unused native libraries before packaging
-RUN rm -rf grobid-home/pdf2xml
-RUN rm -rf grobid-home/pdfalto/lin-32
-RUN rm -rf grobid-home/pdfalto/mac-64
-RUN rm -rf grobid-home/pdfalto/win-*
-RUN rm -rf grobid-home/lib/lin-32
-RUN rm -rf grobid-home/lib/win-*
-RUN rm -rf grobid-home/lib/mac-64
-
-RUN ./gradlew clean assemble install --no-daemon  --info --stacktrace
-
-WORKDIR ./dataseer-ml/
-RUN ./gradlew clean install --no-daemon  --info --stacktrace
+    apt-get -y --no-install-recommends install apt-utils libxml2 git unzip wget
 
 WORKDIR /opt/grobid
-#RUN unzip -o /opt/grobid-source/grobid-service/build/distributions/grobid-service-*.zip && \
-#    mv grobid-service* grobid-service
-RUN unzip -o /opt/grobid-source/grobid-home/build/distributions/grobid-home-*.zip && \
-    chmod -R 755 /opt/grobid/grobid-home/pdfalto
-RUN rm -rf grobid-source
+
+RUN mkdir -p dataseer-source grobid-home/models
+COPY src dataseer-source/src
+COPY settings.gradle dataseer-source/
+COPY resources/config/server.yml dataseer-source/resources/config/server.yml
+COPY resources/config/dataseer-ml.yml dataseer-source/resources/config/dataseer-ml.yml
+COPY resources/models dataseer-source/resources/models
+COPY resources/lexicon dataseer-source/resources/lexicon
+COPY build.gradle dataseer-source/
+COPY gradle.properties dataseer-source/
+COPY gradle dataseer-source/gradle/
+COPY gradlew dataseer-source/
+#COPY .git dataseer-source/.git
+#COPY localLibs dataseer-source/localLibs
+
+# Preparing models
+WORKDIR /opt/grobid/dataseer-source
+RUN rm -rf /opt/grobid/grobid-home/models/*
+RUN ./gradlew clean assemble -x shadowJar --no-daemon  --stacktrace --info
+RUN ./gradlew copyModels  --no-daemon --info --stacktrace \
+    && rm -f /opt/grobid/grobid-home/models/*.zip
+
+# Preparing distribution
+WORKDIR /opt/grobid
+RUN unzip -o /opt/grobid/dataseer-source/build/distributions/dataseer-ml-0*.zip -d dataseer_distribution \
+  && mv dataseer_distribution/dataseer-* dataseer-ml \
+  && rm -rf /opt/grobid/dataseer-source/build
 
 # -------------------
 # build runtime image
 # -------------------
 
-# use NVIDIA Container Toolkit to automatically recognize possible GPU drivers on the host machine
-FROM tensorflow/tensorflow:2.7.0-gpu
-CMD nvidia-smi
+FROM lfoppiano/grobid:0.8.0-full-slim as runtime
 
 # setting locale is likely useless but to be sure
 ENV LANG C.UTF-8
 
-# update NVIDIA Cuda key (following a key rotation in April 2022)
-RUN apt-get install -y wget
-RUN apt-key del 7fa2af80
-RUN rm /etc/apt/sources.list.d/cuda.list
-RUN rm /etc/apt/sources.list.d/nvidia-ml.list
-RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb
-RUN dpkg -i cuda-keyring_1.0-1_all.deb
-
-# install JRE 8, python and other dependencies
-RUN apt-get update && \
-    apt-get -y --no-install-recommends install apt-utils build-essential gcc libxml2 unzip curl \
-    openjdk-8-jre-headless openjdk-8-jdk ca-certificates-java \
-    musl gfortran \
-    python3 python3-pip python3-setuptools python3-dev \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-
 WORKDIR /opt/grobid
+RUN rm -rf /opt/grobid/grobid-home/models/*-with_ELMo \
+    && rm -rf /opt/grobid/grobid-service \
+    && ln -sf dataseer-ml/resources/ resources
 
-COPY --from=builder /opt/grobid .
+# the last command above is just a hack to make the lexicon loader working
 
-RUN python3 -m pip install pip --upgrade
+COPY --from=builder /opt/grobid/grobid-home/models ./grobid-home/models
+COPY --from=builder /opt/grobid/dataseer-ml ./dataseer-ml/
+COPY --from=builder /opt/grobid/dataseer-source/resources/config/*.yml ./dataseer-ml/resources/config/
+COPY --from=builder /opt/grobid/dataseer-source/resources/lexicon/ ./dataseer-ml/resources/lexicon/
 
-# install DeLFT via pypi
-RUN pip3 install requests delft==0.3.3
-# link the data directory to /data
-# the current working directory will most likely be /opt/grobid
-RUN mkdir -p /data \
-    && ln -s /data /opt/grobid/data \
-    && ln -s /data ./data
+RUN sed -i 's/^grobidHome:.*/grobidHome: \/opt\/grobid\/grobid-home/' dataseer-ml/resources/config/dataseer-ml.yml \
+    && sed -i 's/^grobidHome:.*/grobidHome: \/opt\/grobid\/grobid-home/' dataseer-ml/resources/config/server.yml
 
-# disable python warnings (and fix logging)
-ENV PYTHONWARNINGS="ignore"
+COPY --from=builder /opt/grobid/dataseer-ml /opt/grobid/dataseer-ml
 
-WORKDIR /opt/grobid
+RUN python3 preload_embeddings.py --registry ./resources-registry.json --embedding word2vec
 
-ENV JAVA_OPTS=-Xmx4g
-
-# Add Tini
-ENV TINI_VERSION v0.18.0
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
-RUN chmod +x /tini
-ENTRYPOINT ["/tini", "-s", "--"]
-
-# install jep (and temporarily the matching JDK)
-ENV TEMP_JDK_HOME=/tmp/jdk-8
-ENV JDK_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u212-b04/OpenJDK8U-x64_linux_8u212b04.tar.gz
-RUN curl --fail --show-error --location -q ${JDK_URL} -o /tmp/openjdk.tar.gz \
-    && ls -lh /tmp/openjdk.tar.gz \
-    && mkdir - "${TEMP_JDK_HOME}" \
-    && tar --extract \
-        --file /tmp/openjdk.tar.gz \
-        --directory "${TEMP_JDK_HOME}" \
-        --strip-components 1 \
-        --no-same-owner \
-    && JAVA_HOME=${TEMP_JDK_HOME} pip3 install jep==4.0.2 \
-    && rm -f /tmp/openjdk.tar.gz \
-    && rm -rf "${TEMP_JDK_HOME}"
-ENV LD_LIBRARY_PATH=/usr/local/lib/python3.8/dist-packages/jep:${LD_LIBRARY_PATH}
-# remove libjep.so because we are providing our own version in the virtual env
-RUN rm /opt/grobid/grobid-home/lib/lin-64/jep/libjep.so
-
-# preload embeddings, for GROBID all the RNN models use glove-840B (default for the script), ELMo is currently not loaded 
-# download GROBID fine-tuned models based on SciBERT if selected
-
-COPY --from=builder /opt/grobid-source/grobid-home/scripts/preload_embeddings.py .
-# embeddings will be loaded when building and running tests
-
-RUN ln -s /opt/grobid /opt/delft
-
-COPY --from=builder /opt/grobid-source/dataseer-ml /opt/grobid/dataseer-ml
-#COPY --from=builder /root/.m2/repository/org /opt/grobid/dataseer-ml/lib/org
-
-WORKDIR /opt/grobid/dataseer-ml
-
-RUN mkdir /opt/grobid/delft
-RUN mkdir /opt/grobid/delft/delft
-COPY --from=builder /opt/grobid-source/grobid-home/config/resources-registry.json /opt/grobid/delft/delft/resources-registry.json
-
-WORKDIR /opt/grobid/dataseer-ml
-
-# trigger gradle wrapper install
-RUN ./gradlew --version
-RUN ./gradlew copyModels && rm -rf resources/models 
-
-# this will build and load embeddings on the image forever :)
-RUN ./gradlew clean build
-
-CMD ["./gradlew", "run"]
+VOLUME ["/opt/grobid/grobid-home/tmp"]
 
 ARG GROBID_VERSION
+ENV GROBID_VERSION=${GROBID_VERSION:-latest}
+ENV DATASEER_ML_OPTS "-Djavrua.library.path=/opt/grobid/grobid-home/lib/li-64:/usr/local/lib/python3.8/dist-packages/jep --add-opens java.base/java.lang=ALL-UNNAMED"
+
+# WORKDIR /opt/grobid/dataseer-ml
+
+CMD ["dataseer-ml/bin/dataseer-ml", "server", "dataseer-ml/resources/config/server.yml"]
+
+LABEL \
+    authors="The contributors" \
+    org.label-schema.name="datastet" \
+    org.label-schema.description="Image with DataStet service" \
+    org.label-schema.url="https://github.com/DataSeer/datastet" \
+    org.label-schema.version=${GROBID_VERSION}

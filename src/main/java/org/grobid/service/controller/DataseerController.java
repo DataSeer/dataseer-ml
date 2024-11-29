@@ -1,12 +1,8 @@
 package org.grobid.service.controller;
 
 import org.glassfish.jersey.media.multipart.FormDataParam;
-import org.grobid.core.lexicon.DataseerLexicon;
-import org.grobid.core.main.GrobidHomeFinder;
-import org.grobid.core.main.LibraryLoader;
 import org.grobid.core.utilities.DataseerConfiguration;
-import org.grobid.core.utilities.GrobidProperties;
-import org.grobid.core.utilities.GrobidConfig.ModelParameters;
+import org.grobid.service.configuration.DataseerServiceConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,13 +12,8 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.InputStream;
-import java.io.File;
 import java.util.Arrays;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-
-import org.grobid.service.configuration.DataseerServiceConfiguration;
+import java.util.List;
 
 /**
  * RESTful service for GROBID dataseer extension.
@@ -36,6 +27,7 @@ public class DataseerController implements DataseerPaths {
     private static final Logger LOGGER = LoggerFactory.getLogger(DataseerController.class);
 
     private static final String TEXT = "text";
+    private static final String TEXTS = "texts";
     private static final String XML = "xml";
     private static final String TEI = "tei";
     private static final String PDF = "pdf";
@@ -96,20 +88,29 @@ public class DataseerController implements DataseerPaths {
 
     @Path(PATH_DATASEER_SENTENCE)
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    @POST
-    public Response processText_post(@FormParam(TEXT) String text) {
+    @GET
+    public Response processText_get(@QueryParam(TEXT) String text) {
         LOGGER.info(text);
         return DataseerProcessString.processSentence(text);
     }
 
     @Path(PATH_DATASEER_SENTENCE)
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    @GET
-    public Response processText_get(@QueryParam(TEXT) String text) {
+    @POST
+    public Response processText_post(@FormParam(TEXT) String text) {
         LOGGER.info(text);
         return DataseerProcessString.processSentence(text);
     }
-    
+
+    @Path(PATH_DATASEER_SENTENCES)
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @POST
+    public Response processTexts_post(@FormDataParam(TEXTS) String texts) {
+        LOGGER.info("Received multiple sentences as JSON list");
+        return DataseerProcessString.processSentences(texts);
+    }
+
     @Path(PATH_DATASEER_PDF)
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_XML)
@@ -122,8 +123,10 @@ public class DataseerController implements DataseerPaths {
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_XML)
     @POST
-    public Response processTEI(@FormDataParam(INPUT) InputStream inputStream) {
-        return DataseerProcessFile.processTEI(inputStream);
+    public Response processTEI(
+            @FormDataParam(INPUT) InputStream inputStream,
+            @FormDataParam("segmentSentences") String segmentSentences) {
+        return DataseerProcessFile.processTEI(inputStream, segmentSentences);
     }
 
     @Path(PATH_DATASEER_JATS)

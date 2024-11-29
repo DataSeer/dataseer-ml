@@ -4,15 +4,9 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 import org.apache.commons.lang3.StringUtils;
-import org.grobid.core.document.Document;
 import org.grobid.core.engines.DataseerClassifier;
-import org.grobid.core.engines.Engine;
-import org.grobid.core.engines.config.GrobidAnalysisConfig;
-import org.grobid.core.factory.GrobidFactory;
-import org.grobid.core.layout.Page;
 import org.grobid.core.utilities.IOUtilities;
 import org.grobid.core.utilities.ArticleUtilities;
-import org.grobid.core.utilities.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.grobid.service.exceptions.DataseerServiceException;
@@ -23,8 +17,6 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import java.io.File;
 import java.io.InputStream;
-import java.util.List;
-import java.util.NoSuchElementException;
 
 /**
  *
@@ -48,8 +40,9 @@ public class DataseerProcessFile {
      * @param inputStream the data of origin TEI document
      * @return a response object which contains an enriched TEI representation of the document
      */
-    public static Response processTEI(final InputStream inputStream) {
+    public static Response processTEI(final InputStream inputStream, String segmentSentences) {
         LOGGER.debug(methodLogIn());
+        boolean segmentSentencesBool = validateTrueFalseParam(segmentSentences);
         String retVal = null;
         Response response = null;
         File originFile = null;
@@ -63,7 +56,7 @@ public class DataseerProcessFile {
             } 
 
             // starts conversion process
-            retVal = classifier.processTEI(originFile.getAbsolutePath(), true, false);
+            retVal = classifier.processTEI(originFile.getAbsolutePath(), segmentSentencesBool, false);
 
             if (!isResultOK(retVal)) {
                 response = Response.status(Response.Status.NO_CONTENT).build();
@@ -219,6 +212,14 @@ public class DataseerProcessFile {
 
     public static String methodLogOut() {
         return "<< " + DataseerProcessFile.class.getName() + "." + Thread.currentThread().getStackTrace()[1].getMethodName();
+    }
+
+    private static boolean validateTrueFalseParam(String param) {
+        boolean booleanOutput = false;
+        if ((param != null) && (param.equals("1") || param.equalsIgnoreCase("true"))) {
+            booleanOutput = true;
+        }
+        return booleanOutput;
     }
 
     /**
