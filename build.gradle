@@ -88,6 +88,12 @@ dependencies {
     implementation group: 'org.grobid', name: 'grobid-core', version: '0.7.3'
     implementation group: 'org.grobid', name: 'grobid-trainer', version: '0.7.3'
 
+    // Add Lucene dependencies required by Grobid 0.7.3 (uses Lucene 4.5.x)
+    implementation 'org.apache.lucene:lucene-core:4.5.1'
+    implementation 'org.apache.lucene:lucene-analyzers-common:4.5.1'
+    implementation 'org.apache.lucene:lucene-queryparser:4.5.1'
+    implementation 'org.apache.lucene:lucene-queries:4.5.1'
+
     implementation group: 'net.arnx', name: 'jsonic', version: '1.3.10'
 
     //Logging
