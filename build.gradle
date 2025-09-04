@@ -67,10 +67,9 @@ repositories {
     mavenLocal()
     mavenCentral()
     maven { url "https://jitpack.io" }
-    maven { url "https://grobid.s3.eu-west-1.amazonaws.com/repo/" }
-    /*maven {
-        url new File(rootProject.rootDir, "lib")
-    }*/
+    maven {
+        url new File(rootProject.rootDir, "localLibs")
+    }
 }
 
 ext {
@@ -311,5 +310,6 @@ application {
 
     run {
         args = ['server', 'resources/config/server.yml']
+        classpath += files('/usr/local/lib/python3.8/dist-packages/jep/jep-4.0.2.jar')
     }
 }
