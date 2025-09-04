@@ -2,7 +2,7 @@
 # build builder image
 # -------------------
 
-FROM openjdk:8u275-jdk as builder
+FROM openjdk:11-jdk as builder
 
 USER root
 
@@ -101,6 +101,14 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "-s", "--"]
 
+# The GoogleNews-vectors-negative300.vec.gz file is no longer available
+# preload embeddings, for GROBID all the RNN models use glove-840B (default for the script), ELMo is currently not loaded 
+# to be done: mechanism to download GROBID fine-tuned models based on SciBERT if selected (but not good enough for the moment)
+# COPY --from=builder /opt/grobid-source/grobid-home/scripts/preload_embeddings.py .
+# COPY --from=builder /opt/grobid-source/grobid-home/config/resources-registry.json .
+# RUN python3 preload_embeddings.py --registry ./resources-registry.json --embedding word2vec &&  \
+#    ln -s /opt/grobid /opt/delft
+
 # install jep (and temporarily the matching JDK)
 ENV TEMP_JDK_HOME=/tmp/jdk-8
 ENV JDK_URL=https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u212-b04/OpenJDK8U-x64_linux_8u212b04.tar.gz
@@ -135,6 +143,7 @@ WORKDIR /opt/grobid/dataseer-ml
 RUN mkdir /opt/grobid/delft
 RUN mkdir /opt/grobid/delft/delft
 COPY --from=builder /opt/grobid-source/grobid-home/config/resources-registry.json /opt/grobid/delft/delft/resources-registry.json
+COPY --from=builder /opt/grobid-source/dataseer-ml/db/ /opt/grobid/delft/data/db/
 
 WORKDIR /opt/grobid/dataseer-ml
 
@@ -143,7 +152,7 @@ RUN ./gradlew --version
 RUN ./gradlew copyModels && rm -rf resources/models 
 
 # this will build and load embeddings on the image forever :)
-RUN ./gradlew clean build
+RUN ./gradlew clean build -x test
 
 CMD ["./gradlew", "run"]
 
